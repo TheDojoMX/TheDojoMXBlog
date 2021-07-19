@@ -32,8 +32,8 @@ Kevlin Henney es un consultor, escritor, entrenador y presentador de temas relac
 
 Ha escrito columnas para múltiples revistas dedicadas al desarrollo de software. Es autor o editor de varios libros que son _muy recomendados_ para arquitectos de software y desarrolladores. Algunos ejemplos son:
 
-- [A Pattern Oriented Software Architecture for Distributed Computing](https://www.amazon.com.mx/Pattern-Oriented-Software-Architecture-Distributed-Computing/dp/0470059028)
-- [97 Things Every Developer should know](https://www.oreilly.com/library/view/97-things-every/9780596809515/) - Es una colección de ensayos que Kevlin se encargó de compilar y editar.
+- [Pattern-Oriented Software Architecture, Volume 4: A Pattern Language for Distributed Computing](https://www.amazon.com.mx/Pattern-Oriented-Software-Architecture-Distributed-Computing/dp/0470059028)
+- [97 Things Every Programmer Should Know](https://www.oreilly.com/library/view/97-things-every/9780596809515/) - Es una colección de ensayos que Kevlin se encargó de compilar y editar, sobre cómo ser un mejor programador. También está la versión en español: [97 cosas que todo programador debería saber](http://97cosas.com/programador/)
 
 Kevlin se ha presentado en casi todas las conferencias importante de desarrollo de software europeas y de hable inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en [Amazon](https://www.amazon.com/Kevlin-Henney/e/B0716N93KR%3Fref=dbs_a_mng_rwt_scns_share) sus libros de ficción. Además es muy accesible, si lo buscas en Twitter es muy probable que te conteste: [Kevlin Henney en Twitter](https://twitter.com/KevlinHenney)
 
