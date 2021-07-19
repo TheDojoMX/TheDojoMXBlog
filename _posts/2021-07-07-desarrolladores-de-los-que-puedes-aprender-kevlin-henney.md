@@ -41,14 +41,13 @@ Una de las cosas que menciona que más nos gusta es: **"Si estás de acuerdo con
 
 ## Algunas ideas de Kevlin
 
-
 > "Less code == less bugs". - Kevlin Henney
 
 De las pláticas y el contenido que hemos consumido de Kevlin, hemos podido derivar algunas de las principales ideas que promueve. Te listamos las tres más importantes y te dejamos descubrir las demás viendo sus charlas o leyendo su contenido.
 
 1. **La arquitectura de software requiere entendimiento completo del dominio.** Una de las ideas que Kevlin repite vez tras vez es la importancia de entender y definir el problema que estamos tratando de resolver. Se basa en las ideas de otros autores para reforzar esto. Una de las cosas que Kevlin resalta es que debemos conocer los **detalles**, para poder implementar software correcto con la arquitectura adecuada.
 2. **El diseño y la arquitectura de software son procesos iterativos e incrementales.** Es imposible hacer un diseño completamente correcto y sin errores desde la primera vez. Es por eso que esta es una idea que se repite en sus conferencias vez tras vez. La lección para nosotros: _debemos diseñar el software con el conocimiento de que siempre habrá algo que mejorar_.
-3. **El software simple, pequeño y "aburrido" es más fácil de manejar**. Haciendo eco de la frase que pusimos al inicio de esta sección, una de las ideas que Kevlin promueve más es la de minimizar la cantidad de código para lograr algo, así como buscar la simplicidad tanto en funciones como de construcción. Esto último es lo que llamamos aburrido: evitar tanto como podamos tecnologías a las que no estamos acostumbrados o demasiado nuevas y que agreguen dependencias inecesarias.
+3. **El software simple, pequeño y "aburrido" es más fácil de manejar**. Haciendo eco de la frase que pusimos al inicio de esta sección, una de las ideas que Kevlin promueve más es la de minimizar la cantidad de código para lograr algo, así como buscar la simplicidad tanto en funciones como de construcción. Esto último es lo que llamamos aburrido: evitar tanto como podamos tecnologías a las que no estamos acostumbrados o demasiado nuevas y que agreguen dependencias innecesarias.
 
 ## Pláticas
 
@@ -76,7 +75,8 @@ Crear software **depende** del conocimiento que tengamos acerca del dominio que 
 
 ---
 
-Tiene muchas más pláticas en conferencias que puedes buscar directamente en YouTube. Cada una de sus pláticas es un conjunto de ideas y referencias que es más de lo que se puede absorber en el tiempo en el que lo presenta, por lo que tal vez tengas que verlas varias veces, pero todo ese bagaje vale la pena. Aquí te dejamos una búsqueda que las agrupa: [DevTube](https://dev.tube/@kevlinhenney)
+Tiene muchas más pláticas en conferencias que puedes buscar directamente en YouTube. Cada una de sus pláticas es un conjunto de ideas y referencias que es más de lo que se puede absorber en el tiempo en el que lo presenta, por lo que tal vez tengas que verlas varias veces, pero todo ese bagaje vale la pena. Aquí te dejamos una búsqueda que las agrupa: [DevTube](https://dev.tube/@kevlinhenney).
+
 ## Recursos
 
 Para aprender más de las ideas qeu Kevlin enseña, puedes investigar más de él y su trabajo aquí:
