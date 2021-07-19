@@ -23,13 +23,16 @@ Primeramente hablemos de **la motivación** para explicar mejor las cosas: lo qu
 
 Debemos tener un plan o una estructura para compartir el conocimiento, lo primero es no sacar tus pensamientos sin estructura. Russ propone algunas estructuras, como las siguientes:
 
-
 - **Zoom In**: Empieza en el contexto más amplio y termina en los detalles. Por ejemplo: Queremos vender zapatos -> Por eso estamos construyendo un eCommerce -> Por eso necesitamos este botón de "Pagar".
 
-- **Zoom Out**: Empieza en el detalle y termina en el contexto más amplio. Por ejemplo: Necesitamos mejorar la retención de esta pantalla -> Porque es fundamental para terminar la compra -> Por que necesitamos acabar con el stock de este trimestre. 
+- **Zoom Out**: Empieza en el detalle y termina en el contexto más amplio. Por ejemplo: Necesitamos mejorar la retención de esta pantalla -> Porque es fundamental para terminar la compra -> Por que necesitamos acabar con el stock de este trimestre.
 
-- **"De los simple a lo complejo"**: Empieza explicando lo más básico, sin saltarte nada. Este método puede implicar ocultar información intencionalmente o explicarla en términos inexactos, que cuando llegue el momento se tendrán que aclarar y expandir.
+- **De los simple a lo complejo**: Empieza explicando lo más básico, sin saltarte nada. Este método puede implicar ocultar información _intencionalmente_ o explicarla en términos inexactos, pero que cuando llegue el momento se tendrán que aclarar y expandir.
 
+- **Explica el proceso**: Este tipo de explicaciones se adapta bien a escenarios en dónde tienes que describir una transformación progresiva. Por ejemplo, cuando hablamos de cómo se transforma una petición web en un respuesta en cualquier framework web.
+
+
+Lo más importante es encontrar la estructura que más se  adapte a tu situación.
 ## Sé Agil
 
 Tus explicaciones debe seguir el mismo ciclo que el desarrollo de software: explica, mide, ajusta y repite.
