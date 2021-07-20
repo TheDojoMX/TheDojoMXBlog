@@ -1,4 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-07-18T23:22:19-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Desarrolladores de los que puedes aprender: Russ Olsen</title><link href="https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html" rel="alternate" type="text/html" title="Desarrolladores de los que puedes aprender: Russ Olsen" /><published>2021-07-14T00:00:00-05:00</published><updated>2021-07-14T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html">&lt;p&gt;En este capítulo vamos a Hablar de &lt;a href=&quot;http://russolsen.com/&quot;&gt;Russ Olsen&lt;/a&gt;, un desarrollador ahora de &lt;a href=&quot;https://clojure.org/&quot;&gt;Clojure&lt;/a&gt;, pero bastante reconocido en el mundo de Ruby. Ha escrito varios libros y contribuye activamente a la comunidad mediante podcasts, presentaciones y charlas.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-07-19T23:47:08-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Como transmitir conocimiento en el desarrollo de software</title><link href="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="alternate" type="text/html" title="Como transmitir conocimiento en el desarrollo de software" /><published>2021-07-19T00:00:00-05:00</published><updated>2021-07-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html">&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
+
+&lt;p&gt;La charla &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;“Eloquent Explanations”&lt;/a&gt; de &lt;a href=&quot;/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt;. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo lo que aprendí.&lt;/p&gt;
+
+&lt;h2 id=&quot;la-motivación&quot;&gt;La motivación&lt;/h2&gt;
+
+&lt;p&gt;Primeramente hablemos de &lt;strong&gt;la motivación&lt;/strong&gt; para explicar mejor las cosas: lo que nos limita para construir software es conocimiento. Conocimiento sobre el dominio, el negocio o el sistema. Es por eso que compartirlo es una muy buena forma de ayudar al equipo a avanzar. La principal forma de compartirlo es con explicaciones.&lt;/p&gt;
+
+&lt;h2 id=&quot;tómatelo-en-serio&quot;&gt;Tómatelo en serio&lt;/h2&gt;
+
+&lt;p&gt;Debemos tener un plan o una estructura para compartir el conocimiento, lo primero es no sacar tus pensamientos sin estructura. Russ propone algunas estructuras, como las siguientes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Zoom In&lt;/strong&gt;: Empieza en el contexto más amplio y termina en los detalles. Por ejemplo: Queremos vender zapatos -&amp;gt; Por eso estamos construyendo un eCommerce -&amp;gt; Por eso necesitamos este botón de “Pagar”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Zoom Out&lt;/strong&gt;: Empieza en el detalle y termina en el contexto más amplio. Por ejemplo: Necesitamos mejorar la retención de esta pantalla -&amp;gt; Porque es fundamental para terminar la compra -&amp;gt; Por que necesitamos acabar con el stock de este trimestre.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;De los simple a lo complejo&lt;/strong&gt;: Empieza explicando lo más básico, sin saltarte nada. Este método puede implicar ocultar información &lt;em&gt;intencionalmente&lt;/em&gt; o explicarla en términos inexactos, pero que cuando llegue el momento se tendrán que aclarar y expandir.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Explica el proceso&lt;/strong&gt;: Este tipo de explicaciones se adapta bien a escenarios en dónde tienes que describir una transformación progresiva. Por ejemplo, cuando hablamos de cómo se transforma una petición web en un respuesta en cualquier framework web.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lo más importante es encontrar la estructura que más se  adapte a tu situación.&lt;/p&gt;
+&lt;h2 id=&quot;sé-agil&quot;&gt;Sé Agil&lt;/h2&gt;
+
+&lt;p&gt;Tus explicaciones debe seguir el mismo ciclo que el desarrollo de software:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Explica: ejecuta siguiendo el plan que trazaste&lt;/li&gt;
+  &lt;li&gt;Mide: tienes que leer a la audiencia y darte cuenta de si tu explicación está funcionando. Busca señales como si las preguntas van cambiando, no te miran raro y no hay un silencio mortal.&lt;/li&gt;
+  &lt;li&gt;Ajusta: si tu explicación no está logrando transmitir lo que quieres, cambia de estrategia, simplifica o busca nuevos ejemplos.&lt;/li&gt;
+  &lt;li&gt;Repite: vuelve a iniciar el proceso con nuevo conocimiento aplicando lo que aprendiste.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;empieza-en-lo-más-básico&quot;&gt;Empieza en lo más básico&lt;/h3&gt;
+
+&lt;p&gt;Esto viene de un aprendizaje del autor de la plática mientras daba una taller en el quería enseñar Ruby on Rails. Había algunas personas en el auditorio que preguntaban una y otra vez lo mismo (señal de que no está funcionando tu explicación), hasta que comprendieron que Ruby es el lenguaje y Rails es el framework, cosa que Russ no había pensado siquiera en explicar.&lt;/p&gt;
+
+&lt;p&gt;Cuando explicamos algo que conocemos muy bien, puede que nos saltemos información que no tenemos presente que necesitamos saber, justo por el dominio tan amplio que tenemos del problema. Tenemos que ser cuidadosos en esto e intentar dar la mayor cantidad de información posible, incluso la que pueda ser muy básica.&lt;/p&gt;
+
+&lt;p&gt;A veces parece que lo que estamos diciendo es obvio, pero aquí menciona una frase muy interesante:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“Nadie en esta sala nació con ese conocimiento codificado en su ADN” - Russ Olsen (cuando el público se rio de la explicación tan básica que tuvo que dar)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Esto nos debe recordar que a nosotros también nos tienen que explicar cosas que para otros son obvias.&lt;/p&gt;
+
+&lt;h2 id=&quot;haz-cortas-tus-explicaciones&quot;&gt;Haz cortas tus explicaciones&lt;/h2&gt;
+
+&lt;p&gt;Explicar es un deporte con límite de tiempo. Tenemos un tiempo limitado para explicar lo que queremos antes de &lt;strong&gt;perder la atención de la persona&lt;/strong&gt;, por lo que comprimir la información y decir primero lo más importante es buena idea.&lt;/p&gt;
+
+&lt;p&gt;Uno de los consejos que Russ da es evitar la jerga técnica. La terminología es un obstáculo para los que están empezando, y sólo quitará tiempo a tu explicación, aburriendo o comunicando muy poco en un espacio grande de tiempo, mientras la puedas evitar hazlo.&lt;/p&gt;
+
+&lt;p&gt;Una buena noticia: &lt;strong&gt;puedes resetear el reloj y comprarte más tiempo&lt;/strong&gt; si logras que las personas a las que les estás explicando tengan pequeñas victorias, entendiendo progresivamente el tema en cuestión.&lt;/p&gt;
+
+&lt;h2 id=&quot;usa-la-repetición&quot;&gt;Usa la repetición&lt;/h2&gt;
+
+&lt;p&gt;Repite para énfasis y para dar contexto. El &lt;em&gt;“Don’t repeat yourself”&lt;/em&gt; es para las máquinas, los humanos necesitamos repetición para entender que algo es importante o para recordar el contexto de algo.&lt;/p&gt;
+
+&lt;p&gt;Así que usa la repetición para resaltar las ideas más importantes de tu explicación.&lt;/p&gt;
+
+&lt;h2 id=&quot;muéstrate-como-humano&quot;&gt;Muéstrate como humano&lt;/h2&gt;
+
+&lt;p&gt;Muéstrate humano. Las explicaciones que causan una reacción emocional en los que escuchan, como las que incluyen humor, las que demuestran sentimientos o conectan en un nivel humano con las personas son las que dejan las cosas grabadas. Russ cuenta la experiencia de la portada de un libro que lo hizo reír y por eso se ha acordado de él toda la vida.&lt;/p&gt;
+
+&lt;p&gt;Hazles saber por qué importa lo que estás diciendo, muestra el interés o el amor que tienes por el tema. Una buena explicación puede cambiar tu compañía, tu equipo o incluso el mundo.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Explicar algo de manera que otros comprendan no es algo sencillo. Necesitas práctica, intención y esfuerzo para lograrlo. Si lo dominas, sin duda serás un componente muy valioso de cualquier equipo en el que participes en el desarrollo de software.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="explicaciones" /><category term="conocimiento" /><category term="desarrollo" /><summary type="html">Compartir el conocimiento que tienes sobre el proyecto es una de las tareas más importantes en el desarrollo de software. Exploremos cómo podemos mejorar en esto.</summary></entry><entry><title type="html">Desarrolladores de los que puedes aprender: Russ Olsen</title><link href="https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html" rel="alternate" type="text/html" title="Desarrolladores de los que puedes aprender: Russ Olsen" /><published>2021-07-14T00:00:00-05:00</published><updated>2021-07-14T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html">&lt;p&gt;En este capítulo vamos a Hablar de &lt;a href=&quot;http://russolsen.com/&quot;&gt;Russ Olsen&lt;/a&gt;, un desarrollador ahora de &lt;a href=&quot;https://clojure.org/&quot;&gt;Clojure&lt;/a&gt;, pero bastante reconocido en el mundo de Ruby. Ha escrito varios libros y contribuye activamente a la comunidad mediante podcasts, presentaciones y charlas.&lt;/p&gt;
 
 &lt;h2 id=&quot;acerca-de-russ&quot;&gt;Acerca de Russ&lt;/h2&gt;
 
@@ -113,7 +187,7 @@
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;La arquitectura de software requiere entendimiento completo del dominio.&lt;/strong&gt; Una de las ideas que Kevlin repite vez tras vez es la importancia de entender y definir el problema que estamos tratando de resolver. Se basa en las ideas de otros autores para reforzar esto. Una de las cosas que Kevlin resalta es que debemos conocer los &lt;strong&gt;detalles&lt;/strong&gt;, para poder implementar software correcto con la arquitectura adecuada.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;El diseño y la arquitectura de software son procesos iterativos e incrementales.&lt;/strong&gt; Es imposible hacer un diseño completamente correcto y sin errores desde la primera vez. Es por eso que esta es una idea que se repite en sus conferencias vez tras vez. La lección para nosotros: &lt;em&gt;debemos diseñar el software con el conocimiento de que siempre habrá algo que mejorar&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;El software simple, pequeño y “aburrido” es más fácil de manejar&lt;/strong&gt;. Haciendo eco de la frase que pusimos al inicio de esta sección, una de las ideas que Kevlin promueve más es la de minimizar la cantidad de código para lograr algo, así como buscar la simplicidad tanto en funciones como de construcción. Esto último es lo que llamamos aburrido: evitar tanto como podamos tecnologías a las que no estamos acostumbrados o demasiado nuevas y que agreguen dependencias inecesarias.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;El software simple, pequeño y “aburrido” es más fácil de manejar&lt;/strong&gt;. Haciendo eco de la frase que pusimos al inicio de esta sección, una de las ideas que Kevlin promueve más es la de minimizar la cantidad de código para lograr algo, así como buscar la simplicidad tanto en funciones como de construcción. Esto último es lo que llamamos aburrido: evitar tanto como podamos tecnologías a las que no estamos acostumbrados o demasiado nuevas y que agreguen dependencias innecesarias.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;pláticas&quot;&gt;Pláticas&lt;/h2&gt;
@@ -142,7 +216,8 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;Tiene muchas más pláticas en conferencias que puedes buscar directamente en YouTube. Cada una de sus pláticas es un conjunto de ideas y referencias que es más de lo que se puede absorber en el tiempo en el que lo presenta, por lo que tal vez tengas que verlas varias veces, pero todo ese bagaje vale la pena. Aquí te dejamos una búsqueda que las agrupa: &lt;a href=&quot;https://dev.tube/@kevlinhenney&quot;&gt;DevTube&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tiene muchas más pláticas en conferencias que puedes buscar directamente en YouTube. Cada una de sus pláticas es un conjunto de ideas y referencias que es más de lo que se puede absorber en el tiempo en el que lo presenta, por lo que tal vez tengas que verlas varias veces, pero todo ese bagaje vale la pena. Aquí te dejamos una búsqueda que las agrupa: &lt;a href=&quot;https://dev.tube/@kevlinhenney&quot;&gt;DevTube&lt;/a&gt;.&lt;/p&gt;
+
 &lt;h2 id=&quot;recursos&quot;&gt;Recursos&lt;/h2&gt;
 
 &lt;p&gt;Para aprender más de las ideas qeu Kevlin enseña, puedes investigar más de él y su trabajo aquí:&lt;/p&gt;
@@ -625,37 +700,4 @@
 
 &lt;p&gt;Hablamos de muchas cosas más, productividad, Google, cómo avanzar en tu carrera, etc. No te pierdas la plática entera aquí:&lt;/p&gt;
 
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mUfmVBaOmxM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lives" /><category term="recomendaciones" /><category term="video" /><category term="libros" /><category term="consejos" /><summary type="html">Hablamos con Diego De Granda y Pablo Trinidad sobre qué tienes que hacer para conseguir un buen trabajo en tecnología. Aquí tienes un resumen.</summary></entry><entry><title type="html">Libros que te ayudarán a aprender Data Science</title><link href="https://blog.thedojo.mx/2021/02/01/libros-que-te-ayurdaran-a-aprender-data-science.html" rel="alternate" type="text/html" title="Libros que te ayudarán a aprender Data Science" /><published>2021-02-01T00:00:00-06:00</published><updated>2021-02-01T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/02/01/libros-que-te-ayurdaran-a-aprender-data-science</id><content type="html" xml:base="https://blog.thedojo.mx/2021/02/01/libros-que-te-ayurdaran-a-aprender-data-science.html">&lt;p&gt;Creemos firmemente que una de las mejores maneras de educarte como desarrollador es conseguir guía clara.&lt;/p&gt;
-
-&lt;p&gt;Una de las mejores fuentes de conocimiento son los libros escritos por personas expertas en el tema del que quieres aprender, es por eso siempre buscamos personas que nos den consejos sobre los mejores recursos que encuentren.&lt;/p&gt;
-
-&lt;p&gt;En esta ocasión invitamos a &lt;a href=&quot;https://twitter.com/silvercorp&quot;&gt;Yesi Days&lt;/a&gt; a platicar sobre qué libros nos recomendaría para desarrollarte en &lt;strong&gt;data science&lt;/strong&gt;. Nos recomendó los siguientes:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://amzn.to/3q5lDj0&quot;&gt;Hands-on Machine Learning with Scikit-Learn and Tensorflow&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://themlbook.com/&quot;&gt;The Hundred Page Machine Learning&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://amzn.to/35qysMQ&quot;&gt;Introduction to Machine Learning with Python: A Guide for Data Scientists&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://amzn.to/2L8AiuZ&quot;&gt;Data Science from Scratch: First Principles with Python&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://amzn.to/2MGG6Mq&quot;&gt;Cracking the PM Interview: How to Land a Product Manager Job in Technology (Cracking the Interview &amp;amp; Career)&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/27783740-building-real-time-data-pipelines&quot;&gt;Building Real-time data pipelines&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;data-science-path&quot;&gt;Data science Path&lt;/h2&gt;
-
-&lt;p&gt;Yesi también nos contó sobre un guía que creó para ayuddarte a empezar en el camino, la puedes encontrar en:&lt;a href=&quot;https://ds-path.netlify.app/&quot;&gt;Data Science Path&lt;/a&gt; y próximamente estará en español.&lt;/p&gt;
-
-&lt;p&gt;La charla que tuvimos con ella se extendió sobre muchos temas más, si no te la quieres perder la puedes ver aquí:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/vCzMLeq_eBk&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="video" /><category term="data-science" /><category term="books" /><category term="libros" /><summary type="html">En este post te contamos sobre algunos libros que te pueden servir para avanzar en tu carrera.</summary></entry></feed>
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mUfmVBaOmxM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lives" /><category term="recomendaciones" /><category term="video" /><category term="libros" /><category term="consejos" /><summary type="html">Hablamos con Diego De Granda y Pablo Trinidad sobre qué tienes que hacer para conseguir un buen trabajo en tecnología. Aquí tienes un resumen.</summary></entry></feed>

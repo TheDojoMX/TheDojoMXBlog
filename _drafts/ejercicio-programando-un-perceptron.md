@@ -16,6 +16,7 @@ En este post platicaremos acerca de cómo funciona un perceptrón a nivel de có
 Si no tienes claro lo que es un perceptrón, puedes leer nuestro [artículo anterior](/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html){:target="_blank"}.
 ## El conjunto de datos
 
+
 ## Aproximando la función
 
 ## Resultado
