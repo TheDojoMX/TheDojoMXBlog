@@ -75,3 +75,7 @@ Hazles saber por qué importa lo que estás diciendo, muestra el interés o el a
 ## Conclusión
 
 Explicar algo de manera que otros comprendan no es algo sencillo. Necesitas práctica, intención y esfuerzo para lograrlo. Si lo dominas, sin duda serás un componente muy valioso de cualquier equipo en el que participes en el desarrollo de software.
+
+Puedes ver la charla completa aquí:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/80EE4mZmp3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
