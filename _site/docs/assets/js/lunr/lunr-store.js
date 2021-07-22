@@ -358,4 +358,22 @@ var store = [{
         "tags": ["propiedad-intelectual","leyes"],
         "url": "/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_cartoonify,w_1200/v1624377067/giammarco-zeH-ljawHtg-unsplash_e4u5ve.jpg"
+      },{
+        "title": "Desarrolladores de los que puedes aprender: Kevlin Henney",
+        "excerpt":"Hay varios desarrolladores de talla internacional de los que puedes aprender mucho, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que...","categories": [],
+        "tags": ["developers","arquitectura"],
+        "url": "/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:12/v1625199907/DevTernity-2016-Kevlin-Henney-Seven-Ineffective-Coding-Habits-of-Many-Programmers-Video-Speech_jrjhg8.jpg"
+      },{
+        "title": "Desarrolladores de los que puedes aprender: Russ Olsen",
+        "excerpt":"En este capítulo vamos a Hablar de Russ Olsen, un desarrollador ahora de Clojure, pero bastante reconocido en el mundo de Ruby. Ha escrito varios libros y contribuye activamente a la comunidad mediante podcasts, presentaciones y charlas. Acerca de Russ Russ trabaja como vicepresidente de Cognitec, la empresa que está...","categories": [],
+        "tags": ["devs","ruby","clojure"],
+        "url": "/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:13,w_300/v1626237333/slideslive_russ-olsen_explain-it_mejk2s.jpg"
+      },{
+        "title": "Como transmitir conocimiento en el desarrollo de software",
+        "excerpt":"Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando. La charla “Eloquent Explanations” de Russ Olsen. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo...","categories": [],
+        "tags": ["explicaciones","conocimiento","desarrollo"],
+        "url": "/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:16,w_300/v1626756313/daniele-franchi-g2fJ7d7eKSM-unsplash_mogbm1.jpg"
       }]

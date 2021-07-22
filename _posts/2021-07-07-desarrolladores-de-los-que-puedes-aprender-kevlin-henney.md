@@ -93,11 +93,11 @@ Esto eventualmente me llevó a dar charlas, cursos y visitar compañías, lo cu�
 
 2. ¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?
 
-I'll choose a technical decision that is safely in the past — quarter of a century past, to be precise. I was working on a SCADA system in the energy sector. Our systems were embedded in electricity substations and had very low network bandwidth (only a few thousand bits per second). I helped define a binary protocol that was compact and not bandwidth hungry. In defining this protocol, we specifically decided not to worry about security in the protocol because, at that time, we didn't think anyone would be foolish enough to connect sensitive infrastructure, such as the electrical grid, to a public network, such as the internet.
+Escogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasao, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.
 
-It turns out that you should never underestimate how foolish people can be! Fortunately, this was later addressed by a few changes that switched to using SSL rather than running over raw sockets.
+¡Resulta que nunca debes subestimar que tan tonta puede ser la gente! Afortunadamente esto fue corregido después con unos cuántos cambios para usar SSL en vez de correr nuestros propios sockets sin protección.
 
-That said, although we missed one future trend, we caught others. We not only addressed the Y2K problem before most people were even aware of it; we also addressed the Year 2038 problem.
+dicho esto, aunque perdimos una tendencia futura, nos subimos a otras. No sólo corregimos el problema Y2K antes de que la mayoría de las personas siquiera supieran de él; también atendimos el problema del año 2038.[^1]
 
 3. ¿Cuál es el peor consejo que te han dado?
 
@@ -149,3 +149,4 @@ Para aprender más de las ideas qeu Kevlin enseña, puedes investigar más de é
 
 Todos los desarrolladores de diferentes niveles podemos aprender mucho de las ideas que Kevlin se ha dedicado a enseñar, mientras lo hace de una manera entretenida, profunda y que va puliendo con el tiempo. Es importante escuchar a personas con experiencia para pode desarrollar el criterio propio y las habilidades y formas de pensar para ser efectivos.
 
+[^1]: El fin del UNIX Timestamp o [Y2k38](https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2038). (Nota de tracucción)

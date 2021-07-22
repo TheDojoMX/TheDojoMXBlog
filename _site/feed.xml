@@ -1,4 +1,154 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-07-06T23:58:17-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Desarrolladores de los que puedes aprender: Russ Olsen</title><link href="https://blog.thedojo.mx/2021/07/04/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html" rel="alternate" type="text/html" title="Desarrolladores de los que puedes aprender: Russ Olsen" /><published>2021-07-04T00:00:00-05:00</published><updated>2021-07-04T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/04/desarrolladores-de-los-que-puedes-aprender-russ-olsen</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/04/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html">&lt;p&gt;Twitter: https://twitter.com/russolsen&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Escribe aquí un buen resumen de tu artículo</summary></entry><entry><title type="html">Desarrolladores de los que puedes aprender: Kevlin Henney</title><link href="https://blog.thedojo.mx/2021/06/26/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html" rel="alternate" type="text/html" title="Desarrolladores de los que puedes aprender: Kevlin Henney" /><published>2021-06-26T00:00:00-05:00</published><updated>2021-06-26T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/06/26/desarrolladores-de-los-que-puedes-aprender-kevlin-henney</id><content type="html" xml:base="https://blog.thedojo.mx/2021/06/26/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html">&lt;p&gt;Hay varios desarrolladores de talla internacional de los que puedes &lt;strong&gt;aprender mucho&lt;/strong&gt;, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que puedes aprender.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-07-21T23:24:35-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Como transmitir conocimiento en el desarrollo de software</title><link href="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="alternate" type="text/html" title="Como transmitir conocimiento en el desarrollo de software" /><published>2021-07-19T00:00:00-05:00</published><updated>2021-07-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html">&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
+
+&lt;p&gt;La charla &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;“Eloquent Explanations”&lt;/a&gt; de &lt;a href=&quot;/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt;. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo lo que aprendí.&lt;/p&gt;
+
+&lt;h2 id=&quot;la-motivación&quot;&gt;La motivación&lt;/h2&gt;
+
+&lt;p&gt;Primeramente hablemos de &lt;strong&gt;la motivación&lt;/strong&gt; para explicar mejor las cosas: lo que nos limita para construir software es conocimiento. Conocimiento sobre el dominio, el negocio o el sistema. Es por eso que compartirlo es una muy buena forma de ayudar al equipo a avanzar. La principal forma de compartirlo es con explicaciones.&lt;/p&gt;
+
+&lt;h2 id=&quot;tómatelo-en-serio&quot;&gt;Tómatelo en serio&lt;/h2&gt;
+
+&lt;p&gt;Debemos tener un plan o una estructura para compartir el conocimiento, lo primero es no sacar tus pensamientos sin estructura. Russ propone algunas estructuras, como las siguientes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Zoom In&lt;/strong&gt;: Empieza en el contexto más amplio y termina en los detalles. Por ejemplo: Queremos vender zapatos -&amp;gt; Por eso estamos construyendo un eCommerce -&amp;gt; Por eso necesitamos este botón de “Pagar”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Zoom Out&lt;/strong&gt;: Empieza en el detalle y termina en el contexto más amplio. Por ejemplo: Necesitamos mejorar la retención de esta pantalla -&amp;gt; Porque es fundamental para terminar la compra -&amp;gt; Por que necesitamos acabar con el stock de este trimestre.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;De los simple a lo complejo&lt;/strong&gt;: Empieza explicando lo más básico, sin saltarte nada. Este método puede implicar ocultar información &lt;em&gt;intencionalmente&lt;/em&gt; o explicarla en términos inexactos, pero que cuando llegue el momento se tendrán que aclarar y expandir.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Explica el proceso&lt;/strong&gt;: Este tipo de explicaciones se adapta bien a escenarios en dónde tienes que describir una transformación progresiva. Por ejemplo, cuando hablamos de cómo se transforma una petición web en un respuesta en cualquier framework web.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lo más importante es encontrar la estructura que más se  adapte a tu situación.&lt;/p&gt;
+&lt;h2 id=&quot;sé-agil&quot;&gt;Sé Agil&lt;/h2&gt;
+
+&lt;p&gt;Tus explicaciones debe seguir el mismo ciclo que el desarrollo de software:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Explica: ejecuta siguiendo el plan que trazaste&lt;/li&gt;
+  &lt;li&gt;Mide: tienes que leer a la audiencia y darte cuenta de si tu explicación está funcionando. Busca señales como si las preguntas van cambiando, no te miran raro y no hay un silencio mortal.&lt;/li&gt;
+  &lt;li&gt;Ajusta: si tu explicación no está logrando transmitir lo que quieres, cambia de estrategia, simplifica o busca nuevos ejemplos.&lt;/li&gt;
+  &lt;li&gt;Repite: vuelve a iniciar el proceso con nuevo conocimiento aplicando lo que aprendiste.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;empieza-en-lo-más-básico&quot;&gt;Empieza en lo más básico&lt;/h3&gt;
+
+&lt;p&gt;Esto viene de un aprendizaje del autor de la plática mientras daba una taller en el quería enseñar Ruby on Rails. Había algunas personas en el auditorio que preguntaban una y otra vez lo mismo (señal de que no está funcionando tu explicación), hasta que comprendieron que Ruby es el lenguaje y Rails es el framework, cosa que Russ no había pensado siquiera en explicar.&lt;/p&gt;
+
+&lt;p&gt;Cuando explicamos algo que conocemos muy bien, puede que nos saltemos información que no tenemos presente que necesitamos saber, justo por el dominio tan amplio que tenemos del problema. Tenemos que ser cuidadosos en esto e intentar dar la mayor cantidad de información posible, incluso la que pueda ser muy básica.&lt;/p&gt;
+
+&lt;p&gt;A veces parece que lo que estamos diciendo es obvio, pero aquí menciona una frase muy interesante:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“Nadie en esta sala nació con ese conocimiento codificado en su ADN” - Russ Olsen (cuando el público se rio de la explicación tan básica que tuvo que dar)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Esto nos debe recordar que a nosotros también nos tienen que explicar cosas que para otros son obvias.&lt;/p&gt;
+
+&lt;h2 id=&quot;haz-cortas-tus-explicaciones&quot;&gt;Haz cortas tus explicaciones&lt;/h2&gt;
+
+&lt;p&gt;Explicar es un deporte con límite de tiempo. Tenemos un tiempo limitado para explicar lo que queremos antes de &lt;strong&gt;perder la atención de la persona&lt;/strong&gt;, por lo que comprimir la información y decir primero lo más importante es buena idea.&lt;/p&gt;
+
+&lt;p&gt;Uno de los consejos que Russ da es evitar la jerga técnica. La terminología es un obstáculo para los que están empezando, y sólo quitará tiempo a tu explicación, aburriendo o comunicando muy poco en un espacio grande de tiempo, mientras la puedas evitar hazlo.&lt;/p&gt;
+
+&lt;p&gt;Una buena noticia: &lt;strong&gt;puedes resetear el reloj y comprarte más tiempo&lt;/strong&gt; si logras que las personas a las que les estás explicando tengan pequeñas victorias, entendiendo progresivamente el tema en cuestión.&lt;/p&gt;
+
+&lt;h2 id=&quot;usa-la-repetición&quot;&gt;Usa la repetición&lt;/h2&gt;
+
+&lt;p&gt;Repite para énfasis y para dar contexto. El &lt;em&gt;“Don’t repeat yourself”&lt;/em&gt; es para las máquinas, los humanos necesitamos repetición para entender que algo es importante o para recordar el contexto de algo.&lt;/p&gt;
+
+&lt;p&gt;Así que usa la repetición para resaltar las ideas más importantes de tu explicación.&lt;/p&gt;
+
+&lt;h2 id=&quot;muéstrate-como-humano&quot;&gt;Muéstrate como humano&lt;/h2&gt;
+
+&lt;p&gt;Muéstrate humano. Las explicaciones que causan una reacción emocional en los que escuchan, como las que incluyen humor, las que demuestran sentimientos o conectan en un nivel humano con las personas son las que dejan las cosas grabadas. Russ cuenta la experiencia de la portada de un libro que lo hizo reír y por eso se ha acordado de él toda la vida.&lt;/p&gt;
+
+&lt;p&gt;Hazles saber por qué importa lo que estás diciendo, muestra el interés o el amor que tienes por el tema. Una buena explicación puede cambiar tu compañía, tu equipo o incluso el mundo.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Explicar algo de manera que otros comprendan no es algo sencillo. Necesitas práctica, intención y esfuerzo para lograrlo. Si lo dominas, sin duda serás un componente muy valioso de cualquier equipo en el que participes en el desarrollo de software.&lt;/p&gt;
+
+&lt;p&gt;Puedes ver la charla completa aquí:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/80EE4mZmp3A&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="explicaciones" /><category term="conocimiento" /><category term="desarrollo" /><summary type="html">Compartir el conocimiento que tienes sobre el proyecto es una de las tareas más importantes en el desarrollo de software. Exploremos cómo podemos mejorar en esto.</summary></entry><entry><title type="html">Desarrolladores de los que puedes aprender: Russ Olsen</title><link href="https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html" rel="alternate" type="text/html" title="Desarrolladores de los que puedes aprender: Russ Olsen" /><published>2021-07-14T00:00:00-05:00</published><updated>2021-07-14T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html">&lt;p&gt;En este capítulo vamos a Hablar de &lt;a href=&quot;http://russolsen.com/&quot;&gt;Russ Olsen&lt;/a&gt;, un desarrollador ahora de &lt;a href=&quot;https://clojure.org/&quot;&gt;Clojure&lt;/a&gt;, pero bastante reconocido en el mundo de Ruby. Ha escrito varios libros y contribuye activamente a la comunidad mediante podcasts, presentaciones y charlas.&lt;/p&gt;
+
+&lt;h2 id=&quot;acerca-de-russ&quot;&gt;Acerca de Russ&lt;/h2&gt;
+
+&lt;p&gt;Russ trabaja como vicepresidente de &lt;a href=&quot;https://www.cognitect.com/&quot;&gt;Cognitec&lt;/a&gt;, la empresa que está detrás de Clojure. Ha participado en proyectos que parecen bastante complejos, su Github muestra creación de compiladores, marshalling y otras cosas interesantes.&lt;/p&gt;
+
+&lt;p&gt;Según la biografía que se encuentra en &lt;a href=&quot;https://gotocon.com/berlin-2015/speaker/Russ+Olsen&quot;&gt;sitios de conferencias&lt;/a&gt; ha trabajado en motores de renderizado 3D, sistemas de consulta de bases de datos y sistema de flujos de trabajo, en pocas palabras, proyectos bastante complejos.&lt;/p&gt;
+
+&lt;p&gt;Russ es el autor de tres libros bastantes respetados:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Eloquent-Ruby-Addison-Wesley-Professional/dp/0321584104&quot;&gt;Eloquent Ruby&lt;/a&gt;: acerca de cómo escribir Ruby idiomáticamente.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/gp/product/B004YW6M6G/ref=dbs_a_def_rwt_hsch_vapi_tkin_p1_i2&quot;&gt;Design Patterns in Ruby&lt;/a&gt;: la implementación de los patrones de diseño clásicos en Ruby.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pragprog.com/titles/roclojure/getting-clojure/&quot;&gt;Getting Clojure&lt;/a&gt;: te enseña a programar en Clojure mientras te explica las ideas detrás de cada una de las caracerísticas del lenguaje, ya que es importante concer &lt;em&gt;la visión&lt;/em&gt; detrás del lenguaje.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;las-ideas-de-russ&quot;&gt;Las ideas de Russ&lt;/h2&gt;
+
+&lt;p&gt;Russ tiene ideas muy pragmáticas para crear software, con un background de ingeniería mecánica. Vamos a hablar de algunas cosas que podemos aprender de él y aplicar directamente en nuestras carreras y proyectos.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Transmitir conocimiento es MUY IMPORTANTE para el desarrollo de software. Si no lo compartimos ponemos en riesgo el desarrollo del proyecto en el que estamos participando. Saber explicarlo de manera sencilla es una habilidad que todos debemos adquirir.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;La programación funcional, como una serie de &lt;em&gt;restricciones, técnicas y habilidades&lt;/em&gt; que reorganizan la forma en que escribimos código, es una forma de crear código de mejor calidad y más mantenible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Trabajar con otras personas&lt;/strong&gt; es uno de los aspectos más importantes que tiene el desarrollo de software y saber organizarla y tratar con ellas es imperativo para llevar a los proyectos a buen término.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Crear cosas que importen&lt;/strong&gt; y difíciles te inspirará para seguir creando y también a otras personas.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;charlas-y-presentaciones&quot;&gt;Charlas y presentaciones&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Ve y haz cosas difíciles.” - Russ Olsen&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Aquí tienes las tres charlas que Russ que pueden aportar a tu conocimiento y motivación para seguir creando software:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=l3XwpSKqNZw&quot;&gt;To the Moon&lt;/a&gt;. Si vas a ver una charla de Russ Olsen, tiene que ser esta. Tiene nulo contenido técnico, pero te puede enseñar muchas cosas: cómo dar una charla entretenida, cómo contar una historia, métodos narrativos y cómo mantener enganchada a la audiencia. En ella cuenta las dificultades técnicas que se presentaron en el proyecto del &lt;strong&gt;Apollo 11&lt;/strong&gt;, y como se solucionaron. La lección más importante de la charla es: hacer cosas difíciles como ingenieros de software te ayudará a creer más en ti y a inspirar a otros.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;Eloquent Explanations&lt;/a&gt;: En esta charla Russ nos habla sobre lo importante que es comunicar claramente varios aspeectos de los sistemas que creamos, con la premisa fundamental de que el conocimiento es lo que nos permite crear el software que necesitamos. En &lt;a href=&quot;https://twitter.com/HectorIP/status/1414096122306498560&quot;&gt;este hilo de Twitter&lt;/a&gt; hicimos un resumen.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=0if71HOyVjY&quot;&gt;Functional Programming in 40 minutes&lt;/a&gt;: Como puedes ver, Russ es un programador bastante versátil. En los últimos años se ha dedicado a programar en Clojure. Esta es una de las charlas que más me ayudó a comprender la programación funcional como idea más allá de las definiciones clásicas y que te dejan híper confundido. Si quieres aprender programación funcional, esta charla te puede ayudar a entenderla para empezar con una buena base.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tiene varias charlas más que puedes buscar en &lt;a href=&quot;https://www.youtube.com/results?search_query=russ+olsen&quot;&gt;YouTube&lt;/a&gt;, pero estas son las más importantes para mi, y parece que varias de ellas son la mismas que mencionamos aquí pero repetidas.&lt;/p&gt;
+
+&lt;h2 id=&quot;recursos-para-aprender-más&quot;&gt;Recursos para aprender más&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/russolsen&quot;&gt;Twitter de Russ&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Su &lt;a href=&quot;https://github.com/russolsen/&quot;&gt;Github&lt;/a&gt;, tiene cosas interesantes, como la implementación del lenguaje &lt;a href=&quot;https://hackaday.com/2017/01/27/forth-the-hackers-language/&quot;&gt;Forth&lt;/a&gt; en Python y Clojure, una implementación de Transit (un formato de serialización) en Go y Julia.&lt;/li&gt;
+  &lt;li&gt;El blog de &lt;a href=&quot;https://www.cognitect.com/blog/&quot;&gt;Cognitect&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Este podcast en el que participó: &lt;a href=&quot;https://www.youtube.com/watch?v=gcs1t91X5LA&quot;&gt;Get Smarter and Make Stuff&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Una de las cosas que aprender al ver la carrera de Russ es su flexibilidad y adaptabilidad. Russ era un gran nombre en el mundo de &lt;strong&gt;Rails y Ruby&lt;/strong&gt;, pero ahora está en el mundo de Clojure y tiene una de las mejores explicaciones para aprender programación funcional.&lt;/p&gt;
+
+&lt;p&gt;Además, el pragmatismo que demuestra en los consejos que da, es algo que podemos aprender a aplicar: &lt;strong&gt;resolver el problema es mucho más importante que sonar rimbombantes y asombrar a todos con las palabras tan bonitas que usamos&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;El último punto que quiero resaltar tiene que ver con la capacidad que tiene de contar historias, explicar progresivamente y dar charlas entretenidas. La comunicación es uno de los aspectos más importantes en el desarrollo de software, y mientras mejores seamos e eso, más podremos avanzar en nuestra carrera.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="devs" /><category term="ruby" /><category term="clojure" /><summary type="html">Russ Olsen es un desarrollador de software conocido por sus libros sobre Ruby y Clojure y por las excelentes charlas que da. Veamos algunas de sus ideas y lo que podemos aprender de él.</summary></entry><entry><title type="html">Desarrolladores de los que puedes aprender: Kevlin Henney</title><link href="https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html" rel="alternate" type="text/html" title="Desarrolladores de los que puedes aprender: Kevlin Henney" /><published>2021-07-07T00:00:00-05:00</published><updated>2021-07-07T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html">&lt;p&gt;Hay varios desarrolladores de talla internacional de los que puedes &lt;strong&gt;aprender mucho&lt;/strong&gt;, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que puedes aprender.&lt;/p&gt;
 
 &lt;p&gt;Las condiciones para que aparezcan aquí son las siguientes:&lt;/p&gt;
 
@@ -6,14 +156,14 @@
   &lt;li&gt;Amplia experiencia real desarrollando sistemas&lt;/li&gt;
   &lt;li&gt;Que tengan algún logro notable en el desarrollo de sistemas&lt;/li&gt;
   &lt;li&gt;Comparten sus ideas con la comunidad de forma continua&lt;/li&gt;
-  &lt;li&gt;No son unos &lt;em&gt;“brilliant jerks”&lt;/em&gt;, es decir, no usan su experiencia o inteligencia para el mal&lt;/li&gt;
+  &lt;li&gt;No son unos &lt;em&gt;“brilliant jerks”&lt;/em&gt;, es decir, no usan su experiencia o inteligencia para humillar o desacreditar a otros, y mucho menos su exposición para promover ideas nocivas.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;El objetivo de esta serie es que aprendamos de las personas que han dedicado su vida a esto y construyamos sobre lo que ellos han hecho en vez de reinventar la rueda cada vez.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; El que los mencionemos aquí no implica que todas sus ideas son correctas o que estemos de acuerdo con todo lo que dicen. Conocer diferentes puntos de vista, sumado a tu experiencia en diferentes contextos te ayudará a tener un criterio adaptado a tu realidad.&lt;/p&gt;
 
-&lt;p&gt;En este capítulo hablaremos de &lt;a href=&quot;https://blog.eisele.net/2013/07/the-heroes-of-java-kevlin-henney.html&quot;&gt;Kevlin Henney&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora sí, vamos a hablar de &lt;a href=&quot;https://blog.eisele.net/2013/07/the-heroes-of-java-kevlin-henney.html&quot;&gt;Kevlin Henney&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;acerca-de-kevlin-henney&quot;&gt;Acerca de Kevlin Henney&lt;/h2&gt;
 
@@ -22,11 +172,13 @@
 &lt;p&gt;Ha escrito columnas para múltiples revistas dedicadas al desarrollo de software. Es autor o editor de varios libros que son &lt;em&gt;muy recomendados&lt;/em&gt; para arquitectos de software y desarrolladores. Algunos ejemplos son:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com.mx/Pattern-Oriented-Software-Architecture-Distributed-Computing/dp/0470059028&quot;&gt;A Pattern Oriented Software Architecture for Distributed Computing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.oreilly.com/library/view/97-things-every/9780596809515/&quot;&gt;97 Things Every Developer should know&lt;/a&gt; - Es una colección de ensayos que Kevlin se encargó de compilar y editar.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com.mx/Pattern-Oriented-Software-Architecture-Distributed-Computing/dp/0470059028&quot;&gt;Pattern-Oriented Software Architecture, Volume 4: A Pattern Language for Distributed Computing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.oreilly.com/library/view/97-things-every/9780596809515/&quot;&gt;97 Things Every Programmer Should Know&lt;/a&gt; - Es una colección de ensayos que Kevlin se encargó de compilar y editar, sobre cómo ser un mejor programador. También está la versión en español: &lt;a href=&quot;http://97cosas.com/programador/&quot;&gt;97 cosas que todo programador debería saber&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Kevlin se ha presentado en casi todas las conferencias importante de desarrollo de software europeas y de hable inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en &lt;a href=&quot;https://www.amazon.com/Kevlin-Henney/e/B0716N93KR%3Fref=dbs_a_mng_rwt_scns_share&quot;&gt;Amazon&lt;/a&gt; sus libros de ficción.&lt;/p&gt;
+&lt;p&gt;Kevlin se ha presentado en casi todas las conferencias importante de desarrollo de software europeas y de hable inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en &lt;a href=&quot;https://www.amazon.com/Kevlin-Henney/e/B0716N93KR%3Fref=dbs_a_mng_rwt_scns_share&quot;&gt;Amazon&lt;/a&gt; sus libros de ficción. Además es muy accesible, si lo buscas en Twitter es muy probable que te conteste: &lt;a href=&quot;https://twitter.com/KevlinHenney&quot;&gt;Kevlin Henney en Twitter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Una de las cosas que menciona que más nos gusta es: &lt;strong&gt;“Si estás de acuerdo con todo lo qu estoy diciendo, no me estás escuchando.”&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;algunas-ideas-de-kevlin&quot;&gt;Algunas ideas de Kevlin&lt;/h2&gt;
 
@@ -39,12 +191,108 @@
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;La arquitectura de software requiere entendimiento completo del dominio.&lt;/strong&gt; Una de las ideas que Kevlin repite vez tras vez es la importancia de entender y definir el problema que estamos tratando de resolver. Se basa en las ideas de otros autores para reforzar esto. Una de las cosas que Kevlin resalta es que debemos conocer los &lt;strong&gt;detalles&lt;/strong&gt;, para poder implementar software correcto con la arquitectura adecuada.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;El diseño y la arquitectura de software son procesos iterativos e incrementales.&lt;/strong&gt; Es imposible hacer un diseño completamente correcto y sin errores desde la primera vez. Es por eso que esta es una idea que se repite en sus conferencias vez tras vez. La lección para nosotros: &lt;em&gt;debemos diseñar el software con el conocimiento de que siempre habrá algo que mejorar&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;El software simple, pequeño y “aburrido” es más fácil de manejar&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;El software simple, pequeño y “aburrido” es más fácil de manejar&lt;/strong&gt;. Haciendo eco de la frase que pusimos al inicio de esta sección, una de las ideas que Kevlin promueve más es la de minimizar la cantidad de código para lograr algo, así como buscar la simplicidad tanto en funciones como de construcción. Esto último es lo que llamamos aburrido: evitar tanto como podamos tecnologías a las que no estamos acostumbrados o demasiado nuevas y que agreguen dependencias innecesarias.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;pláticas&quot;&gt;Pláticas&lt;/h2&gt;
 
-&lt;p&gt;Kevlin tiene decenas de pláticas en YouTube y Vimeo, hablando temas muy variados, todos relacionados de una forma u otra con el &lt;em&gt;proceso&lt;/em&gt; de desarrollo de calidad. Aquí vamos a listar algunas de las que nos han parecido las mejores.&lt;/p&gt;
+&lt;p&gt;Kevlin tiene decenas de pláticas en YouTube y Vimeo, hablando temas variados, todos relacionados de una forma u otra con el &lt;em&gt;proceso&lt;/em&gt; de desarrollo y la calidad del software.&lt;/p&gt;
+
+&lt;p&gt;Vamos a mencionar tres de las que nos han parecido las mejores.&lt;/p&gt;
+
+&lt;h3 id=&quot;software-is-details&quot;&gt;Software is Details&lt;/h3&gt;
+
+&lt;p&gt;Aquí presenta una idea que repite a lo largo de sus presentaciones: &lt;strong&gt;la implementación del software requiere un conocimiento lo más profundo y completo que se pueda sobre el problema que se está resolviendo&lt;/strong&gt;. Da algunos ejemplos en los que se diseñó un sistema sin pensar en los “detalles de implementación” con resultados catastróficos. Mantener la vista en el sistema entero mientras se toman en cuenta los detalles es una señal de un arquitecto de software efectivo.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/kX0prJklhUE&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;old-is-the-new-new&quot;&gt;Old is the new new&lt;/h3&gt;
+
+&lt;p&gt;En esta plática resalta la importancia de conocer y dominar los principios que habilitan a las nuevas tecnologías y herramientas. Las implementaciones tienen una vida corta mientras que los principios se mantienen inalterados.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/AbgsfeGvg3E&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;it-depends&quot;&gt;It Depends…&lt;/h3&gt;
+
+&lt;p&gt;Crear software &lt;strong&gt;depende&lt;/strong&gt; del conocimiento que tengamos acerca del dominio que estamos tratando. Nuestro conocimiento tiene límites que no podemos sobrepasar (incertidumbre) y es contra eso con lo que debemos tener cuidado, cosas que no están inmediatamente en nuestra visión.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/rNSVZs66o48&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Tiene muchas más pláticas en conferencias que puedes buscar directamente en YouTube. Cada una de sus pláticas es un conjunto de ideas y referencias que es más de lo que se puede absorber en el tiempo en el que lo presenta, por lo que tal vez tengas que verlas varias veces, pero todo ese bagaje vale la pena. Aquí te dejamos una búsqueda que las agrupa: &lt;a href=&quot;https://dev.tube/@kevlinhenney&quot;&gt;DevTube&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;preguntas-que-le-hicimos&quot;&gt;Preguntas que le hicimos&lt;/h2&gt;
+
+&lt;p&gt;Además de investigar y aprender sobre las ideas de estos desarrolladores, creamos un cuestionario para hacérselos a todos los desarrolladores de esta serie, para que contesten la que puedan. Contactaremos directamente a cada uno y le haremos llegar las preguntas, con suerte nos contestaran.&lt;/p&gt;
+
+&lt;p&gt;Kevlin fue muy accesible y nos contestó casi todas las preguntas, disfruta las respuestas.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;¿Cómo fue tu camino de aprendizaje? &lt;strong&gt;¿Cómo te hiciste así de bueno?&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;No se si soy &lt;em&gt;tan&lt;/em&gt; bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio,  ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.&lt;/p&gt;
+
+&lt;p&gt;Mientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, paradigmas, diseño, etc., mientras leía un conjunto aleatorio de artículos que incrementaron mi interés y fascinación. Empecé a tratar de comunicar esas ideas a través de artículos, y a relacionarlas mis experiencias mientras trabajaba con diferentes sistemas y en en diferentes ambientes.&lt;/p&gt;
+
+&lt;p&gt;Esto eventualmente me llevó a dar charlas, cursos y visitar compañías, lo cuál amplió mi campo de visión, retó algunas de mis ideas y mejoró mi habilidad para pensar con los pies en la tierra.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Escogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasao, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.&lt;/p&gt;
+
+&lt;p&gt;¡Resulta que nunca debes subestimar que tan tonta puede ser la gente! Afortunadamente esto fue corregido después con unos cuántos cambios para usar SSL en vez de correr nuestros propios sockets sin protección.&lt;/p&gt;
+
+&lt;p&gt;dicho esto, aunque perdimos una tendencia futura, nos subimos a otras. No sólo corregimos el problema Y2K antes de que la mayoría de las personas siquiera supieran de él; también atendimos el problema del año 2038.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;¿Cuál es el peor consejo que te han dado?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Testing is not the responsibility of a developer.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;¿Cuál es el mejor consejo que te han dado?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Think about software development as the management of complexity.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It’s important in that language choice is often architectural. If you’re unsure about this, consider the cost and effort, the tooling, the skills, etc. of what it would take to change programming language in some or all of your codebase. Think about how much of your system would be affected, how staff would be affected, how other elements of your technical stack would be affected. And so on. Far from being a detail, the choice is more significant than many people realise.&lt;/p&gt;
+
+&lt;p&gt;Language, in whatever form, is a way in which we express ourselves. Language is also associated with culture and community. This is why we argue about it. Although many developers might think they are debating rationally about a language and its technical merits, they typically are not. Beneath the technical veneer of such arguments is something more human and less rational, something more social and personal. And that’s why we continue to argue about language.&lt;/p&gt;
+
+&lt;p&gt;Of course, there are technical differences and there are objective points that can be made, but in truth this does not lie at the core of most discussions.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;¿Cuál es la discusión técnica &lt;strong&gt;más improductiva que has tenido&lt;/strong&gt;?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;¡Probablemente sobre un lenguaje de programación!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Look at the history of programming, software architecture, development methodologies and so on. Software development has a history and most of the deep ideas can be found in it. Most of today’s trends and choices are better understood by understanding the past rather than just looking at the present. Software development is more conservative than you might appreciate, and new ideas are rarely novel.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;¿Qué ideas debemos superar como comunidad de IT para mejorar?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The idea that software development is a strictly neutral and technical activity independent of the considerations of people. The way we develop software and the way that it is used have ethical implications. We need to better recognise the spectrum of people who can and do create software and the responsibilities to people that use software. Software changes the world; we don’t get to do that and say that how the world changes is not our problem.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The next ten years are going to be a lot like the previous ten years. There will be new frameworks, new platforms, new programming languages, etc. and associated shifts in skills. Some people will get excited by new ideas that are actually not that new. Some people will predict the demise of programmers and software development as we know it. What will most likely happen is that the number of programmers will increase and software development will continue to evolve, mostly along the lines it is currently following. The world will continue to be increasingly reliant on software and developers.&lt;/p&gt;
 
 &lt;h2 id=&quot;recursos&quot;&gt;Recursos&lt;/h2&gt;
 
@@ -59,11 +307,26 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://blog.eisele.net/2013/07/the-heroes-of-java-kevlin-henney.html&quot;&gt;Entrevista de la serie “Heroes of Java”&lt;/a&gt;&lt;/p&gt;
-    &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://kevlinhenney.medium.com/&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.slideshare.net/Kevlin/presentations&quot;&gt;Sus presentaciones&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Todos los desarrolladores de diferentes niveles podemos aprender mucho de las ideas que Kevlin se ha dedicado a enseñar.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.</summary></entry><entry><title type="html">Lo que debes saber sobre propiedad intelectual como desarrollador de software</title><link href="https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html" rel="alternate" type="text/html" title="Lo que debes saber sobre propiedad intelectual como desarrollador de software" /><published>2021-06-22T00:00:00-05:00</published><updated>2021-06-22T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html">&lt;p&gt;Programar es una cosa, desarrollar software algo completamente diferente, sobre todo en un ambiente comercial en el que tienes que tratar con clientes y patrones. En este entorno tienes que entender otras cosas como la forma de colaborar con ellos, los precios y algo muy importante: las leyes.&lt;/p&gt;
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Todos los desarrolladores de diferentes niveles podemos aprender mucho de las ideas que Kevlin se ha dedicado a enseñar, mientras lo hace de una manera entretenida, profunda y que va puliendo con el tiempo. Es importante escuchar a personas con experiencia para pode desarrollar el criterio propio y las habilidades y formas de pensar para ser efectivos.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;El fin del UNIX Timestamp o &lt;a href=&quot;https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2038&quot;&gt;Y2k38&lt;/a&gt;. (Nota de tracucción) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="developers" /><category term="arquitectura" /><summary type="html">Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.</summary></entry><entry><title type="html">Lo que debes saber sobre propiedad intelectual como desarrollador de software</title><link href="https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html" rel="alternate" type="text/html" title="Lo que debes saber sobre propiedad intelectual como desarrollador de software" /><published>2021-06-22T00:00:00-05:00</published><updated>2021-06-22T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html">&lt;p&gt;Programar es una cosa, desarrollar software algo completamente diferente, sobre todo en un ambiente comercial en el que tienes que tratar con clientes y patrones. En este entorno tienes que entender otras cosas como la forma de colaborar con ellos, los precios y algo muy importante: las leyes.&lt;/p&gt;
 
 &lt;p&gt;En este artículo vamos a hacer un resumen de las cosas que platicamos con &lt;a href=&quot;https://twitter.com/LaCD_Rom&quot;&gt;Cynthia Romero&lt;/a&gt; y con &lt;a href=&quot;https://twitter.com/LawyerCount&quot;&gt;Conde&lt;/a&gt; en la plática &lt;a href=&quot;https://youtu.be/CpISQxihazU&quot;&gt;“Todo lo que debes saber acerca de propiedad intelectual como creador de Software”&lt;/a&gt;. También Novus hizo un resumen por si lo quieres checar: &lt;a href=&quot;https://www.novusconcilium.com/post/software&quot;&gt;Tips legales para crear software&lt;/a&gt;.&lt;/p&gt;
 
@@ -227,14 +490,7 @@
   &lt;li&gt;&lt;a href=&quot;https://andreasbm.github.io/web-skills/&quot;&gt;Web Skills&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Si no te acomodas con las formas tradicionales como los libros y los videos, siempre habrá opciones diferentes e interactivas. ¿Tienes alguna otra recomendación? La esperamos en los comentarios.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="recursos" /><category term="aprendizaje" /><category term="programación" /><summary type="html">En este artículo te recomendamos algunos recursos que te servirán para aprender conceptos de progrmación que no son libros o cursos comunes.</summary></entry><entry><title type="html">Ejercicio: programando un perceptrón</title><link href="https://blog.thedojo.mx/2021/04/10/ejercicio-programando-un-perceptron.html" rel="alternate" type="text/html" title="Ejercicio: programando un perceptrón" /><published>2021-04-10T00:00:00-05:00</published><updated>2021-04-10T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/04/10/ejercicio-programando-un-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2021/04/10/ejercicio-programando-un-perceptron.html">&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
-
-&lt;p&gt;Si no tienes claro lo que es un perceptrón, puedes leer nuestro &lt;a href=&quot;/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html&quot; target=&quot;_blank&quot;&gt;artículo anterior&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;el-conjunto-de-datos&quot;&gt;El conjunto de datos&lt;/h2&gt;
-
-&lt;h2 id=&quot;aproximando-la-función&quot;&gt;Aproximando la función&lt;/h2&gt;
-
-&lt;h2 id=&quot;resultado&quot;&gt;Resultado&lt;/h2&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ia" /><summary type="html">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.</summary></entry><entry><title type="html">Creando un API con GO: Usando Beego</title><link href="https://blog.thedojo.mx/2021/03/31/creando-un-api-con-go-usando-beego.html" rel="alternate" type="text/html" title="Creando un API con GO: Usando Beego" /><published>2021-03-31T00:00:00-06:00</published><updated>2021-03-31T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/03/31/creando-un-api-con-go-usando-beego</id><content type="html" xml:base="https://blog.thedojo.mx/2021/03/31/creando-un-api-con-go-usando-beego.html">&lt;p&gt;Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde sabemos que las exigencias respecto a lo que deben soportar los sistemas son fuertes.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Hagamos una pequeña API en Go usando Beego, mientras intentamos seguir los principios de Domain Driven Design</summary></entry><entry><title type="html">Recursos para aprender diseño de sistemas</title><link href="https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas.html" rel="alternate" type="text/html" title="Recursos para aprender diseño de sistemas" /><published>2021-03-29T00:00:00-06:00</published><updated>2021-03-29T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas</id><content type="html" xml:base="https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas.html">&lt;p&gt;El diseño de sistemas es un tema recurrente en entrevistas para desarrolladores de software, sobre todo para los niveles que requieren más experiencia, pero más allá de eso, es una habilidad fundamental a dominar si quieres avanzar en tu carrera.&lt;/p&gt;
+&lt;p&gt;Si no te acomodas con las formas tradicionales como los libros y los videos, siempre habrá opciones diferentes e interactivas. ¿Tienes alguna otra recomendación? La esperamos en los comentarios.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="recursos" /><category term="aprendizaje" /><category term="programación" /><summary type="html">En este artículo te recomendamos algunos recursos que te servirán para aprender conceptos de progrmación que no son libros o cursos comunes.</summary></entry><entry><title type="html">Recursos para aprender diseño de sistemas</title><link href="https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas.html" rel="alternate" type="text/html" title="Recursos para aprender diseño de sistemas" /><published>2021-03-29T00:00:00-06:00</published><updated>2021-03-29T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas</id><content type="html" xml:base="https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas.html">&lt;p&gt;El diseño de sistemas es un tema recurrente en entrevistas para desarrolladores de software, sobre todo para los niveles que requieren más experiencia, pero más allá de eso, es una habilidad fundamental a dominar si quieres avanzar en tu carrera.&lt;/p&gt;
 
 &lt;p&gt;Es por eso que vamos a empezar a hablar más de ese tema, contando nuestra experiencia, pero al mismo tiempo aprendiendo a diseñar mejor.&lt;/p&gt;
 
@@ -455,4 +711,77 @@
 
 &lt;p&gt;Es hora de ponerle un tiempo y un obejetivo más concreto al proyecto: &lt;em&gt;durante los próximos 10 meses (lo que resta de 2021) aprenderé las bases teóricas y prácitcas de machine learning, con el obejetivo de aplicarlo mejor en los proyectos de trabajo y combinarlo con mis habilidades de ingeniería del software y progeamación.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Sobra decir que este plan no está escrito en piedra y se irá modifcando conforme vaya experimentando y aprendiendo más del campo. Por lo mientras, espero que el proyecto y lo que vaya aprendiendo y meta-aprendiendo te sirva, como la compilación de recursos para empezar que pusimos en este post.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="ml" /><category term="machine-learning" /><summary type="html">En este artículo te proponemos una forma de aprender machine learning y deep learning y te presentamos algunos recursos que te pueden servir</summary></entry></feed>
+&lt;p&gt;Sobra decir que este plan no está escrito en piedra y se irá modifcando conforme vaya experimentando y aprendiendo más del campo. Por lo mientras, espero que el proyecto y lo que vaya aprendiendo y meta-aprendiendo te sirva, como la compilación de recursos para empezar que pusimos en este post.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="ml" /><category term="machine-learning" /><summary type="html">En este artículo te proponemos una forma de aprender machine learning y deep learning y te presentamos algunos recursos que te pueden servir</summary></entry><entry><title type="html">Resumen: Qué hacer para conseguir un buen trabajo como programador</title><link href="https://blog.thedojo.mx/2021/02/10/resumen-que-hacer-para-conseguir-un-buen-trabajo-como-programador.html" rel="alternate" type="text/html" title="Resumen: Qué hacer para conseguir un buen trabajo como programador" /><published>2021-02-10T00:00:00-06:00</published><updated>2021-02-10T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/02/10/resumen-que-hacer-para-conseguir-un-buen-trabajo-como-programador</id><content type="html" xml:base="https://blog.thedojo.mx/2021/02/10/resumen-que-hacer-para-conseguir-un-buen-trabajo-como-programador.html">&lt;p&gt;Aquí te damos un resumen de la plática que tuvimos con Diego De Granda y Pablo Trinidad sobre algunas cosas que hicieron para conseguir buenos trabajos. Esbozaremos algunos de los consejos independientes sin una secuencia definida.&lt;/p&gt;
+
+&lt;h2 id=&quot;aprende-inglés&quot;&gt;Aprende Inglés&lt;/h2&gt;
+
+&lt;p&gt;Aunque la razón de existencia de este blog y de The Dojo MX en general es generar contenido en español para ayudar a los hispanohablantes, nunca nos cansaremos (y tampoco nuestros invitados) de darte el mismo consejo: &lt;strong&gt;APRENDE INGLÉS&lt;/strong&gt;. Creemos sinceramente que el idioma no debería ser una limitante para que &lt;em&gt;empieces&lt;/em&gt; a aprender lo que sea que te guste, pero especialmente en el área de tecnología, la mayor parte de las personas, trabaja y habla en inglés, por lo que es importantísimo aprenderlo lo mejor que puedas.&lt;/p&gt;
+
+&lt;h2 id=&quot;aprende-a-dar-y-recibir-retroalimentación&quot;&gt;Aprende a dar y recibir retroalimentación&lt;/h2&gt;
+
+&lt;p&gt;En este apartado hablaron de cuatro cosas que la retroalimentación debe tener para poder ser útil:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Directa, sin darle tantas vueltas al asunto&lt;/li&gt;
+  &lt;li&gt;Accionable, debes dejar a la persona con algo sobre lo que pueda actuar&lt;/li&gt;
+  &lt;li&gt;Oportuno, mientras más cercano estés al momento en cuestión, mejor&lt;/li&gt;
+  &lt;li&gt;Transparente, tus intenciones son claras&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Y si eres la persona que toma la retroalimentación, no te ofendas y toma lo bueno.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-pragmatic-programmer&quot;&gt;The Pragmatic Programmer&lt;/h2&gt;
+
+&lt;p&gt;No pudimos platicar tanto de libros, pero uno que no puede faltar casi en ninguna recomendación de libros para programadores es &lt;a href=&quot;https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/&quot;&gt;The Pragmatic Programmer&lt;/a&gt; un libro sobre las bases que necesitas para ser un programador productivo.&lt;/p&gt;
+
+&lt;h2 id=&quot;aprende-los-fundamentos&quot;&gt;Aprende los fundamentos&lt;/h2&gt;
+
+&lt;p&gt;Es muy importante que aprendas los fundamentos de lo que haces si quieres atacar problemas difíciles. Para esto, tienes que aplicar consejos de otras partes de este mismo artículo.&lt;/p&gt;
+&lt;h2 id=&quot;consejos-de-pablo-trinidad-para-mantenerte-empleable&quot;&gt;Consejos de Pablo Trinidad para mantenerte empleable&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Permanecer presente en el aprendizaje y ser crítico&lt;/em&gt;: Tienes que estarte preguntando constantemente: ¿Por qué funciona lo que estoy haciendo? Y puedes aplicar la técnica de preguntar continuamente “¿Por qué?” hasta llegar al fondo de las cosas.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Leer&lt;/em&gt;. Estudiar y aprender lo más que puedas, incluso sobre cosas que no sean ténicas.
+    &lt;h2 id=&quot;consejos-de-diego-de-granda&quot;&gt;Consejos de Diego de Granda&lt;/h2&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Resiliencia&lt;/em&gt;: Los problemas nunca van a parar, así que tienes que aprender a solucionar problemas sin frustrarte y persistir hasta que llegues a la solución&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Resolver problemas&lt;/em&gt;: mejorar tus capacidades de resolver problemas te ayudará a ser alguien más útil para tu equipo y tu empresa&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Ser agnóstico&lt;/em&gt;: No te cases con una tecnología, diversifica y usa la correcta para el problema en cuestión.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;características-que-necesitarás-para-trabajar-en-google&quot;&gt;Características que necesitarás para trabajar en Google&lt;/h2&gt;
+
+&lt;p&gt;¿Qué se necesita para trabajar en Google? Aquí algunas de las ideas que Pablo nos compartió:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Capacidad&lt;/strong&gt; de tomar problemas difíciles&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Liderazgo&lt;/strong&gt; para ayudar a tu equipo&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Impacto&lt;/strong&gt; extendido en diferentes personas y equipos&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Independencia&lt;/strong&gt;, no necesitas de un manager que te esté cuidando los pasos&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ownership&lt;/strong&gt;, te adueñas de los problemas y pones todo tu empeño en resolverlos&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Estar presente&lt;/strong&gt;, es decir, no pasar por las experiencias sin aprender de ellas&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sigue-alimentando-tu-curiosidad&quot;&gt;Sigue alimentando tu curiosidad&lt;/h2&gt;
+
+&lt;p&gt;Pablo nos recomendó algunos canales de YouTube para seguir alimentando la curiosidad y aprender cosas de diferentes campos, como matemáticas, ciencia, computación y electrónica.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/TheChernoProject&quot;&gt;The Cherno&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/Computerphile&quot;&gt;Computerphile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/Numberphile&quot;&gt;Numberphile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/1Veritasium&quot;&gt;Veritasium&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/destinws2&quot;&gt;Smarter Everyday&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/nobani88&quot;&gt;Eric Weinstein&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/PowerfulJRE&quot;&gt;Joe rogan&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/eaterbc&quot;&gt;Ben Eater&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw&quot;&gt;3Blue1Brown&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Esto no te hará un mejor programador directamente pero te ayudará a crecer como persona y te ayudará a conseguir mejores oportunidades. Y sí, necesitas inglés para entenderlos.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Hablamos de muchas cosas más, productividad, Google, cómo avanzar en tu carrera, etc. No te pierdas la plática entera aquí:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mUfmVBaOmxM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lives" /><category term="recomendaciones" /><category term="video" /><category term="libros" /><category term="consejos" /><summary type="html">Hablamos con Diego De Granda y Pablo Trinidad sobre qué tienes que hacer para conseguir un buen trabajo en tecnología. Aquí tienes un resumen.</summary></entry></feed>

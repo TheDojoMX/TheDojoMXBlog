@@ -1,0 +1,925 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Desarrolladores de los que puedes aprender: Kevlin Henney -</title>
+<meta name="description" content="Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Desarrolladores de los que puedes aprender: Kevlin Henney">
+<meta property="og:url" content="https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html">
+
+
+  <meta property="og:description" content="Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:12/v1625199907/DevTernity-2016-Kevlin-Henney-Seven-Ineffective-Coding-Habits-of-Many-Programmers-Video-Speech_jrjhg8.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-07-07T00:00:00-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html",
+      "name": "Desarrolladores de los que puedes aprender: Kevlin Henney",
+      "headline": "Desarrolladores de los que puedes aprender: Kevlin Henney",
+      "keywords": "developers,arquitectura",
+      "description": "Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.",
+      "articleBody": "Hay varios desarrolladores de talla internacional de los que puedes aprender mucho, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que puedes aprender.\n\nLas condiciones para que aparezcan aquí son las siguientes:\n\n\n  Amplia experiencia real desarrollando sistemas\n  Que tengan algún logro notable en el desarrollo de sistemas\n  Comparten sus ideas con la comunidad de forma continua\n  No son unos “brilliant jerks”, es decir, no usan su experiencia o inteligencia para humillar o desacreditar a otros, y mucho menos su exposición para promover ideas nocivas.\n\n\nEl objetivo de esta serie es que aprendamos de las personas que han dedicado su vida a esto y construyamos sobre lo que ellos han hecho en vez de reinventar la rueda cada vez.\n\nNota: El que los mencionemos aquí no implica que todas sus ideas son correctas o que estemos de acuerdo con todo lo que dicen. Conocer diferentes puntos de vista, sumado a tu experiencia en diferentes contextos te ayudará a tener un criterio adaptado a tu realidad.\n\nAhora sí, vamos a hablar de Kevlin Henney.\n\nAcerca de Kevlin Henney\n\nKevlin Henney es un consultor, escritor, entrenador y presentador de temas relacionados con sistemas, procesos, las personas y el software. Sus escritos, talleres y consultorías siempre tienen que ver con la forma en que desarrollamos y diseñamos software, además de con los procesos y prácticas que llevan al éxito los proyectos de software complejos.\n\nHa escrito columnas para múltiples revistas dedicadas al desarrollo de software. Es autor o editor de varios libros que son muy recomendados para arquitectos de software y desarrolladores. Algunos ejemplos son:\n\n\n  Pattern-Oriented Software Architecture, Volume 4: A Pattern Language for Distributed Computing\n  97 Things Every Programmer Should Know - Es una colección de ensayos que Kevlin se encargó de compilar y editar, sobre cómo ser un mejor programador. También está la versión en español: 97 cosas que todo programador debería saber\n\n\nKevlin se ha presentado en casi todas las conferencias importante de desarrollo de software europeas y de hable inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en Amazon sus libros de ficción. Además es muy accesible, si lo buscas en Twitter es muy probable que te conteste: Kevlin Henney en Twitter\n\nUna de las cosas que menciona que más nos gusta es: “Si estás de acuerdo con todo lo qu estoy diciendo, no me estás escuchando.”.\n\nAlgunas ideas de Kevlin\n\n\n  “Less code == less bugs”. - Kevlin Henney\n\n\nDe las pláticas y el contenido que hemos consumido de Kevlin, hemos podido derivar algunas de las principales ideas que promueve. Te listamos las tres más importantes y te dejamos descubrir las demás viendo sus charlas o leyendo su contenido.\n\n\n  La arquitectura de software requiere entendimiento completo del dominio. Una de las ideas que Kevlin repite vez tras vez es la importancia de entender y definir el problema que estamos tratando de resolver. Se basa en las ideas de otros autores para reforzar esto. Una de las cosas que Kevlin resalta es que debemos conocer los detalles, para poder implementar software correcto con la arquitectura adecuada.\n  El diseño y la arquitectura de software son procesos iterativos e incrementales. Es imposible hacer un diseño completamente correcto y sin errores desde la primera vez. Es por eso que esta es una idea que se repite en sus conferencias vez tras vez. La lección para nosotros: debemos diseñar el software con el conocimiento de que siempre habrá algo que mejorar.\n  El software simple, pequeño y “aburrido” es más fácil de manejar. Haciendo eco de la frase que pusimos al inicio de esta sección, una de las ideas que Kevlin promueve más es la de minimizar la cantidad de código para lograr algo, así como buscar la simplicidad tanto en funciones como de construcción. Esto último es lo que llamamos aburrido: evitar tanto como podamos tecnologías a las que no estamos acostumbrados o demasiado nuevas y que agreguen dependencias innecesarias.\n\n\nPláticas\n\nKevlin tiene decenas de pláticas en YouTube y Vimeo, hablando temas variados, todos relacionados de una forma u otra con el proceso de desarrollo y la calidad del software.\n\nVamos a mencionar tres de las que nos han parecido las mejores.\n\nSoftware is Details\n\nAquí presenta una idea que repite a lo largo de sus presentaciones: la implementación del software requiere un conocimiento lo más profundo y completo que se pueda sobre el problema que se está resolviendo. Da algunos ejemplos en los que se diseñó un sistema sin pensar en los “detalles de implementación” con resultados catastróficos. Mantener la vista en el sistema entero mientras se toman en cuenta los detalles es una señal de un arquitecto de software efectivo.\n\n\n\nOld is the new new\n\nEn esta plática resalta la importancia de conocer y dominar los principios que habilitan a las nuevas tecnologías y herramientas. Las implementaciones tienen una vida corta mientras que los principios se mantienen inalterados.\n\n\n\nIt Depends…\n\nCrear software depende del conocimiento que tengamos acerca del dominio que estamos tratando. Nuestro conocimiento tiene límites que no podemos sobrepasar (incertidumbre) y es contra eso con lo que debemos tener cuidado, cosas que no están inmediatamente en nuestra visión.\n\n\n\n\n\nTiene muchas más pláticas en conferencias que puedes buscar directamente en YouTube. Cada una de sus pláticas es un conjunto de ideas y referencias que es más de lo que se puede absorber en el tiempo en el que lo presenta, por lo que tal vez tengas que verlas varias veces, pero todo ese bagaje vale la pena. Aquí te dejamos una búsqueda que las agrupa: DevTube.\n\nPreguntas que le hicimos\n\nAdemás de investigar y aprender sobre las ideas de estos desarrolladores, creamos un cuestionario para hacérselos a todos los desarrolladores de esta serie, para que contesten la que puedan. Contactaremos directamente a cada uno y le haremos llegar las preguntas, con suerte nos contestaran.\n\nKevlin fue muy accesible y nos contestó casi todas las preguntas, disfruta las respuestas.\n\n\n  ¿Cómo fue tu camino de aprendizaje? ¿Cómo te hiciste así de bueno?\n\n\nNo se si soy tan bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio,  ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.\n\nMientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, paradigmas, diseño, etc., mientras leía un conjunto aleatorio de artículos que incrementaron mi interés y fascinación. Empecé a tratar de comunicar esas ideas a través de artículos, y a relacionarlas mis experiencias mientras trabajaba con diferentes sistemas y en en diferentes ambientes.\n\nEsto eventualmente me llevó a dar charlas, cursos y visitar compañías, lo cuál amplió mi campo de visión, retó algunas de mis ideas y mejoró mi habilidad para pensar con los pies en la tierra.\n\n\n  ¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?\n\n\nEscogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasao, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.\n\n¡Resulta que nunca debes subestimar que tan tonta puede ser la gente! Afortunadamente esto fue corregido después con unos cuántos cambios para usar SSL en vez de correr nuestros propios sockets sin protección.\n\ndicho esto, aunque perdimos una tendencia futura, nos subimos a otras. No sólo corregimos el problema Y2K antes de que la mayoría de las personas siquiera supieran de él; también atendimos el problema del año 2038.1\n\n\n  ¿Cuál es el peor consejo que te han dado?\n\n\nTesting is not the responsibility of a developer.\n\n\n  ¿Cuál es el mejor consejo que te han dado?\n\n\nThink about software development as the management of complexity.\n\n\n  ¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?\n\n\nIt’s important in that language choice is often architectural. If you’re unsure about this, consider the cost and effort, the tooling, the skills, etc. of what it would take to change programming language in some or all of your codebase. Think about how much of your system would be affected, how staff would be affected, how other elements of your technical stack would be affected. And so on. Far from being a detail, the choice is more significant than many people realise.\n\nLanguage, in whatever form, is a way in which we express ourselves. Language is also associated with culture and community. This is why we argue about it. Although many developers might think they are debating rationally about a language and its technical merits, they typically are not. Beneath the technical veneer of such arguments is something more human and less rational, something more social and personal. And that’s why we continue to argue about language.\n\nOf course, there are technical differences and there are objective points that can be made, but in truth this does not lie at the core of most discussions.\n\n\n  ¿Cuál es la discusión técnica más improductiva que has tenido?\n\n\n¡Probablemente sobre un lenguaje de programación!\n\n\n  ¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?\n\n\nLook at the history of programming, software architecture, development methodologies and so on. Software development has a history and most of the deep ideas can be found in it. Most of today’s trends and choices are better understood by understanding the past rather than just looking at the present. Software development is more conservative than you might appreciate, and new ideas are rarely novel.\n\n\n  ¿Qué ideas debemos superar como comunidad de IT para mejorar?\n\n\nThe idea that software development is a strictly neutral and technical activity independent of the considerations of people. The way we develop software and the way that it is used have ethical implications. We need to better recognise the spectrum of people who can and do create software and the responsibilities to people that use software. Software changes the world; we don’t get to do that and say that how the world changes is not our problem.\n\n\n  ¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?\n\n\nThe next ten years are going to be a lot like the previous ten years. There will be new frameworks, new platforms, new programming languages, etc. and associated shifts in skills. Some people will get excited by new ideas that are actually not that new. Some people will predict the demise of programmers and software development as we know it. What will most likely happen is that the number of programmers will increase and software development will continue to evolve, mostly along the lines it is currently following. The world will continue to be increasingly reliant on software and developers.\n\nRecursos\n\nPara aprender más de las ideas qeu Kevlin enseña, puedes investigar más de él y su trabajo aquí:\n\n\n  \n    Página de Kevlin Henney\n  \n  \n    What to read if you are a programmer\n  \n  \n    Entrevista de la serie “Heroes of Java”\n  \n  \n    Blog\n  \n  \n    Sus presentaciones\n  \n\n\nConclusión\n\nTodos los desarrolladores de diferentes niveles podemos aprender mucho de las ideas que Kevlin se ha dedicado a enseñar, mientras lo hace de una manera entretenida, profunda y que va puliendo con el tiempo. Es importante escuchar a personas con experiencia para pode desarrollar el criterio propio y las habilidades y formas de pensar para ser efectivos.\n\n\n  \n    \n      El fin del UNIX Timestamp o Y2k38. (Nota de tracucción) &#8617;\n    \n  \n\n",
+      "datePublished": "2021-07-07 00:00:00 -0500",
+      "dateModified": "2021-07-07 00:00:00 -0500",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": null,
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:12/v1625199907/DevTernity-2016-Kevlin-Henney-Seven-Ineffective-Coding-Habits-of-Many-Programmers-Video-Speech_jrjhg8.jpg"
+      }
+    }
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          The Dojo Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:12/v1625199907/DevTernity-2016-Kevlin-Henney-Seven-Ineffective-Coding-Habits-of-Many-Programmers-Video-Speech_jrjhg8.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Desarrolladores de los que puedes aprender: Kevlin Henney
+
+        
+      </h1>
+      
+        <p class="page__lead">Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en HAL</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Desarrolladores de los que puedes aprender: Kevlin Henney">
+    <meta itemprop="description" content="Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.">
+    <meta itemprop="datePublished" content="2021-07-07T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Hay varios desarrolladores de talla internacional de los que puedes <strong>aprender mucho</strong>, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que puedes aprender.</p>
+
+<p>Las condiciones para que aparezcan aquí son las siguientes:</p>
+
+<ul>
+  <li>Amplia experiencia real desarrollando sistemas</li>
+  <li>Que tengan algún logro notable en el desarrollo de sistemas</li>
+  <li>Comparten sus ideas con la comunidad de forma continua</li>
+  <li>No son unos <em>“brilliant jerks”</em>, es decir, no usan su experiencia o inteligencia para humillar o desacreditar a otros, y mucho menos su exposición para promover ideas nocivas.</li>
+</ul>
+
+<p>El objetivo de esta serie es que aprendamos de las personas que han dedicado su vida a esto y construyamos sobre lo que ellos han hecho en vez de reinventar la rueda cada vez.</p>
+
+<p><strong>Nota:</strong> El que los mencionemos aquí no implica que todas sus ideas son correctas o que estemos de acuerdo con todo lo que dicen. Conocer diferentes puntos de vista, sumado a tu experiencia en diferentes contextos te ayudará a tener un criterio adaptado a tu realidad.</p>
+
+<p>Ahora sí, vamos a hablar de <a href="https://blog.eisele.net/2013/07/the-heroes-of-java-kevlin-henney.html">Kevlin Henney</a>.</p>
+
+<h2 id="acerca-de-kevlin-henney">Acerca de Kevlin Henney</h2>
+
+<p>Kevlin Henney es un consultor, escritor, entrenador y presentador de temas relacionados con sistemas, procesos, las personas y el software. Sus escritos, talleres y consultorías siempre tienen que ver con <strong>la forma</strong> en que <em>desarrollamos</em> y <em>diseñamos</em> software, además de con los procesos y prácticas que llevan al éxito los proyectos de software complejos.</p>
+
+<p>Ha escrito columnas para múltiples revistas dedicadas al desarrollo de software. Es autor o editor de varios libros que son <em>muy recomendados</em> para arquitectos de software y desarrolladores. Algunos ejemplos son:</p>
+
+<ul>
+  <li><a href="https://www.amazon.com.mx/Pattern-Oriented-Software-Architecture-Distributed-Computing/dp/0470059028">Pattern-Oriented Software Architecture, Volume 4: A Pattern Language for Distributed Computing</a></li>
+  <li>
+<a href="https://www.oreilly.com/library/view/97-things-every/9780596809515/">97 Things Every Programmer Should Know</a> - Es una colección de ensayos que Kevlin se encargó de compilar y editar, sobre cómo ser un mejor programador. También está la versión en español: <a href="http://97cosas.com/programador/">97 cosas que todo programador debería saber</a>
+</li>
+</ul>
+
+<p>Kevlin se ha presentado en casi todas las conferencias importante de desarrollo de software europeas y de hable inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en <a href="https://www.amazon.com/Kevlin-Henney/e/B0716N93KR%3Fref=dbs_a_mng_rwt_scns_share">Amazon</a> sus libros de ficción. Además es muy accesible, si lo buscas en Twitter es muy probable que te conteste: <a href="https://twitter.com/KevlinHenney">Kevlin Henney en Twitter</a></p>
+
+<p>Una de las cosas que menciona que más nos gusta es: <strong>“Si estás de acuerdo con todo lo qu estoy diciendo, no me estás escuchando.”</strong>.</p>
+
+<h2 id="algunas-ideas-de-kevlin">Algunas ideas de Kevlin</h2>
+
+<blockquote>
+  <p>“Less code == less bugs”. - Kevlin Henney</p>
+</blockquote>
+
+<p>De las pláticas y el contenido que hemos consumido de Kevlin, hemos podido derivar algunas de las principales ideas que promueve. Te listamos las tres más importantes y te dejamos descubrir las demás viendo sus charlas o leyendo su contenido.</p>
+
+<ol>
+  <li>
+<strong>La arquitectura de software requiere entendimiento completo del dominio.</strong> Una de las ideas que Kevlin repite vez tras vez es la importancia de entender y definir el problema que estamos tratando de resolver. Se basa en las ideas de otros autores para reforzar esto. Una de las cosas que Kevlin resalta es que debemos conocer los <strong>detalles</strong>, para poder implementar software correcto con la arquitectura adecuada.</li>
+  <li>
+<strong>El diseño y la arquitectura de software son procesos iterativos e incrementales.</strong> Es imposible hacer un diseño completamente correcto y sin errores desde la primera vez. Es por eso que esta es una idea que se repite en sus conferencias vez tras vez. La lección para nosotros: <em>debemos diseñar el software con el conocimiento de que siempre habrá algo que mejorar</em>.</li>
+  <li>
+<strong>El software simple, pequeño y “aburrido” es más fácil de manejar</strong>. Haciendo eco de la frase que pusimos al inicio de esta sección, una de las ideas que Kevlin promueve más es la de minimizar la cantidad de código para lograr algo, así como buscar la simplicidad tanto en funciones como de construcción. Esto último es lo que llamamos aburrido: evitar tanto como podamos tecnologías a las que no estamos acostumbrados o demasiado nuevas y que agreguen dependencias innecesarias.</li>
+</ol>
+
+<h2 id="pláticas">Pláticas</h2>
+
+<p>Kevlin tiene decenas de pláticas en YouTube y Vimeo, hablando temas variados, todos relacionados de una forma u otra con el <em>proceso</em> de desarrollo y la calidad del software.</p>
+
+<p>Vamos a mencionar tres de las que nos han parecido las mejores.</p>
+
+<h3 id="software-is-details">Software is Details</h3>
+
+<p>Aquí presenta una idea que repite a lo largo de sus presentaciones: <strong>la implementación del software requiere un conocimiento lo más profundo y completo que se pueda sobre el problema que se está resolviendo</strong>. Da algunos ejemplos en los que se diseñó un sistema sin pensar en los “detalles de implementación” con resultados catastróficos. Mantener la vista en el sistema entero mientras se toman en cuenta los detalles es una señal de un arquitecto de software efectivo.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kX0prJklhUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="old-is-the-new-new">Old is the new new</h3>
+
+<p>En esta plática resalta la importancia de conocer y dominar los principios que habilitan a las nuevas tecnologías y herramientas. Las implementaciones tienen una vida corta mientras que los principios se mantienen inalterados.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AbgsfeGvg3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="it-depends">It Depends…</h3>
+
+<p>Crear software <strong>depende</strong> del conocimiento que tengamos acerca del dominio que estamos tratando. Nuestro conocimiento tiene límites que no podemos sobrepasar (incertidumbre) y es contra eso con lo que debemos tener cuidado, cosas que no están inmediatamente en nuestra visión.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rNSVZs66o48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<hr>
+
+<p>Tiene muchas más pláticas en conferencias que puedes buscar directamente en YouTube. Cada una de sus pláticas es un conjunto de ideas y referencias que es más de lo que se puede absorber en el tiempo en el que lo presenta, por lo que tal vez tengas que verlas varias veces, pero todo ese bagaje vale la pena. Aquí te dejamos una búsqueda que las agrupa: <a href="https://dev.tube/@kevlinhenney">DevTube</a>.</p>
+
+<h2 id="preguntas-que-le-hicimos">Preguntas que le hicimos</h2>
+
+<p>Además de investigar y aprender sobre las ideas de estos desarrolladores, creamos un cuestionario para hacérselos a todos los desarrolladores de esta serie, para que contesten la que puedan. Contactaremos directamente a cada uno y le haremos llegar las preguntas, con suerte nos contestaran.</p>
+
+<p>Kevlin fue muy accesible y nos contestó casi todas las preguntas, disfruta las respuestas.</p>
+
+<ol>
+  <li>¿Cómo fue tu camino de aprendizaje? <strong>¿Cómo te hiciste así de bueno?</strong>
+</li>
+</ol>
+
+<p>No se si soy <em>tan</em> bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio,  ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.</p>
+
+<p>Mientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, paradigmas, diseño, etc., mientras leía un conjunto aleatorio de artículos que incrementaron mi interés y fascinación. Empecé a tratar de comunicar esas ideas a través de artículos, y a relacionarlas mis experiencias mientras trabajaba con diferentes sistemas y en en diferentes ambientes.</p>
+
+<p>Esto eventualmente me llevó a dar charlas, cursos y visitar compañías, lo cuál amplió mi campo de visión, retó algunas de mis ideas y mejoró mi habilidad para pensar con los pies en la tierra.</p>
+
+<ol>
+  <li>¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?</li>
+</ol>
+
+<p>Escogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasao, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.</p>
+
+<p>¡Resulta que nunca debes subestimar que tan tonta puede ser la gente! Afortunadamente esto fue corregido después con unos cuántos cambios para usar SSL en vez de correr nuestros propios sockets sin protección.</p>
+
+<p>dicho esto, aunque perdimos una tendencia futura, nos subimos a otras. No sólo corregimos el problema Y2K antes de que la mayoría de las personas siquiera supieran de él; también atendimos el problema del año 2038.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<ol>
+  <li>¿Cuál es el peor consejo que te han dado?</li>
+</ol>
+
+<p>Testing is not the responsibility of a developer.</p>
+
+<ol>
+  <li>¿Cuál es el mejor consejo que te han dado?</li>
+</ol>
+
+<p>Think about software development as the management of complexity.</p>
+
+<ol>
+  <li>¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?</li>
+</ol>
+
+<p>It’s important in that language choice is often architectural. If you’re unsure about this, consider the cost and effort, the tooling, the skills, etc. of what it would take to change programming language in some or all of your codebase. Think about how much of your system would be affected, how staff would be affected, how other elements of your technical stack would be affected. And so on. Far from being a detail, the choice is more significant than many people realise.</p>
+
+<p>Language, in whatever form, is a way in which we express ourselves. Language is also associated with culture and community. This is why we argue about it. Although many developers might think they are debating rationally about a language and its technical merits, they typically are not. Beneath the technical veneer of such arguments is something more human and less rational, something more social and personal. And that’s why we continue to argue about language.</p>
+
+<p>Of course, there are technical differences and there are objective points that can be made, but in truth this does not lie at the core of most discussions.</p>
+
+<ol>
+  <li>¿Cuál es la discusión técnica <strong>más improductiva que has tenido</strong>?</li>
+</ol>
+
+<p>¡Probablemente sobre un lenguaje de programación!</p>
+
+<ol>
+  <li>¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?</li>
+</ol>
+
+<p>Look at the history of programming, software architecture, development methodologies and so on. Software development has a history and most of the deep ideas can be found in it. Most of today’s trends and choices are better understood by understanding the past rather than just looking at the present. Software development is more conservative than you might appreciate, and new ideas are rarely novel.</p>
+
+<ol>
+  <li>¿Qué ideas debemos superar como comunidad de IT para mejorar?</li>
+</ol>
+
+<p>The idea that software development is a strictly neutral and technical activity independent of the considerations of people. The way we develop software and the way that it is used have ethical implications. We need to better recognise the spectrum of people who can and do create software and the responsibilities to people that use software. Software changes the world; we don’t get to do that and say that how the world changes is not our problem.</p>
+
+<ol>
+  <li>¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?</li>
+</ol>
+
+<p>The next ten years are going to be a lot like the previous ten years. There will be new frameworks, new platforms, new programming languages, etc. and associated shifts in skills. Some people will get excited by new ideas that are actually not that new. Some people will predict the demise of programmers and software development as we know it. What will most likely happen is that the number of programmers will increase and software development will continue to evolve, mostly along the lines it is currently following. The world will continue to be increasingly reliant on software and developers.</p>
+
+<h2 id="recursos">Recursos</h2>
+
+<p>Para aprender más de las ideas qeu Kevlin enseña, puedes investigar más de él y su trabajo aquí:</p>
+
+<ul>
+  <li>
+    <p><a href="https://about.me/kevlin">Página de Kevlin Henney</a></p>
+  </li>
+  <li>
+    <p><a href="https://blog.itkonekt.com/2021/01/21/kevlin-henney-on-the-topic-of-what-to-read-if-youre-a-programmer/">What to read if you are a programmer</a></p>
+  </li>
+  <li>
+    <p><a href="https://blog.eisele.net/2013/07/the-heroes-of-java-kevlin-henney.html">Entrevista de la serie “Heroes of Java”</a></p>
+  </li>
+  <li>
+    <p><a href="https://kevlinhenney.medium.com/">Blog</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.slideshare.net/Kevlin/presentations">Sus presentaciones</a></p>
+  </li>
+</ul>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Todos los desarrolladores de diferentes niveles podemos aprender mucho de las ideas que Kevlin se ha dedicado a enseñar, mientras lo hace de una manera entretenida, profunda y que va puliendo con el tiempo. Es importante escuchar a personas con experiencia para pode desarrollar el criterio propio y las habilidades y formas de pensar para ser efectivos.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>El fin del UNIX Timestamp o <a href="https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2038">Y2k38</a>. (Nota de tracucción) <a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#arquitectura" class="page__taxonomy-item" rel="tag">arquitectura</a><span class="sep">, </span>
+    
+      <a href="/tags/#developers" class="page__taxonomy-item" rel="tag">developers</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2021-07-07T00:00:00-05:00">July 7, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Desarrolladores+de+los+que+puedes+aprender%3A+Kevlin+Henney%20https%3A%2F%2Fblog.thedojo.mx%2F2021%2F07%2F07%2Fdesarrolladores-de-los-que-puedes-aprender-kevlin-henney.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2021%2F07%2F07%2Fdesarrolladores-de-los-que-puedes-aprender-kevlin-henney.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2021%2F07%2F07%2Fdesarrolladores-de-los-que-puedes-aprender-kevlin-henney.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html" class="pagination--pager" title="Lo que debes saber sobre propiedad intelectual como desarrollador de software
+">Anterior</a>
+    
+    
+      <a href="/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html" class="pagination--pager" title="Desarrolladores de los que puedes aprender: Russ Olsen
+">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">Podrías ver también</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:16,w_300/v1626756313/daniele-franchi-g2fJ7d7eKSM-unsplash_mogbm1.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="permalink">Como transmitir conocimiento en el desarrollo de software
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 19-07-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Compartir el conocimiento que tienes sobre el proyecto es una de las tareas más importantes en el desarrollo de software. Exploremos cómo podemos mejorar en ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:13,w_300/v1626237333/slideslive_russ-olsen_explain-it_mejk2s.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html" rel="permalink">Desarrolladores de los que puedes aprender: Russ Olsen
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 14-07-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Russ Olsen es un desarrollador de software conocido por sus libros sobre Ruby y Clojure y por las excelentes charlas que da. Veamos algunas de sus ideas y lo...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_cartoonify,w_1200/v1624377067/giammarco-zeH-ljawHtg-unsplash_e4u5ve.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html" rel="permalink">Lo que debes saber sobre propiedad intelectual como desarrollador de software
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 22-06-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Como creadores de software es importante que conozcamos lo básico sobre las leyes que rigen la propiedad intelectual respecto a los programas y sus diferente...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:49,w_300/v1617383682/michael-dziedzic-gEN5Btvf2Eg-unsplash_nrd8uv.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/06/14/fuentes-no-convencionales-de-aprendizaje.html" rel="permalink">Fuentes no convencionales de aprendizaje
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 14-06-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">En este artículo te recomendamos algunos recursos que te servirán para aprender conceptos de progrmación que no son libros o cursos comunes.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+<div style="margin: 0 auto; ">
+    <div style="margin: 0 auto">Suscríbete a nuestro newsletter</div>
+    <form action="https://app.convertkit.com/forms/1792283/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="1792283" data-uid="bc6708e046" data-format="inline" data-version="5" style="margin: 0 auto; " data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}' min-width="400 500 600 700 800">
+<div data-style="clean">
+<ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+<div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+<div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Correo Electrónico" placeholder="Correo Electrónico" required="" type="email" style="color: rgb(85, 82, 82); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div>
+<button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(204, 30, 38); border-radius: 4px; font-weight: 400;"><div class="formkit-spinner">
+<div></div>
+<div></div>
+<div></div>
+</div>
+<span class="">Suscribirme</span></button>
+</div>
+<div class="formkit-powered-by-convertkit-container"><a href="https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="noopener noreferrer">Built with ConvertKit</a></div>
+</div>
+<style>.formkit-form[data-uid="bc6708e046"] *{box-sizing:border-box;}.formkit-form[data-uid="bc6708e046"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.formkit-form[data-uid="bc6708e046"] legend{border:none;font-size:inherit;margin-bottom:10px;padding:0;position:relative;display:table;}.formkit-form[data-uid="bc6708e046"] fieldset{border:0;padding:0.01em 0 0 0;margin:0;min-width:0;}.formkit-form[data-uid="bc6708e046"] body:not(:-moz-handler-blocked) fieldset{display:table-cell;}.formkit-form[data-uid="bc6708e046"] h1,.formkit-form[data-uid="bc6708e046"] h2,.formkit-form[data-uid="bc6708e046"] h3,.formkit-form[data-uid="bc6708e046"] h4,.formkit-form[data-uid="bc6708e046"] h5,.formkit-form[data-uid="bc6708e046"] h6{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="bc6708e046"] p{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="bc6708e046"] ol:not([template-default]),.formkit-form[data-uid="bc6708e046"] ul:not([template-default]),.formkit-form[data-uid="bc6708e046"] blockquote:not([template-default]){text-align:left;}.formkit-form[data-uid="bc6708e046"] p:not([template-default]),.formkit-form[data-uid="bc6708e046"] hr:not([template-default]),.formkit-form[data-uid="bc6708e046"] blockquote:not([template-default]),.formkit-form[data-uid="bc6708e046"] ol:not([template-default]),.formkit-form[data-uid="bc6708e046"] ul:not([template-default]){color:inherit;font-style:initial;}.formkit-form[data-uid="bc6708e046"] .ordered-list,.formkit-form[data-uid="bc6708e046"] .unordered-list{list-style-position:outside !important;padding-left:1em;}.formkit-form[data-uid="bc6708e046"] .list-item{padding-left:0;}.formkit-form[data-uid="bc6708e046"][data-format="modal"]{display:none;}.formkit-form[data-uid="bc6708e046"][data-format="slide in"]{display:none;}.formkit-form[data-uid="bc6708e046"][data-format="sticky bar"]{display:none;}.formkit-sticky-bar .formkit-form[data-uid="bc6708e046"][data-format="sticky bar"]{display:block;}.formkit-form[data-uid="bc6708e046"] .formkit-input,.formkit-form[data-uid="bc6708e046"] .formkit-select,.formkit-form[data-uid="bc6708e046"] .formkit-checkboxes{width:100%;}.formkit-form[data-uid="bc6708e046"] .formkit-button,.formkit-form[data-uid="bc6708e046"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}.formkit-form[data-uid="bc6708e046"] .formkit-button:hover,.formkit-form[data-uid="bc6708e046"] .formkit-submit:hover,.formkit-form[data-uid="bc6708e046"] .formkit-button:focus,.formkit-form[data-uid="bc6708e046"] .formkit-submit:focus{outline:none;}.formkit-form[data-uid="bc6708e046"] .formkit-button:hover > span,.formkit-form[data-uid="bc6708e046"] .formkit-submit:hover > span,.formkit-form[data-uid="bc6708e046"] .formkit-button:focus > span,.formkit-form[data-uid="bc6708e046"] .formkit-submit:focus > span{background-color:rgba(0,0,0,0.1);}.formkit-form[data-uid="bc6708e046"] .formkit-button > span,.formkit-form[data-uid="bc6708e046"] .formkit-submit > span{display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;}.formkit-form[data-uid="bc6708e046"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;}.formkit-form[data-uid="bc6708e046"] .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="bc6708e046"] .formkit-input::-webkit-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bc6708e046"] .formkit-input::-moz-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bc6708e046"] .formkit-input:-ms-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bc6708e046"] .formkit-input::placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bc6708e046"] [data-group="dropdown"]{position:relative;display:inline-block;width:100%;}.formkit-form[data-uid="bc6708e046"] [data-group="dropdown"]::before{content:"";top:calc(50% - 2.5px);right:10px;position:absolute;pointer-events:none;border-color:#4f4f4f transparent transparent transparent;border-style:solid;border-width:6px 6px 0 6px;height:0;width:0;z-index:999;}.formkit-form[data-uid="bc6708e046"] [data-group="dropdown"] select{height:auto;width:100%;cursor:pointer;color:#333333;line-height:1.4;margin-bottom:0;padding:0 6px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:15px;padding:12px;padding-right:25px;border:1px solid #e3e3e3;background:#ffffff;}.formkit-form[data-uid="bc6708e046"] [data-group="dropdown"] select:focus{outline:none;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"]{text-align:left;margin:0;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"]{margin-bottom:10px;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"] *{cursor:pointer;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"]:last-of-type{margin-bottom:0;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]{display:none;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"] + label::after{content:none;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::after{border-color:#ffffff;content:"";}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::before{background:#10bf7a;border-color:#10bf7a;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"] label{position:relative;display:inline-block;padding-left:28px;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"] label::before,.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"] label::after{position:absolute;content:"";display:inline-block;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"] label::before{height:16px;width:16px;border:1px solid #e3e3e3;background:#ffffff;left:0px;top:3px;}.formkit-form[data-uid="bc6708e046"] [data-group="checkboxes"] [data-group="checkbox"] label::after{height:4px;width:8px;border-left:2px solid #4d4d4d;border-bottom:2px solid #4d4d4d;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);left:4px;top:8px;}.formkit-form[data-uid="bc6708e046"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="bc6708e046"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="bc6708e046"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}.formkit-form[data-uid="bc6708e046"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="bc6708e046"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="bc6708e046"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-bc6708e046- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-bc6708e046- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="bc6708e046"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="bc6708e046"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="bc6708e046"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="bc6708e046"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}.formkit-form[data-uid="bc6708e046"] .formkit-powered-by[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="bc6708e046"] .formkit-powered-by-convertkit-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:5;margin:10px 0;position:relative;}.formkit-form[data-uid="bc6708e046"] .formkit-powered-by-convertkit-container[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="bc6708e046"] .formkit-powered-by-convertkit{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ffffff;border:1px solid #dce1e5;border-radius:4px;color:#373f45;cursor:pointer;display:block;height:36px;margin:0 auto;opacity:0.95;padding:0;-webkit-text-decoration:none;text-decoration:none;text-indent:100%;-webkit-transition:ease-in-out all 200ms;transition:ease-in-out all 200ms;white-space:nowrap;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:190px;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='%23373F45'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='%23373F45'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='%23373F45'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='%23373F45'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='%23373F45'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='%23373F45'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='%23373F45'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='%23373F45'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='%23373F45'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='%23373F45'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='%23373F45'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='%23373F45'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='%23373F45'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='%23373F45'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='%23373F45'/%3E%3C/svg%3E");}.formkit-form[data-uid="bc6708e046"] .formkit-powered-by-convertkit:hover,.formkit-form[data-uid="bc6708e046"] .formkit-powered-by-convertkit:focus{background-color:#ffffff;-webkit-transform:scale(1.025) perspective(1px);-ms-transform:scale(1.025) perspective(1px);transform:scale(1.025) perspective(1px);opacity:1;}.formkit-form[data-uid="bc6708e046"] .formkit-powered-by-convertkit[data-variant="dark"],.formkit-form[data-uid="bc6708e046"] .formkit-powered-by-convertkit[data-variant="light"]{background-color:transparent;border-color:transparent;width:166px;}.formkit-form[data-uid="bc6708e046"] .formkit-powered-by-convertkit[data-variant="light"]{color:#ffffff;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='white'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='white'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='white'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='white'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='white'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='white'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='white'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='white'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='white'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='white'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='white'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='white'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='white'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='white'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='white'/%3E%3C/svg%3E");}@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-bc6708e046-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes formkit-bouncedelay-formkit-form-data-uid-bc6708e046-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}.formkit-form[data-uid="bc6708e046"] blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #e1e1e1;} .formkit-form[data-uid="bc6708e046"]{max-width:700px;}.formkit-form[data-uid="bc6708e046"] [data-style="clean"]{width:100%;}.formkit-form[data-uid="bc6708e046"] .formkit-fields{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 auto;}.formkit-form[data-uid="bc6708e046"] .formkit-field,.formkit-form[data-uid="bc6708e046"] .formkit-submit{margin:0 0 15px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}.formkit-form[data-uid="bc6708e046"] .formkit-powered-by-convertkit-container{margin:0;}.formkit-form[data-uid="bc6708e046"][min-width~="700"] [data-style="clean"],.formkit-form[data-uid="bc6708e046"][min-width~="800"] [data-style="clean"]{padding:10px;}.formkit-form[data-uid="bc6708e046"][min-width~="700"] .formkit-fields[data-stacked="false"],.formkit-form[data-uid="bc6708e046"][min-width~="800"] .formkit-fields[data-stacked="false"]{margin-left:-5px;margin-right:-5px;}.formkit-form[data-uid="bc6708e046"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="bc6708e046"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="bc6708e046"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-submit,.formkit-form[data-uid="bc6708e046"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-submit{margin:0 5px 15px 5px;}.formkit-form[data-uid="bc6708e046"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="bc6708e046"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-field{-webkit-flex:100 1 auto;-ms-flex:100 1 auto;flex:100 1 auto;}.formkit-form[data-uid="bc6708e046"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-submit,.formkit-form[data-uid="bc6708e046"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-submit{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;} </style>
+</form>
+</div>
+<!-- End Convertkit -->
+<!-- <script type="text/javascript" src="/assets/jquery.scrolldepth.min.js"></script> -->
+
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+
+<script async data-uid="3362b65db9" src="https://thedojomx.ck.page/3362b65db9/index.js"></script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2021 . Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
