@@ -87,11 +87,11 @@ Kevlin fue muy accesible y nos contestó casi todas las preguntas, disfruta las 
 
 No se si soy _tan_ bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio,  ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.
 
-As I was working, I was also drawn into the world of languages, techniques, paradigms, design, etc., reading a random assortment of books and articles that increased my interest and fascination. I started trying to communicate these ideas through articles, and relating my experiences as I worked on different systems and in different environments.
+Mientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, paradigmas, diseño, etc., mientras leía un conjunto aleatorio de artículos que incrementaron mi interés y fascinación. Empecé a tratar de comunicar esas ideas a través de artículos, y a relacionarlas mis experiencias mientras trabajaba con diferentes sistemas y en en diferentes ambientes.
 
-This eventually led to giving talks, running courses and visiting companies, which broadened my outlook, challenged some of my ideas and improved my ability to think on my feet.
+Esto eventualmente me llevó a dar charlas, cursos y visitar compañías, lo cuál amplió mi campo de visión, retó algunas de mis ideas y mejoró mi habilidad para pensar con los pies en la tierra.
 
-2. What has been your **worst technical decision so far?** What constraints restrained it?
+2. ¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?
 
 I'll choose a technical decision that is safely in the past — quarter of a century past, to be precise. I was working on a SCADA system in the energy sector. Our systems were embedded in electricity substations and had very low network bandwidth (only a few thousand bits per second). I helped define a binary protocol that was compact and not bandwidth hungry. In defining this protocol, we specifically decided not to worry about security in the protocol because, at that time, we didn't think anyone would be foolish enough to connect sensitive infrastructure, such as the electrical grid, to a public network, such as the internet.
 
@@ -99,15 +99,15 @@ It turns out that you should never underestimate how foolish people can be! Fort
 
 That said, although we missed one future trend, we caught others. We not only addressed the Y2K problem before most people were even aware of it; we also addressed the Year 2038 problem.
 
-3. What is the worst advice you got?
+3. ¿Cuál es el peor consejo que te han dado?
 
 Testing is not the responsibility of a developer.
 
-4. What is the best advice you got?
+4. ¿Cuál es el mejor consejo que te han dado?
 
 Think about software development as the management of complexity.
 
-5. In your experience, how important is the language we pick to develop our software? Why do you think we still arguing about the language?
+5. ¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?
 
 It's important in that language choice is often architectural. If you're unsure about this, consider the cost and effort, the tooling, the skills, etc. of what it would take to change programming language in some or all of your codebase. Think about how much of your system would be affected, how staff would be affected, how other elements of your technical stack would be affected. And so on. Far from being a detail, the choice is more significant than many people realise.
 
@@ -115,19 +115,19 @@ Language, in whatever form, is a way in which we express ourselves. Language is 
 
 Of course, there are technical differences and there are objective points that can be made, but in truth this does not lie at the core of most discussions.
 
-6. What is the most **unproductive technical arguing you have had?**
+6. ¿Cuál es la discusión técnica **más improductiva que has tenido**?
 
-Probably about programming language!
+¡Probablemente sobre un lenguaje de programación!
 
-7. What is something you could recommend to young developers still looking for their way?
+7. ¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?
 
 Look at the history of programming, software architecture, development methodologies and so on. Software development has a history and most of the deep ideas can be found in it. Most of today's trends and choices are better understood by understanding the past rather than just looking at the present. Software development is more conservative than you might appreciate, and new ideas are rarely novel.
 
-8. What are the ideas that we as the IT industry should overcome to improve as a community?
+8. ¿Qué ideas debemos superar como comunidad de IT para mejorar? 
 
 The idea that software development is a strictly neutral and technical activity independent of the considerations of people. The way we develop software and the way that it is used have ethical implications. We need to better recognise the spectrum of people who can and do create software and the responsibilities to people that use software. Software changes the world; we don't get to do that and say that how the world changes is not our problem.
 
-9. What is the future of programming for the next ten years in your opinion? What should we learn to remain productive?
+9. ¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?
 
 The next ten years are going to be a lot like the previous ten years. There will be new frameworks, new platforms, new programming languages, etc. and associated shifts in skills. Some people will get excited by new ideas that are actually not that new. Some people will predict the demise of programmers and software development as we know it. What will most likely happen is that the number of programmers will increase and software development will continue to evolve, mostly along the lines it is currently following. The world will continue to be increasingly reliant on software and developers.
 
@@ -148,3 +148,4 @@ Para aprender más de las ideas qeu Kevlin enseña, puedes investigar más de é
 ## Conclusión
 
 Todos los desarrolladores de diferentes niveles podemos aprender mucho de las ideas que Kevlin se ha dedicado a enseñar, mientras lo hace de una manera entretenida, profunda y que va puliendo con el tiempo. Es importante escuchar a personas con experiencia para pode desarrollar el criterio propio y las habilidades y formas de pensar para ser efectivos.
+
