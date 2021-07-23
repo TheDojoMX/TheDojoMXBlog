@@ -83,7 +83,7 @@ Además de investigar y aprender sobre las ideas de estos desarrolladores, cream
 
 Kevlin fue muy accesible y nos contestó casi todas las preguntas, disfruta las respuestas.
 
-1. ¿Cómo fue tu camino de aprendizaje? **¿Cómo te hiciste así de bueno?**
+#### ¿Cómo fue tu camino de aprendizaje? **¿Cómo te hiciste así de bueno?**
 
 No se si soy _tan_ bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio,  ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.
 
@@ -91,23 +91,23 @@ Mientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, par
 
 Esto eventualmente me llevó a dar charlas, cursos y visitar compañías, lo cuál amplió mi campo de visión, retó algunas de mis ideas y mejoró mi habilidad para pensar con los pies en la tierra.
 
-2. ¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?
+#### ¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?
 
 Escogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasao, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.
 
 ¡Resulta que nunca debes subestimar que tan tonta puede ser la gente! Afortunadamente esto fue corregido después con unos cuántos cambios para usar SSL en vez de correr nuestros propios sockets sin protección.
 
-dicho esto, aunque perdimos una tendencia futura, nos subimos a otras. No sólo corregimos el problema Y2K antes de que la mayoría de las personas siquiera supieran de él; también atendimos el problema del año 2038.[^1]
+Dicho esto, aunque perdimos una tendencia futura, nos subimos a otras. No sólo corregimos el problema Y2K antes de que la mayoría de las personas siquiera supieran de él; también atendimos el problema del año 2038.[^1]
 
-3. ¿Cuál es el peor consejo que te han dado?
+#### ¿Cuál es el peor consejo que te han dado?
 
-Testing is not the responsibility of a developer.
+Las pruebas no son responsabilidad del desarrollador.
 
-4. ¿Cuál es el mejor consejo que te han dado?
+#### ¿Cuál es el mejor consejo que te han dado?
 
-Think about software development as the management of complexity.
+Piensa en el desarrollo de software como la administración de la complejidad.
 
-5. ¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?
+#### ¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?
 
 It's important in that language choice is often architectural. If you're unsure about this, consider the cost and effort, the tooling, the skills, etc. of what it would take to change programming language in some or all of your codebase. Think about how much of your system would be affected, how staff would be affected, how other elements of your technical stack would be affected. And so on. Far from being a detail, the choice is more significant than many people realise.
 
@@ -115,19 +115,19 @@ Language, in whatever form, is a way in which we express ourselves. Language is 
 
 Of course, there are technical differences and there are objective points that can be made, but in truth this does not lie at the core of most discussions.
 
-6. ¿Cuál es la discusión técnica **más improductiva que has tenido**?
+#### ¿Cuál es la discusión técnica **más improductiva que has tenido**?
 
 ¡Probablemente sobre un lenguaje de programación!
 
-7. ¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?
+#### ¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?
 
 Look at the history of programming, software architecture, development methodologies and so on. Software development has a history and most of the deep ideas can be found in it. Most of today's trends and choices are better understood by understanding the past rather than just looking at the present. Software development is more conservative than you might appreciate, and new ideas are rarely novel.
 
-8. ¿Qué ideas debemos superar como comunidad de IT para mejorar? 
+#### ¿Qué ideas debemos superar como comunidad de IT para mejorar? 
 
 The idea that software development is a strictly neutral and technical activity independent of the considerations of people. The way we develop software and the way that it is used have ethical implications. We need to better recognise the spectrum of people who can and do create software and the responsibilities to people that use software. Software changes the world; we don't get to do that and say that how the world changes is not our problem.
 
-9. ¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?
+#### ¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?
 
 The next ten years are going to be a lot like the previous ten years. There will be new frameworks, new platforms, new programming languages, etc. and associated shifts in skills. Some people will get excited by new ideas that are actually not that new. Some people will predict the demise of programmers and software development as we know it. What will most likely happen is that the number of programmers will increase and software development will continue to evolve, mostly along the lines it is currently following. The world will continue to be increasingly reliant on software and developers.
 
