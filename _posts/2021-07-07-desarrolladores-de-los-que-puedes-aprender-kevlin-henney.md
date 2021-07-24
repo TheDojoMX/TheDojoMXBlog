@@ -109,6 +109,7 @@ Piensa en el desarrollo de software como la administración de la complejidad.
 
 #### ¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?
 
+Es importante porque la elección de lenguaje es comúnmente arquitectural. Si no estás seguro de esto, considera el costo y esfuerzo, las herramientas, las habilidades, etc. de lo que tomaría cambiar de lenguaje en una parte o toda tu base de código. Piensa en cuánto de tu sistema se afectaría, como afecctaría al equipo y cómo otros elementos de tu cconjunto de herramientas tecnológicas saldrían afectadas. Y más. Lejos de ser un detalle, la elección es mucho más significativa de lo que muchas personas se dan cuenta.
 It's important in that language choice is often architectural. If you're unsure about this, consider the cost and effort, the tooling, the skills, etc. of what it would take to change programming language in some or all of your codebase. Think about how much of your system would be affected, how staff would be affected, how other elements of your technical stack would be affected. And so on. Far from being a detail, the choice is more significant than many people realise.
 
 Language, in whatever form, is a way in which we express ourselves. Language is also associated with culture and community. This is why we argue about it. Although many developers might think they are debating rationally about a language and its technical merits, they typically are not. Beneath the technical veneer of such arguments is something more human and less rational, something more social and personal. And that's why we continue to argue about language.
@@ -120,6 +121,7 @@ Of course, there are technical differences and there are objective points that c
 ¡Probablemente sobre un lenguaje de programación!
 
 #### ¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?
+
 
 Look at the history of programming, software architecture, development methodologies and so on. Software development has a history and most of the deep ideas can be found in it. Most of today's trends and choices are better understood by understanding the past rather than just looking at the present. Software development is more conservative than you might appreciate, and new ideas are rarely novel.
 
