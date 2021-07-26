@@ -111,11 +111,9 @@ Piensa en el desarrollo de software como la administración de la complejidad.
 
 Es importante porque la elección de lenguaje es comúnmente arquitectural. Si no estás seguro de esto, considera el costo y esfuerzo, las herramientas, las habilidades, etc. de lo que tomaría cambiar de lenguaje en una parte o toda tu base de código. Piensa en cuánto de tu sistema se afectaría, como afecctaría al equipo y cómo otros elementos de tu cconjunto de herramientas tecnológicas saldrían afectadas. Y más. Lejos de ser un detalle, la elección es mucho más significativa de lo que muchas personas se dan cuenta.
 
-El lenguaje, en cualquier forma, es una forma de expresarnos. El lenguaje también está asociado con la cultura y la comunidad. Por eso peleamos acerca de él. Aunque muchos desarrolladores podrían pensar qu están debatiendo...
+El lenguaje, en cualquier forma, es una forma de expresarnos. El lenguaje también está asociado con la cultura y la comunidad. Por eso peleamos acerca de él. Aunque muchos desarrolladores podrían pensar que están debatiendo racionalmente acerca de su lenguaje y sus méritos técnicos, pero típicamente esto no sucede. Debajo de la apariencia técnica de estas discusiones hay algo más  humano y menos racional, algo más social y personal. Y por eso es por lo que continuamos discutiendo sobre los lenguajes.
 
-Language, in whatever form, is a way in which we express ourselves. Language is also associated with culture and community. This is why we argue about it. Although many developers might think they are debating rationally about a language and its technical merits, they typically are not. Beneath the technical veneer of such arguments is something more human and less rational, something more social and personal. And that's why we continue to argue about language.
-
-Of course, there are technical differences and there are objective points that can be made, but in truth this does not lie at the core of most discussions.
+Claro, hay diferencias técnicas y puntos objetivos que se pueden argumentar, pero la verdad es que esto no es el centro de las discusiones.
 
 #### ¿Cuál es la discusión técnica **más improductiva que has tenido**?
 
@@ -123,15 +121,11 @@ Of course, there are technical differences and there are objective points that c
 
 #### ¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?
 
-Observa la historia de la programación, la arquitectura de software, las metodologías de desarrollo...
+Observa la historia de la programación, la arquitectura de software, las metodologías de desarrollo, etcétera. El desarrollo de software  tiene una historia y la mayoría de las ideas profundas puede ser hayada ahí. La mayoría de las tendencias y elecciones actuales se entienden mejor al entender el pasado, en vez de sólo mirar el presente. El desarrollo de software es más conservador de lo que podrías apreciar, y las nuevas ideas raramente son originales.
 
+#### ¿Qué ideas debemos superar como comunidad de IT para mejorar?
 
-Look at the history of programming, software architecture, development methodologies and so on. Software development has a history and most of the deep ideas can be found in it. Most of today's trends and choices are better understood by understanding the past rather than just looking at the present. Software development is more conservative than you might appreciate, and new ideas are rarely novel.
-
-#### ¿Qué ideas debemos superar como comunidad de IT para mejorar? 
-
-The idea that software development is a strictly neutral and technical activity independent of the considerations of people. The way we develop software and the way that it is used have ethical implications. We need to better recognise the spectrum of people who can and do create software and the responsibilities to people that use software. Software changes the world; we don't get to do that and say that how the world changes is not our problem.
-
+La idea de que el desarrollo de software es una actividad estríctamente neutral y técnica que no necesita considerar a la gente. La manera en que desarrollamos software y en la que es usado tiene implicaciones éticas. Necesitamos reconocer de mejor manera el espectro de personas que pueden y crean software y las responsabilidad que tienen para con las personas qeu usan el software. El software cambia al mundo; no podemos hacer eso y decir que la manera en que el mundo cambia no es nuestra responsabilidad.
 #### ¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?
 
 The next ten years are going to be a lot like the previous ten years. There will be new frameworks, new platforms, new programming languages, etc. and associated shifts in skills. Some people will get excited by new ideas that are actually not that new. Some people will predict the demise of programmers and software development as we know it. What will most likely happen is that the number of programmers will increase and software development will continue to evolve, mostly along the lines it is currently following. The world will continue to be increasingly reliant on software and developers.
