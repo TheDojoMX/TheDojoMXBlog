@@ -123,6 +123,8 @@ Of course, there are technical differences and there are objective points that c
 
 #### ¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?
 
+Observa la historia de la programación, la arquitectura de software, las metodologías de desarrollo...
+
 
 Look at the history of programming, software architecture, development methodologies and so on. Software development has a history and most of the deep ideas can be found in it. Most of today's trends and choices are better understood by understanding the past rather than just looking at the present. Software development is more conservative than you might appreciate, and new ideas are rarely novel.
 
