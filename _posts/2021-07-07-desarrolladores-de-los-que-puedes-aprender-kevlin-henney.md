@@ -128,6 +128,7 @@ Observa la historia de la programación, la arquitectura de software, las metodo
 La idea de que el desarrollo de software es una actividad estríctamente neutral y técnica que no necesita considerar a la gente. La manera en que desarrollamos software y en la que es usado tiene implicaciones éticas. Necesitamos reconocer de mejor manera el espectro de personas que pueden y crean software y las responsabilidad que tienen para con las personas qeu usan el software. El software cambia al mundo; no podemos hacer eso y decir que la manera en que el mundo cambia no es nuestra responsabilidad.
 #### ¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?
 
+Los próximos diez a
 The next ten years are going to be a lot like the previous ten years. There will be new frameworks, new platforms, new programming languages, etc. and associated shifts in skills. Some people will get excited by new ideas that are actually not that new. Some people will predict the demise of programmers and software development as we know it. What will most likely happen is that the number of programmers will increase and software development will continue to evolve, mostly along the lines it is currently following. The world will continue to be increasingly reliant on software and developers.
 
 ## Recursos
