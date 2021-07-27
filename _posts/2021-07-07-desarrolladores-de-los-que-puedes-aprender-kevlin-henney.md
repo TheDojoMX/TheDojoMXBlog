@@ -128,9 +128,7 @@ Observa la historia de la programación, la arquitectura de software, las metodo
 La idea de que el desarrollo de software es una actividad estríctamente neutral y técnica que no necesita considerar a la gente. La manera en que desarrollamos software y en la que es usado tiene implicaciones éticas. Necesitamos reconocer de mejor manera el espectro de personas que pueden y crean software y las responsabilidad que tienen para con las personas qeu usan el software. El software cambia al mundo; no podemos hacer eso y decir que la manera en que el mundo cambia no es nuestra responsabilidad.
 #### ¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?
 
-Los próximos diez a
-The next ten years are going to be a lot like the previous ten years. There will be new frameworks, new platforms, new programming languages, etc. and associated shifts in skills. Some people will get excited by new ideas that are actually not that new. Some people will predict the demise of programmers and software development as we know it. What will most likely happen is that the number of programmers will increase and software development will continue to evolve, mostly along the lines it is currently following. The world will continue to be increasingly reliant on software and developers.
-
+Los próximos diez van a ser muy parecidos a los diez anteriores. Va a haber nuevos frameworks, nuevas plataformas, nuevos lenguajes de programación, junto con los respectivos cambios en las habilidades. Algunas personas se emocionarán con las nuevas ideas que no son tan nuevas. Algunas personas personas predecirán la desaparición de los programadores y el software tal como lo conocemos. Lo que es más probable que pase es que el número de programadores va a seguir aumentando y el desarrollo de software va a seguir evolucionando, mayoritariamente en la línea que lleva ahora. El mundo continuará siendo cada vez mas dependiente de los desarrolladores de software.
 ## Recursos
 
 Para aprender más de las ideas qeu Kevlin enseña, puedes investigar más de él y su trabajo aquí:
