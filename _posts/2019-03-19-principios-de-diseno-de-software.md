@@ -73,7 +73,7 @@ Los principios que vienen están fundamentados sobre estos dos principios.
 
 ### Principios SOLID
 
-Si te dedicas a programar, llegado cierto punto vas a encontrar estos principios mencionados lo suficiente como para que tengas que aprender qué significan.
+Si te dedicas a programar, llegado cierto punto vas a encontrar estos principios mencionados que te sentirás obligado a aprender qué significan.
 
 **SOLID** es un acrónimo que engloba el nombre de 5 principios, originalmente dirigidos a la programación orientada a objetos, pero que son aplicables a muchas otras cosas.
 

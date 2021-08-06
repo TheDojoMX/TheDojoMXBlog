@@ -32,7 +32,7 @@ software, con un enfoque educativo. Algunos ejemplos de los tópicos a tratar so
 
 ## Contribuciones
 
-Este es un blog Open Source. Está construido sobre GitHub Pages con Jekyll (tendremos que actualizar esto si un día cambia), lo cuál te permite contribuir con el simple hecho de hacer un PR si crees que podemos cambiar algo en la estructura del sitio o si quieres escribir un post.
+Este es un blog Open Source. Está construido sobre GitHub Pages con Jekyll (tendremos que actualizar esto si un día cambia), lo cuál te permite contribuir con el simple hecho de hacer un PR si crees que podemos cambiar algo en la estructura del sitio o si quieres escribir un post.0
 
 En uno de los siguientes posts daremos una lista de pasos detallados de cómo hacer esto, junto con los lineamientos para aceptar un post.
 
