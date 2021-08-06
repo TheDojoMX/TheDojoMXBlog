@@ -13,4 +13,4 @@ header:
 
 Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde las exigencias respecto a lo que deben soportar los sistemas en cuanto a concurrencia y escalabilidad son fuertes.
 
-Para hacer la prueba vamos a crear un proyecto más o menos interesante: vamos a hacer un diccionario inverso. Tú das la descripción de la palabra, y la API nos devuelve una serie de opciones con un valor de certeza. Para lograr esto vamos a necesitar un modelo.
+Para hacer la prueba vamos a crear un proyecto más o menos interesante: vamos a hacer un diccionario inverso. Tú das la [descripción de la palabra, y la API nos devuelve una serie de opciones con un valor de certeza. Para lograr esto vamos a necesitar un modelo.
