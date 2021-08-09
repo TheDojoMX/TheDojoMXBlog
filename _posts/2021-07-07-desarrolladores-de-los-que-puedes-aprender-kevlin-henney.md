@@ -109,9 +109,9 @@ Piensa en el desarrollo de software como la administración de la complejidad.
 
 #### ¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?
 
-Es importante porque la elección de lenguaje es comúnmente arquitectural. Si no estás seguro de esto, considera el costo y esfuerzo, las herramientas, las habilidades, etc. de lo que tomaría cambiar de lenguaje en una parte o toda tu base de código. Piensa en cuánto de tu sistema se afectaría, como afecctaría al equipo y cómo otros elementos de tu cconjunto de herramientas tecnológicas saldrían afectadas. Y más. Lejos de ser un detalle, la elección es mucho más significativa de lo que muchas personas se dan cuenta.
+Es importante porque la elección de lenguaje es, normalmente, arquitectural. Si no estás seguro de esto, **considera el costo y esfuerzo, las herramientas, las habilidades, etcétera, de lo que tomaría cambiar de lenguaje en una parte o toda tu base de código**. Piensa en cuánto de tu sistema saldría afectado, como afectaría al equipo y cómo otros elementos de tu conjunto de herramientas tecnológicas serían impactados. **Y más**. Lejos de ser un detalle, la elección es _mucho más significativa de lo que muchas personas se dan cuenta_.
 
-El lenguaje, en cualquier forma, es una forma de expresarnos. El lenguaje también está asociado con la cultura y la comunidad. Por eso peleamos acerca de él. Aunque muchos desarrolladores podrían pensar que están debatiendo racionalmente acerca de su lenguaje y sus méritos técnicos, pero típicamente esto no sucede. Debajo de la apariencia técnica de estas discusiones hay algo más  humano y menos racional, algo más social y personal. Y por eso es por lo que continuamos discutiendo sobre los lenguajes.
+El lenguaje, en cualquier presentación, es una forma de expresarnos. El lenguaje también está asociado con la cultura y la comunidad. Por eso peleamos acerca de él. Aunque muchos desarrolladores podrían pensar que están debatiendo racionalmente acerca de su lenguaje y sus méritos técnicos, pero típicamente esto no sucede. Debajo de la apariencia técnica de estas discusiones hay algo más  humano y menos racional, algo más social y personal. Y por eso es por lo que continuamos discutiendo sobre los lenguajes.
 
 Claro, hay diferencias técnicas y puntos objetivos que se pueden argumentar, pero la verdad es que esto no es el centro de las discusiones.
 
@@ -119,16 +119,18 @@ Claro, hay diferencias técnicas y puntos objetivos que se pueden argumentar, pe
 
 ¡Probablemente sobre un lenguaje de programación!
 
-#### ¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?
+#### ¿Qué podrías recomendar a los programadores jóvenes que aún estén buscando su camino?
 
-Observa la historia de la programación, la arquitectura de software, las metodologías de desarrollo, etcétera. El desarrollo de software  tiene una historia y la mayoría de las ideas profundas puede ser hayada ahí. La mayoría de las tendencias y elecciones actuales se entienden mejor al entender el pasado, en vez de sólo mirar el presente. El desarrollo de software es más conservador de lo que podrías apreciar, y las nuevas ideas raramente son originales.
+Observa la historia de la programación, la arquitectura de software, las metodologías de desarrollo, etcétera. El desarrollo de software  tiene una historia y la mayoría de las ideas profundas puede ser hallada ahí. La mayoría de las tendencias y elecciones actuales se entienden mejor al entender el pasado, en vez de sólo mirar el presente. El desarrollo de software es más conservador de lo que podrías apreciar, y las nuevas ideas raramente son originales.
 
 #### ¿Qué ideas debemos superar como comunidad de IT para mejorar?
 
 La idea de que el desarrollo de software es una actividad estríctamente neutral y técnica que no necesita considerar a la gente. La manera en que desarrollamos software y en la que es usado tiene implicaciones éticas. Necesitamos reconocer de mejor manera el espectro de personas que pueden y crean software y las responsabilidad que tienen para con las personas qeu usan el software. El software cambia al mundo; no podemos hacer eso y decir que la manera en que el mundo cambia no es nuestra responsabilidad.
+
 #### ¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?
 
 Los próximos diez van a ser muy parecidos a los diez anteriores. Va a haber nuevos frameworks, nuevas plataformas, nuevos lenguajes de programación, junto con los respectivos cambios en las habilidades. Algunas personas se emocionarán con las nuevas ideas que no son tan nuevas. Algunas personas personas predecirán la desaparición de los programadores y el software tal como lo conocemos. Lo que es más probable que pase es que el número de programadores va a seguir aumentando y el desarrollo de software va a seguir evolucionando, mayoritariamente en la línea que lleva ahora. El mundo continuará siendo cada vez mas dependiente de los desarrolladores de software.
+
 ## Recursos
 
 Para aprender más de las ideas qeu Kevlin enseña, puedes investigar más de él y su trabajo aquí:
