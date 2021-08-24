@@ -6,8 +6,8 @@ tags: devs ruby clojure
 comments: true
 excerpt: "Russ Olsen es un desarrollador de software conocido por sus libros sobre Ruby y Clojure y por las excelentes charlas que da. Veamos algunas de sus ideas y lo que podemos aprender de él."
 header:
-  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:19,w_1280/v1626300098/60da357436deba0fd63a4689_ch2-getting-started-with-ruby_yrghl0.jpg
-  teaser: https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:13,w_300/v1626237333/slideslive_russ-olsen_explain-it_mejk2s.jpg
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:13,w_1280/v1626300098/60da357436deba0fd63a4689_ch2-getting-started-with-ruby_yrghl0.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:9,w_300/v1626237333/slideslive_russ-olsen_explain-it_mejk2s.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
