@@ -35,7 +35,7 @@ Ha escrito columnas para múltiples revistas dedicadas al desarrollo de software
 - [Pattern-Oriented Software Architecture, Volume 4: A Pattern Language for Distributed Computing](https://www.amazon.com.mx/Pattern-Oriented-Software-Architecture-Distributed-Computing/dp/0470059028)
 - [97 Things Every Programmer Should Know](https://www.oreilly.com/library/view/97-things-every/9780596809515/) - Es una colección de ensayos que Kevlin se encargó de compilar y editar, sobre cómo ser un mejor programador. También está la versión en español: [97 cosas que todo programador debería saber](http://97cosas.com/programador/)
 
-Kevlin se ha presentado en casi todas las conferencias importante de desarrollo de software europeas y de hable inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en [Amazon](https://www.amazon.com/Kevlin-Henney/e/B0716N93KR%3Fref=dbs_a_mng_rwt_scns_share) sus libros de ficción. Además es muy accesible, si lo buscas en Twitter es muy probable que te conteste: [Kevlin Henney en Twitter](https://twitter.com/KevlinHenney)
+Kevlin se ha presentado en casi todas las conferencias importantes de desarrollo de software europeas y de habla inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en [Amazon](https://www.amazon.com/Kevlin-Henney/e/B0716N93KR%3Fref=dbs_a_mng_rwt_scns_share) sus libros de ficción. Además es muy accesible, si lo buscas en Twitter es muy probable que te conteste: [Kevlin Henney en Twitter](https://twitter.com/KevlinHenney)
 
 Una de las cosas que menciona que más nos gusta es: **"Si estás de acuerdo con todo lo qu estoy diciendo, no me estás escuchando."**.
 
@@ -79,21 +79,21 @@ Tiene muchas más pláticas en conferencias que puedes buscar directamente en Yo
 
 ## Preguntas que le hicimos
 
-Además de investigar y aprender sobre las ideas de estos desarrolladores, creamos un cuestionario para hacérselos a todos los desarrolladores de esta serie, para que contesten la que puedan. Contactaremos directamente a cada uno y le haremos llegar las preguntas, con suerte nos contestaran.
+Además de investigar y aprender sobre las ideas de estos desarrolladores, creamos un cuestionario para hacérselos a todos los desarrolladores de esta serie, para que contesten las preguntas que puedan. Contactaremos directamente a cada uno y le haremos llegar las preguntas, con suerte nos contestaran.
 
 Kevlin fue muy accesible y nos contestó casi todas las preguntas, disfruta las respuestas.
 
 #### ¿Cómo fue tu camino de aprendizaje? **¿Cómo te hiciste así de bueno?**
 
-No se si soy _tan_ bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio,  ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.
+No se si soy _tan_ bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio, ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.
 
-Mientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, paradigmas, diseño, etc., mientras leía un conjunto aleatorio de artículos que incrementaron mi interés y fascinación. Empecé a tratar de comunicar esas ideas a través de artículos, y a relacionarlas mis experiencias mientras trabajaba con diferentes sistemas y en en diferentes ambientes.
+Mientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, paradigmas, diseño, etc., mientras leía un conjunto aleatorio de artículos que incrementaron mi interés y fascinación. Empecé a tratar de comunicar esas ideas a través de artículos, y a relacionarlas con mis experiencias mientras trabajaba con diferentes sistemas y en en diferentes ambientes.
 
 Esto eventualmente me llevó a dar charlas, cursos y visitar compañías, lo cuál amplió mi campo de visión, retó algunas de mis ideas y mejoró mi habilidad para pensar con los pies en la tierra.
 
 #### ¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?
 
-Escogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasao, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.
+Escogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasado, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.
 
 ¡Resulta que nunca debes subestimar que tan tonta puede ser la gente! Afortunadamente esto fue corregido después con unos cuántos cambios para usar SSL en vez de correr nuestros propios sockets sin protección.
 
@@ -129,7 +129,7 @@ La idea de que el desarrollo de software es una actividad estríctamente neutral
 
 #### ¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?
 
-Los próximos diez van a ser muy parecidos a los diez anteriores. Va a haber nuevos frameworks, nuevas plataformas, nuevos lenguajes de programación, junto con los respectivos cambios en las habilidades. Algunas personas se emocionarán con las nuevas ideas que no son tan nuevas. Algunas personas personas predecirán la desaparición de los programadores y el software tal como lo conocemos. Lo que es más probable que pase es que el número de programadores va a seguir aumentando y el desarrollo de software va a seguir evolucionando, mayoritariamente en la línea que lleva ahora. El mundo continuará siendo cada vez mas dependiente de los desarrolladores de software.
+Los próximos diez van a ser muy parecidos a los diez anteriores. Va a haber nuevos frameworks, nuevas plataformas, nuevos lenguajes de programación, junto con los respectivos cambios en las habilidades. Algunas personas se emocionarán con las nuevas ideas que no son tan nuevas. Algunas personas predecirán la desaparición de los programadores y el software tal como lo conocemos. Lo que es más probable que pase es que el número de programadores va a seguir aumentando y el desarrollo de software va a seguir evolucionando, mayoritariamente en la línea que lleva ahora. El mundo continuará siendo cada vez mas dependiente de los desarrolladores de software.
 
 ## Recursos
 
@@ -149,4 +149,4 @@ Para aprender más de las ideas qeu Kevlin enseña, puedes investigar más de é
 
 Todos los desarrolladores de diferentes niveles podemos aprender mucho de las ideas que Kevlin se ha dedicado a enseñar, mientras lo hace de una manera entretenida, profunda y que va puliendo con el tiempo. Es importante escuchar a personas con experiencia para pode desarrollar el criterio propio y las habilidades y formas de pensar para ser efectivos.
 
-[^1]: El fin del UNIX Timestamp o [Y2k38](https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2038). (Nota de tracucción)
+[^1]: El fin del UNIX Timestamp o [Y2k38](https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2038). (Nota de traducción)
