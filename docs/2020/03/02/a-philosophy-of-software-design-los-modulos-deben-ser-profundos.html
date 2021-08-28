@@ -135,7 +135,7 @@
       "headline": "A Philosophy of Software Design: Los módulos deben ser profundos",
       "keywords": "módulo,PoSD,ousterhout,complejidad,función",
       "description": "Veamos algunos lineamientos para el diseño de funciones/clases/módulos que ayudarán a reducir la complejidad de tus sistemas de software.",
-      "articleBody": "Para reducir la complejidad de los programas es importante tener técnicas definidas. La primera que vamos a analizar es la organización y separación de código a alto nivel, es decir separación en módulos.\n\nPor qué es importante la separación\n\nAntes de empezar a hablar de cómo deberíamos diseñar nuestros módulos hablemos de por qué es importante la separación.\n\nLa mejor forma de resolver un problema complejo es mediante la descomposición del problema en problemas más sencillos. Estos problemas se resuelven individualmente, idealmente de de manera independiente en un módulo por separado para cada uno. De esta manera podemos hacer software más mantenible y fácil de entender. Incluso se puede dividir mejor el trabajo.\n\nLa división del problema permite además ocultar información no relevante para el problema en cuestión.\n\nEsta división del trabajo es diferente dependiendo del paradigma del lenguaje de programación que usemos, así que veamos a qué nos referimos con un módulo.\n\n¿Qué es un módulo?\n\nUna definición fácil y amplia de “módulo” dada por “A Philosophy of Software Design” es: todo aquello que agrupe código, proveyendo separación de funcionalidad, es decir que agrupe comportamiento en detrás de una interfaz.\n\nUn módulo puede ser una función, una clase, un paquete o cosas similares dependiendo del lenguaje de programación. Un módulo incluso puede ser una API HTTP u otro programa.\n\nComo resumen: un módulo permite hacer algo mediante una interfaz.\n\nAhora bien, ¿qué es la interfaz de un módulo?\n\nInterfaces\n\nYa hemos hablado sobre lo que es una interfaz, pero para resumir: es el punto en donde un sistema, en este caso específico, un módulo, se encuentra con otro (otro módulo o código que lo usa).\n\nUn módulo tiene una interfaz que permite a otras partes del sistema usarlo. Usaremos el caso más sencillo, una función. La interfaz de una función es su firma: su nombre, los parámetros que recibe y lo que devuelve.\n\nVeamos un ejemplo:\n\narchivo = open(\"my_file.md\", \"w\") # Devuelve un apuntador a un archivo abierto\n\n\nLa interfaz de la función es su nombre open (nos permite identificarla y comunica información sobre lo que hace), el nombre del archivo como primer parámetro y el modo de operación en el segundo.\n\nDependiendo de la forma de agrupar la interfaz de los módulos varía, pero recuerda esto: la interfaz es la parte visible del módulo hacia otros módulos.\n\nDiseño de módulos\n\nAquí entramos en lo importante: los módulos deberían ser lo más profundos posible.\n\n¿A qué nos referimos con un módulo profundo?\n\nObserva el siguiente diagrama:\n\n\n\nUn módulo profundo tiene una interfaz sencilla o fácil de usar para la mayoría de los casos de uso y provee de mucha funcionalidad, hace mucho por ti.\n\nUn módulo superficial tiene una interfaz compleja o difícil de usar y provee poca funcionalidad.\n\nEsto no es absoluto: la relación entre la complejidad de la interfaz es relativa a la funcionalidad que provee, por ejemplo, si un módulo hace muchas cosas por ti, puede que requiera muchos datos. La relación interfaz/funcionalidad debe ser razonable para considerar que el módulo es profundo.\n\nAbrir archivos en la mayoría de los lenguajes es un ejemplo de una función profunda: con una interfaz muy pequeña (el nombre y el modo), la función se encarga de todos los detalles de implementación de apertura y creación del archivo. No te debes de preocupar por cosas como el sistema de archivos, el guardado físico en el disco, por verificar si hay memoria, etc.\n\nEn el caso contrario, los getters y setters que se acostumbra usar en algunos lenguajes de programación (Java) son ejemplo de funciones poco profundas, generalmente no hacen algo más que devolver el valor de la propiedad.\n\nEjemplo: Piensa en un aparato electrónico. En una televisión, sus control remoto te permiten acceder a las funcionalidades de encender el panel de iluminación, captar la señal del canal, decodificarlo y saltar entre diferentes canales, todo sin preocuparte tú por los detalles. Sólo la usas y ya. Mientras más detalles de implementación oculte es más fácil de usar.\n\nVentajas de los módulos profundos\n\nEncontrar un equilibrio entre la cantidad de código que metes en un módulo y la interfaz que expone tiene varias ventajas:\n\n\n  El código se puede re-usar en otras partes del sistema\n  Evitas la acumulación de interfaces, es decir, tener demasiadas interfaces (funciones, clases o módulos) que tienes que aprender a usar y que hacen poco por ti\n  La expansión de cambios (tener que tocar muchos lados del sistema para hacer un cambio relativamente pequeño)\n\n\nFinalmente, recuerda que una de las funciones que proveen los módulos es ocultar la complejidad. ¿Cuántas veces has visto lo que hacen las funciones prefabricadas de tu lenguaje de programación? Es probable que ninguna. Los módulos profundos y bien hechos permiten ocultar mayor cantidad de información y hace más fácil trabajar con ellos y simplifica el sistema en general.\n",
+      "articleBody": "Para reducir la complejidad de los programas es importante tener técnicas definidas. La primera que vamos a analizar es la organización y separación de código a alto nivel, es decir separación en módulos.\n\nPor qué es importante la separación\n\nAntes de empezar a hablar de cómo deberíamos diseñar nuestros módulos hablemos de por qué es importante la separación.\n\nLa mejor forma de resolver un problema complejo es mediante la descomposición del problema en problemas más sencillos. Estos problemas se resuelven individualmente, idealmente de de manera independiente en un módulo por separado para cada uno. De esta manera podemos hacer software más mantenible y fácil de entender. Incluso se puede dividir mejor el trabajo.\n\nLa división del problema permite además ocultar información no relevante para el problema en cuestión.\n\nEsta división del trabajo es diferente dependiendo del paradigma del lenguaje de programación que usemos, así que veamos a qué nos referimos con un módulo.\n\n¿Qué es un módulo?\n\nUna definición fácil y amplia de “módulo” dada por “A Philosophy of Software Design” es: todo aquello que agrupe código, proveyendo separación de funcionalidad, es decir que agrupe comportamiento en detrás de una interfaz.\n\nUn módulo puede ser una función, una clase, un paquete o cosas similares dependiendo del lenguaje de programación. Un módulo incluso puede ser una API HTTP u otro programa.\n\nComo resumen: un módulo permite hacer algo mediante una interfaz.\n\nAhora bien, ¿qué es la interfaz de un módulo?\n\nInterfaces\n\nYa hemos hablado sobre lo que es una interfaz, pero para resumir: es el punto en donde un sistema, en este caso específico, un módulo, se encuentra con otro (otro módulo o código que lo usa).\n\nUn módulo tiene una interfaz que permite a otras partes del sistema usarlo. Usaremos el caso más sencillo, una función. La interfaz de una función es su firma: su nombre, los parámetros que recibe y lo que devuelve.\n\nVeamos un ejemplo:\n\narchivo = open(\"my_file.md\", \"w\") # Devuelve un apuntador a un archivo abierto\n\n\nLa interfaz de la función es su nombre open (nos permite identificarla y comunica información sobre lo que hace), el nombre del archivo como primer parámetro y el modo de operación en el segundo.\n\nDependiendo de la forma de agrupar la interfaz de los módulos varía, pero recuerda esto: la interfaz es la parte visible del módulo hacia otros módulos.\n\nDiseño de módulos\n\nAquí entramos en lo importante: los módulos deberían ser lo más profundos posible.\n\n¿A qué nos referimos con un módulo profundo? Puedes imaginarte un módulo como un rectángulo en el que su interfaz es el largo de la base y su funcionalidad es la altura. Un módulo profundo es aquel que tiene una altura elevada comparada con el largo de la base.\n\nObserva la siguiente imagen:\n\n\n\nUn módulo profundo tiene una interfaz sencilla o fácil de usar para la mayoría de los casos de uso y provee de mucha funcionalidad, hace mucho por ti.\n\nUn módulo superficial tiene una interfaz compleja o difícil de usar y provee poca funcionalidad.\n\nEsto no es absoluto: la relación entre la complejidad de la interfaz es relativa a la funcionalidad que provee, por ejemplo, si un módulo hace muchas cosas por ti, puede que requiera muchos datos. La relación interfaz/funcionalidad debe ser razonable para considerar que el módulo es profundo.\n\nAbrir archivos en la mayoría de los lenguajes es un ejemplo de una función profunda: con una interfaz muy pequeña (el nombre y el modo), la función se encarga de todos los detalles de implementación de apertura y creación del archivo. No te debes de preocupar por cosas como el sistema de archivos, el guardado físico en el disco, por verificar si hay memoria, etc.\n\nEn el caso contrario, los getters y setters que se acostumbra usar en algunos lenguajes de programación (Java) son ejemplo de funciones poco profundas, generalmente no hacen algo más que devolver el valor de la propiedad.\n\nEjemplo: Piensa en un aparato electrónico. En una televisión, sus control remoto te permiten acceder a las funcionalidades de encender el panel de iluminación, captar la señal del canal, decodificarlo y saltar entre diferentes canales, todo sin preocuparte tú por los detalles. Sólo la usas y ya. Mientras más detalles de implementación oculte es más fácil de usar.\n\nVentajas de los módulos profundos\n\nEncontrar un equilibrio entre la cantidad de código que metes en un módulo y la interfaz que expone tiene varias ventajas:\n\n\n  El código se puede re-usar en otras partes del sistema\n  Evitas la acumulación de interfaces, es decir, tener demasiadas interfaces (funciones, clases o módulos) que tienes que aprender a usar y que hacen poco por ti\n  La expansión de cambios (tener que tocar muchos lados del sistema para hacer un cambio relativamente pequeño)\n\n\nFinalmente, recuerda que una de las funciones que proveen los módulos es ocultar la complejidad. ¿Cuántas veces has visto lo que hacen las funciones prefabricadas de tu lenguaje de programación? Es probable que ninguna. Los módulos profundos y bien hechos permiten ocultar mayor cantidad de información y hace más fácil trabajar con ellos y simplifica el sistema en general.\n",
       "datePublished": "2020-03-02 00:00:00 -0600",
       "dateModified": "2020-03-02 00:00:00 -0600",
       "author": {
@@ -451,9 +451,9 @@
 
 <p>Aquí entramos en lo importante: los módulos deberían ser lo más profundos posible.</p>
 
-<p>¿A qué nos referimos con un módulo profundo?</p>
+<p>¿A qué nos referimos con un módulo profundo? Puedes imaginarte un módulo como un rectángulo en el que su interfaz es el largo de la base y su funcionalidad es la altura. Un módulo profundo es aquel que tiene una altura elevada comparada con el largo de la base.</p>
 
-<p>Observa el siguiente diagrama:</p>
+<p>Observa la siguiente imagen:</p>
 
 <p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1583213511/IMG_0058_xm2b6w.jpg" alt="Módulos profundos vs superficiales"></p>
 
@@ -544,15 +544,6 @@
   </nav>
 
     </div>
-
-    
-      <div class="page__comments">
-  
-  
-      <h4 class="page__comments-title">Comentar</h4>
-      <section id="disqus_thread"></section>
-    
-</div>
 
     
   </article>
@@ -793,24 +784,6 @@
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-  <script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-127437335-2']);
-  
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-
 
 
 

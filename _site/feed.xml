@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-07-21T23:24:35-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Como transmitir conocimiento en el desarrollo de software</title><link href="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="alternate" type="text/html" title="Como transmitir conocimiento en el desarrollo de software" /><published>2021-07-19T00:00:00-05:00</published><updated>2021-07-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html">&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-08-28T00:11:49-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Como transmitir conocimiento en el desarrollo de software</title><link href="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="alternate" type="text/html" title="Como transmitir conocimiento en el desarrollo de software" /><published>2021-07-19T00:00:00-05:00</published><updated>2021-07-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html">&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
 
 &lt;p&gt;La charla &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;“Eloquent Explanations”&lt;/a&gt; de &lt;a href=&quot;/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt;. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo lo que aprendí.&lt;/p&gt;
 
@@ -176,7 +176,7 @@
   &lt;li&gt;&lt;a href=&quot;https://www.oreilly.com/library/view/97-things-every/9780596809515/&quot;&gt;97 Things Every Programmer Should Know&lt;/a&gt; - Es una colección de ensayos que Kevlin se encargó de compilar y editar, sobre cómo ser un mejor programador. También está la versión en español: &lt;a href=&quot;http://97cosas.com/programador/&quot;&gt;97 cosas que todo programador debería saber&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Kevlin se ha presentado en casi todas las conferencias importante de desarrollo de software europeas y de hable inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en &lt;a href=&quot;https://www.amazon.com/Kevlin-Henney/e/B0716N93KR%3Fref=dbs_a_mng_rwt_scns_share&quot;&gt;Amazon&lt;/a&gt; sus libros de ficción. Además es muy accesible, si lo buscas en Twitter es muy probable que te conteste: &lt;a href=&quot;https://twitter.com/KevlinHenney&quot;&gt;Kevlin Henney en Twitter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Kevlin se ha presentado en casi todas las conferencias importantes de desarrollo de software europeas y de habla inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en &lt;a href=&quot;https://www.amazon.com/Kevlin-Henney/e/B0716N93KR%3Fref=dbs_a_mng_rwt_scns_share&quot;&gt;Amazon&lt;/a&gt; sus libros de ficción. Además es muy accesible, si lo buscas en Twitter es muy probable que te conteste: &lt;a href=&quot;https://twitter.com/KevlinHenney&quot;&gt;Kevlin Henney en Twitter&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Una de las cosas que menciona que más nos gusta es: &lt;strong&gt;“Si estás de acuerdo con todo lo qu estoy diciendo, no me estás escuchando.”&lt;/strong&gt;.&lt;/p&gt;
 
@@ -224,75 +224,57 @@
 
 &lt;h2 id=&quot;preguntas-que-le-hicimos&quot;&gt;Preguntas que le hicimos&lt;/h2&gt;
 
-&lt;p&gt;Además de investigar y aprender sobre las ideas de estos desarrolladores, creamos un cuestionario para hacérselos a todos los desarrolladores de esta serie, para que contesten la que puedan. Contactaremos directamente a cada uno y le haremos llegar las preguntas, con suerte nos contestaran.&lt;/p&gt;
+&lt;p&gt;Además de investigar y aprender sobre las ideas de estos desarrolladores, creamos un cuestionario para hacérselos a todos los desarrolladores de esta serie, para que contesten las preguntas que puedan. Contactaremos directamente a cada uno y le haremos llegar las preguntas, con suerte nos contestaran.&lt;/p&gt;
 
 &lt;p&gt;Kevlin fue muy accesible y nos contestó casi todas las preguntas, disfruta las respuestas.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;¿Cómo fue tu camino de aprendizaje? &lt;strong&gt;¿Cómo te hiciste así de bueno?&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;cómo-fue-tu-camino-de-aprendizaje-cómo-te-hiciste-así-de-bueno&quot;&gt;¿Cómo fue tu camino de aprendizaje? &lt;strong&gt;¿Cómo te hiciste así de bueno?&lt;/strong&gt;&lt;/h4&gt;
 
-&lt;p&gt;No se si soy &lt;em&gt;tan&lt;/em&gt; bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio,  ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.&lt;/p&gt;
+&lt;p&gt;No se si soy &lt;em&gt;tan&lt;/em&gt; bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio, ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.&lt;/p&gt;
 
-&lt;p&gt;Mientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, paradigmas, diseño, etc., mientras leía un conjunto aleatorio de artículos que incrementaron mi interés y fascinación. Empecé a tratar de comunicar esas ideas a través de artículos, y a relacionarlas mis experiencias mientras trabajaba con diferentes sistemas y en en diferentes ambientes.&lt;/p&gt;
+&lt;p&gt;Mientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, paradigmas, diseño, etc., mientras leía un conjunto aleatorio de artículos que incrementaron mi interés y fascinación. Empecé a tratar de comunicar esas ideas a través de artículos, y a relacionarlas con mis experiencias mientras trabajaba con diferentes sistemas y en en diferentes ambientes.&lt;/p&gt;
 
 &lt;p&gt;Esto eventualmente me llevó a dar charlas, cursos y visitar compañías, lo cuál amplió mi campo de visión, retó algunas de mis ideas y mejoró mi habilidad para pensar con los pies en la tierra.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;cuál-ha-sido-tu-peor-decisión-técnica-qué-restricciones-la-limitaron&quot;&gt;¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?&lt;/h4&gt;
 
-&lt;p&gt;Escogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasao, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.&lt;/p&gt;
+&lt;p&gt;Escogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasado, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.&lt;/p&gt;
 
 &lt;p&gt;¡Resulta que nunca debes subestimar que tan tonta puede ser la gente! Afortunadamente esto fue corregido después con unos cuántos cambios para usar SSL en vez de correr nuestros propios sockets sin protección.&lt;/p&gt;
 
-&lt;p&gt;dicho esto, aunque perdimos una tendencia futura, nos subimos a otras. No sólo corregimos el problema Y2K antes de que la mayoría de las personas siquiera supieran de él; también atendimos el problema del año 2038.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Dicho esto, aunque perdimos una tendencia futura, nos subimos a otras. No sólo corregimos el problema Y2K antes de que la mayoría de las personas siquiera supieran de él; también atendimos el problema del año 2038.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;¿Cuál es el peor consejo que te han dado?&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;cuál-es-el-peor-consejo-que-te-han-dado&quot;&gt;¿Cuál es el peor consejo que te han dado?&lt;/h4&gt;
 
-&lt;p&gt;Testing is not the responsibility of a developer.&lt;/p&gt;
+&lt;p&gt;Las pruebas no son responsabilidad del desarrollador.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;¿Cuál es el mejor consejo que te han dado?&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;cuál-es-el-mejor-consejo-que-te-han-dado&quot;&gt;¿Cuál es el mejor consejo que te han dado?&lt;/h4&gt;
 
-&lt;p&gt;Think about software development as the management of complexity.&lt;/p&gt;
+&lt;p&gt;Piensa en el desarrollo de software como la administración de la complejidad.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;en-tu-experiencia-qué-tan-importante-es-el-lenguaje-que-seleccionamos-para-desarrollar-nuestro-software-por-qué-estamos-discutiendo-aún-sobre-los-lenguajes&quot;&gt;¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?&lt;/h4&gt;
 
-&lt;p&gt;It’s important in that language choice is often architectural. If you’re unsure about this, consider the cost and effort, the tooling, the skills, etc. of what it would take to change programming language in some or all of your codebase. Think about how much of your system would be affected, how staff would be affected, how other elements of your technical stack would be affected. And so on. Far from being a detail, the choice is more significant than many people realise.&lt;/p&gt;
+&lt;p&gt;Es importante porque la elección de lenguaje es, normalmente, arquitectural. Si no estás seguro de esto, &lt;strong&gt;considera el costo y esfuerzo, las herramientas, las habilidades, etcétera, de lo que tomaría cambiar de lenguaje en una parte o toda tu base de código&lt;/strong&gt;. Piensa en cuánto de tu sistema saldría afectado, como afectaría al equipo y cómo otros elementos de tu conjunto de herramientas tecnológicas serían impactados. &lt;strong&gt;Y más&lt;/strong&gt;. Lejos de ser un detalle, la elección es &lt;em&gt;mucho más significativa de lo que muchas personas se dan cuenta&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Language, in whatever form, is a way in which we express ourselves. Language is also associated with culture and community. This is why we argue about it. Although many developers might think they are debating rationally about a language and its technical merits, they typically are not. Beneath the technical veneer of such arguments is something more human and less rational, something more social and personal. And that’s why we continue to argue about language.&lt;/p&gt;
+&lt;p&gt;El lenguaje, en cualquier presentación, es una forma de expresarnos. El lenguaje también está asociado con la cultura y la comunidad. Por eso peleamos acerca de él. Aunque muchos desarrolladores podrían pensar que están debatiendo racionalmente acerca de su lenguaje y sus méritos técnicos, pero típicamente esto no sucede. Debajo de la apariencia técnica de estas discusiones hay algo más  humano y menos racional, algo más social y personal. Y por eso es por lo que continuamos discutiendo sobre los lenguajes.&lt;/p&gt;
 
-&lt;p&gt;Of course, there are technical differences and there are objective points that can be made, but in truth this does not lie at the core of most discussions.&lt;/p&gt;
+&lt;p&gt;Claro, hay diferencias técnicas y puntos objetivos que se pueden argumentar, pero la verdad es que esto no es el centro de las discusiones.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;¿Cuál es la discusión técnica &lt;strong&gt;más improductiva que has tenido&lt;/strong&gt;?&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;cuál-es-la-discusión-técnica-más-improductiva-que-has-tenido&quot;&gt;¿Cuál es la discusión técnica &lt;strong&gt;más improductiva que has tenido&lt;/strong&gt;?&lt;/h4&gt;
 
 &lt;p&gt;¡Probablemente sobre un lenguaje de programación!&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;¿Qué podrías recomendar a los programadores jovenes que aún estén buscando su camino?&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;qué-podrías-recomendar-a-los-programadores-jóvenes-que-aún-estén-buscando-su-camino&quot;&gt;¿Qué podrías recomendar a los programadores jóvenes que aún estén buscando su camino?&lt;/h4&gt;
 
-&lt;p&gt;Look at the history of programming, software architecture, development methodologies and so on. Software development has a history and most of the deep ideas can be found in it. Most of today’s trends and choices are better understood by understanding the past rather than just looking at the present. Software development is more conservative than you might appreciate, and new ideas are rarely novel.&lt;/p&gt;
+&lt;p&gt;Observa la historia de la programación, la arquitectura de software, las metodologías de desarrollo, etcétera. El desarrollo de software  tiene una historia y la mayoría de las ideas profundas puede ser hallada ahí. La mayoría de las tendencias y elecciones actuales se entienden mejor al entender el pasado, en vez de sólo mirar el presente. El desarrollo de software es más conservador de lo que podrías apreciar, y las nuevas ideas raramente son originales.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;¿Qué ideas debemos superar como comunidad de IT para mejorar?&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;qué-ideas-debemos-superar-como-comunidad-de-it-para-mejorar&quot;&gt;¿Qué ideas debemos superar como comunidad de IT para mejorar?&lt;/h4&gt;
 
-&lt;p&gt;The idea that software development is a strictly neutral and technical activity independent of the considerations of people. The way we develop software and the way that it is used have ethical implications. We need to better recognise the spectrum of people who can and do create software and the responsibilities to people that use software. Software changes the world; we don’t get to do that and say that how the world changes is not our problem.&lt;/p&gt;
+&lt;p&gt;La idea de que el desarrollo de software es una actividad estríctamente neutral y técnica que no necesita considerar a la gente. La manera en que desarrollamos software y en la que es usado tiene implicaciones éticas. Necesitamos reconocer de mejor manera el espectro de personas que pueden y crean software y las responsabilidad que tienen para con las personas qeu usan el software. El software cambia al mundo; no podemos hacer eso y decir que la manera en que el mundo cambia no es nuestra responsabilidad.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;cuál-es-el-futuro-de-la-programación-para-los-siguientes-diez-años-en-tu-opinión-qué-deberíamos-aprender-para-mantenernos-productivos&quot;&gt;¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?&lt;/h4&gt;
 
-&lt;p&gt;The next ten years are going to be a lot like the previous ten years. There will be new frameworks, new platforms, new programming languages, etc. and associated shifts in skills. Some people will get excited by new ideas that are actually not that new. Some people will predict the demise of programmers and software development as we know it. What will most likely happen is that the number of programmers will increase and software development will continue to evolve, mostly along the lines it is currently following. The world will continue to be increasingly reliant on software and developers.&lt;/p&gt;
+&lt;p&gt;Los próximos diez van a ser muy parecidos a los diez anteriores. Va a haber nuevos frameworks, nuevas plataformas, nuevos lenguajes de programación, junto con los respectivos cambios en las habilidades. Algunas personas se emocionarán con las nuevas ideas que no son tan nuevas. Algunas personas predecirán la desaparición de los programadores y el software tal como lo conocemos. Lo que es más probable que pase es que el número de programadores va a seguir aumentando y el desarrollo de software va a seguir evolucionando, mayoritariamente en la línea que lleva ahora. El mundo continuará siendo cada vez mas dependiente de los desarrolladores de software.&lt;/p&gt;
 
 &lt;h2 id=&quot;recursos&quot;&gt;Recursos&lt;/h2&gt;
 
@@ -323,7 +305,7 @@
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;El fin del UNIX Timestamp o &lt;a href=&quot;https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2038&quot;&gt;Y2k38&lt;/a&gt;. (Nota de tracucción) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;El fin del UNIX Timestamp o &lt;a href=&quot;https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2038&quot;&gt;Y2k38&lt;/a&gt;. (Nota de traducción) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="developers" /><category term="arquitectura" /><summary type="html">Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.</summary></entry><entry><title type="html">Lo que debes saber sobre propiedad intelectual como desarrollador de software</title><link href="https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html" rel="alternate" type="text/html" title="Lo que debes saber sobre propiedad intelectual como desarrollador de software" /><published>2021-06-22T00:00:00-05:00</published><updated>2021-06-22T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html">&lt;p&gt;Programar es una cosa, desarrollar software algo completamente diferente, sobre todo en un ambiente comercial en el que tienes que tratar con clientes y patrones. En este entorno tienes que entender otras cosas como la forma de colaborar con ellos, los precios y algo muy importante: las leyes.&lt;/p&gt;

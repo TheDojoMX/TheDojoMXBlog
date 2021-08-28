@@ -369,7 +369,7 @@ var store = [{
         "excerpt":"En este capítulo vamos a Hablar de Russ Olsen, un desarrollador ahora de Clojure, pero bastante reconocido en el mundo de Ruby. Ha escrito varios libros y contribuye activamente a la comunidad mediante podcasts, presentaciones y charlas. Acerca de Russ Russ trabaja como vicepresidente de Cognitec, la empresa que está...","categories": [],
         "tags": ["devs","ruby","clojure"],
         "url": "/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html",
-        "teaser": "https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:13,w_300/v1626237333/slideslive_russ-olsen_explain-it_mejk2s.jpg"
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:0,w_300/v1626237333/slideslive_russ-olsen_explain-it_mejk2s.jpg"
       },{
         "title": "Como transmitir conocimiento en el desarrollo de software",
         "excerpt":"Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando. La charla “Eloquent Explanations” de Russ Olsen. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo...","categories": [],

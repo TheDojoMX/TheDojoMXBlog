@@ -53,9 +53,9 @@ Dependiendo de la forma de agrupar la interfaz de los módulos varía, pero recu
 
 Aquí entramos en lo importante: los módulos deberían ser lo más profundos posible.
 
-¿A qué nos referimos con un módulo profundo?
+¿A qué nos referimos con un módulo profundo? Puedes imaginarte un módulo como un rectángulo en el que su interfaz es el largo de la base y su funcionalidad es la altura. Un módulo profundo es aquel que tiene una altura elevada comparada con el largo de la base.
 
-Observa el siguiente diagrama:
+Observa la siguiente imagen:
 
 ![Módulos profundos vs superficiales](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1583213511/IMG_0058_xm2b6w.jpg)
 

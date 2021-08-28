@@ -19,7 +19,7 @@
 /* Other ========================================================================== */
 /* Mixins and functions */
 /* Magnific Popup CSS */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700,700i,900,900i&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Merriweather:400,800&display=swap");
 .mfp-counter { font-family: Georgia, Times, serif; }
 
@@ -1686,7 +1686,7 @@ body { display: -webkit-box; display: -ms-flexbox; display: flex; min-height: 10
 
 a { text-decoration: none; font-weight: 400; }
 
-article.page { font-family: 'Montserrat', sans-serif; font-weight: 300; }
+article.page { font-family: 'Atkinson Hyperlegible', sans-serif; font-weight: 300; }
 
 h1, h2, h3, h4, h5, h6, h2 > a { font-family: "Merriweather", sans-serif; font-weight: 800; }
 
@@ -1694,6 +1694,6 @@ h1, h2, h3, h4, h5, h6, h2 > a { font-family: "Merriweather", sans-serif; font-w
 
 .custom-grid .grid__item { min-width: 290px; max-width: 400px; margin-top: 15px; }
 
-@media (max-width: 640px) { .grid__item .archive__item-excerpt { display: block; } .archive__item-teaser { max-height: 267px; } .grid__item { margin-top: 10px; } .grid__item .archive__item-title { font-size: 1.3em; } article.page { font-family: 'Montserrat', serif; font-weight: 300; font-size: 1.3em; } }
+@media (max-width: 640px) { .grid__item .archive__item-excerpt { display: block; } .archive__item-teaser { max-height: 267px; } .grid__item { margin-top: 10px; } .grid__item .archive__item-title { font-size: 1.3em; } article.page { font-family: 'Atkinson Hyperlegible', serif; font-weight: 300; font-size: 1.3em; } }
 
 /*# sourceMappingURL=main.css.map */
