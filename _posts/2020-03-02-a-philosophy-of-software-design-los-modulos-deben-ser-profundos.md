@@ -57,7 +57,7 @@ Aquí entramos en lo importante: los módulos deberían ser lo más profundos po
 
 Observa la siguiente imagen:
 
-![Módulos profundos vs superficiales](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1583213511/IMG_0058_xm2b6w.jpg)
+![Módulos profundos vs superficiales](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_500/v1630554161/Ilustracio%CC%81n_sin_ti%CC%81tulo_zchwj3.png)
 
 Un módulo profundo tiene una **interfaz sencilla** o fácil de usar para la mayoría de los casos de uso y provee de mucha funcionalidad, hace mucho por ti.
 
@@ -67,7 +67,7 @@ Esto no es absoluto: la relación entre la complejidad de la interfaz es relativ
 
 Abrir archivos en la mayoría de los lenguajes es un ejemplo de una función profunda: con una interfaz muy pequeña (el nombre y el modo), la función se encarga de todos los detalles de implementación de apertura y creación del archivo. No te debes de preocupar por cosas como el sistema de archivos, el guardado físico en el disco, por verificar si hay memoria, etc.
 
-En el caso contrario, los getters y setters que se acostumbra usar en algunos lenguajes de programación (Java) son ejemplo de funciones poco profundas, generalmente no hacen algo más que devolver el valor de la propiedad.
+En el caso contrario, los _getters_ y _setters_ que se acostumbra usar en algunos lenguajes de programación (Java) son ejemplo de funciones poco profundas, generalmente no hacen algo más que devolver el valor de la propiedad.
 
 Ejemplo: Piensa en un aparato electrónico. En una televisión, sus control remoto te permiten acceder a las funcionalidades de encender el panel de iluminación, captar la señal del canal, decodificarlo y saltar entre diferentes canales, todo sin preocuparte tú por los detalles. Sólo la usas y ya. Mientras más detalles de implementación oculte es más fácil de usar.
 
