@@ -347,6 +347,18 @@ var store = [{
         "url": "/2021/03/29/recursos-para-aprender-diseno-de-sistemas.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1617037690/joel-filipe-jU9VAZDGMzs-unsplash_wzkvza.jpg"
       },{
+        "title": "Creando un API con GO: Usando Beego",
+        "excerpt":"Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde las exigencias respecto a lo que deben soportar los sistemas en cuanto a concurrencia y escalabilidad son fuertes. Para hacer la prueba vamos a crear un proyecto más o menos interesante: vamos a...","categories": [],
+        "tags": [],
+        "url": "/2021/03/31/creando-un-api-con-go-usando-beego.html",
+        "teaser": null
+      },{
+        "title": "Ejercicio: programando un perceptrón",
+        "excerpt":"En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.   Si no tienes claro lo que es un perceptrón, puedes leer nuestro artículo anterior.  El conjunto de datos   Aproximando la función   Resultado  ","categories": [],
+        "tags": ["machine-learning","ia"],
+        "url": "/2021/04/10/ejercicio-programando-un-perceptron.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1618030907/arseny-togulev-MECKPoKJYjM-unsplash_nakl3a.jpg"
+      },{
         "title": "Fuentes no convencionales de aprendizaje",
         "excerpt":"Cada quien tiene su forma de aprender. A algunas personas les funcionan mejor formas visuales y no convencionales. En este artículo te vamos a presentar algunos de los recursos que hemos encontrado que explican ideas y temas relacionados con la programación con un formato no convencional. Te lo explico con...","categories": [],
         "tags": ["recursos","aprendizaje","programación"],
@@ -376,4 +388,28 @@ var store = [{
         "tags": ["explicaciones","conocimiento","desarrollo"],
         "url": "/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:16,w_300/v1626756313/daniele-franchi-g2fJ7d7eKSM-unsplash_mogbm1.jpg"
+      },{
+        "title": "Análisis de los principios SOLID: Principio de Responsabilidad Única",
+        "excerpt":"En esta serie de artículos vamos a hablar sobre los cinco principios SOLID, debido a que son algo que se dice que todo programador que quiera crear código mantenible debe saber y usar. La estructura de los artículos llevará la siguiente forma: Explicación del principio Ejemplos de código Contraejemplos Críticas...","categories": [],
+        "tags": [],
+        "url": "/2021/07/30/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html",
+        "teaser": null
+      },{
+        "title": "Crypto",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/2021/08/24/crypto.html",
+        "teaser": null
+      },{
+        "title": "Entendiendo la cohesión y el acoplamiento en el software",
+        "excerpt":"Siempre se dice que una buena base de código tiena alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica? En este artículo vamos a definir cada uno de esos términos de manera sencilla, con ejemplos y cómo llegar a la aplicación...","categories": [],
+        "tags": ["Cohesión","acoplamiento","software"],
+        "url": "/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1620272565/sam-loyd-qy27JnsH9sU-unsplash_ibulfd.jpg"
+      },{
+        "title": "La Importancia de los Estándares de Código",
+        "excerpt":"Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad. Para las organizaciones...","categories": [],
+        "tags": [],
+        "url": "/2021/09/29/estandares-de-calidad-en-el-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1633104565/fakurian-design-UoqIavC59eg-unsplash_bitrsd.jpg"
       }]

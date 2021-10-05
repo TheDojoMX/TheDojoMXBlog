@@ -376,4 +376,10 @@ var store = [{
         "tags": ["explicaciones","conocimiento","desarrollo"],
         "url": "/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:16,w_300/v1626756313/daniele-franchi-g2fJ7d7eKSM-unsplash_mogbm1.jpg"
+      },{
+        "title": "La Importancia de los Estándares de Código",
+        "excerpt":"Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad. Para las organizaciones...","categories": [],
+        "tags": ["estándares,","calidad,","source-code"],
+        "url": "/2021/10/05/estandares-de-calidad-en-el-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1633104565/fakurian-design-UoqIavC59eg-unsplash_bitrsd.jpg"
       }]

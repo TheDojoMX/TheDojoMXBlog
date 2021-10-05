@@ -1,4 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-08-28T00:11:49-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Como transmitir conocimiento en el desarrollo de software</title><link href="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="alternate" type="text/html" title="Como transmitir conocimiento en el desarrollo de software" /><published>2021-07-19T00:00:00-05:00</published><updated>2021-07-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html">&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-10-01T11:11:57-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">La Importancia de los Estándares de Código</title><link href="https://blog.thedojo.mx/2021/09/29/estandares-de-calidad-en-el-software.html" rel="alternate" type="text/html" title="La Importancia de los Estándares de Código" /><published>2021-09-29T00:00:00-05:00</published><updated>2021-09-29T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/09/29/estandares-de-calidad-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/09/29/estandares-de-calidad-en-el-software.html">&lt;p&gt;Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad.
+Para las organizaciones de nuestra época, el correcto funcionamiento de sus aplicaciones digitales representa crecimiento, si eres parte de un equipo que aún no se preocupa por esto, te invitó a siguir leyendo y conocer las ventajas de esta práctica para que asi puedas considerar utilizarla en un futuro.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-son-los-estándares-de-código&quot;&gt;¿Qué son los estándares de código?&lt;/h2&gt;
+
+&lt;p&gt;Los estándares de código son una serie de reglas definidas para un lenguaje de programación, o bien, un estilo de programación específico. El estilo garantiza que todos los ingenieros que contribuyen a un proyecto tengan una forma única de diseñar su código, lo que da como resultado una base de código coherente, esto asegura que el producto sea fácil de leer y mantener.&lt;/p&gt;
+
+&lt;p&gt;El uso de estándares es muy importante en la calidad de software, sin embargo el mantener todos los proyectos cumpliendo a la perfección con los estándares establecidos no es una tarea fácil, requiere un gran esfuerzo y constancia por parte del equipo de desarrollo. Mientras más y más compañías han adoptado estándares, todavía hay aquellas que realizan el desarrollo de sus proyectos sin estándares.&lt;/p&gt;
+
+&lt;h2 id=&quot;trabajando-sin-estándares-de-código&quot;&gt;Trabajando sin estándares de código&lt;/h2&gt;
+
+&lt;p&gt;Cuando eres parte de un equipo que aún no ha establecido reglas a seguir es muy común que los desarrolladores escriban código a su modo, dando como resultado un repositorio difícil de entender y por tanto difícil de mantener. La falta de un código organizado se puede transformar en horas y horas buscando un problema antes de estar siquiera cerca de donde podría haberse originado.&lt;/p&gt;
+
+&lt;p&gt;Tambien puede propiciar un ambiente de trabajo hostil, en el que ciertos ingenieros escriben código con un estilo propio y otros lo hacen diferente, al momento de unificar el trabajo hay discusiones para elegir la mejor opción, y al no haber una regla establecida y validada poro todo el equipo, la discusión puede tornarse mas larga de lo normal, provocando retrasos en la entrega de nuevas implementaciones.&lt;/p&gt;
+
+&lt;p&gt;Siendo realistas al crear un producto/proyecto nuevo nos enfocamos en conseguir que la aplicación funcione como primer meta, esto no es malo, usualmente las aplicaciones de software tienen un fin comercial/economico que debe resolverse en principio, pero una vez se alcanza cierta estabilidad es importante regresar a revisar el producto inicial y considerar refactorizaciones, esto con el fin de tener un futuro más sencillo.&lt;/p&gt;
+
+&lt;h2 id=&quot;como-implementar-estándares-de-código-en-proyectos-existentes&quot;&gt;Como implementar estándares de código en proyectos existentes&lt;/h2&gt;
+
+&lt;p&gt;“Roma no fue construida en un día.” la migración debe ser progresiva, no es algo que se consigue de la noche a la mañana, es recomendado adoptar estas practicas en nuevos proyectos y poco a poco ir implementando un nivel adecuado de estándares en los existentes.&lt;/p&gt;
+
+&lt;p&gt;Considera que en un inicio puede ser difícil para el equipo de ingenieria adaptarse, el contraste entre no tener reglas oficiales establecidas en el proceso de revisión de código vs, el comenzar a tenerlas puede ser un cambio que no todos tomén de forma natural, a algunos les llevara más tiempo que a otros. Para reducir ese tiempo de adaptación es importate dar a conocer a todo el equipo las ventajas principales de esta practica.&lt;/p&gt;
+
+&lt;p&gt;No todas las compañías utilizan las mismas herramientas en sus desarrollos y es muy complicado que se encuentre un estándar ideal que se adapte a las necesidades especificas, por ello, para que todos esten en el mismo canal es recomendable establecer un grupo de estándares propios, es decir, crear tu propio repositorio de estándares es un buen comienzo para lograr código de calidad.&lt;/p&gt;
+
+&lt;p&gt;Pueden iniciar adoptando estándares oficiales de las herramientas/lenguajes que utilizan. Automatizar ciertos procesos de validaciones del código puede ser de gran ayuda para una integración continua.&lt;/p&gt;
+
+&lt;h2 id=&quot;consideraciones&quot;&gt;Consideraciones:&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tomar como base estándares oficialmente publicados de las herramientas que se utilizan en cada proyecto.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Para obtener un código de fácil lectura es necesario poner atención al estilo del mismo; segmentos de código, correcto uso de indentación, longitud de lineas y espacios entre ellas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Asignación de nombres en variables, funciones, etc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Establecer límites en complejidad o longitud de funciones.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Y lo más importante, no detenerse en la aplicación de estas reglas, no incrementemos la deuda técnica en nuestros proyectos, quizá al día de hoy tengas un proyecto muy grande en el que jamás se han aplicado estándares y te parece una pérdida de tiempo comenzar a hacerlo, pero es una inversión que vale la pena, para ir construyendo no sólo un producto de calidad, sino también un equipo de ingeniería con calidad. Si la implementación de estos estándares comienza a ser un verdadero dolor de cabeza, es muy recomendable considerar una refactorización completa de tu sistema. “Divide y vencerás” es recomendable iniciar módulo por módulo.&lt;/p&gt;
+
+&lt;h2 id=&quot;ventajas-de-la-implementación-de-estándares&quot;&gt;Ventajas de la implementación de estándares:&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Detección temprana de fallas:
+Al buscar cumplir con los estándares que establezcas es más sencillo detectar posibles errores desde la revisión de código, evitando que esos problemas lleguen a producción.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Reducción de la complejidad:
+El cumplir con las reglas acerca del estilo de código ayuda a construir código más limpio, permitiéndo detectar fácilmente oportunidades para simplificar funciones.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Código de fácil lectura:
+El respetar los estándares en un proyectos le permite a nuevos miembros del equipo acoplarse más fácilmente al ritmo de trabajo y a entender mejor el código en los repositorios.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Código reusable:
+Contar con segmentos de código que pueden ser consumidos por más de un servicio, gracias al uso de buenas prácticas, hace menos frecuente la repetición de código.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;principios-de-código-limpio-recomendados&quot;&gt;Principios de código limpio recomendados:&lt;/h2&gt;
+
+&lt;p&gt;Es una buena estrategia buscar que todo el equipo de ingenieros esté familiarizado con principios de código limpio, por esto a continuación se enlistan algunos de los principios que te inspirarán a crear estándares para tu equipo. En busca de software de calidad.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;DRY - Don’t Repeat Yourself.&lt;/li&gt;
+  &lt;li&gt;YAGNI - You Aren’t Gonna Need It.&lt;/li&gt;
+  &lt;li&gt;KISS - Keep it Simple, Stupid.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SOLID&lt;/p&gt;
+
+    &lt;p&gt;S - Single-Responsiblity Principle.&lt;/p&gt;
+
+    &lt;p&gt;O - Open-Closed Principle.&lt;/p&gt;
+
+    &lt;p&gt;L - Liskov Substitution Principle.&lt;/p&gt;
+
+    &lt;p&gt;I - Interface Segregation Principle.&lt;/p&gt;
+
+    &lt;p&gt;D - Dependency Inversion Principle.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión:&lt;/h2&gt;
+
+&lt;p&gt;Considera que siempre habrá procesos por mejorar pero es un esfuerzo continuo y podrás seguir trabajando en ello.&lt;/p&gt;
+
+&lt;p&gt;Algunos de los resultados, que en mi experiencia trabajando con equipos de ingeniería que usan esta practica, he visto:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reducciónes entre el 40 y 60% en incidencias.&lt;/li&gt;
+  &lt;li&gt;Disminución en el número de despliegues de “hotfix”.&lt;/li&gt;
+  &lt;li&gt;Una mejora significativa en la calidad del equipo de desarrollo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como podemos ver la definición y el uso de estándares proporciona muchos beneficios, en lo personal, disfruto más el trabajo cuando se tiene un enfoque hacia el código de calidad que cuando no hay reglas establecidas, sin embargo eso no se puede lograr sin el trabajo de todos los ingenieros en un equipo, se trata de apuntar todos juntos a un mismo objetivo.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><summary type="html">Escribe aquí un buen resumen de tu artículo</summary></entry><entry><title type="html">Entendiendo la cohesión y el acoplamiento en el software</title><link href="https://blog.thedojo.mx/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html" rel="alternate" type="text/html" title="Entendiendo la cohesión y el acoplamiento en el software" /><published>2021-09-06T00:00:00-05:00</published><updated>2021-09-06T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html">&lt;p&gt;Siempre se dice que una buena base de código tiena alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica? En este artículo vamos a definir cada uno de esos términos de manera sencilla, con ejemplos y cómo llegar a la aplicación real de estos términos.&lt;/p&gt;
+
+&lt;h2 id=&quot;cohesión&quot;&gt;Cohesión&lt;/h2&gt;
+
+&lt;p&gt;La &lt;strong&gt;cohesión&lt;/strong&gt; de los módulos en el desarrollo de software se refiere al grado en el que sus componentes internos se relacionan entre sí. Es decir, un módulo tiene &lt;strong&gt;alta cohesión&lt;/strong&gt; si todos sus componentes trabajan para un mismo objetivo y no para cosas dispares.&lt;/p&gt;
+
+&lt;p&gt;Este grado de cohesión permitirá que el componente utilice menos otros módulos externos.&lt;/p&gt;
+
+&lt;p&gt;Para lograr esto tu módulo debe enfocarse en hacer una sola cosa, en tratar con un aspecto específico de tu problema general. Pongamos un ejemplo:&lt;/p&gt;
+
+&lt;p&gt;Imagina que estás creando un chatbot, un programa que, usando las API’s de los aplicaciones de comunicación te permite interactuar con tus usuarios en forma de chat. El sistema tiene como requerimiento que la lógica de conversación sea fácil de reemplazar y mantener.&lt;/p&gt;
+
+&lt;h2 id=&quot;acoplamiento&quot;&gt;Acoplamiento&lt;/h2&gt;
+
+&lt;h3 id=&quot;tipos-de-acoplamiento&quot;&gt;Tipos de acoplamiento&lt;/h3&gt;
+
+&lt;h2 id=&quot;cómo-lograr-alta-cohesión-y-bajo-acomplamiento&quot;&gt;Cómo lograr alta cohesión y bajo acomplamiento&lt;/h2&gt;
+
+&lt;h2 id=&quot;conclusiones&quot;&gt;Conclusiones&lt;/h2&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Cohesión" /><category term="acoplamiento" /><category term="software" /><summary type="html">En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código</summary></entry><entry><title type="html">Crypto</title><link href="https://blog.thedojo.mx/2021/08/24/crypto.html" rel="alternate" type="text/html" title="Crypto" /><published>2021-08-24T22:26:29-05:00</published><updated>2021-08-24T22:26:29-05:00</updated><id>https://blog.thedojo.mx/2021/08/24/crypto</id><content type="html" xml:base="https://blog.thedojo.mx/2021/08/24/crypto.html"></content><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><summary type="html"></summary></entry><entry><title type="html">Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link href="https://blog.thedojo.mx/2021/07/30/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="alternate" type="text/html" title="Análisis de los principios SOLID: Principio de Responsabilidad Única" /><published>2021-07-30T00:00:00-05:00</published><updated>2021-07-30T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/30/analisis-de-los-principios-solid-principio-de-responsabilidad-unica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/30/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco principios SOLID, debido a que son algo que se dice que todo programador que quiera crear código mantenible debe saber y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Explicación del principio&lt;/li&gt;
+  &lt;li&gt;Ejemplos de código&lt;/li&gt;
+  &lt;li&gt;Contraejemplos&lt;/li&gt;
+  &lt;li&gt;Críticas y alternativas&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Esta serie de artículos surge debido a que aunque son poco entendidos por la mayoría de los programadores, estos principios se toman como verdades universales que hay que seguir. Si queremos desarrollar buen software, no podemos ir por allí sólamente aceptando lo que &lt;em&gt;todos&lt;/em&gt; dicen que está bien sin entenderlo a fondo y cuestionarlo.&lt;/p&gt;
+
+&lt;p&gt;Empecemos diseccionando el primer principio de los aclamados SOLID: el principio de Responsabilidad Única.&lt;/p&gt;
+&lt;h2 id=&quot;el-principio-de-responsabilidad-única&quot;&gt;El principio de Responsabilidad Única&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Los programas deben ser responsables de sus propias acciones, no de las acciones de otros programas.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Luego de hablar de los principios SOLID, vamos a hablar de uno de ellos que es muy importante para el desarrollo de software, pero que aún no está muy bien entendido por muchos programadores. Otro de los principios SOLID es el principio de Responsabilidad Única.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Escribe aquí un buen resumen de tu artículo</summary></entry><entry><title type="html">Como transmitir conocimiento en el desarrollo de software</title><link href="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="alternate" type="text/html" title="Como transmitir conocimiento en el desarrollo de software" /><published>2021-07-19T00:00:00-05:00</published><updated>2021-07-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html">&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
 
 &lt;p&gt;La charla &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;“Eloquent Explanations”&lt;/a&gt; de &lt;a href=&quot;/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt;. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo lo que aprendí.&lt;/p&gt;
 
@@ -472,298 +609,11 @@
   &lt;li&gt;&lt;a href=&quot;https://andreasbm.github.io/web-skills/&quot;&gt;Web Skills&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Si no te acomodas con las formas tradicionales como los libros y los videos, siempre habrá opciones diferentes e interactivas. ¿Tienes alguna otra recomendación? La esperamos en los comentarios.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="recursos" /><category term="aprendizaje" /><category term="programación" /><summary type="html">En este artículo te recomendamos algunos recursos que te servirán para aprender conceptos de progrmación que no son libros o cursos comunes.</summary></entry><entry><title type="html">Recursos para aprender diseño de sistemas</title><link href="https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas.html" rel="alternate" type="text/html" title="Recursos para aprender diseño de sistemas" /><published>2021-03-29T00:00:00-06:00</published><updated>2021-03-29T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas</id><content type="html" xml:base="https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas.html">&lt;p&gt;El diseño de sistemas es un tema recurrente en entrevistas para desarrolladores de software, sobre todo para los niveles que requieren más experiencia, pero más allá de eso, es una habilidad fundamental a dominar si quieres avanzar en tu carrera.&lt;/p&gt;
+&lt;p&gt;Si no te acomodas con las formas tradicionales como los libros y los videos, siempre habrá opciones diferentes e interactivas. ¿Tienes alguna otra recomendación? La esperamos en los comentarios.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="recursos" /><category term="aprendizaje" /><category term="programación" /><summary type="html">En este artículo te recomendamos algunos recursos que te servirán para aprender conceptos de progrmación que no son libros o cursos comunes.</summary></entry><entry><title type="html">Ejercicio: programando un perceptrón</title><link href="https://blog.thedojo.mx/2021/04/10/ejercicio-programando-un-perceptron.html" rel="alternate" type="text/html" title="Ejercicio: programando un perceptrón" /><published>2021-04-10T00:00:00-05:00</published><updated>2021-04-10T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/04/10/ejercicio-programando-un-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2021/04/10/ejercicio-programando-un-perceptron.html">&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
 
-&lt;p&gt;Es por eso que vamos a empezar a hablar más de ese tema, contando nuestra experiencia, pero al mismo tiempo aprendiendo a diseñar mejor.&lt;/p&gt;
+&lt;p&gt;Si no tienes claro lo que es un perceptrón, puedes leer nuestro &lt;a href=&quot;/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html&quot; target=&quot;_blank&quot;&gt;artículo anterior&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;el-conjunto-de-datos&quot;&gt;El conjunto de datos&lt;/h2&gt;
 
-&lt;p&gt;En este post hablaremos de algunos recursos con los que puedes empezar a aprender.&lt;/p&gt;
+&lt;h2 id=&quot;aproximando-la-función&quot;&gt;Aproximando la función&lt;/h2&gt;
 
-&lt;h2 id=&quot;libros&quot;&gt;Libros&lt;/h2&gt;
-
-&lt;p&gt;Un libro que se ha recomendado mucho sobre todo en esta época en la que los datos son cada vez más importantes es &lt;a href=&quot;https://www.goodreads.com/book/show/23463279-designing-data-intensive-applications&quot; target=&quot;_blank&quot;&gt;Designing Data-intensive Applications&lt;/a&gt; que, como su nombre lo dice, te enseña a construir aplicaciones en donde los datos son muy importantes.&lt;/p&gt;
-
-&lt;p&gt;Hay un libro que se enfoca justamente en la parte de entrevistas llamado &lt;a href=&quot;https://www.goodreads.com/book/show/54109255-system-design-interview-an-insider-s-guide?from_search=true&amp;amp;from_srp=true&amp;amp;qid=Bm7AnA9Fzo&amp;amp;rank=9&quot; target=&quot;_blank&quot;&gt;System Design Interview&lt;/a&gt;, con la mayoría de las opiniones como positivas, pero algunas resaltan un punto muy importante: gran parte del contenido se encuentra en las referencias, así que si quieres profundizar tienes que buscarlas. A mi esto me parece positivo porque en vez de intentar abarcar todo y diluirse, este libro puede servir como un índice o una referencia para aprender más.&lt;/p&gt;
-
-&lt;p&gt;Finalmente, te vamos a recordar un libro del que hemos hablado continuamente tanto en nuestros videos como en los posts de este blog: &lt;a href=&quot;https://www.goodreads.com/en/book/show/39996759&quot; target=&quot;_blank&quot;&gt;A Philosophy of Software Design&lt;/a&gt; de John Ousterhout. Este es uno de los mejores libros que puedes leer acerca del diseño de software en general, y de las prácticas que llevan a crear software bien diseñado. No habla de diseño de sistemas a gran escala, sino de organización y división modular y cómo deberías aplicarla.&lt;/p&gt;
-
-&lt;h2 id=&quot;cursos-y-videos&quot;&gt;Cursos y videos&lt;/h2&gt;
-
-&lt;p&gt;Codely, una plataforma de cursos para desarrolladores, tiene un curso de introducción a la arquitectura hexagonal, que es una muy buena base para deseñar sistemas, aquí puedes ver una pequeña prueba: &lt;a href=&quot;https://codely.tv/blog/screencasts/arquitectura-hexagonal-ddd/&quot; target=&quot;_blank&quot;&gt;Intro a arquitectura hexagonal&lt;/a&gt; y aquí puedes ver el curso completo: &lt;a href=&quot;https://pro.codely.tv/library/arquitectura-hexagonal/about/&quot; target=&quot;_blank&quot;&gt;Arquitectura Hexagonal&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://pro.codely.tv/library/principios-solid-aplicados/77070/about/&quot; target=&quot;_blank&quot;&gt;Principios SOLID Aplicados&lt;/a&gt; es otro curso con aplicaciones prácticas que puedes ver para aprender más sobre estos principios que ayudan a crear código y sistemas más mantenibles.&lt;/p&gt;
-
-&lt;p&gt;En Educative.io tiene un curso llamado &lt;a href=&quot;https://www.educative.io/courses/grokking-the-system-design-interview&quot; target=&quot;_blank&quot;&gt;Grokking the System Design Interview&lt;/a&gt; que tiene ejemplos de diseño explicados como blogposts, abarcando varias etapas del diseño, desde el primer borrador (back of the envelop) hasta análisis de cuellos de botella junto con diseño detallado.&lt;/p&gt;
-
-&lt;p&gt;Y finalmente, tenemos una recomendación Open Source y gratuita: &lt;a href=&quot;https://github.com/donnemartin/system-design-primer&quot; target=&quot;_blank&quot;&gt;System Design Primer&lt;/a&gt; que contiene incluso tarjetas de &lt;a href=&quot;https://apps.ankiweb.net/&quot; target=&quot;_blank&quot;&gt;Anki&lt;/a&gt; un software para estudio mediante repetición espaciada.&lt;/p&gt;
-
-&lt;h3 id=&quot;extras&quot;&gt;Extras&lt;/h3&gt;
-
-&lt;p&gt;Un sitio en el que puedes aprender a diseñar sistemas que requieran mucho cuidado por la afluencia de usuarios que tendrán es &lt;a href=&quot;http://highscalability.com/&quot; target=&quot;_blank&quot;&gt;High Scalability&lt;/a&gt;. Ahí podrás ver algunos ejemplos reales sobre como crear sistemas web más grandes en contenido, más rápidos y más confiables.&lt;/p&gt;
-
-&lt;p&gt;Si quieres una ruta de aprendizaje completa, Educative.io tiene además la ruta de cursos que te pueden ayudar aprender aspectos teóricos y prácticos: &lt;a href=&quot;https://www.educative.io/path/scalability-system-design&quot; target=&quot;_blank&quot;&gt;Scalability and System Design for developers&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;cómo-representar-el-diseño&quot;&gt;Cómo representar el diseño&lt;/h3&gt;
-
-&lt;p&gt;Después de tener clara la idea de cómo resolver los problemas es buena idea tener un lenguaje visual y una guía par representar y comunicar todas las partes del sistema. Aquí te podemos recomendar el paper &lt;a href=&quot;https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf&quot; target=&quot;_blank&quot;&gt;Architectural Blueprints–The “4+1” View Model of Software Architecture&lt;/a&gt; y el estilo creado por Simon Brown: &lt;a href=&quot;https://c4model.com/&quot; target=&quot;_blank&quot;&gt;El modelo C4&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Cualquiera de estos dos modelos tienen las herramientas suficientes para poder visualizar y comunicar tu arquitectura desde diferentes perspectivas y a diferentes niveles.&lt;/p&gt;
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Aprender diseño de sistemas tiene que ver con estudiar mucho, pero sobre todo con aplicar lo aprendido. En el canal de YouTube tuvimos una plática sobre este tema, tomando de nuestras experiencias, lo puedes ver aquí:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/hWVNLloajqg&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;En el futuro tendremos más pláticas sobre estos temas, con algunos ejercicios para ver la teoría en acción.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="system-design" /><category term="book" /><category term="courses" /><category term="cursos" /><category term="libros" /><category term="learning" /><summary type="html">¿Quieres aprender los principios de diseño de sistemas para mejorar como desarrollador o para una entrevista? En este post te pasamos algunos recursos.</summary></entry><entry><title type="html">Intro a Machine Learning: Entendiendo el perceptrón</title><link href="https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html" rel="alternate" type="text/html" title="Intro a Machine Learning: Entendiendo el perceptrón" /><published>2021-03-25T00:00:00-06:00</published><updated>2021-03-25T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html">&lt;p&gt;Hablar de aprendizaje automático y los términos que lo rodean, muchas veces intimida a los desarrolladores. En esta serie de posts vamos a intentar explicar los conceptos detrás del aprendizaje automático y llevarlos a la práctica.&lt;/p&gt;
-
-&lt;h2 id=&quot;acerca-de-los-nombres-de-las-cosas&quot;&gt;Acerca de los nombres de las cosas&lt;/h2&gt;
-
-&lt;p&gt;Antes de empezar a hablar de inteligencia artificial, aprendizaje automático, aprendizaje profundo y todas esas cosas, queremos hacer una nota sobre el nombrado en las asuntos de tecnología.&lt;/p&gt;
-
-&lt;p&gt;Primero, debemos recordar que la tecnología no existe en un entorno aislado, y generalmente no tiene uso por sí misma, sino que la usamos para servir a otras áreas. Es por eso que lo que conoceríamos por un nombre completamente acertado y descriptivo de acuerdo a sus características técnicas se tiene que renombrar para que otras personas no pertenecientes al área de desarrollo de software.&lt;/p&gt;
-
-&lt;p&gt;Así ha pasado vez tras vez con diferentes tecnologías:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;El objeto &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;XMLHttpRequest&lt;/code&gt; de los navegadores y su uso se nombró como &lt;strong&gt;AJAX&lt;/strong&gt; para que fuera más vendible&lt;/li&gt;
-  &lt;li&gt;Una página web avanzada y con más funcionalidades se empezó a llamar &lt;strong&gt;Web App&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Las técnicas relacionadas con aprovechar las nuevas características de los navegadores como el Service Worker, el archivo manifest se juntaron bajo un solo nombre más “vendible”: &lt;strong&gt;Progressive Web Apps&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Los ejemplos siguen y estoy seguro que en cada área del conocimiento suceden. Este “renombramiento” permite que la tecnología en cuestión sea más aceptada y difundida, aunque a veces puede llevar a un malentendido por parte del público en general que puede permear a los practicantes.&lt;/p&gt;
-
-&lt;p&gt;Esto es lo que ha pasado con los nombres que nos conciernen en este artículo, le llamamos &lt;em&gt;“Inteligencia Artificial”&lt;/em&gt; a toda una rama de las ciencias de la computación relacionada con imitar lo que entendemos como “inteligencia humana”, pero las bases formales de esto podrían describirse con otros nombres más familiares para nosotros.&lt;/p&gt;
-
-&lt;p&gt;Este nombre permite que los avances sean aceptados y por lo menos el área de negocio entienda las capacidades de la tecnología, &lt;strong&gt;no su funcionamiento&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Cuando comprendas cómo funciona, tal vez veas que las redes neuronales no tienen nada que ver con las redes neuronales, o que en realidad el &lt;em&gt;aprendizaje automático&lt;/em&gt; es la aplicación de técnicas matemáticas y de ingeniería para aproximación de funciones, a veces muy complejas.&lt;/p&gt;
-
-&lt;p&gt;Ahora bien, eso no tiene nada de malo, sólo debemos aprender a no confundirnos con esos términos. Después de esta pequeña digresión, ahora si vayamos a lo que venimos: aprendamos aplicar estas técnicas.&lt;/p&gt;
-
-&lt;h2 id=&quot;perceptrones&quot;&gt;Perceptrones&lt;/h2&gt;
-
-&lt;p&gt;Un &lt;strong&gt;perceptrón&lt;/strong&gt; es un algoritmo que aproxima una función matemática sirve para &lt;strong&gt;clasificar&lt;/strong&gt; su entrada entre &lt;strong&gt;dos clases&lt;/strong&gt;. Un perceptrón puede tomar N entradas y devuelve un “Sí” o un “No”.&lt;/p&gt;
-
-&lt;p&gt;Si eres un programador sin experiencia en ML, te puedes imaginar la función del perceptrón básicamente como un “IF”. Es un clasificador binario que devuelve &lt;strong&gt;Verdadero&lt;/strong&gt; si el objeto en cuestión pertenece al grupo seleccionado, &lt;strong&gt;falso&lt;/strong&gt; en el caso contrario.&lt;/p&gt;
-
-&lt;p&gt;La diferencia está &lt;strong&gt;en cómo se construye esta función&lt;/strong&gt;, nosotros no le damos reglas programadas al perceptrón para clasificar los objetos de cierta forma, sino que le damos ejemplos &lt;strong&gt;etiquetados&lt;/strong&gt; y el perceptrón &lt;strong&gt;aprende&lt;/strong&gt;: ajusta los parámetros de su función interna para dividir las dos clases lo mejor posible.&lt;/p&gt;
-
-&lt;p&gt;La fórmula básica para un perceptrón es una sumatoria de todos sus parámetros de entrada multiplicados por un factor llamado &lt;em&gt;peso&lt;/em&gt; para cada uno, más una constante llamada &lt;em&gt;sesgo&lt;/em&gt; o &lt;em&gt;bias&lt;/em&gt;. Al resultado de esta suma se le aplica la &lt;strong&gt;función de activación&lt;/strong&gt;, normalmente la función &lt;strong&gt;step&lt;/strong&gt; que devuelve &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; (equivalente a falso) si la entrada es menor o igual que cero y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt; en cualquier otro caso.&lt;/p&gt;
-
-&lt;p&gt;Si llamamos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;X&lt;/code&gt; a los parámetros de entrada, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;W&lt;/code&gt; a los pesos aquí puedes ver la representación gráfica de un perceptrón:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1616653024/Untitled_Artwork_2_fsqfcr.png&quot; alt=&quot;Representación gráfica de un perceptrón&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Y aquí la ecuación matemática que lo representa:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1616653048/Untitled_Artwork_3_fjoaaa.png&quot; alt=&quot;Ecuación de un perceptrón&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;entrenamiento&quot;&gt;Entrenamiento&lt;/h3&gt;
-
-&lt;p&gt;Como te podrás dar cuenta, el funcionamiento de un perceptrón es muy sencillo. Pero lo importante no es su funcionamiento cuando clasifica, &lt;em&gt;sino como aprende a clasificar&lt;/em&gt;. Esta fase se llama &lt;strong&gt;entrenamiento&lt;/strong&gt; o &lt;strong&gt;training&lt;/strong&gt; y consiste en encontrar los pesos correctos para cada parámetro de entrada y el sesgo correcto.&lt;/p&gt;
-
-&lt;p&gt;El entrenamiento de un perceptrón toma un conjunto de ejemplos &lt;strong&gt;clasificados&lt;/strong&gt; o &lt;strong&gt;etiquetados&lt;/strong&gt; y encuentra los peso que pueden clasificar el mayor número de ejemplos correctamente. Este entrenamiento puede ser muy pesado dependiendo del número de entradas y ejemplos.&lt;/p&gt;
-
-&lt;p&gt;Es justo esto lo que hace que diferencia al machine learning de la programación tradicional. Tú programaste el algoritmo para encontrar los parámetros correctos, pero nunca las reglas específicas de clasificación.&lt;/p&gt;
-
-&lt;h2 id=&quot;redes-neuronales&quot;&gt;Redes Neuronales&lt;/h2&gt;
-
-&lt;p&gt;Una red neuronal es un conjunto de perceptrones combinados para poder clasificar en más de dos clases, y para crear funciones de clasificación que van mucho más allá de nuestro nivel de comprensión.&lt;/p&gt;
-
-&lt;p&gt;Las redes neuronales generalmente usan perceptrones con una función de activación diferente, la función sigmoide que transforma cualquier entrada en un valor entre 0 y 1 (como una probabilidad).&lt;/p&gt;
-
-&lt;p&gt;En el siguiente artículo hablaremos más a detalle sobre eso.&lt;/p&gt;
-
-&lt;h2 id=&quot;las-matemáticas-necesarias&quot;&gt;Las matemáticas necesarias&lt;/h2&gt;
-
-&lt;p&gt;Para poder entender las &lt;strong&gt;bases de funcionamiento&lt;/strong&gt; de todo lo que acabamos de mencionar, hay que saber trabajar con matemáticas de nivel universitario:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Álgebra líneal&lt;/li&gt;
-  &lt;li&gt;Análisis o Cálculo Vectorial&lt;/li&gt;
-  &lt;li&gt;Ecuaciones diferenciales&lt;/li&gt;
-  &lt;li&gt;Probabilidad&lt;/li&gt;
-  &lt;li&gt;Estadística&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Y, claro, todas las matemáticas que soportan estas: álgebra, trigonometría, geometría analítica, etc.&lt;/p&gt;
-
-&lt;p&gt;Si quieres aprender &lt;em&gt;profundamente&lt;/em&gt; esta área de la computación y estas técnicas y sientes que no tienes las bases matemáticas necesarias puedes estudiarlas aquí: &lt;a href=&quot;https://es.khanacademy.org/&quot;&gt;Khan Academy en Español&lt;/a&gt; (gratuito) o &lt;a href=&quot;https://brilliant.org/&quot;&gt;Brilliant&lt;/a&gt; (de pago).&lt;/p&gt;
-
-&lt;p&gt;Sin embargo, y espero no ser linchado por esto, para empezar a aplicar las técnicas de manera práctica &lt;strong&gt;no las necesitas&lt;/strong&gt;. Puedes abrazar la parte pragmática y algorítmica y empezar a usar los paquetes y herramientas de ML.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ml" /><category term="aprendizaje-automático" /><summary type="html">En este artículo entenderemos las bases matemáticas y de programación de la unidad de construcción básica de lo que comercialmente se conoce como redes neuronales</summary></entry><entry><title type="html">Las bases matemáticas de la programación funcional</title><link href="https://blog.thedojo.mx/2021/03/18/las-bases-matematicas-de-la-programacion-funcional.html" rel="alternate" type="text/html" title="Las bases matemáticas de la programación funcional" /><published>2021-03-18T00:00:00-06:00</published><updated>2021-03-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/03/18/las-bases-matematicas-de-la-programacion-funcional</id><content type="html" xml:base="https://blog.thedojo.mx/2021/03/18/las-bases-matematicas-de-la-programacion-funcional.html">&lt;p&gt;La programación funcional tiene conceptos muy relacionados con las matemáticas. Aquí te vamos a platicar de sus orígenes y de algunos conceptos matemáticos directamente embebidos en la programación funcional.&lt;/p&gt;
-
-&lt;p&gt;Lo primero que tienes que recordar es que las matemáticas no tienen que ver  &lt;em&gt;necesariamente&lt;/em&gt; con números, sino con el razonamiento y la &lt;em&gt;formalización&lt;/em&gt; de este. En este artículo hablamos más de ello: &lt;a href=&quot;/2019/12/25/las-matematicas-que-debes-saber-para-programar.html&quot;&gt;Las matemáticas que necesitas para programar&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ahora sí, empecemos con lo más fundamental de las matemáticas que soportan la programación funcional, no sin mencionar que podemos afirmar que la programación funcional &lt;em&gt;es una forma de matemáticas&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;cálculo-lambda&quot;&gt;Cálculo Lambda&lt;/h2&gt;
-
-&lt;p&gt;El cálculo lambda es una forma de definir todo lo que entendemos como matemáticas y de describir &lt;em&gt;cálculos&lt;/em&gt; o &lt;em&gt;cómputo&lt;/em&gt;. Es una notación que permite definir todos los elementos necesarios para crear razonamientos formales abstractos.&lt;/p&gt;
-
-&lt;p&gt;El cálculo lambda fue diseñado por &lt;strong&gt;Alonzo Church&lt;/strong&gt; como una forma de responder a un problema muy profundo de las matemáticas: &lt;strong&gt;“¿Es posible encontrar una forma de computación universal que, mediante la representación de problemas y una serie de pasos definido y finitos permita resolverlos?”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Esta pregunta fue planteada por David Hilbert y se conoce como el &lt;em&gt;Entscheidungsproblem&lt;/em&gt;, o &lt;em&gt;“El problema de la decisión”&lt;/em&gt;. De esta pregunta se deriva toda la computación moderna, ya que para responder estas preguntas &lt;strong&gt;Alan Turing&lt;/strong&gt; diseñó las &lt;em&gt;Máquinas de Turing&lt;/em&gt;. Si quieres saber más de esto, el libro &lt;a href=&quot;https://www.cs.buap.mx/~jitalo/libros/lanueva.pdf&quot;&gt;La Mente Nueva del Emperador de Roger Penrose&lt;/a&gt; lo explica muy bien, junto con muchas otras cosas.&lt;/p&gt;
-
-&lt;h3 id=&quot;funciones&quot;&gt;Funciones&lt;/h3&gt;
-
-&lt;p&gt;Las funciones o abstracciones son la base del cómputo en el Cálculo Lambda y lo son también en la programación funcional. Puedes pensar en las funciones como en la parte central del cómputo, la que representa las acciones a realizar con la información introducida, que en el Cálculo lambda, &lt;strong&gt;siempre será otra función&lt;/strong&gt;. Así es, no existen los número naturales, y todo se puede representar con funciones. Si quieres un idea más clara de cómo se puede lograr esto la plática de John Huges, &lt;a href=&quot;https://www.youtube.com/watch?v=XrNdvWqxBvA&quot;&gt;Why Functional Programming Matters&lt;/a&gt; da algunos ejemplos con Lisp.&lt;/p&gt;
-
-&lt;p&gt;Además esta plática en español explica más del Cálculo Lambda: &lt;a href=&quot;https://www.youtube.com/watch?v=i1zYBLdlxfc&quot;&gt;Cálculo Lambda por Jaime Pavlich-Mariscal&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Y aquí hay un libro gratuito que puedes estudiar si quieres adentrarte más en esto: &lt;a href=&quot;http://www.cse.chalmers.se/research/group/logic/TypesSS05/Extra/geuvers.pdf&quot;&gt;Introduction to Lambda Calculus&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;combinadores&quot;&gt;Combinadores&lt;/h2&gt;
-
-&lt;p&gt;Un combinador es una abstracción o función en el cálculo lambda, que no tiene variables libres o, en su defecto, sólo usa otros combinadores en su definición. Son funciones que sirven para crear cálculos más complejos mediante la mezcla de ellas.&lt;/p&gt;
-
-&lt;p&gt;Las variables libres son las que &lt;strong&gt;no se reciben como parámetros&lt;/strong&gt;. Los combinadores sirven para crear un lenguaje sobre el cálculo lambda y crear abstracciones más fácilmente y han sido el objeto de estudio de varios matemáticos.&lt;/p&gt;
-
-&lt;p&gt;Uno de ellos Raymond Smullyan, los enumeró poniéndoles nombres de aves, basados en las letras con las que se les identificaba y en su libro &lt;a href=&quot;http://douxnet.weebly.com/uploads/2/0/4/1/20418601/raymond_m._smullyan-to_mock_a_mockingbird_and_other_logic_puzzles__including__an_amazing_adventure_in_combinatory_logic-knopf_1985.pdf&quot;&gt;To Mock a Mockingbird&lt;/a&gt; los usa para crear algunos acertijos.&lt;/p&gt;
-
-&lt;p&gt;Puedes aprender más de los combinadores con ejemplos en JavaScript en esta plática: &lt;a href=&quot;https://www.youtube.com/watch?v=3VQ382QG-y4&quot;&gt;Lambda Calculus - Fundamentals of Lambda Calculus &amp;amp; Functional Programming in JavaScript&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Aquí hay algunos ejemplos de combinadores en JavaSCript&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Combinador I, Idiot o función identidad&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Combinador K, Kestrel o función constante&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;K&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Combinador S, Starling o función de substitución&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;S&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Justo de esta rama de la lógica viene el famoso &lt;a href=&quot;https://medium.com/@ayanonagon/the-y-combinator-no-not-that-one-7268d8d9c46&quot;&gt;Y combinator&lt;/a&gt;, el combinador que permite la recursión. Aquí hay artículo que explica cómo se llega a él, si te quieres ir por el hoyo del conejo: &lt;a href=&quot;https://homes.cs.washington.edu/~sorawee/en/blog/2017/10-05-deriving-Y.html&quot;&gt;Deriving Y Combinator&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;cálculo-ski&quot;&gt;Cálculo SKI&lt;/h3&gt;
-
-&lt;p&gt;Debido a que todas las matemáticas y cosas computables se pueden expresar con los combinadores S, K e I, existe toda una rama llamada &lt;strong&gt;Cálculo SKI&lt;/strong&gt;, en el que estos tres combinadores son los únicos elementos necesarios para expresar todo lo demás.&lt;/p&gt;
-
-&lt;h2 id=&quot;teoría-de-categorías&quot;&gt;Teoría de categorías&lt;/h2&gt;
-
-&lt;p&gt;La teoría de categorías explora la composición de elementos y la creación de grupos con “objetos” relacionados entre ellos. &lt;a href=&quot;https://bartoszmilewski.com/&quot;&gt;Bartosz Mileswsky&lt;/a&gt; afirma que la teoría de categorías es muy importante para los programadores porque nos permite entender la composición y esta es la base para construir programas complejos.&lt;/p&gt;
-
-&lt;p&gt;La teoría de categorías se extiende más allá de la programación funcional, de hecho todos los sistemas de tipos de los lenguajes se comportan como una categoría. Puedes entender más de qué se trata en el libro de Bartosz Mileswsky &lt;a href=&quot;https://github.com/hmemcpy/milewski-ctfp-pdf&quot;&gt;“Category Theory for Programmers”&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;y-todo-esto-a-mi-qué&quot;&gt;¿Y todo esto, a mi qué?&lt;/h2&gt;
-
-&lt;p&gt;Conocer las bases de la programación funcional te puede dar un índice muy valioso como referencia a temas en los que tienes que profundizar si quieres ser un mejor programador@ funcional y tú lógica en general.&lt;/p&gt;
-
-&lt;p&gt;La programación funcional y las ideas provenientes de ella están mejorando la forma en que hacemos software, ya que dan permiten un mejor tratamiento de la información que en muchos casos es más fácil de entender que su contraparte imperativa.&lt;/p&gt;
-
-&lt;p&gt;Puedes ver algunas de las características y ventajas de la programación funcional en &lt;a href=&quot;/2019/03/30/que-es-la-programacion-funcional.html&quot;&gt;este artículo&lt;/a&gt; y si quiere aprender, compilamos algunos recursos aquí: &lt;a href=&quot;/educación/2019/04/06/los-mejores-recursos-para-aprender-programacion-funcional.html&quot;&gt;Los mejores recursos para aprender programación funcional.&lt;/a&gt;&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="matemáticas" /><category term="math" /><category term="fp" /><category term="programación-funcional" /><summary type="html">La programación funcional tiene bases matemáticas muy interesantes, hablemos un poco de ellas y cómo te pueden ayudar a entenderla mejor.</summary></entry><entry><title type="html">Ruta de aprendizaje: Deep Learning</title><link href="https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning.html" rel="alternate" type="text/html" title="Ruta de aprendizaje: Deep Learning" /><published>2021-03-06T00:00:00-06:00</published><updated>2021-03-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning</id><content type="html" xml:base="https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning.html">&lt;p&gt;Inspirado en el libro “Ultralearning” de Scott Young, voy hacer un proyecto de aprendizaje de algo que llama mi atención desde hace mucho: Deep Learning y Machine Learning en general. Si no conces el concepto, te invito leer el post aquí: &lt;a href=&quot;/2019/08/13/lecciones-sobre-el-aprendizaje-de-manos-de-un-experto.html&quot;&gt;Ultralearning: el arte del aprendizaje profundo&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;En esta serie documentaremos las diferentes fases. Este primer post trata sobre los recursos que usaré para aprender. Si tienes alguna sugerencia, ¡todas son bienvenidas!&lt;/p&gt;
-
-&lt;h2 id=&quot;fase-1-investigación&quot;&gt;Fase 1: Investigación&lt;/h2&gt;
-
-&lt;p&gt;La primera fase de un proyecto de Ultra-aprendizaje consiste en hacer una investigación sobre las posibles opciones, recursos, metas y caminos que otros han seguido para aprender lo que quieres, así como definir claramente los límites del proyecto.&lt;/p&gt;
-
-&lt;p&gt;En este proyecto el objetivo será:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Entender y aplicar las técnicas básicas  Machine Learning, en específico Deep Learning, para poder resolver problemas y aplicarlos en proyectos que lo requieran.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Algunos de los programas que podemos usar para aprenderlo son los siguientes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Nanodegree de Deep Learning en &lt;a href=&quot;https://www.udacity.com/course/deep-learning-nanodegree--nd101&quot;&gt;Udacity&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Especialización en Deep Learning de &lt;a href=&quot;https://www.coursera.org/specializations/deep-learning&quot;&gt;Coursera&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Redes neuronales y Deep Learning de &lt;a href=&quot;https://www.coursera.org/learn/neural-networks-deep-learning&quot;&gt;Coursera&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Programming Machine Learning de &lt;a href=&quot;https://pragprog.com/titles/pplearn/programming-machine-learning/&quot;&gt;Pragmatic Programmers&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Machine Learning with Python: from Linear Models to Deep Learning de &lt;a href=&quot;https://www.edx.org/course/machine-learning-with-python-from-linear-models-to?index=product&amp;amp;queryID=66ef0e341d390841649ca12aaef6fd6b&amp;amp;position=1&quot;&gt;EDX&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;CS230 de &lt;a href=&quot;https://cs230.stanford.edu/syllabus/&quot;&gt;Stanford&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;STAT 212B de &lt;a href=&quot;https://bcourses.berkeley.edu/courses/1413088/assignments/syllabus&quot;&gt;Berkeley&lt;/a&gt; (Lecciones: &lt;a href=&quot;https://github.com/joanbruna/stat212b&quot;&gt;Github&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Deep Learning Crash Course en &lt;a href=&quot;https://youtu.be/VyWAvY2CF9c&quot;&gt;Free Code Camp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;decisión&quot;&gt;Decisión&lt;/h2&gt;
-
-&lt;p&gt;Uno de los consjos de Ultralearning es no gastar mucho tiempo investigando. No sabemos lo que no sabemos y esta incetidumbre nos puede dar parálisis por análisis y no dejar que pasemos a la siguiente etapa.&lt;/p&gt;
-
-&lt;p&gt;Este proyecto estará basado en el &lt;a href=&quot;https://www.udacity.com/course/deep-learning-nanodegree--nd101&quot;&gt;Nanodegree de Deep Learning de Udacity&lt;/a&gt; por dos razones:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Probé algunos de sus cursos y la calidad se me hace muy buena y el contenido muy bien desarrollado&lt;/li&gt;
-  &lt;li&gt;Puedes allí mismo optar por un certificado, lo que incluye acompañamiento de un mentor y resolución de dudas con la comunidad. esto puede servir muy bien para desatorarme si encuentro algo muy difícil.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Paralelamente leeré el libro &lt;a href=&quot;https://pragprog.com/titles/pplearn/programming-machine-learning/&quot;&gt;Programming Machine Learning de Pragmatic Programmers&lt;/a&gt;, ya que parece tener justamente el enfoque que necesito: Machine Learning para programadores.&lt;/p&gt;
-
-&lt;h2 id=&quot;objetivo-final&quot;&gt;Objetivo final&lt;/h2&gt;
-
-&lt;p&gt;Es hora de ponerle un tiempo y un obejetivo más concreto al proyecto: &lt;em&gt;durante los próximos 10 meses (lo que resta de 2021) aprenderé las bases teóricas y prácitcas de machine learning, con el obejetivo de aplicarlo mejor en los proyectos de trabajo y combinarlo con mis habilidades de ingeniería del software y progeamación.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Sobra decir que este plan no está escrito en piedra y se irá modifcando conforme vaya experimentando y aprendiendo más del campo. Por lo mientras, espero que el proyecto y lo que vaya aprendiendo y meta-aprendiendo te sirva, como la compilación de recursos para empezar que pusimos en este post.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="ml" /><category term="machine-learning" /><summary type="html">En este artículo te proponemos una forma de aprender machine learning y deep learning y te presentamos algunos recursos que te pueden servir</summary></entry><entry><title type="html">Resumen: Qué hacer para conseguir un buen trabajo como programador</title><link href="https://blog.thedojo.mx/2021/02/10/resumen-que-hacer-para-conseguir-un-buen-trabajo-como-programador.html" rel="alternate" type="text/html" title="Resumen: Qué hacer para conseguir un buen trabajo como programador" /><published>2021-02-10T00:00:00-06:00</published><updated>2021-02-10T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/02/10/resumen-que-hacer-para-conseguir-un-buen-trabajo-como-programador</id><content type="html" xml:base="https://blog.thedojo.mx/2021/02/10/resumen-que-hacer-para-conseguir-un-buen-trabajo-como-programador.html">&lt;p&gt;Aquí te damos un resumen de la plática que tuvimos con Diego De Granda y Pablo Trinidad sobre algunas cosas que hicieron para conseguir buenos trabajos. Esbozaremos algunos de los consejos independientes sin una secuencia definida.&lt;/p&gt;
-
-&lt;h2 id=&quot;aprende-inglés&quot;&gt;Aprende Inglés&lt;/h2&gt;
-
-&lt;p&gt;Aunque la razón de existencia de este blog y de The Dojo MX en general es generar contenido en español para ayudar a los hispanohablantes, nunca nos cansaremos (y tampoco nuestros invitados) de darte el mismo consejo: &lt;strong&gt;APRENDE INGLÉS&lt;/strong&gt;. Creemos sinceramente que el idioma no debería ser una limitante para que &lt;em&gt;empieces&lt;/em&gt; a aprender lo que sea que te guste, pero especialmente en el área de tecnología, la mayor parte de las personas, trabaja y habla en inglés, por lo que es importantísimo aprenderlo lo mejor que puedas.&lt;/p&gt;
-
-&lt;h2 id=&quot;aprende-a-dar-y-recibir-retroalimentación&quot;&gt;Aprende a dar y recibir retroalimentación&lt;/h2&gt;
-
-&lt;p&gt;En este apartado hablaron de cuatro cosas que la retroalimentación debe tener para poder ser útil:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Directa, sin darle tantas vueltas al asunto&lt;/li&gt;
-  &lt;li&gt;Accionable, debes dejar a la persona con algo sobre lo que pueda actuar&lt;/li&gt;
-  &lt;li&gt;Oportuno, mientras más cercano estés al momento en cuestión, mejor&lt;/li&gt;
-  &lt;li&gt;Transparente, tus intenciones son claras&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Y si eres la persona que toma la retroalimentación, no te ofendas y toma lo bueno.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-pragmatic-programmer&quot;&gt;The Pragmatic Programmer&lt;/h2&gt;
-
-&lt;p&gt;No pudimos platicar tanto de libros, pero uno que no puede faltar casi en ninguna recomendación de libros para programadores es &lt;a href=&quot;https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/&quot;&gt;The Pragmatic Programmer&lt;/a&gt; un libro sobre las bases que necesitas para ser un programador productivo.&lt;/p&gt;
-
-&lt;h2 id=&quot;aprende-los-fundamentos&quot;&gt;Aprende los fundamentos&lt;/h2&gt;
-
-&lt;p&gt;Es muy importante que aprendas los fundamentos de lo que haces si quieres atacar problemas difíciles. Para esto, tienes que aplicar consejos de otras partes de este mismo artículo.&lt;/p&gt;
-&lt;h2 id=&quot;consejos-de-pablo-trinidad-para-mantenerte-empleable&quot;&gt;Consejos de Pablo Trinidad para mantenerte empleable&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Permanecer presente en el aprendizaje y ser crítico&lt;/em&gt;: Tienes que estarte preguntando constantemente: ¿Por qué funciona lo que estoy haciendo? Y puedes aplicar la técnica de preguntar continuamente “¿Por qué?” hasta llegar al fondo de las cosas.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Leer&lt;/em&gt;. Estudiar y aprender lo más que puedas, incluso sobre cosas que no sean ténicas.
-    &lt;h2 id=&quot;consejos-de-diego-de-granda&quot;&gt;Consejos de Diego de Granda&lt;/h2&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Resiliencia&lt;/em&gt;: Los problemas nunca van a parar, así que tienes que aprender a solucionar problemas sin frustrarte y persistir hasta que llegues a la solución&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Resolver problemas&lt;/em&gt;: mejorar tus capacidades de resolver problemas te ayudará a ser alguien más útil para tu equipo y tu empresa&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Ser agnóstico&lt;/em&gt;: No te cases con una tecnología, diversifica y usa la correcta para el problema en cuestión.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;características-que-necesitarás-para-trabajar-en-google&quot;&gt;Características que necesitarás para trabajar en Google&lt;/h2&gt;
-
-&lt;p&gt;¿Qué se necesita para trabajar en Google? Aquí algunas de las ideas que Pablo nos compartió:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Capacidad&lt;/strong&gt; de tomar problemas difíciles&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Liderazgo&lt;/strong&gt; para ayudar a tu equipo&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Impacto&lt;/strong&gt; extendido en diferentes personas y equipos&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Independencia&lt;/strong&gt;, no necesitas de un manager que te esté cuidando los pasos&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Ownership&lt;/strong&gt;, te adueñas de los problemas y pones todo tu empeño en resolverlos&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Estar presente&lt;/strong&gt;, es decir, no pasar por las experiencias sin aprender de ellas&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;sigue-alimentando-tu-curiosidad&quot;&gt;Sigue alimentando tu curiosidad&lt;/h2&gt;
-
-&lt;p&gt;Pablo nos recomendó algunos canales de YouTube para seguir alimentando la curiosidad y aprender cosas de diferentes campos, como matemáticas, ciencia, computación y electrónica.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/TheChernoProject&quot;&gt;The Cherno&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/Computerphile&quot;&gt;Computerphile&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/Numberphile&quot;&gt;Numberphile&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/1Veritasium&quot;&gt;Veritasium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/destinws2&quot;&gt;Smarter Everyday&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/nobani88&quot;&gt;Eric Weinstein&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/PowerfulJRE&quot;&gt;Joe rogan&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/eaterbc&quot;&gt;Ben Eater&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw&quot;&gt;3Blue1Brown&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Esto no te hará un mejor programador directamente pero te ayudará a crecer como persona y te ayudará a conseguir mejores oportunidades. Y sí, necesitas inglés para entenderlos.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Hablamos de muchas cosas más, productividad, Google, cómo avanzar en tu carrera, etc. No te pierdas la plática entera aquí:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mUfmVBaOmxM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lives" /><category term="recomendaciones" /><category term="video" /><category term="libros" /><category term="consejos" /><summary type="html">Hablamos con Diego De Granda y Pablo Trinidad sobre qué tienes que hacer para conseguir un buen trabajo en tecnología. Aquí tienes un resumen.</summary></entry></feed>
+&lt;h2 id=&quot;resultado&quot;&gt;Resultado&lt;/h2&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ia" /><summary type="html">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.</summary></entry></feed>

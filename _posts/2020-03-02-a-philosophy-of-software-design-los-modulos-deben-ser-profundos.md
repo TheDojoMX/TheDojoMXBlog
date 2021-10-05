@@ -79,4 +79,4 @@ Encontrar un equilibrio entre la cantidad de código que metes en un módulo y l
 - Evitas la acumulación de interfaces, es decir, tener demasiadas interfaces (funciones, clases o módulos) que tienes que aprender a usar y que hacen poco por ti
 - La expansión de cambios (tener que tocar muchos lados del sistema para hacer un cambio relativamente pequeño)
 
-Finalmente, recuerda que una de las funciones que proveen los módulos es _ocultar_ la complejidad. ¿Cuántas veces has visto lo que hacen las funciones prefabricadas de tu lenguaje de programación? Es probable que ninguna. Los módulos profundos y bien hechos permiten ocultar mayor cantidad de información y hace más fácil trabajar con ellos y simplifica el sistema en general.
+Finalmente, recuerda que una de las funciones que proveen los módulos es _ocultar_ la complejidad. ¿Cuántas veces has visto lo que hacen las funciones prefabricadas de tu lenguaje de programación? Es probable que ninguna. Los módulos profundos te permiten ocultar mayor cantidad de información, hace más fácil trabajar con ellos y simplifica el sistema en general.

@@ -1,4 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-09-01T22:44:54-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Como transmitir conocimiento en el desarrollo de software</title><link href="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="alternate" type="text/html" title="Como transmitir conocimiento en el desarrollo de software" /><published>2021-07-19T00:00:00-05:00</published><updated>2021-07-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html">&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-10-05T11:45:15-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">La Importancia de los Estándares de Código</title><link href="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html" rel="alternate" type="text/html" title="La Importancia de los Estándares de Código" /><published>2021-10-05T00:00:00-05:00</published><updated>2021-10-05T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html">&lt;p&gt;Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad.&lt;/p&gt;
+
+&lt;p&gt;Para las organizaciones de nuestra época, el correcto funcionamiento de sus aplicaciones digitales representa crecimiento. Si eres parte de un equipo que aún no se preocupa por esto, te invitó a seguir leyendo y conocer las ventajas de esta práctica para que asi puedas considerar utilizarla en un futuro.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-son-los-estándares-de-código&quot;&gt;¿Qué son los estándares de código?&lt;/h2&gt;
+
+&lt;p&gt;Los estándares de código son una serie de reglas definidas para un lenguaje de programación, o bien, un estilo de programación específico. El estilo garantiza que todos los ingenieros que contribuyen a un proyecto tengan una forma única de diseñar su código, lo que da como resultado una base de código coherente, asegurando una fácil lectura y mantenimiento.&lt;/p&gt;
+
+&lt;p&gt;El uso de estándares es muy importante en la calidad de software, sin embargo mantener todos los proyectos cumpliendo a la perfección con esto no es una tarea fácil, requiere un gran esfuerzo y constancia por parte del equipo de desarrollo. Mientras más y más compañías han adoptado estándares, todavía hay aquellas que realizan el desarrollo de sus proyectos sin ellos.&lt;/p&gt;
+
+&lt;h2 id=&quot;trabajando-sin-estándares-de-código&quot;&gt;Trabajando sin estándares de código&lt;/h2&gt;
+
+&lt;p&gt;Cuando eres parte de un equipo que aún no ha establecido reglas a seguir, es muy común que los desarrolladores escriban código a su modo, dando como resultado un repositorio difícil de entender y por tanto difícil de mantener. La falta de un código organizado se puede transformar en horas y horas buscando un problema antes de estar siquiera cerca de donde podría haberse originado.&lt;/p&gt;
+
+&lt;p&gt;Tambien puede propiciar un ambiente de trabajo hostil, en el que ciertos ingenieros escriben código con un estilo propio y otros lo hacen diferente. Al momento de unificar el trabajo hay discusiones para elegir la mejor opción, y al no tener reglas establecidas u oficialmente validadas por todo el equipo, la discusión puede ser mas larga de lo normal, provocando retrasos en la entrega de nuevas implementaciones.&lt;/p&gt;
+
+&lt;p&gt;Siendo realistas al crear un proyecto nuevo nos enfocamos en conseguir que la aplicación funcione como primer meta, esto no es malo, usualmente las aplicaciones de software tienen un fin comercial o economico que debe resolverse en principio, pero una vez se alcanza cierta estabilidad es importante regresar a revisar el producto inicial y considerar refactorizaciones, esto con el fin de tener un futuro más sencillo.&lt;/p&gt;
+
+&lt;h2 id=&quot;como-implementar-estándares-de-código-en-proyectos-existentes&quot;&gt;Como implementar estándares de código en proyectos existentes&lt;/h2&gt;
+
+&lt;p&gt;“Roma no fue construida en un día.” la migración debe ser progresiva, no es algo que se consigue de la noche a la mañana, es recomendado adoptar estas practicas en nuevos proyectos y poco a poco ir implementando un nivel adecuado de estándares en los existentes.&lt;/p&gt;
+
+&lt;p&gt;Considera que en un inicio puede ser difícil para el equipo de ingenieria adaptarse, el contraste entre no tener reglas oficiales establecidas en el proceso de revisión de código vs, el comenzar a tenerlas puede ser un cambio que no todos tomen de forma natural, a algunos les llevara más tiempo que a otros. Para reducir ese tiempo de adaptación es importante dar a conocer a todo el equipo las ventajas principales de esta practica.&lt;/p&gt;
+
+&lt;p&gt;No todas las compañías utilizan las mismas herramientas en sus desarrollos y es muy complicado que se encuentre un estándar ideal que se adapte a las necesidades especificas, por ello, para que todos esten en el mismo canal, es recomendable establecer un grupo de estándares propios, es decir, crear tu propio repositorio de estándares es un buen comienzo para lograr código de calidad.&lt;/p&gt;
+
+&lt;p&gt;Pueden iniciar adoptando estándares oficiales de las herramientas/lenguajes que utilizan. Automatizar ciertos procesos de validaciones del código puede ser de gran ayuda para una integración continua.&lt;/p&gt;
+
+&lt;h2 id=&quot;consideraciones&quot;&gt;Consideraciones:&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tomar como base estándares oficialmente publicados de las herramientas que se utilizan en cada proyecto.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Para obtener un código de fácil lectura es necesario poner atención al estilo del mismo; segmentos de código, correcto uso de indentación, longitud de lineas y espacios entre ellas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Asignación de nombres en variables, funciones, etc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Establecer límites en complejidad o longitud de funciones.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Y lo más importante, no detenerse en la aplicación de estas reglas. No incrementemos la deuda técnica en nuestros proyectos. Quizá al día de hoy tengas un proyecto muy grande en el que jamás se han aplicado estándares y te parece una pérdida de tiempo comenzar a hacerlo, pero es una inversión que vale la pena para ir construyendo no sólo un producto de calidad, sino también un equipo de ingeniería de calidad. Si la implementación de estos estándares comienza a ser un verdadero dolor de cabeza, es muy recomendable considerar una refactorización completa de tu sistema “Divide y vencerás” se puede iniciar módulo por módulo.&lt;/p&gt;
+
+&lt;h2 id=&quot;ventajas-de-la-implementación-de-estándares&quot;&gt;Ventajas de la implementación de estándares&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Detección temprana de fallas:
+Al buscar cumplir con los estándares que establezcas es más sencillo detectar posibles errores desde la revisión de código, evitando que esos problemas lleguen a producción.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Reducción de la complejidad:
+El cumplir con las reglas acerca del estilo de código ayuda a construir código más limpio, permitiendo detectar fácilmente oportunidades para simplificar funciones.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Código de fácil lectura:
+El respetar los estándares en un proyectos le permite a nuevos miembros del equipo acoplarse más fácilmente al ritmo de trabajo y a entender mejor el código de los proyectos existentes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Código reusable:
+Contar con segmentos de código que pueden ser consumidos por más de un servicio, gracias al uso de buenas prácticas, hace menos frecuente la repetición de código.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;principios-de-código-limpio-recomendados&quot;&gt;Principios de código limpio recomendados&lt;/h2&gt;
+
+&lt;p&gt;Es una buena estrategia buscar que todo el equipo de ingenieros esté familiarizado con principios de código limpio, por esto a continuación se enlistan algunos de los principios que te inspirarán a crear estándares para tu equipo. En busca de software de calidad.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;DRY - Don’t Repeat Yourself.&lt;/li&gt;
+  &lt;li&gt;YAGNI - You Aren’t Gonna Need It.&lt;/li&gt;
+  &lt;li&gt;KISS - Keep it Simple, Stupid.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SOLID&lt;/p&gt;
+
+    &lt;p&gt;S - Single-Responsiblity Principle.&lt;/p&gt;
+
+    &lt;p&gt;O - Open-Closed Principle.&lt;/p&gt;
+
+    &lt;p&gt;L - Liskov Substitution Principle.&lt;/p&gt;
+
+    &lt;p&gt;I - Interface Segregation Principle.&lt;/p&gt;
+
+    &lt;p&gt;D - Dependency Inversion Principle.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Considera que siempre habrá procesos por mejorar pero es un esfuerzo continuo y podrás seguir trabajando en ello.&lt;/p&gt;
+
+&lt;p&gt;En mi experiencia trabajando con diversos equipos de ingeniería, he podido ver muy buenos resultados haciendo uso de esta practica, por ejemplo:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reducciones entre el 40 y 60% en incidencias.&lt;/li&gt;
+  &lt;li&gt;Disminución en el número de despliegues de “hotfix”.&lt;/li&gt;
+  &lt;li&gt;Una mejora significativa en la calidad del equipo de desarrollo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como podemos ver la definición y el uso de estándares proporciona muchos beneficios, en lo personal, disfruto más el trabajo cuando se tiene un enfoque hacia el código de calidad que cuando no hay reglas establecidas, sin embargo eso no se puede lograr sin el trabajo de todos los ingenieros en un equipo, se trata de apuntar todos juntos a un mismo objetivo.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="estándares," /><category term="calidad," /><category term="source-code" /><summary type="html">La implementacion de ciertas reglas en el desarrollo de software mejora significativamente la calidad del producto final.</summary></entry><entry><title type="html">Como transmitir conocimiento en el desarrollo de software</title><link href="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="alternate" type="text/html" title="Como transmitir conocimiento en el desarrollo de software" /><published>2021-07-19T00:00:00-05:00</published><updated>2021-07-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html">&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
 
 &lt;p&gt;La charla &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;“Eloquent Explanations”&lt;/a&gt; de &lt;a href=&quot;/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt;. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo lo que aprendí.&lt;/p&gt;
 
@@ -693,77 +796,4 @@
 
 &lt;p&gt;Es hora de ponerle un tiempo y un obejetivo más concreto al proyecto: &lt;em&gt;durante los próximos 10 meses (lo que resta de 2021) aprenderé las bases teóricas y prácitcas de machine learning, con el obejetivo de aplicarlo mejor en los proyectos de trabajo y combinarlo con mis habilidades de ingeniería del software y progeamación.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Sobra decir que este plan no está escrito en piedra y se irá modifcando conforme vaya experimentando y aprendiendo más del campo. Por lo mientras, espero que el proyecto y lo que vaya aprendiendo y meta-aprendiendo te sirva, como la compilación de recursos para empezar que pusimos en este post.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="ml" /><category term="machine-learning" /><summary type="html">En este artículo te proponemos una forma de aprender machine learning y deep learning y te presentamos algunos recursos que te pueden servir</summary></entry><entry><title type="html">Resumen: Qué hacer para conseguir un buen trabajo como programador</title><link href="https://blog.thedojo.mx/2021/02/10/resumen-que-hacer-para-conseguir-un-buen-trabajo-como-programador.html" rel="alternate" type="text/html" title="Resumen: Qué hacer para conseguir un buen trabajo como programador" /><published>2021-02-10T00:00:00-06:00</published><updated>2021-02-10T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/02/10/resumen-que-hacer-para-conseguir-un-buen-trabajo-como-programador</id><content type="html" xml:base="https://blog.thedojo.mx/2021/02/10/resumen-que-hacer-para-conseguir-un-buen-trabajo-como-programador.html">&lt;p&gt;Aquí te damos un resumen de la plática que tuvimos con Diego De Granda y Pablo Trinidad sobre algunas cosas que hicieron para conseguir buenos trabajos. Esbozaremos algunos de los consejos independientes sin una secuencia definida.&lt;/p&gt;
-
-&lt;h2 id=&quot;aprende-inglés&quot;&gt;Aprende Inglés&lt;/h2&gt;
-
-&lt;p&gt;Aunque la razón de existencia de este blog y de The Dojo MX en general es generar contenido en español para ayudar a los hispanohablantes, nunca nos cansaremos (y tampoco nuestros invitados) de darte el mismo consejo: &lt;strong&gt;APRENDE INGLÉS&lt;/strong&gt;. Creemos sinceramente que el idioma no debería ser una limitante para que &lt;em&gt;empieces&lt;/em&gt; a aprender lo que sea que te guste, pero especialmente en el área de tecnología, la mayor parte de las personas, trabaja y habla en inglés, por lo que es importantísimo aprenderlo lo mejor que puedas.&lt;/p&gt;
-
-&lt;h2 id=&quot;aprende-a-dar-y-recibir-retroalimentación&quot;&gt;Aprende a dar y recibir retroalimentación&lt;/h2&gt;
-
-&lt;p&gt;En este apartado hablaron de cuatro cosas que la retroalimentación debe tener para poder ser útil:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Directa, sin darle tantas vueltas al asunto&lt;/li&gt;
-  &lt;li&gt;Accionable, debes dejar a la persona con algo sobre lo que pueda actuar&lt;/li&gt;
-  &lt;li&gt;Oportuno, mientras más cercano estés al momento en cuestión, mejor&lt;/li&gt;
-  &lt;li&gt;Transparente, tus intenciones son claras&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Y si eres la persona que toma la retroalimentación, no te ofendas y toma lo bueno.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-pragmatic-programmer&quot;&gt;The Pragmatic Programmer&lt;/h2&gt;
-
-&lt;p&gt;No pudimos platicar tanto de libros, pero uno que no puede faltar casi en ninguna recomendación de libros para programadores es &lt;a href=&quot;https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/&quot;&gt;The Pragmatic Programmer&lt;/a&gt; un libro sobre las bases que necesitas para ser un programador productivo.&lt;/p&gt;
-
-&lt;h2 id=&quot;aprende-los-fundamentos&quot;&gt;Aprende los fundamentos&lt;/h2&gt;
-
-&lt;p&gt;Es muy importante que aprendas los fundamentos de lo que haces si quieres atacar problemas difíciles. Para esto, tienes que aplicar consejos de otras partes de este mismo artículo.&lt;/p&gt;
-&lt;h2 id=&quot;consejos-de-pablo-trinidad-para-mantenerte-empleable&quot;&gt;Consejos de Pablo Trinidad para mantenerte empleable&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Permanecer presente en el aprendizaje y ser crítico&lt;/em&gt;: Tienes que estarte preguntando constantemente: ¿Por qué funciona lo que estoy haciendo? Y puedes aplicar la técnica de preguntar continuamente “¿Por qué?” hasta llegar al fondo de las cosas.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Leer&lt;/em&gt;. Estudiar y aprender lo más que puedas, incluso sobre cosas que no sean ténicas.
-    &lt;h2 id=&quot;consejos-de-diego-de-granda&quot;&gt;Consejos de Diego de Granda&lt;/h2&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Resiliencia&lt;/em&gt;: Los problemas nunca van a parar, así que tienes que aprender a solucionar problemas sin frustrarte y persistir hasta que llegues a la solución&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Resolver problemas&lt;/em&gt;: mejorar tus capacidades de resolver problemas te ayudará a ser alguien más útil para tu equipo y tu empresa&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Ser agnóstico&lt;/em&gt;: No te cases con una tecnología, diversifica y usa la correcta para el problema en cuestión.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;características-que-necesitarás-para-trabajar-en-google&quot;&gt;Características que necesitarás para trabajar en Google&lt;/h2&gt;
-
-&lt;p&gt;¿Qué se necesita para trabajar en Google? Aquí algunas de las ideas que Pablo nos compartió:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Capacidad&lt;/strong&gt; de tomar problemas difíciles&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Liderazgo&lt;/strong&gt; para ayudar a tu equipo&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Impacto&lt;/strong&gt; extendido en diferentes personas y equipos&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Independencia&lt;/strong&gt;, no necesitas de un manager que te esté cuidando los pasos&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Ownership&lt;/strong&gt;, te adueñas de los problemas y pones todo tu empeño en resolverlos&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Estar presente&lt;/strong&gt;, es decir, no pasar por las experiencias sin aprender de ellas&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;sigue-alimentando-tu-curiosidad&quot;&gt;Sigue alimentando tu curiosidad&lt;/h2&gt;
-
-&lt;p&gt;Pablo nos recomendó algunos canales de YouTube para seguir alimentando la curiosidad y aprender cosas de diferentes campos, como matemáticas, ciencia, computación y electrónica.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/TheChernoProject&quot;&gt;The Cherno&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/Computerphile&quot;&gt;Computerphile&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/Numberphile&quot;&gt;Numberphile&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/1Veritasium&quot;&gt;Veritasium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/destinws2&quot;&gt;Smarter Everyday&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/nobani88&quot;&gt;Eric Weinstein&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/PowerfulJRE&quot;&gt;Joe rogan&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/eaterbc&quot;&gt;Ben Eater&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw&quot;&gt;3Blue1Brown&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Esto no te hará un mejor programador directamente pero te ayudará a crecer como persona y te ayudará a conseguir mejores oportunidades. Y sí, necesitas inglés para entenderlos.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Hablamos de muchas cosas más, productividad, Google, cómo avanzar en tu carrera, etc. No te pierdas la plática entera aquí:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/mUfmVBaOmxM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lives" /><category term="recomendaciones" /><category term="video" /><category term="libros" /><category term="consejos" /><summary type="html">Hablamos con Diego De Granda y Pablo Trinidad sobre qué tienes que hacer para conseguir un buen trabajo en tecnología. Aquí tienes un resumen.</summary></entry></feed>
+&lt;p&gt;Sobra decir que este plan no está escrito en piedra y se irá modifcando conforme vaya experimentando y aprendiendo más del campo. Por lo mientras, espero que el proyecto y lo que vaya aprendiendo y meta-aprendiendo te sirva, como la compilación de recursos para empezar que pusimos en este post.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="ml" /><category term="machine-learning" /><summary type="html">En este artículo te proponemos una forma de aprender machine learning y deep learning y te presentamos algunos recursos que te pueden servir</summary></entry></feed>
