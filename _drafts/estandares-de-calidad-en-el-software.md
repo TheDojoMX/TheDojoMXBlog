@@ -4,7 +4,7 @@ date: 2021-09-29
 author: Sagrario Meneses
 tags:
 comments: true
-excerpt: "Escribe aquí un buen resumen de tu artículo"
+excerpt: "La implementacion de ciertas reglas en el desarrollo de software mejora significativamente la calidad del producto final."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1633104565/fakurian-design-UoqIavC59eg-unsplash_bitrsd.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1633104565/fakurian-design-UoqIavC59eg-unsplash_bitrsd.jpg
@@ -12,21 +12,21 @@ header:
 ---
 
 Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad.
-Para las organizaciones de nuestra época, el correcto funcionamiento de sus aplicaciones digitales representa crecimiento, si eres parte de un equipo que aún no se preocupa por esto, te invitó a siguir leyendo y conocer las ventajas de esta práctica para que asi puedas considerar utilizarla en un futuro.
+Para las organizaciones de nuestra época, el correcto funcionamiento de sus aplicaciones digitales representa crecimiento. Si eres parte de un equipo que aún no se preocupa por esto, te invitó a siguir leyendo y conocer las ventajas de esta práctica para que asi puedas considerar utilizarla en un futuro.
 
 ## ¿Qué son los estándares de código?
 
-Los estándares de código son una serie de reglas definidas para un lenguaje de programación, o bien, un estilo de programación específico. El estilo garantiza que todos los ingenieros que contribuyen a un proyecto tengan una forma única de diseñar su código, lo que da como resultado una base de código coherente, esto asegura que el producto sea fácil de leer y mantener.
+Los estándares de código son una serie de reglas definidas para un lenguaje de programación, o bien, un estilo de programación específico. El estilo garantiza que todos los ingenieros que contribuyen a un proyecto tengan una forma única de diseñar su código, lo que da como resultado una base de código coherente, asegurando una fácil lectura y mantenimiento.
 
-El uso de estándares es muy importante en la calidad de software, sin embargo el mantener todos los proyectos cumpliendo a la perfección con los estándares establecidos no es una tarea fácil, requiere un gran esfuerzo y constancia por parte del equipo de desarrollo. Mientras más y más compañías han adoptado estándares, todavía hay aquellas que realizan el desarrollo de sus proyectos sin estándares.
+El uso de estándares es muy importante en la calidad de software, sin embargo mantener todos los proyectos cumpliendo a la perfección con esto no es una tarea fácil, requiere un gran esfuerzo y constancia por parte del equipo de desarrollo. Mientras más y más compañías han adoptado estándares, todavía hay aquellas que realizan el desarrollo de sus proyectos sin ellos.
 
 ## Trabajando sin estándares de código
 
-Cuando eres parte de un equipo que aún no ha establecido reglas a seguir es muy común que los desarrolladores escriban código a su modo, dando como resultado un repositorio difícil de entender y por tanto difícil de mantener. La falta de un código organizado se puede transformar en horas y horas buscando un problema antes de estar siquiera cerca de donde podría haberse originado.
+Cuando eres parte de un equipo que aún no ha establecido reglas a seguir, es muy común que los desarrolladores escriban código a su modo, dando como resultado un repositorio difícil de entender y por tanto difícil de mantener. La falta de un código organizado se puede transformar en horas y horas buscando un problema antes de estar siquiera cerca de donde podría haberse originado.
 
-Tambien puede propiciar un ambiente de trabajo hostil, en el que ciertos ingenieros escriben código con un estilo propio y otros lo hacen diferente, al momento de unificar el trabajo hay discusiones para elegir la mejor opción, y al no haber una regla establecida y validada poro todo el equipo, la discusión puede tornarse mas larga de lo normal, provocando retrasos en la entrega de nuevas implementaciones.
+Tambien puede propiciar un ambiente de trabajo hostil, en el que ciertos ingenieros escriben código con un estilo propio y otros lo hacen diferente. Al momento de unificar el trabajo hay discusiones para elegir la mejor opción, y al no tener reglas establecidas u oficialmente validadas por todo el equipo, la discusión puede ser mas larga de lo normal, provocando retrasos en la entrega de nuevas implementaciones.
 
-Siendo realistas al crear un producto/proyecto nuevo nos enfocamos en conseguir que la aplicación funcione como primer meta, esto no es malo, usualmente las aplicaciones de software tienen un fin comercial/economico que debe resolverse en principio, pero una vez se alcanza cierta estabilidad es importante regresar a revisar el producto inicial y considerar refactorizaciones, esto con el fin de tener un futuro más sencillo.
+Siendo realistas al crear un proyecto nuevo nos enfocamos en conseguir que la aplicación funcione como primer meta, esto no es malo, usualmente las aplicaciones de software tienen un fin comercial o economico que debe resolverse en principio, pero una vez se alcanza cierta estabilidad es importante regresar a revisar el producto inicial y considerar refactorizaciones, esto con el fin de tener un futuro más sencillo.
 
 ## Como implementar estándares de código en proyectos existentes
 
@@ -34,7 +34,7 @@ Siendo realistas al crear un producto/proyecto nuevo nos enfocamos en conseguir 
 
 Considera que en un inicio puede ser difícil para el equipo de ingenieria adaptarse, el contraste entre no tener reglas oficiales establecidas en el proceso de revisión de código vs, el comenzar a tenerlas puede ser un cambio que no todos tomén de forma natural, a algunos les llevara más tiempo que a otros. Para reducir ese tiempo de adaptación es importate dar a conocer a todo el equipo las ventajas principales de esta practica.
 
-No todas las compañías utilizan las mismas herramientas en sus desarrollos y es muy complicado que se encuentre un estándar ideal que se adapte a las necesidades especificas, por ello, para que todos esten en el mismo canal es recomendable establecer un grupo de estándares propios, es decir, crear tu propio repositorio de estándares es un buen comienzo para lograr código de calidad.
+No todas las compañías utilizan las mismas herramientas en sus desarrollos y es muy complicado que se encuentre un estándar ideal que se adapte a las necesidades especificas, por ello, para que todos esten en el mismo canal, es recomendable establecer un grupo de estándares propios, es decir, crear tu propio repositorio de estándares es un buen comienzo para lograr código de calidad.
 
 Pueden iniciar adoptando estándares oficiales de las herramientas/lenguajes que utilizan. Automatizar ciertos procesos de validaciones del código puede ser de gran ayuda para una integración continua.
 
@@ -48,7 +48,7 @@ Pueden iniciar adoptando estándares oficiales de las herramientas/lenguajes que
 
 4. Establecer límites en complejidad o longitud de funciones.
 
-Y lo más importante, no detenerse en la aplicación de estas reglas, no incrementemos la deuda técnica en nuestros proyectos, quizá al día de hoy tengas un proyecto muy grande en el que jamás se han aplicado estándares y te parece una pérdida de tiempo comenzar a hacerlo, pero es una inversión que vale la pena, para ir construyendo no sólo un producto de calidad, sino también un equipo de ingeniería con calidad. Si la implementación de estos estándares comienza a ser un verdadero dolor de cabeza, es muy recomendable considerar una refactorización completa de tu sistema. "Divide y vencerás" es recomendable iniciar módulo por módulo.
+Y lo más importante, no detenerse en la aplicación de estas reglas. No incrementemos la deuda técnica en nuestros proyectos. Quizá al día de hoy tengas un proyecto muy grande en el que jamás se han aplicado estándares y te parece una pérdida de tiempo comenzar a hacerlo, pero es una inversión que vale la pena para ir construyendo no sólo un producto de calidad, sino también un equipo de ingeniería de calidad. Si la implementación de estos estándares comienza a ser un verdadero dolor de cabeza, es muy recomendable considerar una refactorización completa de tu sistema "Divide y vencerás" se puede iniciar módulo por módulo.
 
 ## Ventajas de la implementación de estándares:
 
@@ -59,7 +59,7 @@ Y lo más importante, no detenerse en la aplicación de estas reglas, no increme
    El cumplir con las reglas acerca del estilo de código ayuda a construir código más limpio, permitiéndo detectar fácilmente oportunidades para simplificar funciones.
 
 3. Código de fácil lectura:
-   El respetar los estándares en un proyectos le permite a nuevos miembros del equipo acoplarse más fácilmente al ritmo de trabajo y a entender mejor el código en los repositorios.
+   El respetar los estándares en un proyectos le permite a nuevos miembros del equipo acoplarse más fácilmente al ritmo de trabajo y a entender mejor el código de los proyectos existentes.
 
 4. Código reusable:
    Contar con segmentos de código que pueden ser consumidos por más de un servicio, gracias al uso de buenas prácticas, hace menos frecuente la repetición de código.
@@ -87,7 +87,7 @@ Es una buena estrategia buscar que todo el equipo de ingenieros esté familiariz
 
 Considera que siempre habrá procesos por mejorar pero es un esfuerzo continuo y podrás seguir trabajando en ello.
 
-Algunos de los resultados, que en mi experiencia trabajando con equipos de ingeniería que usan esta practica, he visto:
+En mi experiencia trabajando con diversos equipos de ingeniería, he podido ver muy buenos resultados haciendo uso de esta practica, por ejemplo:
 
 - Reducciónes entre el 40 y 60% en incidencias.
 - Disminución en el número de despliegues de "hotfix".
