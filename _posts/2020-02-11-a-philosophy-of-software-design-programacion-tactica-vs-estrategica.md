@@ -57,7 +57,7 @@ Ejemplos de prácticas desarrollo estratégico:
 
 La siguiente imagen ilustra cómo se comporta el avance total en las dos formas de programar:
 
-![Comparación desarrollo táctico vs estratégico](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1581404091/Untitled_Artwork_2_op8k0e.jpg)
+![Comparación desarrollo táctico vs estratégico](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1636240255/Ilustracio%CC%81n_sin_ti%CC%81tulo_6_htdc68.png)
 
 
 Como se puede ver, el desarrollo estratégico tarda más en entregar resultados, pero vale la pena si es un proyecto importante con un tiempo de vida esperado largo. Puedes pensarlo como la diferencia entre construir una choza o construcción sin ningún tipo de diseño contra una casa bien diseñada y con buenos materiales, como en la historia de los tres cochinitos. ¿Cuál aguantará más?
