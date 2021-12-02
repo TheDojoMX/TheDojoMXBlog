@@ -4,7 +4,7 @@ date: 2021-12-01
 author: Héctor Patricio
 tags: python books bibliotecas
 comments: true
-excerpt: "Exploremos un poco las bibliotecas que el libro del '20 Python Libraries You Aren't Using' recomienda"
+excerpt: "Exploremos cinco bibliotecas que el libro del '20 Python Libraries You Aren't Using' recomienda y que te podrían servir para tu próximo desarrollo en Python."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1120/v1638419376/hans-isaacson-rlqkZ1DlOnU-unsplash_rsaim0.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_340/v1638419376/hans-isaacson-rlqkZ1DlOnU-unsplash_rsaim0.jpg
