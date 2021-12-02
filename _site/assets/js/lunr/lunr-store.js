@@ -395,21 +395,27 @@ var store = [{
         "url": "/2021/07/30/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html",
         "teaser": null
       },{
-        "title": "Crypto",
-        "excerpt":" ","categories": [],
-        "tags": [],
-        "url": "/2021/08/24/crypto.html",
-        "teaser": null
-      },{
         "title": "Entendiendo la cohesión y el acoplamiento en el software",
         "excerpt":"Siempre se dice que una buena base de código tiena alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica? En este artículo vamos a definir cada uno de esos términos de manera sencilla, con ejemplos y cómo llegar a la aplicación...","categories": [],
         "tags": ["Cohesión","acoplamiento","software"],
         "url": "/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1620272565/sam-loyd-qy27JnsH9sU-unsplash_ibulfd.jpg"
       },{
+        "title": "Crypto",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/2021/09/06/crypto.html",
+        "teaser": null
+      },{
         "title": "La Importancia de los Estándares de Código",
         "excerpt":"Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad. Para las organizaciones...","categories": [],
-        "tags": [],
-        "url": "/2021/09/29/estandares-de-calidad-en-el-software.html",
+        "tags": ["estándares,","calidad,","source-code"],
+        "url": "/2021/10/05/estandares-de-calidad-en-el-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1633104565/fakurian-design-UoqIavC59eg-unsplash_bitrsd.jpg"
+      },{
+        "title": "20 bibliotecas de Python que deberías estar usando",
+        "excerpt":"El libro “20 Python Libraries You Aren’t Using (But Should)” de Caleb Hattingh es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida. Veamos las 5 que me parece más importante conocer y tú puedes leer el...","categories": [],
+        "tags": ["python","books","bibliotecas"],
+        "url": "/2021/12/01/20-librerias-de-python-que-deberias-estar-usando.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_340/v1638419376/hans-isaacson-rlqkZ1DlOnU-unsplash_rsaim0.jpg"
       }]

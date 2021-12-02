@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-11-06T17:15:23-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">La Importancia de los Estándares de Código</title><link href="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html" rel="alternate" type="text/html" title="La Importancia de los Estándares de Código" /><published>2021-10-05T00:00:00-05:00</published><updated>2021-10-05T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html">&lt;p&gt;Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-01T23:49:16-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">20 bibliotecas de Python que deberías estar usando</title><link href="https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deberias-estar-usando.html" rel="alternate" type="text/html" title="20 bibliotecas de Python que deberías estar usando" /><published>2021-12-01T00:00:00-06:00</published><updated>2021-12-01T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deberias-estar-usando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deberias-estar-usando.html">&lt;p&gt;El libro &lt;a href=&quot;https://freecomputerbooks.com/20-Python-Libraries%20You-Are-Not-Using-But-Should.html#downloadLinks&quot;&gt;“20 Python Libraries You Aren’t Using (But Should)”&lt;/a&gt; de &lt;a href=&quot;https://github.com/cjrh&quot;&gt;Caleb Hattingh&lt;/a&gt; es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1638418876/20_python_rlf1b2.png&quot; alt=&quot;Portada de 20 python libraries&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Veamos las 5 que me parece más importante conocer y tú puedes leer el libro para ver el detalle y entender las otras 15.&lt;/p&gt;
+
+&lt;h2 id=&quot;en-la-biblioteca-estándar-de-python&quot;&gt;En la biblioteca estándar de Python&lt;/h2&gt;
+
+&lt;p&gt;Estas bibliotecas no las tendrás que instalar porque vienen con todas las instalaciones normales de Python, pero son poco usadas.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/collections.html&quot;&gt;collections&lt;/a&gt; - Contiene un conjunto de clases y funciones para trabajar con estructuras de datos especializadas en alguna función. Por ejemplo provee de diccionarios que mantienen el orden, listas de doble acceso, tuplas nombradas y hasta un diccionario especializado en contadores. En el canal de YouTube hemos hecho algunos videos sobre estos contenedores, puedes verlas aquí: &lt;a href=&quot;https://www.youtube.com/watch?v=DrhHkPI7spU&amp;amp;list=PLfeFnTZNTVDMDCoBzZ6XynugZTFDzEjiB&quot;&gt;Python Collections&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/sched.html&quot;&gt;sched&lt;/a&gt; - Trabaja con tareas programadas de manera sencilla, este módulo nos da la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scheduler&lt;/code&gt; que nos permite programar, encolar y ejecutar tareas entre otras cosas.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;bibliotecas-desarrolladas-por-la-comunidad&quot;&gt;Bibliotecas desarrolladas por la comunidad&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.hug.rest/&quot;&gt;hug&lt;/a&gt; - Es una biblioteca de Python que nos permite crear &lt;strong&gt;API&lt;/strong&gt;’s en el sentido general de la palabra. Nos permite crear interfaces de tres tipos: de consola, de módulo y REST. Contiene una serie de utilidades para que puedas exponer tu API de la manera más sencilla posible, documentación automática, aprovechamiento de las sugerencias de tipos de Python, entre muchas otras cosas. Esta es una Biblioteca que realmente recomiendo si quieres crear una API verdaderamente rápido.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://arrow.readthedocs.io/en/latest/&quot;&gt;arrow&lt;/a&gt; - te permite manejar las fechas y tiempos de mejor manera que sólamente con los tipos de datos nativos de Python. Centraliza todas las funciones de fechas y tiempos en vez de estar repartidas en varios módulos, trabaja por default con fechas y horas que incluyen la zona horaria (UTC), soporta el estándar &lt;a href=&quot;https://en.wikipedia.org/wiki/ISO_8601&quot;&gt;ISO 8601&lt;/a&gt;, tiene funciones de “humanización” de fechas y tiempos, etc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://boltons.readthedocs.io/en/latest/&quot;&gt;boltons&lt;/a&gt; - contiene una gran colección de tipos de datos y funciones que los creadores y contribuidores piensan que le hacen falta a la biblioteca estándar de Python. Para Octubre de 2021 tenía &lt;em&gt;83 tipos de datos y 171 funciones&lt;/em&gt;, hablemos de tamaño. Las utilidades que provee son muy variadas, y te pueden ayudar para una gran cantidad de casos. Por ejemplo, tiene utilidades para colecciones, para manejo de caché, trabajo con tipos de datos, utilidades para debuggear, ente muchas otras ayudas.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;La verdad es que cada una de las bibliotecas arriba mencionadas debería tener su propio artículo o video, esperamos que podamos extender sobre algunas de ellas en el futuro. Por lo mientras, puedes leer el libro y aprender más sobre las bibliotecas que recomienda, sólo ten en cuenta que algunas pueden estar sin mantenimiento por la edad que tiene el libro. Aquí te dejamos el resumen que hicimos en el canal y con suerte &lt;a href=&quot;https://pepa.holla.cz/wp-content/uploads/2016/10/20-python-libraries-you-arent-using-but-should.pdf&quot;&gt;en este link puedes descargar&lt;/a&gt; el libro en PDF, aunque es un libro que puedes seguir leyendo en Safari, la biblioteca online de O’Reilly o leer gratuito en línea: &lt;a href=&quot;https://www.oreilly.com/content/20-python-libraries-you-arent-using-but-should/&quot;&gt;aquí&lt;/a&gt;. Déjanos un comentario si quieres que hagamos el análisis de alguna biblioteca en el futuro.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/T5xHzP1Ex5s&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="python" /><category term="books" /><category term="bibliotecas" /><summary type="html">Exploremos un poco las bibliotecas que el libro del '20 Python Libraries You Aren't Using' recomienda</summary></entry><entry><title type="html">La Importancia de los Estándares de Código</title><link href="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html" rel="alternate" type="text/html" title="La Importancia de los Estándares de Código" /><published>2021-10-05T00:00:00-05:00</published><updated>2021-10-05T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html">&lt;p&gt;Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad.&lt;/p&gt;
 
 &lt;p&gt;Para las organizaciones de nuestra época, el correcto funcionamiento de sus aplicaciones digitales representa crecimiento. Si eres parte de un equipo que aún no se preocupa por esto, te invitó a seguir leyendo y conocer las ventajas de esta práctica para que asi puedas considerar utilizarla en un futuro.&lt;/p&gt;
 
@@ -752,48 +789,4 @@ Contar con segmentos de código que pueden ser consumidos por más de un servici
 
 &lt;p&gt;La programación funcional y las ideas provenientes de ella están mejorando la forma en que hacemos software, ya que dan permiten un mejor tratamiento de la información que en muchos casos es más fácil de entender que su contraparte imperativa.&lt;/p&gt;
 
-&lt;p&gt;Puedes ver algunas de las características y ventajas de la programación funcional en &lt;a href=&quot;/2019/03/30/que-es-la-programacion-funcional.html&quot;&gt;este artículo&lt;/a&gt; y si quiere aprender, compilamos algunos recursos aquí: &lt;a href=&quot;/educación/2019/04/06/los-mejores-recursos-para-aprender-programacion-funcional.html&quot;&gt;Los mejores recursos para aprender programación funcional.&lt;/a&gt;&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="matemáticas" /><category term="math" /><category term="fp" /><category term="programación-funcional" /><summary type="html">La programación funcional tiene bases matemáticas muy interesantes, hablemos un poco de ellas y cómo te pueden ayudar a entenderla mejor.</summary></entry><entry><title type="html">Ruta de aprendizaje: Deep Learning</title><link href="https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning.html" rel="alternate" type="text/html" title="Ruta de aprendizaje: Deep Learning" /><published>2021-03-06T00:00:00-06:00</published><updated>2021-03-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning</id><content type="html" xml:base="https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning.html">&lt;p&gt;Inspirado en el libro “Ultralearning” de Scott Young, voy hacer un proyecto de aprendizaje de algo que llama mi atención desde hace mucho: Deep Learning y Machine Learning en general. Si no conces el concepto, te invito leer el post aquí: &lt;a href=&quot;/2019/08/13/lecciones-sobre-el-aprendizaje-de-manos-de-un-experto.html&quot;&gt;Ultralearning: el arte del aprendizaje profundo&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;En esta serie documentaremos las diferentes fases. Este primer post trata sobre los recursos que usaré para aprender. Si tienes alguna sugerencia, ¡todas son bienvenidas!&lt;/p&gt;
-
-&lt;h2 id=&quot;fase-1-investigación&quot;&gt;Fase 1: Investigación&lt;/h2&gt;
-
-&lt;p&gt;La primera fase de un proyecto de Ultra-aprendizaje consiste en hacer una investigación sobre las posibles opciones, recursos, metas y caminos que otros han seguido para aprender lo que quieres, así como definir claramente los límites del proyecto.&lt;/p&gt;
-
-&lt;p&gt;En este proyecto el objetivo será:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Entender y aplicar las técnicas básicas  Machine Learning, en específico Deep Learning, para poder resolver problemas y aplicarlos en proyectos que lo requieran.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Algunos de los programas que podemos usar para aprenderlo son los siguientes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Nanodegree de Deep Learning en &lt;a href=&quot;https://www.udacity.com/course/deep-learning-nanodegree--nd101&quot;&gt;Udacity&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Especialización en Deep Learning de &lt;a href=&quot;https://www.coursera.org/specializations/deep-learning&quot;&gt;Coursera&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Redes neuronales y Deep Learning de &lt;a href=&quot;https://www.coursera.org/learn/neural-networks-deep-learning&quot;&gt;Coursera&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Programming Machine Learning de &lt;a href=&quot;https://pragprog.com/titles/pplearn/programming-machine-learning/&quot;&gt;Pragmatic Programmers&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Machine Learning with Python: from Linear Models to Deep Learning de &lt;a href=&quot;https://www.edx.org/course/machine-learning-with-python-from-linear-models-to?index=product&amp;amp;queryID=66ef0e341d390841649ca12aaef6fd6b&amp;amp;position=1&quot;&gt;EDX&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;CS230 de &lt;a href=&quot;https://cs230.stanford.edu/syllabus/&quot;&gt;Stanford&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;STAT 212B de &lt;a href=&quot;https://bcourses.berkeley.edu/courses/1413088/assignments/syllabus&quot;&gt;Berkeley&lt;/a&gt; (Lecciones: &lt;a href=&quot;https://github.com/joanbruna/stat212b&quot;&gt;Github&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Deep Learning Crash Course en &lt;a href=&quot;https://youtu.be/VyWAvY2CF9c&quot;&gt;Free Code Camp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;decisión&quot;&gt;Decisión&lt;/h2&gt;
-
-&lt;p&gt;Uno de los consjos de Ultralearning es no gastar mucho tiempo investigando. No sabemos lo que no sabemos y esta incetidumbre nos puede dar parálisis por análisis y no dejar que pasemos a la siguiente etapa.&lt;/p&gt;
-
-&lt;p&gt;Este proyecto estará basado en el &lt;a href=&quot;https://www.udacity.com/course/deep-learning-nanodegree--nd101&quot;&gt;Nanodegree de Deep Learning de Udacity&lt;/a&gt; por dos razones:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Probé algunos de sus cursos y la calidad se me hace muy buena y el contenido muy bien desarrollado&lt;/li&gt;
-  &lt;li&gt;Puedes allí mismo optar por un certificado, lo que incluye acompañamiento de un mentor y resolución de dudas con la comunidad. esto puede servir muy bien para desatorarme si encuentro algo muy difícil.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Paralelamente leeré el libro &lt;a href=&quot;https://pragprog.com/titles/pplearn/programming-machine-learning/&quot;&gt;Programming Machine Learning de Pragmatic Programmers&lt;/a&gt;, ya que parece tener justamente el enfoque que necesito: Machine Learning para programadores.&lt;/p&gt;
-
-&lt;h2 id=&quot;objetivo-final&quot;&gt;Objetivo final&lt;/h2&gt;
-
-&lt;p&gt;Es hora de ponerle un tiempo y un obejetivo más concreto al proyecto: &lt;em&gt;durante los próximos 10 meses (lo que resta de 2021) aprenderé las bases teóricas y prácitcas de machine learning, con el obejetivo de aplicarlo mejor en los proyectos de trabajo y combinarlo con mis habilidades de ingeniería del software y progeamación.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Sobra decir que este plan no está escrito en piedra y se irá modifcando conforme vaya experimentando y aprendiendo más del campo. Por lo mientras, espero que el proyecto y lo que vaya aprendiendo y meta-aprendiendo te sirva, como la compilación de recursos para empezar que pusimos en este post.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="ml" /><category term="machine-learning" /><summary type="html">En este artículo te proponemos una forma de aprender machine learning y deep learning y te presentamos algunos recursos que te pueden servir</summary></entry></feed>
+&lt;p&gt;Puedes ver algunas de las características y ventajas de la programación funcional en &lt;a href=&quot;/2019/03/30/que-es-la-programacion-funcional.html&quot;&gt;este artículo&lt;/a&gt; y si quiere aprender, compilamos algunos recursos aquí: &lt;a href=&quot;/educación/2019/04/06/los-mejores-recursos-para-aprender-programacion-funcional.html&quot;&gt;Los mejores recursos para aprender programación funcional.&lt;/a&gt;&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="matemáticas" /><category term="math" /><category term="fp" /><category term="programación-funcional" /><summary type="html">La programación funcional tiene bases matemáticas muy interesantes, hablemos un poco de ellas y cómo te pueden ayudar a entenderla mejor.</summary></entry></feed>
