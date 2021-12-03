@@ -11,19 +11,19 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Dentro del mundo del desarrollo se escucha bastante sobre las funciones hash y en realidad se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.
+Dentro del mundo del desarrollo se escucha bastante sobre **funciones hash** y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.
 
 ## ¿Qué es un función hash?
 
-La idea y el nombre de un función hash viene de la cocina: _hash_ se traduce como "picadillo", y se usa precisamente porque eso hace una función hash con los datos que le pasemos.
+La idea y el nombre de un función hash viene de la cocina: _hash_ se traduce literalmente como "picadillo", y se usa precisamente porque eso hace una función hash con los datos que le pasemos.
 
 ![Un platillo que parece picadillo](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_500/v1638503321/melissa-walker-horn-ufs4w3Jn73I-unsplash_q4m1qy.jpg){:.align-center}
 
-Las funciones hash reciben los datos y te devuelven un valor de tamaño fijo. Estos datos parecen "picadillo", normalmente es imposible para los humanos distinguir los argumentos que recibió _a partir de la salida_. Las funciones hash más simples _mapean_ los valores de entrada a un número pequeño, [aquí puedes ver algunos ejemplos](https://www.cs.hmc.edu/~geoff/classes/hmc.cs070.200101/homework10/hashfuncs.html).
+Las funciones hash reciben una entrada y normalmente te devuelven un valor de tamaño fijo. Estos datos parecen "picadillo", es imposible para los humanos distinguir los argumentos que recibió _a partir de la salida_. Las funciones hash más simples _mapean_ los valores de entrada a un número pequeño, [aquí puedes ver algunos ejemplos](https://www.cs.hmc.edu/~geoff/classes/hmc.cs070.200101/homework10/hashfuncs.html). Estas funciones las puedes considerar como un mapeo de valores (con posibilidades infinitas) a un conjunto de valores finitos. Por eso, una función hash de esta naturaleza se considera como una relación del valor de entrada con su "contenedor" o "bucket" como le dirían en inglés.
 
-Las funciones hash son utilizadas para ocultar datos, para crear estructuras de datos llamadas __hash tables__, para comparar datos, para crear firmas digitales y muchas otras cosas. Tienen muchos usos dentro y fuera de la criptografía.
+Las funciones hash son como navajas suizas, ya que pueden ser utilizadas para ocultar datos, para crear estructuras de datos llamadas __hash tables__, para comparar datos, para crear firmas digitales (verificación de integridad) y muchas otras cosas. Tienen muchos usos dentro y fuera de la criptografía.
 
-Existen diferentes tipos de funciones hash, pero las dos características que no faltan en ningún tipo de hashes son:
+Existen diferentes tipos de funciones hash para los diferentes usos, las características que normalmente verás en hashes son:
 
 1. Entregan un resultado de tamaño fijo sin importar el tamaño de la entrada
 2. Son rápidas relativamente
@@ -37,40 +37,40 @@ def hash_simple(x):
     return x % 10
 ```
 
-Esta función cumple con todos las características de las que hablamos arriba, y es una función hash **no criptográfica**, es decir no se puede confiar en ella para proteger información. Ejemplos funciones hash no criptográfica:
+Esta función cumple con todas las características de las que hablamos arriba, y es una función hash **no criptográfica** o **no segura**, es decir, no se puede confiar en ella para proteger información.
+
+Algunos ejemplos de funciones hash no criptográficas son:
 - [SeaHash](https://docs.rs/seahash/2.0.0/seahash/)
 - [fnv1a](https://github.com/sindresorhus/fnv1a)
-- La función `hash` de Python.
+- La función `hash` de Python o de tu lenguaje preferido
 
-Ahora hablemos de qué características tiene una función hash criptográfica, o segura.
+Ahora hablemos de qué características tiene una función hash criptográfica segura.
 
 ## Funciones hash criptográficas
 
-Una función hash segura para ser usada en la protección de datos cumple con las siguientes tres características:
+La característica principal de una función hash segura es que su resultado es completamente impredecible, no revela ningún tipo de información sobre la entrada original, tanto para los humanos como para _una computadora_, es resistente a análisis estadísticos.
 
-1. Es resistente a encontrar una preimagen
-2. Es resistente a segundas preimágenes
-3. No resistente a colisiones
+Para asegurarnos de esto, una función hash segura cumple con tres características formales:
 
-¿Qué es eso de las _preimágenes_? En criptografía se llama **preimagen** a todos los valores que le podemos dar a una función hash. La **imagen** por el contrario, es el resultado de aplicar la función hash a una _preimagen_.
+1. Es resistente a encontrar una **preimagen**
+2. Es resistente a encontrar una **segunda preimagen**
+3. Es resistente a **colisiones**
+
+¿Qué es eso de las **_preimágenes_**? En criptografía se llama **preimagen** a todos los valores que le podemos dar a una función hash. La **imagen** es el resultado de aplicar la función hash a una _preimagen_.
 
 Esta ilustración lo puede dejar un poco más claro:
 
 ![Diagrama sobre imágenes y preimágnes](https://res.cloudinary.com/hectorip/image/upload/v1638509732/Ilustracio%CC%81n_sin_ti%CC%81tulo_9_qrerag.png){:.align-center}
 
-Ahora hablemos sobre lo que significa cada punto de la seguridad.  El primer punto se refiere a que dada una **imagen** o un _hash_, como normalmente le llamamos al resultado de una función hash, es imposible encontrar la entrada original.
+Ahora hablemos sobre lo que significa cada punto de la seguridad.  El primer punto se refiere a que dada una **imagen** o un _hash_, como normalmente le llamamos al resultado de una función hash, es imposible encontrar la entrada original, o algún otro valor que resulte en ese hash. Si este punto no se cumple, los siguientes dos tampoco.
 
-El segundo punto, la resistencia a la segunda preimagen, es que dado un par de un valor de entrada y su hash correspondiente (imagen y preimagen), es imposible encontrar otro valor de entrada que se resulte en el mismo hash, o la misma imagen.
+El segundo punto, la resistencia a la segunda preimagen, es que dado un valor de entrada (praimagen) y su hash correspondiente (imagen), es imposible encontrar otro valor de entrada que se resulte en el mismo hash, o la misma imagen.
 
-La resistencia a colisiones se refiere a que es cerca de imposible encontrar dos valores de entrada cualesquiera que den el mismo hash (dos preimágenes que resulten en la misma imagen).
+El tercer punto, **la resistencia a colisiones** se refiere a que es cerca de imposible encontrar (o fabricar) dos valores de entrada que den el mismo hash (dos preimágenes que resulten en la misma imagen).
 
-En resumen: **es casi imposible encontrar dos valores que den el mismo hash, teniendo ejemplos de hasheado o no**, así como encontrar el valor que generó cierto hash.
+En resumen: para un hash seguro **es casi imposible encontrar dos valores que den el mismo hash, teniendo ejemplos de hasheado o no**, así como encontrar el valor que generó cierto hash.
 
-Si una función hash cumple con todos estos puntos, entonces es una función hash criptográfica segura.
-
-Como punto extra, pero muy importante, el resultado de una función hash debe ser completamente impredecible, no debe de revelar ningún tipo de información sobre la entrada original.
-
-## Algunas funciones hash criptográficas
+## Algunas funciones hash criptográficamente seguras
 
 Las dos funciones hash criptográficas más populares son [MD5](https://es.wikipedia.org/wiki/MD5) y [SHA-1](https://es.wikipedia.org/wiki/SHA-1). Actualmente (2021) a ambas se les han encontrado vulnerabilidades, sobre todo en el campo de las colisiones, para ambas es posible generar colisiones de manera arbitraria.
 
@@ -88,8 +88,8 @@ Como puedes ver, tenemos para escoger entre las funciones hash todavía consider
 
 ## ¿Qué función hash usar?
 
-Ahora que tenemos un sucesor de SHA-2, la que deberías usar para la mayoría de tus proyectos es SHA3-256, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Ahora bien, si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2.
+Ahora que tenemos un sucesor de SHA-2, la que deberías usar para la mayoría de tus proyectos es **SHA3-256**, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2.
 
 ## ¿Sirven para guardar passwords?
 
-Un error común es pensar que estas funciones pueden servir para guardar de forma segura en nuestras aplicaciones. En el siguiente artículo hablaremos de por qué no sirven para eso y qué otras funciones podrías usar.
+Un error común es pensar que estas funciones pueden servir para guardar passwords de forma segura en nuestras aplicaciones. En el siguiente artículo hablaremos de por qué no sirven para eso y qué otras funciones podrías usar.

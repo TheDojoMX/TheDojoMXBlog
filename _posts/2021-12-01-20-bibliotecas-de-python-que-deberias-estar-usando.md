@@ -33,7 +33,6 @@ Estas bibliotecas no las tendrás que instalar porque vienen con todas las insta
 
 3. [boltons](https://boltons.readthedocs.io/en/latest/) - contiene una gran colección de tipos de datos y funciones que los creadores y contribuidores piensan que le hacen falta a la biblioteca estándar de Python. Para Octubre de 2021 tenía _83 tipos de datos y 171 funciones_, hablemos de tamaño. Las utilidades que provee son muy variadas, y te pueden ayudar para una gran cantidad de casos. Por ejemplo, tiene utilidades para colecciones, para manejo de caché, trabajo con tipos de datos, utilidades para debuggear, ente muchas otras ayudas.
 
-
 ## Conclusión
 
 La verdad es que cada una de las bibliotecas arriba mencionadas debería tener su propio artículo o video, esperamos que podamos extender sobre algunas de ellas en el futuro. Por lo mientras, puedes leer el libro y aprender más sobre las bibliotecas que recomienda, sólo ten en cuenta que algunas pueden estar sin mantenimiento por la edad que tiene el libro. Aquí te dejamos el resumen que hicimos en el canal y con suerte [en este link puedes descargar](https://pepa.holla.cz/wp-content/uploads/2016/10/20-python-libraries-you-arent-using-but-should.pdf) el libro en PDF, aunque es un libro que puedes seguir leyendo en Safari, la biblioteca online de O'Reilly o leer gratuito en línea: [aquí](https://www.oreilly.com/content/20-python-libraries-you-arent-using-but-should/). Déjanos un comentario si quieres que hagamos el análisis de alguna biblioteca en el futuro.
