@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-01T23:48:17-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">20 bibliotecas de Python que deberías estar usando</title><link href="https://blog.thedojo.mx/2021/12/01/20-librerias-de-python-que-deberias-estar-usando.html" rel="alternate" type="text/html" title="20 bibliotecas de Python que deberías estar usando" /><published>2021-12-01T00:00:00-06:00</published><updated>2021-12-01T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/01/20-librerias-de-python-que-deberias-estar-usando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/01/20-librerias-de-python-que-deberias-estar-usando.html">&lt;p&gt;El libro &lt;a href=&quot;https://freecomputerbooks.com/20-Python-Libraries%20You-Are-Not-Using-But-Should.html#downloadLinks&quot;&gt;“20 Python Libraries You Aren’t Using (But Should)”&lt;/a&gt; de &lt;a href=&quot;https://github.com/cjrh&quot;&gt;Caleb Hattingh&lt;/a&gt; es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-03T00:57:41-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Algoritmos criptográficos: ¿Qué es un Hash?</title><link href="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: ¿Qué es un Hash?" /><published>2021-12-02T00:00:00-06:00</published><updated>2021-12-02T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">&lt;p&gt;Dentro del mundo del desarrollo se escucha bastante sobre las funciones hash y en realidad se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-un-función-hash&quot;&gt;¿Qué es un función hash?&lt;/h2&gt;
+
+&lt;p&gt;La idea y el nombre de un función hash viene de la cocina: &lt;em&gt;hash&lt;/em&gt; se traduce como “picadillo”, y se usa precisamente porque eso hace una función hash con los datos que le pasemos.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_500/v1638503321/melissa-walker-horn-ufs4w3Jn73I-unsplash_q4m1qy.jpg&quot; alt=&quot;Un platillo que parece picadillo&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Las funciones hash reciben los datos y te devuelven un valor de tamaño fijo. Estos datos parecen “picadillo”, normalmente es imposible para los humanos distinguir los argumentos que recibió &lt;em&gt;a partir de la salida&lt;/em&gt;. Las funciones hash más simples &lt;em&gt;mapean&lt;/em&gt; los valores de entrada a un número pequeño, &lt;a href=&quot;https://www.cs.hmc.edu/~geoff/classes/hmc.cs070.200101/homework10/hashfuncs.html&quot;&gt;aquí puedes ver algunos ejemplos&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Las funciones hash son utilizadas para ocultar datos, para crear estructuras de datos llamadas &lt;strong&gt;hash tables&lt;/strong&gt;, para comparar datos, para crear firmas digitales y muchas otras cosas. Tienen muchos usos dentro y fuera de la criptografía.&lt;/p&gt;
+
+&lt;p&gt;Existen diferentes tipos de funciones hash, pero las dos características que no faltan en ningún tipo de hashes son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Entregan un resultado de tamaño fijo sin importar el tamaño de la entrada&lt;/li&gt;
+  &lt;li&gt;Son rápidas relativamente&lt;/li&gt;
+  &lt;li&gt;Son deterministas, es decir, siempre que le demos el mismo valor, dará el mismo resultado&lt;/li&gt;
+  &lt;li&gt;Es imposible recuperar la entrada original, porque se pierden datos&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Algo que contaría como una función hash podría ser tan sencilla como obtener el sobrante de una división entera para los números enteros:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hash_simple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Esta función cumple con todos las características de las que hablamos arriba, y es una función hash &lt;strong&gt;no criptográfica&lt;/strong&gt;, es decir no se puede confiar en ella para proteger información. Ejemplos funciones hash no criptográfica:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.rs/seahash/2.0.0/seahash/&quot;&gt;SeaHash&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sindresorhus/fnv1a&quot;&gt;fnv1a&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;La función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash&lt;/code&gt; de Python.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ahora hablemos de qué características tiene una función hash criptográfica, o segura.&lt;/p&gt;
+
+&lt;h2 id=&quot;funciones-hash-criptográficas&quot;&gt;Funciones hash criptográficas&lt;/h2&gt;
+
+&lt;p&gt;Una función hash segura para ser usada en la protección de datos cumple con las siguientes tres características:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Es resistente a encontrar una preimagen&lt;/li&gt;
+  &lt;li&gt;Es resistente a segundas preimágenes&lt;/li&gt;
+  &lt;li&gt;No resistente a colisiones&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;¿Qué es eso de las &lt;em&gt;preimágenes&lt;/em&gt;? En criptografía se llama &lt;strong&gt;preimagen&lt;/strong&gt; a todos los valores que le podemos dar a una función hash. La &lt;strong&gt;imagen&lt;/strong&gt; por el contrario, es el resultado de aplicar la función hash a una &lt;em&gt;preimagen&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esta ilustración lo puede dejar un poco más claro:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1638509732/Ilustracio%CC%81n_sin_ti%CC%81tulo_9_qrerag.png&quot; alt=&quot;Diagrama sobre imágenes y preimágnes&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ahora hablemos sobre lo que significa cada punto de la seguridad.  El primer punto se refiere a que dada una &lt;strong&gt;imagen&lt;/strong&gt; o un &lt;em&gt;hash&lt;/em&gt;, como normalmente le llamamos al resultado de una función hash, es imposible encontrar la entrada original.&lt;/p&gt;
+
+&lt;p&gt;El segundo punto, la resistencia a la segunda preimagen, es que dado un par de un valor de entrada y su hash correspondiente (imagen y preimagen), es imposible encontrar otro valor de entrada que se resulte en el mismo hash, o la misma imagen.&lt;/p&gt;
+
+&lt;p&gt;La resistencia a colisiones se refiere a que es cerca de imposible encontrar dos valores de entrada cualesquiera que den el mismo hash (dos preimágenes que resulten en la misma imagen).&lt;/p&gt;
+
+&lt;p&gt;En resumen: &lt;strong&gt;es casi imposible encontrar dos valores que den el mismo hash, teniendo ejemplos de hasheado o no&lt;/strong&gt;, así como encontrar el valor que generó cierto hash.&lt;/p&gt;
+
+&lt;p&gt;Si una función hash cumple con todos estos puntos, entonces es una función hash criptográfica segura.&lt;/p&gt;
+
+&lt;p&gt;Como punto extra, pero muy importante, el resultado de una función hash debe ser completamente impredecible, no debe de revelar ningún tipo de información sobre la entrada original.&lt;/p&gt;
+
+&lt;h2 id=&quot;algunas-funciones-hash-criptográficas&quot;&gt;Algunas funciones hash criptográficas&lt;/h2&gt;
+
+&lt;p&gt;Las dos funciones hash criptográficas más populares son &lt;a href=&quot;https://es.wikipedia.org/wiki/MD5&quot;&gt;MD5&lt;/a&gt; y &lt;a href=&quot;https://es.wikipedia.org/wiki/SHA-1&quot;&gt;SHA-1&lt;/a&gt;. Actualmente (2021) a ambas se les han encontrado vulnerabilidades, sobre todo en el campo de las colisiones, para ambas es posible generar colisiones de manera arbitraria.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“SHA”&lt;/em&gt; es un acrónimo que significa Algoritmo de Hasheo Seguro (“Secure Hash Algorithm”) y es un “título” dado a los algoritmos de hasheo que son seleccionados por la &lt;strong&gt;NIST&lt;/strong&gt; (National Institute of Standards and Technology de Estados Unidos).&lt;/p&gt;
+
+&lt;p&gt;Ahora sí hablemos de algunas funciones hash criptográficas todavía consideradas seguras:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://es.wikipedia.org/wiki/SHA-2&quot;&gt;SHA-2&lt;/a&gt;. SHA-2 es la familia sucesora de SHA-1, y consiste de 4 funciones hash que difieren en el tamaño de bits de su salida: SHA-224, SHA-256, SHA-384 y SHA-512. Las dos más usadas son SHA-256 y SHA-512. Hasta 2021 no se le han encontrado vulnerabilidades que hagan que sean no recomendadas. La desventaja es que la familia SHA-2 es más lenta que SHA-1.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://es.wikipedia.org/wiki/SHA-3&quot;&gt;SHA-3&lt;/a&gt;. SHA-3 es la cuarta versión de SHA y el algoritmo se escogió de un concurso organizado por la NIST en 2007. En 2012 se anunció que el algoritmo seleccionado era &lt;a href=&quot;https://en.wikipedia.org/wiki/Keccak&quot;&gt;Keccak&lt;/a&gt;, un algoritmo muy diferente de SHA-1 y SHA-2. Esta familia de algoritmos también define cuatro funciones hash, SHA3-224, SHA3-256, SHA3-384 y SHA3-512. Pero además define 2 algoritmos extra que pueden dar resultados variables. Puedes ver la página del equipo de Keccak en &lt;a href=&quot;https://keccak.team/keccak.html&quot;&gt;Keccak Team&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.blake2.net/&quot;&gt;BLAKE2&lt;/a&gt;. Es un algoritmo sucesor de BLAKE, uno de los participantes en el concurso por SHA-3. BLAKE2 es mucho más rápido que Keccak, casi igual de seguro, pero más parecido a SHA-2, que es la razón por la que no se eligió a BLAKE como el SHA-3. Es una muy buena opción para usarse en caso de que requieras un función hash segura y que la velocidad sea muy importante, ya que es más rápida incluso que SHA-1.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Como puedes ver, tenemos para escoger entre las funciones hash todavía consideradas seguras.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-función-hash-usar&quot;&gt;¿Qué función hash usar?&lt;/h2&gt;
+
+&lt;p&gt;Ahora que tenemos un sucesor de SHA-2, la que deberías usar para la mayoría de tus proyectos es SHA3-256, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Ahora bien, si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2.&lt;/p&gt;
+
+&lt;h2 id=&quot;sirven-para-guardar-passwords&quot;&gt;¿Sirven para guardar passwords?&lt;/h2&gt;
+
+&lt;p&gt;Un error común es pensar que estas funciones pueden servir para guardar de forma segura en nuestras aplicaciones. En el siguiente artículo hablaremos de por qué no sirven para eso y qué otras funciones podrías usar.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía," /><category term="hash," /><category term="cifrado" /><summary type="html">Continuemos con las bases de la criptogrfía para desarrolladores, hablemos de lo que es una función hash y cómo puede servirte en tus aplicaciones.</summary></entry><entry><title type="html">20 bibliotecas de Python que deberías estar usando</title><link href="https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deberias-estar-usando.html" rel="alternate" type="text/html" title="20 bibliotecas de Python que deberías estar usando" /><published>2021-12-01T00:00:00-06:00</published><updated>2021-12-01T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deberias-estar-usando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deberias-estar-usando.html">&lt;p&gt;El libro &lt;a href=&quot;https://freecomputerbooks.com/20-Python-Libraries%20You-Are-Not-Using-But-Should.html#downloadLinks&quot;&gt;“20 Python Libraries You Aren’t Using (But Should)”&lt;/a&gt; de &lt;a href=&quot;https://github.com/cjrh&quot;&gt;Caleb Hattingh&lt;/a&gt; es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1638418876/20_python_rlf1b2.png&quot; alt=&quot;Portada de 20 python libraries&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
@@ -35,7 +127,7 @@
 
 &lt;p&gt;La verdad es que cada una de las bibliotecas arriba mencionadas debería tener su propio artículo o video, esperamos que podamos extender sobre algunas de ellas en el futuro. Por lo mientras, puedes leer el libro y aprender más sobre las bibliotecas que recomienda, sólo ten en cuenta que algunas pueden estar sin mantenimiento por la edad que tiene el libro. Aquí te dejamos el resumen que hicimos en el canal y con suerte &lt;a href=&quot;https://pepa.holla.cz/wp-content/uploads/2016/10/20-python-libraries-you-arent-using-but-should.pdf&quot;&gt;en este link puedes descargar&lt;/a&gt; el libro en PDF, aunque es un libro que puedes seguir leyendo en Safari, la biblioteca online de O’Reilly o leer gratuito en línea: &lt;a href=&quot;https://www.oreilly.com/content/20-python-libraries-you-arent-using-but-should/&quot;&gt;aquí&lt;/a&gt;. Déjanos un comentario si quieres que hagamos el análisis de alguna biblioteca en el futuro.&lt;/p&gt;
 
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/T5xHzP1Ex5s&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="python" /><category term="books" /><category term="bibliotecas" /><summary type="html">Exploremos un poco las bibliotecas que el libro del '20 Python Libraries You Aren't Using' recomienda</summary></entry><entry><title type="html">La Importancia de los Estándares de Código</title><link href="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html" rel="alternate" type="text/html" title="La Importancia de los Estándares de Código" /><published>2021-10-05T00:00:00-05:00</published><updated>2021-10-05T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html">&lt;p&gt;Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/T5xHzP1Ex5s&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="python" /><category term="books" /><category term="bibliotecas" /><summary type="html">Exploremos cinco bibliotecas que el libro del '20 Python Libraries You Aren't Using' recomienda y que te podrían servir para tu próximo desarrollo en Python.</summary></entry><entry><title type="html">Crypto</title><link href="https://blog.thedojo.mx/2021/10/09/crypto.html" rel="alternate" type="text/html" title="Crypto" /><published>2021-10-09T11:34:32-05:00</published><updated>2021-10-09T11:34:32-05:00</updated><id>https://blog.thedojo.mx/2021/10/09/crypto</id><content type="html" xml:base="https://blog.thedojo.mx/2021/10/09/crypto.html"></content><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><summary type="html"></summary></entry><entry><title type="html">La Importancia de los Estándares de Código</title><link href="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html" rel="alternate" type="text/html" title="La Importancia de los Estándares de Código" /><published>2021-10-05T00:00:00-05:00</published><updated>2021-10-05T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html">&lt;p&gt;Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad.&lt;/p&gt;
 
 &lt;p&gt;Para las organizaciones de nuestra época, el correcto funcionamiento de sus aplicaciones digitales representa crecimiento. Si eres parte de un equipo que aún no se preocupa por esto, te invitó a seguir leyendo y conocer las ventajas de esta práctica para que asi puedas considerar utilizarla en un futuro.&lt;/p&gt;
 
@@ -138,7 +230,7 @@ Contar con segmentos de código que pueden ser consumidos por más de un servici
   &lt;li&gt;Una mejora significativa en la calidad del equipo de desarrollo.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Como podemos ver la definición y el uso de estándares proporciona muchos beneficios, en lo personal, disfruto más el trabajo cuando se tiene un enfoque hacia el código de calidad que cuando no hay reglas establecidas, sin embargo eso no se puede lograr sin el trabajo de todos los ingenieros en un equipo, se trata de apuntar todos juntos a un mismo objetivo.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="estándares," /><category term="calidad," /><category term="source-code" /><summary type="html">La implementacion de ciertas reglas en el desarrollo de software mejora significativamente la calidad del producto final.</summary></entry><entry><title type="html">Crypto</title><link href="https://blog.thedojo.mx/2021/09/06/crypto.html" rel="alternate" type="text/html" title="Crypto" /><published>2021-09-06T11:06:22-05:00</published><updated>2021-09-06T11:06:22-05:00</updated><id>https://blog.thedojo.mx/2021/09/06/crypto</id><content type="html" xml:base="https://blog.thedojo.mx/2021/09/06/crypto.html"></content><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><summary type="html"></summary></entry><entry><title type="html">Entendiendo la cohesión y el acoplamiento en el software</title><link href="https://blog.thedojo.mx/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html" rel="alternate" type="text/html" title="Entendiendo la cohesión y el acoplamiento en el software" /><published>2021-09-06T00:00:00-05:00</published><updated>2021-09-06T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html">&lt;p&gt;Siempre se dice que una buena base de código tiena alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica? En este artículo vamos a definir cada uno de esos términos de manera sencilla, con ejemplos y cómo llegar a la aplicación real de estos términos.&lt;/p&gt;
+&lt;p&gt;Como podemos ver la definición y el uso de estándares proporciona muchos beneficios, en lo personal, disfruto más el trabajo cuando se tiene un enfoque hacia el código de calidad que cuando no hay reglas establecidas, sin embargo eso no se puede lograr sin el trabajo de todos los ingenieros en un equipo, se trata de apuntar todos juntos a un mismo objetivo.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="estándares," /><category term="calidad," /><category term="source-code" /><summary type="html">La implementacion de ciertas reglas en el desarrollo de software mejora significativamente la calidad del producto final.</summary></entry><entry><title type="html">Entendiendo la cohesión y el acoplamiento en el software</title><link href="https://blog.thedojo.mx/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html" rel="alternate" type="text/html" title="Entendiendo la cohesión y el acoplamiento en el software" /><published>2021-09-06T00:00:00-05:00</published><updated>2021-09-06T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html">&lt;p&gt;Siempre se dice que una buena base de código tiena alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica? En este artículo vamos a definir cada uno de esos términos de manera sencilla, con ejemplos y cómo llegar a la aplicación real de estos términos.&lt;/p&gt;
 
 &lt;h2 id=&quot;cohesión&quot;&gt;Cohesión&lt;/h2&gt;
 
@@ -534,117 +626,4 @@ Contar con segmentos de código que pueden ser consumidos por más de un servici
 
 &lt;p&gt;Como desarrollador de software es importante que conozcas los temas básicos de propiedad intelectual si quieres desarrollar y comercializar software. Puedes ver la charla entera, para que obtengas más detalles aquí:&lt;/p&gt;
 
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/CpISQxihazU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="propiedad-intelectual" /><category term="leyes" /><summary type="html">Como creadores de software es importante que conozcamos lo básico sobre las leyes que rigen la propiedad intelectual respecto a los programas y sus diferentes formas.</summary></entry><entry><title type="html">Fuentes no convencionales de aprendizaje</title><link href="https://blog.thedojo.mx/2021/06/14/fuentes-no-convencionales-de-aprendizaje.html" rel="alternate" type="text/html" title="Fuentes no convencionales de aprendizaje" /><published>2021-06-14T00:00:00-05:00</published><updated>2021-06-14T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/06/14/fuentes-no-convencionales-de-aprendizaje</id><content type="html" xml:base="https://blog.thedojo.mx/2021/06/14/fuentes-no-convencionales-de-aprendizaje.html">&lt;p&gt;Cada quien tiene su forma de aprender. A algunas personas les funcionan mejor formas visuales y no convencionales. En este artículo te vamos a presentar algunos de los recursos que hemos encontrado que explican ideas y temas relacionados con la programación con un formato no convencional.&lt;/p&gt;
-
-&lt;h2 id=&quot;te-lo-explico-con-gatitos&quot;&gt;Te lo explico con gatitos&lt;/h2&gt;
-
-&lt;p&gt;Bel Rey, una programadora de Argentina (con la que tenemos una &lt;a href=&quot;https://youtu.be/7Ea4BGxwhEA&quot;&gt;entrevista&lt;/a&gt;) crea explicaciones estilo comics usando gatitos para embellecer y hacer divertidas las explicaciones.&lt;/p&gt;
-
-&lt;p&gt;En este cómic explica una de las motivaciones para hacer este estilo de ilustraciones-explicaciones:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://teloexplicocongatitos.com/_next/image?url=https%3A%2F%2Fdoomvault.nyc3.digitaloceanspaces.com%2Ftlecg%2Fbig%2Faprender00.jpg&amp;amp;w=1200&amp;amp;q=75&quot; alt=&quot;Estilos de aprendizaje - te lo explico con gatitos&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Entre sus explicaciones puedes encontrar temas como Docker, programación orientada objetos y comandos SQL todo con el estilo simpático y la estética de los gatitos, algunos de ellos enojados.&lt;/p&gt;
-
-&lt;p&gt;Puedes ver su contenido en:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://teloexplicocongatitos.com/&quot;&gt;Su página&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.instagram.com/teloexplicocongatitos/&quot;&gt;Instagram&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/explicocongatos&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;los-apuntes-de-majo&quot;&gt;Los apuntes de Majo&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1623713646/losapuntes_ijwxfh.png&quot; alt=&quot;Ejemplo de los apuntes de Majo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Majo Ledesma, mientras estaba estudiando programación empezó a crear notas bastante bonitas y visuales reportando y resumiendo temas diversos como Python, JavaScript, CSS y ahora amasa una gran cantidad de temas y apuntes.&lt;/p&gt;
-
-&lt;p&gt;Se hizo tan famosa que el CEO de &lt;a href=&quot;https://losapuntesdemajo.vercel.app/&quot;&gt;Vercel&lt;/a&gt; le ofreció poner todo su contenido en línea gratis usando su plataforma.&lt;/p&gt;
-
-&lt;p&gt;El estilo de los apuntes es como si estuvieras leyendo la libreta de la alumna más aplicada y dedicada del salón para cualquier materia, con ilustraciones que embellecen la nota pero no siempre relacionadas con el tema. Son apuntes completamente hechos a mano en medios físicos y digitalizados.&lt;/p&gt;
-
-&lt;p&gt;Pudes obtener los apuntes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://losapuntesdemajo.vercel.app/&quot;&gt;Los apuntes de Majo&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/MajoLedes&quot;&gt;Twitter de Majo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;wizardzines-de-julia-evans-en-inglés&quot;&gt;Wizardzines de Julia Evans (en inglés)&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1623630863/wz_3_vvj9pp.png&quot; alt=&quot;Algunos wizard zines&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Los wizardzines son explicaciones sobre un tema en formato de cómic con dibujos sencillos e ilustrativos. Lo que resalta de estos cómics es que tratan a veces temas no tan sencillos de manera fácil de entender y para eso se lleva una buena cantidad de espacio, por lo que el artículo se convierte en una “revistita”.&lt;/p&gt;
-
-&lt;p&gt;Julia vende las revistas que ha hecho en aproximadamente &lt;em&gt;10 USD&lt;/em&gt;, en formato digital con instrucciones para que tú las imprimas. Sin embargo, si no las puedes pagar, Julia ofrece el modelo que yo llamaría &lt;strong&gt;“paga sólo si puedes”&lt;/strong&gt;: abrió todo su contenido para que lo descargues sin costo, con la confianza de que pagarás si no es un impedimento para ti.&lt;/p&gt;
-
-&lt;p&gt;En las Wiardzines puedes encontrar los siguientes temas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;“How containers work”&lt;/li&gt;
-  &lt;li&gt;“Hell yes! CSS!”&lt;/li&gt;
-  &lt;li&gt;“Help! I have a manager!”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Además, tiene un montón de zines gratuitos que tratan temas más pequeños y no están a color.&lt;/p&gt;
-
-&lt;p&gt;Su página tiene una sección llamada “questions” que te permite estudiar temas en formato de tarjetas con preguntas y respuestas que se revelan. Es una forma bastante buena de entender básicamente los temas de los que trata y al mismo tiempo de estudiar para memorizar algo que creas necesitar.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1623713772/wizard_zines_bt7dzw.png&quot; alt=&quot;Ejemplo de Questions de wizardzines&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Puedes encontrar los wizardzines en:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://wizardzines.com/&quot;&gt;Página de Wizard Zines&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Twitter de Julia Evans&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;visual-partner&quot;&gt;Visual Partner&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/b196b29325f46dda5728d8d27884075949eaa7315beebf32a0537f259d54ee58/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6361726c6f67696c6d61722f696d6167652f75706c6f61642f76313539353937323133392f696c6c757374726174696f6e732f426568696e64253230746865253230636f64652f494d475f353837335f656d7173686b2e706e67&quot; alt=&quot;Ejemplo de registro grǻfico&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Carlo Gilmar, siguiendo la tendencia de &lt;a href=&quot;https://extremservicejam.wordpress.com/2013/02/18/que-es-visual-thinking-y-como-puede-ayudarte/&quot;&gt;visual thinking&lt;/a&gt; ha creado &lt;strong&gt;Visual Partner&lt;/strong&gt;, la empresa/proyecto alterno en la que comparte sus &lt;em&gt;apuntes visuales&lt;/em&gt; de charlas que se dan en meetups y conferencias.&lt;/p&gt;
-
-&lt;p&gt;Carlo ha creado un buen cuerpo de conocimiento de temas muy variados y probablemente puedas encontrar algo que estés aprendiendo en alguno de los lugares en lo que los comparte:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://visualpartnership.herokuapp.com/&quot;&gt;Visual Partnership&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.facebook.com/visualpartnership/&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/carlogilmar?lang=en&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Su contenido puede servir como resumen y guía para aprender más acerca de cierto tema, ya que no está ordenado por tópicos, ni toca los temas profundamente. Aquí podrás encontrar contenido variado.&lt;/p&gt;
-
-&lt;h2 id=&quot;execute-program-inglés&quot;&gt;Execute Program (inglés)&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1623647102/execute_program_ofbgcz.png&quot; alt=&quot;Execute program home&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;El creador de &lt;strong&gt;Destroy All Software&lt;/strong&gt;,  Gary Bernhardt creó una plataforma para que aprendieras las siguientes tecnologías de forma no convencional:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;JavaScript Arrays&lt;/li&gt;
-  &lt;li&gt;Concurrencia con JavaScript&lt;/li&gt;
-  &lt;li&gt;JavaScript moderno (ES2015-2019)&lt;/li&gt;
-  &lt;li&gt;Expresiones Regulares&lt;/li&gt;
-  &lt;li&gt;SQL&lt;/li&gt;
-  &lt;li&gt;TypeScript&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;La dinámica de la plataforma es la siguiente: tú eres el compilador o el intérprete, es decir, la plataforma te da sentencias cada vez más complejas de la tecnología en cuestión y tú predices los resultados.&lt;/p&gt;
-
-&lt;p&gt;Puedes entrar a la plataforma aquí: &lt;a href=&quot;https://www.executeprogram.com/&quot;&gt;Execute Program&lt;/a&gt;. Te recomiendo su otra plataforma, con videos tradicionales explicando cosas difíciles de desarrollar como compiladores: &lt;a href=&quot;https://www.destroyallsoftware.com/screencasts&quot;&gt;Destroy all Software&lt;/a&gt;. Tienes acceso a ambas plataformas con la suscripción de Execute Program.&lt;/p&gt;
-
-&lt;h2 id=&quot;otras-utilidades&quot;&gt;Otras utilidades&lt;/h2&gt;
-
-&lt;p&gt;Hay otras experiencias no convencionales que puedes para aprender cosas específicas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learngitbranching.js.org/?locale=es_ES&quot;&gt;Aprende Git branching&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://flukeout.github.io/&quot;&gt;CSS Diner&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://flexboxfroggy.com/#es&quot;&gt;Flexbox Froggy&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://http.cat/&quot;&gt;HTTP Cats&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://andreasbm.github.io/web-skills/&quot;&gt;Web Skills&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Si no te acomodas con las formas tradicionales como los libros y los videos, siempre habrá opciones diferentes e interactivas. ¿Tienes alguna otra recomendación? La esperamos en los comentarios.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="recursos" /><category term="aprendizaje" /><category term="programación" /><summary type="html">En este artículo te recomendamos algunos recursos que te servirán para aprender conceptos de progrmación que no son libros o cursos comunes.</summary></entry></feed>
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/CpISQxihazU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="propiedad-intelectual" /><category term="leyes" /><summary type="html">Como creadores de software es importante que conozcamos lo básico sobre las leyes que rigen la propiedad intelectual respecto a los programas y sus diferentes formas.</summary></entry></feed>

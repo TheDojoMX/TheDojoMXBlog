@@ -382,4 +382,10 @@ var store = [{
         "tags": ["estándares,","calidad,","source-code"],
         "url": "/2021/10/05/estandares-de-calidad-en-el-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1633104565/fakurian-design-UoqIavC59eg-unsplash_bitrsd.jpg"
+      },{
+        "title": "20 bibliotecas de Python que deberías estar usando",
+        "excerpt":"El libro “20 Python Libraries You Aren’t Using (But Should)” de Caleb Hattingh es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida. Veamos las 5 que me parece más importante conocer y tú puedes leer el...","categories": [],
+        "tags": ["python","books","bibliotecas"],
+        "url": "/2021/12/01/20-bibliotecas-de-python-que-deberias-estar-usando.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_340/v1638419376/hans-isaacson-rlqkZ1DlOnU-unsplash_rsaim0.jpg"
       }]
