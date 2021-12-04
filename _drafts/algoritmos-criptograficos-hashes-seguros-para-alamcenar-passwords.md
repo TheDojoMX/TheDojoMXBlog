@@ -57,9 +57,47 @@ Pero además, algunos de estos algoritmos te ayudana a "salar" el password de ma
 
 En esta sección hablaremos de los algoritmos, cómo cumplen con estas características y si los puedes seguir usando.
 
-1. [PBKDF2](https://www.ietf.org/rfc/rfc2898.txt) - Es un acrónimo que significa "Password Based Key Derivation Function", versión 2.0 y que básicamente aplica un algoritmo de hasheo seguro a una contraseña repetidas veces. Puedes configurar el número de iteraciones, el algoritmo de hasheo, el tamaño del resultado y te pide el _salt_ para funcionar. Fue usada por varios frameworks de desarrollo web como Django, pero actualmente no se considera segura porque aunque es exigente en cómputo para una computadora normal, es débil contra hardware especializado.
 
-2. [bcrypt](https://www.usenix.org/legacy/event/usenix99/provos/provos.pdf) - Es una algoritmo diseñado específicamente con el objetico cde
-3. scrypt
-4. twofish
-5. Argon2
+### PBKDF2
+
+
+[PBKDF2](https://www.ietf.org/rfc/rfc2898.txt) - Es un acrónimo que significa "Password Based Key Derivation Function", versión 2.0 y que básicamente aplica un algoritmo de hasheo seguro a una contraseña repetidas veces. Puedes configurar el número de iteraciones, el algoritmo de hasheo, el tamaño del resultado y te pide el _salt_ para funcionar. Fue usada por varios frameworks de desarrollo web como Django, pero actualmente no se considera segura porque aunque es exigente en cómputo para una computadora normal, es débil contra hardware especializado.
+
+### bcrypt
+
+[bcrypt](https://www.usenix.org/legacy/event/usenix99/provos/provos.pdf) - Es un algoritmo diseñado específicamente con el objetivo de estar preparado para el mejoramiento que el hardware va teniendo, ya que tiene una "dificultad" configurable. Te provee **automáticamente de un salt seguro**, por lo que no recaerá en ti la responsabilidad de conseguirlo como en PBKDF2. Está basado en blowfish, otro algoritmo de cifrado que ha permanecido seguro. Bcrypt fue presentado en 1999 y sigue siendo considerado más o menos seguro, su recomendación está en duda ya que es posible atacarlo con hardware especializado y de bajo costo. [Este estudio de 2011](https://www.usenix.org/system/files/conference/woot14/woot14-malvoni.pdf) explica como se puede atacar con hardware especializado en cómputo paralelo y predijo muy bien que bcrypt no permanecería super seguro por mucho tiempo.
+
+### scrypt
+
+[scrypt](https://datatracker.ietf.org/doc/html/rfc7914) - Es una función diseñada para cubrir las carencias de PBKDF2 y bcrypt. Es tanto computacionalmente intensiva como pesada en memoria, por lo que no es tan fácil atacarla con hardware especializado. Es un función de muy reciente presentación, [Colin Percival la presentó en 2009](https://www.tarsnap.com/scrypt/scrypt.pdf). Es una secuencia de funciones pesadas en memoria que impide que sea atacada fácilmente con GPU's. FPGA's y ASIC's. Es una función que puedes usar conseguridad todavía ya que no se han encontrado ataques efectivos contra ella. Al igual que bcrypt, _sala_ (usa un salt) automáticamente, lo que le facilita la vida al desarrollador.
+
+### Argon2
+
+[Argon2](https://github.com/P-H-C/phc-winner-argon2/blob/master/argon2-specs.pdf) - Es la función más avanzada y con mejores garantías para generación de hashes resistentes a ataques con fuerza bruta. Es la ganadora del [Password Hashing Competition](https://www.password-hashing.net/) en 2015. Se dice que Argon2 es el estado del arte en lo que se refiere a hashing de passwords. Tiene tres variaciones principales: Argond2d, Argon2i y Argon2id.
+
+¿Cuándo usar cada una?
+
+- **Argon2d**  es más rápida pero al mismo tiempo está mejor protegida contra ataques de fuerza bruta de hardware especializado, por la forma en la que usa la memoria, sin embargo, es más vulnerable a ataques [side-channel](https://www.rambus.com/blogs/side-channel-attacks/). Es recoemndada cuando tus atacantes no tengan posibilidad de realizar estos ataques, como en servidores de backend y para generación criptomonedas.
+
+- **Argon2i** es más lenta, más computacionalmente intensiva y resistente contra side-channel attacks, es la recomendada para hashear passwords. Da varias "pasadas" a los argumentos de entradda, por lo que es más dificil de atacar.
+
+- **Argon2id** es un híbrido entre estas las dos variaciones anteriores, protegida parcialmente contra ataques side-channel al mismo tiempo que más computacionalmente intensiva que Argon2d. La recomendación es que si estás en incertidumbre uses Argon2d.
+
+Argon2 permite configurar:
+
+1. Memoria usada: mientras más memoria se use, más resistente será el hash y menos vulnerable será a ataques de fuerza bruta.
+
+2. Número de iteraciones sobre la memororia. Esto lo hace más computacionalmente intensivo, de igual forma haciéndolo más dificil de atacar, haciendo la generación de hashes más lenta.
+
+3. Grado de paralelismo. Es el número de hilos que se usan para generar el hash, el tiempo de ejecución variará dependiendo de la configuración.
+
+4. Tamaño del hash, el salt y el tag. Esto también varía el grado de resistencia de tus hashes.
+
+ En el artículo ["Cómo escoger los parámetros de Argon2"](https://www.twelve21.io/how-to-choose-the-right-parameters-for-argon2/) se describe una forma de escoger los parámetros de Argon2.
+
+ Finalmente, aunque Argon2 no incluye la generación del salt en el argumento mismo, las implementaciones de Argon2 incluyen una función de generación de salt automática para que no tengas que hacerlo tú.
+
+
+ ## Conclusión
+
+Si estas haciendo una aplicación lo más recomendable es que uses scrypt o Argon2i. 
