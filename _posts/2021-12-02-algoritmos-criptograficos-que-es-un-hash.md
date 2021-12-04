@@ -88,7 +88,7 @@ Como puedes ver, tenemos para escoger entre las funciones hash todavía consider
 
 ## ¿Qué función hash usar?
 
-Ahora que tenemos un sucesor de SHA-2, la que deberías usar para la mayoría de tus proyectos es **SHA3-256**, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2.
+Ahora que tenemos un sucesor de SHA-2, la que deberías usar en la mayoría de tus proyectos es **SHA3-256**, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2, que también es muy popular y está implementada en muchos lenguajes de programación.
 
 ## ¿Sirven para guardar passwords?
 

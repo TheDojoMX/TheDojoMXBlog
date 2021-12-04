@@ -135,7 +135,7 @@
       "headline": "Algoritmos criptográficos: ¿Qué es un Hash?",
       "keywords": "criptografía,,hash,,cifrado",
       "description": "Continuemos con las bases de la criptogrfía para desarrolladores, hablemos de lo que es una función hash y cómo puede servirte en tus aplicaciones.",
-      "articleBody": "Dentro del mundo del desarrollo se escucha bastante sobre funciones hash y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.\n\n¿Qué es un función hash?\n\nLa idea y el nombre de un función hash viene de la cocina: hash se traduce literalmente como “picadillo”, y se usa precisamente porque eso hace una función hash con los datos que le pasemos.\n\n\n\nLas funciones hash reciben una entrada y normalmente te devuelven un valor de tamaño fijo. Estos datos parecen “picadillo”, es imposible para los humanos distinguir los argumentos que recibió a partir de la salida. Las funciones hash más simples mapean los valores de entrada a un número pequeño, aquí puedes ver algunos ejemplos. Estas funciones las puedes considerar como un mapeo de valores (con posibilidades infinitas) a un conjunto de valores finitos. Por eso, una función hash de esta naturaleza se considera como una relación del valor de entrada con su “contenedor” o “bucket” como le dirían en inglés.\n\nLas funciones hash son como navajas suizas, ya que pueden ser utilizadas para ocultar datos, para crear estructuras de datos llamadas hash tables, para comparar datos, para crear firmas digitales (verificación de integridad) y muchas otras cosas. Tienen muchos usos dentro y fuera de la criptografía.\n\nExisten diferentes tipos de funciones hash para los diferentes usos, las características que normalmente verás en hashes son:\n\n\n  Entregan un resultado de tamaño fijo sin importar el tamaño de la entrada\n  Son rápidas relativamente\n  Son deterministas, es decir, siempre que le demos el mismo valor, dará el mismo resultado\n  Es imposible recuperar la entrada original, porque se pierden datos\n\n\nAlgo que contaría como una función hash podría ser tan sencilla como obtener el sobrante de una división entera para los números enteros:\n\ndef hash_simple(x):\n    return x % 10\n\n\nEsta función cumple con todas las características de las que hablamos arriba, y es una función hash no criptográfica o no segura, es decir, no se puede confiar en ella para proteger información.\n\nAlgunos ejemplos de funciones hash no criptográficas son:\n\n  SeaHash\n  fnv1a\n  La función hash de Python o de tu lenguaje preferido\n\n\nAhora hablemos de qué características tiene una función hash criptográfica segura.\n\nFunciones hash criptográficas\n\nLa característica principal de una función hash segura es que su resultado es completamente impredecible, no revela ningún tipo de información sobre la entrada original, tanto para los humanos como para una computadora, es resistente a análisis estadísticos.\n\nPara asegurarnos de esto, una función hash segura cumple con tres características formales:\n\n\n  Es resistente a encontrar una preimagen\n  Es resistente a encontrar una segunda preimagen\n  Es resistente a colisiones\n\n\n¿Qué es eso de las preimágenes? En criptografía se llama preimagen a todos los valores que le podemos dar a una función hash. La imagen es el resultado de aplicar la función hash a una preimagen.\n\nEsta ilustración lo puede dejar un poco más claro:\n\n\n\nAhora hablemos sobre lo que significa cada punto de la seguridad.  El primer punto se refiere a que dada una imagen o un hash, como normalmente le llamamos al resultado de una función hash, es imposible encontrar la entrada original, o algún otro valor que resulte en ese hash. Si este punto no se cumple, los siguientes dos tampoco.\n\nEl segundo punto, la resistencia a la segunda preimagen, es que dado un valor de entrada (praimagen) y su hash correspondiente (imagen), es imposible encontrar otro valor de entrada que se resulte en el mismo hash, o la misma imagen.\n\nEl tercer punto, la resistencia a colisiones se refiere a que es cerca de imposible encontrar (o fabricar) dos valores de entrada que den el mismo hash (dos preimágenes que resulten en la misma imagen).\n\nEn resumen: para un hash seguro es casi imposible encontrar dos valores que den el mismo hash, teniendo ejemplos de hasheado o no, así como encontrar el valor que generó cierto hash.\n\nAlgunas funciones hash criptográficamente seguras\n\nLas dos funciones hash criptográficas más populares son MD5 y SHA-1. Actualmente (2021) a ambas se les han encontrado vulnerabilidades, sobre todo en el campo de las colisiones, para ambas es posible generar colisiones de manera arbitraria.\n\n“SHA” es un acrónimo que significa Algoritmo de Hasheo Seguro (“Secure Hash Algorithm”) y es un “título” dado a los algoritmos de hasheo que son seleccionados por la NIST (National Institute of Standards and Technology de Estados Unidos).\n\nAhora sí hablemos de algunas funciones hash criptográficas todavía consideradas seguras:\n\n\n  \n    SHA-2. SHA-2 es la familia sucesora de SHA-1, y consiste de 4 funciones hash que difieren en el tamaño de bits de su salida: SHA-224, SHA-256, SHA-384 y SHA-512. Las dos más usadas son SHA-256 y SHA-512. Hasta 2021 no se le han encontrado vulnerabilidades que hagan que sean no recomendadas. La desventaja es que la familia SHA-2 es más lenta que SHA-1.\n  \n  \n    SHA-3. SHA-3 es la cuarta versión de SHA y el algoritmo se escogió de un concurso organizado por la NIST en 2007. En 2012 se anunció que el algoritmo seleccionado era Keccak, un algoritmo muy diferente de SHA-1 y SHA-2. Esta familia de algoritmos también define cuatro funciones hash, SHA3-224, SHA3-256, SHA3-384 y SHA3-512. Pero además define 2 algoritmos extra que pueden dar resultados variables. Puedes ver la página del equipo de Keccak en Keccak Team.\n  \n  \n    BLAKE2. Es un algoritmo sucesor de BLAKE, uno de los participantes en el concurso por SHA-3. BLAKE2 es mucho más rápido que Keccak, casi igual de seguro, pero más parecido a SHA-2, que es la razón por la que no se eligió a BLAKE como el SHA-3. Es una muy buena opción para usarse en caso de que requieras un función hash segura y que la velocidad sea muy importante, ya que es más rápida incluso que SHA-1.\n  \n\n\nComo puedes ver, tenemos para escoger entre las funciones hash todavía consideradas seguras.\n\n¿Qué función hash usar?\n\nAhora que tenemos un sucesor de SHA-2, la que deberías usar en la mayoría de tus proyectos es SHA3-256, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2, que también es muy popular y está implementada en muchos lenguajes de programación.\n\n¿Sirven para guardar passwords?\n\nUn error común es pensar que estas funciones pueden servir para guardar passwords de forma segura en nuestras aplicaciones. En el siguiente artículo hablaremos de por qué no sirven para eso y qué otras funciones podrías usar.\n",
+      "articleBody": "Dentro del mundo del desarrollo se escucha bastante sobre funciones hash y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.\n\n¿Qué es un función hash?\n\nLa idea y el nombre de un función hash viene de la cocina: hash se traduce literalmente como “picadillo”, y se usa precisamente porque eso hace una función hash con los datos que le pasemos.\n\n\n\nLas funciones hash reciben una entrada y normalmente te devuelven un valor de tamaño fijo. Estos datos parecen “picadillo”, es imposible para los humanos distinguir los argumentos que recibió a partir de la salida. Las funciones hash más simples mapean los valores de entrada a un número pequeño, aquí puedes ver algunos ejemplos. Estas funciones las puedes considerar como un mapeo de valores (con posibilidades infinitas) a un conjunto de valores finitos. Por eso, una función hash de esta naturaleza se considera como una relación del valor de entrada con su “contenedor” o “bucket” como le dirían en inglés.\n\nLas funciones hash son como navajas suizas, ya que pueden ser utilizadas para ocultar datos, para crear estructuras de datos llamadas hash tables, para comparar datos, para crear firmas digitales (verificación de integridad) y muchas otras cosas. Tienen muchos usos dentro y fuera de la criptografía.\n\nExisten diferentes tipos de funciones hash para los diferentes usos, las características que normalmente verás en hashes son:\n\n\n  Entregan un resultado de tamaño fijo sin importar el tamaño de la entrada\n  Son rápidas relativamente\n  Son deterministas, es decir, siempre que le demos el mismo valor, dará el mismo resultado\n  Es imposible recuperar la entrada original, porque se pierden datos\n\n\nAlgo que contaría como una función hash podría ser tan sencilla como obtener el sobrante de una división entera para los números enteros:\n\ndef hash_simple(x):\n    return x % 10\n\n\nEsta función cumple con todas las características de las que hablamos arriba, y es una función hash no criptográfica o no segura, es decir, no se puede confiar en ella para proteger información.\n\nAlgunos ejemplos de funciones hash no criptográficas son:\n\n  SeaHash\n  fnv1a\n  La función hash de Python o de tu lenguaje preferido\n\n\nAhora hablemos de qué características tiene una función hash criptográfica segura.\n\nFunciones hash criptográficas\n\nLa característica principal de una función hash segura es que su resultado es completamente impredecible, no revela ningún tipo de información sobre la entrada original, tanto para los humanos como para una computadora, es resistente a análisis estadísticos.\n\nPara asegurarnos de esto, una función hash segura cumple con tres características formales:\n\n\n  Es resistente a encontrar una preimagen\n  Es resistente a encontrar una segunda preimagen\n  Es resistente a colisiones\n\n\n¿Qué es eso de las preimágenes? En criptografía se llama preimagen a todos los valores que le podemos dar a una función hash. La imagen es el resultado de aplicar la función hash a una preimagen.\n\nEsta ilustración lo puede dejar un poco más claro:\n\n\n\nAhora hablemos sobre lo que significa cada punto de la seguridad.  El primer punto se refiere a que dada una imagen o un hash, como normalmente le llamamos al resultado de una función hash, es imposible encontrar la entrada original, o algún otro valor que resulte en ese hash. Si este punto no se cumple, los siguientes dos tampoco.\n\nEl segundo punto, la resistencia a la segunda preimagen, es que dado un valor de entrada (praimagen) y su hash correspondiente (imagen), es imposible encontrar otro valor de entrada que se resulte en el mismo hash, o la misma imagen.\n\nEl tercer punto, la resistencia a colisiones se refiere a que es cerca de imposible encontrar (o fabricar) dos valores de entrada que den el mismo hash (dos preimágenes que resulten en la misma imagen).\n\nEn resumen: para un hash seguro es casi imposible encontrar dos valores que den el mismo hash, teniendo ejemplos de hasheado o no, así como encontrar el valor que generó cierto hash.\n\nAlgunas funciones hash criptográficamente seguras\n\nLas dos funciones hash criptográficas más populares son MD5 y SHA-1. Actualmente (2021) a ambas se les han encontrado vulnerabilidades, sobre todo en el campo de las colisiones, para ambas es posible generar colisiones de manera arbitraria.\n\n“SHA” es un acrónimo que significa Algoritmo de Hasheo Seguro (“Secure Hash Algorithm”) y es un “título” dado a los algoritmos de hasheo que son seleccionados por la NIST (National Institute of Standards and Technology de Estados Unidos).\n\nAhora sí hablemos de algunas funciones hash criptográficas todavía consideradas seguras:\n\n\n  \n    SHA-2. SHA-2 es la familia sucesora de SHA-1, y consiste de 4 funciones hash que difieren en el tamaño de bits de su salida: SHA-224, SHA-256, SHA-384 y SHA-512. Las dos más usadas son SHA-256 y SHA-512. Hasta 2021 no se le han encontrado vulnerabilidades que hagan que sean no recomendadas. La desventaja es que la familia SHA-2 es más lenta que SHA-1.\n  \n  \n    SHA-3. SHA-3 es la cuarta versión de SHA y el algoritmo se escogió de un concurso organizado por la NIST en 2007. En 2012 se anunció que el algoritmo seleccionado era Keccak, un algoritmo muy diferente de SHA-1 y SHA-2. Esta familia de algoritmos también define cuatro funciones hash, SHA3-224, SHA3-256, SHA3-384 y SHA3-512. Pero además define 2 algoritmos extra que pueden dar resultados variables. Puedes ver la página del equipo de Keccak en Keccak Team.\n  \n  \n    BLAKE2. Es un algoritmo sucesor de BLAKE, uno de los participantes en el concurso por SHA-3. BLAKE2 es mucho más rápido que Keccak, casi igual de seguro, pero más parecido a SHA-2, que es la razón por la que no se eligió a BLAKE como el SHA-3. Es una muy buena opción para usarse en caso de que requieras un función hash segura y que la velocidad sea muy importante, ya que es más rápida incluso que SHA-1.\n  \n\n\nComo puedes ver, tenemos para escoger entre las funciones hash todavía consideradas seguras.\n\n¿Qué función hash usar?\n\nAhora que tenemos un sucesor de SHA-2, la que deberías usar para la mayoría de tus proyectos es SHA3-256, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2.\n\n¿Sirven para guardar passwords?\n\nUn error común es pensar que estas funciones pueden servir para guardar passwords de forma segura en nuestras aplicaciones. En el siguiente artículo hablaremos de por qué no sirven para eso y qué otras funciones podrías usar.\n",
       "datePublished": "2021-12-02 00:00:00 -0600",
       "dateModified": "2021-12-02 00:00:00 -0600",
       "author": {
@@ -501,7 +501,7 @@
 
 <h2 id="qué-función-hash-usar">¿Qué función hash usar?</h2>
 
-<p>Ahora que tenemos un sucesor de SHA-2, la que deberías usar en la mayoría de tus proyectos es <strong>SHA3-256</strong>, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2, que también es muy popular y está implementada en muchos lenguajes de programación.</p>
+<p>Ahora que tenemos un sucesor de SHA-2, la que deberías usar para la mayoría de tus proyectos es <strong>SHA3-256</strong>, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2.</p>
 
 <h2 id="sirven-para-guardar-passwords">¿Sirven para guardar passwords?</h2>
 
@@ -560,8 +560,7 @@
 ">Anterior</a>
     
     
-      <a href="/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" class="pagination--pager" title="Algoritmos criptográficos: hashes seguros para alamcenar passwords
-">Siguiente</a>
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
     
   </nav>
 
@@ -584,41 +583,6 @@
     <div class="page__related">
       <h4 class="page__related-title">Podrías ver también</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1638592882/susan-wilkinson--ZgqdP78I4g-unsplash_uchtnu.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" rel="permalink">Algoritmos criptográficos: hashes seguros para alamcenar passwords
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  5 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 03-12-2021
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Muchos desarrolladores cometen el error de usar un hash criptográfico seguro como SHA-256 para almacenar passwords en la base de datos. Veamos por qué no es ...</p>
-  </article>
-</div>
-
         
           
 
@@ -663,38 +627,6 @@
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2021/10/09/crypto.html" rel="permalink">Crypto
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  menos de 1 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 09-10-2021
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
       <div class="archive__item-teaser">
         <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1633104565/fakurian-design-UoqIavC59eg-unsplash_bitrsd.jpg" alt="">
       </div>
@@ -720,6 +652,76 @@
     
     <p class="archive__item-excerpt" itemprop="description">La implementacion de ciertas reglas en el desarrollo de software mejora significativamente la calidad del producto final.
 </p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:16,w_300/v1626756313/daniele-franchi-g2fJ7d7eKSM-unsplash_mogbm1.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="permalink">Como transmitir conocimiento en el desarrollo de software
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 19-07-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Compartir el conocimiento que tienes sobre el proyecto es una de las tareas más importantes en el desarrollo de software. Exploremos cómo podemos mejorar en ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/e_oil_paint:0,w_300/v1626237333/slideslive_russ-olsen_explain-it_mejk2s.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html" rel="permalink">Desarrolladores de los que puedes aprender: Russ Olsen
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 14-07-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Russ Olsen es un desarrollador de software conocido por sus libros sobre Ruby y Clojure y por las excelentes charlas que da. Veamos algunas de sus ideas y lo...</p>
   </article>
 </div>
 

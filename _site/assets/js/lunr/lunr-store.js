@@ -420,8 +420,14 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_340/v1638419376/hans-isaacson-rlqkZ1DlOnU-unsplash_rsaim0.jpg"
       },{
         "title": "Algoritmos criptográficos: ¿Qué es un Hash?",
-        "excerpt":"Dentro del mundo del desarrollo se escucha bastante sobre las funciones hash y en realidad se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software. ¿Qué es un función hash?...","categories": [],
+        "excerpt":"Dentro del mundo del desarrollo se escucha bastante sobre funciones hash y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software. ¿Qué es un función hash? La...","categories": [],
         "tags": ["criptografía,","hash,","cifrado"],
         "url": "/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638504578/steven-lasry-UC8hqc0udqY-unsplash_xmtlvb.jpg"
+      },{
+        "title": "Algoritmos criptográficos: hashes seguros para alamcenar passwords",
+        "excerpt":"Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre hashearla. Como aprendiste en el artículo anterior, un hash es una función que impide recuperar el valor original ya que simplemente la información...","categories": [],
+        "tags": ["criptografía","hash","password"],
+        "url": "/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1638592882/susan-wilkinson--ZgqdP78I4g-unsplash_uchtnu.jpg"
       }]
