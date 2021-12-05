@@ -1,4 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-03T14:14:54-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Algoritmos criptográficos: ¿Qué es un Hash?</title><link href="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: ¿Qué es un Hash?" /><published>2021-12-02T00:00:00-06:00</published><updated>2021-12-02T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">&lt;p&gt;Dentro del mundo del desarrollo se escucha bastante sobre &lt;strong&gt;funciones hash&lt;/strong&gt; y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-04T18:03:35-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Algoritmos criptográficos: hashes seguros para alamcenar passwords</title><link href="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: hashes seguros para alamcenar passwords" /><published>2021-12-03T00:00:00-06:00</published><updated>2021-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html">&lt;p&gt;Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre &lt;em&gt;hashearla&lt;/em&gt;. Como aprendiste &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;en el artículo anterior&lt;/a&gt;, un hash es una función que impide recuperar el valor original ya que simplemente la información se pierde.&lt;/p&gt;
+
+&lt;p&gt;Los hashes seguros hacen casi imposible encontrar una colisión (que dos passwords te devuelvan un mismo hash), por lo que parecerían una buena solución para crear un valor único para cada usuario. Debido a que son deterministas, cuando el usuario te da su password, calculamos el hash de nuevo, lo comparamos con el hash almacenado y verificamos si coinciden. En este caso, el usuario está autenticado.&lt;/p&gt;
+
+&lt;p&gt;¿Pero qué hash puedes usar para hashear un password? Todos hemos escuchado &lt;em&gt;que no se debe usar MD5 para hashear passwords&lt;/em&gt;, pero la razón por la que se menciona que esto es un error normalmente no es la correcta. Se argumento que MD5 es un hash que está “roto”, ya que es posible romper su seguridad con menos esfuerzo computacional del que su tamaño requeriría. Esto es cierto, pero no es la razón principal por la que no deberías usar MD5 para passwords.&lt;/p&gt;
+
+&lt;p&gt;La verdadera razón por la que nunca debes usar MD5 para esto es que &lt;strong&gt;no está diseñado para esa función&lt;/strong&gt;, y puede ser atacado de manera sencilla y efectiva.&lt;/p&gt;
+
+&lt;p&gt;Hablemos de algunos tipos de ataques que pueden sufrir los sistemas de almacenamiento de información que usan un hash seguro normal para hashear sus passwords.&lt;/p&gt;
+
+&lt;h2 id=&quot;ataques-de-fuerza-bruta&quot;&gt;Ataques de fuerza bruta&lt;/h2&gt;
+
+&lt;p&gt;Un hash seguro que no presenta vulnerabilidades tiene la característica de que no hay una forma más inteligente de atacarlo que mediante probar todos los valores posibles de entrada. Por ejemplo, si sabemos que un sistema acepta letras y números y la mínima contraseña es de 6 carácteres, tendríamos que probar todas las combinaciones posibles de letras y números a partir de 6 carácteres.&lt;/p&gt;
+
+&lt;p&gt;Eso suena a que es mucho, sin embargo, con los hashes seguros no es un problema para los atacantes ya que estos hashes son muy eficientes y están pensados para correr lo más rápido posible.&lt;/p&gt;
+
+&lt;p&gt;Alguien con la suficiente motivación y paciencia podría lanzar un ataque de fuerza bruta con &lt;em&gt;hardware especializado&lt;/em&gt; y encontrar un password que coincida con el hash. Esto se puede hacer con hardware común como CPU’s  y GPU’s domésticos, que llegan a procesar cientos de miles de passwords &lt;strong&gt;por segundo&lt;/strong&gt;, o con hardware especializado en hashear (FPGA’s y ASIC’s).&lt;/p&gt;
+
+&lt;p&gt;Herramientas como &lt;a href=&quot;https://hashcat.net/hashcat/&quot;&gt;hashcat&lt;/a&gt; te permiten hacer este tipo de ataques, pero lo más interesante es que debido a que conocemos la naturaleza de la información, podemos dirigir el ataque de manera un poco más inteligente, usando diccionarios de palabras y contraseñas comunes, haciendo todavía más probable romper la seguridad de estos sistemas.&lt;/p&gt;
+
+&lt;p&gt;Repitamos: lo que permite este tipo de ataques son los objetivos de diseño de las funciones hash seguras: que sean rápidas, y eficientes en memoria. Esta es la primera razón por la que &lt;strong&gt;nunca debiste usar MD5&lt;/strong&gt; es esta. Pero, como podrás deducir, lo mismo aplica para cualquiera de familia SHA (SHA-1, SHA-2, SHA-3 y los que vengan), BLAKE, BLAKE2 y los que vengan. No importa que estas funciones sigan siendo seguras para otros usos.&lt;/p&gt;
+
+&lt;h2 id=&quot;ataques-con-tablas-arcoiris-rainbow-tables&quot;&gt;Ataques con tablas arcoiris (Rainbow Tables)&lt;/h2&gt;
+
+&lt;p&gt;Imagínate que eres un atacante que quiere descubrir los passwords de los usuarios de diferentes sitios y sabes que todos usan SHA-256. En vez de hacer una ataque de fuerza bruta cada vez, preparas una tabla con dos columnas: el hash y el password. En la columna de passwords pondrás valores que sabes que pueden servir de passwords a los usuarios.&lt;/p&gt;
+
+&lt;p&gt;Esto que acabamos de describir es una versión sencilla de una &lt;strong&gt;Rainbow table&lt;/strong&gt;, una colección de valores precalculados organizados para que, una vez teniendo el hash, puedas buscar el password correspondiente en la tabla. Se hace un intercambio de procesamiento por memoria. Las Rainbow Tables completas son un poco más complejas que lo que acabamos de describir, puedes leer más sobres ellas en este artículo: &lt;a href=&quot;https://www.ionos.com/digitalguide/server/security/rainbow-tables/&quot;&gt;Rainbow Tables&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Debido al mal uso de los passwords y de los algoritmos para hasheo seguro, existen rainbow tables para millones de valores de todos los algoritmos. Aunque siguen siendo una amenaza, las Rainbow tables están cayendo en desuso, en favor de otros métodos más modernos y aprovechándose del poder de cómputo actual.&lt;/p&gt;
+
+&lt;h2 id=&quot;protección-contra-ataques-a-hasheo-de-passwords&quot;&gt;Protección contra ataques a hasheo de passwords&lt;/h2&gt;
+
+&lt;p&gt;La forma de protegerse contra valores precalculados y ataques de diccionario es más o menos sencilla: antes de hashear el password, agrega un valor aleatorio extra que puedas recuperar fácilmente y añadir cada vez que verificas el password. Esto se conoce como &lt;strong&gt;salting&lt;/strong&gt;, siendo el valor aleatoria el &lt;strong&gt;salt&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Aunque es cierto que esto lo podrías hacer con cualquier algoritmo de hasheo seguro, se queda sin resolver el segundo problema: ¿Cómo nos protegemos contra ataques de fuerza bruta con hardware muy poderoso? Esto sólo se puede resolver de una forma: usando algoritmos que te obliguen a usar mucho procesamiento o mucha memoria, o ambos. Estas deben ser precisamente las metas de diseño de los algoritmos especializados en hasheo de passwords.&lt;/p&gt;
+
+&lt;p&gt;Hablemos de algunos de ellos y finalizarmos con el que deberías usar actualmente en 2021.&lt;/p&gt;
+
+&lt;h2 id=&quot;hashes-seguros-para-passwords&quot;&gt;Hashes seguros para passwords&lt;/h2&gt;
+
+&lt;p&gt;Como ya lo dijimos, estos hashes deben ayudarte con una cosa principal además de ser seguros criptográficamente: ser costos en proceamiento y/o memoria, lo que se traduce en lentitud.&lt;/p&gt;
+
+&lt;p&gt;Pero además, algunos de estos algoritmos te ayudana a “salar” el password de manera automática, lo que es una ventaja para reducir errores en la implementación de esta práctica.&lt;/p&gt;
+
+&lt;p&gt;En esta sección hablaremos de los algoritmos, cómo cumplen con estas características y si los puedes seguir usando.&lt;/p&gt;
+
+&lt;h3 id=&quot;pbkdf2&quot;&gt;PBKDF2&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ietf.org/rfc/rfc2898.txt&quot;&gt;PBKDF2&lt;/a&gt; - Es un acrónimo que significa “Password Based Key Derivation Function”, versión 2.0 y que básicamente aplica un algoritmo de hasheo seguro a una contraseña repetidas veces. Puedes configurar el número de iteraciones, el algoritmo de hasheo, el tamaño del resultado y te pide el &lt;em&gt;salt&lt;/em&gt; para funcionar. Fue usada por varios frameworks de desarrollo web como Django, pero actualmente no se considera segura porque aunque es exigente en cómputo para una computadora normal, es débil contra hardware especializado.&lt;/p&gt;
+
+&lt;h3 id=&quot;bcrypt&quot;&gt;bcrypt&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.usenix.org/legacy/event/usenix99/provos/provos.pdf&quot;&gt;bcrypt&lt;/a&gt; - Es un algoritmo diseñado específicamente con el objetivo de estar preparado para el mejoramiento que el hardware va teniendo, ya que tiene una “dificultad” configurable. Te provee &lt;strong&gt;automáticamente de un salt seguro&lt;/strong&gt;, por lo que no recaerá en ti la responsabilidad de conseguirlo como en PBKDF2. Está basado en blowfish, otro algoritmo de cifrado que ha permanecido seguro. Bcrypt fue presentado en 1999 y sigue siendo considerado más o menos seguro, su recomendación está en duda ya que es posible atacarlo con hardware especializado y de bajo costo. &lt;a href=&quot;https://www.usenix.org/system/files/conference/woot14/woot14-malvoni.pdf&quot;&gt;Este estudio de 2011&lt;/a&gt; explica como se puede atacar con hardware especializado en cómputo paralelo y predijo muy bien que bcrypt no permanecería super seguro por mucho tiempo.&lt;/p&gt;
+
+&lt;h3 id=&quot;scrypt&quot;&gt;scrypt&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc7914&quot;&gt;scrypt&lt;/a&gt; - Es una función diseñada para cubrir las carencias de PBKDF2 y bcrypt. Es tanto computacionalmente intensiva como pesada en memoria, por lo que no es tan fácil atacarla con hardware especializado. Es un función de muy reciente presentación, &lt;a href=&quot;https://www.tarsnap.com/scrypt/scrypt.pdf&quot;&gt;Colin Percival la presentó en 2009&lt;/a&gt;. Es una secuencia de funciones pesadas en memoria que impide que sea atacada fácilmente con GPU’s. FPGA’s y ASIC’s. Es una función que puedes usar conseguridad todavía ya que no se han encontrado ataques efectivos contra ella. Al igual que bcrypt, &lt;em&gt;sala&lt;/em&gt; (usa un salt) automáticamente, lo que le facilita la vida al desarrollador.&lt;/p&gt;
+
+&lt;h3 id=&quot;argon2&quot;&gt;Argon2&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/P-H-C/phc-winner-argon2/blob/master/argon2-specs.pdf&quot;&gt;Argon2&lt;/a&gt; - Es la función más avanzada y con mejores garantías para generación de hashes resistentes a ataques con fuerza bruta. Es la ganadora del &lt;a href=&quot;https://www.password-hashing.net/&quot;&gt;Password Hashing Competition&lt;/a&gt; en 2015. Se dice que Argon2 es el estado del arte en lo que se refiere a hashing de passwords. Tiene tres variaciones principales: Argond2d, Argon2i y Argon2id.&lt;/p&gt;
+
+&lt;p&gt;¿Cuándo usar cada una?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Argon2d&lt;/strong&gt;  es más rápida pero al mismo tiempo está mejor protegida contra ataques de fuerza bruta de hardware especializado, por la forma en la que usa la memoria, sin embargo, es más vulnerable a ataques &lt;a href=&quot;https://www.rambus.com/blogs/side-channel-attacks/&quot;&gt;side-channel&lt;/a&gt;. Es recoemndada cuando tus atacantes no tengan posibilidad de realizar estos ataques, como en servidores de backend y para generación criptomonedas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Argon2i&lt;/strong&gt; es más lenta, más computacionalmente intensiva y resistente contra side-channel attacks, es la recomendada para hashear passwords. Da varias “pasadas” a los argumentos de entradda, por lo que es más dificil de atacar.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Argon2id&lt;/strong&gt; es un híbrido entre estas las dos variaciones anteriores, protegida parcialmente contra ataques side-channel al mismo tiempo que más computacionalmente intensiva que Argon2d. La recomendación es que si estás en incertidumbre uses Argon2d.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Argon2 permite configurar:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Memoria usada: mientras más memoria se use, más resistente será el hash y menos vulnerable será a ataques de fuerza bruta.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Número de iteraciones sobre la memororia. Esto lo hace más computacionalmente intensivo, de igual forma haciéndolo más dificil de atacar, haciendo la generación de hashes más lenta.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Grado de paralelismo. Es el número de hilos que se usan para generar el hash, el tiempo de ejecución variará dependiendo de la configuración.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tamaño del hash, el salt y el tag. Esto también varía el grado de resistencia de tus hashes.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;En el artículo &lt;a href=&quot;https://www.twelve21.io/how-to-choose-the-right-parameters-for-argon2/&quot;&gt;“Cómo escoger los parámetros de Argon2”&lt;/a&gt; se describe una forma de escoger los parámetros de Argon2.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, aunque no incluye la generación del salt en el algoritmo mismo, las implementaciones de Argon2 incluyen una función de generación de salt automática para que no tengas que hacerlo tú.&lt;/p&gt;
+
+&lt;h3 id=&quot;nota-sobre-funciones-de-derivación-de-llaves-key-derivation-functions&quot;&gt;Nota sobre Funciones de Derivación de Llaves (Key Derivation Functions)&lt;/h3&gt;
+
+&lt;p&gt;Si lees algunas de las especificaciones de los algoritmos de arriba, probablemente te encuentres mucho con el término &lt;strong&gt;KDF&lt;/strong&gt; o Key Derivation Function. ¿Qué es eso? ¿No estábamos hablando de funciones hash?&lt;/p&gt;
+
+&lt;p&gt;Las KDF’s son funciones hash usadas para generar un cadena pseudo-aleatoria de bytes, que puede ser usada como una llave para cifrado, basadas en uno o varios valores de entrada. Las KDF’s son un caso especializados de las funciones hash y que pueden entregar resultados de tamaño variable y ya que los algoritmos usados aquí admiten varios valores y pueden entregar resultados variables, se consideran funciones de derivación de llaves o KDF’s.&lt;/p&gt;
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Aunque ninguna de las funciones mencionadas aquí es lo que se diría &lt;em&gt;fácil&lt;/em&gt; de romper, es recomendable que no uses PBKDF2 o bcrypt si quieres tener un buen margen de seguridad y estar preparado para el futuro y para el mejoramiento de constante del hardaware. Si estas haciendo una aplicación lo más recomendable es que uses por lo menos scrypt, pero idealmente Argon2i, que es más fuerte que scrypt usando los mismos parámetros de esfuerzo. Esto es de esencial importancia sobre todo si estás haciendo un sistema en el que los atacantes puedan tener incentivos y recursos para robar información.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="hash" /><category term="password" /><summary type="html">Muchos desarrolladores cometen el error de usar un hash criptográfico seguro como SHA-256 para almacenar passwords en la base de datos. Veamos por qué no es conveniente.</summary></entry><entry><title type="html">Algoritmos criptográficos: ¿Qué es un Hash?</title><link href="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: ¿Qué es un Hash?" /><published>2021-12-02T00:00:00-06:00</published><updated>2021-12-02T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">&lt;p&gt;Dentro del mundo del desarrollo se escucha bastante sobre &lt;strong&gt;funciones hash&lt;/strong&gt; y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.&lt;/p&gt;
 
 &lt;h2 id=&quot;qué-es-un-función-hash&quot;&gt;¿Qué es un función hash?&lt;/h2&gt;
 
@@ -86,7 +190,7 @@
 
 &lt;h2 id=&quot;qué-función-hash-usar&quot;&gt;¿Qué función hash usar?&lt;/h2&gt;
 
-&lt;p&gt;Ahora que tenemos un sucesor de SHA-2, la que deberías usar para la mayoría de tus proyectos es &lt;strong&gt;SHA3-256&lt;/strong&gt;, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2.&lt;/p&gt;
+&lt;p&gt;Ahora que tenemos un sucesor de SHA-2, la que deberías usar en la mayoría de tus proyectos es &lt;strong&gt;SHA3-256&lt;/strong&gt;, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2, que también es muy popular y está implementada en muchos lenguajes de programación.&lt;/p&gt;
 
 &lt;h2 id=&quot;sirven-para-guardar-passwords&quot;&gt;¿Sirven para guardar passwords?&lt;/h2&gt;
 
@@ -745,80 +849,4 @@ Contar con segmentos de código que pueden ser consumidos por más de un servici
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/hWVNLloajqg&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;En el futuro tendremos más pláticas sobre estos temas, con algunos ejercicios para ver la teoría en acción.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="system-design" /><category term="book" /><category term="courses" /><category term="cursos" /><category term="libros" /><category term="learning" /><summary type="html">¿Quieres aprender los principios de diseño de sistemas para mejorar como desarrollador o para una entrevista? En este post te pasamos algunos recursos.</summary></entry><entry><title type="html">Intro a Machine Learning: Entendiendo el perceptrón</title><link href="https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html" rel="alternate" type="text/html" title="Intro a Machine Learning: Entendiendo el perceptrón" /><published>2021-03-25T00:00:00-06:00</published><updated>2021-03-25T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html">&lt;p&gt;Hablar de aprendizaje automático y los términos que lo rodean, muchas veces intimida a los desarrolladores. En esta serie de posts vamos a intentar explicar los conceptos detrás del aprendizaje automático y llevarlos a la práctica.&lt;/p&gt;
-
-&lt;h2 id=&quot;acerca-de-los-nombres-de-las-cosas&quot;&gt;Acerca de los nombres de las cosas&lt;/h2&gt;
-
-&lt;p&gt;Antes de empezar a hablar de inteligencia artificial, aprendizaje automático, aprendizaje profundo y todas esas cosas, queremos hacer una nota sobre el nombrado en las asuntos de tecnología.&lt;/p&gt;
-
-&lt;p&gt;Primero, debemos recordar que la tecnología no existe en un entorno aislado, y generalmente no tiene uso por sí misma, sino que la usamos para servir a otras áreas. Es por eso que lo que conoceríamos por un nombre completamente acertado y descriptivo de acuerdo a sus características técnicas se tiene que renombrar para que otras personas no pertenecientes al área de desarrollo de software.&lt;/p&gt;
-
-&lt;p&gt;Así ha pasado vez tras vez con diferentes tecnologías:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;El objeto &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;XMLHttpRequest&lt;/code&gt; de los navegadores y su uso se nombró como &lt;strong&gt;AJAX&lt;/strong&gt; para que fuera más vendible&lt;/li&gt;
-  &lt;li&gt;Una página web avanzada y con más funcionalidades se empezó a llamar &lt;strong&gt;Web App&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Las técnicas relacionadas con aprovechar las nuevas características de los navegadores como el Service Worker, el archivo manifest se juntaron bajo un solo nombre más “vendible”: &lt;strong&gt;Progressive Web Apps&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Los ejemplos siguen y estoy seguro que en cada área del conocimiento suceden. Este “renombramiento” permite que la tecnología en cuestión sea más aceptada y difundida, aunque a veces puede llevar a un malentendido por parte del público en general que puede permear a los practicantes.&lt;/p&gt;
-
-&lt;p&gt;Esto es lo que ha pasado con los nombres que nos conciernen en este artículo, le llamamos &lt;em&gt;“Inteligencia Artificial”&lt;/em&gt; a toda una rama de las ciencias de la computación relacionada con imitar lo que entendemos como “inteligencia humana”, pero las bases formales de esto podrían describirse con otros nombres más familiares para nosotros.&lt;/p&gt;
-
-&lt;p&gt;Este nombre permite que los avances sean aceptados y por lo menos el área de negocio entienda las capacidades de la tecnología, &lt;strong&gt;no su funcionamiento&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Cuando comprendas cómo funciona, tal vez veas que las redes neuronales no tienen nada que ver con las redes neuronales, o que en realidad el &lt;em&gt;aprendizaje automático&lt;/em&gt; es la aplicación de técnicas matemáticas y de ingeniería para aproximación de funciones, a veces muy complejas.&lt;/p&gt;
-
-&lt;p&gt;Ahora bien, eso no tiene nada de malo, sólo debemos aprender a no confundirnos con esos términos. Después de esta pequeña digresión, ahora si vayamos a lo que venimos: aprendamos aplicar estas técnicas.&lt;/p&gt;
-
-&lt;h2 id=&quot;perceptrones&quot;&gt;Perceptrones&lt;/h2&gt;
-
-&lt;p&gt;Un &lt;strong&gt;perceptrón&lt;/strong&gt; es un algoritmo que aproxima una función matemática sirve para &lt;strong&gt;clasificar&lt;/strong&gt; su entrada entre &lt;strong&gt;dos clases&lt;/strong&gt;. Un perceptrón puede tomar N entradas y devuelve un “Sí” o un “No”.&lt;/p&gt;
-
-&lt;p&gt;Si eres un programador sin experiencia en ML, te puedes imaginar la función del perceptrón básicamente como un “IF”. Es un clasificador binario que devuelve &lt;strong&gt;Verdadero&lt;/strong&gt; si el objeto en cuestión pertenece al grupo seleccionado, &lt;strong&gt;falso&lt;/strong&gt; en el caso contrario.&lt;/p&gt;
-
-&lt;p&gt;La diferencia está &lt;strong&gt;en cómo se construye esta función&lt;/strong&gt;, nosotros no le damos reglas programadas al perceptrón para clasificar los objetos de cierta forma, sino que le damos ejemplos &lt;strong&gt;etiquetados&lt;/strong&gt; y el perceptrón &lt;strong&gt;aprende&lt;/strong&gt;: ajusta los parámetros de su función interna para dividir las dos clases lo mejor posible.&lt;/p&gt;
-
-&lt;p&gt;La fórmula básica para un perceptrón es una sumatoria de todos sus parámetros de entrada multiplicados por un factor llamado &lt;em&gt;peso&lt;/em&gt; para cada uno, más una constante llamada &lt;em&gt;sesgo&lt;/em&gt; o &lt;em&gt;bias&lt;/em&gt;. Al resultado de esta suma se le aplica la &lt;strong&gt;función de activación&lt;/strong&gt;, normalmente la función &lt;strong&gt;step&lt;/strong&gt; que devuelve &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; (equivalente a falso) si la entrada es menor o igual que cero y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt; en cualquier otro caso.&lt;/p&gt;
-
-&lt;p&gt;Si llamamos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;X&lt;/code&gt; a los parámetros de entrada, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;W&lt;/code&gt; a los pesos aquí puedes ver la representación gráfica de un perceptrón:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1616653024/Untitled_Artwork_2_fsqfcr.png&quot; alt=&quot;Representación gráfica de un perceptrón&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Y aquí la ecuación matemática que lo representa:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1616653048/Untitled_Artwork_3_fjoaaa.png&quot; alt=&quot;Ecuación de un perceptrón&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;entrenamiento&quot;&gt;Entrenamiento&lt;/h3&gt;
-
-&lt;p&gt;Como te podrás dar cuenta, el funcionamiento de un perceptrón es muy sencillo. Pero lo importante no es su funcionamiento cuando clasifica, &lt;em&gt;sino como aprende a clasificar&lt;/em&gt;. Esta fase se llama &lt;strong&gt;entrenamiento&lt;/strong&gt; o &lt;strong&gt;training&lt;/strong&gt; y consiste en encontrar los pesos correctos para cada parámetro de entrada y el sesgo correcto.&lt;/p&gt;
-
-&lt;p&gt;El entrenamiento de un perceptrón toma un conjunto de ejemplos &lt;strong&gt;clasificados&lt;/strong&gt; o &lt;strong&gt;etiquetados&lt;/strong&gt; y encuentra los peso que pueden clasificar el mayor número de ejemplos correctamente. Este entrenamiento puede ser muy pesado dependiendo del número de entradas y ejemplos.&lt;/p&gt;
-
-&lt;p&gt;Es justo esto lo que hace que diferencia al machine learning de la programación tradicional. Tú programaste el algoritmo para encontrar los parámetros correctos, pero nunca las reglas específicas de clasificación.&lt;/p&gt;
-
-&lt;h2 id=&quot;redes-neuronales&quot;&gt;Redes Neuronales&lt;/h2&gt;
-
-&lt;p&gt;Una red neuronal es un conjunto de perceptrones combinados para poder clasificar en más de dos clases, y para crear funciones de clasificación que van mucho más allá de nuestro nivel de comprensión.&lt;/p&gt;
-
-&lt;p&gt;Las redes neuronales generalmente usan perceptrones con una función de activación diferente, la función sigmoide que transforma cualquier entrada en un valor entre 0 y 1 (como una probabilidad).&lt;/p&gt;
-
-&lt;p&gt;En el siguiente artículo hablaremos más a detalle sobre eso.&lt;/p&gt;
-
-&lt;h2 id=&quot;las-matemáticas-necesarias&quot;&gt;Las matemáticas necesarias&lt;/h2&gt;
-
-&lt;p&gt;Para poder entender las &lt;strong&gt;bases de funcionamiento&lt;/strong&gt; de todo lo que acabamos de mencionar, hay que saber trabajar con matemáticas de nivel universitario:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Álgebra líneal&lt;/li&gt;
-  &lt;li&gt;Análisis o Cálculo Vectorial&lt;/li&gt;
-  &lt;li&gt;Ecuaciones diferenciales&lt;/li&gt;
-  &lt;li&gt;Probabilidad&lt;/li&gt;
-  &lt;li&gt;Estadística&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Y, claro, todas las matemáticas que soportan estas: álgebra, trigonometría, geometría analítica, etc.&lt;/p&gt;
-
-&lt;p&gt;Si quieres aprender &lt;em&gt;profundamente&lt;/em&gt; esta área de la computación y estas técnicas y sientes que no tienes las bases matemáticas necesarias puedes estudiarlas aquí: &lt;a href=&quot;https://es.khanacademy.org/&quot;&gt;Khan Academy en Español&lt;/a&gt; (gratuito) o &lt;a href=&quot;https://brilliant.org/&quot;&gt;Brilliant&lt;/a&gt; (de pago).&lt;/p&gt;
-
-&lt;p&gt;Sin embargo, y espero no ser linchado por esto, para empezar a aplicar las técnicas de manera práctica &lt;strong&gt;no las necesitas&lt;/strong&gt;. Puedes abrazar la parte pragmática y algorítmica y empezar a usar los paquetes y herramientas de ML.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ml" /><category term="aprendizaje-automático" /><summary type="html">En este artículo entenderemos las bases matemáticas y de programación de la unidad de construcción básica de lo que comercialmente se conoce como redes neuronales</summary></entry></feed>
+&lt;p&gt;En el futuro tendremos más pláticas sobre estos temas, con algunos ejercicios para ver la teoría en acción.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="system-design" /><category term="book" /><category term="courses" /><category term="cursos" /><category term="libros" /><category term="learning" /><summary type="html">¿Quieres aprender los principios de diseño de sistemas para mejorar como desarrollador o para una entrevista? En este post te pasamos algunos recursos.</summary></entry></feed>

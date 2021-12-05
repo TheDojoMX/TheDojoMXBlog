@@ -394,4 +394,10 @@ var store = [{
         "tags": ["criptografía,","hash,","cifrado"],
         "url": "/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638504578/steven-lasry-UC8hqc0udqY-unsplash_xmtlvb.jpg"
+      },{
+        "title": "Algoritmos criptográficos: hashes seguros para alamcenar passwords",
+        "excerpt":"Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre hashearla. Como aprendiste en el artículo anterior, un hash es una función que impide recuperar el valor original ya que simplemente la información...","categories": [],
+        "tags": ["criptografía","hash","password"],
+        "url": "/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1638592882/susan-wilkinson--ZgqdP78I4g-unsplash_uchtnu.jpg"
       }]

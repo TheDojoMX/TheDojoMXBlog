@@ -93,11 +93,15 @@ Argon2 permite configurar:
 
 4. Tamaño del hash, el salt y el tag. Esto también varía el grado de resistencia de tus hashes.
 
- En el artículo ["Cómo escoger los parámetros de Argon2"](https://www.twelve21.io/how-to-choose-the-right-parameters-for-argon2/) se describe una forma de escoger los parámetros de Argon2.
+En el artículo ["Cómo escoger los parámetros de Argon2"](https://www.twelve21.io/how-to-choose-the-right-parameters-for-argon2/) se describe una forma de escoger los parámetros de Argon2.
 
- Finalmente, aunque Argon2 no incluye la generación del salt en el argumento mismo, las implementaciones de Argon2 incluyen una función de generación de salt automática para que no tengas que hacerlo tú.
+Finalmente, aunque no incluye la generación del salt en el algoritmo mismo, las implementaciones de Argon2 incluyen una función de generación de salt automática para que no tengas que hacerlo tú.
 
+### Nota sobre Funciones de Derivación de Llaves (Key Derivation Functions)
 
- ## Conclusión
+Si lees algunas de las especificaciones de los algoritmos de arriba, probablemente te encuentres mucho con el término **KDF** o Key Derivation Function. ¿Qué es eso? ¿No estábamos hablando de funciones hash?
 
-Si estas haciendo una aplicación lo más recomendable es que uses scrypt o Argon2i. 
+Las KDF's son funciones hash usadas para generar un cadena pseudo-aleatoria de bytes, que puede ser usada como una llave para cifrado, basadas en uno o varios valores de entrada. Las KDF's son un caso especializados de las funciones hash y que pueden entregar resultados de tamaño variable y ya que los algoritmos usados aquí admiten varios valores y pueden entregar resultados variables, se consideran funciones de derivación de llaves o KDF's.
+## Conclusión
+
+Aunque ninguna de las funciones mencionadas aquí es lo que se diría _fácil_ de romper, es recomendable que no uses PBKDF2 o bcrypt si quieres tener un buen margen de seguridad y estar preparado para el futuro y para el mejoramiento de constante del hardaware. Si estas haciendo una aplicación lo más recomendable es que uses por lo menos scrypt, pero idealmente Argon2i, que es más fuerte que scrypt usando los mismos parámetros de esfuerzo. Esto es de esencial importancia sobre todo si estás haciendo un sistema en el que los atacantes puedan tener incentivos y recursos para robar información.
