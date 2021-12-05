@@ -1,4 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-04T01:01:15-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Algoritmos criptográficos: hashes seguros para alamcenar passwords</title><link href="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: hashes seguros para alamcenar passwords" /><published>2021-12-03T00:00:00-06:00</published><updated>2021-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html">&lt;p&gt;Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre &lt;em&gt;hashearla&lt;/em&gt;. Como aprendiste &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;en el artículo anterior&lt;/a&gt;, un hash es una función que impide recuperar el valor original ya que simplemente la información se pierde.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-05T00:33:25-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Versiona mejor tu código: versionamiento semántico y commits convencionales</title><link href="https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html" rel="alternate" type="text/html" title="Versiona mejor tu código: versionamiento semántico y commits convencionales" /><published>2021-12-04T00:00:00-06:00</published><updated>2021-12-04T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html">&lt;p&gt;Una de las mejores cosas que podemos hacer por nosotros mismos y por nuestro equipo es versionar nuestro código y qué mejor que hacerlo de las mejores formas conocidas hasta el momento.&lt;/p&gt;
+
+&lt;p&gt;En este artículo hablaremos de dos cosas conectadas: el &lt;strong&gt;versionamiento semántico&lt;/strong&gt; y los &lt;strong&gt;“commits convencionales”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;por-qué-es-importante&quot;&gt;¿Por qué es importante?&lt;/h2&gt;
+
+&lt;p&gt;Organizar y manejar tu código de tal manera que puedas crear diferentes versiones del sistema que estás programando, cambiar entre ellas o regresar una anterior, es un requerimiento de todos los procesos de desarrollo actuales.&lt;/p&gt;
+
+&lt;p&gt;Además, presentar tu software a los usuarios finales en versiones iterativamente mejores es una buena práctica que te permitirá liberar más rápido, más seguido y frecuentemente con mejor calidad. Para lograr esto es importante &lt;strong&gt;comunicar correctamente lo que está cambiando en cada versión&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;La herramienta más usada para versionar nuestro código es &lt;strong&gt;git&lt;/strong&gt;, pero no establece ningún lineamiento en la forma en la que liberamos el software para los usuarios finales. Así que veamos primeramente una forma de comunicar nuestros cambios de manera correcta y efectiva y después una forma de hacerlo conectarlo con nuestro proceso de trabajo con git.&lt;/p&gt;
+
+&lt;h2 id=&quot;versionamiento-semántico&quot;&gt;Versionamiento semántico&lt;/h2&gt;
+
+&lt;p&gt;El versionamiento semántico (Semantic Versioning o SemVer) es una forma de &lt;strong&gt;comunicar a nuestros usuarios finales los tipos de cambios introducidos en las nuevas versiones.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Esto es muy importante porque, como seguramente habrás experimentado, un proyecto de software requiere de muchas dependencias y cuando alguna de ellas no funciona bien, tiene algunos bugs, o no es compatible con lo que ya existía, nos podemos meter en serios problemas. Y mientras más grande es el proyecto, más dependencias necesitarás, lo que agranda el problema.&lt;/p&gt;
+
+&lt;p&gt;Lo que &lt;strong&gt;SemVer&lt;/strong&gt; propone es una sintaxis formal que nos permite entender el tipo de cambios introducidos en cada versión. Esta sintaxis constituye un lenguaje formal que puede ser usado para resolver automáticamente problemas de dependencias si se usa correctamente.&lt;/p&gt;
+
+&lt;p&gt;Antes de ver un ejemplo de una versión semántica es importante que aclaremos que esta se usa para software que tiene una interfaz establecida. Esta interfaz formal está completamente documentada para que otros programadores o usuarios finales pueden usar tu software. A esta interfaz le llamaremos &lt;strong&gt;API&lt;/strong&gt; (Application Programming Interface)&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; a partir de ahora. Ahora sí, una versión en SemVer se ve así:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.0.2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El primer número es la versión mayor, en este caso 1. El segundo número es la versión menor, en este caso 0. El tercer número es la versión del parche, en este caso 2.&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, ¿que significa cuando cambian estos números?&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cuando cambia la versión mayor, se introducen cambios que hacen que la API sea incompatible con la versión anterior. Imagínate por ejemplo que se remueve alguna función o módulo que ya no se necesita. También puede ser que aunque no cambie explícitamente el contrato externo, cambie el significado de una operación.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cuando cambia la versión menor, se han introducido cambios o mejoras que no hacen incompatible a la API con versiones anteriores. Imagínate algo como agregarle nuevos parámetros a una función, pero que soporta valores default para que pueda seguir siendo llamada de la forma anterior. O también puede ser que agregas nuevas partes que no afectan a la forma en la que se usan las antiguas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cuando cambia la versión de parche, no se ha introducido cambios externos a la interfaz por diseño, sino que se han arreglado errores que causaban mal funcionamiento.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Después de estos tres elementos pueden venir otros detalles, como por ejemplo la versón de prelanzamiento y metadatos de la compilación.&lt;/p&gt;
+
+&lt;p&gt;En el documento oficial &lt;a href=&quot;https://semver.org/lang/es/&quot;&gt;Versionamiento Semántico 2.0&lt;/a&gt; puedes ver más detalles sobre cómo trabajar con él, pero sobre todo notarás lo importante y serio que es que comuniquemos correctamente lo que está pasando con el software que hacemos, sobre todo si otros dependen de él. También podrás ver como las cadenas resultantes de semantic versioning son un lenguaje formal en el que se puede confiar para programar resolución de dependencias, hasta tienen un regex para reconocerlas.&lt;/p&gt;
+
+&lt;p&gt;Ahora veamos una herramienta que te ayudará a llevar cuenta del tipo de cambios que se van introduciendo en tu software y base de código.&lt;/p&gt;
+
+&lt;h2 id=&quot;commits-convencionales&quot;&gt;Commits convencionales&lt;/h2&gt;
+
+&lt;p&gt;Los &lt;a href=&quot;https://conventionalcommits.org/&quot;&gt;commits convencionales (Conventional Commits)&lt;/a&gt; son una forma de estructurar tus mensajes de cada commit para comunicar explícitamente lo que estás cambiando. El objetivo es que 1) puedas saber exactamente lo que el equipo ha cambiado en cada nueva versión o rama y 2) poder automatizar la creación de versiones semánticas y registros de cambios (changelog).&lt;/p&gt;
+
+&lt;p&gt;Un commit convencional tiene la siguiente estructura:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;tipo de commit&amp;gt; [ámbito (opcional)]: &amp;lt;descripción&amp;gt;
+
+[cuerpo (opcional)]
+
+[notas finales (opcional)]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Los tipos de commit directamente establecidos por la especificación son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;fix: Se trata de una corrección de un bug. Este tipo de commit se relaciona con una nueva versión de parche.&lt;/li&gt;
+  &lt;li&gt;feat: Se trata de una nueva función o módulo. Este tipo de commits se relaciona con una nueva versión menor.&lt;/li&gt;
+  &lt;li&gt;BREAKING CHANGE: No es un tipo de commit sino una nota final. Siempre que se incluyan debe generarse una nueva versión mayor en la siguiente liberación.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Si se incluye un símbolo de admiración después del tipo de commit como de esta forma &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feat!&lt;/code&gt; significa que este commit introduce un cambio que rompe la compatibilidad con la versión anterior.&lt;/p&gt;
+
+&lt;p&gt;El &lt;strong&gt;ámbito&lt;/strong&gt; puede referirse a la base de código o módulo al que se aplicó el cambio.&lt;/p&gt;
+
+&lt;p&gt;Veamos algunos ejemplos:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;feat(core): Ahora podemos usar ARGON2i para cifrar las contraseñas
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fix!: Removemos la compatibilidad con SHA-1 debido a que no es seguro
+
+Se encontró que SHA-1 no es seguro debido a que se pueden fabricar colisiones y por lo tanto hemos removido el soporte en la plataforma
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;feat: Añadimos el soporte de Sal para todas las funciones de hasheo
+
+BREAKING CHANGE: Todas las firmas de función ahora requieren el parámetro `salt`
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Básicamente en esto consisten los commits convencionales y si tu base de código los sigue, podrás usar herramientas para automatizar la creación de versiones semánticas y registros de cambios (changelog), ademas de mejorar drásticamente la información que se encuentra en los repositorios y cuándo sucedieron los cambios.&lt;/p&gt;
+
+&lt;p&gt;Puedes ver la especificación completa, más tipos de commits, ejemplos y las herramientas que te facilitarán la vida en &lt;a href=&quot;https://conventionalcommits.org/es/&quot;&gt;la página oficial en español&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Comunicar correctamente el estado de nuestros sistemas y módulos hacia nuestros usuarios finales es una tarea muy importante para los desarrolladores de software profesionales. Como podrás haber notado, para que esto tenga utilidad, el requisito previo es que exista documentación formal de tu software.&lt;/p&gt;
+
+&lt;p&gt;Espero que estas herramientas te ayuden a crear software que sea más fácil usar, mantener y más disfrutable tanto para ti como para tus usuarios finales.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Aquí puedes ver por qué se llama una API a la interfaz que presenta una pieza de software a otra: &lt;a href=&quot;https://youtu.be/n8MxyHG0j3Q&quot;&gt;API’s con Hug&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="versionamiento" /><category term="git" /><category term="commits" /><summary type="html">Hablemos de cómo versionar tu código para beneficiar a tu equipo y a tus usuarios usando el sistema de vesionamiento semántico y los commits convencionales.</summary></entry><entry><title type="html">Algoritmos criptográficos: hashes seguros para alamcenar passwords</title><link href="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: hashes seguros para alamcenar passwords" /><published>2021-12-03T00:00:00-06:00</published><updated>2021-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html">&lt;p&gt;Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre &lt;em&gt;hashearla&lt;/em&gt;. Como aprendiste &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;en el artículo anterior&lt;/a&gt;, un hash es una función que impide recuperar el valor original ya que simplemente la información se pierde.&lt;/p&gt;
 
 &lt;p&gt;Los hashes seguros hacen casi imposible encontrar una colisión (que dos passwords te devuelvan un mismo hash), por lo que parecerían una buena solución para crear un valor único para cada usuario. Debido a que son deterministas, cuando el usuario te da su password, calculamos el hash de nuevo, lo comparamos con el hash almacenado y verificamos si coinciden. En este caso, el usuario está autenticado.&lt;/p&gt;
 
@@ -44,15 +146,65 @@
 
 &lt;p&gt;En esta sección hablaremos de los algoritmos, cómo cumplen con estas características y si los puedes seguir usando.&lt;/p&gt;
 
+&lt;h3 id=&quot;pbkdf2&quot;&gt;PBKDF2&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ietf.org/rfc/rfc2898.txt&quot;&gt;PBKDF2&lt;/a&gt; - Es un acrónimo que significa “Password Based Key Derivation Function”, versión 2.0 y que básicamente aplica un algoritmo de hasheo seguro a una contraseña repetidas veces. Puedes configurar el número de iteraciones, el algoritmo de hasheo, el tamaño del resultado y te pide el &lt;em&gt;salt&lt;/em&gt; para funcionar. Fue usada por varios frameworks de desarrollo web como Django, pero actualmente no se considera segura porque aunque es exigente en cómputo para una computadora normal, es débil contra hardware especializado.&lt;/p&gt;
+
+&lt;h3 id=&quot;bcrypt&quot;&gt;bcrypt&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.usenix.org/legacy/event/usenix99/provos/provos.pdf&quot;&gt;bcrypt&lt;/a&gt; - Es un algoritmo diseñado específicamente con el objetivo de estar preparado para el mejoramiento que el hardware va teniendo, ya que tiene una “dificultad” configurable. Te provee &lt;strong&gt;automáticamente de un salt seguro&lt;/strong&gt;, por lo que no recaerá en ti la responsabilidad de conseguirlo como en PBKDF2. Está basado en blowfish, otro algoritmo de cifrado que ha permanecido seguro. Bcrypt fue presentado en 1999 y sigue siendo considerado más o menos seguro, su recomendación está en duda ya que es posible atacarlo con hardware especializado y de bajo costo. &lt;a href=&quot;https://www.usenix.org/system/files/conference/woot14/woot14-malvoni.pdf&quot;&gt;Este estudio de 2011&lt;/a&gt; explica como se puede atacar con hardware especializado en cómputo paralelo y predijo muy bien que bcrypt no permanecería super seguro por mucho tiempo.&lt;/p&gt;
+
+&lt;h3 id=&quot;scrypt&quot;&gt;scrypt&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc7914&quot;&gt;scrypt&lt;/a&gt; - Es una función diseñada para cubrir las carencias de PBKDF2 y bcrypt. Es tanto computacionalmente intensiva como pesada en memoria, por lo que no es tan fácil atacarla con hardware especializado. Es un función de muy reciente presentación, &lt;a href=&quot;https://www.tarsnap.com/scrypt/scrypt.pdf&quot;&gt;Colin Percival la presentó en 2009&lt;/a&gt;. Es una secuencia de funciones pesadas en memoria que impide que sea atacada fácilmente con GPU’s. FPGA’s y ASIC’s. Es una función que puedes usar conseguridad todavía ya que no se han encontrado ataques efectivos contra ella. Al igual que bcrypt, &lt;em&gt;sala&lt;/em&gt; (usa un salt) automáticamente, lo que le facilita la vida al desarrollador.&lt;/p&gt;
+
+&lt;h3 id=&quot;argon2&quot;&gt;Argon2&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/P-H-C/phc-winner-argon2/blob/master/argon2-specs.pdf&quot;&gt;Argon2&lt;/a&gt; - Es la función más avanzada y con mejores garantías para generación de hashes resistentes a ataques con fuerza bruta. Es la ganadora del &lt;a href=&quot;https://www.password-hashing.net/&quot;&gt;Password Hashing Competition&lt;/a&gt; en 2015. Se dice que Argon2 es el estado del arte en lo que se refiere a hashing de passwords. Tiene tres variaciones principales: Argond2d, Argon2i y Argon2id.&lt;/p&gt;
+
+&lt;p&gt;¿Cuándo usar cada una?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Argon2d&lt;/strong&gt;  es más rápida pero al mismo tiempo está mejor protegida contra ataques de fuerza bruta de hardware especializado, por la forma en la que usa la memoria, sin embargo, es más vulnerable a ataques &lt;a href=&quot;https://www.rambus.com/blogs/side-channel-attacks/&quot;&gt;side-channel&lt;/a&gt;. Es recoemndada cuando tus atacantes no tengan posibilidad de realizar estos ataques, como en servidores de backend y para generación criptomonedas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Argon2i&lt;/strong&gt; es más lenta, más computacionalmente intensiva y resistente contra side-channel attacks, es la recomendada para hashear passwords. Da varias “pasadas” a los argumentos de entradda, por lo que es más dificil de atacar.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Argon2id&lt;/strong&gt; es un híbrido entre estas las dos variaciones anteriores, protegida parcialmente contra ataques side-channel al mismo tiempo que más computacionalmente intensiva que Argon2d. La recomendación es que si estás en incertidumbre uses Argon2d.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Argon2 permite configurar:&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.ietf.org/rfc/rfc2898.txt&quot;&gt;PBKDF2&lt;/a&gt; - Es un acrónimo que significa “Password Based Key Derivation Function”, versión 2.0 y que básicamente aplica un algoritmo de hasheo seguro a una contraseña repetidas veces. Puedes configurar el número de iteraciones, el algoritmo de hasheo, el tamaño del resultado y te pide el &lt;em&gt;salt&lt;/em&gt; para funcionar. Fue usada por varios frameworks de desarrollo web como Django, pero actualmente no se considera segura porque aunque es exigente en cómputo para una computadora normal, es débil contra hardware especializado.&lt;/p&gt;
+    &lt;p&gt;Memoria usada: mientras más memoria se use, más resistente será el hash y menos vulnerable será a ataques de fuerza bruta.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;bcrypt&lt;/li&gt;
-  &lt;li&gt;scrypt&lt;/li&gt;
-  &lt;li&gt;twofish&lt;/li&gt;
-  &lt;li&gt;Argon2&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="hash" /><category term="password" /><summary type="html">Muchos desarrolladores cometen el error de usar un hash criptográfico seguro como SHA-256 para almacenar passwords en la base de datos. Veamos por qué no es conveniente.</summary></entry><entry><title type="html">Algoritmos criptográficos: ¿Qué es un Hash?</title><link href="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: ¿Qué es un Hash?" /><published>2021-12-02T00:00:00-06:00</published><updated>2021-12-02T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">&lt;p&gt;Dentro del mundo del desarrollo se escucha bastante sobre &lt;strong&gt;funciones hash&lt;/strong&gt; y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;Número de iteraciones sobre la memororia. Esto lo hace más computacionalmente intensivo, de igual forma haciéndolo más dificil de atacar, haciendo la generación de hashes más lenta.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Grado de paralelismo. Es el número de hilos que se usan para generar el hash, el tiempo de ejecución variará dependiendo de la configuración.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tamaño del hash, el salt y el tag. Esto también varía el grado de resistencia de tus hashes.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;En el artículo &lt;a href=&quot;https://www.twelve21.io/how-to-choose-the-right-parameters-for-argon2/&quot;&gt;“Cómo escoger los parámetros de Argon2”&lt;/a&gt; se describe una forma de escoger los parámetros de Argon2.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, aunque no incluye la generación del salt en el algoritmo mismo, las implementaciones de Argon2 incluyen una función de generación de salt automática para que no tengas que hacerlo tú.&lt;/p&gt;
+
+&lt;h3 id=&quot;nota-sobre-funciones-de-derivación-de-llaves-key-derivation-functions&quot;&gt;Nota sobre Funciones de Derivación de Llaves (Key Derivation Functions)&lt;/h3&gt;
+
+&lt;p&gt;Si lees algunas de las especificaciones de los algoritmos de arriba, probablemente te encuentres mucho con el término &lt;strong&gt;KDF&lt;/strong&gt; o Key Derivation Function. ¿Qué es eso? ¿No estábamos hablando de funciones hash?&lt;/p&gt;
+
+&lt;p&gt;Las KDF’s son funciones hash usadas para generar un cadena pseudo-aleatoria de bytes, que puede ser usada como una llave para cifrado, basadas en uno o varios valores de entrada. Las KDF’s son un caso especializados de las funciones hash y que pueden entregar resultados de tamaño variable y ya que los algoritmos usados aquí admiten varios valores y pueden entregar resultados variables, se consideran funciones de derivación de llaves o KDF’s.&lt;/p&gt;
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Aunque ninguna de las funciones mencionadas aquí es lo que se diría &lt;em&gt;fácil&lt;/em&gt; de romper, es recomendable que no uses PBKDF2 o bcrypt si quieres tener un buen margen de seguridad y estar preparado para el futuro y para el mejoramiento de constante del hardaware. Si estas haciendo una aplicación lo más recomendable es que uses por lo menos scrypt, pero idealmente Argon2i, que es más fuerte que scrypt usando los mismos parámetros de esfuerzo. Esto es de esencial importancia sobre todo si estás haciendo un sistema en el que los atacantes puedan tener incentivos y recursos para robar información.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="hash" /><category term="password" /><summary type="html">Muchos desarrolladores cometen el error de usar un hash criptográfico seguro como SHA-256 para almacenar passwords en la base de datos. Veamos por qué no es conveniente.</summary></entry><entry><title type="html">Algoritmos criptográficos: ¿Qué es un Hash?</title><link href="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: ¿Qué es un Hash?" /><published>2021-12-02T00:00:00-06:00</published><updated>2021-12-02T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">&lt;p&gt;Dentro del mundo del desarrollo se escucha bastante sobre &lt;strong&gt;funciones hash&lt;/strong&gt; y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.&lt;/p&gt;
 
 &lt;h2 id=&quot;qué-es-un-función-hash&quot;&gt;¿Qué es un función hash?&lt;/h2&gt;
 
@@ -469,164 +621,4 @@ Contar con segmentos de código que pueden ser consumidos por más de un servici
 
 &lt;p&gt;Además, el pragmatismo que demuestra en los consejos que da, es algo que podemos aprender a aplicar: &lt;strong&gt;resolver el problema es mucho más importante que sonar rimbombantes y asombrar a todos con las palabras tan bonitas que usamos&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;El último punto que quiero resaltar tiene que ver con la capacidad que tiene de contar historias, explicar progresivamente y dar charlas entretenidas. La comunicación es uno de los aspectos más importantes en el desarrollo de software, y mientras mejores seamos e eso, más podremos avanzar en nuestra carrera.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="devs" /><category term="ruby" /><category term="clojure" /><summary type="html">Russ Olsen es un desarrollador de software conocido por sus libros sobre Ruby y Clojure y por las excelentes charlas que da. Veamos algunas de sus ideas y lo que podemos aprender de él.</summary></entry><entry><title type="html">Desarrolladores de los que puedes aprender: Kevlin Henney</title><link href="https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html" rel="alternate" type="text/html" title="Desarrolladores de los que puedes aprender: Kevlin Henney" /><published>2021-07-07T00:00:00-05:00</published><updated>2021-07-07T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html">&lt;p&gt;Hay varios desarrolladores de talla internacional de los que puedes &lt;strong&gt;aprender mucho&lt;/strong&gt;, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que puedes aprender.&lt;/p&gt;
-
-&lt;p&gt;Las condiciones para que aparezcan aquí son las siguientes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Amplia experiencia real desarrollando sistemas&lt;/li&gt;
-  &lt;li&gt;Que tengan algún logro notable en el desarrollo de sistemas&lt;/li&gt;
-  &lt;li&gt;Comparten sus ideas con la comunidad de forma continua&lt;/li&gt;
-  &lt;li&gt;No son unos &lt;em&gt;“brilliant jerks”&lt;/em&gt;, es decir, no usan su experiencia o inteligencia para humillar o desacreditar a otros, y mucho menos su exposición para promover ideas nocivas.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;El objetivo de esta serie es que aprendamos de las personas que han dedicado su vida a esto y construyamos sobre lo que ellos han hecho en vez de reinventar la rueda cada vez.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; El que los mencionemos aquí no implica que todas sus ideas son correctas o que estemos de acuerdo con todo lo que dicen. Conocer diferentes puntos de vista, sumado a tu experiencia en diferentes contextos te ayudará a tener un criterio adaptado a tu realidad.&lt;/p&gt;
-
-&lt;p&gt;Ahora sí, vamos a hablar de &lt;a href=&quot;https://blog.eisele.net/2013/07/the-heroes-of-java-kevlin-henney.html&quot;&gt;Kevlin Henney&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;acerca-de-kevlin-henney&quot;&gt;Acerca de Kevlin Henney&lt;/h2&gt;
-
-&lt;p&gt;Kevlin Henney es un consultor, escritor, entrenador y presentador de temas relacionados con sistemas, procesos, las personas y el software. Sus escritos, talleres y consultorías siempre tienen que ver con &lt;strong&gt;la forma&lt;/strong&gt; en que &lt;em&gt;desarrollamos&lt;/em&gt; y &lt;em&gt;diseñamos&lt;/em&gt; software, además de con los procesos y prácticas que llevan al éxito los proyectos de software complejos.&lt;/p&gt;
-
-&lt;p&gt;Ha escrito columnas para múltiples revistas dedicadas al desarrollo de software. Es autor o editor de varios libros que son &lt;em&gt;muy recomendados&lt;/em&gt; para arquitectos de software y desarrolladores. Algunos ejemplos son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com.mx/Pattern-Oriented-Software-Architecture-Distributed-Computing/dp/0470059028&quot;&gt;Pattern-Oriented Software Architecture, Volume 4: A Pattern Language for Distributed Computing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.oreilly.com/library/view/97-things-every/9780596809515/&quot;&gt;97 Things Every Programmer Should Know&lt;/a&gt; - Es una colección de ensayos que Kevlin se encargó de compilar y editar, sobre cómo ser un mejor programador. También está la versión en español: &lt;a href=&quot;http://97cosas.com/programador/&quot;&gt;97 cosas que todo programador debería saber&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Kevlin se ha presentado en casi todas las conferencias importantes de desarrollo de software europeas y de habla inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en &lt;a href=&quot;https://www.amazon.com/Kevlin-Henney/e/B0716N93KR%3Fref=dbs_a_mng_rwt_scns_share&quot;&gt;Amazon&lt;/a&gt; sus libros de ficción. Además es muy accesible, si lo buscas en Twitter es muy probable que te conteste: &lt;a href=&quot;https://twitter.com/KevlinHenney&quot;&gt;Kevlin Henney en Twitter&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Una de las cosas que menciona que más nos gusta es: &lt;strong&gt;“Si estás de acuerdo con todo lo qu estoy diciendo, no me estás escuchando.”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;algunas-ideas-de-kevlin&quot;&gt;Algunas ideas de Kevlin&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Less code == less bugs”. - Kevlin Henney&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;De las pláticas y el contenido que hemos consumido de Kevlin, hemos podido derivar algunas de las principales ideas que promueve. Te listamos las tres más importantes y te dejamos descubrir las demás viendo sus charlas o leyendo su contenido.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;La arquitectura de software requiere entendimiento completo del dominio.&lt;/strong&gt; Una de las ideas que Kevlin repite vez tras vez es la importancia de entender y definir el problema que estamos tratando de resolver. Se basa en las ideas de otros autores para reforzar esto. Una de las cosas que Kevlin resalta es que debemos conocer los &lt;strong&gt;detalles&lt;/strong&gt;, para poder implementar software correcto con la arquitectura adecuada.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;El diseño y la arquitectura de software son procesos iterativos e incrementales.&lt;/strong&gt; Es imposible hacer un diseño completamente correcto y sin errores desde la primera vez. Es por eso que esta es una idea que se repite en sus conferencias vez tras vez. La lección para nosotros: &lt;em&gt;debemos diseñar el software con el conocimiento de que siempre habrá algo que mejorar&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;El software simple, pequeño y “aburrido” es más fácil de manejar&lt;/strong&gt;. Haciendo eco de la frase que pusimos al inicio de esta sección, una de las ideas que Kevlin promueve más es la de minimizar la cantidad de código para lograr algo, así como buscar la simplicidad tanto en funciones como de construcción. Esto último es lo que llamamos aburrido: evitar tanto como podamos tecnologías a las que no estamos acostumbrados o demasiado nuevas y que agreguen dependencias innecesarias.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;pláticas&quot;&gt;Pláticas&lt;/h2&gt;
-
-&lt;p&gt;Kevlin tiene decenas de pláticas en YouTube y Vimeo, hablando temas variados, todos relacionados de una forma u otra con el &lt;em&gt;proceso&lt;/em&gt; de desarrollo y la calidad del software.&lt;/p&gt;
-
-&lt;p&gt;Vamos a mencionar tres de las que nos han parecido las mejores.&lt;/p&gt;
-
-&lt;h3 id=&quot;software-is-details&quot;&gt;Software is Details&lt;/h3&gt;
-
-&lt;p&gt;Aquí presenta una idea que repite a lo largo de sus presentaciones: &lt;strong&gt;la implementación del software requiere un conocimiento lo más profundo y completo que se pueda sobre el problema que se está resolviendo&lt;/strong&gt;. Da algunos ejemplos en los que se diseñó un sistema sin pensar en los “detalles de implementación” con resultados catastróficos. Mantener la vista en el sistema entero mientras se toman en cuenta los detalles es una señal de un arquitecto de software efectivo.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/kX0prJklhUE&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;h3 id=&quot;old-is-the-new-new&quot;&gt;Old is the new new&lt;/h3&gt;
-
-&lt;p&gt;En esta plática resalta la importancia de conocer y dominar los principios que habilitan a las nuevas tecnologías y herramientas. Las implementaciones tienen una vida corta mientras que los principios se mantienen inalterados.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/AbgsfeGvg3E&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;h3 id=&quot;it-depends&quot;&gt;It Depends…&lt;/h3&gt;
-
-&lt;p&gt;Crear software &lt;strong&gt;depende&lt;/strong&gt; del conocimiento que tengamos acerca del dominio que estamos tratando. Nuestro conocimiento tiene límites que no podemos sobrepasar (incertidumbre) y es contra eso con lo que debemos tener cuidado, cosas que no están inmediatamente en nuestra visión.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/rNSVZs66o48&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Tiene muchas más pláticas en conferencias que puedes buscar directamente en YouTube. Cada una de sus pláticas es un conjunto de ideas y referencias que es más de lo que se puede absorber en el tiempo en el que lo presenta, por lo que tal vez tengas que verlas varias veces, pero todo ese bagaje vale la pena. Aquí te dejamos una búsqueda que las agrupa: &lt;a href=&quot;https://dev.tube/@kevlinhenney&quot;&gt;DevTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;preguntas-que-le-hicimos&quot;&gt;Preguntas que le hicimos&lt;/h2&gt;
-
-&lt;p&gt;Además de investigar y aprender sobre las ideas de estos desarrolladores, creamos un cuestionario para hacérselos a todos los desarrolladores de esta serie, para que contesten las preguntas que puedan. Contactaremos directamente a cada uno y le haremos llegar las preguntas, con suerte nos contestaran.&lt;/p&gt;
-
-&lt;p&gt;Kevlin fue muy accesible y nos contestó casi todas las preguntas, disfruta las respuestas.&lt;/p&gt;
-
-&lt;h4 id=&quot;cómo-fue-tu-camino-de-aprendizaje-cómo-te-hiciste-así-de-bueno&quot;&gt;¿Cómo fue tu camino de aprendizaje? &lt;strong&gt;¿Cómo te hiciste así de bueno?&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;No se si soy &lt;em&gt;tan&lt;/em&gt; bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio, ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.&lt;/p&gt;
-
-&lt;p&gt;Mientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, paradigmas, diseño, etc., mientras leía un conjunto aleatorio de artículos que incrementaron mi interés y fascinación. Empecé a tratar de comunicar esas ideas a través de artículos, y a relacionarlas con mis experiencias mientras trabajaba con diferentes sistemas y en en diferentes ambientes.&lt;/p&gt;
-
-&lt;p&gt;Esto eventualmente me llevó a dar charlas, cursos y visitar compañías, lo cuál amplió mi campo de visión, retó algunas de mis ideas y mejoró mi habilidad para pensar con los pies en la tierra.&lt;/p&gt;
-
-&lt;h4 id=&quot;cuál-ha-sido-tu-peor-decisión-técnica-qué-restricciones-la-limitaron&quot;&gt;¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?&lt;/h4&gt;
-
-&lt;p&gt;Escogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasado, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.&lt;/p&gt;
-
-&lt;p&gt;¡Resulta que nunca debes subestimar que tan tonta puede ser la gente! Afortunadamente esto fue corregido después con unos cuántos cambios para usar SSL en vez de correr nuestros propios sockets sin protección.&lt;/p&gt;
-
-&lt;p&gt;Dicho esto, aunque perdimos una tendencia futura, nos subimos a otras. No sólo corregimos el problema Y2K antes de que la mayoría de las personas siquiera supieran de él; también atendimos el problema del año 2038.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;cuál-es-el-peor-consejo-que-te-han-dado&quot;&gt;¿Cuál es el peor consejo que te han dado?&lt;/h4&gt;
-
-&lt;p&gt;Las pruebas no son responsabilidad del desarrollador.&lt;/p&gt;
-
-&lt;h4 id=&quot;cuál-es-el-mejor-consejo-que-te-han-dado&quot;&gt;¿Cuál es el mejor consejo que te han dado?&lt;/h4&gt;
-
-&lt;p&gt;Piensa en el desarrollo de software como la administración de la complejidad.&lt;/p&gt;
-
-&lt;h4 id=&quot;en-tu-experiencia-qué-tan-importante-es-el-lenguaje-que-seleccionamos-para-desarrollar-nuestro-software-por-qué-estamos-discutiendo-aún-sobre-los-lenguajes&quot;&gt;¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?&lt;/h4&gt;
-
-&lt;p&gt;Es importante porque la elección de lenguaje es, normalmente, arquitectural. Si no estás seguro de esto, &lt;strong&gt;considera el costo y esfuerzo, las herramientas, las habilidades, etcétera, de lo que tomaría cambiar de lenguaje en una parte o toda tu base de código&lt;/strong&gt;. Piensa en cuánto de tu sistema saldría afectado, como afectaría al equipo y cómo otros elementos de tu conjunto de herramientas tecnológicas serían impactados. &lt;strong&gt;Y más&lt;/strong&gt;. Lejos de ser un detalle, la elección es &lt;em&gt;mucho más significativa de lo que muchas personas se dan cuenta&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;El lenguaje, en cualquier presentación, es una forma de expresarnos. El lenguaje también está asociado con la cultura y la comunidad. Por eso peleamos acerca de él. Aunque muchos desarrolladores podrían pensar que están debatiendo racionalmente acerca de su lenguaje y sus méritos técnicos, pero típicamente esto no sucede. Debajo de la apariencia técnica de estas discusiones hay algo más  humano y menos racional, algo más social y personal. Y por eso es por lo que continuamos discutiendo sobre los lenguajes.&lt;/p&gt;
-
-&lt;p&gt;Claro, hay diferencias técnicas y puntos objetivos que se pueden argumentar, pero la verdad es que esto no es el centro de las discusiones.&lt;/p&gt;
-
-&lt;h4 id=&quot;cuál-es-la-discusión-técnica-más-improductiva-que-has-tenido&quot;&gt;¿Cuál es la discusión técnica &lt;strong&gt;más improductiva que has tenido&lt;/strong&gt;?&lt;/h4&gt;
-
-&lt;p&gt;¡Probablemente sobre un lenguaje de programación!&lt;/p&gt;
-
-&lt;h4 id=&quot;qué-podrías-recomendar-a-los-programadores-jóvenes-que-aún-estén-buscando-su-camino&quot;&gt;¿Qué podrías recomendar a los programadores jóvenes que aún estén buscando su camino?&lt;/h4&gt;
-
-&lt;p&gt;Observa la historia de la programación, la arquitectura de software, las metodologías de desarrollo, etcétera. El desarrollo de software  tiene una historia y la mayoría de las ideas profundas puede ser hallada ahí. La mayoría de las tendencias y elecciones actuales se entienden mejor al entender el pasado, en vez de sólo mirar el presente. El desarrollo de software es más conservador de lo que podrías apreciar, y las nuevas ideas raramente son originales.&lt;/p&gt;
-
-&lt;h4 id=&quot;qué-ideas-debemos-superar-como-comunidad-de-it-para-mejorar&quot;&gt;¿Qué ideas debemos superar como comunidad de IT para mejorar?&lt;/h4&gt;
-
-&lt;p&gt;La idea de que el desarrollo de software es una actividad estríctamente neutral y técnica que no necesita considerar a la gente. La manera en que desarrollamos software y en la que es usado tiene implicaciones éticas. Necesitamos reconocer de mejor manera el espectro de personas que pueden y crean software y las responsabilidad que tienen para con las personas qeu usan el software. El software cambia al mundo; no podemos hacer eso y decir que la manera en que el mundo cambia no es nuestra responsabilidad.&lt;/p&gt;
-
-&lt;h4 id=&quot;cuál-es-el-futuro-de-la-programación-para-los-siguientes-diez-años-en-tu-opinión-qué-deberíamos-aprender-para-mantenernos-productivos&quot;&gt;¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?&lt;/h4&gt;
-
-&lt;p&gt;Los próximos diez van a ser muy parecidos a los diez anteriores. Va a haber nuevos frameworks, nuevas plataformas, nuevos lenguajes de programación, junto con los respectivos cambios en las habilidades. Algunas personas se emocionarán con las nuevas ideas que no son tan nuevas. Algunas personas predecirán la desaparición de los programadores y el software tal como lo conocemos. Lo que es más probable que pase es que el número de programadores va a seguir aumentando y el desarrollo de software va a seguir evolucionando, mayoritariamente en la línea que lleva ahora. El mundo continuará siendo cada vez mas dependiente de los desarrolladores de software.&lt;/p&gt;
-
-&lt;h2 id=&quot;recursos&quot;&gt;Recursos&lt;/h2&gt;
-
-&lt;p&gt;Para aprender más de las ideas qeu Kevlin enseña, puedes investigar más de él y su trabajo aquí:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://about.me/kevlin&quot;&gt;Página de Kevlin Henney&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://blog.itkonekt.com/2021/01/21/kevlin-henney-on-the-topic-of-what-to-read-if-youre-a-programmer/&quot;&gt;What to read if you are a programmer&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://blog.eisele.net/2013/07/the-heroes-of-java-kevlin-henney.html&quot;&gt;Entrevista de la serie “Heroes of Java”&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://kevlinhenney.medium.com/&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.slideshare.net/Kevlin/presentations&quot;&gt;Sus presentaciones&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Todos los desarrolladores de diferentes niveles podemos aprender mucho de las ideas que Kevlin se ha dedicado a enseñar, mientras lo hace de una manera entretenida, profunda y que va puliendo con el tiempo. Es importante escuchar a personas con experiencia para pode desarrollar el criterio propio y las habilidades y formas de pensar para ser efectivos.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;El fin del UNIX Timestamp o &lt;a href=&quot;https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2038&quot;&gt;Y2k38&lt;/a&gt;. (Nota de traducción) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="developers" /><category term="arquitectura" /><summary type="html">Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.</summary></entry></feed>
+&lt;p&gt;El último punto que quiero resaltar tiene que ver con la capacidad que tiene de contar historias, explicar progresivamente y dar charlas entretenidas. La comunicación es uno de los aspectos más importantes en el desarrollo de software, y mientras mejores seamos e eso, más podremos avanzar en nuestra carrera.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="devs" /><category term="ruby" /><category term="clojure" /><summary type="html">Russ Olsen es un desarrollador de software conocido por sus libros sobre Ruby y Clojure y por las excelentes charlas que da. Veamos algunas de sus ideas y lo que podemos aprender de él.</summary></entry></feed>

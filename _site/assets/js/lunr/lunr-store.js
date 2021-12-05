@@ -430,4 +430,10 @@ var store = [{
         "tags": ["criptografía","hash","password"],
         "url": "/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1638592882/susan-wilkinson--ZgqdP78I4g-unsplash_uchtnu.jpg"
+      },{
+        "title": "Versiona mejor tu código: versionamiento semántico y commits convencionales",
+        "excerpt":"Una de las mejores cosas que podemos hacer por nosotros mismos y por nuestro equipo es versionar nuestro código y qué mejor que hacerlo de las mejores formas conocidas hasta el momento. En este artículo hablaremos de dos cosas conectadas: el versionamiento semántico y los “commits convencionales”. ¿Por qué es...","categories": [],
+        "tags": ["versionamiento","git","commits"],
+        "url": "/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638685910/lilzidesigns-EjhKmWfLI2c-unsplash_se9qtf.jpg"
       }]
