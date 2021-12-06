@@ -1,6 +1,6 @@
 ---
 title: "Entendiendo la cohesión y el acoplamiento en el software"
-date: 2021-09-06
+date: 2021-12-05
 author: Héctor Patricio
 tags: Cohesión acoplamiento software
 comments: true
@@ -17,7 +17,7 @@ En este artículo vamos a definir cada uno de esos términos de manera sencilla,
 
 ## Un poco de historia
 
-Estos dos conceptos y otros relacionados fueron desarrollados por [Larry Constantine](https://history.computer.org/pioneers/constantine.html) en la década de los 60's y publicados en los años siguientes, junto con el nacimiento del _diseño estructurado de sistemas_. Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Ahora sí empecemos hablando de lo que quisiéramos lograr con nuestro software.
+Estos dos conceptos y otros relacionados fueron desarrollados por [Larry Constantine](https://history.computer.org/pioneers/constantine.html) en la década de los 60's y publicados en los años siguientes, junto con el nacimiento del [diseño estructurado de sistemas](https://www.win.tue.nl/~wstomv/quotes/structured-design.html). Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Ahora sí empecemos hablando de lo que quisiéramos lograr con nuestro software.
 ## Cohesión
 
 La **cohesión** de los módulos se refiere al grado en que los componentes de cierto módulo **se relacionan entre sí**. Es decir, un módulo tiene **alta cohesión** si todos, o la mayoría de sus componentes trabajan para un mismo objetivo y no para cosas dispares o no relacionadas.
