@@ -68,4 +68,4 @@ _Constantine y Yourdon_ afirman que la única forma de lograr esto es con práct
 
 El principio de "Alta cohesión y bajo acoplamiento" sin duda es útil para que nuestro software sea más claro, más fácil de mantener y de cambiar. No hay manera de aprender cómo dividir el sistema en módulos si no es mediante la práctica de diseño e implementación de sistemas reales. Así que, ya sabes, **manos a la obra**.
 
-[^1] Cuando decimos "módulo" estamos hablando de la forma de tu lenguaje de agrupar funcionalidades, puede ser literalmente un módulo, un paquete, una aplicación etc.
+[^1]: Cuando decimos "módulo" estamos hablando de la forma de tu lenguaje de agrupar funcionalidades, puede ser literalmente un módulo, un paquete, una aplicación etc.
