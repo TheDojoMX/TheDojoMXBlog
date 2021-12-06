@@ -377,6 +377,12 @@ var store = [{
         "url": "/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:16,w_300/v1626756313/daniele-franchi-g2fJ7d7eKSM-unsplash_mogbm1.jpg"
       },{
+        "title": "Entendiendo la cohesión y el acoplamiento en el software",
+        "excerpt":"Siempre se dice que una buena base de código tiene alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica? En este artículo vamos a definir cada uno de esos términos de manera sencilla, y con ejemplos de cómo llegar a la...","categories": [],
+        "tags": ["Cohesión","acoplamiento","software"],
+        "url": "/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1620272565/sam-loyd-qy27JnsH9sU-unsplash_ibulfd.jpg"
+      },{
         "title": "La Importancia de los Estándares de Código",
         "excerpt":"Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad. Para las organizaciones...","categories": [],
         "tags": ["estándares,","calidad,","source-code"],
