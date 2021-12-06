@@ -6,8 +6,8 @@ tags: Cohesión acoplamiento software
 comments: true
 excerpt: "En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código"
 header:
-  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_1200/v1620272565/sam-loyd-qy27JnsH9sU-unsplash_ibulfd.jpg
-  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1620272565/sam-loyd-qy27JnsH9sU-unsplash_ibulfd.jpg
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1120/v1638804031/adrian-trinkaus-7UCmXtyg1CQ-unsplash_zhc1uk.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638804031/adrian-trinkaus-7UCmXtyg1CQ-unsplash_zhc1uk.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -18,6 +18,7 @@ En este artículo vamos a definir cada uno de esos términos de manera sencilla,
 ## Un poco de historia
 
 Estos dos conceptos y otros relacionados fueron desarrollados por [Larry Constantine](https://history.computer.org/pioneers/constantine.html) en la década de los 60's y publicados en los años siguientes, junto con el nacimiento del [diseño estructurado de sistemas](https://www.win.tue.nl/~wstomv/quotes/structured-design.html). Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Ahora sí empecemos hablando de lo que quisiéramos lograr con nuestro software.
+
 ## Cohesión
 
 La **cohesión** de los módulos se refiere al grado en que los componentes de cierto módulo **se relacionan entre sí**. Es decir, un módulo tiene **alta cohesión** si todos, o la mayoría de sus componentes trabajan para un mismo objetivo y no para cosas dispares o no relacionadas.
@@ -36,7 +37,7 @@ El **acoplamiento** consiste en el grado de dependencia de las diferentes partes
 
 Mientras más necesites saber de **A** para entender **B**, más **A** relacionados, o acoplados están.
 
-Por ejemplo, imagina una aplicación de eCommerce, que consiste de un catálogo, un carrito de compras y la parte del pago. Estos tres elementos pueden estar muy acoplados entre sí, en el sentido de que cualquier cambio en el catálogo afecta al carrito de compras y al pago, o al revés. Si puedes cambiar cualquiera de los tres módulos sin tener que tocar los otros, hay un bajo acoplamiento.
+Por ejemplo, imagina una aplicación de e-commerce, que consiste de un catálogo, un carrito de compras y la parte del pago. Estos tres elementos pueden estar muy acoplados entre sí, en el sentido de que cualquier cambio en el catálogo afecta al carrito de compras y al pago, o al revés. Si puedes cambiar cualquiera de los tres módulos sin tener que tocar los otros, hay un bajo acoplamiento.
 
 El acoplamiento **ideal sería cero**, pero como te imaginarás esto es imposible.
 
@@ -49,13 +50,14 @@ Los módulos pueden depender entre ellos de diferentes formas, tanto conceptualm
 
 Tener en cuenta estos factores puede ayudar a reducir el acoplamiento de los módulos.
 
-## Ralación entre cohesión y acoplamento
+## Relación entre cohesión y acoplamiento
 
 Constantine menciona que mientras más cohesión tengan los módulos, menos acoplamiento tendrán entre ellos. Esto suena lógico porque mientras más "autocontenido" sea un módulo (más cohesión) menos va a necesitar de otros para poder funcionar.
 
-> "A mayor cohesión de los módulos individuales en el sistema, menor será el acoplamiento" - Structured Design by Yourdon and Constantine
+> "A mayor cohesión de los módulos individuales en el sistema, menor será el acoplamiento" - [Structured Design by Yourdon and Constantine](https://www.win.tue.nl/~wstomv/quotes/structured-design.htm)
 
-Como podrás ver, no son medidas independientes, sino correlacionadas en la prácitca.
+Como podrás ver, no son medidas independientes, sino correlacionadas en la práctica.
+
 ## Cómo lograr alta cohesión y bajo acoplamiento
 
 La principal forma de lograr esta buena estructura es dedicando tiempo al diseño del software,prestando especial atención a la forma en la que se modulariza el sistema, es decir, la forma en la que se divide el problemas en otros más pequeños.
@@ -64,6 +66,6 @@ _Constantine y Yourdon_ afirman que la única forma de lograr esto es con práct
 
 ## Conclusiones
 
-El principio de "Alta cohesión y bajo acoplamiento" sin duda es útil para que nuestro software sea más claro, más fácil de mantener y de cambiar. No hay manera de aprender cómo dividir el sistema en módulos si no es mediante la práctica de diseño e implementación de sistemas reales. Así que, ya sabes, manos a la obra.
+El principio de "Alta cohesión y bajo acoplamiento" sin duda es útil para que nuestro software sea más claro, más fácil de mantener y de cambiar. No hay manera de aprender cómo dividir el sistema en módulos si no es mediante la práctica de diseño e implementación de sistemas reales. Así que, ya sabes, **manos a la obra**.
 
 [^1] Cuando decimos "módulo" estamos hablando de la forma de tu lenguaje de agrupar funcionalidades, puede ser literalmente un módulo, un paquete, una aplicación etc.

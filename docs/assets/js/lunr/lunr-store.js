@@ -411,5 +411,5 @@ var store = [{
         "excerpt":"Siempre se dice que una buena base de código tiene alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica? En este artículo vamos a definir cada uno de esos términos de manera sencilla, y con ejemplos de cómo llegar a la...","categories": [],
         "tags": ["Cohesión","acoplamiento","software"],
         "url": "/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html",
-        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1620272565/sam-loyd-qy27JnsH9sU-unsplash_ibulfd.jpg"
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638804031/adrian-trinkaus-7UCmXtyg1CQ-unsplash_zhc1uk.jpg"
       }]
