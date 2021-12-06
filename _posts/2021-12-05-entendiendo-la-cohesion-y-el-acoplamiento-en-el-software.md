@@ -17,7 +17,9 @@ En este artículo vamos a definir cada uno de esos términos de manera sencilla,
 
 ## Un poco de historia
 
-Estos dos conceptos y otros relacionados fueron desarrollados por [Larry Constantine](https://history.computer.org/pioneers/constantine.html) en la década de los 60's y publicados en los años siguientes, junto con el nacimiento del [diseño estructurado de sistemas](https://www.win.tue.nl/~wstomv/quotes/structured-design.html). Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Ahora sí empecemos hablando de lo que quisiéramos lograr con nuestro software.
+Estos dos conceptos y otros relacionados fueron desarrollados por [Larry Constantine](https://history.computer.org/pioneers/constantine.html) en la década de los 60's y publicados en los años siguientes, junto con el nacimiento del [diseño estructurado de sistemas](https://www.win.tue.nl/~wstomv/quotes/structured-design.html). Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Lo que se ha descubierto es que efectivamente, las dependencias infinitas (alto acoplamiento y baja cohesión) crean problemas que son casi imposobles de resolver en las bases de código y es cuando terminamos diciendo: _"Es más fácil hacerlo de nuevo."_
+
+Ahora sí, hablemos de lo que quisiéramos lograr con nuestro software, para no terminar queriéndolo rehacer de nuevo en poco tiempo.
 
 ## Cohesión
 
@@ -27,9 +29,13 @@ Una buena cohesión permitirá que el componente _utilice menos otros módulos e
 
 Para lograr esto, normalmente tienes que reducir las tareas de las que el módulo es responsable al menor grado posible, tratando de seguir el principio de responsabilidad única.
 
-Pongamos un ejemplo: imagina que estás creando un chatbot, un programa que, usando las API's de los aplicaciones de comunicación te permite interactuar con tus usuarios en forma de chat. El sistema tiene como requerimiento que la lógica de conversación sea fácil de reemplazar y mantener. Una buena cohesión se refiere a por ejemplo a que por ejemplo, la lógica de conversación y todo lo necesario para manejarla existe en un sólo módulo. Así mismo con los conectores para la comunicación con cada uno de los sistemas, etc.
+Pongamos un ejemplo: imagina que estás creando un chatbot, un programa que, usando las API's de los aplicaciones de comunicación te permite interactuar con tus usuarios en forma de chat, en lugares como WhatsApp, Messenger o Slack. El sistema tiene como requerimiento que la lógica de conversación sea fácil de reemplazar y mantener y que funcione independientemente del canal.
 
-Una forma efectiva de entender la cohesión es **"juntar"** todas las partes que tienen que ver con un tema, una abstracción o una decisión de diseño lo más cerca posible, de preferencia en el mismo módulo[^1] o clase.
+Para implementar este sistema los rompemos por lo menos en tres módulos: el manejo de usuarios, la lógica de conversación y la conexión son los canales de comunicación.
+
+Una buena cohesión se refiere a que, por ejemplo, la lógica de conversación y todo lo necesario para decidir cómo conversar con un usuario exista dentro de este mismo módulo. Así, cuando tengas que actualizarla no tienes que tocar todo el sistema o muchas partes del código. Esto mismo aplicaría para los otros módulos, imagínate que tienes que agregar un canal nuevo, por ejemplo, Telegram. Tu módulo de conexión a canales debería tener todo lo necesario para que no tengas que modificar ni el módulo de usuarios, ni el de la lógica de conversación.
+
+Una forma efectiva de crear módulos cohesivos es mediante **agrupar** todas las partes que tienen que ver con el mismo tema abstracción o decisión en el mismo módulo[^1] o clase. Esto casi nunca se puede lograr perfectamente, pero es una buena meta que te ahorrará dolores de cabeza.
 
 ## Acoplamiento
 
