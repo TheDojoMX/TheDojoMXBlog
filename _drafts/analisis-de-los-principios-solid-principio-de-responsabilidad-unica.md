@@ -27,4 +27,4 @@ Empecemos diseccionando el primer principio de los aclamados SOLID: el principio
 
 Este principio se puede enunciar como:
 
-"Una clase debe tener una única razón para ser modificada"
+"Una clase debe tener una única razón para ser modificada" según en libro Clean Code.

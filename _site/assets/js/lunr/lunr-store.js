@@ -390,16 +390,10 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:16,w_300/v1626756313/daniele-franchi-g2fJ7d7eKSM-unsplash_mogbm1.jpg"
       },{
         "title": "Análisis de los principios SOLID: Principio de Responsabilidad Única",
-        "excerpt":"En esta serie de artículos vamos a hablar sobre los cinco principios SOLID, debido a que son algo que se dice que todo programador que quiera crear código mantenible debe saber y usar. La estructura de los artículos llevará la siguiente forma: Explicación del principio Ejemplos de código Contraejemplos Críticas...","categories": [],
+        "excerpt":"En esta serie de artículos vamos a hablar sobre los cinco principios SOLID, debido a que son algo que se dice que todo programador que quiera crear código mantenible y “limpio” debe saber y usar. La estructura de los artículos llevará la siguiente forma: Explicación del principio Ejemplos de código...","categories": [],
         "tags": [],
         "url": "/2021/07/30/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html",
         "teaser": null
-      },{
-        "title": "Entendiendo la cohesión y el acoplamiento en el software",
-        "excerpt":"Siempre se dice que una buena base de código tiena alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica? En este artículo vamos a definir cada uno de esos términos de manera sencilla, con ejemplos y cómo llegar a la aplicación...","categories": [],
-        "tags": ["Cohesión","acoplamiento","software"],
-        "url": "/2021/09/06/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html",
-        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1620272565/sam-loyd-qy27JnsH9sU-unsplash_ibulfd.jpg"
       },{
         "title": "La Importancia de los Estándares de Código",
         "excerpt":"Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad. Para las organizaciones...","categories": [],
@@ -436,4 +430,16 @@ var store = [{
         "tags": ["versionamiento","git","commits"],
         "url": "/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638685910/lilzidesigns-EjhKmWfLI2c-unsplash_se9qtf.jpg"
+      },{
+        "title": "Entendiendo la cohesión y el acoplamiento en el software",
+        "excerpt":"Siempre se dice que una buena base de código tiene alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica? En este artículo vamos a definir cada uno de esos términos de manera sencilla, y con ejemplos de cómo llegar a la...","categories": [],
+        "tags": ["Cohesión","acoplamiento","software"],
+        "url": "/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638804031/adrian-trinkaus-7UCmXtyg1CQ-unsplash_zhc1uk.jpg"
+      },{
+        "title": "¿Por qué deberías aprender TypeScript?",
+        "excerpt":"TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar. Acerca de TypeScript El propósito de TypeScript es tener un lenguaje adecuado para...","categories": [],
+        "tags": ["javascript","typescript","js","ts"],
+        "url": "/2021/12/06/por-que-deberias-aprender-typescript.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638857085/dominik-lange-Lej_oqHljbk-unsplash_gxaixe.jpg"
       }]

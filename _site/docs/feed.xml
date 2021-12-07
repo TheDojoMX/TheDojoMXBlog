@@ -1,4 +1,179 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-04T18:03:35-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Algoritmos criptográficos: hashes seguros para alamcenar passwords</title><link href="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: hashes seguros para alamcenar passwords" /><published>2021-12-03T00:00:00-06:00</published><updated>2021-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html">&lt;p&gt;Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre &lt;em&gt;hashearla&lt;/em&gt;. Como aprendiste &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;en el artículo anterior&lt;/a&gt;, un hash es una función que impide recuperar el valor original ya que simplemente la información se pierde.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-06T13:06:16-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Entendiendo la cohesión y el acoplamiento en el software</title><link href="https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html" rel="alternate" type="text/html" title="Entendiendo la cohesión y el acoplamiento en el software" /><published>2021-12-05T00:00:00-06:00</published><updated>2021-12-05T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html">&lt;p&gt;Siempre se dice que una buena base de código tiene alta &lt;strong&gt;cohesión&lt;/strong&gt;, pero bajo &lt;strong&gt;acoplamiento&lt;/strong&gt;. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica?&lt;/p&gt;
+
+&lt;p&gt;En este artículo vamos a definir cada uno de esos términos de manera sencilla, y con ejemplos de cómo llegar a la aplicación real de estos términos.&lt;/p&gt;
+
+&lt;h2 id=&quot;un-poco-de-historia&quot;&gt;Un poco de historia&lt;/h2&gt;
+
+&lt;p&gt;Estos dos conceptos y otros relacionados fueron desarrollados por &lt;a href=&quot;https://history.computer.org/pioneers/constantine.html&quot;&gt;Larry Constantine&lt;/a&gt; en la década de los 60’s y publicados en los años siguientes, junto con el nacimiento del &lt;a href=&quot;https://www.win.tue.nl/~wstomv/quotes/structured-design.html&quot;&gt;diseño estructurado de sistemas&lt;/a&gt;. Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Lo que se ha descubierto es que efectivamente, las dependencias infinitas (alto acoplamiento y baja cohesión) crean problemas que son casi imposobles de resolver en las bases de código y es cuando terminamos diciendo: &lt;em&gt;“Es más fácil hacerlo de nuevo.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Ahora sí, hablemos de lo que quisiéramos lograr con nuestro software, para no terminar queriéndolo rehacer de nuevo en poco tiempo.&lt;/p&gt;
+
+&lt;h2 id=&quot;cohesión&quot;&gt;Cohesión&lt;/h2&gt;
+
+&lt;p&gt;La &lt;strong&gt;cohesión&lt;/strong&gt; de los módulos se refiere al grado en que los componentes de cierto módulo &lt;strong&gt;se relacionan entre sí&lt;/strong&gt;. Es decir, un módulo tiene &lt;strong&gt;alta cohesión&lt;/strong&gt; si todos, o la mayoría de sus componentes trabajan para un mismo objetivo y no para cosas dispares o no relacionadas.&lt;/p&gt;
+
+&lt;p&gt;Una buena cohesión permitirá que el componente &lt;em&gt;utilice menos otros módulos externos&lt;/em&gt;, ya que la mayoría de lo que requiere para realizar su trabajo está en el mismo módulo.&lt;/p&gt;
+
+&lt;p&gt;Para lograr esto, normalmente tienes que reducir las tareas de las que el módulo es responsable al menor grado posible, tratando de seguir el principio de responsabilidad única.&lt;/p&gt;
+
+&lt;p&gt;Pongamos un ejemplo: imagina que estás creando un chatbot, un programa que, usando las API’s de los aplicaciones de comunicación te permite interactuar con tus usuarios en forma de chat, en lugares como WhatsApp, Messenger o Slack. El sistema tiene como requerimiento que la lógica de conversación sea fácil de reemplazar y mantener y que funcione independientemente del canal.&lt;/p&gt;
+
+&lt;p&gt;Para implementar este sistema los rompemos por lo menos en tres módulos: el manejo de usuarios, la lógica de conversación y la conexión son los canales de comunicación.&lt;/p&gt;
+
+&lt;p&gt;Una buena cohesión se refiere a que, por ejemplo, la lógica de conversación y todo lo necesario para decidir cómo conversar con un usuario exista dentro de este mismo módulo. Así, cuando tengas que actualizarla no tienes que tocar todo el sistema o muchas partes del código. Esto mismo aplicaría para los otros módulos, imagínate que tienes que agregar un canal nuevo, por ejemplo, Telegram. Tu módulo de conexión a canales debería tener todo lo necesario para que no tengas que modificar ni el módulo de usuarios, ni el de la lógica de conversación.&lt;/p&gt;
+
+&lt;p&gt;Una forma efectiva de crear módulos cohesivos es mediante &lt;strong&gt;agrupar&lt;/strong&gt; todas las partes que tienen que ver con el mismo tema abstracción o decisión en el mismo módulo&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; o clase. Esto casi nunca se puede lograr perfectamente, pero es una buena meta que te ahorrará dolores de cabeza.&lt;/p&gt;
+
+&lt;h2 id=&quot;acoplamiento&quot;&gt;Acoplamiento&lt;/h2&gt;
+
+&lt;p&gt;El &lt;strong&gt;acoplamiento&lt;/strong&gt; consiste en el grado de dependencia de las diferentes partes de un sistema entre ellas. La pregunta clave para entender el acoplamiento es: &lt;strong&gt;¿Cuánto se necesita saber de un módulo para entender otro módulo?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Mientras más necesites saber de &lt;strong&gt;A&lt;/strong&gt; para entender &lt;strong&gt;B&lt;/strong&gt;, más &lt;strong&gt;A&lt;/strong&gt; relacionados, o acoplados están.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, imagina una aplicación de e-commerce, que consiste de un catálogo, un carrito de compras y la parte del pago. Estos tres elementos pueden estar muy acoplados entre sí, en el sentido de que cualquier cambio en el catálogo afecta al carrito de compras y al pago, o al revés. Si puedes cambiar cualquiera de los tres módulos sin tener que tocar los otros, hay un bajo acoplamiento.&lt;/p&gt;
+
+&lt;p&gt;El acoplamiento &lt;strong&gt;ideal sería cero&lt;/strong&gt;, pero como te imaginarás esto es imposible.&lt;/p&gt;
+
+&lt;p&gt;Los módulos pueden depender entre ellos de diferentes formas, tanto conceptualmente como en implementación. Constantine menciona que los siguientes cuatro factores pueden afectar el grado de acoplamiento de los módulos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Tipo de conexión entre los módulos. ¿Escriben a las mismas variables globales? ¿Uno usa al otro? ¿Uno es la especialización de otro?&lt;/li&gt;
+  &lt;li&gt;Complejidad de la interfaz: ¿Qué tan intrincada es la conexión entre los módulos?&lt;/li&gt;
+  &lt;li&gt;Tipo de información que pasa entre la conexión: ¿se pasan grandes estructuras de datos que procesan de manera secuencial? O, ¿un módulo modifica la forma de trabajar de otro?&lt;/li&gt;
+  &lt;li&gt;Tiempo en el que sucede la conexión: ¿depende uno de que el otro corra para poder ejecutarse?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Tener en cuenta estos factores puede ayudar a reducir el acoplamiento de los módulos.&lt;/p&gt;
+
+&lt;h2 id=&quot;relación-entre-cohesión-y-acoplamiento&quot;&gt;Relación entre cohesión y acoplamiento&lt;/h2&gt;
+
+&lt;p&gt;Constantine menciona que mientras más cohesión tengan los módulos, menos acoplamiento tendrán entre ellos. Esto suena lógico porque mientras más “autocontenido” sea un módulo (más cohesión) menos va a necesitar de otros para poder funcionar.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“A mayor cohesión de los módulos individuales en el sistema, menor será el acoplamiento” - &lt;a href=&quot;https://www.win.tue.nl/~wstomv/quotes/structured-design.htm&quot;&gt;Structured Design by Yourdon and Constantine&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Como podrás ver, no son medidas independientes, sino correlacionadas en la práctica.&lt;/p&gt;
+
+&lt;h2 id=&quot;cómo-lograr-alta-cohesión-y-bajo-acoplamiento&quot;&gt;Cómo lograr alta cohesión y bajo acoplamiento&lt;/h2&gt;
+
+&lt;p&gt;La principal forma de lograr esta buena estructura es dedicando tiempo al diseño del software,prestando especial atención a la forma en la que se modulariza el sistema, es decir, la forma en la que se divide el problemas en otros más pequeños.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Constantine y Yourdon&lt;/em&gt; afirman que la única forma de lograr esto es con práctica, práctica y más práctica.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusiones&quot;&gt;Conclusiones&lt;/h2&gt;
+
+&lt;p&gt;El principio de “Alta cohesión y bajo acoplamiento” sin duda es útil para que nuestro software sea más claro, más fácil de mantener y de cambiar. No hay manera de aprender cómo dividir el sistema en módulos si no es mediante la práctica de diseño e implementación de sistemas reales. Así que, ya sabes, &lt;strong&gt;manos a la obra&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Cuando decimos “módulo” estamos hablando de la forma de tu lenguaje de agrupar funcionalidades, puede ser literalmente un módulo, un paquete, una aplicación etc. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Cohesión" /><category term="acoplamiento" /><category term="software" /><summary type="html">En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código</summary></entry><entry><title type="html">Versiona mejor tu código: versionamiento semántico y commits convencionales</title><link href="https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html" rel="alternate" type="text/html" title="Versiona mejor tu código: versionamiento semántico y commits convencionales" /><published>2021-12-04T00:00:00-06:00</published><updated>2021-12-04T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html">&lt;p&gt;Una de las mejores cosas que podemos hacer por nosotros mismos y por nuestro equipo es versionar nuestro código y qué mejor que hacerlo de las mejores formas conocidas hasta el momento.&lt;/p&gt;
+
+&lt;p&gt;En este artículo hablaremos de dos cosas conectadas: el &lt;strong&gt;versionamiento semántico&lt;/strong&gt; y los &lt;strong&gt;“commits convencionales”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;por-qué-es-importante&quot;&gt;¿Por qué es importante?&lt;/h2&gt;
+
+&lt;p&gt;Organizar y manejar tu código de tal manera que puedas crear diferentes versiones del sistema que estás programando, cambiar entre ellas o regresar una anterior, es un requerimiento de todos los procesos de desarrollo actuales.&lt;/p&gt;
+
+&lt;p&gt;Además, presentar tu software a los usuarios finales en versiones iterativamente mejores es una buena práctica que te permitirá liberar más rápido, más seguido y frecuentemente con mejor calidad. Para lograr esto es importante &lt;strong&gt;comunicar correctamente lo que está cambiando en cada versión&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;La herramienta más usada para versionar nuestro código es &lt;strong&gt;git&lt;/strong&gt;, pero no establece ningún lineamiento en la forma en la que liberamos el software para los usuarios finales. Así que veamos primeramente una forma de comunicar nuestros cambios de manera correcta y efectiva y después una forma de hacerlo conectarlo con nuestro proceso de trabajo con git.&lt;/p&gt;
+
+&lt;h2 id=&quot;versionamiento-semántico&quot;&gt;Versionamiento semántico&lt;/h2&gt;
+
+&lt;p&gt;El versionamiento semántico (Semantic Versioning o SemVer) es una forma de &lt;strong&gt;comunicar a nuestros usuarios finales los tipos de cambios introducidos en las nuevas versiones.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Esto es muy importante porque, como seguramente habrás experimentado, un proyecto de software requiere de muchas dependencias y cuando alguna de ellas no funciona bien, tiene algunos bugs, o no es compatible con lo que ya existía, nos podemos meter en serios problemas. Y mientras más grande es el proyecto, más dependencias necesitarás, lo que agranda el problema.&lt;/p&gt;
+
+&lt;p&gt;Lo que &lt;strong&gt;SemVer&lt;/strong&gt; propone es una sintaxis formal que nos permite entender el tipo de cambios introducidos en cada versión. Esta sintaxis constituye un lenguaje formal que puede ser usado para resolver automáticamente problemas de dependencias si se usa correctamente.&lt;/p&gt;
+
+&lt;p&gt;Antes de ver un ejemplo de una versión semántica es importante que aclaremos que esta se usa para software que tiene una interfaz establecida. Esta interfaz formal está completamente documentada para que otros programadores o usuarios finales pueden usar tu software. A esta interfaz le llamaremos &lt;strong&gt;API&lt;/strong&gt; (Application Programming Interface)&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; a partir de ahora. Ahora sí, una versión en SemVer se ve así:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.0.2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El primer número es la versión mayor, en este caso 1. El segundo número es la versión menor, en este caso 0. El tercer número es la versión del parche, en este caso 2.&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, ¿que significa cuando cambian estos números?&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cuando cambia la versión mayor, se introducen cambios que hacen que la API sea incompatible con la versión anterior. Imagínate por ejemplo que se remueve alguna función o módulo que ya no se necesita. También puede ser que aunque no cambie explícitamente el contrato externo, cambie el significado de una operación.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cuando cambia la versión menor, se han introducido cambios o mejoras que no hacen incompatible a la API con versiones anteriores. Imagínate algo como agregarle nuevos parámetros a una función, pero que soporta valores default para que pueda seguir siendo llamada de la forma anterior. O también puede ser que agregas nuevas partes que no afectan a la forma en la que se usan las antiguas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cuando cambia la versión de parche, no se ha introducido cambios externos a la interfaz por diseño, sino que se han arreglado errores que causaban mal funcionamiento.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Después de estos tres elementos pueden venir otros detalles, como por ejemplo la versón de prelanzamiento y metadatos de la compilación.&lt;/p&gt;
+
+&lt;p&gt;En el documento oficial &lt;a href=&quot;https://semver.org/lang/es/&quot;&gt;Versionamiento Semántico 2.0&lt;/a&gt; puedes ver más detalles sobre cómo trabajar con él, pero sobre todo notarás lo importante y serio que es que comuniquemos correctamente lo que está pasando con el software que hacemos, sobre todo si otros dependen de él. También podrás ver como las cadenas resultantes de semantic versioning son un lenguaje formal en el que se puede confiar para programar resolución de dependencias, hasta tienen un regex para reconocerlas.&lt;/p&gt;
+
+&lt;p&gt;Ahora veamos una herramienta que te ayudará a llevar cuenta del tipo de cambios que se van introduciendo en tu software y base de código.&lt;/p&gt;
+
+&lt;h2 id=&quot;commits-convencionales&quot;&gt;Commits convencionales&lt;/h2&gt;
+
+&lt;p&gt;Los &lt;a href=&quot;https://conventionalcommits.org/&quot;&gt;commits convencionales (Conventional Commits)&lt;/a&gt; son una forma de estructurar tus mensajes de cada commit para comunicar explícitamente lo que estás cambiando. El objetivo es que 1) puedas saber exactamente lo que el equipo ha cambiado en cada nueva versión o rama y 2) poder automatizar la creación de versiones semánticas y registros de cambios (changelog).&lt;/p&gt;
+
+&lt;p&gt;Un commit convencional tiene la siguiente estructura:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;tipo de commit&amp;gt; [ámbito (opcional)]: &amp;lt;descripción&amp;gt;
+
+[cuerpo (opcional)]
+
+[notas finales (opcional)]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Los tipos de commit directamente establecidos por la especificación son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;fix: Se trata de una corrección de un bug. Este tipo de commit se relaciona con una nueva versión de parche.&lt;/li&gt;
+  &lt;li&gt;feat: Se trata de una nueva función o módulo. Este tipo de commits se relaciona con una nueva versión menor.&lt;/li&gt;
+  &lt;li&gt;BREAKING CHANGE: No es un tipo de commit sino una nota final. Siempre que se incluyan debe generarse una nueva versión mayor en la siguiente liberación.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Si se incluye un símbolo de admiración después del tipo de commit como de esta forma &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feat!&lt;/code&gt; significa que este commit introduce un cambio que rompe la compatibilidad con la versión anterior.&lt;/p&gt;
+
+&lt;p&gt;El &lt;strong&gt;ámbito&lt;/strong&gt; puede referirse a la base de código o módulo al que se aplicó el cambio.&lt;/p&gt;
+
+&lt;p&gt;Veamos algunos ejemplos:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;feat(core): Ahora podemos usar ARGON2i para cifrar las contraseñas
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fix!: Removemos la compatibilidad con SHA-1 debido a que no es seguro
+
+Se encontró que SHA-1 no es seguro debido a que se pueden fabricar colisiones y por lo tanto hemos removido el soporte en la plataforma
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;feat: Añadimos el soporte de Sal para todas las funciones de hasheo
+
+BREAKING CHANGE: Todas las firmas de función ahora requieren el parámetro `salt`
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Básicamente en esto consisten los commits convencionales y si tu base de código los sigue, podrás usar herramientas para automatizar la creación de versiones semánticas y registros de cambios (changelog), ademas de mejorar drásticamente la información que se encuentra en los repositorios y cuándo sucedieron los cambios.&lt;/p&gt;
+
+&lt;p&gt;Puedes ver la especificación completa, más tipos de commits, ejemplos y las herramientas que te facilitarán la vida en &lt;a href=&quot;https://conventionalcommits.org/es/&quot;&gt;la página oficial en español&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Comunicar correctamente el estado de nuestros sistemas y módulos hacia nuestros usuarios finales es una tarea muy importante para los desarrolladores de software profesionales. Como podrás haber notado, para que esto tenga utilidad, el requisito previo es que exista documentación formal de tu software.&lt;/p&gt;
+
+&lt;p&gt;Espero que estas herramientas te ayuden a crear software que sea más fácil usar, mantener y más disfrutable tanto para ti como para tus usuarios finales.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Aquí puedes ver por qué se llama una API a la interfaz que presenta una pieza de software a otra: &lt;a href=&quot;https://youtu.be/n8MxyHG0j3Q&quot;&gt;API’s con Hug&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="versionamiento" /><category term="git" /><category term="commits" /><summary type="html">Hablemos de cómo versionar tu código para beneficiar a tu equipo y a tus usuarios usando el sistema de vesionamiento semántico y los commits convencionales.</summary></entry><entry><title type="html">Algoritmos criptográficos: hashes seguros para alamcenar passwords</title><link href="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: hashes seguros para alamcenar passwords" /><published>2021-12-03T00:00:00-06:00</published><updated>2021-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html">&lt;p&gt;Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre &lt;em&gt;hashearla&lt;/em&gt;. Como aprendiste &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;en el artículo anterior&lt;/a&gt;, un hash es una función que impide recuperar el valor original ya que simplemente la información se pierde.&lt;/p&gt;
 
 &lt;p&gt;Los hashes seguros hacen casi imposible encontrar una colisión (que dos passwords te devuelvan un mismo hash), por lo que parecerían una buena solución para crear un valor único para cada usuario. Debido a que son deterministas, cuando el usuario te da su password, calculamos el hash de nuevo, lo comparamos con el hash almacenado y verificamos si coinciden. En este caso, el usuario está autenticado.&lt;/p&gt;
 
@@ -695,158 +870,4 @@ Contar con segmentos de código que pueden ser consumidos por más de un servici
 
 &lt;p&gt;Como desarrollador de software es importante que conozcas los temas básicos de propiedad intelectual si quieres desarrollar y comercializar software. Puedes ver la charla entera, para que obtengas más detalles aquí:&lt;/p&gt;
 
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/CpISQxihazU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="propiedad-intelectual" /><category term="leyes" /><summary type="html">Como creadores de software es importante que conozcamos lo básico sobre las leyes que rigen la propiedad intelectual respecto a los programas y sus diferentes formas.</summary></entry><entry><title type="html">Fuentes no convencionales de aprendizaje</title><link href="https://blog.thedojo.mx/2021/06/14/fuentes-no-convencionales-de-aprendizaje.html" rel="alternate" type="text/html" title="Fuentes no convencionales de aprendizaje" /><published>2021-06-14T00:00:00-05:00</published><updated>2021-06-14T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/06/14/fuentes-no-convencionales-de-aprendizaje</id><content type="html" xml:base="https://blog.thedojo.mx/2021/06/14/fuentes-no-convencionales-de-aprendizaje.html">&lt;p&gt;Cada quien tiene su forma de aprender. A algunas personas les funcionan mejor formas visuales y no convencionales. En este artículo te vamos a presentar algunos de los recursos que hemos encontrado que explican ideas y temas relacionados con la programación con un formato no convencional.&lt;/p&gt;
-
-&lt;h2 id=&quot;te-lo-explico-con-gatitos&quot;&gt;Te lo explico con gatitos&lt;/h2&gt;
-
-&lt;p&gt;Bel Rey, una programadora de Argentina (con la que tenemos una &lt;a href=&quot;https://youtu.be/7Ea4BGxwhEA&quot;&gt;entrevista&lt;/a&gt;) crea explicaciones estilo comics usando gatitos para embellecer y hacer divertidas las explicaciones.&lt;/p&gt;
-
-&lt;p&gt;En este cómic explica una de las motivaciones para hacer este estilo de ilustraciones-explicaciones:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://teloexplicocongatitos.com/_next/image?url=https%3A%2F%2Fdoomvault.nyc3.digitaloceanspaces.com%2Ftlecg%2Fbig%2Faprender00.jpg&amp;amp;w=1200&amp;amp;q=75&quot; alt=&quot;Estilos de aprendizaje - te lo explico con gatitos&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Entre sus explicaciones puedes encontrar temas como Docker, programación orientada objetos y comandos SQL todo con el estilo simpático y la estética de los gatitos, algunos de ellos enojados.&lt;/p&gt;
-
-&lt;p&gt;Puedes ver su contenido en:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://teloexplicocongatitos.com/&quot;&gt;Su página&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.instagram.com/teloexplicocongatitos/&quot;&gt;Instagram&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/explicocongatos&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;los-apuntes-de-majo&quot;&gt;Los apuntes de Majo&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1623713646/losapuntes_ijwxfh.png&quot; alt=&quot;Ejemplo de los apuntes de Majo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Majo Ledesma, mientras estaba estudiando programación empezó a crear notas bastante bonitas y visuales reportando y resumiendo temas diversos como Python, JavaScript, CSS y ahora amasa una gran cantidad de temas y apuntes.&lt;/p&gt;
-
-&lt;p&gt;Se hizo tan famosa que el CEO de &lt;a href=&quot;https://losapuntesdemajo.vercel.app/&quot;&gt;Vercel&lt;/a&gt; le ofreció poner todo su contenido en línea gratis usando su plataforma.&lt;/p&gt;
-
-&lt;p&gt;El estilo de los apuntes es como si estuvieras leyendo la libreta de la alumna más aplicada y dedicada del salón para cualquier materia, con ilustraciones que embellecen la nota pero no siempre relacionadas con el tema. Son apuntes completamente hechos a mano en medios físicos y digitalizados.&lt;/p&gt;
-
-&lt;p&gt;Pudes obtener los apuntes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://losapuntesdemajo.vercel.app/&quot;&gt;Los apuntes de Majo&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/MajoLedes&quot;&gt;Twitter de Majo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;wizardzines-de-julia-evans-en-inglés&quot;&gt;Wizardzines de Julia Evans (en inglés)&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1623630863/wz_3_vvj9pp.png&quot; alt=&quot;Algunos wizard zines&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Los wizardzines son explicaciones sobre un tema en formato de cómic con dibujos sencillos e ilustrativos. Lo que resalta de estos cómics es que tratan a veces temas no tan sencillos de manera fácil de entender y para eso se lleva una buena cantidad de espacio, por lo que el artículo se convierte en una “revistita”.&lt;/p&gt;
-
-&lt;p&gt;Julia vende las revistas que ha hecho en aproximadamente &lt;em&gt;10 USD&lt;/em&gt;, en formato digital con instrucciones para que tú las imprimas. Sin embargo, si no las puedes pagar, Julia ofrece el modelo que yo llamaría &lt;strong&gt;“paga sólo si puedes”&lt;/strong&gt;: abrió todo su contenido para que lo descargues sin costo, con la confianza de que pagarás si no es un impedimento para ti.&lt;/p&gt;
-
-&lt;p&gt;En las Wiardzines puedes encontrar los siguientes temas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;“How containers work”&lt;/li&gt;
-  &lt;li&gt;“Hell yes! CSS!”&lt;/li&gt;
-  &lt;li&gt;“Help! I have a manager!”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Además, tiene un montón de zines gratuitos que tratan temas más pequeños y no están a color.&lt;/p&gt;
-
-&lt;p&gt;Su página tiene una sección llamada “questions” que te permite estudiar temas en formato de tarjetas con preguntas y respuestas que se revelan. Es una forma bastante buena de entender básicamente los temas de los que trata y al mismo tiempo de estudiar para memorizar algo que creas necesitar.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1623713772/wizard_zines_bt7dzw.png&quot; alt=&quot;Ejemplo de Questions de wizardzines&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Puedes encontrar los wizardzines en:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://wizardzines.com/&quot;&gt;Página de Wizard Zines&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Twitter de Julia Evans&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;visual-partner&quot;&gt;Visual Partner&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/b196b29325f46dda5728d8d27884075949eaa7315beebf32a0537f259d54ee58/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6361726c6f67696c6d61722f696d6167652f75706c6f61642f76313539353937323133392f696c6c757374726174696f6e732f426568696e64253230746865253230636f64652f494d475f353837335f656d7173686b2e706e67&quot; alt=&quot;Ejemplo de registro grǻfico&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Carlo Gilmar, siguiendo la tendencia de &lt;a href=&quot;https://extremservicejam.wordpress.com/2013/02/18/que-es-visual-thinking-y-como-puede-ayudarte/&quot;&gt;visual thinking&lt;/a&gt; ha creado &lt;strong&gt;Visual Partner&lt;/strong&gt;, la empresa/proyecto alterno en la que comparte sus &lt;em&gt;apuntes visuales&lt;/em&gt; de charlas que se dan en meetups y conferencias.&lt;/p&gt;
-
-&lt;p&gt;Carlo ha creado un buen cuerpo de conocimiento de temas muy variados y probablemente puedas encontrar algo que estés aprendiendo en alguno de los lugares en lo que los comparte:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://visualpartnership.herokuapp.com/&quot;&gt;Visual Partnership&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.facebook.com/visualpartnership/&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/carlogilmar?lang=en&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Su contenido puede servir como resumen y guía para aprender más acerca de cierto tema, ya que no está ordenado por tópicos, ni toca los temas profundamente. Aquí podrás encontrar contenido variado.&lt;/p&gt;
-
-&lt;h2 id=&quot;execute-program-inglés&quot;&gt;Execute Program (inglés)&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1623647102/execute_program_ofbgcz.png&quot; alt=&quot;Execute program home&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;El creador de &lt;strong&gt;Destroy All Software&lt;/strong&gt;,  Gary Bernhardt creó una plataforma para que aprendieras las siguientes tecnologías de forma no convencional:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;JavaScript Arrays&lt;/li&gt;
-  &lt;li&gt;Concurrencia con JavaScript&lt;/li&gt;
-  &lt;li&gt;JavaScript moderno (ES2015-2019)&lt;/li&gt;
-  &lt;li&gt;Expresiones Regulares&lt;/li&gt;
-  &lt;li&gt;SQL&lt;/li&gt;
-  &lt;li&gt;TypeScript&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;La dinámica de la plataforma es la siguiente: tú eres el compilador o el intérprete, es decir, la plataforma te da sentencias cada vez más complejas de la tecnología en cuestión y tú predices los resultados.&lt;/p&gt;
-
-&lt;p&gt;Puedes entrar a la plataforma aquí: &lt;a href=&quot;https://www.executeprogram.com/&quot;&gt;Execute Program&lt;/a&gt;. Te recomiendo su otra plataforma, con videos tradicionales explicando cosas difíciles de desarrollar como compiladores: &lt;a href=&quot;https://www.destroyallsoftware.com/screencasts&quot;&gt;Destroy all Software&lt;/a&gt;. Tienes acceso a ambas plataformas con la suscripción de Execute Program.&lt;/p&gt;
-
-&lt;h2 id=&quot;otras-utilidades&quot;&gt;Otras utilidades&lt;/h2&gt;
-
-&lt;p&gt;Hay otras experiencias no convencionales que puedes para aprender cosas específicas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learngitbranching.js.org/?locale=es_ES&quot;&gt;Aprende Git branching&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://flukeout.github.io/&quot;&gt;CSS Diner&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://flexboxfroggy.com/#es&quot;&gt;Flexbox Froggy&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://http.cat/&quot;&gt;HTTP Cats&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://andreasbm.github.io/web-skills/&quot;&gt;Web Skills&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Si no te acomodas con las formas tradicionales como los libros y los videos, siempre habrá opciones diferentes e interactivas. ¿Tienes alguna otra recomendación? La esperamos en los comentarios.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="recursos" /><category term="aprendizaje" /><category term="programación" /><summary type="html">En este artículo te recomendamos algunos recursos que te servirán para aprender conceptos de progrmación que no son libros o cursos comunes.</summary></entry><entry><title type="html">Recursos para aprender diseño de sistemas</title><link href="https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas.html" rel="alternate" type="text/html" title="Recursos para aprender diseño de sistemas" /><published>2021-03-29T00:00:00-06:00</published><updated>2021-03-29T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas</id><content type="html" xml:base="https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-diseno-de-sistemas.html">&lt;p&gt;El diseño de sistemas es un tema recurrente en entrevistas para desarrolladores de software, sobre todo para los niveles que requieren más experiencia, pero más allá de eso, es una habilidad fundamental a dominar si quieres avanzar en tu carrera.&lt;/p&gt;
-
-&lt;p&gt;Es por eso que vamos a empezar a hablar más de ese tema, contando nuestra experiencia, pero al mismo tiempo aprendiendo a diseñar mejor.&lt;/p&gt;
-
-&lt;p&gt;En este post hablaremos de algunos recursos con los que puedes empezar a aprender.&lt;/p&gt;
-
-&lt;h2 id=&quot;libros&quot;&gt;Libros&lt;/h2&gt;
-
-&lt;p&gt;Un libro que se ha recomendado mucho sobre todo en esta época en la que los datos son cada vez más importantes es &lt;a href=&quot;https://www.goodreads.com/book/show/23463279-designing-data-intensive-applications&quot; target=&quot;_blank&quot;&gt;Designing Data-intensive Applications&lt;/a&gt; que, como su nombre lo dice, te enseña a construir aplicaciones en donde los datos son muy importantes.&lt;/p&gt;
-
-&lt;p&gt;Hay un libro que se enfoca justamente en la parte de entrevistas llamado &lt;a href=&quot;https://www.goodreads.com/book/show/54109255-system-design-interview-an-insider-s-guide?from_search=true&amp;amp;from_srp=true&amp;amp;qid=Bm7AnA9Fzo&amp;amp;rank=9&quot; target=&quot;_blank&quot;&gt;System Design Interview&lt;/a&gt;, con la mayoría de las opiniones como positivas, pero algunas resaltan un punto muy importante: gran parte del contenido se encuentra en las referencias, así que si quieres profundizar tienes que buscarlas. A mi esto me parece positivo porque en vez de intentar abarcar todo y diluirse, este libro puede servir como un índice o una referencia para aprender más.&lt;/p&gt;
-
-&lt;p&gt;Finalmente, te vamos a recordar un libro del que hemos hablado continuamente tanto en nuestros videos como en los posts de este blog: &lt;a href=&quot;https://www.goodreads.com/en/book/show/39996759&quot; target=&quot;_blank&quot;&gt;A Philosophy of Software Design&lt;/a&gt; de John Ousterhout. Este es uno de los mejores libros que puedes leer acerca del diseño de software en general, y de las prácticas que llevan a crear software bien diseñado. No habla de diseño de sistemas a gran escala, sino de organización y división modular y cómo deberías aplicarla.&lt;/p&gt;
-
-&lt;h2 id=&quot;cursos-y-videos&quot;&gt;Cursos y videos&lt;/h2&gt;
-
-&lt;p&gt;Codely, una plataforma de cursos para desarrolladores, tiene un curso de introducción a la arquitectura hexagonal, que es una muy buena base para deseñar sistemas, aquí puedes ver una pequeña prueba: &lt;a href=&quot;https://codely.tv/blog/screencasts/arquitectura-hexagonal-ddd/&quot; target=&quot;_blank&quot;&gt;Intro a arquitectura hexagonal&lt;/a&gt; y aquí puedes ver el curso completo: &lt;a href=&quot;https://pro.codely.tv/library/arquitectura-hexagonal/about/&quot; target=&quot;_blank&quot;&gt;Arquitectura Hexagonal&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://pro.codely.tv/library/principios-solid-aplicados/77070/about/&quot; target=&quot;_blank&quot;&gt;Principios SOLID Aplicados&lt;/a&gt; es otro curso con aplicaciones prácticas que puedes ver para aprender más sobre estos principios que ayudan a crear código y sistemas más mantenibles.&lt;/p&gt;
-
-&lt;p&gt;En Educative.io tiene un curso llamado &lt;a href=&quot;https://www.educative.io/courses/grokking-the-system-design-interview&quot; target=&quot;_blank&quot;&gt;Grokking the System Design Interview&lt;/a&gt; que tiene ejemplos de diseño explicados como blogposts, abarcando varias etapas del diseño, desde el primer borrador (back of the envelop) hasta análisis de cuellos de botella junto con diseño detallado.&lt;/p&gt;
-
-&lt;p&gt;Y finalmente, tenemos una recomendación Open Source y gratuita: &lt;a href=&quot;https://github.com/donnemartin/system-design-primer&quot; target=&quot;_blank&quot;&gt;System Design Primer&lt;/a&gt; que contiene incluso tarjetas de &lt;a href=&quot;https://apps.ankiweb.net/&quot; target=&quot;_blank&quot;&gt;Anki&lt;/a&gt; un software para estudio mediante repetición espaciada.&lt;/p&gt;
-
-&lt;h3 id=&quot;extras&quot;&gt;Extras&lt;/h3&gt;
-
-&lt;p&gt;Un sitio en el que puedes aprender a diseñar sistemas que requieran mucho cuidado por la afluencia de usuarios que tendrán es &lt;a href=&quot;http://highscalability.com/&quot; target=&quot;_blank&quot;&gt;High Scalability&lt;/a&gt;. Ahí podrás ver algunos ejemplos reales sobre como crear sistemas web más grandes en contenido, más rápidos y más confiables.&lt;/p&gt;
-
-&lt;p&gt;Si quieres una ruta de aprendizaje completa, Educative.io tiene además la ruta de cursos que te pueden ayudar aprender aspectos teóricos y prácticos: &lt;a href=&quot;https://www.educative.io/path/scalability-system-design&quot; target=&quot;_blank&quot;&gt;Scalability and System Design for developers&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;cómo-representar-el-diseño&quot;&gt;Cómo representar el diseño&lt;/h3&gt;
-
-&lt;p&gt;Después de tener clara la idea de cómo resolver los problemas es buena idea tener un lenguaje visual y una guía par representar y comunicar todas las partes del sistema. Aquí te podemos recomendar el paper &lt;a href=&quot;https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf&quot; target=&quot;_blank&quot;&gt;Architectural Blueprints–The “4+1” View Model of Software Architecture&lt;/a&gt; y el estilo creado por Simon Brown: &lt;a href=&quot;https://c4model.com/&quot; target=&quot;_blank&quot;&gt;El modelo C4&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Cualquiera de estos dos modelos tienen las herramientas suficientes para poder visualizar y comunicar tu arquitectura desde diferentes perspectivas y a diferentes niveles.&lt;/p&gt;
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Aprender diseño de sistemas tiene que ver con estudiar mucho, pero sobre todo con aplicar lo aprendido. En el canal de YouTube tuvimos una plática sobre este tema, tomando de nuestras experiencias, lo puedes ver aquí:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/hWVNLloajqg&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;En el futuro tendremos más pláticas sobre estos temas, con algunos ejercicios para ver la teoría en acción.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="system-design" /><category term="book" /><category term="courses" /><category term="cursos" /><category term="libros" /><category term="learning" /><summary type="html">¿Quieres aprender los principios de diseño de sistemas para mejorar como desarrollador o para una entrevista? En este post te pasamos algunos recursos.</summary></entry></feed>
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/CpISQxihazU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="propiedad-intelectual" /><category term="leyes" /><summary type="html">Como creadores de software es importante que conozcamos lo básico sobre las leyes que rigen la propiedad intelectual respecto a los programas y sus diferentes formas.</summary></entry></feed>

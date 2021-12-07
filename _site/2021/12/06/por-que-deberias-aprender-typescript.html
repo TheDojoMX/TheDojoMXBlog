@@ -1,0 +1,834 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>¿Por qué deberías aprender TypeScript? -</title>
+<meta name="description" content="TypeScript es un lenguaje muy popular actualmente, ¿te conviene aprenderlo? Veamos algunas características y desventajas para ayudarte a decidir.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="¿Por qué deberías aprender TypeScript?">
+<meta property="og:url" content="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html">
+
+
+  <meta property="og:description" content="TypeScript es un lenguaje muy popular actualmente, ¿te conviene aprenderlo? Veamos algunas características y desventajas para ayudarte a decidir.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1120/v1638857085/dominik-lange-Lej_oqHljbk-unsplash_gxaixe.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-12-06T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html",
+      "name": "¿Por qué deberías aprender TypeScript?",
+      "headline": "¿Por qué deberías aprender TypeScript?",
+      "keywords": "javascript,typescript,js,ts",
+      "description": "TypeScript es un lenguaje muy popular actualmente, ¿te conviene aprenderlo? Veamos algunas características y desventajas para ayudarte a decidir.",
+      "articleBody": "TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.\n\nAcerca de TypeScript\n\nEl propósito de TypeScript es tener un lenguaje adecuado para crear grandes sistemas que compile a JS. En realidad, todo programa válido en JS también es Válido en TypeScript. La principal diferencia que verás en TypeScript con respecto a JS es que este soporta anotaciones e inferencia de tipos de datos y los verifica en tiempo de compilación. Así que si tu programa no pasa la verificación de tipos, ni siquiera podrá llegar a correr. Algunas de las características de TypeScript son:\n\n\n  Anotaciones de tipos. Puedes especificar el tipo de dato de una variable o función.\n  Inferencia de tipos. No requiere que se especifique el tipo de dato de una variable explicitamente, ya que lo puede inferir por los valores que le asignas.\n  Verificación de tipos. Verifica que tu programa cumpla con los contratos de los tipos de datos.\n  Borrado de tipos. Se refiere a la eliminación de tipos de datos de un programa antes de dejarlo listo para correr pero después de verificarlo.\n  Compilación a una versión específica de JS. Puedes especificar a qué versión de JS se compilará tu programa.\n  Genéricos. Puedes crear funciones que reciban tipos de datos variables.\n\n\nEs por esto que muchos lo ven como un JavaScript tipado. Es cierto que cumplir con los contratos de los tipos es un trabajo extra, pero es una buena idea y un trabajo que vale la pena cuando tienes que hacer un sistema grande. El tipado estático puede protegerte de errores al mismo tiempo que es una capa extra de documentación.\n\nTypeScript (de aquí en adelante le diremos TS) fue creado por Microsoft y lanzado al público ne 2012 todavía sin una versión estable. Detrás de él está (Anders Hejlsberg)[https://twitter.com/ahejlsberg], también diseñador de C#, y creador de Delphi y Turbo Pascal. En 2021 vamos en la versión 4.5, con muchísimos avances desde su primera versión pública.\n\n¿Por qué deberías aprender TypeScript?\n\nYa empezamos a hablar de algunas ventajas en la descripción de lo que es TS. Veamos otras con más detenimiento.\n\nReduces los errores en producción\n\nundefined is not a function es uno de los errores que más estamos acostumbrados a ver cuando programaos en JS. Este es un error causado por que algo que esperábamos que tuviera una función no la tiene en tiempo de ejecución. Con TypeScript, esto no sucede, ya que te obliga a cumplir con un contrato de tipo de objeto y si no cuenta con cierto atributo, ni siquiera compila. Por ejemplo:\n\ntype Person = {\n  name: string;\n  age: number;\n  sayHello: () =&gt; string;\n}\nconst hector: Person  = {\n  name: 'Héctor',\n  age: 30\n};\n\n\nEste código te dará un error cuando lo intentes compilar diciendo que el objeto asignado a Héctor no tiene la propiedad sayHello, protegiéndote así de que se te pase algo que creías que estaba bien a producción. Lo mismo sucedería si la propiedad existiera, pero la función tuviera diferentes tipos de entrada y de salida.\n\nComo todo en la programación, esto es un arma de doble filo, ya que puede reducir el tiempo “crudo” de desarrollo, es decir, el tiempo que te lleva programar por primera vez algo listo pra probar, pero reducirá el tiempo total de desarrollo sobre todo si tu programa es grande.\n\nComo punto final, es que probablemente ni siquiera tengas que correr el código para darte cuenta de que está mal, ya que tu editor de código, aprovechándose de la características de TS, te avisará que algo está mal ahí.\n\nTu editor o IDE puede ser más útil\n\nLa información extra que el sistema de inferencia de TS da, o las anotaciones de tipos que tú pones, le dan información al editor que le permite ayudarte de mejor manera, con autocompletados más eficientes, aviso de incumplimiento de contratos en los tipos, etc. Esto contrarresta el tiempo que te llevará extra trabajar con esos tipos.\n\nLa refactorización será más fácil\n\nTener una capa de protección en forma de un sistema de tipos es una capa extra de información que evitará que rompas tu código si lo cambias para mejorarlo manteniendo la funcionalidad. Pero además de eso, muchas herramientas ofrecen funciones de refactorización automática que se aprovecharán de esta misma información para hacerla de manera más segura y efectiva.\n\nDesventajas de TypeScript\n\nPersonalmente, y lo digo como alguien que ha trabajado tanto en lenguajes con tipado estático y dinámico, creo que para un programador que ha estado acostumbrado a trabajar con tipado dinámico toda su vida sufrirá un poco cuando lo pongas a trabajar en lenguajes como TypeScript y hay situaciones en las que te metes en un verdadero embrollo tratando de cumplir con el sistema de tipos. Esto puede causar algunos retrasos, pero como lo hemos mencionado a lo largo del artículo, los beneficios de usar TS en un sistema grande superan con creces estas restricciones añadidas.\n\nOtra desventaja del código de TypeScript es que puede pasar que el código se vea menos legible si se llena de tipos, pero con el tiempo los programadores pueden aprender en dónde vale la pena poner anotaciones de tipos explícitas contra aprovecharse de la inferencia automática de TS.\n\n¿Quieres aprender TypeScript?\n\nAlgunos recursos gratuitos que puedes usar para aprender TS:\n\n\n  Tackling TypeScript del Dr. Alex Rauschmayer\n  The TypeScript Handbook de Microsoft\n\n\nEstos dos recursos están en inglés. Algunos recursos en español:\n\n\n  Curso práctico desde cero\n  Curso Práctico Rápido desde cero para Iniciantes\n\n\nUna herramienta de pago que recomiendo muchísimo, tanto por su contenido como por su técnica didáctica es Execute Program creada por Gary Bernhardt.\n\nConclusión\n\nSi quieres continuar con sistemas serios para entornos que solamente ejecuten JS, una de tus mejore opciones es TypeScript. Las restricciones y la información extra que proporciona el sistema de tipos sobre tu código común supercargará tu proceso de desarrollo desde las herramientas de programación como el editor hasta la protección contra errores en tiempo de compilación.\n",
+      "datePublished": "2021-12-06 00:00:00 -0600",
+      "dateModified": "2021-12-06 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": null,
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1120/v1638857085/dominik-lange-Lej_oqHljbk-unsplash_gxaixe.jpg"
+      }
+    }
+</script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          The Dojo Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1120/v1638857085/dominik-lange-Lej_oqHljbk-unsplash_gxaixe.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          ¿Por qué deberías aprender TypeScript?
+
+        
+      </h1>
+      
+        <p class="page__lead">TypeScript es un lenguaje muy popular actualmente, ¿te conviene aprenderlo? Veamos algunas características y desventajas para ayudarte a decidir.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="¿Por qué deberías aprender TypeScript?">
+    <meta itemprop="description" content="TypeScript es un lenguaje muy popular actualmente, ¿te conviene aprenderlo? Veamos algunas características y desventajas para ayudarte a decidir.">
+    <meta itemprop="datePublished" content="2021-12-06T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.</p>
+
+<h2 id="acerca-de-typescript">Acerca de TypeScript</h2>
+
+<p>El propósito de TypeScript es tener un lenguaje adecuado para crear grandes sistemas que compile a JS. En realidad, todo programa válido en JS también es Válido en TypeScript. La principal diferencia que verás en TypeScript con respecto a JS es que este soporta anotaciones e inferencia de tipos de datos y los verifica en tiempo de compilación. Así que si tu programa no pasa la verificación de tipos, ni siquiera podrá llegar a correr. Algunas de las características de TypeScript son:</p>
+
+<ol>
+  <li>
+<strong>Anotaciones de tipos.</strong> Puedes especificar el tipo de dato de una variable o función.</li>
+  <li>
+<strong>Inferencia de tipos.</strong> No requiere que se especifique el tipo de dato de una variable explicitamente, ya que lo puede inferir por los valores que le asignas.</li>
+  <li>
+<strong>Verificación de tipos.</strong> Verifica que tu programa cumpla con los contratos de los tipos de datos.</li>
+  <li>
+<strong>Borrado de tipos.</strong> Se refiere a la eliminación de tipos de datos de un programa antes de dejarlo listo para correr pero después de verificarlo.</li>
+  <li>
+<strong>Compilación a una versión específica de JS</strong>. Puedes especificar a qué versión de JS se compilará tu programa.</li>
+  <li>
+<strong>Genéricos</strong>. Puedes crear funciones que reciban tipos de datos variables.</li>
+</ol>
+
+<p>Es por esto que muchos lo ven como un <strong>JavaScript tipado</strong>. Es cierto que cumplir con los contratos de los tipos es un trabajo extra, pero es una buena idea y un trabajo que vale la pena cuando tienes que hacer un sistema grande. El tipado estático puede protegerte de errores al mismo tiempo que es una capa extra de documentación.</p>
+
+<p>TypeScript (de aquí en adelante le diremos <strong>TS</strong>) fue creado por Microsoft y lanzado al público ne 2012 todavía sin una versión estable. Detrás de él está (Anders Hejlsberg)[https://twitter.com/ahejlsberg], también diseñador de C#, y creador de Delphi y Turbo Pascal. En 2021 vamos en la versión <strong>4.5</strong>, con muchísimos avances desde su primera versión pública.</p>
+
+<h2 id="por-qué-deberías-aprender-typescript">¿Por qué deberías aprender TypeScript?</h2>
+
+<p>Ya empezamos a hablar de algunas ventajas en la descripción de lo que es TS. Veamos otras con más detenimiento.</p>
+
+<h3 id="reduces-los-errores-en-producción">Reduces los errores en producción</h3>
+
+<p><code class="language-plaintext highlighter-rouge">undefined is not a function</code> es uno de los errores que más estamos acostumbrados a ver cuando programaos en JS. Este es un error causado por que algo que esperábamos que tuviera una función no la tiene en tiempo de ejecución. Con TypeScript, esto no sucede, ya que te obliga a cumplir con un contrato de tipo de objeto y si no cuenta con cierto atributo, ni siquiera compila. Por ejemplo:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">sayHello</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">hector</span><span class="p">:</span> <span class="nx">Person</span>  <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Héctor</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">30</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Este código te dará un error <strong>cuando lo intentes compilar</strong> diciendo que el objeto asignado a Héctor no tiene la propiedad <code class="language-plaintext highlighter-rouge">sayHello</code>, protegiéndote así de que se te pase algo que creías que estaba bien a producción. Lo mismo sucedería si la propiedad existiera, pero la función tuviera diferentes tipos de entrada y de salida.</p>
+
+<p>Como todo en la programación, esto es un arma de doble filo, ya que puede reducir el tiempo “crudo” de desarrollo, es decir, el tiempo que te lleva programar por primera vez algo listo pra probar, pero reducirá el tiempo total de desarrollo sobre todo si tu programa es grande.</p>
+
+<p>Como punto final, es que probablemente <strong>ni siquiera tengas que correr el código para darte cuenta de que está mal</strong>, ya que tu editor de código, aprovechándose de la características de TS, te avisará que algo está mal ahí.</p>
+
+<h3 id="tu-editor-o-ide-puede-ser-más-útil">Tu editor o IDE puede ser más útil</h3>
+
+<p>La información extra que el sistema de inferencia de TS da, o las anotaciones de tipos que tú pones, le dan información al editor que le permite ayudarte de mejor manera, con autocompletados más eficientes, aviso de incumplimiento de contratos en los tipos, etc. Esto contrarresta el tiempo que te llevará extra trabajar con esos tipos.</p>
+
+<h3 id="la-refactorización-será-más-fácil">La refactorización será más fácil</h3>
+
+<p>Tener una capa de protección en forma de un sistema de tipos es una capa extra de información que evitará que rompas tu código si lo cambias para mejorarlo manteniendo la funcionalidad. Pero además de eso, muchas herramientas ofrecen funciones de refactorización automática que se aprovecharán de esta misma información para hacerla de manera más segura y efectiva.</p>
+
+<h2 id="desventajas-de-typescript">Desventajas de TypeScript</h2>
+
+<p>Personalmente, y lo digo como alguien que ha trabajado tanto en lenguajes con tipado estático y dinámico, creo que para un programador que ha estado acostumbrado a trabajar con tipado dinámico toda su vida sufrirá un poco cuando lo pongas a trabajar en lenguajes como TypeScript y hay situaciones en las que te metes en un verdadero embrollo tratando de cumplir con el sistema de tipos. Esto puede causar algunos retrasos, pero como lo hemos mencionado a lo largo del artículo, los beneficios de usar TS en un sistema grande superan con creces estas restricciones añadidas.</p>
+
+<p>Otra desventaja del código de TypeScript es que puede pasar que el código se vea menos legible si se llena de tipos, pero con el tiempo los programadores pueden aprender en dónde vale la pena poner anotaciones de tipos explícitas contra aprovecharse de la inferencia automática de TS.</p>
+
+<h2 id="quieres-aprender-typescript">¿Quieres aprender TypeScript?</h2>
+
+<p>Algunos recursos gratuitos que puedes usar para aprender TS:</p>
+
+<ol>
+  <li>
+<a href="https://exploringjs.com/tackling-ts/toc.html">Tackling TypeScript</a> del Dr. Alex Rauschmayer</li>
+  <li>
+<a href="https://www.typescriptlang.org/docs/handbook/intro.html">The TypeScript Handbook</a> de Microsoft</li>
+</ol>
+
+<p>Estos dos recursos están en inglés. Algunos recursos en español:</p>
+
+<ol>
+  <li><a href="https://www.youtube.com/watch?v=8fnhN1HRPB4">Curso práctico desde cero</a></li>
+  <li><a href="https://www.youtube.com/watch?v=Xxqh0RoWxNc">Curso Práctico Rápido desde cero para Iniciantes</a></li>
+</ol>
+
+<p>Una herramienta de pago que recomiendo muchísimo, tanto por su contenido como por su técnica didáctica es <a href="https://www.executeprogram.com/">Execute Program</a> creada por <a href="https://destroyallsoftware.com">Gary Bernhardt</a>.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Si quieres continuar con sistemas serios para entornos que solamente ejecuten JS, una de tus mejore opciones es TypeScript. Las restricciones y la información extra que proporciona el sistema de tipos sobre tu código común supercargará tu proceso de desarrollo desde las herramientas de programación como el editor hasta la protección contra errores en tiempo de compilación.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item" rel="tag">javascript</a><span class="sep">, </span>
+    
+      <a href="/tags/#js" class="page__taxonomy-item" rel="tag">js</a><span class="sep">, </span>
+    
+      <a href="/tags/#ts" class="page__taxonomy-item" rel="tag">ts</a><span class="sep">, </span>
+    
+      <a href="/tags/#typescript" class="page__taxonomy-item" rel="tag">typescript</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2021-12-06T00:00:00-06:00">December 6, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%C2%BFPor+qu%C3%A9+deber%C3%ADas+aprender+TypeScript%3F%20https%3A%2F%2Fblog.thedojo.mx%2F2021%2F12%2F06%2Fpor-que-deberias-aprender-typescript.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2021%2F12%2F06%2Fpor-que-deberias-aprender-typescript.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2021%2F12%2F06%2Fpor-que-deberias-aprender-typescript.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html" class="pagination--pager" title="Entendiendo la cohesión y el acoplamiento en el software
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">Podrías ver también</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638804031/adrian-trinkaus-7UCmXtyg1CQ-unsplash_zhc1uk.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html" rel="permalink">Entendiendo la cohesión y el acoplamiento en el software
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 05-12-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638685910/lilzidesigns-EjhKmWfLI2c-unsplash_se9qtf.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html" rel="permalink">Versiona mejor tu código: versionamiento semántico y commits convencionales
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 04-12-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos de cómo versionar tu código para beneficiar a tu equipo y a tus usuarios usando el sistema de vesionamiento semántico y los commits convencionales.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1638592882/susan-wilkinson--ZgqdP78I4g-unsplash_uchtnu.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" rel="permalink">Algoritmos criptográficos: hashes seguros para alamcenar passwords
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 03-12-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Muchos desarrolladores cometen el error de usar un hash criptográfico seguro como SHA-256 para almacenar passwords en la base de datos. Veamos por qué no es ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638504578/steven-lasry-UC8hqc0udqY-unsplash_xmtlvb.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html" rel="permalink">Algoritmos criptográficos: ¿Qué es un Hash?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 02-12-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Continuemos con las bases de la criptogrfía para desarrolladores, hablemos de lo que es una función hash y cómo puede servirte en tus aplicaciones.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2021 . Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2021/12/06/por-que-deberias-aprender-typescript"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
