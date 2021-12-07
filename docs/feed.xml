@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-06T13:06:16-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Entendiendo la cohesión y el acoplamiento en el software</title><link href="https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html" rel="alternate" type="text/html" title="Entendiendo la cohesión y el acoplamiento en el software" /><published>2021-12-05T00:00:00-06:00</published><updated>2021-12-05T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html">&lt;p&gt;Siempre se dice que una buena base de código tiene alta &lt;strong&gt;cohesión&lt;/strong&gt;, pero bajo &lt;strong&gt;acoplamiento&lt;/strong&gt;. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-07T00:08:33-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Por qué deberías aprender TypeScript?</title><link href="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html" rel="alternate" type="text/html" title="¿Por qué deberías aprender TypeScript?" /><published>2021-12-06T00:00:00-06:00</published><updated>2021-12-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html">&lt;p&gt;TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.&lt;/p&gt;
+
+&lt;h2 id=&quot;acerca-de-typescript&quot;&gt;Acerca de TypeScript&lt;/h2&gt;
+
+&lt;p&gt;El propósito de TypeScript es tener un lenguaje adecuado para crear grandes sistemas que compile a JS. En realidad, todo programa válido en JS también es Válido en TypeScript. La principal diferencia que verás en TypeScript con respecto a JS es que este soporta anotaciones e inferencia de tipos de datos y los verifica en tiempo de compilación. Así que si tu programa no pasa la verificación de tipos, ni siquiera podrá llegar a correr. Algunas de las características de TypeScript son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Anotaciones de tipos.&lt;/strong&gt; Puedes especificar el tipo de dato de una variable o función.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Inferencia de tipos.&lt;/strong&gt; No requiere que se especifique el tipo de dato de una variable explicitamente, ya que lo puede inferir por los valores que le asignas.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Verificación de tipos.&lt;/strong&gt; Verifica que tu programa cumpla con los contratos de los tipos de datos.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Borrado de tipos.&lt;/strong&gt; Se refiere a la eliminación de tipos de datos de un programa antes de dejarlo listo para correr pero después de verificarlo.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Compilación a una versión específica de JS&lt;/strong&gt;. Puedes especificar a qué versión de JS se compilará tu programa.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Genéricos&lt;/strong&gt;. Puedes crear funciones que reciban tipos de datos variables.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Es por esto que muchos lo ven como un &lt;strong&gt;JavaScript tipado&lt;/strong&gt;. Es cierto que cumplir con los contratos de los tipos es un trabajo extra, pero es una buena idea y un trabajo que vale la pena cuando tienes que hacer un sistema grande. El tipado estático puede protegerte de errores al mismo tiempo que es una capa extra de documentación.&lt;/p&gt;
+
+&lt;p&gt;TypeScript (de aquí en adelante le diremos &lt;strong&gt;TS&lt;/strong&gt;) fue creado por Microsoft y lanzado al público ne 2012 todavía sin una versión estable. Detrás de él está (Anders Hejlsberg)[https://twitter.com/ahejlsberg], también diseñador de C#, y creador de Delphi y Turbo Pascal. En 2021 vamos en la versión &lt;strong&gt;4.5&lt;/strong&gt;, con muchísimos avances desde su primera versión pública.&lt;/p&gt;
+
+&lt;h2 id=&quot;por-qué-deberías-aprender-typescript&quot;&gt;¿Por qué deberías aprender TypeScript?&lt;/h2&gt;
+
+&lt;p&gt;Ya empezamos a hablar de algunas ventajas en la descripción de lo que es TS. Veamos otras con más detenimiento.&lt;/p&gt;
+
+&lt;h3 id=&quot;reduces-los-errores-en-producción&quot;&gt;Reduces los errores en producción&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined is not a function&lt;/code&gt; es uno de los errores que más estamos acostumbrados a ver cuando programaos en JS. Este es un error causado por que algo que esperábamos que tuviera una función no la tiene en tiempo de ejecución. Con TypeScript, esto no sucede, ya que te obliga a cumplir con un contrato de tipo de objeto y si no cuenta con cierto atributo, ni siquiera compila. Por ejemplo:&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Héctor&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Este código te dará un error &lt;strong&gt;cuando lo intentes compilar&lt;/strong&gt; diciendo que el objeto asignado a Héctor no tiene la propiedad &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sayHello&lt;/code&gt;, protegiéndote así de que se te pase algo que creías que estaba bien a producción. Lo mismo sucedería si la propiedad existiera, pero la función tuviera diferentes tipos de entrada y de salida.&lt;/p&gt;
+
+&lt;p&gt;Como todo en la programación, esto es un arma de doble filo, ya que puede reducir el tiempo “crudo” de desarrollo, es decir, el tiempo que te lleva programar por primera vez algo listo pra probar, pero reducirá el tiempo total de desarrollo sobre todo si tu programa es grande.&lt;/p&gt;
+
+&lt;p&gt;Como punto final, es que probablemente &lt;strong&gt;ni siquiera tengas que correr el código para darte cuenta de que está mal&lt;/strong&gt;, ya que tu editor de código, aprovechándose de la características de TS, te avisará que algo está mal ahí.&lt;/p&gt;
+
+&lt;h3 id=&quot;tu-editor-o-ide-puede-ser-más-útil&quot;&gt;Tu editor o IDE puede ser más útil&lt;/h3&gt;
+
+&lt;p&gt;La información extra que el sistema de inferencia de TS da, o las anotaciones de tipos que tú pones, le dan información al editor que le permite ayudarte de mejor manera, con autocompletados más eficientes, aviso de incumplimiento de contratos en los tipos, etc. Esto contrarresta el tiempo que te llevará extra trabajar con esos tipos.&lt;/p&gt;
+
+&lt;h3 id=&quot;la-refactorización-será-más-fácil&quot;&gt;La refactorización será más fácil&lt;/h3&gt;
+
+&lt;p&gt;Tener una capa de protección en forma de un sistema de tipos es una capa extra de información que evitará que rompas tu código si lo cambias para mejorarlo manteniendo la funcionalidad. Pero además de eso, muchas herramientas ofrecen funciones de refactorización automática que se aprovecharán de esta misma información para hacerla de manera más segura y efectiva.&lt;/p&gt;
+
+&lt;h2 id=&quot;desventajas-de-typescript&quot;&gt;Desventajas de TypeScript&lt;/h2&gt;
+
+&lt;p&gt;Personalmente, y lo digo como alguien que ha trabajado tanto en lenguajes con tipado estático y dinámico, creo que para un programador que ha estado acostumbrado a trabajar con tipado dinámico toda su vida sufrirá un poco cuando lo pongas a trabajar en lenguajes como TypeScript y hay situaciones en las que te metes en un verdadero embrollo tratando de cumplir con el sistema de tipos. Esto puede causar algunos retrasos, pero como lo hemos mencionado a lo largo del artículo, los beneficios de usar TS en un sistema grande superan con creces estas restricciones añadidas.&lt;/p&gt;
+
+&lt;p&gt;Otra desventaja del código de TypeScript es que puede pasar que el código se vea menos legible si se llena de tipos, pero con el tiempo los programadores pueden aprender en dónde vale la pena poner anotaciones de tipos explícitas contra aprovecharse de la inferencia automática de TS.&lt;/p&gt;
+
+&lt;h2 id=&quot;quieres-aprender-typescript&quot;&gt;¿Quieres aprender TypeScript?&lt;/h2&gt;
+
+&lt;p&gt;Algunos recursos gratuitos que puedes usar para aprender TS:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://exploringjs.com/tackling-ts/toc.html&quot;&gt;Tackling TypeScript&lt;/a&gt; del Dr. Alex Rauschmayer&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/intro.html&quot;&gt;The TypeScript Handbook&lt;/a&gt; de Microsoft&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Estos dos recursos están en inglés. Algunos recursos en español:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=8fnhN1HRPB4&quot;&gt;Curso práctico desde cero&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Xxqh0RoWxNc&quot;&gt;Curso Práctico Rápido desde cero para Iniciantes&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Una herramienta de pago que recomiendo muchísimo, tanto por su contenido como por su técnica didáctica es &lt;a href=&quot;https://www.executeprogram.com/&quot;&gt;Execute Program&lt;/a&gt; creada por &lt;a href=&quot;https://destroyallsoftware.com&quot;&gt;Gary Bernhardt&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Si quieres continuar con sistemas serios para entornos que solamente ejecuten JS, una de tus mejore opciones es TypeScript. Las restricciones y la información extra que proporciona el sistema de tipos sobre tu código común supercargará tu proceso de desarrollo desde las herramientas de programación como el editor hasta la protección contra errores en tiempo de compilación.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="javascript" /><category term="typescript" /><category term="js" /><category term="ts" /><summary type="html">TypeScript es un lenguaje muy popular actualmente, ¿te conviene aprenderlo? Veamos algunas características y desventajas para ayudarte a decidir.</summary></entry><entry><title type="html">Entendiendo la cohesión y el acoplamiento en el software</title><link href="https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html" rel="alternate" type="text/html" title="Entendiendo la cohesión y el acoplamiento en el software" /><published>2021-12-05T00:00:00-06:00</published><updated>2021-12-05T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html">&lt;p&gt;Siempre se dice que una buena base de código tiene alta &lt;strong&gt;cohesión&lt;/strong&gt;, pero bajo &lt;strong&gt;acoplamiento&lt;/strong&gt;. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica?&lt;/p&gt;
 
 &lt;p&gt;En este artículo vamos a definir cada uno de esos términos de manera sencilla, y con ejemplos de cómo llegar a la aplicación real de estos términos.&lt;/p&gt;
 
@@ -819,55 +897,4 @@ Contar con segmentos de código que pueden ser consumidos por más de un servici
       &lt;p&gt;El fin del UNIX Timestamp o &lt;a href=&quot;https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2038&quot;&gt;Y2k38&lt;/a&gt;. (Nota de traducción) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="developers" /><category term="arquitectura" /><summary type="html">Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.</summary></entry><entry><title type="html">Lo que debes saber sobre propiedad intelectual como desarrollador de software</title><link href="https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html" rel="alternate" type="text/html" title="Lo que debes saber sobre propiedad intelectual como desarrollador de software" /><published>2021-06-22T00:00:00-05:00</published><updated>2021-06-22T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/06/22/lo-que-debes-saber-sobre-propiedad-intelectual-como-desarrollador-de-software.html">&lt;p&gt;Programar es una cosa, desarrollar software algo completamente diferente, sobre todo en un ambiente comercial en el que tienes que tratar con clientes y patrones. En este entorno tienes que entender otras cosas como la forma de colaborar con ellos, los precios y algo muy importante: las leyes.&lt;/p&gt;
-
-&lt;p&gt;En este artículo vamos a hacer un resumen de las cosas que platicamos con &lt;a href=&quot;https://twitter.com/LaCD_Rom&quot;&gt;Cynthia Romero&lt;/a&gt; y con &lt;a href=&quot;https://twitter.com/LawyerCount&quot;&gt;Conde&lt;/a&gt; en la plática &lt;a href=&quot;https://youtu.be/CpISQxihazU&quot;&gt;“Todo lo que debes saber acerca de propiedad intelectual como creador de Software”&lt;/a&gt;. También Novus hizo un resumen por si lo quieres checar: &lt;a href=&quot;https://www.novusconcilium.com/post/software&quot;&gt;Tips legales para crear software&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: Es muy importante controlar y conocer los componentes de tu software y mantener un registro para no meterte en problemas.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-es-la-propiedad&quot;&gt;¿Qué es la propiedad?&lt;/h2&gt;
-
-&lt;p&gt;La propiedad es la facultad que se define en el derecho como la capacidad de usar algo, aprovecharse de los frutos o productos de ese algo y la facultad de usar como quieras, incluso deshacerte de ese algo.&lt;/p&gt;
-
-&lt;p&gt;La propiedad es muy fácil de entender cuando se trata de cosas físicas, pero no tanto cuando se trata de cosas intangibles. La propiedad &lt;strong&gt;intelectual&lt;/strong&gt; se refiere a la aplicación de las facultades antes mencionadas a obras o trabajos que hiciste con tu mente y no con tus manos. Algo que se resaltó en la plática, es que el software y todas las obras intelectuales están protegidas por las leyes desde escribes la primera línea.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-es-una-licencia&quot;&gt;¿Qué es una licencia?&lt;/h2&gt;
-
-&lt;p&gt;Debido a que somos los dueños de las cosas que creamos, podemos extender facultades como el uso o la distribución sobre nuestras obras. Estas facultades se formalizan mediante &lt;strong&gt;una licencia&lt;/strong&gt;, que es un contrato que establece las condiciones de uso de la obra intelectual.&lt;/p&gt;
-
-&lt;p&gt;Los desarrolladores de software debemos tener bien claro cómo es que queremos sacarle provecho a nuestras obras para establecer el contrato, &lt;em&gt;la licencia&lt;/em&gt; adecuada. Para establecer esto, lo normal es consultar con expertos que nos ayuden a tangibilizar la licencia, ya que los términos y procedimientos legales no son fáciles de manejar, y más vale contar con la ayuda de alguien con experiencia.&lt;/p&gt;
-
-&lt;h2 id=&quot;uso-de-software-de-terceros&quot;&gt;Uso de software de terceros&lt;/h2&gt;
-
-&lt;p&gt;Cuando desarrollamos software medianamente usable para casos cotidianos, es muy difícil que seamos nosotros quienes escribamos cada línea que compone el programa. Es por eso que confiamos en bibliotecas y piezas de software. ¿Cómo puedes asegurarte de respetar la propiedad intelectual de otros desarrolladores?&lt;/p&gt;
-
-&lt;p&gt;El primer punto es que si alguna pieza de software no tiene una licencia explícita, entonces debes asumir que no tienes permiso para usarlo, mucho menos para incluirlo en software comercial o por encargo.&lt;/p&gt;
-
-&lt;p&gt;Si el software que vas a usar tiene una licencia, debes asegurarte que cumples con lo que se establece en ella. Entender esto y asegurarte de que se estás cumpliendo requiere tiempo y esfuerzo, que debes considerar en la estimación del proyecto.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-inventario-de-activos&quot;&gt;El inventario de activos&lt;/h2&gt;
-
-&lt;p&gt;Muy conectado con el punto anterior existe una cosa que los creadores de software deberíamos tener muy presente: el inventario de activos (bill of materials). Este es un documento que contiene todas las piezas de software que estas usando, junto con las licencias y algún otro detalle sobre la pieza en específico. Esta lista ayudará al momento de asegurarnos que el software no está rompiendo ninguna licencia.&lt;/p&gt;
-
-&lt;p&gt;Dependiendo del lenguaje que programes, hay herramientas que te pueden ayudar a verificar esto automáticamente, incluso a listar las licencias que usan, por ejemplo, Node tiene el paquete &lt;a href=&quot;https://www.npmjs.com/package/license-checker&quot;&gt;License Checker&lt;/a&gt; y Python tiene &lt;a href=&quot;https://pypi.org/project/pip-licenses/&quot;&gt;PIP Licenses&lt;/a&gt;. El que existan estas herramientas de este estilo tal vez te de una idea de &lt;strong&gt;lo importante&lt;/strong&gt; que es tener tu inventario de activos controlado.&lt;/p&gt;
-
-&lt;h2 id=&quot;documentos-legales&quot;&gt;Documentos legales&lt;/h2&gt;
-
-&lt;p&gt;Cuando queremos obtener beneficios por el software que comercializamos o exponemos a un público, es muy importante contar con documentos legales que establecen los acuerdos que se asumen con el uso del software. Estos documentos son normalmente:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;La licencia de uso (para software comercial)&lt;/li&gt;
-  &lt;li&gt;Los términos y condiciones de uso (para software de uso público)&lt;/li&gt;
-  &lt;li&gt;El aviso de privacidad&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Crear estos documentos es un asunto serio en el que normalmente se necesita la ayuda de expertos, a menos que sea una aplicación muy sencilla y poco seria.&lt;/p&gt;
-
-&lt;p&gt;Si estás exponiendo el software como OpenSource, entonces puedes usar una licencia prefabricada: &lt;a href=&quot;https://opensource.org/licenses&quot;&gt;OpenSource Licenses&lt;/a&gt;, pero también tienes que entenderlas para ver qué es lo que permites con cada una.&lt;/p&gt;
-
-&lt;p&gt;Estos costos los deberías de considerar en el costo final del software.&lt;/p&gt;
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Como desarrollador de software es importante que conozcas los temas básicos de propiedad intelectual si quieres desarrollar y comercializar software. Puedes ver la charla entera, para que obtengas más detalles aquí:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/CpISQxihazU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="propiedad-intelectual" /><category term="leyes" /><summary type="html">Como creadores de software es importante que conozcamos lo básico sobre las leyes que rigen la propiedad intelectual respecto a los programas y sus diferentes formas.</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="developers" /><category term="arquitectura" /><summary type="html">Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.</summary></entry></feed>
