@@ -442,4 +442,10 @@ var store = [{
         "tags": ["javascript","typescript","js","ts"],
         "url": "/2021/12/06/por-que-deberias-aprender-typescript.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638857085/dominik-lange-Lej_oqHljbk-unsplash_gxaixe.jpg"
+      },{
+        "title": "Generadores de números aleatorios y su importancia",
+        "excerpt":"Muy comúnmente los sistemas informáticos requieren de valores aleatorios para diferentes procesos, por ejemplo, para ordenar las cosas, para seleccionar elementos de un conjunto o para tomar diferentes caminos en un proceso. Un lugar en el que los valores aleatorios tienen una importancia especial es en la criptografía en la...","categories": [],
+        "tags": ["prng","criptografía","randomness","aleatoriedad"],
+        "url": "/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638939680/erica-li-UCGvgdlbYGk-unsplash_iucni9.jpg"
       }]

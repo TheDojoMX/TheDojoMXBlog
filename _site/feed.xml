@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-07T00:07:20-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Por qué deberías aprender TypeScript?</title><link href="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html" rel="alternate" type="text/html" title="¿Por qué deberías aprender TypeScript?" /><published>2021-12-06T00:00:00-06:00</published><updated>2021-12-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html">&lt;p&gt;TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-08T15:43:26-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Generadores de números aleatorios y su importancia</title><link href="https://blog.thedojo.mx/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo.html" rel="alternate" type="text/html" title="Generadores de números aleatorios y su importancia" /><published>2021-12-07T00:00:00-06:00</published><updated>2021-12-07T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo.html">&lt;p&gt;Muy comúnmente los sistemas informáticos requieren de valores aleatorios para diferentes procesos, por ejemplo, para ordenar las cosas, para seleccionar elementos de un conjunto o para tomar diferentes caminos en un proceso.&lt;/p&gt;
+
+&lt;p&gt;Un lugar en el que los valores aleatorios tienen una importancia especial es en la criptografía en la seguridad informática. De hecho los números aleatorios son la base de la mayoría de los algoritmos de cifrado.&lt;/p&gt;
+
+&lt;p&gt;Veamos cómo se generan y cómo puedes usar correctamente los generadores de números aleatorios.&lt;/p&gt;
+
+&lt;p&gt;Antes empecemos a hablar de qué es la aleatoriedad y cómo
+podemos entenderla intuitivamente.&lt;/p&gt;
+
+&lt;h2 id=&quot;aleatoriedad&quot;&gt;Aleatoriedad&lt;/h2&gt;
+
+&lt;p&gt;La aleatoriedad tiene que ver con la &lt;em&gt;probabilidad&lt;/em&gt; de obtener cierto valor de un conjunto, o universo, de valores posibles. Los valores aleatorios son impredecibles. Conecta estos los dos conceptos anteriores: para que un valor sea aleatorio debe de ser extraído de un conjunto de valores con la misma probabilidad de aparecer.&lt;/p&gt;
+
+&lt;p&gt;**Ejemplo: ** una moneda lanzada puede entregar dos valores, cara o cruz (águila o sol en México). Es imposible asegurar que va a salir uno u otro valor debido a que ambos valores tienen la misma probabilidad de salir. Y muchos procesos físicos se comportan de esta misma manera.&lt;/p&gt;
+
+&lt;p&gt;Si en el universo de valores posibles es más probable que salga cierto valor, entonces empezamos a perder aleatoriedad, imagínate el caso de una moneda o dado cargado.&lt;/p&gt;
+
+&lt;p&gt;Los humanos percibimos un valor como aleatorio si &lt;em&gt;parece&lt;/em&gt; poco probable que hayamos obtenido ese valor específicamente, pero no siempre es así.&lt;/p&gt;
+
+&lt;p&gt;La aleatoriedad se puede medir a través de &lt;em&gt;entropía&lt;/em&gt;, que es la cantidad de información disponible en todo el espacio de valores posibles. La entropía es la sumatoria de todos los valores posibles multiplicados por el logaritmo de su probabilidad de aparecer, y se mide en bits. Una generador con aleatoriedad perfecta entrega &lt;strong&gt;tantos bits de entropía como valores posibles&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;generadores-de-números-aleatorios&quot;&gt;Generadores de números aleatorios&lt;/h2&gt;
+
+&lt;p&gt;Los programadores podemos usar la aleatoriedad si tenemos un &lt;strong&gt;generador de números aleatorios&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Un generador de números aleatorios es un programa que te entrega una &lt;strong&gt;serie de bits&lt;/strong&gt; aleatorios, es decir, impredecibles desde el punto de vista externo.&lt;/p&gt;
+
+&lt;p&gt;Haya generadores de diferentes tipos dependiendo de su fuente de entropía (información impredecible) y de cómo la usen. Hablemos de los diferentes tipos, sus características, y cómo usarlos.&lt;/p&gt;
+
+&lt;h2 id=&quot;true-random-number-generators&quot;&gt;True Random Number Generators&lt;/h2&gt;
+
+&lt;p&gt;A esta clase de generadores también se le conoce simplemente como &lt;strong&gt;generadores de números aleatorios&lt;/strong&gt; (Random Number Generators o &lt;strong&gt;RNG’s&lt;/strong&gt;). Los RNGs toman su fuente de entropía de &lt;strong&gt;lugares físicos&lt;/strong&gt;, dado que el mundo real es impredecible. Miden las variaciones en los semiconductores, la manera en la que mueves el ratón, el teclado, información de los sensores de la computadora, el micrófono, la red y muchas otras cosas. Hay algunos que toman su entropía de procesos cuánticos incluso, conocidos como &lt;strong&gt;generadores de números aleatorios cuánticos&lt;/strong&gt; o &lt;em&gt;QRNGs&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Estos elementos físicos son fuentes confiables de entropía, pero no podemos confiar en nuestra manera de medirla o “capturarla”, además de que pueden ser sesgados por un usuario malintencionado o atacante. Además son lentos para generar los bits aleatorios que las aplicaciones pueden requerir.&lt;/p&gt;
+
+&lt;p&gt;Es normal que un RNG se quede sin suficiente entropía para servir a las aplicaciones que lo usan, por lo que terminaría bloqueándola.&lt;/p&gt;
+
+&lt;p&gt;Es por esto que los generadores de números aleatorios a menudo se complementan de los generadores de números pseudo-aleatorios, de los que hablaremos a continuación.&lt;/p&gt;
+
+&lt;p&gt;Estos generadores&lt;/p&gt;
+&lt;h2 id=&quot;pseudo-random-number-generators&quot;&gt;Pseudo-Random Number Generators&lt;/h2&gt;
+
+&lt;p&gt;Los generadores de números pseudo-aleatorios (&lt;strong&gt;PRNGs&lt;/strong&gt;) son aquellos que no toman su fuente de entropía de lugares físicos, sino que la generan a partir de una semilla o &lt;em&gt;seed&lt;/em&gt;. Siempre que reciban la misma semilla generarán la misma secuencia de bits que &lt;em&gt;parece&lt;/em&gt; aleatoria, pero en realidad es determinista.&lt;/p&gt;
+
+&lt;p&gt;Si conocemos la semilla y el algoritmo, podríamos predecir la secuencia de bits que generará el algoritmo. Si la distribución de probabilidad de los bits es uniforme o cerca de uniforme, entonces la secuencia de bits parecerá aleatoria, lo cuál es útil para la mayoría de las aplicaciones.&lt;/p&gt;
+
+&lt;p&gt;Los PRNGs no se quedan sin entropía para seguir sirviendo bits, ya que la generan artificialmente, normalmente con algoritmos matemáticos y &lt;em&gt;piscinas&lt;/em&gt; o &lt;em&gt;pools&lt;/em&gt; de bits.&lt;/p&gt;
+
+&lt;p&gt;Una forma de crear un PRNG es usando como semilla un RNG, que tome su fuente de lugares físicos y &lt;em&gt;expendiendo&lt;/em&gt; esta entropía a un número más grande de bits. Esto lo hace mediante la actualización de un estado interno mediante la recepción de bits verdaderamente aleatorios de un RNG.&lt;/p&gt;
+
+&lt;h2 id=&quot;cryptographically-secure-pseudo-random-number-generators&quot;&gt;Cryptographically Secure Pseudo-Random Number Generators&lt;/h2&gt;
+
+&lt;p&gt;Los PRNGs critpográficamente seguros requieren dos características extras para ser usados en criptografía:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Discreción hacia adelante&lt;/strong&gt;. En inglés conocida como &lt;strong&gt;forward secrecy&lt;/strong&gt;, se refiere a que es imposible predecir los bits que generará si se le pide un número.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Discresión hacia atás&lt;/strong&gt;. Se refiere a que, dados los bits de un número aleatorio gennerado, es imposible conocer los bits que le precedieron, que se entregaron en llamadas anteriores.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Cuando hablamos de &lt;strong&gt;“imposible&lt;/strong&gt;” en términos de criptografía, normalmente nos referimos a que es &lt;em&gt;computcionalmente infactible&lt;/em&gt; resolver el problema propuesto. Para que esto sea cierto basta con que no exista un &lt;strong&gt;algoritmo de tiempo polinomial&lt;/strong&gt; que funcione para resolver el problema.&lt;/p&gt;
+
+&lt;p&gt;En pocas palabras, los PRNGs criptográficos son &lt;em&gt;impredecibles&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;ejemplos&quot;&gt;Ejemplos&lt;/h2&gt;
+
+&lt;p&gt;Algunos PRNGs de ejemplo:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;/dev/urandom&lt;/strong&gt; de los sistemas UNIX: genera bits aleatorios combinando lecturas del uso del sistema (RNG de hardware) y un generador por software, de manera que haya siempre suficientes bits. Si quieres conocer más a detalle cómo funciona, este artículo te lo explicará: &lt;a href=&quot;https://www.redhat.com/en/blog/understanding-random-number-generators-and-their-limitations-linux&quot;&gt;Understanding random number generators and their limitations on Linux&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/ESultanik/mtwister&quot;&gt;Meresenne Twister&lt;/a&gt;&lt;/strong&gt;: genera bits aleatorios usando con una distribución uniforme, pero no sirve para criptografía porque es predecible. Dada cierta cantidad de bits es posible predecir la secuencia de bits que generará a continuación.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;PRNG’s en procesadores&lt;/strong&gt;: Tanto a AMD (desde 2015) como Intel (Desde 2013) tienen PRNGs embebidos dentro de los procesadores que pueden ser usados mediante una instrucciones específicas (RDRAND y RDSEED).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Fortuna&lt;/strong&gt;. Es un algoritmo criptográficamente seguro diseñado en 2003, en el que están basadas la generación de números aleatorios de MacOS y iOS.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cómo-usar-prng&quot;&gt;Cómo usar PRNG&lt;/h2&gt;
+
+&lt;p&gt;Si quieres generar números aleatorios para uso general, sin garantía de impredictibilidad, puedes usar un PRNG común implementado en tu lenguage de programación favorito. Generalmente las funciones &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rand()&lt;/code&gt; de Python o &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mt_rand()&lt;/code&gt; de PHP son bastante buenas para esto.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, para generar números aleatorios para criptografía, debes usar un PRNG especializado, normalmente basado en los provistos por el sistema operativo.&lt;/p&gt;
+
+&lt;p&gt;Aunque podrías escribir una función que se comunique con el sistema operativo para obtener un flujo de bits aleatorios, tendrías que hacer lo suficiente para asegurarte de que esos bits sean de calidad (con una alta entropía). Es por esto que como desarrollador es mejor usar las implementaciones de la biblioteca estándar de criptografía de tu lenguaje, a menos que tengas requerimientos muy específicos.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Conocer cómo funciona un PRNG a parte de algo interesante es útil para no usarlos mal. Siempre que requieras números aleatorios para usarlos con relación a la seguridad de la información, deberías usar un PRNG criptográfico. En cualquier otro caso, un PRNG como el &lt;em&gt;Meresenne Twister&lt;/em&gt; es suficiente. Además, ahora sabes que los RNGs basados en procesos físicos, a pesar de las garantías de entropía que prometen, no son muy confiables en el sentido de que no siempre están disponibles.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, la mejor opción para usarlos es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="prng" /><category term="criptografía" /><category term="randomness" /><category term="aleatoriedad" /><summary type="html">Los números aleatorios son muy importantes para el desarrollo, sobre todo para la seguridad de la información y la criptografía.</summary></entry><entry><title type="html">¿Por qué deberías aprender TypeScript?</title><link href="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html" rel="alternate" type="text/html" title="¿Por qué deberías aprender TypeScript?" /><published>2021-12-06T00:00:00-06:00</published><updated>2021-12-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html">&lt;p&gt;TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.&lt;/p&gt;
 
 &lt;h2 id=&quot;acerca-de-typescript&quot;&gt;Acerca de TypeScript&lt;/h2&gt;
 
@@ -604,82 +702,4 @@ Contar con segmentos de código que pueden ser consumidos por más de un servici
 
 &lt;p&gt;Este principio se puede enunciar como:&lt;/p&gt;
 
-&lt;p&gt;“Una clase debe tener una única razón para ser modificada” según en libro Clean Code.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Escribe aquí un buen resumen de tu artículo</summary></entry><entry><title type="html">Como transmitir conocimiento en el desarrollo de software</title><link href="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="alternate" type="text/html" title="Como transmitir conocimiento en el desarrollo de software" /><published>2021-07-19T00:00:00-05:00</published><updated>2021-07-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html">&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
-
-&lt;p&gt;La charla &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;“Eloquent Explanations”&lt;/a&gt; de &lt;a href=&quot;/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt;. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo lo que aprendí.&lt;/p&gt;
-
-&lt;h2 id=&quot;la-motivación&quot;&gt;La motivación&lt;/h2&gt;
-
-&lt;p&gt;Primeramente hablemos de &lt;strong&gt;la motivación&lt;/strong&gt; para explicar mejor las cosas: lo que nos limita para construir software es conocimiento. Conocimiento sobre el dominio, el negocio o el sistema. Es por eso que compartirlo es una muy buena forma de ayudar al equipo a avanzar. La principal forma de compartirlo es con explicaciones.&lt;/p&gt;
-
-&lt;h2 id=&quot;tómatelo-en-serio&quot;&gt;Tómatelo en serio&lt;/h2&gt;
-
-&lt;p&gt;Debemos tener un plan o una estructura para compartir el conocimiento, lo primero es no sacar tus pensamientos sin estructura. Russ propone algunas estructuras, como las siguientes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Zoom In&lt;/strong&gt;: Empieza en el contexto más amplio y termina en los detalles. Por ejemplo: Queremos vender zapatos -&amp;gt; Por eso estamos construyendo un eCommerce -&amp;gt; Por eso necesitamos este botón de “Pagar”.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Zoom Out&lt;/strong&gt;: Empieza en el detalle y termina en el contexto más amplio. Por ejemplo: Necesitamos mejorar la retención de esta pantalla -&amp;gt; Porque es fundamental para terminar la compra -&amp;gt; Por que necesitamos acabar con el stock de este trimestre.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;De los simple a lo complejo&lt;/strong&gt;: Empieza explicando lo más básico, sin saltarte nada. Este método puede implicar ocultar información &lt;em&gt;intencionalmente&lt;/em&gt; o explicarla en términos inexactos, pero que cuando llegue el momento se tendrán que aclarar y expandir.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Explica el proceso&lt;/strong&gt;: Este tipo de explicaciones se adapta bien a escenarios en dónde tienes que describir una transformación progresiva. Por ejemplo, cuando hablamos de cómo se transforma una petición web en un respuesta en cualquier framework web.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Lo más importante es encontrar la estructura que más se  adapte a tu situación.&lt;/p&gt;
-&lt;h2 id=&quot;sé-agil&quot;&gt;Sé Agil&lt;/h2&gt;
-
-&lt;p&gt;Tus explicaciones debe seguir el mismo ciclo que el desarrollo de software:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Explica: ejecuta siguiendo el plan que trazaste&lt;/li&gt;
-  &lt;li&gt;Mide: tienes que leer a la audiencia y darte cuenta de si tu explicación está funcionando. Busca señales como si las preguntas van cambiando, no te miran raro y no hay un silencio mortal.&lt;/li&gt;
-  &lt;li&gt;Ajusta: si tu explicación no está logrando transmitir lo que quieres, cambia de estrategia, simplifica o busca nuevos ejemplos.&lt;/li&gt;
-  &lt;li&gt;Repite: vuelve a iniciar el proceso con nuevo conocimiento aplicando lo que aprendiste.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;empieza-en-lo-más-básico&quot;&gt;Empieza en lo más básico&lt;/h3&gt;
-
-&lt;p&gt;Esto viene de un aprendizaje del autor de la plática mientras daba una taller en el quería enseñar Ruby on Rails. Había algunas personas en el auditorio que preguntaban una y otra vez lo mismo (señal de que no está funcionando tu explicación), hasta que comprendieron que Ruby es el lenguaje y Rails es el framework, cosa que Russ no había pensado siquiera en explicar.&lt;/p&gt;
-
-&lt;p&gt;Cuando explicamos algo que conocemos muy bien, puede que nos saltemos información que no tenemos presente que necesitamos saber, justo por el dominio tan amplio que tenemos del problema. Tenemos que ser cuidadosos en esto e intentar dar la mayor cantidad de información posible, incluso la que pueda ser muy básica.&lt;/p&gt;
-
-&lt;p&gt;A veces parece que lo que estamos diciendo es obvio, pero aquí menciona una frase muy interesante:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;“Nadie en esta sala nació con ese conocimiento codificado en su ADN” - Russ Olsen (cuando el público se rio de la explicación tan básica que tuvo que dar)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Esto nos debe recordar que a nosotros también nos tienen que explicar cosas que para otros son obvias.&lt;/p&gt;
-
-&lt;h2 id=&quot;haz-cortas-tus-explicaciones&quot;&gt;Haz cortas tus explicaciones&lt;/h2&gt;
-
-&lt;p&gt;Explicar es un deporte con límite de tiempo. Tenemos un tiempo limitado para explicar lo que queremos antes de &lt;strong&gt;perder la atención de la persona&lt;/strong&gt;, por lo que comprimir la información y decir primero lo más importante es buena idea.&lt;/p&gt;
-
-&lt;p&gt;Uno de los consejos que Russ da es evitar la jerga técnica. La terminología es un obstáculo para los que están empezando, y sólo quitará tiempo a tu explicación, aburriendo o comunicando muy poco en un espacio grande de tiempo, mientras la puedas evitar hazlo.&lt;/p&gt;
-
-&lt;p&gt;Una buena noticia: &lt;strong&gt;puedes resetear el reloj y comprarte más tiempo&lt;/strong&gt; si logras que las personas a las que les estás explicando tengan pequeñas victorias, entendiendo progresivamente el tema en cuestión.&lt;/p&gt;
-
-&lt;h2 id=&quot;usa-la-repetición&quot;&gt;Usa la repetición&lt;/h2&gt;
-
-&lt;p&gt;Repite para énfasis y para dar contexto. El &lt;em&gt;“Don’t repeat yourself”&lt;/em&gt; es para las máquinas, los humanos necesitamos repetición para entender que algo es importante o para recordar el contexto de algo.&lt;/p&gt;
-
-&lt;p&gt;Así que usa la repetición para resaltar las ideas más importantes de tu explicación.&lt;/p&gt;
-
-&lt;h2 id=&quot;muéstrate-como-humano&quot;&gt;Muéstrate como humano&lt;/h2&gt;
-
-&lt;p&gt;Muéstrate humano. Las explicaciones que causan una reacción emocional en los que escuchan, como las que incluyen humor, las que demuestran sentimientos o conectan en un nivel humano con las personas son las que dejan las cosas grabadas. Russ cuenta la experiencia de la portada de un libro que lo hizo reír y por eso se ha acordado de él toda la vida.&lt;/p&gt;
-
-&lt;p&gt;Hazles saber por qué importa lo que estás diciendo, muestra el interés o el amor que tienes por el tema. Una buena explicación puede cambiar tu compañía, tu equipo o incluso el mundo.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Explicar algo de manera que otros comprendan no es algo sencillo. Necesitas práctica, intención y esfuerzo para lograrlo. Si lo dominas, sin duda serás un componente muy valioso de cualquier equipo en el que participes en el desarrollo de software.&lt;/p&gt;
-
-&lt;p&gt;Puedes ver la charla completa aquí:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/80EE4mZmp3A&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="explicaciones" /><category term="conocimiento" /><category term="desarrollo" /><summary type="html">Compartir el conocimiento que tienes sobre el proyecto es una de las tareas más importantes en el desarrollo de software. Exploremos cómo podemos mejorar en esto.</summary></entry></feed>
+&lt;p&gt;“Una clase debe tener una única razón para ser modificada” según en libro Clean Code.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Escribe aquí un buen resumen de tu artículo</summary></entry></feed>

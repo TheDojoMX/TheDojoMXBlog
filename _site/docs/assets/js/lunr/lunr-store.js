@@ -412,4 +412,10 @@ var store = [{
         "tags": ["Cohesión","acoplamiento","software"],
         "url": "/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638804031/adrian-trinkaus-7UCmXtyg1CQ-unsplash_zhc1uk.jpg"
+      },{
+        "title": "¿Por qué deberías aprender TypeScript?",
+        "excerpt":"TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar. Acerca de TypeScript El propósito de TypeScript es tener un lenguaje adecuado para...","categories": [],
+        "tags": ["javascript","typescript","js","ts"],
+        "url": "/2021/12/06/por-que-deberias-aprender-typescript.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638857085/dominik-lange-Lej_oqHljbk-unsplash_gxaixe.jpg"
       }]

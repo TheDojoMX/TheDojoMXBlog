@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-07T00:08:33-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Por qué deberías aprender TypeScript?</title><link href="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html" rel="alternate" type="text/html" title="¿Por qué deberías aprender TypeScript?" /><published>2021-12-06T00:00:00-06:00</published><updated>2021-12-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html">&lt;p&gt;TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-08T15:44:45-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Generadores de números aleatorios y su importancia</title><link href="https://blog.thedojo.mx/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo.html" rel="alternate" type="text/html" title="Generadores de números aleatorios y su importancia" /><published>2021-12-07T00:00:00-06:00</published><updated>2021-12-07T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo.html">&lt;p&gt;Muy comúnmente los sistemas informáticos requieren de valores aleatorios para diferentes procesos, por ejemplo, para ordenar las cosas, para seleccionar elementos de un conjunto o para tomar diferentes caminos en un proceso.&lt;/p&gt;
+
+&lt;p&gt;Un lugar en el que los valores aleatorios tienen una importancia especial es en la criptografía en la seguridad informática. De hecho los números aleatorios son la base de la mayoría de los algoritmos de cifrado.&lt;/p&gt;
+
+&lt;p&gt;Veamos cómo se generan y cómo puedes usar correctamente los generadores de números aleatorios.&lt;/p&gt;
+
+&lt;p&gt;Antes empecemos a hablar de qué es la aleatoriedad y cómo
+podemos entenderla intuitivamente.&lt;/p&gt;
+
+&lt;h2 id=&quot;aleatoriedad&quot;&gt;Aleatoriedad&lt;/h2&gt;
+
+&lt;p&gt;La aleatoriedad tiene que ver con la &lt;em&gt;probabilidad&lt;/em&gt; de obtener cierto valor de un conjunto, o universo, de valores posibles. Los valores aleatorios son impredecibles. Conecta estos los dos conceptos anteriores: para que un valor sea aleatorio debe de ser extraído de un conjunto de valores con la misma probabilidad de aparecer.&lt;/p&gt;
+
+&lt;p&gt;**Ejemplo: ** una moneda lanzada puede entregar dos valores, cara o cruz (águila o sol en México). Es imposible asegurar que va a salir uno u otro valor debido a que ambos valores tienen la misma probabilidad de salir. Y muchos procesos físicos se comportan de esta misma manera.&lt;/p&gt;
+
+&lt;p&gt;Si en el universo de valores posibles es más probable que salga cierto valor, entonces empezamos a perder aleatoriedad, imagínate el caso de una moneda o dado cargado.&lt;/p&gt;
+
+&lt;p&gt;Los humanos percibimos un valor como aleatorio si &lt;em&gt;parece&lt;/em&gt; poco probable que hayamos obtenido ese valor específicamente, pero no siempre es así.&lt;/p&gt;
+
+&lt;p&gt;La aleatoriedad se puede medir a través de &lt;em&gt;entropía&lt;/em&gt;, que es la cantidad de información disponible en todo el espacio de valores posibles. La entropía es la sumatoria de todos los valores posibles multiplicados por el logaritmo de su probabilidad de aparecer, y se mide en bits. Una generador con aleatoriedad perfecta entrega &lt;strong&gt;tantos bits de entropía como valores posibles&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;generadores-de-números-aleatorios&quot;&gt;Generadores de números aleatorios&lt;/h2&gt;
+
+&lt;p&gt;Los programadores podemos usar la aleatoriedad si tenemos un &lt;strong&gt;generador de números aleatorios&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Un generador de números aleatorios es un programa que te entrega una &lt;strong&gt;serie de bits&lt;/strong&gt; aleatorios, es decir, impredecibles desde el punto de vista externo.&lt;/p&gt;
+
+&lt;p&gt;Haya generadores de diferentes tipos dependiendo de su fuente de entropía (información impredecible) y de cómo la usen. Hablemos de los diferentes tipos, sus características, y cómo usarlos.&lt;/p&gt;
+
+&lt;h2 id=&quot;true-random-number-generators&quot;&gt;True Random Number Generators&lt;/h2&gt;
+
+&lt;p&gt;A esta clase de generadores también se le conoce simplemente como &lt;strong&gt;generadores de números aleatorios&lt;/strong&gt; (Random Number Generators o &lt;strong&gt;RNG’s&lt;/strong&gt;). Los RNGs toman su fuente de entropía de &lt;strong&gt;lugares físicos&lt;/strong&gt;, dado que el mundo real es impredecible. Miden las variaciones en los semiconductores, la manera en la que mueves el ratón, el teclado, información de los sensores de la computadora, el micrófono, la red y muchas otras cosas. Hay algunos que toman su entropía de procesos cuánticos incluso, conocidos como &lt;strong&gt;generadores de números aleatorios cuánticos&lt;/strong&gt; o &lt;em&gt;QRNGs&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Estos elementos físicos son fuentes confiables de entropía, pero no podemos confiar en nuestra manera de medirla o “capturarla”, además de que pueden ser sesgados por un usuario malintencionado o atacante. Además son lentos para generar los bits aleatorios que las aplicaciones pueden requerir.&lt;/p&gt;
+
+&lt;p&gt;Es normal que un RNG se quede sin suficiente entropía para servir a las aplicaciones que lo usan, por lo que terminaría bloqueándola.&lt;/p&gt;
+
+&lt;p&gt;Es por esto que los generadores de números aleatorios a menudo se complementan de los generadores de números pseudo-aleatorios, de los que hablaremos a continuación.&lt;/p&gt;
+
+&lt;p&gt;Estos generadores&lt;/p&gt;
+&lt;h2 id=&quot;pseudo-random-number-generators&quot;&gt;Pseudo-Random Number Generators&lt;/h2&gt;
+
+&lt;p&gt;Los generadores de números pseudo-aleatorios (&lt;strong&gt;PRNGs&lt;/strong&gt;) son aquellos que no toman su fuente de entropía de lugares físicos, sino que la generan a partir de una semilla o &lt;em&gt;seed&lt;/em&gt;. Siempre que reciban la misma semilla generarán la misma secuencia de bits que &lt;em&gt;parece&lt;/em&gt; aleatoria, pero en realidad es determinista.&lt;/p&gt;
+
+&lt;p&gt;Si conocemos la semilla y el algoritmo, podríamos predecir la secuencia de bits que generará el algoritmo. Si la distribución de probabilidad de los bits es uniforme o cerca de uniforme, entonces la secuencia de bits parecerá aleatoria, lo cuál es útil para la mayoría de las aplicaciones.&lt;/p&gt;
+
+&lt;p&gt;Los PRNGs no se quedan sin entropía para seguir sirviendo bits, ya que la generan artificialmente, normalmente con algoritmos matemáticos y &lt;em&gt;piscinas&lt;/em&gt; o &lt;em&gt;pools&lt;/em&gt; de bits.&lt;/p&gt;
+
+&lt;p&gt;Una forma de crear un PRNG es usando como semilla un RNG, que tome su fuente de lugares físicos y &lt;em&gt;expendiendo&lt;/em&gt; esta entropía a un número más grande de bits. Esto lo hace mediante la actualización de un estado interno mediante la recepción de bits verdaderamente aleatorios de un RNG.&lt;/p&gt;
+
+&lt;h2 id=&quot;cryptographically-secure-pseudo-random-number-generators&quot;&gt;Cryptographically Secure Pseudo-Random Number Generators&lt;/h2&gt;
+
+&lt;p&gt;Los PRNGs critpográficamente seguros requieren dos características extras para ser usados en criptografía:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Discreción hacia adelante&lt;/strong&gt;. En inglés conocida como &lt;strong&gt;forward secrecy&lt;/strong&gt;, se refiere a que es imposible predecir los bits que generará si se le pide un número.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Discresión hacia atás&lt;/strong&gt;. Se refiere a que, dados los bits de un número aleatorio gennerado, es imposible conocer los bits que le precedieron, que se entregaron en llamadas anteriores.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Cuando hablamos de &lt;strong&gt;“imposible&lt;/strong&gt;” en términos de criptografía, normalmente nos referimos a que es &lt;em&gt;computcionalmente infactible&lt;/em&gt; resolver el problema propuesto. Para que esto sea cierto basta con que no exista un &lt;strong&gt;algoritmo de tiempo polinomial&lt;/strong&gt; que funcione para resolver el problema.&lt;/p&gt;
+
+&lt;p&gt;En pocas palabras, los PRNGs criptográficos son &lt;em&gt;impredecibles&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;ejemplos&quot;&gt;Ejemplos&lt;/h2&gt;
+
+&lt;p&gt;Algunos PRNGs de ejemplo:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;/dev/urandom&lt;/strong&gt; de los sistemas UNIX: genera bits aleatorios combinando lecturas del uso del sistema (RNG de hardware) y un generador por software, de manera que haya siempre suficientes bits. Si quieres conocer más a detalle cómo funciona, este artículo te lo explicará: &lt;a href=&quot;https://www.redhat.com/en/blog/understanding-random-number-generators-and-their-limitations-linux&quot;&gt;Understanding random number generators and their limitations on Linux&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/ESultanik/mtwister&quot;&gt;Meresenne Twister&lt;/a&gt;&lt;/strong&gt;: genera bits aleatorios usando con una distribución uniforme, pero no sirve para criptografía porque es predecible. Dada cierta cantidad de bits es posible predecir la secuencia de bits que generará a continuación.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;PRNG’s en procesadores&lt;/strong&gt;: Tanto a AMD (desde 2015) como Intel (Desde 2013) tienen PRNGs embebidos dentro de los procesadores que pueden ser usados mediante una instrucciones específicas (RDRAND y RDSEED).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Fortuna&lt;/strong&gt;. Es un algoritmo criptográficamente seguro diseñado en 2003, en el que están basadas la generación de números aleatorios de MacOS y iOS.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cómo-usar-prng&quot;&gt;Cómo usar PRNG&lt;/h2&gt;
+
+&lt;p&gt;Si quieres generar números aleatorios para uso general, sin garantía de impredictibilidad, puedes usar un PRNG común implementado en tu lenguage de programación favorito. Generalmente las funciones &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rand()&lt;/code&gt; de Python o &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mt_rand()&lt;/code&gt; de PHP son bastante buenas para esto.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, para generar números aleatorios para criptografía, debes usar un PRNG especializado, normalmente basado en los provistos por el sistema operativo.&lt;/p&gt;
+
+&lt;p&gt;Aunque podrías escribir una función que se comunique con el sistema operativo para obtener un flujo de bits aleatorios, tendrías que hacer lo suficiente para asegurarte de que esos bits sean de calidad (con una alta entropía). Es por esto que como desarrollador es mejor usar las implementaciones de la biblioteca estándar de criptografía de tu lenguaje, a menos que tengas requerimientos muy específicos.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Conocer cómo funciona un PRNG a parte de algo interesante es útil para no usarlos mal. Siempre que requieras números aleatorios para usarlos con relación a la seguridad de la información, deberías usar un PRNG criptográfico. En cualquier otro caso, un PRNG como el &lt;em&gt;Meresenne Twister&lt;/em&gt; es suficiente. Además, ahora sabes que los RNGs basados en procesos físicos, a pesar de las garantías de entropía que prometen, no son muy confiables en el sentido de que no siempre están disponibles.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, la mejor opción para usarlos es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="prng" /><category term="criptografía" /><category term="randomness" /><category term="aleatoriedad" /><summary type="html">Los números aleatorios son muy importantes para el desarrollo, sobre todo para la seguridad de la información y la criptografía.</summary></entry><entry><title type="html">¿Por qué deberías aprender TypeScript?</title><link href="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html" rel="alternate" type="text/html" title="¿Por qué deberías aprender TypeScript?" /><published>2021-12-06T00:00:00-06:00</published><updated>2021-12-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html">&lt;p&gt;TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.&lt;/p&gt;
 
 &lt;h2 id=&quot;acerca-de-typescript&quot;&gt;Acerca de TypeScript&lt;/h2&gt;
 
@@ -737,164 +835,4 @@ Contar con segmentos de código que pueden ser consumidos por más de un servici
 
 &lt;p&gt;Además, el pragmatismo que demuestra en los consejos que da, es algo que podemos aprender a aplicar: &lt;strong&gt;resolver el problema es mucho más importante que sonar rimbombantes y asombrar a todos con las palabras tan bonitas que usamos&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;El último punto que quiero resaltar tiene que ver con la capacidad que tiene de contar historias, explicar progresivamente y dar charlas entretenidas. La comunicación es uno de los aspectos más importantes en el desarrollo de software, y mientras mejores seamos e eso, más podremos avanzar en nuestra carrera.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="devs" /><category term="ruby" /><category term="clojure" /><summary type="html">Russ Olsen es un desarrollador de software conocido por sus libros sobre Ruby y Clojure y por las excelentes charlas que da. Veamos algunas de sus ideas y lo que podemos aprender de él.</summary></entry><entry><title type="html">Desarrolladores de los que puedes aprender: Kevlin Henney</title><link href="https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html" rel="alternate" type="text/html" title="Desarrolladores de los que puedes aprender: Kevlin Henney" /><published>2021-07-07T00:00:00-05:00</published><updated>2021-07-07T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney.html">&lt;p&gt;Hay varios desarrolladores de talla internacional de los que puedes &lt;strong&gt;aprender mucho&lt;/strong&gt;, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que puedes aprender.&lt;/p&gt;
-
-&lt;p&gt;Las condiciones para que aparezcan aquí son las siguientes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Amplia experiencia real desarrollando sistemas&lt;/li&gt;
-  &lt;li&gt;Que tengan algún logro notable en el desarrollo de sistemas&lt;/li&gt;
-  &lt;li&gt;Comparten sus ideas con la comunidad de forma continua&lt;/li&gt;
-  &lt;li&gt;No son unos &lt;em&gt;“brilliant jerks”&lt;/em&gt;, es decir, no usan su experiencia o inteligencia para humillar o desacreditar a otros, y mucho menos su exposición para promover ideas nocivas.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;El objetivo de esta serie es que aprendamos de las personas que han dedicado su vida a esto y construyamos sobre lo que ellos han hecho en vez de reinventar la rueda cada vez.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; El que los mencionemos aquí no implica que todas sus ideas son correctas o que estemos de acuerdo con todo lo que dicen. Conocer diferentes puntos de vista, sumado a tu experiencia en diferentes contextos te ayudará a tener un criterio adaptado a tu realidad.&lt;/p&gt;
-
-&lt;p&gt;Ahora sí, vamos a hablar de &lt;a href=&quot;https://blog.eisele.net/2013/07/the-heroes-of-java-kevlin-henney.html&quot;&gt;Kevlin Henney&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;acerca-de-kevlin-henney&quot;&gt;Acerca de Kevlin Henney&lt;/h2&gt;
-
-&lt;p&gt;Kevlin Henney es un consultor, escritor, entrenador y presentador de temas relacionados con sistemas, procesos, las personas y el software. Sus escritos, talleres y consultorías siempre tienen que ver con &lt;strong&gt;la forma&lt;/strong&gt; en que &lt;em&gt;desarrollamos&lt;/em&gt; y &lt;em&gt;diseñamos&lt;/em&gt; software, además de con los procesos y prácticas que llevan al éxito los proyectos de software complejos.&lt;/p&gt;
-
-&lt;p&gt;Ha escrito columnas para múltiples revistas dedicadas al desarrollo de software. Es autor o editor de varios libros que son &lt;em&gt;muy recomendados&lt;/em&gt; para arquitectos de software y desarrolladores. Algunos ejemplos son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com.mx/Pattern-Oriented-Software-Architecture-Distributed-Computing/dp/0470059028&quot;&gt;Pattern-Oriented Software Architecture, Volume 4: A Pattern Language for Distributed Computing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.oreilly.com/library/view/97-things-every/9780596809515/&quot;&gt;97 Things Every Programmer Should Know&lt;/a&gt; - Es una colección de ensayos que Kevlin se encargó de compilar y editar, sobre cómo ser un mejor programador. También está la versión en español: &lt;a href=&quot;http://97cosas.com/programador/&quot;&gt;97 cosas que todo programador debería saber&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Kevlin se ha presentado en casi todas las conferencias importantes de desarrollo de software europeas y de habla inglesa. Vive en Bristol, Reino Unido y también disfruta de escribir ficción, puedes encontrar en &lt;a href=&quot;https://www.amazon.com/Kevlin-Henney/e/B0716N93KR%3Fref=dbs_a_mng_rwt_scns_share&quot;&gt;Amazon&lt;/a&gt; sus libros de ficción. Además es muy accesible, si lo buscas en Twitter es muy probable que te conteste: &lt;a href=&quot;https://twitter.com/KevlinHenney&quot;&gt;Kevlin Henney en Twitter&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Una de las cosas que menciona que más nos gusta es: &lt;strong&gt;“Si estás de acuerdo con todo lo qu estoy diciendo, no me estás escuchando.”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;algunas-ideas-de-kevlin&quot;&gt;Algunas ideas de Kevlin&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Less code == less bugs”. - Kevlin Henney&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;De las pláticas y el contenido que hemos consumido de Kevlin, hemos podido derivar algunas de las principales ideas que promueve. Te listamos las tres más importantes y te dejamos descubrir las demás viendo sus charlas o leyendo su contenido.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;La arquitectura de software requiere entendimiento completo del dominio.&lt;/strong&gt; Una de las ideas que Kevlin repite vez tras vez es la importancia de entender y definir el problema que estamos tratando de resolver. Se basa en las ideas de otros autores para reforzar esto. Una de las cosas que Kevlin resalta es que debemos conocer los &lt;strong&gt;detalles&lt;/strong&gt;, para poder implementar software correcto con la arquitectura adecuada.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;El diseño y la arquitectura de software son procesos iterativos e incrementales.&lt;/strong&gt; Es imposible hacer un diseño completamente correcto y sin errores desde la primera vez. Es por eso que esta es una idea que se repite en sus conferencias vez tras vez. La lección para nosotros: &lt;em&gt;debemos diseñar el software con el conocimiento de que siempre habrá algo que mejorar&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;El software simple, pequeño y “aburrido” es más fácil de manejar&lt;/strong&gt;. Haciendo eco de la frase que pusimos al inicio de esta sección, una de las ideas que Kevlin promueve más es la de minimizar la cantidad de código para lograr algo, así como buscar la simplicidad tanto en funciones como de construcción. Esto último es lo que llamamos aburrido: evitar tanto como podamos tecnologías a las que no estamos acostumbrados o demasiado nuevas y que agreguen dependencias innecesarias.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;pláticas&quot;&gt;Pláticas&lt;/h2&gt;
-
-&lt;p&gt;Kevlin tiene decenas de pláticas en YouTube y Vimeo, hablando temas variados, todos relacionados de una forma u otra con el &lt;em&gt;proceso&lt;/em&gt; de desarrollo y la calidad del software.&lt;/p&gt;
-
-&lt;p&gt;Vamos a mencionar tres de las que nos han parecido las mejores.&lt;/p&gt;
-
-&lt;h3 id=&quot;software-is-details&quot;&gt;Software is Details&lt;/h3&gt;
-
-&lt;p&gt;Aquí presenta una idea que repite a lo largo de sus presentaciones: &lt;strong&gt;la implementación del software requiere un conocimiento lo más profundo y completo que se pueda sobre el problema que se está resolviendo&lt;/strong&gt;. Da algunos ejemplos en los que se diseñó un sistema sin pensar en los “detalles de implementación” con resultados catastróficos. Mantener la vista en el sistema entero mientras se toman en cuenta los detalles es una señal de un arquitecto de software efectivo.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/kX0prJklhUE&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;h3 id=&quot;old-is-the-new-new&quot;&gt;Old is the new new&lt;/h3&gt;
-
-&lt;p&gt;En esta plática resalta la importancia de conocer y dominar los principios que habilitan a las nuevas tecnologías y herramientas. Las implementaciones tienen una vida corta mientras que los principios se mantienen inalterados.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/AbgsfeGvg3E&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;h3 id=&quot;it-depends&quot;&gt;It Depends…&lt;/h3&gt;
-
-&lt;p&gt;Crear software &lt;strong&gt;depende&lt;/strong&gt; del conocimiento que tengamos acerca del dominio que estamos tratando. Nuestro conocimiento tiene límites que no podemos sobrepasar (incertidumbre) y es contra eso con lo que debemos tener cuidado, cosas que no están inmediatamente en nuestra visión.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/rNSVZs66o48&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Tiene muchas más pláticas en conferencias que puedes buscar directamente en YouTube. Cada una de sus pláticas es un conjunto de ideas y referencias que es más de lo que se puede absorber en el tiempo en el que lo presenta, por lo que tal vez tengas que verlas varias veces, pero todo ese bagaje vale la pena. Aquí te dejamos una búsqueda que las agrupa: &lt;a href=&quot;https://dev.tube/@kevlinhenney&quot;&gt;DevTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;preguntas-que-le-hicimos&quot;&gt;Preguntas que le hicimos&lt;/h2&gt;
-
-&lt;p&gt;Además de investigar y aprender sobre las ideas de estos desarrolladores, creamos un cuestionario para hacérselos a todos los desarrolladores de esta serie, para que contesten las preguntas que puedan. Contactaremos directamente a cada uno y le haremos llegar las preguntas, con suerte nos contestaran.&lt;/p&gt;
-
-&lt;p&gt;Kevlin fue muy accesible y nos contestó casi todas las preguntas, disfruta las respuestas.&lt;/p&gt;
-
-&lt;h4 id=&quot;cómo-fue-tu-camino-de-aprendizaje-cómo-te-hiciste-así-de-bueno&quot;&gt;¿Cómo fue tu camino de aprendizaje? &lt;strong&gt;¿Cómo te hiciste así de bueno?&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;No se si soy &lt;em&gt;tan&lt;/em&gt; bueno, pero mi camino ha sido una mezcla de interés apasionado experimentación, ignorancia, estudio, ¡y suerte! Me introduje en la programación en la adolescencia pero no se me ocurrió hasta que dejé la universidad que el desarrollo de software podría ser una buena elección de trabajo o carrera.&lt;/p&gt;
-
-&lt;p&gt;Mientras trabajaba, fui atraído hacia el mundo de los lenguajes, técnicas, paradigmas, diseño, etc., mientras leía un conjunto aleatorio de artículos que incrementaron mi interés y fascinación. Empecé a tratar de comunicar esas ideas a través de artículos, y a relacionarlas con mis experiencias mientras trabajaba con diferentes sistemas y en en diferentes ambientes.&lt;/p&gt;
-
-&lt;p&gt;Esto eventualmente me llevó a dar charlas, cursos y visitar compañías, lo cuál amplió mi campo de visión, retó algunas de mis ideas y mejoró mi habilidad para pensar con los pies en la tierra.&lt;/p&gt;
-
-&lt;h4 id=&quot;cuál-ha-sido-tu-peor-decisión-técnica-qué-restricciones-la-limitaron&quot;&gt;¿Cuál ha sido tu peor decisión técnica? ¿Qué restricciones la limitaron?&lt;/h4&gt;
-
-&lt;p&gt;Escogeré un decisión técnica que está segura en el pasado; un cuarto de siglo en el pasado, para ser precisos. Estaba trabajando en un sistema SCADA en el sector energético. Nuestros sistemas estaban embebidos en subestaciones eléctricas y tenían muy poco ancho de banda (sólo unos pocos miles de bits por segundo). Ayudé a definir un protocolo binario compacto y que no requería mucho ancho de banda. Cuando definimos el protocolo, decidimos específicamente no preocuparnos por la seguridad en el protocolo porque, en ese tiempo, no pensamos que alguien sería lo suficientemente tonto para conectar infraestructura sensible, como la red eléctrica, a una red pública, como el Internet.&lt;/p&gt;
-
-&lt;p&gt;¡Resulta que nunca debes subestimar que tan tonta puede ser la gente! Afortunadamente esto fue corregido después con unos cuántos cambios para usar SSL en vez de correr nuestros propios sockets sin protección.&lt;/p&gt;
-
-&lt;p&gt;Dicho esto, aunque perdimos una tendencia futura, nos subimos a otras. No sólo corregimos el problema Y2K antes de que la mayoría de las personas siquiera supieran de él; también atendimos el problema del año 2038.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;cuál-es-el-peor-consejo-que-te-han-dado&quot;&gt;¿Cuál es el peor consejo que te han dado?&lt;/h4&gt;
-
-&lt;p&gt;Las pruebas no son responsabilidad del desarrollador.&lt;/p&gt;
-
-&lt;h4 id=&quot;cuál-es-el-mejor-consejo-que-te-han-dado&quot;&gt;¿Cuál es el mejor consejo que te han dado?&lt;/h4&gt;
-
-&lt;p&gt;Piensa en el desarrollo de software como la administración de la complejidad.&lt;/p&gt;
-
-&lt;h4 id=&quot;en-tu-experiencia-qué-tan-importante-es-el-lenguaje-que-seleccionamos-para-desarrollar-nuestro-software-por-qué-estamos-discutiendo-aún-sobre-los-lenguajes&quot;&gt;¿En tu experiencia, qué tan importante es el lenguaje que seleccionamos para desarrollar nuestro software? ¿Por qué estamos discutiendo aún sobre los lenguajes?&lt;/h4&gt;
-
-&lt;p&gt;Es importante porque la elección de lenguaje es, normalmente, arquitectural. Si no estás seguro de esto, &lt;strong&gt;considera el costo y esfuerzo, las herramientas, las habilidades, etcétera, de lo que tomaría cambiar de lenguaje en una parte o toda tu base de código&lt;/strong&gt;. Piensa en cuánto de tu sistema saldría afectado, como afectaría al equipo y cómo otros elementos de tu conjunto de herramientas tecnológicas serían impactados. &lt;strong&gt;Y más&lt;/strong&gt;. Lejos de ser un detalle, la elección es &lt;em&gt;mucho más significativa de lo que muchas personas se dan cuenta&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;El lenguaje, en cualquier presentación, es una forma de expresarnos. El lenguaje también está asociado con la cultura y la comunidad. Por eso peleamos acerca de él. Aunque muchos desarrolladores podrían pensar que están debatiendo racionalmente acerca de su lenguaje y sus méritos técnicos, pero típicamente esto no sucede. Debajo de la apariencia técnica de estas discusiones hay algo más  humano y menos racional, algo más social y personal. Y por eso es por lo que continuamos discutiendo sobre los lenguajes.&lt;/p&gt;
-
-&lt;p&gt;Claro, hay diferencias técnicas y puntos objetivos que se pueden argumentar, pero la verdad es que esto no es el centro de las discusiones.&lt;/p&gt;
-
-&lt;h4 id=&quot;cuál-es-la-discusión-técnica-más-improductiva-que-has-tenido&quot;&gt;¿Cuál es la discusión técnica &lt;strong&gt;más improductiva que has tenido&lt;/strong&gt;?&lt;/h4&gt;
-
-&lt;p&gt;¡Probablemente sobre un lenguaje de programación!&lt;/p&gt;
-
-&lt;h4 id=&quot;qué-podrías-recomendar-a-los-programadores-jóvenes-que-aún-estén-buscando-su-camino&quot;&gt;¿Qué podrías recomendar a los programadores jóvenes que aún estén buscando su camino?&lt;/h4&gt;
-
-&lt;p&gt;Observa la historia de la programación, la arquitectura de software, las metodologías de desarrollo, etcétera. El desarrollo de software  tiene una historia y la mayoría de las ideas profundas puede ser hallada ahí. La mayoría de las tendencias y elecciones actuales se entienden mejor al entender el pasado, en vez de sólo mirar el presente. El desarrollo de software es más conservador de lo que podrías apreciar, y las nuevas ideas raramente son originales.&lt;/p&gt;
-
-&lt;h4 id=&quot;qué-ideas-debemos-superar-como-comunidad-de-it-para-mejorar&quot;&gt;¿Qué ideas debemos superar como comunidad de IT para mejorar?&lt;/h4&gt;
-
-&lt;p&gt;La idea de que el desarrollo de software es una actividad estríctamente neutral y técnica que no necesita considerar a la gente. La manera en que desarrollamos software y en la que es usado tiene implicaciones éticas. Necesitamos reconocer de mejor manera el espectro de personas que pueden y crean software y las responsabilidad que tienen para con las personas qeu usan el software. El software cambia al mundo; no podemos hacer eso y decir que la manera en que el mundo cambia no es nuestra responsabilidad.&lt;/p&gt;
-
-&lt;h4 id=&quot;cuál-es-el-futuro-de-la-programación-para-los-siguientes-diez-años-en-tu-opinión-qué-deberíamos-aprender-para-mantenernos-productivos&quot;&gt;¿Cuál es el futuro de la programación para los siguientes diez años, en tu opinión? ¿Qué deberíamos aprender para mantenernos productivos?&lt;/h4&gt;
-
-&lt;p&gt;Los próximos diez van a ser muy parecidos a los diez anteriores. Va a haber nuevos frameworks, nuevas plataformas, nuevos lenguajes de programación, junto con los respectivos cambios en las habilidades. Algunas personas se emocionarán con las nuevas ideas que no son tan nuevas. Algunas personas predecirán la desaparición de los programadores y el software tal como lo conocemos. Lo que es más probable que pase es que el número de programadores va a seguir aumentando y el desarrollo de software va a seguir evolucionando, mayoritariamente en la línea que lleva ahora. El mundo continuará siendo cada vez mas dependiente de los desarrolladores de software.&lt;/p&gt;
-
-&lt;h2 id=&quot;recursos&quot;&gt;Recursos&lt;/h2&gt;
-
-&lt;p&gt;Para aprender más de las ideas qeu Kevlin enseña, puedes investigar más de él y su trabajo aquí:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://about.me/kevlin&quot;&gt;Página de Kevlin Henney&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://blog.itkonekt.com/2021/01/21/kevlin-henney-on-the-topic-of-what-to-read-if-youre-a-programmer/&quot;&gt;What to read if you are a programmer&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://blog.eisele.net/2013/07/the-heroes-of-java-kevlin-henney.html&quot;&gt;Entrevista de la serie “Heroes of Java”&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://kevlinhenney.medium.com/&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.slideshare.net/Kevlin/presentations&quot;&gt;Sus presentaciones&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Todos los desarrolladores de diferentes niveles podemos aprender mucho de las ideas que Kevlin se ha dedicado a enseñar, mientras lo hace de una manera entretenida, profunda y que va puliendo con el tiempo. Es importante escuchar a personas con experiencia para pode desarrollar el criterio propio y las habilidades y formas de pensar para ser efectivos.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;El fin del UNIX Timestamp o &lt;a href=&quot;https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2038&quot;&gt;Y2k38&lt;/a&gt;. (Nota de traducción) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="developers" /><category term="arquitectura" /><summary type="html">Hay muchas personas de las cuáles aprender, con muchos años de experiencia más allá de Robert Martín. En esta serie de artículos vamos a resaltar el trabajo y las ideas de varios desarrolladores y consultores con gran experiencia. Empecemos con Kevlin Henney.</summary></entry></feed>
+&lt;p&gt;El último punto que quiero resaltar tiene que ver con la capacidad que tiene de contar historias, explicar progresivamente y dar charlas entretenidas. La comunicación es uno de los aspectos más importantes en el desarrollo de software, y mientras mejores seamos e eso, más podremos avanzar en nuestra carrera.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="devs" /><category term="ruby" /><category term="clojure" /><summary type="html">Russ Olsen es un desarrollador de software conocido por sus libros sobre Ruby y Clojure y por las excelentes charlas que da. Veamos algunas de sus ideas y lo que podemos aprender de él.</summary></entry></feed>
