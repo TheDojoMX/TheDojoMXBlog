@@ -32,7 +32,6 @@ Los humanos percibimos un valor como aleatorio si _parece_ poco probable que hay
 
 La aleatoriedad se puede medir a través de _entropía_, que es la cantidad de información disponible en todo el espacio de valores posibles. La entropía es la sumatoria de todos los valores posibles multiplicados por el logaritmo de su probabilidad de aparecer, y se mide en bits. Una generador con aleatoriedad perfecta entrega **tantos bits de entropía como valores posibles**.
 
-
 ## Generadores de números aleatorios
 
 Los programadores podemos usar la aleatoriedad si tenemos un **generador de números aleatorios**.
