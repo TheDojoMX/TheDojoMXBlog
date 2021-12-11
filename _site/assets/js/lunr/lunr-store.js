@@ -401,12 +401,6 @@ var store = [{
         "url": "/2021/10/05/estandares-de-calidad-en-el-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1633104565/fakurian-design-UoqIavC59eg-unsplash_bitrsd.jpg"
       },{
-        "title": "Crypto",
-        "excerpt":" ","categories": [],
-        "tags": [],
-        "url": "/2021/10/09/crypto.html",
-        "teaser": null
-      },{
         "title": "20 bibliotecas de Python que deberías estar usando",
         "excerpt":"El libro “20 Python Libraries You Aren’t Using (But Should)” de Caleb Hattingh es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida. Veamos las 5 que me parece más importante conocer y tú puedes leer el...","categories": [],
         "tags": ["python","books","bibliotecas"],
@@ -456,8 +450,20 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639201671/daniil-komov-dSZyPg9rCRA-unsplash_v4liy9.jpg"
       },{
         "title": "Cómo convertirte en un mago programando",
-        "excerpt":" ","categories": [],
-        "tags": [],
+        "excerpt":"Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del wizardzine gratuito “So you want to be a wizard” de Julia Evans. Espero...","categories": [],
+        "tags": ["aprendizaje","preguntas","investigación"],
         "url": "/2021/12/09/como-convertirte-en-un-mago-programando.html",
-        "teaser": null
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639259079/michael-dziedzic-dSyhpTGhNHg-unsplash_mcsqsn.jpg"
+      },{
+        "title": "La regla del 'Cero, Uno o Infinito'",
+        "excerpt":"La regla del ‘Cero, Uno o Infinito’ es una guía para que creemos software más usable.  ","categories": [],
+        "tags": [],
+        "url": "/2021/12/10/la-regla-del-cero-uno-o-infinito.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639259189/michael-dziedzic-uZr0oWxrHYs-unsplash_koqk3a.jpg"
+      },{
+        "title": "Criptografía VS computación cuántica",
+        "excerpt":"La computación cuántica es una tecnología muy prometedora que lleva décadas en gestación y cada vez la vemos más cerca. Una las cosas que más le llama la atención a las personas  ","categories": [],
+        "tags": ["criptografía,","quantum,","matemáticas"],
+        "url": "/2021/12/11/criptografia-vs-computacion-cuantica.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639258127/anton-maksimov-juvnsky-wrkNQmhmdvY-unsplash_zfe4zr.jpg"
       }]
