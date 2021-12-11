@@ -444,8 +444,20 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638857085/dominik-lange-Lej_oqHljbk-unsplash_gxaixe.jpg"
       },{
         "title": "Generadores de números aleatorios y su importancia",
-        "excerpt":"Muy comúnmente los sistemas informáticos requieren de valores aleatorios para diferentes procesos, por ejemplo, para ordenar las cosas, para seleccionar elementos de un conjunto o para tomar diferentes caminos en un proceso. Un lugar en el que los valores aleatorios tienen una importancia especial es en la criptografía en la...","categories": [],
+        "excerpt":"Muy comúnmente los sistemas informáticos requieren de valores aleatorios para diferentes procesos, por ejemplo, para ordenar las cosas, para seleccionar elementos de un conjunto, para simulaciones, para tomar diferentes caminos en un proceso (como los videojuegos). Un lugar en el que los valores aleatorios tienen una importancia especial es en...","categories": [],
         "tags": ["prng","criptografía","randomness","aleatoriedad"],
         "url": "/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638939680/erica-li-UCGvgdlbYGk-unsplash_iucni9.jpg"
+      },{
+        "title": "Recursos para aprender Criptografía en 2022",
+        "excerpt":"La criptografía es un campo con mucha demanda laboral actualmente porque es importante para diferentes áreas de la informática. En este artículo vamos hablar su importancia y cómo puedes aprenderlo si está dentro de tus intereses. La importancia de la criptografía En el artículo ¿Qué es la Criptografía? explicamos que...","categories": [],
+        "tags": ["criptografía","libros","cursos","matemáticas"],
+        "url": "/2021/12/08/recursos-para-aprender-criptografia-en-2021.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639201671/daniil-komov-dSZyPg9rCRA-unsplash_v4liy9.jpg"
+      },{
+        "title": "Cómo convertirte en un mago programando",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/2021/12/09/como-convertirte-en-un-mago-programando.html",
+        "teaser": null
       }]

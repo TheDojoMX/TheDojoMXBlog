@@ -135,7 +135,7 @@
       "headline": "Generadores de números aleatorios y su importancia",
       "keywords": "prng,criptografía,randomness,aleatoriedad",
       "description": "Los números aleatorios son muy importantes para el desarrollo, sobre todo para la seguridad de la información y la criptografía.",
-      "articleBody": "Muy comúnmente los sistemas informáticos requieren de valores aleatorios para diferentes procesos, por ejemplo, para ordenar las cosas, para seleccionar elementos de un conjunto o para tomar diferentes caminos en un proceso.\n\nUn lugar en el que los valores aleatorios tienen una importancia especial es en la criptografía en la seguridad informática. De hecho los números aleatorios son la base de la mayoría de los algoritmos de cifrado.\n\nVeamos cómo se generan y cómo puedes usar correctamente los generadores de números aleatorios.\n\nAntes empecemos a hablar de qué es la aleatoriedad y cómo\npodemos entenderla intuitivamente.\n\nAleatoriedad\n\nLa aleatoriedad tiene que ver con la probabilidad de obtener cierto valor de un conjunto, o universo, de valores posibles. Los valores aleatorios son impredecibles. Conecta estos los dos conceptos anteriores: para que un valor sea aleatorio debe de ser extraído de un conjunto de valores con la misma probabilidad de aparecer.\n\n**Ejemplo: ** una moneda lanzada puede entregar dos valores, cara o cruz (águila o sol en México). Es imposible asegurar que va a salir uno u otro valor debido a que ambos valores tienen la misma probabilidad de salir. Y muchos procesos físicos se comportan de esta misma manera.\n\nSi en el universo de valores posibles es más probable que salga cierto valor, entonces empezamos a perder aleatoriedad, imagínate el caso de una moneda o dado cargado.\n\nLos humanos percibimos un valor como aleatorio si parece poco probable que hayamos obtenido ese valor específicamente, pero no siempre es así.\n\nLa aleatoriedad se puede medir a través de entropía, que es la cantidad de información disponible en todo el espacio de valores posibles. La entropía es la sumatoria de todos los valores posibles multiplicados por el logaritmo de su probabilidad de aparecer, y se mide en bits. Una generador con aleatoriedad perfecta entrega tantos bits de entropía como valores posibles.\n\nGeneradores de números aleatorios\n\nLos programadores podemos usar la aleatoriedad si tenemos un generador de números aleatorios.\n\nUn generador de números aleatorios es un programa que te entrega una serie de bits aleatorios, es decir, impredecibles desde el punto de vista externo.\n\nHaya generadores de diferentes tipos dependiendo de su fuente de entropía (información impredecible) y de cómo la usen. Hablemos de los diferentes tipos, sus características, y cómo usarlos.\n\nTrue Random Number Generators\n\nA esta clase de generadores también se le conoce simplemente como generadores de números aleatorios (Random Number Generators o RNG’s). Los RNGs toman su fuente de entropía de lugares físicos, dado que el mundo real es impredecible. Miden las variaciones en los semiconductores, la manera en la que mueves el ratón, el teclado, información de los sensores de la computadora, el micrófono, la red y muchas otras cosas. Hay algunos que toman su entropía de procesos cuánticos incluso, conocidos como generadores de números aleatorios cuánticos o QRNGs.\n\nEstos elementos físicos son fuentes confiables de entropía, pero no podemos confiar en nuestra manera de medirla o “capturarla”, además de que pueden ser sesgados por un usuario malintencionado o atacante. Además son lentos para generar los bits aleatorios que las aplicaciones pueden requerir.\n\nEs normal que un RNG se quede sin suficiente entropía para servir a las aplicaciones que lo usan, por lo que terminaría bloqueándola.\n\nEs por esto que los generadores de números aleatorios a menudo se complementan de los generadores de números pseudo-aleatorios, de los que hablaremos a continuación.\n\nEstos generadores\nPseudo-Random Number Generators\n\nLos generadores de números pseudo-aleatorios (PRNGs) son aquellos que no toman su fuente de entropía de lugares físicos, sino que la generan a partir de una semilla o seed. Siempre que reciban la misma semilla generarán la misma secuencia de bits que parece aleatoria, pero en realidad es determinista.\n\nSi conocemos la semilla y el algoritmo, podríamos predecir la secuencia de bits que generará el algoritmo. Si la distribución de probabilidad de los bits es uniforme o cerca de uniforme, entonces la secuencia de bits parecerá aleatoria, lo cuál es útil para la mayoría de las aplicaciones.\n\nLos PRNGs no se quedan sin entropía para seguir sirviendo bits, ya que la generan artificialmente, normalmente con algoritmos matemáticos y piscinas o pools de bits.\n\nUna forma de crear un PRNG es usando como semilla un RNG, que tome su fuente de lugares físicos y expendiendo esta entropía a un número más grande de bits. Esto lo hace mediante la actualización de un estado interno mediante la recepción de bits verdaderamente aleatorios de un RNG.\n\nCryptographically Secure Pseudo-Random Number Generators\n\nLos PRNGs critpográficamente seguros requieren dos características extras para ser usados en criptografía:\n\n\n  \n    Discreción hacia adelante. En inglés conocida como forward secrecy, se refiere a que es imposible predecir los bits que generará si se le pide un número.\n  \n  \n    Discresión hacia atás. Se refiere a que, dados los bits de un número aleatorio gennerado, es imposible conocer los bits que le precedieron, que se entregaron en llamadas anteriores.\n  \n\n\nCuando hablamos de “imposible” en términos de criptografía, normalmente nos referimos a que es computcionalmente infactible resolver el problema propuesto. Para que esto sea cierto basta con que no exista un algoritmo de tiempo polinomial que funcione para resolver el problema.\n\nEn pocas palabras, los PRNGs criptográficos son impredecibles.\n\nEjemplos\n\nAlgunos PRNGs de ejemplo:\n\n\n  \n    /dev/urandom de los sistemas UNIX: genera bits aleatorios combinando lecturas del uso del sistema (RNG de hardware) y un generador por software, de manera que haya siempre suficientes bits. Si quieres conocer más a detalle cómo funciona, este artículo te lo explicará: Understanding random number generators and their limitations on Linux\n  \n  \n    Meresenne Twister: genera bits aleatorios usando con una distribución uniforme, pero no sirve para criptografía porque es predecible. Dada cierta cantidad de bits es posible predecir la secuencia de bits que generará a continuación.\n  \n  \n    PRNG’s en procesadores: Tanto a AMD (desde 2015) como Intel (Desde 2013) tienen PRNGs embebidos dentro de los procesadores que pueden ser usados mediante una instrucciones específicas (RDRAND y RDSEED).\n  \n  \n    Fortuna. Es un algoritmo criptográficamente seguro diseñado en 2003, en el que están basadas la generación de números aleatorios de MacOS y iOS.\n  \n\n\nCómo usar PRNG\n\nSi quieres generar números aleatorios para uso general, sin garantía de impredictibilidad, puedes usar un PRNG común implementado en tu lenguage de programación favorito. Generalmente las funciones rand() de Python o mt_rand() de PHP son bastante buenas para esto.\n\nSin embargo, para generar números aleatorios para criptografía, debes usar un PRNG especializado, normalmente basado en los provistos por el sistema operativo.\n\nAunque podrías escribir una función que se comunique con el sistema operativo para obtener un flujo de bits aleatorios, tendrías que hacer lo suficiente para asegurarte de que esos bits sean de calidad (con una alta entropía). Es por esto que como desarrollador es mejor usar las implementaciones de la biblioteca estándar de criptografía de tu lenguaje, a menos que tengas requerimientos muy específicos.\n\nConclusión\n\nConocer cómo funciona un PRNG a parte de algo interesante es útil para no usarlos mal. Siempre que requieras números aleatorios para usarlos con relación a la seguridad de la información, deberías usar un PRNG criptográfico. En cualquier otro caso, un PRNG como el Meresenne Twister es suficiente. Además, ahora sabes que los RNGs basados en procesos físicos, a pesar de las garantías de entropía que prometen, no son muy confiables en el sentido de que no siempre están disponibles.\n\nFinalmente, la mejor opción para usarlos es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.\n",
+      "articleBody": "Muy comúnmente los sistemas informáticos requieren de valores aleatorios para diferentes procesos, por ejemplo, para ordenar las cosas, para seleccionar elementos de un conjunto, para simulaciones, para tomar diferentes caminos en un proceso (como los videojuegos).\n\nUn lugar en el que los valores aleatorios tienen una importancia especial es en criptografía y en la seguridad informática. De hecho, los números aleatorios están muy relacionados con la generación de valores usables en criptografía como llaves, por ejemplo.\n\nVeamos cómo se generan y cómo puedes usar correctamente los generadores de números aleatorios, pero antes empecemos a hablar de qué es la aleatoriedad y cómo podemos entenderla intuitivamente.\n\nAleatoriedad\n\nLa aleatoriedad tiene que ver con la probabilidad de obtener cierto valor de un conjunto (universo) de valores posibles. Los valores aleatorios son impredecibles, no puedes asegurar que uno tiene más probabilidades de salir que otro. Ahora conecta los dos conceptos anteriores: para que un valor sea aleatorio debe de ser extraído de un conjunto de valores con la misma probabilidad de aparecer, lo que se conoce como una distribución uniforme.\n\nEjemplo: una moneda lanzada puede entregar dos valores, cara o cruz (águila o sol en México). Es imposible asegurar que va a salir uno u otro valor, debido a que ambos valores tienen la misma probabilidad de salir. Y muchos procesos físicos se comportan de esta misma manera.\n\nSi en el universo de valores posibles es más probable que salga cierto valor, entonces empezamos a perder aleatoriedad, imagínate por ejemplo el caso de una moneda o dado cargado.\n\nLos humanos percibimos un valor como aleatorio si parece poco probable que hayamos obtenido ese valor específicamente, pero no siempre es así.\n\nLa aleatoriedad se puede medir a través de entropía, que es la cantidad de información disponible en todo el espacio de valores. La entropía es la sumatoria de la probabilidad de aparecer de cada valor multiplicado por su logaritmo base 2, y se mide en bits. Una generador con aleatoriedad perfecta entrega tantos bits de entropía como valores posibles.\n\nGeneradores de números aleatorios\n\nLos programadores podemos usar la aleatoriedad si tenemos un generador de números aleatorios.\n\nUn generador de números aleatorios es un programa que te entrega una serie de bits aleatorios, es decir, impredecibles desde el punto de vista externo. Estos bits se pueden usar entonces para crear un número aleatorio.\n\nHaya generadores de diferentes tipos dependiendo de su fuente de entropía (información impredecible) y de cómo la usen. Hablemos de los diferentes tipos, sus características, y cómo usarlos.\n\nTrue Random Number Generators\n\nA esta clase de generadores también se le conoce simplemente como generadores de números aleatorios (Random Number Generators o RNG’s). Los RNGs toman su fuente de entropía de lugares físicos, dado que el mundo real es impredecible. Miden las variaciones en los semiconductores, la manera en la que mueves el ratón, el teclado, información de los sensores de la computadora, el micrófono, la red y muchas otras cosas. Hay algunos que toman su entropía de procesos cuánticos incluso, conocidos como generadores de números aleatorios cuánticos o QRNGs.\n\nEstos elementos físicos son fuentes confiables de entropía, pero no podemos confiar en nuestra manera de medirla o “capturarla”, además de que pueden ser sesgados por un usuario malintencionado o atacante. Además son lentos para generar los bits aleatorios que las aplicaciones pueden requerir.\n\nEs normal que un RNG se quede sin suficiente entropía para servir a las aplicaciones que lo usan, por lo que terminaría bloqueándola o haciéndola insegura.\n\nEs por esto que los generadores de números aleatorios a menudo se complementan de los generadores de números pseudo-aleatorios, de los que hablaremos a continuación.\n\nPseudo-Random Number Generators\n\nLos generadores de números pseudo-aleatorios (PRNGs) son aquellos que no toman su fuente de entropía de lugares físicos, sino que la generan a partir de una semilla o seed. Siempre que reciban la misma semilla generarán la misma secuencia de bits que parece aleatoria, pero en realidad es determinista.\n\nSi conocemos la semilla y el algoritmo, podríamos predecir la secuencia de bits que resultará en cada llamada. Si la distribución de probabilidad de los bits es uniforme o cerca de uniforme, entonces la secuencia de bits parecerá aleatoria, lo cuál es útil para la mayoría de las aplicaciones.\n\nLos PRNGs no se quedan sin entropía para seguir sirviendo bits, ya que la generan artificialmente, normalmente con algoritmos matemáticos y piscinas o pools de bits.\n\nUna forma de crear un PRNG es usando como semilla un RNG, que tome su fuente de lugares físicos y expendiendo esta entropía a un número más grande de bits. Esto lo hace mediante la actualización de un estado interno mediante la recepción de bits verdaderamente aleatorios de un RNG.\n\nCryptographically Secure Pseudo-Random Number Generators\n\nLos PRNGs critpográficamente seguros requieren dos características extras para ser usados en criptografía:\n\n\n  \n    Discreción hacia adelante. En inglés conocida como forward secrecy, se refiere a que es imposible predecir los bits que generará a continuación.\n  \n  \n    Discreción hacia atás. Se refiere a que, dados los bits de un número aleatorio generado, es imposible conocer los bits que le precedieron, que se entregaron en llamadas anteriores.\n  \n\n\nCuando hablamos de “imposible” en términos de criptografía, normalmente nos referimos a que es computacionalmente infactible resolver el problema propuesto. Para que esto sea cierto basta con que no exista un algoritmo de tiempo polinomial que funcione para resolver el problema.\n\nEn pocas palabras, los PRNGs criptográficos son impredecibles completamente.\n\nEjemplos\n\nAlgunos PRNGs que puedes usar son:\n\n\n  \n    /dev/urandom de los sistemas UNIX: genera bits aleatorios combinando lecturas del uso del sistema (RNG de hardware) y un generador por software, de manera que haya siempre suficientes bits. Si quieres conocer más a detalle cómo funciona, este artículo te lo explicará: Understanding random number generators and their limitations on Linux.\n  \n  \n    Meresenne Twister: genera bits aleatorios con una distribución uniforme, pero no sirve para criptografía porque es predecible. Dada cierta cantidad de bits es posible predecir la secuencia de bits que generará a continuación. Aún así, el MT se comporta mejor que algunos otros PRNGs incluidos en los lenguajes de programación.\n  \n  \n    PRNG’s en procesadores: Tanto AMD (desde 2015), como Intel (Desde 2013) tienen PRNGs embebidos dentro de los procesadores que pueden ser usados mediante instrucciones específicas (RDRAND y RDSEED).\n  \n  \n    Fortuna. Es un algoritmo criptográficamente seguro diseñado en 2003, en el que están basadas la generación de números aleatorios de MacOS y iOS.\n  \n\n\nCómo usar un PRNG\n\nSi quieres generar números aleatorios para uso general, sin garantía de que sea impredecible, puedes usar un PRNG común implementado en tu lenguage de programación favorito. Generalmente las funciones rand() de Python o mt_rand() de PHP son bastante buenas para esto.\n\nSin embargo, para generar números aleatorios para criptografía, debes usar un PRNG especializado, generalmente basado en los provistos por el sistema operativo.\n\nAunque podrías escribir una función que se comunique con el sistema operativo para obtener un flujo de bits aleatorios, tendrías que hacer lo suficiente para asegurarte de que esos bits sean de calidad (con una alta entropía). Es por esto que como desarrollador es mejor usar las implementaciones de la biblioteca estándar de criptografía de tu lenguaje, a menos que tengas requerimientos muy específicos, y sobre todo, sepas cómo verificar que tienes la entropía suficiente.\n\nConclusión\n\nConocer cómo funciona un PRNG, a parte de algo interesante, es útil para no usarlos mal. Siempre que requieras números aleatorios para usarlos con relación a la seguridad de la información, deberías usar un PRNG criptográfico. En cualquier otro caso, un PRNG como el Meresenne Twister es suficiente. Además, ahora sabes que los RNGs basados en procesos físicos, a pesar de las garantías de entropía que prometen, no son muy confiables en el sentido de que no siempre están disponibles, pero hay soluciones de hardware especializadas que te pueden ayudar si tienes un problema muy específico.\n\nFinalmente, la mejor opción para usar un PRNG es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.\n",
       "datePublished": "2021-12-07 00:00:00 -0600",
       "dateModified": "2021-12-07 00:00:00 -0600",
       "author": {
@@ -410,32 +410,29 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Muy comúnmente los sistemas informáticos requieren de valores aleatorios para diferentes procesos, por ejemplo, para ordenar las cosas, para seleccionar elementos de un conjunto o para tomar diferentes caminos en un proceso.</p>
+        <p>Muy comúnmente los sistemas informáticos requieren de valores aleatorios para diferentes procesos, por ejemplo, para ordenar las cosas, para seleccionar elementos de un conjunto, para simulaciones, para tomar diferentes caminos en un proceso (como los videojuegos).</p>
 
-<p>Un lugar en el que los valores aleatorios tienen una importancia especial es en la criptografía en la seguridad informática. De hecho los números aleatorios son la base de la mayoría de los algoritmos de cifrado.</p>
+<p>Un lugar en el que los valores aleatorios tienen una importancia especial es <strong>en criptografía</strong> y en la seguridad informática. De hecho, los números aleatorios están muy relacionados con la generación de valores usables en criptografía como llaves, por ejemplo.</p>
 
-<p>Veamos cómo se generan y cómo puedes usar correctamente los generadores de números aleatorios.</p>
-
-<p>Antes empecemos a hablar de qué es la aleatoriedad y cómo
-podemos entenderla intuitivamente.</p>
+<p>Veamos cómo se generan y cómo puedes usar correctamente los generadores de números aleatorios, pero antes empecemos a hablar de qué es la aleatoriedad y cómo podemos entenderla intuitivamente.</p>
 
 <h2 id="aleatoriedad">Aleatoriedad</h2>
 
-<p>La aleatoriedad tiene que ver con la <em>probabilidad</em> de obtener cierto valor de un conjunto, o universo, de valores posibles. Los valores aleatorios son impredecibles. Conecta estos los dos conceptos anteriores: para que un valor sea aleatorio debe de ser extraído de un conjunto de valores con la misma probabilidad de aparecer.</p>
+<p>La aleatoriedad tiene que ver con la <em>probabilidad</em> de obtener cierto valor de un conjunto (universo) de valores posibles. Los valores aleatorios son impredecibles, no puedes asegurar que uno tiene más probabilidades de salir que otro. Ahora conecta los dos conceptos anteriores: para que un valor sea aleatorio debe de ser extraído de un conjunto de valores con la misma probabilidad de aparecer, lo que se conoce como una <strong>distribución uniforme</strong>.</p>
 
-<p>**Ejemplo: ** una moneda lanzada puede entregar dos valores, cara o cruz (águila o sol en México). Es imposible asegurar que va a salir uno u otro valor debido a que ambos valores tienen la misma probabilidad de salir. Y muchos procesos físicos se comportan de esta misma manera.</p>
+<p><strong>Ejemplo:</strong> una moneda lanzada puede entregar dos valores, cara o cruz (águila o sol en México). Es imposible asegurar que va a salir uno u otro valor, debido a que ambos valores tienen la misma probabilidad de salir. Y muchos procesos físicos se comportan de esta misma manera.</p>
 
-<p>Si en el universo de valores posibles es más probable que salga cierto valor, entonces empezamos a perder aleatoriedad, imagínate el caso de una moneda o dado cargado.</p>
+<p>Si en el universo de valores posibles es más probable que salga cierto valor, entonces empezamos a perder aleatoriedad, imagínate por ejemplo el caso de una moneda o dado cargado.</p>
 
 <p>Los humanos percibimos un valor como aleatorio si <em>parece</em> poco probable que hayamos obtenido ese valor específicamente, pero no siempre es así.</p>
 
-<p>La aleatoriedad se puede medir a través de <em>entropía</em>, que es la cantidad de información disponible en todo el espacio de valores posibles. La entropía es la sumatoria de todos los valores posibles multiplicados por el logaritmo de su probabilidad de aparecer, y se mide en bits. Una generador con aleatoriedad perfecta entrega <strong>tantos bits de entropía como valores posibles</strong>.</p>
+<p>La aleatoriedad se puede medir a través de <em>entropía</em>, que es la cantidad de información disponible en todo el espacio de valores. La entropía es la sumatoria de la probabilidad de aparecer de cada valor multiplicado por su logaritmo base 2, y <strong>se mide en bits</strong>. Una generador con aleatoriedad perfecta entrega <strong>tantos bits de entropía como valores posibles</strong>.</p>
 
 <h2 id="generadores-de-números-aleatorios">Generadores de números aleatorios</h2>
 
 <p>Los programadores podemos usar la aleatoriedad si tenemos un <strong>generador de números aleatorios</strong>.</p>
 
-<p>Un generador de números aleatorios es un programa que te entrega una <strong>serie de bits</strong> aleatorios, es decir, impredecibles desde el punto de vista externo.</p>
+<p>Un generador de números aleatorios es un programa que te entrega una <strong>serie de bits</strong> aleatorios, es decir, impredecibles desde el punto de vista externo. Estos bits se pueden usar entonces para crear un número aleatorio.</p>
 
 <p>Haya generadores de diferentes tipos dependiendo de su fuente de entropía (información impredecible) y de cómo la usen. Hablemos de los diferentes tipos, sus características, y cómo usarlos.</p>
 
@@ -445,16 +442,15 @@ podemos entenderla intuitivamente.</p>
 
 <p>Estos elementos físicos son fuentes confiables de entropía, pero no podemos confiar en nuestra manera de medirla o “capturarla”, además de que pueden ser sesgados por un usuario malintencionado o atacante. Además son lentos para generar los bits aleatorios que las aplicaciones pueden requerir.</p>
 
-<p>Es normal que un RNG se quede sin suficiente entropía para servir a las aplicaciones que lo usan, por lo que terminaría bloqueándola.</p>
+<p>Es normal que un RNG se quede sin suficiente entropía para servir a las aplicaciones que lo usan, por lo que terminaría bloqueándola o haciéndola insegura.</p>
 
 <p>Es por esto que los generadores de números aleatorios a menudo se complementan de los generadores de números pseudo-aleatorios, de los que hablaremos a continuación.</p>
 
-<p>Estos generadores</p>
 <h2 id="pseudo-random-number-generators">Pseudo-Random Number Generators</h2>
 
 <p>Los generadores de números pseudo-aleatorios (<strong>PRNGs</strong>) son aquellos que no toman su fuente de entropía de lugares físicos, sino que la generan a partir de una semilla o <em>seed</em>. Siempre que reciban la misma semilla generarán la misma secuencia de bits que <em>parece</em> aleatoria, pero en realidad es determinista.</p>
 
-<p>Si conocemos la semilla y el algoritmo, podríamos predecir la secuencia de bits que generará el algoritmo. Si la distribución de probabilidad de los bits es uniforme o cerca de uniforme, entonces la secuencia de bits parecerá aleatoria, lo cuál es útil para la mayoría de las aplicaciones.</p>
+<p>Si conocemos la semilla y el algoritmo, podríamos predecir la secuencia de bits que resultará en cada llamada. Si la distribución de probabilidad de los bits es uniforme o cerca de uniforme, entonces la secuencia de bits parecerá aleatoria, lo cuál es útil para la mayoría de las aplicaciones.</p>
 
 <p>Los PRNGs no se quedan sin entropía para seguir sirviendo bits, ya que la generan artificialmente, normalmente con algoritmos matemáticos y <em>piscinas</em> o <em>pools</em> de bits.</p>
 
@@ -466,49 +462,49 @@ podemos entenderla intuitivamente.</p>
 
 <ol>
   <li>
-    <p><strong>Discreción hacia adelante</strong>. En inglés conocida como <strong>forward secrecy</strong>, se refiere a que es imposible predecir los bits que generará si se le pide un número.</p>
+    <p><strong>Discreción hacia adelante</strong>. En inglés conocida como <strong>forward secrecy</strong>, se refiere a que es imposible predecir los bits que generará a continuación.</p>
   </li>
   <li>
-    <p><strong>Discresión hacia atás</strong>. Se refiere a que, dados los bits de un número aleatorio gennerado, es imposible conocer los bits que le precedieron, que se entregaron en llamadas anteriores.</p>
+    <p><strong>Discreción hacia atás</strong>. Se refiere a que, dados los bits de un número aleatorio generado, es imposible conocer los bits que le precedieron, que se entregaron en llamadas anteriores.</p>
   </li>
 </ol>
 
-<p>Cuando hablamos de <strong>“imposible</strong>” en términos de criptografía, normalmente nos referimos a que es <em>computcionalmente infactible</em> resolver el problema propuesto. Para que esto sea cierto basta con que no exista un <strong>algoritmo de tiempo polinomial</strong> que funcione para resolver el problema.</p>
+<p>Cuando hablamos de <strong>“imposible</strong>” en términos de criptografía, normalmente nos referimos a que es <em>computacionalmente infactible</em> resolver el problema propuesto. Para que esto sea cierto basta con que no exista un <strong>algoritmo de tiempo polinomial</strong> que funcione para resolver el problema.</p>
 
-<p>En pocas palabras, los PRNGs criptográficos son <em>impredecibles</em>.</p>
+<p>En pocas palabras, los PRNGs criptográficos son <em>impredecibles completamente</em>.</p>
 
 <h2 id="ejemplos">Ejemplos</h2>
 
-<p>Algunos PRNGs de ejemplo:</p>
+<p>Algunos PRNGs que puedes usar son:</p>
 
 <ul>
   <li>
-    <p><strong>/dev/urandom</strong> de los sistemas UNIX: genera bits aleatorios combinando lecturas del uso del sistema (RNG de hardware) y un generador por software, de manera que haya siempre suficientes bits. Si quieres conocer más a detalle cómo funciona, este artículo te lo explicará: <a href="https://www.redhat.com/en/blog/understanding-random-number-generators-and-their-limitations-linux">Understanding random number generators and their limitations on Linux</a></p>
+    <p><strong>/dev/urandom</strong> de los sistemas UNIX: genera bits aleatorios combinando lecturas del uso del sistema (RNG de hardware) y un generador por software, de manera que haya siempre suficientes bits. Si quieres conocer más a detalle cómo funciona, este artículo te lo explicará: <a href="https://www.redhat.com/en/blog/understanding-random-number-generators-and-their-limitations-linux">Understanding random number generators and their limitations on Linux</a>.</p>
   </li>
   <li>
-    <p><strong><a href="https://github.com/ESultanik/mtwister">Meresenne Twister</a></strong>: genera bits aleatorios usando con una distribución uniforme, pero no sirve para criptografía porque es predecible. Dada cierta cantidad de bits es posible predecir la secuencia de bits que generará a continuación.</p>
+    <p><strong><a href="https://github.com/ESultanik/mtwister">Meresenne Twister</a></strong>: genera bits aleatorios con una distribución uniforme, pero no sirve para criptografía porque es predecible. Dada cierta cantidad de bits es posible predecir la secuencia de bits que generará a continuación. Aún así, el MT se comporta mejor que algunos otros PRNGs incluidos en los lenguajes de programación.</p>
   </li>
   <li>
-    <p><strong>PRNG’s en procesadores</strong>: Tanto a AMD (desde 2015) como Intel (Desde 2013) tienen PRNGs embebidos dentro de los procesadores que pueden ser usados mediante una instrucciones específicas (RDRAND y RDSEED).</p>
+    <p><strong>PRNG’s en procesadores</strong>: Tanto AMD (desde 2015), como Intel (Desde 2013) tienen PRNGs embebidos dentro de los procesadores que pueden ser usados mediante instrucciones específicas (RDRAND y RDSEED).</p>
   </li>
   <li>
     <p><strong>Fortuna</strong>. Es un algoritmo criptográficamente seguro diseñado en 2003, en el que están basadas la generación de números aleatorios de MacOS y iOS.</p>
   </li>
 </ul>
 
-<h2 id="cómo-usar-prng">Cómo usar PRNG</h2>
+<h2 id="cómo-usar-un-prng">Cómo usar un PRNG</h2>
 
-<p>Si quieres generar números aleatorios para uso general, sin garantía de impredictibilidad, puedes usar un PRNG común implementado en tu lenguage de programación favorito. Generalmente las funciones <code class="language-plaintext highlighter-rouge">rand()</code> de Python o <code class="language-plaintext highlighter-rouge">mt_rand()</code> de PHP son bastante buenas para esto.</p>
+<p>Si quieres generar números aleatorios para uso general, sin garantía de que sea impredecible, puedes usar un PRNG común implementado en tu lenguage de programación favorito. Generalmente las funciones <code class="language-plaintext highlighter-rouge">rand()</code> de Python o <code class="language-plaintext highlighter-rouge">mt_rand()</code> de PHP son bastante buenas para esto.</p>
 
-<p>Sin embargo, para generar números aleatorios para criptografía, debes usar un PRNG especializado, normalmente basado en los provistos por el sistema operativo.</p>
+<p>Sin embargo, para generar números aleatorios para criptografía, debes usar un PRNG especializado, generalmente basado en los provistos por el sistema operativo.</p>
 
-<p>Aunque podrías escribir una función que se comunique con el sistema operativo para obtener un flujo de bits aleatorios, tendrías que hacer lo suficiente para asegurarte de que esos bits sean de calidad (con una alta entropía). Es por esto que como desarrollador es mejor usar las implementaciones de la biblioteca estándar de criptografía de tu lenguaje, a menos que tengas requerimientos muy específicos.</p>
+<p>Aunque podrías escribir una función que se comunique con el sistema operativo para obtener un flujo de bits aleatorios, tendrías que hacer lo suficiente para asegurarte de que esos bits sean de calidad (con una alta entropía). Es por esto que como desarrollador es mejor usar las implementaciones de la biblioteca estándar de criptografía de tu lenguaje, a menos que tengas requerimientos muy específicos, y sobre todo, sepas cómo verificar que tienes la entropía suficiente.</p>
 
 <h2 id="conclusión">Conclusión</h2>
 
-<p>Conocer cómo funciona un PRNG a parte de algo interesante es útil para no usarlos mal. Siempre que requieras números aleatorios para usarlos con relación a la seguridad de la información, deberías usar un PRNG criptográfico. En cualquier otro caso, un PRNG como el <em>Meresenne Twister</em> es suficiente. Además, ahora sabes que los RNGs basados en procesos físicos, a pesar de las garantías de entropía que prometen, no son muy confiables en el sentido de que no siempre están disponibles.</p>
+<p>Conocer cómo funciona un PRNG, a parte de algo interesante, es útil para no usarlos mal. Siempre que requieras números aleatorios para usarlos con relación a la seguridad de la información, <strong>deberías usar un PRNG criptográfico</strong>. En cualquier otro caso, un PRNG como el <em>Meresenne Twister</em> es suficiente. Además, ahora sabes que los RNGs basados en procesos físicos, a pesar de las garantías de entropía que prometen, no son muy confiables en el sentido de que no siempre están disponibles, pero hay soluciones de hardware especializadas que te pueden ayudar si tienes un problema muy específico.</p>
 
-<p>Finalmente, la mejor opción para usarlos es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.</p>
+<p>Finalmente, la mejor opción para usar un PRNG es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.</p>
 
         
       </section>
@@ -565,20 +561,12 @@ podemos entenderla intuitivamente.</p>
 ">Anterior</a>
     
     
-      <a href="#" class="pagination--pager disabled">Siguiente</a>
+      <a href="/2021/12/08/recursos-para-aprender-criptografia-en-2021.html" class="pagination--pager" title="Recursos para aprender Criptografía en 2022
+">Siguiente</a>
     
   </nav>
 
     </div>
-
-    
-      <div class="page__comments">
-  
-  
-      <h4 class="page__comments-title">Comentar</h4>
-      <section id="disqus_thread"></section>
-    
-</div>
 
     
   </article>
@@ -588,6 +576,74 @@ podemos entenderla intuitivamente.</p>
     <div class="page__related">
       <h4 class="page__related-title">Podrías ver también</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/12/09/como-convertirte-en-un-mago-programando.html" rel="permalink">Cómo convertirte en un mago programando
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  menos de 1 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 09-12-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Escribe aquí un buen resumen de tu artículo
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639201671/daniil-komov-dSZyPg9rCRA-unsplash_v4liy9.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2021/12/08/recursos-para-aprender-criptografia-en-2021.html" rel="permalink">Recursos para aprender Criptografía en 2022
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 08-12-2021
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Aprende sobre algunos recursos que te servirán para entrenarte en una de las ramas más importantes de la computación actualmente: la criptografia.
+</p>
+  </article>
+</div>
+
         
           
 
@@ -661,77 +717,6 @@ podemos entenderla intuitivamente.</p>
 </div>
 
         
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638685910/lilzidesigns-EjhKmWfLI2c-unsplash_se9qtf.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html" rel="permalink">Versiona mejor tu código: versionamiento semántico y commits convencionales
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  5 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 04-12-2021
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Hablemos de cómo versionar tu código para beneficiar a tu equipo y a tus usuarios usando el sistema de vesionamiento semántico y los commits convencionales.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1638592882/susan-wilkinson--ZgqdP78I4g-unsplash_uchtnu.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" rel="permalink">Algoritmos criptográficos: hashes seguros para alamcenar passwords
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  8 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 03-12-2021
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Muchos desarrolladores cometen el error de usar un hash criptográfico seguro como SHA-256 para almacenar passwords en la base de datos. Veamos por qué no es ...</p>
-  </article>
-</div>
-
-        
       </div>
     </div>
   
@@ -797,24 +782,6 @@ podemos entenderla intuitivamente.</p>
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-  <script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-127437335-2']);
-  
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-
 
 
 
