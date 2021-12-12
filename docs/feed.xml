@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-10T23:51:21-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Recursos para aprender Criptografía en 2022</title><link href="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html" rel="alternate" type="text/html" title="Recursos para aprender Criptografía en 2022" /><published>2021-12-08T00:00:00-06:00</published><updated>2021-12-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html">&lt;p&gt;La criptografía es un campo con mucha demanda laboral actualmente porque es importante para diferentes áreas de la informática. En este artículo vamos hablar su importancia y cómo puedes aprenderlo si está dentro de tus intereses.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-11T23:56:48-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Cómo convertirte en un mago programando</title><link href="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html" rel="alternate" type="text/html" title="Cómo convertirte en un mago programando" /><published>2021-12-09T00:00:00-06:00</published><updated>2021-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html">&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del wizardzine gratuito &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a wizard”&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Espero que estas recomendaciones te dejen reflexionando y que termines con ganas de leer el &lt;em&gt;wizardzine&lt;/em&gt; completo. Los pongo en el orden que personalmente me parecen más impactantes, pero para ti puede ser diferente, por lo que te recomiendo que lo leas y medites por tu cuenta.&lt;/p&gt;
+
+&lt;h2 id=&quot;escribe-un-documento-de-diseño&quot;&gt;Escribe un documento de diseño&lt;/h2&gt;
+
+&lt;p&gt;Una de las cosas más importantes que podemos aprender los desarrolladores es a &lt;strong&gt;diseñar software.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Un documento de diseño es una expresión del diseño de software. Es un escrito que haces &lt;strong&gt;ANTES de empezar&lt;/strong&gt; un desarrollo, en el que detallas varias cosas sobre lo que te estás proponiendo hacer:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;El objetivo principal&lt;/li&gt;
+  &lt;li&gt;Detalles sobre el problema a resolver&lt;/li&gt;
+  &lt;li&gt;El diseño a alto nivel de la solución&lt;/li&gt;
+  &lt;li&gt;Las partes del sistema que estás afectando&lt;/li&gt;
+  &lt;li&gt;Otras consideraciones que hay que tener sobre esa pieza de software&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Normalmente este diseño y consideraciones iniciales no se mantienen a lo largo del proyecto, pero sirven para empezar con una idea más clara y sin malentendidos. Una de las cosas más importantes que tienes que hacer con un documento de diseño es &lt;strong&gt;la retroalimentación que otros miembros del equipo puedan darte&lt;/strong&gt;. En un artículo futuro de este blog hablaremos más a detalle de esto.&lt;/p&gt;
+
+&lt;p&gt;Pero recuerda que si no tienes práctica y, aunque sea un proyecto o cambio muy pequeño, vale la pena dedicarle un tiempo a &lt;em&gt;pensar&lt;/em&gt; y &lt;em&gt;escribir&lt;/em&gt; sobre lo que planeas hacer.&lt;/p&gt;
+
+&lt;h2 id=&quot;como-adquirir-experiencia-significativa&quot;&gt;Como adquirir experiencia significativa&lt;/h2&gt;
+
+&lt;p&gt;Es cierto que mediante trabajar en algo por un tiempo en algo lograrás adquirir experiencia, pero esta experiencia está limitada a las actividades que más repitas en ese trabajo y a ese entorno. &lt;strong&gt;Por eso no basta con sólo aprender en el trabajo&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Si quieres tener una experiencia más amplia, algunas prácticas que te pueden servir son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Escoge un área que te interese especialmente y estudiala durante un tiempo razonable. Desarrolla tus habilidades en esa área y luego cambia a otra. Lo importante es que &lt;strong&gt;tu aprendizaje sea activo&lt;/strong&gt;, no solamente teórico o lo que te vaya llegando del trabajo.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;No pienses que es tarde para aprender&lt;/strong&gt;. Aunque lleves bastante tiempo usando algo, no significa que lo debas saber todo sobre esa tecnología. No pienses: “¿Cómo es que no sabes X cosa sobre Y?”, sino: “Hoy es el día en que aprenderé sobre X y Y”.&lt;/li&gt;
+  &lt;li&gt;Aprende los conceptos fundamentales, lo que te servirá para construir sobre eso más conocimiento y habilidades.&lt;/li&gt;
+  &lt;li&gt;Haz experimentos. En muchas de las áreas del desarrollo, puedes hacer experimentos que no te cuestan nada y pueden ayudarte a entender más profundamente un tema.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Lee Libros&lt;/strong&gt;. Los libros en la mayoría de los casos son un conjunto de conocimientos destilados sobre cierto tema. Leer los capítulos específicos de los temas de tu interés te ayudará a avanzar más rápido.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Haz proyectos difíciles&lt;/strong&gt;. Nada como poner a prueba tus habilidades para ver los hoyos en tu conocimiento como hacer tareas difíciles.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Profundiza&lt;/strong&gt;. Cuando no entiendas algo, busca información más profunda sobre el tema, aprende la historia, las bases y los conceptos más fundamentales. Además puedes acercarte a expertos en el tema a pedirles ayuda para comprender este tema, o recursos que te ayuden a comprenderlo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finalmente, recuerda que todo esto toma tiempo, no puedes convertirte en un experto en algo de la noche a la mañana, por lo que debes tener paciencia contigo.&lt;/p&gt;
+
+&lt;h2 id=&quot;lee-código-fuente&quot;&gt;Lee código fuente&lt;/h2&gt;
+
+&lt;p&gt;A veces, los sistemas o herramientas que tenemos que usar no tienen documentación, nadie sabe lo suficiente para ayudarnos o no están disponibles. Es por esto que una de las habilidades más importantes que podemos tener es la de &lt;strong&gt;leer y entender el código fuente&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Algunas de las cosas que te pueden ayudar son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Busca exactamente por la parte que necesitas. Puede ser un error, un mensaje o un módulo específico, usa las herramientas de indexación de texto para llegar ahí, no creas que tienes que leer toda la base.&lt;/li&gt;
+  &lt;li&gt;Si el código que tienes que leer es pequeño, intenta darle un recorrida rápida para tener una idea general de lo que sucede y dónde sucede.&lt;/li&gt;
+  &lt;li&gt;Haz experimentos con el código, cambiando cosas y viendo lo que sucede, usa un debuggers, agrega tests, introduce bugs intencionalmente.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finalmente, documenta lo que aprendas y encuentres, le puede servir a otros miembros del equipo, de la comunidad o a ti en el futuro. Entender estos sistemas te ayudará aprender de las decisiones de diseño buenas o malas y además te enseñará nuevas técnicas que hubieras tardado más en aprender por otros lados.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Lo que te acercará más a sentirte un mago o maga programando es la &lt;strong&gt;práctica enfocada&lt;/strong&gt;, que puede presentarse de las tres maneras que hablamos aquí, pero hay muchas otras. Recuerda que la constancia es importante, más que la velocidad, pero buscar formas más eficientes de aprender no es malo.&lt;/p&gt;
+
+&lt;p&gt;Si te quedaste con ganas de más consejos de este estilo, descarga &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a Wiazard”&lt;/a&gt; de la página oficial y continúa leyendo, esta vez de manera visual.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="preguntas" /><category term="investigación" /><summary type="html">Hablemos sobre las técnicas que Julia Evans recomienda para converirte en un mejor programador(a) y avanzar en tu carrera.</summary></entry><entry><title type="html">Recursos para aprender Criptografía en 2022</title><link href="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html" rel="alternate" type="text/html" title="Recursos para aprender Criptografía en 2022" /><published>2021-12-08T00:00:00-06:00</published><updated>2021-12-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html">&lt;p&gt;La criptografía es un campo con mucha demanda laboral actualmente porque es importante para diferentes áreas de la informática. En este artículo vamos hablar su importancia y cómo puedes aprenderlo si está dentro de tus intereses.&lt;/p&gt;
 
 &lt;h2 id=&quot;la-importancia-de-la-criptografía&quot;&gt;La importancia de la criptografía&lt;/h2&gt;
 
@@ -764,82 +822,4 @@ Contar con segmentos de código que pueden ser consumidos por más de un servici
   &lt;li&gt;Una mejora significativa en la calidad del equipo de desarrollo.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Como podemos ver la definición y el uso de estándares proporciona muchos beneficios, en lo personal, disfruto más el trabajo cuando se tiene un enfoque hacia el código de calidad que cuando no hay reglas establecidas, sin embargo eso no se puede lograr sin el trabajo de todos los ingenieros en un equipo, se trata de apuntar todos juntos a un mismo objetivo.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="estándares," /><category term="calidad," /><category term="source-code" /><summary type="html">La implementacion de ciertas reglas en el desarrollo de software mejora significativamente la calidad del producto final.</summary></entry><entry><title type="html">Como transmitir conocimiento en el desarrollo de software</title><link href="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html" rel="alternate" type="text/html" title="Como transmitir conocimiento en el desarrollo de software" /><published>2021-07-19T00:00:00-05:00</published><updated>2021-07-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html">&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
-
-&lt;p&gt;La charla &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;“Eloquent Explanations”&lt;/a&gt; de &lt;a href=&quot;/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt;. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo lo que aprendí.&lt;/p&gt;
-
-&lt;h2 id=&quot;la-motivación&quot;&gt;La motivación&lt;/h2&gt;
-
-&lt;p&gt;Primeramente hablemos de &lt;strong&gt;la motivación&lt;/strong&gt; para explicar mejor las cosas: lo que nos limita para construir software es conocimiento. Conocimiento sobre el dominio, el negocio o el sistema. Es por eso que compartirlo es una muy buena forma de ayudar al equipo a avanzar. La principal forma de compartirlo es con explicaciones.&lt;/p&gt;
-
-&lt;h2 id=&quot;tómatelo-en-serio&quot;&gt;Tómatelo en serio&lt;/h2&gt;
-
-&lt;p&gt;Debemos tener un plan o una estructura para compartir el conocimiento, lo primero es no sacar tus pensamientos sin estructura. Russ propone algunas estructuras, como las siguientes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Zoom In&lt;/strong&gt;: Empieza en el contexto más amplio y termina en los detalles. Por ejemplo: Queremos vender zapatos -&amp;gt; Por eso estamos construyendo un eCommerce -&amp;gt; Por eso necesitamos este botón de “Pagar”.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Zoom Out&lt;/strong&gt;: Empieza en el detalle y termina en el contexto más amplio. Por ejemplo: Necesitamos mejorar la retención de esta pantalla -&amp;gt; Porque es fundamental para terminar la compra -&amp;gt; Por que necesitamos acabar con el stock de este trimestre.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;De los simple a lo complejo&lt;/strong&gt;: Empieza explicando lo más básico, sin saltarte nada. Este método puede implicar ocultar información &lt;em&gt;intencionalmente&lt;/em&gt; o explicarla en términos inexactos, pero que cuando llegue el momento se tendrán que aclarar y expandir.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Explica el proceso&lt;/strong&gt;: Este tipo de explicaciones se adapta bien a escenarios en dónde tienes que describir una transformación progresiva. Por ejemplo, cuando hablamos de cómo se transforma una petición web en un respuesta en cualquier framework web.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Lo más importante es encontrar la estructura que más se  adapte a tu situación.&lt;/p&gt;
-&lt;h2 id=&quot;sé-agil&quot;&gt;Sé Agil&lt;/h2&gt;
-
-&lt;p&gt;Tus explicaciones debe seguir el mismo ciclo que el desarrollo de software:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Explica: ejecuta siguiendo el plan que trazaste&lt;/li&gt;
-  &lt;li&gt;Mide: tienes que leer a la audiencia y darte cuenta de si tu explicación está funcionando. Busca señales como si las preguntas van cambiando, no te miran raro y no hay un silencio mortal.&lt;/li&gt;
-  &lt;li&gt;Ajusta: si tu explicación no está logrando transmitir lo que quieres, cambia de estrategia, simplifica o busca nuevos ejemplos.&lt;/li&gt;
-  &lt;li&gt;Repite: vuelve a iniciar el proceso con nuevo conocimiento aplicando lo que aprendiste.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;empieza-en-lo-más-básico&quot;&gt;Empieza en lo más básico&lt;/h3&gt;
-
-&lt;p&gt;Esto viene de un aprendizaje del autor de la plática mientras daba una taller en el quería enseñar Ruby on Rails. Había algunas personas en el auditorio que preguntaban una y otra vez lo mismo (señal de que no está funcionando tu explicación), hasta que comprendieron que Ruby es el lenguaje y Rails es el framework, cosa que Russ no había pensado siquiera en explicar.&lt;/p&gt;
-
-&lt;p&gt;Cuando explicamos algo que conocemos muy bien, puede que nos saltemos información que no tenemos presente que necesitamos saber, justo por el dominio tan amplio que tenemos del problema. Tenemos que ser cuidadosos en esto e intentar dar la mayor cantidad de información posible, incluso la que pueda ser muy básica.&lt;/p&gt;
-
-&lt;p&gt;A veces parece que lo que estamos diciendo es obvio, pero aquí menciona una frase muy interesante:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;“Nadie en esta sala nació con ese conocimiento codificado en su ADN” - Russ Olsen (cuando el público se rio de la explicación tan básica que tuvo que dar)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Esto nos debe recordar que a nosotros también nos tienen que explicar cosas que para otros son obvias.&lt;/p&gt;
-
-&lt;h2 id=&quot;haz-cortas-tus-explicaciones&quot;&gt;Haz cortas tus explicaciones&lt;/h2&gt;
-
-&lt;p&gt;Explicar es un deporte con límite de tiempo. Tenemos un tiempo limitado para explicar lo que queremos antes de &lt;strong&gt;perder la atención de la persona&lt;/strong&gt;, por lo que comprimir la información y decir primero lo más importante es buena idea.&lt;/p&gt;
-
-&lt;p&gt;Uno de los consejos que Russ da es evitar la jerga técnica. La terminología es un obstáculo para los que están empezando, y sólo quitará tiempo a tu explicación, aburriendo o comunicando muy poco en un espacio grande de tiempo, mientras la puedas evitar hazlo.&lt;/p&gt;
-
-&lt;p&gt;Una buena noticia: &lt;strong&gt;puedes resetear el reloj y comprarte más tiempo&lt;/strong&gt; si logras que las personas a las que les estás explicando tengan pequeñas victorias, entendiendo progresivamente el tema en cuestión.&lt;/p&gt;
-
-&lt;h2 id=&quot;usa-la-repetición&quot;&gt;Usa la repetición&lt;/h2&gt;
-
-&lt;p&gt;Repite para énfasis y para dar contexto. El &lt;em&gt;“Don’t repeat yourself”&lt;/em&gt; es para las máquinas, los humanos necesitamos repetición para entender que algo es importante o para recordar el contexto de algo.&lt;/p&gt;
-
-&lt;p&gt;Así que usa la repetición para resaltar las ideas más importantes de tu explicación.&lt;/p&gt;
-
-&lt;h2 id=&quot;muéstrate-como-humano&quot;&gt;Muéstrate como humano&lt;/h2&gt;
-
-&lt;p&gt;Muéstrate humano. Las explicaciones que causan una reacción emocional en los que escuchan, como las que incluyen humor, las que demuestran sentimientos o conectan en un nivel humano con las personas son las que dejan las cosas grabadas. Russ cuenta la experiencia de la portada de un libro que lo hizo reír y por eso se ha acordado de él toda la vida.&lt;/p&gt;
-
-&lt;p&gt;Hazles saber por qué importa lo que estás diciendo, muestra el interés o el amor que tienes por el tema. Una buena explicación puede cambiar tu compañía, tu equipo o incluso el mundo.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Explicar algo de manera que otros comprendan no es algo sencillo. Necesitas práctica, intención y esfuerzo para lograrlo. Si lo dominas, sin duda serás un componente muy valioso de cualquier equipo en el que participes en el desarrollo de software.&lt;/p&gt;
-
-&lt;p&gt;Puedes ver la charla completa aquí:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/80EE4mZmp3A&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="explicaciones" /><category term="conocimiento" /><category term="desarrollo" /><summary type="html">Compartir el conocimiento que tienes sobre el proyecto es una de las tareas más importantes en el desarrollo de software. Exploremos cómo podemos mejorar en esto.</summary></entry></feed>
+&lt;p&gt;Como podemos ver la definición y el uso de estándares proporciona muchos beneficios, en lo personal, disfruto más el trabajo cuando se tiene un enfoque hacia el código de calidad que cuando no hay reglas establecidas, sin embargo eso no se puede lograr sin el trabajo de todos los ingenieros en un equipo, se trata de apuntar todos juntos a un mismo objetivo.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="estándares," /><category term="calidad," /><category term="source-code" /><summary type="html">La implementacion de ciertas reglas en el desarrollo de software mejora significativamente la calidad del producto final.</summary></entry></feed>

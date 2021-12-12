@@ -430,4 +430,10 @@ var store = [{
         "tags": ["criptografía","libros","cursos","matemáticas"],
         "url": "/2021/12/08/recursos-para-aprender-criptografia-en-2021.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639201671/daniil-komov-dSZyPg9rCRA-unsplash_v4liy9.jpg"
+      },{
+        "title": "Cómo convertirte en un mago programando",
+        "excerpt":"Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del wizardzine gratuito “So you want to be a wizard” de Julia Evans. Espero...","categories": [],
+        "tags": ["aprendizaje","preguntas","investigación"],
+        "url": "/2021/12/09/como-convertirte-en-un-mago-programando.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639259079/michael-dziedzic-dSyhpTGhNHg-unsplash_mcsqsn.jpg"
       }]
