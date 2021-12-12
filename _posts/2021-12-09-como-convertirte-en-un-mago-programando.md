@@ -11,7 +11,7 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del wizardzine gratuito ["So you want to be a wizard"](https://wizardzines.com/zines/wizard/) de [Julia Evans](https://twitter.com/b0rk).
+Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del [wizardzine](https://www.youtube.com/watch?v=drPMyDyQG8M) gratuito ["So you want to be a wizard"](https://wizardzines.com/zines/wizard/) de [Julia Evans](https://twitter.com/b0rk).
 
 Espero que estas recomendaciones te dejen reflexionando y que termines con ganas de leer el _wizardzine_ completo. Los pongo en el orden que personalmente me parecen más impactantes, pero para ti puede ser diferente, por lo que te recomiendo que lo leas y medites por tu cuenta.
 
@@ -64,3 +64,7 @@ Finalmente, documenta lo que aprendas y encuentres, le puede servir a otros miem
 Lo que te acercará más a sentirte un mago o maga programando es la **práctica enfocada**, que puede presentarse de las tres maneras que hablamos aquí, pero hay muchas otras. Recuerda que la constancia es importante, más que la velocidad, pero buscar formas más eficientes de aprender no es malo.
 
 Si te quedaste con ganas de más consejos de este estilo, descarga ["So you want to be a Wiazard"](https://wizardzines.com/zines/wizard/) de la página oficial y continúa leyendo, esta vez de manera visual.
+
+Shameless plug: [aquí puedes ver nuestra presentación de los wizardzines](https://www.youtube.com/watch?v=drPMyDyQG8M).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/drPMyDyQG8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
