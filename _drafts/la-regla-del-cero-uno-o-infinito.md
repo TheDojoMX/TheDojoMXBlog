@@ -22,16 +22,22 @@ Algunos ejemplos de esta regla, puesta en práctica:
 - Una estructura de datos no limita arbitrariamente el grado de anidado que puede tener
 - No existe un normalmente un límite impuesto de recursividad (más allá del dado por el tamaño del _stack_ de ejecución)
 - En las bases de datos relacionales existen tres cardinalidades: 1-1 (permitir una), 1-N (un padre puede tener muchos hijos), N-N (varios artículos pueden pertenecer a la misma categoría y un artículo puede tener varias categorías)
-- Los carácteres especiales básicos de las expresiones regulares son: `.` (un carácter cualquiera), `+` (uno o más carácteres), `*` (cualquier número de caracteres).
-
+- Los caracteres especiales básicos de las expresiones regulares son: `.` (un carácter cualquiera), `+` (uno o más caracteres), `*` (cualquier número de caracteres).
 
 Y esta regla parece que también existe en la naturaleza:
 
 - La procreación es ilimitada mientras los recursos sean suficientes (puedes tener N hijos)
 - Tus ancestros directos son uno de cada género (tienes un padre y una madre)
 - Tus ancestros indirectos pueden ser infinitos (tu linea genealógica y los hijos de tus hijos pueden ser infinitos)
-- Cuando tienes un límite de uno y lo abres para dos, ¿entonces por qué no abrirlo para tres? Si aplicamos esta regla recursivamente llegamos infinito. (Un ejemplo pueden ser las relaciones poliamorosas)
+- Cuando tienes un límite de uno y lo abres para dos, ¿entonces por qué no abrirlo para tres? Si aplicamos esta regla recursivamente llegamos infinito
+- En un consejo de administración hay una (1) persona encargada con acceso a la información de un sistema o un equipo (N - infinito)
+- Como conjunto, un vehículo puede transportar N pasajeros, luego limitado por el caso de negocio o modelo específico. Cuando esta lleno puede transportar cero personas más
+
+Ahora veamos algunos ejemplos en los que puedes poner límites arbitrarios sin darte cuenta.
+
+## Ejemplo modelando bases da datos
+
+En modelados de bases de datos. Imagínate que tienes que modelar una tipo de usuario en el que te dicen que tienes que guardar diez propiedades arbitrarias. Podrías cometer el error de crear específicamente diez campos para guardar estas propiedades, lo cuál crearía un límite arbitrario en la capacidad de guardar estas propiedades. La mejor forma de modelarlo sería con una relación 1-N, ya que te da la flexibilidad de aumentar o reducir este límite mediante lógica específica para el caso de uso.
 
 
 ##
-

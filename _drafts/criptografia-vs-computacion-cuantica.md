@@ -12,3 +12,5 @@ header:
 ---
 
 La computación cuántica es una tecnología muy prometedora que lleva décadas en gestación y cada vez la vemos más cerca. Una las cosas que más le llama la atención a las personas
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WJ3r6btgzBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
