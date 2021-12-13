@@ -64,7 +64,6 @@ Una de las principales críticas a esta regla es que **está dejando fuera el do
 
 En mi opinión es un número que también se debe considerar, pero solo en caso de que los dos elementos carguen un significado como en los ejemplos anteriores, normalmente son cosas opuestas que se relacionan con un centro, pero incluso, si no se considera un número especial, podemos modelar estos casos siguiendo la regla del 'Cero, Uno o Infinito': si tomamos como punto de referencia uno de estos valores, el otro es nuestro _"uno"_ que estamos permitiendo.
 
-
 ## Conclusión
 
 Aprender principios de diseño de software te ayudará a crear mejores sistemas que puedan ser usados más fácilmente tanto por otros desarrolladores como por usuario. Espero que este pequeño ejemplo te lleve a aprender otros principios que puedas aplicar en tu trabajo diario. Déjanos un comentario si quieres que lo platiquemos más profundamente o con otros ejemplos.
