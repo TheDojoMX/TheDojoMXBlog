@@ -436,4 +436,10 @@ var store = [{
         "tags": ["aprendizaje","preguntas","investigación"],
         "url": "/2021/12/09/como-convertirte-en-un-mago-programando.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639259079/michael-dziedzic-dSyhpTGhNHg-unsplash_mcsqsn.jpg"
+      },{
+        "title": "La regla del 'Cero, Uno o Infinito'",
+        "excerpt":"La regla del ‘Cero, Uno o Infinito’ es una guía para diseñar software que sea más fácil de usar, tanto para otros desarrolladores como para los usuarios finales. La regla en inglés es: “Allow none of foo, one of foo, or any number of foo.” - Willem van der Poel...","categories": [],
+        "tags": ["zero-one-infinity,","design,","reglas"],
+        "url": "/2021/12/10/la-regla-del-cero-uno-o-infinito.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639259189/michael-dziedzic-uZr0oWxrHYs-unsplash_koqk3a.jpg"
       }]

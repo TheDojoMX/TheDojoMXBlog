@@ -1,4 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-12T00:00:35-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Cómo convertirte en un mago programando</title><link href="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html" rel="alternate" type="text/html" title="Cómo convertirte en un mago programando" /><published>2021-12-09T00:00:00-06:00</published><updated>2021-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html">&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;wizardzine&lt;/a&gt; gratuito &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a wizard”&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-13T00:20:24-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">La regla del ‘Cero, Uno o Infinito’</title><link href="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html" rel="alternate" type="text/html" title="La regla del ‘Cero, Uno o Infinito’" /><published>2021-12-10T00:00:00-06:00</published><updated>2021-12-10T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html">&lt;p&gt;La regla del ‘Cero, Uno o Infinito’ es una guía para diseñar software que sea más fácil de usar, tanto para otros desarrolladores como para los usuarios finales. La regla en inglés es:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Allow none of foo, one of foo, or any number of foo.” - Willem van der Poel&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Esta regla establece que respecto a la existencia de elementos, deberías permitir que no exista ninguno, solamente uno o un número arbitrario (potencialmente infinito, mientras las limitantes ) de estos elementos. La idea &lt;strong&gt;principal es que no existan límites arbitrarios impuestos por alguna idea sin explicación&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Algunos ejemplos de esta regla, puesta en práctica:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Una estructura de datos no limita arbitrariamente el grado de anidado que puede tener&lt;/li&gt;
+  &lt;li&gt;No existe un normalmente un límite impuesto de recursividad (más allá del dado por el tamaño del &lt;em&gt;stack&lt;/em&gt; de ejecución)&lt;/li&gt;
+  &lt;li&gt;En las bases de datos relacionales existen tres cardinalidades: 1-1 (permitir una), 1-N (un padre puede tener muchos hijos), N-N (varios artículos pueden pertenecer a la misma categoría y un artículo puede tener varias categorías)&lt;/li&gt;
+  &lt;li&gt;Los caracteres especiales básicos de las expresiones regulares son: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; (un carácter cualquiera), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; (uno o más caracteres), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; (cualquier número de caracteres).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Y esta regla parece que también existe en la naturaleza:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La procreación es ilimitada mientras los recursos sean suficientes (puedes tener N hijos)&lt;/li&gt;
+  &lt;li&gt;Tus ancestros directos son uno de cada género (tienes un padre y una madre)&lt;/li&gt;
+  &lt;li&gt;Tus ancestros indirectos pueden ser infinitos (tu linea genealógica y los hijos de tus hijos pueden ser infinitos)&lt;/li&gt;
+  &lt;li&gt;Cuando tienes un límite de uno y lo abres para dos, ¿entonces por qué no abrirlo para tres? Si aplicamos esta regla recursivamente llegamos infinito&lt;/li&gt;
+  &lt;li&gt;En un consejo de administración hay una (1) persona encargada con acceso a la información de un sistema o un equipo (N - infinito)&lt;/li&gt;
+  &lt;li&gt;Como conjunto, un vehículo puede transportar N pasajeros, luego limitado por el caso de negocio o modelo específico. Cuando esta lleno puede transportar cero personas más&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ahora veamos algunos ejemplos en los que puedes poner límites arbitrarios sin darte cuenta.&lt;/p&gt;
+
+&lt;h2 id=&quot;modelando-bases-da-datos&quot;&gt;Modelando bases da datos&lt;/h2&gt;
+
+&lt;p&gt;En modelados de bases de datos. Imagínate que tienes que modelar una tipo de usuario en el que te dicen que tienes que guardar diez propiedades arbitrarias. Podrías cometer el error de crear específicamente diez campos para guardar estas propiedades, lo cuál crearía un límite arbitrario en la capacidad de guardar estas propiedades. La mejor forma de modelarlo sería con una relación 1-N, ya que te da la flexibilidad de aumentar o reducir este límite mediante lógica específica para el caso de uso.&lt;/p&gt;
+
+&lt;p&gt;Lo mismo podrías pensar en cuanto a asignación de categorías, tags, comentarios, etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;modelando-software&quot;&gt;Modelando software&lt;/h2&gt;
+
+&lt;p&gt;Veamos algunos ejemplos que te puedes encontrar creando software.&lt;/p&gt;
+
+&lt;h3 id=&quot;ctrl-z&quot;&gt;CTRL-Z&lt;/h3&gt;
+
+&lt;p&gt;Imagina que tienes que diseñar un editor de texto y estás pensando en agregar la funcionalidad de “deshacer”. Primeramente piensas que es buena idea solamente permitir que se deshaga la acción inmediata anterior, así que lo implementas como una variable que se está sustituyendo constantemente.&lt;/p&gt;
+
+&lt;p&gt;Pero ahora quieres permitir que se deshagan más acciones. ¿Cuál sería tu siguiente límite? El límite natural tendría que ser “infinito” o “hasta el principio del tiempo”, ya que cualquier otro límite sería arbitrario y difícil de comprender o justificar. Así que tu implementación cambia de una variable a una pila de acciones que va manteniendo tantas acciones como sea posible.&lt;/p&gt;
+
+&lt;h3 id=&quot;modelando-una-conversaciǿn&quot;&gt;Modelando una conversaciǿn&lt;/h3&gt;
+
+&lt;p&gt;Ahora estamos creando un modelo para almacenar y correr una conversación de un chatbot con un usuario. Cada mensaje puede comportarse de tres maneras: darle la oportunidad al usuario de contestar con una respuesta fija, llevar a otro mensaje sin darle oportunidad al usuario de contestar, o terminar la conversación.&lt;/p&gt;
+
+&lt;p&gt;Como puedes observar, esto es un caso perfecto de la regla del ‘Cero, Uno o Infinito’. Un mensaje puede tener cero mensajes siguientes, por lo que termina la conversación. Puede tener un solo mensaje siguiente, que es cuando continuamos sin esperar respuesta. O puede tener N mensajes siguientes, uno correspondiente a cada respuesta posible de parte del usuario. Imponer un número limitado de respuestas posibles dentro de tu sistema no una buen idea, ya que limita sin razón alguna la flexibilidad de nuestro sistema.&lt;/p&gt;
+
+&lt;h2 id=&quot;críticas-a-la-regla-del-cero-uno-o-infinito&quot;&gt;Críticas a la regla del ‘Cero, Uno o Infinito’&lt;/h2&gt;
+
+&lt;p&gt;Una de las principales críticas a esta regla es que &lt;strong&gt;está dejando fuera el dos&lt;/strong&gt;, que también es un número muy especial para ciertos casos: muchas cosas en la naturaleza vienen en pares. Los booleanos, prendido/apagado, arriba/abajo, izquierda/derecha.&lt;/p&gt;
+
+&lt;p&gt;En mi opinión es un número que también se debe considerar, pero solo en caso de que los dos elementos carguen un significado como en los ejemplos anteriores, normalmente son cosas opuestas que se relacionan con un centro, pero incluso, si no se considera un número especial, podemos modelar estos casos siguiendo la regla del ‘Cero, Uno o Infinito’: si tomamos como punto de referencia uno de estos valores, el otro es nuestro &lt;em&gt;“uno”&lt;/em&gt; que estamos permitiendo.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Aprender principios de diseño de software te ayudará a crear mejores sistemas que puedan ser usados más fácilmente tanto por otros desarrolladores como por usuario. Espero que este pequeño ejemplo te lleve a aprender otros principios que puedas aplicar en tu trabajo diario. Déjanos un comentario si quieres que lo platiquemos más profundamente o con otros ejemplos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="zero-one-infinity," /><category term="design," /><category term="reglas" /><summary type="html">A veces necesitamos reglas que nos ayuden a desarrollar mejor software. La regal de 'Cero, Uno o Infinito' es una guía para que creemos software más usable.</summary></entry><entry><title type="html">Cómo convertirte en un mago programando</title><link href="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html" rel="alternate" type="text/html" title="Cómo convertirte en un mago programando" /><published>2021-12-09T00:00:00-06:00</published><updated>2021-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html">&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;wizardzine&lt;/a&gt; gratuito &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a wizard”&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Espero que estas recomendaciones te dejen reflexionando y que termines con ganas de leer el &lt;em&gt;wizardzine&lt;/em&gt; completo. Los pongo en el orden que personalmente me parecen más impactantes, pero para ti puede ser diferente, por lo que te recomiendo que lo leas y medites por tu cuenta.&lt;/p&gt;
 
@@ -723,107 +783,4 @@ BREAKING CHANGE: Todas las firmas de función ahora requieren el parámetro `sal
 
 &lt;p&gt;La verdad es que cada una de las bibliotecas arriba mencionadas debería tener su propio artículo o video, esperamos que podamos extender sobre algunas de ellas en el futuro. Por lo mientras, puedes leer el libro y aprender más sobre las bibliotecas que recomienda, sólo ten en cuenta que algunas pueden estar sin mantenimiento por la edad que tiene el libro. Aquí te dejamos el resumen que hicimos en el canal y con suerte &lt;a href=&quot;https://pepa.holla.cz/wp-content/uploads/2016/10/20-python-libraries-you-arent-using-but-should.pdf&quot;&gt;en este link puedes descargar&lt;/a&gt; el libro en PDF, aunque es un libro que puedes seguir leyendo en Safari, la biblioteca online de O’Reilly o leer gratuito en línea: &lt;a href=&quot;https://www.oreilly.com/content/20-python-libraries-you-arent-using-but-should/&quot;&gt;aquí&lt;/a&gt;. Déjanos un comentario si quieres que hagamos el análisis de alguna biblioteca en el futuro.&lt;/p&gt;
 
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/T5xHzP1Ex5s&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="python" /><category term="books" /><category term="bibliotecas" /><summary type="html">Exploremos cinco bibliotecas que el libro del '20 Python Libraries You Aren't Using' recomienda y que te podrían servir para tu próximo desarrollo en Python.</summary></entry><entry><title type="html">La Importancia de los Estándares de Código</title><link href="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html" rel="alternate" type="text/html" title="La Importancia de los Estándares de Código" /><published>2021-10-05T00:00:00-05:00</published><updated>2021-10-05T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/10/05/estandares-de-calidad-en-el-software.html">&lt;p&gt;Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad.&lt;/p&gt;
-
-&lt;p&gt;Para las organizaciones de nuestra época, el correcto funcionamiento de sus aplicaciones digitales representa crecimiento. Si eres parte de un equipo que aún no se preocupa por esto, te invitó a seguir leyendo y conocer las ventajas de esta práctica para que asi puedas considerar utilizarla en un futuro.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-son-los-estándares-de-código&quot;&gt;¿Qué son los estándares de código?&lt;/h2&gt;
-
-&lt;p&gt;Los estándares de código son una serie de reglas definidas para un lenguaje de programación, o bien, un estilo de programación específico. El estilo garantiza que todos los ingenieros que contribuyen a un proyecto tengan una forma única de diseñar su código, lo que da como resultado una base de código coherente, asegurando una fácil lectura y mantenimiento.&lt;/p&gt;
-
-&lt;p&gt;El uso de estándares es muy importante en la calidad de software, sin embargo mantener todos los proyectos cumpliendo a la perfección con esto no es una tarea fácil, requiere un gran esfuerzo y constancia por parte del equipo de desarrollo. Mientras más y más compañías han adoptado estándares, todavía hay aquellas que realizan el desarrollo de sus proyectos sin ellos.&lt;/p&gt;
-
-&lt;h2 id=&quot;trabajando-sin-estándares-de-código&quot;&gt;Trabajando sin estándares de código&lt;/h2&gt;
-
-&lt;p&gt;Cuando eres parte de un equipo que aún no ha establecido reglas a seguir, es muy común que los desarrolladores escriban código a su modo, dando como resultado un repositorio difícil de entender y por tanto difícil de mantener. La falta de un código organizado se puede transformar en horas y horas buscando un problema antes de estar siquiera cerca de donde podría haberse originado.&lt;/p&gt;
-
-&lt;p&gt;Tambien puede propiciar un ambiente de trabajo hostil, en el que ciertos ingenieros escriben código con un estilo propio y otros lo hacen diferente. Al momento de unificar el trabajo hay discusiones para elegir la mejor opción, y al no tener reglas establecidas u oficialmente validadas por todo el equipo, la discusión puede ser mas larga de lo normal, provocando retrasos en la entrega de nuevas implementaciones.&lt;/p&gt;
-
-&lt;p&gt;Siendo realistas al crear un proyecto nuevo nos enfocamos en conseguir que la aplicación funcione como primer meta, esto no es malo, usualmente las aplicaciones de software tienen un fin comercial o economico que debe resolverse en principio, pero una vez se alcanza cierta estabilidad es importante regresar a revisar el producto inicial y considerar refactorizaciones, esto con el fin de tener un futuro más sencillo.&lt;/p&gt;
-
-&lt;h2 id=&quot;como-implementar-estándares-de-código-en-proyectos-existentes&quot;&gt;Como implementar estándares de código en proyectos existentes&lt;/h2&gt;
-
-&lt;p&gt;“Roma no fue construida en un día.” la migración debe ser progresiva, no es algo que se consigue de la noche a la mañana, es recomendado adoptar estas practicas en nuevos proyectos y poco a poco ir implementando un nivel adecuado de estándares en los existentes.&lt;/p&gt;
-
-&lt;p&gt;Considera que en un inicio puede ser difícil para el equipo de ingenieria adaptarse, el contraste entre no tener reglas oficiales establecidas en el proceso de revisión de código vs, el comenzar a tenerlas puede ser un cambio que no todos tomen de forma natural, a algunos les llevara más tiempo que a otros. Para reducir ese tiempo de adaptación es importante dar a conocer a todo el equipo las ventajas principales de esta practica.&lt;/p&gt;
-
-&lt;p&gt;No todas las compañías utilizan las mismas herramientas en sus desarrollos y es muy complicado que se encuentre un estándar ideal que se adapte a las necesidades especificas, por ello, para que todos esten en el mismo canal, es recomendable establecer un grupo de estándares propios, es decir, crear tu propio repositorio de estándares es un buen comienzo para lograr código de calidad.&lt;/p&gt;
-
-&lt;p&gt;Pueden iniciar adoptando estándares oficiales de las herramientas/lenguajes que utilizan. Automatizar ciertos procesos de validaciones del código puede ser de gran ayuda para una integración continua.&lt;/p&gt;
-
-&lt;h2 id=&quot;consideraciones&quot;&gt;Consideraciones:&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Tomar como base estándares oficialmente publicados de las herramientas que se utilizan en cada proyecto.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Para obtener un código de fácil lectura es necesario poner atención al estilo del mismo; segmentos de código, correcto uso de indentación, longitud de lineas y espacios entre ellas.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Asignación de nombres en variables, funciones, etc.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Establecer límites en complejidad o longitud de funciones.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Y lo más importante, no detenerse en la aplicación de estas reglas. No incrementemos la deuda técnica en nuestros proyectos. Quizá al día de hoy tengas un proyecto muy grande en el que jamás se han aplicado estándares y te parece una pérdida de tiempo comenzar a hacerlo, pero es una inversión que vale la pena para ir construyendo no sólo un producto de calidad, sino también un equipo de ingeniería de calidad. Si la implementación de estos estándares comienza a ser un verdadero dolor de cabeza, es muy recomendable considerar una refactorización completa de tu sistema “Divide y vencerás” se puede iniciar módulo por módulo.&lt;/p&gt;
-
-&lt;h2 id=&quot;ventajas-de-la-implementación-de-estándares&quot;&gt;Ventajas de la implementación de estándares&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Detección temprana de fallas:
-Al buscar cumplir con los estándares que establezcas es más sencillo detectar posibles errores desde la revisión de código, evitando que esos problemas lleguen a producción.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Reducción de la complejidad:
-El cumplir con las reglas acerca del estilo de código ayuda a construir código más limpio, permitiendo detectar fácilmente oportunidades para simplificar funciones.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Código de fácil lectura:
-El respetar los estándares en un proyectos le permite a nuevos miembros del equipo acoplarse más fácilmente al ritmo de trabajo y a entender mejor el código de los proyectos existentes.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Código reusable:
-Contar con segmentos de código que pueden ser consumidos por más de un servicio, gracias al uso de buenas prácticas, hace menos frecuente la repetición de código.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;principios-de-código-limpio-recomendados&quot;&gt;Principios de código limpio recomendados&lt;/h2&gt;
-
-&lt;p&gt;Es una buena estrategia buscar que todo el equipo de ingenieros esté familiarizado con principios de código limpio, por esto a continuación se enlistan algunos de los principios que te inspirarán a crear estándares para tu equipo. En busca de software de calidad.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;DRY - Don’t Repeat Yourself.&lt;/li&gt;
-  &lt;li&gt;YAGNI - You Aren’t Gonna Need It.&lt;/li&gt;
-  &lt;li&gt;KISS - Keep it Simple, Stupid.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SOLID&lt;/p&gt;
-
-    &lt;p&gt;S - Single-Responsiblity Principle.&lt;/p&gt;
-
-    &lt;p&gt;O - Open-Closed Principle.&lt;/p&gt;
-
-    &lt;p&gt;L - Liskov Substitution Principle.&lt;/p&gt;
-
-    &lt;p&gt;I - Interface Segregation Principle.&lt;/p&gt;
-
-    &lt;p&gt;D - Dependency Inversion Principle.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Considera que siempre habrá procesos por mejorar pero es un esfuerzo continuo y podrás seguir trabajando en ello.&lt;/p&gt;
-
-&lt;p&gt;En mi experiencia trabajando con diversos equipos de ingeniería, he podido ver muy buenos resultados haciendo uso de esta practica, por ejemplo:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Reducciones entre el 40 y 60% en incidencias.&lt;/li&gt;
-  &lt;li&gt;Disminución en el número de despliegues de “hotfix”.&lt;/li&gt;
-  &lt;li&gt;Una mejora significativa en la calidad del equipo de desarrollo.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Como podemos ver la definición y el uso de estándares proporciona muchos beneficios, en lo personal, disfruto más el trabajo cuando se tiene un enfoque hacia el código de calidad que cuando no hay reglas establecidas, sin embargo eso no se puede lograr sin el trabajo de todos los ingenieros en un equipo, se trata de apuntar todos juntos a un mismo objetivo.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="estándares," /><category term="calidad," /><category term="source-code" /><summary type="html">La implementacion de ciertas reglas en el desarrollo de software mejora significativamente la calidad del producto final.</summary></entry></feed>
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/T5xHzP1Ex5s&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="python" /><category term="books" /><category term="bibliotecas" /><summary type="html">Exploremos cinco bibliotecas que el libro del '20 Python Libraries You Aren't Using' recomienda y que te podrían servir para tu próximo desarrollo en Python.</summary></entry></feed>

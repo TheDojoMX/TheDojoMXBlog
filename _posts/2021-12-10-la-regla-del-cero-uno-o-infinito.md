@@ -2,7 +2,7 @@
 title: "La regla del 'Cero, Uno o Infinito'"
 date: 2021-12-10
 author: Héctor Patricio
-tags:
+tags: zero-one-infinity, design, reglas
 comments: true
 excerpt: "A veces necesitamos reglas que nos ayuden a desarrollar mejor software. La regal de 'Cero, Uno o Infinito' es una guía para que creemos software más usable."
 header:
@@ -35,9 +35,36 @@ Y esta regla parece que también existe en la naturaleza:
 
 Ahora veamos algunos ejemplos en los que puedes poner límites arbitrarios sin darte cuenta.
 
-## Ejemplo modelando bases da datos
+## Modelando bases da datos
 
 En modelados de bases de datos. Imagínate que tienes que modelar una tipo de usuario en el que te dicen que tienes que guardar diez propiedades arbitrarias. Podrías cometer el error de crear específicamente diez campos para guardar estas propiedades, lo cuál crearía un límite arbitrario en la capacidad de guardar estas propiedades. La mejor forma de modelarlo sería con una relación 1-N, ya que te da la flexibilidad de aumentar o reducir este límite mediante lógica específica para el caso de uso.
 
+Lo mismo podrías pensar en cuanto a asignación de categorías, tags, comentarios, etc.
 
-##
+## Modelando software
+
+Veamos algunos ejemplos que te puedes encontrar creando software.
+
+### CTRL-Z
+
+Imagina que tienes que diseñar un editor de texto y estás pensando en agregar la funcionalidad de "deshacer". Primeramente piensas que es buena idea solamente permitir que se deshaga la acción inmediata anterior, así que lo implementas como una variable que se está sustituyendo constantemente.
+
+Pero ahora quieres permitir que se deshagan más acciones. ¿Cuál sería tu siguiente límite? El límite natural tendría que ser "infinito" o "hasta el principio del tiempo", ya que cualquier otro límite sería arbitrario y difícil de comprender o justificar. Así que tu implementación cambia de una variable a una pila de acciones que va manteniendo tantas acciones como sea posible.
+
+### Modelando una conversaciǿn
+
+Ahora estamos creando un modelo para almacenar y correr una conversación de un chatbot con un usuario. Cada mensaje puede comportarse de tres maneras: darle la oportunidad al usuario de contestar con una respuesta fija, llevar a otro mensaje sin darle oportunidad al usuario de contestar, o terminar la conversación.
+
+Como puedes observar, esto es un caso perfecto de la regla del 'Cero, Uno o Infinito'. Un mensaje puede tener cero mensajes siguientes, por lo que termina la conversación. Puede tener un solo mensaje siguiente, que es cuando continuamos sin esperar respuesta. O puede tener N mensajes siguientes, uno correspondiente a cada respuesta posible de parte del usuario. Imponer un número limitado de respuestas posibles dentro de tu sistema no una buen idea, ya que limita sin razón alguna la flexibilidad de nuestro sistema.
+
+
+## Críticas a la regla del 'Cero, Uno o Infinito'
+
+Una de las principales críticas a esta regla es que **está dejando fuera el dos**, que también es un número muy especial para ciertos casos: muchas cosas en la naturaleza vienen en pares. Los booleanos, prendido/apagado, arriba/abajo, izquierda/derecha.
+
+En mi opinión es un número que también se debe considerar, pero solo en caso de que los dos elementos carguen un significado como en los ejemplos anteriores, normalmente son cosas opuestas que se relacionan con un centro, pero incluso, si no se considera un número especial, podemos modelar estos casos siguiendo la regla del 'Cero, Uno o Infinito': si tomamos como punto de referencia uno de estos valores, el otro es nuestro _"uno"_ que estamos permitiendo.
+
+
+## Conclusión
+
+Aprender principios de diseño de software te ayudará a crear mejores sistemas que puedan ser usados más fácilmente tanto por otros desarrolladores como por usuario. Espero que este pequeño ejemplo te lleve a aprender otros principios que puedas aplicar en tu trabajo diario. Déjanos un comentario si quieres que lo platiquemos más profundamente o con otros ejemplos.
