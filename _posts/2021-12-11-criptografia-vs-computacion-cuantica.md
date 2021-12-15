@@ -92,6 +92,7 @@ Algunos ejemplos que se ven prometedores son:
 - Entramados (Lattice Cryptography)
 - Códigos de corrección de errores (Error-correcting codes)
 - Multivariada (Multivariate cryptography)
+- Hashes (Hash-based cryptography)
 
 La explicación de cada uno de estos posibles caminos para la criptografía la dejaremos para otro artículo, déjanos un comentario si te interesa alguna en especial.
 
@@ -101,7 +102,6 @@ La criptografía cuántica acelera la capacidad de cómputo, pero además es fun
 
 Pero no toda la **criptografía actual esta destinada a perderse con el avance de las computadas cuánticas**, solamente la criptografía asimétrica y toda aquella basada en la factorización de números primos.
 
-Ciertamente, la criptografía simétrica se ve menguada por el poder de cómputo y los algoritmos cuánticos, pero no lo suficiente para darla por perdida, sino que bastará con fortalecerla con el mismo poder de cómputo cuántico.
+Ciertamente, la seguridad de la criptografía simétrica se ve menguada por el poder de cómputo y los algoritmos cuánticos, pero no lo suficiente para darla por perdida, sino que bastará con fortalecerla con el mismo poder de cómputo cuántico y **aumentando el tamaño de las llaves**.
 
 Finalmente, los investigadores ya están trabajando en formas para sustituir lo que se va a romper.
-
