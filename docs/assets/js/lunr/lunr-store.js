@@ -442,4 +442,10 @@ var store = [{
         "tags": ["zero-one-infinity,","design,","reglas"],
         "url": "/2021/12/10/la-regla-del-cero-uno-o-infinito.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639259189/michael-dziedzic-uZr0oWxrHYs-unsplash_koqk3a.jpg"
+      },{
+        "title": "Criptografía VS computación cuántica",
+        "excerpt":"“If you are not completely confused by quantum mechanics, you do not understand it.” La computación cuántica es una tecnología muy prometedora que lleva décadas en gestación y cada vez la vemos más cerca. Una las cosas que más le llama la atención es la capacidad de cómputo que las...","categories": [],
+        "tags": ["criptografía,","quantum,","matemáticas"],
+        "url": "/2021/12/11/criptografia-vs-computacion-cuantica.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639258127/anton-maksimov-juvnsky-wrkNQmhmdvY-unsplash_zfe4zr.jpg"
       }]

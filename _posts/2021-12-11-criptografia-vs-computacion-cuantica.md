@@ -62,7 +62,45 @@ Ahora que tenemos los conceptos más básicos de cómo funciona la computación 
 
 ## El algoritmo de Shor
 
-El algoritmo de Shor
+Uno de los problemas en los que está basada la criptografía asimétrica actual, es el problema de la factorización de números primos, es decir, encontrar los componentes primos de un número entero. _Creemos_ que encontrar los factores de un número lo suficientemente grande es casi imposible para nuestras computadoras clásicas actuales, incluso las más poderosas.
+
+El **algoritmo de Shor**, propuesto en 1995, traslada el problema de la factorización a otro problema difícil de las ciencias de la computación: encontrar el periodo de una función exponencial. Aquí puedes encontrar una explicación más a profundidad de esta transformación: [Period Finding](https://quantum-computing.ibm.com/composer/docs/iqx/guide/shors-algorithm#period-finding).
+
+Lo importante de esta transformación es lo siguiente: **para una computadora cuántica, el problema de encontrar el periodo de una función exponencial no es tan difícil**. Una computadora cuántica resuelve este problema con una complejidad de O(log n) aproximadamente, ya que existen circuitos cuánticos que permiten encontrar el periodo de la función exponencial.
+
+Esto significa que cuando una computadora cuántica tenga los suficientes qubits para representar los números que se usan en la generación de llaves asimétricas, la mayor parte de la criptografía asimétrica actual dejará de ser útil.
+
 ## El algoritmo de Grover
 
+Buscar un elemento que cumpla cierta condición en un conjunto es uno de los problemas que nos ayudarían a romper la criptografía actual. Por ejemplo, imagina que tienes un texto cifrado con AES con una llave de 128 bits. Si quieres romper la seguridad, vas a tener que probar 2^128 llaves en promedio para encontrar la correcta.
+
+El [algoritmo de Grover]() permite acelerar esta operación de manera cuadrática, es decir, te tomaría en promedio la raíz cuadrada de _n_ encontrar el elemento que cumpla con la condición. En el caso del ejemplo anterior te tomaría en promedio 2^(128/2) = 2^64 operaciones.
+
+Lo mismo podría pasar para todos cifrados simétricos (que usan la misma llave para cifrar y descifrar) y hasheados, el ataque consistiría en un estilo de fuerza bruta más inteligente o _cuadráticamente más rápida_.
+
+Sin embargo, como podrás notar, esto no es un problema tan grande, ya que para mantener el mismo nivel de seguridad que tenemos actualmente **bastaría con duplicar el tamaño de las llaves usadas**.
+
+Esto seguirá siendo así mientras no se descubran debilidades en los algoritmos de cifrado simétricos o en las funciones de comprensión de los hashes que usamos.
+
+## Criptografía post-quantum
+
+Debido a las amenazas que presenta la computación cuántica a la criptografía de llave pública gracias al algoritmo de Shor, los criptográfos están manos a la obra diseñando nuevos algoritmos basados en otros principios aún no amenazados por la computación cuántica.
+
+Algunos ejemplos que se ven prometedores son:
+
+- Entramados (Lattice Cryptography)
+- Códigos de corrección de errores (Error-correcting codes)
+- Multivariada (Multivariate cryptography)
+
+La explicación de cada uno de estos posibles caminos para la criptografía la dejaremos para otro artículo, déjanos un comentario si te interesa alguna en especial.
+
+## Conclusión
+
+La criptografía cuántica acelera la capacidad de cómputo, pero además es fundamentalmente _diferente_  de la computación clásica, lo que permite resolver problemas con otros métodos imposibles de alcanzar con la computación actual.
+
+Pero no toda la **criptografía actual esta destinada a perderse con el avance de las computadas cuánticas**, solamente la criptografía asimétrica y toda aquella basada en la factorización de números primos.
+
+Ciertamente, la criptografía simétrica se ve menguada por el poder de cómputo y los algoritmos cuánticos, pero no lo suficiente para darla por perdida, sino que bastará con fortalecerla con el mismo poder de cómputo cuántico.
+
+Finalmente, los investigadores ya están trabajando en formas para sustituir lo que se va a romper.
 
