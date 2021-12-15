@@ -1,6 +1,6 @@
 ---
 title: "Análisis de los principios SOLID: Principio de Responsabilidad Única"
-date: 2021-07-30
+date: 2021-12-14
 author: Héctor Patricio
 tags:
 categories:

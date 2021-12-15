@@ -1,6 +1,6 @@
 ---
 title: "Ejercicio: programando un perceptrón"
-date: 2021-04-10
+date: 2021-12-12
 author: Héctor Patricio
 tags: machine-learning ia
 comments: true
@@ -14,9 +14,12 @@ header:
 En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.
 
 Si no tienes claro lo que es un perceptrón, puedes leer nuestro [artículo anterior](/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html){:target="_blank"}.
+
 ## El conjunto de datos
 
+Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo _aprenda_ de estos datos. Los datos que un perceptron puede clasificar deben estar divididos en dos clases separables, ya si lo representáramos como una función, es un línea recta en un plano de dos variables, o su equivalente dependiendo del espacio y sus dimensiones.
 
 ## Aproximando la función
+
 
 ## Resultado

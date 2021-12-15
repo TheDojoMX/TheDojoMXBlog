@@ -1,6 +1,6 @@
 ---
 title: "Creando un API con GO: Usando Beego"
-date: 2021-03-31
+date: 2021-12-13
 author: Héctor Patricio
 tags:
 comments: true
