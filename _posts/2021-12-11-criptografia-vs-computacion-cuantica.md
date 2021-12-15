@@ -11,38 +11,39 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-> “If you are not completely confused by quantum mechanics, you do not understand it.”
+> “If you are not completely confused by quantum mechanics, you do not understand it.” - Richard Feynman
 
-La computación cuántica es una tecnología muy prometedora que lleva décadas en gestación y cada vez la vemos más cerca. Una las cosas que más le llama la atención es la capacidad de cómputo que las computadoras cuánticas pueden tener, sin embargo, en este artículo aclararemos de qué se trata todo esto y cómo se relaciona con la criptografía, uno de los campos más afectados.
+La computación cuántica es una tecnología muy prometedora que lleva _décadas_ en gestación y cada vez la vemos más cerca. Una de las cosas que más llama la atención es la capacidad de cómputo que las computadoras cuánticas pueden tener, en este artículo aclararemos de qué se trata todo esto y **cómo se relaciona con la criptografía**, uno de los campos más afectados.
 
-Si no tienes no has escuchado mucho sobre , este video de una presentación dada por [Ignacio Cirac](https://www.xataka.com/investigacion/algun-dia-se-construye-ordenador-cuantico-plenamente-funcional-sera-gracias-parte-a-este-cientifico-espanol-hablamos-ignacio-cirac) nos da una introducción a lo que promete y las bases de funcionamiento de la computación cuántica.
+Si no has escuchado mucho sobre la computación cuántica, este video de una presentación dada por [Ignacio Cirac](https://www.xataka.com/investigacion/algun-dia-se-construye-ordenador-cuantico-plenamente-funcional-sera-gracias-parte-a-este-cientifico-espanol-hablamos-ignacio-cirac) nos da una introducción a lo que promete y las bases de funcionamiento.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WJ3r6btgzBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
-Excerpt From: Jean-Philippe Aumasson. “Serious Cryptography.” Apple Books.
-Ahora veamos a más detalle cómo **computa** una máquina cuántica y entendamos por qué no _toda la criptografía está perdida_, aunque tuviéramos una computadora cuántica funcional hoy mismo.
+Ahora veamos a más detalle cómo **computa una máquina cuántica** y entendamos por qué no _toda la criptografía está perdida_, aunque tuviéramos una computadora cuántica funcional hoy mismo.
 
 ## Principios de funcionamiento de una computadora cuántica
 
-Hablemos un poco de los principios físicos y matemáticos que hacen especial a una computadora cuántica.
+Hablemos un poco de los _principios físicos y matemáticos_ que hacen especial a una computadora cuántica.
 
 ### Superposición cuántica
 
-Una computadora cuántica está basada en el [principio de superposición cuántica](https://es.wikipedia.org/wiki/Superposici%C3%B3n_cu%C3%A1ntica), que establece en palabras comunes que una partícula puede poseer múltiples estados a la vez de diferentes magnitudes físicas. Una forma fácil en la que se ha mencionado este principio es que "puede estar en don lugares a la vez". Lo que sale de nuestra comprensión común de la física es que esto de tener múltiples estados desaparece cuando lo observamos, se dice que su _ecuación de onda_ colapsa, lo que significa que la partícula "se decide" por uno de los múltiples estados en los que podía estar.
+Una computadora cuántica está basada en el [principio de superposición cuántica](https://es.wikipedia.org/wiki/Superposici%C3%B3n_cu%C3%A1ntica), que establece, en palabras comunes, que una partícula tiene magnitudes físicas (como la posición o el momento) indeterminadas hasta que se realiza una medición sobre ellas. La partícula se comporta como si tuviera todos los estados posibles, algunos con más probabilidad que otros. Una forma fácil en la que se ha mencionado este principio es que **"puede estar en dos lugares a la vez"**.
+
+Lo que se escapa de nuestra comprensión común de la física es que esto de tener múltiples estados **desaparece cuando lo observamos**, se dice que su _función de onda_ colapsa, lo que significa que la partícula "se decide" por uno de los múltiples estados en los que podía estar. La función de onda es la ecuación que describe todas las "probabilidades" de cada estado.
 
 El ejercicio mental del [Gato de Schrödinger](https://www.youtube.com/watch?v=lzxKZx7we4s) te puede ayudar a imaginarlo, pero en [este video puedes de Quantum Fracture](https://www.youtube.com/watch?v=9JlOmEEyTOU) te ayudará a profundizar más en la complejidad del tema y como no es tan sencillo como "puede estar en dos estados a la vez", sino en un número _infinito de estados_.
 
 Este artículo te explicará el principio de superposición cuántica sin matemáticas avanzadas: [Superposición, una aproximación sin matemáticas avanzadas a la motivación de la mecánica cuántica](https://www.elclaustro.edu.mx/agnosia/index.php/component/k2/item/427-superposicion-una-aproximacion-sin-matematicas-avanzadas-a-la-motivacion-de-la-mecanica-cuantica).
 
-**Resumen:** Una particula como un átomo, un electron o un fotón, puede poseer múltiples estados físicos a la vez, con diferentes combinaciones entre todos sus posibles estados, dando lugar a una infinidad de estados posibles. Las probabilidades de cada estado están contenidas en su _función de onda_, y cuando medimos (miramos) una partícula se define en un estado de todos los posibles.
+**Resumen:** Una particula como un átomo, un electron o un fotón, puede poseer múltiples estados físicos a la vez, con diferentes combinaciones entre todos sus posibles estados, dando lugar a _una infinidad de estados posibles_. Las probabilidades de cada estado están contenidas en su _función de onda_, y cuando medimos (miramos) una partícula se define en un estado de todos los posibles.
 
 ### Amplitud de onda y Qubits
 
-Cada uno de los estados posibles de una partícula y sus probabilidades están representados en lo que se llama su amplitud. En el caso de la computación cuántica, nos interesa si una partícula representa un _cero o un uno_. Por esto, un **Qubit** (un bit cuántico) está representado por una amplitud de onda, que se puede entender parcialmente como la probabilidad de que ese bit sea cero o uno. Un qubit está caracterizado por dos amplitudes: una para el estado cero y otra para el estado uno.
+Cada uno de los estados posibles de una partícula y sus probabilidades están representados en lo que se llama su **amplitud**. En el caso de la computación cuántica, nos interesa si una partícula _representa un cero o un uno_. Por esto, un **Qubit** (un bit cuántico) está representado por una amplitud de onda, que se puede entender parcialmente como la probabilidad de que ese bit sea cero o uno. Un qubit está caracterizado por dos amplitudes: una para el estado **cero** y otra para el estado **uno**. Estas amplitudes son números complejos, números que tienen un parte real y una parte imaginaria, como `2 + 3i`, por ejemplo.
 
-Sin embargo, una _palabra_ o conjunto de qubits está representado por 2^n amplitudes, donde n es el número de qubits. Así que en una palabra de 8 bits, tenemos 256 amplitudes de onda. Y aquí está el secreto de por qué la computación cuántica puede ser tan poderosa: **con sólo _n_ objetos (qubits), puedes almacenar y procesar 2^n números complejos, mientras que en una computadora clásica necesitarías 2^n espacios de memoria**.
+Una _palabra_ o conjunto de qubits está representado por **2^n amplitudes**, donde n es el número de qubits. Así que en una palabra de 8 bits, tenemos 256 amplitudes de onda. Y aquí está el secreto de por qué la computación cuántica puede ser tan poderosa: **con sólo _n_ objetos (qubits), puedes almacenar y procesar 2^n números complejos, mientras que en una computadora clásica necesitarías 2^n espacios de memoria**.
 
 ### Compuertas cuánticas
 
