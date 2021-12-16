@@ -23,7 +23,7 @@ software, con un enfoque educativo. Algunos ejemplos de los tópicos a tratar so
 
 - Desarrollo web front y backend
 - Lenguajes de programación en general
-- Mejores prácitcas de desarrollo
+- Mejores prácticas de desarrollo
 - Inteligencia Artificial
 - Ciencias de la computación teóricas
 - Algoritmia

@@ -12,7 +12,7 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-En esta serie de artículos vamos a hablar sobre los cinco principios SOLID, debido a que son algo que se dice que todo programador que quiera crear código mantenible y "limpio" debe saber y usar. La estructura de los artículos llevará la siguiente forma:
+En esta serie de artículos vamos a hablar sobre los cinco **principios SOLID**. Se dice que todo programador que quiera crear código mantenible y "limpio" debe saber y usar. La estructura de los artículos llevará la siguiente forma:
 
 - Explicación del principio
 - Ejemplos de código
@@ -27,4 +27,4 @@ Empecemos diseccionando el primer principio de los aclamados SOLID: el principio
 
 Este principio se puede enunciar como:
 
-"Una clase debe tener una única razón para ser modificada" según en libro Clean Code.
+"Una clase debe tener una única razón para ser modificada" según en libro _Clean Code_.
