@@ -20,8 +20,13 @@ La mejor manera de entenderlos es en contraste con los cifrados de bloque: mient
 
 Son muy útiles cuando no sabes el tamaño del contenido que vas a cifrar o cuando va ir llegando de manera continua sin que sepas exactamente cuánto y cada cuando, justamente como un **flujo**.
 
-## Modo de trabajo
+## Funcionamiento
 
+Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación **XOR**. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aletoria se le conoce como el _keystream_ o _cadena de bits de clave_.
+
+Un cifrado de flujo normalmente utiliza una llave y un **nonce**, un número usado una única vez con esa llave.
+
+A muy alto nivel, los cifrados  
 ## Ejemplos de algoritmos de cifrados de flujo
 
 ## Conclusión y aplicaciones
