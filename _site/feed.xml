@@ -1,24 +1,317 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-11T15:54:15-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Criptografía VS computación cuántica</title><link href="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html" rel="alternate" type="text/html" title="Criptografía VS computación cuántica" /><published>2021-12-11T00:00:00-06:00</published><updated>2021-12-11T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html">&lt;p&gt;La computación cuántica es una tecnología muy prometedora que lleva décadas en gestación y cada vez la vemos más cerca. Una las cosas que más le llama la atención a las personas&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía," /><category term="quantum," /><category term="matemáticas" /><summary type="html">Se ha escuchado mucho sobre que la criptografía está completamente acabada si la computación cuántica tiene éxito. Entendamos si esto es verdad.</summary></entry><entry><title type="html">La regla del ‘Cero, Uno o Infinito’</title><link href="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html" rel="alternate" type="text/html" title="La regla del ‘Cero, Uno o Infinito’" /><published>2021-12-10T00:00:00-06:00</published><updated>2021-12-10T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html">&lt;p&gt;La regla del ‘Cero, Uno o Infinito’ es una guía para que creemos software más usable.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">A veces necesitamos reglas que nos ayuden a desarrollar mejor software. La regal de 'Cero, Uno o Infinito' es una guía para que creemos software más usable.</summary></entry><entry><title type="html">Cómo convertirte en un mago programando</title><link href="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html" rel="alternate" type="text/html" title="Cómo convertirte en un mago programando" /><published>2021-12-09T00:00:00-06:00</published><updated>2021-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html">&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del wizardzine gratuito &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a wizard”&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-18T01:36:01-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html"></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Escribe aquí un buen resumen de tu artículo</summary></entry><entry><title type="html">Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link href="https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="alternate" type="text/html" title="Análisis de los principios SOLID: Principio de Responsabilidad Única" /><published>2021-12-14T00:00:00-06:00</published><updated>2021-12-14T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y “limpio” debe saber y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Explicación del principio&lt;/li&gt;
+  &lt;li&gt;Ejemplos de código&lt;/li&gt;
+  &lt;li&gt;Contraejemplos (si existen)&lt;/li&gt;
+  &lt;li&gt;Críticas y alternativas&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Esta serie de artículos surge debido a que aunque son poco entendidos por la mayoría de los programadores, estos principios se toman como &lt;em&gt;verdades universales&lt;/em&gt; que hay que seguir. Si queremos desarrollar buen software, no podemos ir por allí solamente aceptando lo que &lt;em&gt;la mayoría&lt;/em&gt; dice que está bien sin entenderlo a fondo y cuestionarlo.&lt;/p&gt;
+
+&lt;p&gt;Empecemos diseccionando el primer principio de los aclamados SOLID: el principio de Responsabilidad Única.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-principio-de-responsabilidad-única&quot;&gt;El principio de Responsabilidad Única&lt;/h2&gt;
+
+&lt;p&gt;Este principio se puede enunciar como:&lt;/p&gt;
+
+&lt;p&gt;“Una clase debe tener una única razón para ser modificada” según en libro &lt;em&gt;Clean Code&lt;/em&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Escribe aquí un buen resumen de tu artículo</summary></entry><entry><title type="html">Creando un API con GO: Usando Beego</title><link href="https://blog.thedojo.mx/2021/12/13/creando-un-api-con-go-usando-beego.html" rel="alternate" type="text/html" title="Creando un API con GO: Usando Beego" /><published>2021-12-13T00:00:00-06:00</published><updated>2021-12-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/13/creando-un-api-con-go-usando-beego</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/13/creando-un-api-con-go-usando-beego.html">&lt;p&gt;Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde las exigencias respecto a lo que deben soportar los sistemas en cuanto a concurrencia y escalabilidad son fuertes.&lt;/p&gt;
+
+&lt;p&gt;Para hacer la prueba vamos a crear un proyecto más o menos interesante: vamos a hacer un diccionario inverso. Tú das la descripción de la palabra, y la API nos devuelve una serie de opciones con un valor de certeza. Para lograr esto vamos a necesitar un modelo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Hagamos una pequeña API en Go usando Beego, mientras intentamos seguir los principios de Domain Driven Design</summary></entry><entry><title type="html">Ejercicio: programando un perceptrón</title><link href="https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron.html" rel="alternate" type="text/html" title="Ejercicio: programando un perceptrón" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron.html">&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
+
+&lt;p&gt;Si no tienes claro lo que es un perceptrón, puedes leer nuestro &lt;a href=&quot;/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html&quot; target=&quot;_blank&quot;&gt;artículo anterior&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-conjunto-de-datos&quot;&gt;El conjunto de datos&lt;/h2&gt;
+
+&lt;p&gt;Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo &lt;em&gt;aprenda&lt;/em&gt; de estos datos. Los datos que un perceptrón puede clasificar deben estar divididos en dos clases separables, ya si lo representáramos como una función, es un línea recta en un plano de dos variables, o su equivalente dependiendo del espacio y sus dimensiones.&lt;/p&gt;
+
+&lt;h2 id=&quot;aproximando-la-función&quot;&gt;Aproximando la función&lt;/h2&gt;
+
+&lt;h2 id=&quot;resultado&quot;&gt;Resultado&lt;/h2&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ia" /><summary type="html">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.</summary></entry><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra con los cifrados de &lt;em&gt;flujo&lt;/em&gt; o &lt;strong&gt;stream ciphers&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;definición-de-cifrado-de-flujo&quot;&gt;Definición de cifrado de flujo&lt;/h2&gt;
+
+&lt;p&gt;La mejor manera de entenderlos es en &lt;em&gt;contraste&lt;/em&gt; con los cifrados de bloque: mientras los cifrados de bloque toman pedazos de contenido de tamaño fijo y los cifran, aplicando diferentes técnicas para abarcar todo el contenido, los cifrados de flujo toman &lt;strong&gt;contenido de tamaño arbitrario y lo cifran&lt;/strong&gt;, bit por bit, devolviéndote un texto cifrado del mismo tamaño.&lt;/p&gt;
+
+&lt;p&gt;Son muy útiles cuando no sabes el tamaño del contenido que vas a cifrar o cuando van ir llegando de manera continua sin que sepas exactamente cuánto y cada cuando, justamente como un &lt;strong&gt;flujo de informació&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Los cifrados de flujo se consideraban “cifrados de hardware” porque eran más ligeros que los de bloque y se podían implementar en menos espacio en un chip, pero ahora tanto los cifrados de bloque como los de flujo son adecuados para implementarse en hardware.&lt;/p&gt;
+
+&lt;h2 id=&quot;funcionamiento&quot;&gt;Funcionamiento&lt;/h2&gt;
+
+&lt;p&gt;Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación &lt;strong&gt;XOR&lt;/strong&gt;, también conocida como &lt;strong&gt;suma módulo 2&lt;/strong&gt;. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aleatoria se le conoce como el &lt;em&gt;keystream&lt;/em&gt; o &lt;em&gt;cadena de bits de clave&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;La parte más importante es entonces el generador del &lt;em&gt;keystream&lt;/em&gt;, y que sea capaz de volver a generar los mismos bits pseudo-aleatorios para descifrar.&lt;/p&gt;
+
+&lt;p&gt;Un cifrado de flujo normalmente utiliza una llave y un &lt;strong&gt;nonce&lt;/strong&gt;, un número usado una única vez con esa llave.&lt;/p&gt;
+
+&lt;p&gt;A muy alto nivel, los cifrados de flujo pueden trabajar de dos formas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Mediante mantener un estado secreto&lt;/strong&gt;. Después de haber sido inicializados con una llave y un nonce, el algoritmo mantiene un estado interno que se va actualizando en cada nueva llamada.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mediante un contador&lt;/strong&gt;. Este tipo de algoritmos recibe a parte de la llave y el nonce, un contador que se incrementa en cada llamada, de esta manera no es necesario mantener un estado interno secreto.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ejemplos-de-cifrados-de-flujo&quot;&gt;Ejemplos de cifrados de flujo&lt;/h2&gt;
+
+&lt;p&gt;Veamos algunos ejemplos de cifrados de flujo, sus características y sus usos, así como qué tan seguros son.&lt;/p&gt;
+
+&lt;h3 id=&quot;rc4&quot;&gt;RC4&lt;/h3&gt;
+
+&lt;p&gt;Es el cifrado de software que se usaba para la comunicación entre los routers WI-FI que usaban WEP y tus dispositivos. También se usaba en las comunicaciones TLS. Fue diseñado por el mismo inventor de MD5, &lt;a href=&quot;https://people.csail.mit.edu/rivest/&quot;&gt;Ron Rivest&lt;/a&gt;. Trivia: RC significaba originalmente: “&lt;strong&gt;R&lt;/strong&gt;ons &lt;strong&gt;C&lt;/strong&gt;ode”. Se conocen ataques contra el cifrado y sobre todo sobre sus implementaciones, pero se sigue usando, así que ten mucho cuidado cuando los dispositivos que usas te ofrezcan configurarlo (como en el caso de los routers con “seguridad” WEP).&lt;/p&gt;
+
+&lt;h3 id=&quot;a51&quot;&gt;A5/1&lt;/h3&gt;
+
+&lt;p&gt;Fue el cifrado de flujo de hardaware de que se usaba para cifrar las comunicaciones inalámbricas 2G. Se encontraron vulnerabilidades en él, al principio de la década de los 2000 y ahora se puede descifrar completamente.&lt;/p&gt;
+
+&lt;h2 id=&quot;grain-128a&quot;&gt;Grain-128a&lt;/h2&gt;
+
+&lt;p&gt;Es uno de los cifrados de flujo recomendados por la &lt;a href=&quot;http://www.ecrypt.eu.org/stream/project.html&quot;&gt;´EAM competition&lt;/a&gt;,
+usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementado en hardware.&lt;/p&gt;
+
+&lt;p&gt;Es seguro todavía y usado en sistemas de hardware de bajo presupuesto que requieran un cifrado ligero.&lt;/p&gt;
+&lt;h3 id=&quot;salsa20&quot;&gt;Salsa20&lt;/h3&gt;
+
+&lt;p&gt;Es un cifrado de flujo, orientado a software que también fue recomendado por la ´EAM competition. Tiene una implementación sencilla, lo que lo ha hecho popular. Usa una llave, un nonce y un contador para generar el flujo de cifrado.&lt;/p&gt;
+
+&lt;p&gt;Aplica una serie de transoformaciones en “rounds” y tiene tres variaciones, dependiendo del nivel de seguridad necesario y la velocidad que deseemos: Salsa20 (20 rounds), Salsa20/12 (12 rounds), Salsa20/8 (8 rounds), siendo el de 8 rounds el que menos seguridad  ofrece. Hay un ataque teórico contra Salsa20/8 que reduce su seguridad a 2^251 operaciones, todavía imposible de llevar a la práctica.&lt;/p&gt;
+
+&lt;h3 id=&quot;aes-ctr&quot;&gt;AES-CTR&lt;/h3&gt;
+
+&lt;p&gt;Este es un cifrado de bloque disfrazado de cifrado de flujo, como diría JP Aumasson, el autor de “Serious Cryptography”. Es el cifrado AES usado en &lt;strong&gt;Counter Mode&lt;/strong&gt; o &lt;strong&gt;modo contador&lt;/strong&gt;, que ya explicamos en el &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;artículo sobre los cifrados de bloque y sus modos de operación&lt;/a&gt;. Cualquier cifrado de bloque que pueda ser usado en modo &lt;strong&gt;counter&lt;/strong&gt; se comportará como un cifrado de flujo.&lt;/p&gt;
+
+&lt;p&gt;La desventaja de esto es que normalmente queremos que los cifrados de flujo sean ligeros y rápidos y la velocidad de esta implementación dependerá en gran medida del cifrado que se use.&lt;/p&gt;
+
+&lt;h2 id=&quot;evitando-errores&quot;&gt;Evitando errores&lt;/h2&gt;
+
+&lt;p&gt;Si estás usando un cifrado de flujo, &lt;strong&gt;debes evitar en todo momento reusar el nonce&lt;/strong&gt;, recuerda que la única razón de existencia del &lt;em&gt;nonce&lt;/em&gt; es ser usado una única vez con la misma llave. Esta es la forma más fácil de usar mal los cifrados de flujo, y elimina completamente la seguridad teórica que puedan ofrecer.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión-y-aplicaciones&quot;&gt;Conclusión y aplicaciones&lt;/h2&gt;
+
+&lt;p&gt;Los cifrados de flujo actualmente son seguros (Salsa20, Grain-128a y  AES-CTR) y los puedes usar con confianza siempre que requieras cifrar datos de longitud desconocida o que llega (o se va) con un flujo de información.&lt;/p&gt;
+
+&lt;p&gt;Evita reutilizar el Nonce, el counter y elige una llave segura, lo más aleatoria posible y estarás listo para usarlos en cualquier desarrollo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="cifrado" /><category term="cypher" /><category term="flujo" /><category term="aes" /><summary type="html">Ya hemos hablado en este blog sobre qué es la criptografía, los cifrados de bloque y ahora ha llegado la hora de hablar de cifrados de flujo. Veamos qué son y para qué sirven.</summary></entry><entry><title type="html">Criptografía VS computación cuántica</title><link href="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html" rel="alternate" type="text/html" title="Criptografía VS computación cuántica" /><published>2021-12-11T00:00:00-06:00</published><updated>2021-12-11T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html">&lt;blockquote&gt;
+  &lt;p&gt;“If you are not completely confused by quantum mechanics, you do not understand it.” - Richard Feynman&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;La computación cuántica es una tecnología muy prometedora que lleva &lt;em&gt;décadas&lt;/em&gt; en gestación y cada vez la vemos más cerca. Una de las cosas que más llama la atención es la capacidad de cómputo que las computadoras cuánticas pueden tener, en este artículo aclararemos de qué se trata todo esto y &lt;strong&gt;cómo se relaciona con la criptografía&lt;/strong&gt;, uno de los campos más afectados.&lt;/p&gt;
+
+&lt;p&gt;Si no has escuchado mucho sobre la computación cuántica, este video de una presentación dada por &lt;a href=&quot;https://www.xataka.com/investigacion/algun-dia-se-construye-ordenador-cuantico-plenamente-funcional-sera-gracias-parte-a-este-cientifico-espanol-hablamos-ignacio-cirac&quot;&gt;Ignacio Cirac&lt;/a&gt; nos da una introducción a lo que promete y las bases de funcionamiento.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/WJ3r6btgzBM&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Ahora veamos a más detalle cómo &lt;strong&gt;computa una máquina cuántica&lt;/strong&gt; y entendamos por qué no &lt;em&gt;toda la criptografía está perdida&lt;/em&gt;, aunque tuviéramos una computadora cuántica funcional hoy mismo.&lt;/p&gt;
+
+&lt;h2 id=&quot;principios-de-funcionamiento-de-una-computadora-cuántica&quot;&gt;Principios de funcionamiento de una computadora cuántica&lt;/h2&gt;
+
+&lt;p&gt;Hablemos un poco de los &lt;em&gt;principios físicos y matemáticos&lt;/em&gt; que hacen especial a una computadora cuántica.&lt;/p&gt;
+
+&lt;h3 id=&quot;superposición-cuántica&quot;&gt;Superposición cuántica&lt;/h3&gt;
+
+&lt;p&gt;Una computadora cuántica está basada en el &lt;a href=&quot;https://es.wikipedia.org/wiki/Superposici%C3%B3n_cu%C3%A1ntica&quot;&gt;principio de superposición cuántica&lt;/a&gt;, que establece, en palabras comunes, que una partícula tiene magnitudes físicas (como la posición o el momento) indeterminadas hasta que se realiza una medición sobre ellas. La partícula se comporta como si tuviera todos los estados posibles, algunos con más probabilidad que otros. Una forma fácil en la que se ha mencionado este principio es que &lt;strong&gt;“puede estar en dos lugares a la vez”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lo que se escapa de nuestra comprensión común de la física es que esto de tener múltiples estados &lt;strong&gt;desaparece cuando lo observamos&lt;/strong&gt;, se dice que su &lt;em&gt;función de onda&lt;/em&gt; colapsa, lo que significa que la partícula “se decide” por uno de los múltiples estados en los que podía estar. La función de onda es la ecuación que describe todas las “probabilidades” de cada estado.&lt;/p&gt;
+
+&lt;p&gt;El ejercicio mental del &lt;a href=&quot;https://www.youtube.com/watch?v=lzxKZx7we4s&quot;&gt;Gato de Schrödinger&lt;/a&gt; te puede ayudar a imaginarlo, pero en &lt;a href=&quot;https://www.youtube.com/watch?v=9JlOmEEyTOU&quot;&gt;este video puedes de Quantum Fracture&lt;/a&gt; te ayudará a profundizar más en la complejidad del tema y como no es tan sencillo como “puede estar en dos estados a la vez”, sino en un número &lt;em&gt;infinito de estados&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Este artículo te explicará el principio de superposición cuántica sin matemáticas avanzadas: &lt;a href=&quot;https://www.elclaustro.edu.mx/agnosia/index.php/component/k2/item/427-superposicion-una-aproximacion-sin-matematicas-avanzadas-a-la-motivacion-de-la-mecanica-cuantica&quot;&gt;Superposición, una aproximación sin matemáticas avanzadas a la motivación de la mecánica cuántica&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Resumen:&lt;/strong&gt; Una particula como un átomo, un electron o un fotón, puede poseer múltiples estados físicos a la vez, con diferentes combinaciones entre todos sus posibles estados, dando lugar a &lt;em&gt;una infinidad de estados posibles&lt;/em&gt;. Las probabilidades de cada estado están contenidas en su &lt;em&gt;función de onda&lt;/em&gt;, y cuando medimos (miramos) una partícula se define en un estado de todos los posibles.&lt;/p&gt;
+
+&lt;h3 id=&quot;amplitud-de-onda-y-qubits&quot;&gt;Amplitud de onda y Qubits&lt;/h3&gt;
+
+&lt;p&gt;Cada uno de los estados posibles de una partícula y sus probabilidades están representados en lo que se llama su &lt;strong&gt;amplitud&lt;/strong&gt;. En el caso de la computación cuántica, nos interesa si una partícula &lt;em&gt;representa un cero o un uno&lt;/em&gt;. Por esto, un &lt;strong&gt;Qubit&lt;/strong&gt; (un bit cuántico) está representado por una amplitud de onda, que se puede entender parcialmente como la probabilidad de que ese bit sea cero o uno. Un qubit está caracterizado por dos amplitudes: una para el estado &lt;strong&gt;cero&lt;/strong&gt; y otra para el estado &lt;strong&gt;uno&lt;/strong&gt;. Estas amplitudes son números complejos, números que tienen un parte real y una parte imaginaria, como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2 + 3i&lt;/code&gt;, por ejemplo.&lt;/p&gt;
+
+&lt;p&gt;Una &lt;em&gt;palabra&lt;/em&gt; o conjunto de qubits está representado por &lt;strong&gt;2^n amplitudes&lt;/strong&gt;, donde n es el número de qubits. Así que en una palabra de 8 bits, tenemos 256 amplitudes de onda. Y aquí está el secreto de por qué la computación cuántica puede ser tan poderosa: &lt;strong&gt;con sólo &lt;em&gt;n&lt;/em&gt; objetos (qubits), puedes almacenar y procesar 2^n números complejos, mientras que en una computadora clásica necesitarías 2^n espacios de memoria&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;compuertas-cuánticas&quot;&gt;Compuertas cuánticas&lt;/h3&gt;
+
+&lt;p&gt;Una compuerta cuántica es el equivalente cuántico a la compuertas lógicas clásicas. Son una serie de transformaciones que se le aplica a las amplitudes que caracterizan nuestro conjunto de qubits para obtener los resultados deseados.&lt;/p&gt;
+
+&lt;p&gt;Después de aplicarle un serie de compuertas cuánticas a los qubits, lo que se conoce como un &lt;strong&gt;circuito cuántico&lt;/strong&gt;, se realiza una medición sobre uno o varios qubits para saber el resultado.&lt;/p&gt;
+
+&lt;p&gt;Las compuertas se comportan como multiplicaciones de matrices y vectores de gran tamaño, que serían imposibles de hacer para computadoras comunes, pero en la computadora cuántica se realizan mediante manipulaciones físicas que equivalen a estas transformaciones de matrices gigantescas.&lt;/p&gt;
+
+&lt;p&gt;No vamos a entrar en profundidad en este tema, pero si quieres leer más, &lt;a href=&quot;https://josueacevedo.medium.com/computaci%C3%B3n-cu%C3%A1ntica-compuertas-o-circuitos-cu%C3%A1nticos-27910f5338c8&quot;&gt;este artículo te puede servir&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;aceleración-cuántica&quot;&gt;Aceleración cuántica&lt;/h3&gt;
+
+&lt;p&gt;Gracias a las cualidades de las computadoras cuánticas antes descritas, es posible resolver algunos problemas de la computación mediante nuevos algoritmos cuánticos que reducen el tiempo esperado de ejecución de O(2^n) a O(n^k), siendo &lt;em&gt;k&lt;/em&gt; una constante. Es decir: &lt;strong&gt;aceleran la resolución de algunos problemas exponencialmente&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ahora que tenemos los conceptos más básicos de cómo funciona la computación cuántica y por qué puede ejecutar muchos más cálculos, hablemos de de algunas amenazas que presenta contra la criptografía.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-algoritmo-de-shor&quot;&gt;El algoritmo de Shor&lt;/h2&gt;
+
+&lt;p&gt;Uno de los problemas en los que está basada la criptografía asimétrica actual, es el problema de la factorización de números primos, es decir, encontrar los componentes primos de un número entero. &lt;em&gt;Creemos&lt;/em&gt; que encontrar los factores de un número lo suficientemente grande es casi imposible para nuestras computadoras clásicas actuales, incluso las más poderosas.&lt;/p&gt;
+
+&lt;p&gt;El &lt;strong&gt;algoritmo de Shor&lt;/strong&gt;, propuesto en 1995, traslada el problema de la factorización a otro problema difícil de las ciencias de la computación: encontrar el periodo de una función exponencial. Aquí puedes encontrar una explicación más a profundidad de esta transformación: &lt;a href=&quot;https://quantum-computing.ibm.com/composer/docs/iqx/guide/shors-algorithm#period-finding&quot;&gt;Period Finding&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lo importante de esta transformación es lo siguiente: &lt;strong&gt;para una computadora cuántica, el problema de encontrar el periodo de una función exponencial no es tan difícil&lt;/strong&gt;. Una computadora cuántica resuelve este problema con una complejidad de O(log n) aproximadamente, ya que existen circuitos cuánticos que permiten encontrar el periodo de la función exponencial.&lt;/p&gt;
+
+&lt;p&gt;Esto significa que cuando una computadora cuántica tenga los suficientes qubits para representar los números que se usan en la generación de llaves asimétricas, la mayor parte de la criptografía asimétrica actual dejará de ser útil.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-algoritmo-de-grover&quot;&gt;El algoritmo de Grover&lt;/h2&gt;
+
+&lt;p&gt;Buscar un elemento que cumpla cierta condición en un conjunto es uno de los problemas que nos ayudarían a romper la criptografía actual. Por ejemplo, imagina que tienes un texto cifrado con AES con una llave de 128 bits. Si quieres romper la seguridad, vas a tener que probar 2^128 llaves en promedio para encontrar la correcta.&lt;/p&gt;
+
+&lt;p&gt;El &lt;a href=&quot;&quot;&gt;algoritmo de Grover&lt;/a&gt; permite acelerar esta operación de manera cuadrática, es decir, te tomaría en promedio la raíz cuadrada de &lt;em&gt;n&lt;/em&gt; encontrar el elemento que cumpla con la condición. En el caso del ejemplo anterior te tomaría en promedio 2^(128/2) = 2^64 operaciones.&lt;/p&gt;
+
+&lt;p&gt;Lo mismo podría pasar para todos cifrados simétricos (que usan la misma llave para cifrar y descifrar) y hasheados, el ataque consistiría en un estilo de fuerza bruta más inteligente o &lt;em&gt;cuadráticamente más rápida&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, como podrás notar, esto no es un problema tan grande, ya que para mantener el mismo nivel de seguridad que tenemos actualmente &lt;strong&gt;bastaría con duplicar el tamaño de las llaves usadas&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esto seguirá siendo así mientras no se descubran debilidades en los algoritmos de cifrado simétricos o en las funciones de comprensión de los hashes que usamos.&lt;/p&gt;
+
+&lt;h2 id=&quot;criptografía-post-quantum&quot;&gt;Criptografía post-quantum&lt;/h2&gt;
+
+&lt;p&gt;Debido a las amenazas que presenta la computación cuántica a la criptografía de llave pública gracias al algoritmo de Shor, los criptográfos están manos a la obra diseñando nuevos algoritmos basados en otros principios aún no amenazados por la computación cuántica.&lt;/p&gt;
+
+&lt;p&gt;Algunos ejemplos que se ven prometedores son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Entramados (Lattice Cryptography)&lt;/li&gt;
+  &lt;li&gt;Códigos de corrección de errores (Error-correcting codes)&lt;/li&gt;
+  &lt;li&gt;Multivariada (Multivariate cryptography)&lt;/li&gt;
+  &lt;li&gt;Hashes (Hash-based cryptography)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La explicación de cada uno de estos posibles caminos para la criptografía la dejaremos para otro artículo, déjanos un comentario si te interesa alguna en especial.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;La criptografía cuántica acelera la capacidad de cómputo, pero además es fundamentalmente &lt;em&gt;diferente&lt;/em&gt;  de la computación clásica, lo que permite resolver problemas con otros métodos imposibles de alcanzar con la computación actual.&lt;/p&gt;
+
+&lt;p&gt;Pero no toda la &lt;strong&gt;criptografía actual esta destinada a perderse con el avance de las computadas cuánticas&lt;/strong&gt;, solamente la criptografía asimétrica y toda aquella basada en la factorización de números primos.&lt;/p&gt;
+
+&lt;p&gt;Ciertamente, la seguridad de la criptografía simétrica se ve menguada por el poder de cómputo y los algoritmos cuánticos, pero no lo suficiente para darla por perdida, sino que bastará con fortalecerla con el mismo poder de cómputo cuántico y &lt;strong&gt;aumentando el tamaño de las llaves&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, los investigadores ya están trabajando en formas para sustituir lo que se va a romper.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía," /><category term="quantum," /><category term="matemáticas" /><summary type="html">Se ha escuchado mucho sobre que la criptografía está completamente acabada si la computación cuántica tiene éxito. Entendamos si esto es verdad.</summary></entry><entry><title type="html">La regla del ‘Cero, Uno o Infinito’</title><link href="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html" rel="alternate" type="text/html" title="La regla del ‘Cero, Uno o Infinito’" /><published>2021-12-10T00:00:00-06:00</published><updated>2021-12-10T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html">&lt;p&gt;La regla del ‘Cero, Uno o Infinito’ es una guía para diseñar software que sea más fácil de usar, tanto para otros desarrolladores como para los usuarios finales. La regla en inglés es:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Allow none of foo, one of foo, or any number of foo.” - Willem van der Poel&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Esta regla establece que respecto a la existencia de elementos, deberías permitir que no exista ninguno, solamente uno o un número arbitrario (potencialmente infinito, mientras las limitantes ) de estos elementos. La idea &lt;strong&gt;principal es que no existan límites arbitrarios impuestos por alguna idea sin explicación&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Algunos ejemplos de esta regla, puesta en práctica:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Una estructura de datos no limita arbitrariamente el grado de anidado que puede tener&lt;/li&gt;
+  &lt;li&gt;No existe un normalmente un límite impuesto de recursividad (más allá del dado por el tamaño del &lt;em&gt;stack&lt;/em&gt; de ejecución)&lt;/li&gt;
+  &lt;li&gt;En las bases de datos relacionales existen tres cardinalidades: 1-1 (permitir una), 1-N (un padre puede tener muchos hijos), N-N (varios artículos pueden pertenecer a la misma categoría y un artículo puede tener varias categorías)&lt;/li&gt;
+  &lt;li&gt;Los caracteres especiales básicos de las expresiones regulares son: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; (un carácter cualquiera), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; (uno o más caracteres), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; (cualquier número de caracteres).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Y esta regla parece que también existe en la naturaleza:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La procreación es ilimitada mientras los recursos sean suficientes (puedes tener N hijos)&lt;/li&gt;
+  &lt;li&gt;Tus ancestros directos son uno de cada género (tienes un padre y una madre)&lt;/li&gt;
+  &lt;li&gt;Tus ancestros indirectos pueden ser infinitos (tu linea genealógica y los hijos de tus hijos pueden ser infinitos)&lt;/li&gt;
+  &lt;li&gt;Cuando tienes un límite de uno y lo abres para dos, ¿entonces por qué no abrirlo para tres? Si aplicamos esta regla recursivamente llegamos infinito&lt;/li&gt;
+  &lt;li&gt;En un consejo de administración hay una (1) persona encargada con acceso a la información de un sistema o un equipo (N - infinito)&lt;/li&gt;
+  &lt;li&gt;Como conjunto, un vehículo puede transportar N pasajeros, luego limitado por el caso de negocio o modelo específico. Cuando esta lleno puede transportar cero personas más&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ahora veamos algunos ejemplos en los que puedes poner límites arbitrarios sin darte cuenta.&lt;/p&gt;
+
+&lt;h2 id=&quot;modelando-bases-da-datos&quot;&gt;Modelando bases da datos&lt;/h2&gt;
+
+&lt;p&gt;En modelados de bases de datos. Imagínate que tienes que modelar una tipo de usuario en el que te dicen que tienes que guardar diez propiedades arbitrarias. Podrías cometer el error de crear específicamente diez campos para guardar estas propiedades, lo cuál crearía un límite arbitrario en la capacidad de guardar estas propiedades. La mejor forma de modelarlo sería con una relación 1-N, ya que te da la flexibilidad de aumentar o reducir este límite mediante lógica específica para el caso de uso.&lt;/p&gt;
+
+&lt;p&gt;Lo mismo podrías pensar en cuanto a asignación de categorías, tags, comentarios, etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;modelando-software&quot;&gt;Modelando software&lt;/h2&gt;
+
+&lt;p&gt;Veamos algunos ejemplos que te puedes encontrar creando software.&lt;/p&gt;
+
+&lt;h3 id=&quot;ctrl-z&quot;&gt;CTRL-Z&lt;/h3&gt;
+
+&lt;p&gt;Imagina que tienes que diseñar un editor de texto y estás pensando en agregar la funcionalidad de “deshacer”. Primeramente piensas que es buena idea solamente permitir que se deshaga la acción inmediata anterior, así que lo implementas como una variable que se está sustituyendo constantemente.&lt;/p&gt;
+
+&lt;p&gt;Pero ahora quieres permitir que se deshagan más acciones. ¿Cuál sería tu siguiente límite? El límite natural tendría que ser “infinito” o “hasta el principio del tiempo”, ya que cualquier otro límite sería arbitrario y difícil de comprender o justificar. Así que tu implementación cambia de una variable a una pila de acciones que va manteniendo tantas acciones como sea posible.&lt;/p&gt;
+
+&lt;h3 id=&quot;modelando-una-conversaciǿn&quot;&gt;Modelando una conversaciǿn&lt;/h3&gt;
+
+&lt;p&gt;Ahora estamos creando un modelo para almacenar y correr una conversación de un chatbot con un usuario. Cada mensaje puede comportarse de tres maneras: darle la oportunidad al usuario de contestar con una respuesta fija, llevar a otro mensaje sin darle oportunidad al usuario de contestar, o terminar la conversación.&lt;/p&gt;
+
+&lt;p&gt;Como puedes observar, esto es un caso perfecto de la regla del ‘Cero, Uno o Infinito’. Un mensaje puede tener cero mensajes siguientes, por lo que termina la conversación. Puede tener un solo mensaje siguiente, que es cuando continuamos sin esperar respuesta. O puede tener N mensajes siguientes, uno correspondiente a cada respuesta posible de parte del usuario. Imponer un número limitado de respuestas posibles dentro de tu sistema no una buen idea, ya que limita sin razón alguna la flexibilidad de nuestro sistema.&lt;/p&gt;
+
+&lt;h2 id=&quot;críticas-a-la-regla-del-cero-uno-o-infinito&quot;&gt;Críticas a la regla del ‘Cero, Uno o Infinito’&lt;/h2&gt;
+
+&lt;p&gt;Una de las principales críticas a esta regla es que &lt;strong&gt;está dejando fuera el dos&lt;/strong&gt;, que también es un número muy especial para ciertos casos: muchas cosas en la naturaleza vienen en pares. Los booleanos, prendido/apagado, arriba/abajo, izquierda/derecha.&lt;/p&gt;
+
+&lt;p&gt;En mi opinión es un número que también se debe considerar, pero solo en caso de que los dos elementos carguen un significado como en los ejemplos anteriores, normalmente son cosas opuestas que se relacionan con un centro, pero incluso, si no se considera un número especial, podemos modelar estos casos siguiendo la regla del ‘Cero, Uno o Infinito’: si tomamos como punto de referencia uno de estos valores, el otro es nuestro &lt;em&gt;“uno”&lt;/em&gt; que estamos permitiendo.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Aprender principios de diseño de software te ayudará a crear mejores sistemas que puedan ser usados más fácilmente tanto por otros desarrolladores como por usuario. Espero que este pequeño ejemplo te lleve a aprender otros principios que puedas aplicar en tu trabajo diario. Déjanos un comentario si quieres que lo platiquemos más profundamente o con otros ejemplos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="zero-one-infinity," /><category term="design," /><category term="reglas" /><summary type="html">A veces necesitamos reglas que nos ayuden a desarrollar mejor software. La regal de 'Cero, Uno o Infinito' es una guía para que creemos software más usable.</summary></entry><entry><title type="html">Cómo convertirte en un mago programando</title><link href="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html" rel="alternate" type="text/html" title="Cómo convertirte en un mago programando" /><published>2021-12-09T00:00:00-06:00</published><updated>2021-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html">&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;wizardzine&lt;/a&gt; gratuito &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a wizard”&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Espero que estas recomendaciones te dejen reflexionando y que termines con ganas de leer el &lt;em&gt;wizardzine&lt;/em&gt; completo. Los pongo en el orden que personalmente me parecen más impactantes, pero para ti puede ser diferente, por lo que te recomiendo que lo leas y medites por tu cuenta.&lt;/p&gt;
 
 &lt;h2 id=&quot;escribe-un-documento-de-diseño&quot;&gt;Escribe un documento de diseño&lt;/h2&gt;
 
-&lt;p&gt;Un documento de diseño es un escrito que haces ANTES de empezar in desarrollo en el que detallas varias cosas sobre lo que te estás proponiendo hacer:&lt;/p&gt;
+&lt;p&gt;Una de las cosas más importantes que podemos aprender los desarrolladores es a &lt;strong&gt;diseñar software.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Un documento de diseño es una expresión del diseño de software. Es un escrito que haces &lt;strong&gt;ANTES de empezar&lt;/strong&gt; un desarrollo, en el que detallas varias cosas sobre lo que te estás proponiendo hacer:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;El objetivo principal&lt;/li&gt;
   &lt;li&gt;Detalles sobre el problema a resolver&lt;/li&gt;
   &lt;li&gt;El diseño a alto nivel de la solución&lt;/li&gt;
   &lt;li&gt;Las partes del sistema que estás afectando&lt;/li&gt;
-  &lt;li&gt;Otras consideraciones&lt;/li&gt;
+  &lt;li&gt;Otras consideraciones que hay que tener sobre esa pieza de software&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;como-empezar-a-aprender-un-tema-complejo&quot;&gt;Como empezar a aprender un tema complejo&lt;/h2&gt;
+&lt;p&gt;Normalmente este diseño y consideraciones iniciales no se mantienen a lo largo del proyecto, pero sirven para empezar con una idea más clara y sin malentendidos. Una de las cosas más importantes que tienes que hacer con un documento de diseño es &lt;strong&gt;la retroalimentación que otros miembros del equipo puedan darte&lt;/strong&gt;. En un artículo futuro de este blog hablaremos más a detalle de esto.&lt;/p&gt;
 
-&lt;p&gt;Algunas de las cosas más&lt;/p&gt;
+&lt;p&gt;Pero recuerda que si no tienes práctica y, aunque sea un proyecto o cambio muy pequeño, vale la pena dedicarle un tiempo a &lt;em&gt;pensar&lt;/em&gt; y &lt;em&gt;escribir&lt;/em&gt; sobre lo que planeas hacer.&lt;/p&gt;
 
-&lt;h2 id=&quot;lee-código-fuente&quot;&gt;Lee código fuente&lt;/h2&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="preguntas" /><category term="investigación" /><summary type="html">Hablemos sobre las técnicas que Julia Evans recomienda para converirte en un mejor programador(a) y avanzar en tu carrera.</summary></entry><entry><title type="html">Recursos para aprender Criptografía en 2022</title><link href="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html" rel="alternate" type="text/html" title="Recursos para aprender Criptografía en 2022" /><published>2021-12-08T00:00:00-06:00</published><updated>2021-12-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html">&lt;p&gt;La criptografía es un campo con mucha demanda laboral actualmente porque es importante para diferentes áreas de la informática. En este artículo vamos hablar su importancia y cómo puedes aprenderlo si está dentro de tus intereses.&lt;/p&gt;
+&lt;h2 id=&quot;como-adquirir-experiencia-significativa&quot;&gt;Como adquirir experiencia significativa&lt;/h2&gt;
+
+&lt;p&gt;Es cierto que mediante trabajar en algo por un tiempo en algo lograrás adquirir experiencia, pero esta experiencia está limitada a las actividades que más repitas en ese trabajo y a ese entorno. &lt;strong&gt;Por eso no basta con sólo aprender en el trabajo&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Si quieres tener una experiencia más amplia, algunas prácticas que te pueden servir son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Escoge un área que te interese especialmente y estudiala durante un tiempo razonable. Desarrolla tus habilidades en esa área y luego cambia a otra. Lo importante es que &lt;strong&gt;tu aprendizaje sea activo&lt;/strong&gt;, no solamente teórico o lo que te vaya llegando del trabajo.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;No pienses que es tarde para aprender&lt;/strong&gt;. Aunque lleves bastante tiempo usando algo, no significa que lo debas saber todo sobre esa tecnología. No pienses: “¿Cómo es que no sabes X cosa sobre Y?”, sino: “Hoy es el día en que aprenderé sobre X y Y”.&lt;/li&gt;
+  &lt;li&gt;Aprende los conceptos fundamentales, lo que te servirá para construir sobre eso más conocimiento y habilidades.&lt;/li&gt;
+  &lt;li&gt;Haz experimentos. En muchas de las áreas del desarrollo, puedes hacer experimentos que no te cuestan nada y pueden ayudarte a entender más profundamente un tema.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Lee Libros&lt;/strong&gt;. Los libros en la mayoría de los casos son un conjunto de conocimientos destilados sobre cierto tema. Leer los capítulos específicos de los temas de tu interés te ayudará a avanzar más rápido.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Haz proyectos difíciles&lt;/strong&gt;. Nada como poner a prueba tus habilidades para ver los hoyos en tu conocimiento como hacer tareas difíciles.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Profundiza&lt;/strong&gt;. Cuando no entiendas algo, busca información más profunda sobre el tema, aprende la historia, las bases y los conceptos más fundamentales. Además puedes acercarte a expertos en el tema a pedirles ayuda para comprender este tema, o recursos que te ayuden a comprenderlo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finalmente, recuerda que todo esto toma tiempo, no puedes convertirte en un experto en algo de la noche a la mañana, por lo que debes tener paciencia contigo.&lt;/p&gt;
+
+&lt;h2 id=&quot;lee-código-fuente&quot;&gt;Lee código fuente&lt;/h2&gt;
+
+&lt;p&gt;A veces, los sistemas o herramientas que tenemos que usar no tienen documentación, nadie sabe lo suficiente para ayudarnos o no están disponibles. Es por esto que una de las habilidades más importantes que podemos tener es la de &lt;strong&gt;leer y entender el código fuente&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Algunas de las cosas que te pueden ayudar son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Busca exactamente por la parte que necesitas. Puede ser un error, un mensaje o un módulo específico, usa las herramientas de indexación de texto para llegar ahí, no creas que tienes que leer toda la base.&lt;/li&gt;
+  &lt;li&gt;Si el código que tienes que leer es pequeño, intenta darle un recorrida rápida para tener una idea general de lo que sucede y dónde sucede.&lt;/li&gt;
+  &lt;li&gt;Haz experimentos con el código, cambiando cosas y viendo lo que sucede, usa un debuggers, agrega tests, introduce bugs intencionalmente.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finalmente, documenta lo que aprendas y encuentres, le puede servir a otros miembros del equipo, de la comunidad o a ti en el futuro. Entender estos sistemas te ayudará aprender de las decisiones de diseño buenas o malas y además te enseñará nuevas técnicas que hubieras tardado más en aprender por otros lados.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Lo que te acercará más a sentirte un mago o maga programando es la &lt;strong&gt;práctica enfocada&lt;/strong&gt;, que puede presentarse de las tres maneras que hablamos aquí, pero hay muchas otras. Recuerda que la constancia es importante, más que la velocidad, pero buscar formas más eficientes de aprender no es malo.&lt;/p&gt;
+
+&lt;p&gt;Si te quedaste con ganas de más consejos de este estilo, descarga &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a Wiazard”&lt;/a&gt; de la página oficial y continúa leyendo, esta vez de manera visual.&lt;/p&gt;
+
+&lt;p&gt;Shameless plug: &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;aquí puedes ver nuestra presentación de los wizardzines&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/drPMyDyQG8M&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="preguntas" /><category term="investigación" /><summary type="html">Hablemos sobre las técnicas que Julia Evans recomienda para converirte en un mejor programador(a) y avanzar en tu carrera.</summary></entry><entry><title type="html">Recursos para aprender Criptografía en 2022</title><link href="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html" rel="alternate" type="text/html" title="Recursos para aprender Criptografía en 2022" /><published>2021-12-08T00:00:00-06:00</published><updated>2021-12-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html">&lt;p&gt;La criptografía es un campo con mucha demanda laboral actualmente porque es importante para diferentes áreas de la informática. En este artículo vamos hablar su importancia y cómo puedes aprenderlo si está dentro de tus intereses.&lt;/p&gt;
 
 &lt;h2 id=&quot;la-importancia-de-la-criptografía&quot;&gt;La importancia de la criptografía&lt;/h2&gt;
 
@@ -195,453 +488,4 @@ Puedes ver la presentación de uno de los autores en &lt;a href=&quot;https://ww
 
 &lt;p&gt;Conocer cómo funciona un PRNG, a parte de algo interesante, es útil para no usarlos mal. Siempre que requieras números aleatorios para usarlos con relación a la seguridad de la información, &lt;strong&gt;deberías usar un PRNG criptográfico&lt;/strong&gt;. En cualquier otro caso, un PRNG como el &lt;em&gt;Meresenne Twister&lt;/em&gt; es suficiente. Además, ahora sabes que los RNGs basados en procesos físicos, a pesar de las garantías de entropía que prometen, no son muy confiables en el sentido de que no siempre están disponibles, pero hay soluciones de hardware especializadas que te pueden ayudar si tienes un problema muy específico.&lt;/p&gt;
 
-&lt;p&gt;Finalmente, la mejor opción para usar un PRNG es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="prng" /><category term="criptografía" /><category term="randomness" /><category term="aleatoriedad" /><summary type="html">Los números aleatorios son muy importantes para el desarrollo, sobre todo para la seguridad de la información y la criptografía.</summary></entry><entry><title type="html">¿Por qué deberías aprender TypeScript?</title><link href="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html" rel="alternate" type="text/html" title="¿Por qué deberías aprender TypeScript?" /><published>2021-12-06T00:00:00-06:00</published><updated>2021-12-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html">&lt;p&gt;TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.&lt;/p&gt;
-
-&lt;h2 id=&quot;acerca-de-typescript&quot;&gt;Acerca de TypeScript&lt;/h2&gt;
-
-&lt;p&gt;El propósito de TypeScript es tener un lenguaje adecuado para crear grandes sistemas que compile a JS. En realidad, todo programa válido en JS también es Válido en TypeScript. La principal diferencia que verás en TypeScript con respecto a JS es que este soporta anotaciones e inferencia de tipos de datos y los verifica en tiempo de compilación. Así que si tu programa no pasa la verificación de tipos, ni siquiera podrá llegar a correr. Algunas de las características de TypeScript son:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Anotaciones de tipos.&lt;/strong&gt; Puedes especificar el tipo de dato de una variable o función.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Inferencia de tipos.&lt;/strong&gt; No requiere que se especifique el tipo de dato de una variable explicitamente, ya que lo puede inferir por los valores que le asignas.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Verificación de tipos.&lt;/strong&gt; Verifica que tu programa cumpla con los contratos de los tipos de datos.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Borrado de tipos.&lt;/strong&gt; Se refiere a la eliminación de tipos de datos de un programa antes de dejarlo listo para correr pero después de verificarlo.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Compilación a una versión específica de JS&lt;/strong&gt;. Puedes especificar a qué versión de JS se compilará tu programa.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Genéricos&lt;/strong&gt;. Puedes crear funciones que reciban tipos de datos variables.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Es por esto que muchos lo ven como un &lt;strong&gt;JavaScript tipado&lt;/strong&gt;. Es cierto que cumplir con los contratos de los tipos es un trabajo extra, pero es una buena idea y un trabajo que vale la pena cuando tienes que hacer un sistema grande. El tipado estático puede protegerte de errores al mismo tiempo que es una capa extra de documentación.&lt;/p&gt;
-
-&lt;p&gt;TypeScript (de aquí en adelante le diremos &lt;strong&gt;TS&lt;/strong&gt;) fue creado por Microsoft y lanzado al público ne 2012 todavía sin una versión estable. Detrás de él está (Anders Hejlsberg)[https://twitter.com/ahejlsberg], también diseñador de C#, y creador de Delphi y Turbo Pascal. En 2021 vamos en la versión &lt;strong&gt;4.5&lt;/strong&gt;, con muchísimos avances desde su primera versión pública.&lt;/p&gt;
-
-&lt;h2 id=&quot;por-qué-deberías-aprender-typescript&quot;&gt;¿Por qué deberías aprender TypeScript?&lt;/h2&gt;
-
-&lt;p&gt;Ya empezamos a hablar de algunas ventajas en la descripción de lo que es TS. Veamos otras con más detenimiento.&lt;/p&gt;
-
-&lt;h3 id=&quot;reduces-los-errores-en-producción&quot;&gt;Reduces los errores en producción&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined is not a function&lt;/code&gt; es uno de los errores que más estamos acostumbrados a ver cuando programaos en JS. Este es un error causado por que algo que esperábamos que tuviera una función no la tiene en tiempo de ejecución. Con TypeScript, esto no sucede, ya que te obliga a cumplir con un contrato de tipo de objeto y si no cuenta con cierto atributo, ni siquiera compila. Por ejemplo:&lt;/p&gt;
-
-&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Héctor&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Este código te dará un error &lt;strong&gt;cuando lo intentes compilar&lt;/strong&gt; diciendo que el objeto asignado a Héctor no tiene la propiedad &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sayHello&lt;/code&gt;, protegiéndote así de que se te pase algo que creías que estaba bien a producción. Lo mismo sucedería si la propiedad existiera, pero la función tuviera diferentes tipos de entrada y de salida.&lt;/p&gt;
-
-&lt;p&gt;Como todo en la programación, esto es un arma de doble filo, ya que puede reducir el tiempo “crudo” de desarrollo, es decir, el tiempo que te lleva programar por primera vez algo listo pra probar, pero reducirá el tiempo total de desarrollo sobre todo si tu programa es grande.&lt;/p&gt;
-
-&lt;p&gt;Como punto final, es que probablemente &lt;strong&gt;ni siquiera tengas que correr el código para darte cuenta de que está mal&lt;/strong&gt;, ya que tu editor de código, aprovechándose de la características de TS, te avisará que algo está mal ahí.&lt;/p&gt;
-
-&lt;h3 id=&quot;tu-editor-o-ide-puede-ser-más-útil&quot;&gt;Tu editor o IDE puede ser más útil&lt;/h3&gt;
-
-&lt;p&gt;La información extra que el sistema de inferencia de TS da, o las anotaciones de tipos que tú pones, le dan información al editor que le permite ayudarte de mejor manera, con autocompletados más eficientes, aviso de incumplimiento de contratos en los tipos, etc. Esto contrarresta el tiempo que te llevará extra trabajar con esos tipos.&lt;/p&gt;
-
-&lt;h3 id=&quot;la-refactorización-será-más-fácil&quot;&gt;La refactorización será más fácil&lt;/h3&gt;
-
-&lt;p&gt;Tener una capa de protección en forma de un sistema de tipos es una capa extra de información que evitará que rompas tu código si lo cambias para mejorarlo manteniendo la funcionalidad. Pero además de eso, muchas herramientas ofrecen funciones de refactorización automática que se aprovecharán de esta misma información para hacerla de manera más segura y efectiva.&lt;/p&gt;
-
-&lt;h2 id=&quot;desventajas-de-typescript&quot;&gt;Desventajas de TypeScript&lt;/h2&gt;
-
-&lt;p&gt;Personalmente, y lo digo como alguien que ha trabajado tanto en lenguajes con tipado estático y dinámico, creo que para un programador que ha estado acostumbrado a trabajar con tipado dinámico toda su vida sufrirá un poco cuando lo pongas a trabajar en lenguajes como TypeScript y hay situaciones en las que te metes en un verdadero embrollo tratando de cumplir con el sistema de tipos. Esto puede causar algunos retrasos, pero como lo hemos mencionado a lo largo del artículo, los beneficios de usar TS en un sistema grande superan con creces estas restricciones añadidas.&lt;/p&gt;
-
-&lt;p&gt;Otra desventaja del código de TypeScript es que puede pasar que el código se vea menos legible si se llena de tipos, pero con el tiempo los programadores pueden aprender en dónde vale la pena poner anotaciones de tipos explícitas contra aprovecharse de la inferencia automática de TS.&lt;/p&gt;
-
-&lt;h2 id=&quot;quieres-aprender-typescript&quot;&gt;¿Quieres aprender TypeScript?&lt;/h2&gt;
-
-&lt;p&gt;Algunos recursos gratuitos que puedes usar para aprender TS:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://exploringjs.com/tackling-ts/toc.html&quot;&gt;Tackling TypeScript&lt;/a&gt; del Dr. Alex Rauschmayer&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/intro.html&quot;&gt;The TypeScript Handbook&lt;/a&gt; de Microsoft&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Estos dos recursos están en inglés. Algunos recursos en español:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=8fnhN1HRPB4&quot;&gt;Curso práctico desde cero&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Xxqh0RoWxNc&quot;&gt;Curso Práctico Rápido desde cero para Iniciantes&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Una herramienta de pago que recomiendo muchísimo, tanto por su contenido como por su técnica didáctica es &lt;a href=&quot;https://www.executeprogram.com/&quot;&gt;Execute Program&lt;/a&gt; creada por &lt;a href=&quot;https://destroyallsoftware.com&quot;&gt;Gary Bernhardt&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Si quieres continuar con sistemas serios para entornos que solamente ejecuten JS, una de tus mejore opciones es TypeScript. Las restricciones y la información extra que proporciona el sistema de tipos sobre tu código común supercargará tu proceso de desarrollo desde las herramientas de programación como el editor hasta la protección contra errores en tiempo de compilación.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="javascript" /><category term="typescript" /><category term="js" /><category term="ts" /><summary type="html">TypeScript es un lenguaje muy popular actualmente, ¿te conviene aprenderlo? Veamos algunas características y desventajas para ayudarte a decidir.</summary></entry><entry><title type="html">Entendiendo la cohesión y el acoplamiento en el software</title><link href="https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html" rel="alternate" type="text/html" title="Entendiendo la cohesión y el acoplamiento en el software" /><published>2021-12-05T00:00:00-06:00</published><updated>2021-12-05T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html">&lt;p&gt;Siempre se dice que una buena base de código tiene alta &lt;strong&gt;cohesión&lt;/strong&gt;, pero bajo &lt;strong&gt;acoplamiento&lt;/strong&gt;. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica?&lt;/p&gt;
-
-&lt;p&gt;En este artículo vamos a definir cada uno de esos términos de manera sencilla, y con ejemplos de cómo llegar a la aplicación real de estos términos.&lt;/p&gt;
-
-&lt;h2 id=&quot;un-poco-de-historia&quot;&gt;Un poco de historia&lt;/h2&gt;
-
-&lt;p&gt;Estos dos conceptos y otros relacionados fueron desarrollados por &lt;a href=&quot;https://history.computer.org/pioneers/constantine.html&quot;&gt;Larry Constantine&lt;/a&gt; en la década de los 60’s y publicados en los años siguientes, junto con el nacimiento del &lt;a href=&quot;https://www.win.tue.nl/~wstomv/quotes/structured-design.html&quot;&gt;diseño estructurado de sistemas&lt;/a&gt;. Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Lo que se ha descubierto es que efectivamente, las dependencias infinitas (alto acoplamiento y baja cohesión) crean problemas que son casi imposobles de resolver en las bases de código y es cuando terminamos diciendo: &lt;em&gt;“Es más fácil hacerlo de nuevo.”&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Ahora sí, hablemos de lo que quisiéramos lograr con nuestro software, para no terminar queriéndolo rehacer de nuevo en poco tiempo.&lt;/p&gt;
-
-&lt;h2 id=&quot;cohesión&quot;&gt;Cohesión&lt;/h2&gt;
-
-&lt;p&gt;La &lt;strong&gt;cohesión&lt;/strong&gt; de los módulos se refiere al grado en que los componentes de cierto módulo &lt;strong&gt;se relacionan entre sí&lt;/strong&gt;. Es decir, un módulo tiene &lt;strong&gt;alta cohesión&lt;/strong&gt; si todos, o la mayoría de sus componentes trabajan para un mismo objetivo y no para cosas dispares o no relacionadas.&lt;/p&gt;
-
-&lt;p&gt;Una buena cohesión permitirá que el componente &lt;em&gt;utilice menos otros módulos externos&lt;/em&gt;, ya que la mayoría de lo que requiere para realizar su trabajo está en el mismo módulo.&lt;/p&gt;
-
-&lt;p&gt;Para lograr esto, normalmente tienes que reducir las tareas de las que el módulo es responsable al menor grado posible, tratando de seguir el principio de responsabilidad única.&lt;/p&gt;
-
-&lt;p&gt;Pongamos un ejemplo: imagina que estás creando un chatbot, un programa que, usando las API’s de los aplicaciones de comunicación te permite interactuar con tus usuarios en forma de chat, en lugares como WhatsApp, Messenger o Slack. El sistema tiene como requerimiento que la lógica de conversación sea fácil de reemplazar y mantener y que funcione independientemente del canal.&lt;/p&gt;
-
-&lt;p&gt;Para implementar este sistema los rompemos por lo menos en tres módulos: el manejo de usuarios, la lógica de conversación y la conexión son los canales de comunicación.&lt;/p&gt;
-
-&lt;p&gt;Una buena cohesión se refiere a que, por ejemplo, la lógica de conversación y todo lo necesario para decidir cómo conversar con un usuario exista dentro de este mismo módulo. Así, cuando tengas que actualizarla no tienes que tocar todo el sistema o muchas partes del código. Esto mismo aplicaría para los otros módulos, imagínate que tienes que agregar un canal nuevo, por ejemplo, Telegram. Tu módulo de conexión a canales debería tener todo lo necesario para que no tengas que modificar ni el módulo de usuarios, ni el de la lógica de conversación.&lt;/p&gt;
-
-&lt;p&gt;Una forma efectiva de crear módulos cohesivos es mediante &lt;strong&gt;agrupar&lt;/strong&gt; todas las partes que tienen que ver con el mismo tema abstracción o decisión en el mismo módulo&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; o clase. Esto casi nunca se puede lograr perfectamente, pero es una buena meta que te ahorrará dolores de cabeza.&lt;/p&gt;
-
-&lt;h2 id=&quot;acoplamiento&quot;&gt;Acoplamiento&lt;/h2&gt;
-
-&lt;p&gt;El &lt;strong&gt;acoplamiento&lt;/strong&gt; consiste en el grado de dependencia de las diferentes partes de un sistema entre ellas. La pregunta clave para entender el acoplamiento es: &lt;strong&gt;¿Cuánto se necesita saber de un módulo para entender otro módulo?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Mientras más necesites saber de &lt;strong&gt;A&lt;/strong&gt; para entender &lt;strong&gt;B&lt;/strong&gt;, más &lt;strong&gt;A&lt;/strong&gt; relacionados, o acoplados están.&lt;/p&gt;
-
-&lt;p&gt;Por ejemplo, imagina una aplicación de e-commerce, que consiste de un catálogo, un carrito de compras y la parte del pago. Estos tres elementos pueden estar muy acoplados entre sí, en el sentido de que cualquier cambio en el catálogo afecta al carrito de compras y al pago, o al revés. Si puedes cambiar cualquiera de los tres módulos sin tener que tocar los otros, hay un bajo acoplamiento.&lt;/p&gt;
-
-&lt;p&gt;El acoplamiento &lt;strong&gt;ideal sería cero&lt;/strong&gt;, pero como te imaginarás esto es imposible.&lt;/p&gt;
-
-&lt;p&gt;Los módulos pueden depender entre ellos de diferentes formas, tanto conceptualmente como en implementación. Constantine menciona que los siguientes cuatro factores pueden afectar el grado de acoplamiento de los módulos:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Tipo de conexión entre los módulos. ¿Escriben a las mismas variables globales? ¿Uno usa al otro? ¿Uno es la especialización de otro?&lt;/li&gt;
-  &lt;li&gt;Complejidad de la interfaz: ¿Qué tan intrincada es la conexión entre los módulos?&lt;/li&gt;
-  &lt;li&gt;Tipo de información que pasa entre la conexión: ¿se pasan grandes estructuras de datos que procesan de manera secuencial? O, ¿un módulo modifica la forma de trabajar de otro?&lt;/li&gt;
-  &lt;li&gt;Tiempo en el que sucede la conexión: ¿depende uno de que el otro corra para poder ejecutarse?&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Tener en cuenta estos factores puede ayudar a reducir el acoplamiento de los módulos.&lt;/p&gt;
-
-&lt;h2 id=&quot;relación-entre-cohesión-y-acoplamiento&quot;&gt;Relación entre cohesión y acoplamiento&lt;/h2&gt;
-
-&lt;p&gt;Constantine menciona que mientras más cohesión tengan los módulos, menos acoplamiento tendrán entre ellos. Esto suena lógico porque mientras más “autocontenido” sea un módulo (más cohesión) menos va a necesitar de otros para poder funcionar.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“A mayor cohesión de los módulos individuales en el sistema, menor será el acoplamiento” - &lt;a href=&quot;https://www.win.tue.nl/~wstomv/quotes/structured-design.htm&quot;&gt;Structured Design by Yourdon and Constantine&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Como podrás ver, no son medidas independientes, sino correlacionadas en la práctica.&lt;/p&gt;
-
-&lt;h2 id=&quot;cómo-lograr-alta-cohesión-y-bajo-acoplamiento&quot;&gt;Cómo lograr alta cohesión y bajo acoplamiento&lt;/h2&gt;
-
-&lt;p&gt;La principal forma de lograr esta buena estructura es dedicando tiempo al diseño del software,prestando especial atención a la forma en la que se modulariza el sistema, es decir, la forma en la que se divide el problemas en otros más pequeños.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Constantine y Yourdon&lt;/em&gt; afirman que la única forma de lograr esto es con práctica, práctica y más práctica.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusiones&quot;&gt;Conclusiones&lt;/h2&gt;
-
-&lt;p&gt;El principio de “Alta cohesión y bajo acoplamiento” sin duda es útil para que nuestro software sea más claro, más fácil de mantener y de cambiar. No hay manera de aprender cómo dividir el sistema en módulos si no es mediante la práctica de diseño e implementación de sistemas reales. Así que, ya sabes, &lt;strong&gt;manos a la obra&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;Cuando decimos “módulo” estamos hablando de la forma de tu lenguaje de agrupar funcionalidades, puede ser literalmente un módulo, un paquete, una aplicación etc. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Cohesión" /><category term="acoplamiento" /><category term="software" /><summary type="html">En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código</summary></entry><entry><title type="html">Versiona mejor tu código: versionamiento semántico y commits convencionales</title><link href="https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html" rel="alternate" type="text/html" title="Versiona mejor tu código: versionamiento semántico y commits convencionales" /><published>2021-12-04T00:00:00-06:00</published><updated>2021-12-04T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html">&lt;p&gt;Una de las mejores cosas que podemos hacer por nosotros mismos y por nuestro equipo es versionar nuestro código y qué mejor que hacerlo de las mejores formas conocidas hasta el momento.&lt;/p&gt;
-
-&lt;p&gt;En este artículo hablaremos de dos cosas conectadas: el &lt;strong&gt;versionamiento semántico&lt;/strong&gt; y los &lt;strong&gt;“commits convencionales”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;por-qué-es-importante&quot;&gt;¿Por qué es importante?&lt;/h2&gt;
-
-&lt;p&gt;Organizar y manejar tu código de tal manera que puedas crear diferentes versiones del sistema que estás programando, cambiar entre ellas o regresar una anterior, es un requerimiento de todos los procesos de desarrollo actuales.&lt;/p&gt;
-
-&lt;p&gt;Además, presentar tu software a los usuarios finales en versiones iterativamente mejores es una buena práctica que te permitirá liberar más rápido, más seguido y frecuentemente con mejor calidad. Para lograr esto es importante &lt;strong&gt;comunicar correctamente lo que está cambiando en cada versión&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;La herramienta más usada para versionar nuestro código es &lt;strong&gt;git&lt;/strong&gt;, pero no establece ningún lineamiento en la forma en la que liberamos el software para los usuarios finales. Así que veamos primeramente una forma de comunicar nuestros cambios de manera correcta y efectiva y después una forma de hacerlo conectarlo con nuestro proceso de trabajo con git.&lt;/p&gt;
-
-&lt;h2 id=&quot;versionamiento-semántico&quot;&gt;Versionamiento semántico&lt;/h2&gt;
-
-&lt;p&gt;El versionamiento semántico (Semantic Versioning o SemVer) es una forma de &lt;strong&gt;comunicar a nuestros usuarios finales los tipos de cambios introducidos en las nuevas versiones.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Esto es muy importante porque, como seguramente habrás experimentado, un proyecto de software requiere de muchas dependencias y cuando alguna de ellas no funciona bien, tiene algunos bugs, o no es compatible con lo que ya existía, nos podemos meter en serios problemas. Y mientras más grande es el proyecto, más dependencias necesitarás, lo que agranda el problema.&lt;/p&gt;
-
-&lt;p&gt;Lo que &lt;strong&gt;SemVer&lt;/strong&gt; propone es una sintaxis formal que nos permite entender el tipo de cambios introducidos en cada versión. Esta sintaxis constituye un lenguaje formal que puede ser usado para resolver automáticamente problemas de dependencias si se usa correctamente.&lt;/p&gt;
-
-&lt;p&gt;Antes de ver un ejemplo de una versión semántica es importante que aclaremos que esta se usa para software que tiene una interfaz establecida. Esta interfaz formal está completamente documentada para que otros programadores o usuarios finales pueden usar tu software. A esta interfaz le llamaremos &lt;strong&gt;API&lt;/strong&gt; (Application Programming Interface)&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; a partir de ahora. Ahora sí, una versión en SemVer se ve así:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.0.2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;El primer número es la versión mayor, en este caso 1. El segundo número es la versión menor, en este caso 0. El tercer número es la versión del parche, en este caso 2.&lt;/p&gt;
-
-&lt;p&gt;Ahora bien, ¿que significa cuando cambian estos números?&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cuando cambia la versión mayor, se introducen cambios que hacen que la API sea incompatible con la versión anterior. Imagínate por ejemplo que se remueve alguna función o módulo que ya no se necesita. También puede ser que aunque no cambie explícitamente el contrato externo, cambie el significado de una operación.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cuando cambia la versión menor, se han introducido cambios o mejoras que no hacen incompatible a la API con versiones anteriores. Imagínate algo como agregarle nuevos parámetros a una función, pero que soporta valores default para que pueda seguir siendo llamada de la forma anterior. O también puede ser que agregas nuevas partes que no afectan a la forma en la que se usan las antiguas.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cuando cambia la versión de parche, no se ha introducido cambios externos a la interfaz por diseño, sino que se han arreglado errores que causaban mal funcionamiento.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Después de estos tres elementos pueden venir otros detalles, como por ejemplo la versón de prelanzamiento y metadatos de la compilación.&lt;/p&gt;
-
-&lt;p&gt;En el documento oficial &lt;a href=&quot;https://semver.org/lang/es/&quot;&gt;Versionamiento Semántico 2.0&lt;/a&gt; puedes ver más detalles sobre cómo trabajar con él, pero sobre todo notarás lo importante y serio que es que comuniquemos correctamente lo que está pasando con el software que hacemos, sobre todo si otros dependen de él. También podrás ver como las cadenas resultantes de semantic versioning son un lenguaje formal en el que se puede confiar para programar resolución de dependencias, hasta tienen un regex para reconocerlas.&lt;/p&gt;
-
-&lt;p&gt;Ahora veamos una herramienta que te ayudará a llevar cuenta del tipo de cambios que se van introduciendo en tu software y base de código.&lt;/p&gt;
-
-&lt;h2 id=&quot;commits-convencionales&quot;&gt;Commits convencionales&lt;/h2&gt;
-
-&lt;p&gt;Los &lt;a href=&quot;https://conventionalcommits.org/&quot;&gt;commits convencionales (Conventional Commits)&lt;/a&gt; son una forma de estructurar tus mensajes de cada commit para comunicar explícitamente lo que estás cambiando. El objetivo es que 1) puedas saber exactamente lo que el equipo ha cambiado en cada nueva versión o rama y 2) poder automatizar la creación de versiones semánticas y registros de cambios (changelog).&lt;/p&gt;
-
-&lt;p&gt;Un commit convencional tiene la siguiente estructura:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;tipo de commit&amp;gt; [ámbito (opcional)]: &amp;lt;descripción&amp;gt;
-
-[cuerpo (opcional)]
-
-[notas finales (opcional)]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Los tipos de commit directamente establecidos por la especificación son:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;fix: Se trata de una corrección de un bug. Este tipo de commit se relaciona con una nueva versión de parche.&lt;/li&gt;
-  &lt;li&gt;feat: Se trata de una nueva función o módulo. Este tipo de commits se relaciona con una nueva versión menor.&lt;/li&gt;
-  &lt;li&gt;BREAKING CHANGE: No es un tipo de commit sino una nota final. Siempre que se incluyan debe generarse una nueva versión mayor en la siguiente liberación.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Si se incluye un símbolo de admiración después del tipo de commit como de esta forma &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feat!&lt;/code&gt; significa que este commit introduce un cambio que rompe la compatibilidad con la versión anterior.&lt;/p&gt;
-
-&lt;p&gt;El &lt;strong&gt;ámbito&lt;/strong&gt; puede referirse a la base de código o módulo al que se aplicó el cambio.&lt;/p&gt;
-
-&lt;p&gt;Veamos algunos ejemplos:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;feat(core): Ahora podemos usar ARGON2i para cifrar las contraseñas
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fix!: Removemos la compatibilidad con SHA-1 debido a que no es seguro
-
-Se encontró que SHA-1 no es seguro debido a que se pueden fabricar colisiones y por lo tanto hemos removido el soporte en la plataforma
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;feat: Añadimos el soporte de Sal para todas las funciones de hasheo
-
-BREAKING CHANGE: Todas las firmas de función ahora requieren el parámetro `salt`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Básicamente en esto consisten los commits convencionales y si tu base de código los sigue, podrás usar herramientas para automatizar la creación de versiones semánticas y registros de cambios (changelog), ademas de mejorar drásticamente la información que se encuentra en los repositorios y cuándo sucedieron los cambios.&lt;/p&gt;
-
-&lt;p&gt;Puedes ver la especificación completa, más tipos de commits, ejemplos y las herramientas que te facilitarán la vida en &lt;a href=&quot;https://conventionalcommits.org/es/&quot;&gt;la página oficial en español&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Comunicar correctamente el estado de nuestros sistemas y módulos hacia nuestros usuarios finales es una tarea muy importante para los desarrolladores de software profesionales. Como podrás haber notado, para que esto tenga utilidad, el requisito previo es que exista documentación formal de tu software.&lt;/p&gt;
-
-&lt;p&gt;Espero que estas herramientas te ayuden a crear software que sea más fácil usar, mantener y más disfrutable tanto para ti como para tus usuarios finales.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;Aquí puedes ver por qué se llama una API a la interfaz que presenta una pieza de software a otra: &lt;a href=&quot;https://youtu.be/n8MxyHG0j3Q&quot;&gt;API’s con Hug&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="versionamiento" /><category term="git" /><category term="commits" /><summary type="html">Hablemos de cómo versionar tu código para beneficiar a tu equipo y a tus usuarios usando el sistema de vesionamiento semántico y los commits convencionales.</summary></entry><entry><title type="html">Algoritmos criptográficos: hashes seguros para alamcenar passwords</title><link href="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: hashes seguros para alamcenar passwords" /><published>2021-12-03T00:00:00-06:00</published><updated>2021-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html">&lt;p&gt;Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre &lt;em&gt;hashearla&lt;/em&gt;. Como aprendiste &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;en el artículo anterior&lt;/a&gt;, un hash es una función que impide recuperar el valor original ya que simplemente la información se pierde.&lt;/p&gt;
-
-&lt;p&gt;Los hashes seguros hacen casi imposible encontrar una colisión (que dos passwords te devuelvan un mismo hash), por lo que parecerían una buena solución para crear un valor único para cada usuario. Debido a que son deterministas, cuando el usuario te da su password, calculamos el hash de nuevo, lo comparamos con el hash almacenado y verificamos si coinciden. En este caso, el usuario está autenticado.&lt;/p&gt;
-
-&lt;p&gt;¿Pero qué hash puedes usar para hashear un password? Todos hemos escuchado &lt;em&gt;que no se debe usar MD5 para hashear passwords&lt;/em&gt;, pero la razón por la que se menciona que esto es un error normalmente no es la correcta. Se argumento que MD5 es un hash que está “roto”, ya que es posible romper su seguridad con menos esfuerzo computacional del que su tamaño requeriría. Esto es cierto, pero no es la razón principal por la que no deberías usar MD5 para passwords.&lt;/p&gt;
-
-&lt;p&gt;La verdadera razón por la que nunca debes usar MD5 para esto es que &lt;strong&gt;no está diseñado para esa función&lt;/strong&gt;, y puede ser atacado de manera sencilla y efectiva.&lt;/p&gt;
-
-&lt;p&gt;Hablemos de algunos tipos de ataques que pueden sufrir los sistemas de almacenamiento de información que usan un hash seguro normal para hashear sus passwords.&lt;/p&gt;
-
-&lt;h2 id=&quot;ataques-de-fuerza-bruta&quot;&gt;Ataques de fuerza bruta&lt;/h2&gt;
-
-&lt;p&gt;Un hash seguro que no presenta vulnerabilidades tiene la característica de que no hay una forma más inteligente de atacarlo que mediante probar todos los valores posibles de entrada. Por ejemplo, si sabemos que un sistema acepta letras y números y la mínima contraseña es de 6 carácteres, tendríamos que probar todas las combinaciones posibles de letras y números a partir de 6 carácteres.&lt;/p&gt;
-
-&lt;p&gt;Eso suena a que es mucho, sin embargo, con los hashes seguros no es un problema para los atacantes ya que estos hashes son muy eficientes y están pensados para correr lo más rápido posible.&lt;/p&gt;
-
-&lt;p&gt;Alguien con la suficiente motivación y paciencia podría lanzar un ataque de fuerza bruta con &lt;em&gt;hardware especializado&lt;/em&gt; y encontrar un password que coincida con el hash. Esto se puede hacer con hardware común como CPU’s  y GPU’s domésticos, que llegan a procesar cientos de miles de passwords &lt;strong&gt;por segundo&lt;/strong&gt;, o con hardware especializado en hashear (FPGA’s y ASIC’s).&lt;/p&gt;
-
-&lt;p&gt;Herramientas como &lt;a href=&quot;https://hashcat.net/hashcat/&quot;&gt;hashcat&lt;/a&gt; te permiten hacer este tipo de ataques, pero lo más interesante es que debido a que conocemos la naturaleza de la información, podemos dirigir el ataque de manera un poco más inteligente, usando diccionarios de palabras y contraseñas comunes, haciendo todavía más probable romper la seguridad de estos sistemas.&lt;/p&gt;
-
-&lt;p&gt;Repitamos: lo que permite este tipo de ataques son los objetivos de diseño de las funciones hash seguras: que sean rápidas, y eficientes en memoria. Esta es la primera razón por la que &lt;strong&gt;nunca debiste usar MD5&lt;/strong&gt; es esta. Pero, como podrás deducir, lo mismo aplica para cualquiera de familia SHA (SHA-1, SHA-2, SHA-3 y los que vengan), BLAKE, BLAKE2 y los que vengan. No importa que estas funciones sigan siendo seguras para otros usos.&lt;/p&gt;
-
-&lt;h2 id=&quot;ataques-con-tablas-arcoiris-rainbow-tables&quot;&gt;Ataques con tablas arcoiris (Rainbow Tables)&lt;/h2&gt;
-
-&lt;p&gt;Imagínate que eres un atacante que quiere descubrir los passwords de los usuarios de diferentes sitios y sabes que todos usan SHA-256. En vez de hacer una ataque de fuerza bruta cada vez, preparas una tabla con dos columnas: el hash y el password. En la columna de passwords pondrás valores que sabes que pueden servir de passwords a los usuarios.&lt;/p&gt;
-
-&lt;p&gt;Esto que acabamos de describir es una versión sencilla de una &lt;strong&gt;Rainbow table&lt;/strong&gt;, una colección de valores precalculados organizados para que, una vez teniendo el hash, puedas buscar el password correspondiente en la tabla. Se hace un intercambio de procesamiento por memoria. Las Rainbow Tables completas son un poco más complejas que lo que acabamos de describir, puedes leer más sobres ellas en este artículo: &lt;a href=&quot;https://www.ionos.com/digitalguide/server/security/rainbow-tables/&quot;&gt;Rainbow Tables&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Debido al mal uso de los passwords y de los algoritmos para hasheo seguro, existen rainbow tables para millones de valores de todos los algoritmos. Aunque siguen siendo una amenaza, las Rainbow tables están cayendo en desuso, en favor de otros métodos más modernos y aprovechándose del poder de cómputo actual.&lt;/p&gt;
-
-&lt;h2 id=&quot;protección-contra-ataques-a-hasheo-de-passwords&quot;&gt;Protección contra ataques a hasheo de passwords&lt;/h2&gt;
-
-&lt;p&gt;La forma de protegerse contra valores precalculados y ataques de diccionario es más o menos sencilla: antes de hashear el password, agrega un valor aleatorio extra que puedas recuperar fácilmente y añadir cada vez que verificas el password. Esto se conoce como &lt;strong&gt;salting&lt;/strong&gt;, siendo el valor aleatoria el &lt;strong&gt;salt&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Aunque es cierto que esto lo podrías hacer con cualquier algoritmo de hasheo seguro, se queda sin resolver el segundo problema: ¿Cómo nos protegemos contra ataques de fuerza bruta con hardware muy poderoso? Esto sólo se puede resolver de una forma: usando algoritmos que te obliguen a usar mucho procesamiento o mucha memoria, o ambos. Estas deben ser precisamente las metas de diseño de los algoritmos especializados en hasheo de passwords.&lt;/p&gt;
-
-&lt;p&gt;Hablemos de algunos de ellos y finalizarmos con el que deberías usar actualmente en 2021.&lt;/p&gt;
-
-&lt;h2 id=&quot;hashes-seguros-para-passwords&quot;&gt;Hashes seguros para passwords&lt;/h2&gt;
-
-&lt;p&gt;Como ya lo dijimos, estos hashes deben ayudarte con una cosa principal además de ser seguros criptográficamente: ser costos en proceamiento y/o memoria, lo que se traduce en lentitud.&lt;/p&gt;
-
-&lt;p&gt;Pero además, algunos de estos algoritmos te ayudana a “salar” el password de manera automática, lo que es una ventaja para reducir errores en la implementación de esta práctica.&lt;/p&gt;
-
-&lt;p&gt;En esta sección hablaremos de los algoritmos, cómo cumplen con estas características y si los puedes seguir usando.&lt;/p&gt;
-
-&lt;h3 id=&quot;pbkdf2&quot;&gt;PBKDF2&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ietf.org/rfc/rfc2898.txt&quot;&gt;PBKDF2&lt;/a&gt; - Es un acrónimo que significa “Password Based Key Derivation Function”, versión 2.0 y que básicamente aplica un algoritmo de hasheo seguro a una contraseña repetidas veces. Puedes configurar el número de iteraciones, el algoritmo de hasheo, el tamaño del resultado y te pide el &lt;em&gt;salt&lt;/em&gt; para funcionar. Fue usada por varios frameworks de desarrollo web como Django, pero actualmente no se considera segura porque aunque es exigente en cómputo para una computadora normal, es débil contra hardware especializado.&lt;/p&gt;
-
-&lt;h3 id=&quot;bcrypt&quot;&gt;bcrypt&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.usenix.org/legacy/event/usenix99/provos/provos.pdf&quot;&gt;bcrypt&lt;/a&gt; - Es un algoritmo diseñado específicamente con el objetivo de estar preparado para el mejoramiento que el hardware va teniendo, ya que tiene una “dificultad” configurable. Te provee &lt;strong&gt;automáticamente de un salt seguro&lt;/strong&gt;, por lo que no recaerá en ti la responsabilidad de conseguirlo como en PBKDF2. Está basado en blowfish, otro algoritmo de cifrado que ha permanecido seguro. Bcrypt fue presentado en 1999 y sigue siendo considerado más o menos seguro, su recomendación está en duda ya que es posible atacarlo con hardware especializado y de bajo costo. &lt;a href=&quot;https://www.usenix.org/system/files/conference/woot14/woot14-malvoni.pdf&quot;&gt;Este estudio de 2011&lt;/a&gt; explica como se puede atacar con hardware especializado en cómputo paralelo y predijo muy bien que bcrypt no permanecería super seguro por mucho tiempo.&lt;/p&gt;
-
-&lt;h3 id=&quot;scrypt&quot;&gt;scrypt&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc7914&quot;&gt;scrypt&lt;/a&gt; - Es una función diseñada para cubrir las carencias de PBKDF2 y bcrypt. Es tanto computacionalmente intensiva como pesada en memoria, por lo que no es tan fácil atacarla con hardware especializado. Es un función de muy reciente presentación, &lt;a href=&quot;https://www.tarsnap.com/scrypt/scrypt.pdf&quot;&gt;Colin Percival la presentó en 2009&lt;/a&gt;. Es una secuencia de funciones pesadas en memoria que impide que sea atacada fácilmente con GPU’s. FPGA’s y ASIC’s. Es una función que puedes usar conseguridad todavía ya que no se han encontrado ataques efectivos contra ella. Al igual que bcrypt, &lt;em&gt;sala&lt;/em&gt; (usa un salt) automáticamente, lo que le facilita la vida al desarrollador.&lt;/p&gt;
-
-&lt;h3 id=&quot;argon2&quot;&gt;Argon2&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/P-H-C/phc-winner-argon2/blob/master/argon2-specs.pdf&quot;&gt;Argon2&lt;/a&gt; - Es la función más avanzada y con mejores garantías para generación de hashes resistentes a ataques con fuerza bruta. Es la ganadora del &lt;a href=&quot;https://www.password-hashing.net/&quot;&gt;Password Hashing Competition&lt;/a&gt; en 2015. Se dice que Argon2 es el estado del arte en lo que se refiere a hashing de passwords. Tiene tres variaciones principales: Argond2d, Argon2i y Argon2id.&lt;/p&gt;
-
-&lt;p&gt;¿Cuándo usar cada una?&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Argon2d&lt;/strong&gt;  es más rápida pero al mismo tiempo está mejor protegida contra ataques de fuerza bruta de hardware especializado, por la forma en la que usa la memoria, sin embargo, es más vulnerable a ataques &lt;a href=&quot;https://www.rambus.com/blogs/side-channel-attacks/&quot;&gt;side-channel&lt;/a&gt;. Es recoemndada cuando tus atacantes no tengan posibilidad de realizar estos ataques, como en servidores de backend y para generación criptomonedas.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Argon2i&lt;/strong&gt; es más lenta, más computacionalmente intensiva y resistente contra side-channel attacks, es la recomendada para hashear passwords. Da varias “pasadas” a los argumentos de entradda, por lo que es más dificil de atacar.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Argon2id&lt;/strong&gt; es un híbrido entre estas las dos variaciones anteriores, protegida parcialmente contra ataques side-channel al mismo tiempo que más computacionalmente intensiva que Argon2d. La recomendación es que si estás en incertidumbre uses Argon2d.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Argon2 permite configurar:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Memoria usada: mientras más memoria se use, más resistente será el hash y menos vulnerable será a ataques de fuerza bruta.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Número de iteraciones sobre la memororia. Esto lo hace más computacionalmente intensivo, de igual forma haciéndolo más dificil de atacar, haciendo la generación de hashes más lenta.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Grado de paralelismo. Es el número de hilos que se usan para generar el hash, el tiempo de ejecución variará dependiendo de la configuración.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Tamaño del hash, el salt y el tag. Esto también varía el grado de resistencia de tus hashes.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;En el artículo &lt;a href=&quot;https://www.twelve21.io/how-to-choose-the-right-parameters-for-argon2/&quot;&gt;“Cómo escoger los parámetros de Argon2”&lt;/a&gt; se describe una forma de escoger los parámetros de Argon2.&lt;/p&gt;
-
-&lt;p&gt;Finalmente, aunque no incluye la generación del salt en el algoritmo mismo, las implementaciones de Argon2 incluyen una función de generación de salt automática para que no tengas que hacerlo tú.&lt;/p&gt;
-
-&lt;h3 id=&quot;nota-sobre-funciones-de-derivación-de-llaves-key-derivation-functions&quot;&gt;Nota sobre Funciones de Derivación de Llaves (Key Derivation Functions)&lt;/h3&gt;
-
-&lt;p&gt;Si lees algunas de las especificaciones de los algoritmos de arriba, probablemente te encuentres mucho con el término &lt;strong&gt;KDF&lt;/strong&gt; o Key Derivation Function. ¿Qué es eso? ¿No estábamos hablando de funciones hash?&lt;/p&gt;
-
-&lt;p&gt;Las KDF’s son funciones hash usadas para generar un cadena pseudo-aleatoria de bytes, que puede ser usada como una llave para cifrado, basadas en uno o varios valores de entrada. Las KDF’s son un caso especializados de las funciones hash y que pueden entregar resultados de tamaño variable y ya que los algoritmos usados aquí admiten varios valores y pueden entregar resultados variables, se consideran funciones de derivación de llaves o KDF’s.&lt;/p&gt;
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Aunque ninguna de las funciones mencionadas aquí es lo que se diría &lt;em&gt;fácil&lt;/em&gt; de romper, es recomendable que no uses PBKDF2 o bcrypt si quieres tener un buen margen de seguridad y estar preparado para el futuro y para el mejoramiento de constante del hardaware. Si estas haciendo una aplicación lo más recomendable es que uses por lo menos scrypt, pero idealmente Argon2i, que es más fuerte que scrypt usando los mismos parámetros de esfuerzo. Esto es de esencial importancia sobre todo si estás haciendo un sistema en el que los atacantes puedan tener incentivos y recursos para robar información.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="hash" /><category term="password" /><summary type="html">Muchos desarrolladores cometen el error de usar un hash criptográfico seguro como SHA-256 para almacenar passwords en la base de datos. Veamos por qué no es conveniente.</summary></entry><entry><title type="html">Algoritmos criptográficos: ¿Qué es un Hash?</title><link href="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: ¿Qué es un Hash?" /><published>2021-12-02T00:00:00-06:00</published><updated>2021-12-02T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">&lt;p&gt;Dentro del mundo del desarrollo se escucha bastante sobre &lt;strong&gt;funciones hash&lt;/strong&gt; y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-es-un-función-hash&quot;&gt;¿Qué es un función hash?&lt;/h2&gt;
-
-&lt;p&gt;La idea y el nombre de un función hash viene de la cocina: &lt;em&gt;hash&lt;/em&gt; se traduce literalmente como “picadillo”, y se usa precisamente porque eso hace una función hash con los datos que le pasemos.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_500/v1638503321/melissa-walker-horn-ufs4w3Jn73I-unsplash_q4m1qy.jpg&quot; alt=&quot;Un platillo que parece picadillo&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Las funciones hash reciben una entrada y normalmente te devuelven un valor de tamaño fijo. Estos datos parecen “picadillo”, es imposible para los humanos distinguir los argumentos que recibió &lt;em&gt;a partir de la salida&lt;/em&gt;. Las funciones hash más simples &lt;em&gt;mapean&lt;/em&gt; los valores de entrada a un número pequeño, &lt;a href=&quot;https://www.cs.hmc.edu/~geoff/classes/hmc.cs070.200101/homework10/hashfuncs.html&quot;&gt;aquí puedes ver algunos ejemplos&lt;/a&gt;. Estas funciones las puedes considerar como un mapeo de valores (con posibilidades infinitas) a un conjunto de valores finitos. Por eso, una función hash de esta naturaleza se considera como una relación del valor de entrada con su “contenedor” o “bucket” como le dirían en inglés.&lt;/p&gt;
-
-&lt;p&gt;Las funciones hash son como navajas suizas, ya que pueden ser utilizadas para ocultar datos, para crear estructuras de datos llamadas &lt;strong&gt;hash tables&lt;/strong&gt;, para comparar datos, para crear firmas digitales (verificación de integridad) y muchas otras cosas. Tienen muchos usos dentro y fuera de la criptografía.&lt;/p&gt;
-
-&lt;p&gt;Existen diferentes tipos de funciones hash para los diferentes usos, las características que normalmente verás en hashes son:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Entregan un resultado de tamaño fijo sin importar el tamaño de la entrada&lt;/li&gt;
-  &lt;li&gt;Son rápidas relativamente&lt;/li&gt;
-  &lt;li&gt;Son deterministas, es decir, siempre que le demos el mismo valor, dará el mismo resultado&lt;/li&gt;
-  &lt;li&gt;Es imposible recuperar la entrada original, porque se pierden datos&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Algo que contaría como una función hash podría ser tan sencilla como obtener el sobrante de una división entera para los números enteros:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hash_simple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Esta función cumple con todas las características de las que hablamos arriba, y es una función hash &lt;strong&gt;no criptográfica&lt;/strong&gt; o &lt;strong&gt;no segura&lt;/strong&gt;, es decir, no se puede confiar en ella para proteger información.&lt;/p&gt;
-
-&lt;p&gt;Algunos ejemplos de funciones hash no criptográficas son:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.rs/seahash/2.0.0/seahash/&quot;&gt;SeaHash&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/sindresorhus/fnv1a&quot;&gt;fnv1a&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;La función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash&lt;/code&gt; de Python o de tu lenguaje preferido&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ahora hablemos de qué características tiene una función hash criptográfica segura.&lt;/p&gt;
-
-&lt;h2 id=&quot;funciones-hash-criptográficas&quot;&gt;Funciones hash criptográficas&lt;/h2&gt;
-
-&lt;p&gt;La característica principal de una función hash segura es que su resultado es completamente impredecible, no revela ningún tipo de información sobre la entrada original, tanto para los humanos como para &lt;em&gt;una computadora&lt;/em&gt;, es resistente a análisis estadísticos.&lt;/p&gt;
-
-&lt;p&gt;Para asegurarnos de esto, una función hash segura cumple con tres características formales:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Es resistente a encontrar una &lt;strong&gt;preimagen&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Es resistente a encontrar una &lt;strong&gt;segunda preimagen&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Es resistente a &lt;strong&gt;colisiones&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;¿Qué es eso de las &lt;strong&gt;&lt;em&gt;preimágenes&lt;/em&gt;&lt;/strong&gt;? En criptografía se llama &lt;strong&gt;preimagen&lt;/strong&gt; a todos los valores que le podemos dar a una función hash. La &lt;strong&gt;imagen&lt;/strong&gt; es el resultado de aplicar la función hash a una &lt;em&gt;preimagen&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Esta ilustración lo puede dejar un poco más claro:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1638509732/Ilustracio%CC%81n_sin_ti%CC%81tulo_9_qrerag.png&quot; alt=&quot;Diagrama sobre imágenes y preimágnes&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ahora hablemos sobre lo que significa cada punto de la seguridad.  El primer punto se refiere a que dada una &lt;strong&gt;imagen&lt;/strong&gt; o un &lt;em&gt;hash&lt;/em&gt;, como normalmente le llamamos al resultado de una función hash, es imposible encontrar la entrada original, o algún otro valor que resulte en ese hash. Si este punto no se cumple, los siguientes dos tampoco.&lt;/p&gt;
-
-&lt;p&gt;El segundo punto, la resistencia a la segunda preimagen, es que dado un valor de entrada (praimagen) y su hash correspondiente (imagen), es imposible encontrar otro valor de entrada que se resulte en el mismo hash, o la misma imagen.&lt;/p&gt;
-
-&lt;p&gt;El tercer punto, &lt;strong&gt;la resistencia a colisiones&lt;/strong&gt; se refiere a que es cerca de imposible encontrar (o fabricar) dos valores de entrada que den el mismo hash (dos preimágenes que resulten en la misma imagen).&lt;/p&gt;
-
-&lt;p&gt;En resumen: para un hash seguro &lt;strong&gt;es casi imposible encontrar dos valores que den el mismo hash, teniendo ejemplos de hasheado o no&lt;/strong&gt;, así como encontrar el valor que generó cierto hash.&lt;/p&gt;
-
-&lt;h2 id=&quot;algunas-funciones-hash-criptográficamente-seguras&quot;&gt;Algunas funciones hash criptográficamente seguras&lt;/h2&gt;
-
-&lt;p&gt;Las dos funciones hash criptográficas más populares son &lt;a href=&quot;https://es.wikipedia.org/wiki/MD5&quot;&gt;MD5&lt;/a&gt; y &lt;a href=&quot;https://es.wikipedia.org/wiki/SHA-1&quot;&gt;SHA-1&lt;/a&gt;. Actualmente (2021) a ambas se les han encontrado vulnerabilidades, sobre todo en el campo de las colisiones, para ambas es posible generar colisiones de manera arbitraria.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;“SHA”&lt;/em&gt; es un acrónimo que significa Algoritmo de Hasheo Seguro (“Secure Hash Algorithm”) y es un “título” dado a los algoritmos de hasheo que son seleccionados por la &lt;strong&gt;NIST&lt;/strong&gt; (National Institute of Standards and Technology de Estados Unidos).&lt;/p&gt;
-
-&lt;p&gt;Ahora sí hablemos de algunas funciones hash criptográficas todavía consideradas seguras:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://es.wikipedia.org/wiki/SHA-2&quot;&gt;SHA-2&lt;/a&gt;. SHA-2 es la familia sucesora de SHA-1, y consiste de 4 funciones hash que difieren en el tamaño de bits de su salida: SHA-224, SHA-256, SHA-384 y SHA-512. Las dos más usadas son SHA-256 y SHA-512. Hasta 2021 no se le han encontrado vulnerabilidades que hagan que sean no recomendadas. La desventaja es que la familia SHA-2 es más lenta que SHA-1.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://es.wikipedia.org/wiki/SHA-3&quot;&gt;SHA-3&lt;/a&gt;. SHA-3 es la cuarta versión de SHA y el algoritmo se escogió de un concurso organizado por la NIST en 2007. En 2012 se anunció que el algoritmo seleccionado era &lt;a href=&quot;https://en.wikipedia.org/wiki/Keccak&quot;&gt;Keccak&lt;/a&gt;, un algoritmo muy diferente de SHA-1 y SHA-2. Esta familia de algoritmos también define cuatro funciones hash, SHA3-224, SHA3-256, SHA3-384 y SHA3-512. Pero además define 2 algoritmos extra que pueden dar resultados variables. Puedes ver la página del equipo de Keccak en &lt;a href=&quot;https://keccak.team/keccak.html&quot;&gt;Keccak Team&lt;/a&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.blake2.net/&quot;&gt;BLAKE2&lt;/a&gt;. Es un algoritmo sucesor de BLAKE, uno de los participantes en el concurso por SHA-3. BLAKE2 es mucho más rápido que Keccak, casi igual de seguro, pero más parecido a SHA-2, que es la razón por la que no se eligió a BLAKE como el SHA-3. Es una muy buena opción para usarse en caso de que requieras un función hash segura y que la velocidad sea muy importante, ya que es más rápida incluso que SHA-1.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Como puedes ver, tenemos para escoger entre las funciones hash todavía consideradas seguras.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-función-hash-usar&quot;&gt;¿Qué función hash usar?&lt;/h2&gt;
-
-&lt;p&gt;Ahora que tenemos un sucesor de SHA-2, la que deberías usar en la mayoría de tus proyectos es &lt;strong&gt;SHA3-256&lt;/strong&gt;, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2, que también es muy popular y está implementada en muchos lenguajes de programación.&lt;/p&gt;
-
-&lt;h2 id=&quot;sirven-para-guardar-passwords&quot;&gt;¿Sirven para guardar passwords?&lt;/h2&gt;
-
-&lt;p&gt;Un error común es pensar que estas funciones pueden servir para guardar passwords de forma segura en nuestras aplicaciones. En el siguiente artículo hablaremos de por qué no sirven para eso y qué otras funciones podrías usar.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía," /><category term="hash," /><category term="cifrado" /><summary type="html">Continuemos con las bases de la criptogrfía para desarrolladores, hablemos de lo que es una función hash y cómo puede servirte en tus aplicaciones.</summary></entry></feed>
+&lt;p&gt;Finalmente, la mejor opción para usar un PRNG es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="prng" /><category term="criptografía" /><category term="randomness" /><category term="aleatoriedad" /><summary type="html">Los números aleatorios son muy importantes para el desarrollo, sobre todo para la seguridad de la información y la criptografía.</summary></entry></feed>

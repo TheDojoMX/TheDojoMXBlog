@@ -347,18 +347,6 @@ var store = [{
         "url": "/2021/03/29/recursos-para-aprender-diseno-de-sistemas.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1617037690/joel-filipe-jU9VAZDGMzs-unsplash_wzkvza.jpg"
       },{
-        "title": "Creando un API con GO: Usando Beego",
-        "excerpt":"Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde las exigencias respecto a lo que deben soportar los sistemas en cuanto a concurrencia y escalabilidad son fuertes. Para hacer la prueba vamos a crear un proyecto más o menos interesante: vamos a...","categories": [],
-        "tags": [],
-        "url": "/2021/03/31/creando-un-api-con-go-usando-beego.html",
-        "teaser": null
-      },{
-        "title": "Ejercicio: programando un perceptrón",
-        "excerpt":"En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.   Si no tienes claro lo que es un perceptrón, puedes leer nuestro artículo anterior.  El conjunto de datos   Aproximando la función   Resultado  ","categories": [],
-        "tags": ["machine-learning","ia"],
-        "url": "/2021/04/10/ejercicio-programando-un-perceptron.html",
-        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1618030907/arseny-togulev-MECKPoKJYjM-unsplash_nakl3a.jpg"
-      },{
         "title": "Fuentes no convencionales de aprendizaje",
         "excerpt":"Cada quien tiene su forma de aprender. A algunas personas les funcionan mejor formas visuales y no convencionales. En este artículo te vamos a presentar algunos de los recursos que hemos encontrado que explican ideas y temas relacionados con la programación con un formato no convencional. Te lo explico con...","categories": [],
         "tags": ["recursos","aprendizaje","programación"],
@@ -388,12 +376,6 @@ var store = [{
         "tags": ["explicaciones","conocimiento","desarrollo"],
         "url": "/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:16,w_300/v1626756313/daniele-franchi-g2fJ7d7eKSM-unsplash_mogbm1.jpg"
-      },{
-        "title": "Análisis de los principios SOLID: Principio de Responsabilidad Única",
-        "excerpt":"En esta serie de artículos vamos a hablar sobre los cinco principios SOLID, debido a que son algo que se dice que todo programador que quiera crear código mantenible y “limpio” debe saber y usar. La estructura de los artículos llevará la siguiente forma: Explicación del principio Ejemplos de código...","categories": [],
-        "tags": [],
-        "url": "/2021/07/30/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html",
-        "teaser": null
       },{
         "title": "La Importancia de los Estándares de Código",
         "excerpt":"Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad. Para las organizaciones...","categories": [],
@@ -456,14 +438,44 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639259079/michael-dziedzic-dSyhpTGhNHg-unsplash_mcsqsn.jpg"
       },{
         "title": "La regla del 'Cero, Uno o Infinito'",
-        "excerpt":"La regla del ‘Cero, Uno o Infinito’ es una guía para que creemos software más usable.  ","categories": [],
-        "tags": [],
+        "excerpt":"La regla del ‘Cero, Uno o Infinito’ es una guía para diseñar software que sea más fácil de usar, tanto para otros desarrolladores como para los usuarios finales. La regla en inglés es: “Allow none of foo, one of foo, or any number of foo.” - Willem van der Poel...","categories": [],
+        "tags": ["zero-one-infinity,","design,","reglas"],
         "url": "/2021/12/10/la-regla-del-cero-uno-o-infinito.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639259189/michael-dziedzic-uZr0oWxrHYs-unsplash_koqk3a.jpg"
       },{
         "title": "Criptografía VS computación cuántica",
-        "excerpt":"La computación cuántica es una tecnología muy prometedora que lleva décadas en gestación y cada vez la vemos más cerca. Una las cosas que más le llama la atención a las personas  ","categories": [],
+        "excerpt":"“If you are not completely confused by quantum mechanics, you do not understand it.” - Richard Feynman La computación cuántica es una tecnología muy prometedora que lleva décadas en gestación y cada vez la vemos más cerca. Una de las cosas que más llama la atención es la capacidad de...","categories": [],
         "tags": ["criptografía,","quantum,","matemáticas"],
         "url": "/2021/12/11/criptografia-vs-computacion-cuantica.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639258127/anton-maksimov-juvnsky-wrkNQmhmdvY-unsplash_zfe4zr.jpg"
+      },{
+        "title": "Ejercicio: programando un perceptrón",
+        "excerpt":"En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos. Si no tienes claro lo que es un perceptrón, puedes leer nuestro artículo anterior. El conjunto de datos Recuerda que para poder crear...","categories": [],
+        "tags": ["machine-learning","ia"],
+        "url": "/2021/12/12/ejercicio-programando-un-perceptron.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1618030907/arseny-togulev-MECKPoKJYjM-unsplash_nakl3a.jpg"
+      },{
+        "title": "Tipos de algoritmos criptográficos: cifrados de flujo",
+        "excerpt":"Ya hablamos de lo que es la criptografía y del tipo de cifrado más fuerte y seguro que existe en la criptografía: los cifrados de bloque. Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra...","categories": [],
+        "tags": ["cifrado","cypher","flujo","aes"],
+        "url": "/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639633812/solen-feyissa-IfWFKG3FXE4-unsplash_dvnbjc.jpg"
+      },{
+        "title": "Creando un API con GO: Usando Beego",
+        "excerpt":"Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde las exigencias respecto a lo que deben soportar los sistemas en cuanto a concurrencia y escalabilidad son fuertes. Para hacer la prueba vamos a crear un proyecto más o menos interesante: vamos a...","categories": [],
+        "tags": [],
+        "url": "/2021/12/13/creando-un-api-con-go-usando-beego.html",
+        "teaser": null
+      },{
+        "title": "Análisis de los principios SOLID: Principio de Responsabilidad Única",
+        "excerpt":"En esta serie de artículos vamos a hablar sobre los cinco principios SOLID. Se dice que todo programador que quiera crear código mantenible y “limpio” debe saber y usar. La estructura de los artículos llevará la siguiente forma: Explicación del principio Ejemplos de código Contraejemplos (si existen) Críticas y alternativas...","categories": [],
+        "tags": [],
+        "url": "/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html",
+        "teaser": null
+      },{
+        "title": "HTTP 1.1, HTTP/2 y HTTP/3",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/2021/12/15/http-1-1-http-2-y-http-3.html",
+        "teaser": null
       }]
