@@ -2,7 +2,7 @@
 title: "Criptografía VS computación cuántica"
 date: 2021-12-11
 author: Héctor Patricio
-tags: criptografía, quantum, matemáticas
+tags: criptografía quantum matemáticas
 comments: true
 excerpt: "Se ha escuchado mucho sobre que la criptografía está completamente acabada si la computación cuántica tiene éxito. Entendamos si esto es verdad."
 header:

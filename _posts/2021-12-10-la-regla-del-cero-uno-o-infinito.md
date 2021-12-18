@@ -2,7 +2,7 @@
 title: "La regla del 'Cero, Uno o Infinito'"
 date: 2021-12-10
 author: Héctor Patricio
-tags: zero-one-infinity, design, reglas
+tags: zero-one-infinity design reglas
 comments: true
 excerpt: "A veces necesitamos reglas que nos ayuden a desarrollar mejor software. La regal de 'Cero, Uno o Infinito' es una guía para que creemos software más usable."
 header:
