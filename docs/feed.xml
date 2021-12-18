@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-18T01:36:20-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Criptografía VS computación cuántica</title><link href="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html" rel="alternate" type="text/html" title="Criptografía VS computación cuántica" /><published>2021-12-11T00:00:00-06:00</published><updated>2021-12-11T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-18T01:40:41-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra con los cifrados de &lt;em&gt;flujo&lt;/em&gt; o &lt;strong&gt;stream ciphers&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;definición-de-cifrado-de-flujo&quot;&gt;Definición de cifrado de flujo&lt;/h2&gt;
+
+&lt;p&gt;La mejor manera de entenderlos es en &lt;em&gt;contraste&lt;/em&gt; con los cifrados de bloque: mientras los cifrados de bloque toman pedazos de contenido de tamaño fijo y los cifran, aplicando diferentes técnicas para abarcar todo el contenido, los cifrados de flujo toman &lt;strong&gt;contenido de tamaño arbitrario y lo cifran&lt;/strong&gt;, bit por bit, devolviéndote un texto cifrado del mismo tamaño.&lt;/p&gt;
+
+&lt;p&gt;Son muy útiles cuando no sabes el tamaño del contenido que vas a cifrar o cuando van ir llegando de manera continua sin que sepas exactamente cuánto y cada cuando, justamente como un &lt;strong&gt;flujo de informació&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Los cifrados de flujo se consideraban “cifrados de hardware” porque eran más ligeros que los de bloque y se podían implementar en menos espacio en un chip, pero ahora tanto los cifrados de bloque como los de flujo son adecuados para implementarse en hardware.&lt;/p&gt;
+
+&lt;h2 id=&quot;funcionamiento&quot;&gt;Funcionamiento&lt;/h2&gt;
+
+&lt;p&gt;Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación &lt;strong&gt;XOR&lt;/strong&gt;, también conocida como &lt;strong&gt;suma módulo 2&lt;/strong&gt;. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aleatoria se le conoce como el &lt;em&gt;keystream&lt;/em&gt; o &lt;em&gt;cadena de bits de clave&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;La parte más importante es entonces el generador del &lt;em&gt;keystream&lt;/em&gt;, y que sea capaz de volver a generar los mismos bits pseudo-aleatorios para descifrar.&lt;/p&gt;
+
+&lt;p&gt;Un cifrado de flujo normalmente utiliza una llave y un &lt;strong&gt;nonce&lt;/strong&gt;, un número usado una única vez con esa llave.&lt;/p&gt;
+
+&lt;p&gt;A muy alto nivel, los cifrados de flujo pueden trabajar de dos formas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Mediante mantener un estado secreto&lt;/strong&gt;. Después de haber sido inicializados con una llave y un nonce, el algoritmo mantiene un estado interno que se va actualizando en cada nueva llamada.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mediante un contador&lt;/strong&gt;. Este tipo de algoritmos recibe a parte de la llave y el nonce, un contador que se incrementa en cada llamada, de esta manera no es necesario mantener un estado interno secreto.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ejemplos-de-cifrados-de-flujo&quot;&gt;Ejemplos de cifrados de flujo&lt;/h2&gt;
+
+&lt;p&gt;Veamos algunos ejemplos de cifrados de flujo, sus características y sus usos, así como qué tan seguros son.&lt;/p&gt;
+
+&lt;h3 id=&quot;rc4&quot;&gt;RC4&lt;/h3&gt;
+
+&lt;p&gt;Es el cifrado de software que se usaba para la comunicación entre los routers WI-FI que usaban WEP y tus dispositivos. También se usaba en las comunicaciones TLS. Fue diseñado por el mismo inventor de MD5, &lt;a href=&quot;https://people.csail.mit.edu/rivest/&quot;&gt;Ron Rivest&lt;/a&gt;. Trivia: RC significaba originalmente: “&lt;strong&gt;R&lt;/strong&gt;ons &lt;strong&gt;C&lt;/strong&gt;ode”. Se conocen ataques contra el cifrado y sobre todo sobre sus implementaciones, pero se sigue usando, así que ten mucho cuidado cuando los dispositivos que usas te ofrezcan configurarlo (como en el caso de los routers con “seguridad” WEP).&lt;/p&gt;
+
+&lt;h3 id=&quot;a51&quot;&gt;A5/1&lt;/h3&gt;
+
+&lt;p&gt;Fue el cifrado de flujo de hardaware de que se usaba para cifrar las comunicaciones inalámbricas 2G. Se encontraron vulnerabilidades en él, al principio de la década de los 2000 y ahora se puede descifrar completamente.&lt;/p&gt;
+
+&lt;h2 id=&quot;grain-128a&quot;&gt;Grain-128a&lt;/h2&gt;
+
+&lt;p&gt;Es uno de los cifrados de flujo recomendados por la &lt;a href=&quot;http://www.ecrypt.eu.org/stream/project.html&quot;&gt;´EAM competition&lt;/a&gt;,
+usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementado en hardware.&lt;/p&gt;
+
+&lt;p&gt;Es seguro todavía y usado en sistemas de hardware de bajo presupuesto que requieran un cifrado ligero.&lt;/p&gt;
+&lt;h3 id=&quot;salsa20&quot;&gt;Salsa20&lt;/h3&gt;
+
+&lt;p&gt;Es un cifrado de flujo, orientado a software que también fue recomendado por la ´EAM competition. Tiene una implementación sencilla, lo que lo ha hecho popular. Usa una llave, un nonce y un contador para generar el flujo de cifrado.&lt;/p&gt;
+
+&lt;p&gt;Aplica una serie de transoformaciones en “rounds” y tiene tres variaciones, dependiendo del nivel de seguridad necesario y la velocidad que deseemos: Salsa20 (20 rounds), Salsa20/12 (12 rounds), Salsa20/8 (8 rounds), siendo el de 8 rounds el que menos seguridad  ofrece. Hay un ataque teórico contra Salsa20/8 que reduce su seguridad a 2^251 operaciones, todavía imposible de llevar a la práctica.&lt;/p&gt;
+
+&lt;h3 id=&quot;aes-ctr&quot;&gt;AES-CTR&lt;/h3&gt;
+
+&lt;p&gt;Este es un cifrado de bloque disfrazado de cifrado de flujo, como diría JP Aumasson, el autor de “Serious Cryptography”. Es el cifrado AES usado en &lt;strong&gt;Counter Mode&lt;/strong&gt; o &lt;strong&gt;modo contador&lt;/strong&gt;, que ya explicamos en el &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;artículo sobre los cifrados de bloque y sus modos de operación&lt;/a&gt;. Cualquier cifrado de bloque que pueda ser usado en modo &lt;strong&gt;counter&lt;/strong&gt; se comportará como un cifrado de flujo.&lt;/p&gt;
+
+&lt;p&gt;La desventaja de esto es que normalmente queremos que los cifrados de flujo sean ligeros y rápidos y la velocidad de esta implementación dependerá en gran medida del cifrado que se use.&lt;/p&gt;
+
+&lt;h2 id=&quot;evitando-errores&quot;&gt;Evitando errores&lt;/h2&gt;
+
+&lt;p&gt;Si estás usando un cifrado de flujo, &lt;strong&gt;debes evitar en todo momento reusar el nonce&lt;/strong&gt;, recuerda que la única razón de existencia del &lt;em&gt;nonce&lt;/em&gt; es ser usado una única vez con la misma llave. Esta es la forma más fácil de usar mal los cifrados de flujo, y elimina completamente la seguridad teórica que puedan ofrecer.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión-y-aplicaciones&quot;&gt;Conclusión y aplicaciones&lt;/h2&gt;
+
+&lt;p&gt;Los cifrados de flujo actualmente son seguros (Salsa20, Grain-128a y  AES-CTR) y los puedes usar con confianza siempre que requieras cifrar datos de longitud desconocida o que llega (o se va) con un flujo de información.&lt;/p&gt;
+
+&lt;p&gt;Evita reutilizar el Nonce, el counter y elige una llave segura, lo más aleatoria posible y estarás listo para usarlos en cualquier desarrollo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="cifrado" /><category term="cypher" /><category term="flujo" /><category term="aes" /><summary type="html">Ya hemos hablado en este blog sobre qué es la criptografía, los cifrados de bloque y ahora ha llegado la hora de hablar de cifrados de flujo. Veamos qué son y para qué sirven.</summary></entry><entry><title type="html">Criptografía VS computación cuántica</title><link href="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html" rel="alternate" type="text/html" title="Criptografía VS computación cuántica" /><published>2021-12-11T00:00:00-06:00</published><updated>2021-12-11T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html">&lt;blockquote&gt;
   &lt;p&gt;“If you are not completely confused by quantum mechanics, you do not understand it.” - Richard Feynman&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -95,7 +160,7 @@
 
 &lt;p&gt;Ciertamente, la seguridad de la criptografía simétrica se ve menguada por el poder de cómputo y los algoritmos cuánticos, pero no lo suficiente para darla por perdida, sino que bastará con fortalecerla con el mismo poder de cómputo cuántico y &lt;strong&gt;aumentando el tamaño de las llaves&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Finalmente, los investigadores ya están trabajando en formas para sustituir lo que se va a romper.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía," /><category term="quantum," /><category term="matemáticas" /><summary type="html">Se ha escuchado mucho sobre que la criptografía está completamente acabada si la computación cuántica tiene éxito. Entendamos si esto es verdad.</summary></entry><entry><title type="html">La regla del ‘Cero, Uno o Infinito’</title><link href="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html" rel="alternate" type="text/html" title="La regla del ‘Cero, Uno o Infinito’" /><published>2021-12-10T00:00:00-06:00</published><updated>2021-12-10T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html">&lt;p&gt;La regla del ‘Cero, Uno o Infinito’ es una guía para diseñar software que sea más fácil de usar, tanto para otros desarrolladores como para los usuarios finales. La regla en inglés es:&lt;/p&gt;
+&lt;p&gt;Finalmente, los investigadores ya están trabajando en formas para sustituir lo que se va a romper.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="quantum" /><category term="matemáticas" /><summary type="html">Se ha escuchado mucho sobre que la criptografía está completamente acabada si la computación cuántica tiene éxito. Entendamos si esto es verdad.</summary></entry><entry><title type="html">La regla del ‘Cero, Uno o Infinito’</title><link href="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html" rel="alternate" type="text/html" title="La regla del ‘Cero, Uno o Infinito’" /><published>2021-12-10T00:00:00-06:00</published><updated>2021-12-10T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html">&lt;p&gt;La regla del ‘Cero, Uno o Infinito’ es una guía para diseñar software que sea más fácil de usar, tanto para otros desarrolladores como para los usuarios finales. La regla en inglés es:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;“Allow none of foo, one of foo, or any number of foo.” - Willem van der Poel&lt;/p&gt;
@@ -155,7 +220,7 @@
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Aprender principios de diseño de software te ayudará a crear mejores sistemas que puedan ser usados más fácilmente tanto por otros desarrolladores como por usuario. Espero que este pequeño ejemplo te lleve a aprender otros principios que puedas aplicar en tu trabajo diario. Déjanos un comentario si quieres que lo platiquemos más profundamente o con otros ejemplos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="zero-one-infinity," /><category term="design," /><category term="reglas" /><summary type="html">A veces necesitamos reglas que nos ayuden a desarrollar mejor software. La regal de 'Cero, Uno o Infinito' es una guía para que creemos software más usable.</summary></entry><entry><title type="html">Cómo convertirte en un mago programando</title><link href="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html" rel="alternate" type="text/html" title="Cómo convertirte en un mago programando" /><published>2021-12-09T00:00:00-06:00</published><updated>2021-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html">&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;wizardzine&lt;/a&gt; gratuito &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a wizard”&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Aprender principios de diseño de software te ayudará a crear mejores sistemas que puedan ser usados más fácilmente tanto por otros desarrolladores como por usuario. Espero que este pequeño ejemplo te lleve a aprender otros principios que puedas aplicar en tu trabajo diario. Déjanos un comentario si quieres que lo platiquemos más profundamente o con otros ejemplos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="zero-one-infinity" /><category term="design" /><category term="reglas" /><summary type="html">A veces necesitamos reglas que nos ayuden a desarrollar mejor software. La regal de 'Cero, Uno o Infinito' es una guía para que creemos software más usable.</summary></entry><entry><title type="html">Cómo convertirte en un mago programando</title><link href="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html" rel="alternate" type="text/html" title="Cómo convertirte en un mago programando" /><published>2021-12-09T00:00:00-06:00</published><updated>2021-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html">&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;wizardzine&lt;/a&gt; gratuito &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a wizard”&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Espero que estas recomendaciones te dejen reflexionando y que termines con ganas de leer el &lt;em&gt;wizardzine&lt;/em&gt; completo. Los pongo en el orden que personalmente me parecen más impactantes, pero para ti puede ser diferente, por lo que te recomiendo que lo leas y medites por tu cuenta.&lt;/p&gt;
 
@@ -751,96 +816,4 @@ BREAKING CHANGE: Todas las firmas de función ahora requieren el parámetro `sal
 &lt;p&gt;Las KDF’s son funciones hash usadas para generar un cadena pseudo-aleatoria de bytes, que puede ser usada como una llave para cifrado, basadas en uno o varios valores de entrada. Las KDF’s son un caso especializados de las funciones hash y que pueden entregar resultados de tamaño variable y ya que los algoritmos usados aquí admiten varios valores y pueden entregar resultados variables, se consideran funciones de derivación de llaves o KDF’s.&lt;/p&gt;
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Aunque ninguna de las funciones mencionadas aquí es lo que se diría &lt;em&gt;fácil&lt;/em&gt; de romper, es recomendable que no uses PBKDF2 o bcrypt si quieres tener un buen margen de seguridad y estar preparado para el futuro y para el mejoramiento de constante del hardaware. Si estas haciendo una aplicación lo más recomendable es que uses por lo menos scrypt, pero idealmente Argon2i, que es más fuerte que scrypt usando los mismos parámetros de esfuerzo. Esto es de esencial importancia sobre todo si estás haciendo un sistema en el que los atacantes puedan tener incentivos y recursos para robar información.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="hash" /><category term="password" /><summary type="html">Muchos desarrolladores cometen el error de usar un hash criptográfico seguro como SHA-256 para almacenar passwords en la base de datos. Veamos por qué no es conveniente.</summary></entry><entry><title type="html">Algoritmos criptográficos: ¿Qué es un Hash?</title><link href="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: ¿Qué es un Hash?" /><published>2021-12-02T00:00:00-06:00</published><updated>2021-12-02T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">&lt;p&gt;Dentro del mundo del desarrollo se escucha bastante sobre &lt;strong&gt;funciones hash&lt;/strong&gt; y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-es-un-función-hash&quot;&gt;¿Qué es un función hash?&lt;/h2&gt;
-
-&lt;p&gt;La idea y el nombre de un función hash viene de la cocina: &lt;em&gt;hash&lt;/em&gt; se traduce literalmente como “picadillo”, y se usa precisamente porque eso hace una función hash con los datos que le pasemos.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_500/v1638503321/melissa-walker-horn-ufs4w3Jn73I-unsplash_q4m1qy.jpg&quot; alt=&quot;Un platillo que parece picadillo&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Las funciones hash reciben una entrada y normalmente te devuelven un valor de tamaño fijo. Estos datos parecen “picadillo”, es imposible para los humanos distinguir los argumentos que recibió &lt;em&gt;a partir de la salida&lt;/em&gt;. Las funciones hash más simples &lt;em&gt;mapean&lt;/em&gt; los valores de entrada a un número pequeño, &lt;a href=&quot;https://www.cs.hmc.edu/~geoff/classes/hmc.cs070.200101/homework10/hashfuncs.html&quot;&gt;aquí puedes ver algunos ejemplos&lt;/a&gt;. Estas funciones las puedes considerar como un mapeo de valores (con posibilidades infinitas) a un conjunto de valores finitos. Por eso, una función hash de esta naturaleza se considera como una relación del valor de entrada con su “contenedor” o “bucket” como le dirían en inglés.&lt;/p&gt;
-
-&lt;p&gt;Las funciones hash son como navajas suizas, ya que pueden ser utilizadas para ocultar datos, para crear estructuras de datos llamadas &lt;strong&gt;hash tables&lt;/strong&gt;, para comparar datos, para crear firmas digitales (verificación de integridad) y muchas otras cosas. Tienen muchos usos dentro y fuera de la criptografía.&lt;/p&gt;
-
-&lt;p&gt;Existen diferentes tipos de funciones hash para los diferentes usos, las características que normalmente verás en hashes son:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Entregan un resultado de tamaño fijo sin importar el tamaño de la entrada&lt;/li&gt;
-  &lt;li&gt;Son rápidas relativamente&lt;/li&gt;
-  &lt;li&gt;Son deterministas, es decir, siempre que le demos el mismo valor, dará el mismo resultado&lt;/li&gt;
-  &lt;li&gt;Es imposible recuperar la entrada original, porque se pierden datos&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Algo que contaría como una función hash podría ser tan sencilla como obtener el sobrante de una división entera para los números enteros:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hash_simple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Esta función cumple con todas las características de las que hablamos arriba, y es una función hash &lt;strong&gt;no criptográfica&lt;/strong&gt; o &lt;strong&gt;no segura&lt;/strong&gt;, es decir, no se puede confiar en ella para proteger información.&lt;/p&gt;
-
-&lt;p&gt;Algunos ejemplos de funciones hash no criptográficas son:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.rs/seahash/2.0.0/seahash/&quot;&gt;SeaHash&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/sindresorhus/fnv1a&quot;&gt;fnv1a&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;La función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash&lt;/code&gt; de Python o de tu lenguaje preferido&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ahora hablemos de qué características tiene una función hash criptográfica segura.&lt;/p&gt;
-
-&lt;h2 id=&quot;funciones-hash-criptográficas&quot;&gt;Funciones hash criptográficas&lt;/h2&gt;
-
-&lt;p&gt;La característica principal de una función hash segura es que su resultado es completamente impredecible, no revela ningún tipo de información sobre la entrada original, tanto para los humanos como para &lt;em&gt;una computadora&lt;/em&gt;, es resistente a análisis estadísticos.&lt;/p&gt;
-
-&lt;p&gt;Para asegurarnos de esto, una función hash segura cumple con tres características formales:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Es resistente a encontrar una &lt;strong&gt;preimagen&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Es resistente a encontrar una &lt;strong&gt;segunda preimagen&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Es resistente a &lt;strong&gt;colisiones&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;¿Qué es eso de las &lt;strong&gt;&lt;em&gt;preimágenes&lt;/em&gt;&lt;/strong&gt;? En criptografía se llama &lt;strong&gt;preimagen&lt;/strong&gt; a todos los valores que le podemos dar a una función hash. La &lt;strong&gt;imagen&lt;/strong&gt; es el resultado de aplicar la función hash a una &lt;em&gt;preimagen&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Esta ilustración lo puede dejar un poco más claro:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1638509732/Ilustracio%CC%81n_sin_ti%CC%81tulo_9_qrerag.png&quot; alt=&quot;Diagrama sobre imágenes y preimágnes&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ahora hablemos sobre lo que significa cada punto de la seguridad.  El primer punto se refiere a que dada una &lt;strong&gt;imagen&lt;/strong&gt; o un &lt;em&gt;hash&lt;/em&gt;, como normalmente le llamamos al resultado de una función hash, es imposible encontrar la entrada original, o algún otro valor que resulte en ese hash. Si este punto no se cumple, los siguientes dos tampoco.&lt;/p&gt;
-
-&lt;p&gt;El segundo punto, la resistencia a la segunda preimagen, es que dado un valor de entrada (praimagen) y su hash correspondiente (imagen), es imposible encontrar otro valor de entrada que se resulte en el mismo hash, o la misma imagen.&lt;/p&gt;
-
-&lt;p&gt;El tercer punto, &lt;strong&gt;la resistencia a colisiones&lt;/strong&gt; se refiere a que es cerca de imposible encontrar (o fabricar) dos valores de entrada que den el mismo hash (dos preimágenes que resulten en la misma imagen).&lt;/p&gt;
-
-&lt;p&gt;En resumen: para un hash seguro &lt;strong&gt;es casi imposible encontrar dos valores que den el mismo hash, teniendo ejemplos de hasheado o no&lt;/strong&gt;, así como encontrar el valor que generó cierto hash.&lt;/p&gt;
-
-&lt;h2 id=&quot;algunas-funciones-hash-criptográficamente-seguras&quot;&gt;Algunas funciones hash criptográficamente seguras&lt;/h2&gt;
-
-&lt;p&gt;Las dos funciones hash criptográficas más populares son &lt;a href=&quot;https://es.wikipedia.org/wiki/MD5&quot;&gt;MD5&lt;/a&gt; y &lt;a href=&quot;https://es.wikipedia.org/wiki/SHA-1&quot;&gt;SHA-1&lt;/a&gt;. Actualmente (2021) a ambas se les han encontrado vulnerabilidades, sobre todo en el campo de las colisiones, para ambas es posible generar colisiones de manera arbitraria.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;“SHA”&lt;/em&gt; es un acrónimo que significa Algoritmo de Hasheo Seguro (“Secure Hash Algorithm”) y es un “título” dado a los algoritmos de hasheo que son seleccionados por la &lt;strong&gt;NIST&lt;/strong&gt; (National Institute of Standards and Technology de Estados Unidos).&lt;/p&gt;
-
-&lt;p&gt;Ahora sí hablemos de algunas funciones hash criptográficas todavía consideradas seguras:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://es.wikipedia.org/wiki/SHA-2&quot;&gt;SHA-2&lt;/a&gt;. SHA-2 es la familia sucesora de SHA-1, y consiste de 4 funciones hash que difieren en el tamaño de bits de su salida: SHA-224, SHA-256, SHA-384 y SHA-512. Las dos más usadas son SHA-256 y SHA-512. Hasta 2021 no se le han encontrado vulnerabilidades que hagan que sean no recomendadas. La desventaja es que la familia SHA-2 es más lenta que SHA-1.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://es.wikipedia.org/wiki/SHA-3&quot;&gt;SHA-3&lt;/a&gt;. SHA-3 es la cuarta versión de SHA y el algoritmo se escogió de un concurso organizado por la NIST en 2007. En 2012 se anunció que el algoritmo seleccionado era &lt;a href=&quot;https://en.wikipedia.org/wiki/Keccak&quot;&gt;Keccak&lt;/a&gt;, un algoritmo muy diferente de SHA-1 y SHA-2. Esta familia de algoritmos también define cuatro funciones hash, SHA3-224, SHA3-256, SHA3-384 y SHA3-512. Pero además define 2 algoritmos extra que pueden dar resultados variables. Puedes ver la página del equipo de Keccak en &lt;a href=&quot;https://keccak.team/keccak.html&quot;&gt;Keccak Team&lt;/a&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.blake2.net/&quot;&gt;BLAKE2&lt;/a&gt;. Es un algoritmo sucesor de BLAKE, uno de los participantes en el concurso por SHA-3. BLAKE2 es mucho más rápido que Keccak, casi igual de seguro, pero más parecido a SHA-2, que es la razón por la que no se eligió a BLAKE como el SHA-3. Es una muy buena opción para usarse en caso de que requieras un función hash segura y que la velocidad sea muy importante, ya que es más rápida incluso que SHA-1.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Como puedes ver, tenemos para escoger entre las funciones hash todavía consideradas seguras.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-función-hash-usar&quot;&gt;¿Qué función hash usar?&lt;/h2&gt;
-
-&lt;p&gt;Ahora que tenemos un sucesor de SHA-2, la que deberías usar en la mayoría de tus proyectos es &lt;strong&gt;SHA3-256&lt;/strong&gt;, ya que provee de la suficiente seguridad, está estandarizada y es probable que sea implementada como instrucciones del procesador en el futuro. Si te importa muchísimo la velocidad en tu proyecto ahora mismo, deberías usar BLAKE2, que también es muy popular y está implementada en muchos lenguajes de programación.&lt;/p&gt;
-
-&lt;h2 id=&quot;sirven-para-guardar-passwords&quot;&gt;¿Sirven para guardar passwords?&lt;/h2&gt;
-
-&lt;p&gt;Un error común es pensar que estas funciones pueden servir para guardar passwords de forma segura en nuestras aplicaciones. En el siguiente artículo hablaremos de por qué no sirven para eso y qué otras funciones podrías usar.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía," /><category term="hash," /><category term="cifrado" /><summary type="html">Continuemos con las bases de la criptogrfía para desarrolladores, hablemos de lo que es una función hash y cómo puede servirte en tus aplicaciones.</summary></entry></feed>
+&lt;p&gt;Aunque ninguna de las funciones mencionadas aquí es lo que se diría &lt;em&gt;fácil&lt;/em&gt; de romper, es recomendable que no uses PBKDF2 o bcrypt si quieres tener un buen margen de seguridad y estar preparado para el futuro y para el mejoramiento de constante del hardaware. Si estas haciendo una aplicación lo más recomendable es que uses por lo menos scrypt, pero idealmente Argon2i, que es más fuerte que scrypt usando los mismos parámetros de esfuerzo. Esto es de esencial importancia sobre todo si estás haciendo un sistema en el que los atacantes puedan tener incentivos y recursos para robar información.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="hash" /><category term="password" /><summary type="html">Muchos desarrolladores cometen el error de usar un hash criptográfico seguro como SHA-256 para almacenar passwords en la base de datos. Veamos por qué no es conveniente.</summary></entry></feed>
