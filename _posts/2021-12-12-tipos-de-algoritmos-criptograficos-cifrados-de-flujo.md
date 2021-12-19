@@ -25,7 +25,7 @@ Los cifrados de flujo se consideraban "cifrados de hardware" porque eran más li
 
 ## Funcionamiento
 
-Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación **XOR**, también conocida como **suma módulo 2**. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aleatoria se le conoce como el _keystream_ o _cadena de bits de clave_. En el video ["XOR de tamaño fijo | Cryptopals Crypto Challenges"](https://youtu.be/74MYHpGzRR8) explicamos por qué el XOR es una operación perfecta para usarse en criptografía y por qué en algunos recursos se la llama "suma módulo 2".
+Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación **XOR**, también conocida como **suma módulo 2**. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aleatoria se le conoce como el _keystream_ o _cadena de bits de clave_. En el video ["XOR de tamaño fijo \| Cryptopals Crypto Challenges"](https://youtu.be/74MYHpGzRR8) explicamos por qué el XOR es una operación perfecta para usarse en criptografía y por qué en algunos recursos se la llama "suma módulo 2".
 
 
 La parte más importante es entonces el generador del _keystream_, y que sea capaz de volver a generar los mismos bits pseudo-aleatorios para descifrar.
