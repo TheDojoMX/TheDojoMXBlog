@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-18T01:40:41-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-18T23:40:48-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra con los cifrados de &lt;em&gt;flujo&lt;/em&gt; o &lt;strong&gt;stream ciphers&lt;/strong&gt;.&lt;/p&gt;
 
@@ -6,13 +6,20 @@
 
 &lt;p&gt;La mejor manera de entenderlos es en &lt;em&gt;contraste&lt;/em&gt; con los cifrados de bloque: mientras los cifrados de bloque toman pedazos de contenido de tamaño fijo y los cifran, aplicando diferentes técnicas para abarcar todo el contenido, los cifrados de flujo toman &lt;strong&gt;contenido de tamaño arbitrario y lo cifran&lt;/strong&gt;, bit por bit, devolviéndote un texto cifrado del mismo tamaño.&lt;/p&gt;
 
-&lt;p&gt;Son muy útiles cuando no sabes el tamaño del contenido que vas a cifrar o cuando van ir llegando de manera continua sin que sepas exactamente cuánto y cada cuando, justamente como un &lt;strong&gt;flujo de informació&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Son muy útiles cuando no sabes el tamaño del contenido que vas a cifrar o cuando van ir llegando de manera continua sin que sepas exactamente cuánto y cada cuando, justamente como un &lt;strong&gt;flujo de información&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Los cifrados de flujo se consideraban “cifrados de hardware” porque eran más ligeros que los de bloque y se podían implementar en menos espacio en un chip, pero ahora tanto los cifrados de bloque como los de flujo son adecuados para implementarse en hardware.&lt;/p&gt;
 
 &lt;h2 id=&quot;funcionamiento&quot;&gt;Funcionamiento&lt;/h2&gt;
 
-&lt;p&gt;Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación &lt;strong&gt;XOR&lt;/strong&gt;, también conocida como &lt;strong&gt;suma módulo 2&lt;/strong&gt;. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aleatoria se le conoce como el &lt;em&gt;keystream&lt;/em&gt; o &lt;em&gt;cadena de bits de clave&lt;/em&gt;.&lt;/p&gt;
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación &lt;strong&gt;XOR&lt;/strong&gt;, también conocida como &lt;strong&gt;suma módulo 2&lt;/strong&gt;. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aleatoria se le conoce como el &lt;em&gt;keystream&lt;/em&gt; o &lt;em&gt;cadena de bits de clave&lt;/em&gt;. En el video [“XOR de tamaño fijo&lt;/td&gt;
+      &lt;td&gt;Cryptopals Crypto Challenges”](https://youtu.be/74MYHpGzRR8) explicamos por qué el XOR es una operación perfecta para usarse en criptografía y por qué en algunos recursos se la llama “suma módulo 2”.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;p&gt;La parte más importante es entonces el generador del &lt;em&gt;keystream&lt;/em&gt;, y que sea capaz de volver a generar los mismos bits pseudo-aleatorios para descifrar.&lt;/p&gt;
 
@@ -31,11 +38,11 @@
 
 &lt;h3 id=&quot;rc4&quot;&gt;RC4&lt;/h3&gt;
 
-&lt;p&gt;Es el cifrado de software que se usaba para la comunicación entre los routers WI-FI que usaban WEP y tus dispositivos. También se usaba en las comunicaciones TLS. Fue diseñado por el mismo inventor de MD5, &lt;a href=&quot;https://people.csail.mit.edu/rivest/&quot;&gt;Ron Rivest&lt;/a&gt;. Trivia: RC significaba originalmente: “&lt;strong&gt;R&lt;/strong&gt;ons &lt;strong&gt;C&lt;/strong&gt;ode”. Se conocen ataques contra el cifrado y sobre todo sobre sus implementaciones, pero se sigue usando, así que ten mucho cuidado cuando los dispositivos que usas te ofrezcan configurarlo (como en el caso de los routers con “seguridad” WEP).&lt;/p&gt;
+&lt;p&gt;Es el cifrado de software que se usaba para la comunicación entre los routers WI-FI que usaban WEP y tus dispositivos. También se usaba en las comunicaciones TLS. Fue diseñado por el mismo inventor de MD5, &lt;a href=&quot;https://people.csail.mit.edu/rivest/&quot;&gt;Ron Rivest&lt;/a&gt;. Trivia: RC significaba originalmente: “&lt;strong&gt;R&lt;/strong&gt;on’s &lt;strong&gt;C&lt;/strong&gt;ode”. Se conocen ataques contra el cifrado y sobre todo sobre sus implementaciones, pero se sigue usando, así que ten mucho cuidado cuando los dispositivos que usas te ofrezcan configurarlo (como en el caso de los routers con “seguridad” WEP).&lt;/p&gt;
 
 &lt;h3 id=&quot;a51&quot;&gt;A5/1&lt;/h3&gt;
 
-&lt;p&gt;Fue el cifrado de flujo de hardaware de que se usaba para cifrar las comunicaciones inalámbricas 2G. Se encontraron vulnerabilidades en él, al principio de la década de los 2000 y ahora se puede descifrar completamente.&lt;/p&gt;
+&lt;p&gt;Fue el cifrado de flujo de hardware de que se usaba para cifrar las comunicaciones inalámbricas 2G. Se encontraron vulnerabilidades en él, al principio de la década de los 2000 y ahora se puede descifrar completamente.&lt;/p&gt;
 
 &lt;h2 id=&quot;grain-128a&quot;&gt;Grain-128a&lt;/h2&gt;
 
@@ -47,7 +54,7 @@ usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementad
 
 &lt;p&gt;Es un cifrado de flujo, orientado a software que también fue recomendado por la ´EAM competition. Tiene una implementación sencilla, lo que lo ha hecho popular. Usa una llave, un nonce y un contador para generar el flujo de cifrado.&lt;/p&gt;
 
-&lt;p&gt;Aplica una serie de transoformaciones en “rounds” y tiene tres variaciones, dependiendo del nivel de seguridad necesario y la velocidad que deseemos: Salsa20 (20 rounds), Salsa20/12 (12 rounds), Salsa20/8 (8 rounds), siendo el de 8 rounds el que menos seguridad  ofrece. Hay un ataque teórico contra Salsa20/8 que reduce su seguridad a 2^251 operaciones, todavía imposible de llevar a la práctica.&lt;/p&gt;
+&lt;p&gt;Aplica una serie de transformaciones en “rounds” y tiene tres variaciones, dependiendo del nivel de seguridad necesario y la velocidad que deseemos: Salsa20 (20 rounds), Salsa20/12 (12 rounds), Salsa20/8 (8 rounds), siendo el de 8 rounds el que menos seguridad  ofrece. Hay un ataque teórico contra Salsa20/8 que reduce su seguridad a 2^251 operaciones, todavía imposible de llevar a la práctica.&lt;/p&gt;
 
 &lt;h3 id=&quot;aes-ctr&quot;&gt;AES-CTR&lt;/h3&gt;
 
@@ -57,7 +64,7 @@ usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementad
 
 &lt;h2 id=&quot;evitando-errores&quot;&gt;Evitando errores&lt;/h2&gt;
 
-&lt;p&gt;Si estás usando un cifrado de flujo, &lt;strong&gt;debes evitar en todo momento reusar el nonce&lt;/strong&gt;, recuerda que la única razón de existencia del &lt;em&gt;nonce&lt;/em&gt; es ser usado una única vez con la misma llave. Esta es la forma más fácil de usar mal los cifrados de flujo, y elimina completamente la seguridad teórica que puedan ofrecer.&lt;/p&gt;
+&lt;p&gt;Si estás usando un cifrado de flujo, &lt;strong&gt;debes evitar en todo momento re-usar el nonce&lt;/strong&gt;, recuerda que la única razón de existencia del &lt;em&gt;nonce&lt;/em&gt; es ser usado una única vez con la misma llave. Esta es la forma más fácil de usar mal los cifrados de flujo, y elimina completamente la seguridad teórica que puedan ofrecer.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusión-y-aplicaciones&quot;&gt;Conclusión y aplicaciones&lt;/h2&gt;
 
@@ -278,7 +285,7 @@ usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementad
 
 &lt;p&gt;Lo que te acercará más a sentirte un mago o maga programando es la &lt;strong&gt;práctica enfocada&lt;/strong&gt;, que puede presentarse de las tres maneras que hablamos aquí, pero hay muchas otras. Recuerda que la constancia es importante, más que la velocidad, pero buscar formas más eficientes de aprender no es malo.&lt;/p&gt;
 
-&lt;p&gt;Si te quedaste con ganas de más consejos de este estilo, descarga &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a Wiazard”&lt;/a&gt; de la página oficial y continúa leyendo, esta vez de manera visual.&lt;/p&gt;
+&lt;p&gt;Si te quedaste con ganas de más consejos de este estilo, descarga &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a Wizard”&lt;/a&gt; de la página oficial y continúa leyendo, esta vez de manera visual.&lt;/p&gt;
 
 &lt;p&gt;Shameless plug: &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;aquí puedes ver nuestra presentación de los wizardzines&lt;/a&gt;.&lt;/p&gt;
 

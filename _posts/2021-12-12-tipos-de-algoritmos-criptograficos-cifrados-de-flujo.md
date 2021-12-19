@@ -19,13 +19,14 @@ Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño ind
 
 La mejor manera de entenderlos es en _contraste_ con los cifrados de bloque: mientras los cifrados de bloque toman pedazos de contenido de tamaño fijo y los cifran, aplicando diferentes técnicas para abarcar todo el contenido, los cifrados de flujo toman **contenido de tamaño arbitrario y lo cifran**, bit por bit, devolviéndote un texto cifrado del mismo tamaño.
 
-Son muy útiles cuando no sabes el tamaño del contenido que vas a cifrar o cuando van ir llegando de manera continua sin que sepas exactamente cuánto y cada cuando, justamente como un **flujo de informació**.
+Son muy útiles cuando no sabes el tamaño del contenido que vas a cifrar o cuando van ir llegando de manera continua sin que sepas exactamente cuánto y cada cuando, justamente como un **flujo de información**.
 
 Los cifrados de flujo se consideraban "cifrados de hardware" porque eran más ligeros que los de bloque y se podían implementar en menos espacio en un chip, pero ahora tanto los cifrados de bloque como los de flujo son adecuados para implementarse en hardware.
 
 ## Funcionamiento
 
-Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación **XOR**, también conocida como **suma módulo 2**. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aleatoria se le conoce como el _keystream_ o _cadena de bits de clave_.
+Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación **XOR**, también conocida como **suma módulo 2**. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aleatoria se le conoce como el _keystream_ o _cadena de bits de clave_. En el video ["XOR de tamaño fijo | Cryptopals Crypto Challenges"](https://youtu.be/74MYHpGzRR8) explicamos por qué el XOR es una operación perfecta para usarse en criptografía y por qué en algunos recursos se la llama "suma módulo 2".
+
 
 La parte más importante es entonces el generador del _keystream_, y que sea capaz de volver a generar los mismos bits pseudo-aleatorios para descifrar.
 
@@ -42,11 +43,11 @@ Veamos algunos ejemplos de cifrados de flujo, sus características y sus usos, a
 
 ### RC4
 
-Es el cifrado de software que se usaba para la comunicación entre los routers WI-FI que usaban WEP y tus dispositivos. También se usaba en las comunicaciones TLS. Fue diseñado por el mismo inventor de MD5, [Ron Rivest](https://people.csail.mit.edu/rivest/){:target=blank}. Trivia: RC significaba originalmente: "**R**ons **C**ode". Se conocen ataques contra el cifrado y sobre todo sobre sus implementaciones, pero se sigue usando, así que ten mucho cuidado cuando los dispositivos que usas te ofrezcan configurarlo (como en el caso de los routers con "seguridad" WEP).
+Es el cifrado de software que se usaba para la comunicación entre los routers WI-FI que usaban WEP y tus dispositivos. También se usaba en las comunicaciones TLS. Fue diseñado por el mismo inventor de MD5, [Ron Rivest](https://people.csail.mit.edu/rivest/){:target=blank}. Trivia: RC significaba originalmente: "**R**on's **C**ode". Se conocen ataques contra el cifrado y sobre todo sobre sus implementaciones, pero se sigue usando, así que ten mucho cuidado cuando los dispositivos que usas te ofrezcan configurarlo (como en el caso de los routers con "seguridad" WEP).
 
 ### A5/1
 
-Fue el cifrado de flujo de hardaware de que se usaba para cifrar las comunicaciones inalámbricas 2G. Se encontraron vulnerabilidades en él, al principio de la década de los 2000 y ahora se puede descifrar completamente.
+Fue el cifrado de flujo de hardware de que se usaba para cifrar las comunicaciones inalámbricas 2G. Se encontraron vulnerabilidades en él, al principio de la década de los 2000 y ahora se puede descifrar completamente.
 
 ## Grain-128a
 
@@ -58,7 +59,7 @@ Es seguro todavía y usado en sistemas de hardware de bajo presupuesto que requi
 
 Es un cifrado de flujo, orientado a software que también fue recomendado por la ´EAM competition. Tiene una implementación sencilla, lo que lo ha hecho popular. Usa una llave, un nonce y un contador para generar el flujo de cifrado.
 
-Aplica una serie de transoformaciones en "rounds" y tiene tres variaciones, dependiendo del nivel de seguridad necesario y la velocidad que deseemos: Salsa20 (20 rounds), Salsa20/12 (12 rounds), Salsa20/8 (8 rounds), siendo el de 8 rounds el que menos seguridad  ofrece. Hay un ataque teórico contra Salsa20/8 que reduce su seguridad a 2^251 operaciones, todavía imposible de llevar a la práctica.
+Aplica una serie de transformaciones en "rounds" y tiene tres variaciones, dependiendo del nivel de seguridad necesario y la velocidad que deseemos: Salsa20 (20 rounds), Salsa20/12 (12 rounds), Salsa20/8 (8 rounds), siendo el de 8 rounds el que menos seguridad  ofrece. Hay un ataque teórico contra Salsa20/8 que reduce su seguridad a 2^251 operaciones, todavía imposible de llevar a la práctica.
 
 ### AES-CTR
 
@@ -68,7 +69,7 @@ La desventaja de esto es que normalmente queremos que los cifrados de flujo sean
 
 ## Evitando errores
 
-Si estás usando un cifrado de flujo, **debes evitar en todo momento reusar el nonce**, recuerda que la única razón de existencia del _nonce_ es ser usado una única vez con la misma llave. Esta es la forma más fácil de usar mal los cifrados de flujo, y elimina completamente la seguridad teórica que puedan ofrecer.
+Si estás usando un cifrado de flujo, **debes evitar en todo momento re-usar el nonce**, recuerda que la única razón de existencia del _nonce_ es ser usado una única vez con la misma llave. Esta es la forma más fácil de usar mal los cifrados de flujo, y elimina completamente la seguridad teórica que puedan ofrecer.
 
 ## Conclusión y aplicaciones
 

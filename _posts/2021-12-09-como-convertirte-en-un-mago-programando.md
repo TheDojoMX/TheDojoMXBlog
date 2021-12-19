@@ -63,7 +63,7 @@ Finalmente, documenta lo que aprendas y encuentres, le puede servir a otros miem
 
 Lo que te acercará más a sentirte un mago o maga programando es la **práctica enfocada**, que puede presentarse de las tres maneras que hablamos aquí, pero hay muchas otras. Recuerda que la constancia es importante, más que la velocidad, pero buscar formas más eficientes de aprender no es malo.
 
-Si te quedaste con ganas de más consejos de este estilo, descarga ["So you want to be a Wiazard"](https://wizardzines.com/zines/wizard/) de la página oficial y continúa leyendo, esta vez de manera visual.
+Si te quedaste con ganas de más consejos de este estilo, descarga ["So you want to be a Wizard"](https://wizardzines.com/zines/wizard/) de la página oficial y continúa leyendo, esta vez de manera visual.
 
 Shameless plug: [aquí puedes ver nuestra presentación de los wizardzines](https://www.youtube.com/watch?v=drPMyDyQG8M).
 
