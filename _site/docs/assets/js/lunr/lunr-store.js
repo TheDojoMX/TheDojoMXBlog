@@ -439,13 +439,19 @@ var store = [{
       },{
         "title": "La regla del 'Cero, Uno o Infinito'",
         "excerpt":"La regla del ‘Cero, Uno o Infinito’ es una guía para diseñar software que sea más fácil de usar, tanto para otros desarrolladores como para los usuarios finales. La regla en inglés es: “Allow none of foo, one of foo, or any number of foo.” - Willem van der Poel...","categories": [],
-        "tags": ["zero-one-infinity,","design,","reglas"],
+        "tags": ["zero-one-infinity","design","reglas"],
         "url": "/2021/12/10/la-regla-del-cero-uno-o-infinito.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639259189/michael-dziedzic-uZr0oWxrHYs-unsplash_koqk3a.jpg"
       },{
         "title": "Criptografía VS computación cuántica",
         "excerpt":"“If you are not completely confused by quantum mechanics, you do not understand it.” - Richard Feynman La computación cuántica es una tecnología muy prometedora que lleva décadas en gestación y cada vez la vemos más cerca. Una de las cosas que más llama la atención es la capacidad de...","categories": [],
-        "tags": ["criptografía,","quantum,","matemáticas"],
+        "tags": ["criptografía","quantum","matemáticas"],
         "url": "/2021/12/11/criptografia-vs-computacion-cuantica.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639258127/anton-maksimov-juvnsky-wrkNQmhmdvY-unsplash_zfe4zr.jpg"
+      },{
+        "title": "Tipos de algoritmos criptográficos: cifrados de flujo",
+        "excerpt":"Ya hablamos de lo que es la criptografía y del tipo de cifrado más fuerte y seguro que existe en la criptografía: los cifrados de bloque. Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra...","categories": [],
+        "tags": ["cifrado","cypher","flujo","aes"],
+        "url": "/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639633812/solen-feyissa-IfWFKG3FXE4-unsplash_dvnbjc.jpg"
       }]
