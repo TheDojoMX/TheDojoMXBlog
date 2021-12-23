@@ -1,4 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-18T23:59:17-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-22T23:45:43-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html">&lt;p&gt;HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;HTTP/3 hará que tus páginas web descarguen mucho más rápido, gracias a que trabaja de forma diferente a bajo nivel. Empieza a aprenderlo porque esto vendrá con nuevos retos para los desarrolladores.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;qué-es-http&quot;&gt;¿Qué es HTTP?&lt;/h2&gt;
+
+&lt;p&gt;El &lt;strong&gt;Protocolo de Transferencia de Hyper-Texto&lt;/strong&gt; (&lt;strong&gt;H&lt;/strong&gt;yper &lt;strong&gt;T&lt;/strong&gt;ext &lt;strong&gt;T&lt;/strong&gt;ransfer &lt;strong&gt;P&lt;/strong&gt;rotocol) es un estándar definido en el &lt;a href=&quot;https://tools.ietf.org/html/rfc2616&quot;&gt;RFC 2616&lt;/a&gt; que permite la comunicación entre dos computadoras a nivel de aplicación, es decir, a nivel de software y con contenido relacionado a lo que tu aplicación de red está haciendo.&lt;/p&gt;
+
+&lt;p&gt;El que sea un protocolo a nivel de aplicación también implica que necesita otros protocolos debajo de él para encargarse de otras partes del proceso de comunicación, como la conexión física, la conexión de software, el transporte de datos y el enrutamiento de la información.&lt;/p&gt;
+
+&lt;p&gt;HTTP es un protocolo con arquitectura &lt;strong&gt;cliente-servidor&lt;/strong&gt;, en el que un cliente hace &lt;em&gt;peticiones&lt;/em&gt; (requests) al servidor y el servidor contesta con la información solicitada, a lo que nos referimos como &lt;em&gt;respuesta&lt;/em&gt; (response).&lt;/p&gt;
+
+&lt;p&gt;La parte de hyper-texto nacio por la necesidad de transferir información más rica que el texto plano, es decir, con metadatos, links a otra parte de la información u otros documentos. Al agregar imágenes, videos y otro tipo de información lo estamos convirtiendo en &lt;strong&gt;Hypermedia&lt;/strong&gt;, información relacionada entre sí que no es puro texto.&lt;/p&gt;
+
+&lt;h2 id=&quot;http11&quot;&gt;HTTP/1.1&lt;/h2&gt;
+
+&lt;p&gt;Este es el estándar que la mayoría de nosotros consideraríamos como “HTTP”, ha estado en uso por bastante tiempo. La versión 1.0 fue liberada en 1996, pero en 1997 se liberó la versión 1.1, que es lo que la mayoría de los devs que “crecimos” junto con la web llamaríamos &lt;em&gt;HTTP&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Las limitaciones técnicas de HTTP/1.1 son lo que han hecho que necesitemos un nuevo estándar, ya que la web actual requiere muchas más descargas que cuando se creó. En 2021 se descargan aproximadamente 1.9 MB en promedio por página, pero esto repartido en múltiples archivos HTML, CSS, JavaScript e imágenes (74 en promedio). Puedes ver más información sobre el tamaño de las páginas web aquí: &lt;a href=&quot;https://httparchive.org/reports/page-weight&quot;&gt;HTTP Archive - Page Weight&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;HTTP 1.1 solamente permite descargar un archivo a la vez, por lo que los navegadores tienen que abrir múltiples conexiones a un mismo servidor, limitadas por los recursos de la computadora. Esto crea un cuello de botella que puede hacer que la experiencia en web no sea óptima.&lt;/p&gt;
+
+&lt;p&gt;Por eso llegó HTTP/2.&lt;/p&gt;
+&lt;h2 id=&quot;http2&quot;&gt;HTTP/2&lt;/h2&gt;
+
+&lt;p&gt;En 2015 por fin llegó una especificación más adecuada para la web moderna que HTTP/1.1: &lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc7540&quot;&gt;HTTP/2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;HTTP/2 se centra en la &lt;em&gt;multiplexación de conexiones&lt;/em&gt;, es decir, permite mantener varias “conversaciones” con el servidor al mismo tiempo en la misma conexión. Esto permite la descarga de múltiples archivos simultáneamente sin tener que consumir tantos recursos como en HTTP/1.1.&lt;/p&gt;
+
+&lt;p&gt;El problema con HTTP/2 es que sigue funcionando sobre TCP, que no permite la multiplexación de conexiones, así al intentar la descarga de archivos paralelamente se pueden producir cuellos de botella ya que si se presentan problemas de descarga con un archivo, hay que esperar hasta que llegue el paquete que corrija el error, pudiendo este tardar mucho tiempo por estar en la misma conexión en la que se están descargando otros archivos.&lt;/p&gt;
+
+&lt;p&gt;Esto último causa que HTTP/2 sea insuficiente para las necesidades actuales, e incluso más lento que HTTP/1.1 en muchos casos de uso de la vida real: cuando las conexiones son poco estables. HTTP/2 fue bastante promovido por Google por un tiempo, pero ahora ha sido reemplazado por HTTP/3, que promete ser mucho mejor.&lt;/p&gt;
+
+&lt;h2 id=&quot;http3&quot;&gt;HTTP/3&lt;/h2&gt;
+
+&lt;p&gt;El último borrador del estándar fue publicado en &lt;a href=&quot;https://quicwg.org/base-drafts/draft-ietf-quic-http.html#name-delegation-to-quic&quot;&gt;Mayo de 2021&lt;/a&gt;, o sea que es muy, muy nuevo, todavía no está en uso ampliamente y el estándar todavía no es el final.&lt;/p&gt;
+
+&lt;p&gt;HTTP/3 es básicamente las mejoras propuestas por HTTP/2 sobre una nueva capa de transporte que no es TCP: &lt;a href=&quot;https://quicwg.org/&quot;&gt;QUIC&lt;/a&gt;. QUIC está basado en UDP, pero establece la forma de crear canales con control de flujo, cifrado y multiplexación para poder servir mejor a la web moderna.&lt;/p&gt;
+
+&lt;p&gt;QUIC permite &lt;a href=&quot;https://www.rfc-editor.org/rfc/rfc9000.html&quot;&gt;usar TLS&lt;/a&gt; para establecer los parámetros de cifrado e incluso permite adelantar el intercambio de información antes de negociar completamente los parámetros de cifrado, haciendo un poco más débil el cifrado pero incrementando la velocidad de descarga.&lt;/p&gt;
+
+&lt;h2 id=&quot;benchmarks&quot;&gt;Benchmarks&lt;/h2&gt;
+
+&lt;p&gt;HTTP/3 es mucho mucho más rápido que HTTP/1.1 y mucho más &lt;em&gt;confiable y rápido&lt;/em&gt; que HTTP/2. En el artículo &lt;a href=&quot;https://requestmetrics.com/web-performance/http3-is-fast&quot;&gt;HTTP/3 is Fast&lt;/a&gt; podrás encontrar una comparación del comportamiento de las tres versiones variando diferentes factores, como la confiabilidad y distancia de la conexión.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusiones&quot;&gt;Conclusiones&lt;/h2&gt;
+
+&lt;p&gt;Mantenernos actualizados con respecto a las nuevas tecnologías es muy importante para ofrecerles lo mejor a los usuarios de nuestro software, sean desarrollaodores o usuarios finales. Si quieres empezar a usar HTTP/3 échale un ojo a tus servidores HTTP, por ejemplo &lt;a href=&quot;https://www.nginx.com/blog/our-roadmap-quic-http-3-support-nginx/&quot;&gt;NGINX ya tiene planes para soportarlo completamente&lt;/a&gt;, &lt;a href=&quot;https://doc.traefik.io/traefik/master/routing/entrypoints/#http3&quot;&gt;Traefik ya lo soporta de manera experimental&lt;/a&gt;, pero parece que Apache &lt;a href=&quot;https://www.reddit.com/r/apache/comments/o6a86x/why_is_apache_failing_to_implement_quic_http3/&quot;&gt;no lo hará por ahora&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;También si usas algún servicio de AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que loa ctives. Puedes revisar la lista de compatibilidad constantemente aquí: &lt;a href=&quot;https://caniuse.com/http3&quot;&gt;Can I Use HTTP/3?&lt;/a&gt;&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="HTTP" /><category term="web" /><category term="network" /><summary type="html">HTTP es el estándar que permite que internet exista como hoy lo conocemos, hablemos de sus avances y lo que puede ofrecerte la última versión: HTTP/3.</summary></entry><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra con los cifrados de &lt;em&gt;flujo&lt;/em&gt; o &lt;strong&gt;stream ciphers&lt;/strong&gt;.&lt;/p&gt;
 
@@ -712,108 +768,4 @@ BREAKING CHANGE: Todas las firmas de función ahora requieren el parámetro `sal
       &lt;p&gt;Aquí puedes ver por qué se llama una API a la interfaz que presenta una pieza de software a otra: &lt;a href=&quot;https://youtu.be/n8MxyHG0j3Q&quot;&gt;API’s con Hug&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="versionamiento" /><category term="git" /><category term="commits" /><summary type="html">Hablemos de cómo versionar tu código para beneficiar a tu equipo y a tus usuarios usando el sistema de vesionamiento semántico y los commits convencionales.</summary></entry><entry><title type="html">Algoritmos criptográficos: hashes seguros para alamcenar passwords</title><link href="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html" rel="alternate" type="text/html" title="Algoritmos criptográficos: hashes seguros para alamcenar passwords" /><published>2021-12-03T00:00:00-06:00</published><updated>2021-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html">&lt;p&gt;Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre &lt;em&gt;hashearla&lt;/em&gt;. Como aprendiste &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;en el artículo anterior&lt;/a&gt;, un hash es una función que impide recuperar el valor original ya que simplemente la información se pierde.&lt;/p&gt;
-
-&lt;p&gt;Los hashes seguros hacen casi imposible encontrar una colisión (que dos passwords te devuelvan un mismo hash), por lo que parecerían una buena solución para crear un valor único para cada usuario. Debido a que son deterministas, cuando el usuario te da su password, calculamos el hash de nuevo, lo comparamos con el hash almacenado y verificamos si coinciden. En este caso, el usuario está autenticado.&lt;/p&gt;
-
-&lt;p&gt;¿Pero qué hash puedes usar para hashear un password? Todos hemos escuchado &lt;em&gt;que no se debe usar MD5 para hashear passwords&lt;/em&gt;, pero la razón por la que se menciona que esto es un error normalmente no es la correcta. Se argumento que MD5 es un hash que está “roto”, ya que es posible romper su seguridad con menos esfuerzo computacional del que su tamaño requeriría. Esto es cierto, pero no es la razón principal por la que no deberías usar MD5 para passwords.&lt;/p&gt;
-
-&lt;p&gt;La verdadera razón por la que nunca debes usar MD5 para esto es que &lt;strong&gt;no está diseñado para esa función&lt;/strong&gt;, y puede ser atacado de manera sencilla y efectiva.&lt;/p&gt;
-
-&lt;p&gt;Hablemos de algunos tipos de ataques que pueden sufrir los sistemas de almacenamiento de información que usan un hash seguro normal para hashear sus passwords.&lt;/p&gt;
-
-&lt;h2 id=&quot;ataques-de-fuerza-bruta&quot;&gt;Ataques de fuerza bruta&lt;/h2&gt;
-
-&lt;p&gt;Un hash seguro que no presenta vulnerabilidades tiene la característica de que no hay una forma más inteligente de atacarlo que mediante probar todos los valores posibles de entrada. Por ejemplo, si sabemos que un sistema acepta letras y números y la mínima contraseña es de 6 carácteres, tendríamos que probar todas las combinaciones posibles de letras y números a partir de 6 carácteres.&lt;/p&gt;
-
-&lt;p&gt;Eso suena a que es mucho, sin embargo, con los hashes seguros no es un problema para los atacantes ya que estos hashes son muy eficientes y están pensados para correr lo más rápido posible.&lt;/p&gt;
-
-&lt;p&gt;Alguien con la suficiente motivación y paciencia podría lanzar un ataque de fuerza bruta con &lt;em&gt;hardware especializado&lt;/em&gt; y encontrar un password que coincida con el hash. Esto se puede hacer con hardware común como CPU’s  y GPU’s domésticos, que llegan a procesar cientos de miles de passwords &lt;strong&gt;por segundo&lt;/strong&gt;, o con hardware especializado en hashear (FPGA’s y ASIC’s).&lt;/p&gt;
-
-&lt;p&gt;Herramientas como &lt;a href=&quot;https://hashcat.net/hashcat/&quot;&gt;hashcat&lt;/a&gt; te permiten hacer este tipo de ataques, pero lo más interesante es que debido a que conocemos la naturaleza de la información, podemos dirigir el ataque de manera un poco más inteligente, usando diccionarios de palabras y contraseñas comunes, haciendo todavía más probable romper la seguridad de estos sistemas.&lt;/p&gt;
-
-&lt;p&gt;Repitamos: lo que permite este tipo de ataques son los objetivos de diseño de las funciones hash seguras: que sean rápidas, y eficientes en memoria. Esta es la primera razón por la que &lt;strong&gt;nunca debiste usar MD5&lt;/strong&gt; es esta. Pero, como podrás deducir, lo mismo aplica para cualquiera de familia SHA (SHA-1, SHA-2, SHA-3 y los que vengan), BLAKE, BLAKE2 y los que vengan. No importa que estas funciones sigan siendo seguras para otros usos.&lt;/p&gt;
-
-&lt;h2 id=&quot;ataques-con-tablas-arcoiris-rainbow-tables&quot;&gt;Ataques con tablas arcoiris (Rainbow Tables)&lt;/h2&gt;
-
-&lt;p&gt;Imagínate que eres un atacante que quiere descubrir los passwords de los usuarios de diferentes sitios y sabes que todos usan SHA-256. En vez de hacer una ataque de fuerza bruta cada vez, preparas una tabla con dos columnas: el hash y el password. En la columna de passwords pondrás valores que sabes que pueden servir de passwords a los usuarios.&lt;/p&gt;
-
-&lt;p&gt;Esto que acabamos de describir es una versión sencilla de una &lt;strong&gt;Rainbow table&lt;/strong&gt;, una colección de valores precalculados organizados para que, una vez teniendo el hash, puedas buscar el password correspondiente en la tabla. Se hace un intercambio de procesamiento por memoria. Las Rainbow Tables completas son un poco más complejas que lo que acabamos de describir, puedes leer más sobres ellas en este artículo: &lt;a href=&quot;https://www.ionos.com/digitalguide/server/security/rainbow-tables/&quot;&gt;Rainbow Tables&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Debido al mal uso de los passwords y de los algoritmos para hasheo seguro, existen rainbow tables para millones de valores de todos los algoritmos. Aunque siguen siendo una amenaza, las Rainbow tables están cayendo en desuso, en favor de otros métodos más modernos y aprovechándose del poder de cómputo actual.&lt;/p&gt;
-
-&lt;h2 id=&quot;protección-contra-ataques-a-hasheo-de-passwords&quot;&gt;Protección contra ataques a hasheo de passwords&lt;/h2&gt;
-
-&lt;p&gt;La forma de protegerse contra valores precalculados y ataques de diccionario es más o menos sencilla: antes de hashear el password, agrega un valor aleatorio extra que puedas recuperar fácilmente y añadir cada vez que verificas el password. Esto se conoce como &lt;strong&gt;salting&lt;/strong&gt;, siendo el valor aleatoria el &lt;strong&gt;salt&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Aunque es cierto que esto lo podrías hacer con cualquier algoritmo de hasheo seguro, se queda sin resolver el segundo problema: ¿Cómo nos protegemos contra ataques de fuerza bruta con hardware muy poderoso? Esto sólo se puede resolver de una forma: usando algoritmos que te obliguen a usar mucho procesamiento o mucha memoria, o ambos. Estas deben ser precisamente las metas de diseño de los algoritmos especializados en hasheo de passwords.&lt;/p&gt;
-
-&lt;p&gt;Hablemos de algunos de ellos y finalizarmos con el que deberías usar actualmente en 2021.&lt;/p&gt;
-
-&lt;h2 id=&quot;hashes-seguros-para-passwords&quot;&gt;Hashes seguros para passwords&lt;/h2&gt;
-
-&lt;p&gt;Como ya lo dijimos, estos hashes deben ayudarte con una cosa principal además de ser seguros criptográficamente: ser costos en proceamiento y/o memoria, lo que se traduce en lentitud.&lt;/p&gt;
-
-&lt;p&gt;Pero además, algunos de estos algoritmos te ayudana a “salar” el password de manera automática, lo que es una ventaja para reducir errores en la implementación de esta práctica.&lt;/p&gt;
-
-&lt;p&gt;En esta sección hablaremos de los algoritmos, cómo cumplen con estas características y si los puedes seguir usando.&lt;/p&gt;
-
-&lt;h3 id=&quot;pbkdf2&quot;&gt;PBKDF2&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ietf.org/rfc/rfc2898.txt&quot;&gt;PBKDF2&lt;/a&gt; - Es un acrónimo que significa “Password Based Key Derivation Function”, versión 2.0 y que básicamente aplica un algoritmo de hasheo seguro a una contraseña repetidas veces. Puedes configurar el número de iteraciones, el algoritmo de hasheo, el tamaño del resultado y te pide el &lt;em&gt;salt&lt;/em&gt; para funcionar. Fue usada por varios frameworks de desarrollo web como Django, pero actualmente no se considera segura porque aunque es exigente en cómputo para una computadora normal, es débil contra hardware especializado.&lt;/p&gt;
-
-&lt;h3 id=&quot;bcrypt&quot;&gt;bcrypt&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.usenix.org/legacy/event/usenix99/provos/provos.pdf&quot;&gt;bcrypt&lt;/a&gt; - Es un algoritmo diseñado específicamente con el objetivo de estar preparado para el mejoramiento que el hardware va teniendo, ya que tiene una “dificultad” configurable. Te provee &lt;strong&gt;automáticamente de un salt seguro&lt;/strong&gt;, por lo que no recaerá en ti la responsabilidad de conseguirlo como en PBKDF2. Está basado en blowfish, otro algoritmo de cifrado que ha permanecido seguro. Bcrypt fue presentado en 1999 y sigue siendo considerado más o menos seguro, su recomendación está en duda ya que es posible atacarlo con hardware especializado y de bajo costo. &lt;a href=&quot;https://www.usenix.org/system/files/conference/woot14/woot14-malvoni.pdf&quot;&gt;Este estudio de 2011&lt;/a&gt; explica como se puede atacar con hardware especializado en cómputo paralelo y predijo muy bien que bcrypt no permanecería super seguro por mucho tiempo.&lt;/p&gt;
-
-&lt;h3 id=&quot;scrypt&quot;&gt;scrypt&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc7914&quot;&gt;scrypt&lt;/a&gt; - Es una función diseñada para cubrir las carencias de PBKDF2 y bcrypt. Es tanto computacionalmente intensiva como pesada en memoria, por lo que no es tan fácil atacarla con hardware especializado. Es un función de muy reciente presentación, &lt;a href=&quot;https://www.tarsnap.com/scrypt/scrypt.pdf&quot;&gt;Colin Percival la presentó en 2009&lt;/a&gt;. Es una secuencia de funciones pesadas en memoria que impide que sea atacada fácilmente con GPU’s. FPGA’s y ASIC’s. Es una función que puedes usar conseguridad todavía ya que no se han encontrado ataques efectivos contra ella. Al igual que bcrypt, &lt;em&gt;sala&lt;/em&gt; (usa un salt) automáticamente, lo que le facilita la vida al desarrollador.&lt;/p&gt;
-
-&lt;h3 id=&quot;argon2&quot;&gt;Argon2&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/P-H-C/phc-winner-argon2/blob/master/argon2-specs.pdf&quot;&gt;Argon2&lt;/a&gt; - Es la función más avanzada y con mejores garantías para generación de hashes resistentes a ataques con fuerza bruta. Es la ganadora del &lt;a href=&quot;https://www.password-hashing.net/&quot;&gt;Password Hashing Competition&lt;/a&gt; en 2015. Se dice que Argon2 es el estado del arte en lo que se refiere a hashing de passwords. Tiene tres variaciones principales: Argond2d, Argon2i y Argon2id.&lt;/p&gt;
-
-&lt;p&gt;¿Cuándo usar cada una?&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Argon2d&lt;/strong&gt;  es más rápida pero al mismo tiempo está mejor protegida contra ataques de fuerza bruta de hardware especializado, por la forma en la que usa la memoria, sin embargo, es más vulnerable a ataques &lt;a href=&quot;https://www.rambus.com/blogs/side-channel-attacks/&quot;&gt;side-channel&lt;/a&gt;. Es recoemndada cuando tus atacantes no tengan posibilidad de realizar estos ataques, como en servidores de backend y para generación criptomonedas.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Argon2i&lt;/strong&gt; es más lenta, más computacionalmente intensiva y resistente contra side-channel attacks, es la recomendada para hashear passwords. Da varias “pasadas” a los argumentos de entradda, por lo que es más dificil de atacar.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Argon2id&lt;/strong&gt; es un híbrido entre estas las dos variaciones anteriores, protegida parcialmente contra ataques side-channel al mismo tiempo que más computacionalmente intensiva que Argon2d. La recomendación es que si estás en incertidumbre uses Argon2d.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Argon2 permite configurar:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Memoria usada: mientras más memoria se use, más resistente será el hash y menos vulnerable será a ataques de fuerza bruta.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Número de iteraciones sobre la memororia. Esto lo hace más computacionalmente intensivo, de igual forma haciéndolo más dificil de atacar, haciendo la generación de hashes más lenta.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Grado de paralelismo. Es el número de hilos que se usan para generar el hash, el tiempo de ejecución variará dependiendo de la configuración.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Tamaño del hash, el salt y el tag. Esto también varía el grado de resistencia de tus hashes.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;En el artículo &lt;a href=&quot;https://www.twelve21.io/how-to-choose-the-right-parameters-for-argon2/&quot;&gt;“Cómo escoger los parámetros de Argon2”&lt;/a&gt; se describe una forma de escoger los parámetros de Argon2.&lt;/p&gt;
-
-&lt;p&gt;Finalmente, aunque no incluye la generación del salt en el algoritmo mismo, las implementaciones de Argon2 incluyen una función de generación de salt automática para que no tengas que hacerlo tú.&lt;/p&gt;
-
-&lt;h3 id=&quot;nota-sobre-funciones-de-derivación-de-llaves-key-derivation-functions&quot;&gt;Nota sobre Funciones de Derivación de Llaves (Key Derivation Functions)&lt;/h3&gt;
-
-&lt;p&gt;Si lees algunas de las especificaciones de los algoritmos de arriba, probablemente te encuentres mucho con el término &lt;strong&gt;KDF&lt;/strong&gt; o Key Derivation Function. ¿Qué es eso? ¿No estábamos hablando de funciones hash?&lt;/p&gt;
-
-&lt;p&gt;Las KDF’s son funciones hash usadas para generar un cadena pseudo-aleatoria de bytes, que puede ser usada como una llave para cifrado, basadas en uno o varios valores de entrada. Las KDF’s son un caso especializados de las funciones hash y que pueden entregar resultados de tamaño variable y ya que los algoritmos usados aquí admiten varios valores y pueden entregar resultados variables, se consideran funciones de derivación de llaves o KDF’s.&lt;/p&gt;
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Aunque ninguna de las funciones mencionadas aquí es lo que se diría &lt;em&gt;fácil&lt;/em&gt; de romper, es recomendable que no uses PBKDF2 o bcrypt si quieres tener un buen margen de seguridad y estar preparado para el futuro y para el mejoramiento de constante del hardaware. Si estas haciendo una aplicación lo más recomendable es que uses por lo menos scrypt, pero idealmente Argon2i, que es más fuerte que scrypt usando los mismos parámetros de esfuerzo. Esto es de esencial importancia sobre todo si estás haciendo un sistema en el que los atacantes puedan tener incentivos y recursos para robar información.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="hash" /><category term="password" /><summary type="html">Muchos desarrolladores cometen el error de usar un hash criptográfico seguro como SHA-256 para almacenar passwords en la base de datos. Veamos por qué no es conveniente.</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="versionamiento" /><category term="git" /><category term="commits" /><summary type="html">Hablemos de cómo versionar tu código para beneficiar a tu equipo y a tus usuarios usando el sistema de vesionamiento semántico y los commits convencionales.</summary></entry></feed>
