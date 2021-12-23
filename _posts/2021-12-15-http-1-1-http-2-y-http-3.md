@@ -23,7 +23,7 @@ El que sea un protocolo a nivel de aplicación también implica que necesita otr
 
 HTTP es un protocolo con arquitectura **cliente-servidor**, en el que un cliente hace _peticiones_ (requests) al servidor y el servidor contesta con la información solicitada, a lo que nos referimos como _respuesta_ (response).
 
-La parte de hyper-texto nacio por la necesidad de transferir información más rica que el texto plano, es decir, con metadatos, links a otra parte de la información u otros documentos. Al agregar imágenes, videos y otro tipo de información lo estamos convirtiendo en **Hypermedia**, información relacionada entre sí que no es puro texto.
+La parte de hyper-texto nacio por la necesidad de transferir información más rica que el texto plano, es decir, con metadatos, links a otra parte de la información u otros documentos. Al agregar imágenes, videos y otro tipo de información multimedia lo estamos convirtiendo en **Hypermedia**, información relacionada entre sí que no es puro texto.
 
 ## HTTP/1.1
 
@@ -48,7 +48,7 @@ Esto último causa que HTTP/2 sea insuficiente para las necesidades actuales, e 
 
 El último borrador del estándar fue publicado en [Mayo de 2021](https://quicwg.org/base-drafts/draft-ietf-quic-http.html#name-delegation-to-quic), o sea que es muy, muy nuevo, todavía no está en uso ampliamente y el estándar todavía no es el final.
 
-HTTP/3 es básicamente las mejoras propuestas por HTTP/2 sobre una nueva capa de transporte que no es TCP: [QUIC](https://quicwg.org/). QUIC está basado en UDP, pero establece la forma de crear canales con control de flujo, cifrado y multiplexación para poder servir mejor a la web moderna.
+HTTP/3 es básicamente las mejoras propuestas por HTTP/2 sobre una nueva capa de transporte que no es TCP: [QUIC](https://quicwg.org/). QUIC está basado en UDP, **pero establece la forma de crear canales con control de flujo, cifrado y multiplexación** para poder servir mejor a la web moderna.
 
 QUIC permite [usar TLS](https://www.rfc-editor.org/rfc/rfc9000.html) para establecer los parámetros de cifrado e incluso permite adelantar el intercambio de información antes de negociar completamente los parámetros de cifrado, haciendo un poco más débil el cifrado pero incrementando la velocidad de descarga.
 
@@ -58,6 +58,6 @@ HTTP/3 es mucho mucho más rápido que HTTP/1.1 y mucho más _confiable y rápid
 
 ## Conclusiones
 
-Mantenernos actualizados con respecto a las nuevas tecnologías es muy importante para ofrecerles lo mejor a los usuarios de nuestro software, sean desarrollaodores o usuarios finales. Si quieres empezar a usar HTTP/3 échale un ojo a tus servidores HTTP, por ejemplo [NGINX ya tiene planes para soportarlo completamente](https://www.nginx.com/blog/our-roadmap-quic-http-3-support-nginx/), [Traefik ya lo soporta de manera experimental](https://doc.traefik.io/traefik/master/routing/entrypoints/#http3), pero parece que Apache [no lo hará por ahora](https://www.reddit.com/r/apache/comments/o6a86x/why_is_apache_failing_to_implement_quic_http3/).
+Mantenernos actualizados con respecto a las nuevas tecnologías es muy importante para ofrecerles lo mejor a los usuarios de nuestro software, sean desarrolladores o usuarios finales. Si quieres empezar a usar HTTP/3 échale un ojo a tus servidores HTTP, por ejemplo [NGINX ya tiene planes para soportarlo completamente](https://www.nginx.com/blog/our-roadmap-quic-http-3-support-nginx/), [Traefik ya lo soporta de manera experimental](https://doc.traefik.io/traefik/master/routing/entrypoints/#http3), pero parece que Apache [no lo hará por ahora](https://www.reddit.com/r/apache/comments/o6a86x/why_is_apache_failing_to_implement_quic_http3/).
 
-También si usas algún servicio de AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que loa ctives. Puedes revisar la lista de compatibilidad constantemente aquí: [Can I Use HTTP/3?](https://caniuse.com/http3)
+También si usas algún servicio de AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que lo actives. Puedes revisar la lista de compatibilidad constantemente aquí: [Can I Use HTTP/3?](https://caniuse.com/http3).
