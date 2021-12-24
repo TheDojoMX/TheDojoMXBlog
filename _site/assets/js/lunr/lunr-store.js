@@ -462,7 +462,7 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639633812/solen-feyissa-IfWFKG3FXE4-unsplash_dvnbjc.jpg"
       },{
         "title": "Creando un API con GO: Usando Beego",
-        "excerpt":"Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde las exigencias respecto a lo que deben soportar los sistemas en cuanto a concurrencia y escalabilidad son fuertes. Para hacer la prueba vamos a crear un proyecto más o menos interesante: vamos a...","categories": [],
+        "excerpt":"Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde las exigencias respecto a lo que deben soportar los sistemas en cuanto a concurrencia y escalabilidad son fuertes. Para hacer la prueba vamos a crear un proyecto más o menos interesante: creemos un...","categories": [],
         "tags": [],
         "url": "/2021/12/13/creando-un-api-con-go-usando-beego.html",
         "teaser": null
@@ -478,4 +478,10 @@ var store = [{
         "tags": ["HTTP","web","network"],
         "url": "/2021/12/15/http-1-1-http-2-y-http-3.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639894600/erick-chevez-DcS2NQF-Ers-unsplash_tbv7pu.jpg"
+      },{
+        "title": "Matemáticas para criptografía",
+        "excerpt":"¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles y probabilidad y estadística. Veamos a un poco de más profundidad un plan de estudio de matemáticas que podrías usar para adquirir las habilidades matemáticas para entender mejor los algoritmos criptográficos. Básico...","categories": [],
+        "tags": ["criptografía","matemáticas","álgebra"],
+        "url": "/2021/12/22/matematicas-para-criptografia.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639258119/anton-maksimov-juvnsky-hlc-O87pjUs-unsplash_gvco8p.jpg"
       }]

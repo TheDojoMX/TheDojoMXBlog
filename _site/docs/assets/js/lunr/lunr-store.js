@@ -454,4 +454,10 @@ var store = [{
         "tags": ["cifrado","cypher","flujo","aes"],
         "url": "/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639633812/solen-feyissa-IfWFKG3FXE4-unsplash_dvnbjc.jpg"
+      },{
+        "title": "HTTP 1.1, HTTP/2 y HTTP/3",
+        "excerpt":"HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual. TL;DR...","categories": [],
+        "tags": ["HTTP","web","network"],
+        "url": "/2021/12/15/http-1-1-http-2-y-http-3.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639894600/erick-chevez-DcS2NQF-Ers-unsplash_tbv7pu.jpg"
       }]
