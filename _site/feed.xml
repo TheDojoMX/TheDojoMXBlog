@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-24T00:27:32-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Matemáticas para criptografía</title><link href="https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia.html" rel="alternate" type="text/html" title="Matemáticas para criptografía" /><published>2021-12-22T00:00:00-06:00</published><updated>2021-12-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia.html">&lt;p&gt;¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles y probabilidad y estadística.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-24T16:10:24-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Matemáticas para criptografía</title><link href="https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia.html" rel="alternate" type="text/html" title="Matemáticas para criptografía" /><published>2021-12-22T00:00:00-06:00</published><updated>2021-12-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia.html">&lt;p&gt;¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles y probabilidad y estadística.&lt;/p&gt;
 
 &lt;p&gt;Veamos a un poco de más profundidad un plan de estudio de matemáticas que podrías usar para adquirir las habilidades matemáticas para entender mejor los algoritmos criptográficos.&lt;/p&gt;
 
@@ -17,18 +17,41 @@
   &lt;li&gt;&lt;a href=&quot;https://platzi.com/cursos/algebra/&quot;&gt;Curso de Álgebra en Platzi&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;probabilidad-y-estadística&quot;&gt;Probabilidad y estadística&lt;/h3&gt;
+
+&lt;p&gt;Siempre que hablamos de que un algoritmo es seguro, lo decimos basados en la probabilidad de que alguien pueda encontrar una solución a un problema muy difícil en un número de intentos razonable. Así, confiamos en que la probabilidad es cercana a cero, pero real&lt;/p&gt;
+
+&lt;h2 id=&quot;matemáticas-discretas&quot;&gt;Matemáticas discretas&lt;/h2&gt;
+
+&lt;p&gt;Me atrevería a decir que este es la rama &lt;strong&gt;más importante de matemáticas&lt;/strong&gt; que debes de conocer como programador y como criptógrafo. La mayoría de los operaciones criptográficas y de algoritmo de programación están basadas en el conocimiento que aprenderás aquí.&lt;/p&gt;
+
+&lt;p&gt;Las partes más importantes son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Lógica&lt;/strong&gt;. Tablas de verdad, proposciones, funciones&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;teoría-de-números&quot;&gt;Teoría de números&lt;/h3&gt;
+&lt;h3 id=&quot;combinatoria&quot;&gt;Combinatoria&lt;/h3&gt;
+
+&lt;h3 id=&quot;teoría-de-grafos&quot;&gt;Teoría de Grafos&lt;/h3&gt;
+&lt;h2 id=&quot;intermedio&quot;&gt;Intermedio&lt;/h2&gt;
+
 &lt;h3 id=&quot;geometría-analítica&quot;&gt;Geometría analítica&lt;/h3&gt;
 
 &lt;p&gt;Conocer las propiedades matemáticas de los objetos geométricos te ayudará a comprender intuitivamente algunas de los problemas en los que está basada la criptografía.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.coursera.org/learn/trigonometria&quot;&gt;Trigonometría y geometría analítica - UNAM&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Algunos cursos que puedes tomar:&lt;/p&gt;
 
-&lt;h3 id=&quot;probabilidad-y-estadística&quot;&gt;Probabilidad y estadística&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/trigonometria&quot;&gt;Trigonometría y geometría analítica - UNAM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Siempre que hablamos de que un algoritmo es seguro, lo decimos basados en la probabilidad de que alguien pueda encontrar una solución a un problema muy difícil en un número de intentos razonable. Así, confiamos en que la probabilidad es cercana a cero, pero real&lt;/p&gt;
-&lt;h2 id=&quot;intermedio&quot;&gt;Intermedio&lt;/h2&gt;
+&lt;h2 id=&quot;avanzado&quot;&gt;Avanzado&lt;/h2&gt;
 
-&lt;h2 id=&quot;avanzado&quot;&gt;Avanzado&lt;/h2&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="matemáticas" /><category term="álgebra" /><summary type="html">Veamos qué conocimientos matemáticos requieres para entender los algoritmos criptográficos, cómo funcionan y, en su caso, avanzar para que puedas diseñar los tuyos.</summary></entry><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html">&lt;p&gt;HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual.&lt;/p&gt;
+&lt;p&gt;Esta matemáticas están enfocadas en que diseñes tus propios algortimos criptográficos, resistentes a ataques modernos y sobre todo preparados para resistir la acelaración en cómputo prometida por la tecnología cuántica.&lt;/p&gt;
+
+&lt;h3 id=&quot;retículas&quot;&gt;Retículas&lt;/h3&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="matemáticas" /><category term="álgebra" /><summary type="html">Veamos qué conocimientos matemáticos requieres para entender los algoritmos criptográficos, cómo funcionan y, en su caso, avanzar para que puedas diseñar los tuyos.</summary></entry><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html">&lt;p&gt;HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;

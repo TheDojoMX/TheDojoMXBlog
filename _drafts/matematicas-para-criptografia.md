@@ -28,17 +28,37 @@ Es necesario conoces los procedimientos algebraicos a fondo porque en esto se ba
 - [Algebra básica - UNAM](https://www.coursera.org/learn/algebra-basica)
 - [Curso de Álgebra en Platzi](https://platzi.com/cursos/algebra/)
 
-### Geometría analítica
-
-Conocer las propiedades matemáticas de los objetos geométricos te ayudará a comprender intuitivamente algunas de los problemas en los que está basada la criptografía.
-
-[Trigonometría y geometría analítica - UNAM](https://www.coursera.org/learn/trigonometria)
-
 
 ### Probabilidad y estadística
 
 Siempre que hablamos de que un algoritmo es seguro, lo decimos basados en la probabilidad de que alguien pueda encontrar una solución a un problema muy difícil en un número de intentos razonable. Así, confiamos en que la probabilidad es cercana a cero, pero real
+
+## Matemáticas discretas
+
+Me atrevería a decir que este es la rama **más importante de matemáticas** que debes de conocer como programador y como criptógrafo. La mayoría de los operaciones criptográficas y de algoritmo de programación están basadas en el conocimiento que aprenderás aquí.
+
+Las partes más importantes son:
+
+- **Lógica**. Tablas de verdad, proposciones, funciones
+
+### Teoría de números
+### Combinatoria
+
+### Teoría de Grafos
 ## Intermedio
+
+### Geometría analítica
+
+Conocer las propiedades matemáticas de los objetos geométricos te ayudará a comprender intuitivamente algunas de los problemas en los que está basada la criptografía.
+
+Algunos cursos que puedes tomar:
+
+- [Trigonometría y geometría analítica - UNAM](https://www.coursera.org/learn/trigonometria)
 
 
 ## Avanzado
+
+Esta matemáticas están enfocadas en que diseñes tus propios algortimos criptográficos, resistentes a ataques modernos y sobre todo preparados para resistir la acelaración en cómputo prometida por la tecnología cuántica.
+
+### Retículas
+
