@@ -1,4 +1,125 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-23T09:39:23-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html">&lt;p&gt;HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-25T01:36:28-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Matemáticas para criptografía</title><link href="https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia.html" rel="alternate" type="text/html" title="Matemáticas para criptografía" /><published>2021-12-22T00:00:00-06:00</published><updated>2021-12-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia.html">&lt;p&gt;¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles y probabilidad y estadística.&lt;/p&gt;
+
+&lt;p&gt;Veamos a un poco de más profundidad un plan de estudio de matemáticas que podrías usar para adquirir las habilidades matemáticas para entender mejor los algoritmos criptográficos.&lt;/p&gt;
+
+&lt;h2 id=&quot;básico-básico&quot;&gt;Básico básico&lt;/h2&gt;
+
+&lt;p&gt;Empecemos por los fundamentos más profundos que debes tener, que hasta pueden parecer obvios. Lo importante es que tengas la seguridad que los dominas y si no, te proporcionamos algunos recursos para que los repasas.&lt;/p&gt;
+
+&lt;h3 id=&quot;álgebra&quot;&gt;Álgebra&lt;/h3&gt;
+
+&lt;p&gt;Es necesario conoces los procedimientos algebraicos a fondo porque en esto se basa la resolución de problemas de muchas de las siguientes áreas. Además la factorización es uno de los problemas más importantes de la criptografía actual, y aquí es donde aprenderás el concepto básico. Si sientes que te falta comprender un poco, puedes tomar estos cursos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/math/algebra&quot;&gt;Álgebra 1 - Khan Academy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/math/algebra2&quot;&gt;Álgebra 2 - Khan Academy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/algebra-basica&quot;&gt;Algebra básica - UNAM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://platzi.com/cursos/algebra/&quot;&gt;Curso de Álgebra en Platzi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;probabilidad-y-estadística&quot;&gt;Probabilidad y estadística&lt;/h3&gt;
+
+&lt;p&gt;Siempre que hablamos de que un algoritmo es seguro, lo decimos basados en la probabilidad de que alguien pueda encontrar una solución a un problema muy difícil en un número de intentos razonable. Así, confiamos en que la probabilidad es cercana a cero, pero realmente esta probabilidad nunca es cero absoluto, sino algo como &lt;strong&gt;1/2^128&lt;/strong&gt; por intento, pero alguien motivado podría hacer &lt;em&gt;miles de millones&lt;/em&gt; de intentos. Para poder calcular estas probabilidades hay que entender lo básico de probabilidad y estadística.&lt;/p&gt;
+
+&lt;p&gt;Esto también te ayudará a entender lo que es una distribución de probabilidad, lo que es muy importante tanto para atacar algoritmos criptográficos como para verificar que las salidas son seguras.&lt;/p&gt;
+
+&lt;p&gt;Puedes aprender un poco de esto en los siguientes cursos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/math/statistics-probability&quot;&gt;Probabilidad y estadística - Khan Academy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/estadistica-probabilidad&quot;&gt;Estadística y Probabilidad - UNAM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;matemáticas-discretas&quot;&gt;Matemáticas discretas&lt;/h2&gt;
+
+&lt;p&gt;Me atrevería a decir que este es la rama &lt;strong&gt;más importante de matemáticas&lt;/strong&gt; que debes de conocer como programador y como criptógrafo. La mayoría de los operaciones criptográficas y de algoritmo de programación están basadas en el conocimiento que aprenderás aquí. &lt;a href=&quot;https://blog.thedojo.mx/2019/12/25/las-matematicas-que-debes-saber-para-programar.html#l%C3%B3gica-matem%C3%A1ticas-discretas&quot;&gt;Ya hemos mencionado&lt;/a&gt; que las matemáticas discretas son el estudio de las cosas que se pueden contar, sean finitas o infinitas.&lt;/p&gt;
+
+&lt;p&gt;A continuación te listamos algunos de los temas que debes dominar o por lo menos conocer bien.&lt;/p&gt;
+
+&lt;h3 id=&quot;lógica&quot;&gt;Lógica&lt;/h3&gt;
+
+&lt;p&gt;La lógica tiene la intención de formalizar el razonamiento de tal manera que lo podamos estudiar, entender y aplicar a otras áreas.&lt;/p&gt;
+
+&lt;p&gt;En este tema se habla de cosas como tablas de verdad, lógica proposicional, deducción, &lt;a href=&quot;https://www.fing.edu.uy/~amiquel/fundamentos/teoriasymodelos.pdf&quot;&gt;teorías y lógica de primer orden&lt;/a&gt;, etc.&lt;/p&gt;
+
+&lt;h3 id=&quot;teoría-de-números&quot;&gt;Teoría de números&lt;/h3&gt;
+
+&lt;p&gt;La teoría de números trata acerca de los números enteros, sus propiedades, operaciones y relaciones. Esta es &lt;strong&gt;la base de varios problemas difíciles que sirven para crear los algoritmos criptográficos modernos&lt;/strong&gt;. En esta rama se estudia la divisibilidad, los números primos, la aritmética modular y los algoritmos relacionados con estas operaciones.&lt;/p&gt;
+
+&lt;p&gt;Si no vas a estudiar nada más, entender los temas de un curso de teoría de números enfocado en criptografía es suficiente para no sentirte sin rumbo. Estos cursos pueden ayudarte a aprender lo que necesitas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/number-theory-cryptography&quot;&gt;Number Theory for Cryptography&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://personal.cimat.mx:8181/~hgallegos/teaching/teoriaDeNumeros/&quot;&gt;Temario con Bibliografía y tareas del curso de Teoría de Números del CIMAT&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/mathematical-foundations-cryptography&quot;&gt;Mathematical foundations of cryptography&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_(Poritz)&quot;&gt;Yet Another Introductory Number Theory Textbook - Cryptology Emphasis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;combinatoria&quot;&gt;Combinatoria&lt;/h3&gt;
+
+&lt;p&gt;Esta sub-rama de las matemáticas discreta tiene que ver con el &lt;em&gt;conteo, combinaciones y arreglos de objetos en estructuras discretas&lt;/em&gt; (con objetos claramente separados) como los grafos y conjuntos. Normalmente estas estructuras discretas contienen números, pero podrían contener palabras, textos, frases. La combinatoria incluye el conteo de objetos y combinaciones que llevamos a a cabo en probabilidad y estadística: las operaciones de combinación y permutación.&lt;/p&gt;
+
+&lt;p&gt;Algunos recursos que te ayudarán a aprender combinatoria a fondo se encuentran aquí: &lt;a href=&quot;https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics&quot;&gt;Combinatorics and Discrete Mathematics&lt;/a&gt; que tiene un conjunto de libros sobre combinatoria con diferentes enfoques.&lt;/p&gt;
+
+&lt;h3 id=&quot;cursos-de-matemáticas-discretas-generales&quot;&gt;Cursos de matemáticas discretas generales&lt;/h3&gt;
+
+&lt;p&gt;Algunos cursos y temarios que puedes tomar son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://compilandoconocimiento.com/discretas/&quot;&gt;Curso de matemáticas discretas&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://posgrados.inaoep.mx/archivos/PosCsComputacionales/Curso_Propedeutico/TEMARIOS/2_MateDiscretas-VersionGeneral.pdf&quot;&gt;Temario sobre matemáticas discretas para Maestría en Ciencias de la Computación&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;geometría-analítica&quot;&gt;Geometría analítica&lt;/h3&gt;
+
+&lt;p&gt;Conocer las propiedades matemáticas de los objetos geométricos te ayudará a comprender intuitivamente algunas de los problemas difíciles en los que está basada la criptografía.&lt;/p&gt;
+
+&lt;p&gt;Algunos cursos que puedes tomar:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/https://www.eusal.es/eusal/catalog/book/978-84-1311-463-7trigonometria&quot;&gt;Trigonometría y geometría analítica - UNAM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;álgebra-lineal&quot;&gt;Álgebra lineal&lt;/h2&gt;
+
+&lt;p&gt;El álgebra lineal tiene que ver con el estudio de ecuaciones lineales (que pueden ser graficadas en el plano cartesiano con una recta), sus soluciones y su tratamiento a través de vectores y matrices.&lt;/p&gt;
+
+&lt;p&gt;Muchas de las técnicas utilizadas en álgebra lineal son ocupadas en criptografía para crear algoritmos seguros que sean imposibles de revertir sin conocer la llave correcta. Un ejemplo es el algoritmo Rijndael, el actual AES.&lt;/p&gt;
+
+&lt;p&gt;Algunos recursos que te ayudarána a aprender matemáticas discretas son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/projects/aprendiendo-python-con-algebra-lineal&quot;&gt;Aprendiendo Python con Álgebra Lineal&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.edx.org/course/fundamentos-de-algebra-lineal-2?index=product&amp;amp;queryID=4f34318ca69382d83eb24655d433f655&amp;amp;position=1&quot;&gt;Fundamentos de álgebra lineal&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://buzzard.ups.edu/courses/2013spring/projects/berger-aes-ups-434-2013.pdf&quot;&gt;Cómo funciona AES (Rijndael)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;opcionales&quot;&gt;Opcionales&lt;/h2&gt;
+
+&lt;p&gt;Si quieres avanzar a campos muy adelantados de la criptografía, debes estudias campos aún más específicos de las matemáticas discretas como:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Teoría de grupos&lt;/li&gt;
+  &lt;li&gt;Teoría de grafos&lt;/li&gt;
+  &lt;li&gt;Retículas (algo muy importante para la criptografía post-cuántica)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cursos-completos&quot;&gt;Cursos completos&lt;/h2&gt;
+
+&lt;p&gt;Para finalizar, te quiero presentar recursos que tienen un conjunto completo básico de todas las matemáticas necesarias para entender los algoritmos criptográficos modernos.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.eusal.es/eusal/catalog/book/978-84-1311-463-7&quot;&gt;MANUAL DE CRIPTOGRAFÍA: FUNDAMENTOS MATEMÁTICOS DE LA CRIPTOGRAFÍA PARA UN ESTUDIANTE DE GRADO&lt;/a&gt; - Tiene apartados para todos los tipos de algoritmos criptográficos usados en la actualidad, explicando su soporte matemático. Si quieres profundizar en algún tema de estos, podrías tomar el curso específico que sugerimos aquí.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/specializations/discrete-mathematics&quot;&gt;Especialización en matemáticas discretas en Coursera&lt;/a&gt; - Tiene todos los temas relacionados con matemáticas para computación y criptografía divididos en varios cursos, lo puedes tomar de manera gratuita.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/mathematical-foundations-cryptography?&quot;&gt;Mathematical foundations of Cryptography&lt;/a&gt; - Tiene todos los temas necesarios para entender la criptografía, incluyendo los temas selectos de todas las matemáticas para ir directo al grano. Esto requerirá que tengas cubierto las matemáticas básicas para no perderte.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.isical.ac.in/~rcbose/mtechCrS.pdf&quot;&gt;Temario de maestría en seguridad de la ISICAL&lt;/a&gt; - Tiene todos los cursos que alguien debería de tomar para especializarse en ciberseguridad, con temarios completos y bibliografía, lo que te puede servir como una guía si lo que prefieres es aprender de los libros.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bonus: &lt;a href=&quot;https://www.coursera.org/learn/cryptography-boolean-functions&quot;&gt;Cryptogaphy, Boolean Functions and related problems&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Como podrás observar, hay una gran cantidad de recursos para aprender lo necesario para entender la criptografía a fondo, desde sus bases matemáticas. Puedes usar estas recomendaciones como guía, o ver los temas y buscar tus propios recursos para seguir aprendiendo. Si tienes alguna recomendación no dudes en compartirla con nosotros para poder actualizar nuestra lista y cada vez hacerla mejor.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="matemáticas" /><category term="álgebra" /><summary type="html">Veamos qué conocimientos matemáticos requieres para entender los algoritmos criptográficos, cómo funcionan y, en su caso, avanzar para que puedas diseñar los tuyos.</summary></entry><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html">&lt;p&gt;HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -54,7 +175,7 @@
 
 &lt;p&gt;Mantenernos actualizados con respecto a las nuevas tecnologías es muy importante para ofrecerles lo mejor a los usuarios de nuestro software, sean desarrolladores o usuarios finales. Si quieres empezar a usar HTTP/3 échale un ojo a tus servidores HTTP, por ejemplo &lt;a href=&quot;https://www.nginx.com/blog/our-roadmap-quic-http-3-support-nginx/&quot;&gt;NGINX ya tiene planes para soportarlo completamente&lt;/a&gt;, &lt;a href=&quot;https://doc.traefik.io/traefik/master/routing/entrypoints/#http3&quot;&gt;Traefik ya lo soporta de manera experimental&lt;/a&gt;, pero parece que Apache &lt;a href=&quot;https://www.reddit.com/r/apache/comments/o6a86x/why_is_apache_failing_to_implement_quic_http3/&quot;&gt;no lo hará por ahora&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;También si usas algún servicio de AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que lo actives. Puedes revisar la lista de compatibilidad constantemente aquí: &lt;a href=&quot;https://caniuse.com/http3&quot;&gt;Can I Use HTTP/3?&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="HTTP" /><category term="web" /><category term="network" /><summary type="html">HTTP es el estándar que permite que internet exista como hoy lo conocemos, hablemos de sus avances y lo que puede ofrecerte la última versión: HTTP/3.</summary></entry><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;También si usas algún servicio de servidores administrados AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que lo actives. Puedes revisar la lista de compatibilidad constantemente aquí: &lt;a href=&quot;https://caniuse.com/http3&quot;&gt;Can I Use HTTP/3?&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="HTTP" /><category term="web" /><category term="network" /><summary type="html">HTTP es el estándar que permite que internet exista como hoy lo conocemos, hablemos de sus avances y lo que puede ofrecerte la última versión: HTTP/3.</summary></entry><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra con los cifrados de &lt;em&gt;flujo&lt;/em&gt; o &lt;strong&gt;stream ciphers&lt;/strong&gt;.&lt;/p&gt;
 
@@ -666,106 +787,4 @@ Puedes ver la presentación de uno de los autores en &lt;a href=&quot;https://ww
       &lt;p&gt;Cuando decimos “módulo” estamos hablando de la forma de tu lenguaje de agrupar funcionalidades, puede ser literalmente un módulo, un paquete, una aplicación etc. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Cohesión" /><category term="acoplamiento" /><category term="software" /><summary type="html">En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código</summary></entry><entry><title type="html">Versiona mejor tu código: versionamiento semántico y commits convencionales</title><link href="https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html" rel="alternate" type="text/html" title="Versiona mejor tu código: versionamiento semántico y commits convencionales" /><published>2021-12-04T00:00:00-06:00</published><updated>2021-12-04T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-codigo-versionamiento-semantico-y-commits-convencionales.html">&lt;p&gt;Una de las mejores cosas que podemos hacer por nosotros mismos y por nuestro equipo es versionar nuestro código y qué mejor que hacerlo de las mejores formas conocidas hasta el momento.&lt;/p&gt;
-
-&lt;p&gt;En este artículo hablaremos de dos cosas conectadas: el &lt;strong&gt;versionamiento semántico&lt;/strong&gt; y los &lt;strong&gt;“commits convencionales”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;por-qué-es-importante&quot;&gt;¿Por qué es importante?&lt;/h2&gt;
-
-&lt;p&gt;Organizar y manejar tu código de tal manera que puedas crear diferentes versiones del sistema que estás programando, cambiar entre ellas o regresar una anterior, es un requerimiento de todos los procesos de desarrollo actuales.&lt;/p&gt;
-
-&lt;p&gt;Además, presentar tu software a los usuarios finales en versiones iterativamente mejores es una buena práctica que te permitirá liberar más rápido, más seguido y frecuentemente con mejor calidad. Para lograr esto es importante &lt;strong&gt;comunicar correctamente lo que está cambiando en cada versión&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;La herramienta más usada para versionar nuestro código es &lt;strong&gt;git&lt;/strong&gt;, pero no establece ningún lineamiento en la forma en la que liberamos el software para los usuarios finales. Así que veamos primeramente una forma de comunicar nuestros cambios de manera correcta y efectiva y después una forma de hacerlo conectarlo con nuestro proceso de trabajo con git.&lt;/p&gt;
-
-&lt;h2 id=&quot;versionamiento-semántico&quot;&gt;Versionamiento semántico&lt;/h2&gt;
-
-&lt;p&gt;El versionamiento semántico (Semantic Versioning o SemVer) es una forma de &lt;strong&gt;comunicar a nuestros usuarios finales los tipos de cambios introducidos en las nuevas versiones.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Esto es muy importante porque, como seguramente habrás experimentado, un proyecto de software requiere de muchas dependencias y cuando alguna de ellas no funciona bien, tiene algunos bugs, o no es compatible con lo que ya existía, nos podemos meter en serios problemas. Y mientras más grande es el proyecto, más dependencias necesitarás, lo que agranda el problema.&lt;/p&gt;
-
-&lt;p&gt;Lo que &lt;strong&gt;SemVer&lt;/strong&gt; propone es una sintaxis formal que nos permite entender el tipo de cambios introducidos en cada versión. Esta sintaxis constituye un lenguaje formal que puede ser usado para resolver automáticamente problemas de dependencias si se usa correctamente.&lt;/p&gt;
-
-&lt;p&gt;Antes de ver un ejemplo de una versión semántica es importante que aclaremos que esta se usa para software que tiene una interfaz establecida. Esta interfaz formal está completamente documentada para que otros programadores o usuarios finales pueden usar tu software. A esta interfaz le llamaremos &lt;strong&gt;API&lt;/strong&gt; (Application Programming Interface)&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; a partir de ahora. Ahora sí, una versión en SemVer se ve así:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.0.2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;El primer número es la versión mayor, en este caso 1. El segundo número es la versión menor, en este caso 0. El tercer número es la versión del parche, en este caso 2.&lt;/p&gt;
-
-&lt;p&gt;Ahora bien, ¿que significa cuando cambian estos números?&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cuando cambia la versión mayor, se introducen cambios que hacen que la API sea incompatible con la versión anterior. Imagínate por ejemplo que se remueve alguna función o módulo que ya no se necesita. También puede ser que aunque no cambie explícitamente el contrato externo, cambie el significado de una operación.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cuando cambia la versión menor, se han introducido cambios o mejoras que no hacen incompatible a la API con versiones anteriores. Imagínate algo como agregarle nuevos parámetros a una función, pero que soporta valores default para que pueda seguir siendo llamada de la forma anterior. O también puede ser que agregas nuevas partes que no afectan a la forma en la que se usan las antiguas.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cuando cambia la versión de parche, no se ha introducido cambios externos a la interfaz por diseño, sino que se han arreglado errores que causaban mal funcionamiento.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Después de estos tres elementos pueden venir otros detalles, como por ejemplo la versón de prelanzamiento y metadatos de la compilación.&lt;/p&gt;
-
-&lt;p&gt;En el documento oficial &lt;a href=&quot;https://semver.org/lang/es/&quot;&gt;Versionamiento Semántico 2.0&lt;/a&gt; puedes ver más detalles sobre cómo trabajar con él, pero sobre todo notarás lo importante y serio que es que comuniquemos correctamente lo que está pasando con el software que hacemos, sobre todo si otros dependen de él. También podrás ver como las cadenas resultantes de semantic versioning son un lenguaje formal en el que se puede confiar para programar resolución de dependencias, hasta tienen un regex para reconocerlas.&lt;/p&gt;
-
-&lt;p&gt;Ahora veamos una herramienta que te ayudará a llevar cuenta del tipo de cambios que se van introduciendo en tu software y base de código.&lt;/p&gt;
-
-&lt;h2 id=&quot;commits-convencionales&quot;&gt;Commits convencionales&lt;/h2&gt;
-
-&lt;p&gt;Los &lt;a href=&quot;https://conventionalcommits.org/&quot;&gt;commits convencionales (Conventional Commits)&lt;/a&gt; son una forma de estructurar tus mensajes de cada commit para comunicar explícitamente lo que estás cambiando. El objetivo es que 1) puedas saber exactamente lo que el equipo ha cambiado en cada nueva versión o rama y 2) poder automatizar la creación de versiones semánticas y registros de cambios (changelog).&lt;/p&gt;
-
-&lt;p&gt;Un commit convencional tiene la siguiente estructura:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;tipo de commit&amp;gt; [ámbito (opcional)]: &amp;lt;descripción&amp;gt;
-
-[cuerpo (opcional)]
-
-[notas finales (opcional)]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Los tipos de commit directamente establecidos por la especificación son:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;fix: Se trata de una corrección de un bug. Este tipo de commit se relaciona con una nueva versión de parche.&lt;/li&gt;
-  &lt;li&gt;feat: Se trata de una nueva función o módulo. Este tipo de commits se relaciona con una nueva versión menor.&lt;/li&gt;
-  &lt;li&gt;BREAKING CHANGE: No es un tipo de commit sino una nota final. Siempre que se incluyan debe generarse una nueva versión mayor en la siguiente liberación.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Si se incluye un símbolo de admiración después del tipo de commit como de esta forma &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feat!&lt;/code&gt; significa que este commit introduce un cambio que rompe la compatibilidad con la versión anterior.&lt;/p&gt;
-
-&lt;p&gt;El &lt;strong&gt;ámbito&lt;/strong&gt; puede referirse a la base de código o módulo al que se aplicó el cambio.&lt;/p&gt;
-
-&lt;p&gt;Veamos algunos ejemplos:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;feat(core): Ahora podemos usar ARGON2i para cifrar las contraseñas
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fix!: Removemos la compatibilidad con SHA-1 debido a que no es seguro
-
-Se encontró que SHA-1 no es seguro debido a que se pueden fabricar colisiones y por lo tanto hemos removido el soporte en la plataforma
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;feat: Añadimos el soporte de Sal para todas las funciones de hasheo
-
-BREAKING CHANGE: Todas las firmas de función ahora requieren el parámetro `salt`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Básicamente en esto consisten los commits convencionales y si tu base de código los sigue, podrás usar herramientas para automatizar la creación de versiones semánticas y registros de cambios (changelog), ademas de mejorar drásticamente la información que se encuentra en los repositorios y cuándo sucedieron los cambios.&lt;/p&gt;
-
-&lt;p&gt;Puedes ver la especificación completa, más tipos de commits, ejemplos y las herramientas que te facilitarán la vida en &lt;a href=&quot;https://conventionalcommits.org/es/&quot;&gt;la página oficial en español&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Comunicar correctamente el estado de nuestros sistemas y módulos hacia nuestros usuarios finales es una tarea muy importante para los desarrolladores de software profesionales. Como podrás haber notado, para que esto tenga utilidad, el requisito previo es que exista documentación formal de tu software.&lt;/p&gt;
-
-&lt;p&gt;Espero que estas herramientas te ayuden a crear software que sea más fácil usar, mantener y más disfrutable tanto para ti como para tus usuarios finales.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;Aquí puedes ver por qué se llama una API a la interfaz que presenta una pieza de software a otra: &lt;a href=&quot;https://youtu.be/n8MxyHG0j3Q&quot;&gt;API’s con Hug&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="versionamiento" /><category term="git" /><category term="commits" /><summary type="html">Hablemos de cómo versionar tu código para beneficiar a tu equipo y a tus usuarios usando el sistema de vesionamiento semántico y los commits convencionales.</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Cohesión" /><category term="acoplamiento" /><category term="software" /><summary type="html">En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código</summary></entry></feed>
