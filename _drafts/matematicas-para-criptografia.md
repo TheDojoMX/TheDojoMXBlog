@@ -35,17 +35,30 @@ Siempre que hablamos de que un algoritmo es seguro, lo decimos basados en la pro
 
 ## Matemáticas discretas
 
-Me atrevería a decir que este es la rama **más importante de matemáticas** que debes de conocer como programador y como criptógrafo. La mayoría de los operaciones criptográficas y de algoritmo de programación están basadas en el conocimiento que aprenderás aquí.
+Me atrevería a decir que este es la rama **más importante de matemáticas** que debes de conocer como programador y como criptógrafo. La mayoría de los operaciones criptográficas y de algoritmo de programación están basadas en el conocimiento que aprenderás aquí. [Ya hemos mencionado](https://blog.thedojo.mx/2019/12/25/las-matematicas-que-debes-saber-para-programar.html#l%C3%B3gica-matem%C3%A1ticas-discretas) que las matemáticas discretas son el estudio de las cosas que se pueden contar, sean finitas o infinitas.
 
-Las partes más importantes son:
+A continuación te listamos algunos de los temas que debes dominar o por lo menos conocer bien.
 
-- **Lógica**. Tablas de verdad, proposciones, funciones
+### Lógica
+
+La lógica tiene la intención de formalizar el razonamiento de tal manera que lo podamos estudiar, entender y aplicar a otras áreas.
+
+En este tema se habla de cosas como tablas de verdad, lógica proposicional, deducción, [teorías y lógica de primer orden](https://www.fing.edu.uy/~amiquel/fundamentos/teoriasymodelos.pdf), etc.
+
 
 ### Teoría de números
+
+
 ### Combinatoria
 
 ### Teoría de Grafos
-## Intermedio
+
+### Cursos de matemáticas discretas
+
+Algunos cursos y temarios que puedes tomar son:
+
+- [Curso de matemáticas discretas](https://compilandoconocimiento.com/discretas/)
+- [Temario sobre matemáticas discretas para Maestría en Ciencias de la Computación](https://posgrados.inaoep.mx/archivos/PosCsComputacionales/Curso_Propedeutico/TEMARIOS/2_MateDiscretas-VersionGeneral.pdf)
 
 ### Geometría analítica
 
@@ -53,7 +66,7 @@ Conocer las propiedades matemáticas de los objetos geométricos te ayudará a c
 
 Algunos cursos que puedes tomar:
 
-- [Trigonometría y geometría analítica - UNAM](https://www.coursera.org/learn/trigonometria)
+- [Trigonometría y geometría analítica - UNAM](https://www.coursera.org/learn/https://www.eusal.es/eusal/catalog/book/978-84-1311-463-7trigonometria)
 
 
 ## Avanzado
@@ -62,3 +75,6 @@ Esta matemáticas están enfocadas en que diseñes tus propios algortimos cripto
 
 ### Retículas
 
+https://www.eusal.es/eusal/catalog/book/978-84-1311-463-7
+https://www.eusal.es/eusal/catalog/book/978-84-1311-463-7
+https://www.coursera.org/specializations/discrete-mathematics
