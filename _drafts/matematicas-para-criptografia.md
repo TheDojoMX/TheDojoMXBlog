@@ -11,7 +11,7 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles y probabilidad y estadística. 
+¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles y probabilidad y estadística.
 
 Veamos a un poco de más profundidad un plan de estudio de matemáticas que podrías usar para adquirir las habilidades matemáticas para entender mejor los algoritmos criptográficos.
 
@@ -27,7 +27,6 @@ Es necesario conoces los procedimientos algebraicos a fondo porque en esto se ba
 - [Álgebra 2 - Khan Academy](https://www.khanacademy.org/math/algebra2)
 - [Algebra básica - UNAM](https://www.coursera.org/learn/algebra-basica)
 - [Curso de Álgebra en Platzi](https://platzi.com/cursos/algebra/)
-
 
 ### Probabilidad y estadística
 
@@ -45,15 +44,19 @@ La lógica tiene la intención de formalizar el razonamiento de tal manera que l
 
 En este tema se habla de cosas como tablas de verdad, lógica proposicional, deducción, [teorías y lógica de primer orden](https://www.fing.edu.uy/~amiquel/fundamentos/teoriasymodelos.pdf), etc.
 
-
 ### Teoría de números
 
+La teoría de números trata acerca de los números enteros, sus propiedades, operaciones y relaciones. Esta es la base de varios problemas difíciles que sirven para crear los algoritmos criptográficos actuales. En esta rama se estudia la divisibilidad, los números primos, la artimética modular y los algoritmos relacionados con estas operaciones. Si no vas a estudiar nada más, entender los temas de un curso de teoría de números enfocado en criptografía es suficiente para no sentirte perdifo.
 
+Estos cursos pueden ayudarte a aprender lo que necesitas:
+- [Number Theory for Cryptography](https://www.coursera.org/learn/number-theory-cryptography)
+- [Temario con Bibliografía y tareas del curso de Teoría de Números del CIMAT](http://personal.cimat.mx:8181/~hgallegos/teaching/teoriaDeNumeros/)
+- [Mathematical foundations of cryptography](https://www.coursera.org/learn/mathematical-foundations-cryptography)
 ### Combinatoria
 
 ### Teoría de Grafos
 
-### Cursos de matemáticas discretas
+### Cursos de matemáticas discretas generales
 
 Algunos cursos y temarios que puedes tomar son:
 
@@ -68,10 +71,9 @@ Algunos cursos que puedes tomar:
 
 - [Trigonometría y geometría analítica - UNAM](https://www.coursera.org/learn/https://www.eusal.es/eusal/catalog/book/978-84-1311-463-7trigonometria)
 
+## Opcionales
 
-## Avanzado
-
-Esta matemáticas están enfocadas en que diseñes tus propios algortimos criptográficos, resistentes a ataques modernos y sobre todo preparados para resistir la acelaración en cómputo prometida por la tecnología cuántica.
+Esta matemáticas están enfocadas en que diseñes tus propios algoritmos criptográficos, resistentes a ataques modernos y sobre todo preparados para resistir la acelaración en cómputo prometida por la tecnología cuántica.
 
 ### Retículas
 
