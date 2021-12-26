@@ -462,8 +462,8 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639894600/erick-chevez-DcS2NQF-Ers-unsplash_tbv7pu.jpg"
       },{
         "title": "Matemáticas para criptografía",
-        "excerpt":"¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles y probabilidad y estadística. Veamos a un poco de más profundidad un plan de estudio de matemáticas que podrías usar para adquirir las habilidades matemáticas para entender mejor los algoritmos criptográficos. Básico...","categories": [],
+        "excerpt":"¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles de resolver, probabilidad y estadística. Veamos un plan de estudios de matemáticas que podrías usar para adquirir las habilidades matemáticas necesarias para entender mejor los algoritmos criptográficos. Básico básico Empecemos por los...","categories": [],
         "tags": ["criptografía","matemáticas","álgebra"],
-        "url": "/2021/12/22/matematicas-para-criptografia.html",
+        "url": "/2021/12/25/matematicas-para-criptografia.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639258119/anton-maksimov-juvnsky-hlc-O87pjUs-unsplash_gvco8p.jpg"
       }]

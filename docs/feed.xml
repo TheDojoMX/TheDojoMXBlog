@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-25T01:36:28-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Matemáticas para criptografía</title><link href="https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia.html" rel="alternate" type="text/html" title="Matemáticas para criptografía" /><published>2021-12-22T00:00:00-06:00</published><updated>2021-12-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia.html">&lt;p&gt;¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles y probabilidad y estadística.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-26T00:06:50-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Matemáticas para criptografía</title><link href="https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia.html" rel="alternate" type="text/html" title="Matemáticas para criptografía" /><published>2021-12-25T00:00:00-06:00</published><updated>2021-12-25T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia.html">&lt;p&gt;¿Quieres entender por qué los algoritmos criptográficos pueden &lt;em&gt;prometer&lt;/em&gt; seguridad? Todos están basados en operaciones matemáticas, problemas difíciles de resolver, probabilidad y estadística.&lt;/p&gt;
 
-&lt;p&gt;Veamos a un poco de más profundidad un plan de estudio de matemáticas que podrías usar para adquirir las habilidades matemáticas para entender mejor los algoritmos criptográficos.&lt;/p&gt;
+&lt;p&gt;Veamos un plan de estudios de matemáticas que podrías usar para adquirir las habilidades matemáticas necesarias para entender mejor los algoritmos criptográficos.&lt;/p&gt;
 
 &lt;h2 id=&quot;básico-básico&quot;&gt;Básico básico&lt;/h2&gt;
 
-&lt;p&gt;Empecemos por los fundamentos más profundos que debes tener, que hasta pueden parecer obvios. Lo importante es que tengas la seguridad que los dominas y si no, te proporcionamos algunos recursos para que los repasas.&lt;/p&gt;
+&lt;p&gt;Empecemos por los fundamentos más profundos que debes tener, que hasta pueden parecer obvios. Lo importante es que tengas &lt;em&gt;la seguridad de que los dominas&lt;/em&gt; y si no, te proporcionamos algunos recursos para que los repases.&lt;/p&gt;
 
 &lt;h3 id=&quot;álgebra&quot;&gt;Álgebra&lt;/h3&gt;
 
-&lt;p&gt;Es necesario conoces los procedimientos algebraicos a fondo porque en esto se basa la resolución de problemas de muchas de las siguientes áreas. Además la factorización es uno de los problemas más importantes de la criptografía actual, y aquí es donde aprenderás el concepto básico. Si sientes que te falta comprender un poco, puedes tomar estos cursos:&lt;/p&gt;
+&lt;p&gt;Es necesario conocer los procedimientos algebraicos a fondo porque en esto se basa la resolución de problemas de muchas otras áreas. Además la factorización es uno de los problemas más importantes de la criptografía actual, y aquí es donde aprenderás el concepto básico en práctica. Si sientes que te falta aprender un poco, puedes tomar estos cursos:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/math/algebra&quot;&gt;Álgebra 1 - Khan Academy&lt;/a&gt;&lt;/li&gt;
@@ -19,9 +19,11 @@
 
 &lt;h3 id=&quot;probabilidad-y-estadística&quot;&gt;Probabilidad y estadística&lt;/h3&gt;
 
-&lt;p&gt;Siempre que hablamos de que un algoritmo es seguro, lo decimos basados en la probabilidad de que alguien pueda encontrar una solución a un problema muy difícil en un número de intentos razonable. Así, confiamos en que la probabilidad es cercana a cero, pero realmente esta probabilidad nunca es cero absoluto, sino algo como &lt;strong&gt;1/2^128&lt;/strong&gt; por intento, pero alguien motivado podría hacer &lt;em&gt;miles de millones&lt;/em&gt; de intentos. Para poder calcular estas probabilidades hay que entender lo básico de probabilidad y estadística.&lt;/p&gt;
+&lt;p&gt;Siempre que hablamos de que un algoritmo es seguro, lo decimos basados en la probabilidad de que alguien pueda encontrar una solución a un problema muy difícil en un &lt;em&gt;número de intentos razonable&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Esto también te ayudará a entender lo que es una distribución de probabilidad, lo que es muy importante tanto para atacar algoritmos criptográficos como para verificar que las salidas son seguras.&lt;/p&gt;
+&lt;p&gt;Por ejemplo: confiamos en que la probabilidad de que alguien rompa un cifrado es cercana a cero, pero realmente esta probabilidad nunca es cero absoluto, sino algo como &lt;strong&gt;1/2^128&lt;/strong&gt; por intento, pero alguien motivado podría hacer &lt;em&gt;miles de millones&lt;/em&gt; de intentos. Para poder calcular estas probabilidades hay que entender lo básico de probabilidad y estadística.&lt;/p&gt;
+
+&lt;p&gt;La probabilidad también te ayudará a entender lo que es una &lt;strong&gt;distribución de probabilidad&lt;/strong&gt;, que es muy importante tanto para atacar algoritmos criptográficos como para verificar que las salidas de estos son seguras.&lt;/p&gt;
 
 &lt;p&gt;Puedes aprender un poco de esto en los siguientes cursos:&lt;/p&gt;
 
@@ -32,7 +34,7 @@
 
 &lt;h2 id=&quot;matemáticas-discretas&quot;&gt;Matemáticas discretas&lt;/h2&gt;
 
-&lt;p&gt;Me atrevería a decir que este es la rama &lt;strong&gt;más importante de matemáticas&lt;/strong&gt; que debes de conocer como programador y como criptógrafo. La mayoría de los operaciones criptográficas y de algoritmo de programación están basadas en el conocimiento que aprenderás aquí. &lt;a href=&quot;https://blog.thedojo.mx/2019/12/25/las-matematicas-que-debes-saber-para-programar.html#l%C3%B3gica-matem%C3%A1ticas-discretas&quot;&gt;Ya hemos mencionado&lt;/a&gt; que las matemáticas discretas son el estudio de las cosas que se pueden contar, sean finitas o infinitas.&lt;/p&gt;
+&lt;p&gt;Me atrevería a decir que esta es la rama &lt;strong&gt;más importante de matemáticas&lt;/strong&gt; que debes de conocer como programador y como criptógrafo. La mayoría de los operaciones criptográficas y de algoritmos de programación están basadas en el conocimiento que aprenderás aquí. &lt;a href=&quot;https://blog.thedojo.mx/2019/12/25/las-matematicas-que-debes-saber-para-programar.html#l%C3%B3gica-matem%C3%A1ticas-discretas&quot;&gt;Ya hemos mencionado&lt;/a&gt; que las matemáticas discretas son el estudio de las cosas que se pueden contar, sean finitas o infinitas, a diferencia de las matemáticas continuas que estudian los números reales o cosas que son continuas, incontables y sin divisiones claras.&lt;/p&gt;
 
 &lt;p&gt;A continuación te listamos algunos de los temas que debes dominar o por lo menos conocer bien.&lt;/p&gt;
 
@@ -57,7 +59,7 @@
 
 &lt;h3 id=&quot;combinatoria&quot;&gt;Combinatoria&lt;/h3&gt;
 
-&lt;p&gt;Esta sub-rama de las matemáticas discreta tiene que ver con el &lt;em&gt;conteo, combinaciones y arreglos de objetos en estructuras discretas&lt;/em&gt; (con objetos claramente separados) como los grafos y conjuntos. Normalmente estas estructuras discretas contienen números, pero podrían contener palabras, textos, frases. La combinatoria incluye el conteo de objetos y combinaciones que llevamos a a cabo en probabilidad y estadística: las operaciones de combinación y permutación.&lt;/p&gt;
+&lt;p&gt;Esta sub-rama de las matemáticas discretas tiene que ver con el &lt;em&gt;conteo, combinaciones y arreglos de objetos en estructuras discretas&lt;/em&gt; (con objetos claramente separados) como los grafos y conjuntos. Normalmente estas estructuras discretas contienen números, pero podrían contener palabras, textos, frases. La combinatoria incluye el conteo de objetos y combinaciones que llevamos a a cabo en probabilidad y estadística: las operaciones de combinación y permutación.&lt;/p&gt;
 
 &lt;p&gt;Algunos recursos que te ayudarán a aprender combinatoria a fondo se encuentran aquí: &lt;a href=&quot;https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics&quot;&gt;Combinatorics and Discrete Mathematics&lt;/a&gt; que tiene un conjunto de libros sobre combinatoria con diferentes enfoques.&lt;/p&gt;
 
