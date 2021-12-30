@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>El tiempo monótono -</title>
-<meta name="description" content="¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el qye puedes confiar para hacer calculos relativos a periodos de tiempo en tus programas.">
+<meta name="description" content="¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.">
 
 
   <meta name="author" content="Héctor Patricio">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html">
 
 
-  <meta property="og:description" content="¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el qye puedes confiar para hacer calculos relativos a periodos de tiempo en tus programas.">
+  <meta property="og:description" content="¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.">
 
 
 
@@ -134,8 +134,8 @@
       "name": "El tiempo monótono",
       "headline": "El tiempo monótono",
       "keywords": "monótono,tiempo,conteo",
-      "description": "¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el qye puedes confiar para hacer calculos relativos a periodos de tiempo en tus programas.",
-      "articleBody": "Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto, es cuando se está midiendo el tiempo que tarda una parte del programa manualmente.\n\nEl tiempo monótono es un concepto que todo programador debería conocer, para evitar errores y código frágil al medir el tiempo en los programas.\n\nEl reloj de “pared”\n\nLo primero que se nos viene a la cabeza cuando se trata de medir el tiempo entre dos eventos de nuestro programa es usar alguna función de nuestro lenguaje de programación que obtenga la fecha y hora actual del sistema. Un ejemplo en Python sería:\n\nimport time\n\nstart = time.time()\n# hacer algo (lo que queremos medir)\nend = time.time()\ndiff = end - start\n\nprint(diff)\n\n\nEsto puede parecer inofensivo, pero tiene una falla que hace a nuestro programa frágil ante eventualidades fuera del sistema. La función time.time() devuelve un número de segundos desde el 1 de Enero de 1970 (esta fecha conocida como el Epoch) como un flotante. Este número siempre será incremental, es decir, no debería devolverte un número menor que una llamada previa. Sin embargo, para calcular ese número de segundos (conocido como el Tiempo Unix), Python se basa en la hora del sistema en el que está corriendo el programa.\n\n¿Alcanzas a notar por qué esta forma de calcular cuánto tiempo ha pasado desde un evento es frágil? Por ejemplo, imagina que entre una medida de tiempo (en nuestro programa, la variable start) y la siguiente(end), ocurriera un cambio de hora en el sistema. Puede ser que alguien esté jugando con las configuraciones o que por pura casualidad el sistema haya ajustado el tiempo por uno de los segundos de ajuste de nuestro calendario (leap seconds) o que corra durante el cambio de hora por el horario de verano.\n\nTodas estas circunstancias podrían afectar como mide el tiempo tu programa si usamos el reloj del sistema. Es aquí en donde entra el tiempo o reloj monótono.\n\nEl tiempo monótono\n\nEl reloj monótono es un contador del sistema que sólo avanza hacia adelante, contando a partir de un punto arbitrario en el pasado. Este reloj no tiene conexión con el calendario y el tiempo real del sistema, sino que simplemente sirve para medir el tiempo que ha pasado (siempre en aumento) desde el punto que se eligió.\n\nAsí, este reloj es confiable para medir el tiempo que pasó entre dos eventos, porque podemos tener la seguridad de que el una llamada posterior a la lectura de este reloj siempre va a devolver algo mayor que la lectura anterior.\n\nLa manera de usarlo en Python también es mediante el módulo time:\n\nimport time\n\nstart = time.monotonic()\n# hacer algo (lo que queremos medir)\nend = time.monotonic()\ndiff = end - start\nprint(diff)\n\n\n\nLa función time.monotonic() devuelve el tiempo monótono como un flotante, en segundos. Con estas dos puntos que están conectados al mismo marco de referencia obligatoriamente, hacemos que nuestra medición entre los dos eventos sea confiable. Lo mismo sucedería si quisieras coordinar dos sistemas diferentes: cada uno puede confiar en su reloj monótono sabiendo que el tiempo no saltará hacia atrás de ninguna manera.\n\nCon vergüenza te comento que la primera vez que escuché de este concepto fue con más de 10 años de carrera, mediante el libro Elixir para Alquimistas de Manuel Rubio, un libro que recomiendo mucho.\n\nConclusión\n\nCuando estés midiendo tiempo o coordinando tareas en tu programa, no confíes en las fechas y horas del sistema en el que está corriendo tu programa. Usa el reloj monótono para garantizar que tienes el mismo marco de referencia siempre que hagas una medición de tiempo. Tu lenguaje de programación debería darte acceso a esta medición, sólo investiga o busca en Google: “Lenguaje X monotonic time”.\n",
+      "description": "¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.",
+      "articleBody": "Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto es cuando se está midiendo el tiempo que tarda una parte del programa o un evento externo.\n\nEl tiempo o reloj monótono es un concepto que todo programador debería conocer, para evitar errores y código frágil al medir el tiempo en los programas.\n\nEl reloj de “pared”\n\nLo primero que se nos viene a la cabeza cuando se trata de medir el tiempo entre dos eventos de nuestro programa es usar alguna función de nuestro lenguaje de programación que obtenga la fecha y hora actual. Este reloj o tiempo se llama de “tiempo real” y algunos programadores le llaman el reloj de pared, porque es como si voltearas a ver un reloj de esos que pones en tu pared para que te de la hora constantemente.\n\nUn ejemplo de esto en Python sería:\n\nimport time\n\nstart = time.time()\n\n# hacer algo (lo que queremos medir)\n\nend = time.time()\ndiff = end - start\n\nprint(diff)\n\n\nEsto puede parecer inofensivo, pero tiene una falla que hace a nuestro programa frágil ante eventualidades fuera del sistema. La función time.time() devuelve un número de segundos desde el 1 de Enero de 1970 (esta fecha conocida como el Epoch) como un flotante. Este número siempre será incremental, es decir, no debería devolverte un número menor que una llamada previa. Sin embargo, para calcular ese número de segundos (conocido como el Tiempo Unix), Python se basa en la hora del sistema en el que está corriendo el programa.\n\n¿Alcanzas a notar por qué esta forma de calcular cuánto tiempo ha pasado desde un evento es frágil? Por ejemplo, imagina que entre una medida de tiempo (en nuestro programa, la variable start) y la siguiente(end), ocurriera un cambio de hora en el sistema. Puede ser que alguien esté jugando con las configuraciones o que por pura casualidad el sistema haya ajustado el tiempo por uno de los segundos de ajuste de nuestro calendario (leap seconds) o que corra durante el cambio de hora por el horario de verano.\n\nTodas estas circunstancias podrían afectar como mide el tiempo tu programa si usamos el reloj del sistema. Es aquí en donde entra el tiempo o reloj monótono.\n\nEl tiempo monótono\n\nEl reloj monótono es un contador del sistema que sólo avanza hacia adelante, contando a partir de un punto arbitrario en el pasado. Este reloj no tiene conexión con el calendario y el tiempo real del sistema, sino que simplemente sirve para medir el tiempo que ha pasado (siempre en aumento) desde el punto que se eligió.\n\nAsí, este reloj es confiable para medir el tiempo que pasó entre dos eventos, porque podemos tener la seguridad de que el una llamada posterior a la lectura de este reloj siempre va a devolver algo mayor que la lectura anterior.\n\nLa manera de usarlo en Python también es mediante el módulo time:\n\nimport time\n\nstart = time.monotonic()\n# hacer algo (lo que queremos medir)\nend = time.monotonic()\ndiff = end - start\nprint(diff)\n\n\n\nLa función time.monotonic() devuelve el tiempo monótono como un flotante, en segundos. Con estas dos puntos que están conectados al mismo marco de referencia obligatoriamente, hacemos que nuestra medición entre los dos eventos sea confiable. Lo mismo sucedería si quisieras coordinar dos sistemas diferentes: cada uno puede confiar en su reloj monótono sabiendo que el tiempo no saltará hacia atrás de ninguna manera.\n\nCon vergüenza te comento que la primera vez que escuché de este concepto fue con más de 10 años de carrera, mediante el libro Elixir para Alquimistas de Manuel Rubio, un libro que recomiendo mucho.\n\nConclusión\n\nCuando estés midiendo tiempo o coordinando tareas en tu programa, no confíes en las fechas y horas del sistema en el que está corriendo tu programa. Usa el reloj monótono para garantizar que tienes el mismo marco de referencia siempre que hagas una medición de tiempo. Tu lenguaje de programación debería darte acceso a esta medición, sólo investiga o busca en Google: “Lenguaje X monotonic time”.\n",
       "datePublished": "2021-12-26 00:00:00 -0600",
       "dateModified": "2021-12-26 00:00:00 -0600",
       "author": {
@@ -246,7 +246,7 @@
         
       </h1>
       
-        <p class="page__lead">¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el qye puedes confiar para hacer calculos relativos a periodos de tiempo en tus programas.
+        <p class="page__lead">¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.
 </p>
       
       
@@ -401,7 +401,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="El tiempo monótono">
-    <meta itemprop="description" content="¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el qye puedes confiar para hacer calculos relativos a periodos de tiempo en tus programas.">
+    <meta itemprop="description" content="¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.">
     <meta itemprop="datePublished" content="2021-12-26T00:00:00-06:00">
     
 
@@ -410,19 +410,23 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto, es cuando se está midiendo el tiempo que tarda una parte del programa manualmente.</p>
+        <p>Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto es cuando se está midiendo el tiempo que tarda una parte del programa o un evento externo.</p>
 
-<p>El tiempo monótono es un concepto que todo programador debería conocer, para evitar errores y código frágil al <em>medir</em> el tiempo en los programas.</p>
+<p>El <strong>tiempo o reloj monótono</strong> es un concepto que todo programador debería conocer, para evitar errores y código frágil al <em>medir</em> el tiempo en los programas.</p>
 
 <h2 id="el-reloj-de-pared">El reloj de “pared”</h2>
 
-<p>Lo primero que se nos viene a la cabeza cuando se trata de medir el tiempo entre dos eventos de nuestro programa es usar alguna función de nuestro lenguaje de programación que obtenga la fecha y hora actual del sistema. Un ejemplo en Python sería:</p>
+<p>Lo primero que se nos viene a la cabeza cuando se trata de medir el tiempo entre dos eventos de nuestro programa es usar alguna función de nuestro lenguaje de programación que obtenga la fecha y hora actual. Este reloj o tiempo se llama de “tiempo real” y algunos programadores le llaman el reloj de pared, porque es como si voltearas a ver un reloj de esos que pones en tu pared para que te de la hora constantemente.</p>
+
+<p>Un ejemplo de esto en Python sería:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+
 <span class="c1"># hacer algo (lo que queremos medir)
-</span><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">diff</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>

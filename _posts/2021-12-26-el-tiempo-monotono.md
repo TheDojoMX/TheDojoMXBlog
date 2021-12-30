@@ -4,26 +4,30 @@ date: 2021-12-26
 author: Héctor Patricio
 tags: monótono tiempo conteo
 comments: true
-excerpt: "¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el qye puedes confiar para hacer calculos relativos a periodos de tiempo en tus programas."
+excerpt: "¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1120/v1639894527/daniel-mirlea-Zpq06Q5ltJY-unsplash_mhq5ms.jpg
-  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639894527/daniel-mirlea-Zpq06Q5ltJY-unsplash_mhq5ms.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_420/v1639894527/daniel-mirlea-Zpq06Q5ltJY-unsplash_mhq5ms.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto, es cuando se está midiendo el tiempo que tarda una parte del programa manualmente.
+Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto es cuando se está midiendo el tiempo que tarda una parte del programa o un evento externo.
 
-El tiempo monótono es un concepto que todo programador debería conocer, para evitar errores y código frágil al _medir_ el tiempo en los programas.
+El **tiempo o reloj monótono** es un concepto que todo programador debería conocer, para evitar errores y código frágil al _medir_ el tiempo en los programas.
 
 ## El reloj de "pared"
 
-Lo primero que se nos viene a la cabeza cuando se trata de medir el tiempo entre dos eventos de nuestro programa es usar alguna función de nuestro lenguaje de programación que obtenga la fecha y hora actual del sistema. Un ejemplo en Python sería:
+Lo primero que se nos viene a la cabeza cuando se trata de medir el tiempo entre dos eventos de nuestro programa es usar alguna función de nuestro lenguaje de programación que obtenga la fecha y hora actual. Este reloj o tiempo se llama de "tiempo real" y algunos programadores le llaman el reloj de pared, porque es como si voltearas a ver un reloj de esos que pones en tu pared para que te de la hora constantemente.
+
+Un ejemplo de esto en Python sería:
 
 ```python
 import time
 
 start = time.time()
+
 # hacer algo (lo que queremos medir)
+
 end = time.time()
 diff = end - start
 
