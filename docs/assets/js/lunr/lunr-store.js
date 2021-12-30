@@ -466,4 +466,10 @@ var store = [{
         "tags": ["criptografía","matemáticas","álgebra"],
         "url": "/2021/12/25/matematicas-para-criptografia.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639258119/anton-maksimov-juvnsky-hlc-O87pjUs-unsplash_gvco8p.jpg"
+      },{
+        "title": "El tiempo monótono",
+        "excerpt":"Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto, es cuando se está midiendo el tiempo que tarda una parte del programa manualmente. El tiempo monótono es un concepto que todo programador...","categories": [],
+        "tags": ["monótono","tiempo","conteo"],
+        "url": "/2021/12/26/el-tiempo-monotono.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639894527/daniel-mirlea-Zpq06Q5ltJY-unsplash_mhq5ms.jpg"
       }]

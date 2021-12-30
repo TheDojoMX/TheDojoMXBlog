@@ -38,9 +38,9 @@ Todas estas circunstancias podrían afectar como mide el tiempo tu programa si u
 
 ## El tiempo monótono
 
-El reloj monótono es un contador del sistema que sólo avanza hacia adelante contando a partir de un punto arbitrario en el pasado. Este reloj no tiene conexión con el calendario y el tiempo real del sistema, sino que siemplemente sirve para medir el tiempo que ha pasado (**siempre en aumento**) desde el punto que se eligió.
+El reloj monótono es un **contador del sistema que sólo avanza hacia adelante**, contando a partir de un punto arbitrario en el pasado. Este reloj no tiene conexión con el calendario y el tiempo real del sistema, sino que simplemente sirve para medir el tiempo que ha pasado (**siempre en aumento**) desde el punto que se eligió.
 
-Así, este reloj es confiable para medir el tiempo que pasó entre dos eventos, podemos tener la seguridad de que el una llamada posterior a la lectura de este reloj _siempre_ va a devolver algo mayor que la lectura anterior.
+Así, este reloj es confiable para medir el tiempo que pasó entre dos eventos, porque podemos tener la seguridad de que el una llamada posterior a la lectura de este reloj _siempre_ va a devolver algo mayor que la lectura anterior.
 
 La manera de usarlo en Python también es mediante el módulo `time`:
 
@@ -55,10 +55,10 @@ print(diff)
 
 ```
 
-La función `time.monotonic()` devuelve el tiempo monótono como un flotante en segundos. Con estas dos puntos que recorren un
-
+La función `time.monotonic()` devuelve el tiempo monótono como un flotante, en segundos. Con estas dos puntos que están conectados al mismo marco de referencia obligatoriamente, hacemos que nuestra medición entre los dos eventos sea confiable. Lo mismo sucedería si quisieras coordinar dos sistemas diferentes: cada uno puede confiar en su reloj monótono sabiendo que el tiempo no saltará hacia atrás de ninguna manera.
 
 Con vergüenza te comento que la primera vez que escuché de este concepto fue con más de 10 años de carrera, mediante el libro [Elixir para Alquimistas](https://books.altenwald.com/book/elixir) de Manuel Rubio, un libro que recomiendo mucho.
 
+## Conclusión
 
-
+Cuando estés midiendo tiempo o coordinando tareas en tu programa, no confíes en las fechas y horas del sistema en el que está corriendo tu programa. Usa el reloj monótono para garantizar que tienes el mismo marco de referencia siempre que hagas una medición de tiempo. Tu lenguaje de programación debería darte acceso a esta medición, sólo investiga o busca en Google: _"Lenguaje X monotonic time"_.
