@@ -1,4 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-30T10:33:29-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">El tiempo monótono</title><link href="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html" rel="alternate" type="text/html" title="El tiempo monótono" /><published>2021-12-26T00:00:00-06:00</published><updated>2021-12-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html">&lt;p&gt;Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto es cuando se está midiendo el tiempo que tarda una parte del programa o un evento externo.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-01-01T01:00:43-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Criptografía para desarrolladores: Códigos de autenticación de mensajes</title><link href="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html" rel="alternate" type="text/html" title="Criptografía para desarrolladores: Códigos de autenticación de mensajes" /><published>2021-12-30T00:00:00-06:00</published><updated>2021-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html">&lt;p&gt;Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.&lt;/p&gt;
+
+&lt;p&gt;En general este tipo de algoritmos se llaman &lt;strong&gt;hashes con llave&lt;/strong&gt; o &lt;em&gt;Keyed Hashes&lt;/em&gt;. Empecemos a hablar del tipo más sencillo y usado: la generación de códigos de autenticación de mensajes.&lt;/p&gt;
+
+&lt;h2 id=&quot;message-authentication-codes-macs&quot;&gt;Message Authentication Codes (MACs)&lt;/h2&gt;
+
+&lt;p&gt;Un código de autenticación de mensajes es una función que recibe un mensaje y &lt;em&gt;una llave&lt;/em&gt; (secreta) y devuelve lo que llamamos una etiqueta, que es una cadena de bits de los tamaños comunes en los hashes.&lt;/p&gt;
+
+&lt;p&gt;En este tipo de algoritmos, si mantenemos la llave secreta, y la compartimos solamente con quien necesitamos verificar la autenticidad del mensaje, podemos comprobar el &lt;em&gt;origen&lt;/em&gt; (gracias a que sabemos que la llave está protegida) y que el mensaje está intacto (gracias a que las propiedades del hash).&lt;/p&gt;
+
+&lt;p&gt;Una forma de crear un hash con llave es simplemente poniendo la llave antes o después del mensaje que queremos autenticar y usando un algoritmo de hashing normal, &lt;strong&gt;aunque ninguna de las dos formas es muy segura&lt;/strong&gt;, ya que es vulnerable a ataques de &lt;a href=&quot;https://en.wikipedia.org/wiki/Length_extension_attack&quot;&gt;&lt;em&gt;extensión de longitud&lt;/em&gt;&lt;/a&gt; o se pueden encontrar colisiones si se usa una llave de tamaño variable. Un ejemplo en Python sería el siguiente:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hashlib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3_512&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sa&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mi llave super secreta'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sa&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mi mensaje que puede o no ser secreto, pero del que me importa el origen y que no haya sido cambiado'&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3_512&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hexdigest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;(Afortunadamente, ningún algoritmo de la familia SHA-3 es vulnerable a los ataques de extensión de longitud, por eso lo usamos aquí para el ejemplo)&lt;/p&gt;
+
+&lt;p&gt;A nuestra contraparte le enviamos el mensaje junto con el tag y para verificar la autenticidad del mensaje el receptor debe hacer exactamente la misma operación, por lo que necesita tener previamente la llave. Si el tag resultante es igual, quiere decir que el mensaje es auténtico y no ha sido modificado, reemplazado o viene de alguien que no tiene la llave.&lt;/p&gt;
+
+&lt;p&gt;Para que un MAC sea seguro, debe ser imposible crear un tag que parezca venir de alguien con la llave, sea por falsificarlo directamente o por poder adivinar la llave.&lt;/p&gt;
+
+&lt;p&gt;Los MACs más comunes son los que están basados en hashes, conocidos como &lt;strong&gt;HMAC&lt;/strong&gt;, un término que seguro has visto si has estado desarrollando por algún tiempo.&lt;/p&gt;
+
+&lt;h2 id=&quot;códigos-de-autenticación-de-mensajes-basados-en-hashes-hmac&quot;&gt;Códigos de autenticación de mensajes basados en hashes (HMAC)&lt;/h2&gt;
+
+&lt;p&gt;Un &lt;em&gt;Hash based Message Authentication Code&lt;/em&gt; es un MAC creado a partir de un hash, operando de una manera diferente a simplemente poner antes o después la llave. Los HMACs hacen uso de dos valores adicionales, un padding interno y un padding externo. Los combinan con la llave para crear una etiqueta que no sea vulnerable a los ataques de extensión de longitud.&lt;/p&gt;
+
+&lt;p&gt;La construcción de HMAC funciona así:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Se combina la llave con el padding interno mediante la operación XOR.&lt;/li&gt;
+  &lt;li&gt;Se hashea la la combinación de la llave y el padding interno junto con el mensaje del que queremos crear la etiqueta (a esto lo llamaremos H1).&lt;/li&gt;
+  &lt;li&gt;Se combina la llave con el padding externo mediante la operación XOR.&lt;/li&gt;
+  &lt;li&gt;Se hashea la la combinación de la llave y el padding externo junto con H1, el resultado de esto es la etiqueta de autenticación.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Sin embargo, se conoce un ataque efectivos contra los HMACs que permiten falsificar tags computando &lt;strong&gt;2^n/2 operaciones&lt;/strong&gt; en promedio, lo cuál no es cualquier cosa, pero un atacante motivado (y con recursos) podría lograrlo sin problemas si &lt;strong&gt;n&lt;/strong&gt;, el tamanño interno del estado del hash es muy pequeño. Un hash moderno tiene un estado de 512 bits, por lo que un ataque de tamaño de 2^n512/2 = 2^256 es impráctico.&lt;/p&gt;
+
+&lt;p&gt;Ya que un HMAC están basado en un algoritmo de hash, cuando se nombra se usa el nombre de este, por ejemplo: HMAC-SHA-256 o HMAC-SHA-3-512.&lt;/p&gt;
+
+&lt;h2 id=&quot;códigos-de-autenticación-de-mensajes-basados-en-cifrados-de-bloque-cmac&quot;&gt;Códigos de autenticación de mensajes basados en cifrados de bloque (CMAC)&lt;/h2&gt;
+
+&lt;p&gt;Ya que los hashes pueden estar basados en cifrados de bloque, una construcción más directa es usar un cifrado de bloque como la base para un MAC. Así nacen lo CMACs, códigos de autenticación de mensajes basados en cifrados de bloque, por ejemplo AES-CMAC.
+Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más eficientes son los que no se basan en Hashes o cifrados de bloque, sino que tienen un diseño independiente.&lt;/p&gt;
+
+&lt;h2 id=&quot;macs-con-diseño-independiente&quot;&gt;MACs con diseño independiente&lt;/h2&gt;
+
+&lt;p&gt;Un MAC seguro es más fácil de lograr que un hash completamente funcional y seguro o que un cifrado de bloque con las mismas características, ya que al usar un llave secreta evitan que se pueda atacar tan fácilmente como un hash y al exponer una etiqueta pequeña, revelan menos información que un cifrado de bloque.&lt;/p&gt;
+
+&lt;p&gt;Es por eso que un MAC no requiere todo el poder de un hash ni de un cifrado de bloque. Gracias a esto se han dieseñado algortimos que usan esta ventaja para ser más eficientes. Hablemos de tres ejemplos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cr.yp.to/siphash/siphash-20120918.pdf&quot;&gt;SipHash&lt;/a&gt;: Es una familia de algoritmos optimizada para autenticar mensajes cortos, originalmente diseñada para reemplazar las funciones hash en los diccionarios implmentados como hashtables.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cr.yp.to/mac/poly1305-20050329.pdf&quot;&gt;Poly1305&lt;/a&gt;: Es una función de autenticación de mensajes muy rápida y eficiente, más que cualquiera basada completamente en un algoritmo de bloque o un hash, usada para autenticar paquetes en dispositivos de bajo rendimiento en Android, por ejemplo.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://eprint.iacr.org/2005/088.pdf&quot;&gt;Pelican 2.0&lt;/a&gt;: Es un MAC basado en AES (Rijndael), pero que no utiliza todo su poder y que funciona de forma eficiente gracias a esto. Sin embargo, este algoritmo no está implementado en ningún lugar importante.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Si lo que buscas es eficiencia, manteniendo la seguridad relativa de tus etiquetas de autenticación, este tipo de MACs son los que deberías usar.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Conocer sobre los códigos de autenticación de mensajes es importante para no navegar perdidos entre todas esas siglas que luego vemos en las suites de seguridad de IPSec, TLS, SSL, SSH, HTTPS, etc. Ahora ya sabes lo que significa HMAC-SHA-512, AES-CMAC o Poly1305.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mac" /><category term="hamc" /><category term="aes" /><category term="security" /><category term="cryptography" /><summary type="html">A veces vemos nombres como HMAC-MD4 o AES-CMAC y no sabemos lo que significa. En este artículo hablaremos de los diferentes tipos de MAC y por qué son importantes.</summary></entry><entry><title type="html">El tiempo monótono</title><link href="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html" rel="alternate" type="text/html" title="El tiempo monótono" /><published>2021-12-26T00:00:00-06:00</published><updated>2021-12-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html">&lt;p&gt;Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto es cuando se está midiendo el tiempo que tarda una parte del programa o un evento externo.&lt;/p&gt;
 
 &lt;p&gt;El &lt;strong&gt;tiempo o reloj monótono&lt;/strong&gt; es un concepto que todo programador debería conocer, para evitar errores y código frágil al &lt;em&gt;medir&lt;/em&gt; el tiempo en los programas.&lt;/p&gt;
 
@@ -690,82 +758,4 @@ Puedes ver la presentación de uno de los autores en &lt;a href=&quot;https://ww
 
 &lt;p&gt;Conocer cómo funciona un PRNG, a parte de algo interesante, es útil para no usarlos mal. Siempre que requieras números aleatorios para usarlos con relación a la seguridad de la información, &lt;strong&gt;deberías usar un PRNG criptográfico&lt;/strong&gt;. En cualquier otro caso, un PRNG como el &lt;em&gt;Meresenne Twister&lt;/em&gt; es suficiente. Además, ahora sabes que los RNGs basados en procesos físicos, a pesar de las garantías de entropía que prometen, no son muy confiables en el sentido de que no siempre están disponibles, pero hay soluciones de hardware especializadas que te pueden ayudar si tienes un problema muy específico.&lt;/p&gt;
 
-&lt;p&gt;Finalmente, la mejor opción para usar un PRNG es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="prng" /><category term="criptografía" /><category term="randomness" /><category term="aleatoriedad" /><summary type="html">Los números aleatorios son muy importantes para el desarrollo, sobre todo para la seguridad de la información y la criptografía.</summary></entry><entry><title type="html">¿Por qué deberías aprender TypeScript?</title><link href="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html" rel="alternate" type="text/html" title="¿Por qué deberías aprender TypeScript?" /><published>2021-12-06T00:00:00-06:00</published><updated>2021-12-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/06/por-que-deberias-aprender-typescript.html">&lt;p&gt;TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.&lt;/p&gt;
-
-&lt;h2 id=&quot;acerca-de-typescript&quot;&gt;Acerca de TypeScript&lt;/h2&gt;
-
-&lt;p&gt;El propósito de TypeScript es tener un lenguaje adecuado para crear grandes sistemas que compile a JS. En realidad, todo programa válido en JS también es Válido en TypeScript. La principal diferencia que verás en TypeScript con respecto a JS es que este soporta anotaciones e inferencia de tipos de datos y los verifica en tiempo de compilación. Así que si tu programa no pasa la verificación de tipos, ni siquiera podrá llegar a correr. Algunas de las características de TypeScript son:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Anotaciones de tipos.&lt;/strong&gt; Puedes especificar el tipo de dato de una variable o función.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Inferencia de tipos.&lt;/strong&gt; No requiere que se especifique el tipo de dato de una variable explicitamente, ya que lo puede inferir por los valores que le asignas.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Verificación de tipos.&lt;/strong&gt; Verifica que tu programa cumpla con los contratos de los tipos de datos.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Borrado de tipos.&lt;/strong&gt; Se refiere a la eliminación de tipos de datos de un programa antes de dejarlo listo para correr pero después de verificarlo.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Compilación a una versión específica de JS&lt;/strong&gt;. Puedes especificar a qué versión de JS se compilará tu programa.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Genéricos&lt;/strong&gt;. Puedes crear funciones que reciban tipos de datos variables.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Es por esto que muchos lo ven como un &lt;strong&gt;JavaScript tipado&lt;/strong&gt;. Es cierto que cumplir con los contratos de los tipos es un trabajo extra, pero es una buena idea y un trabajo que vale la pena cuando tienes que hacer un sistema grande. El tipado estático puede protegerte de errores al mismo tiempo que es una capa extra de documentación.&lt;/p&gt;
-
-&lt;p&gt;TypeScript (de aquí en adelante le diremos &lt;strong&gt;TS&lt;/strong&gt;) fue creado por Microsoft y lanzado al público ne 2012 todavía sin una versión estable. Detrás de él está (Anders Hejlsberg)[https://twitter.com/ahejlsberg], también diseñador de C#, y creador de Delphi y Turbo Pascal. En 2021 vamos en la versión &lt;strong&gt;4.5&lt;/strong&gt;, con muchísimos avances desde su primera versión pública.&lt;/p&gt;
-
-&lt;h2 id=&quot;por-qué-deberías-aprender-typescript&quot;&gt;¿Por qué deberías aprender TypeScript?&lt;/h2&gt;
-
-&lt;p&gt;Ya empezamos a hablar de algunas ventajas en la descripción de lo que es TS. Veamos otras con más detenimiento.&lt;/p&gt;
-
-&lt;h3 id=&quot;reduces-los-errores-en-producción&quot;&gt;Reduces los errores en producción&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined is not a function&lt;/code&gt; es uno de los errores que más estamos acostumbrados a ver cuando programaos en JS. Este es un error causado por que algo que esperábamos que tuviera una función no la tiene en tiempo de ejecución. Con TypeScript, esto no sucede, ya que te obliga a cumplir con un contrato de tipo de objeto y si no cuenta con cierto atributo, ni siquiera compila. Por ejemplo:&lt;/p&gt;
-
-&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Héctor&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Este código te dará un error &lt;strong&gt;cuando lo intentes compilar&lt;/strong&gt; diciendo que el objeto asignado a Héctor no tiene la propiedad &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sayHello&lt;/code&gt;, protegiéndote así de que se te pase algo que creías que estaba bien a producción. Lo mismo sucedería si la propiedad existiera, pero la función tuviera diferentes tipos de entrada y de salida.&lt;/p&gt;
-
-&lt;p&gt;Como todo en la programación, esto es un arma de doble filo, ya que puede reducir el tiempo “crudo” de desarrollo, es decir, el tiempo que te lleva programar por primera vez algo listo pra probar, pero reducirá el tiempo total de desarrollo sobre todo si tu programa es grande.&lt;/p&gt;
-
-&lt;p&gt;Como punto final, es que probablemente &lt;strong&gt;ni siquiera tengas que correr el código para darte cuenta de que está mal&lt;/strong&gt;, ya que tu editor de código, aprovechándose de la características de TS, te avisará que algo está mal ahí.&lt;/p&gt;
-
-&lt;h3 id=&quot;tu-editor-o-ide-puede-ser-más-útil&quot;&gt;Tu editor o IDE puede ser más útil&lt;/h3&gt;
-
-&lt;p&gt;La información extra que el sistema de inferencia de TS da, o las anotaciones de tipos que tú pones, le dan información al editor que le permite ayudarte de mejor manera, con autocompletados más eficientes, aviso de incumplimiento de contratos en los tipos, etc. Esto contrarresta el tiempo que te llevará extra trabajar con esos tipos.&lt;/p&gt;
-
-&lt;h3 id=&quot;la-refactorización-será-más-fácil&quot;&gt;La refactorización será más fácil&lt;/h3&gt;
-
-&lt;p&gt;Tener una capa de protección en forma de un sistema de tipos es una capa extra de información que evitará que rompas tu código si lo cambias para mejorarlo manteniendo la funcionalidad. Pero además de eso, muchas herramientas ofrecen funciones de refactorización automática que se aprovecharán de esta misma información para hacerla de manera más segura y efectiva.&lt;/p&gt;
-
-&lt;h2 id=&quot;desventajas-de-typescript&quot;&gt;Desventajas de TypeScript&lt;/h2&gt;
-
-&lt;p&gt;Personalmente, y lo digo como alguien que ha trabajado tanto en lenguajes con tipado estático y dinámico, creo que para un programador que ha estado acostumbrado a trabajar con tipado dinámico toda su vida sufrirá un poco cuando lo pongas a trabajar en lenguajes como TypeScript y hay situaciones en las que te metes en un verdadero embrollo tratando de cumplir con el sistema de tipos. Esto puede causar algunos retrasos, pero como lo hemos mencionado a lo largo del artículo, los beneficios de usar TS en un sistema grande superan con creces estas restricciones añadidas.&lt;/p&gt;
-
-&lt;p&gt;Otra desventaja del código de TypeScript es que puede pasar que el código se vea menos legible si se llena de tipos, pero con el tiempo los programadores pueden aprender en dónde vale la pena poner anotaciones de tipos explícitas contra aprovecharse de la inferencia automática de TS.&lt;/p&gt;
-
-&lt;h2 id=&quot;quieres-aprender-typescript&quot;&gt;¿Quieres aprender TypeScript?&lt;/h2&gt;
-
-&lt;p&gt;Algunos recursos gratuitos que puedes usar para aprender TS:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://exploringjs.com/tackling-ts/toc.html&quot;&gt;Tackling TypeScript&lt;/a&gt; del Dr. Alex Rauschmayer&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/intro.html&quot;&gt;The TypeScript Handbook&lt;/a&gt; de Microsoft&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Estos dos recursos están en inglés. Algunos recursos en español:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=8fnhN1HRPB4&quot;&gt;Curso práctico desde cero&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Xxqh0RoWxNc&quot;&gt;Curso Práctico Rápido desde cero para Iniciantes&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Una herramienta de pago que recomiendo muchísimo, tanto por su contenido como por su técnica didáctica es &lt;a href=&quot;https://www.executeprogram.com/&quot;&gt;Execute Program&lt;/a&gt; creada por &lt;a href=&quot;https://destroyallsoftware.com&quot;&gt;Gary Bernhardt&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Si quieres continuar con sistemas serios para entornos que solamente ejecuten JS, una de tus mejore opciones es TypeScript. Las restricciones y la información extra que proporciona el sistema de tipos sobre tu código común supercargará tu proceso de desarrollo desde las herramientas de programación como el editor hasta la protección contra errores en tiempo de compilación.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="javascript" /><category term="typescript" /><category term="js" /><category term="ts" /><summary type="html">TypeScript es un lenguaje muy popular actualmente, ¿te conviene aprenderlo? Veamos algunas características y desventajas para ayudarte a decidir.</summary></entry></feed>
+&lt;p&gt;Finalmente, la mejor opción para usar un PRNG es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="prng" /><category term="criptografía" /><category term="randomness" /><category term="aleatoriedad" /><summary type="html">Los números aleatorios son muy importantes para el desarrollo, sobre todo para la seguridad de la información y la criptografía.</summary></entry></feed>

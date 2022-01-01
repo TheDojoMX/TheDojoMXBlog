@@ -472,4 +472,10 @@ var store = [{
         "tags": ["monótono","tiempo","conteo"],
         "url": "/2021/12/26/el-tiempo-monotono.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_420/v1639894527/daniel-mirlea-Zpq06Q5ltJY-unsplash_mhq5ms.jpg"
+      },{
+        "title": "Criptografía para desarrolladores: Códigos de autenticación de mensajes",
+        "excerpt":"Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también...","categories": [],
+        "tags": ["mac","hamc","aes","security","cryptography"],
+        "url": "/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_420/v1641020242/ethmessages--o90yRQoXAM-unsplash_tmjc6s.jpg"
       }]
