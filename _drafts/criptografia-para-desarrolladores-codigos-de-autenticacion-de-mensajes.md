@@ -21,9 +21,10 @@ Un código de autenticación de mensajes es una función que recibe un mensaje y
 
 En este tipo de algoritmos, si mantenemos la llave secreta, y la compartimos solamente con quien necesitamos verificar la autenticidad del mensaje, podemos comprobar el _origen_ (gracias a que sabemos que la llave está protegida) y que el mensaje está intacto (gracias a que las propiedades del hash).
 
-Una forma de crear un hash con llave es simplemente poniendo la llave antes o después del mensaje que queremos autenticar y usando un algoritmo de hashing normal, **aunque ninguna de las dos formas es muy segura**, ya que es vulnerable a ataques de _extensión de tamaño_ o de _tamaño de llave_. Un ejemplo en Python sería el siguiente:
+Una forma de crear un hash con llave es simplemente poniendo la llave antes o después del mensaje que queremos autenticar y usando un algoritmo de hashing normal, **aunque ninguna de las dos formas es muy segura**, ya que es vulnerable a ataques de [_extensión de longitud_](https://en.wikipedia.org/wiki/Length_extension_attack) o de [_tamaño de llave_](^1). Un ejemplo en Python sería el siguiente:
 
 ```python
+
 from hashlib import sha3_512
 
 key = b'mi llave super secreta'
@@ -33,7 +34,7 @@ tag = sha3_512(key + message).hexdigest()
 
 ```
 
-(Afortunadamente, ningún algoritmo de la familia SHA-3 es vulnerable a los ataques de extensión de llave, por eso lo usamos aquí para el ejemplo)
+(Afortunadamente, ningún algoritmo de la familia SHA-3 es vulnerable a los ataques de extensión de longitud, por eso lo usamos aquí para el ejemplo)
 
 A nuestra contraparte le enviamos el mensaje junto con el tag y para verificar la autenticidad del mensaje el receptor debe hacer exactamente la misma operación, por lo que necesita tener previamente la llave. Si el tag resultante es igual, quiere decir que el mensaje es auténtico y no ha sido modificado, reemplazado o viene de alguien que no tiene la llave.
 
@@ -43,5 +44,6 @@ Los MACs más comunes son los que están basados en hashes, conocidos como **HMA
 
 ## Códigos de autenticación de mensajes basados en hashes (HMAC)
 
-Un _Hash based Message Authentication Code_ es un MAC creado a partir de un hash, operando de una manera diferente a simplemente poner antes o después la llave del mensaje. Los HMACs hacen uso de dos valores adicionales, un padding interno y un padding externo. Los combinan con la llave para crear una etiqueta que no sea vulnerable ni a ataques de extensión de tamaño ni del tamaño de la llave.
+Un _Hash based Message Authentication Code_ es un MAC creado a partir de un hash, operando de una manera diferente a simplemente poner antes o después la llave. Los HMACs hacen uso de dos valores adicionales, un padding interno y un padding externo. Los combinan con la llave para crear una etiqueta que no sea vulnerable a ataques de extensión de tamaño ni del tamaño de la llave.
 
+Sin embargo, se conocen ataques efectivos contra los HMACs que permiten falsificar tags computando **2^64 operaciones** en promedio, lo cuál no es cualquier cosa, pero un atacante motivado (y con recursos) podría lograrlo sin problemas.
