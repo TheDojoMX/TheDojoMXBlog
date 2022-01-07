@@ -2,7 +2,7 @@
 title: "Aprendiendo desarrollo efectivamente"
 date: 2022-01-03
 author: Héctor Patricio
-tags:
+tags: aprendizaje
 comments: true
 excerpt: "Escribe aquí un buen resumen de tu artículo"
 header:
@@ -43,3 +43,11 @@ Recuerda que somos máquinas biológicas que necesitan procesos químicos para f
 
 Ahora que ya conocemos los dos modos en los que nuestro cerebro puede funcionar, veamos técnicas que nos ayudarán a aprovecharnos de esto para aprender de manera eficiente.
 
+
+### Crea un mapa de lo que aprenderás
+
+### Auto-exámenes
+
+### Programa sesiones de estudio pequeñas per constantes
+
+### Practica y repite
