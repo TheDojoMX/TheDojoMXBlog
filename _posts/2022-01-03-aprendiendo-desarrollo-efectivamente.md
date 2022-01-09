@@ -4,7 +4,7 @@ date: 2022-01-03
 author: Héctor Patricio
 tags: aprendizaje a-mind-for-numbers barbara-oakley
 comments: true
-excerpt: "Nunca nos han enseñado a aprender (a casi nadie) y el desarrollo de software es un campo que requiere un aprendizaje constante de temas difíciles. Veamos lo que \"A mind for numbers\" nos enseña sobre el aprendizaje"
+excerpt: "Nunca nos han enseñado a aprender (a casi nadie) y el desarrollo de software es un campo que requiere un aprendizaje constante de temas difíciles. Veamos lo que \"A mind for numbers\" nos enseña sobre el aprendizaje."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1120/v1641684828/adrien-converse-kCrrUx7US04-unsplash_cwpd7f.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_420/v1641684828/adrien-converse-kCrrUx7US04-unsplash_cwpd7f.jpg
@@ -15,7 +15,7 @@ Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado t�
 
 El desarrollo de software es un campo muy amplio en el que tenemos que aprender constantemente, sea por el cambio de las tecnologías, porque tenemos que aprender del área en la que estamos aplicando nuestro conocimiento tecnológico para crear software efectivo o simplemente porque queremos cambiar de área.
 
-En este artículo hablaremos sobre algunas de las cosas que el libro "A Mind for Numbers" de _Barbara Oakley_ nos enseña sobre el aprendizaje de temas difíciles, como las matemáticas y las ciencias. Considerando que el desarrollo de software tiene temas difíciles, creemos que es aplicable lo mencionado en este libro.
+En este artículo hablaremos sobre algunas de las cosas que el libro ["A Mind for Numbers"](https://amzn.to/3r20CYr)[^1] de [Barbara Oakley](https://barbaraoakley.com/) nos enseña sobre el aprendizaje de temas difíciles, como las matemáticas y las ciencias. Considerando que el desarrollo de software tiene temas difíciles, creemos que es aplicable lo mencionado en este libro.
 
 Primero hablemos de las bases de las recomendaciones que da el libro: los modos en los que puede estar tu cerebro, y las partes que ocupa para cada tipo.
 
@@ -88,3 +88,4 @@ Finalmente hablemos de algo que ha adquirido muy mala fama: la _memoria_. Debido
 Hemos hablado de los temas que a mi parecer son más aplicables a los desarrolladores. El libro habla de otros temas como la presentación de exámenes, la organización del tiempo, la motivación, etc. Te invito a que le eches un ojo si estás en la escuela y sobre todo si estás en un área de ciencias o físico-matemáticas.
 
 
+[^1]: Link de afiliados de Amazon
