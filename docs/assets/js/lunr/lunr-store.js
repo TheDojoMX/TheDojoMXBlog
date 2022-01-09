@@ -478,4 +478,10 @@ var store = [{
         "tags": ["mac","hamc","aes","security","cryptography"],
         "url": "/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_420/v1641020242/ethmessages--o90yRQoXAM-unsplash_tmjc6s.jpg"
+      },{
+        "title": "Aprendiendo desarrollo efectivamente",
+        "excerpt":"Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado técnicas para aprender efectivamente, aunque la escuela trata de aprender lo más efectivamente posible. El desarrollo de software es un campo muy amplio en el que tenemos que aprender constantemente, sea por el cambio de las...","categories": [],
+        "tags": ["aprendizaje","a-mind-for-numbers","barbara-oakley"],
+        "url": "/2022/01/03/aprendiendo-desarrollo-efectivamente.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_420/v1641684828/adrien-converse-kCrrUx7US04-unsplash_cwpd7f.jpg"
       }]

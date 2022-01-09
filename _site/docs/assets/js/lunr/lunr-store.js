@@ -460,4 +460,22 @@ var store = [{
         "tags": ["HTTP","web","network"],
         "url": "/2021/12/15/http-1-1-http-2-y-http-3.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639894600/erick-chevez-DcS2NQF-Ers-unsplash_tbv7pu.jpg"
+      },{
+        "title": "Matemáticas para criptografía",
+        "excerpt":"¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles de resolver, probabilidad y estadística. Veamos un plan de estudios de matemáticas que podrías usar para adquirir las habilidades matemáticas necesarias para entender mejor los algoritmos criptográficos. Básico básico Empecemos por los...","categories": [],
+        "tags": ["criptografía","matemáticas","álgebra"],
+        "url": "/2021/12/25/matematicas-para-criptografia.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1639258119/anton-maksimov-juvnsky-hlc-O87pjUs-unsplash_gvco8p.jpg"
+      },{
+        "title": "El tiempo monótono",
+        "excerpt":"Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto es cuando se está midiendo el tiempo que tarda una parte del programa o un evento externo. El tiempo o reloj monótono es...","categories": [],
+        "tags": ["monótono","tiempo","conteo"],
+        "url": "/2021/12/26/el-tiempo-monotono.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_420/v1639894527/daniel-mirlea-Zpq06Q5ltJY-unsplash_mhq5ms.jpg"
+      },{
+        "title": "Criptografía para desarrolladores: Códigos de autenticación de mensajes",
+        "excerpt":"Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también...","categories": [],
+        "tags": ["mac","hamc","aes","security","cryptography"],
+        "url": "/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_420/v1641020242/ethmessages--o90yRQoXAM-unsplash_tmjc6s.jpg"
       }]

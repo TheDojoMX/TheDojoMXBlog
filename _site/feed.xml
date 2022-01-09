@@ -1,14 +1,215 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2021-12-24T16:10:24-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Matemáticas para criptografía</title><link href="https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia.html" rel="alternate" type="text/html" title="Matemáticas para criptografía" /><published>2021-12-22T00:00:00-06:00</published><updated>2021-12-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/22/matematicas-para-criptografia.html">&lt;p&gt;¿Quieres entender por qué los algoritmos criptográficos pueden prometer seguridad? Todos están basados en operaciones matemáticas, problemas difíciles y probabilidad y estadística.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-01-08T19:10:19-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Aprendiendo desarrollo efectivamente</title><link href="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html" rel="alternate" type="text/html" title="Aprendiendo desarrollo efectivamente" /><published>2022-01-03T00:00:00-06:00</published><updated>2022-01-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente</id><content type="html" xml:base="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html">&lt;p&gt;Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado técnicas para aprender efectivamente, aunque la escuela trata de aprender lo más efectivamente posible.&lt;/p&gt;
 
-&lt;p&gt;Veamos a un poco de más profundidad un plan de estudio de matemáticas que podrías usar para adquirir las habilidades matemáticas para entender mejor los algoritmos criptográficos.&lt;/p&gt;
+&lt;p&gt;El desarrollo de software es un campo muy amplio en el que tenemos que aprender constantemente, sea por el cambio de las tecnologías, porque tenemos que aprender del área en la que estamos aplicando nuestro conocimiento tecnológico para crear software efectivo o simplemente porque queremos cambiar de área.&lt;/p&gt;
 
-&lt;h2 id=&quot;básico&quot;&gt;Básico&lt;/h2&gt;
+&lt;p&gt;En este artículo hablaremos sobre algunas de las cosas que el libro “A Mind for Numbers” de &lt;em&gt;Barbara Oakley&lt;/em&gt; nos enseña sobre el aprendizaje de temas difíciles, como las matemáticas y las ciencias. Considerando que el desarrollo de software tiene temas difíciles, creemos que es aplicable lo mencionado en este libro.&lt;/p&gt;
 
-&lt;p&gt;Empecemos por los fundamentos más profundos que debes tener, que hasta pueden parecer obvios. Lo importante es que tengas la seguridad que los dominas y si no, te proporcionamos algunos recursos para que los repasas.&lt;/p&gt;
+&lt;p&gt;Primero hablemos de las bases de las recomendaciones que da el libro: los modos en los que puede estar tu cerebro, y las partes que ocupa para cada tipo.&lt;/p&gt;
+
+&lt;h2 id=&quot;modo-enfocado&quot;&gt;Modo enfocado&lt;/h2&gt;
+
+&lt;p&gt;En este modo, llamado &lt;strong&gt;estado de alta atención&lt;/strong&gt;, tu cerebro está &lt;strong&gt;concentrado&lt;/strong&gt; en una tarea que tienes que lograr, como escribir este artículo, estudiar un tema específico o resolver un algoritmo. Digamos que todas las energías de tu cerebro están destinadas a esta tarea y no &lt;em&gt;divagas&lt;/em&gt; en diferentes temas.&lt;/p&gt;
+
+&lt;p&gt;Este modo es muy bueno para &lt;em&gt;terminar o avanzar&lt;/em&gt; las tareas del día a día y para evitar errores mientras haces algo importante, pero no es muy bueno para aprovechar el poder natural de tu cerebro, ya que utilizamos las &lt;em&gt;funciones ejecutivas&lt;/em&gt;, que nos permiten mantenernos atentos a algo pero nos cuestan mucha energía. La funciones ejecutivas se encuentran situadas principalmente en la corteza prefrontal.&lt;/p&gt;
+
+&lt;p&gt;El modo enfocado es necesario para aprender, ya que podremos recordar lo que hemos estudiado en este modo, o hacer conexiones conscientes con otras cosas que ya sepamos. En este modo resolvemos problemas de forma secuencial y analítica.&lt;/p&gt;
+
+&lt;h2 id=&quot;modo-difuso&quot;&gt;Modo difuso&lt;/h2&gt;
+
+&lt;p&gt;Oficialmente podemos llamar a este el &lt;em&gt;modo de descanso&lt;/em&gt;. Este es el modo en el que estamos cuando no estamos pensando o aplicando nuestra mente a nada específico, digamos que es el estado por defecto del cerebro. Tu foco de atención está brincando de un lugar a otro constantemente. El modo difuso consume menos energía porque no necesitamos controlar la mente para hacerlo. El modo difuso entra en acción cuando estamos haciendo tareas que tenemos completamente dominadas, como caminar, bañarnos, o comer, en ninguna de estas actividades estamos completamente concentrados y nuestra mente está viajando por diferentes lugares.&lt;/p&gt;
+
+&lt;p&gt;En el modo difuso podemos conectar ideas usando la capacidad del cerebro de hacer conexiones naturalmente, o brincar de un tema a otro sin ningún esfuerzo.&lt;/p&gt;
+
+&lt;p&gt;Podríamos creer que el modo difuso es &lt;em&gt;malo&lt;/em&gt; para el estudio, sin embargo, en este modo es cuando nuestro cerebro procesa inconscientemente lo que hemos estudiado de modo consciente y hace que permanezca. Por lo tanto, el modo difuso &lt;strong&gt;es esencial para aprender&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;El modo difuso no utiliza una parte específica del cerebro, sino que se reparte. Al consumir poca energía relativamente y utilizar todo el poder del cerebro, es una herramienta imprescindible para resolver problemas.&lt;/p&gt;
+
+&lt;p&gt;Recuerda que en parte somos máquinas biológicas que necesitan procesos químicos para funcionar y los modos en los que puede estar nuestra mente se complementan para que funcionemos y para que aprendamos efectivamente.&lt;/p&gt;
+
+&lt;h2 id=&quot;técnicas-de-aprendizaje&quot;&gt;Técnicas de aprendizaje&lt;/h2&gt;
+
+&lt;p&gt;Ahora que ya conocemos los dos modos en los que nuestro cerebro puede funcionar, veamos técnicas que nos ayudarán a aprovecharnos de esto para aprender de manera eficiente.&lt;/p&gt;
+
+&lt;h3 id=&quot;controla-el-tiempo-que-dedicas-a-estudiar&quot;&gt;Controla el tiempo que dedicas a estudiar&lt;/h3&gt;
+
+&lt;p&gt;Nuestro cerebro tiene una &lt;em&gt;capacidad limitada&lt;/em&gt; de absorción de información por unidad de tiempo, necesitamos tiempo para procesar las cosas y entender lo que sigue mejor, además de que la repetición a través del tiempo nos ayuda a retener la información por más tiempo. Es por eso que es muy importante controlar cuánto tiempo dedicas a estudiar, cuándo se lo dedicamos y las condiciones físicas y mentales en las que estamos.&lt;/p&gt;
+
+&lt;p&gt;Dos técnicas que te pueden ayudar a dedicarle el tiempo &lt;em&gt;correctamente&lt;/em&gt; al estudio son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Programar sesiones de estudio de un tema cortas pero constantes&lt;/strong&gt;. Es mucho mejor dedicar una hora de estudio diaria durante diez d
+ías, que 10 horas un día al mismo tema. Hacerlo de manera espaciada permitirá a tu cerebro procesar la información durante los periodos en los que está en el modo difuso, además de que mantener el modo enfocado por periodos cortos es más fácil y eficiente que hacerlo durante periodos largos. Esto se conoce como &lt;strong&gt;práctica distribuida&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cambiar constantemente de modos de pensamiento&lt;/strong&gt;. Cambiar entre el modo enfocado y el modo difuso te ayudará aprender mejor y te mantendrá fresco. Una técnica que puedes aplicar es la técnica &lt;em&gt;pomodoro&lt;/em&gt; en la que programas periodos de estudio o trabajo de 25 minutos y un descanso de 5 minutos. Esta técnica no es efectiva para todos por el tiempo que tardan en enfocarse, pero puedes incrementar los periodos de enfoque para que se acomode a tu estilo. El punto es tener una sesión de estudio &lt;em&gt;estructurada&lt;/em&gt; y que te permita cambiar de modos de pensamiento &lt;strong&gt;para aprovechar todo el poder de tu cerebro&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Estos dos técnicas le darán a tu cerebro tiempo para usar todo su poder: le darán al modo difuso tiempo para trabajar en problemas difíciles.&lt;/p&gt;
+
+&lt;h3 id=&quot;crea-un-mapa-de-lo-que-aprenderás&quot;&gt;Crea un mapa de lo que aprenderás&lt;/h3&gt;
+
+&lt;p&gt;Es muy importante que cuando tengas un tema difícil que aprender hagas una sesión de pre-estudio, en el que veas lo que aprenderás. Esto lo puedes hacer mirando el índice si existe, las preguntas que guían el estudio en caso de que haya, leyendo (o viendo, o escuchando) solamente la introducción y conclusión y fijándote en los subtemas, capítulos, negritas, recuadros, etc.&lt;/p&gt;
+
+&lt;p&gt;Esta sesión de pre-estudio te ayudará a organizar tus pensamientos sobre lo que aprenderás, un mapa que tendrá los puntos principales a aprender que después rellanarás estudiando a fondo el tema.&lt;/p&gt;
+
+&lt;h2 id=&quot;evitar-la-ilusión-de-aprendizaje&quot;&gt;Evitar la ilusión de aprendizaje&lt;/h2&gt;
+
+&lt;p&gt;Una parte muy importante de aprender es evitar la &lt;em&gt;sensación&lt;/em&gt; falsa de que aprendimos algo sin realmente haberlo aprendido. ¿Cómo podemos evitar esto?&lt;/p&gt;
+
+&lt;h3 id=&quot;auto-exámenes&quot;&gt;Auto-exámenes&lt;/h3&gt;
+
+&lt;p&gt;Una de las formas más efectivas es buscar o fabricar exámenes o cuestionarios de las cosas de las que deberíamos ser conscientes una vez que terminemos de estudiar el tema. Hacer estos exámenes o prácticas sin consultar el material de estudio te ayudará averiguar si realmente has aprendido algo, y si fallas, tendrás puntos en los cuales mejorar.&lt;/p&gt;
+
+&lt;p&gt;Estos auto-exámenes se han mostrado muy eficaces para muchos estudiantes de temas complejos.&lt;/p&gt;
+
+&lt;h3 id=&quot;practica-recorta-y-repite&quot;&gt;Practica, recorta y repite&lt;/h3&gt;
+
+&lt;p&gt;Algunas de las cosas que tenemos que aprender consiste en una serie de pasos por ser un problema complejo. Una técnica de aprendizaje es aislar una parte del problema y practicarla hasta que la dominemos en diferentes contextos. Imagina por ejemplo que quieres dominar la configuración de servidores. Lo que más se te dificulta es la configuración de la parte de HTTPS. Entonces, deberías repetir estar parte con diferentes variables y opciones hasta que lo puedas hacer sin dificultad.&lt;/p&gt;
+
+&lt;h2 id=&quot;mejora-tu-memoria&quot;&gt;Mejora tu memoria&lt;/h2&gt;
+
+&lt;p&gt;Finalmente hablemos de algo que ha adquirido muy mala fama: la &lt;em&gt;memoria&lt;/em&gt;. Debido a que en la escuela nos hacían aprender de memoria cosas que parecen inútiles a lo largo de la vida, hemos demonizado el memorizar cosas. Sin embargo, memorizar es algo imprescindible para la resolución de problemas efectiva y la creatividad. Veamos algunas técnicas que te ayudarán a memorizar de manera más eficiente:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Palacios de memoria&lt;/strong&gt;. Esta es una técnica que consiste en aprovechar nuestra capacidad de ubicación espacial para memorizar cosas fácilmente. Puedes investigar más sobre ella y ver si te sirve.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Repetición espaciada&lt;/strong&gt;. Casi todo lo que consumimos lo olvidamos, a menos que se nos repita constantemente. La repetición espaciada consiste en repasar un tema con frecuencia cada vez más grande, para poder retenerlo a largo plazo. Puedes usar herramientas como Anki.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Hemos hablado de los temas que a mi parecer son más aplicables a los desarrolladores. El libro habla de otros temas como la presentación de exámenes, la organización del tiempo, la motivación, etc. Te invito a que le eches un ojo si estás en la escuela y sobre todo si estás en un área de ciencias o físico-matemáticas.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="a-mind-for-numbers" /><category term="barbara-oakley" /><summary type="html">Nunca nos han enseñado a aprender (a casi nadie) y el desarrollo de software es un campo que requiere un aprendizaje constante de temas difíciles. Veamos lo que &quot;A mind for numbers&quot; nos enseña sobre el aprendizaje</summary></entry><entry><title type="html">Criptografía para desarrolladores: Códigos de autenticación de mensajes</title><link href="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html" rel="alternate" type="text/html" title="Criptografía para desarrolladores: Códigos de autenticación de mensajes" /><published>2021-12-30T00:00:00-06:00</published><updated>2021-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html">&lt;p&gt;Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.&lt;/p&gt;
+
+&lt;p&gt;En general este tipo de algoritmos se llaman &lt;strong&gt;hashes con llave&lt;/strong&gt; o &lt;em&gt;Keyed Hashes&lt;/em&gt;. Empecemos a hablar del tipo más sencillo y usado: la generación de códigos de autenticación de mensajes.&lt;/p&gt;
+
+&lt;h2 id=&quot;message-authentication-codes-macs&quot;&gt;Message Authentication Codes (MACs)&lt;/h2&gt;
+
+&lt;p&gt;Un código de autenticación de mensajes es una función que recibe un mensaje y &lt;em&gt;una llave&lt;/em&gt; (secreta) y devuelve lo que llamamos una etiqueta, que es una cadena de bits de los tamaños comunes en los hashes.&lt;/p&gt;
+
+&lt;p&gt;En este tipo de algoritmos, si mantenemos la llave secreta, y la compartimos solamente con quien necesitamos verificar la autenticidad del mensaje, podemos comprobar el &lt;em&gt;origen&lt;/em&gt; (gracias a que sabemos que la llave está protegida) y que el mensaje está intacto (gracias a que las propiedades del hash).&lt;/p&gt;
+
+&lt;p&gt;Una forma de crear un hash con llave es simplemente poniendo la llave antes o después del mensaje que queremos autenticar y usando un algoritmo de hashing normal, &lt;strong&gt;aunque ninguna de las dos formas es muy segura&lt;/strong&gt;, ya que es vulnerable a ataques de &lt;a href=&quot;https://en.wikipedia.org/wiki/Length_extension_attack&quot;&gt;&lt;em&gt;extensión de longitud&lt;/em&gt;&lt;/a&gt; o se pueden encontrar colisiones si se usa una llave de tamaño variable. Un ejemplo en Python sería el siguiente:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hashlib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3_512&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sa&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mi llave super secreta'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sa&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mi mensaje que puede o no ser secreto, pero del que me importa el origen y que no haya sido cambiado'&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3_512&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hexdigest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;(Afortunadamente, ningún algoritmo de la familia SHA-3 es vulnerable a los ataques de extensión de longitud, por eso lo usamos aquí para el ejemplo)&lt;/p&gt;
+
+&lt;p&gt;A nuestra contraparte le enviamos el mensaje junto con el tag y para verificar la autenticidad del mensaje el receptor debe hacer exactamente la misma operación, por lo que necesita tener previamente la llave. Si el tag resultante es igual, quiere decir que el mensaje es auténtico y no ha sido modificado, reemplazado o viene de alguien que no tiene la llave.&lt;/p&gt;
+
+&lt;p&gt;Para que un MAC sea seguro, debe ser imposible crear un tag que parezca venir de alguien con la llave, sea por falsificarlo directamente o por poder adivinar la llave.&lt;/p&gt;
+
+&lt;p&gt;Los MACs más comunes son los que están basados en hashes, conocidos como &lt;strong&gt;HMAC&lt;/strong&gt;, un término que seguro has visto si has estado desarrollando por algún tiempo.&lt;/p&gt;
+
+&lt;h2 id=&quot;códigos-de-autenticación-de-mensajes-basados-en-hashes-hmac&quot;&gt;Códigos de autenticación de mensajes basados en hashes (HMAC)&lt;/h2&gt;
+
+&lt;p&gt;Un &lt;em&gt;Hash based Message Authentication Code&lt;/em&gt; es un MAC creado a partir de un hash, operando de una manera diferente a simplemente poner antes o después la llave. Los HMACs hacen uso de dos valores adicionales, un padding interno y un padding externo. Los combinan con la llave para crear una etiqueta que no sea vulnerable a los ataques de extensión de longitud.&lt;/p&gt;
+
+&lt;p&gt;La construcción de HMAC funciona así:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Se combina la llave con el padding interno mediante la operación XOR.&lt;/li&gt;
+  &lt;li&gt;Se hashea la la combinación de la llave y el padding interno junto con el mensaje del que queremos crear la etiqueta (a esto lo llamaremos H1).&lt;/li&gt;
+  &lt;li&gt;Se combina la llave con el padding externo mediante la operación XOR.&lt;/li&gt;
+  &lt;li&gt;Se hashea la la combinación de la llave y el padding externo junto con H1, el resultado de esto es la etiqueta de autenticación.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Sin embargo, se conoce un ataque efectivos contra los HMACs que permiten falsificar tags computando &lt;strong&gt;2^n/2 operaciones&lt;/strong&gt; en promedio, lo cuál no es cualquier cosa, pero un atacante motivado (y con recursos) podría lograrlo sin problemas si &lt;strong&gt;n&lt;/strong&gt;, el tamanño interno del estado del hash es muy pequeño. Un hash moderno tiene un estado de 512 bits, por lo que un ataque de tamaño de 2^n512/2 = 2^256 es impráctico.&lt;/p&gt;
+
+&lt;p&gt;Ya que un HMAC están basado en un algoritmo de hash, cuando se nombra se usa el nombre de este, por ejemplo: HMAC-SHA-256 o HMAC-SHA-3-512.&lt;/p&gt;
+
+&lt;h2 id=&quot;códigos-de-autenticación-de-mensajes-basados-en-cifrados-de-bloque-cmac&quot;&gt;Códigos de autenticación de mensajes basados en cifrados de bloque (CMAC)&lt;/h2&gt;
+
+&lt;p&gt;Ya que los hashes pueden estar basados en cifrados de bloque, una construcción más directa es usar un cifrado de bloque como la base para un MAC. Así nacen lo CMACs, códigos de autenticación de mensajes basados en cifrados de bloque, por ejemplo AES-CMAC.
+Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más eficientes son los que no se basan en Hashes o cifrados de bloque, sino que tienen un diseño independiente.&lt;/p&gt;
+
+&lt;h2 id=&quot;macs-con-diseño-independiente&quot;&gt;MACs con diseño independiente&lt;/h2&gt;
+
+&lt;p&gt;Un MAC seguro es más fácil de lograr que un hash completamente funcional y seguro o que un cifrado de bloque con las mismas características, ya que al usar un llave secreta evitan que se pueda atacar tan fácilmente como un hash y al exponer una etiqueta pequeña, revelan menos información que un cifrado de bloque.&lt;/p&gt;
+
+&lt;p&gt;Es por eso que un MAC no requiere todo el poder de un hash ni de un cifrado de bloque. Gracias a esto se han dieseñado algortimos que usan esta ventaja para ser más eficientes. Hablemos de tres ejemplos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cr.yp.to/siphash/siphash-20120918.pdf&quot;&gt;SipHash&lt;/a&gt;: Es una familia de algoritmos optimizada para autenticar mensajes cortos, originalmente diseñada para reemplazar las funciones hash en los diccionarios implmentados como hashtables.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cr.yp.to/mac/poly1305-20050329.pdf&quot;&gt;Poly1305&lt;/a&gt;: Es una función de autenticación de mensajes muy rápida y eficiente, más que cualquiera basada completamente en un algoritmo de bloque o un hash, usada para autenticar paquetes en dispositivos de bajo rendimiento en Android, por ejemplo.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://eprint.iacr.org/2005/088.pdf&quot;&gt;Pelican 2.0&lt;/a&gt;: Es un MAC basado en AES (Rijndael), pero que no utiliza todo su poder y que funciona de forma eficiente gracias a esto. Sin embargo, este algoritmo no está implementado en ningún lugar importante.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Si lo que buscas es eficiencia, manteniendo la seguridad relativa de tus etiquetas de autenticación, este tipo de MACs son los que deberías usar.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Conocer sobre los códigos de autenticación de mensajes es importante para no navegar perdidos entre todas esas siglas que luego vemos en las suites de seguridad de IPSec, TLS, SSL, SSH, HTTPS, etc. Ahora ya sabes lo que significa HMAC-SHA-512, AES-CMAC o Poly1305.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mac" /><category term="hamc" /><category term="aes" /><category term="security" /><category term="cryptography" /><summary type="html">A veces vemos nombres como HMAC-MD4 o AES-CMAC y no sabemos lo que significa. En este artículo hablaremos de los diferentes tipos de MAC y por qué son importantes.</summary></entry><entry><title type="html">El tiempo monótono</title><link href="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html" rel="alternate" type="text/html" title="El tiempo monótono" /><published>2021-12-26T00:00:00-06:00</published><updated>2021-12-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html">&lt;p&gt;Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto es cuando se está midiendo el tiempo que tarda una parte del programa o un evento externo.&lt;/p&gt;
+
+&lt;p&gt;El &lt;strong&gt;tiempo o reloj monótono&lt;/strong&gt; es un concepto que todo programador debería conocer, para evitar errores y código frágil al &lt;em&gt;medir&lt;/em&gt; el tiempo en los programas.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-reloj-de-pared&quot;&gt;El reloj de “pared”&lt;/h2&gt;
+
+&lt;p&gt;Lo primero que se nos viene a la cabeza cuando se trata de medir el tiempo entre dos eventos de nuestro programa es usar alguna función de nuestro lenguaje de programación que obtenga la fecha y hora actual. Este reloj o tiempo se llama de “tiempo real” y algunos programadores le llaman el reloj de pared, porque es como si voltearas a ver un reloj de esos que pones en tu pared para que te de la hora constantemente.&lt;/p&gt;
+
+&lt;p&gt;Un ejemplo de esto en Python sería:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# hacer algo (lo que queremos medir)
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Esto puede parecer inofensivo, pero tiene una falla que hace a nuestro programa frágil ante eventualidades fuera del sistema. La función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time.time()&lt;/code&gt; devuelve un número de segundos desde el 1 de Enero de 1970 (esta fecha conocida como el &lt;strong&gt;Epoch&lt;/strong&gt;) como un flotante. Este número siempre será incremental, es decir, no &lt;em&gt;debería&lt;/em&gt; devolverte un número menor que una llamada previa. Sin embargo, para calcular ese número de segundos (conocido como el &lt;strong&gt;Tiempo Unix&lt;/strong&gt;), Python se basa en la hora del &lt;em&gt;sistema&lt;/em&gt; en el que está corriendo el programa.&lt;/p&gt;
+
+&lt;p&gt;¿Alcanzas a notar por qué esta forma de calcular cuánto tiempo ha pasado desde un evento es frágil? Por ejemplo, imagina que entre una medida de tiempo (en nuestro programa, la variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt;) y la siguiente(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;end&lt;/code&gt;), ocurriera un cambio de hora en el sistema. Puede ser que alguien esté jugando con las configuraciones o que por pura casualidad el sistema haya ajustado el tiempo por uno de los segundos de ajuste de nuestro calendario (leap seconds) o que corra durante el cambio de hora por el horario de verano.&lt;/p&gt;
+
+&lt;p&gt;Todas estas circunstancias podrían afectar como mide el tiempo tu programa si usamos el reloj del sistema. Es aquí en donde entra el tiempo o reloj monótono.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-tiempo-monótono&quot;&gt;El tiempo monótono&lt;/h2&gt;
+
+&lt;p&gt;El reloj monótono es un &lt;strong&gt;contador del sistema que sólo avanza hacia adelante&lt;/strong&gt;, contando a partir de un punto arbitrario en el pasado. Este reloj no tiene conexión con el calendario y el tiempo real del sistema, sino que simplemente sirve para medir el tiempo que ha pasado (&lt;strong&gt;siempre en aumento&lt;/strong&gt;) desde el punto que se eligió.&lt;/p&gt;
+
+&lt;p&gt;Así, este reloj es confiable para medir el tiempo que pasó entre dos eventos, porque podemos tener la seguridad de que el una llamada posterior a la lectura de este reloj &lt;em&gt;siempre&lt;/em&gt; va a devolver algo mayor que la lectura anterior.&lt;/p&gt;
+
+&lt;p&gt;La manera de usarlo en Python también es mediante el módulo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;monotonic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# hacer algo (lo que queremos medir)
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;monotonic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;La función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time.monotonic()&lt;/code&gt; devuelve el tiempo monótono como un flotante, en segundos. Con estas dos puntos que están conectados al mismo marco de referencia obligatoriamente, hacemos que nuestra medición entre los dos eventos sea confiable. Lo mismo sucedería si quisieras coordinar dos sistemas diferentes: cada uno puede confiar en su reloj monótono sabiendo que el tiempo no saltará hacia atrás de ninguna manera.&lt;/p&gt;
+
+&lt;p&gt;Con vergüenza te comento que la primera vez que escuché de este concepto fue con más de 10 años de carrera, mediante el libro &lt;a href=&quot;https://books.altenwald.com/book/elixir&quot;&gt;Elixir para Alquimistas&lt;/a&gt; de Manuel Rubio, un libro que recomiendo mucho.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Cuando estés midiendo tiempo o coordinando tareas en tu programa, no confíes en las fechas y horas del sistema en el que está corriendo tu programa. Usa el reloj monótono para garantizar que tienes el mismo marco de referencia siempre que hagas una medición de tiempo. Tu lenguaje de programación debería darte acceso a esta medición, sólo investiga o busca en Google: &lt;em&gt;“Lenguaje X monotonic time”&lt;/em&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="monótono" /><category term="tiempo" /><category term="conteo" /><summary type="html">¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.</summary></entry><entry><title type="html">Matemáticas para criptografía</title><link href="https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia.html" rel="alternate" type="text/html" title="Matemáticas para criptografía" /><published>2021-12-25T00:00:00-06:00</published><updated>2021-12-25T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia.html">&lt;p&gt;¿Quieres entender por qué los algoritmos criptográficos pueden &lt;em&gt;prometer&lt;/em&gt; seguridad? Todos están basados en operaciones matemáticas, problemas difíciles de resolver, probabilidad y estadística.&lt;/p&gt;
+
+&lt;p&gt;Veamos un plan de estudios de matemáticas que podrías usar para adquirir las habilidades matemáticas necesarias para entender mejor los algoritmos criptográficos.&lt;/p&gt;
+
+&lt;h2 id=&quot;básico-básico&quot;&gt;Básico básico&lt;/h2&gt;
+
+&lt;p&gt;Empecemos por los fundamentos más profundos que debes tener, que hasta pueden parecer obvios. Lo importante es que tengas &lt;em&gt;la seguridad de que los dominas&lt;/em&gt; y si no, te proporcionamos algunos recursos para que los repases.&lt;/p&gt;
 
 &lt;h3 id=&quot;álgebra&quot;&gt;Álgebra&lt;/h3&gt;
 
-&lt;p&gt;Es necesario conoces los procedimientos algebraicos a fondo porque en esto se basa la resolución de problemas de muchas de las siguientes áreas. Además la factorización es uno de los problemas más importantes de la criptografía actual, y aquí es donde aprenderás el concepto básico. Si sientes que te falta comprender un poco, puedes tomar estos cursos:&lt;/p&gt;
+&lt;p&gt;Es necesario conocer los procedimientos algebraicos a fondo porque en esto se basa la resolución de problemas de muchas otras áreas. Además la factorización es uno de los problemas más importantes de la criptografía actual, y aquí es donde aprenderás el concepto básico en práctica. Si sientes que te falta aprender un poco, puedes tomar estos cursos:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/math/algebra&quot;&gt;Álgebra 1 - Khan Academy&lt;/a&gt;&lt;/li&gt;
@@ -19,39 +220,109 @@
 
 &lt;h3 id=&quot;probabilidad-y-estadística&quot;&gt;Probabilidad y estadística&lt;/h3&gt;
 
-&lt;p&gt;Siempre que hablamos de que un algoritmo es seguro, lo decimos basados en la probabilidad de que alguien pueda encontrar una solución a un problema muy difícil en un número de intentos razonable. Así, confiamos en que la probabilidad es cercana a cero, pero real&lt;/p&gt;
+&lt;p&gt;Siempre que hablamos de que un algoritmo es seguro, lo decimos basados en la probabilidad de que alguien pueda encontrar una solución a un problema muy difícil en un &lt;em&gt;número de intentos razonable&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo: confiamos en que la probabilidad de que alguien rompa un cifrado es cercana a cero, pero realmente esta probabilidad nunca es cero absoluto, sino algo como &lt;strong&gt;1/2^128&lt;/strong&gt; por intento, pero alguien motivado podría hacer &lt;em&gt;miles de millones&lt;/em&gt; de intentos. Para poder calcular estas probabilidades hay que entender lo básico de probabilidad y estadística.&lt;/p&gt;
+
+&lt;p&gt;La probabilidad también te ayudará a entender lo que es una &lt;strong&gt;distribución de probabilidad&lt;/strong&gt;, que es muy importante tanto para atacar algoritmos criptográficos como para verificar que las salidas de estos son seguras.&lt;/p&gt;
+
+&lt;p&gt;Puedes aprender un poco de esto en los siguientes cursos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/math/statistics-probability&quot;&gt;Probabilidad y estadística - Khan Academy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/estadistica-probabilidad&quot;&gt;Estadística y Probabilidad - UNAM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;matemáticas-discretas&quot;&gt;Matemáticas discretas&lt;/h2&gt;
 
-&lt;p&gt;Me atrevería a decir que este es la rama &lt;strong&gt;más importante de matemáticas&lt;/strong&gt; que debes de conocer como programador y como criptógrafo. La mayoría de los operaciones criptográficas y de algoritmo de programación están basadas en el conocimiento que aprenderás aquí.&lt;/p&gt;
+&lt;p&gt;Me atrevería a decir que esta es la rama &lt;strong&gt;más importante de matemáticas&lt;/strong&gt; que debes de conocer como programador y como criptógrafo. La mayoría de los operaciones criptográficas y de algoritmos de programación están basadas en el conocimiento que aprenderás aquí. &lt;a href=&quot;https://blog.thedojo.mx/2019/12/25/las-matematicas-que-debes-saber-para-programar.html#l%C3%B3gica-matem%C3%A1ticas-discretas&quot;&gt;Ya hemos mencionado&lt;/a&gt; que las matemáticas discretas son el estudio de las cosas que se pueden contar, sean finitas o infinitas, a diferencia de las matemáticas continuas que estudian los números reales o cosas que son continuas, incontables y sin divisiones claras.&lt;/p&gt;
 
-&lt;p&gt;Las partes más importantes son:&lt;/p&gt;
+&lt;p&gt;A continuación te listamos algunos de los temas que debes dominar o por lo menos conocer bien.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Lógica&lt;/strong&gt;. Tablas de verdad, proposciones, funciones&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h3 id=&quot;lógica&quot;&gt;Lógica&lt;/h3&gt;
+
+&lt;p&gt;La lógica tiene la intención de formalizar el razonamiento de tal manera que lo podamos estudiar, entender y aplicar a otras áreas.&lt;/p&gt;
+
+&lt;p&gt;En este tema se habla de cosas como tablas de verdad, lógica proposicional, deducción, &lt;a href=&quot;https://www.fing.edu.uy/~amiquel/fundamentos/teoriasymodelos.pdf&quot;&gt;teorías y lógica de primer orden&lt;/a&gt;, etc.&lt;/p&gt;
 
 &lt;h3 id=&quot;teoría-de-números&quot;&gt;Teoría de números&lt;/h3&gt;
+
+&lt;p&gt;La teoría de números trata acerca de los números enteros, sus propiedades, operaciones y relaciones. Esta es &lt;strong&gt;la base de varios problemas difíciles que sirven para crear los algoritmos criptográficos modernos&lt;/strong&gt;. En esta rama se estudia la divisibilidad, los números primos, la aritmética modular y los algoritmos relacionados con estas operaciones.&lt;/p&gt;
+
+&lt;p&gt;Si no vas a estudiar nada más, entender los temas de un curso de teoría de números enfocado en criptografía es suficiente para no sentirte sin rumbo. Estos cursos pueden ayudarte a aprender lo que necesitas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/number-theory-cryptography&quot;&gt;Number Theory for Cryptography&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://personal.cimat.mx:8181/~hgallegos/teaching/teoriaDeNumeros/&quot;&gt;Temario con Bibliografía y tareas del curso de Teoría de Números del CIMAT&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/mathematical-foundations-cryptography&quot;&gt;Mathematical foundations of cryptography&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_(Poritz)&quot;&gt;Yet Another Introductory Number Theory Textbook - Cryptology Emphasis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&quot;combinatoria&quot;&gt;Combinatoria&lt;/h3&gt;
 
-&lt;h3 id=&quot;teoría-de-grafos&quot;&gt;Teoría de Grafos&lt;/h3&gt;
-&lt;h2 id=&quot;intermedio&quot;&gt;Intermedio&lt;/h2&gt;
+&lt;p&gt;Esta sub-rama de las matemáticas discretas tiene que ver con el &lt;em&gt;conteo, combinaciones y arreglos de objetos en estructuras discretas&lt;/em&gt; (con objetos claramente separados) como los grafos y conjuntos. Normalmente estas estructuras discretas contienen números, pero podrían contener palabras, textos, frases. La combinatoria incluye el conteo de objetos y combinaciones que llevamos a a cabo en probabilidad y estadística: las operaciones de combinación y permutación.&lt;/p&gt;
+
+&lt;p&gt;Algunos recursos que te ayudarán a aprender combinatoria a fondo se encuentran aquí: &lt;a href=&quot;https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics&quot;&gt;Combinatorics and Discrete Mathematics&lt;/a&gt; que tiene un conjunto de libros sobre combinatoria con diferentes enfoques.&lt;/p&gt;
+
+&lt;h3 id=&quot;cursos-de-matemáticas-discretas-generales&quot;&gt;Cursos de matemáticas discretas generales&lt;/h3&gt;
+
+&lt;p&gt;Algunos cursos y temarios que puedes tomar son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://compilandoconocimiento.com/discretas/&quot;&gt;Curso de matemáticas discretas&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://posgrados.inaoep.mx/archivos/PosCsComputacionales/Curso_Propedeutico/TEMARIOS/2_MateDiscretas-VersionGeneral.pdf&quot;&gt;Temario sobre matemáticas discretas para Maestría en Ciencias de la Computación&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;geometría-analítica&quot;&gt;Geometría analítica&lt;/h3&gt;
 
-&lt;p&gt;Conocer las propiedades matemáticas de los objetos geométricos te ayudará a comprender intuitivamente algunas de los problemas en los que está basada la criptografía.&lt;/p&gt;
+&lt;p&gt;Conocer las propiedades matemáticas de los objetos geométricos te ayudará a comprender intuitivamente algunas de los problemas difíciles en los que está basada la criptografía.&lt;/p&gt;
 
 &lt;p&gt;Algunos cursos que puedes tomar:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/trigonometria&quot;&gt;Trigonometría y geometría analítica - UNAM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/https://www.eusal.es/eusal/catalog/book/978-84-1311-463-7trigonometria&quot;&gt;Trigonometría y geometría analítica - UNAM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;avanzado&quot;&gt;Avanzado&lt;/h2&gt;
+&lt;h2 id=&quot;álgebra-lineal&quot;&gt;Álgebra lineal&lt;/h2&gt;
 
-&lt;p&gt;Esta matemáticas están enfocadas en que diseñes tus propios algortimos criptográficos, resistentes a ataques modernos y sobre todo preparados para resistir la acelaración en cómputo prometida por la tecnología cuántica.&lt;/p&gt;
+&lt;p&gt;El álgebra lineal tiene que ver con el estudio de ecuaciones lineales (que pueden ser graficadas en el plano cartesiano con una recta), sus soluciones y su tratamiento a través de vectores y matrices.&lt;/p&gt;
 
-&lt;h3 id=&quot;retículas&quot;&gt;Retículas&lt;/h3&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="matemáticas" /><category term="álgebra" /><summary type="html">Veamos qué conocimientos matemáticos requieres para entender los algoritmos criptográficos, cómo funcionan y, en su caso, avanzar para que puedas diseñar los tuyos.</summary></entry><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html">&lt;p&gt;HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual.&lt;/p&gt;
+&lt;p&gt;Muchas de las técnicas utilizadas en álgebra lineal son ocupadas en criptografía para crear algoritmos seguros que sean imposibles de revertir sin conocer la llave correcta. Un ejemplo es el algoritmo Rijndael, el actual AES.&lt;/p&gt;
+
+&lt;p&gt;Algunos recursos que te ayudarána a aprender matemáticas discretas son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/projects/aprendiendo-python-con-algebra-lineal&quot;&gt;Aprendiendo Python con Álgebra Lineal&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.edx.org/course/fundamentos-de-algebra-lineal-2?index=product&amp;amp;queryID=4f34318ca69382d83eb24655d433f655&amp;amp;position=1&quot;&gt;Fundamentos de álgebra lineal&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://buzzard.ups.edu/courses/2013spring/projects/berger-aes-ups-434-2013.pdf&quot;&gt;Cómo funciona AES (Rijndael)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;opcionales&quot;&gt;Opcionales&lt;/h2&gt;
+
+&lt;p&gt;Si quieres avanzar a campos muy adelantados de la criptografía, debes estudias campos aún más específicos de las matemáticas discretas como:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Teoría de grupos&lt;/li&gt;
+  &lt;li&gt;Teoría de grafos&lt;/li&gt;
+  &lt;li&gt;Retículas (algo muy importante para la criptografía post-cuántica)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cursos-completos&quot;&gt;Cursos completos&lt;/h2&gt;
+
+&lt;p&gt;Para finalizar, te quiero presentar recursos que tienen un conjunto completo básico de todas las matemáticas necesarias para entender los algoritmos criptográficos modernos.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.eusal.es/eusal/catalog/book/978-84-1311-463-7&quot;&gt;MANUAL DE CRIPTOGRAFÍA: FUNDAMENTOS MATEMÁTICOS DE LA CRIPTOGRAFÍA PARA UN ESTUDIANTE DE GRADO&lt;/a&gt; - Tiene apartados para todos los tipos de algoritmos criptográficos usados en la actualidad, explicando su soporte matemático. Si quieres profundizar en algún tema de estos, podrías tomar el curso específico que sugerimos aquí.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/specializations/discrete-mathematics&quot;&gt;Especialización en matemáticas discretas en Coursera&lt;/a&gt; - Tiene todos los temas relacionados con matemáticas para computación y criptografía divididos en varios cursos, lo puedes tomar de manera gratuita.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/mathematical-foundations-cryptography?&quot;&gt;Mathematical foundations of Cryptography&lt;/a&gt; - Tiene todos los temas necesarios para entender la criptografía, incluyendo los temas selectos de todas las matemáticas para ir directo al grano. Esto requerirá que tengas cubierto las matemáticas básicas para no perderte.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.isical.ac.in/~rcbose/mtechCrS.pdf&quot;&gt;Temario de maestría en seguridad de la ISICAL&lt;/a&gt; - Tiene todos los cursos que alguien debería de tomar para especializarse en ciberseguridad, con temarios completos y bibliografía, lo que te puede servir como una guía si lo que prefieres es aprender de los libros.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bonus: &lt;a href=&quot;https://www.coursera.org/learn/cryptography-boolean-functions&quot;&gt;Cryptogaphy, Boolean Functions and related problems&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Como podrás observar, hay una gran cantidad de recursos para aprender lo necesario para entender la criptografía a fondo, desde sus bases matemáticas. Puedes usar estas recomendaciones como guía, o ver los temas y buscar tus propios recursos para seguir aprendiendo. Si tienes alguna recomendación no dudes en compartirla con nosotros para poder actualizar nuestra lista y cada vez hacerla mejor.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="matemáticas" /><category term="álgebra" /><summary type="html">Veamos qué conocimientos matemáticos requieres para entender los algoritmos criptográficos, cómo funcionan y, en su caso, avanzar para que puedas diseñar los tuyos.</summary></entry><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html">&lt;p&gt;HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -107,7 +378,7 @@
 
 &lt;p&gt;Mantenernos actualizados con respecto a las nuevas tecnologías es muy importante para ofrecerles lo mejor a los usuarios de nuestro software, sean desarrolladores o usuarios finales. Si quieres empezar a usar HTTP/3 échale un ojo a tus servidores HTTP, por ejemplo &lt;a href=&quot;https://www.nginx.com/blog/our-roadmap-quic-http-3-support-nginx/&quot;&gt;NGINX ya tiene planes para soportarlo completamente&lt;/a&gt;, &lt;a href=&quot;https://doc.traefik.io/traefik/master/routing/entrypoints/#http3&quot;&gt;Traefik ya lo soporta de manera experimental&lt;/a&gt;, pero parece que Apache &lt;a href=&quot;https://www.reddit.com/r/apache/comments/o6a86x/why_is_apache_failing_to_implement_quic_http3/&quot;&gt;no lo hará por ahora&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;También si usas algún servicio de AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que lo actives. Puedes revisar la lista de compatibilidad constantemente aquí: &lt;a href=&quot;https://caniuse.com/http3&quot;&gt;Can I Use HTTP/3?&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="HTTP" /><category term="web" /><category term="network" /><summary type="html">HTTP es el estándar que permite que internet exista como hoy lo conocemos, hablemos de sus avances y lo que puede ofrecerte la última versión: HTTP/3.</summary></entry><entry><title type="html">Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link href="https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="alternate" type="text/html" title="Análisis de los principios SOLID: Principio de Responsabilidad Única" /><published>2021-12-14T00:00:00-06:00</published><updated>2021-12-14T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y “limpio” debe saber y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;
+&lt;p&gt;También si usas algún servicio de servidores administrados AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que lo actives. Puedes revisar la lista de compatibilidad constantemente aquí: &lt;a href=&quot;https://caniuse.com/http3&quot;&gt;Can I Use HTTP/3?&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="HTTP" /><category term="web" /><category term="network" /><summary type="html">HTTP es el estándar que permite que internet exista como hoy lo conocemos, hablemos de sus avances y lo que puede ofrecerte la última versión: HTTP/3.</summary></entry><entry><title type="html">Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link href="https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="alternate" type="text/html" title="Análisis de los principios SOLID: Principio de Responsabilidad Única" /><published>2021-12-14T00:00:00-06:00</published><updated>2021-12-14T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y “limpio” debe saber y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Explicación del principio&lt;/li&gt;
@@ -126,17 +397,7 @@
 
 &lt;p&gt;“Una clase debe tener una única razón para ser modificada” según en libro &lt;em&gt;Clean Code&lt;/em&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Escribe aquí un buen resumen de tu artículo</summary></entry><entry><title type="html">Creando un API con GO: Usando Beego</title><link href="https://blog.thedojo.mx/2021/12/13/creando-un-api-con-go-usando-beego.html" rel="alternate" type="text/html" title="Creando un API con GO: Usando Beego" /><published>2021-12-13T00:00:00-06:00</published><updated>2021-12-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/13/creando-un-api-con-go-usando-beego</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/13/creando-un-api-con-go-usando-beego.html">&lt;p&gt;Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde las exigencias respecto a lo que deben soportar los sistemas en cuanto a concurrencia y escalabilidad son fuertes.&lt;/p&gt;
 
-&lt;p&gt;Para hacer la prueba vamos a crear un proyecto más o menos interesante: creemos un diccionario inverso. Tú das la descripción de la palabra, y la API nos devuelve una serie de opciones con un valor de certeza. Para lograr esto vamos a necesitar un modelo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Hagamos una pequeña API en Go usando Beego, mientras intentamos seguir los principios de Domain Driven Design</summary></entry><entry><title type="html">Ejercicio: programando un perceptrón</title><link href="https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron.html" rel="alternate" type="text/html" title="Ejercicio: programando un perceptrón" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron.html">&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
-
-&lt;p&gt;Si no tienes claro lo que es un perceptrón, puedes leer nuestro &lt;a href=&quot;/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html&quot; target=&quot;_blank&quot;&gt;artículo anterior&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-conjunto-de-datos&quot;&gt;El conjunto de datos&lt;/h2&gt;
-
-&lt;p&gt;Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo &lt;em&gt;aprenda&lt;/em&gt; de estos datos. Los datos que un perceptrón puede clasificar deben estar divididos en dos clases separables, ya si lo representáramos como una función, es un línea recta en un plano de dos variables, o su equivalente dependiendo del espacio y sus dimensiones.&lt;/p&gt;
-
-&lt;h2 id=&quot;aproximando-la-función&quot;&gt;Aproximando la función&lt;/h2&gt;
-
-&lt;h2 id=&quot;resultado&quot;&gt;Resultado&lt;/h2&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ia" /><summary type="html">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.</summary></entry><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para hacer la prueba vamos a crear un proyecto más o menos interesante: creemos un diccionario inverso. Tú das la descripción de la palabra, y la API nos devuelve una serie de opciones con un valor de certeza. Para lograr esto vamos a necesitar un modelo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Hagamos una pequeña API en Go usando Beego, mientras intentamos seguir los principios de Domain Driven Design</summary></entry><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra con los cifrados de &lt;em&gt;flujo&lt;/em&gt; o &lt;strong&gt;stream ciphers&lt;/strong&gt;.&lt;/p&gt;
 
@@ -201,7 +462,17 @@ usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementad
 
 &lt;p&gt;Los cifrados de flujo actualmente son seguros (Salsa20, Grain-128a y  AES-CTR) y los puedes usar con confianza siempre que requieras cifrar datos de longitud desconocida o que llega (o se va) con un flujo de información.&lt;/p&gt;
 
-&lt;p&gt;Evita reutilizar el Nonce, el counter y elige una llave segura, lo más aleatoria posible y estarás listo para usarlos en cualquier desarrollo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="cifrado" /><category term="cypher" /><category term="flujo" /><category term="aes" /><summary type="html">Ya hemos hablado en este blog sobre qué es la criptografía, los cifrados de bloque y ahora ha llegado la hora de hablar de cifrados de flujo. Veamos qué son y para qué sirven.</summary></entry><entry><title type="html">Criptografía VS computación cuántica</title><link href="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html" rel="alternate" type="text/html" title="Criptografía VS computación cuántica" /><published>2021-12-11T00:00:00-06:00</published><updated>2021-12-11T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html">&lt;blockquote&gt;
+&lt;p&gt;Evita reutilizar el Nonce, el counter y elige una llave segura, lo más aleatoria posible y estarás listo para usarlos en cualquier desarrollo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="cifrado" /><category term="cypher" /><category term="flujo" /><category term="aes" /><summary type="html">Ya hemos hablado en este blog sobre qué es la criptografía, los cifrados de bloque y ahora ha llegado la hora de hablar de cifrados de flujo. Veamos qué son y para qué sirven.</summary></entry><entry><title type="html">Ejercicio: programando un perceptrón</title><link href="https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron.html" rel="alternate" type="text/html" title="Ejercicio: programando un perceptrón" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron.html">&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
+
+&lt;p&gt;Si no tienes claro lo que es un perceptrón, puedes leer nuestro &lt;a href=&quot;/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html&quot; target=&quot;_blank&quot;&gt;artículo anterior&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-conjunto-de-datos&quot;&gt;El conjunto de datos&lt;/h2&gt;
+
+&lt;p&gt;Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo &lt;em&gt;aprenda&lt;/em&gt; de estos datos. Los datos que un perceptrón puede clasificar deben estar divididos en dos clases separables, ya si lo representáramos como una función, es un línea recta en un plano de dos variables, o su equivalente dependiendo del espacio y sus dimensiones.&lt;/p&gt;
+
+&lt;h2 id=&quot;aproximando-la-función&quot;&gt;Aproximando la función&lt;/h2&gt;
+
+&lt;h2 id=&quot;resultado&quot;&gt;Resultado&lt;/h2&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ia" /><summary type="html">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.</summary></entry><entry><title type="html">Criptografía VS computación cuántica</title><link href="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html" rel="alternate" type="text/html" title="Criptografía VS computación cuántica" /><published>2021-12-11T00:00:00-06:00</published><updated>2021-12-11T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html">&lt;blockquote&gt;
   &lt;p&gt;“If you are not completely confused by quantum mechanics, you do not understand it.” - Richard Feynman&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -298,209 +569,4 @@ usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementad
 
 &lt;p&gt;Ciertamente, la seguridad de la criptografía simétrica se ve menguada por el poder de cómputo y los algoritmos cuánticos, pero no lo suficiente para darla por perdida, sino que bastará con fortalecerla con el mismo poder de cómputo cuántico y &lt;strong&gt;aumentando el tamaño de las llaves&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Finalmente, los investigadores ya están trabajando en formas para sustituir lo que se va a romper.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="quantum" /><category term="matemáticas" /><summary type="html">Se ha escuchado mucho sobre que la criptografía está completamente acabada si la computación cuántica tiene éxito. Entendamos si esto es verdad.</summary></entry><entry><title type="html">La regla del ‘Cero, Uno o Infinito’</title><link href="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html" rel="alternate" type="text/html" title="La regla del ‘Cero, Uno o Infinito’" /><published>2021-12-10T00:00:00-06:00</published><updated>2021-12-10T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/10/la-regla-del-cero-uno-o-infinito.html">&lt;p&gt;La regla del ‘Cero, Uno o Infinito’ es una guía para diseñar software que sea más fácil de usar, tanto para otros desarrolladores como para los usuarios finales. La regla en inglés es:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Allow none of foo, one of foo, or any number of foo.” - Willem van der Poel&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Esta regla establece que respecto a la existencia de elementos, deberías permitir que no exista ninguno, solamente uno o un número arbitrario (potencialmente infinito, mientras las limitantes ) de estos elementos. La idea &lt;strong&gt;principal es que no existan límites arbitrarios impuestos por alguna idea sin explicación&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Algunos ejemplos de esta regla, puesta en práctica:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Una estructura de datos no limita arbitrariamente el grado de anidado que puede tener&lt;/li&gt;
-  &lt;li&gt;No existe un normalmente un límite impuesto de recursividad (más allá del dado por el tamaño del &lt;em&gt;stack&lt;/em&gt; de ejecución)&lt;/li&gt;
-  &lt;li&gt;En las bases de datos relacionales existen tres cardinalidades: 1-1 (permitir una), 1-N (un padre puede tener muchos hijos), N-N (varios artículos pueden pertenecer a la misma categoría y un artículo puede tener varias categorías)&lt;/li&gt;
-  &lt;li&gt;Los caracteres especiales básicos de las expresiones regulares son: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; (un carácter cualquiera), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; (uno o más caracteres), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; (cualquier número de caracteres).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Y esta regla parece que también existe en la naturaleza:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;La procreación es ilimitada mientras los recursos sean suficientes (puedes tener N hijos)&lt;/li&gt;
-  &lt;li&gt;Tus ancestros directos son uno de cada género (tienes un padre y una madre)&lt;/li&gt;
-  &lt;li&gt;Tus ancestros indirectos pueden ser infinitos (tu linea genealógica y los hijos de tus hijos pueden ser infinitos)&lt;/li&gt;
-  &lt;li&gt;Cuando tienes un límite de uno y lo abres para dos, ¿entonces por qué no abrirlo para tres? Si aplicamos esta regla recursivamente llegamos infinito&lt;/li&gt;
-  &lt;li&gt;En un consejo de administración hay una (1) persona encargada con acceso a la información de un sistema o un equipo (N - infinito)&lt;/li&gt;
-  &lt;li&gt;Como conjunto, un vehículo puede transportar N pasajeros, luego limitado por el caso de negocio o modelo específico. Cuando esta lleno puede transportar cero personas más&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ahora veamos algunos ejemplos en los que puedes poner límites arbitrarios sin darte cuenta.&lt;/p&gt;
-
-&lt;h2 id=&quot;modelando-bases-da-datos&quot;&gt;Modelando bases da datos&lt;/h2&gt;
-
-&lt;p&gt;En modelados de bases de datos. Imagínate que tienes que modelar una tipo de usuario en el que te dicen que tienes que guardar diez propiedades arbitrarias. Podrías cometer el error de crear específicamente diez campos para guardar estas propiedades, lo cuál crearía un límite arbitrario en la capacidad de guardar estas propiedades. La mejor forma de modelarlo sería con una relación 1-N, ya que te da la flexibilidad de aumentar o reducir este límite mediante lógica específica para el caso de uso.&lt;/p&gt;
-
-&lt;p&gt;Lo mismo podrías pensar en cuanto a asignación de categorías, tags, comentarios, etc.&lt;/p&gt;
-
-&lt;h2 id=&quot;modelando-software&quot;&gt;Modelando software&lt;/h2&gt;
-
-&lt;p&gt;Veamos algunos ejemplos que te puedes encontrar creando software.&lt;/p&gt;
-
-&lt;h3 id=&quot;ctrl-z&quot;&gt;CTRL-Z&lt;/h3&gt;
-
-&lt;p&gt;Imagina que tienes que diseñar un editor de texto y estás pensando en agregar la funcionalidad de “deshacer”. Primeramente piensas que es buena idea solamente permitir que se deshaga la acción inmediata anterior, así que lo implementas como una variable que se está sustituyendo constantemente.&lt;/p&gt;
-
-&lt;p&gt;Pero ahora quieres permitir que se deshagan más acciones. ¿Cuál sería tu siguiente límite? El límite natural tendría que ser “infinito” o “hasta el principio del tiempo”, ya que cualquier otro límite sería arbitrario y difícil de comprender o justificar. Así que tu implementación cambia de una variable a una pila de acciones que va manteniendo tantas acciones como sea posible.&lt;/p&gt;
-
-&lt;h3 id=&quot;modelando-una-conversaciǿn&quot;&gt;Modelando una conversaciǿn&lt;/h3&gt;
-
-&lt;p&gt;Ahora estamos creando un modelo para almacenar y correr una conversación de un chatbot con un usuario. Cada mensaje puede comportarse de tres maneras: darle la oportunidad al usuario de contestar con una respuesta fija, llevar a otro mensaje sin darle oportunidad al usuario de contestar, o terminar la conversación.&lt;/p&gt;
-
-&lt;p&gt;Como puedes observar, esto es un caso perfecto de la regla del ‘Cero, Uno o Infinito’. Un mensaje puede tener cero mensajes siguientes, por lo que termina la conversación. Puede tener un solo mensaje siguiente, que es cuando continuamos sin esperar respuesta. O puede tener N mensajes siguientes, uno correspondiente a cada respuesta posible de parte del usuario. Imponer un número limitado de respuestas posibles dentro de tu sistema no una buen idea, ya que limita sin razón alguna la flexibilidad de nuestro sistema.&lt;/p&gt;
-
-&lt;h2 id=&quot;críticas-a-la-regla-del-cero-uno-o-infinito&quot;&gt;Críticas a la regla del ‘Cero, Uno o Infinito’&lt;/h2&gt;
-
-&lt;p&gt;Una de las principales críticas a esta regla es que &lt;strong&gt;está dejando fuera el dos&lt;/strong&gt;, que también es un número muy especial para ciertos casos: muchas cosas en la naturaleza vienen en pares. Los booleanos, prendido/apagado, arriba/abajo, izquierda/derecha.&lt;/p&gt;
-
-&lt;p&gt;En mi opinión es un número que también se debe considerar, pero solo en caso de que los dos elementos carguen un significado como en los ejemplos anteriores, normalmente son cosas opuestas que se relacionan con un centro, pero incluso, si no se considera un número especial, podemos modelar estos casos siguiendo la regla del ‘Cero, Uno o Infinito’: si tomamos como punto de referencia uno de estos valores, el otro es nuestro &lt;em&gt;“uno”&lt;/em&gt; que estamos permitiendo.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Aprender principios de diseño de software te ayudará a crear mejores sistemas que puedan ser usados más fácilmente tanto por otros desarrolladores como por usuario. Espero que este pequeño ejemplo te lleve a aprender otros principios que puedas aplicar en tu trabajo diario. Déjanos un comentario si quieres que lo platiquemos más profundamente o con otros ejemplos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="zero-one-infinity" /><category term="design" /><category term="reglas" /><summary type="html">A veces necesitamos reglas que nos ayuden a desarrollar mejor software. La regal de 'Cero, Uno o Infinito' es una guía para que creemos software más usable.</summary></entry><entry><title type="html">Cómo convertirte en un mago programando</title><link href="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html" rel="alternate" type="text/html" title="Cómo convertirte en un mago programando" /><published>2021-12-09T00:00:00-06:00</published><updated>2021-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html">&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;wizardzine&lt;/a&gt; gratuito &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a wizard”&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Espero que estas recomendaciones te dejen reflexionando y que termines con ganas de leer el &lt;em&gt;wizardzine&lt;/em&gt; completo. Los pongo en el orden que personalmente me parecen más impactantes, pero para ti puede ser diferente, por lo que te recomiendo que lo leas y medites por tu cuenta.&lt;/p&gt;
-
-&lt;h2 id=&quot;escribe-un-documento-de-diseño&quot;&gt;Escribe un documento de diseño&lt;/h2&gt;
-
-&lt;p&gt;Una de las cosas más importantes que podemos aprender los desarrolladores es a &lt;strong&gt;diseñar software.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Un documento de diseño es una expresión del diseño de software. Es un escrito que haces &lt;strong&gt;ANTES de empezar&lt;/strong&gt; un desarrollo, en el que detallas varias cosas sobre lo que te estás proponiendo hacer:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;El objetivo principal&lt;/li&gt;
-  &lt;li&gt;Detalles sobre el problema a resolver&lt;/li&gt;
-  &lt;li&gt;El diseño a alto nivel de la solución&lt;/li&gt;
-  &lt;li&gt;Las partes del sistema que estás afectando&lt;/li&gt;
-  &lt;li&gt;Otras consideraciones que hay que tener sobre esa pieza de software&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Normalmente este diseño y consideraciones iniciales no se mantienen a lo largo del proyecto, pero sirven para empezar con una idea más clara y sin malentendidos. Una de las cosas más importantes que tienes que hacer con un documento de diseño es &lt;strong&gt;la retroalimentación que otros miembros del equipo puedan darte&lt;/strong&gt;. En un artículo futuro de este blog hablaremos más a detalle de esto.&lt;/p&gt;
-
-&lt;p&gt;Pero recuerda que si no tienes práctica y, aunque sea un proyecto o cambio muy pequeño, vale la pena dedicarle un tiempo a &lt;em&gt;pensar&lt;/em&gt; y &lt;em&gt;escribir&lt;/em&gt; sobre lo que planeas hacer.&lt;/p&gt;
-
-&lt;h2 id=&quot;como-adquirir-experiencia-significativa&quot;&gt;Como adquirir experiencia significativa&lt;/h2&gt;
-
-&lt;p&gt;Es cierto que mediante trabajar en algo por un tiempo en algo lograrás adquirir experiencia, pero esta experiencia está limitada a las actividades que más repitas en ese trabajo y a ese entorno. &lt;strong&gt;Por eso no basta con sólo aprender en el trabajo&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Si quieres tener una experiencia más amplia, algunas prácticas que te pueden servir son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Escoge un área que te interese especialmente y estudiala durante un tiempo razonable. Desarrolla tus habilidades en esa área y luego cambia a otra. Lo importante es que &lt;strong&gt;tu aprendizaje sea activo&lt;/strong&gt;, no solamente teórico o lo que te vaya llegando del trabajo.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;No pienses que es tarde para aprender&lt;/strong&gt;. Aunque lleves bastante tiempo usando algo, no significa que lo debas saber todo sobre esa tecnología. No pienses: “¿Cómo es que no sabes X cosa sobre Y?”, sino: “Hoy es el día en que aprenderé sobre X y Y”.&lt;/li&gt;
-  &lt;li&gt;Aprende los conceptos fundamentales, lo que te servirá para construir sobre eso más conocimiento y habilidades.&lt;/li&gt;
-  &lt;li&gt;Haz experimentos. En muchas de las áreas del desarrollo, puedes hacer experimentos que no te cuestan nada y pueden ayudarte a entender más profundamente un tema.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Lee Libros&lt;/strong&gt;. Los libros en la mayoría de los casos son un conjunto de conocimientos destilados sobre cierto tema. Leer los capítulos específicos de los temas de tu interés te ayudará a avanzar más rápido.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Haz proyectos difíciles&lt;/strong&gt;. Nada como poner a prueba tus habilidades para ver los hoyos en tu conocimiento como hacer tareas difíciles.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Profundiza&lt;/strong&gt;. Cuando no entiendas algo, busca información más profunda sobre el tema, aprende la historia, las bases y los conceptos más fundamentales. Además puedes acercarte a expertos en el tema a pedirles ayuda para comprender este tema, o recursos que te ayuden a comprenderlo.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finalmente, recuerda que todo esto toma tiempo, no puedes convertirte en un experto en algo de la noche a la mañana, por lo que debes tener paciencia contigo.&lt;/p&gt;
-
-&lt;h2 id=&quot;lee-código-fuente&quot;&gt;Lee código fuente&lt;/h2&gt;
-
-&lt;p&gt;A veces, los sistemas o herramientas que tenemos que usar no tienen documentación, nadie sabe lo suficiente para ayudarnos o no están disponibles. Es por esto que una de las habilidades más importantes que podemos tener es la de &lt;strong&gt;leer y entender el código fuente&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Algunas de las cosas que te pueden ayudar son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Busca exactamente por la parte que necesitas. Puede ser un error, un mensaje o un módulo específico, usa las herramientas de indexación de texto para llegar ahí, no creas que tienes que leer toda la base.&lt;/li&gt;
-  &lt;li&gt;Si el código que tienes que leer es pequeño, intenta darle un recorrida rápida para tener una idea general de lo que sucede y dónde sucede.&lt;/li&gt;
-  &lt;li&gt;Haz experimentos con el código, cambiando cosas y viendo lo que sucede, usa un debuggers, agrega tests, introduce bugs intencionalmente.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finalmente, documenta lo que aprendas y encuentres, le puede servir a otros miembros del equipo, de la comunidad o a ti en el futuro. Entender estos sistemas te ayudará aprender de las decisiones de diseño buenas o malas y además te enseñará nuevas técnicas que hubieras tardado más en aprender por otros lados.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Lo que te acercará más a sentirte un mago o maga programando es la &lt;strong&gt;práctica enfocada&lt;/strong&gt;, que puede presentarse de las tres maneras que hablamos aquí, pero hay muchas otras. Recuerda que la constancia es importante, más que la velocidad, pero buscar formas más eficientes de aprender no es malo.&lt;/p&gt;
-
-&lt;p&gt;Si te quedaste con ganas de más consejos de este estilo, descarga &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a Wizard”&lt;/a&gt; de la página oficial y continúa leyendo, esta vez de manera visual.&lt;/p&gt;
-
-&lt;p&gt;Shameless plug: &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;aquí puedes ver nuestra presentación de los wizardzines&lt;/a&gt;.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/drPMyDyQG8M&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="preguntas" /><category term="investigación" /><summary type="html">Hablemos sobre las técnicas que Julia Evans recomienda para converirte en un mejor programador(a) y avanzar en tu carrera.</summary></entry><entry><title type="html">Recursos para aprender Criptografía en 2022</title><link href="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html" rel="alternate" type="text/html" title="Recursos para aprender Criptografía en 2022" /><published>2021-12-08T00:00:00-06:00</published><updated>2021-12-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html">&lt;p&gt;La criptografía es un campo con mucha demanda laboral actualmente porque es importante para diferentes áreas de la informática. En este artículo vamos hablar su importancia y cómo puedes aprenderlo si está dentro de tus intereses.&lt;/p&gt;
-
-&lt;h2 id=&quot;la-importancia-de-la-criptografía&quot;&gt;La importancia de la criptografía&lt;/h2&gt;
-
-&lt;p&gt;En el artículo &lt;a href=&quot;https://blog.thedojo.mx/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;¿Qué es la Criptografía?&lt;/a&gt; explicamos que es un conjunto de técnicas y conocimiento que busca &lt;strong&gt;&lt;em&gt;ocultar la información&lt;/em&gt;&lt;/strong&gt;, derivada de las matemáticas y las ciencias de la computación.&lt;/p&gt;
-
-&lt;p&gt;El mundo de la computación necesita mantener secretos en muchas áreas, principalmente en cosas relacionadas como la identificación y autenticación de personas y elementos. Además, la criptografía tiene usos laterales, como la verificación de la autenticidad de la información. Cada día hay más valor en nuestras redes informáticas, por lo que cada vez hay más incentivos para robar la información que protegemos mediante la criptografía.&lt;/p&gt;
-
-&lt;p&gt;En tiempos modernos, debido a lo pesado de procesos de cifrado y hasheado, también se ha estado usando para probar que un elemento de un sistema distribuido hizo muchos cálculos, un concepto llamado &lt;a href=&quot;https://cointelegraph.com/explained/proof-of-work-explained&quot;&gt;prueba de trabajo&lt;/a&gt;, usado en Bitcoin.&lt;/p&gt;
-
-&lt;p&gt;Como resumen: &lt;strong&gt;está aumentando  el número de personas que se requiere&lt;/strong&gt; para trabajar en criptografía. Se requieren personas que diseñen sistemas que usen los esquemas y algoritmos correctamente, criptográfos que diseñen nuevos algoritmos adecuados para nuestra época y las décadas que siguen, resistentes a el avance del hardware y la computación cuántica, y finalmente, personas que implementen correctamente los algoritmos diseñados por los matemáticos y criptográfos tanto en hardware como en software.&lt;/p&gt;
-
-&lt;p&gt;¿Quieres ser tú una de estas personas? ¿O tal vez quieres aprender un poco más solamente para crear software más seguro? Veamos algunos recursos que te pueden ayudar.&lt;/p&gt;
-
-&lt;h2 id=&quot;libros&quot;&gt;Libros&lt;/h2&gt;
-
-&lt;p&gt;Los siguientes libros te enseñarán lo suficiente de criptografía de manera general para que no te confundas con los términos y para tener una idea clara de los puedes y no puedes hacer al usar diferentes esquemas y tipos de algoritmos.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-code-book&quot;&gt;The Code Book&lt;/h3&gt;
-
-&lt;p&gt;Este libro está escrito por un físico que ha escrito varios libros de divulgación. Te cuenta los usos e historia de la criptografía y es una excelente introducción para motivarte a empezar tu camino en criptografía con el mayor interés posible. Puedes ver la presentación del libro aquí: &lt;a href=&quot;https://simonsingh.net/books/the-code-book/&quot;&gt;The Code Book&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;serious-cryptography&quot;&gt;Serious Cryptography&lt;/h3&gt;
-
-&lt;p&gt;Escrito por Jean Philippe Aumasson, un criptógrafo renombrado a nivel mundial e inventor de varios algoritmos de cifrado y hasheado modernos, es libro es una guía para los principiantes de criptografía, te enseña conceptos básicos y avanza hasta contarte de criptografía cuántica. Si no vas a leer o estudiar nada más de criptografía este libro es suficiente para no estar en blanco.&lt;/p&gt;
-
-&lt;p&gt;Tiene un estilo divertido, desenfadado, con una gran cantidad de ejemplos y la profundidad adecuada para que no pierdas el interés. Página oficial: &lt;a href=&quot;https://nostarch.com/seriouscrypto&quot;&gt;Serious Cryptography&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1639196918/crypto_cover-front-final_REV_HM_ceeqzb.png&quot; alt=&quot;Portada de Serious&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;introduction-to-cryptography&quot;&gt;Introduction to Cryptography&lt;/h3&gt;
-
-&lt;p&gt;Es una introducción un poco más formal y académica a la criptografía, con el que reforzarás algunos conceptos si ya sabes de criptografía, pero especialmente bueno en el caso de que no tengas ningún conocimiento. Página oficial: &lt;a href=&quot;https://link.springer.com/book/10.1007/3-540-49244-5&quot;&gt;Introduction to Cryptography en Springer&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;cryptography-engineering&quot;&gt;Cryptography Engineering&lt;/h3&gt;
-
-&lt;p&gt;Este libro está escrito por un equipo de criptográfos de nivel mundial, con varios algoritmos publicados y todavía en uso. Este libro te explica las bases de la criptografía desde un enfoque un poco más rígido que Serious Cryptography. Está enfocado en las decisiones de diseño detrás de los esquemas criptográficos actuales. Propone un plan de 12 semanas que te puede ayudar a tener estructura al estudiar el libro.
-Puedes ver la presentación de uno de los autores en &lt;a href=&quot;https://www.schneier.com/books/cryptography-engineering/&quot;&gt;Cryptography Engineering&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-graduate-course-in-applied-cryptography&quot;&gt;A Graduate Course in Applied Cryptography&lt;/h2&gt;
-
-&lt;p&gt;Este curso es la recopilación del curso de criptografía completo de la universidad de Stanford. En mi opinión es el libro más profundo de todos los mencionados aquí en tres temas: cifrado simétrico, asimétrico y esquemas criptográficos. Tiene explicaciones a alto nivel y las demostraciones matemáticas de por qué es seguro. Puedes leerlo de dos formas: lo lees completo con todo y las demostraciones si ya conoces los conceptos básicos o te saltas las demostraciones y los ejercicios para adquirir los conceptos básicos.&lt;/p&gt;
-
-&lt;p&gt;Es completamente gratuito, lo puedes descargar aquí: &lt;a href=&quot;http://toc.cryptobook.us/&quot;&gt;A Graduate Course in Applied Cryptography&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;recursos-interactivos&quot;&gt;Recursos interactivos&lt;/h2&gt;
-
-&lt;p&gt;En esta sección abarcaremos algunos recursos con más involucramiento que te permitirán poner manos a la obra.&lt;/p&gt;
-&lt;h3 id=&quot;cryptopals-crypto-challenges&quot;&gt;Cryptopals Crypto Challenges&lt;/h3&gt;
-
-&lt;p&gt;Esta es una colección de ejercicios en los que programarás y atacarás algunos esquemas criptográficos para entenderlos profundamente. Los ejercicios varían bastante en dificultad y debes tener fuertes bases de criptografía (como la provista por los libros sugeridos anteriormente) y de programación para poder realizarlos.&lt;/p&gt;
-
-&lt;p&gt;Puedes verlos aquí: &lt;a href=&quot;https://cryptopals.com/&quot;&gt;the cryptopals crypto challenges&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;cryptohack&quot;&gt;Cryptohack&lt;/h3&gt;
-
-&lt;p&gt;Es una herramienta que te enseñará las bases de la criptografía con ejercicios y retos interactivos. Tiene una comunidad y los incentivos de un juego, que te ayudarán a mantenerte motivado y a aprender más. Pueder visitarla aquí: &lt;a href=&quot;https://cryptohack.org/&quot;&gt;Cryptohack&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1639199460/Screen_Shot_2021-12-10_at_23.10.36_xzer7u.png&quot; alt=&quot;Logo de Cryptohack&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;cursos-en-video&quot;&gt;Cursos en video&lt;/h1&gt;
-
-&lt;p&gt;En esta sección te recomendaremos buscar en las principales plataformas de cursos masivos online, como EDX y Coursera, ya que existen múltiples cursos impartidos por universidades importantes, con un estilo académico. Puedes probar varios estilos de instructor y elegir el que más te guste. Un curso un poco menos académico y con explicaciones bastante buenas es el &lt;a href=&quot;https://www.udacity.com/course/applied-cryptography--cs387&quot;&gt;Curso de Criptografía Aplicada Gratuito de Udacity&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;recursos-en-español&quot;&gt;Recursos en español&lt;/h2&gt;
-
-&lt;p&gt;Finalmente, veamos algunos recursos en español por si sientes que el inglés no lo dominas lo suficiente para meterte a temas complejos como este.&lt;/p&gt;
-
-&lt;h2 id=&quot;curso-de-criptografía-informática-básica-para-principiantes&quot;&gt;Curso de Criptografía Informática Básica para principiantes&lt;/h2&gt;
-
-&lt;p&gt;En este curso introductorio el instructor te enseñará con ejemplos sencillos los conceptos más básicos de la criptografía y algunos ejemplos con Python. Lo puedes ver en YouTube aquí: &lt;a href=&quot;https://www.youtube.com/playlist?list=PLG1hKOHdoXkt1V51gyPMZqgQ8LjK3LfmJ&quot;&gt;Curso de Criptografía Informática Básica para principiantes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;curso-introductorio-a-la-teoría-de-números-y-criptografía&quot;&gt;Curso introductorio a la teoría de números y criptografía&lt;/h2&gt;
-
-&lt;p&gt;Este es un curso mucho más profundo en las matemáticas que soportan los esquemas criptográficos, con ejemplos explicados paso a paso, para comprender las bases matemáticas, la puedes ver aquí: &lt;a href=&quot;https://www.youtube.com/playlist?list=PLterBef0AD5ZyXFaDfueQYXkLMs_OVkoV&quot;&gt;Curso introductorio a la teoría de números y criptografía&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;crypt4you&quot;&gt;Crypt4You&lt;/h3&gt;
-
-&lt;p&gt;Es un proyecto gratuito creado en 2012 en españa en el que se recorren los principales temas de la criptografía moderna. Debido a la edad del curso, debes ser precavido porque puede que algunas cosas hayan cambiado desde que se creó, por ejemplo, que SHA-1 ya no se considera seguro.&lt;/p&gt;
-
-&lt;p&gt;Presentación oficial: &lt;a href=&quot;https://www.dragonjar.org/crypt4you-aprende-criptografia-y-seguridad-informatica-de-otra-forma-y-gratis.xhtml&quot;&gt;Crypt4You&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;En esta pequeña guía incluimos algunos recursos que te pueden ayudar para empezar a &lt;strong&gt;rascar la superficie&lt;/strong&gt; de la criptografía. Estamos trabajando en un temario completo que no sólo te de la introducción, sino que te ayude a llegar a la parte avanzada si así lo deseas. Esperamos tus comentarios si se nos pasó algún recurso.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="libros" /><category term="cursos" /><category term="matemáticas" /><summary type="html">Aprende sobre algunos recursos que te servirán para entrenarte en una de las ramas más importantes de la computación actualmente: la criptografia.</summary></entry></feed>
+&lt;p&gt;Finalmente, los investigadores ya están trabajando en formas para sustituir lo que se va a romper.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="quantum" /><category term="matemáticas" /><summary type="html">Se ha escuchado mucho sobre que la criptografía está completamente acabada si la computación cuántica tiene éxito. Entendamos si esto es verdad.</summary></entry></feed>
