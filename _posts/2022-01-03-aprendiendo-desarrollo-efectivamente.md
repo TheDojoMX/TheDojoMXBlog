@@ -81,7 +81,7 @@ Algunas de las cosas que tenemos que aprender consiste en una serie de pasos por
 Finalmente hablemos de algo que ha adquirido muy mala fama: la _memoria_. Debido a que en la escuela nos hacían aprender de memoria cosas que parecen inútiles a lo largo de la vida, hemos demonizado el memorizar cosas. Sin embargo, memorizar es algo imprescindible para la resolución de problemas efectiva y la creatividad. Veamos algunas técnicas que te ayudarán a memorizar de manera más eficiente:
 
 1. **Palacios de memoria**. Esta es una técnica que consiste en aprovechar nuestra capacidad de ubicación espacial para memorizar cosas fácilmente. Puedes investigar más sobre ella y ver si te sirve.
-2. **Repetición espaciada**. Casi todo lo que consumimos lo olvidamos, a menos que se nos repita constantemente. La repetición espaciada consiste en repasar un tema con frecuencia cada vez más grande, para poder retenerlo a largo plazo. Puedes usar herramientas como Anki.
+2. **Repetición espaciada**. Casi todo lo que consumimos lo olvidamos, a menos que se nos repita constantemente. La repetición espaciada consiste en repasar un tema con frecuencia cada vez más grande, para poder retenerlo a largo plazo. Puedes usar herramientas como [Anki](https://apps.ankiweb.net/) para automatizar esto.
 
 ## Conclusión
 
