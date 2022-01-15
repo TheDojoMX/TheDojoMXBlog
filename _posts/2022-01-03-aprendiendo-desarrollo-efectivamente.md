@@ -87,5 +87,4 @@ Finalmente hablemos de algo que ha adquirido muy mala fama: la _memoria_. Debido
 
 Hemos hablado de los temas que a mi parecer son más aplicables a los desarrolladores. El libro habla de otros temas como la presentación de exámenes, la organización del tiempo, la motivación, etc. Te invito a que le eches un ojo si estás en la escuela y sobre todo si estás en un área de ciencias o físico-matemáticas.
 
-
 [^1]: Link de afiliados de Amazon
