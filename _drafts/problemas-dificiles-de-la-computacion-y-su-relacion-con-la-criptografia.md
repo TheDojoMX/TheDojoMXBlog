@@ -19,11 +19,14 @@ En post futuros vamos a ahondar en detalles de algoritmos como Diffie-Hellman, R
 
 
 ## Complejidad computacional
+
 ### Tiempo polinomial
 ### Tiempo super polinomial
 ### Tiempos no polinomiaes
 ### Exponencial
 
 ## Problemas que creemos que son difíciles
+
 ## Problema de la factorización
+
 ## Curvas elípticas
