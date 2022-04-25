@@ -12,7 +12,7 @@ En este blog hablamos de:
 
 ## Acerca de este blog
 
-Intentamos mejorar el ecosistema de desarrollo en español.
+Intentamos mejjorar el ecosistema de desarrollo en español.
 
 ### ¿A quiénes está dirigido este blog?
 
@@ -26,7 +26,6 @@ Este es un blog open source. Si quieres participar con un artículo manda un PR.
 - Información práctica, que se pueda aplicar.
 - Información actual pero que aguante el paso del tiempo.
 - Tutoriales bien escritos bienvenidos.
-
 
 ### Para publicar
 
