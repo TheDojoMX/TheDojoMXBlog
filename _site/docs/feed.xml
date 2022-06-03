@@ -1,4 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-01-01T01:00:43-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Criptografía para desarrolladores: Códigos de autenticación de mensajes</title><link href="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html" rel="alternate" type="text/html" title="Criptografía para desarrolladores: Códigos de autenticación de mensajes" /><published>2021-12-30T00:00:00-06:00</published><updated>2021-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html">&lt;p&gt;Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-06-03T13:24:36-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Consistencia en el código</title><link href="https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo.html" rel="alternate" type="text/html" title="Consistencia en el código" /><published>2022-06-02T00:00:00-05:00</published><updated>2022-06-02T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo.html">&lt;p&gt;Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en “A Philosophy of Software Design”.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-la-consistencia-en-el-código&quot;&gt;¿Qué es la consistencia en el código?&lt;/h2&gt;
+
+&lt;p&gt;Básicamente, significa que las que cosas o el código que hace lo mismo luzca y se programen igual y las piezas de código que no hacen los mismo, luzcan y se programen diferente.&lt;/p&gt;
+
+&lt;p&gt;Hay varios factores a tomar en cuenta respecto a la consistencia del código, que trataremos en las siguientes sub-secciones.&lt;/p&gt;
+
+&lt;h3 id=&quot;nombres&quot;&gt;Nombres&lt;/h3&gt;
+
+&lt;p&gt;Para empezar, los nombres deben ser consistentes, tanto en estilo como en semántica. Es decir, si decidiste usar &lt;strong&gt;camelCase&lt;/strong&gt;, debes buscar usarlo en todos lados. Muchos guías de estilo y linters incluso lo sugieren un estilo, o es común tener una costumbre dependiendo del lenguaje (por ejemplo en JS y Java se acostumbra mucho el &lt;strong&gt;camelCase&lt;/strong&gt;, mientras que en Python se recomienda usar &lt;strong&gt;snake_case&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;El segundo punto, la semántica tiene que ver con que siempre te refieras a la misma idea con el mismo nombre, por ejemplo, si estás modelando algo que tiene que ver con boletos para un evento, es buena idea nombrar a las variables siempre de la misma forma, como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ticket&lt;/code&gt;, en vez de nombrarlas &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ticket&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bill&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrance_ticket&lt;/code&gt;, etc.&lt;/p&gt;
+
+&lt;p&gt;Si decides usar nombres como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; o &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt; para numerar cosas o en bloques, asegúrate de que tengan la misma semántica en todos lados, por ejemplo, usa &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; para el primer índice en un ciclo, y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; para un índice interno.&lt;/p&gt;
+
+&lt;p&gt;Tener un sistema de nombrado consistente hará que la &lt;strong&gt;carga cognitiva&lt;/strong&gt; que requiere programar en tu base de código disminuya.&lt;/p&gt;
+
+&lt;h3 id=&quot;interfaces&quot;&gt;Interfaces&lt;/h3&gt;
+
+&lt;p&gt;Crear una interfaz (o una clase abstracta, o una estructura, o un protocolo) o cualquier cosa que sirva para definir un &lt;em&gt;contrato&lt;/em&gt; para un conjunto de módulos que hagan cosas similares, permitirá que tú código sea más fácil y rápido de entender. Basta con entender una sola de las implementaciones para comprender todas las demás.&lt;/p&gt;
+
+&lt;p&gt;El ejemplo perfecto son los métodos de pago en un sistema de eCommerce. En vez de inventar cada vez un una nueva interfaz, puedes definir que la interfaz común sea algo como:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PaymentMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+    Defines the interface for all payment methods
+    &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;charge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;refund&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Si tu lenguaje no tiene, puedes documentar y dejar claro para tu equipo cómo deben cumplirse las interfaces y contratos entre los diferentes módulos.&lt;/p&gt;
+
+&lt;h3 id=&quot;patrones-de-diseño-y-principios-de-programación&quot;&gt;Patrones de diseño y principios de programación&lt;/h3&gt;
+
+&lt;p&gt;Muchas soluciones comunes a problemas comunes que encontramos en el desarrollo se han definido claramente y nombrado, para poder ser usadas y entendidas como una receta por muchos programadores.&lt;/p&gt;
+
+&lt;p&gt;A estas soluciones las llamamos &lt;strong&gt;patrones de diseño&lt;/strong&gt; y la familiaridad con ellos, pueden hacer que tú base de código se más fácil de mantener. Usarlos cuando es adecuado, puede ayudarte a darle consistencia a tu código, lo mismo que otro principios de programación, como por ejemplo, inversión de dependencias.&lt;/p&gt;
+
+&lt;p&gt;Sólo debes tener en cuenta que para que tu equipo se beneficie de esto, debe &lt;em&gt;conocer&lt;/em&gt; estas soluciones, ya que ese es uno de los principales objetivos de los patrones: que los programadores tengan un lenguaje común de soluciones que los ayuden a comunicarse más fácil.&lt;/p&gt;
+
+&lt;h2 id=&quot;invariantes&quot;&gt;Invariantes&lt;/h2&gt;
+
+&lt;p&gt;Una &lt;strong&gt;condición que siempre se cumple&lt;/strong&gt; en tu programa es una invariante. Por ejemplo, muchos los lenguajes funcionales te aseguran que todo es una expresión, por lo que siempre puedes usar cualquier construcción del lenguaje como algo que te devuelve un valor.&lt;/p&gt;
+
+&lt;p&gt;Establecer invariantes en tu base de código y estilo de programación, ayudará a que el código sea consistente. Por ejemplo, en JQuery se creo la invariante de que todas las funciones que usan un elemento, devuelven este mismo elemento, por lo que puedes encadenar llamadas y siempre funcionará.&lt;/p&gt;
+
+&lt;p&gt;Piensa en cosas que puedas hacer invariantes y ayudarás a que tu código sea más consistente.&lt;/p&gt;
+
+&lt;h2 id=&quot;asegura-la-consistencia-en-el-código&quot;&gt;Asegura la consistencia en el código&lt;/h2&gt;
+
+&lt;p&gt;Hay varias formas de asegurar que tu equipo cree código consistente, no son excluyentes, sino que se ayudan unas a otras.&lt;/p&gt;
+
+&lt;p&gt;La primera forma, y la más fuerte, es mediante el aseguramiento automático del cumplimiento de las reglas que pueden ser representadas en alguna herramienta. Por ejemplo, los &lt;strong&gt;linters&lt;/strong&gt;, verificadores de complejidad del código, combinados con las herramientas dadas por los sistemas de versionamiento  de código (ver &lt;a href=&quot;https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks&quot;&gt;git hooks&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Este conjunto de herramientas podría verificar y obligar que se cumplan las reglas de formateo de código y otras medidas de calidad.&lt;/p&gt;
+
+&lt;p&gt;Otra herramienta es la &lt;strong&gt;documentación&lt;/strong&gt;, y yo diría que es la más importante porque es en la que se define todas las cosas que deberían ser uniformes y trasciende a las personas, estructuras de equipo y herramientas. Es muy importante que (de preferencia) al iniciar el proyecto crees una guía de estilo y sugerencias de uniformidad que ayuden a tu equipo a crear código uniforme. Como te imaginarás, esto es trabajo extra, pero vale la pena.&lt;/p&gt;
+
+&lt;p&gt;Finalmente &lt;em&gt;tienes&lt;/em&gt; que promover la consistencia con tu ejemplo y mediante las revisiones de código, si las tienes. Cuando escribas código nuevo, busca la guía de estilo y las convenciones. Si no son explícitas, observa el código para que veas lo que puedes extraer como convención.&lt;/p&gt;
+
+&lt;h2 id=&quot;mantén-la-consistencia&quot;&gt;Mantén la consistencia&lt;/h2&gt;
+
+&lt;p&gt;Es muy fácil querer cambiar algo porque encontramos una forma diferente de hacer las cosas que preferimos por gusto o porque es un poquito mejor. En estos casos, tienes que pensar muy bien si vale la pena romper la consistencia de tu base de código por una mejora.&lt;/p&gt;
+
+&lt;p&gt;Como en muchas ocasiones en el código, esto implica un intercambio de valor y como responsable de esta decisión, tienes que evaluar los pros y los contras. Piensa: ¿me va a dar tanta ventaja como para que valga la pena meter esta complejidad extra? ¿vale tanto la pena para que haga replique este cambio en todo los otros lugares en los qu se hace esto?&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Mantener la consistencia, en la base de código es algo que vale la pena para reducir el esfuerzo cognitivo que a los desarrolladores les cuesta trabajar en tu código. Esto ayudará a que tu código sea mantenible y sea más probable que tenga una larga vida.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="consistencia," /><category term="base-de-código," /><category term="posd" /><summary type="html">La consistencia y uniformidad en una base de código son muy importantes, en este artículo veremos cómo podemos lograrlo y en qué cosas debes poner atención.</summary></entry><entry><title type="html">Aprendiendo desarrollo efectivamente</title><link href="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html" rel="alternate" type="text/html" title="Aprendiendo desarrollo efectivamente" /><published>2022-01-03T00:00:00-06:00</published><updated>2022-01-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente</id><content type="html" xml:base="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html">&lt;p&gt;Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado técnicas para aprender efectivamente, aunque la escuela trata de aprender lo más efectivamente posible.&lt;/p&gt;
+
+&lt;p&gt;El desarrollo de software es un campo muy amplio en el que tenemos que aprender constantemente, sea por el cambio de las tecnologías, porque tenemos que aprender del área en la que estamos aplicando nuestro conocimiento tecnológico para crear software efectivo o simplemente porque queremos cambiar de área.&lt;/p&gt;
+
+&lt;p&gt;En este artículo hablaremos sobre algunas de las cosas que el libro &lt;a href=&quot;https://amzn.to/3r20CYr&quot;&gt;“A Mind for Numbers”&lt;/a&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; de &lt;a href=&quot;https://barbaraoakley.com/&quot;&gt;Barbara Oakley&lt;/a&gt; nos enseña sobre el aprendizaje de temas difíciles, como las matemáticas y las ciencias. Considerando que el desarrollo de software tiene temas difíciles, creemos que es aplicable lo mencionado en este libro.&lt;/p&gt;
+
+&lt;p&gt;Primero hablemos de las bases de las recomendaciones que da el libro: los modos en los que puede estar tu cerebro, y las partes que ocupa para cada tipo.&lt;/p&gt;
+
+&lt;h2 id=&quot;modo-enfocado&quot;&gt;Modo enfocado&lt;/h2&gt;
+
+&lt;p&gt;En este modo, llamado &lt;strong&gt;estado de alta atención&lt;/strong&gt;, tu cerebro está &lt;strong&gt;concentrado&lt;/strong&gt; en una tarea que tienes que lograr, como escribir este artículo, estudiar un tema específico o resolver un algoritmo. Digamos que todas las energías de tu cerebro están destinadas a esta tarea y no &lt;em&gt;divagas&lt;/em&gt; en diferentes temas.&lt;/p&gt;
+
+&lt;p&gt;Este modo es muy bueno para &lt;em&gt;terminar o avanzar&lt;/em&gt; las tareas del día a día y para evitar errores mientras haces algo importante, pero no es muy bueno para aprovechar el poder natural de tu cerebro, ya que utilizamos las &lt;em&gt;funciones ejecutivas&lt;/em&gt;, que nos permiten mantenernos atentos a algo pero nos cuestan mucha energía. La funciones ejecutivas se encuentran situadas principalmente en la corteza prefrontal.&lt;/p&gt;
+
+&lt;p&gt;El modo enfocado es necesario para aprender, ya que podremos recordar lo que hemos estudiado en este modo, o hacer conexiones conscientes con otras cosas que ya sepamos. En este modo resolvemos problemas de forma secuencial y analítica.&lt;/p&gt;
+
+&lt;h2 id=&quot;modo-difuso&quot;&gt;Modo difuso&lt;/h2&gt;
+
+&lt;p&gt;Oficialmente podemos llamar a este el &lt;em&gt;modo de descanso&lt;/em&gt;. Este es el modo en el que estamos cuando no estamos pensando o aplicando nuestra mente a nada específico, digamos que es el estado por defecto del cerebro. Tu foco de atención está brincando de un lugar a otro constantemente. El modo difuso consume menos energía porque no necesitamos controlar la mente para hacerlo. El modo difuso entra en acción cuando estamos haciendo tareas que tenemos completamente dominadas, como caminar, bañarnos, o comer, en ninguna de estas actividades estamos completamente concentrados y nuestra mente está viajando por diferentes lugares.&lt;/p&gt;
+
+&lt;p&gt;En el modo difuso podemos conectar ideas usando la capacidad del cerebro de hacer conexiones naturalmente, o brincar de un tema a otro sin ningún esfuerzo.&lt;/p&gt;
+
+&lt;p&gt;Podríamos creer que el modo difuso es &lt;em&gt;malo&lt;/em&gt; para el estudio, sin embargo, en este modo es cuando nuestro cerebro procesa inconscientemente lo que hemos estudiado de modo consciente y hace que permanezca. Por lo tanto, el modo difuso &lt;strong&gt;es esencial para aprender&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;El modo difuso no utiliza una parte específica del cerebro, sino que se reparte. Al consumir poca energía relativamente y utilizar todo el poder del cerebro, es una herramienta imprescindible para resolver problemas.&lt;/p&gt;
+
+&lt;p&gt;Recuerda que en parte somos máquinas biológicas que necesitan procesos químicos para funcionar y los modos en los que puede estar nuestra mente se complementan para que funcionemos y para que aprendamos efectivamente.&lt;/p&gt;
+
+&lt;h2 id=&quot;técnicas-de-aprendizaje&quot;&gt;Técnicas de aprendizaje&lt;/h2&gt;
+
+&lt;p&gt;Ahora que ya conocemos los dos modos en los que nuestro cerebro puede funcionar, veamos técnicas que nos ayudarán a aprovecharnos de esto para aprender de manera eficiente.&lt;/p&gt;
+
+&lt;h3 id=&quot;controla-el-tiempo-que-dedicas-a-estudiar&quot;&gt;Controla el tiempo que dedicas a estudiar&lt;/h3&gt;
+
+&lt;p&gt;Nuestro cerebro tiene una &lt;em&gt;capacidad limitada&lt;/em&gt; de absorción de información por unidad de tiempo, necesitamos tiempo para procesar las cosas y entender lo que sigue mejor, además de que la repetición a través del tiempo nos ayuda a retener la información por más tiempo. Es por eso que es muy importante controlar cuánto tiempo dedicas a estudiar, cuándo se lo dedicamos y las condiciones físicas y mentales en las que estamos.&lt;/p&gt;
+
+&lt;p&gt;Dos técnicas que te pueden ayudar a dedicarle el tiempo &lt;em&gt;correctamente&lt;/em&gt; al estudio son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Programar sesiones de estudio de un tema cortas pero constantes&lt;/strong&gt;. Es mucho mejor dedicar una hora de estudio diaria durante diez d
+ías, que 10 horas un día al mismo tema. Hacerlo de manera espaciada permitirá a tu cerebro procesar la información durante los periodos en los que está en el modo difuso, además de que mantener el modo enfocado por periodos cortos es más fácil y eficiente que hacerlo durante periodos largos. Esto se conoce como &lt;strong&gt;práctica distribuida&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cambiar constantemente de modos de pensamiento&lt;/strong&gt;. Cambiar entre el modo enfocado y el modo difuso te ayudará aprender mejor y te mantendrá fresco. Una técnica que puedes aplicar es la técnica &lt;em&gt;pomodoro&lt;/em&gt; en la que programas periodos de estudio o trabajo de 25 minutos y un descanso de 5 minutos. Esta técnica no es efectiva para todos por el tiempo que tardan en enfocarse, pero puedes incrementar los periodos de enfoque para que se acomode a tu estilo. El punto es tener una sesión de estudio &lt;em&gt;estructurada&lt;/em&gt; y que te permita cambiar de modos de pensamiento &lt;strong&gt;para aprovechar todo el poder de tu cerebro&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Estos dos técnicas le darán a tu cerebro tiempo para usar todo su poder: le darán al modo difuso tiempo para trabajar en problemas difíciles.&lt;/p&gt;
+
+&lt;h3 id=&quot;crea-un-mapa-de-lo-que-aprenderás&quot;&gt;Crea un mapa de lo que aprenderás&lt;/h3&gt;
+
+&lt;p&gt;Es muy importante que cuando tengas un tema difícil que aprender hagas una sesión de pre-estudio, en el que veas lo que aprenderás. Esto lo puedes hacer mirando el índice si existe, las preguntas que guían el estudio en caso de que haya, leyendo (o viendo, o escuchando) solamente la introducción y conclusión y fijándote en los subtemas, capítulos, negritas, recuadros, etc.&lt;/p&gt;
+
+&lt;p&gt;Esta sesión de pre-estudio te ayudará a organizar tus pensamientos sobre lo que aprenderás, un mapa que tendrá los puntos principales a aprender que después rellanarás estudiando a fondo el tema.&lt;/p&gt;
+
+&lt;h2 id=&quot;evitar-la-ilusión-de-aprendizaje&quot;&gt;Evitar la ilusión de aprendizaje&lt;/h2&gt;
+
+&lt;p&gt;Una parte muy importante de aprender es evitar la &lt;em&gt;sensación&lt;/em&gt; falsa de que aprendimos algo sin realmente haberlo aprendido. ¿Cómo podemos evitar esto?&lt;/p&gt;
+
+&lt;h3 id=&quot;auto-exámenes&quot;&gt;Auto-exámenes&lt;/h3&gt;
+
+&lt;p&gt;Una de las formas más efectivas es buscar o fabricar exámenes o cuestionarios de las cosas de las que deberíamos ser conscientes una vez que terminemos de estudiar el tema. Hacer estos exámenes o prácticas sin consultar el material de estudio te ayudará averiguar si realmente has aprendido algo, y si fallas, tendrás puntos en los cuales mejorar.&lt;/p&gt;
+
+&lt;p&gt;Estos auto-exámenes se han mostrado muy eficaces para muchos estudiantes de temas complejos.&lt;/p&gt;
+
+&lt;h3 id=&quot;practica-recorta-y-repite&quot;&gt;Practica, recorta y repite&lt;/h3&gt;
+
+&lt;p&gt;Algunas de las cosas que tenemos que aprender consiste en una serie de pasos por ser un problema complejo. Una técnica de aprendizaje es aislar una parte del problema y practicarla hasta que la dominemos en diferentes contextos. Imagina por ejemplo que quieres dominar la configuración de servidores. Lo que más se te dificulta es la configuración de la parte de HTTPS. Entonces, deberías repetir estar parte con diferentes variables y opciones hasta que lo puedas hacer sin dificultad.&lt;/p&gt;
+
+&lt;h2 id=&quot;mejora-tu-memoria&quot;&gt;Mejora tu memoria&lt;/h2&gt;
+
+&lt;p&gt;Finalmente hablemos de algo que ha adquirido muy mala fama: la &lt;em&gt;memoria&lt;/em&gt;. Debido a que en la escuela nos hacían aprender de memoria cosas que parecen inútiles a lo largo de la vida, hemos demonizado el memorizar cosas. Sin embargo, memorizar es algo imprescindible para la resolución de problemas efectiva y la creatividad. Veamos algunas técnicas que te ayudarán a memorizar de manera más eficiente:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Palacios de memoria&lt;/strong&gt;. Esta es una técnica que consiste en aprovechar nuestra capacidad de ubicación espacial para memorizar cosas fácilmente. Puedes investigar más sobre ella y ver si te sirve.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Repetición espaciada&lt;/strong&gt;. Casi todo lo que consumimos lo olvidamos, a menos que se nos repita constantemente. La repetición espaciada consiste en repasar un tema con frecuencia cada vez más grande, para poder retenerlo a largo plazo. Puedes usar herramientas como &lt;a href=&quot;https://apps.ankiweb.net/&quot;&gt;Anki&lt;/a&gt; para automatizar esto.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Hemos hablado de los temas que a mi parecer son más aplicables a los desarrolladores. El libro habla de otros temas como la presentación de exámenes, la organización del tiempo, la motivación, etc. Te invito a que le eches un ojo si estás en la escuela y sobre todo si estás en un área de ciencias o físico-matemáticas.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Link de afiliados de Amazon &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="a-mind-for-numbers" /><category term="barbara-oakley" /><summary type="html">Nunca nos han enseñado a aprender (a casi nadie) y el desarrollo de software es un campo que requiere un aprendizaje constante de temas difíciles. Veamos lo que &quot;A mind for numbers&quot; nos enseña sobre el aprendizaje.</summary></entry><entry><title type="html">Criptografía para desarrolladores: Códigos de autenticación de mensajes</title><link href="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html" rel="alternate" type="text/html" title="Criptografía para desarrolladores: Códigos de autenticación de mensajes" /><published>2021-12-30T00:00:00-06:00</published><updated>2021-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html">&lt;p&gt;Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.&lt;/p&gt;
 
 &lt;p&gt;En general este tipo de algoritmos se llaman &lt;strong&gt;hashes con llave&lt;/strong&gt; o &lt;em&gt;Keyed Hashes&lt;/em&gt;. Empecemos a hablar del tipo más sencillo y usado: la generación de códigos de autenticación de mensajes.&lt;/p&gt;
 
@@ -581,181 +746,4 @@ usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementad
 
 &lt;p&gt;Shameless plug: &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;aquí puedes ver nuestra presentación de los wizardzines&lt;/a&gt;.&lt;/p&gt;
 
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/drPMyDyQG8M&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="preguntas" /><category term="investigación" /><summary type="html">Hablemos sobre las técnicas que Julia Evans recomienda para converirte en un mejor programador(a) y avanzar en tu carrera.</summary></entry><entry><title type="html">Recursos para aprender Criptografía en 2022</title><link href="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html" rel="alternate" type="text/html" title="Recursos para aprender Criptografía en 2022" /><published>2021-12-08T00:00:00-06:00</published><updated>2021-12-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html">&lt;p&gt;La criptografía es un campo con mucha demanda laboral actualmente porque es importante para diferentes áreas de la informática. En este artículo vamos hablar su importancia y cómo puedes aprenderlo si está dentro de tus intereses.&lt;/p&gt;
-
-&lt;h2 id=&quot;la-importancia-de-la-criptografía&quot;&gt;La importancia de la criptografía&lt;/h2&gt;
-
-&lt;p&gt;En el artículo &lt;a href=&quot;https://blog.thedojo.mx/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;¿Qué es la Criptografía?&lt;/a&gt; explicamos que es un conjunto de técnicas y conocimiento que busca &lt;strong&gt;&lt;em&gt;ocultar la información&lt;/em&gt;&lt;/strong&gt;, derivada de las matemáticas y las ciencias de la computación.&lt;/p&gt;
-
-&lt;p&gt;El mundo de la computación necesita mantener secretos en muchas áreas, principalmente en cosas relacionadas como la identificación y autenticación de personas y elementos. Además, la criptografía tiene usos laterales, como la verificación de la autenticidad de la información. Cada día hay más valor en nuestras redes informáticas, por lo que cada vez hay más incentivos para robar la información que protegemos mediante la criptografía.&lt;/p&gt;
-
-&lt;p&gt;En tiempos modernos, debido a lo pesado de procesos de cifrado y hasheado, también se ha estado usando para probar que un elemento de un sistema distribuido hizo muchos cálculos, un concepto llamado &lt;a href=&quot;https://cointelegraph.com/explained/proof-of-work-explained&quot;&gt;prueba de trabajo&lt;/a&gt;, usado en Bitcoin.&lt;/p&gt;
-
-&lt;p&gt;Como resumen: &lt;strong&gt;está aumentando  el número de personas que se requiere&lt;/strong&gt; para trabajar en criptografía. Se requieren personas que diseñen sistemas que usen los esquemas y algoritmos correctamente, criptográfos que diseñen nuevos algoritmos adecuados para nuestra época y las décadas que siguen, resistentes a el avance del hardware y la computación cuántica, y finalmente, personas que implementen correctamente los algoritmos diseñados por los matemáticos y criptográfos tanto en hardware como en software.&lt;/p&gt;
-
-&lt;p&gt;¿Quieres ser tú una de estas personas? ¿O tal vez quieres aprender un poco más solamente para crear software más seguro? Veamos algunos recursos que te pueden ayudar.&lt;/p&gt;
-
-&lt;h2 id=&quot;libros&quot;&gt;Libros&lt;/h2&gt;
-
-&lt;p&gt;Los siguientes libros te enseñarán lo suficiente de criptografía de manera general para que no te confundas con los términos y para tener una idea clara de los puedes y no puedes hacer al usar diferentes esquemas y tipos de algoritmos.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-code-book&quot;&gt;The Code Book&lt;/h3&gt;
-
-&lt;p&gt;Este libro está escrito por un físico que ha escrito varios libros de divulgación. Te cuenta los usos e historia de la criptografía y es una excelente introducción para motivarte a empezar tu camino en criptografía con el mayor interés posible. Puedes ver la presentación del libro aquí: &lt;a href=&quot;https://simonsingh.net/books/the-code-book/&quot;&gt;The Code Book&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;serious-cryptography&quot;&gt;Serious Cryptography&lt;/h3&gt;
-
-&lt;p&gt;Escrito por Jean Philippe Aumasson, un criptógrafo renombrado a nivel mundial e inventor de varios algoritmos de cifrado y hasheado modernos, es libro es una guía para los principiantes de criptografía, te enseña conceptos básicos y avanza hasta contarte de criptografía cuántica. Si no vas a leer o estudiar nada más de criptografía este libro es suficiente para no estar en blanco.&lt;/p&gt;
-
-&lt;p&gt;Tiene un estilo divertido, desenfadado, con una gran cantidad de ejemplos y la profundidad adecuada para que no pierdas el interés. Página oficial: &lt;a href=&quot;https://nostarch.com/seriouscrypto&quot;&gt;Serious Cryptography&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1639196918/crypto_cover-front-final_REV_HM_ceeqzb.png&quot; alt=&quot;Portada de Serious&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;introduction-to-cryptography&quot;&gt;Introduction to Cryptography&lt;/h3&gt;
-
-&lt;p&gt;Es una introducción un poco más formal y académica a la criptografía, con el que reforzarás algunos conceptos si ya sabes de criptografía, pero especialmente bueno en el caso de que no tengas ningún conocimiento. Página oficial: &lt;a href=&quot;https://link.springer.com/book/10.1007/3-540-49244-5&quot;&gt;Introduction to Cryptography en Springer&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;cryptography-engineering&quot;&gt;Cryptography Engineering&lt;/h3&gt;
-
-&lt;p&gt;Este libro está escrito por un equipo de criptográfos de nivel mundial, con varios algoritmos publicados y todavía en uso. Este libro te explica las bases de la criptografía desde un enfoque un poco más rígido que Serious Cryptography. Está enfocado en las decisiones de diseño detrás de los esquemas criptográficos actuales. Propone un plan de 12 semanas que te puede ayudar a tener estructura al estudiar el libro.
-Puedes ver la presentación de uno de los autores en &lt;a href=&quot;https://www.schneier.com/books/cryptography-engineering/&quot;&gt;Cryptography Engineering&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-graduate-course-in-applied-cryptography&quot;&gt;A Graduate Course in Applied Cryptography&lt;/h2&gt;
-
-&lt;p&gt;Este curso es la recopilación del curso de criptografía completo de la universidad de Stanford. En mi opinión es el libro más profundo de todos los mencionados aquí en tres temas: cifrado simétrico, asimétrico y esquemas criptográficos. Tiene explicaciones a alto nivel y las demostraciones matemáticas de por qué es seguro. Puedes leerlo de dos formas: lo lees completo con todo y las demostraciones si ya conoces los conceptos básicos o te saltas las demostraciones y los ejercicios para adquirir los conceptos básicos.&lt;/p&gt;
-
-&lt;p&gt;Es completamente gratuito, lo puedes descargar aquí: &lt;a href=&quot;http://toc.cryptobook.us/&quot;&gt;A Graduate Course in Applied Cryptography&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;recursos-interactivos&quot;&gt;Recursos interactivos&lt;/h2&gt;
-
-&lt;p&gt;En esta sección abarcaremos algunos recursos con más involucramiento que te permitirán poner manos a la obra.&lt;/p&gt;
-&lt;h3 id=&quot;cryptopals-crypto-challenges&quot;&gt;Cryptopals Crypto Challenges&lt;/h3&gt;
-
-&lt;p&gt;Esta es una colección de ejercicios en los que programarás y atacarás algunos esquemas criptográficos para entenderlos profundamente. Los ejercicios varían bastante en dificultad y debes tener fuertes bases de criptografía (como la provista por los libros sugeridos anteriormente) y de programación para poder realizarlos.&lt;/p&gt;
-
-&lt;p&gt;Puedes verlos aquí: &lt;a href=&quot;https://cryptopals.com/&quot;&gt;the cryptopals crypto challenges&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;cryptohack&quot;&gt;Cryptohack&lt;/h3&gt;
-
-&lt;p&gt;Es una herramienta que te enseñará las bases de la criptografía con ejercicios y retos interactivos. Tiene una comunidad y los incentivos de un juego, que te ayudarán a mantenerte motivado y a aprender más. Pueder visitarla aquí: &lt;a href=&quot;https://cryptohack.org/&quot;&gt;Cryptohack&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1639199460/Screen_Shot_2021-12-10_at_23.10.36_xzer7u.png&quot; alt=&quot;Logo de Cryptohack&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;cursos-en-video&quot;&gt;Cursos en video&lt;/h1&gt;
-
-&lt;p&gt;En esta sección te recomendaremos buscar en las principales plataformas de cursos masivos online, como EDX y Coursera, ya que existen múltiples cursos impartidos por universidades importantes, con un estilo académico. Puedes probar varios estilos de instructor y elegir el que más te guste. Un curso un poco menos académico y con explicaciones bastante buenas es el &lt;a href=&quot;https://www.udacity.com/course/applied-cryptography--cs387&quot;&gt;Curso de Criptografía Aplicada Gratuito de Udacity&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;recursos-en-español&quot;&gt;Recursos en español&lt;/h2&gt;
-
-&lt;p&gt;Finalmente, veamos algunos recursos en español por si sientes que el inglés no lo dominas lo suficiente para meterte a temas complejos como este.&lt;/p&gt;
-
-&lt;h2 id=&quot;curso-de-criptografía-informática-básica-para-principiantes&quot;&gt;Curso de Criptografía Informática Básica para principiantes&lt;/h2&gt;
-
-&lt;p&gt;En este curso introductorio el instructor te enseñará con ejemplos sencillos los conceptos más básicos de la criptografía y algunos ejemplos con Python. Lo puedes ver en YouTube aquí: &lt;a href=&quot;https://www.youtube.com/playlist?list=PLG1hKOHdoXkt1V51gyPMZqgQ8LjK3LfmJ&quot;&gt;Curso de Criptografía Informática Básica para principiantes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;curso-introductorio-a-la-teoría-de-números-y-criptografía&quot;&gt;Curso introductorio a la teoría de números y criptografía&lt;/h2&gt;
-
-&lt;p&gt;Este es un curso mucho más profundo en las matemáticas que soportan los esquemas criptográficos, con ejemplos explicados paso a paso, para comprender las bases matemáticas, la puedes ver aquí: &lt;a href=&quot;https://www.youtube.com/playlist?list=PLterBef0AD5ZyXFaDfueQYXkLMs_OVkoV&quot;&gt;Curso introductorio a la teoría de números y criptografía&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;crypt4you&quot;&gt;Crypt4You&lt;/h3&gt;
-
-&lt;p&gt;Es un proyecto gratuito creado en 2012 en españa en el que se recorren los principales temas de la criptografía moderna. Debido a la edad del curso, debes ser precavido porque puede que algunas cosas hayan cambiado desde que se creó, por ejemplo, que SHA-1 ya no se considera seguro.&lt;/p&gt;
-
-&lt;p&gt;Presentación oficial: &lt;a href=&quot;https://www.dragonjar.org/crypt4you-aprende-criptografia-y-seguridad-informatica-de-otra-forma-y-gratis.xhtml&quot;&gt;Crypt4You&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;En esta pequeña guía incluimos algunos recursos que te pueden ayudar para empezar a &lt;strong&gt;rascar la superficie&lt;/strong&gt; de la criptografía. Estamos trabajando en un temario completo que no sólo te de la introducción, sino que te ayude a llegar a la parte avanzada si así lo deseas. Esperamos tus comentarios si se nos pasó algún recurso.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="libros" /><category term="cursos" /><category term="matemáticas" /><summary type="html">Aprende sobre algunos recursos que te servirán para entrenarte en una de las ramas más importantes de la computación actualmente: la criptografia.</summary></entry><entry><title type="html">Generadores de números aleatorios y su importancia</title><link href="https://blog.thedojo.mx/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo.html" rel="alternate" type="text/html" title="Generadores de números aleatorios y su importancia" /><published>2021-12-07T00:00:00-06:00</published><updated>2021-12-07T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/07/generadores-de-numeros-aleatorios-y-su-importancia-para-el-desarrollo.html">&lt;p&gt;Muy comúnmente los sistemas informáticos requieren de valores aleatorios para diferentes procesos, por ejemplo, para ordenar las cosas, para seleccionar elementos de un conjunto, para simulaciones, para tomar diferentes caminos en un proceso (como los videojuegos).&lt;/p&gt;
-
-&lt;p&gt;Un lugar en el que los valores aleatorios tienen una importancia especial es &lt;strong&gt;en criptografía&lt;/strong&gt; y en la seguridad informática. De hecho, los números aleatorios están muy relacionados con la generación de valores usables en criptografía como llaves, por ejemplo.&lt;/p&gt;
-
-&lt;p&gt;Veamos cómo se generan y cómo puedes usar correctamente los generadores de números aleatorios, pero antes empecemos a hablar de qué es la aleatoriedad y cómo podemos entenderla intuitivamente.&lt;/p&gt;
-
-&lt;h2 id=&quot;aleatoriedad&quot;&gt;Aleatoriedad&lt;/h2&gt;
-
-&lt;p&gt;La aleatoriedad tiene que ver con la &lt;em&gt;probabilidad&lt;/em&gt; de obtener cierto valor de un conjunto (universo) de valores posibles. Los valores aleatorios son impredecibles, no puedes asegurar que uno tiene más probabilidades de salir que otro. Ahora conecta los dos conceptos anteriores: para que un valor sea aleatorio debe de ser extraído de un conjunto de valores con la misma probabilidad de aparecer, lo que se conoce como una &lt;strong&gt;distribución uniforme&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Ejemplo:&lt;/strong&gt; una moneda lanzada puede entregar dos valores, cara o cruz (águila o sol en México). Es imposible asegurar que va a salir uno u otro valor, debido a que ambos valores tienen la misma probabilidad de salir. Y muchos procesos físicos se comportan de esta misma manera.&lt;/p&gt;
-
-&lt;p&gt;Si en el universo de valores posibles es más probable que salga cierto valor, entonces empezamos a perder aleatoriedad, imagínate por ejemplo el caso de una moneda o dado cargado.&lt;/p&gt;
-
-&lt;p&gt;Los humanos percibimos un valor como aleatorio si &lt;em&gt;parece&lt;/em&gt; poco probable que hayamos obtenido ese valor específicamente, pero no siempre es así.&lt;/p&gt;
-
-&lt;p&gt;La aleatoriedad se puede medir a través de &lt;em&gt;entropía&lt;/em&gt;, que es la cantidad de información disponible en todo el espacio de valores. La entropía es la sumatoria de la probabilidad de aparecer de cada valor multiplicado por su logaritmo base 2, y &lt;strong&gt;se mide en bits&lt;/strong&gt;. Una generador con aleatoriedad perfecta entrega &lt;strong&gt;tantos bits de entropía como valores posibles&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;generadores-de-números-aleatorios&quot;&gt;Generadores de números aleatorios&lt;/h2&gt;
-
-&lt;p&gt;Los programadores podemos usar la aleatoriedad si tenemos un &lt;strong&gt;generador de números aleatorios&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Un generador de números aleatorios es un programa que te entrega una &lt;strong&gt;serie de bits&lt;/strong&gt; aleatorios, es decir, impredecibles desde el punto de vista externo. Estos bits se pueden usar entonces para crear un número aleatorio.&lt;/p&gt;
-
-&lt;p&gt;Haya generadores de diferentes tipos dependiendo de su fuente de entropía (información impredecible) y de cómo la usen. Hablemos de los diferentes tipos, sus características, y cómo usarlos.&lt;/p&gt;
-
-&lt;h2 id=&quot;true-random-number-generators&quot;&gt;True Random Number Generators&lt;/h2&gt;
-
-&lt;p&gt;A esta clase de generadores también se le conoce simplemente como &lt;strong&gt;generadores de números aleatorios&lt;/strong&gt; (Random Number Generators o &lt;strong&gt;RNG’s&lt;/strong&gt;). Los RNGs toman su fuente de entropía de &lt;strong&gt;lugares físicos&lt;/strong&gt;, dado que el mundo real es impredecible. Miden las variaciones en los semiconductores, la manera en la que mueves el ratón, el teclado, información de los sensores de la computadora, el micrófono, la red y muchas otras cosas. Hay algunos que toman su entropía de procesos cuánticos incluso, conocidos como &lt;strong&gt;generadores de números aleatorios cuánticos&lt;/strong&gt; o &lt;em&gt;QRNGs&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Estos elementos físicos son fuentes confiables de entropía, pero no podemos confiar en nuestra manera de medirla o “capturarla”, además de que pueden ser sesgados por un usuario malintencionado o atacante. Además son lentos para generar los bits aleatorios que las aplicaciones pueden requerir.&lt;/p&gt;
-
-&lt;p&gt;Es normal que un RNG se quede sin suficiente entropía para servir a las aplicaciones que lo usan, por lo que terminaría bloqueándola o haciéndola insegura.&lt;/p&gt;
-
-&lt;p&gt;Es por esto que los generadores de números aleatorios a menudo se complementan de los generadores de números pseudo-aleatorios, de los que hablaremos a continuación.&lt;/p&gt;
-
-&lt;h2 id=&quot;pseudo-random-number-generators&quot;&gt;Pseudo-Random Number Generators&lt;/h2&gt;
-
-&lt;p&gt;Los generadores de números pseudo-aleatorios (&lt;strong&gt;PRNGs&lt;/strong&gt;) son aquellos que no toman su fuente de entropía de lugares físicos, sino que la generan a partir de una semilla o &lt;em&gt;seed&lt;/em&gt;. Siempre que reciban la misma semilla generarán la misma secuencia de bits que &lt;em&gt;parece&lt;/em&gt; aleatoria, pero en realidad es determinista.&lt;/p&gt;
-
-&lt;p&gt;Si conocemos la semilla y el algoritmo, podríamos predecir la secuencia de bits que resultará en cada llamada. Si la distribución de probabilidad de los bits es uniforme o cerca de uniforme, entonces la secuencia de bits parecerá aleatoria, lo cuál es útil para la mayoría de las aplicaciones.&lt;/p&gt;
-
-&lt;p&gt;Los PRNGs no se quedan sin entropía para seguir sirviendo bits, ya que la generan artificialmente, normalmente con algoritmos matemáticos y &lt;em&gt;piscinas&lt;/em&gt; o &lt;em&gt;pools&lt;/em&gt; de bits.&lt;/p&gt;
-
-&lt;p&gt;Una forma de crear un PRNG es usando como semilla un RNG, que tome su fuente de lugares físicos y &lt;em&gt;expendiendo&lt;/em&gt; esta entropía a un número más grande de bits. Esto lo hace mediante la actualización de un estado interno mediante la recepción de bits verdaderamente aleatorios de un RNG.&lt;/p&gt;
-
-&lt;h2 id=&quot;cryptographically-secure-pseudo-random-number-generators&quot;&gt;Cryptographically Secure Pseudo-Random Number Generators&lt;/h2&gt;
-
-&lt;p&gt;Los PRNGs critpográficamente seguros requieren dos características extras para ser usados en criptografía:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Discreción hacia adelante&lt;/strong&gt;. En inglés conocida como &lt;strong&gt;forward secrecy&lt;/strong&gt;, se refiere a que es imposible predecir los bits que generará a continuación.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Discreción hacia atás&lt;/strong&gt;. Se refiere a que, dados los bits de un número aleatorio generado, es imposible conocer los bits que le precedieron, que se entregaron en llamadas anteriores.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Cuando hablamos de &lt;strong&gt;“imposible&lt;/strong&gt;” en términos de criptografía, normalmente nos referimos a que es &lt;em&gt;computacionalmente infactible&lt;/em&gt; resolver el problema propuesto. Para que esto sea cierto basta con que no exista un &lt;strong&gt;algoritmo de tiempo polinomial&lt;/strong&gt; que funcione para resolver el problema.&lt;/p&gt;
-
-&lt;p&gt;En pocas palabras, los PRNGs criptográficos son &lt;em&gt;impredecibles completamente&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;ejemplos&quot;&gt;Ejemplos&lt;/h2&gt;
-
-&lt;p&gt;Algunos PRNGs que puedes usar son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;/dev/urandom&lt;/strong&gt; de los sistemas UNIX: genera bits aleatorios combinando lecturas del uso del sistema (RNG de hardware) y un generador por software, de manera que haya siempre suficientes bits. Si quieres conocer más a detalle cómo funciona, este artículo te lo explicará: &lt;a href=&quot;https://www.redhat.com/en/blog/understanding-random-number-generators-and-their-limitations-linux&quot;&gt;Understanding random number generators and their limitations on Linux&lt;/a&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/ESultanik/mtwister&quot;&gt;Meresenne Twister&lt;/a&gt;&lt;/strong&gt;: genera bits aleatorios con una distribución uniforme, pero no sirve para criptografía porque es predecible. Dada cierta cantidad de bits es posible predecir la secuencia de bits que generará a continuación. Aún así, el MT se comporta mejor que algunos otros PRNGs incluidos en los lenguajes de programación.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;PRNG’s en procesadores&lt;/strong&gt;: Tanto AMD (desde 2015), como Intel (Desde 2013) tienen PRNGs embebidos dentro de los procesadores que pueden ser usados mediante instrucciones específicas (RDRAND y RDSEED).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Fortuna&lt;/strong&gt;. Es un algoritmo criptográficamente seguro diseñado en 2003, en el que están basadas la generación de números aleatorios de MacOS y iOS.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;cómo-usar-un-prng&quot;&gt;Cómo usar un PRNG&lt;/h2&gt;
-
-&lt;p&gt;Si quieres generar números aleatorios para uso general, sin garantía de que sea impredecible, puedes usar un PRNG común implementado en tu lenguage de programación favorito. Generalmente las funciones &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rand()&lt;/code&gt; de Python o &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mt_rand()&lt;/code&gt; de PHP son bastante buenas para esto.&lt;/p&gt;
-
-&lt;p&gt;Sin embargo, para generar números aleatorios para criptografía, debes usar un PRNG especializado, generalmente basado en los provistos por el sistema operativo.&lt;/p&gt;
-
-&lt;p&gt;Aunque podrías escribir una función que se comunique con el sistema operativo para obtener un flujo de bits aleatorios, tendrías que hacer lo suficiente para asegurarte de que esos bits sean de calidad (con una alta entropía). Es por esto que como desarrollador es mejor usar las implementaciones de la biblioteca estándar de criptografía de tu lenguaje, a menos que tengas requerimientos muy específicos, y sobre todo, sepas cómo verificar que tienes la entropía suficiente.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Conocer cómo funciona un PRNG, a parte de algo interesante, es útil para no usarlos mal. Siempre que requieras números aleatorios para usarlos con relación a la seguridad de la información, &lt;strong&gt;deberías usar un PRNG criptográfico&lt;/strong&gt;. En cualquier otro caso, un PRNG como el &lt;em&gt;Meresenne Twister&lt;/em&gt; es suficiente. Además, ahora sabes que los RNGs basados en procesos físicos, a pesar de las garantías de entropía que prometen, no son muy confiables en el sentido de que no siempre están disponibles, pero hay soluciones de hardware especializadas que te pueden ayudar si tienes un problema muy específico.&lt;/p&gt;
-
-&lt;p&gt;Finalmente, la mejor opción para usar un PRNG es confiar en la implementación de la plataforma y lenguaje en el que estés trabajando.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="prng" /><category term="criptografía" /><category term="randomness" /><category term="aleatoriedad" /><summary type="html">Los números aleatorios son muy importantes para el desarrollo, sobre todo para la seguridad de la información y la criptografía.</summary></entry></feed>
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/drPMyDyQG8M&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="preguntas" /><category term="investigación" /><summary type="html">Hablemos sobre las técnicas que Julia Evans recomienda para converirte en un mejor programador(a) y avanzar en tu carrera.</summary></entry></feed>

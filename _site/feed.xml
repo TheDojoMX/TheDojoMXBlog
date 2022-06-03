@@ -1,8 +1,182 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-01-08T19:10:19-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Aprendiendo desarrollo efectivamente</title><link href="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html" rel="alternate" type="text/html" title="Aprendiendo desarrollo efectivamente" /><published>2022-01-03T00:00:00-06:00</published><updated>2022-01-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente</id><content type="html" xml:base="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html">&lt;p&gt;Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado técnicas para aprender efectivamente, aunque la escuela trata de aprender lo más efectivamente posible.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-03T13:24:39-05:00</updated><id>http://localhost:4000/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Consistencia en el código</title><link href="http://localhost:4000/2022/06/02/consistencia-en-el-codigo.html" rel="alternate" type="text/html" title="Consistencia en el código" /><published>2022-06-02T00:00:00-05:00</published><updated>2022-06-02T00:00:00-05:00</updated><id>http://localhost:4000/2022/06/02/consistencia-en-el-codigo</id><content type="html" xml:base="http://localhost:4000/2022/06/02/consistencia-en-el-codigo.html">&lt;p&gt;Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en “A Philosophy of Software Design”.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-la-consistencia-en-el-código&quot;&gt;¿Qué es la consistencia en el código?&lt;/h2&gt;
+
+&lt;p&gt;Básicamente, significa que las que cosas o el código que hace lo mismo luzca y se programen igual y las piezas de código que no hacen los mismo, luzcan y se programen diferente.&lt;/p&gt;
+
+&lt;p&gt;Hay varios factores a tomar en cuenta respecto a la consistencia del código, que trataremos en las siguientes sub-secciones.&lt;/p&gt;
+
+&lt;h3 id=&quot;nombres&quot;&gt;Nombres&lt;/h3&gt;
+
+&lt;p&gt;Para empezar, los nombres deben ser consistentes, tanto en estilo como en semántica. Es decir, si decidiste usar &lt;strong&gt;camelCase&lt;/strong&gt;, debes buscar usarlo en todos lados. Muchos guías de estilo y linters incluso lo sugieren un estilo, o es común tener una costumbre dependiendo del lenguaje (por ejemplo en JS y Java se acostumbra mucho el &lt;strong&gt;camelCase&lt;/strong&gt;, mientras que en Python se recomienda usar &lt;strong&gt;snake_case&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;El segundo punto, la semántica tiene que ver con que siempre te refieras a la misma idea con el mismo nombre, por ejemplo, si estás modelando algo que tiene que ver con boletos para un evento, es buena idea nombrar a las variables siempre de la misma forma, como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ticket&lt;/code&gt;, en vez de nombrarlas &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ticket&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bill&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrance_ticket&lt;/code&gt;, etc.&lt;/p&gt;
+
+&lt;p&gt;Si decides usar nombres como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; o &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt; para numerar cosas o en bloques, asegúrate de que tengan la misma semántica en todos lados, por ejemplo, usa &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; para el primer índice en un ciclo, y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; para un índice interno.&lt;/p&gt;
+
+&lt;p&gt;Tener un sistema de nombrado consistente hará que la &lt;strong&gt;carga cognitiva&lt;/strong&gt; que requiere programar en tu base de código disminuya.&lt;/p&gt;
+
+&lt;h3 id=&quot;interfaces&quot;&gt;Interfaces&lt;/h3&gt;
+
+&lt;p&gt;Crear una interfaz (o una clase abstracta, o una estructura, o un protocolo) o cualquier cosa que sirva para definir un &lt;em&gt;contrato&lt;/em&gt; para un conjunto de módulos que hagan cosas similares, permitirá que tú código sea más fácil y rápido de entender. Basta con entender una sola de las implementaciones para comprender todas las demás.&lt;/p&gt;
+
+&lt;p&gt;El ejemplo perfecto son los métodos de pago en un sistema de eCommerce. En vez de inventar cada vez un una nueva interfaz, puedes definir que la interfaz común sea algo como:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PaymentMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+    Defines the interface for all payment methods
+    &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;charge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;refund&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Si tu lenguaje no tiene, puedes documentar y dejar claro para tu equipo cómo deben cumplirse las interfaces y contratos entre los diferentes módulos.&lt;/p&gt;
+
+&lt;h3 id=&quot;patrones-de-diseño-y-principios-de-programación&quot;&gt;Patrones de diseño y principios de programación&lt;/h3&gt;
+
+&lt;p&gt;Muchas soluciones comunes a problemas comunes que encontramos en el desarrollo se han definido claramente y nombrado, para poder ser usadas y entendidas como una receta por muchos programadores.&lt;/p&gt;
+
+&lt;p&gt;A estas soluciones las llamamos &lt;strong&gt;patrones de diseño&lt;/strong&gt; y la familiaridad con ellos, pueden hacer que tú base de código se más fácil de mantener. Usarlos cuando es adecuado, puede ayudarte a darle consistencia a tu código, lo mismo que otro principios de programación, como por ejemplo, inversión de dependencias.&lt;/p&gt;
+
+&lt;p&gt;Sólo debes tener en cuenta que para que tu equipo se beneficie de esto, debe &lt;em&gt;conocer&lt;/em&gt; estas soluciones, ya que ese es uno de los principales objetivos de los patrones: que los programadores tengan un lenguaje común de soluciones que los ayuden a comunicarse más fácil.&lt;/p&gt;
+
+&lt;h2 id=&quot;invariantes&quot;&gt;Invariantes&lt;/h2&gt;
+
+&lt;p&gt;Una &lt;strong&gt;condición que siempre se cumple&lt;/strong&gt; en tu programa es una invariante. Por ejemplo, muchos los lenguajes funcionales te aseguran que todo es una expresión, por lo que siempre puedes usar cualquier construcción del lenguaje como algo que te devuelve un valor.&lt;/p&gt;
+
+&lt;p&gt;Establecer invariantes en tu base de código y estilo de programación, ayudará a que el código sea consistente. Por ejemplo, en JQuery se creo la invariante de que todas las funciones que usan un elemento, devuelven este mismo elemento, por lo que puedes encadenar llamadas y siempre funcionará.&lt;/p&gt;
+
+&lt;p&gt;Piensa en cosas que puedas hacer invariantes y ayudarás a que tu código sea más consistente.&lt;/p&gt;
+
+&lt;h2 id=&quot;asegura-la-consistencia-en-el-código&quot;&gt;Asegura la consistencia en el código&lt;/h2&gt;
+
+&lt;p&gt;Hay varias formas de asegurar que tu equipo cree código consistente, no son excluyentes, sino que se ayudan unas a otras.&lt;/p&gt;
+
+&lt;p&gt;La primera forma, y la más fuerte, es mediante el aseguramiento automático del cumplimiento de las reglas que pueden ser representadas en alguna herramienta. Por ejemplo, los &lt;strong&gt;linters&lt;/strong&gt;, verificadores de complejidad del código, combinados con las herramientas dadas por los sistemas de versionamiento  de código (ver &lt;a href=&quot;https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks&quot;&gt;git hooks&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Este conjunto de herramientas podría verificar y obligar que se cumplan las reglas de formateo de código y otras medidas de calidad.&lt;/p&gt;
+
+&lt;p&gt;Otra herramienta es la &lt;strong&gt;documentación&lt;/strong&gt;, y yo diría que es la más importante porque es en la que se define todas las cosas que deberían ser uniformes y trasciende a las personas, estructuras de equipo y herramientas. Es muy importante que (de preferencia) al iniciar el proyecto crees una guía de estilo y sugerencias de uniformidad que ayuden a tu equipo a crear código uniforme. Como te imaginarás, esto es trabajo extra, pero vale la pena.&lt;/p&gt;
+
+&lt;p&gt;Finalmente &lt;em&gt;tienes&lt;/em&gt; que promover la consistencia con tu ejemplo y mediante las revisiones de código, si las tienes. Cuando escribas código nuevo, busca la guía de estilo y las convenciones. Si no son explícitas, observa el código para que veas lo que puedes extraer como convención.&lt;/p&gt;
+
+&lt;h2 id=&quot;mantén-la-consistencia&quot;&gt;Mantén la consistencia&lt;/h2&gt;
+
+&lt;p&gt;Es muy fácil querer cambiar algo porque encontramos una forma diferente de hacer las cosas que preferimos por gusto o porque es un poquito mejor. En estos casos, tienes que pensar muy bien si vale la pena romper la consistencia de tu base de código por una mejora.&lt;/p&gt;
+
+&lt;p&gt;Como en muchas ocasiones en el código, esto implica un intercambio de valor y como responsable de esta decisión, tienes que evaluar los pros y los contras. Piensa: ¿me va a dar tanta ventaja como para que valga la pena meter esta complejidad extra? ¿vale tanto la pena para que haga replique este cambio en todo los otros lugares en los qu se hace esto?&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Mantener la consistencia, en la base de código es algo que vale la pena para reducir el esfuerzo cognitivo que a los desarrolladores les cuesta trabajar en tu código. Esto ayudará a que tu código sea mantenible y sea más probable que tenga una larga vida.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="consistencia," /><category term="base-de-código," /><category term="posd" /><summary type="html">La consistencia y uniformidad en una base de código son muy importantes, en este artículo veremos cómo podemos lograrlo y en qué cosas debes poner atención.</summary></entry><entry><title type="html">Consistencia en el código</title><link href="http://localhost:4000/2022/06/02/consistencia-en-el-codigo.html" rel="alternate" type="text/html" title="Consistencia en el código" /><published>2022-06-02T00:00:00-05:00</published><updated>2022-06-02T00:00:00-05:00</updated><id>http://localhost:4000/2022/06/02/consistencia-en-el-codigo</id><content type="html" xml:base="http://localhost:4000/2022/06/02/consistencia-en-el-codigo.html">&lt;p&gt;Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en “A Philosophy of Software Design”.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-la-consistencia-en-el-código&quot;&gt;¿Qué es la consistencia en el código?&lt;/h2&gt;
+
+&lt;p&gt;Básicamente, significa que las que cosas o el código que hace lo mismo luzca y se programen igual y las piezas de código que no hacen los mismo, luzcan y se programen diferente.&lt;/p&gt;
+
+&lt;p&gt;Hay varios factores a tomar en cuenta respecto a la consistencia del código, que trataremos en las siguientes sub-secciones.&lt;/p&gt;
+
+&lt;h3 id=&quot;nombres&quot;&gt;Nombres&lt;/h3&gt;
+
+&lt;p&gt;Para empezar, los nombres deben ser consistentes, tanto en estilo como en semántica. Es decir, si decidiste usar &lt;strong&gt;camelCase&lt;/strong&gt;, debes buscar usarlo en todos lados. Muchos guías de estilo y linters incluso lo sugieren un estilo, o es común tener una costumbre dependiendo del lenguaje (por ejemplo en JS y Java se acostumbra mucho el &lt;strong&gt;camelCase&lt;/strong&gt;, mientras que en Python se recomienda usar &lt;strong&gt;snake_case&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;El segundo punto, la semántica tiene que ver con que siempre te refieras a la misma idea con el mismo nombre, por ejemplo, si estás modelando algo que tiene que ver con boletos para un evento, es buena idea nombrar a las variables siempre de la misma forma, como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ticket&lt;/code&gt;, en vez de nombrarlas &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ticket&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bill&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrance_ticket&lt;/code&gt;, etc.&lt;/p&gt;
+
+&lt;p&gt;Si decides usar nombres como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; o &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt; para numerar cosas o en bloques, asegúrate de que tengan la misma semántica en todos lados, por ejemplo, usa &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; para el primer índice en un ciclo, y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; para un índice interno.&lt;/p&gt;
+
+&lt;p&gt;Tener un sistema de nombrado consistente hará que la &lt;strong&gt;carga cognitiva&lt;/strong&gt; que requiere programar en tu base de código disminuya.&lt;/p&gt;
+
+&lt;h3 id=&quot;interfaces&quot;&gt;Interfaces&lt;/h3&gt;
+
+&lt;p&gt;Crear una interfaz (o una clase abstracta, o una estructura, o un protocolo) o cualquier cosa que sirva para definir un &lt;em&gt;contrato&lt;/em&gt; para un conjunto de módulos que hagan cosas similares, permitirá que tú código sea más fácil y rápido de entender. Basta con entender una sola de las implementaciones para comprender todas las demás.&lt;/p&gt;
+
+&lt;p&gt;El ejemplo perfecto son los métodos de pago en un sistema de eCommerce. En vez de inventar cada vez un una nueva interfaz, puedes definir que la interfaz común sea algo como:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PaymentMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+    Defines the interface for all payment methods
+    &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;charge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;refund&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Si tu lenguaje no tiene, puedes documentar y dejar claro para tu equipo cómo deben cumplirse las interfaces y contratos entre los diferentes módulos.&lt;/p&gt;
+
+&lt;h3 id=&quot;patrones-de-diseño-y-principios-de-programación&quot;&gt;Patrones de diseño y principios de programación&lt;/h3&gt;
+
+&lt;p&gt;Muchas soluciones comunes a problemas comunes que encontramos en el desarrollo se han definido claramente y nombrado, para poder ser usadas y entendidas como una receta por muchos programadores.&lt;/p&gt;
+
+&lt;p&gt;A estas soluciones las llamamos &lt;strong&gt;patrones de diseño&lt;/strong&gt; y la familiaridad con ellos, pueden hacer que tú base de código se más fácil de mantener. Usarlos cuando es adecuado, puede ayudarte a darle consistencia a tu código, lo mismo que otro principios de programación, como por ejemplo, inversión de dependencias.&lt;/p&gt;
+
+&lt;p&gt;Sólo debes tener en cuenta que para que tu equipo se beneficie de esto, debe &lt;em&gt;conocer&lt;/em&gt; estas soluciones, ya que ese es uno de los principales objetivos de los patrones: que los programadores tengan un lenguaje común de soluciones que los ayuden a comunicarse más fácil.&lt;/p&gt;
+
+&lt;h2 id=&quot;invariantes&quot;&gt;Invariantes&lt;/h2&gt;
+
+&lt;p&gt;Una &lt;strong&gt;condición que siempre se cumple&lt;/strong&gt; en tu programa es una invariante. Por ejemplo, muchos los lenguajes funcionales te aseguran que todo es una expresión, por lo que siempre puedes usar cualquier construcción del lenguaje como algo que te devuelve un valor.&lt;/p&gt;
+
+&lt;p&gt;Establecer invariantes en tu base de código y estilo de programación, ayudará a que el código sea consistente. Por ejemplo, en JQuery se creo la invariante de que todas las funciones que usan un elemento, devuelven este mismo elemento, por lo que puedes encadenar llamadas y siempre funcionará.&lt;/p&gt;
+
+&lt;p&gt;Piensa en cosas que puedas hacer invariantes y ayudarás a que tu código sea más consistente.&lt;/p&gt;
+
+&lt;h2 id=&quot;asegura-la-consistencia-en-el-código&quot;&gt;Asegura la consistencia en el código&lt;/h2&gt;
+
+&lt;p&gt;Hay varias formas de asegurar que tu equipo cree código consistente, no son excluyentes, sino que se ayudan unas a otras.&lt;/p&gt;
+
+&lt;p&gt;La primera forma, y la más fuerte, es mediante el aseguramiento automático del cumplimiento de las reglas que pueden ser representadas en alguna herramienta. Por ejemplo, los &lt;strong&gt;linters&lt;/strong&gt;, verificadores de complejidad del código, combinados con las herramientas dadas por los sistemas de versionamiento  de código (ver &lt;a href=&quot;https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks&quot;&gt;git hooks&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Este conjunto de herramientas podría verificar y obligar que se cumplan las reglas de formateo de código y otras medidas de calidad.&lt;/p&gt;
+
+&lt;p&gt;Otra herramienta es la &lt;strong&gt;documentación&lt;/strong&gt;, y yo diría que es la más importante porque es en la que se define todas las cosas que deberían ser uniformes y trasciende a las personas, estructuras de equipo y herramientas. Es muy importante que (de preferencia) al iniciar el proyecto crees una guía de estilo y sugerencias de uniformidad que ayuden a tu equipo a crear código uniforme. Como te imaginarás, esto es trabajo extra, pero vale la pena.&lt;/p&gt;
+
+&lt;p&gt;Finalmente &lt;em&gt;tienes&lt;/em&gt; que promover la consistencia con tu ejemplo y mediante las revisiones de código, si las tienes. Cuando escribas código nuevo, busca la guía de estilo y las convenciones. Si no son explícitas, observa el código para que veas lo que puedes extraer como convención.&lt;/p&gt;
+
+&lt;h2 id=&quot;mantén-la-consistencia&quot;&gt;Mantén la consistencia&lt;/h2&gt;
+
+&lt;p&gt;Es muy fácil querer cambiar algo porque encontramos una forma diferente de hacer las cosas que preferimos por gusto o porque es un poquito mejor. En estos casos, tienes que pensar muy bien si vale la pena romper la consistencia de tu base de código por una mejora.&lt;/p&gt;
+
+&lt;p&gt;Como en muchas ocasiones en el código, esto implica un intercambio de valor y como responsable de esta decisión, tienes que evaluar los pros y los contras. Piensa: ¿me va a dar tanta ventaja como para que valga la pena meter esta complejidad extra? ¿vale tanto la pena para que haga replique este cambio en todo los otros lugares en los qu se hace esto?&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Mantener la consistencia, en la base de código es algo que vale la pena para reducir el esfuerzo cognitivo que a los desarrolladores les cuesta trabajar en tu código. Esto ayudará a que tu código sea mantenible y sea más probable que tenga una larga vida.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="consistencia," /><category term="base-de-código," /><category term="posd" /><summary type="html">La consistencia y uniformidad en una base de código son muy importantes, en este artículo veremos cómo podemos lograrlo y en qué cosas debes poner atención.</summary></entry><entry><title type="html">Problemas difíciles de la computación y su relación con la criptografía</title><link href="http://localhost:4000/2022/01/14/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html" rel="alternate" type="text/html" title="Problemas difíciles de la computación y su relación con la criptografía" /><published>2022-01-14T00:00:00-06:00</published><updated>2022-01-14T00:00:00-06:00</updated><id>http://localhost:4000/2022/01/14/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia</id><content type="html" xml:base="http://localhost:4000/2022/01/14/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html">&lt;p&gt;De los algoritmos de cifrado que hemos hablado hasta ahora.&lt;/p&gt;
+
+&lt;p&gt;Con la criptografía simétrica no nos enfrentamos a ciertos problemas que criptografía de llave pública sí tenemos en cada escenario, por ejemplo, coordinar y escoger una llave segura para comunicaciones privadas sin conocer al previamente a la contraparte.&lt;/p&gt;
+
+&lt;p&gt;En post futuros vamos a ahondar en detalles de algoritmos como Diffie-Hellman, RSA, ECDSA, etc, pero ahora centrémonos en la teoría computacional que soporta todos estos algoritmos.&lt;/p&gt;
+
+&lt;h2 id=&quot;complejidad-computacional&quot;&gt;Complejidad computacional&lt;/h2&gt;
+
+&lt;p&gt;La complejidad computacional se puede entender como la cantidad de operaciones que un algoritmo que resuelve un problema ejecuta para finalizar.&lt;/p&gt;
+
+&lt;h3 id=&quot;tiempo-polinomial&quot;&gt;Tiempo polinomial&lt;/h3&gt;
+
+&lt;h3 id=&quot;tiempo-super-polinomial&quot;&gt;Tiempo super polinomial&lt;/h3&gt;
+
+&lt;h3 id=&quot;tiempos-no-polinomiaes&quot;&gt;Tiempos no polinomiaes&lt;/h3&gt;
+
+&lt;h3 id=&quot;exponencial&quot;&gt;Exponencial&lt;/h3&gt;
+
+&lt;h2 id=&quot;problemas-que-creemos-que-son-difíciles&quot;&gt;Problemas que creemos que son difíciles&lt;/h2&gt;
+
+&lt;h2 id=&quot;problema-de-la-factorización&quot;&gt;Problema de la factorización&lt;/h2&gt;
+
+&lt;h2 id=&quot;curvas-elípticas&quot;&gt;Curvas elípticas&lt;/h2&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="computer-science" /><category term="cs" /><category term="complejidad-computacional" /><summary type="html">Hablemos de los problemas que hacen posible que tengamos criptografía asimétrica y sistemas que se ponen de acuerdo para hablar de manera segura sin conocerse antes.</summary></entry><entry><title type="html">Aprendiendo desarrollo efectivamente</title><link href="http://localhost:4000/2022/01/03/aprendiendo-desarrollo-efectivamente.html" rel="alternate" type="text/html" title="Aprendiendo desarrollo efectivamente" /><published>2022-01-03T00:00:00-06:00</published><updated>2022-01-03T00:00:00-06:00</updated><id>http://localhost:4000/2022/01/03/aprendiendo-desarrollo-efectivamente</id><content type="html" xml:base="http://localhost:4000/2022/01/03/aprendiendo-desarrollo-efectivamente.html">&lt;p&gt;Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado técnicas para aprender efectivamente, aunque la escuela trata de aprender lo más efectivamente posible.&lt;/p&gt;
 
 &lt;p&gt;El desarrollo de software es un campo muy amplio en el que tenemos que aprender constantemente, sea por el cambio de las tecnologías, porque tenemos que aprender del área en la que estamos aplicando nuestro conocimiento tecnológico para crear software efectivo o simplemente porque queremos cambiar de área.&lt;/p&gt;
 
-&lt;p&gt;En este artículo hablaremos sobre algunas de las cosas que el libro “A Mind for Numbers” de &lt;em&gt;Barbara Oakley&lt;/em&gt; nos enseña sobre el aprendizaje de temas difíciles, como las matemáticas y las ciencias. Considerando que el desarrollo de software tiene temas difíciles, creemos que es aplicable lo mencionado en este libro.&lt;/p&gt;
+&lt;p&gt;En este artículo hablaremos sobre algunas de las cosas que el libro &lt;a href=&quot;https://amzn.to/3r20CYr&quot;&gt;“A Mind for Numbers”&lt;/a&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; de &lt;a href=&quot;https://barbaraoakley.com/&quot;&gt;Barbara Oakley&lt;/a&gt; nos enseña sobre el aprendizaje de temas difíciles, como las matemáticas y las ciencias. Considerando que el desarrollo de software tiene temas difíciles, creemos que es aplicable lo mencionado en este libro.&lt;/p&gt;
 
 &lt;p&gt;Primero hablemos de las bases de las recomendaciones que da el libro: los modos en los que puede estar tu cerebro, y las partes que ocupa para cada tipo.&lt;/p&gt;
 
@@ -74,12 +248,20 @@
 
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Palacios de memoria&lt;/strong&gt;. Esta es una técnica que consiste en aprovechar nuestra capacidad de ubicación espacial para memorizar cosas fácilmente. Puedes investigar más sobre ella y ver si te sirve.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Repetición espaciada&lt;/strong&gt;. Casi todo lo que consumimos lo olvidamos, a menos que se nos repita constantemente. La repetición espaciada consiste en repasar un tema con frecuencia cada vez más grande, para poder retenerlo a largo plazo. Puedes usar herramientas como Anki.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Repetición espaciada&lt;/strong&gt;. Casi todo lo que consumimos lo olvidamos, a menos que se nos repita constantemente. La repetición espaciada consiste en repasar un tema con frecuencia cada vez más grande, para poder retenerlo a largo plazo. Puedes usar herramientas como &lt;a href=&quot;https://apps.ankiweb.net/&quot;&gt;Anki&lt;/a&gt; para automatizar esto.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Hemos hablado de los temas que a mi parecer son más aplicables a los desarrolladores. El libro habla de otros temas como la presentación de exámenes, la organización del tiempo, la motivación, etc. Te invito a que le eches un ojo si estás en la escuela y sobre todo si estás en un área de ciencias o físico-matemáticas.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="a-mind-for-numbers" /><category term="barbara-oakley" /><summary type="html">Nunca nos han enseñado a aprender (a casi nadie) y el desarrollo de software es un campo que requiere un aprendizaje constante de temas difíciles. Veamos lo que &quot;A mind for numbers&quot; nos enseña sobre el aprendizaje</summary></entry><entry><title type="html">Criptografía para desarrolladores: Códigos de autenticación de mensajes</title><link href="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html" rel="alternate" type="text/html" title="Criptografía para desarrolladores: Códigos de autenticación de mensajes" /><published>2021-12-30T00:00:00-06:00</published><updated>2021-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html">&lt;p&gt;Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.&lt;/p&gt;
+&lt;p&gt;Hemos hablado de los temas que a mi parecer son más aplicables a los desarrolladores. El libro habla de otros temas como la presentación de exámenes, la organización del tiempo, la motivación, etc. Te invito a que le eches un ojo si estás en la escuela y sobre todo si estás en un área de ciencias o físico-matemáticas.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Link de afiliados de Amazon &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="a-mind-for-numbers" /><category term="barbara-oakley" /><summary type="html">Nunca nos han enseñado a aprender (a casi nadie) y el desarrollo de software es un campo que requiere un aprendizaje constante de temas difíciles. Veamos lo que &quot;A mind for numbers&quot; nos enseña sobre el aprendizaje.</summary></entry><entry><title type="html">Criptografía para desarrolladores: Códigos de autenticación de mensajes</title><link href="http://localhost:4000/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html" rel="alternate" type="text/html" title="Criptografía para desarrolladores: Códigos de autenticación de mensajes" /><published>2021-12-30T00:00:00-06:00</published><updated>2021-12-30T00:00:00-06:00</updated><id>http://localhost:4000/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes</id><content type="html" xml:base="http://localhost:4000/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html">&lt;p&gt;Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.&lt;/p&gt;
 
 &lt;p&gt;En general este tipo de algoritmos se llaman &lt;strong&gt;hashes con llave&lt;/strong&gt; o &lt;em&gt;Keyed Hashes&lt;/em&gt;. Empecemos a hablar del tipo más sencillo y usado: la generación de códigos de autenticación de mensajes.&lt;/p&gt;
 
@@ -147,7 +329,7 @@ Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más e
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Conocer sobre los códigos de autenticación de mensajes es importante para no navegar perdidos entre todas esas siglas que luego vemos en las suites de seguridad de IPSec, TLS, SSL, SSH, HTTPS, etc. Ahora ya sabes lo que significa HMAC-SHA-512, AES-CMAC o Poly1305.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mac" /><category term="hamc" /><category term="aes" /><category term="security" /><category term="cryptography" /><summary type="html">A veces vemos nombres como HMAC-MD4 o AES-CMAC y no sabemos lo que significa. En este artículo hablaremos de los diferentes tipos de MAC y por qué son importantes.</summary></entry><entry><title type="html">El tiempo monótono</title><link href="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html" rel="alternate" type="text/html" title="El tiempo monótono" /><published>2021-12-26T00:00:00-06:00</published><updated>2021-12-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html">&lt;p&gt;Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto es cuando se está midiendo el tiempo que tarda una parte del programa o un evento externo.&lt;/p&gt;
+&lt;p&gt;Conocer sobre los códigos de autenticación de mensajes es importante para no navegar perdidos entre todas esas siglas que luego vemos en las suites de seguridad de IPSec, TLS, SSL, SSH, HTTPS, etc. Ahora ya sabes lo que significa HMAC-SHA-512, AES-CMAC o Poly1305.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mac" /><category term="hamc" /><category term="aes" /><category term="security" /><category term="cryptography" /><summary type="html">A veces vemos nombres como HMAC-MD4 o AES-CMAC y no sabemos lo que significa. En este artículo hablaremos de los diferentes tipos de MAC y por qué son importantes.</summary></entry><entry><title type="html">El tiempo monótono</title><link href="http://localhost:4000/2021/12/26/el-tiempo-monotono.html" rel="alternate" type="text/html" title="El tiempo monótono" /><published>2021-12-26T00:00:00-06:00</published><updated>2021-12-26T00:00:00-06:00</updated><id>http://localhost:4000/2021/12/26/el-tiempo-monotono</id><content type="html" xml:base="http://localhost:4000/2021/12/26/el-tiempo-monotono.html">&lt;p&gt;Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto es cuando se está midiendo el tiempo que tarda una parte del programa o un evento externo.&lt;/p&gt;
 
 &lt;p&gt;El &lt;strong&gt;tiempo o reloj monótono&lt;/strong&gt; es un concepto que todo programador debería conocer, para evitar errores y código frágil al &lt;em&gt;medir&lt;/em&gt; el tiempo en los programas.&lt;/p&gt;
 
@@ -199,7 +381,7 @@ Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más e
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Cuando estés midiendo tiempo o coordinando tareas en tu programa, no confíes en las fechas y horas del sistema en el que está corriendo tu programa. Usa el reloj monótono para garantizar que tienes el mismo marco de referencia siempre que hagas una medición de tiempo. Tu lenguaje de programación debería darte acceso a esta medición, sólo investiga o busca en Google: &lt;em&gt;“Lenguaje X monotonic time”&lt;/em&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="monótono" /><category term="tiempo" /><category term="conteo" /><summary type="html">¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.</summary></entry><entry><title type="html">Matemáticas para criptografía</title><link href="https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia.html" rel="alternate" type="text/html" title="Matemáticas para criptografía" /><published>2021-12-25T00:00:00-06:00</published><updated>2021-12-25T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia.html">&lt;p&gt;¿Quieres entender por qué los algoritmos criptográficos pueden &lt;em&gt;prometer&lt;/em&gt; seguridad? Todos están basados en operaciones matemáticas, problemas difíciles de resolver, probabilidad y estadística.&lt;/p&gt;
+&lt;p&gt;Cuando estés midiendo tiempo o coordinando tareas en tu programa, no confíes en las fechas y horas del sistema en el que está corriendo tu programa. Usa el reloj monótono para garantizar que tienes el mismo marco de referencia siempre que hagas una medición de tiempo. Tu lenguaje de programación debería darte acceso a esta medición, sólo investiga o busca en Google: &lt;em&gt;“Lenguaje X monotonic time”&lt;/em&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="monótono" /><category term="tiempo" /><category term="conteo" /><summary type="html">¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.</summary></entry><entry><title type="html">Matemáticas para criptografía</title><link href="http://localhost:4000/2021/12/25/matematicas-para-criptografia.html" rel="alternate" type="text/html" title="Matemáticas para criptografía" /><published>2021-12-25T00:00:00-06:00</published><updated>2021-12-25T00:00:00-06:00</updated><id>http://localhost:4000/2021/12/25/matematicas-para-criptografia</id><content type="html" xml:base="http://localhost:4000/2021/12/25/matematicas-para-criptografia.html">&lt;p&gt;¿Quieres entender por qué los algoritmos criptográficos pueden &lt;em&gt;prometer&lt;/em&gt; seguridad? Todos están basados en operaciones matemáticas, problemas difíciles de resolver, probabilidad y estadística.&lt;/p&gt;
 
 &lt;p&gt;Veamos un plan de estudios de matemáticas que podrías usar para adquirir las habilidades matemáticas necesarias para entender mejor los algoritmos criptográficos.&lt;/p&gt;
 
@@ -322,7 +504,7 @@ Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más e
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Como podrás observar, hay una gran cantidad de recursos para aprender lo necesario para entender la criptografía a fondo, desde sus bases matemáticas. Puedes usar estas recomendaciones como guía, o ver los temas y buscar tus propios recursos para seguir aprendiendo. Si tienes alguna recomendación no dudes en compartirla con nosotros para poder actualizar nuestra lista y cada vez hacerla mejor.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="matemáticas" /><category term="álgebra" /><summary type="html">Veamos qué conocimientos matemáticos requieres para entender los algoritmos criptográficos, cómo funcionan y, en su caso, avanzar para que puedas diseñar los tuyos.</summary></entry><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html">&lt;p&gt;HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual.&lt;/p&gt;
+&lt;p&gt;Como podrás observar, hay una gran cantidad de recursos para aprender lo necesario para entender la criptografía a fondo, desde sus bases matemáticas. Puedes usar estas recomendaciones como guía, o ver los temas y buscar tus propios recursos para seguir aprendiendo. Si tienes alguna recomendación no dudes en compartirla con nosotros para poder actualizar nuestra lista y cada vez hacerla mejor.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="matemáticas" /><category term="álgebra" /><summary type="html">Veamos qué conocimientos matemáticos requieres para entender los algoritmos criptográficos, cómo funcionan y, en su caso, avanzar para que puedas diseñar los tuyos.</summary></entry><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="http://localhost:4000/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>http://localhost:4000/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="http://localhost:4000/2021/12/15/http-1-1-http-2-y-http-3.html">&lt;p&gt;HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -378,7 +560,7 @@ Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más e
 
 &lt;p&gt;Mantenernos actualizados con respecto a las nuevas tecnologías es muy importante para ofrecerles lo mejor a los usuarios de nuestro software, sean desarrolladores o usuarios finales. Si quieres empezar a usar HTTP/3 échale un ojo a tus servidores HTTP, por ejemplo &lt;a href=&quot;https://www.nginx.com/blog/our-roadmap-quic-http-3-support-nginx/&quot;&gt;NGINX ya tiene planes para soportarlo completamente&lt;/a&gt;, &lt;a href=&quot;https://doc.traefik.io/traefik/master/routing/entrypoints/#http3&quot;&gt;Traefik ya lo soporta de manera experimental&lt;/a&gt;, pero parece que Apache &lt;a href=&quot;https://www.reddit.com/r/apache/comments/o6a86x/why_is_apache_failing_to_implement_quic_http3/&quot;&gt;no lo hará por ahora&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;También si usas algún servicio de servidores administrados AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que lo actives. Puedes revisar la lista de compatibilidad constantemente aquí: &lt;a href=&quot;https://caniuse.com/http3&quot;&gt;Can I Use HTTP/3?&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="HTTP" /><category term="web" /><category term="network" /><summary type="html">HTTP es el estándar que permite que internet exista como hoy lo conocemos, hablemos de sus avances y lo que puede ofrecerte la última versión: HTTP/3.</summary></entry><entry><title type="html">Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link href="https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="alternate" type="text/html" title="Análisis de los principios SOLID: Principio de Responsabilidad Única" /><published>2021-12-14T00:00:00-06:00</published><updated>2021-12-14T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y “limpio” debe saber y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;
+&lt;p&gt;También si usas algún servicio de servidores administrados AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que lo actives. Puedes revisar la lista de compatibilidad constantemente aquí: &lt;a href=&quot;https://caniuse.com/http3&quot;&gt;Can I Use HTTP/3?&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="HTTP" /><category term="web" /><category term="network" /><summary type="html">HTTP es el estándar que permite que internet exista como hoy lo conocemos, hablemos de sus avances y lo que puede ofrecerte la última versión: HTTP/3.</summary></entry><entry><title type="html">Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link href="http://localhost:4000/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="alternate" type="text/html" title="Análisis de los principios SOLID: Principio de Responsabilidad Única" /><published>2021-12-14T00:00:00-06:00</published><updated>2021-12-14T00:00:00-06:00</updated><id>http://localhost:4000/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica</id><content type="html" xml:base="http://localhost:4000/2021/12/14/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y “limpio” debe saber y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Explicación del principio&lt;/li&gt;
@@ -395,178 +577,6 @@ Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más e
 
 &lt;p&gt;Este principio se puede enunciar como:&lt;/p&gt;
 
-&lt;p&gt;“Una clase debe tener una única razón para ser modificada” según en libro &lt;em&gt;Clean Code&lt;/em&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Escribe aquí un buen resumen de tu artículo</summary></entry><entry><title type="html">Creando un API con GO: Usando Beego</title><link href="https://blog.thedojo.mx/2021/12/13/creando-un-api-con-go-usando-beego.html" rel="alternate" type="text/html" title="Creando un API con GO: Usando Beego" /><published>2021-12-13T00:00:00-06:00</published><updated>2021-12-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/13/creando-un-api-con-go-usando-beego</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/13/creando-un-api-con-go-usando-beego.html">&lt;p&gt;Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde las exigencias respecto a lo que deben soportar los sistemas en cuanto a concurrencia y escalabilidad son fuertes.&lt;/p&gt;
+&lt;p&gt;“Una clase debe tener una única razón para ser modificada” según en libro &lt;em&gt;Clean Code&lt;/em&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Escribe aquí un buen resumen de tu artículo</summary></entry><entry><title type="html">Creando un API con GO: Usando Beego</title><link href="http://localhost:4000/2021/12/13/creando-un-api-con-go-usando-beego.html" rel="alternate" type="text/html" title="Creando un API con GO: Usando Beego" /><published>2021-12-13T00:00:00-06:00</published><updated>2021-12-13T00:00:00-06:00</updated><id>http://localhost:4000/2021/12/13/creando-un-api-con-go-usando-beego</id><content type="html" xml:base="http://localhost:4000/2021/12/13/creando-un-api-con-go-usando-beego.html">&lt;p&gt;Vamos a probar el poder y la facilidad de Beego, un framework creado en China, en dónde las exigencias respecto a lo que deben soportar los sistemas en cuanto a concurrencia y escalabilidad son fuertes.&lt;/p&gt;
 
-&lt;p&gt;Para hacer la prueba vamos a crear un proyecto más o menos interesante: creemos un diccionario inverso. Tú das la descripción de la palabra, y la API nos devuelve una serie de opciones con un valor de certeza. Para lograr esto vamos a necesitar un modelo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Hagamos una pequeña API en Go usando Beego, mientras intentamos seguir los principios de Domain Driven Design</summary></entry><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra con los cifrados de &lt;em&gt;flujo&lt;/em&gt; o &lt;strong&gt;stream ciphers&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;definición-de-cifrado-de-flujo&quot;&gt;Definición de cifrado de flujo&lt;/h2&gt;
-
-&lt;p&gt;La mejor manera de entenderlos es en &lt;em&gt;contraste&lt;/em&gt; con los cifrados de bloque: mientras los cifrados de bloque toman pedazos de contenido de tamaño fijo y los cifran, aplicando diferentes técnicas para abarcar todo el contenido, los cifrados de flujo toman &lt;strong&gt;contenido de tamaño arbitrario y lo cifran&lt;/strong&gt;, bit por bit, devolviéndote un texto cifrado del mismo tamaño.&lt;/p&gt;
-
-&lt;p&gt;Son muy útiles cuando no sabes el tamaño del contenido que vas a cifrar o cuando van ir llegando de manera continua sin que sepas exactamente cuánto y cada cuando, justamente como un &lt;strong&gt;flujo de información&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Los cifrados de flujo se consideraban “cifrados de hardware” porque eran más ligeros que los de bloque y se podían implementar en menos espacio en un chip, pero ahora tanto los cifrados de bloque como los de flujo son adecuados para implementarse en hardware.&lt;/p&gt;
-
-&lt;h2 id=&quot;funcionamiento&quot;&gt;Funcionamiento&lt;/h2&gt;
-
-&lt;p&gt;Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación &lt;strong&gt;XOR&lt;/strong&gt;, también conocida como &lt;strong&gt;suma módulo 2&lt;/strong&gt;. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aleatoria se le conoce como el &lt;em&gt;keystream&lt;/em&gt; o &lt;em&gt;cadena de bits de clave&lt;/em&gt;. En el video &lt;a href=&quot;https://youtu.be/74MYHpGzRR8&quot;&gt;“XOR de tamaño fijo | Cryptopals Crypto Challenges”&lt;/a&gt; explicamos por qué el XOR es una operación perfecta para usarse en criptografía y por qué en algunos recursos se la llama “suma módulo 2”.&lt;/p&gt;
-
-&lt;p&gt;La parte más importante es entonces el generador del &lt;em&gt;keystream&lt;/em&gt;, y que sea capaz de volver a generar los mismos bits pseudo-aleatorios para descifrar.&lt;/p&gt;
-
-&lt;p&gt;Un cifrado de flujo normalmente utiliza una llave y un &lt;strong&gt;nonce&lt;/strong&gt;, un número usado una única vez con esa llave.&lt;/p&gt;
-
-&lt;p&gt;A muy alto nivel, los cifrados de flujo pueden trabajar de dos formas:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Mediante mantener un estado secreto&lt;/strong&gt;. Después de haber sido inicializados con una llave y un nonce, el algoritmo mantiene un estado interno que se va actualizando en cada nueva llamada.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Mediante un contador&lt;/strong&gt;. Este tipo de algoritmos recibe a parte de la llave y el nonce, un contador que se incrementa en cada llamada, de esta manera no es necesario mantener un estado interno secreto.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;ejemplos-de-cifrados-de-flujo&quot;&gt;Ejemplos de cifrados de flujo&lt;/h2&gt;
-
-&lt;p&gt;Veamos algunos ejemplos de cifrados de flujo, sus características y sus usos, así como qué tan seguros son.&lt;/p&gt;
-
-&lt;h3 id=&quot;rc4&quot;&gt;RC4&lt;/h3&gt;
-
-&lt;p&gt;Es el cifrado de software que se usaba para la comunicación entre los routers WI-FI que usaban WEP y tus dispositivos. También se usaba en las comunicaciones TLS. Fue diseñado por el mismo inventor de MD5, &lt;a href=&quot;https://people.csail.mit.edu/rivest/&quot;&gt;Ron Rivest&lt;/a&gt;. Trivia: RC significaba originalmente: “&lt;strong&gt;R&lt;/strong&gt;on’s &lt;strong&gt;C&lt;/strong&gt;ode”. Se conocen ataques contra el cifrado y sobre todo sobre sus implementaciones, pero se sigue usando, así que ten mucho cuidado cuando los dispositivos que usas te ofrezcan configurarlo (como en el caso de los routers con “seguridad” WEP).&lt;/p&gt;
-
-&lt;h3 id=&quot;a51&quot;&gt;A5/1&lt;/h3&gt;
-
-&lt;p&gt;Fue el cifrado de flujo de hardware de que se usaba para cifrar las comunicaciones inalámbricas 2G. Se encontraron vulnerabilidades en él, al principio de la década de los 2000 y ahora se puede descifrar completamente.&lt;/p&gt;
-
-&lt;h2 id=&quot;grain-128a&quot;&gt;Grain-128a&lt;/h2&gt;
-
-&lt;p&gt;Es uno de los cifrados de flujo recomendados por la &lt;a href=&quot;http://www.ecrypt.eu.org/stream/project.html&quot;&gt;´EAM competition&lt;/a&gt;,
-usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementado en hardware.&lt;/p&gt;
-
-&lt;p&gt;Es seguro todavía y usado en sistemas de hardware de bajo presupuesto que requieran un cifrado ligero.&lt;/p&gt;
-&lt;h3 id=&quot;salsa20&quot;&gt;Salsa20&lt;/h3&gt;
-
-&lt;p&gt;Es un cifrado de flujo, orientado a software que también fue recomendado por la ´EAM competition. Tiene una implementación sencilla, lo que lo ha hecho popular. Usa una llave, un nonce y un contador para generar el flujo de cifrado.&lt;/p&gt;
-
-&lt;p&gt;Aplica una serie de transformaciones en “rounds” y tiene tres variaciones, dependiendo del nivel de seguridad necesario y la velocidad que deseemos: Salsa20 (20 rounds), Salsa20/12 (12 rounds), Salsa20/8 (8 rounds), siendo el de 8 rounds el que menos seguridad  ofrece. Hay un ataque teórico contra Salsa20/8 que reduce su seguridad a 2^251 operaciones, todavía imposible de llevar a la práctica.&lt;/p&gt;
-
-&lt;h3 id=&quot;aes-ctr&quot;&gt;AES-CTR&lt;/h3&gt;
-
-&lt;p&gt;Este es un cifrado de bloque disfrazado de cifrado de flujo, como diría JP Aumasson, el autor de “Serious Cryptography”. Es el cifrado AES usado en &lt;strong&gt;Counter Mode&lt;/strong&gt; o &lt;strong&gt;modo contador&lt;/strong&gt;, que ya explicamos en el &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;artículo sobre los cifrados de bloque y sus modos de operación&lt;/a&gt;. Cualquier cifrado de bloque que pueda ser usado en modo &lt;strong&gt;counter&lt;/strong&gt; se comportará como un cifrado de flujo.&lt;/p&gt;
-
-&lt;p&gt;La desventaja de esto es que normalmente queremos que los cifrados de flujo sean ligeros y rápidos y la velocidad de esta implementación dependerá en gran medida del cifrado que se use.&lt;/p&gt;
-
-&lt;h2 id=&quot;evitando-errores&quot;&gt;Evitando errores&lt;/h2&gt;
-
-&lt;p&gt;Si estás usando un cifrado de flujo, &lt;strong&gt;debes evitar en todo momento re-usar el nonce&lt;/strong&gt;, recuerda que la única razón de existencia del &lt;em&gt;nonce&lt;/em&gt; es ser usado una única vez con la misma llave. Esta es la forma más fácil de usar mal los cifrados de flujo, y elimina completamente la seguridad teórica que puedan ofrecer.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión-y-aplicaciones&quot;&gt;Conclusión y aplicaciones&lt;/h2&gt;
-
-&lt;p&gt;Los cifrados de flujo actualmente son seguros (Salsa20, Grain-128a y  AES-CTR) y los puedes usar con confianza siempre que requieras cifrar datos de longitud desconocida o que llega (o se va) con un flujo de información.&lt;/p&gt;
-
-&lt;p&gt;Evita reutilizar el Nonce, el counter y elige una llave segura, lo más aleatoria posible y estarás listo para usarlos en cualquier desarrollo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="cifrado" /><category term="cypher" /><category term="flujo" /><category term="aes" /><summary type="html">Ya hemos hablado en este blog sobre qué es la criptografía, los cifrados de bloque y ahora ha llegado la hora de hablar de cifrados de flujo. Veamos qué son y para qué sirven.</summary></entry><entry><title type="html">Ejercicio: programando un perceptrón</title><link href="https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron.html" rel="alternate" type="text/html" title="Ejercicio: programando un perceptrón" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/ejercicio-programando-un-perceptron.html">&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
-
-&lt;p&gt;Si no tienes claro lo que es un perceptrón, puedes leer nuestro &lt;a href=&quot;/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html&quot; target=&quot;_blank&quot;&gt;artículo anterior&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-conjunto-de-datos&quot;&gt;El conjunto de datos&lt;/h2&gt;
-
-&lt;p&gt;Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo &lt;em&gt;aprenda&lt;/em&gt; de estos datos. Los datos que un perceptrón puede clasificar deben estar divididos en dos clases separables, ya si lo representáramos como una función, es un línea recta en un plano de dos variables, o su equivalente dependiendo del espacio y sus dimensiones.&lt;/p&gt;
-
-&lt;h2 id=&quot;aproximando-la-función&quot;&gt;Aproximando la función&lt;/h2&gt;
-
-&lt;h2 id=&quot;resultado&quot;&gt;Resultado&lt;/h2&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ia" /><summary type="html">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.</summary></entry><entry><title type="html">Criptografía VS computación cuántica</title><link href="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html" rel="alternate" type="text/html" title="Criptografía VS computación cuántica" /><published>2021-12-11T00:00:00-06:00</published><updated>2021-12-11T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html">&lt;blockquote&gt;
-  &lt;p&gt;“If you are not completely confused by quantum mechanics, you do not understand it.” - Richard Feynman&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;La computación cuántica es una tecnología muy prometedora que lleva &lt;em&gt;décadas&lt;/em&gt; en gestación y cada vez la vemos más cerca. Una de las cosas que más llama la atención es la capacidad de cómputo que las computadoras cuánticas pueden tener, en este artículo aclararemos de qué se trata todo esto y &lt;strong&gt;cómo se relaciona con la criptografía&lt;/strong&gt;, uno de los campos más afectados.&lt;/p&gt;
-
-&lt;p&gt;Si no has escuchado mucho sobre la computación cuántica, este video de una presentación dada por &lt;a href=&quot;https://www.xataka.com/investigacion/algun-dia-se-construye-ordenador-cuantico-plenamente-funcional-sera-gracias-parte-a-este-cientifico-espanol-hablamos-ignacio-cirac&quot;&gt;Ignacio Cirac&lt;/a&gt; nos da una introducción a lo que promete y las bases de funcionamiento.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/WJ3r6btgzBM&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Ahora veamos a más detalle cómo &lt;strong&gt;computa una máquina cuántica&lt;/strong&gt; y entendamos por qué no &lt;em&gt;toda la criptografía está perdida&lt;/em&gt;, aunque tuviéramos una computadora cuántica funcional hoy mismo.&lt;/p&gt;
-
-&lt;h2 id=&quot;principios-de-funcionamiento-de-una-computadora-cuántica&quot;&gt;Principios de funcionamiento de una computadora cuántica&lt;/h2&gt;
-
-&lt;p&gt;Hablemos un poco de los &lt;em&gt;principios físicos y matemáticos&lt;/em&gt; que hacen especial a una computadora cuántica.&lt;/p&gt;
-
-&lt;h3 id=&quot;superposición-cuántica&quot;&gt;Superposición cuántica&lt;/h3&gt;
-
-&lt;p&gt;Una computadora cuántica está basada en el &lt;a href=&quot;https://es.wikipedia.org/wiki/Superposici%C3%B3n_cu%C3%A1ntica&quot;&gt;principio de superposición cuántica&lt;/a&gt;, que establece, en palabras comunes, que una partícula tiene magnitudes físicas (como la posición o el momento) indeterminadas hasta que se realiza una medición sobre ellas. La partícula se comporta como si tuviera todos los estados posibles, algunos con más probabilidad que otros. Una forma fácil en la que se ha mencionado este principio es que &lt;strong&gt;“puede estar en dos lugares a la vez”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Lo que se escapa de nuestra comprensión común de la física es que esto de tener múltiples estados &lt;strong&gt;desaparece cuando lo observamos&lt;/strong&gt;, se dice que su &lt;em&gt;función de onda&lt;/em&gt; colapsa, lo que significa que la partícula “se decide” por uno de los múltiples estados en los que podía estar. La función de onda es la ecuación que describe todas las “probabilidades” de cada estado.&lt;/p&gt;
-
-&lt;p&gt;El ejercicio mental del &lt;a href=&quot;https://www.youtube.com/watch?v=lzxKZx7we4s&quot;&gt;Gato de Schrödinger&lt;/a&gt; te puede ayudar a imaginarlo, pero en &lt;a href=&quot;https://www.youtube.com/watch?v=9JlOmEEyTOU&quot;&gt;este video puedes de Quantum Fracture&lt;/a&gt; te ayudará a profundizar más en la complejidad del tema y como no es tan sencillo como “puede estar en dos estados a la vez”, sino en un número &lt;em&gt;infinito de estados&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Este artículo te explicará el principio de superposición cuántica sin matemáticas avanzadas: &lt;a href=&quot;https://www.elclaustro.edu.mx/agnosia/index.php/component/k2/item/427-superposicion-una-aproximacion-sin-matematicas-avanzadas-a-la-motivacion-de-la-mecanica-cuantica&quot;&gt;Superposición, una aproximación sin matemáticas avanzadas a la motivación de la mecánica cuántica&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Resumen:&lt;/strong&gt; Una particula como un átomo, un electron o un fotón, puede poseer múltiples estados físicos a la vez, con diferentes combinaciones entre todos sus posibles estados, dando lugar a &lt;em&gt;una infinidad de estados posibles&lt;/em&gt;. Las probabilidades de cada estado están contenidas en su &lt;em&gt;función de onda&lt;/em&gt;, y cuando medimos (miramos) una partícula se define en un estado de todos los posibles.&lt;/p&gt;
-
-&lt;h3 id=&quot;amplitud-de-onda-y-qubits&quot;&gt;Amplitud de onda y Qubits&lt;/h3&gt;
-
-&lt;p&gt;Cada uno de los estados posibles de una partícula y sus probabilidades están representados en lo que se llama su &lt;strong&gt;amplitud&lt;/strong&gt;. En el caso de la computación cuántica, nos interesa si una partícula &lt;em&gt;representa un cero o un uno&lt;/em&gt;. Por esto, un &lt;strong&gt;Qubit&lt;/strong&gt; (un bit cuántico) está representado por una amplitud de onda, que se puede entender parcialmente como la probabilidad de que ese bit sea cero o uno. Un qubit está caracterizado por dos amplitudes: una para el estado &lt;strong&gt;cero&lt;/strong&gt; y otra para el estado &lt;strong&gt;uno&lt;/strong&gt;. Estas amplitudes son números complejos, números que tienen un parte real y una parte imaginaria, como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2 + 3i&lt;/code&gt;, por ejemplo.&lt;/p&gt;
-
-&lt;p&gt;Una &lt;em&gt;palabra&lt;/em&gt; o conjunto de qubits está representado por &lt;strong&gt;2^n amplitudes&lt;/strong&gt;, donde n es el número de qubits. Así que en una palabra de 8 bits, tenemos 256 amplitudes de onda. Y aquí está el secreto de por qué la computación cuántica puede ser tan poderosa: &lt;strong&gt;con sólo &lt;em&gt;n&lt;/em&gt; objetos (qubits), puedes almacenar y procesar 2^n números complejos, mientras que en una computadora clásica necesitarías 2^n espacios de memoria&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;compuertas-cuánticas&quot;&gt;Compuertas cuánticas&lt;/h3&gt;
-
-&lt;p&gt;Una compuerta cuántica es el equivalente cuántico a la compuertas lógicas clásicas. Son una serie de transformaciones que se le aplica a las amplitudes que caracterizan nuestro conjunto de qubits para obtener los resultados deseados.&lt;/p&gt;
-
-&lt;p&gt;Después de aplicarle un serie de compuertas cuánticas a los qubits, lo que se conoce como un &lt;strong&gt;circuito cuántico&lt;/strong&gt;, se realiza una medición sobre uno o varios qubits para saber el resultado.&lt;/p&gt;
-
-&lt;p&gt;Las compuertas se comportan como multiplicaciones de matrices y vectores de gran tamaño, que serían imposibles de hacer para computadoras comunes, pero en la computadora cuántica se realizan mediante manipulaciones físicas que equivalen a estas transformaciones de matrices gigantescas.&lt;/p&gt;
-
-&lt;p&gt;No vamos a entrar en profundidad en este tema, pero si quieres leer más, &lt;a href=&quot;https://josueacevedo.medium.com/computaci%C3%B3n-cu%C3%A1ntica-compuertas-o-circuitos-cu%C3%A1nticos-27910f5338c8&quot;&gt;este artículo te puede servir&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;aceleración-cuántica&quot;&gt;Aceleración cuántica&lt;/h3&gt;
-
-&lt;p&gt;Gracias a las cualidades de las computadoras cuánticas antes descritas, es posible resolver algunos problemas de la computación mediante nuevos algoritmos cuánticos que reducen el tiempo esperado de ejecución de O(2^n) a O(n^k), siendo &lt;em&gt;k&lt;/em&gt; una constante. Es decir: &lt;strong&gt;aceleran la resolución de algunos problemas exponencialmente&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ahora que tenemos los conceptos más básicos de cómo funciona la computación cuántica y por qué puede ejecutar muchos más cálculos, hablemos de de algunas amenazas que presenta contra la criptografía.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-algoritmo-de-shor&quot;&gt;El algoritmo de Shor&lt;/h2&gt;
-
-&lt;p&gt;Uno de los problemas en los que está basada la criptografía asimétrica actual, es el problema de la factorización de números primos, es decir, encontrar los componentes primos de un número entero. &lt;em&gt;Creemos&lt;/em&gt; que encontrar los factores de un número lo suficientemente grande es casi imposible para nuestras computadoras clásicas actuales, incluso las más poderosas.&lt;/p&gt;
-
-&lt;p&gt;El &lt;strong&gt;algoritmo de Shor&lt;/strong&gt;, propuesto en 1995, traslada el problema de la factorización a otro problema difícil de las ciencias de la computación: encontrar el periodo de una función exponencial. Aquí puedes encontrar una explicación más a profundidad de esta transformación: &lt;a href=&quot;https://quantum-computing.ibm.com/composer/docs/iqx/guide/shors-algorithm#period-finding&quot;&gt;Period Finding&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Lo importante de esta transformación es lo siguiente: &lt;strong&gt;para una computadora cuántica, el problema de encontrar el periodo de una función exponencial no es tan difícil&lt;/strong&gt;. Una computadora cuántica resuelve este problema con una complejidad de O(log n) aproximadamente, ya que existen circuitos cuánticos que permiten encontrar el periodo de la función exponencial.&lt;/p&gt;
-
-&lt;p&gt;Esto significa que cuando una computadora cuántica tenga los suficientes qubits para representar los números que se usan en la generación de llaves asimétricas, la mayor parte de la criptografía asimétrica actual dejará de ser útil.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-algoritmo-de-grover&quot;&gt;El algoritmo de Grover&lt;/h2&gt;
-
-&lt;p&gt;Buscar un elemento que cumpla cierta condición en un conjunto es uno de los problemas que nos ayudarían a romper la criptografía actual. Por ejemplo, imagina que tienes un texto cifrado con AES con una llave de 128 bits. Si quieres romper la seguridad, vas a tener que probar 2^128 llaves en promedio para encontrar la correcta.&lt;/p&gt;
-
-&lt;p&gt;El &lt;a href=&quot;&quot;&gt;algoritmo de Grover&lt;/a&gt; permite acelerar esta operación de manera cuadrática, es decir, te tomaría en promedio la raíz cuadrada de &lt;em&gt;n&lt;/em&gt; encontrar el elemento que cumpla con la condición. En el caso del ejemplo anterior te tomaría en promedio 2^(128/2) = 2^64 operaciones.&lt;/p&gt;
-
-&lt;p&gt;Lo mismo podría pasar para todos cifrados simétricos (que usan la misma llave para cifrar y descifrar) y hasheados, el ataque consistiría en un estilo de fuerza bruta más inteligente o &lt;em&gt;cuadráticamente más rápida&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Sin embargo, como podrás notar, esto no es un problema tan grande, ya que para mantener el mismo nivel de seguridad que tenemos actualmente &lt;strong&gt;bastaría con duplicar el tamaño de las llaves usadas&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Esto seguirá siendo así mientras no se descubran debilidades en los algoritmos de cifrado simétricos o en las funciones de comprensión de los hashes que usamos.&lt;/p&gt;
-
-&lt;h2 id=&quot;criptografía-post-quantum&quot;&gt;Criptografía post-quantum&lt;/h2&gt;
-
-&lt;p&gt;Debido a las amenazas que presenta la computación cuántica a la criptografía de llave pública gracias al algoritmo de Shor, los criptográfos están manos a la obra diseñando nuevos algoritmos basados en otros principios aún no amenazados por la computación cuántica.&lt;/p&gt;
-
-&lt;p&gt;Algunos ejemplos que se ven prometedores son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Entramados (Lattice Cryptography)&lt;/li&gt;
-  &lt;li&gt;Códigos de corrección de errores (Error-correcting codes)&lt;/li&gt;
-  &lt;li&gt;Multivariada (Multivariate cryptography)&lt;/li&gt;
-  &lt;li&gt;Hashes (Hash-based cryptography)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;La explicación de cada uno de estos posibles caminos para la criptografía la dejaremos para otro artículo, déjanos un comentario si te interesa alguna en especial.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;La criptografía cuántica acelera la capacidad de cómputo, pero además es fundamentalmente &lt;em&gt;diferente&lt;/em&gt;  de la computación clásica, lo que permite resolver problemas con otros métodos imposibles de alcanzar con la computación actual.&lt;/p&gt;
-
-&lt;p&gt;Pero no toda la &lt;strong&gt;criptografía actual esta destinada a perderse con el avance de las computadas cuánticas&lt;/strong&gt;, solamente la criptografía asimétrica y toda aquella basada en la factorización de números primos.&lt;/p&gt;
-
-&lt;p&gt;Ciertamente, la seguridad de la criptografía simétrica se ve menguada por el poder de cómputo y los algoritmos cuánticos, pero no lo suficiente para darla por perdida, sino que bastará con fortalecerla con el mismo poder de cómputo cuántico y &lt;strong&gt;aumentando el tamaño de las llaves&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Finalmente, los investigadores ya están trabajando en formas para sustituir lo que se va a romper.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="quantum" /><category term="matemáticas" /><summary type="html">Se ha escuchado mucho sobre que la criptografía está completamente acabada si la computación cuántica tiene éxito. Entendamos si esto es verdad.</summary></entry></feed>
+&lt;p&gt;Para hacer la prueba vamos a crear un proyecto más o menos interesante: creemos un diccionario inverso. Tú das la descripción de la palabra, y la API nos devuelve una serie de opciones con un valor de certeza. Para lograr esto vamos a necesitar un modelo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Hagamos una pequeña API en Go usando Beego, mientras intentamos seguir los principios de Domain Driven Design</summary></entry></feed>

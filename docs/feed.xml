@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-01-10T22:26:01-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Aprendiendo desarrollo efectivamente</title><link href="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html" rel="alternate" type="text/html" title="Aprendiendo desarrollo efectivamente" /><published>2022-01-03T00:00:00-06:00</published><updated>2022-01-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente</id><content type="html" xml:base="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html">&lt;p&gt;Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado técnicas para aprender efectivamente, aunque la escuela trata de aprender lo más efectivamente posible.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-06-03T13:24:36-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Consistencia en el código</title><link href="https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo.html" rel="alternate" type="text/html" title="Consistencia en el código" /><published>2022-06-02T00:00:00-05:00</published><updated>2022-06-02T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo.html">&lt;p&gt;Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en “A Philosophy of Software Design”.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-la-consistencia-en-el-código&quot;&gt;¿Qué es la consistencia en el código?&lt;/h2&gt;
+
+&lt;p&gt;Básicamente, significa que las que cosas o el código que hace lo mismo luzca y se programen igual y las piezas de código que no hacen los mismo, luzcan y se programen diferente.&lt;/p&gt;
+
+&lt;p&gt;Hay varios factores a tomar en cuenta respecto a la consistencia del código, que trataremos en las siguientes sub-secciones.&lt;/p&gt;
+
+&lt;h3 id=&quot;nombres&quot;&gt;Nombres&lt;/h3&gt;
+
+&lt;p&gt;Para empezar, los nombres deben ser consistentes, tanto en estilo como en semántica. Es decir, si decidiste usar &lt;strong&gt;camelCase&lt;/strong&gt;, debes buscar usarlo en todos lados. Muchos guías de estilo y linters incluso lo sugieren un estilo, o es común tener una costumbre dependiendo del lenguaje (por ejemplo en JS y Java se acostumbra mucho el &lt;strong&gt;camelCase&lt;/strong&gt;, mientras que en Python se recomienda usar &lt;strong&gt;snake_case&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;El segundo punto, la semántica tiene que ver con que siempre te refieras a la misma idea con el mismo nombre, por ejemplo, si estás modelando algo que tiene que ver con boletos para un evento, es buena idea nombrar a las variables siempre de la misma forma, como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ticket&lt;/code&gt;, en vez de nombrarlas &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ticket&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bill&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrance_ticket&lt;/code&gt;, etc.&lt;/p&gt;
+
+&lt;p&gt;Si decides usar nombres como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; o &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt; para numerar cosas o en bloques, asegúrate de que tengan la misma semántica en todos lados, por ejemplo, usa &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; para el primer índice en un ciclo, y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; para un índice interno.&lt;/p&gt;
+
+&lt;p&gt;Tener un sistema de nombrado consistente hará que la &lt;strong&gt;carga cognitiva&lt;/strong&gt; que requiere programar en tu base de código disminuya.&lt;/p&gt;
+
+&lt;h3 id=&quot;interfaces&quot;&gt;Interfaces&lt;/h3&gt;
+
+&lt;p&gt;Crear una interfaz (o una clase abstracta, o una estructura, o un protocolo) o cualquier cosa que sirva para definir un &lt;em&gt;contrato&lt;/em&gt; para un conjunto de módulos que hagan cosas similares, permitirá que tú código sea más fácil y rápido de entender. Basta con entender una sola de las implementaciones para comprender todas las demás.&lt;/p&gt;
+
+&lt;p&gt;El ejemplo perfecto son los métodos de pago en un sistema de eCommerce. En vez de inventar cada vez un una nueva interfaz, puedes definir que la interfaz común sea algo como:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PaymentMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+    Defines the interface for all payment methods
+    &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;charge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;refund&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Si tu lenguaje no tiene, puedes documentar y dejar claro para tu equipo cómo deben cumplirse las interfaces y contratos entre los diferentes módulos.&lt;/p&gt;
+
+&lt;h3 id=&quot;patrones-de-diseño-y-principios-de-programación&quot;&gt;Patrones de diseño y principios de programación&lt;/h3&gt;
+
+&lt;p&gt;Muchas soluciones comunes a problemas comunes que encontramos en el desarrollo se han definido claramente y nombrado, para poder ser usadas y entendidas como una receta por muchos programadores.&lt;/p&gt;
+
+&lt;p&gt;A estas soluciones las llamamos &lt;strong&gt;patrones de diseño&lt;/strong&gt; y la familiaridad con ellos, pueden hacer que tú base de código se más fácil de mantener. Usarlos cuando es adecuado, puede ayudarte a darle consistencia a tu código, lo mismo que otro principios de programación, como por ejemplo, inversión de dependencias.&lt;/p&gt;
+
+&lt;p&gt;Sólo debes tener en cuenta que para que tu equipo se beneficie de esto, debe &lt;em&gt;conocer&lt;/em&gt; estas soluciones, ya que ese es uno de los principales objetivos de los patrones: que los programadores tengan un lenguaje común de soluciones que los ayuden a comunicarse más fácil.&lt;/p&gt;
+
+&lt;h2 id=&quot;invariantes&quot;&gt;Invariantes&lt;/h2&gt;
+
+&lt;p&gt;Una &lt;strong&gt;condición que siempre se cumple&lt;/strong&gt; en tu programa es una invariante. Por ejemplo, muchos los lenguajes funcionales te aseguran que todo es una expresión, por lo que siempre puedes usar cualquier construcción del lenguaje como algo que te devuelve un valor.&lt;/p&gt;
+
+&lt;p&gt;Establecer invariantes en tu base de código y estilo de programación, ayudará a que el código sea consistente. Por ejemplo, en JQuery se creo la invariante de que todas las funciones que usan un elemento, devuelven este mismo elemento, por lo que puedes encadenar llamadas y siempre funcionará.&lt;/p&gt;
+
+&lt;p&gt;Piensa en cosas que puedas hacer invariantes y ayudarás a que tu código sea más consistente.&lt;/p&gt;
+
+&lt;h2 id=&quot;asegura-la-consistencia-en-el-código&quot;&gt;Asegura la consistencia en el código&lt;/h2&gt;
+
+&lt;p&gt;Hay varias formas de asegurar que tu equipo cree código consistente, no son excluyentes, sino que se ayudan unas a otras.&lt;/p&gt;
+
+&lt;p&gt;La primera forma, y la más fuerte, es mediante el aseguramiento automático del cumplimiento de las reglas que pueden ser representadas en alguna herramienta. Por ejemplo, los &lt;strong&gt;linters&lt;/strong&gt;, verificadores de complejidad del código, combinados con las herramientas dadas por los sistemas de versionamiento  de código (ver &lt;a href=&quot;https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks&quot;&gt;git hooks&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Este conjunto de herramientas podría verificar y obligar que se cumplan las reglas de formateo de código y otras medidas de calidad.&lt;/p&gt;
+
+&lt;p&gt;Otra herramienta es la &lt;strong&gt;documentación&lt;/strong&gt;, y yo diría que es la más importante porque es en la que se define todas las cosas que deberían ser uniformes y trasciende a las personas, estructuras de equipo y herramientas. Es muy importante que (de preferencia) al iniciar el proyecto crees una guía de estilo y sugerencias de uniformidad que ayuden a tu equipo a crear código uniforme. Como te imaginarás, esto es trabajo extra, pero vale la pena.&lt;/p&gt;
+
+&lt;p&gt;Finalmente &lt;em&gt;tienes&lt;/em&gt; que promover la consistencia con tu ejemplo y mediante las revisiones de código, si las tienes. Cuando escribas código nuevo, busca la guía de estilo y las convenciones. Si no son explícitas, observa el código para que veas lo que puedes extraer como convención.&lt;/p&gt;
+
+&lt;h2 id=&quot;mantén-la-consistencia&quot;&gt;Mantén la consistencia&lt;/h2&gt;
+
+&lt;p&gt;Es muy fácil querer cambiar algo porque encontramos una forma diferente de hacer las cosas que preferimos por gusto o porque es un poquito mejor. En estos casos, tienes que pensar muy bien si vale la pena romper la consistencia de tu base de código por una mejora.&lt;/p&gt;
+
+&lt;p&gt;Como en muchas ocasiones en el código, esto implica un intercambio de valor y como responsable de esta decisión, tienes que evaluar los pros y los contras. Piensa: ¿me va a dar tanta ventaja como para que valga la pena meter esta complejidad extra? ¿vale tanto la pena para que haga replique este cambio en todo los otros lugares en los qu se hace esto?&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Mantener la consistencia, en la base de código es algo que vale la pena para reducir el esfuerzo cognitivo que a los desarrolladores les cuesta trabajar en tu código. Esto ayudará a que tu código sea mantenible y sea más probable que tenga una larga vida.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="consistencia," /><category term="base-de-código," /><category term="posd" /><summary type="html">La consistencia y uniformidad en una base de código son muy importantes, en este artículo veremos cómo podemos lograrlo y en qué cosas debes poner atención.</summary></entry><entry><title type="html">Aprendiendo desarrollo efectivamente</title><link href="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html" rel="alternate" type="text/html" title="Aprendiendo desarrollo efectivamente" /><published>2022-01-03T00:00:00-06:00</published><updated>2022-01-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente</id><content type="html" xml:base="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html">&lt;p&gt;Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado técnicas para aprender efectivamente, aunque la escuela trata de aprender lo más efectivamente posible.&lt;/p&gt;
 
 &lt;p&gt;El desarrollo de software es un campo muy amplio en el que tenemos que aprender constantemente, sea por el cambio de las tecnologías, porque tenemos que aprender del área en la que estamos aplicando nuestro conocimiento tecnológico para crear software efectivo o simplemente porque queremos cambiar de área.&lt;/p&gt;
 
@@ -670,87 +746,4 @@ usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementad
 
 &lt;p&gt;Shameless plug: &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;aquí puedes ver nuestra presentación de los wizardzines&lt;/a&gt;.&lt;/p&gt;
 
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/drPMyDyQG8M&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="preguntas" /><category term="investigación" /><summary type="html">Hablemos sobre las técnicas que Julia Evans recomienda para converirte en un mejor programador(a) y avanzar en tu carrera.</summary></entry><entry><title type="html">Recursos para aprender Criptografía en 2022</title><link href="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html" rel="alternate" type="text/html" title="Recursos para aprender Criptografía en 2022" /><published>2021-12-08T00:00:00-06:00</published><updated>2021-12-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/08/recursos-para-aprender-criptografia-en-2021.html">&lt;p&gt;La criptografía es un campo con mucha demanda laboral actualmente porque es importante para diferentes áreas de la informática. En este artículo vamos hablar su importancia y cómo puedes aprenderlo si está dentro de tus intereses.&lt;/p&gt;
-
-&lt;h2 id=&quot;la-importancia-de-la-criptografía&quot;&gt;La importancia de la criptografía&lt;/h2&gt;
-
-&lt;p&gt;En el artículo &lt;a href=&quot;https://blog.thedojo.mx/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;¿Qué es la Criptografía?&lt;/a&gt; explicamos que es un conjunto de técnicas y conocimiento que busca &lt;strong&gt;&lt;em&gt;ocultar la información&lt;/em&gt;&lt;/strong&gt;, derivada de las matemáticas y las ciencias de la computación.&lt;/p&gt;
-
-&lt;p&gt;El mundo de la computación necesita mantener secretos en muchas áreas, principalmente en cosas relacionadas como la identificación y autenticación de personas y elementos. Además, la criptografía tiene usos laterales, como la verificación de la autenticidad de la información. Cada día hay más valor en nuestras redes informáticas, por lo que cada vez hay más incentivos para robar la información que protegemos mediante la criptografía.&lt;/p&gt;
-
-&lt;p&gt;En tiempos modernos, debido a lo pesado de procesos de cifrado y hasheado, también se ha estado usando para probar que un elemento de un sistema distribuido hizo muchos cálculos, un concepto llamado &lt;a href=&quot;https://cointelegraph.com/explained/proof-of-work-explained&quot;&gt;prueba de trabajo&lt;/a&gt;, usado en Bitcoin.&lt;/p&gt;
-
-&lt;p&gt;Como resumen: &lt;strong&gt;está aumentando  el número de personas que se requiere&lt;/strong&gt; para trabajar en criptografía. Se requieren personas que diseñen sistemas que usen los esquemas y algoritmos correctamente, criptográfos que diseñen nuevos algoritmos adecuados para nuestra época y las décadas que siguen, resistentes a el avance del hardware y la computación cuántica, y finalmente, personas que implementen correctamente los algoritmos diseñados por los matemáticos y criptográfos tanto en hardware como en software.&lt;/p&gt;
-
-&lt;p&gt;¿Quieres ser tú una de estas personas? ¿O tal vez quieres aprender un poco más solamente para crear software más seguro? Veamos algunos recursos que te pueden ayudar.&lt;/p&gt;
-
-&lt;h2 id=&quot;libros&quot;&gt;Libros&lt;/h2&gt;
-
-&lt;p&gt;Los siguientes libros te enseñarán lo suficiente de criptografía de manera general para que no te confundas con los términos y para tener una idea clara de los puedes y no puedes hacer al usar diferentes esquemas y tipos de algoritmos.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-code-book&quot;&gt;The Code Book&lt;/h3&gt;
-
-&lt;p&gt;Este libro está escrito por un físico que ha escrito varios libros de divulgación. Te cuenta los usos e historia de la criptografía y es una excelente introducción para motivarte a empezar tu camino en criptografía con el mayor interés posible. Puedes ver la presentación del libro aquí: &lt;a href=&quot;https://simonsingh.net/books/the-code-book/&quot;&gt;The Code Book&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;serious-cryptography&quot;&gt;Serious Cryptography&lt;/h3&gt;
-
-&lt;p&gt;Escrito por Jean Philippe Aumasson, un criptógrafo renombrado a nivel mundial e inventor de varios algoritmos de cifrado y hasheado modernos, es libro es una guía para los principiantes de criptografía, te enseña conceptos básicos y avanza hasta contarte de criptografía cuántica. Si no vas a leer o estudiar nada más de criptografía este libro es suficiente para no estar en blanco.&lt;/p&gt;
-
-&lt;p&gt;Tiene un estilo divertido, desenfadado, con una gran cantidad de ejemplos y la profundidad adecuada para que no pierdas el interés. Página oficial: &lt;a href=&quot;https://nostarch.com/seriouscrypto&quot;&gt;Serious Cryptography&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1639196918/crypto_cover-front-final_REV_HM_ceeqzb.png&quot; alt=&quot;Portada de Serious&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;introduction-to-cryptography&quot;&gt;Introduction to Cryptography&lt;/h3&gt;
-
-&lt;p&gt;Es una introducción un poco más formal y académica a la criptografía, con el que reforzarás algunos conceptos si ya sabes de criptografía, pero especialmente bueno en el caso de que no tengas ningún conocimiento. Página oficial: &lt;a href=&quot;https://link.springer.com/book/10.1007/3-540-49244-5&quot;&gt;Introduction to Cryptography en Springer&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;cryptography-engineering&quot;&gt;Cryptography Engineering&lt;/h3&gt;
-
-&lt;p&gt;Este libro está escrito por un equipo de criptográfos de nivel mundial, con varios algoritmos publicados y todavía en uso. Este libro te explica las bases de la criptografía desde un enfoque un poco más rígido que Serious Cryptography. Está enfocado en las decisiones de diseño detrás de los esquemas criptográficos actuales. Propone un plan de 12 semanas que te puede ayudar a tener estructura al estudiar el libro.
-Puedes ver la presentación de uno de los autores en &lt;a href=&quot;https://www.schneier.com/books/cryptography-engineering/&quot;&gt;Cryptography Engineering&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-graduate-course-in-applied-cryptography&quot;&gt;A Graduate Course in Applied Cryptography&lt;/h2&gt;
-
-&lt;p&gt;Este curso es la recopilación del curso de criptografía completo de la universidad de Stanford. En mi opinión es el libro más profundo de todos los mencionados aquí en tres temas: cifrado simétrico, asimétrico y esquemas criptográficos. Tiene explicaciones a alto nivel y las demostraciones matemáticas de por qué es seguro. Puedes leerlo de dos formas: lo lees completo con todo y las demostraciones si ya conoces los conceptos básicos o te saltas las demostraciones y los ejercicios para adquirir los conceptos básicos.&lt;/p&gt;
-
-&lt;p&gt;Es completamente gratuito, lo puedes descargar aquí: &lt;a href=&quot;http://toc.cryptobook.us/&quot;&gt;A Graduate Course in Applied Cryptography&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;recursos-interactivos&quot;&gt;Recursos interactivos&lt;/h2&gt;
-
-&lt;p&gt;En esta sección abarcaremos algunos recursos con más involucramiento que te permitirán poner manos a la obra.&lt;/p&gt;
-&lt;h3 id=&quot;cryptopals-crypto-challenges&quot;&gt;Cryptopals Crypto Challenges&lt;/h3&gt;
-
-&lt;p&gt;Esta es una colección de ejercicios en los que programarás y atacarás algunos esquemas criptográficos para entenderlos profundamente. Los ejercicios varían bastante en dificultad y debes tener fuertes bases de criptografía (como la provista por los libros sugeridos anteriormente) y de programación para poder realizarlos.&lt;/p&gt;
-
-&lt;p&gt;Puedes verlos aquí: &lt;a href=&quot;https://cryptopals.com/&quot;&gt;the cryptopals crypto challenges&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;cryptohack&quot;&gt;Cryptohack&lt;/h3&gt;
-
-&lt;p&gt;Es una herramienta que te enseñará las bases de la criptografía con ejercicios y retos interactivos. Tiene una comunidad y los incentivos de un juego, que te ayudarán a mantenerte motivado y a aprender más. Pueder visitarla aquí: &lt;a href=&quot;https://cryptohack.org/&quot;&gt;Cryptohack&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1639199460/Screen_Shot_2021-12-10_at_23.10.36_xzer7u.png&quot; alt=&quot;Logo de Cryptohack&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;cursos-en-video&quot;&gt;Cursos en video&lt;/h1&gt;
-
-&lt;p&gt;En esta sección te recomendaremos buscar en las principales plataformas de cursos masivos online, como EDX y Coursera, ya que existen múltiples cursos impartidos por universidades importantes, con un estilo académico. Puedes probar varios estilos de instructor y elegir el que más te guste. Un curso un poco menos académico y con explicaciones bastante buenas es el &lt;a href=&quot;https://www.udacity.com/course/applied-cryptography--cs387&quot;&gt;Curso de Criptografía Aplicada Gratuito de Udacity&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;recursos-en-español&quot;&gt;Recursos en español&lt;/h2&gt;
-
-&lt;p&gt;Finalmente, veamos algunos recursos en español por si sientes que el inglés no lo dominas lo suficiente para meterte a temas complejos como este.&lt;/p&gt;
-
-&lt;h2 id=&quot;curso-de-criptografía-informática-básica-para-principiantes&quot;&gt;Curso de Criptografía Informática Básica para principiantes&lt;/h2&gt;
-
-&lt;p&gt;En este curso introductorio el instructor te enseñará con ejemplos sencillos los conceptos más básicos de la criptografía y algunos ejemplos con Python. Lo puedes ver en YouTube aquí: &lt;a href=&quot;https://www.youtube.com/playlist?list=PLG1hKOHdoXkt1V51gyPMZqgQ8LjK3LfmJ&quot;&gt;Curso de Criptografía Informática Básica para principiantes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;curso-introductorio-a-la-teoría-de-números-y-criptografía&quot;&gt;Curso introductorio a la teoría de números y criptografía&lt;/h2&gt;
-
-&lt;p&gt;Este es un curso mucho más profundo en las matemáticas que soportan los esquemas criptográficos, con ejemplos explicados paso a paso, para comprender las bases matemáticas, la puedes ver aquí: &lt;a href=&quot;https://www.youtube.com/playlist?list=PLterBef0AD5ZyXFaDfueQYXkLMs_OVkoV&quot;&gt;Curso introductorio a la teoría de números y criptografía&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;crypt4you&quot;&gt;Crypt4You&lt;/h3&gt;
-
-&lt;p&gt;Es un proyecto gratuito creado en 2012 en españa en el que se recorren los principales temas de la criptografía moderna. Debido a la edad del curso, debes ser precavido porque puede que algunas cosas hayan cambiado desde que se creó, por ejemplo, que SHA-1 ya no se considera seguro.&lt;/p&gt;
-
-&lt;p&gt;Presentación oficial: &lt;a href=&quot;https://www.dragonjar.org/crypt4you-aprende-criptografia-y-seguridad-informatica-de-otra-forma-y-gratis.xhtml&quot;&gt;Crypt4You&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;En esta pequeña guía incluimos algunos recursos que te pueden ayudar para empezar a &lt;strong&gt;rascar la superficie&lt;/strong&gt; de la criptografía. Estamos trabajando en un temario completo que no sólo te de la introducción, sino que te ayude a llegar a la parte avanzada si así lo deseas. Esperamos tus comentarios si se nos pasó algún recurso.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="libros" /><category term="cursos" /><category term="matemáticas" /><summary type="html">Aprende sobre algunos recursos que te servirán para entrenarte en una de las ramas más importantes de la computación actualmente: la criptografia.</summary></entry></feed>
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/drPMyDyQG8M&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="preguntas" /><category term="investigación" /><summary type="html">Hablemos sobre las técnicas que Julia Evans recomienda para converirte en un mejor programador(a) y avanzar en tu carrera.</summary></entry></feed>

@@ -502,4 +502,22 @@ var store = [{
         "tags": ["aprendizaje","a-mind-for-numbers","barbara-oakley"],
         "url": "/2022/01/03/aprendiendo-desarrollo-efectivamente.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_420/v1641684828/adrien-converse-kCrrUx7US04-unsplash_cwpd7f.jpg"
+      },{
+        "title": "Problemas difíciles de la computación y su relación con la criptografía",
+        "excerpt":"De los algoritmos de cifrado que hemos hablado hasta ahora. Con la criptografía simétrica no nos enfrentamos a ciertos problemas que criptografía de llave pública sí tenemos en cada escenario, por ejemplo, coordinar y escoger una llave segura para comunicaciones privadas sin conocer al previamente a la contraparte. En post...","categories": [],
+        "tags": ["criptografía","computer-science","cs","complejidad-computacional"],
+        "url": "/2022/01/14/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html",
+        "teaser": null
+      },{
+        "title": "Consistencia en el código",
+        "excerpt":"Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en “A Philosophy of Software Design”. ¿Qué es la consistencia en el código? Básicamente,...","categories": [],
+        "tags": ["consistencia,","base-de-código,","posd"],
+        "url": "/2022/06/02/consistencia-en-el-codigo.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1654205989/joshua-dow-E17e1LZV0dg-unsplash_toh95b.jpg"
+      },{
+        "title": "Consistencia en el código",
+        "excerpt":"Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en “A Philosophy of Software Design”. ¿Qué es la consistencia en el código? Básicamente,...","categories": [],
+        "tags": ["consistencia,","base-de-código,","posd"],
+        "url": "/2022/06/02/consistencia-en-el-codigo.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1654205989/joshua-dow-E17e1LZV0dg-unsplash_toh95b.jpg"
       }]
