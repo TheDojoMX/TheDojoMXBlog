@@ -19,7 +19,15 @@ El libro habla de manera más o menos cronológica del nacimiento de los primero
 
 El libro abarca hasta el año 1960, poco antes del nacimiento de Lisp.
 
-## Los capítulos
+## Contenido
+
+El primer capítulo trata sobe el nacimiento de la computación como la conocemos, cómo **Alan Turing**, **Alonzo Church** definieron lo que conocemos como computable, gracias al ["Problema de la decisión"](https://paginas.matem.unam.mx/videos/2017/marzo-2017/seminario-junior/427-acerca-del-problema-de-la-decision), definido en los diez problemas del matemático David Hilbert.
+
+Además habla de las contribuciones de [John Von Neumann](https://www.britannica.com/biography/John-von-Neumann) para el diseño y la concreción de las computadoras como medios físicos.
+
+El segundo capítulo habla del camino independiente que tuvo **Konrad Zuse**, en la creación de máquinas automáticas para la computación de problemas lógicos y matemáticos. Habla de cómo hizo la **Z1, Z2 y Z3**, computadoras mecánicas, cada una mejor que la otra. Además habla de la creación de un lenguaje de programación teórico llamado **Plankalkül**.
+
+Estos dos capítulos son muy interesantes porque nos ayudan a comprender cómo la computación automática es algo que estaba muy cerca de ser logrado por la década de 1930, por diferentes mentes y de formas parecidas.
 
 ## Aprendizajes
 
@@ -33,4 +41,4 @@ Konrad persiguió sus intereses con perseverancia y logró cosas muy parecidas a
 
 ### Acerca de los equipos de trabajo
 
-Para crear algo que vale la pena, como un lenguaje de programación, que es una creación bastante compleja, casi siempre hace falta la cooperación de muchas personas por un periodo sostenido (). Estas
+Para crear algo que vale la pena, como un lenguaje de programación, que es una creación bastante compleja, casi siempre hace falta la cooperación de muchas personas por un periodo sostenido (como ya vimos, hay excepciones). Estas
