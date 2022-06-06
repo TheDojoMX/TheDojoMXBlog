@@ -219,11 +219,13 @@
 
 
 
+
+
 <div id="main" role="main">
   
 
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     
     
     
@@ -235,11 +237,10 @@
           
           
 
-
         </header>
       
 
-      <section class="page__content" itemprop="text">
+      <section class="page__content e-content" itemprop="text">
         
         {
   "version": "https://jsonfeed.org/version/1",
@@ -361,7 +362,6 @@
   
   
 </div>
-
     </div>
 
     

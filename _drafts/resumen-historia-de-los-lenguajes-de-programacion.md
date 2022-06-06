@@ -29,6 +29,24 @@ El segundo capítulo habla del camino independiente que tuvo **Konrad Zuse**, en
 
 Estos dos capítulos son muy interesantes porque nos ayudan a comprender cómo la computación automática es algo que estaba muy cerca de ser logrado por la década de 1930, por diferentes mentes y de formas parecidas.
 
+Los siguientes capítulos nos van hablando de la progresión de los lenguajes de programación, todos guiados principalmente por dos cosas:
+
+1. La capacidad de la computaras existentes, pero sobre todo, sus _límitaciones_.
+2. La intención de los usuarios de la computadora.
+
+No vamos a hablar de cada uno de los capítulos y lenguajes que se mencionan en el libro, pero hablemos de la progresión general que se fue dando y cómo se acercaban cada vez más los lenguajes que conocemos hoy.
+
+Las primeras computadoras programables requerían que se recablearan, es decir, esta era su forma de entrada de información, sin embargo, se empezaron a crear tablas de instrucciones que ayudaban a programar. Tenemos por ejemplo el [ENIAC Short Code](https://hopl.info/showlanguage2.prx?exp=6030).
+
+También, durante esta época empezaron a crearse cosas que damos por sentado, pero que seguramente surgieron naturalmente durante el trabajo del día a día de las primeras _programadoras_:
+
+1. La **subrutina**, como una plantilla de código reutilizable a la que sólo se le agregaban los datos en lugares designados para ello.
+2. El **punto de ruptura**, que es una pausa en la ejecución de un programa, para revisar el estado general del sistema y el programa.
+
+Después de esto empezaron a nacer los primeros lenguajes _ensambladores_, que correspondían a su propia computadora y que por lo tanto, _no se podían usar en ningún otro lado_. Tenemos como ejemplo (y primer lenguaje ensamblador reconocido) el **ARC Assembly de Kathleen Booth**. Así surgieron más lenguajes de este estilo, cada uno para su máquina específica hasta la creación de los primeros intérpretes y compiladores.
+
+### Las primeras hackers
+
 ## Aprendizajes
 
 Este libro, más allá de contarte la historia de la programación entre los años 1940-1960, te comunica varias lecciones que puedes aprender si lees entre líneas. A continuación listo mis aprendizajes.
