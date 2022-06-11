@@ -1,4 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-06-06T12:52:27-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Consistencia en el código</title><link href="https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo.html" rel="alternate" type="text/html" title="Consistencia en el código" /><published>2022-06-02T00:00:00-05:00</published><updated>2022-06-02T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo.html">&lt;p&gt;Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en “A Philosophy of Software Design”.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-06-11T12:49:38-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Resumen: Historia de los lenguajes de programación</title><link href="https://blog.thedojo.mx/2022/06/11/resumen-historia-de-los-lenguajes-de-programacion.html" rel="alternate" type="text/html" title="Resumen: Historia de los lenguajes de programación" /><published>2022-06-11T00:00:00-05:00</published><updated>2022-06-11T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/06/11/resumen-historia-de-los-lenguajes-de-programacion</id><content type="html" xml:base="https://blog.thedojo.mx/2022/06/11/resumen-historia-de-los-lenguajes-de-programacion.html">&lt;p&gt;¿Te has preguntado cómo nacieron los primeros lenguajes de programación? Manuel Rubio, autor de ‘Historia de los lenguajes de programación’, nos habla lo explica de manera cronológica en el primer tomo de esta obra.&lt;/p&gt;
+
+&lt;h2 id=&quot;resumen-general&quot;&gt;Resumen general&lt;/h2&gt;
+
+&lt;p&gt;El libro habla de manera más o menos cronológica del nacimiento de los primero lenguajes de programación, desde la época de 1940. La forma en que lo narra te hace comprender claramente por qué eran necesarios y las diferentes tendencias que se dieron.&lt;/p&gt;
+
+&lt;p&gt;El libro abarca hasta el año 1960, poco antes del nacimiento de Lisp. Hablemos ahora de las fases que el libro cubre a grandes rasgos.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-nacimiento-de-la-computación-automática&quot;&gt;El nacimiento de la computación automática&lt;/h2&gt;
+
+&lt;p&gt;El primer capítulo trata sobe el nacimiento de la computación como la conocemos, cómo &lt;strong&gt;Alan Turing&lt;/strong&gt;, &lt;strong&gt;Alonzo Church&lt;/strong&gt; definieron lo que conocemos como computable, gracias al &lt;a href=&quot;https://paginas.matem.unam.mx/videos/2017/marzo-2017/seminario-junior/427-acerca-del-problema-de-la-decision&quot;&gt;“Problema de la decisión”&lt;/a&gt;, definido en los diez problemas del matemático David Hilbert.&lt;/p&gt;
+
+&lt;p&gt;Además habla de las contribuciones de &lt;a href=&quot;https://www.britannica.com/biography/John-von-Neumann&quot;&gt;John Von Neumann&lt;/a&gt; para el diseño y la concreción de las computadoras como medios físicos.&lt;/p&gt;
+
+&lt;p&gt;El segundo capítulo habla del camino independiente que tuvo &lt;strong&gt;Konrad Zuse&lt;/strong&gt;, en la creación de máquinas automáticas para la computación de problemas lógicos y matemáticos. Habla de cómo hizo la &lt;strong&gt;Z1, Z2 y Z3&lt;/strong&gt;, computadoras mecánicas, cada una mejor que la otra. Además habla de la creación de un lenguaje de programación teórico llamado &lt;strong&gt;Plankalkül&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Estos dos capítulos son muy interesantes porque nos ayudan a comprender cómo la computación automática es algo que estaba muy cerca de ser logrado por la década de 1930, por diferentes mentes y de formas parecidas.&lt;/p&gt;
+
+&lt;h2 id=&quot;los-primero-lenguajes-que-corrían-en-computadoras&quot;&gt;Los primero lenguajes que corrían en computadoras&lt;/h2&gt;
+
+&lt;p&gt;Los siguientes capítulos nos van hablando de la progresión de los lenguajes de programación, todos guiados principalmente por dos cosas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;La capacidad de la computaras existentes, pero sobre todo, sus &lt;em&gt;límitaciones&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;La intención de los usuarios de la computadora.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;No vamos a hablar de cada uno de los capítulos y lenguajes que se mencionan en el libro, pero hablemos de la progresión general que se fue dando y cómo se acercaban cada vez más los lenguajes que conocemos hoy.&lt;/p&gt;
+
+&lt;p&gt;Las primeras computadoras programables requerían que se recablearan, es decir, esta era su forma de entrada de información, sin embargo, se empezaron a crear tablas de instrucciones que ayudaban a programar. Tenemos por ejemplo el &lt;a href=&quot;https://hopl.info/showlanguage2.prx?exp=6030&quot;&gt;ENIAC Short Code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;También, durante esta época empezaron a crearse cosas que damos por sentado, pero que seguramente surgieron naturalmente durante el trabajo del día a día de las primeras &lt;em&gt;programadoras&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;La &lt;strong&gt;subrutina&lt;/strong&gt;, como una plantilla de código reutilizable a la que sólo se le agregaban los datos en lugares designados para ello.&lt;/li&gt;
+  &lt;li&gt;El &lt;strong&gt;punto de ruptura&lt;/strong&gt;, que es una pausa en la ejecución de un programa, para revisar el estado general del sistema y el programa.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Después de esto empezaron a nacer los primeros lenguajes &lt;em&gt;ensambladores&lt;/em&gt;. Un lenguaje &lt;strong&gt;ensamblador&lt;/strong&gt; es un conjunto de instrucciones apegadas al procesador que lo correrá, que sustituyen las instrucciones en binario y que para pasar a código máquina necesitan una fase de transformación, que los primeros programadores llamaban la fase de “ensamblaje”. En este sentido, lo que conocemos como lenguajes ensambladores, debieron haberse llamado &lt;a href=&quot;https://softwareengineering.stackexchange.com/questions/405080/why-is-assembly-language-called-assembly&quot;&gt;&lt;em&gt;lenguajes ensamblados&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Estos lenguajes correspondían a su propia computadora y que por lo tanto, &lt;em&gt;no se podían usar en ningún otro lado&lt;/em&gt;. Tenemos como ejemplo (y primer lenguaje ensamblador reconocido) el &lt;strong&gt;ARC Assembly de Kathleen Booth&lt;/strong&gt;. Así surgieron más lenguajes de este estilo, cada uno para su máquina específica hasta la creación de los primeros intérpretes y compiladores.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-primer-intérprete&quot;&gt;El primer intérprete&lt;/h2&gt;
+
+&lt;p&gt;¿Qué nacio primero? Los compiladores o los intérpretes? Pues resulta que lo primero que permitió usar un lenguaje de alto nivel, es decir, algo no relacionado directamente con las instrucciones de específicas de un procesador, fue un &lt;strong&gt;intérprete&lt;/strong&gt; propuesto por John Mauchly en 1949. Este fue llamado primero &lt;em&gt;Brief Code&lt;/em&gt; y después &lt;em&gt;Short Code&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Un intérprete es un programa que transforma un lenguaje de alto nivel en código máquina, es decir, instrucciones para el procesador para el que este intérprete está implementado y además lo ejecuta.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Short Code&lt;/strong&gt; fue un lenguaje pensado para representar y resolver expresiones matemáticas. Fue implementado para el &lt;strong&gt;BINAC&lt;/strong&gt; en 1949 y para el &lt;strong&gt;UNIVAC I&lt;/strong&gt; en 1950, por William Schmitt. Aquí empieza la historia de los lenguajes que no están pegados a la arquitectura de un procesador.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-primer-compilador&quot;&gt;El primer compilador&lt;/h2&gt;
+
+&lt;p&gt;Una de las primeras programadoras, &lt;strong&gt;Grace Hopper&lt;/strong&gt;, después haber estado programando de forma arcaica mucho tiempo, comenzó a crear una colección de &lt;em&gt;subrutinas&lt;/em&gt; para facilitarse el trabajo. Así que su trabajo se fue convirtiendo en juntar una serie de subrutinas que lograran la tarea en cuestión.&lt;/p&gt;
+
+&lt;p&gt;El siguiente paso natural, por lo tanto, fue la automatización de este proceso, de juntar o &lt;em&gt;compilar&lt;/em&gt; todas estas partes de código en un programa final. Así fue que nació el primer compilador, creado por Grace Hopper, el &lt;strong&gt;A-0&lt;/strong&gt; para la &lt;a href=&quot;https://www.computinghistory.org.uk/det/5487/Grace-Hopper-completes-the-A-0-Compiler/&quot;&gt;UNIVAC I&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Después de esto siguieron surgiendo compiladores, como el A-1, A-2, MATH-MATIC, ARITH-MATIC, por ejemplo. Estos lenguajes y compiladores surgieron por las diferentes necesidades de las empresas que poseían una computadora y un equipo capaz de desarrollar estos lenguajes.&lt;/p&gt;
+
+&lt;h3 id=&quot;fortran-i-y-ii&quot;&gt;Fortran I y II&lt;/h3&gt;
+
+&lt;p&gt;La mayor desventaja de los lenguajes creados en la década de los 50’s es que representaban un gran intercambio entre velocidad &lt;em&gt;de programación&lt;/em&gt; por velocidad &lt;em&gt;de ejecución&lt;/em&gt;. Es por eso que &lt;strong&gt;John Backus&lt;/strong&gt; hizo la propuesta de un lenguaje que fuera fácil de programar, y por lo tanto de enseñar, y que al mismo tiempo no representara una gran diferencia en velocidad de ejecución.&lt;/p&gt;
+
+&lt;p&gt;Así presentó el informe sobre FORTRAN (&lt;strong&gt;FOR&lt;/strong&gt;mula &lt;strong&gt;TRAN&lt;/strong&gt;slator), en el que se mencionaban justo estas dos fortalezas: escribir en alto nivel fórmulas matemáticas al mismo tiempo que compilar un programa muy eficiente en ejecución para la computadora &lt;strong&gt;IBM 704&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Aquí se empiezan a ver las malas capacidades de estimación de los desarrolladores: John Backus dijo que la implementación primera versión tomaría 6 meses, pero en realidad tomó 2 años y medio, 5 veces más.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, el resultado de FORTRAN como producto fue impecable: a diferencia de los demás compiladores y lenguajes tenía una muy buena documentación que permitió su adopción masiva, convirtiéndose en la mejor arma de IBM para vender más computadoras, y en el estándar en América (sobre todo Estados Unidos) para la industria, debido a que después de implementó para otras computadoras de IBM.&lt;/p&gt;
+
+&lt;h3 id=&quot;algol-58&quot;&gt;Algol 58&lt;/h3&gt;
+
+&lt;p&gt;Aunque FORTRAN había tenido mucho éxito como lenguaje en la industria, no había un lenguaje estándar para hacer computación científica, ni en América ni en Europa, por lo que no se podían compartir los resultados ni los programas entre universidades ni instituciones.&lt;/p&gt;
+
+&lt;p&gt;Así nació la iniciativa de crear un lenguaje estándar para la industria y la academia, que permitiera compartir los resultados entre diferentes grupos de personas. La GAMM (&lt;a href=&quot;https://www.gamm-ev.de/en/&quot;&gt;Gesellschaft für angewandte Mathematik und Mechanik&lt;/a&gt; [Asociación de Matemáticas Aplicadas y Mecánica]), que es el equivalente a la ACM (&lt;a href=&quot;https://www.acm.org/&quot;&gt;Association for Computing Machinery&lt;/a&gt; [Asociación de Mecánica Computacional]) se pusieron de acuerdo para crear una especificación de un lenguaje que sirviera este propósito, reuniendo personas con mucha experiencia en la creación de lenguajes y en la programación de compiladores.&lt;/p&gt;
+
+&lt;p&gt;El resultado de esto fue el &lt;strong&gt;International Algebraic Language&lt;/strong&gt;, después conocido como &lt;strong&gt;ALGOL&lt;/strong&gt;. Este lenguaje tenía las mejores características de los lenguajes modernos de aquella época, sin embargo, tenía un serio problema: sus implementaciones eran inconsistentes, por lo que no pudo cumplir su objetivo de tener una herramienta estandarizada para crear y compartir programas.&lt;/p&gt;
+
+&lt;p&gt;La creación de esta recomendación, sin embargo, estableció las bases de cooperación entre las asociaciones relacionadas con la computación de Europa y América.&lt;/p&gt;
+
+&lt;h3 id=&quot;cobol&quot;&gt;COBOL&lt;/h3&gt;
+
+&lt;p&gt;Hemos estado hablando de lenguajes usados para computación científica y cálculos matemáticos, sea en la academia o en la industria. &lt;strong&gt;Grace Hopper&lt;/strong&gt;, una gran visionaria por lo que podemos ver, se dio cuenta de que los negocios necesitaban ayuda con cosas más mundanas: contaduría, inventarios, etc. De hecho, en retrospectiva, eso es algo que se estaba notando con lenguajes como &lt;a href=&quot;https://en.wikipedia.org/wiki/FLOW-MATIC&quot;&gt;FLOW-MATIC&lt;/a&gt; y &lt;a href=&quot;https://en.wikipedia.org/wiki/AIMACO&quot;&gt;AIMACO&lt;/a&gt;, especializados en tareas de procesamiento de datos, menos científicos y con instrucciones más adaptadas al mundo de los negocios.&lt;/p&gt;
+
+&lt;p&gt;Así que &lt;strong&gt;Hopper&lt;/strong&gt; se dio a la tarea de juntar a la gente necesaria para diseñar un lenguaje que cumpliera con estas características y que detuviera la proliferación innecesaria de lenguajes de negocio. Así nació el comité para diseñar &lt;strong&gt;COBOL&lt;/strong&gt;, un lenguaje que cumpliera con las necesidades de las empresas.&lt;/p&gt;
+
+&lt;p&gt;COBOL, en vez de enfocarse en matemáticas y fórmulas se enfocaría principalmente en palabras en inglés para hacerlo más fácil de programar y aplicar a las necesidades del día a día de los negocios. En el libro de Manuel puedes ver los detalles y los retos a los que tuvo que enfrentarse este comité.&lt;/p&gt;
+
+&lt;p&gt;La especificación de COBOL se terminó en 1960, pero su implementación se tomó otros años. Para mi, COBOL es el lenguaje que precede a la gran mayoría de los que usamos hoy, como Java, Python, PHP, etc., ya que estos están enfocados en problemas de negocio más que en computación científica o matemática.&lt;/p&gt;
+
+&lt;h3 id=&quot;otros-lenguajes&quot;&gt;Otros lenguajes&lt;/h3&gt;
+
+&lt;p&gt;No mencioné un montón de lenguajes, compiladores y computadoras que Manuel toca en libro, por lo que te recomiendo su lectura si quieres una visión más amplia del desarrollo de nuestra industria desde su nacimiento, la evolución de las necesidades y cómo los comercios, la academia y el gobierno se conjuntaron para ir creando lo que se fue necesitando hasta llegar al rico entorno que tenemos hoy.&lt;/p&gt;
+
+&lt;h2 id=&quot;aprendizajes&quot;&gt;Aprendizajes&lt;/h2&gt;
+
+&lt;p&gt;Este libro, más allá de contarte la historia de la programación entre los años 1940-1960, te comunica varias lecciones que puedes aprender si lees entre líneas. A continuación listo mis aprendizajes.&lt;/p&gt;
+
+&lt;h3 id=&quot;perseverancia&quot;&gt;Perseverancia&lt;/h3&gt;
+
+&lt;p&gt;La historia de &lt;strong&gt;Konrad Zuse&lt;/strong&gt; me enseña que no siempre es necesario estar con un grupo de personas pensando igual o siquiera que te entiendan para crear algo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Konrad&lt;/strong&gt; persiguió sus intereses con perseverancia y logró cosas muy parecidas a lo que los grupos de principales de desarrollo de la computación lograron años después. Claro, él es una excepción, pero es una muestra de qué tan lejos te pueden llevar tus intereses.&lt;/p&gt;
+
+&lt;h3 id=&quot;acerca-de-los-equipos-de-trabajo&quot;&gt;Acerca de los equipos de trabajo&lt;/h3&gt;
+
+&lt;p&gt;Para crear algo que vale la pena, como un lenguaje de programación, que es una creación bastante compleja, casi siempre hace falta la cooperación de muchas personas por un periodo sostenido (como ya vimos, hay excepciones). En por lo menos dos de los lenguajes mencionados arriba, se tuvieron que poner de acuerdo múltiples grupos de personas para lograr un objetivo común, como crear un lenguaje que cubriera las necesidades de un grupo amplio de personas e instituciones y evitar problemas estilo la “Torre de Babel”.&lt;/p&gt;
+
+&lt;h3 id=&quot;vender-las-ideas&quot;&gt;Vender las ideas&lt;/h3&gt;
+
+&lt;p&gt;Una de las cosas que se menciona en el libro es que &lt;strong&gt;“la gente es alérgica al cambio”&lt;/strong&gt;. Esto pasó con la idea primeramente de hacer intérpretes y después de los compiladores.&lt;/p&gt;
+
+&lt;p&gt;Es por eso que las personas que tuvieron la idea inicialmente tuvieron que luchar porque otras personas tomaran sis ideas en serio, convencerlas de que valía la pena y poner de acuerdo a un grupo de personas.&lt;/p&gt;
+
+&lt;p&gt;Tener la habilidad de &lt;strong&gt;vender tus ideas&lt;/strong&gt; es algo que te ayudará a avanzar en tu carrera y conseguir tus objetivos.&lt;/p&gt;
+
+&lt;h3 id=&quot;siempre-habrá-celadores&quot;&gt;Siempre habrá celadores&lt;/h3&gt;
+
+&lt;p&gt;Cuando se presentaban ideas que permitían abrir el campo hacia personas menos educadas que las que ya estaban, o que quitaban barreras para que otros programaran, siempre había personas que se sentían amenazadas y se oponían a esto.&lt;/p&gt;
+
+&lt;p&gt;Esa es una actitud que seguimos viendo hasta hoy. Hay muchos “profesionales” que desprecias a las personas que no son tan educadas como ellos o que entran en el campo del desarrollo de software sin educación formal.&lt;/p&gt;
+
+&lt;p&gt;Podemos ver en retrospectiva lo equivocados que estaban y podemos entender lo equivocados que están hoy los que tienen la misma actitud.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;El primer volumen de “Historia de los Lenguajes de Programación” es un libro que te puede enseñar mucho sobre tu industria y te puede dejar muchas lecciones. Lo recomiendo mucho a todos los desarrolladores de software que tengan interés en la historia y la filosofía de lo que hacen día a día y creo que debería ser una lectura obligatoria para todos los estudiantes de carreras afines a la computación.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="programming-languages" /><summary type="html">Hablemos del libro 'Historia de los lenguajes de programación' de Manuel Rubio, que nos cuenta acerca del nacimiento de los primeros lenguajes.</summary></entry><entry><title type="html">Consistencia en el código</title><link href="https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo.html" rel="alternate" type="text/html" title="Consistencia en el código" /><published>2022-06-02T00:00:00-05:00</published><updated>2022-06-02T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/06/02/consistencia-en-el-codigo.html">&lt;p&gt;Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en “A Philosophy of Software Design”.&lt;/p&gt;
 
 &lt;h2 id=&quot;qué-es-la-consistencia-en-el-código&quot;&gt;¿Qué es la consistencia en el código?&lt;/h2&gt;
 
@@ -684,66 +808,4 @@ usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementad
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Aprender principios de diseño de software te ayudará a crear mejores sistemas que puedan ser usados más fácilmente tanto por otros desarrolladores como por usuario. Espero que este pequeño ejemplo te lleve a aprender otros principios que puedas aplicar en tu trabajo diario. Déjanos un comentario si quieres que lo platiquemos más profundamente o con otros ejemplos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="zero-one-infinity" /><category term="design" /><category term="reglas" /><summary type="html">A veces necesitamos reglas que nos ayuden a desarrollar mejor software. La regal de 'Cero, Uno o Infinito' es una guía para que creemos software más usable.</summary></entry><entry><title type="html">Cómo convertirte en un mago programando</title><link href="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html" rel="alternate" type="text/html" title="Cómo convertirte en un mago programando" /><published>2021-12-09T00:00:00-06:00</published><updated>2021-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/09/como-convertirte-en-un-mago-programando.html">&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;wizardzine&lt;/a&gt; gratuito &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a wizard”&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/b0rk&quot;&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Espero que estas recomendaciones te dejen reflexionando y que termines con ganas de leer el &lt;em&gt;wizardzine&lt;/em&gt; completo. Los pongo en el orden que personalmente me parecen más impactantes, pero para ti puede ser diferente, por lo que te recomiendo que lo leas y medites por tu cuenta.&lt;/p&gt;
-
-&lt;h2 id=&quot;escribe-un-documento-de-diseño&quot;&gt;Escribe un documento de diseño&lt;/h2&gt;
-
-&lt;p&gt;Una de las cosas más importantes que podemos aprender los desarrolladores es a &lt;strong&gt;diseñar software.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Un documento de diseño es una expresión del diseño de software. Es un escrito que haces &lt;strong&gt;ANTES de empezar&lt;/strong&gt; un desarrollo, en el que detallas varias cosas sobre lo que te estás proponiendo hacer:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;El objetivo principal&lt;/li&gt;
-  &lt;li&gt;Detalles sobre el problema a resolver&lt;/li&gt;
-  &lt;li&gt;El diseño a alto nivel de la solución&lt;/li&gt;
-  &lt;li&gt;Las partes del sistema que estás afectando&lt;/li&gt;
-  &lt;li&gt;Otras consideraciones que hay que tener sobre esa pieza de software&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Normalmente este diseño y consideraciones iniciales no se mantienen a lo largo del proyecto, pero sirven para empezar con una idea más clara y sin malentendidos. Una de las cosas más importantes que tienes que hacer con un documento de diseño es &lt;strong&gt;la retroalimentación que otros miembros del equipo puedan darte&lt;/strong&gt;. En un artículo futuro de este blog hablaremos más a detalle de esto.&lt;/p&gt;
-
-&lt;p&gt;Pero recuerda que si no tienes práctica y, aunque sea un proyecto o cambio muy pequeño, vale la pena dedicarle un tiempo a &lt;em&gt;pensar&lt;/em&gt; y &lt;em&gt;escribir&lt;/em&gt; sobre lo que planeas hacer.&lt;/p&gt;
-
-&lt;h2 id=&quot;como-adquirir-experiencia-significativa&quot;&gt;Como adquirir experiencia significativa&lt;/h2&gt;
-
-&lt;p&gt;Es cierto que mediante trabajar en algo por un tiempo en algo lograrás adquirir experiencia, pero esta experiencia está limitada a las actividades que más repitas en ese trabajo y a ese entorno. &lt;strong&gt;Por eso no basta con sólo aprender en el trabajo&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Si quieres tener una experiencia más amplia, algunas prácticas que te pueden servir son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Escoge un área que te interese especialmente y estudiala durante un tiempo razonable. Desarrolla tus habilidades en esa área y luego cambia a otra. Lo importante es que &lt;strong&gt;tu aprendizaje sea activo&lt;/strong&gt;, no solamente teórico o lo que te vaya llegando del trabajo.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;No pienses que es tarde para aprender&lt;/strong&gt;. Aunque lleves bastante tiempo usando algo, no significa que lo debas saber todo sobre esa tecnología. No pienses: “¿Cómo es que no sabes X cosa sobre Y?”, sino: “Hoy es el día en que aprenderé sobre X y Y”.&lt;/li&gt;
-  &lt;li&gt;Aprende los conceptos fundamentales, lo que te servirá para construir sobre eso más conocimiento y habilidades.&lt;/li&gt;
-  &lt;li&gt;Haz experimentos. En muchas de las áreas del desarrollo, puedes hacer experimentos que no te cuestan nada y pueden ayudarte a entender más profundamente un tema.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Lee Libros&lt;/strong&gt;. Los libros en la mayoría de los casos son un conjunto de conocimientos destilados sobre cierto tema. Leer los capítulos específicos de los temas de tu interés te ayudará a avanzar más rápido.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Haz proyectos difíciles&lt;/strong&gt;. Nada como poner a prueba tus habilidades para ver los hoyos en tu conocimiento como hacer tareas difíciles.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Profundiza&lt;/strong&gt;. Cuando no entiendas algo, busca información más profunda sobre el tema, aprende la historia, las bases y los conceptos más fundamentales. Además puedes acercarte a expertos en el tema a pedirles ayuda para comprender este tema, o recursos que te ayuden a comprenderlo.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finalmente, recuerda que todo esto toma tiempo, no puedes convertirte en un experto en algo de la noche a la mañana, por lo que debes tener paciencia contigo.&lt;/p&gt;
-
-&lt;h2 id=&quot;lee-código-fuente&quot;&gt;Lee código fuente&lt;/h2&gt;
-
-&lt;p&gt;A veces, los sistemas o herramientas que tenemos que usar no tienen documentación, nadie sabe lo suficiente para ayudarnos o no están disponibles. Es por esto que una de las habilidades más importantes que podemos tener es la de &lt;strong&gt;leer y entender el código fuente&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Algunas de las cosas que te pueden ayudar son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Busca exactamente por la parte que necesitas. Puede ser un error, un mensaje o un módulo específico, usa las herramientas de indexación de texto para llegar ahí, no creas que tienes que leer toda la base.&lt;/li&gt;
-  &lt;li&gt;Si el código que tienes que leer es pequeño, intenta darle un recorrida rápida para tener una idea general de lo que sucede y dónde sucede.&lt;/li&gt;
-  &lt;li&gt;Haz experimentos con el código, cambiando cosas y viendo lo que sucede, usa un debuggers, agrega tests, introduce bugs intencionalmente.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finalmente, documenta lo que aprendas y encuentres, le puede servir a otros miembros del equipo, de la comunidad o a ti en el futuro. Entender estos sistemas te ayudará aprender de las decisiones de diseño buenas o malas y además te enseñará nuevas técnicas que hubieras tardado más en aprender por otros lados.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Lo que te acercará más a sentirte un mago o maga programando es la &lt;strong&gt;práctica enfocada&lt;/strong&gt;, que puede presentarse de las tres maneras que hablamos aquí, pero hay muchas otras. Recuerda que la constancia es importante, más que la velocidad, pero buscar formas más eficientes de aprender no es malo.&lt;/p&gt;
-
-&lt;p&gt;Si te quedaste con ganas de más consejos de este estilo, descarga &lt;a href=&quot;https://wizardzines.com/zines/wizard/&quot;&gt;“So you want to be a Wizard”&lt;/a&gt; de la página oficial y continúa leyendo, esta vez de manera visual.&lt;/p&gt;
-
-&lt;p&gt;Shameless plug: &lt;a href=&quot;https://www.youtube.com/watch?v=drPMyDyQG8M&quot;&gt;aquí puedes ver nuestra presentación de los wizardzines&lt;/a&gt;.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/drPMyDyQG8M&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="preguntas" /><category term="investigación" /><summary type="html">Hablemos sobre las técnicas que Julia Evans recomienda para converirte en un mejor programador(a) y avanzar en tu carrera.</summary></entry></feed>
+&lt;p&gt;Aprender principios de diseño de software te ayudará a crear mejores sistemas que puedan ser usados más fácilmente tanto por otros desarrolladores como por usuario. Espero que este pequeño ejemplo te lleve a aprender otros principios que puedas aplicar en tu trabajo diario. Déjanos un comentario si quieres que lo platiquemos más profundamente o con otros ejemplos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="zero-one-infinity" /><category term="design" /><category term="reglas" /><summary type="html">A veces necesitamos reglas que nos ayuden a desarrollar mejor software. La regal de 'Cero, Uno o Infinito' es una guía para que creemos software más usable.</summary></entry></feed>
