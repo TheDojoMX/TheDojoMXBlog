@@ -21,7 +21,7 @@ El libro abarca hasta el año 1960, poco antes del nacimiento de Lisp. Hablemos 
 
 ## El nacimiento de la computación automática
 
-El primer capítulo trata sobe el nacimiento de la computación como la conocemos, cómo **Alan Turing**, **Alonzo Church** definieron lo que conocemos como computable, gracias al ["Problema de la decisión"](https://paginas.matem.unam.mx/videos/2017/marzo-2017/seminario-junior/427-acerca-del-problema-de-la-decision), definido en los diez problemas del matemático David Hilbert.
+El primer capítulo trata sobe el nacimiento de la computación como la conocemos, cómo **Alan Turing**, **Alonzo Church** y **John von Neumann** definieron lo que conocemos como computable, gracias al ["Problema de la decisión"](https://paginas.matem.unam.mx/videos/2017/marzo-2017/seminario-junior/427-acerca-del-problema-de-la-decision), definido en los diez problemas del matemático David Hilbert.
 
 Además habla de las contribuciones de [John Von Neumann](https://www.britannica.com/biography/John-von-Neumann) para el diseño y la concreción de las computadoras como medios físicos.
 

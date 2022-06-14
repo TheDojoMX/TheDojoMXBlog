@@ -4,7 +4,7 @@ date: 2022-01-14
 author: Héctor Patricio
 tags: criptografía computer-science cs complejidad-computacional
 comments: true
-excerpt: "Hablemos de los problemas que hacen posible que tengamos criptografía asimétrica y sistemas que se ponen de acuerdo para hablar de manera segura sin conocerse antes."
+excerpt: "Hablemos de los problemas matemáticos que hacen posible que tengamos criptografía asimétrica y sistemas que se ponen de acuerdo para hablar de manera segura sin conocerse antes."
 header:
   overlay_image: #image
   teaser: #image
@@ -23,9 +23,9 @@ La complejidad computacional se puede entender como la cantidad de operaciones q
 
 ### Tiempo polinomial
 
-### Tiempo super polinomial
+### Tiempo súper polinomial
 
-### Tiempos no polinomiaes
+### Tiempos no polinomiales
 
 ### Exponencial
 
