@@ -15,7 +15,7 @@ header:
 
 ## Resumen general
 
-El libro habla de manera más o menos cronológica del nacimiento de los primero lenguajes de programación, desde la época de 1940. La forma en que lo narra te hace comprender claramente por qué eran necesarios y las diferentes tendencias que se dieron.
+El libro habla de manera más o menos cronológica del nacimiento de los primeros lenguajes de programación, desde la época de 1940. La forma en que lo narra te hace comprender claramente **por qué eran necesarios** y las diferentes tendencias que se dieron.
 
 El libro abarca hasta el año 1960, poco antes del nacimiento de Lisp. Hablemos ahora de las fases que el libro cubre a grandes rasgos.
 

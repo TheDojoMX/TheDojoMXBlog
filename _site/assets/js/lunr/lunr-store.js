@@ -516,8 +516,8 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1654205989/joshua-dow-E17e1LZV0dg-unsplash_toh95b.jpg"
       },{
         "title": "Resumen: Historia de los lenguajes de programación",
-        "excerpt":"¿Te has preguntado cómo nacieron los primeros lenguajes de programación? Manuel Rubio, autor de ‘Historia de los lenguajes de programación’, nos habla lo explica de manera cronológica en el primer tomo de esta obra. Resumen general El libro habla de manera más o menos cronológica del nacimiento de los primero...","categories": [],
+        "excerpt":"¿Te has preguntado cómo nacieron los primeros lenguajes de programación? Manuel Rubio, autor de ‘Historia de los lenguajes de programación’, nos habla lo explica de manera cronológica en el primer tomo de esta obra. Resumen general El libro habla de manera más o menos cronológica del nacimiento de los primeros...","categories": [],
         "tags": ["libros","programming-languages"],
-        "url": "/2022/06/03/resumen-historia-de-los-lenguajes-de-programacion.html",
+        "url": "/2022/06/11/resumen-historia-de-los-lenguajes-de-programacion.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1654281870/jr-korpa-9XngoIpxcEo-unsplash_c6yihq.jpg"
       }]
