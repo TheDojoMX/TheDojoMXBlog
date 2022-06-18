@@ -1,4 +1,8 @@
---- # Only the main Sass file needs front matter (the dashes are enough) --- @charset "utf-8";
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
 
 // $link_color: #c4001d;
 // $link_color: rgb(0, 100, 238);
@@ -11,13 +15,13 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,800&display=swap');
 
 a {
-    text-decoration: none;
-    font-weight: 400;
+    text-decoration: none !important;
+    font-weight: 400 !important;
 }
 
 article.page {
-    font-family: 'Atkinson Hyperlegible', sans-serif;
-    font-weight: 300;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-weight: 300 !important;
 }
 
 h1,
@@ -27,8 +31,8 @@ h4,
 h5,
 h6,
 h2>a {
-    font-family: "Merriweather", sans-serif;
-    font-weight: 800;
+    font-family: "Merriweather", sans-serif !important;
+    font-weight: 800 !important;
 }
 
 .custom-grid {
