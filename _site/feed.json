@@ -242,6 +242,10 @@
 
       <section class="page__content e-content" itemprop="text">
         
+        <div style="border: 1px solid white; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        
+        </div>
         {
   "version": "https://jsonfeed.org/version/1",
   "title": null,
@@ -339,6 +343,10 @@
     
   ]
 }
+       <div style="border: 1px solid white; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        
+
         
       </section>
 
@@ -362,6 +370,7 @@
   
   
 </div>
+
     </div>
 
     
