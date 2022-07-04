@@ -150,7 +150,7 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_200/v1576563210/raychan-QtHYdJsBRFU-unsplash_mpyus4.jpg"
       },{
         "title": "Las matemáticas que debes saber para programar",
-        "excerpt":"Cuando se habla de matemáticas mucha gente empieza a sentirse fastidiada porque creen que son cosas difíciles de entender. Sin embargo, las matemáticas son la base de muchas otras ciencias y sobre de todo de la computación. Podríamos considerar las ciencias de la computación como una rama de las matemáticas,...","categories": [],
+        "excerpt":"Cuando se habla de matemáticas muchas personas prefieren cambiar de tema. Pero las matemáticas son la base de muchas otras ciencias incluída la computación. Podríamos considerar las ciencias de la computación como una rama de las matemáticas, pero que ha evolucionado todavía más allá de ellas. Para programar con eficacia...","categories": [],
         "tags": ["math","matemáticas","aprender"],
         "url": "/2019/12/25/las-matematicas-que-debes-saber-para-programar.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_fill,g_custom,h_1000,w_1400,x_0/v1586794249/7CD56C0C-C8F6-448E-891B-348469AAF598_h9jpih.jpg"

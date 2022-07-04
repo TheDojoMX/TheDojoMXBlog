@@ -11,13 +11,13 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Cuando se habla de **matemáticas** mucha gente empieza a sentirse fastidiada porque creen que son cosas difíciles de entender.
+Cuando se habla de **matemáticas** muchas personas prefieren cambiar de tema.
 
-Sin embargo, las matemáticas son la base de muchas otras ciencias y sobre de todo de la computación. Podríamos considerar las ciencias de la computación como **una rama de las matemáticas**, pero han divergido tanto que ya no se pueden considerar matemáticas solamente.
+Pero las matemáticas son la base de muchas otras ciencias incluída la computación. Podríamos considerar las ciencias de la computación como **una rama de las matemáticas**, pero que ha evolucionado todavía más allá de ellas.
 
-Pero para programar con eficacia no necesitas saber muchas matemáticas, de hecho, con el entendimiento básico es suficiente. En este artículo hablaremos de aquello que debes dominar.
+Para programar con eficacia no necesitas saber muchas matemáticas, con el entendimiento básico es suficiente. En este artículo hablaremos de aquello que debes dominar.
 
-De hecho, si ya programas _usas_ matemáticas. Saber más te ayudará a programar mejor, pero del tipo correcto.
+Si ya programas, ya _usas_ matemáticas. Saber más te ayudará a programar mejor, pero para eso necesitamos saber qué matemáticas necesitas. Antes, hagamos un esfuerzo por _entender_ qué son las matemáticas.
 
 ## ¿Qué son las matemáticas?
 
@@ -37,7 +37,7 @@ En esta definición más abstracta se mencionan los elementos usados para lograr
 
 Si quieres adentrarte en esto el libro [**¿Qué son las matemáticas?**](http://bit.ly/2F4Dn8N) habla de ello a fondo.
 
-Pero no estamos aquí para filosofar acerca de las matemáticas. Lo único que quiero quede claro con esto es que las matemáticas no tienen que ver con **números**, sino con el *razonamiento*, *certidumbre* y resolución de problemas.
+Pero no estamos aquí para filosofar acerca de las matemáticas. Lo único que quiero quede claro con esto es que las matemáticas no tienen que ver con sólo con **números**, sino con el *razonamiento*, *certidumbre* y resolución de problemas.
 
 ## Matemáticas Básicas
 
