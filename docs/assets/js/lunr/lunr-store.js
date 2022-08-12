@@ -496,4 +496,10 @@ var store = [{
         "tags": ["libros","programming-languages"],
         "url": "/2022/06/11/resumen-historia-de-los-lenguajes-de-programacion.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1654281870/jr-korpa-9XngoIpxcEo-unsplash_c6yihq.jpg"
+      },{
+        "title": "¿Estás cambiando de trabajo?",
+        "excerpt":"Era noviembre de 2020, sí 2020, el primer año del caos… Momento, aqui va más contexto: llevaba 7 años trabajando para un comercio electrónico, era muy apreciada en ese trabajo y lo disfrutaba mucho. Fuimos una de las mejores empresas de comercio electrónico en LATAM. Empecé a trabajar allí cuando...","categories": [],
+        "tags": ["crecimiento-profesional,","comunidad,","trabajo"],
+        "url": "/2022/08/11/estas-cambiando-de-trabajo.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1660258408/182005458-80093fb7-e46c-49d9-ae4d-c35b8cf437ea_ptlwdt.png"
       }]
