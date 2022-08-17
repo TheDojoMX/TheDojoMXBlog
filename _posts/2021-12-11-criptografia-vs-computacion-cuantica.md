@@ -33,21 +33,21 @@ Una computadora cuántica está basada en el [principio de superposición cuánt
 
 Lo que se escapa de nuestra comprensión común de la física es que esto de tener múltiples estados **desaparece cuando lo observamos**, se dice que su _función de onda_ colapsa, lo que significa que la partícula "se decide" por uno de los múltiples estados en los que podía estar. La función de onda es la ecuación que describe todas las "probabilidades" de cada estado.
 
-El ejercicio mental del [Gato de Schrödinger](https://www.youtube.com/watch?v=lzxKZx7we4s) te puede ayudar a imaginarlo, pero en [este video puedes de Quantum Fracture](https://www.youtube.com/watch?v=9JlOmEEyTOU) te ayudará a profundizar más en la complejidad del tema y como no es tan sencillo como "puede estar en dos estados a la vez", sino en un número _infinito de estados_.
+El ejercicio mental del [Gato de Schrödinger](https://www.youtube.com/watch?v=lzxKZx7we4s) te puede ayudar a imaginarlo, pero en [este video de Quantum Fracture](https://www.youtube.com/watch?v=9JlOmEEyTOU) te ayudará a profundizar más en la complejidad del tema y como no es tan sencillo como "puede estar en dos estados a la vez", sino en un número _infinito de estados_.
 
 Este artículo te explicará el principio de superposición cuántica sin matemáticas avanzadas: [Superposición, una aproximación sin matemáticas avanzadas a la motivación de la mecánica cuántica](https://www.elclaustro.edu.mx/agnosia/index.php/component/k2/item/427-superposicion-una-aproximacion-sin-matematicas-avanzadas-a-la-motivacion-de-la-mecanica-cuantica).
 
-**Resumen:** Una particula como un átomo, un electron o un fotón, puede poseer múltiples estados físicos a la vez, con diferentes combinaciones entre todos sus posibles estados, dando lugar a _una infinidad de estados posibles_. Las probabilidades de cada estado están contenidas en su _función de onda_, y cuando medimos (miramos) una partícula se define en un estado de todos los posibles.
+**Resumen:** Una partícula como un átomo, un electron o un fotón, puede poseer múltiples estados físicos a la vez, con diferentes combinaciones entre todos sus posibles estados, dando lugar a _una infinidad de estados posibles_. Las probabilidades de cada estado están contenidas en su _función de onda_, y cuando medimos (miramos) una partícula se define en un estado de todos los posibles.
 
 ### Amplitud de onda y Qubits
 
 Cada uno de los estados posibles de una partícula y sus probabilidades están representados en lo que se llama su **amplitud**. En el caso de la computación cuántica, nos interesa si una partícula _representa un cero o un uno_. Por esto, un **Qubit** (un bit cuántico) está representado por una amplitud de onda, que se puede entender parcialmente como la probabilidad de que ese bit sea cero o uno. Un qubit está caracterizado por dos amplitudes: una para el estado **cero** y otra para el estado **uno**. Estas amplitudes son números complejos, números que tienen un parte real y una parte imaginaria, como `2 + 3i`, por ejemplo.
 
-Una _palabra_ o conjunto de qubits está representado por **2^n amplitudes**, donde n es el número de qubits. Así que en una palabra de 8 bits, tenemos 256 amplitudes de onda. Y aquí está el secreto de por qué la computación cuántica puede ser tan poderosa: **con sólo _n_ objetos (qubits), puedes almacenar y procesar 2^n números complejos, mientras que en una computadora clásica necesitarías 2^n espacios de memoria**.
+Una _palabra_ o conjunto de qubits está representado por **2^n amplitudes**, donde **n** es el número de qubits. Así que en una palabra de 8 bits, tenemos 256 amplitudes de onda. Y aquí está el secreto de por qué la computación cuántica puede ser tan poderosa: **con sólo _n_ objetos (qubits), puedes almacenar y procesar 2^n números complejos, mientras que en una computadora clásica necesitarías 2^n espacios de memoria**.
 
 ### Compuertas cuánticas
 
-Una compuerta cuántica es el equivalente cuántico a la compuertas lógicas clásicas. Son una serie de transformaciones que se le aplica a las amplitudes que caracterizan nuestro conjunto de qubits para obtener los resultados deseados.
+Una compuerta cuántica es el equivalente cuántico a las compuertas lógicas clásicas. Son una serie de transformaciones que se le aplican a las amplitudes que caracterizan nuestro conjunto de qubits para obtener los resultados deseados.
 
 Después de aplicarle un serie de compuertas cuánticas a los qubits, lo que se conoce como un **circuito cuántico**, se realiza una medición sobre uno o varios qubits para saber el resultado.
 
@@ -59,7 +59,7 @@ No vamos a entrar en profundidad en este tema, pero si quieres leer más, [este 
 
 Gracias a las cualidades de las computadoras cuánticas antes descritas, es posible resolver algunos problemas de la computación mediante nuevos algoritmos cuánticos que reducen el tiempo esperado de ejecución de O(2^n) a O(n^k), siendo _k_ una constante. Es decir: **aceleran la resolución de algunos problemas exponencialmente**.
 
-Ahora que tenemos los conceptos más básicos de cómo funciona la computación cuántica y por qué puede ejecutar muchos más cálculos, hablemos de de algunas amenazas que presenta contra la criptografía.
+Ahora que tenemos los conceptos más básicos de cómo funciona la computación cuántica y por qué puede ejecutar muchos más cálculos, hablemos de algunas amenazas que presenta contra la criptografía.
 
 ## El algoritmo de Shor
 
@@ -75,7 +75,7 @@ Esto significa que cuando una computadora cuántica tenga los suficientes qubits
 
 Buscar un elemento que cumpla cierta condición en un conjunto es uno de los problemas que nos ayudarían a romper la criptografía actual. Por ejemplo, imagina que tienes un texto cifrado con AES con una llave de 128 bits. Si quieres romper la seguridad, vas a tener que probar 2^128 llaves en promedio para encontrar la correcta.
 
-El [algoritmo de Grover]() permite acelerar esta operación de manera cuadrática, es decir, te tomaría en promedio la raíz cuadrada de _n_ encontrar el elemento que cumpla con la condición. En el caso del ejemplo anterior te tomaría en promedio 2^(128/2) = 2^64 operaciones.
+El [algoritmo de Grover](https://qiskit.org/textbook/ch-algorithms/grover.html) permite acelerar esta operación de manera cuadrática, es decir, te tomaría en promedio 2 elevado a la raíz cuadrada de _n_ encontrar el elemento que cumpla con la condición. En el caso del ejemplo anterior te tomaría en promedio 2^(128/2) = 2^64 operaciones.
 
 Lo mismo podría pasar para todos cifrados simétricos (que usan la misma llave para cifrar y descifrar) y hasheados, el ataque consistiría en un estilo de fuerza bruta más inteligente o _cuadráticamente más rápida_.
 
