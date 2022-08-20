@@ -21,4 +21,5 @@ Recuerda que para poder crear un algoritmo de machine learning necesitamos un co
 
 ## Aproximando la función
 
+
 ## Resultado
