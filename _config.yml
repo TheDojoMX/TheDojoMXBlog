@@ -15,7 +15,8 @@ plugins:
 
 # logo: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_200/v1551590729/TheDojo/dojo-cover_scaodz.jpg
 logo: https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png
-masthead_title: "The Dojo Blog"
+masthead_title: "The Dojo MX Blog"
+title: "The Dojo MX Blog"
 
 defaults:
   # _posts
