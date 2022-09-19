@@ -502,4 +502,10 @@ var store = [{
         "tags": ["crecimiento-profesional,","comunidad,","trabajo"],
         "url": "/2022/08/11/estas-cambiando-de-trabajo.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1660258408/182005458-80093fb7-e46c-49d9-ae4d-c35b8cf437ea_ptlwdt.png"
+      },{
+        "title": "Mi experiencia como Mentora",
+        "excerpt":"“El círculo está completo. Cuando te dejé, yo erá el alumno. Ahora, soy el maestro”. - Darth Vader. Intentando evitar ser una maestra del mal; en los últimos meses tuve la oportunidad de ser mentora de dos mujeres increíbles. El viaje comenzó con mi participación en un programa de capacitación...","categories": [],
+        "tags": ["crecimiento-profesional,","comunidad,","mentor"],
+        "url": "/2022/09/19/mi-experiencia-como-mentora.html",
+        "teaser": null
       }]
