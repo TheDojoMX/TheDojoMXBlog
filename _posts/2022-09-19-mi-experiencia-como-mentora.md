@@ -4,6 +4,10 @@ date: 2022-09-19
 author: Sagrario Meneses
 tags: crecimiento-profesional, comunidad, mentor
 excerpt: "¿Has tenido la inquietud de apoyar a una persona en su crecimiento profesional? Te comparto mi experiencia intentandolo."
+header:
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,q_68,w_1200/v1663605238/jon-tyson--xcojCHOSTU-unsplash_ylxtyn.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,q_68,w_300/v1663605238/jon-tyson--xcojCHOSTU-unsplash_ylxtyn.jpg
+  overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
 > "El círculo está completo. Cuando te dejé, yo erá el alumno. Ahora, soy el maestro". - **Darth Vader.**

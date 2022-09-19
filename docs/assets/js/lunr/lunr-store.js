@@ -507,5 +507,5 @@ var store = [{
         "excerpt":"“El círculo está completo. Cuando te dejé, yo erá el alumno. Ahora, soy el maestro”. - Darth Vader. Intentando evitar ser una maestra del mal; en los últimos meses tuve la oportunidad de ser mentora de dos mujeres increíbles. El viaje comenzó con mi participación en un programa de capacitación...","categories": [],
         "tags": ["crecimiento-profesional,","comunidad,","mentor"],
         "url": "/2022/09/19/mi-experiencia-como-mentora.html",
-        "teaser": null
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,q_68,w_300/v1663605238/jon-tyson--xcojCHOSTU-unsplash_ylxtyn.jpg"
       }]
