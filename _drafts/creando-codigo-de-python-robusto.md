@@ -19,19 +19,21 @@ En esta sección veamos las cosas que hacen más entendible y claro tu código. 
 
 ### Simplicidad
 
-
 ### Ocultar información
+
 ### Familiaridad
 
 ## Facilidad de cambio
+
 ### Flexibilidad
+
 ### Modularidad
+
 ### Configurabilidad
 
 ## Resiliencia
 
 ## Seguridad
-
 
 ## WAT's
 
