@@ -36,6 +36,11 @@ defaults:
     values:
       layout: single
       author_profile: false
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
 
 author:
   name   : "Héctor Patricio"
@@ -79,3 +84,7 @@ pagination:
 
 paginate_path: '/latest/:num'
 url: 'https://blog.thedojo.mx'
+
+collections:
+  authors:
+    output: true
