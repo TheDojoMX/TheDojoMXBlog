@@ -1,10 +1,11 @@
 ---
-title: "Crea hashes resistentes a balas con Keccak (también llamado SHA-3)"
+title: "Crea hashes resistentes a balas con Keccak (SHA-3)"
 date: 2022-10-12
 author: Héctor Patricio
 tags: criptografia crypto hash keccak
 comments: true
-excerpt: "¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado"
+toc: true
+excerpt: "¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1200,x_0,y_386/v1665632333/DALL_E_2022-10-12_22.38.45_cmmlql.png
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_crop,h_150,w_300,x_0,y_386/v1665632333/DALL_E_2022-10-12_22.38.45_cmmlql.png
@@ -53,7 +54,7 @@ Keccak empieza este ciclo con un estado inicial de puros ceros. La entrada se di
 Finalmente, para obtener el hash, se "exprime" la función, siendo el primer bloque del resultado la parte de la _velocidad_ de la última iteración y para obtener los siguientes bloques se aplica la función de permutación sucesivamente hasta obtener la cantidad de bytes requeridos. La siguiente imagen ilustra el proceso (con una permutación de 8 bits y una velocidad de  5 bits):
 
 ![Arquitectura interna de una función construcción de esponja](https://res.cloudinary.com/hectorip/image/upload/v1666498363/Screen_Shot_2022-10-22_at_21.51.41_h0u7s0.png){: .align-center }
----
+*Ejemplo de construcción de esponja con permutación de 5 bits. (Tomado del libro [Real World Cryptography de David Wong](https://www.manning.com/books/real-world-cryptography))*
 
 Ahora ya sabes cómo funciona a grandes rasgos **Keccak** internamente. **¿Por qué nos interesa esto?** Las funciones de esponja pueden ser configuradas para que absorban más o menos bits y por lo tanto son bastante flexibles, lo que permite crear funciones configurables y que pueden crear salidas de diferentes tamaños.
 

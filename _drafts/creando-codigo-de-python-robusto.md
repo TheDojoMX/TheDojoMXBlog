@@ -2,7 +2,8 @@
 title: "Creando código de Python robusto"
 date: 2022-08-21
 author: Héctor Patricio
-tags:
+tags: keccak sha3 sha-3-256 hash
+toc: true
 comments: true
 excerpt: "Escribe aquí un buen resumen de tu artículo"
 header:

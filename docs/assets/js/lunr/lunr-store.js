@@ -515,7 +515,7 @@ var store = [{
         "url": "/2022/09/19/mi-experiencia-como-mentora.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,q_68,w_300/v1663605238/jon-tyson--xcojCHOSTU-unsplash_ylxtyn.jpg"
       },{
-        "title": "Crea hashes resistentes a balas con Keccak (también llamado SHA-3)",
+        "title": "Crea hashes resistentes a balas con Keccak (SHA-3)",
         "excerpt":"Ya hemos hablado en este blog de lo que es un hash e incluso qué hashes puedes usar para guardar tus passwords de manera segura. En este artículo vamos a hablar de uno en específico, el que estamos seguros que deberías usar para cualquier uso futuro en tus programas y...","categories": [],
         "tags": ["criptografia","crypto","hash","keccak"],
         "url": "/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html",

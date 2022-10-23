@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Crea hashes resistentes a balas con Keccak (también llamado SHA-3) - The Dojo MX Blog</title>
-<meta name="description" content="¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado">
+<!-- begin _includes/seo.html --><title>Crea hashes resistentes a balas con Keccak (SHA-3) - The Dojo MX Blog</title>
+<meta name="description" content="¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.">
 
 
   <meta name="author" content="Héctor Patricio">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="es">
 <meta property="og:site_name" content="The Dojo MX Blog">
-<meta property="og:title" content="Crea hashes resistentes a balas con Keccak (también llamado SHA-3)">
+<meta property="og:title" content="Crea hashes resistentes a balas con Keccak (SHA-3)">
 <meta property="og:url" content="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html">
 
 
-  <meta property="og:description" content="¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado">
+  <meta property="og:description" content="¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.">
 
 
 
@@ -140,11 +140,11 @@
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "url": "https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html",
-      "name": "Crea hashes resistentes a balas con Keccak (también llamado SHA-3)",
-      "headline": "Crea hashes resistentes a balas con Keccak (también llamado SHA-3)",
+      "name": "Crea hashes resistentes a balas con Keccak (SHA-3)",
+      "headline": "Crea hashes resistentes a balas con Keccak (SHA-3)",
       "keywords": "criptografia,crypto,hash,keccak",
-      "description": "¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado",
-      "articleBody": "Ya hemos hablado en este blog de lo que es un hash e incluso qué hashes puedes usar para guardar tus passwords de manera segura.\n\nEn este artículo vamos a hablar de uno en específico, el que estamos seguros que deberías usar para cualquier uso futuro en tus programas y sistemas, el que ha sido nombrado como el Secure Hash Algorithm 3 (SHA-3): Keccak.\n\n¿Qué es Keccak?\n\nKeccak es una familia de funciones, creadas para cubrir la necesidad de un sucesor de la versión 2 del Secure Hash Algorithm, que tiene algunas limitaciones y vulnerabilidades (por ejemplo, el ataque de extensión de longitud).\n\nEstá basada en una construcción de esponja, y usa internamente una función criptográfica llamada Keccak-f, que se encarga de permutar (cambiar de lugar o mezclar) los bits de la entrada de manera segura.\n\nDespués de haber ganado la competición para la versión 3 del Secure Hash Algorithm, y por lo tanto ser nombrada SHA-3, ha sido estandarizada en diferentes documentos para diferentes usos. La estandarización implica que ha sido examinada y analizada criptográficamente por organismos internacionales, empresas e individuales para estar seguros de que no tiene deficiencias como función hash criptográfica.\n\nUn punto interesante es que uno de los diseñadores de esta función, también participó en la creación del actual AES: Joan Daemen, probablmente es un investigador al que le debamos prestar más atención, ya que casi toda nuestra seguridad actual y futura está influida por él.\n\n¿Qué es una construcción de esponja?\n\nLa “arquitectura” interna de Keccak se distingue de otras funciones hash criptográficas por ser tener una construcción de esponja. SHA-1 y SHA-2 usan una construcción de Merkle–Damgård.\n\n¿Qué es una construcción de esponja y por qué nos importa como desarrolladores de software?\n\nUna construcción de esponja usa una función de permutación (en el caso de Keccak esta función se llama keccak-f). Un función de permutación mapea todas las combinaciones posibles de bits en la entrada a todas las combinaciones posibles de esa misma cantidad de bits, intercambiándolas. Por ejemplo, imagina una función que acepta 3 bits y devuelve 4 bits, y que intercambia los bits de la siguiente manera:\n\n000 --(f)--&gt; 010\n001 --(f)--&gt; 100\n010 --(f)--&gt; 001\n011 --(f)--&gt; 111\n100 --(f)--&gt; 000\n101 --(f)--&gt; 110\n110 --(f)--&gt; 101\n111 --(f)--&gt; 011\n\n\nObserva como ninguna de las combinaciones se repite en ninguno de los dos lados. keccak-f es una permutación de 1600 bits.\n\nLa construcción de esponja divide los bits de la salida en dos partes: velocidad y capacidad. Esta división arbitraria, en el caso de Keccak depende de la versión que se quiera usar. La parte de la velocidad define cuántas veces se tiene que aplicar la función, ya que mientras más grande sea, más rápido se conseguirá el tamaño deseado. La parte de la capacidad define qué tan segura es la función, mientras más grande sea, más segura es la construcción de esponja (y más pequeña es la parte de velocidad, por lo que la función hash tardará más).\n\nKeccak empieza este ciclo con un estado inicial de puros ceros. La entrada se divide en bloques del tamaño de la velocidad (si es más pequeña que la velocidad, se aplica un padding). Se aplica un XOR entre cada bloque y el primer bloque de la velocidad, y se le da como entrada a la función de permutación. Esto se hace tantas veces como bloques haya. Esta fue la etapa de absorción.\n\nFinalmente, para obtener el hash, se “exprime” la función, siendo el primer bloque del resultado la parte de la velocidad de la última iteración y para obtener los siguientes bloques se aplica la función de permutación sucesivamente hasta obtener la cantidad de bytes requeridos. La siguiente imagen ilustra el proceso (con una permutación de 8 bits y una velocidad de  5 bits):\n\n\n\nAhora ya sabes cómo funciona a grandes rasgos Keccak internamente. ¿Por qué nos interesa esto? Las funciones de esponja pueden ser configuradas para que absorban más o menos bits y por lo tanto son bastante flexibles, lo que permite crear funciones configurables y que pueden crear salidas de diferentes tamaños.\n\nTamaños de Keccak\n\nKeccak ofrece los mismos tamaños de salida que SHA-2. Existen las siguientes versiones:\n\n\n  SHA-3-224: 224 bits\n  SHA-3-256: 256 bits\n  SHA-3-384: 384 bits\n  SHA-3-512: 512 bits\n\n\nComo siempre, mientras más grande sea la salida, más bits de seguridad ofrece y más difícil es de ser vulnerada.\n\nUsando Keccak\n\nEl siguiente ejemplo muestra cómo usar Keccak como SHA-3-256 en Python (SHA-3 está disponible desde la versión 3.6 de Python):\n\nfrom hashlib import sha3_256\n\nhash = sha3_256(b\"Hello world\").hexdigest()\n# resultado '369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2'\n\n\n\nAquí hay un ejemplo en Go:\n\npackage main\nimport (\n \"fmt\"\n \"golang.org/x/crypto/sha3\"\n)\n\nfunc main() {\n s := \"hello world\"\n\n // Un hash de 256 bits\n h := sha3.New256()\n h.Write([]byte(s))\n\n bs := h.Sum(nil) // terminamos la cadena\n\n fmt.Println(s) // hello world\n fmt.Printf(\"%x\\n\", bs) // 369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2\n}\n\n\nAquí hay una implementación de Java:\n\n\nimport java.security.MessageDigest;\nimport java.security.NoSuchAlgorithmException;\n\npublic class Main {\n  public static void main(String[] args) {\n    MessageDigest md;\n    try {\n      md = MessageDigest.getInstance(\"SHA3-256\");\n    } catch (NoSuchAlgorithmException e) {\n      throw new IllegalArgumentException(e);\n    }\n    byte[] result = md.digest(\"Hello world\".getBytes());\n    System.out.println(Main.bytesToHex(result));\n  }\n\n  public static String bytesToHex(byte[] bytes) {\n    StringBuilder sb = new StringBuilder();\n    for (byte b : bytes) {\n      sb.append(String.format(\"%02x\", b));\n    }\n    return sb.toString();\n  }\n\n}\n\n\nAdemás, aquí puedes ver ejemplos de cómo usar Keccak (SHA-3) en otros lenguajes:\n\n\n  SHA-3 en JavaScript o TypeScript\n  SHA-3 en Ruby\n  SHA-3 en Elixir, usando Erlang\n\n\n¿Por qué usar Keccak?\n\nSHA-3 o Keccak es una función más fuerte, sin vulnerabilidades conocidas, estandarizada y lista para ser usada como reemplazo de SHA-2 en cualquier lado sin grandes cambios. No hay pretexto para no usarla si existe una buena implementación en tu lenguaje.\n",
+      "description": "¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.",
+      "articleBody": "Ya hemos hablado en este blog de lo que es un hash e incluso qué hashes puedes usar para guardar tus passwords de manera segura.\n\nEn este artículo vamos a hablar de uno en específico, el que estamos seguros que deberías usar para cualquier uso futuro en tus programas y sistemas, el que ha sido nombrado como el Secure Hash Algorithm 3 (SHA-3): Keccak.\n\n¿Qué es Keccak?\n\nKeccak es una familia de funciones, creadas para cubrir la necesidad de un sucesor de la versión 2 del Secure Hash Algorithm, que tiene algunas limitaciones y vulnerabilidades (por ejemplo, el ataque de extensión de longitud).\n\nEstá basada en una construcción de esponja, y usa internamente una función criptográfica llamada Keccak-f, que se encarga de permutar (cambiar de lugar o mezclar) los bits de la entrada de manera segura.\n\nDespués de haber ganado la competición para la versión 3 del Secure Hash Algorithm, y por lo tanto ser nombrada SHA-3, ha sido estandarizada en diferentes documentos para diferentes usos. La estandarización implica que ha sido examinada y analizada criptográficamente por organismos internacionales, empresas e individuales para estar seguros de que no tiene deficiencias como función hash criptográfica.\n\nUn punto interesante es que uno de los diseñadores de esta función, también participó en la creación del actual AES: Joan Daemen, probablmente es un investigador al que le debamos prestar más atención, ya que casi toda nuestra seguridad actual y futura está influida por él.\n\n¿Qué es una construcción de esponja?\n\nLa “arquitectura” interna de Keccak se distingue de otras funciones hash criptográficas por ser tener una construcción de esponja. SHA-1 y SHA-2 usan una construcción de Merkle–Damgård.\n\n¿Qué es una construcción de esponja y por qué nos importa como desarrolladores de software?\n\nUna construcción de esponja usa una función de permutación (en el caso de Keccak esta función se llama keccak-f). Un función de permutación mapea todas las combinaciones posibles de bits en la entrada a todas las combinaciones posibles de esa misma cantidad de bits, intercambiándolas. Por ejemplo, imagina una función que acepta 3 bits y devuelve 4 bits, y que intercambia los bits de la siguiente manera:\n\n000 --(f)--&gt; 010\n001 --(f)--&gt; 100\n010 --(f)--&gt; 001\n011 --(f)--&gt; 111\n100 --(f)--&gt; 000\n101 --(f)--&gt; 110\n110 --(f)--&gt; 101\n111 --(f)--&gt; 011\n\n\nObserva como ninguna de las combinaciones se repite en ninguno de los dos lados. keccak-f es una permutación de 1600 bits.\n\nLa construcción de esponja divide los bits de la salida en dos partes: velocidad y capacidad. Esta división arbitraria, en el caso de Keccak depende de la versión que se quiera usar. La parte de la velocidad define cuántas veces se tiene que aplicar la función, ya que mientras más grande sea, más rápido se conseguirá el tamaño deseado. La parte de la capacidad define qué tan segura es la función, mientras más grande sea, más segura es la construcción de esponja (y más pequeña es la parte de velocidad, por lo que la función hash tardará más).\n\nKeccak empieza este ciclo con un estado inicial de puros ceros. La entrada se divide en bloques del tamaño de la velocidad (si es más pequeña que la velocidad, se aplica un padding). Se aplica un XOR entre cada bloque y el primer bloque de la velocidad, y se le da como entrada a la función de permutación. Esto se hace tantas veces como bloques haya. Esta fue la etapa de absorción.\n\nFinalmente, para obtener el hash, se “exprime” la función, siendo el primer bloque del resultado la parte de la velocidad de la última iteración y para obtener los siguientes bloques se aplica la función de permutación sucesivamente hasta obtener la cantidad de bytes requeridos. La siguiente imagen ilustra el proceso (con una permutación de 8 bits y una velocidad de  5 bits):\n\n\nEjemplo de construcción de esponja con permutación de 5 bits. (Tomado del libro Real World Cryptography de David Wong)\n\nAhora ya sabes cómo funciona a grandes rasgos Keccak internamente. ¿Por qué nos interesa esto? Las funciones de esponja pueden ser configuradas para que absorban más o menos bits y por lo tanto son bastante flexibles, lo que permite crear funciones configurables y que pueden crear salidas de diferentes tamaños.\n\nTamaños de Keccak\n\nKeccak ofrece los mismos tamaños de salida que SHA-2. Existen las siguientes versiones:\n\n\n  SHA-3-224: 224 bits\n  SHA-3-256: 256 bits\n  SHA-3-384: 384 bits\n  SHA-3-512: 512 bits\n\n\nComo siempre, mientras más grande sea la salida, más bits de seguridad ofrece y más difícil es de ser vulnerada.\n\nUsando Keccak\n\nEl siguiente ejemplo muestra cómo usar Keccak como SHA-3-256 en Python (SHA-3 está disponible desde la versión 3.6 de Python):\n\nfrom hashlib import sha3_256\n\nhash = sha3_256(b\"Hello world\").hexdigest()\n# resultado '369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2'\n\n\n\nAquí hay un ejemplo en Go:\n\npackage main\nimport (\n \"fmt\"\n \"golang.org/x/crypto/sha3\"\n)\n\nfunc main() {\n s := \"hello world\"\n\n // Un hash de 256 bits\n h := sha3.New256()\n h.Write([]byte(s))\n\n bs := h.Sum(nil) // terminamos la cadena\n\n fmt.Println(s) // hello world\n fmt.Printf(\"%x\\n\", bs) // 369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2\n}\n\n\nAquí hay una implementación de Java:\n\n\nimport java.security.MessageDigest;\nimport java.security.NoSuchAlgorithmException;\n\npublic class Main {\n  public static void main(String[] args) {\n    MessageDigest md;\n    try {\n      md = MessageDigest.getInstance(\"SHA3-256\");\n    } catch (NoSuchAlgorithmException e) {\n      throw new IllegalArgumentException(e);\n    }\n    byte[] result = md.digest(\"Hello world\".getBytes());\n    System.out.println(Main.bytesToHex(result));\n  }\n\n  public static String bytesToHex(byte[] bytes) {\n    StringBuilder sb = new StringBuilder();\n    for (byte b : bytes) {\n      sb.append(String.format(\"%02x\", b));\n    }\n    return sb.toString();\n  }\n\n}\n\n\nAdemás, aquí puedes ver ejemplos de cómo usar Keccak (SHA-3) en otros lenguajes:\n\n\n  SHA-3 en JavaScript o TypeScript\n  SHA-3 en Ruby\n  SHA-3 en Elixir, usando Erlang\n\n\n¿Por qué usar Keccak?\n\nSHA-3 o Keccak es una función más fuerte, sin vulnerabilidades conocidas, estandarizada y lista para ser usada como reemplazo de SHA-2 en cualquier lado sin grandes cambios. No hay pretexto para no usarla si existe una buena implementación en tu lenguaje.\n",
       "datePublished": "2022-10-12 00:00:00 -0500",
       "dateModified": "2022-10-12 00:00:00 -0500",
       "author": {
@@ -251,12 +251,12 @@
     <div class="wrapper">
       <h1 id="page-title" class="page__title" itemprop="headline">
         
-          Crea hashes resistentes a balas con Keccak (también llamado SHA-3)
+          Crea hashes resistentes a balas con Keccak (SHA-3)
 
         
       </h1>
       
-        <p class="page__lead">¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado
+        <p class="page__lead">¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.
 </p>
       
       
@@ -273,7 +273,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-        947 palabras | 4 minutos de lectura
+        966 palabras | 4 minutos de lectura
         
       </span>
     
@@ -411,8 +411,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Crea hashes resistentes a balas con Keccak (también llamado SHA-3)">
-    <meta itemprop="description" content="¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado">
+    <meta itemprop="headline" content="Crea hashes resistentes a balas con Keccak (SHA-3)">
+    <meta itemprop="description" content="¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.">
     <meta itemprop="datePublished" content="2022-10-12T00:00:00-05:00">
     
 
@@ -420,6 +420,21 @@
       
 
       <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+<i class="fas fa-file-alt"></i> Contenidos</h4></header>
+              <ul class="toc__menu">
+<li><a href="#qu%C3%A9-es-keccak">¿Qué es Keccak?</a></li>
+<li><a href="#qu%C3%A9-es-una-construcci%C3%B3n-de-esponja">¿Qué es una construcción de esponja?</a></li>
+<li><a href="#tama%C3%B1os-de-keccak">Tamaños de Keccak</a></li>
+<li><a href="#usando-keccak">Usando Keccak</a></li>
+<li><a href="#por-qu%C3%A9-usar-keccak">¿Por qué usar Keccak?</a></li>
+</ul>
+
+            </nav>
+          </aside>
         
         <div style="border: 1px solid white; border-radius: 4px; margin: 20px; padding: 5px;">
           Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
@@ -465,7 +480,8 @@
 
 <p>Finalmente, para obtener el hash, se “exprime” la función, siendo el primer bloque del resultado la parte de la <em>velocidad</em> de la última iteración y para obtener los siguientes bloques se aplica la función de permutación sucesivamente hasta obtener la cantidad de bytes requeridos. La siguiente imagen ilustra el proceso (con una permutación de 8 bits y una velocidad de  5 bits):</p>
 
-<h2><img src="https://res.cloudinary.com/hectorip/image/upload/v1666498363/Screen_Shot_2022-10-22_at_21.51.41_h0u7s0.png" alt="Arquitectura interna de una función construcción de esponja" class="align-center"></h2>
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/v1666498363/Screen_Shot_2022-10-22_at_21.51.41_h0u7s0.png" alt="Arquitectura interna de una función construcción de esponja" class="align-center">
+<em>Ejemplo de construcción de esponja con permutación de 5 bits. (Tomado del libro <a href="https://www.manning.com/books/real-world-cryptography">Real World Cryptography de David Wong</a>)</em></p>
 
 <p>Ahora ya sabes cómo funciona a grandes rasgos <strong>Keccak</strong> internamente. <strong>¿Por qué nos interesa esto?</strong> Las funciones de esponja pueden ser configuradas para que absorban más o menos bits y por lo tanto son bastante flexibles, lo que permite crear funciones configurables y que pueden crear salidas de diferentes tamaños.</p>
 
@@ -604,7 +620,7 @@
     <h4 class="page__share-title">Compartir</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Crea+hashes+resistentes+a+balas+con+Keccak+%28tambi%C3%A9n+llamado+SHA-3%29%20https%3A%2F%2Fblog.thedojo.mx%2F2022%2F10%2F12%2Fcrea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Crea+hashes+resistentes+a+balas+con+Keccak+%28SHA-3%29%20https%3A%2F%2Fblog.thedojo.mx%2F2022%2F10%2F12%2Fcrea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F10%2F12%2Fcrea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
