@@ -71,7 +71,7 @@ tag_archive:
 
 include: ["_pages"]
 search: true
-minimal_mistakes_skin: neon
+# minimal_mistakes_skin: neon
 
 pagination:
   enabled: true
