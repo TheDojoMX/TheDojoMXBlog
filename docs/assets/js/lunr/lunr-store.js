@@ -1,4 +1,10 @@
 var store = [{
+        "title": "Sag",
+        "excerpt":"Posts          ","categories": [],
+        "tags": [],
+        "url": "/authors/sag.html",
+        "teaser": null
+      },{
         "title": "Bienvenidos al Blog de The Dojo MX",
         "excerpt":"Este es el primer post, esperamos que de muchos, del blog de The Dojo MX. El objetivo de este blog es compartir información útil para los desarrolladores y contribuir al avance y desarrollo de los que nos dedicamos a hacer productos digitales. Temática y enfoque Se tratarán todos los temas...","categories": [],
         "tags": ["thedojomx","opensource"],
@@ -508,4 +514,10 @@ var store = [{
         "tags": ["crecimiento-profesional,","comunidad,","mentor"],
         "url": "/2022/09/19/mi-experiencia-como-mentora.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,q_68,w_300/v1663605238/jon-tyson--xcojCHOSTU-unsplash_ylxtyn.jpg"
+      },{
+        "title": "Crea hashes resistentes a balas con Keccak (también llamado SHA-3)",
+        "excerpt":"Ya hemos hablado en este blog de lo que es un hash e incluso qué hashes puedes usar para guardar tus passwords de manera segura. En este artículo vamos a hablar de uno en específico, el que estamos seguros que deberías usar para cualquier uso futuro en tus programas y...","categories": [],
+        "tags": ["criptografia","crypto","hash","keccak"],
+        "url": "/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_150,w_300,x_0,y_386/v1665632333/DALL_E_2022-10-12_22.38.45_cmmlql.png"
       }]

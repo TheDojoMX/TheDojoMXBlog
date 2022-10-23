@@ -1,0 +1,903 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Crea hashes resistentes a balas con Keccak (también llamado SHA-3) - The Dojo MX Blog</title>
+<meta name="description" content="¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Crea hashes resistentes a balas con Keccak (también llamado SHA-3)">
+<meta property="og:url" content="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html">
+
+
+  <meta property="og:description" content="¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1200,x_0,y_386/v1665632333/DALL_E_2022-10-12_22.38.45_cmmlql.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-10-12T00:00:00-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html",
+      "name": "Crea hashes resistentes a balas con Keccak (también llamado SHA-3)",
+      "headline": "Crea hashes resistentes a balas con Keccak (también llamado SHA-3)",
+      "keywords": "criptografia,crypto,hash,keccak",
+      "description": "¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado",
+      "articleBody": "Ya hemos hablado en este blog de lo que es un hash e incluso qué hashes puedes usar para guardar tus passwords de manera segura.\n\nEn este artículo vamos a hablar de uno en específico, el que estamos seguros que deberías usar para cualquier uso futuro en tus programas y sistemas, el que ha sido nombrado como el Secure Hash Algorithm 3 (SHA-3): Keccak.\n\n¿Qué es Keccak?\n\nKeccak es una familia de funciones, creadas para cubrir la necesidad de un sucesor de la versión 2 del Secure Hash Algorithm, que tiene algunas limitaciones y vulnerabilidades (por ejemplo, el ataque de extensión de longitud).\n\nEstá basada en una construcción de esponja, y usa internamente una función criptográfica llamada Keccak-f, que se encarga de permutar (cambiar de lugar o mezclar) los bits de la entrada de manera segura.\n\nDespués de haber ganado la competición para la versión 3 del Secure Hash Algorithm, y por lo tanto ser nombrada SHA-3, ha sido estandarizada en diferentes documentos para diferentes usos. La estandarización implica que ha sido examinada y analizada criptográficamente por organismos internacionales, empresas e individuales para estar seguros de que no tiene deficiencias como función hash criptográfica.\n\nUn punto interesante es que uno de los diseñadores de esta función, también participó en la creación del actual AES: Joan Daemen, probablmente es un investigador al que le debamos prestar más atención, ya que casi toda nuestra seguridad actual y futura está influida por él.\n\n¿Qué es una construcción de esponja?\n\nLa “arquitectura” interna de Keccak se distingue de otras funciones hash criptográficas por ser tener una construcción de esponja. SHA-1 y SHA-2 usan una construcción de Merkle–Damgård.\n\n¿Qué es una construcción de esponja y por qué nos importa como desarrolladores de software?\n\nUna construcción de esponja usa una función de permutación (en el caso de Keccak esta función se llama keccak-f). Un función de permutación mapea todas las combinaciones posibles de bits en la entrada a todas las combinaciones posibles de esa misma cantidad de bits, intercambiándolas. Por ejemplo, imagina una función que acepta 3 bits y devuelve 4 bits, y que intercambia los bits de la siguiente manera:\n\n000 --(f)--&gt; 010\n001 --(f)--&gt; 100\n010 --(f)--&gt; 001\n011 --(f)--&gt; 111\n100 --(f)--&gt; 000\n101 --(f)--&gt; 110\n110 --(f)--&gt; 101\n111 --(f)--&gt; 011\n\n\nObserva como ninguna de las combinaciones se repite en ninguno de los dos lados. keccak-f es una permutación de 1600 bits.\n\nLa construcción de esponja divide los bits de la salida en dos partes: velocidad y capacidad. Esta división arbitraria, en el caso de Keccak depende de la versión que se quiera usar. La parte de la velocidad define cuántas veces se tiene que aplicar la función, ya que mientras más grande sea, más rápido se conseguirá el tamaño deseado. La parte de la capacidad define qué tan segura es la función, mientras más grande sea, más segura es la construcción de esponja (y más pequeña es la parte de velocidad, por lo que la función hash tardará más).\n\nKeccak empieza este ciclo con un estado inicial de puros ceros. La entrada se divide en bloques del tamaño de la velocidad (si es más pequeña que la velocidad, se aplica un padding). Se aplica un XOR entre cada bloque y el primer bloque de la velocidad, y se le da como entrada a la función de permutación. Esto se hace tantas veces como bloques haya. Esta fue la etapa de absorción.\n\nFinalmente, para obtener el hash, se “exprime” la función, siendo el primer bloque del resultado la parte de la velocidad de la última iteración y para obtener los siguientes bloques se aplica la función de permutación sucesivamente hasta obtener la cantidad de bytes requeridos. La siguiente imagen ilustra el proceso (con una permutación de 8 bits y una velocidad de  5 bits):\n\n\n\nAhora ya sabes cómo funciona a grandes rasgos Keccak internamente. ¿Por qué nos interesa esto? Las funciones de esponja pueden ser configuradas para que absorban más o menos bits y por lo tanto son bastante flexibles, lo que permite crear funciones configurables y que pueden crear salidas de diferentes tamaños.\n\nTamaños de Keccak\n\nKeccak ofrece los mismos tamaños de salida que SHA-2. Existen las siguientes versiones:\n\n\n  SHA-3-224: 224 bits\n  SHA-3-256: 256 bits\n  SHA-3-384: 384 bits\n  SHA-3-512: 512 bits\n\n\nComo siempre, mientras más grande sea la salida, más bits de seguridad ofrece y más difícil es de ser vulnerada.\n\nUsando Keccak\n\nEl siguiente ejemplo muestra cómo usar Keccak como SHA-3-256 en Python (SHA-3 está disponible desde la versión 3.6 de Python):\n\nfrom hashlib import sha3_256\n\nhash = sha3_256(b\"Hello world\").hexdigest()\n# resultado '369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2'\n\n\n\nAquí hay un ejemplo en Go:\n\npackage main\nimport (\n \"fmt\"\n \"golang.org/x/crypto/sha3\"\n)\n\nfunc main() {\n s := \"hello world\"\n\n // Un hash de 256 bits\n h := sha3.New256()\n h.Write([]byte(s))\n\n bs := h.Sum(nil) // terminamos la cadena\n\n fmt.Println(s) // hello world\n fmt.Printf(\"%x\\n\", bs) // 369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2\n}\n\n\nAquí hay una implementación de Java:\n\n\nimport java.security.MessageDigest;\nimport java.security.NoSuchAlgorithmException;\n\npublic class Main {\n  public static void main(String[] args) {\n    MessageDigest md;\n    try {\n      md = MessageDigest.getInstance(\"SHA3-256\");\n    } catch (NoSuchAlgorithmException e) {\n      throw new IllegalArgumentException(e);\n    }\n    byte[] result = md.digest(\"Hello world\".getBytes());\n    System.out.println(Main.bytesToHex(result));\n  }\n\n  public static String bytesToHex(byte[] bytes) {\n    StringBuilder sb = new StringBuilder();\n    for (byte b : bytes) {\n      sb.append(String.format(\"%02x\", b));\n    }\n    return sb.toString();\n  }\n\n}\n\n\nAdemás, aquí puedes ver ejemplos de cómo usar Keccak (SHA-3) en otros lenguajes:\n\n\n  SHA-3 en JavaScript o TypeScript\n  SHA-3 en Ruby\n  SHA-3 en Elixir, usando Erlang\n\n\n¿Por qué usar Keccak?\n\nSHA-3 o Keccak es una función más fuerte, sin vulnerabilidades conocidas, estandarizada y lista para ser usada como reemplazo de SHA-2 en cualquier lado sin grandes cambios. No hay pretexto para no usarla si existe una buena implementación en tu lenguaje.\n",
+      "datePublished": "2022-10-12 00:00:00 -0500",
+      "dateModified": "2022-10-12 00:00:00 -0500",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1200,x_0,y_386/v1665632333/DALL_E_2022-10-12_22.38.45_cmmlql.png"
+      }
+    }
+</script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1200,x_0,y_386/v1665632333/DALL_E_2022-10-12_22.38.45_cmmlql.png');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Crea hashes resistentes a balas con Keccak (también llamado SHA-3)
+
+        
+      </h1>
+      
+        <p class="page__lead">¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        947 palabras | 4 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Crea hashes resistentes a balas con Keccak (también llamado SHA-3)">
+    <meta itemprop="description" content="¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado">
+    <meta itemprop="datePublished" content="2022-10-12T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid white; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        
+        </div>
+        <p>Ya hemos hablado en este blog de lo que es un <a href="/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">hash</a> e incluso qué hashes puedes usar para guardar tus <a href="/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html">passwords de manera segura</a>.</p>
+
+<p>En este artículo vamos a hablar de uno en específico, el que estamos seguros que deberías usar para cualquier uso futuro en tus programas y sistemas, el que ha sido nombrado como el Secure Hash Algorithm 3 (<a href="https://www.nist.gov/publications/sha-3-standard-permutation-based-hash-and-extendable-output-functions?pub_id=919061">SHA-3</a>): <strong>Keccak</strong>.</p>
+
+<h2 id="qué-es-keccak">¿Qué es Keccak?</h2>
+
+<p><a href="https://keccak.team/">Keccak</a> es una familia de funciones, creadas para cubrir la necesidad de un sucesor de la versión 2 del <em>Secure Hash Algorithm</em>, que tiene algunas limitaciones y vulnerabilidades (por ejemplo, el ataque de extensión de longitud).</p>
+
+<p>Está basada en una construcción de esponja, y usa internamente una función criptográfica llamada <strong>Keccak-f</strong>, que se encarga de permutar (cambiar de lugar o mezclar) los bits de la entrada de manera segura.</p>
+
+<p>Después de haber ganado la competición para la versión 3 del <em>Secure Hash Algorithm</em>, y por lo tanto ser nombrada <strong>SHA-3</strong>, ha sido estandarizada en diferentes documentos para diferentes usos. La estandarización implica que ha sido examinada y analizada criptográficamente por organismos internacionales, empresas e individuales para estar seguros de que no tiene deficiencias como función hash criptográfica.</p>
+
+<p>Un punto interesante es que uno de los diseñadores de esta función, también participó en la creación del actual AES: <a href="https://cs.ru.nl/~joan/">Joan Daemen</a>, probablmente es un investigador al que le debamos prestar más atención, ya que casi toda nuestra seguridad actual y futura está influida por él.</p>
+
+<h2 id="qué-es-una-construcción-de-esponja">¿Qué es una construcción de esponja?</h2>
+
+<p>La “arquitectura” interna de Keccak se distingue de otras funciones <em>hash criptográficas</em> por ser tener una <strong>construcción de esponja</strong>. SHA-1 y SHA-2 usan una construcción de <a href="https://www.coursera.org/lecture/crypto/the-merkle-damgard-paradigm-Hfnu9">Merkle–Damgård</a>.</p>
+
+<p>¿Qué es una <strong>construcción de esponja</strong> y por qué nos importa como desarrolladores de software?</p>
+
+<p>Una construcción de esponja usa una función de <em>permutación</em> (en el caso de Keccak esta función se llama <strong>keccak-f</strong>). Un función de permutación mapea todas las combinaciones posibles de bits en la entrada a todas las combinaciones posibles de esa misma cantidad de bits, intercambiándolas. Por ejemplo, imagina una función que acepta 3 bits y devuelve 4 bits, y que intercambia los bits de la siguiente manera:</p>
+
+<pre><code class="language-center">000 --(f)--&gt; 010
+001 --(f)--&gt; 100
+010 --(f)--&gt; 001
+011 --(f)--&gt; 111
+100 --(f)--&gt; 000
+101 --(f)--&gt; 110
+110 --(f)--&gt; 101
+111 --(f)--&gt; 011
+</code></pre>
+
+<p>Observa como ninguna de las combinaciones se repite en ninguno de los dos lados. <strong>keccak-f</strong> es una permutación de 1600 bits.</p>
+
+<p>La construcción de esponja divide los bits de la salida en dos partes: <em>velocidad</em> y <em>capacidad</em>. Esta división arbitraria, en el caso de <strong>Keccak</strong> depende de la versión que se quiera usar. La parte de la <em>velocidad</em> define cuántas veces se tiene que aplicar la función, ya que mientras más grande sea, más rápido se conseguirá el tamaño deseado. La parte de la <em>capacidad</em> define qué tan segura es la función, mientras más grande sea, más segura es la construcción de esponja (y más pequeña es la parte de velocidad, por lo que la función hash tardará más).</p>
+
+<p>Keccak empieza este ciclo con un estado inicial de puros ceros. La entrada se divide en bloques del tamaño de la velocidad (si es más pequeña que la velocidad, se <a href="https://crypto.stackexchange.com/questions/40511/padding-in-keccak-sha3-hashing-algorithm">aplica un padding</a>). Se aplica un XOR entre cada bloque y el primer bloque de la velocidad, y se le da como entrada a la función de permutación. Esto se hace <strong>tantas veces como bloques haya</strong>. Esta fue la etapa de absorción.</p>
+
+<p>Finalmente, para obtener el hash, se “exprime” la función, siendo el primer bloque del resultado la parte de la <em>velocidad</em> de la última iteración y para obtener los siguientes bloques se aplica la función de permutación sucesivamente hasta obtener la cantidad de bytes requeridos. La siguiente imagen ilustra el proceso (con una permutación de 8 bits y una velocidad de  5 bits):</p>
+
+<h2><img src="https://res.cloudinary.com/hectorip/image/upload/v1666498363/Screen_Shot_2022-10-22_at_21.51.41_h0u7s0.png" alt="Arquitectura interna de una función construcción de esponja" class="align-center"></h2>
+
+<p>Ahora ya sabes cómo funciona a grandes rasgos <strong>Keccak</strong> internamente. <strong>¿Por qué nos interesa esto?</strong> Las funciones de esponja pueden ser configuradas para que absorban más o menos bits y por lo tanto son bastante flexibles, lo que permite crear funciones configurables y que pueden crear salidas de diferentes tamaños.</p>
+
+<h2 id="tamaños-de-keccak">Tamaños de Keccak</h2>
+
+<p>Keccak ofrece los mismos tamaños de salida que SHA-2. Existen las siguientes versiones:</p>
+
+<ul>
+  <li>
+<strong>SHA-3-224</strong>: 224 bits</li>
+  <li>
+<strong>SHA-3-256</strong>: 256 bits</li>
+  <li>
+<strong>SHA-3-384</strong>: 384 bits</li>
+  <li>
+<strong>SHA-3-512</strong>: 512 bits</li>
+</ul>
+
+<p>Como siempre, mientras más grande sea la salida, más bits de seguridad ofrece y más difícil es de ser vulnerada.</p>
+
+<h2 id="usando-keccak">Usando Keccak</h2>
+
+<p>El siguiente ejemplo muestra cómo usar Keccak como SHA-3-256 en Python (SHA-3 está disponible desde la versión 3.6 de Python):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">sha3_256</span>
+
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">sha3_256</span><span class="p">(</span><span class="sa">b</span><span class="s">"Hello world"</span><span class="p">).</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="c1"># resultado '369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2'
+</span>
+</code></pre></div></div>
+
+<p>Aquí hay un ejemplo en Go:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+<span class="k">import</span> <span class="p">(</span>
+ <span class="s">"fmt"</span>
+ <span class="s">"golang.org/x/crypto/sha3"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+ <span class="n">s</span> <span class="o">:=</span> <span class="s">"hello world"</span>
+
+ <span class="c">// Un hash de 256 bits</span>
+ <span class="n">h</span> <span class="o">:=</span> <span class="n">sha3</span><span class="o">.</span><span class="n">New256</span><span class="p">()</span>
+ <span class="n">h</span><span class="o">.</span><span class="n">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+
+ <span class="n">bs</span> <span class="o">:=</span> <span class="n">h</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="no">nil</span><span class="p">)</span> <span class="c">// terminamos la cadena</span>
+
+ <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c">// hello world</span>
+ <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%x</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">bs</span><span class="p">)</span> <span class="c">// 369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Aquí hay una implementación de Java:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">java.security.MessageDigest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.NoSuchAlgorithmException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">MessageDigest</span> <span class="n">md</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">md</span> <span class="o">=</span> <span class="nc">MessageDigest</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">"SHA3-256"</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">NoSuchAlgorithmException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kt">byte</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="na">digest</span><span class="o">(</span><span class="s">"Hello world"</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Main</span><span class="o">.</span><span class="na">bytesToHex</span><span class="o">(</span><span class="n">result</span><span class="o">));</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">bytesToHex</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">byte</span> <span class="n">b</span> <span class="o">:</span> <span class="n">bytes</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%02x"</span><span class="o">,</span> <span class="n">b</span><span class="o">));</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Además, aquí puedes ver ejemplos de cómo usar Keccak (SHA-3) en otros lenguajes:</p>
+
+<ul>
+  <li><a href="https://www.npmjs.com/package/sha3">SHA-3 en JavaScript o TypeScript</a></li>
+  <li><a href="https://github.com/johanns/sha3">SHA-3 en Ruby</a></li>
+  <li><a href="https://www.erlang.org/doc/man/crypto.html#type-hash_algorithm">SHA-3 en Elixir, usando Erlang</a></li>
+</ul>
+
+<h2 id="por-qué-usar-keccak">¿Por qué usar Keccak?</h2>
+
+<p>SHA-3 o Keccak es una función más fuerte, sin vulnerabilidades conocidas, estandarizada y lista para ser usada como reemplazo de SHA-2 en cualquier lado sin grandes cambios. No hay pretexto para no usarla si existe una buena implementación en tu lenguaje.</p>
+
+       <div style="border: 1px solid white; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        
+
+        
+      
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#criptografia" class="page__taxonomy-item" rel="tag">criptografia</a><span class="sep">, </span>
+    
+      <a href="/tags/#crypto" class="page__taxonomy-item" rel="tag">crypto</a><span class="sep">, </span>
+    
+      <a href="/tags/#hash" class="page__taxonomy-item" rel="tag">hash</a><span class="sep">, </span>
+    
+      <a href="/tags/#keccak" class="page__taxonomy-item" rel="tag">keccak</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2022-10-12T00:00:00-05:00">October 12, 2022</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Crea+hashes+resistentes+a+balas+con+Keccak+%28tambi%C3%A9n+llamado+SHA-3%29%20https%3A%2F%2Fblog.thedojo.mx%2F2022%2F10%2F12%2Fcrea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F10%2F12%2Fcrea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F10%2F12%2Fcrea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2022/09/19/mi-experiencia-como-mentora.html" class="pagination--pager" title="Mi experiencia como Mentora
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,q_68,w_300/v1663605238/jon-tyson--xcojCHOSTU-unsplash_ylxtyn.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/09/19/mi-experiencia-como-mentora.html" rel="permalink">Mi experiencia como Mentora
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 19-09-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Has tenido la inquietud de apoyar a una persona en su crecimiento profesional? Te comparto mi experiencia intentandolo.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1660258408/182005458-80093fb7-e46c-49d9-ae4d-c35b8cf437ea_ptlwdt.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/08/11/estas-cambiando-de-trabajo.html" rel="permalink">¿Estás cambiando de trabajo?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 11-08-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Los cambios siempre son buenos, pero no siempre sencillos de manejar, te comparto un poco del último cambio de trabajo que yo atravese.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1654281870/jr-korpa-9XngoIpxcEo-unsplash_c6yihq.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/06/11/resumen-historia-de-los-lenguajes-de-programacion.html" rel="permalink">Resumen: Historia de los lenguajes de programación
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 11-06-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos del libro ‘Historia de los lenguajes de programación’ de Manuel Rubio, que nos cuenta acerca del nacimiento de los primeros lenguajes.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1654205989/joshua-dow-E17e1LZV0dg-unsplash_toh95b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/06/02/consistencia-en-el-codigo.html" rel="permalink">Consistencia en el código
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+5 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 02-06-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">La consistencia y uniformidad en una base de código son muy importantes, en este artículo veremos cómo podemos lograrlo y en qué cosas debes poner atención.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</section>
+</div>
+
+    </article>
+</div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2022 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </div></body>
+</html>

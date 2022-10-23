@@ -1,4 +1,133 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-09-19T11:36:23-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Mi experiencia como Mentora</title><link href="https://blog.thedojo.mx/2022/09/19/mi-experiencia-como-mentora.html" rel="alternate" type="text/html" title="Mi experiencia como Mentora" /><published>2022-09-19T00:00:00-05:00</published><updated>2022-09-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/09/19/mi-experiencia-como-mentora</id><content type="html" xml:base="https://blog.thedojo.mx/2022/09/19/mi-experiencia-como-mentora.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-10-23T08:23:12-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Crea hashes resistentes a balas con Keccak (también llamado SHA-3)</title><link href="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" rel="alternate" type="text/html" title="Crea hashes resistentes a balas con Keccak (también llamado SHA-3)" /><published>2022-10-12T00:00:00-05:00</published><updated>2022-10-12T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3</id><content type="html" xml:base="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html">&lt;p&gt;Ya hemos hablado en este blog de lo que es un &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;hash&lt;/a&gt; e incluso qué hashes puedes usar para guardar tus &lt;a href=&quot;/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html&quot;&gt;passwords de manera segura&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;En este artículo vamos a hablar de uno en específico, el que estamos seguros que deberías usar para cualquier uso futuro en tus programas y sistemas, el que ha sido nombrado como el Secure Hash Algorithm 3 (&lt;a href=&quot;https://www.nist.gov/publications/sha-3-standard-permutation-based-hash-and-extendable-output-functions?pub_id=919061&quot;&gt;SHA-3&lt;/a&gt;): &lt;strong&gt;Keccak&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-keccak&quot;&gt;¿Qué es Keccak?&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://keccak.team/&quot;&gt;Keccak&lt;/a&gt; es una familia de funciones, creadas para cubrir la necesidad de un sucesor de la versión 2 del &lt;em&gt;Secure Hash Algorithm&lt;/em&gt;, que tiene algunas limitaciones y vulnerabilidades (por ejemplo, el ataque de extensión de longitud).&lt;/p&gt;
+
+&lt;p&gt;Está basada en una construcción de esponja, y usa internamente una función criptográfica llamada &lt;strong&gt;Keccak-f&lt;/strong&gt;, que se encarga de permutar (cambiar de lugar o mezclar) los bits de la entrada de manera segura.&lt;/p&gt;
+
+&lt;p&gt;Después de haber ganado la competición para la versión 3 del &lt;em&gt;Secure Hash Algorithm&lt;/em&gt;, y por lo tanto ser nombrada &lt;strong&gt;SHA-3&lt;/strong&gt;, ha sido estandarizada en diferentes documentos para diferentes usos. La estandarización implica que ha sido examinada y analizada criptográficamente por organismos internacionales, empresas e individuales para estar seguros de que no tiene deficiencias como función hash criptográfica.&lt;/p&gt;
+
+&lt;p&gt;Un punto interesante es que uno de los diseñadores de esta función, también participó en la creación del actual AES: &lt;a href=&quot;https://cs.ru.nl/~joan/&quot;&gt;Joan Daemen&lt;/a&gt;, probablmente es un investigador al que le debamos prestar más atención, ya que casi toda nuestra seguridad actual y futura está influida por él.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-una-construcción-de-esponja&quot;&gt;¿Qué es una construcción de esponja?&lt;/h2&gt;
+
+&lt;p&gt;La “arquitectura” interna de Keccak se distingue de otras funciones &lt;em&gt;hash criptográficas&lt;/em&gt; por ser tener una &lt;strong&gt;construcción de esponja&lt;/strong&gt;. SHA-1 y SHA-2 usan una construcción de &lt;a href=&quot;https://www.coursera.org/lecture/crypto/the-merkle-damgard-paradigm-Hfnu9&quot;&gt;Merkle–Damgård&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;¿Qué es una &lt;strong&gt;construcción de esponja&lt;/strong&gt; y por qué nos importa como desarrolladores de software?&lt;/p&gt;
+
+&lt;p&gt;Una construcción de esponja usa una función de &lt;em&gt;permutación&lt;/em&gt; (en el caso de Keccak esta función se llama &lt;strong&gt;keccak-f&lt;/strong&gt;). Un función de permutación mapea todas las combinaciones posibles de bits en la entrada a todas las combinaciones posibles de esa misma cantidad de bits, intercambiándolas. Por ejemplo, imagina una función que acepta 3 bits y devuelve 4 bits, y que intercambia los bits de la siguiente manera:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-center&quot;&gt;000 --(f)--&amp;gt; 010
+001 --(f)--&amp;gt; 100
+010 --(f)--&amp;gt; 001
+011 --(f)--&amp;gt; 111
+100 --(f)--&amp;gt; 000
+101 --(f)--&amp;gt; 110
+110 --(f)--&amp;gt; 101
+111 --(f)--&amp;gt; 011
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Observa como ninguna de las combinaciones se repite en ninguno de los dos lados. &lt;strong&gt;keccak-f&lt;/strong&gt; es una permutación de 1600 bits.&lt;/p&gt;
+
+&lt;p&gt;La construcción de esponja divide los bits de la salida en dos partes: &lt;em&gt;velocidad&lt;/em&gt; y &lt;em&gt;capacidad&lt;/em&gt;. Esta división arbitraria, en el caso de &lt;strong&gt;Keccak&lt;/strong&gt; depende de la versión que se quiera usar. La parte de la &lt;em&gt;velocidad&lt;/em&gt; define cuántas veces se tiene que aplicar la función, ya que mientras más grande sea, más rápido se conseguirá el tamaño deseado. La parte de la &lt;em&gt;capacidad&lt;/em&gt; define qué tan segura es la función, mientras más grande sea, más segura es la construcción de esponja (y más pequeña es la parte de velocidad, por lo que la función hash tardará más).&lt;/p&gt;
+
+&lt;p&gt;Keccak empieza este ciclo con un estado inicial de puros ceros. La entrada se divide en bloques del tamaño de la velocidad (si es más pequeña que la velocidad, se &lt;a href=&quot;https://crypto.stackexchange.com/questions/40511/padding-in-keccak-sha3-hashing-algorithm&quot;&gt;aplica un padding&lt;/a&gt;). Se aplica un XOR entre cada bloque y el primer bloque de la velocidad, y se le da como entrada a la función de permutación. Esto se hace &lt;strong&gt;tantas veces como bloques haya&lt;/strong&gt;. Esta fue la etapa de absorción.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, para obtener el hash, se “exprime” la función, siendo el primer bloque del resultado la parte de la &lt;em&gt;velocidad&lt;/em&gt; de la última iteración y para obtener los siguientes bloques se aplica la función de permutación sucesivamente hasta obtener la cantidad de bytes requeridos. La siguiente imagen ilustra el proceso (con una permutación de 8 bits y una velocidad de  5 bits):&lt;/p&gt;
+
+&lt;h2&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1666498363/Screen_Shot_2022-10-22_at_21.51.41_h0u7s0.png&quot; alt=&quot;Arquitectura interna de una función construcción de esponja&quot; class=&quot;align-center&quot; /&gt;&lt;/h2&gt;
+
+&lt;p&gt;Ahora ya sabes cómo funciona a grandes rasgos &lt;strong&gt;Keccak&lt;/strong&gt; internamente. &lt;strong&gt;¿Por qué nos interesa esto?&lt;/strong&gt; Las funciones de esponja pueden ser configuradas para que absorban más o menos bits y por lo tanto son bastante flexibles, lo que permite crear funciones configurables y que pueden crear salidas de diferentes tamaños.&lt;/p&gt;
+
+&lt;h2 id=&quot;tamaños-de-keccak&quot;&gt;Tamaños de Keccak&lt;/h2&gt;
+
+&lt;p&gt;Keccak ofrece los mismos tamaños de salida que SHA-2. Existen las siguientes versiones:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;SHA-3-224&lt;/strong&gt;: 224 bits&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SHA-3-256&lt;/strong&gt;: 256 bits&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SHA-3-384&lt;/strong&gt;: 384 bits&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SHA-3-512&lt;/strong&gt;: 512 bits&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como siempre, mientras más grande sea la salida, más bits de seguridad ofrece y más difícil es de ser vulnerada.&lt;/p&gt;
+
+&lt;h2 id=&quot;usando-keccak&quot;&gt;Usando Keccak&lt;/h2&gt;
+
+&lt;p&gt;El siguiente ejemplo muestra cómo usar Keccak como SHA-3-256 en Python (SHA-3 está disponible desde la versión 3.6 de Python):&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hashlib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3_256&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3_256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hexdigest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# resultado '369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2'
+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Aquí hay un ejemplo en Go:&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;&quot;golang.org/x/crypto/sha3&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello world&quot;&lt;/span&gt;
+
+ &lt;span class=&quot;c&quot;&gt;// Un hash de 256 bits&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+ &lt;span class=&quot;n&quot;&gt;bs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// terminamos la cadena&lt;/span&gt;
+
+ &lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// hello world&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%x&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// 369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Aquí hay una implementación de Java:&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.security.MessageDigest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.security.NoSuchAlgorithmException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;MessageDigest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;md&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;md&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MessageDigest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SHA3-256&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;NoSuchAlgorithmException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;IllegalArgumentException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;md&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;digest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello world&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;bytesToHex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;bytesToHex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;StringBuilder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StringBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%02x&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Además, aquí puedes ver ejemplos de cómo usar Keccak (SHA-3) en otros lenguajes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/sha3&quot;&gt;SHA-3 en JavaScript o TypeScript&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/johanns/sha3&quot;&gt;SHA-3 en Ruby&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.erlang.org/doc/man/crypto.html#type-hash_algorithm&quot;&gt;SHA-3 en Elixir, usando Erlang&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;por-qué-usar-keccak&quot;&gt;¿Por qué usar Keccak?&lt;/h2&gt;
+
+&lt;p&gt;SHA-3 o Keccak es una función más fuerte, sin vulnerabilidades conocidas, estandarizada y lista para ser usada como reemplazo de SHA-2 en cualquier lado sin grandes cambios. No hay pretexto para no usarla si existe una buena implementación en tu lenguaje.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografia" /><category term="crypto" /><category term="hash" /><category term="keccak" /><summary type="html">¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado</summary></entry><entry><title type="html">Mi experiencia como Mentora</title><link href="https://blog.thedojo.mx/2022/09/19/mi-experiencia-como-mentora.html" rel="alternate" type="text/html" title="Mi experiencia como Mentora" /><published>2022-09-19T00:00:00-05:00</published><updated>2022-09-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/09/19/mi-experiencia-como-mentora</id><content type="html" xml:base="https://blog.thedojo.mx/2022/09/19/mi-experiencia-como-mentora.html">&lt;blockquote&gt;
   &lt;p&gt;“El círculo está completo. Cuando te dejé, yo erá el alumno. Ahora, soy el maestro”. - &lt;strong&gt;Darth Vader.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -699,69 +828,4 @@ Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más e
 
 &lt;p&gt;Mantenernos actualizados con respecto a las nuevas tecnologías es muy importante para ofrecerles lo mejor a los usuarios de nuestro software, sean desarrolladores o usuarios finales. Si quieres empezar a usar HTTP/3 échale un ojo a tus servidores HTTP, por ejemplo &lt;a href=&quot;https://www.nginx.com/blog/our-roadmap-quic-http-3-support-nginx/&quot;&gt;NGINX ya tiene planes para soportarlo completamente&lt;/a&gt;, &lt;a href=&quot;https://doc.traefik.io/traefik/master/routing/entrypoints/#http3&quot;&gt;Traefik ya lo soporta de manera experimental&lt;/a&gt;, pero parece que Apache &lt;a href=&quot;https://www.reddit.com/r/apache/comments/o6a86x/why_is_apache_failing_to_implement_quic_http3/&quot;&gt;no lo hará por ahora&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;También si usas algún servicio de servidores administrados AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que lo actives. Puedes revisar la lista de compatibilidad constantemente aquí: &lt;a href=&quot;https://caniuse.com/http3&quot;&gt;Can I Use HTTP/3?&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="HTTP" /><category term="web" /><category term="network" /><summary type="html">HTTP es el estándar que permite que internet exista como hoy lo conocemos, hablemos de sus avances y lo que puede ofrecerte la última versión: HTTP/3.</summary></entry><entry><title type="html">Tipos de algoritmos criptográficos: cifrados de flujo</title><link href="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html" rel="alternate" type="text/html" title="Tipos de algoritmos criptográficos: cifrados de flujo" /><published>2021-12-12T00:00:00-06:00</published><updated>2021-12-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptograficos-cifrados-de-flujo.html">&lt;p&gt;Ya hablamos de &lt;a href=&quot;/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&quot;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra con los cifrados de &lt;em&gt;flujo&lt;/em&gt; o &lt;strong&gt;stream ciphers&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;definición-de-cifrado-de-flujo&quot;&gt;Definición de cifrado de flujo&lt;/h2&gt;
-
-&lt;p&gt;La mejor manera de entenderlos es en &lt;em&gt;contraste&lt;/em&gt; con los cifrados de bloque: mientras los cifrados de bloque toman pedazos de contenido de tamaño fijo y los cifran, aplicando diferentes técnicas para abarcar todo el contenido, los cifrados de flujo toman &lt;strong&gt;contenido de tamaño arbitrario y lo cifran&lt;/strong&gt;, bit por bit, devolviéndote un texto cifrado del mismo tamaño.&lt;/p&gt;
-
-&lt;p&gt;Son muy útiles cuando no sabes el tamaño del contenido que vas a cifrar o cuando van ir llegando de manera continua sin que sepas exactamente cuánto y cada cuando, justamente como un &lt;strong&gt;flujo de información&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Los cifrados de flujo se consideraban “cifrados de hardware” porque eran más ligeros que los de bloque y se podían implementar en menos espacio en un chip, pero ahora tanto los cifrados de bloque como los de flujo son adecuados para implementarse en hardware.&lt;/p&gt;
-
-&lt;h2 id=&quot;funcionamiento&quot;&gt;Funcionamiento&lt;/h2&gt;
-
-&lt;p&gt;Un cifrado de flujo trabaja generando una cadena de bits pseudo-aleatorios que después combina con el contenido que va a cifrar mediante la operación &lt;strong&gt;XOR&lt;/strong&gt;, también conocida como &lt;strong&gt;suma módulo 2&lt;/strong&gt;. Para descifrar un texto cifrado, algoritmo genera los mismos bits pseudo-aleatorios y los vuelve a combinar, dejando así solamente el texto claro. A esta cadena de bits pseudo-aleatoria se le conoce como el &lt;em&gt;keystream&lt;/em&gt; o &lt;em&gt;cadena de bits de clave&lt;/em&gt;. En el video &lt;a href=&quot;https://youtu.be/74MYHpGzRR8&quot;&gt;“XOR de tamaño fijo | Cryptopals Crypto Challenges”&lt;/a&gt; explicamos por qué el XOR es una operación perfecta para usarse en criptografía y por qué en algunos recursos se la llama “suma módulo 2”.&lt;/p&gt;
-
-&lt;p&gt;La parte más importante es entonces el generador del &lt;em&gt;keystream&lt;/em&gt;, y que sea capaz de volver a generar los mismos bits pseudo-aleatorios para descifrar.&lt;/p&gt;
-
-&lt;p&gt;Un cifrado de flujo normalmente utiliza una llave y un &lt;strong&gt;nonce&lt;/strong&gt;, un número usado una única vez con esa llave.&lt;/p&gt;
-
-&lt;p&gt;A muy alto nivel, los cifrados de flujo pueden trabajar de dos formas:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Mediante mantener un estado secreto&lt;/strong&gt;. Después de haber sido inicializados con una llave y un nonce, el algoritmo mantiene un estado interno que se va actualizando en cada nueva llamada.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Mediante un contador&lt;/strong&gt;. Este tipo de algoritmos recibe a parte de la llave y el nonce, un contador que se incrementa en cada llamada, de esta manera no es necesario mantener un estado interno secreto.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;ejemplos-de-cifrados-de-flujo&quot;&gt;Ejemplos de cifrados de flujo&lt;/h2&gt;
-
-&lt;p&gt;Veamos algunos ejemplos de cifrados de flujo, sus características y sus usos, así como qué tan seguros son.&lt;/p&gt;
-
-&lt;h3 id=&quot;rc4&quot;&gt;RC4&lt;/h3&gt;
-
-&lt;p&gt;Es el cifrado de software que se usaba para la comunicación entre los routers WI-FI que usaban WEP y tus dispositivos. También se usaba en las comunicaciones TLS. Fue diseñado por el mismo inventor de MD5, &lt;a href=&quot;https://people.csail.mit.edu/rivest/&quot;&gt;Ron Rivest&lt;/a&gt;. Trivia: RC significaba originalmente: “&lt;strong&gt;R&lt;/strong&gt;on’s &lt;strong&gt;C&lt;/strong&gt;ode”. Se conocen ataques contra el cifrado y sobre todo sobre sus implementaciones, pero se sigue usando, así que ten mucho cuidado cuando los dispositivos que usas te ofrezcan configurarlo (como en el caso de los routers con “seguridad” WEP).&lt;/p&gt;
-
-&lt;h3 id=&quot;a51&quot;&gt;A5/1&lt;/h3&gt;
-
-&lt;p&gt;Fue el cifrado de flujo de hardware de que se usaba para cifrar las comunicaciones inalámbricas 2G. Se encontraron vulnerabilidades en él, al principio de la década de los 2000 y ahora se puede descifrar completamente.&lt;/p&gt;
-
-&lt;h2 id=&quot;grain-128a&quot;&gt;Grain-128a&lt;/h2&gt;
-
-&lt;p&gt;Es uno de los cifrados de flujo recomendados por la &lt;a href=&quot;http://www.ecrypt.eu.org/stream/project.html&quot;&gt;´EAM competition&lt;/a&gt;,
-usa una llave 128 bits y un nonce de 96 bits. Está pensado para ser implementado en hardware.&lt;/p&gt;
-
-&lt;p&gt;Es seguro todavía y usado en sistemas de hardware de bajo presupuesto que requieran un cifrado ligero.&lt;/p&gt;
-&lt;h3 id=&quot;salsa20&quot;&gt;Salsa20&lt;/h3&gt;
-
-&lt;p&gt;Es un cifrado de flujo, orientado a software que también fue recomendado por la ´EAM competition. Tiene una implementación sencilla, lo que lo ha hecho popular. Usa una llave, un nonce y un contador para generar el flujo de cifrado.&lt;/p&gt;
-
-&lt;p&gt;Aplica una serie de transformaciones en “rounds” y tiene tres variaciones, dependiendo del nivel de seguridad necesario y la velocidad que deseemos: Salsa20 (20 rounds), Salsa20/12 (12 rounds), Salsa20/8 (8 rounds), siendo el de 8 rounds el que menos seguridad  ofrece. Hay un ataque teórico contra Salsa20/8 que reduce su seguridad a 2^251 operaciones, todavía imposible de llevar a la práctica.&lt;/p&gt;
-
-&lt;h3 id=&quot;aes-ctr&quot;&gt;AES-CTR&lt;/h3&gt;
-
-&lt;p&gt;Este es un cifrado de bloque disfrazado de cifrado de flujo, como diría JP Aumasson, el autor de “Serious Cryptography”. Es el cifrado AES usado en &lt;strong&gt;Counter Mode&lt;/strong&gt; o &lt;strong&gt;modo contador&lt;/strong&gt;, que ya explicamos en el &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html&quot;&gt;artículo sobre los cifrados de bloque y sus modos de operación&lt;/a&gt;. Cualquier cifrado de bloque que pueda ser usado en modo &lt;strong&gt;counter&lt;/strong&gt; se comportará como un cifrado de flujo.&lt;/p&gt;
-
-&lt;p&gt;La desventaja de esto es que normalmente queremos que los cifrados de flujo sean ligeros y rápidos y la velocidad de esta implementación dependerá en gran medida del cifrado que se use.&lt;/p&gt;
-
-&lt;h2 id=&quot;evitando-errores&quot;&gt;Evitando errores&lt;/h2&gt;
-
-&lt;p&gt;Si estás usando un cifrado de flujo, &lt;strong&gt;debes evitar en todo momento re-usar el nonce&lt;/strong&gt;, recuerda que la única razón de existencia del &lt;em&gt;nonce&lt;/em&gt; es ser usado una única vez con la misma llave. Esta es la forma más fácil de usar mal los cifrados de flujo, y elimina completamente la seguridad teórica que puedan ofrecer.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión-y-aplicaciones&quot;&gt;Conclusión y aplicaciones&lt;/h2&gt;
-
-&lt;p&gt;Los cifrados de flujo actualmente son seguros (Salsa20, Grain-128a y  AES-CTR) y los puedes usar con confianza siempre que requieras cifrar datos de longitud desconocida o que llega (o se va) con un flujo de información.&lt;/p&gt;
-
-&lt;p&gt;Evita reutilizar el Nonce, el counter y elige una llave segura, lo más aleatoria posible y estarás listo para usarlos en cualquier desarrollo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="cifrado" /><category term="cypher" /><category term="flujo" /><category term="aes" /><summary type="html">Ya hemos hablado en este blog sobre qué es la criptografía, los cifrados de bloque y ahora ha llegado la hora de hablar de cifrados de flujo. Veamos qué son y para qué sirven.</summary></entry></feed>
+&lt;p&gt;También si usas algún servicio de servidores administrados AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que lo actives. Puedes revisar la lista de compatibilidad constantemente aquí: &lt;a href=&quot;https://caniuse.com/http3&quot;&gt;Can I Use HTTP/3?&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="HTTP" /><category term="web" /><category term="network" /><summary type="html">HTTP es el estándar que permite que internet exista como hoy lo conocemos, hablemos de sus avances y lo que puede ofrecerte la última versión: HTTP/3.</summary></entry></feed>
