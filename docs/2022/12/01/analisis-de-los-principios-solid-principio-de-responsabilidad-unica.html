@@ -1,0 +1,849 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Análisis de los principios SOLID: Principio de Responsabilidad Única - The Dojo MX Blog</title>
+<meta name="description" content="¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Análisis de los principios SOLID: Principio de Responsabilidad Única">
+<meta property="og:url" content="https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">
+
+
+  <meta property="og:description" content="¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1010/v1669958588/2113646631_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__otkltm.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-01T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html",
+      "name": "Análisis de los principios SOLID: Principio de Responsabilidad Única",
+      "headline": "Análisis de los principios SOLID: Principio de Responsabilidad Única",
+      "keywords": "solid,principios",
+      "description": "¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.",
+      "articleBody": "En esta serie de artículos vamos a hablar sobre los cinco principios SOLID. Se dice que todo programador que quiera crear código mantenible y “limpio” debe conocer y usar. La estructura de los artículos llevará la siguiente forma:\n\n\n  Explicación del principio\n  Ejemplos y contraejemplos para pensar\n  Críticas y alternativas\n\n\nEsta serie de artículos surge debido a que aunque son poco entendidos por la mayoría de los programadores, estos principios se toman como verdades universales que hay que seguir. Si queremos desarrollar buen software, no podemos ir por allí solamente aceptando lo que la mayoría dice que está bien sin entenderlo a fondo y cuestionarlo.\n\nAsí que esta serie estará enfocada más bien en el lado débil de los principios SOLID y ver si tenemos mejores alternativas, o por lo menos, ver cuando podemos usarlos y cuando no.\n\nEmpecemos diseccionando el primer principio de los aclamados SOLID: el principio de Responsabilidad Única. Como verás a lo largo de los artículos, estos principios casi siempre se aplican con ejemplos de programación orientada a objetos, por lo que los verás explicados con “clases” y “objetos”.\n\nEl principio de Responsabilidad Única\n\nEste principio se puede enunciar como:\n\n\n  “Una clase debe tener una única razón para ser modificada” según en libro Rober Martin.\n\n\nOtros lo enuncian como:\n\n\n  Una clase debe hacer sólo una cosa y hacerla bien.\n\n\nEsto es un resumen del principio que nos puede servir para ayudarnos a pensar sobre las responsabilidades que nuestro código tiene, específicamente una clase. Pero, ¿qué es una responsabilidad? Aquí es donde empiezan a entrar los problemas al definir este principio y a tomar pasos prácticos para aplicarlo. Pensemos en algunos ejemplos:\n\n\n  \n    Una clase que se encarga de transformar un archivo de un formato en otro debería encargarse sólo de esta transformación. ¿En dónde empieza y dónde acaba la responsabilidad de esta clase? ¿Tiene que encargarse de leer y guardar el archivo? ¿Debe existir una clase para guardar el archivo y otra para leerlo?\n  \n  \n    Una clase que se encarga de la comunicación con la API, transformando las peticiones del programa interno en peticiones HTTP y transformando las respuestas de la API en objetos y tipos de datos internos. ¿Dónde acaba su responsabilidad?¿Es la encargada de verificar la condición de la red? ¿Se encarga de verificar que los datos sean correctos, o es responsabilidad de otra clase?\n  \n\n\nComo puedes ver, el principio, aunque suena simple, deja muchas cosas sin resolver y vagas, por lo que pocos encuentran un manera clara de aplicarlo. A mi me parece que tiene aplicaciones, pero solamente si acotamos más su alcance y definimos algunos límites, incluso cambiando el enfoque del consejo.\n\nEl problema\n\nEl gran problema con este consejo es que la definición de lo que una responsabilidad significa es completamente arbitraria. Todo dependerá de quién esté dividiendo el problema más grande en responsabilidades. Además, esta división puede tener diferentes niveles de granularidad, por lo que una sola responsabilidad a cierto nivel puede significar varias responsabilidades en un nivel más bajo.\n\nTransformando el principio\n\n¿Cuál es la esencia del principio? Para mi el corazón de este consejo tiene que ver con controlar la información que una clase maneja. También tiene que ver con el cambio. Finalmente el consejo tiene que ver con la cantidad de información que podemos mantener en nuestra mente en un tiempo específico. Si una pieza de código hace demasiadas cosas, será difícil de entender y por lo tanto propensa a errores y omisiones.\n\nLa primera  cosa de la que vamos a hablar es de la información. La idea de que se encapsule una responsabilidad en un una clase es que si la información que tenemos sobre un problema cambia, se propague por la menor cantidad de código posible en nuestra base, rediciendo el impacto y la posibilidad de crear problemas.\n\nEntonces, lo primero que tenemos que pensar es si el nivel de granularidad del que se está hablando (clases) es el correcto. Para mi, no se puede establecer un nivel de granularidad tan fijo, sino que dependerá del programador que decida dónde encapsular o esconder la información que esta responsabilidad maneja. Puede que sea un módulo, paquete, clase o función. Hay problemas grandes y pequeños.\n\nPara aplicar esto, piensa:\n\n\n  ¿Qué procedimientos, información y datos va a manejar esta pieza de código? Si no tienes claro esto, puede que te falte pensar un poco más en problema, e incluso dividirlo mejor.\n  ¿Cómo puedo aislar la información que esta pieza de código maneja, de tal forma que si cambiar, no afecte a todo lo que está fuera de ella?\n  ¿De dónde viene y a dónde va la información que esta pieza de código transforma?\n  ¿Cómo puedo definir exactamente qué hace esta pieza de código? Esta definición junto con la justificación de la decisión debería estar bien documentada.\n\n\nTécnicas para concretar el principio\n\n\n  \n    Divide en problemas (responsabilidades) bien definidas tu problema principal. No hay una forma correcta de hacerlo, estas divisiones siempre serán arbitrarias, así que trata de documentar estas decisiones lo mejor posible. Estas decisiones deben ser fáciles de entender en la medida de lo posible.\n  \n  \n    Define exactamente que hará cada pieza de código que tenga una interfaz. Un módulo, una clase y una función tienen una interfaz, una parte que permite a otras piezas de código usar su funcionalidad interna. La función de esta interfaz es esconder los detalles de implementación permitiendo el uso de la funcionalidad encapsulada. También esto debe estar bien documentado en el lugar adecuado. Documenta lo que hace, no cómo lo hace.\n  \n\n\nEstos dos puntos anteriores los puedes aplicar recursivamente a nivel cada vez más bajo, hasta que consideres que el problema es lo suficientemente pequeño como para resolverlo directamente.\n\nEl último consejo tiene varias partes, por lo que trataremos en un subtítulo aparte.\n\nEvita las fugas de información\n\nAunque tengamos completamente claro lo que una clase, módulo o función hace, nuestros detalles de implementación pueden dejar escapar información que no es conveniente que esté fuera de ella.\n\nPiensa por ejemplo en la clase que se comunica con la API. ¿Qué pasaría si pasaras directamente los errores que la API da hacia las demás partes del código? Si esta parte cambia en el futuro, afectarás a todas estas partes que consumen esos errores.\n\nPuedes seguir estos consejos para evitar fugas de información:\n\n\n  \n    Define estructuras de datos para comunicar información entre clases, módulos y funciones que sean uniformes a todos. Si alguien necesita un formato diferente, sólo lo transformará dentro de sus límites, siempre encargándose de devolver y  recibir la información en el formato correcto.\n  \n  \n    Evita las dependencias temporales. Siempre que tienes que llamar las mismas funciones, clases o módulos en el mismo orden quiere decir que tienes una dependencia temporal. La información se está escapando en el orden de las llamadas. Piensa si estas piezas de código en realidad debieron ser una sola pieza.\n  \n  \n    Evita usar la misma abstracción a diferentes niveles. Imagínate que estás haciendo una aplicación para editar texto. Tienes una clase central que se encarga de mantener el estado del texto. Esta clase tiene la interfaz básica para realizar todas las transformaciones necesarias básicas, pero no le puedes exponer esto al usuario. El usuario necesita comandos como Copiar, Pegar y Cortar. Sería una mala idea usar estas mismas abstracciones en tu clase central, porque encadenaría completamente tu interfaz con tu centro y viceversa. Por eso, la clase que maneja el código debe tener abstracciones más básicas, adecuadas para crear funcionalidades como Copiar, Pegar, Cortar, u otras, si se necesitara.\n  \n\n\nTodos estos consejos se tratan de mejor manera en el libro “A Philosophy of Software Design” de John Ousterhout, pero también me gustaría hacer eco de un consejo de Dan North: Busca crear código simple.\n\nEsta fue la crítica y aplicación del principio de Responsabilidad Única. En el siguiente artículo veremos el principio de Abierto/Cerrado (Open/Closed Principle).\n",
+      "datePublished": "2022-12-01 00:00:00 -0600",
+      "dateModified": "2022-12-01 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1010/v1669958588/2113646631_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__otkltm.png"
+      }
+    }
+</script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1010/v1669958588/2113646631_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__otkltm.png');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Análisis de los principios SOLID: Principio de Responsabilidad Única
+
+        
+      </h1>
+      
+        <p class="page__lead">¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1302 palabras | 6 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Análisis de los principios SOLID: Principio de Responsabilidad Única">
+    <meta itemprop="description" content="¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.">
+    <meta itemprop="datePublished" content="2022-12-01T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>En esta serie de artículos vamos a hablar sobre los cinco <strong>principios SOLID</strong>. Se dice que todo programador que quiera crear código mantenible y <em>“limpio”</em> debe conocer y usar. La estructura de los artículos llevará la siguiente forma:</p>
+
+<ul>
+  <li>Explicación del principio</li>
+  <li>Ejemplos y contraejemplos para pensar</li>
+  <li>Críticas y alternativas</li>
+</ul>
+
+<p>Esta serie de artículos surge debido a que <strong>aunque son poco entendidos por la mayoría de los programadores</strong>, estos principios se toman como <em>verdades universales</em> que hay que seguir. Si queremos desarrollar buen software, no podemos ir por allí solamente aceptando lo que <em>la mayoría</em> dice que está bien sin entenderlo a fondo y cuestionarlo.</p>
+
+<p>Así que esta serie estará enfocada más bien en el lado débil de los principios SOLID y ver si tenemos mejores alternativas, o por lo menos, ver cuando podemos usarlos y cuando no.</p>
+
+<p>Empecemos diseccionando el primer principio de los aclamados SOLID: el principio de Responsabilidad Única. Como verás a lo largo de los artículos, estos principios casi siempre se aplican con ejemplos de programación orientada a objetos, por lo que los verás explicados con <em>“clases”</em> y <em>“objetos”</em>.</p>
+
+<h2 id="el-principio-de-responsabilidad-única">El principio de Responsabilidad Única</h2>
+
+<p>Este principio se puede enunciar como:</p>
+
+<blockquote>
+  <p>“Una clase debe tener una única razón para ser modificada” según en libro <em>Rober Martin</em>.</p>
+</blockquote>
+
+<p>Otros lo enuncian como:</p>
+
+<blockquote>
+  <p>Una clase debe hacer sólo una cosa y hacerla bien.</p>
+</blockquote>
+
+<p>Esto es un resumen del principio que nos puede servir para ayudarnos a pensar sobre las <em>responsabilidades</em> que nuestro código tiene, específicamente una clase. Pero, ¿qué es una <em>responsabilidad</em>? Aquí es donde empiezan a entrar los problemas al definir este principio y a tomar pasos prácticos para aplicarlo. Pensemos en algunos ejemplos:</p>
+
+<ul>
+  <li>
+    <p>Una clase que se encarga de transformar un archivo de un formato en otro debería encargarse sólo de esta transformación. ¿En dónde empieza y dónde acaba la <em>responsabilidad</em> de esta clase? ¿Tiene que encargarse de leer y guardar el archivo? ¿Debe existir una clase para guardar el archivo y otra para leerlo?</p>
+  </li>
+  <li>
+    <p>Una clase que se encarga de la comunicación con la API, transformando las peticiones del programa interno en peticiones HTTP y transformando las respuestas de la API en objetos y tipos de datos internos. ¿Dónde acaba su <em>responsabilidad</em>?¿Es la encargada de verificar la condición de la red? ¿Se encarga de verificar que los datos sean correctos, o es responsabilidad de otra clase?</p>
+  </li>
+</ul>
+
+<p>Como puedes ver, el principio, aunque suena simple, deja muchas cosas sin resolver y vagas, por lo que pocos encuentran un manera clara de aplicarlo. A mi me parece que tiene aplicaciones, pero solamente si acotamos más su alcance y definimos algunos límites, incluso cambiando el enfoque del consejo.</p>
+
+<h2 id="el-problema">El problema</h2>
+
+<p>El gran problema con este consejo es que la definición de lo que una <strong>responsabilidad</strong> significa es completamente arbitraria. Todo dependerá de quién esté dividiendo el problema más grande en <em>responsabilidades</em>. Además, esta división puede tener diferentes niveles de granularidad, por lo que una sola <em>responsabilidad</em> a cierto nivel puede significar varias <em>responsabilidades</em> en un nivel más bajo.</p>
+
+<h2 id="transformando-el-principio">Transformando el principio</h2>
+
+<p>¿Cuál es la <em>esencia</em> del principio? Para mi el corazón de este consejo tiene que ver con controlar la <strong>información</strong> que una clase maneja. También tiene que ver con el <strong>cambio</strong>. Finalmente el consejo tiene que ver con la cantidad de información que podemos mantener en nuestra mente en un tiempo específico. Si una pieza de código hace demasiadas cosas, será difícil de entender y por lo tanto propensa a errores y omisiones.</p>
+
+<p>La primera  cosa de la que vamos a hablar es de la <strong>información</strong>. La idea de que se encapsule una responsabilidad en un una clase es que si la información que tenemos sobre un problema cambia, se propague por la menor cantidad de código posible en nuestra base, rediciendo el impacto y la posibilidad de crear problemas.</p>
+
+<p>Entonces, lo primero que tenemos que pensar es si el nivel de granularidad del que se está hablando (clases) es el correcto. Para mi, no se puede establecer un nivel de granularidad tan fijo, sino que dependerá del programador que decida dónde <strong>encapsular o esconder</strong> la información que esta responsabilidad maneja. Puede que sea un módulo, paquete, clase o función. Hay problemas grandes y pequeños.</p>
+
+<p>Para aplicar esto, piensa:</p>
+
+<ul>
+  <li>¿Qué procedimientos, información y datos va a manejar esta pieza de código? Si no tienes claro esto, puede que te falte pensar un poco más en problema, e incluso dividirlo mejor.</li>
+  <li>¿Cómo puedo aislar la información que esta pieza de código maneja, de tal forma que si cambiar, no afecte a todo lo que está fuera de ella?</li>
+  <li>¿De dónde viene y a dónde va la información que esta pieza de código transforma?</li>
+  <li>¿Cómo puedo definir <em>exactamente</em> qué hace esta pieza de código? Esta definición junto con la justificación de la decisión debería estar bien documentada.</li>
+</ul>
+
+<h2 id="técnicas-para-concretar-el-principio">Técnicas para concretar el principio</h2>
+
+<ul>
+  <li>
+    <p>Divide en problemas (responsabilidades) bien definidas tu problema principal. No hay una forma correcta de hacerlo, estas divisiones siempre serán arbitrarias, así que trata de documentar estas decisiones lo mejor posible. Estas decisiones deben ser fáciles de entender en la medida de lo posible.</p>
+  </li>
+  <li>
+    <p>Define exactamente que hará cada pieza de código que tenga una interfaz. Un módulo, una clase y una función tienen una interfaz, una parte que permite a otras piezas de código usar su funcionalidad interna. La función de esta interfaz es <em>esconder</em> los detalles de implementación permitiendo el uso de la funcionalidad encapsulada. También esto debe estar bien documentado en el lugar adecuado. Documenta lo que hace, no cómo lo hace.</p>
+  </li>
+</ul>
+
+<p>Estos dos puntos anteriores los puedes aplicar recursivamente a nivel cada vez más bajo, hasta que consideres que el problema es lo suficientemente pequeño como para resolverlo directamente.</p>
+
+<p>El último consejo tiene varias partes, por lo que trataremos en un subtítulo aparte.</p>
+
+<h2 id="evita-las-fugas-de-información">Evita las fugas de información</h2>
+
+<p>Aunque tengamos completamente claro lo que una clase, módulo o función hace, nuestros detalles de implementación pueden dejar escapar información que no es conveniente que esté fuera de ella.</p>
+
+<p>Piensa por ejemplo en la clase que se comunica con la API. ¿Qué pasaría si pasaras directamente los errores que la API da hacia las demás partes del código? Si esta parte cambia en el futuro, afectarás a todas estas partes que consumen esos errores.</p>
+
+<p>Puedes seguir estos consejos para evitar fugas de información:</p>
+
+<ul>
+  <li>
+    <p>Define estructuras de datos para comunicar información entre clases, módulos y funciones que sean uniformes a todos. Si alguien necesita un formato diferente, sólo lo transformará dentro de sus límites, siempre encargándose de devolver y  recibir la información en el formato correcto.</p>
+  </li>
+  <li>
+    <p>Evita las dependencias temporales. Siempre que tienes que llamar las mismas funciones, clases o módulos en el mismo orden quiere decir que tienes una dependencia temporal. La información se está escapando en el orden de las llamadas. Piensa si estas piezas de código en realidad debieron ser una sola pieza.</p>
+  </li>
+  <li>
+    <p>Evita usar la misma abstracción a diferentes niveles. Imagínate que estás haciendo una aplicación para editar texto. Tienes una clase central que se encarga de mantener el estado del texto. Esta clase tiene la interfaz básica para realizar todas las transformaciones necesarias básicas, pero no le puedes exponer esto al usuario. El usuario necesita comandos como Copiar, Pegar y Cortar. Sería una mala idea usar estas mismas abstracciones en tu clase central, porque encadenaría completamente tu interfaz con tu centro y viceversa. Por eso, la clase que maneja el código debe tener abstracciones más básicas, adecuadas para crear funcionalidades como Copiar, Pegar, Cortar, u otras, si se necesitara.</p>
+  </li>
+</ul>
+
+<p>Todos estos consejos se tratan de mejor manera en el libro “A Philosophy of Software Design” de John Ousterhout, pero también me gustaría hacer eco de un consejo de Dan North: <strong>Busca crear código simple.</strong></p>
+
+<p>Esta fue la crítica y aplicación del principio de Responsabilidad Única. En el siguiente artículo veremos el principio de Abierto/Cerrado (Open/Closed Principle).</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#principios" class="page__taxonomy-item" rel="tag">principios</a><span class="sep">, </span>
+    
+      <a href="/tags/#solid" class="page__taxonomy-item" rel="tag">solid</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2022-12-01T00:00:00-06:00">December 1, 2022</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=An%C3%A1lisis+de+los+principios+SOLID%3A+Principio+de+Responsabilidad+%C3%9Anica%20https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F01%2Fanalisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F01%2Fanalisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F01%2Fanalisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" class="pagination--pager" title="Crea hashes resistentes a balas con Keccak (SHA-3)
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_150,w_300,x_0,y_386/v1665632333/DALL_E_2022-10-12_22.38.45_cmmlql.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" rel="permalink">Crea hashes resistentes a balas con Keccak (SHA-3)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 12-10-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,q_68,w_300/v1663605238/jon-tyson--xcojCHOSTU-unsplash_ylxtyn.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/09/19/mi-experiencia-como-mentora.html" rel="permalink">Mi experiencia como Mentora
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 19-09-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Has tenido la inquietud de apoyar a una persona en su crecimiento profesional? Te comparto mi experiencia intentandolo.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1660258408/182005458-80093fb7-e46c-49d9-ae4d-c35b8cf437ea_ptlwdt.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/08/11/estas-cambiando-de-trabajo.html" rel="permalink">¿Estás cambiando de trabajo?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 11-08-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Los cambios siempre son buenos, pero no siempre sencillos de manejar, te comparto un poco del último cambio de trabajo que yo atravese.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1654281870/jr-korpa-9XngoIpxcEo-unsplash_c6yihq.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/06/11/resumen-historia-de-los-lenguajes-de-programacion.html" rel="permalink">Resumen: Historia de los lenguajes de programación
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 11-06-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos del libro ‘Historia de los lenguajes de programación’ de Manuel Rubio, que nos cuenta acerca del nacimiento de los primeros lenguajes.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2022 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

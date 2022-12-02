@@ -1,4 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-10-23T17:28:49-05:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Crea hashes resistentes a balas con Keccak (SHA-3)</title><link href="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" rel="alternate" type="text/html" title="Crea hashes resistentes a balas con Keccak (SHA-3)" /><published>2022-10-12T00:00:00-05:00</published><updated>2022-10-12T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3</id><content type="html" xml:base="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html">&lt;p&gt;Ya hemos hablado en este blog de lo que es un &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;hash&lt;/a&gt; e incluso qué hashes puedes usar para guardar tus &lt;a href=&quot;/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html&quot;&gt;passwords de manera segura&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-01T23:26:29-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link href="https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="alternate" type="text/html" title="Análisis de los principios SOLID: Principio de Responsabilidad Única" /><published>2022-12-01T00:00:00-06:00</published><updated>2022-12-01T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y &lt;em&gt;“limpio”&lt;/em&gt; debe conocer y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Explicación del principio&lt;/li&gt;
+  &lt;li&gt;Ejemplos y contraejemplos para pensar&lt;/li&gt;
+  &lt;li&gt;Críticas y alternativas&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Esta serie de artículos surge debido a que &lt;strong&gt;aunque son poco entendidos por la mayoría de los programadores&lt;/strong&gt;, estos principios se toman como &lt;em&gt;verdades universales&lt;/em&gt; que hay que seguir. Si queremos desarrollar buen software, no podemos ir por allí solamente aceptando lo que &lt;em&gt;la mayoría&lt;/em&gt; dice que está bien sin entenderlo a fondo y cuestionarlo.&lt;/p&gt;
+
+&lt;p&gt;Así que esta serie estará enfocada más bien en el lado débil de los principios SOLID y ver si tenemos mejores alternativas, o por lo menos, ver cuando podemos usarlos y cuando no.&lt;/p&gt;
+
+&lt;p&gt;Empecemos diseccionando el primer principio de los aclamados SOLID: el principio de Responsabilidad Única. Como verás a lo largo de los artículos, estos principios casi siempre se aplican con ejemplos de programación orientada a objetos, por lo que los verás explicados con &lt;em&gt;“clases”&lt;/em&gt; y &lt;em&gt;“objetos”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-principio-de-responsabilidad-única&quot;&gt;El principio de Responsabilidad Única&lt;/h2&gt;
+
+&lt;p&gt;Este principio se puede enunciar como:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Una clase debe tener una única razón para ser modificada” según en libro &lt;em&gt;Rober Martin&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Otros lo enuncian como:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Una clase debe hacer sólo una cosa y hacerla bien.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Esto es un resumen del principio que nos puede servir para ayudarnos a pensar sobre las &lt;em&gt;responsabilidades&lt;/em&gt; que nuestro código tiene, específicamente una clase. Pero, ¿qué es una &lt;em&gt;responsabilidad&lt;/em&gt;? Aquí es donde empiezan a entrar los problemas al definir este principio y a tomar pasos prácticos para aplicarlo. Pensemos en algunos ejemplos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una clase que se encarga de transformar un archivo de un formato en otro debería encargarse sólo de esta transformación. ¿En dónde empieza y dónde acaba la &lt;em&gt;responsabilidad&lt;/em&gt; de esta clase? ¿Tiene que encargarse de leer y guardar el archivo? ¿Debe existir una clase para guardar el archivo y otra para leerlo?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una clase que se encarga de la comunicación con la API, transformando las peticiones del programa interno en peticiones HTTP y transformando las respuestas de la API en objetos y tipos de datos internos. ¿Dónde acaba su &lt;em&gt;responsabilidad&lt;/em&gt;?¿Es la encargada de verificar la condición de la red? ¿Se encarga de verificar que los datos sean correctos, o es responsabilidad de otra clase?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como puedes ver, el principio, aunque suena simple, deja muchas cosas sin resolver y vagas, por lo que pocos encuentran un manera clara de aplicarlo. A mi me parece que tiene aplicaciones, pero solamente si acotamos más su alcance y definimos algunos límites, incluso cambiando el enfoque del consejo.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-problema&quot;&gt;El problema&lt;/h2&gt;
+
+&lt;p&gt;El gran problema con este consejo es que la definición de lo que una &lt;strong&gt;responsabilidad&lt;/strong&gt; significa es completamente arbitraria. Todo dependerá de quién esté dividiendo el problema más grande en &lt;em&gt;responsabilidades&lt;/em&gt;. Además, esta división puede tener diferentes niveles de granularidad, por lo que una sola &lt;em&gt;responsabilidad&lt;/em&gt; a cierto nivel puede significar varias &lt;em&gt;responsabilidades&lt;/em&gt; en un nivel más bajo.&lt;/p&gt;
+
+&lt;h2 id=&quot;transformando-el-principio&quot;&gt;Transformando el principio&lt;/h2&gt;
+
+&lt;p&gt;¿Cuál es la &lt;em&gt;esencia&lt;/em&gt; del principio? Para mi el corazón de este consejo tiene que ver con controlar la &lt;strong&gt;información&lt;/strong&gt; que una clase maneja. También tiene que ver con el &lt;strong&gt;cambio&lt;/strong&gt;. Finalmente el consejo tiene que ver con la cantidad de información que podemos mantener en nuestra mente en un tiempo específico. Si una pieza de código hace demasiadas cosas, será difícil de entender y por lo tanto propensa a errores y omisiones.&lt;/p&gt;
+
+&lt;p&gt;La primera  cosa de la que vamos a hablar es de la &lt;strong&gt;información&lt;/strong&gt;. La idea de que se encapsule una responsabilidad en un una clase es que si la información que tenemos sobre un problema cambia, se propague por la menor cantidad de código posible en nuestra base, rediciendo el impacto y la posibilidad de crear problemas.&lt;/p&gt;
+
+&lt;p&gt;Entonces, lo primero que tenemos que pensar es si el nivel de granularidad del que se está hablando (clases) es el correcto. Para mi, no se puede establecer un nivel de granularidad tan fijo, sino que dependerá del programador que decida dónde &lt;strong&gt;encapsular o esconder&lt;/strong&gt; la información que esta responsabilidad maneja. Puede que sea un módulo, paquete, clase o función. Hay problemas grandes y pequeños.&lt;/p&gt;
+
+&lt;p&gt;Para aplicar esto, piensa:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;¿Qué procedimientos, información y datos va a manejar esta pieza de código? Si no tienes claro esto, puede que te falte pensar un poco más en problema, e incluso dividirlo mejor.&lt;/li&gt;
+  &lt;li&gt;¿Cómo puedo aislar la información que esta pieza de código maneja, de tal forma que si cambiar, no afecte a todo lo que está fuera de ella?&lt;/li&gt;
+  &lt;li&gt;¿De dónde viene y a dónde va la información que esta pieza de código transforma?&lt;/li&gt;
+  &lt;li&gt;¿Cómo puedo definir &lt;em&gt;exactamente&lt;/em&gt; qué hace esta pieza de código? Esta definición junto con la justificación de la decisión debería estar bien documentada.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;técnicas-para-concretar-el-principio&quot;&gt;Técnicas para concretar el principio&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Divide en problemas (responsabilidades) bien definidas tu problema principal. No hay una forma correcta de hacerlo, estas divisiones siempre serán arbitrarias, así que trata de documentar estas decisiones lo mejor posible. Estas decisiones deben ser fáciles de entender en la medida de lo posible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Define exactamente que hará cada pieza de código que tenga una interfaz. Un módulo, una clase y una función tienen una interfaz, una parte que permite a otras piezas de código usar su funcionalidad interna. La función de esta interfaz es &lt;em&gt;esconder&lt;/em&gt; los detalles de implementación permitiendo el uso de la funcionalidad encapsulada. También esto debe estar bien documentado en el lugar adecuado. Documenta lo que hace, no cómo lo hace.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Estos dos puntos anteriores los puedes aplicar recursivamente a nivel cada vez más bajo, hasta que consideres que el problema es lo suficientemente pequeño como para resolverlo directamente.&lt;/p&gt;
+
+&lt;p&gt;El último consejo tiene varias partes, por lo que trataremos en un subtítulo aparte.&lt;/p&gt;
+
+&lt;h2 id=&quot;evita-las-fugas-de-información&quot;&gt;Evita las fugas de información&lt;/h2&gt;
+
+&lt;p&gt;Aunque tengamos completamente claro lo que una clase, módulo o función hace, nuestros detalles de implementación pueden dejar escapar información que no es conveniente que esté fuera de ella.&lt;/p&gt;
+
+&lt;p&gt;Piensa por ejemplo en la clase que se comunica con la API. ¿Qué pasaría si pasaras directamente los errores que la API da hacia las demás partes del código? Si esta parte cambia en el futuro, afectarás a todas estas partes que consumen esos errores.&lt;/p&gt;
+
+&lt;p&gt;Puedes seguir estos consejos para evitar fugas de información:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Define estructuras de datos para comunicar información entre clases, módulos y funciones que sean uniformes a todos. Si alguien necesita un formato diferente, sólo lo transformará dentro de sus límites, siempre encargándose de devolver y  recibir la información en el formato correcto.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Evita las dependencias temporales. Siempre que tienes que llamar las mismas funciones, clases o módulos en el mismo orden quiere decir que tienes una dependencia temporal. La información se está escapando en el orden de las llamadas. Piensa si estas piezas de código en realidad debieron ser una sola pieza.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Evita usar la misma abstracción a diferentes niveles. Imagínate que estás haciendo una aplicación para editar texto. Tienes una clase central que se encarga de mantener el estado del texto. Esta clase tiene la interfaz básica para realizar todas las transformaciones necesarias básicas, pero no le puedes exponer esto al usuario. El usuario necesita comandos como Copiar, Pegar y Cortar. Sería una mala idea usar estas mismas abstracciones en tu clase central, porque encadenaría completamente tu interfaz con tu centro y viceversa. Por eso, la clase que maneja el código debe tener abstracciones más básicas, adecuadas para crear funcionalidades como Copiar, Pegar, Cortar, u otras, si se necesitara.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Todos estos consejos se tratan de mejor manera en el libro “A Philosophy of Software Design” de John Ousterhout, pero también me gustaría hacer eco de un consejo de Dan North: &lt;strong&gt;Busca crear código simple.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Esta fue la crítica y aplicación del principio de Responsabilidad Única. En el siguiente artículo veremos el principio de Abierto/Cerrado (Open/Closed Principle).&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="principios" /><summary type="html">¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.</summary></entry><entry><title type="html">Crea hashes resistentes a balas con Keccak (SHA-3)</title><link href="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" rel="alternate" type="text/html" title="Crea hashes resistentes a balas con Keccak (SHA-3)" /><published>2022-10-12T00:00:00-05:00</published><updated>2022-10-12T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3</id><content type="html" xml:base="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html">&lt;p&gt;Ya hemos hablado en este blog de lo que es un &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;hash&lt;/a&gt; e incluso qué hashes puedes usar para guardar tus &lt;a href=&quot;/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html&quot;&gt;passwords de manera segura&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;En este artículo vamos a hablar de uno en específico, el que estamos seguros que deberías usar para cualquier uso futuro en tus programas y sistemas, el que ha sido nombrado como el Secure Hash Algorithm 3 (&lt;a href=&quot;https://www.nist.gov/publications/sha-3-standard-permutation-based-hash-and-extendable-output-functions?pub_id=919061&quot;&gt;SHA-3&lt;/a&gt;): &lt;strong&gt;Keccak&lt;/strong&gt;.&lt;/p&gt;
 
@@ -773,60 +872,4 @@ Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más e
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Como podrás observar, hay una gran cantidad de recursos para aprender lo necesario para entender la criptografía a fondo, desde sus bases matemáticas. Puedes usar estas recomendaciones como guía, o ver los temas y buscar tus propios recursos para seguir aprendiendo. Si tienes alguna recomendación no dudes en compartirla con nosotros para poder actualizar nuestra lista y cada vez hacerla mejor.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="matemáticas" /><category term="álgebra" /><summary type="html">Veamos qué conocimientos matemáticos requieres para entender los algoritmos criptográficos, cómo funcionan y, en su caso, avanzar para que puedas diseñar los tuyos.</summary></entry><entry><title type="html">HTTP 1.1, HTTP/2 y HTTP/3</title><link href="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html" rel="alternate" type="text/html" title="HTTP 1.1, HTTP/2 y HTTP/3" /><published>2021-12-15T00:00:00-06:00</published><updated>2021-12-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/15/http-1-1-http-2-y-http-3.html">&lt;p&gt;HTTP es el estándar más importante de la web actual, porque permite la transmisión de información entre los diferentes actores de la red. Hablemos un poco de su evolución como estándar para servir mejor a los intereses de la industria y de los usuarios y de su estado actual.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;HTTP/3 hará que tus páginas web descarguen mucho más rápido, gracias a que trabaja de forma diferente a bajo nivel. Empieza a aprenderlo porque esto vendrá con nuevos retos para los desarrolladores.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;qué-es-http&quot;&gt;¿Qué es HTTP?&lt;/h2&gt;
-
-&lt;p&gt;El &lt;strong&gt;Protocolo de Transferencia de Hyper-Texto&lt;/strong&gt; (&lt;strong&gt;H&lt;/strong&gt;yper &lt;strong&gt;T&lt;/strong&gt;ext &lt;strong&gt;T&lt;/strong&gt;ransfer &lt;strong&gt;P&lt;/strong&gt;rotocol) es un estándar definido en el &lt;a href=&quot;https://tools.ietf.org/html/rfc2616&quot;&gt;RFC 2616&lt;/a&gt; que permite la comunicación entre dos computadoras a nivel de aplicación, es decir, a nivel de software y con contenido relacionado a lo que tu aplicación de red está haciendo.&lt;/p&gt;
-
-&lt;p&gt;El que sea un protocolo a nivel de aplicación también implica que necesita otros protocolos debajo de él para encargarse de otras partes del proceso de comunicación, como la conexión física, la conexión de software, el transporte de datos y el enrutamiento de la información.&lt;/p&gt;
-
-&lt;p&gt;HTTP es un protocolo con arquitectura &lt;strong&gt;cliente-servidor&lt;/strong&gt;, en el que un cliente hace &lt;em&gt;peticiones&lt;/em&gt; (requests) al servidor y el servidor contesta con la información solicitada, a lo que nos referimos como &lt;em&gt;respuesta&lt;/em&gt; (response).&lt;/p&gt;
-
-&lt;p&gt;La parte de hyper-texto nacio por la necesidad de transferir información más rica que el texto plano, es decir, con metadatos, links a otra parte de la información u otros documentos. Al agregar imágenes, videos y otro tipo de información multimedia lo estamos convirtiendo en &lt;strong&gt;Hypermedia&lt;/strong&gt;, información relacionada entre sí que no es puro texto.&lt;/p&gt;
-
-&lt;h2 id=&quot;http11&quot;&gt;HTTP/1.1&lt;/h2&gt;
-
-&lt;p&gt;Este es el estándar que la mayoría de nosotros consideraríamos como “HTTP”, ha estado en uso por bastante tiempo. La versión 1.0 fue liberada en 1996, pero en 1997 se liberó la versión 1.1, que es lo que la mayoría de los devs que “crecimos” junto con la web llamaríamos &lt;em&gt;HTTP&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Las limitaciones técnicas de HTTP/1.1 son lo que han hecho que necesitemos un nuevo estándar, ya que la web actual requiere muchas más descargas que cuando se creó. En 2021 se descargan aproximadamente 1.9 MB en promedio por página, pero esto repartido en múltiples archivos HTML, CSS, JavaScript e imágenes (74 en promedio). Puedes ver más información sobre el tamaño de las páginas web aquí: &lt;a href=&quot;https://httparchive.org/reports/page-weight&quot;&gt;HTTP Archive - Page Weight&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;HTTP 1.1 solamente permite descargar un archivo a la vez, por lo que los navegadores tienen que abrir múltiples conexiones a un mismo servidor, limitadas por los recursos de la computadora. Esto crea un cuello de botella que puede hacer que la experiencia en web no sea óptima.&lt;/p&gt;
-
-&lt;p&gt;Por eso llegó HTTP/2.&lt;/p&gt;
-&lt;h2 id=&quot;http2&quot;&gt;HTTP/2&lt;/h2&gt;
-
-&lt;p&gt;En 2015 por fin llegó una especificación más adecuada para la web moderna que HTTP/1.1: &lt;a href=&quot;https://datatracker.ietf.org/doc/html/rfc7540&quot;&gt;HTTP/2&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;HTTP/2 se centra en la &lt;em&gt;multiplexación de conexiones&lt;/em&gt;, es decir, permite mantener varias “conversaciones” con el servidor al mismo tiempo en la misma conexión. Esto permite la descarga de múltiples archivos simultáneamente sin tener que consumir tantos recursos como en HTTP/1.1.&lt;/p&gt;
-
-&lt;p&gt;El problema con HTTP/2 es que sigue funcionando sobre TCP, que no permite la multiplexación de conexiones, así al intentar la descarga de archivos paralelamente se pueden producir cuellos de botella ya que si se presentan problemas de descarga con un archivo, hay que esperar hasta que llegue el paquete que corrija el error, pudiendo este tardar mucho tiempo por estar en la misma conexión en la que se están descargando otros archivos.&lt;/p&gt;
-
-&lt;p&gt;Esto último causa que HTTP/2 sea insuficiente para las necesidades actuales, e incluso más lento que HTTP/1.1 en muchos casos de uso de la vida real: cuando las conexiones son poco estables. HTTP/2 fue bastante promovido por Google por un tiempo, pero ahora ha sido reemplazado por HTTP/3, que promete ser mucho mejor.&lt;/p&gt;
-
-&lt;h2 id=&quot;http3&quot;&gt;HTTP/3&lt;/h2&gt;
-
-&lt;p&gt;El último borrador del estándar fue publicado en &lt;a href=&quot;https://quicwg.org/base-drafts/draft-ietf-quic-http.html#name-delegation-to-quic&quot;&gt;Mayo de 2021&lt;/a&gt;, o sea que es muy, muy nuevo, todavía no está en uso ampliamente y el estándar todavía no es el final.&lt;/p&gt;
-
-&lt;p&gt;HTTP/3 es básicamente las mejoras propuestas por HTTP/2 sobre una nueva capa de transporte que no es TCP: &lt;a href=&quot;https://quicwg.org/&quot;&gt;QUIC&lt;/a&gt;. QUIC está basado en UDP, &lt;strong&gt;pero establece la forma de crear canales con control de flujo, cifrado y multiplexación&lt;/strong&gt; para poder servir mejor a la web moderna.&lt;/p&gt;
-
-&lt;p&gt;QUIC permite &lt;a href=&quot;https://www.rfc-editor.org/rfc/rfc9000.html&quot;&gt;usar TLS&lt;/a&gt; para establecer los parámetros de cifrado e incluso permite adelantar el intercambio de información antes de negociar completamente los parámetros de cifrado, haciendo un poco más débil el cifrado pero incrementando la velocidad de descarga.&lt;/p&gt;
-
-&lt;h2 id=&quot;benchmarks&quot;&gt;Benchmarks&lt;/h2&gt;
-
-&lt;p&gt;HTTP/3 es mucho mucho más rápido que HTTP/1.1 y mucho más &lt;em&gt;confiable y rápido&lt;/em&gt; que HTTP/2. En el artículo &lt;a href=&quot;https://requestmetrics.com/web-performance/http3-is-fast&quot;&gt;HTTP/3 is Fast&lt;/a&gt; podrás encontrar una comparación del comportamiento de las tres versiones variando diferentes factores, como la confiabilidad y distancia de la conexión.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusiones&quot;&gt;Conclusiones&lt;/h2&gt;
-
-&lt;p&gt;Mantenernos actualizados con respecto a las nuevas tecnologías es muy importante para ofrecerles lo mejor a los usuarios de nuestro software, sean desarrolladores o usuarios finales. Si quieres empezar a usar HTTP/3 échale un ojo a tus servidores HTTP, por ejemplo &lt;a href=&quot;https://www.nginx.com/blog/our-roadmap-quic-http-3-support-nginx/&quot;&gt;NGINX ya tiene planes para soportarlo completamente&lt;/a&gt;, &lt;a href=&quot;https://doc.traefik.io/traefik/master/routing/entrypoints/#http3&quot;&gt;Traefik ya lo soporta de manera experimental&lt;/a&gt;, pero parece que Apache &lt;a href=&quot;https://www.reddit.com/r/apache/comments/o6a86x/why_is_apache_failing_to_implement_quic_http3/&quot;&gt;no lo hará por ahora&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;También si usas algún servicio de servidores administrados AWS, GCP, Azure, DigitalOcean o similar, revisa su documentación para verificar si puedes activarlo. También debes tener en cuenta que no todos los navegadores lo soportan, pero los que lo hagan se beneficiarán enormemente de que lo actives. Puedes revisar la lista de compatibilidad constantemente aquí: &lt;a href=&quot;https://caniuse.com/http3&quot;&gt;Can I Use HTTP/3?&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="HTTP" /><category term="web" /><category term="network" /><summary type="html">HTTP es el estándar que permite que internet exista como hoy lo conocemos, hablemos de sus avances y lo que puede ofrecerte la última versión: HTTP/3.</summary></entry></feed>
+&lt;p&gt;Como podrás observar, hay una gran cantidad de recursos para aprender lo necesario para entender la criptografía a fondo, desde sus bases matemáticas. Puedes usar estas recomendaciones como guía, o ver los temas y buscar tus propios recursos para seguir aprendiendo. Si tienes alguna recomendación no dudes en compartirla con nosotros para poder actualizar nuestra lista y cada vez hacerla mejor.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="matemáticas" /><category term="álgebra" /><summary type="html">Veamos qué conocimientos matemáticos requieres para entender los algoritmos criptográficos, cómo funcionan y, en su caso, avanzar para que puedas diseñar los tuyos.</summary></entry></feed>

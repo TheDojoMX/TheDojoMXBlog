@@ -520,4 +520,10 @@ var store = [{
         "tags": ["criptografia","crypto","hash","keccak"],
         "url": "/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_150,w_300,x_0,y_386/v1665632333/DALL_E_2022-10-12_22.38.45_cmmlql.png"
+      },{
+        "title": "Análisis de los principios SOLID: Principio de Responsabilidad Única",
+        "excerpt":"En esta serie de artículos vamos a hablar sobre los cinco principios SOLID. Se dice que todo programador que quiera crear código mantenible y “limpio” debe conocer y usar. La estructura de los artículos llevará la siguiente forma: Explicación del principio Ejemplos y contraejemplos para pensar Críticas y alternativas Esta...","categories": [],
+        "tags": ["solid","principios"],
+        "url": "/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1669958588/2113646631_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__otkltm.png"
       }]
