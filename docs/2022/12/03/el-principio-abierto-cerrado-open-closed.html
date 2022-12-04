@@ -1,0 +1,820 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>El principio Abierto/Cerrado (Open/Closed) y su relación con ‘Information Hiding’ - The Dojo MX Blog</title>
+<meta name="description" content="Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="El principio Abierto/Cerrado (Open/Closed) y su relación con ‘Information Hiding’">
+<meta property="og:url" content="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html">
+
+
+  <meta property="og:description" content="Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1048/v1669958588/470909777_supernova_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__ilkvuz.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-03T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html",
+      "name": "El principio Abierto/Cerrado (Open/Closed) y su relación con 'Information Hiding'",
+      "headline": "El principio Abierto/Cerrado (Open/Closed) y su relación con 'Information Hiding'",
+      "keywords": "solid,open/closed,abierto/cerrado",
+      "description": "Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código",
+      "articleBody": "El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por Robert Martin), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.\n\nVamos a analizarlo, ver sus caso de uso y finalmente a establecer sus relaciones con otros principios de diseño de software que te pueden ayudar a crear mejores programas.\n\nEl principio Abierto/Cerrado\n\nEste principio establece que:\n\n\n  Cualquier módulo de software debería estar abierto para la extensión, pero cerrado para modificación.\n\n\nOtra vez nos encontramos con palabras vagas que tenemos que examinar, pero por suerte en este principio es más fácil llegar a una conclusión.\n\nEn pocas palabras cuando tengas que modificar el comportamiento de un programa, lo último que deberías hacer siempre es modificar el código que ya existe, más bien, debes crear módulos (clases, métodos, funciones, paquetes) que permitan modificar su comportamiento agregando código nuevo.\n\nNo hay ningún mecanismo casi en ningún lenguaje de programación que te permita “cerrar” o “abrir” módulos, así que estas ideas son puramente conceptuales y guías de comportamiento.\n\nAplicaciones y ejemplos\n\nLa forma de ejemplo más clásica de aplicarlo es mediante la preparación de tus módulos o clases para usar polimorfismo. Por ejemplo, imagínate que estás haciendo una aplicación para procesar pagos y quieres cobrar por diferentes medios. Cada uno de estos medios es un “método de pago”. Si implementas cada uno de estos métodos como dependientes de una clase padre, mediante la herencia, clases abstractas, protocolos o interfaces, tu procesador principal podrá, por ejemplo, llamar al método procesar de cada clase, sin importar el tipo de método de pago que sea o sus detalles de implementación.\n\nEn el ejemplo anterior, cuando quieras implementar un nuevo método de pago, simplemente creas un nuevo módulo que cumpla con las especificaciones de la clase padre y no tendrás que modificar el código existente. Así solo has añadido código nuevo y has eliminado la probabilidad de afectar cosas que ya existían y funcionaban bien.\n\nComo puedes ver, los principios de funcionamiento de estas técnicas tienen que ver con dos cosas:\n\n\n  \n    Ocultar información (esconder la mayor cantidad de detalles de implementación de tus módulos, detrás de una interfaz)\n  \n  \n    Programación por contrato, cumplir con una interfaz dada para que otros módulos puedan usarla con seguridad. De esto hablaremos en otro artículo, pero quiero que veas como es un tema que se va a repetir.\n  \n\n\nAplicaciones más amplias\n\nEste principio también se puede aplicar a niveles diferentes del sistema, por ejemplo a nivel arquitectónico.\n\nUn situación en que puedes usar esta estrategia es cuando tienes un módulo que quieres cambiar pero no quieres deshacer o poner en riesgo el funcionamiento de todo el sistema, ya que puede tener consecuencias catastróficas.\n\nPara aplicarlo, tienes que dejar intacto el módulo de la funcionalidad afectada, mientras lo envuelves con tu nuevo código, usándolo como la interfaz principal cuando te conviene y reemplazándolo poco a poco cuando te sientas seguro.\n\nComo puedes notar, para poder aplicar esta técnica, los módulos deben ser completamente independientes o no podrías de ninguna manera aislar los cambios que estás intentando hacer. Esto casi siempre se logra con paso de mensajes, como por ejemplo una interfaz RPC, ReST o respetando un contrato (interfaz).\n\nOtros ideas parecidas\n\nLo primero que quiero que notes es que este principio tiene mucho que ver con la separación de funciones, la ocultación de información y el respeto a la interfaces.\n\nEspero que para este momento te empieces a dar cuenta de que todo lo que llamamos “principios SOLID” tienen en el fondo: Ocultar Información. Esto ha sido ha hablado mucho por David L. Parnas, y para mi, es gran parte de lo que se requiere para hacer gran software que pueda ser mantenido y funcional mucho tiempo.\n\nEsta mismo concepto ha sido tratado por otras personas, como Alistair Cockburn con su concepto de “Variación protegida”.\n\nLa idea natural del concepto, puedes entenderla más fácilmente con máquinas reales:\n\n\n  \n    Una cámara con lentes intercambiables que, cuando requieres una nueva óptica, pones un lente con el mismo conector (interfaz)\n  \n  \n    Un carro, que cuando una llanta se poncha se la puedes cambiar, o si requieres para un terreno diferente, puedes ponerle llantas de otro tipo.\n  \n\n\nEl punto es darle a tu sistema puntos “naturales” de extensión, en los que los cambios puedan caber sin hacer grandes cambios en todo el sistema.\n\nLos límites de la extensión\n\nEs natural que llegue el punto en el que no puedas seguir extendiendo el sistema y tengas que cambiar código que ya está funcionando, nada de lo que estamos diciendo es una ley absoluta o moral que te tengas que sentir mal por no cumplir, recuerda que todo esto es por tu conveniencia, la de tus desarrollos y de tu equipo.\n",
+      "datePublished": "2022-12-03 00:00:00 -0600",
+      "dateModified": "2022-12-03 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1048/v1669958588/470909777_supernova_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__ilkvuz.png"
+      }
+    }
+</script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1048/v1669958588/470909777_supernova_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__ilkvuz.png');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          El principio Abierto/Cerrado (Open/Closed) y su relación con ‘Information Hiding’
+
+        
+      </h1>
+      
+        <p class="page__lead">Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        792 palabras | 3 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="El principio Abierto/Cerrado (Open/Closed) y su relación con ‘Information Hiding’">
+    <meta itemprop="description" content="Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código">
+    <meta itemprop="datePublished" content="2022-12-03T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por <a href="https://drive.google.com/file/d/0BwhCYaYDn8EgN2M5MTkwM2EtNWFkZC00ZTI3LWFjZTUtNTFhZGZiYmUzODc1/view?resourcekey=0-FsS837CGML599A_o5D-nAw" target="_blank">Robert Martin</a>), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.</p>
+
+<p>Vamos a analizarlo, ver sus caso de uso y finalmente a establecer sus relaciones con otros principios de diseño de software que te pueden ayudar a crear mejores programas.</p>
+
+<h2 id="el-principio-abiertocerrado">El principio Abierto/Cerrado</h2>
+
+<p>Este principio establece que:</p>
+
+<blockquote>
+  <p>Cualquier módulo de software debería estar abierto para la extensión, pero cerrado para modificación.</p>
+</blockquote>
+
+<p>Otra vez nos encontramos con palabras vagas que tenemos que examinar, pero por suerte en este principio es más fácil llegar a una conclusión.</p>
+
+<p>En pocas palabras cuando tengas que modificar el comportamiento de un programa, lo último que deberías hacer siempre es modificar el código que ya existe, más bien, debes crear módulos (clases, métodos, funciones, paquetes) que permitan modificar su comportamiento agregando <strong>código nuevo</strong>.</p>
+
+<p>No hay ningún mecanismo casi en ningún lenguaje de programación que te permita “cerrar” o “abrir” módulos, así que estas ideas son puramente conceptuales y guías de comportamiento.</p>
+
+<h2 id="aplicaciones-y-ejemplos">Aplicaciones y ejemplos</h2>
+
+<p>La forma de ejemplo más clásica de aplicarlo es mediante la preparación de tus módulos o clases para usar <strong>polimorfismo</strong>. Por ejemplo, imagínate que estás haciendo una aplicación para procesar pagos y quieres cobrar por diferentes medios. Cada uno de estos medios es un “método de pago”. Si implementas cada uno de estos métodos como dependientes de una clase padre, mediante la herencia, clases abstractas, protocolos o interfaces, tu procesador principal podrá, por ejemplo, llamar al método <code class="language-plaintext highlighter-rouge">procesar</code> de cada clase, sin importar el tipo de método de pago que sea o sus detalles de implementación.</p>
+
+<p>En el ejemplo anterior, cuando quieras implementar un nuevo método de pago, simplemente creas un nuevo módulo que cumpla con las especificaciones de la clase padre y no tendrás que modificar el código existente. Así solo has añadido código nuevo y has eliminado la probabilidad de afectar cosas que ya existían y funcionaban bien.</p>
+
+<p>Como puedes ver, los principios de funcionamiento de estas técnicas tienen que ver con dos cosas:</p>
+
+<ul>
+  <li>
+    <p>Ocultar información (esconder la mayor cantidad de detalles de implementación de tus módulos, detrás de una interfaz)</p>
+  </li>
+  <li>
+    <p>Programación por contrato, cumplir con una interfaz dada para que otros módulos puedan usarla con seguridad. De esto hablaremos en otro artículo, pero quiero que veas como es un tema que se va a repetir.</p>
+  </li>
+</ul>
+
+<h2 id="aplicaciones-más-amplias">Aplicaciones más amplias</h2>
+
+<p>Este principio también se puede aplicar a niveles diferentes del sistema, por ejemplo a nivel arquitectónico.</p>
+
+<p>Un situación en que puedes usar esta estrategia es cuando tienes un módulo que quieres cambiar pero no quieres deshacer o poner en riesgo el funcionamiento de todo el sistema, ya que puede tener consecuencias catastróficas.</p>
+
+<p>Para aplicarlo, tienes que dejar intacto el módulo de la funcionalidad afectada, mientras lo envuelves con tu nuevo código, usándolo como la interfaz principal cuando te conviene y reemplazándolo poco a poco cuando te sientas seguro.</p>
+
+<p>Como puedes notar, para poder aplicar esta técnica, los módulos deben ser completamente independientes o no podrías de ninguna manera aislar los cambios que estás intentando hacer. Esto casi siempre se logra con paso de mensajes, como por ejemplo una interfaz RPC, ReST o respetando un contrato (interfaz).</p>
+
+<h2 id="otros-ideas-parecidas">Otros ideas parecidas</h2>
+
+<p>Lo primero que quiero que notes es que este principio tiene mucho que ver con la <strong>separación de funciones</strong>, la <strong>ocultación de información</strong> y el respeto a la interfaces.</p>
+
+<p>Espero que para este momento te empieces a dar cuenta de que todo lo que llamamos “principios SOLID” tienen en el fondo: <strong>Ocultar Información</strong>. Esto ha sido ha hablado mucho por <a href="https://levelup.gitconnected.com/open-closed-principle-is-nothing-about-the-code-270f1c04bebf" target="_blank">David L. Parnas</a>, y para mi, es gran parte de lo que se requiere para hacer gran software que pueda ser mantenido y funcional mucho tiempo.</p>
+
+<p>Esta mismo concepto ha sido tratado por otras personas, como Alistair Cockburn con su concepto de <a href="https://martinfowler.com/ieeeSoftware/protectedVariation.pdf" target="_blank">“Variación protegida”</a>.</p>
+
+<p>La idea natural del concepto, puedes entenderla más fácilmente con máquinas reales:</p>
+
+<ul>
+  <li>
+    <p>Una cámara con lentes intercambiables que, cuando requieres una nueva óptica, pones un lente con el mismo conector (interfaz)</p>
+  </li>
+  <li>
+    <p>Un carro, que cuando una llanta se poncha se la puedes cambiar, o si requieres para un terreno diferente, puedes ponerle llantas de otro tipo.</p>
+  </li>
+</ul>
+
+<p>El punto es darle a tu sistema puntos “naturales” de extensión, en los que los cambios puedan caber sin hacer grandes cambios en todo el sistema.</p>
+
+<h2 id="los-límites-de-la-extensión">Los límites de la extensión</h2>
+
+<p>Es natural que llegue el punto en el que no puedas seguir extendiendo el sistema y tengas que cambiar código que ya está funcionando, nada de lo que estamos diciendo es una ley absoluta o moral que te tengas que sentir mal por no cumplir, recuerda que todo esto es por tu conveniencia, la de tus desarrollos y de tu equipo.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#abierto-cerrado" class="page__taxonomy-item" rel="tag">abierto/cerrado</a><span class="sep">, </span>
+    
+      <a href="/tags/#open-closed" class="page__taxonomy-item" rel="tag">open/closed</a><span class="sep">, </span>
+    
+      <a href="/tags/#solid" class="page__taxonomy-item" rel="tag">solid</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2022-12-03T00:00:00-06:00">December 3, 2022</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=El+principio+Abierto%2FCerrado+%28Open%2FClosed%29+y+su+relaci%C3%B3n+con+%27Information+Hiding%27%20https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F03%2Fel-principio-abierto-cerrado-open-closed.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F03%2Fel-principio-abierto-cerrado-open-closed.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F03%2Fel-principio-abierto-cerrado-open-closed.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" class="pagination--pager" title="Análisis de los principios SOLID: Principio de Responsabilidad Única
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1669958588/2113646631_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__otkltm.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="permalink">Análisis de los principios SOLID: Principio de Responsabilidad Única
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 01-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_150,w_300,x_0,y_386/v1665632333/DALL_E_2022-10-12_22.38.45_cmmlql.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" rel="permalink">Crea hashes resistentes a balas con Keccak (SHA-3)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 12-10-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,q_68,w_300/v1663605238/jon-tyson--xcojCHOSTU-unsplash_ylxtyn.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/09/19/mi-experiencia-como-mentora.html" rel="permalink">Mi experiencia como Mentora
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 19-09-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Has tenido la inquietud de apoyar a una persona en su crecimiento profesional? Te comparto mi experiencia intentandolo.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1660258408/182005458-80093fb7-e46c-49d9-ae4d-c35b8cf437ea_ptlwdt.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/08/11/estas-cambiando-de-trabajo.html" rel="permalink">¿Estás cambiando de trabajo?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 11-08-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Los cambios siempre son buenos, pero no siempre sencillos de manejar, te comparto un poco del último cambio de trabajo que yo atravese.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2022 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2022/12/03/el-principio-abierto-cerrado-open-closed"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

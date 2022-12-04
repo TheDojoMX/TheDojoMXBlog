@@ -526,4 +526,10 @@ var store = [{
         "tags": ["solid","principios"],
         "url": "/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1669958588/2113646631_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__otkltm.png"
+      },{
+        "title": "El principio Abierto/Cerrado (Open/Closed) y su relación con 'Information Hiding'",
+        "excerpt":"El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por Robert Martin), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID. Vamos a analizarlo, ver sus caso de uso y finalmente a establecer sus relaciones con otros principios...","categories": [],
+        "tags": ["solid","open/closed","abierto/cerrado"],
+        "url": "/2022/12/03/el-principio-abierto-cerrado-open-closed.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1669958588/470909777_supernova_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__ilkvuz.png"
       }]

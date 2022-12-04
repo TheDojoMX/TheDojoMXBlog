@@ -1,4 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-02T12:38:21-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link href="https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="alternate" type="text/html" title="Análisis de los principios SOLID: Principio de Responsabilidad Única" /><published>2022-12-01T00:00:00-06:00</published><updated>2022-12-01T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y &lt;em&gt;“limpio”&lt;/em&gt; debe conocer y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-03T19:48:29-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">El principio Abierto/Cerrado (Open/Closed) y su relación con ‘Information Hiding’</title><link href="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html" rel="alternate" type="text/html" title="El principio Abierto/Cerrado (Open/Closed) y su relación con ‘Information Hiding’" /><published>2022-12-03T00:00:00-06:00</published><updated>2022-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html">&lt;p&gt;El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por &lt;a href=&quot;https://drive.google.com/file/d/0BwhCYaYDn8EgN2M5MTkwM2EtNWFkZC00ZTI3LWFjZTUtNTFhZGZiYmUzODc1/view?resourcekey=0-FsS837CGML599A_o5D-nAw&quot; target=&quot;_blank&quot;&gt;Robert Martin&lt;/a&gt;), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.&lt;/p&gt;
+
+&lt;p&gt;Vamos a analizarlo, ver sus caso de uso y finalmente a establecer sus relaciones con otros principios de diseño de software que te pueden ayudar a crear mejores programas.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-principio-abiertocerrado&quot;&gt;El principio Abierto/Cerrado&lt;/h2&gt;
+
+&lt;p&gt;Este principio establece que:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Cualquier módulo de software debería estar abierto para la extensión, pero cerrado para modificación.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Otra vez nos encontramos con palabras vagas que tenemos que examinar, pero por suerte en este principio es más fácil llegar a una conclusión.&lt;/p&gt;
+
+&lt;p&gt;En pocas palabras cuando tengas que modificar el comportamiento de un programa, lo último que deberías hacer siempre es modificar el código que ya existe, más bien, debes crear módulos (clases, métodos, funciones, paquetes) que permitan modificar su comportamiento agregando &lt;strong&gt;código nuevo&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;No hay ningún mecanismo casi en ningún lenguaje de programación que te permita “cerrar” o “abrir” módulos, así que estas ideas son puramente conceptuales y guías de comportamiento.&lt;/p&gt;
+
+&lt;h2 id=&quot;aplicaciones-y-ejemplos&quot;&gt;Aplicaciones y ejemplos&lt;/h2&gt;
+
+&lt;p&gt;La forma de ejemplo más clásica de aplicarlo es mediante la preparación de tus módulos o clases para usar &lt;strong&gt;polimorfismo&lt;/strong&gt;. Por ejemplo, imagínate que estás haciendo una aplicación para procesar pagos y quieres cobrar por diferentes medios. Cada uno de estos medios es un “método de pago”. Si implementas cada uno de estos métodos como dependientes de una clase padre, mediante la herencia, clases abstractas, protocolos o interfaces, tu procesador principal podrá, por ejemplo, llamar al método &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;procesar&lt;/code&gt; de cada clase, sin importar el tipo de método de pago que sea o sus detalles de implementación.&lt;/p&gt;
+
+&lt;p&gt;En el ejemplo anterior, cuando quieras implementar un nuevo método de pago, simplemente creas un nuevo módulo que cumpla con las especificaciones de la clase padre y no tendrás que modificar el código existente. Así solo has añadido código nuevo y has eliminado la probabilidad de afectar cosas que ya existían y funcionaban bien.&lt;/p&gt;
+
+&lt;p&gt;Como puedes ver, los principios de funcionamiento de estas técnicas tienen que ver con dos cosas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ocultar información (esconder la mayor cantidad de detalles de implementación de tus módulos, detrás de una interfaz)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Programación por contrato, cumplir con una interfaz dada para que otros módulos puedan usarla con seguridad. De esto hablaremos en otro artículo, pero quiero que veas como es un tema que se va a repetir.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;aplicaciones-más-amplias&quot;&gt;Aplicaciones más amplias&lt;/h2&gt;
+
+&lt;p&gt;Este principio también se puede aplicar a niveles diferentes del sistema, por ejemplo a nivel arquitectónico.&lt;/p&gt;
+
+&lt;p&gt;Un situación en que puedes usar esta estrategia es cuando tienes un módulo que quieres cambiar pero no quieres deshacer o poner en riesgo el funcionamiento de todo el sistema, ya que puede tener consecuencias catastróficas.&lt;/p&gt;
+
+&lt;p&gt;Para aplicarlo, tienes que dejar intacto el módulo de la funcionalidad afectada, mientras lo envuelves con tu nuevo código, usándolo como la interfaz principal cuando te conviene y reemplazándolo poco a poco cuando te sientas seguro.&lt;/p&gt;
+
+&lt;p&gt;Como puedes notar, para poder aplicar esta técnica, los módulos deben ser completamente independientes o no podrías de ninguna manera aislar los cambios que estás intentando hacer. Esto casi siempre se logra con paso de mensajes, como por ejemplo una interfaz RPC, ReST o respetando un contrato (interfaz).&lt;/p&gt;
+
+&lt;h2 id=&quot;otros-ideas-parecidas&quot;&gt;Otros ideas parecidas&lt;/h2&gt;
+
+&lt;p&gt;Lo primero que quiero que notes es que este principio tiene mucho que ver con la &lt;strong&gt;separación de funciones&lt;/strong&gt;, la &lt;strong&gt;ocultación de información&lt;/strong&gt; y el respeto a la interfaces.&lt;/p&gt;
+
+&lt;p&gt;Espero que para este momento te empieces a dar cuenta de que todo lo que llamamos “principios SOLID” tienen en el fondo: &lt;strong&gt;Ocultar Información&lt;/strong&gt;. Esto ha sido ha hablado mucho por &lt;a href=&quot;https://levelup.gitconnected.com/open-closed-principle-is-nothing-about-the-code-270f1c04bebf&quot; target=&quot;_blank&quot;&gt;David L. Parnas&lt;/a&gt;, y para mi, es gran parte de lo que se requiere para hacer gran software que pueda ser mantenido y funcional mucho tiempo.&lt;/p&gt;
+
+&lt;p&gt;Esta mismo concepto ha sido tratado por otras personas, como Alistair Cockburn con su concepto de &lt;a href=&quot;https://martinfowler.com/ieeeSoftware/protectedVariation.pdf&quot; target=&quot;_blank&quot;&gt;“Variación protegida”&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;La idea natural del concepto, puedes entenderla más fácilmente con máquinas reales:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una cámara con lentes intercambiables que, cuando requieres una nueva óptica, pones un lente con el mismo conector (interfaz)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Un carro, que cuando una llanta se poncha se la puedes cambiar, o si requieres para un terreno diferente, puedes ponerle llantas de otro tipo.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El punto es darle a tu sistema puntos “naturales” de extensión, en los que los cambios puedan caber sin hacer grandes cambios en todo el sistema.&lt;/p&gt;
+
+&lt;h2 id=&quot;los-límites-de-la-extensión&quot;&gt;Los límites de la extensión&lt;/h2&gt;
+
+&lt;p&gt;Es natural que llegue el punto en el que no puedas seguir extendiendo el sistema y tengas que cambiar código que ya está funcionando, nada de lo que estamos diciendo es una ley absoluta o moral que te tengas que sentir mal por no cumplir, recuerda que todo esto es por tu conveniencia, la de tus desarrollos y de tu equipo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="open/closed" /><category term="abierto/cerrado" /><summary type="html">Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código</summary></entry><entry><title type="html">Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link href="https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="alternate" type="text/html" title="Análisis de los principios SOLID: Principio de Responsabilidad Única" /><published>2022-12-01T00:00:00-06:00</published><updated>2022-12-01T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y &lt;em&gt;“limpio”&lt;/em&gt; debe conocer y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Explicación del principio&lt;/li&gt;
@@ -749,127 +817,4 @@ Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más e
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Cuando estés midiendo tiempo o coordinando tareas en tu programa, no confíes en las fechas y horas del sistema en el que está corriendo tu programa. Usa el reloj monótono para garantizar que tienes el mismo marco de referencia siempre que hagas una medición de tiempo. Tu lenguaje de programación debería darte acceso a esta medición, sólo investiga o busca en Google: &lt;em&gt;“Lenguaje X monotonic time”&lt;/em&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="monótono" /><category term="tiempo" /><category term="conteo" /><summary type="html">¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.</summary></entry><entry><title type="html">Matemáticas para criptografía</title><link href="https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia.html" rel="alternate" type="text/html" title="Matemáticas para criptografía" /><published>2021-12-25T00:00:00-06:00</published><updated>2021-12-25T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/25/matematicas-para-criptografia.html">&lt;p&gt;¿Quieres entender por qué los algoritmos criptográficos pueden &lt;em&gt;prometer&lt;/em&gt; seguridad? Todos están basados en operaciones matemáticas, problemas difíciles de resolver, probabilidad y estadística.&lt;/p&gt;
-
-&lt;p&gt;Veamos un plan de estudios de matemáticas que podrías usar para adquirir las habilidades matemáticas necesarias para entender mejor los algoritmos criptográficos.&lt;/p&gt;
-
-&lt;h2 id=&quot;básico-básico&quot;&gt;Básico básico&lt;/h2&gt;
-
-&lt;p&gt;Empecemos por los fundamentos más profundos que debes tener, que hasta pueden parecer obvios. Lo importante es que tengas &lt;em&gt;la seguridad de que los dominas&lt;/em&gt; y si no, te proporcionamos algunos recursos para que los repases.&lt;/p&gt;
-
-&lt;h3 id=&quot;álgebra&quot;&gt;Álgebra&lt;/h3&gt;
-
-&lt;p&gt;Es necesario conocer los procedimientos algebraicos a fondo porque en esto se basa la resolución de problemas de muchas otras áreas. Además la factorización es uno de los problemas más importantes de la criptografía actual, y aquí es donde aprenderás el concepto básico en práctica. Si sientes que te falta aprender un poco, puedes tomar estos cursos:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/math/algebra&quot;&gt;Álgebra 1 - Khan Academy&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/math/algebra2&quot;&gt;Álgebra 2 - Khan Academy&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/algebra-basica&quot;&gt;Algebra básica - UNAM&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://platzi.com/cursos/algebra/&quot;&gt;Curso de Álgebra en Platzi&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;probabilidad-y-estadística&quot;&gt;Probabilidad y estadística&lt;/h3&gt;
-
-&lt;p&gt;Siempre que hablamos de que un algoritmo es seguro, lo decimos basados en la probabilidad de que alguien pueda encontrar una solución a un problema muy difícil en un &lt;em&gt;número de intentos razonable&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Por ejemplo: confiamos en que la probabilidad de que alguien rompa un cifrado es cercana a cero, pero realmente esta probabilidad nunca es cero absoluto, sino algo como &lt;strong&gt;1/2^128&lt;/strong&gt; por intento, pero alguien motivado podría hacer &lt;em&gt;miles de millones&lt;/em&gt; de intentos. Para poder calcular estas probabilidades hay que entender lo básico de probabilidad y estadística.&lt;/p&gt;
-
-&lt;p&gt;La probabilidad también te ayudará a entender lo que es una &lt;strong&gt;distribución de probabilidad&lt;/strong&gt;, que es muy importante tanto para atacar algoritmos criptográficos como para verificar que las salidas de estos son seguras.&lt;/p&gt;
-
-&lt;p&gt;Puedes aprender un poco de esto en los siguientes cursos:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/math/statistics-probability&quot;&gt;Probabilidad y estadística - Khan Academy&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/estadistica-probabilidad&quot;&gt;Estadística y Probabilidad - UNAM&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;matemáticas-discretas&quot;&gt;Matemáticas discretas&lt;/h2&gt;
-
-&lt;p&gt;Me atrevería a decir que esta es la rama &lt;strong&gt;más importante de matemáticas&lt;/strong&gt; que debes de conocer como programador y como criptógrafo. La mayoría de los operaciones criptográficas y de algoritmos de programación están basadas en el conocimiento que aprenderás aquí. &lt;a href=&quot;https://blog.thedojo.mx/2019/12/25/las-matematicas-que-debes-saber-para-programar.html#l%C3%B3gica-matem%C3%A1ticas-discretas&quot;&gt;Ya hemos mencionado&lt;/a&gt; que las matemáticas discretas son el estudio de las cosas que se pueden contar, sean finitas o infinitas, a diferencia de las matemáticas continuas que estudian los números reales o cosas que son continuas, incontables y sin divisiones claras.&lt;/p&gt;
-
-&lt;p&gt;A continuación te listamos algunos de los temas que debes dominar o por lo menos conocer bien.&lt;/p&gt;
-
-&lt;h3 id=&quot;lógica&quot;&gt;Lógica&lt;/h3&gt;
-
-&lt;p&gt;La lógica tiene la intención de formalizar el razonamiento de tal manera que lo podamos estudiar, entender y aplicar a otras áreas.&lt;/p&gt;
-
-&lt;p&gt;En este tema se habla de cosas como tablas de verdad, lógica proposicional, deducción, &lt;a href=&quot;https://www.fing.edu.uy/~amiquel/fundamentos/teoriasymodelos.pdf&quot;&gt;teorías y lógica de primer orden&lt;/a&gt;, etc.&lt;/p&gt;
-
-&lt;h3 id=&quot;teoría-de-números&quot;&gt;Teoría de números&lt;/h3&gt;
-
-&lt;p&gt;La teoría de números trata acerca de los números enteros, sus propiedades, operaciones y relaciones. Esta es &lt;strong&gt;la base de varios problemas difíciles que sirven para crear los algoritmos criptográficos modernos&lt;/strong&gt;. En esta rama se estudia la divisibilidad, los números primos, la aritmética modular y los algoritmos relacionados con estas operaciones.&lt;/p&gt;
-
-&lt;p&gt;Si no vas a estudiar nada más, entender los temas de un curso de teoría de números enfocado en criptografía es suficiente para no sentirte sin rumbo. Estos cursos pueden ayudarte a aprender lo que necesitas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/number-theory-cryptography&quot;&gt;Number Theory for Cryptography&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://personal.cimat.mx:8181/~hgallegos/teaching/teoriaDeNumeros/&quot;&gt;Temario con Bibliografía y tareas del curso de Teoría de Números del CIMAT&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/mathematical-foundations-cryptography&quot;&gt;Mathematical foundations of cryptography&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_(Poritz)&quot;&gt;Yet Another Introductory Number Theory Textbook - Cryptology Emphasis&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;combinatoria&quot;&gt;Combinatoria&lt;/h3&gt;
-
-&lt;p&gt;Esta sub-rama de las matemáticas discretas tiene que ver con el &lt;em&gt;conteo, combinaciones y arreglos de objetos en estructuras discretas&lt;/em&gt; (con objetos claramente separados) como los grafos y conjuntos. Normalmente estas estructuras discretas contienen números, pero podrían contener palabras, textos, frases. La combinatoria incluye el conteo de objetos y combinaciones que llevamos a a cabo en probabilidad y estadística: las operaciones de combinación y permutación.&lt;/p&gt;
-
-&lt;p&gt;Algunos recursos que te ayudarán a aprender combinatoria a fondo se encuentran aquí: &lt;a href=&quot;https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics&quot;&gt;Combinatorics and Discrete Mathematics&lt;/a&gt; que tiene un conjunto de libros sobre combinatoria con diferentes enfoques.&lt;/p&gt;
-
-&lt;h3 id=&quot;cursos-de-matemáticas-discretas-generales&quot;&gt;Cursos de matemáticas discretas generales&lt;/h3&gt;
-
-&lt;p&gt;Algunos cursos y temarios que puedes tomar son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://compilandoconocimiento.com/discretas/&quot;&gt;Curso de matemáticas discretas&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://posgrados.inaoep.mx/archivos/PosCsComputacionales/Curso_Propedeutico/TEMARIOS/2_MateDiscretas-VersionGeneral.pdf&quot;&gt;Temario sobre matemáticas discretas para Maestría en Ciencias de la Computación&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;geometría-analítica&quot;&gt;Geometría analítica&lt;/h3&gt;
-
-&lt;p&gt;Conocer las propiedades matemáticas de los objetos geométricos te ayudará a comprender intuitivamente algunas de los problemas difíciles en los que está basada la criptografía.&lt;/p&gt;
-
-&lt;p&gt;Algunos cursos que puedes tomar:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/https://www.eusal.es/eusal/catalog/book/978-84-1311-463-7trigonometria&quot;&gt;Trigonometría y geometría analítica - UNAM&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;álgebra-lineal&quot;&gt;Álgebra lineal&lt;/h2&gt;
-
-&lt;p&gt;El álgebra lineal tiene que ver con el estudio de ecuaciones lineales (que pueden ser graficadas en el plano cartesiano con una recta), sus soluciones y su tratamiento a través de vectores y matrices.&lt;/p&gt;
-
-&lt;p&gt;Muchas de las técnicas utilizadas en álgebra lineal son ocupadas en criptografía para crear algoritmos seguros que sean imposibles de revertir sin conocer la llave correcta. Un ejemplo es el algoritmo Rijndael, el actual AES.&lt;/p&gt;
-
-&lt;p&gt;Algunos recursos que te ayudarána a aprender matemáticas discretas son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/projects/aprendiendo-python-con-algebra-lineal&quot;&gt;Aprendiendo Python con Álgebra Lineal&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.edx.org/course/fundamentos-de-algebra-lineal-2?index=product&amp;amp;queryID=4f34318ca69382d83eb24655d433f655&amp;amp;position=1&quot;&gt;Fundamentos de álgebra lineal&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://buzzard.ups.edu/courses/2013spring/projects/berger-aes-ups-434-2013.pdf&quot;&gt;Cómo funciona AES (Rijndael)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;opcionales&quot;&gt;Opcionales&lt;/h2&gt;
-
-&lt;p&gt;Si quieres avanzar a campos muy adelantados de la criptografía, debes estudias campos aún más específicos de las matemáticas discretas como:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Teoría de grupos&lt;/li&gt;
-  &lt;li&gt;Teoría de grafos&lt;/li&gt;
-  &lt;li&gt;Retículas (algo muy importante para la criptografía post-cuántica)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;cursos-completos&quot;&gt;Cursos completos&lt;/h2&gt;
-
-&lt;p&gt;Para finalizar, te quiero presentar recursos que tienen un conjunto completo básico de todas las matemáticas necesarias para entender los algoritmos criptográficos modernos.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.eusal.es/eusal/catalog/book/978-84-1311-463-7&quot;&gt;MANUAL DE CRIPTOGRAFÍA: FUNDAMENTOS MATEMÁTICOS DE LA CRIPTOGRAFÍA PARA UN ESTUDIANTE DE GRADO&lt;/a&gt; - Tiene apartados para todos los tipos de algoritmos criptográficos usados en la actualidad, explicando su soporte matemático. Si quieres profundizar en algún tema de estos, podrías tomar el curso específico que sugerimos aquí.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/specializations/discrete-mathematics&quot;&gt;Especialización en matemáticas discretas en Coursera&lt;/a&gt; - Tiene todos los temas relacionados con matemáticas para computación y criptografía divididos en varios cursos, lo puedes tomar de manera gratuita.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/mathematical-foundations-cryptography?&quot;&gt;Mathematical foundations of Cryptography&lt;/a&gt; - Tiene todos los temas necesarios para entender la criptografía, incluyendo los temas selectos de todas las matemáticas para ir directo al grano. Esto requerirá que tengas cubierto las matemáticas básicas para no perderte.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.isical.ac.in/~rcbose/mtechCrS.pdf&quot;&gt;Temario de maestría en seguridad de la ISICAL&lt;/a&gt; - Tiene todos los cursos que alguien debería de tomar para especializarse en ciberseguridad, con temarios completos y bibliografía, lo que te puede servir como una guía si lo que prefieres es aprender de los libros.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Bonus: &lt;a href=&quot;https://www.coursera.org/learn/cryptography-boolean-functions&quot;&gt;Cryptogaphy, Boolean Functions and related problems&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Como podrás observar, hay una gran cantidad de recursos para aprender lo necesario para entender la criptografía a fondo, desde sus bases matemáticas. Puedes usar estas recomendaciones como guía, o ver los temas y buscar tus propios recursos para seguir aprendiendo. Si tienes alguna recomendación no dudes en compartirla con nosotros para poder actualizar nuestra lista y cada vez hacerla mejor.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="matemáticas" /><category term="álgebra" /><summary type="html">Veamos qué conocimientos matemáticos requieres para entender los algoritmos criptográficos, cómo funcionan y, en su caso, avanzar para que puedas diseñar los tuyos.</summary></entry></feed>
+&lt;p&gt;Cuando estés midiendo tiempo o coordinando tareas en tu programa, no confíes en las fechas y horas del sistema en el que está corriendo tu programa. Usa el reloj monótono para garantizar que tienes el mismo marco de referencia siempre que hagas una medición de tiempo. Tu lenguaje de programación debería darte acceso a esta medición, sólo investiga o busca en Google: &lt;em&gt;“Lenguaje X monotonic time”&lt;/em&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="monótono" /><category term="tiempo" /><category term="conteo" /><summary type="html">¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.</summary></entry></feed>
