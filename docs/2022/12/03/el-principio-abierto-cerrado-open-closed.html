@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>El principio Abierto/Cerrado (Open/Closed) y su relación con ‘Information Hiding’ - The Dojo MX Blog</title>
+<!-- begin _includes/seo.html --><title>El principio Abierto/Cerrado (Open/Closed) - The Dojo MX Blog</title>
 <meta name="description" content="Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="es">
 <meta property="og:site_name" content="The Dojo MX Blog">
-<meta property="og:title" content="El principio Abierto/Cerrado (Open/Closed) y su relación con ‘Information Hiding’">
+<meta property="og:title" content="El principio Abierto/Cerrado (Open/Closed)">
 <meta property="og:url" content="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html">
 
 
@@ -128,8 +128,8 @@
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "url": "https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html",
-      "name": "El principio Abierto/Cerrado (Open/Closed) y su relación con 'Information Hiding'",
-      "headline": "El principio Abierto/Cerrado (Open/Closed) y su relación con 'Information Hiding'",
+      "name": "El principio Abierto/Cerrado (Open/Closed)",
+      "headline": "El principio Abierto/Cerrado (Open/Closed)",
       "keywords": "solid,open/closed,abierto/cerrado",
       "description": "Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código",
       "articleBody": "El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por Robert Martin), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.\n\nVamos a analizarlo, ver sus caso de uso y finalmente a establecer sus relaciones con otros principios de diseño de software que te pueden ayudar a crear mejores programas.\n\nEl principio Abierto/Cerrado\n\nEste principio establece que:\n\n\n  Cualquier módulo de software debería estar abierto para la extensión, pero cerrado para modificación.\n\n\nOtra vez nos encontramos con palabras vagas que tenemos que examinar, pero por suerte en este principio es más fácil llegar a una conclusión.\n\nEn pocas palabras cuando tengas que modificar el comportamiento de un programa, lo último que deberías hacer siempre es modificar el código que ya existe, más bien, debes crear módulos (clases, métodos, funciones, paquetes) que permitan modificar su comportamiento agregando código nuevo.\n\nNo hay ningún mecanismo casi en ningún lenguaje de programación que te permita “cerrar” o “abrir” módulos, así que estas ideas son puramente conceptuales y guías de comportamiento.\n\nAplicaciones y ejemplos\n\nLa forma de ejemplo más clásica de aplicarlo es mediante la preparación de tus módulos o clases para usar polimorfismo. Por ejemplo, imagínate que estás haciendo una aplicación para procesar pagos y quieres cobrar por diferentes medios. Cada uno de estos medios es un “método de pago”. Si implementas cada uno de estos métodos como dependientes de una clase padre, mediante la herencia, clases abstractas, protocolos o interfaces, tu procesador principal podrá, por ejemplo, llamar al método procesar de cada clase, sin importar el tipo de método de pago que sea o sus detalles de implementación.\n\nEn el ejemplo anterior, cuando quieras implementar un nuevo método de pago, simplemente creas un nuevo módulo que cumpla con las especificaciones de la clase padre y no tendrás que modificar el código existente. Así solo has añadido código nuevo y has eliminado la probabilidad de afectar cosas que ya existían y funcionaban bien.\n\nComo puedes ver, los principios de funcionamiento de estas técnicas tienen que ver con dos cosas:\n\n\n  \n    Ocultar información (esconder la mayor cantidad de detalles de implementación de tus módulos, detrás de una interfaz)\n  \n  \n    Programación por contrato, cumplir con una interfaz dada para que otros módulos puedan usarla con seguridad. De esto hablaremos en otro artículo, pero quiero que veas como es un tema que se va a repetir.\n  \n\n\nAplicaciones más amplias\n\nEste principio también se puede aplicar a niveles diferentes del sistema, por ejemplo a nivel arquitectónico.\n\nUn situación en que puedes usar esta estrategia es cuando tienes un módulo que quieres cambiar pero no quieres deshacer o poner en riesgo el funcionamiento de todo el sistema, ya que puede tener consecuencias catastróficas.\n\nPara aplicarlo, tienes que dejar intacto el módulo de la funcionalidad afectada, mientras lo envuelves con tu nuevo código, usándolo como la interfaz principal cuando te conviene y reemplazándolo poco a poco cuando te sientas seguro.\n\nComo puedes notar, para poder aplicar esta técnica, los módulos deben ser completamente independientes o no podrías de ninguna manera aislar los cambios que estás intentando hacer. Esto casi siempre se logra con paso de mensajes, como por ejemplo una interfaz RPC, ReST o respetando un contrato (interfaz).\n\nOtros ideas parecidas\n\nLo primero que quiero que notes es que este principio tiene mucho que ver con la separación de funciones, la ocultación de información y el respeto a la interfaces.\n\nEspero que para este momento te empieces a dar cuenta de que todo lo que llamamos “principios SOLID” tienen en el fondo: Ocultar Información. Esto ha sido ha hablado mucho por David L. Parnas, y para mi, es gran parte de lo que se requiere para hacer gran software que pueda ser mantenido y funcional mucho tiempo.\n\nEsta mismo concepto ha sido tratado por otras personas, como Alistair Cockburn con su concepto de “Variación protegida”.\n\nLa idea natural del concepto, puedes entenderla más fácilmente con máquinas reales:\n\n\n  \n    Una cámara con lentes intercambiables que, cuando requieres una nueva óptica, pones un lente con el mismo conector (interfaz)\n  \n  \n    Un carro, que cuando una llanta se poncha se la puedes cambiar, o si requieres para un terreno diferente, puedes ponerle llantas de otro tipo.\n  \n\n\nEl punto es darle a tu sistema puntos “naturales” de extensión, en los que los cambios puedan caber sin hacer grandes cambios en todo el sistema.\n\nLos límites de la extensión\n\nEs natural que llegue el punto en el que no puedas seguir extendiendo el sistema y tengas que cambiar código que ya está funcionando, nada de lo que estamos diciendo es una ley absoluta o moral que te tengas que sentir mal por no cumplir, recuerda que todo esto es por tu conveniencia, la de tus desarrollos y de tu equipo.\n",
@@ -236,7 +236,7 @@
     <div class="wrapper">
       <h1 id="page-title" class="page__title" itemprop="headline">
         
-          El principio Abierto/Cerrado (Open/Closed) y su relación con ‘Information Hiding’
+          El principio Abierto/Cerrado (Open/Closed)
 
         
       </h1>
@@ -396,7 +396,7 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="El principio Abierto/Cerrado (Open/Closed) y su relación con ‘Information Hiding’">
+    <meta itemprop="headline" content="El principio Abierto/Cerrado (Open/Closed)">
     <meta itemprop="description" content="Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código">
     <meta itemprop="datePublished" content="2022-12-03T00:00:00-06:00">
     
@@ -523,7 +523,7 @@
     <h4 class="page__share-title">Compartir</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=El+principio+Abierto%2FCerrado+%28Open%2FClosed%29+y+su+relaci%C3%B3n+con+%27Information+Hiding%27%20https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F03%2Fel-principio-abierto-cerrado-open-closed.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=El+principio+Abierto%2FCerrado+%28Open%2FClosed%29%20https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F03%2Fel-principio-abierto-cerrado-open-closed.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F03%2Fel-principio-abierto-cerrado-open-closed.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 

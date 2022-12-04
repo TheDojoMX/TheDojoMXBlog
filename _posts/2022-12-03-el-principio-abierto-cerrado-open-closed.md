@@ -1,5 +1,5 @@
 ---
-title: "El principio Abierto/Cerrado (Open/Closed) y su relación con 'Information Hiding'"
+title: "El principio Abierto/Cerrado (Open/Closed)"
 date: 2022-12-03
 author: Héctor Patricio
 tags: solid open/closed abierto/cerrado
