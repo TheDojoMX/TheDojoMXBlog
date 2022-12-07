@@ -15,6 +15,24 @@ Rust se ha estado estableciendo como uno de los lenguajes más queridos entre lo
 
 En este artículo vamos a hablar de algunas de sus características, las ventajas de su ecosistema, y por qué te conviene aprenderlo.
 
+## Historia y concepción
+
+Nació en 2006 como un proyecto personal de [Graydon Hoare](https://github.com/graydon), un empleado de Mozilla en ese entonces, después fue patrocinado por esta empresa, para alcanzar su primera versión pública (0.1) en 2012.
+
+Desde entonces ha estado creciendo tanto en funciones como en popularidad.
+
 ## Características
 
+### Rendimiento
+
+### Seguridad
+
+### Productividad
+
 ## Entorno
+
+### Comunidad
+
+###
+
+## Conclusión
