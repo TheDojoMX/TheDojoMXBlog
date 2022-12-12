@@ -55,6 +55,8 @@ Como lo dice la cita del principio, la ventaja principal de Rust es que te permi
 
 [abstracciones sin costo](https://boats.gitlab.io/blog/post/zero-cost-abstractions/)
 
+> Rust solves pain points present in many other languages, providing a solid step forward with a limited number of downsides. - Jake Goulding
+
 ## Entorno
 
 ### Comunidad
