@@ -1,6 +1,6 @@
 ---
 title: "¿Por qué aprender Rust en 2023?"
-date: 2022-12-10
+date: 2022-12-13
 author: Héctor Patricio
 tags: rust aprendizaje lenguajes-de-programacion
 comments: true
@@ -71,10 +71,20 @@ La comunidad de Rust es vibrante y cada vez crece más. Rust cada vez se usa en 
 
 ### Desventajas
 
-Rust, como todo, no es una solución mágica que vaya a resolver todos los problemas de la creación de software como si fuera un hechizo mágico. Algunas de las desventajas que le veo a Rust son:
+Rust, como todo, no es una solución mágica que vaya a resolver todos los problemas de la creación de software como si fuera un hechizo mágico. Algunas de las desventajas que le veo son:
 
-1. Novedad. Al ser un lenguaje tan nuevo, no hay tantos recursos desarrollados como para C, C++, Java o Python. Probablemente muchas de las cosas que hagas si trabajas en un dominio muy específico, las tendrás que programar desde cero o componer bugs al no haber tantas manos probándolo por mucho tiempo como en otros lenguajes.
+1. **Novedad.** Al ser un lenguaje tan nuevo, no hay tantos recursos desarrollados como para C, C++, Java o Python. Probablemente muchas de las cosas que hagas si trabajas en un dominio muy específico, las tendrás que programar desde cero o componer bugs al no haber tantas manos probándolo por mucho tiempo como en otros lenguajes.
 
-2. Dificultad de aprendizaje. Rust tiene conceptos que no estamos acostumbrados a manejar en otros lenguajes. Simplemente, uno de sus conceptos básicos, el de préstamos y pertenencia, es algo que a muchos programadores nos costará trabajo. El sistema de tipos y la dificultad de que algo compile es algo más que se escucha por ahí respecto a la dificultad de aprender y usar Rust.
+2. **Dificultad de aprendizaje.** Rust tiene conceptos que no estamos acostumbrados a manejar en otros lenguajes. Simplemente, uno de sus conceptos básicos, el de préstamos y pertenencia, es algo que a muchos programadores nos costará trabajo. El sistema de tipos y la dificultad de que algo compile es algo más que se escucha por ahí respecto a la dificultad de aprender y usar Rust.
+
+3. **Está siendo desarrollado muy activamente.** Esto puede ser tanto una ventaja como una desventaja, pero sin duda lo es para la estabilidad de tu código. Si algo cambia en una nueva versión del compilador, vas a tener que hacer un gran cambio en tu base de código o quedarte con tu versión atrasada. Por el lado bueno, a tu lenguaje base se le estarán agregando siempre nuevas y mejores funciones.
+
+Finalmente, puede que no _necesites_ las cosas que te ofrece. El esfuerzo extra que tendrás que poner para hacer que el compilador acepte tus programas puede que valga la pena si el rendimiento, la seguridad en memoria o el acceso a bajo nivel no son algo que distinga a tu software, así que no te dejes llevar el miedo a perderte algo que no necesitas. Si estas haciendo un prototipo que tiene que salir lo más rápido posible, tal vez Rust no sea la mejor elección, por ejemplo.
 
 ## Conclusión
+
+Rust es un lenguaje de programación moderno que ofrece grandes características para poder desarrollar software de diferentes niveles, desde sistemas a aplicaciones web, e incluso frontend con [WebAssembly](https://webassembly.org/). Puede que sus características de seguridad, rendimiento y productividad (por lo menos comparado con C++) sean una razón suficiente para que quieras aprenderlo.
+
+Como desarrollador, también puedes pensar que Rust seguirá creciendo en popularidad y puede que el número de desarrolladores necesitados aumente en los próximos años, por lo que aprenderlo te abriría las posibilidades de encontrar buenos trabajos y bien pagados.
+
+En los próximos artículos hablaremos de las herramientas ya desarrolladas para facilitar el trabajo con Rust, es decir, su entorno Open Source y también de recursos para aprender Rust. ¿Qué piensas? ¿Valdrá la pena aprenderlo?

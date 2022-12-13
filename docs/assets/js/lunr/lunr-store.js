@@ -532,4 +532,10 @@ var store = [{
         "tags": ["solid","open/closed","abierto/cerrado"],
         "url": "/2022/12/03/el-principio-abierto-cerrado-open-closed.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1669958588/470909777_supernova_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__ilkvuz.png"
+      },{
+        "title": "¿Por qué aprender Rust en 2023?",
+        "excerpt":"Rust se ha establecido como uno de los lenguajes más queridos entre los desarrolladores en los últimos años y desde 2016 está en el número uno, según la encuesta anual de Stack Overflow. Esto no es de extrañar, ya que Rust es un lenguaje que ofrece muchas cosas buenas a...","categories": [],
+        "tags": ["rust","aprendizaje","lenguajes-de-programacion"],
+        "url": "/2022/12/13/por-que-aprender-rust.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_200,w_512/v1670303988/DALL_E_2022-12-05_13.19.43_-_rust_on_a_gold_wall_digital_art_illustration_cinematic_m5cplm.png"
       }]

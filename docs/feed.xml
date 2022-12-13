@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-03T19:53:15-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">El principio Abierto/Cerrado (Open/Closed)</title><link href="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html" rel="alternate" type="text/html" title="El principio Abierto/Cerrado (Open/Closed)" /><published>2022-12-03T00:00:00-06:00</published><updated>2022-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html">&lt;p&gt;El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por &lt;a href=&quot;https://drive.google.com/file/d/0BwhCYaYDn8EgN2M5MTkwM2EtNWFkZC00ZTI3LWFjZTUtNTFhZGZiYmUzODc1/view?resourcekey=0-FsS837CGML599A_o5D-nAw&quot; target=&quot;_blank&quot;&gt;Robert Martin&lt;/a&gt;), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-13T17:54:34-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Por qué aprender Rust en 2023?</title><link href="https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust.html" rel="alternate" type="text/html" title="¿Por qué aprender Rust en 2023?" /><published>2022-12-13T00:00:00-06:00</published><updated>2022-12-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust.html">&lt;p&gt;Rust se ha establecido como uno de los lenguajes más queridos entre los desarrolladores en los últimos años y desde 2016 está en el número uno, según la encuesta anual de &lt;a href=&quot;https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted&quot;&gt;Stack Overflow&lt;/a&gt;. Esto no es de extrañar, ya que Rust es un lenguaje que ofrece &lt;strong&gt;muchas cosas buenas&lt;/strong&gt; a aquellos que lo usan.&lt;/p&gt;
+
+&lt;p&gt;En este artículo vamos a hablar de algunas de sus características, las ventajas de su ecosistema, y por qué te conviene aprenderlo. Además vamos a hablar de cuándo no es tan buena idea.&lt;/p&gt;
+
+&lt;h2 id=&quot;historia-y-concepción&quot;&gt;Historia y concepción&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;No siempre fue así de claro, pero el lenguaje de programación Rust trata acerca de &lt;em&gt;empoderamiento&lt;/em&gt;: no importa qué tipo de código estés escribiendo ahora, Rust te habilita para llegar más lejos, para programar con confianza en una variedad de dominios más amplia que la que antes hacías. - Nicholas Matsakis and Aaron Turon&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Rust nació en 2006 como un proyecto personal de &lt;a href=&quot;https://github.com/graydon&quot;&gt;Graydon Hoare&lt;/a&gt;, un empleado de Mozilla en ese entonces, que siempre ha trabajado en lado de los compiladores. Después de mostrárselo a su jefe, a Mozilla le interesó como una alternativa mejor que C y C++ para crear su motor de renderizado web llamado &lt;a href=&quot;https://servo.org/&quot;&gt;Servo&lt;/a&gt;. Y, efectivamente, Servo actualmente estás escrito en Rust.&lt;/p&gt;
+
+&lt;h3 id=&quot;idea-detrás-de-rust&quot;&gt;Idea detrás de Rust&lt;/h3&gt;
+
+&lt;p&gt;Según &lt;a href=&quot;https://www.infoq.com/news/2012/08/Interview-Rust/&quot;&gt;la entrevista&lt;/a&gt; que le hicieron a Graydon, en Rust quiso implementar todas las características que le parecían interesantes y amadas de otros lenguajes, pero para un lenguaje dedicado a la creación sistemas, con la teoría de que las concesiones y condiciones que hacen que lenguajes como C y C++ siempre fueran favorecidos, han cambiado desde que nacieron.&lt;/p&gt;
+
+&lt;p&gt;Así que Rust nació con la &lt;strong&gt;seguridad de memoria y la concurrencia en mente&lt;/strong&gt;, pensando que el internet y la apertura que este provee hace que estas características sean muy importantes. Hablemos de estas características.&lt;/p&gt;
+
+&lt;h2 id=&quot;características-de-rust&quot;&gt;Características de Rust&lt;/h2&gt;
+
+&lt;p&gt;Rust en un lenguaje que quiere reemplazar a C y C++, por lo que necesita características que les compitan y los mejoren, hablemos de tres de ellas con las que lo está intentando.&lt;/p&gt;
+
+&lt;h3 id=&quot;rendimiento&quot;&gt;Rendimiento&lt;/h3&gt;
+
+&lt;p&gt;C y C++ se distinguen por ser los lenguajes para creación de sistemas más eficientes, y por eso Rust tiene que ser por lo menos tan eficiente como ellos. Rust, en la mayoría de los casos logra equipararse al rendimiento de C y C++.&lt;/p&gt;
+
+&lt;p&gt;Aquí puedes ver algunas mediciones de Rust contra C++: &lt;a href=&quot;https://programming-language-benchmarks.vercel.app/cpp-vs-rust&quot;&gt;Benchmarks Rust vs C++&lt;/a&gt;. Y aquí hay otros un poco más entendibles: &lt;a href=&quot;https://levelup.gitconnected.com/which-is-faster-rust-or-c-lets-find-out-who-is-the-usain-bolt-87495c774c8&quot;&gt;Rust vs C&lt;/a&gt;. La conclusión a la que podemos llegar es que Rust es un contendiente muy serio para C y C++ en cuanto a velocidad y eficiencia.&lt;/p&gt;
+
+&lt;p&gt;Lo que tenemos que recordar es que Rust provee características que C y C++, que hacen más fácil y segura la programación, por lo que si es casi tan rápido como estos, más sus características extra, entonces es una gran oferta para los desarrolladores.&lt;/p&gt;
+
+&lt;h3 id=&quot;seguridad-de-memoria&quot;&gt;Seguridad de memoria&lt;/h3&gt;
+
+&lt;p&gt;La seguridad de memoria se refiere a la propiedad de los entornos de ejecución de los programas que te &lt;strong&gt;asegura que las referencias a memoria siempre son válidas&lt;/strong&gt;. Si has programado en C y C++ has experimentado un entorno no seguro en memoria: puedes acceder a registros de memoria que no han sido inicializados y por lo tanto contienen información incierta. Para que la memoria siempre sea segura se necesita que siempre sea alocada por el programa y se del tipo y tamaño correcto.&lt;/p&gt;
+
+&lt;p&gt;Un programa que no es seguro en memoria puede dar bugs aleatorios o fallar aleatoriamente sin explicación alguna. Además también puede ser inseguro respecto a la integridad de tus datos, ya que las fallas en el manejo de memoria pueden ser explotadas de formas creativas por los atacantes para acceder a información sensible.&lt;/p&gt;
+
+&lt;p&gt;Uno de los objetivos de diseño en Rust es que sea seguro de memoria, para mi uno de los distintivos más grandes con C y C++.&lt;/p&gt;
+
+&lt;p&gt;¿Cómo logra Rust la seguridad de memoria? Mediante un sistema de verificación estático de &lt;a href=&quot;https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html&quot;&gt;&lt;em&gt;prestamos&lt;/em&gt; y &lt;em&gt;pertenencia&lt;/em&gt;&lt;/a&gt;. En artículos futuros explicaremos cómo se logra la seguridad de memoria con este sistema.&lt;/p&gt;
+
+&lt;h3 id=&quot;productividad&quot;&gt;Productividad&lt;/h3&gt;
+
+&lt;p&gt;Como lo dice la cita del principio, la ventaja principal de Rust es que te permite ser más productivo en diferentes aspectos de la programación.&lt;/p&gt;
+
+&lt;p&gt;Rust tiene a &lt;a href=&quot;https://doc.rust-lang.org/cargo/&quot;&gt;cargo&lt;/a&gt;, el manejador de paquetes que además te ayuda a crear proyectos, correr las pruebas, realizar reportes diversos sobre tu código, compilar y administrar paquetes, etc.&lt;/p&gt;
+
+&lt;p&gt;Cargo te ayudará en formas que lenguajes más antiguos como C y C++ no pueden, no tendrás que crear los scripts de compilación a mano, o instalar un gestor de paquetes, etc.&lt;/p&gt;
+
+&lt;h3 id=&quot;abstracciones-sin-costo-en-tiempo-de-ejecución&quot;&gt;Abstracciones sin costo en tiempo de ejecución&lt;/h3&gt;
+
+&lt;p&gt;Otra de las ventajas que Rust tiene para la productividad son las &lt;a href=&quot;https://boats.gitlab.io/blog/post/zero-cost-abstractions/&quot;&gt;abstracciones sin costo&lt;/a&gt; (zero-cost abstractions en inglés). Una abstracción sin costo se refiera a que puedes usar elementos de más alto nivel (que hacen más cosas por ti) en tus programas sin que esto genere un impacto negativo en el rendimiento del programa. Es decir, Rust genera el mismo código ensamblador sin importar si usas un for para sumar los elementos de un arrglo, si usas la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fold&lt;/code&gt; o todavía a más alto nivel la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sum&lt;/code&gt; en la que no tienes que hacer nada tú mismo. Sin duda estas abstracciones te pueden ayudar a ser más productivo, y lo mejor es que no tienes que pagar con rendimiento por ellas. Sabemos que las comidas gratis &lt;a href=&quot;https://en.wikipedia.org/wiki/There_ain%27t_no_such_thing_as_a_free_lunch&quot;&gt;no existen&lt;/a&gt;, ¿quién o dónde se paga el costo de estas abstracciones? &lt;strong&gt;Es el compilador&lt;/strong&gt; quien se encarga de que estas formas más fáciles de programar no te cuesten nada en tiempo de ejecución, por lo tanto, te costarán en tiempo de compilación.&lt;/p&gt;
+
+&lt;p&gt;Esto es un tema un poco controversial porque hay quienes dicen que estas no existen, pero yo creo sinceramente que su costo es tan bajo que podemos considerarlo como costo cero, además con las ganancias en productividad que se obtienen, se puede considerar como una ganancia neta.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Rust resuelve puntos dolorosos presentes en muchos otros lenguajes, dando un sólido paso adelante con pocas desventajas - Jake Goulding&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;comunidad&quot;&gt;Comunidad&lt;/h3&gt;
+
+&lt;p&gt;La comunidad de Rust es vibrante y cada vez crece más. Rust cada vez se usa en más lugares y más empresas lo respaldan, es como una bola de nieve que se va haciendo cada vez más y más grande. Mi predicción es que la comunidad seguirá creciendo y desarrollando tanto Rust como paquetes y cosas prefabricadas para que sea cada vez más fácil crear software con Rust.&lt;/p&gt;
+
+&lt;h3 id=&quot;desventajas&quot;&gt;Desventajas&lt;/h3&gt;
+
+&lt;p&gt;Rust, como todo, no es una solución mágica que vaya a resolver todos los problemas de la creación de software como si fuera un hechizo mágico. Algunas de las desventajas que le veo son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Novedad.&lt;/strong&gt; Al ser un lenguaje tan nuevo, no hay tantos recursos desarrollados como para C, C++, Java o Python. Probablemente muchas de las cosas que hagas si trabajas en un dominio muy específico, las tendrás que programar desde cero o componer bugs al no haber tantas manos probándolo por mucho tiempo como en otros lenguajes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Dificultad de aprendizaje.&lt;/strong&gt; Rust tiene conceptos que no estamos acostumbrados a manejar en otros lenguajes. Simplemente, uno de sus conceptos básicos, el de préstamos y pertenencia, es algo que a muchos programadores nos costará trabajo. El sistema de tipos y la dificultad de que algo compile es algo más que se escucha por ahí respecto a la dificultad de aprender y usar Rust.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Está siendo desarrollado muy activamente.&lt;/strong&gt; Esto puede ser tanto una ventaja como una desventaja, pero sin duda lo es para la estabilidad de tu código. Si algo cambia en una nueva versión del compilador, vas a tener que hacer un gran cambio en tu base de código o quedarte con tu versión atrasada. Por el lado bueno, a tu lenguaje base se le estarán agregando siempre nuevas y mejores funciones.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Finalmente, puede que no &lt;em&gt;necesites&lt;/em&gt; las cosas que te ofrece. El esfuerzo extra que tendrás que poner para hacer que el compilador acepte tus programas puede que valga la pena si el rendimiento, la seguridad en memoria o el acceso a bajo nivel no son algo que distinga a tu software, así que no te dejes llevar el miedo a perderte algo que no necesitas. Si estas haciendo un prototipo que tiene que salir lo más rápido posible, tal vez Rust no sea la mejor elección, por ejemplo.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Rust es un lenguaje de programación moderno que ofrece grandes características para poder desarrollar software de diferentes niveles, desde sistemas a aplicaciones web, e incluso frontend con &lt;a href=&quot;https://webassembly.org/&quot;&gt;WebAssembly&lt;/a&gt;. Puede que sus características de seguridad, rendimiento y productividad (por lo menos comparado con C++) sean una razón suficiente para que quieras aprenderlo.&lt;/p&gt;
+
+&lt;p&gt;Como desarrollador, también puedes pensar que Rust seguirá creciendo en popularidad y puede que el número de desarrolladores necesitados aumente en los próximos años, por lo que aprenderlo te abriría las posibilidades de encontrar buenos trabajos y bien pagados.&lt;/p&gt;
+
+&lt;p&gt;En los próximos artículos hablaremos de las herramientas ya desarrolladas para facilitar el trabajo con Rust, es decir, su entorno Open Source y también de recursos para aprender Rust. ¿Qué piensas? ¿Valdrá la pena aprenderlo?&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="rust" /><category term="aprendizaje" /><category term="lenguajes-de-programacion" /><summary type="html">¿Por qué es Rust uno de los lenguajes más amados de la actualiad? ¿Te conviene aprenderlo? Vamos a platicar de eso en este artículo.</summary></entry><entry><title type="html">El principio Abierto/Cerrado (Open/Closed)</title><link href="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html" rel="alternate" type="text/html" title="El principio Abierto/Cerrado (Open/Closed)" /><published>2022-12-03T00:00:00-06:00</published><updated>2022-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html">&lt;p&gt;El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por &lt;a href=&quot;https://drive.google.com/file/d/0BwhCYaYDn8EgN2M5MTkwM2EtNWFkZC00ZTI3LWFjZTUtNTFhZGZiYmUzODc1/view?resourcekey=0-FsS837CGML599A_o5D-nAw&quot; target=&quot;_blank&quot;&gt;Robert Martin&lt;/a&gt;), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.&lt;/p&gt;
 
 &lt;p&gt;Vamos a analizarlo, ver sus caso de uso y finalmente a establecer sus relaciones con otros principios de diseño de software que te pueden ayudar a crear mejores programas.&lt;/p&gt;
 
@@ -765,56 +851,4 @@ Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más e
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Conocer sobre los códigos de autenticación de mensajes es importante para no navegar perdidos entre todas esas siglas que luego vemos en las suites de seguridad de IPSec, TLS, SSL, SSH, HTTPS, etc. Ahora ya sabes lo que significa HMAC-SHA-512, AES-CMAC o Poly1305.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mac" /><category term="hamc" /><category term="aes" /><category term="security" /><category term="cryptography" /><summary type="html">A veces vemos nombres como HMAC-MD4 o AES-CMAC y no sabemos lo que significa. En este artículo hablaremos de los diferentes tipos de MAC y por qué son importantes.</summary></entry><entry><title type="html">El tiempo monótono</title><link href="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html" rel="alternate" type="text/html" title="El tiempo monótono" /><published>2021-12-26T00:00:00-06:00</published><updated>2021-12-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/26/el-tiempo-monotono.html">&lt;p&gt;Saber cuánto tiempo ha pasado desde cierto evento en nuestro programa es algo que podemos requerir en algunos casos. Uno de los casos que más he visto es cuando se está midiendo el tiempo que tarda una parte del programa o un evento externo.&lt;/p&gt;
-
-&lt;p&gt;El &lt;strong&gt;tiempo o reloj monótono&lt;/strong&gt; es un concepto que todo programador debería conocer, para evitar errores y código frágil al &lt;em&gt;medir&lt;/em&gt; el tiempo en los programas.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-reloj-de-pared&quot;&gt;El reloj de “pared”&lt;/h2&gt;
-
-&lt;p&gt;Lo primero que se nos viene a la cabeza cuando se trata de medir el tiempo entre dos eventos de nuestro programa es usar alguna función de nuestro lenguaje de programación que obtenga la fecha y hora actual. Este reloj o tiempo se llama de “tiempo real” y algunos programadores le llaman el reloj de pared, porque es como si voltearas a ver un reloj de esos que pones en tu pared para que te de la hora constantemente.&lt;/p&gt;
-
-&lt;p&gt;Un ejemplo de esto en Python sería:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# hacer algo (lo que queremos medir)
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Esto puede parecer inofensivo, pero tiene una falla que hace a nuestro programa frágil ante eventualidades fuera del sistema. La función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time.time()&lt;/code&gt; devuelve un número de segundos desde el 1 de Enero de 1970 (esta fecha conocida como el &lt;strong&gt;Epoch&lt;/strong&gt;) como un flotante. Este número siempre será incremental, es decir, no &lt;em&gt;debería&lt;/em&gt; devolverte un número menor que una llamada previa. Sin embargo, para calcular ese número de segundos (conocido como el &lt;strong&gt;Tiempo Unix&lt;/strong&gt;), Python se basa en la hora del &lt;em&gt;sistema&lt;/em&gt; en el que está corriendo el programa.&lt;/p&gt;
-
-&lt;p&gt;¿Alcanzas a notar por qué esta forma de calcular cuánto tiempo ha pasado desde un evento es frágil? Por ejemplo, imagina que entre una medida de tiempo (en nuestro programa, la variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt;) y la siguiente(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;end&lt;/code&gt;), ocurriera un cambio de hora en el sistema. Puede ser que alguien esté jugando con las configuraciones o que por pura casualidad el sistema haya ajustado el tiempo por uno de los segundos de ajuste de nuestro calendario (leap seconds) o que corra durante el cambio de hora por el horario de verano.&lt;/p&gt;
-
-&lt;p&gt;Todas estas circunstancias podrían afectar como mide el tiempo tu programa si usamos el reloj del sistema. Es aquí en donde entra el tiempo o reloj monótono.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-tiempo-monótono&quot;&gt;El tiempo monótono&lt;/h2&gt;
-
-&lt;p&gt;El reloj monótono es un &lt;strong&gt;contador del sistema que sólo avanza hacia adelante&lt;/strong&gt;, contando a partir de un punto arbitrario en el pasado. Este reloj no tiene conexión con el calendario y el tiempo real del sistema, sino que simplemente sirve para medir el tiempo que ha pasado (&lt;strong&gt;siempre en aumento&lt;/strong&gt;) desde el punto que se eligió.&lt;/p&gt;
-
-&lt;p&gt;Así, este reloj es confiable para medir el tiempo que pasó entre dos eventos, porque podemos tener la seguridad de que el una llamada posterior a la lectura de este reloj &lt;em&gt;siempre&lt;/em&gt; va a devolver algo mayor que la lectura anterior.&lt;/p&gt;
-
-&lt;p&gt;La manera de usarlo en Python también es mediante el módulo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;monotonic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# hacer algo (lo que queremos medir)
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;monotonic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;La función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time.monotonic()&lt;/code&gt; devuelve el tiempo monótono como un flotante, en segundos. Con estas dos puntos que están conectados al mismo marco de referencia obligatoriamente, hacemos que nuestra medición entre los dos eventos sea confiable. Lo mismo sucedería si quisieras coordinar dos sistemas diferentes: cada uno puede confiar en su reloj monótono sabiendo que el tiempo no saltará hacia atrás de ninguna manera.&lt;/p&gt;
-
-&lt;p&gt;Con vergüenza te comento que la primera vez que escuché de este concepto fue con más de 10 años de carrera, mediante el libro &lt;a href=&quot;https://books.altenwald.com/book/elixir&quot;&gt;Elixir para Alquimistas&lt;/a&gt; de Manuel Rubio, un libro que recomiendo mucho.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Cuando estés midiendo tiempo o coordinando tareas en tu programa, no confíes en las fechas y horas del sistema en el que está corriendo tu programa. Usa el reloj monótono para garantizar que tienes el mismo marco de referencia siempre que hagas una medición de tiempo. Tu lenguaje de programación debería darte acceso a esta medición, sólo investiga o busca en Google: &lt;em&gt;“Lenguaje X monotonic time”&lt;/em&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="monótono" /><category term="tiempo" /><category term="conteo" /><summary type="html">¿Cómo se cuenta el tiempo en una computadora? En este artículo hablaremos del tiempo monótono, un contador en el que puedes confiar para hacer cálculos relativos a periodos de tiempo en tus programas.</summary></entry></feed>
+&lt;p&gt;Conocer sobre los códigos de autenticación de mensajes es importante para no navegar perdidos entre todas esas siglas que luego vemos en las suites de seguridad de IPSec, TLS, SSL, SSH, HTTPS, etc. Ahora ya sabes lo que significa HMAC-SHA-512, AES-CMAC o Poly1305.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mac" /><category term="hamc" /><category term="aes" /><category term="security" /><category term="cryptography" /><summary type="html">A veces vemos nombres como HMAC-MD4 o AES-CMAC y no sabemos lo que significa. En este artículo hablaremos de los diferentes tipos de MAC y por qué son importantes.</summary></entry></feed>

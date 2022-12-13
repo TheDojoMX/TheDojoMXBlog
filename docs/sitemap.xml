@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://blog.thedojo.mx/authors/sag.html</loc>
-<lastmod>2022-12-03T19:53:15-06:00</lastmod>
+<lastmod>2022-12-13T17:54:34-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/2018/10/28/bienvenidos.html</loc>
@@ -355,6 +355,10 @@
 <url>
 <loc>https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html</loc>
 <lastmod>2022-12-03T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust.html</loc>
+<lastmod>2022-12-13T00:00:00-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/about/</loc>
