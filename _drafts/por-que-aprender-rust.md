@@ -51,16 +51,30 @@ Uno de los objetivos de diseño en Rust es que sea seguro de memoria, para mi un
 
 ### Productividad
 
-Como lo dice la cita del principio, la ventaja principal de Rust es que te permite ser más productivo en diferentes aspectos de la programación. Rust tiene a [cargo](https://doc.rust-lang.org/cargo/), el manejador de paquetes que además te ayuda a ...
+Como lo dice la cita del principio, la ventaja principal de Rust es que te permite ser más productivo en diferentes aspectos de la programación.
 
-[abstracciones sin costo](https://boats.gitlab.io/blog/post/zero-cost-abstractions/)
+Rust tiene a [cargo](https://doc.rust-lang.org/cargo/), el manejador de paquetes que además te ayuda a crear proyectos, correr las pruebas, realizar reportes diversos sobre tu código, compilar y administrar paquetes, etc.
 
-> Rust solves pain points present in many other languages, providing a solid step forward with a limited number of downsides. - Jake Goulding
+Cargo te ayudará en formas que lenguajes más antiguos como C y C++ no pueden, no tendrás que crear los scripts de compilación a mano, o instalar un gestor de paquetes, etc.
 
-## Entorno
+### Abstracciones sin costo en tiempo de ejecución
+
+Otra de las ventajas que Rust tiene para la productividad son las [abstracciones sin costo](https://boats.gitlab.io/blog/post/zero-cost-abstractions/) (zero-cost abstractions en inglés). Una abstracción sin costo se refiera a que puedes usar elementos de más alto nivel (que hacen más cosas por ti) en tus programas sin que esto genere un impacto negativo en el rendimiento del programa. Es decir, Rust genera el mismo código ensamblador sin importar si usas un for para sumar los elementos de un arrglo, si usas la función `fold` o todavía a más alto nivel la función `sum` en la que no tienes que hacer nada tú mismo. Sin duda estas abstracciones te pueden ayudar a ser más productivo, y lo mejor es que no tienes que pagar con rendimiento por ellas. Sabemos que las comidas gratis [no existen](https://en.wikipedia.org/wiki/There_ain%27t_no_such_thing_as_a_free_lunch), ¿quién o dónde se paga el costo de estas abstracciones? **Es el compilador** quien se encarga de que estas formas más fáciles de programar no te cuesten nada en tiempo de ejecución, por lo tanto, te costarán en tiempo de compilación.
+
+Esto es un tema un poco controversial porque hay quienes dicen que estas no existen, pero yo creo sinceramente que su costo es tan bajo que podemos considerarlo como costo cero, además con las ganancias en productividad que se obtienen, se puede considerar como una ganancia neta.
+
+> Rust resuelve puntos dolorosos presentes en muchos otros lenguajes, dando un sólido paso adelante con pocas desventajas - Jake Goulding
 
 ### Comunidad
 
-### Recursos para aprender
+La comunidad de Rust es vibrante y cada vez crece más. Rust cada vez se usa en más lugares y más empresas lo respaldan, es como una bola de nieve que se va haciendo cada vez más y más grande. Mi predicción es que la comunidad seguirá creciendo y desarrollando tanto Rust como paquetes y cosas prefabricadas para que sea cada vez más fácil crear software con Rust.
+
+### Desventajas
+
+Rust, como todo, no es una solución mágica que vaya a resolver todos los problemas de la creación de software como si fuera un hechizo mágico. Algunas de las desventajas que le veo a Rust son:
+
+1. Novedad. Al ser un lenguaje tan nuevo, no hay tantos recursos desarrollados como para C, C++, Java o Python. Probablemente muchas de las cosas que hagas si trabajas en un dominio muy específico, las tendrás que programar desde cero o componer bugs al no haber tantas manos probándolo por mucho tiempo como en otros lenguajes.
+
+2. Dificultad de aprendizaje. Rust tiene conceptos que no estamos acostumbrados a manejar en otros lenguajes. Simplemente, uno de sus conceptos básicos, el de préstamos y pertenencia, es algo que a muchos programadores nos costará trabajo. El sistema de tipos y la dificultad de que algo compile es algo más que se escucha por ahí respecto a la dificultad de aprender y usar Rust.
 
 ## Conclusión
