@@ -1,5 +1,5 @@
 ---
-title: "¿Cómo aprender Rust?"
+title: "¿Cómo aprender Rust? Recursos para empezar"
 date: 2022-12-16
 author: Héctor Patricio
 tags: rust aprendizaje cursos
