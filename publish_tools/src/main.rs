@@ -1,8 +1,15 @@
 use walkdir::WalkDir;
+use std::thread;
+use std::time::Duration;
+use console::Term;
 
-fn main() {
+
+
+fn main() -> Result<T, E> {
     // list files in ../../_drafts folder
     let mut drafts = Vec::new();
+    let term = Term::stdout();
+
     for entry in WalkDir::new("../_drafts") {
         let entry = entry.unwrap();
         if entry.file_type().is_file() {
@@ -11,6 +18,8 @@ fn main() {
     }
     // print drafts
     for draft in drafts {
-        println!("{}", draft);
+        term.write_line(&draft);
     }
+    thread::sleep(Duration::from_millis(2000));
+    term.clear_line()?;
 }
