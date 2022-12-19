@@ -1,6 +1,6 @@
 ---
 title: "¿Cómo aprender Rust? Recursos para empezar"
-date: 2022-12-16
+date: 2022-12-18
 author: Héctor Patricio
 tags: rust aprendizaje cursos
 comments: true
@@ -56,4 +56,16 @@ Hay dos libros que me llaman especialmente la atención:
 
 - [Rust for Rustaceans](https://nostarch.com/rust-rustaceans). Es un recurso pensado para programadores experimentados y que ya saben Rust, trata temas avanzados relacionados con el diseño de programas que sean más eficientes y fáciles de mantener.
 
-- [From Zero to Producton in Rust](https://www.zero2prod.com/index.html). Es un libro para principiantes en Rust enfocado en el desarrollo web backend.
+- [From Zero to Production in Rust](https://www.zero2prod.com/index.html). Es un libro para principiantes en Rust enfocado en el desarrollo web backend.
+
+### Cursos en video
+
+La continuación de [Ultimate Rust Crash Curse](https://www.udemy.com/course/ultimate-rust-crash-course/), que se llama [Ultimate Rust 2: Intermediate Concepts](https://www.udemy.com/course/ultimate-rust-2/) avanza en conceptos más profundos del lenguaje, impartido por Nathan Stocks (alias [CleanCut](https://github.com/CleanCut)), también. El curso termina con un proyecto que es un prototipo de un juego en un motor de videojuegos creado por el propio Nathan, llamado [Rusty Engine](https://github.com/CleanCut/rusty_engine).
+
+Esto es un conjunto de cursos que componen lo que llamaríamos una especialidad: [Become a Rust Professional](https://www.educative.io/path/become-a-rust-professional). La plataforma [Educative](https://educative.io) tiene el modelo de suscripción, por lo que si tienes tiempo, puedes pagar un solo mes y tomar todos los cursos, aunque también puedes comprar cada curso individualmente, conforme vayas avanzando.
+
+## Conclusión
+
+Existen un montón de recursos para aprender Rust, sobre todo en inglés, pero también puedes empezar sin ningún problema en español, sobre todo gracias a los esfuerzos que la comunidad y las empresas que lo usan y patrocinan están haciendo para que la mayor cantidad de personas lo puedan aprender.
+
+Empieza tan pronto como puedas si está dentro de tus objetivos.
