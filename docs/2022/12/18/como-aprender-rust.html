@@ -1,0 +1,823 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>¿Cómo aprender Rust? Recursos para empezar - The Dojo MX Blog</title>
+<meta name="description" content="En este artículo encontrarás algunos recursos para aprender Rust tanto en inglés como en español. Empezaremos desde lo más básico hasta llevarte a hacer cosas en producción.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="¿Cómo aprender Rust? Recursos para empezar">
+<meta property="og:url" content="https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html">
+
+
+  <meta property="og:description" content="En este artículo encontrarás algunos recursos para aprender Rust tanto en inglés como en español. Empezaremos desde lo más básico hasta llevarte a hacer cosas en producción.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1024/v1671168726/DALL_E_2022-12-06_16.53.33_-_mandelbrot_set_fractal_made_of_rust_on_a_gold_wall_digital_art_illustration_cinematic_t5cz0h.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-18T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html",
+      "name": "¿Cómo aprender Rust? Recursos para empezar",
+      "headline": "¿Cómo aprender Rust? Recursos para empezar",
+      "keywords": "rust,aprendizaje,cursos",
+      "description": "En este artículo encontrarás algunos recursos para aprender Rust tanto en inglés como en español. Empezaremos desde lo más básico hasta llevarte a hacer cosas en producción.",
+      "articleBody": "En el artículo pasado hablamos de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo. Ahora hablemos de cómo empezar. Empecemos con los recursos en español y sigamos con recursos en inglés.\n\nGuía oficial\n\nEn la página oficial de Rust puedes encontrar una página que te da muchos recursos para aprender Rust: Aprende Rust. Lo malo es que la mayoría de los recursos a los que refiere están en inglés. Si lo manejas bien no tienes que seguir este artículo y puedes dirigirte a esta página y seguirla.\n\nSi quieres otros recursos en español, pero además otros tipos de recursos, sigue leyendo.,\n\nEmpezando en español\n\nDe esta sección deberías escoger uno de los recursos que sugerimos. Si no entiendes bien el inglés, los primeros que sugerimos están en español.\n\nEl recurso más recomendado por todos los que han aprendido Rust es el libro oficial: The Rust Programming Language. El idioma original del libro es inglés y tiene traducciones a diferentes idiomas, entre ellos el español que puedes encontar aquí: El lenguaje de programación Rust. Sin embargo, parece que la traducción tiene bastante tiempo sin avanzar, por lo que la mejor opción es leer la versión en línea en inglés (volvemos al tema de que aprender inglés es una muy buena idea si trabajas en sistemas).\n\nHay un recurso de Freecodecamp interactivo: Aprende Rust en Replit, con el que podrás hacer los ejercicios interactivamente en Replit.\n\nOtro curso en línea es el que Microsoft ofrece en Microsoft Learn: Primeros pasos con Rust.\n\nHay otros recursos que se mencionan en la página oficial de Rust, que no están en español, entre ellos:\n\n\n  Rust by Example. Un curso completamente práctico que te enseña las bases.\n  Rustlings. Un curso práctico que puedes correr en tu propia computadora.\n\n\nRecursos introductorios en video (de paga)\n\nEncontré dos cursos introductorios en plataformas en español:\n\n\n  \n    Curso de Introducción a Rust de Código facilito. Este curso es para programadores principiantes, ya que te explica lo básico de Rust con ejemplos sencillos.\n  \n  \n    Rust básico de Platzi. Tiene exactamente el mismo objetivo que el anterior, ayudar a programadores principiantes a aprender Rust.\n  \n\n\nNo recomiendo ninguno de los dos cursos si eres un programador experimentado, ya que sentirás que avanzan demasiado lento, pero si estás empezando, estos dos cursos están bastante bien por las cosas que explican como detalles.\n\nUn recurso en inglés que parece bastante prometedor si te gustan los cursos en video es Ultimate Rust Crash Course. Tiene bastantes buenas calificacioenes y lo que yo he tomado del curso parece tener un muy buen nivel y avanzar a buen paso.\n\nAvanzando más allá de lo básico\n\nCasi todos los recursos de los que vamos a hablar ahora están en inglés.\n\nLibros\n\nHay dos libros que me llaman especialmente la atención:\n\n\n  \n    Rust for Rustaceans. Es un recurso pensado para programadores experimentados y que ya saben Rust, trata temas avanzados relacionados con el diseño de programas que sean más eficientes y fáciles de mantener.\n  \n  \n    From Zero to Production in Rust. Es un libro para principiantes en Rust enfocado en el desarrollo web backend.\n  \n\n\nCursos en video\n\nLa continuación de Ultimate Rust Crash Curse, que se llama Ultimate Rust 2: Intermediate Concepts avanza en conceptos más profundos del lenguaje, impartido por Nathan Stocks (alias CleanCut), también. El curso termina con un proyecto que es un prototipo de un juego en un motor de videojuegos creado por el propio Nathan, llamado Rusty Engine.\n\nEsto es un conjunto de cursos que componen lo que llamaríamos una especialidad: Become a Rust Professional. La plataforma Educative tiene el modelo de suscripción, por lo que si tienes tiempo, puedes pagar un solo mes y tomar todos los cursos, aunque también puedes comprar cada curso individualmente, conforme vayas avanzando.\n\nConclusión\n\nExisten un montón de recursos para aprender Rust, sobre todo en inglés, pero también puedes empezar sin ningún problema en español, sobre todo gracias a los esfuerzos que la comunidad y las empresas que lo usan y patrocinan están haciendo para que la mayor cantidad de personas lo puedan aprender.\n\nEmpieza tan pronto como puedas si está dentro de tus objetivos.\n",
+      "datePublished": "2022-12-18 00:00:00 -0600",
+      "dateModified": "2022-12-18 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1024/v1671168726/DALL_E_2022-12-06_16.53.33_-_mandelbrot_set_fractal_made_of_rust_on_a_gold_wall_digital_art_illustration_cinematic_t5cz0h.png"
+      }
+    }
+</script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1024/v1671168726/DALL_E_2022-12-06_16.53.33_-_mandelbrot_set_fractal_made_of_rust_on_a_gold_wall_digital_art_illustration_cinematic_t5cz0h.png');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          ¿Cómo aprender Rust? Recursos para empezar
+
+        
+      </h1>
+      
+        <p class="page__lead">En este artículo encontrarás algunos recursos para aprender Rust tanto en inglés como en español. Empezaremos desde lo más básico hasta llevarte a hacer cosas en producción.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        685 palabras | 3 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="¿Cómo aprender Rust? Recursos para empezar">
+    <meta itemprop="description" content="En este artículo encontrarás algunos recursos para aprender Rust tanto en inglés como en español. Empezaremos desde lo más básico hasta llevarte a hacer cosas en producción.">
+    <meta itemprop="datePublished" content="2022-12-18T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>En el <a href="/2022/12/13/por-que-aprender-rust.html">artículo pasado</a> hablamos de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo. Ahora hablemos de cómo empezar. Empecemos con los recursos en español y sigamos con recursos en inglés.</p>
+
+<h2 id="guía-oficial">Guía oficial</h2>
+
+<p>En la página oficial de Rust puedes encontrar una página que te da muchos recursos para aprender Rust: <a href="https://www.rust-lang.org/es/learn">Aprende Rust</a>. Lo malo es que la mayoría de los recursos a los que refiere están en inglés. Si lo manejas bien no tienes que seguir este artículo y puedes dirigirte a esta página y seguirla.</p>
+
+<p>Si quieres otros recursos en español, pero además otros tipos de recursos, sigue leyendo.,</p>
+
+<h2 id="empezando-en-español">Empezando en español</h2>
+
+<p>De esta sección deberías escoger uno de los recursos que sugerimos. Si no entiendes bien el inglés, los primeros que sugerimos están en español.</p>
+
+<p>El recurso más recomendado por todos los que han aprendido Rust es el libro oficial: <a href="https://doc.rust-lang.org/book/title-page.html">The Rust Programming Language</a>. El idioma original del libro es inglés y tiene traducciones a diferentes idiomas, entre ellos el español que puedes encontar aquí: <a href="https://github.com/ManRR/rust-book-es">El lenguaje de programación Rust</a>. Sin embargo, parece que la traducción tiene bastante tiempo sin avanzar, por lo que la mejor opción es leer la versión en línea en inglés (volvemos al tema de que aprender inglés es una muy buena idea si trabajas en sistemas).</p>
+
+<p>Hay un recurso de <em>Freecodecamp</em> interactivo: <a href="https://www.freecodecamp.org/espanol/news/rust-en-replit/#descripci-n-de-rust">Aprende Rust en Replit</a>, con el que podrás hacer los ejercicios interactivamente en <a href="https://replit.com/">Replit</a>.</p>
+
+<p>Otro curso en línea es el que Microsoft ofrece en <a href="https://learn.microsoft.com/es-es/training/paths/rust-first-steps/">Microsoft Learn: Primeros pasos con Rust</a>.</p>
+
+<p>Hay otros recursos que se mencionan en la página oficial de Rust, que no están en español, entre ellos:</p>
+
+<ul>
+  <li>
+<a href="https://doc.rust-lang.org/stable/rust-by-example/">Rust by Example</a>. Un curso completamente práctico que te enseña las bases.</li>
+  <li>
+<a href="https://github.com/rust-lang/rustlings/">Rustlings</a>. Un curso práctico que puedes correr en tu propia computadora.</li>
+</ul>
+
+<h3 id="recursos-introductorios-en-video-de-paga">Recursos introductorios en video (de paga)</h3>
+
+<p>Encontré dos cursos introductorios en plataformas en español:</p>
+
+<ul>
+  <li>
+    <p><a href="https://codigofacilito.com/cursos/rust-introduccion">Curso de Introducción a Rust</a> de Código facilito. Este curso es para programadores principiantes, ya que te explica lo básico de Rust con ejemplos sencillos.</p>
+  </li>
+  <li>
+    <p><a href="https://platzi.com/cursos/rust-basico/">Rust básico</a> de Platzi. Tiene exactamente el mismo objetivo que el anterior, ayudar a programadores principiantes a aprender Rust.</p>
+  </li>
+</ul>
+
+<p>No recomiendo ninguno de los dos cursos si eres un programador experimentado, ya que sentirás que avanzan demasiado lento, pero si estás empezando, estos dos cursos están bastante bien por las cosas que explican como detalles.</p>
+
+<p>Un recurso en inglés que parece bastante prometedor si te gustan los cursos en video es <a href="https://www.udemy.com/course/ultimate-rust-crash-course/">Ultimate Rust Crash Course</a>. Tiene bastantes buenas calificacioenes y lo que yo he tomado del curso parece tener un muy buen nivel y avanzar a buen paso.</p>
+
+<h2 id="avanzando-más-allá-de-lo-básico">Avanzando más allá de lo básico</h2>
+
+<p>Casi todos los recursos de los que vamos a hablar ahora están en inglés.</p>
+
+<h3 id="libros">Libros</h3>
+
+<p>Hay dos libros que me llaman especialmente la atención:</p>
+
+<ul>
+  <li>
+    <p><a href="https://nostarch.com/rust-rustaceans">Rust for Rustaceans</a>. Es un recurso pensado para programadores experimentados y que ya saben Rust, trata temas avanzados relacionados con el diseño de programas que sean más eficientes y fáciles de mantener.</p>
+  </li>
+  <li>
+    <p><a href="https://www.zero2prod.com/index.html">From Zero to Production in Rust</a>. Es un libro para principiantes en Rust enfocado en el desarrollo web backend.</p>
+  </li>
+</ul>
+
+<h3 id="cursos-en-video">Cursos en video</h3>
+
+<p>La continuación de <a href="https://www.udemy.com/course/ultimate-rust-crash-course/">Ultimate Rust Crash Curse</a>, que se llama <a href="https://www.udemy.com/course/ultimate-rust-2/">Ultimate Rust 2: Intermediate Concepts</a> avanza en conceptos más profundos del lenguaje, impartido por Nathan Stocks (alias <a href="https://github.com/CleanCut">CleanCut</a>), también. El curso termina con un proyecto que es un prototipo de un juego en un motor de videojuegos creado por el propio Nathan, llamado <a href="https://github.com/CleanCut/rusty_engine">Rusty Engine</a>.</p>
+
+<p>Esto es un conjunto de cursos que componen lo que llamaríamos una especialidad: <a href="https://www.educative.io/path/become-a-rust-professional">Become a Rust Professional</a>. La plataforma <a href="https://educative.io">Educative</a> tiene el modelo de suscripción, por lo que si tienes tiempo, puedes pagar un solo mes y tomar todos los cursos, aunque también puedes comprar cada curso individualmente, conforme vayas avanzando.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Existen un montón de recursos para aprender Rust, sobre todo en inglés, pero también puedes empezar sin ningún problema en español, sobre todo gracias a los esfuerzos que la comunidad y las empresas que lo usan y patrocinan están haciendo para que la mayor cantidad de personas lo puedan aprender.</p>
+
+<p>Empieza tan pronto como puedas si está dentro de tus objetivos.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#aprendizaje" class="page__taxonomy-item" rel="tag">aprendizaje</a><span class="sep">, </span>
+    
+      <a href="/tags/#cursos" class="page__taxonomy-item" rel="tag">cursos</a><span class="sep">, </span>
+    
+      <a href="/tags/#rust" class="page__taxonomy-item" rel="tag">rust</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2022-12-18T00:00:00-06:00">December 18, 2022</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%C2%BFC%C3%B3mo+aprender+Rust%3F+Recursos+para+empezar%20https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F18%2Fcomo-aprender-rust.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F18%2Fcomo-aprender-rust.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F18%2Fcomo-aprender-rust.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2022/12/13/por-que-aprender-rust.html" class="pagination--pager" title="¿Por qué aprender Rust en 2023?
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_200,w_512/v1670303988/DALL_E_2022-12-05_13.19.43_-_rust_on_a_gold_wall_digital_art_illustration_cinematic_m5cplm.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/13/por-que-aprender-rust.html" rel="permalink">¿Por qué aprender Rust en 2023?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 13-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Por qué es Rust uno de los lenguajes más amados de la actualiad? ¿Te conviene aprenderlo? Vamos a platicar de eso en este artículo.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1669958588/470909777_supernova_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__ilkvuz.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/03/el-principio-abierto-cerrado-open-closed.html" rel="permalink">El principio Abierto/Cerrado (Open/Closed)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+3 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 03-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1669958588/2113646631_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__otkltm.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="permalink">Análisis de los principios SOLID: Principio de Responsabilidad Única
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 01-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_150,w_300,x_0,y_386/v1665632333/DALL_E_2022-10-12_22.38.45_cmmlql.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" rel="permalink">Crea hashes resistentes a balas con Keccak (SHA-3)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 12-10-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2022 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2022/12/18/como-aprender-rust"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

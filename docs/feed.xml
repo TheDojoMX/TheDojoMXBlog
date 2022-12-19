@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-13T17:54:34-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Por qué aprender Rust en 2023?</title><link href="https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust.html" rel="alternate" type="text/html" title="¿Por qué aprender Rust en 2023?" /><published>2022-12-13T00:00:00-06:00</published><updated>2022-12-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust.html">&lt;p&gt;Rust se ha establecido como uno de los lenguajes más queridos entre los desarrolladores en los últimos años y desde 2016 está en el número uno, según la encuesta anual de &lt;a href=&quot;https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted&quot;&gt;Stack Overflow&lt;/a&gt;. Esto no es de extrañar, ya que Rust es un lenguaje que ofrece &lt;strong&gt;muchas cosas buenas&lt;/strong&gt; a aquellos que lo usan.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-19T00:03:37-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Cómo aprender Rust? Recursos para empezar</title><link href="https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html" rel="alternate" type="text/html" title="¿Cómo aprender Rust? Recursos para empezar" /><published>2022-12-18T00:00:00-06:00</published><updated>2022-12-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/18/como-aprender-rust</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html">&lt;p&gt;En el &lt;a href=&quot;/2022/12/13/por-que-aprender-rust.html&quot;&gt;artículo pasado&lt;/a&gt; hablamos de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo. Ahora hablemos de cómo empezar. Empecemos con los recursos en español y sigamos con recursos en inglés.&lt;/p&gt;
+
+&lt;h2 id=&quot;guía-oficial&quot;&gt;Guía oficial&lt;/h2&gt;
+
+&lt;p&gt;En la página oficial de Rust puedes encontrar una página que te da muchos recursos para aprender Rust: &lt;a href=&quot;https://www.rust-lang.org/es/learn&quot;&gt;Aprende Rust&lt;/a&gt;. Lo malo es que la mayoría de los recursos a los que refiere están en inglés. Si lo manejas bien no tienes que seguir este artículo y puedes dirigirte a esta página y seguirla.&lt;/p&gt;
+
+&lt;p&gt;Si quieres otros recursos en español, pero además otros tipos de recursos, sigue leyendo.,&lt;/p&gt;
+
+&lt;h2 id=&quot;empezando-en-español&quot;&gt;Empezando en español&lt;/h2&gt;
+
+&lt;p&gt;De esta sección deberías escoger uno de los recursos que sugerimos. Si no entiendes bien el inglés, los primeros que sugerimos están en español.&lt;/p&gt;
+
+&lt;p&gt;El recurso más recomendado por todos los que han aprendido Rust es el libro oficial: &lt;a href=&quot;https://doc.rust-lang.org/book/title-page.html&quot;&gt;The Rust Programming Language&lt;/a&gt;. El idioma original del libro es inglés y tiene traducciones a diferentes idiomas, entre ellos el español que puedes encontar aquí: &lt;a href=&quot;https://github.com/ManRR/rust-book-es&quot;&gt;El lenguaje de programación Rust&lt;/a&gt;. Sin embargo, parece que la traducción tiene bastante tiempo sin avanzar, por lo que la mejor opción es leer la versión en línea en inglés (volvemos al tema de que aprender inglés es una muy buena idea si trabajas en sistemas).&lt;/p&gt;
+
+&lt;p&gt;Hay un recurso de &lt;em&gt;Freecodecamp&lt;/em&gt; interactivo: &lt;a href=&quot;https://www.freecodecamp.org/espanol/news/rust-en-replit/#descripci-n-de-rust&quot;&gt;Aprende Rust en Replit&lt;/a&gt;, con el que podrás hacer los ejercicios interactivamente en &lt;a href=&quot;https://replit.com/&quot;&gt;Replit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Otro curso en línea es el que Microsoft ofrece en &lt;a href=&quot;https://learn.microsoft.com/es-es/training/paths/rust-first-steps/&quot;&gt;Microsoft Learn: Primeros pasos con Rust&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hay otros recursos que se mencionan en la página oficial de Rust, que no están en español, entre ellos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/stable/rust-by-example/&quot;&gt;Rust by Example&lt;/a&gt;. Un curso completamente práctico que te enseña las bases.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rust-lang/rustlings/&quot;&gt;Rustlings&lt;/a&gt;. Un curso práctico que puedes correr en tu propia computadora.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;recursos-introductorios-en-video-de-paga&quot;&gt;Recursos introductorios en video (de paga)&lt;/h3&gt;
+
+&lt;p&gt;Encontré dos cursos introductorios en plataformas en español:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://codigofacilito.com/cursos/rust-introduccion&quot;&gt;Curso de Introducción a Rust&lt;/a&gt; de Código facilito. Este curso es para programadores principiantes, ya que te explica lo básico de Rust con ejemplos sencillos.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://platzi.com/cursos/rust-basico/&quot;&gt;Rust básico&lt;/a&gt; de Platzi. Tiene exactamente el mismo objetivo que el anterior, ayudar a programadores principiantes a aprender Rust.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;No recomiendo ninguno de los dos cursos si eres un programador experimentado, ya que sentirás que avanzan demasiado lento, pero si estás empezando, estos dos cursos están bastante bien por las cosas que explican como detalles.&lt;/p&gt;
+
+&lt;p&gt;Un recurso en inglés que parece bastante prometedor si te gustan los cursos en video es &lt;a href=&quot;https://www.udemy.com/course/ultimate-rust-crash-course/&quot;&gt;Ultimate Rust Crash Course&lt;/a&gt;. Tiene bastantes buenas calificacioenes y lo que yo he tomado del curso parece tener un muy buen nivel y avanzar a buen paso.&lt;/p&gt;
+
+&lt;h2 id=&quot;avanzando-más-allá-de-lo-básico&quot;&gt;Avanzando más allá de lo básico&lt;/h2&gt;
+
+&lt;p&gt;Casi todos los recursos de los que vamos a hablar ahora están en inglés.&lt;/p&gt;
+
+&lt;h3 id=&quot;libros&quot;&gt;Libros&lt;/h3&gt;
+
+&lt;p&gt;Hay dos libros que me llaman especialmente la atención:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://nostarch.com/rust-rustaceans&quot;&gt;Rust for Rustaceans&lt;/a&gt;. Es un recurso pensado para programadores experimentados y que ya saben Rust, trata temas avanzados relacionados con el diseño de programas que sean más eficientes y fáciles de mantener.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.zero2prod.com/index.html&quot;&gt;From Zero to Production in Rust&lt;/a&gt;. Es un libro para principiantes en Rust enfocado en el desarrollo web backend.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cursos-en-video&quot;&gt;Cursos en video&lt;/h3&gt;
+
+&lt;p&gt;La continuación de &lt;a href=&quot;https://www.udemy.com/course/ultimate-rust-crash-course/&quot;&gt;Ultimate Rust Crash Curse&lt;/a&gt;, que se llama &lt;a href=&quot;https://www.udemy.com/course/ultimate-rust-2/&quot;&gt;Ultimate Rust 2: Intermediate Concepts&lt;/a&gt; avanza en conceptos más profundos del lenguaje, impartido por Nathan Stocks (alias &lt;a href=&quot;https://github.com/CleanCut&quot;&gt;CleanCut&lt;/a&gt;), también. El curso termina con un proyecto que es un prototipo de un juego en un motor de videojuegos creado por el propio Nathan, llamado &lt;a href=&quot;https://github.com/CleanCut/rusty_engine&quot;&gt;Rusty Engine&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esto es un conjunto de cursos que componen lo que llamaríamos una especialidad: &lt;a href=&quot;https://www.educative.io/path/become-a-rust-professional&quot;&gt;Become a Rust Professional&lt;/a&gt;. La plataforma &lt;a href=&quot;https://educative.io&quot;&gt;Educative&lt;/a&gt; tiene el modelo de suscripción, por lo que si tienes tiempo, puedes pagar un solo mes y tomar todos los cursos, aunque también puedes comprar cada curso individualmente, conforme vayas avanzando.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Existen un montón de recursos para aprender Rust, sobre todo en inglés, pero también puedes empezar sin ningún problema en español, sobre todo gracias a los esfuerzos que la comunidad y las empresas que lo usan y patrocinan están haciendo para que la mayor cantidad de personas lo puedan aprender.&lt;/p&gt;
+
+&lt;p&gt;Empieza tan pronto como puedas si está dentro de tus objetivos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="rust" /><category term="aprendizaje" /><category term="cursos" /><summary type="html">En este artículo encontrarás algunos recursos para aprender Rust tanto en inglés como en español. Empezaremos desde lo más básico hasta llevarte a hacer cosas en producción.</summary></entry><entry><title type="html">¿Por qué aprender Rust en 2023?</title><link href="https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust.html" rel="alternate" type="text/html" title="¿Por qué aprender Rust en 2023?" /><published>2022-12-13T00:00:00-06:00</published><updated>2022-12-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust.html">&lt;p&gt;Rust se ha establecido como uno de los lenguajes más queridos entre los desarrolladores en los últimos años y desde 2016 está en el número uno, según la encuesta anual de &lt;a href=&quot;https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted&quot;&gt;Stack Overflow&lt;/a&gt;. Esto no es de extrañar, ya que Rust es un lenguaje que ofrece &lt;strong&gt;muchas cosas buenas&lt;/strong&gt; a aquellos que lo usan.&lt;/p&gt;
 
 &lt;p&gt;En este artículo vamos a hablar de algunas de sus características, las ventajas de su ecosistema, y por qué te conviene aprenderlo. Además vamos a hablar de cuándo no es tan buena idea.&lt;/p&gt;
 
@@ -783,72 +852,4 @@
       &lt;p&gt;Link de afiliados de Amazon &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="a-mind-for-numbers" /><category term="barbara-oakley" /><summary type="html">Nunca nos han enseñado a aprender (a casi nadie) y el desarrollo de software es un campo que requiere un aprendizaje constante de temas difíciles. Veamos lo que &quot;A mind for numbers&quot; nos enseña sobre el aprendizaje.</summary></entry><entry><title type="html">Criptografía para desarrolladores: Códigos de autenticación de mensajes</title><link href="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html" rel="alternate" type="text/html" title="Criptografía para desarrolladores: Códigos de autenticación de mensajes" /><published>2021-12-30T00:00:00-06:00</published><updated>2021-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes</id><content type="html" xml:base="https://blog.thedojo.mx/2021/12/30/criptografia-para-desarrolladores-codigos-de-autenticacion-de-mensajes.html">&lt;p&gt;Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.&lt;/p&gt;
-
-&lt;p&gt;En general este tipo de algoritmos se llaman &lt;strong&gt;hashes con llave&lt;/strong&gt; o &lt;em&gt;Keyed Hashes&lt;/em&gt;. Empecemos a hablar del tipo más sencillo y usado: la generación de códigos de autenticación de mensajes.&lt;/p&gt;
-
-&lt;h2 id=&quot;message-authentication-codes-macs&quot;&gt;Message Authentication Codes (MACs)&lt;/h2&gt;
-
-&lt;p&gt;Un código de autenticación de mensajes es una función que recibe un mensaje y &lt;em&gt;una llave&lt;/em&gt; (secreta) y devuelve lo que llamamos una etiqueta, que es una cadena de bits de los tamaños comunes en los hashes.&lt;/p&gt;
-
-&lt;p&gt;En este tipo de algoritmos, si mantenemos la llave secreta, y la compartimos solamente con quien necesitamos verificar la autenticidad del mensaje, podemos comprobar el &lt;em&gt;origen&lt;/em&gt; (gracias a que sabemos que la llave está protegida) y que el mensaje está intacto (gracias a que las propiedades del hash).&lt;/p&gt;
-
-&lt;p&gt;Una forma de crear un hash con llave es simplemente poniendo la llave antes o después del mensaje que queremos autenticar y usando un algoritmo de hashing normal, &lt;strong&gt;aunque ninguna de las dos formas es muy segura&lt;/strong&gt;, ya que es vulnerable a ataques de &lt;a href=&quot;https://en.wikipedia.org/wiki/Length_extension_attack&quot;&gt;&lt;em&gt;extensión de longitud&lt;/em&gt;&lt;/a&gt; o se pueden encontrar colisiones si se usa una llave de tamaño variable. Un ejemplo en Python sería el siguiente:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hashlib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3_512&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sa&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mi llave super secreta'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sa&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mi mensaje que puede o no ser secreto, pero del que me importa el origen y que no haya sido cambiado'&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3_512&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hexdigest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;(Afortunadamente, ningún algoritmo de la familia SHA-3 es vulnerable a los ataques de extensión de longitud, por eso lo usamos aquí para el ejemplo)&lt;/p&gt;
-
-&lt;p&gt;A nuestra contraparte le enviamos el mensaje junto con el tag y para verificar la autenticidad del mensaje el receptor debe hacer exactamente la misma operación, por lo que necesita tener previamente la llave. Si el tag resultante es igual, quiere decir que el mensaje es auténtico y no ha sido modificado, reemplazado o viene de alguien que no tiene la llave.&lt;/p&gt;
-
-&lt;p&gt;Para que un MAC sea seguro, debe ser imposible crear un tag que parezca venir de alguien con la llave, sea por falsificarlo directamente o por poder adivinar la llave.&lt;/p&gt;
-
-&lt;p&gt;Los MACs más comunes son los que están basados en hashes, conocidos como &lt;strong&gt;HMAC&lt;/strong&gt;, un término que seguro has visto si has estado desarrollando por algún tiempo.&lt;/p&gt;
-
-&lt;h2 id=&quot;códigos-de-autenticación-de-mensajes-basados-en-hashes-hmac&quot;&gt;Códigos de autenticación de mensajes basados en hashes (HMAC)&lt;/h2&gt;
-
-&lt;p&gt;Un &lt;em&gt;Hash based Message Authentication Code&lt;/em&gt; es un MAC creado a partir de un hash, operando de una manera diferente a simplemente poner antes o después la llave. Los HMACs hacen uso de dos valores adicionales, un padding interno y un padding externo. Los combinan con la llave para crear una etiqueta que no sea vulnerable a los ataques de extensión de longitud.&lt;/p&gt;
-
-&lt;p&gt;La construcción de HMAC funciona así:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Se combina la llave con el padding interno mediante la operación XOR.&lt;/li&gt;
-  &lt;li&gt;Se hashea la la combinación de la llave y el padding interno junto con el mensaje del que queremos crear la etiqueta (a esto lo llamaremos H1).&lt;/li&gt;
-  &lt;li&gt;Se combina la llave con el padding externo mediante la operación XOR.&lt;/li&gt;
-  &lt;li&gt;Se hashea la la combinación de la llave y el padding externo junto con H1, el resultado de esto es la etiqueta de autenticación.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Sin embargo, se conoce un ataque efectivos contra los HMACs que permiten falsificar tags computando &lt;strong&gt;2^n/2 operaciones&lt;/strong&gt; en promedio, lo cuál no es cualquier cosa, pero un atacante motivado (y con recursos) podría lograrlo sin problemas si &lt;strong&gt;n&lt;/strong&gt;, el tamanño interno del estado del hash es muy pequeño. Un hash moderno tiene un estado de 512 bits, por lo que un ataque de tamaño de 2^n512/2 = 2^256 es impráctico.&lt;/p&gt;
-
-&lt;p&gt;Ya que un HMAC están basado en un algoritmo de hash, cuando se nombra se usa el nombre de este, por ejemplo: HMAC-SHA-256 o HMAC-SHA-3-512.&lt;/p&gt;
-
-&lt;h2 id=&quot;códigos-de-autenticación-de-mensajes-basados-en-cifrados-de-bloque-cmac&quot;&gt;Códigos de autenticación de mensajes basados en cifrados de bloque (CMAC)&lt;/h2&gt;
-
-&lt;p&gt;Ya que los hashes pueden estar basados en cifrados de bloque, una construcción más directa es usar un cifrado de bloque como la base para un MAC. Así nacen lo CMACs, códigos de autenticación de mensajes basados en cifrados de bloque, por ejemplo AES-CMAC.
-Aunque se siguen usando en algunos protocolos de seguridad, los más MACs más eficientes son los que no se basan en Hashes o cifrados de bloque, sino que tienen un diseño independiente.&lt;/p&gt;
-
-&lt;h2 id=&quot;macs-con-diseño-independiente&quot;&gt;MACs con diseño independiente&lt;/h2&gt;
-
-&lt;p&gt;Un MAC seguro es más fácil de lograr que un hash completamente funcional y seguro o que un cifrado de bloque con las mismas características, ya que al usar un llave secreta evitan que se pueda atacar tan fácilmente como un hash y al exponer una etiqueta pequeña, revelan menos información que un cifrado de bloque.&lt;/p&gt;
-
-&lt;p&gt;Es por eso que un MAC no requiere todo el poder de un hash ni de un cifrado de bloque. Gracias a esto se han dieseñado algortimos que usan esta ventaja para ser más eficientes. Hablemos de tres ejemplos:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://cr.yp.to/siphash/siphash-20120918.pdf&quot;&gt;SipHash&lt;/a&gt;: Es una familia de algoritmos optimizada para autenticar mensajes cortos, originalmente diseñada para reemplazar las funciones hash en los diccionarios implmentados como hashtables.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://cr.yp.to/mac/poly1305-20050329.pdf&quot;&gt;Poly1305&lt;/a&gt;: Es una función de autenticación de mensajes muy rápida y eficiente, más que cualquiera basada completamente en un algoritmo de bloque o un hash, usada para autenticar paquetes en dispositivos de bajo rendimiento en Android, por ejemplo.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://eprint.iacr.org/2005/088.pdf&quot;&gt;Pelican 2.0&lt;/a&gt;: Es un MAC basado en AES (Rijndael), pero que no utiliza todo su poder y que funciona de forma eficiente gracias a esto. Sin embargo, este algoritmo no está implementado en ningún lugar importante.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Si lo que buscas es eficiencia, manteniendo la seguridad relativa de tus etiquetas de autenticación, este tipo de MACs son los que deberías usar.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Conocer sobre los códigos de autenticación de mensajes es importante para no navegar perdidos entre todas esas siglas que luego vemos en las suites de seguridad de IPSec, TLS, SSL, SSH, HTTPS, etc. Ahora ya sabes lo que significa HMAC-SHA-512, AES-CMAC o Poly1305.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mac" /><category term="hamc" /><category term="aes" /><category term="security" /><category term="cryptography" /><summary type="html">A veces vemos nombres como HMAC-MD4 o AES-CMAC y no sabemos lo que significa. En este artículo hablaremos de los diferentes tipos de MAC y por qué son importantes.</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="a-mind-for-numbers" /><category term="barbara-oakley" /><summary type="html">Nunca nos han enseñado a aprender (a casi nadie) y el desarrollo de software es un campo que requiere un aprendizaje constante de temas difíciles. Veamos lo que &quot;A mind for numbers&quot; nos enseña sobre el aprendizaje.</summary></entry></feed>
