@@ -1,4 +1,125 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-19T00:03:37-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Cómo aprender Rust? Recursos para empezar</title><link href="https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html" rel="alternate" type="text/html" title="¿Cómo aprender Rust? Recursos para empezar" /><published>2022-12-18T00:00:00-06:00</published><updated>2022-12-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/18/como-aprender-rust</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html">&lt;p&gt;En el &lt;a href=&quot;/2022/12/13/por-que-aprender-rust.html&quot;&gt;artículo pasado&lt;/a&gt; hablamos de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo. Ahora hablemos de cómo empezar. Empecemos con los recursos en español y sigamos con recursos en inglés.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-22T08:30:28-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Tomando notas efectivamente: Zettelkasten</title><link href="https://blog.thedojo.mx/2022/12/22/tomando-notas-efectivamente-zettelkasten.html" rel="alternate" type="text/html" title="Tomando notas efectivamente: Zettelkasten" /><published>2022-12-22T00:00:00-06:00</published><updated>2022-12-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/22/tomando-notas-efectivamente-zettelkasten</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/22/tomando-notas-efectivamente-zettelkasten.html">&lt;p&gt;Como desarrolladores de Software, necesitamos tener sistemas efectivos para aprender. Y aunque no seas desarrollador@ de software, muchas profesiones requieren que se esté aprendiendo constantemente, sea nuevos avances en el estado del arte, nuevas tecnologías, nuevas técnicas, o simplemente aprender nuevas áreas para entrar en &lt;strong&gt;“pastos más verdes”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;En este artículo hablaremos de la importancia de tomar buenas notas mientras consumes información, y cómo este sistema te puede ayudar a ti mismo a producir más información y reflexiones, sea para ti mismo, para tu equipo o para el mundo.&lt;/p&gt;
+
+&lt;p&gt;Este artículo está basado en el libro: &lt;a href=&quot;https://amzn.to/3BKqWfK&quot;&gt;How to take smart notes&lt;/a&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; de Sönke Ahrens, que también está en español: &lt;a href=&quot;https://amzn.to/3hDbxHq&quot;&gt;El método Zettelkasten&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1671516491/Luhmann_xzhhmb.png&quot; alt=&quot;Dibujo de Niklas Luhmann&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conceptos-fundamentales&quot;&gt;Conceptos fundamentales&lt;/h2&gt;
+
+&lt;p&gt;Antes de empezar a hablar del método y cómo aplicarlo, entendamos por qué Sönke Ahrens y otras personas lo consideran tan efectivo. Los fundamentos de todo están en lo importante que es escribir.&lt;/p&gt;
+
+&lt;h3 id=&quot;escribir-es-lo-único-que-importa&quot;&gt;Escribir es lo único que importa&lt;/h3&gt;
+
+&lt;p&gt;Aunque consumir información mediante la lectura, las clases, los tutoriales y cosas similares es importante, &lt;strong&gt;la forma más efectiva de asimilar información y comprobar que aprendiste es poner en tus propias palabras aquello que estás tratando de aprender&lt;/strong&gt;. Un ejemplo de esto es &lt;a href=&quot;https://www.youtube.com/watch?v=inZe9kW5djI&quot;&gt;“técnica de Feynman”&lt;/a&gt;, que propone poner tus conocimientos sobre el tema que quieres aprender en una hoja de papel (sin copiar de ninguna fuente) y ver en dónde tienes huecos.&lt;/p&gt;
+
+&lt;p&gt;Es por eso que la escritura se propone como un medio superlativamente importante para el aprendizaje, sólo poniendo el pensamiento en medio físico puedes comprobar que aprendiste. Este acto se puede considerar como “aprender en papel”.&lt;/p&gt;
+
+&lt;p&gt;Sönke Ahrens llega a decir en su libro que “escribir es lo único que importa”. ¿Por qué podríamos llegar a decir algo semejante? El se refiere sobre a todo a los académicos e investigadores, y es que por mucho que piensen y tengan ideas, si no las escriben, &lt;strong&gt;no existen&lt;/strong&gt;. No es posible sacarlas de su cabeza y incluso si lo comunican verbalmente, esto no es permanente (podríamos debatir sobre si hacer grabaciones o videos es equivalente a escribir).&lt;/p&gt;
+
+&lt;p&gt;Pero ahora piénsalo en el área de desarrollo de software. El software que no hemos escrito no existe. Y tenemos una capa superior: el software que no tiene especificación y documentación, cuando se va la persona que tiene esas ideas en la mente, es inservible. No se puede mantener o evolucionar a menos que alguien de nuevo adquiera ese conocimiento como si fuera un arqueólogo. Lo mismo pasa con otras áreas del conocimiento, como los procesos empresariales, las políticas, etc. &lt;strong&gt;Si no están escritas, no existen&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;las-conexiones-son-fundamentales&quot;&gt;Las conexiones son fundamentales&lt;/h3&gt;
+
+&lt;p&gt;¿Cuántas veces un amigo de un amigo te ha ayudado con algún problema que tenías? Estas conexiones, que los sociólogos llaman “conexiones débiles” son un gran recurso cuando necesitamos algo de ayuda. Lo mismo pasa con las ideas, las conexiones débiles entre ideas que parecen no relacionadas es lo que permite la innovación y resolución de problemas de maneras que no nos imaginamos o no eran obvias.&lt;/p&gt;
+
+&lt;p&gt;Pero, ¿cómo podemos encontrar estas conexiones no obvias entre ideas? Justo eso para lo que está construido el Zettelkasten.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-el-zettelkasten&quot;&gt;¿Qué es el Zettelkasten?&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Zettelkasten&lt;/strong&gt; literalmente significa literalmente &lt;strong&gt;“caja de notas”&lt;/strong&gt; (en alemán) y el método se llama así porque su creador, &lt;a href=&quot;https://es.wikipedia.org/wiki/Niklas_Luhmann&quot;&gt;Niklas Luhmann&lt;/a&gt;, guardaba sus notas en una caja y desde ahí operaba.&lt;/p&gt;
+
+&lt;p&gt;La propuesta de este método, y por lo que llamó la atención recientemente, es que Niklas fue un sociólogo muy relevante y productivo, que escribió más de &lt;em&gt;70 libros&lt;/em&gt; y &lt;em&gt;400 artículos&lt;/em&gt; académicos. Fue muy influyente, y esta productividad se le atribuye a su método para tomar notas de lo que iba aprendiendo, pensando y encontrando fortuitamente.&lt;/p&gt;
+
+&lt;p&gt;El método consiste en estos pasos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Toma notas mientras lees (o consumes información en cualquier formato, ej. viendo videos), no subrayes o escribas en los márgenes. Luhmann lo hacía en hojas de tamaño A6, escribiendo una nota en pocas palabras capturando la idea principal de que quería guardar y la referencia bibliográfica. Nosotros podemos tomar &lt;strong&gt;notas temporales en un papel, cuaderno o cualquier lugar que te permita&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Al final del día, o constantemente, revisa las notas que tomaste con el fin de integrarlas en con las demás notas. La integración tiene que ver con numerar las notas, para que cada una tenga un identificador único. Ahora bien, ¿dónde vas a poner esta nota con respecto a las otras? Vamos a hablar de esto más adelante, pero esto ya empieza a ser tu &lt;strong&gt;Zettelkasten&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Revisa constantemente tu Zettelkasten y reescribe las notas que crees que puedes mejorar o sustituir. También puedes crear nuevos índices.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Crea un índice de los temas que contiene el Zettelkasten, para poder encontrar los temas más fácilmente cuando los necesites.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;tipos-de-notas&quot;&gt;Tipos de notas&lt;/h2&gt;
+
+&lt;p&gt;Para hacer tu Zettelkasten puedes tomar tres tipos diferentes de notas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Notas en modo borrador o temporales.&lt;/strong&gt; En estas notas, normalmente en papel, anotarás todo lo que se te ocurre, llegas a pensar como parte de la reflexión de tu trabajo, las ideas que surgen mientras vas leyendo, etc. El objetivo de estas notas es que no pierdas nada de lo que crees que es importante para tu trabajo o tu vida en general. Estas notas son temporales y más tarde las transformarás en notas permanentes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Notas de referencia.&lt;/strong&gt; Aquí puedes poner citas textuales junto con su referencia bibliográfica o que te permita encontrar de dónde la sacaste. Normalmente estas notas no llevan tus ideas, sino son usadas para apoyar lo que estás poniendo en una nota permanente. Estas notas normalmente están guardadas en un conjunto de notas de referencia separadas del Zettelkasten principal.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Notas permanentes&lt;/strong&gt;. Estas son las notas que añadirás a tu cajita, lo que te permitirá avanzar tu pensamiento. Estas notas son ideas completas, concisas y meditadas sobre un tema en específico. Pueden ser una nota temporal transformada o una nota completamente nueva. Para hacer estas notas tienes que &lt;strong&gt;reflexionar&lt;/strong&gt; y poner en palabras el resultado de esos pensamientos. A estas notas le puedes agregar notas de referencias para tener soporte o para expandir sobre el tema más tarde.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;El libro “How to Take Smart Notes” menciona otro tipo de notas, llamadas de proyecto, que yo consideraría como las notas permanentes en el sentido de su utilidad, pero que son útiles por menos tiempo porque pertenecen a un proyecto específico.&lt;/p&gt;
+
+&lt;h2 id=&quot;organizando-las-notas&quot;&gt;Organizando las notas&lt;/h2&gt;
+
+&lt;p&gt;La parte más importante del Zettelkasten es la conexión entre las notas, la integración, lo que permite que se generen nuevas ideas y se solidifiquen las que ya existen.&lt;/p&gt;
+
+&lt;p&gt;Para integrar una nota en el Zettelkasten existen varios métodos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Puedes buscar una nota relacionada y agregarla como una conexión, detrás de esta (esto es, de manera física). La relación entre las notas puede ser por ejemplo, que una es argumento para apoyar la otra, que es un punto de vista diferente del mismo tema o que de plano la contradice. Esto indicaría que tu pensamiento se está expandiendo y cambiando. Cuando lo haces en versión digital, sólo tienes que agregar una referencia a los temas que quieres conectar.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Puedes crear una nota que pertenezca a un tema y que tenga referencias a todas las notas relevantes dentro de tu Zettelksten.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;En ambos casos es muy muy importante que cuando agregues nuevas notas a tu Zettelkasten, revises las notas anteriores para agregar las conexiones pertinentes, eso es fundamental para crear nuevas ideas.&lt;/p&gt;
+
+&lt;p&gt;Otra cosa que el libro menciona que debes hacer es un índice, sin embargo, esto lo podemos obviar si usamos un programa que automáticamente nos de una vista de todas nuestras notas.&lt;/p&gt;
+
+&lt;h2 id=&quot;software-para-hacer-tu-zettelkasten&quot;&gt;Software para hacer tu Zettelkasten&lt;/h2&gt;
+
+&lt;p&gt;Luhmann hacía su Zettelkasten en papel, pero no tengo duda de que si hubiera tenido a la mano software que se lo facilitara, lo hubiera aprovechado. Algunos programas que puedes usar para hacer tu Zettelkasten son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Obsidian&lt;/strong&gt;. Es gratuito (con algunos servicios de paga). Permite tomar notas en formato markdown y la característica más importante es que te permite crear conexiones entre notas, por lo que es muy adecuado para hacer tu Zettelkasten. Puedes descargar &lt;a href=&quot;https://obsidian.md/download&quot;&gt;Obsidian&lt;/a&gt; y ver un video de cómo hacer tu Zettelkasten con él &lt;a href=&quot;https://www.youtube.com/watch?v=hGd70QqTkCM&quot;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Zotero&lt;/strong&gt;. Este programa se recomienda principalmente para guardar las referencias a los lugares donde encontraste la información. Desde tu Zettelkasten puedes hacer referencia. A las notas de Zotero. Descarga &lt;a href=&quot;https://www.zotero.org/download/&quot;&gt;Zotero&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Zettlr&lt;/strong&gt;.Es gratuito, te permite tomar notas en formato markdown y que tiene una interfaz muy similar a Obsidian. Descargar &lt;a href=&quot;https://www.zettlr.com/&quot;&gt;Zettlr&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Logseq&lt;/strong&gt;. Te permite crear notas en Markdown, pero también en Org-mode. Se promociona como una base de conocimiento personal, con la privacidad en mente. Descargar &lt;a href=&quot;https://logseq.com/&quot;&gt;Logseq&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h3&gt;
+
+&lt;p&gt;Un cambio que personalmente quiero hacer para medir mi avance, propuesto por el libro mencionado antes, es medir mi productividad por el número de notas que produzco en vez de por el número de páginas que leo. A final de cuentas, mucho de lo que se lee es olvidado si no lo reflexionamos, y lo reflexionado se pierde si no lo escribimos.&lt;/p&gt;
+
+&lt;p&gt;Este sistema, además de aprender mejor, te ayudará a &lt;strong&gt;producir más&lt;/strong&gt;, ya que si quieres crear una pieza sobre un tema, sea el capítulo de un libro, un video o un artículo, basta con echarte un clavado en tu Zettelkasten, ver las notas relevantes, crear un borrador y luego transformarlo y editarlo en el formato final. Claro, no todo será tan lineal, puede que te falten partes que tengas que investigar, pero tendrás un muy buen punto de partida.&lt;/p&gt;
+
+&lt;p&gt;Si eres desarrollador, tener un sistema de administración del conocimiento es esencial para que no eches todo lo que aprendes en saco roto. Pon manos a la obra ya, sea con Zettelkasten o con algún otro sistema. ¿Tienes alguna otra recomendación? ¡Cuéntanos en los comentarios!&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Los enlaces a Amazon son afiliados, si compras algo a través de estos enlaces, yo recibiré una pequeña comisión sin costo adicional para ti. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="zettelkasten" /><category term="ciencia" /><category term="aprendizaje" /><category term="toma-de-notas" /><summary type="html">Hablemos de la importancia de tener un sistema efectivo para tomar notas, usado por académicos y científicos para ser productivos.</summary></entry><entry><title type="html">¿Cómo aprender Rust? Recursos para empezar</title><link href="https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html" rel="alternate" type="text/html" title="¿Cómo aprender Rust? Recursos para empezar" /><published>2022-12-18T00:00:00-06:00</published><updated>2022-12-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/18/como-aprender-rust</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/18/como-aprender-rust.html">&lt;p&gt;En el &lt;a href=&quot;/2022/12/13/por-que-aprender-rust.html&quot;&gt;artículo pasado&lt;/a&gt; hablamos de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo. Ahora hablemos de cómo empezar. Empecemos con los recursos en español y sigamos con recursos en inglés.&lt;/p&gt;
 
 &lt;h2 id=&quot;guía-oficial&quot;&gt;Guía oficial&lt;/h2&gt;
 
@@ -763,93 +884,4 @@
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Mantener la consistencia, en la base de código es algo que vale la pena para reducir el esfuerzo cognitivo que a los desarrolladores les cuesta trabajar en tu código. Esto ayudará a que tu código sea mantenible y sea más probable que tenga una larga vida.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="consistencia," /><category term="base-de-código," /><category term="posd" /><summary type="html">La consistencia y uniformidad en una base de código son muy importantes, en este artículo veremos cómo podemos lograrlo y en qué cosas debes poner atención.</summary></entry><entry><title type="html">Aprendiendo desarrollo efectivamente</title><link href="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html" rel="alternate" type="text/html" title="Aprendiendo desarrollo efectivamente" /><published>2022-01-03T00:00:00-06:00</published><updated>2022-01-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente</id><content type="html" xml:base="https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente.html">&lt;p&gt;Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado técnicas para aprender efectivamente, aunque la escuela trata de aprender lo más efectivamente posible.&lt;/p&gt;
-
-&lt;p&gt;El desarrollo de software es un campo muy amplio en el que tenemos que aprender constantemente, sea por el cambio de las tecnologías, porque tenemos que aprender del área en la que estamos aplicando nuestro conocimiento tecnológico para crear software efectivo o simplemente porque queremos cambiar de área.&lt;/p&gt;
-
-&lt;p&gt;En este artículo hablaremos sobre algunas de las cosas que el libro &lt;a href=&quot;https://amzn.to/3r20CYr&quot;&gt;“A Mind for Numbers”&lt;/a&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; de &lt;a href=&quot;https://barbaraoakley.com/&quot;&gt;Barbara Oakley&lt;/a&gt; nos enseña sobre el aprendizaje de temas difíciles, como las matemáticas y las ciencias. Considerando que el desarrollo de software tiene temas difíciles, creemos que es aplicable lo mencionado en este libro.&lt;/p&gt;
-
-&lt;p&gt;Primero hablemos de las bases de las recomendaciones que da el libro: los modos en los que puede estar tu cerebro, y las partes que ocupa para cada tipo.&lt;/p&gt;
-
-&lt;h2 id=&quot;modo-enfocado&quot;&gt;Modo enfocado&lt;/h2&gt;
-
-&lt;p&gt;En este modo, llamado &lt;strong&gt;estado de alta atención&lt;/strong&gt;, tu cerebro está &lt;strong&gt;concentrado&lt;/strong&gt; en una tarea que tienes que lograr, como escribir este artículo, estudiar un tema específico o resolver un algoritmo. Digamos que todas las energías de tu cerebro están destinadas a esta tarea y no &lt;em&gt;divagas&lt;/em&gt; en diferentes temas.&lt;/p&gt;
-
-&lt;p&gt;Este modo es muy bueno para &lt;em&gt;terminar o avanzar&lt;/em&gt; las tareas del día a día y para evitar errores mientras haces algo importante, pero no es muy bueno para aprovechar el poder natural de tu cerebro, ya que utilizamos las &lt;em&gt;funciones ejecutivas&lt;/em&gt;, que nos permiten mantenernos atentos a algo pero nos cuestan mucha energía. La funciones ejecutivas se encuentran situadas principalmente en la corteza prefrontal.&lt;/p&gt;
-
-&lt;p&gt;El modo enfocado es necesario para aprender, ya que podremos recordar lo que hemos estudiado en este modo, o hacer conexiones conscientes con otras cosas que ya sepamos. En este modo resolvemos problemas de forma secuencial y analítica.&lt;/p&gt;
-
-&lt;h2 id=&quot;modo-difuso&quot;&gt;Modo difuso&lt;/h2&gt;
-
-&lt;p&gt;Oficialmente podemos llamar a este el &lt;em&gt;modo de descanso&lt;/em&gt;. Este es el modo en el que estamos cuando no estamos pensando o aplicando nuestra mente a nada específico, digamos que es el estado por defecto del cerebro. Tu foco de atención está brincando de un lugar a otro constantemente. El modo difuso consume menos energía porque no necesitamos controlar la mente para hacerlo. El modo difuso entra en acción cuando estamos haciendo tareas que tenemos completamente dominadas, como caminar, bañarnos, o comer, en ninguna de estas actividades estamos completamente concentrados y nuestra mente está viajando por diferentes lugares.&lt;/p&gt;
-
-&lt;p&gt;En el modo difuso podemos conectar ideas usando la capacidad del cerebro de hacer conexiones naturalmente, o brincar de un tema a otro sin ningún esfuerzo.&lt;/p&gt;
-
-&lt;p&gt;Podríamos creer que el modo difuso es &lt;em&gt;malo&lt;/em&gt; para el estudio, sin embargo, en este modo es cuando nuestro cerebro procesa inconscientemente lo que hemos estudiado de modo consciente y hace que permanezca. Por lo tanto, el modo difuso &lt;strong&gt;es esencial para aprender&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;El modo difuso no utiliza una parte específica del cerebro, sino que se reparte. Al consumir poca energía relativamente y utilizar todo el poder del cerebro, es una herramienta imprescindible para resolver problemas.&lt;/p&gt;
-
-&lt;p&gt;Recuerda que en parte somos máquinas biológicas que necesitan procesos químicos para funcionar y los modos en los que puede estar nuestra mente se complementan para que funcionemos y para que aprendamos efectivamente.&lt;/p&gt;
-
-&lt;h2 id=&quot;técnicas-de-aprendizaje&quot;&gt;Técnicas de aprendizaje&lt;/h2&gt;
-
-&lt;p&gt;Ahora que ya conocemos los dos modos en los que nuestro cerebro puede funcionar, veamos técnicas que nos ayudarán a aprovecharnos de esto para aprender de manera eficiente.&lt;/p&gt;
-
-&lt;h3 id=&quot;controla-el-tiempo-que-dedicas-a-estudiar&quot;&gt;Controla el tiempo que dedicas a estudiar&lt;/h3&gt;
-
-&lt;p&gt;Nuestro cerebro tiene una &lt;em&gt;capacidad limitada&lt;/em&gt; de absorción de información por unidad de tiempo, necesitamos tiempo para procesar las cosas y entender lo que sigue mejor, además de que la repetición a través del tiempo nos ayuda a retener la información por más tiempo. Es por eso que es muy importante controlar cuánto tiempo dedicas a estudiar, cuándo se lo dedicamos y las condiciones físicas y mentales en las que estamos.&lt;/p&gt;
-
-&lt;p&gt;Dos técnicas que te pueden ayudar a dedicarle el tiempo &lt;em&gt;correctamente&lt;/em&gt; al estudio son:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Programar sesiones de estudio de un tema cortas pero constantes&lt;/strong&gt;. Es mucho mejor dedicar una hora de estudio diaria durante diez d
-ías, que 10 horas un día al mismo tema. Hacerlo de manera espaciada permitirá a tu cerebro procesar la información durante los periodos en los que está en el modo difuso, además de que mantener el modo enfocado por periodos cortos es más fácil y eficiente que hacerlo durante periodos largos. Esto se conoce como &lt;strong&gt;práctica distribuida&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Cambiar constantemente de modos de pensamiento&lt;/strong&gt;. Cambiar entre el modo enfocado y el modo difuso te ayudará aprender mejor y te mantendrá fresco. Una técnica que puedes aplicar es la técnica &lt;em&gt;pomodoro&lt;/em&gt; en la que programas periodos de estudio o trabajo de 25 minutos y un descanso de 5 minutos. Esta técnica no es efectiva para todos por el tiempo que tardan en enfocarse, pero puedes incrementar los periodos de enfoque para que se acomode a tu estilo. El punto es tener una sesión de estudio &lt;em&gt;estructurada&lt;/em&gt; y que te permita cambiar de modos de pensamiento &lt;strong&gt;para aprovechar todo el poder de tu cerebro&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Estos dos técnicas le darán a tu cerebro tiempo para usar todo su poder: le darán al modo difuso tiempo para trabajar en problemas difíciles.&lt;/p&gt;
-
-&lt;h3 id=&quot;crea-un-mapa-de-lo-que-aprenderás&quot;&gt;Crea un mapa de lo que aprenderás&lt;/h3&gt;
-
-&lt;p&gt;Es muy importante que cuando tengas un tema difícil que aprender hagas una sesión de pre-estudio, en el que veas lo que aprenderás. Esto lo puedes hacer mirando el índice si existe, las preguntas que guían el estudio en caso de que haya, leyendo (o viendo, o escuchando) solamente la introducción y conclusión y fijándote en los subtemas, capítulos, negritas, recuadros, etc.&lt;/p&gt;
-
-&lt;p&gt;Esta sesión de pre-estudio te ayudará a organizar tus pensamientos sobre lo que aprenderás, un mapa que tendrá los puntos principales a aprender que después rellanarás estudiando a fondo el tema.&lt;/p&gt;
-
-&lt;h2 id=&quot;evitar-la-ilusión-de-aprendizaje&quot;&gt;Evitar la ilusión de aprendizaje&lt;/h2&gt;
-
-&lt;p&gt;Una parte muy importante de aprender es evitar la &lt;em&gt;sensación&lt;/em&gt; falsa de que aprendimos algo sin realmente haberlo aprendido. ¿Cómo podemos evitar esto?&lt;/p&gt;
-
-&lt;h3 id=&quot;auto-exámenes&quot;&gt;Auto-exámenes&lt;/h3&gt;
-
-&lt;p&gt;Una de las formas más efectivas es buscar o fabricar exámenes o cuestionarios de las cosas de las que deberíamos ser conscientes una vez que terminemos de estudiar el tema. Hacer estos exámenes o prácticas sin consultar el material de estudio te ayudará averiguar si realmente has aprendido algo, y si fallas, tendrás puntos en los cuales mejorar.&lt;/p&gt;
-
-&lt;p&gt;Estos auto-exámenes se han mostrado muy eficaces para muchos estudiantes de temas complejos.&lt;/p&gt;
-
-&lt;h3 id=&quot;practica-recorta-y-repite&quot;&gt;Practica, recorta y repite&lt;/h3&gt;
-
-&lt;p&gt;Algunas de las cosas que tenemos que aprender consiste en una serie de pasos por ser un problema complejo. Una técnica de aprendizaje es aislar una parte del problema y practicarla hasta que la dominemos en diferentes contextos. Imagina por ejemplo que quieres dominar la configuración de servidores. Lo que más se te dificulta es la configuración de la parte de HTTPS. Entonces, deberías repetir estar parte con diferentes variables y opciones hasta que lo puedas hacer sin dificultad.&lt;/p&gt;
-
-&lt;h2 id=&quot;mejora-tu-memoria&quot;&gt;Mejora tu memoria&lt;/h2&gt;
-
-&lt;p&gt;Finalmente hablemos de algo que ha adquirido muy mala fama: la &lt;em&gt;memoria&lt;/em&gt;. Debido a que en la escuela nos hacían aprender de memoria cosas que parecen inútiles a lo largo de la vida, hemos demonizado el memorizar cosas. Sin embargo, memorizar es algo imprescindible para la resolución de problemas efectiva y la creatividad. Veamos algunas técnicas que te ayudarán a memorizar de manera más eficiente:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Palacios de memoria&lt;/strong&gt;. Esta es una técnica que consiste en aprovechar nuestra capacidad de ubicación espacial para memorizar cosas fácilmente. Puedes investigar más sobre ella y ver si te sirve.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Repetición espaciada&lt;/strong&gt;. Casi todo lo que consumimos lo olvidamos, a menos que se nos repita constantemente. La repetición espaciada consiste en repasar un tema con frecuencia cada vez más grande, para poder retenerlo a largo plazo. Puedes usar herramientas como &lt;a href=&quot;https://apps.ankiweb.net/&quot;&gt;Anki&lt;/a&gt; para automatizar esto.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Hemos hablado de los temas que a mi parecer son más aplicables a los desarrolladores. El libro habla de otros temas como la presentación de exámenes, la organización del tiempo, la motivación, etc. Te invito a que le eches un ojo si estás en la escuela y sobre todo si estás en un área de ciencias o físico-matemáticas.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;Link de afiliados de Amazon &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="a-mind-for-numbers" /><category term="barbara-oakley" /><summary type="html">Nunca nos han enseñado a aprender (a casi nadie) y el desarrollo de software es un campo que requiere un aprendizaje constante de temas difíciles. Veamos lo que &quot;A mind for numbers&quot; nos enseña sobre el aprendizaje.</summary></entry></feed>
+&lt;p&gt;Mantener la consistencia, en la base de código es algo que vale la pena para reducir el esfuerzo cognitivo que a los desarrolladores les cuesta trabajar en tu código. Esto ayudará a que tu código sea mantenible y sea más probable que tenga una larga vida.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="consistencia," /><category term="base-de-código," /><category term="posd" /><summary type="html">La consistencia y uniformidad en una base de código son muy importantes, en este artículo veremos cómo podemos lograrlo y en qué cosas debes poner atención.</summary></entry></feed>

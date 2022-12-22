@@ -544,4 +544,10 @@ var store = [{
         "tags": ["rust","aprendizaje","cursos"],
         "url": "/2022/12/18/como-aprender-rust.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1024/v1671168726/DALL_E_2022-12-06_16.53.33_-_mandelbrot_set_fractal_made_of_rust_on_a_gold_wall_digital_art_illustration_cinematic_t5cz0h.png"
+      },{
+        "title": "Tomando notas efectivamente: Zettelkasten",
+        "excerpt":"Como desarrolladores de Software, necesitamos tener sistemas efectivos para aprender. Y aunque no seas desarrollador@ de software, muchas profesiones requieren que se esté aprendiendo constantemente, sea nuevos avances en el estado del arte, nuevas tecnologías, nuevas técnicas, o simplemente aprender nuevas áreas para entrar en “pastos más verdes”. En este...","categories": [],
+        "tags": ["zettelkasten","ciencia","aprendizaje","toma-de-notas"],
+        "url": "/2022/12/22/tomando-notas-efectivamente-zettelkasten.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1671514771/jj-ying-8bghKxNU1j0-unsplash_knucbs.jpg"
       }]

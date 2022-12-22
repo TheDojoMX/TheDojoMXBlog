@@ -4,22 +4,24 @@ use std::time::Duration;
 use console::Term;
 
 
-
-fn main() -> Result<T, E> {
-    // list files in ../../_drafts folder
-    let mut drafts = Vec::new();
+// main function walks _drafts directory and prints out the file names
+fn main() {
     let term = Term::stdout();
-
+    let mut count = 0;
+    let mut files = Vec::new();
     for entry in WalkDir::new("../_drafts") {
         let entry = entry.unwrap();
-        if entry.file_type().is_file() {
-            drafts.push(entry.path().to_str().unwrap().to_string());
+        if entry.path().is_file() {
+            files.push(entry.path().to_str().unwrap().to_string());
         }
     }
-    // print drafts
-    for draft in drafts {
-        term.write_line(&draft);
+    loop {
+        term.clear_screen().unwrap();
+        term.write_line(&format!("{} files found", files.len())).unwrap();
+        for file in &files {
+            term.write_line(&format!("{}: {}", count, file)).unwrap();
+            count += 1;
+        }
+        thread::sleep(Duration::from_secs(1));
     }
-    thread::sleep(Duration::from_millis(2000));
-    term.clear_line()?;
 }
