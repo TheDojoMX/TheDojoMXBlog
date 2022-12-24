@@ -1,26 +1,53 @@
 ---
-title: "Creando código de Python robusto"
-date: 2022-08-21
+title: "Creando código de Python robusto, Parte 1"
+date: 2022-12-23
 author: Héctor Patricio
-tags: keccak sha3 sha-3-256 hash
+tags: python
 toc: true
 comments: true
-excerpt: "Escribe aquí un buen resumen de tu artículo"
+excerpt: "Normalmente no basta con saber lo básico de un lenguaje para hacer código que sea fácil de mantener y seguro. Hablemos de algunas maneras de hacer código robusto con Python."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_fill,g_north,h_350,q_59,w_1200,x_100,y_100/v1661094369/DALL_E_2022-08-12_11.14.36_-_dangerous_green_and_black_python_ready_to_byte_digital_art_bgspv1.png
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_fill,g_north,h_150,q_59,w_300,x_100,y_100/v1661094369/DALL_E_2022-08-12_11.14.36_-_dangerous_green_and_black_python_ready_to_byte_digital_art_bgspv1.png
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-En este post vamos a hablar de algunas cosas que harán que tu código de Python sea resistente al paso del tiempo, más fácil de entender, de mantener y cambiar en caso de que sea necesario. Además, debido a algunas características poco entendidas de los lenguajes, podemos crear bugs muy difíciles de encontrar y perseguir, aquí veremos algunas de las cosas con las que debes tener cuidado en Python.
+En esta serie de posts vamos a hablar de algunas cosas que harán que tu código de Python sea:
 
-## Claridad
+- resistente al paso del tiempo
+- más fácil de entender, de mantener y cambiar
+- que evite errores difíciles de encontrar
 
-En esta sección veamos las cosas que hacen más entendible y claro tu código. Muchas de estas ideas están basadas en la plática ["Clarity" de Saša Jurić](https://www.youtube.com/watch?v=6sNmJtoKDCo) de la Elixir Conf EU de 2021.
+En este artículo vamos a empezar a hablar de cómo hacer código que sea resistente al paso del tiempo.
 
-### Simplicidad
+## El tiempo y los cambios
 
-### Ocultar información
+En realidad el puro paso del tiempo no le hace nada a ninguna cosa. A lo que nos referimos con esta expresión es que las cosas **cambian** con el tiempo. Estos cambios pueden afectar a partes de tu código aunque estas en sí misma no sufran ninguna modificación. Veamos cómo puedes protegerte con algunos tips específicamente para Python.
+
+### Serialización
+
+En algunos casos, es necesario guardar información que es resultado de la operación de un programa, sea como un paso intermedio para poder recuperar el cálculo en caso de fallo (como un punto de revisión) o para que otros procesos lo tomen.
+
+Sobre todo en procesos que llevan una gran cantidad de cálculo, algunos programadores están acostumbrados a usar el módulo `pickle` de Python para guardar información en un archivo. Este módulo es muy útil para guardar _objetos_ de Python en un archivo, pero presenta algunas características inconvenientes:
+
+- Es inseguro, ya que permite ejecutar código arbitrario al cargar un archivo (hay que truquearlo, pero es posible).
+- Es **inestable**, ya que permitirá crear una versión de un objeto que no sea compatible con la versión actual del código.
+
+Aunque la seguridad es muy importante, el punto que queremos tratar ahorita es la inestabilidad. Por ejemplo, si alguna clase de tu código evoluciona, agregando nuevos atributos, el archivo que guardaste y que ahora puedes cargar, creará una versión del objeto sin las características y las guardas que le hayas puesto a la nueva versión. Esto va a causar problemas no detectables hasta que el código que carga el archivo se ejecute.
+
+### Alternativas a Pickle
+
+Siempre que quieras serializar parte de un programa, enfócate en los **datos**. No en las clases o los objetos. Así, para guardar datos puedes usar cualquier otro formato de serialización que no se meta con el código directo de Python. Algunas opciones son:
+
+- [JSON](https://barcelonageeks.com/serializar-y-deserializar-json-complejo-en-python/): usa el paquete `json` para exportar y cargar los datos resultado de las computaciones. Tendrás que convertir tus objetos a diccionarios y listas, pero esto es fácil de hacer y no te afectará cuando cambies tu código.
+
+- [Protocol Buffers](https://blog.conan.io/2019/03/06/Serializing-your-data-with-Protobuf.html): es un formato binario definido por Google para acelarar la comunicación entre diferentes servicios. Es más complicado que usar JSON, pero más eficiente si tienes muchos datos.
+
+- [MessagePack](https://msgpack.org/index.html): usa el paquete `msgpack` para serializar datos en un formato binario. Es más rápido y también más pequeño que JSON, aunque no es tan fácil de leer.
+
+## Trabajando con fechas
+
+Otra razón por la que tu código puede dar problemas con el paso del tiempo
 
 ### Familiaridad
 
