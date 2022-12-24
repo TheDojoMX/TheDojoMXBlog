@@ -47,23 +47,23 @@ Siempre que quieras serializar parte de un programa, enfócate en los **datos**.
 
 ## Trabajando con fechas
 
-Otra razón por la que tu código puede dar problemas con el paso del tiempo
+Otra razón por la que tu código puede dar problemas con el paso del tiempo es por un trato incorrecto de las fechas y horas. Cuando una aplicación tiene que recibir datos de horas o fechas de usuarios de diferentes partes del mundo (casi todas las aplicaciones web), es importante asegurarnos de que entendemos bien lo que nos quieren decir y de comunicarnos correctamente con ellos.
 
-### Familiaridad
+Las zonas horarias son un gran dolor de cabeza para los desarrolladores, pero espero que podamos escribir un artículo más amplio sobre eso en el futuro. Por ahora, vamos a hablar de cómo trabajar con fechas y horas en Python.
 
-## Facilidad de cambio
+Si no sabes nada de las zonas horarias te recomiendo leer esto: [Fundamentos de la zona horaria](https://learn.microsoft.com/es-es/dotnet/standard/datetime/time-zone-overview#time-zone-essentials)
 
-### Flexibilidad
+### Fechas ingenuas vs fechas conscientes de la zona horaria
 
-### Modularidad
+Esta traducción la siento un poco forzada pero en inglés son _naive_ y _timezone aware_. (¿Alguien tiene una mejor idea?)
 
-### Configurabilidad
+En Python, las fechas y horas se representan con objetos de la clase `datetime`. Esta clase tiene dos subclases: `datetime.datetime` y `datetime.date`. Cuando la usas así, directamente sin especificar una zona horaria, estás usando una fecha ingenua. Por ejemplo:
 
-## Resiliencia
+```python
+from datetime import datetime
 
-## Seguridad
+fecha = datetime.now() # Esta fecha no incluye ninguna información sobre la zona horaria
 
-## WAT's
+```
 
-Si no sabes a que nos referimos con un **WAT**,te recomiendo ver este video: [https://www.destroyallsoftware.com/talks/wat](Wat -
-A lightning talk by Gary Bernhardt from CodeMash 2012). Pero en resumen, WAT es la expresión que tenemos al encontrarnos con comportamientos inesperados en lo que estamos programando.
+### El tiempo universal coordinado (UTC)
