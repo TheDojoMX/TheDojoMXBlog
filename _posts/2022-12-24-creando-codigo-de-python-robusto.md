@@ -1,6 +1,6 @@
 ---
 title: "Creando código de Python robusto, Parte 1"
-date: 2022-12-23
+date: 2022-12-24
 author: Héctor Patricio
 tags: python
 toc: true
@@ -99,4 +99,12 @@ UTC, a diferencia de lo que creemos los programadores **no es una zona horaria**
 
 Aunque **UTC** es el estándar, **GMT** pasó a ser el nombre de la zona horaria que no tiene diferencia con el UTC. Ahora ya sabes entonces que lo que los programadores llamamos "UTC" es en realidad la zona horaria "GMT".
 
-¿A qué viene todo esto? Es recomendado que siempre que tengas que guardar fechas y horas antes las conviertas en fechas conscientes de la zona en  UTC.
+**¿A qué viene todo esto?** Es recomendado que siempre que tengas que guardar fechas y horas, **antes las conviertas en fechas conscientes de la zona en UTC**. Al tener esto estandarizado, podrás convertirla sin ningún problema en cualquier zona horaria que el usuario necesite. Además no tendrás problemas para hacer aritmética con fechas y horas.
+
+Tampoco tendrás que preocuparte por problemas con el horarios de verano, ya que UTC no sufre ese cambio.
+
+## Conclusión
+
+Hay cosas a las que le tenemos que poner atención y a veces aprender un poco más para que nuestro código soporte el paso del tiempo. En esta serie de artículos seguiremos hablando sobre este tipo de cosas.
+
+Este artículo estuvo inspirado por dos temas del libro [Intuitive Python](https://pragprog.com/titles/dmpython/intuitive-python/) de [David Muller](https://github.com/DavidMuller).

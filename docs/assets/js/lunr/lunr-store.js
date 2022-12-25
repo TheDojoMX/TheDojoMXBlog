@@ -550,4 +550,10 @@ var store = [{
         "tags": ["zettelkasten","ciencia","aprendizaje","toma-de-notas"],
         "url": "/2022/12/22/tomando-notas-efectivamente-zettelkasten.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1671514771/jj-ying-8bghKxNU1j0-unsplash_knucbs.jpg"
+      },{
+        "title": "Creando código de Python robusto, Parte 1",
+        "excerpt":"En esta serie de posts vamos a hablar de algunas cosas que harán que tu código de Python sea: resistente al paso del tiempo más fácil de entender, de mantener y cambiar que evite errores difíciles de encontrar En este artículo vamos a empezar a hablar de cómo hacer código...","categories": [],
+        "tags": ["python"],
+        "url": "/2022/12/24/creando-codigo-de-python-robusto.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_fill,g_north,h_150,q_59,w_300,x_100,y_100/v1661094369/DALL_E_2022-08-12_11.14.36_-_dangerous_green_and_black_python_ready_to_byte_digital_art_bgspv1.png"
       }]
