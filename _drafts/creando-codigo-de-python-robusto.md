@@ -66,4 +66,37 @@ fecha = datetime.now() # Esta fecha no incluye ninguna información sobre la zon
 
 ```
 
+Aunque esto funciona bien para programas que sólo van a correr en tu computadora y que _siempre_ van a correr nadamás para ti, no es suficiente cuando esta información va a ser compartida o se tiene que guardar para el uso futuro.
+
+La forma de usar una fecha consciente de la zona horaria en Python es:
+
+```python
+from datetime import datetime, timezone
+
+
+fecha = datetime.now(tz=timezone.utc) # Esta fecha incluye información sobre la zona horaria, en este caso UTC
+
+```
+
+De esta manera nos protegemos para no dar por sentado en qué zona horaria se creo cierto dato o a que zona horaria se refiere cierta fecha. A partir de Python 3.9 tenemos disponible un paquete que se llama `zoneinfo` que nos permite trabajar con zonas horarias sin tener que instalar nada extra (excepto en Windows donde es probable que necesites los datos de [tzdata](https://pypi.org/project/tzdata/)). Si estás usando Python 3.8 o anterior, puedes instalar el paquete `pytz` para poder usar zonas horarias o importar desde `backports.zoneinfo` (también se tiene que instalar). Aquí hay un ejemplo:
+
+```python
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
+fecha = datetime.now(tz=ZoneInfo("America/Mexico_City")) # Esta fecha incluye información sobre la zona horaria, en este caso la de México
+# datetime.datetime(2022, 12, 24, 20, 2, 21, 887237, tzinfo=zoneinfo.ZoneInfo(key='America/Mexico_City'))
+
+```
+
+Así puedes crear siempre fechas con zonas horarias para que no tengas problemas a la hora de reutilizarla. Ahora hablemos de por qué es recomendable siempre usar la zona horaria UTC.
+
 ### El tiempo universal coordinado (UTC)
+
+**UTC** son las siglas para **Universal Time Coordinated** o el **Tiempo Universal Coordinado**. Este es un estándar para determinar la hora universal. Incluye todos los detalles de cómo obtener el tiempo, la coordinación, cómo tratar los segundos faltantes en el calendario gregoriano, etc. etc. etc. Coordinar el tiempo es un asunto muy complejo.
+
+UTC, a diferencia de lo que creemos los programadores **no es una zona horaria**, aunque nosotros lo usemos así. Antes se conocía como **GMT** (Greenwich Mean Time), pero otros de sus alias son "Z time" o "Zulu time". Puedes leer el estándar, las motivaciones y la historia en este documento de la (BIPM)[]: [Coordinated Universal Time](https://www.bipm.org/documents/20126/28435864/working-document-ID-3644/2a6ce17c-7b50-4164-9bee-64f77bfad895).
+
+Aunque **UTC** es el estándar, **GMT** pasó a ser el nombre de la zona horaria que no tiene diferencia con el UTC. Ahora ya sabes entonces que lo que los programadores llamamos "UTC" es en realidad la zona horaria "GMT".
+
+¿A qué viene todo esto? Es recomendado que siempre que tengas que guardar fechas y horas antes las conviertas en fechas conscientes de la zona en  UTC.
