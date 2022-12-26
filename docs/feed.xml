@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-26T00:31:42-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Explicaciones elocuentes</title><link href="https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes.html" rel="alternate" type="text/html" title="Explicaciones elocuentes" /><published>2022-12-26T00:00:00-06:00</published><updated>2022-12-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes.html">&lt;p&gt;Aunque el principal trabajo de un desarrollador es comunicar sus pensamientos a la computadora a través de instrucciones precisas (el código), ningún trabajo serio o que valga la pena se puede hacer solo. Casi siempre formamos parte de un equipo, puede ser con otros roles o con más desarrolladores. Para trabajar efectivamente, hay que comunicarse lo mejor posible. &lt;a href=&quot;https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt; tiene una plática llamada &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;Eloquent Explanations&lt;/a&gt; en la que nos da consejos sobre cómo comunicarnos claramente, además de que da razones por las que es importante hacerlo.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-26T10:14:15-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Explicaciones elocuentes</title><link href="https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes.html" rel="alternate" type="text/html" title="Explicaciones elocuentes" /><published>2022-12-26T00:00:00-06:00</published><updated>2022-12-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes.html">&lt;p&gt;Aunque el principal trabajo de un desarrollador es comunicar sus pensamientos a la computadora a través de instrucciones precisas (el código), ningún trabajo serio o que valga la pena se puede hacer solo. Casi siempre formamos parte de un equipo, puede ser con otros roles o con más desarrolladores. Para trabajar efectivamente, hay que comunicarse lo mejor posible. &lt;a href=&quot;https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt; tiene una plática llamada &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;Eloquent Explanations&lt;/a&gt; en la que nos da consejos sobre cómo comunicarnos claramente, además de que da razones por las que es importante hacerlo.&lt;/p&gt;
 
 &lt;p&gt;En este artículo resumiremos esta charla con algunas adaptaciones y extensiones.&lt;/p&gt;
 
@@ -55,21 +55,38 @@
 
 &lt;p&gt;Hay una buena noticia: puedes re-iniciar el reloj y comprarte más tiempo si logras que las personas a las que les estás explicando tengan pequeñas victorias, entendiendo progresivamente el tema en cuestión. Al mantenerlas ilusionadas con el tema, puedes seguir manteniendo su atención.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672066869/russ_oo_rjxxdl.jpg&quot; alt=&quot;Captura de cuadro de video mostrando un reloj con 0 segundos restantes.&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;4-repite-para-énfasis-y-para-dar-contexto&quot;&gt;4: Repite para énfasis y para dar contexto&lt;/h2&gt;
 
-&lt;p&gt;El &lt;strong&gt;“Don’t repeat yourself”&lt;/strong&gt; (No te repitas a ti mismo) es para las máquinas, los humanos sí que necesitamos repetición para entender que algo es importante o para recordar el contexto de algo.&lt;/p&gt;
+&lt;p&gt;El &lt;strong&gt;“Don’t repeat yourself”&lt;/strong&gt; (No te repitas a ti mismo) es para las máquinas, los humanos sí que necesitamos repetición.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;Captura de cuadro de video mostrando que no somos máquinas&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672066971/E5_hHP9WEAENUF2_homosz.jpg&quot; alt=&quot;Captura de cuadro de video mostrando que no somos máquinas&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Las personas prosperan [o crecen] en la redundancia.” - Russ Olsen&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Podemos repetir algo para:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dar énfasis. Si quieres resaltar algo, una de las mejores maneras es repetirlo.&lt;/li&gt;
+  &lt;li&gt;Para dar contexto. Puedes repetir algo para recordar a las personas sobre algo que ya se mencionó para darle más conexto a algo que estás a punto de decir.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;5-muéstrate-humano&quot;&gt;5: Muéstrate humano&lt;/h2&gt;
 
-&lt;p&gt;Las explicaciones que causan una reacción emocional en los que escuchan, como las que incluyen humor, las que demuestran sentimientos o conectan en un nivel más humano con las personas &lt;strong&gt;son las que dejan las cosas grabadas&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Las explicaciones que causan una reacción emocional en los que escuchan, como las que incluyen humor, las que demuestran sentimientos o conectan en un nivel más humano con las personas &lt;strong&gt;son las que dejan las cosas grabadas&lt;/strong&gt;. Una broma puede a hacer que alguien recuerde lo que explciaste por décadas.&lt;/p&gt;
 
-&lt;p&gt;Hazles saber por qué importa lo que estás diciendo, muestra el interés o el amor que tienes por el tema. Una buena explicación puede cambiar tu compañía, tu equipo o incluso el mundo.&lt;/p&gt;
+&lt;p&gt;Hazles saber por qué importa lo que estás diciendo, muestra el interés o el amor que tienes por el tema.&lt;/p&gt;
+
+&lt;p&gt;Esto nos deja una conclusión muy importante. &lt;strong&gt;Si no te interesa lo que estás explicando, a las personas que te escuchan tampoco tiene por qué interesarles.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Saber explicarnos es esencial para realizar un buen trabajo de equipo, y todos los trabajos serios, grandes y que valen la pena requieren de un equipos si los queremos lograr en un tiempo razonable. Nadie nace sabiéndose explicar, es por eso que debemos trabajar en esto y mejorar con la práctica.&lt;/p&gt;
+&lt;p&gt;Saber explicarnos es esencial para realizar un buen trabajo de equipo, y todos los trabajos serios, grandes y que valen la pena requieren de un equipos si los queremos lograr en un tiempo razonable. Nadie nace sabiéndose explicar, es por eso que debemos trabajar en esto y mejorar con la práctica. &lt;strong&gt;Una buena explicación puede cambiar tu compañía, tu equipo o incluso el mundo.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Te repito que puedes ver la plática aquí: &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;Eloquent Explanations&lt;/a&gt;, de nuevo gracias a &lt;a href=&quot;&quot;&gt;@russolsen&lt;/a&gt; por sus contribuciones a la comunidad y por pláticas tan buenas.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><summary type="html">Comunicar claramente y de manera efectiva es una de las tareas más importantes de los desarrolladores. Hablemos de las técnicas que puedes seguir para mejorar en este aspecto.</summary></entry><entry><title type="html">Creando código de Python robusto, Parte 1</title><link href="https://blog.thedojo.mx/2022/12/24/creando-codigo-de-python-robusto.html" rel="alternate" type="text/html" title="Creando código de Python robusto, Parte 1" /><published>2022-12-24T00:00:00-06:00</published><updated>2022-12-24T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/24/creando-codigo-de-python-robusto</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/24/creando-codigo-de-python-robusto.html">&lt;p&gt;En esta serie de posts vamos a hablar de algunas cosas que harán que tu código de Python sea:&lt;/p&gt;
 

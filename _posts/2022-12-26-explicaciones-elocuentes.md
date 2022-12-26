@@ -64,20 +64,33 @@ La **terminología** (palabras especiales de un área del conocimiento) es un ob
 
 Hay una buena noticia: puedes re-iniciar el reloj y comprarte más tiempo si logras que las personas a las que les estás explicando tengan pequeñas victorias, entendiendo progresivamente el tema en cuestión. Al mantenerlas ilusionadas con el tema, puedes seguir manteniendo su atención.
 
+![Captura de cuadro de video mostrando un reloj con 0 segundos restantes.](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672066869/russ_oo_rjxxdl.jpg){: .align-center}
+
 ## 4: Repite para énfasis y para dar contexto
 
- El **"Don't repeat yourself"** (No te repitas a ti mismo) es para las máquinas, los humanos sí que necesitamos repetición para entender que algo es importante o para recordar el contexto de algo.
+El **"Don't repeat yourself"** (No te repitas a ti mismo) es para las máquinas, los humanos sí que necesitamos repetición.
 
-![Captura de cuadro de video mostrando que no somos máquinas]()
+![Captura de cuadro de video mostrando que no somos máquinas](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672066971/E5_hHP9WEAENUF2_homosz.jpg){: .align-center}
+
+---
+
+> "Las personas prosperan [o crecen] en la redundancia." - Russ Olsen
+
+Podemos repetir algo para:
+
+- Dar énfasis. Si quieres resaltar algo, una de las mejores maneras es repetirlo.
+- Para dar contexto. Puedes repetir algo para recordar a las personas sobre algo que ya se mencionó para darle más conexto a algo que estás a punto de decir.
 
 ## 5: Muéstrate humano
 
-Las explicaciones que causan una reacción emocional en los que escuchan, como las que incluyen humor, las que demuestran sentimientos o conectan en un nivel más humano con las personas **son las que dejan las cosas grabadas**.
+Las explicaciones que causan una reacción emocional en los que escuchan, como las que incluyen humor, las que demuestran sentimientos o conectan en un nivel más humano con las personas **son las que dejan las cosas grabadas**. Una broma puede a hacer que alguien recuerde lo que explciaste por décadas.
 
-Hazles saber por qué importa lo que estás diciendo, muestra el interés o el amor que tienes por el tema. Una buena explicación puede cambiar tu compañía, tu equipo o incluso el mundo.
+Hazles saber por qué importa lo que estás diciendo, muestra el interés o el amor que tienes por el tema.
+
+Esto nos deja una conclusión muy importante. **Si no te interesa lo que estás explicando, a las personas que te escuchan tampoco tiene por qué interesarles.**
 
 ## Conclusión
 
-Saber explicarnos es esencial para realizar un buen trabajo de equipo, y todos los trabajos serios, grandes y que valen la pena requieren de un equipos si los queremos lograr en un tiempo razonable. Nadie nace sabiéndose explicar, es por eso que debemos trabajar en esto y mejorar con la práctica.
+Saber explicarnos es esencial para realizar un buen trabajo de equipo, y todos los trabajos serios, grandes y que valen la pena requieren de un equipos si los queremos lograr en un tiempo razonable. Nadie nace sabiéndose explicar, es por eso que debemos trabajar en esto y mejorar con la práctica. **Una buena explicación puede cambiar tu compañía, tu equipo o incluso el mundo.**
 
 Te repito que puedes ver la plática aquí: [Eloquent Explanations](https://www.youtube.com/watch?v=80EE4mZmp3A), de nuevo gracias a [@russolsen]() por sus contribuciones a la comunidad y por pláticas tan buenas.
