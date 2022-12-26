@@ -7,7 +7,7 @@ comments: true
 excerpt: "Comunicar claramente y de manera efectiva es una de las tareas más importantes de los desarrolladores. Hablemos de las técnicas que puedes seguir para mejorar en este aspecto."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_lfill,h_450,w_1200/v1671858924/ryan-baker-VgROGebCi80-unsplash_p2jzj3.jpg
-  teaser: https://res.cloudinary.com/hectorip/image/upload/c_lfill,h_300,w_1200/v1671858924/ryan-baker-VgROGebCi80-unsplash_p2jzj3.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_lfill,h_450,w_1200/v1671858924/ryan-baker-VgROGebCi80-unsplash_p2jzj3.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 

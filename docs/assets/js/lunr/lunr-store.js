@@ -561,5 +561,5 @@ var store = [{
         "excerpt":"Aunque el principal trabajo de un desarrollador es comunicar sus pensamientos a la computadora a través de instrucciones precisas (el código), ningún trabajo serio o que valga la pena se puede hacer solo. Casi siempre formamos parte de un equipo, puede ser con otros roles o con más desarrolladores. Para...","categories": [],
         "tags": [],
         "url": "/2022/12/26/explicaciones-elocuentes.html",
-        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_lfill,h_300,w_1200/v1671858924/ryan-baker-VgROGebCi80-unsplash_p2jzj3.jpg"
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_lfill,h_450,w_1200/v1671858924/ryan-baker-VgROGebCi80-unsplash_p2jzj3.jpg"
       }]
