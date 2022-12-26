@@ -556,4 +556,10 @@ var store = [{
         "tags": ["python"],
         "url": "/2022/12/24/creando-codigo-de-python-robusto.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_fill,g_north,h_150,q_59,w_300,x_100,y_100/v1661094369/DALL_E_2022-08-12_11.14.36_-_dangerous_green_and_black_python_ready_to_byte_digital_art_bgspv1.png"
+      },{
+        "title": "Explicaciones elocuentes",
+        "excerpt":"Aunque el principal trabajo de un desarrollador es comunicar sus pensamientos a la computadora a través de instrucciones precisas (el código), ningún trabajo serio o que valga la pena se puede hacer solo. Casi siempre formamos parte de un equipo, puede ser con otros roles o con más desarrolladores. Para...","categories": [],
+        "tags": [],
+        "url": "/2022/12/26/explicaciones-elocuentes.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_lfill,h_300,w_1200/v1671858924/ryan-baker-VgROGebCi80-unsplash_p2jzj3.jpg"
       }]
