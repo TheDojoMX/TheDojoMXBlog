@@ -1,6 +1,6 @@
 ---
-title: "Claridad en el código"
-date: 2022-12-22
+title: "Claridad de  Saša Jurić"
+date: 2022-12-30
 author: Héctor Patricio
 tags: claridad código-claro pláticas
 comments: true
@@ -11,6 +11,16 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
+<figure>
+    <figcaption>Escucha este artículo:</figcaption>
+    <audio
+        controls
+        src="/media/cc0-audio/t-rex-roar.mp3">
+            <a href="https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav">
+                Descargar audio
+            </a>
+    </audio>
+</figure>
 Hablemos de las cosas que hacen más entendible y claro tu código.
 
 Muchas de estas ideas están basadas en la plática ["Clarity" de Saša Jurić](https://www.youtube.com/watch?v=6sNmJtoKDCo) de la Elixir Conf EU de 2021, de hecho, podríamos considerar este artículo como un análisis y extensión de esa plática.
@@ -70,7 +80,7 @@ En el código lo podemos aplicar haciendo que nuestro código esté separado en 
 
 Si ponemos todos los conceptos posibles de programación en una pieza de código (aquí cito directamente a Saša) "¿Quién va a ser capaz de entender algo de eso?"
 
-![Separación de responsabilidades en un base de código](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672409162/Screen_Shot_2022-12-30_at_8.05.42_ycvhe7.png)
+![Imagen: Separación de responsabilidades en una base de código](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672409162/Screen_Shot_2022-12-30_at_8.05.42_ycvhe7.png)
 
 ---
 
@@ -78,8 +88,28 @@ Si ponemos todos los conceptos posibles de programación en una pieza de código
 
 > "Consider te actual situation you're dealing with, [..], don't just do something because some thought leader or authority says so, even if that person is me. Just think contextually, think inside of your situation." - Saša Jurić
 
+> "Considera tu situación actual, [..], no hagas algo sólo porque un líder de opinión o alguien con autoridad lo dice, incluso si esa persona soy yo. Simplemente piensa contextualmente, piensa en tu situación." - Saša Jurić
+
 ## Testing
 
 ¿Para qué creamos tests? Obviamente, para probar. ¿Pero qué queremos probar? Saša afirma que queremos probar **el comportamiento del software**. Así, las "unidades" que queremos probar son las unidades de comportamiento y no las unidades de código. Otra recomendación es evitar hacer mocks agresivos, solamente en dónde sea estrictamente necesario para lograr comportamientos repetibles. Esto es porque, el uso de dobles en los tests (como los mocks) complica el código de pruebas, pero también complica el código de producción.
 
 Cuando los tests son demasiado complicados o están ligados a la implementación en vez del al comportamiento externo, vas a tener que dividirte entre arreglar los test o arreglar el código de producción, lo cuál es frustrante y una mala idea para tu productividad en general. Un test debe ser fácil de entender y comunicar exactamente lo que está probando, nada más, nada menos.
+
+Recomendación: Libro [Unit Testing](https://www.manning.com/books/unit-testing) de Vladimir Khorikov. Saša lo recomienda como una muy buena lectura.
+
+![Recomendación de libro TDD por Saša Jurić: Unit Testing de editorial Manning](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672450947/Screen_Shot_2022-12-30_at_12.03.25_nedtbg.png)
+
+## Conclusión
+
+Una de las tareas más importantes cuando hacemos código es hacer que comunique claramente el problema que resuelve y cómo lo resuelve. Si hacemos eso, lograremos que nuestro equipo o nosotros mismos podamos continuar con el trabajo y lo mejor: evolucionarlo.
+
+En la siguiente imagen verás el resumen de las recomendaciones de Saša Jurić para escribir código más claro:
+
+![Usa el código para comunicarte, revisa el código, separación de responsabilidades y prueba el comportamiento del código](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672450967/Screen_Shot_2022-12-30_at_18.48.20_hekzsv.png).
+
+Puedes ver la charla completa en [YouTube](https://www.youtube.com/watch?v=6sNmJtoKDCo). [Manuel Rubio](https://twitter.com/mronerlang) y yo platicamos extensamente sobre ese tema:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gswx3ko3A_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Finalmente, te recomiendo mucho el artículo en el que Manuel Rubio hizo su propio resumen en [el blog de Altenwald](https://altenwald.org/2021/09/27/claridad/).

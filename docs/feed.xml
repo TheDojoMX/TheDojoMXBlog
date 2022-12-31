@@ -1,4 +1,122 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-26T10:14:15-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Explicaciones elocuentes</title><link href="https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes.html" rel="alternate" type="text/html" title="Explicaciones elocuentes" /><published>2022-12-26T00:00:00-06:00</published><updated>2022-12-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes.html">&lt;p&gt;Aunque el principal trabajo de un desarrollador es comunicar sus pensamientos a la computadora a través de instrucciones precisas (el código), ningún trabajo serio o que valga la pena se puede hacer solo. Casi siempre formamos parte de un equipo, puede ser con otros roles o con más desarrolladores. Para trabajar efectivamente, hay que comunicarse lo mejor posible. &lt;a href=&quot;https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt; tiene una plática llamada &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;Eloquent Explanations&lt;/a&gt; en la que nos da consejos sobre cómo comunicarnos claramente, además de que da razones por las que es importante hacerlo.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-30T22:31:45-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Claridad de Saša Jurić</title><link href="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html" rel="alternate" type="text/html" title="Claridad de Saša Jurić" /><published>2022-12-30T00:00:00-06:00</published><updated>2022-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html">&lt;figure&gt;
+    &lt;figcaption&gt;Escucha este artículo:&lt;/figcaption&gt;
+    &lt;audio controls=&quot;&quot; src=&quot;/media/cc0-audio/t-rex-roar.mp3&quot;&gt;
+            &lt;a href=&quot;https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav&quot;&gt;
+                Descargar audio
+            &lt;/a&gt;
+    &lt;/audio&gt;
+&lt;/figure&gt;
+&lt;p&gt;Hablemos de las cosas que hacen más entendible y claro tu código.&lt;/p&gt;
+
+&lt;p&gt;Muchas de estas ideas están basadas en la plática &lt;a href=&quot;https://www.youtube.com/watch?v=6sNmJtoKDCo&quot;&gt;“Clarity” de Saša Jurić&lt;/a&gt; de la Elixir Conf EU de 2021, de hecho, podríamos considerar este artículo como un análisis y extensión de esa plática.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cuando trabajamos con bases de código normalmente necesitamos entenderlas. Incluso aunque vayamos a escribir algo nuevo necesitamos entender lo demás para poder integrarlo. Esto lo hacemos mediante la lectura de código.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Los escritores del código nos transmiten información mediante ese código, lo quieran o no.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;La forma en la que obtenemos conocimiento del código es leyéndolo.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;qué-es-la-claridad-y-por-qué-es-mejor-que-el-código-limpio&quot;&gt;¿Qué es la claridad y por qué es mejor que ‘el código limpio’?&lt;/h2&gt;
+
+&lt;p&gt;La claridad como se define en esta plática, es qué tan bien una pieza de código comunica sus verdaderas intenciones. El código claro puede ser entendido sin mucho esfuerzo por alguien que conoce bien el lenguaje: se entiende tanto el problema como la solución que el autor escogió.&lt;/p&gt;
+
+&lt;p&gt;La claridad nos hace más eficientes y efectivos. Primero porque obtenemos información más rápido y segundo porque obtenemos la información correcta.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, la claridad le da poder al equipo porque hace que cualquiera pueda tomar el código y trabajar con él, en vez de sólo el autor, como muchos estamos acostumbrados.&lt;/p&gt;
+
+&lt;p&gt;Para conseguir claridad se tiene que invertir tiempo constantemente. Tienes que recordar que el código es una herramienta de comunicación con otros seres humanos, no sólo con la máquina.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672409158/Screen_Shot_2022-12-28_at_9.37.57_aje64x.png&quot; alt=&quot;Claridad es más concreto que otros términos&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;prácticas-que-mejoran-la-claridad&quot;&gt;Prácticas que mejoran la claridad&lt;/h2&gt;
+
+&lt;p&gt;Hablemos de cosas que tú y tu equipo pueden hacer para producir código más claro.&lt;/p&gt;
+
+&lt;h3 id=&quot;revisión-de-código&quot;&gt;Revisión de código&lt;/h3&gt;
+
+&lt;p&gt;Esto es la práctica de un equipo de integrar el código a la rama principal solamente cuando ha sido evaluado por cierto números de miembros del equipo. El foco principal de la revisión debería ser la claridad del código.&lt;/p&gt;
+
+&lt;p&gt;Para facilitar el proceso, tanto el autor como el revisor pueden seguir ciertas reglas para que el resultado sea código más claro y la revisión sea más fácil.&lt;/p&gt;
+
+&lt;p&gt;El que envía el código puede facilitar el trabajo del revisor de tres maneras:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Envía solicitudes de integración pequeñas: siempre es más fácil de entender poco código que mucho.&lt;/li&gt;
+  &lt;li&gt;Commits pequeños como unidades de cambio más fáciles de tratar individualmente. Un commit no debería tener cambios en muchos lugares para no hacerlo demasiado difícil de entender.&lt;/li&gt;
+  &lt;li&gt;Clarifica tu código lo mejor posible: la historia de los commits debería estar estructurada linealmente. Además debería revisar su código para asegurarse de que está lo más claro posible.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;El revisor:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sugerir y mandar mejoras. El revisor debería señalar todos los puntos en los que se le hizo difícil entender el código. También podría mandar los cambios directamente, como un pull request al autor, invirtiendo los papeles temporalmente.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sincronizar. Es importante tener sesiones si algo no se puede resolver. Estas sesiones de pair programming servirán para clarificar todo aquello que siga siendo confuso.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;prácticas-en-el-código&quot;&gt;Prácticas en el código&lt;/h3&gt;
+
+&lt;p&gt;Saša sugiere seguir las prácticas de progrmación comunes &lt;strong&gt;aplicables al código&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Nombrar variables y funciones de manera explicativa.&lt;/li&gt;
+  &lt;li&gt;Seguir los idiomas y patrones de programación &lt;em&gt;aplicables&lt;/em&gt; a tu caso.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;separación-de-responsabilidades&quot;&gt;Separación de responsabilidades&lt;/h3&gt;
+
+&lt;p&gt;Pero además, podemos seguir lo que en español llamamos “separación de responsabilidades” (en inglés “separation of concerns”). Esta idea Dijkstra lo mencionó en su artículo &lt;a href=&quot;https://www.cs.utexas.edu/users/EWD/transcriptions/EWD04xx/EWD447.html&quot;&gt;On the scientific thougth&lt;/a&gt;. Dijkstra se refería a la forma de pensar en los asuntos complejos desde diferentes ángulos para poder “ignorar” temporalmente los aspectos que no tienen que ver con ese ángulo. Esto permitirá que podamos entender mejor el sistema entero poco a poco.&lt;/p&gt;
+
+&lt;p&gt;En el código lo podemos aplicar haciendo que nuestro código esté separado en módulos que sólo abarquen un aspecto del problema. Esto es imposible de hacer perfectamente, pero nuestro código debería tender hacia allá lo más posible. Por ejemplo, algo que normalmente se hace muy bien es separar el código que maneja la lógica de los datos de la interfaz. Recuerda: &lt;strong&gt;esto es importante porque permitirá al lector solo lidiar con un problema a la vez&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Si ponemos todos los conceptos posibles de programación en una pieza de código (aquí cito directamente a Saša) “¿Quién va a ser capaz de entender algo de eso?”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672409162/Screen_Shot_2022-12-30_at_8.05.42_ycvhe7.png&quot; alt=&quot;Imagen: Separación de responsabilidades en una base de código&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Advertencia&lt;/strong&gt;: Una idea que Saša menciona bastante es la de no seguir arquitecturas o ideas sólo porque un líder de opinión o alguien con autoridad lo dice. Si haces esto &lt;strong&gt;puede que la parte más compleja de tu código sea tu arquitectura&lt;/strong&gt;, lo cuál es un grave error porque el trabajo de la arquitectura deberías ser crear un sistema más claro.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Consider te actual situation you’re dealing with, [..], don’t just do something because some thought leader or authority says so, even if that person is me. Just think contextually, think inside of your situation.” - Saša Jurić&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Considera tu situación actual, [..], no hagas algo sólo porque un líder de opinión o alguien con autoridad lo dice, incluso si esa persona soy yo. Simplemente piensa contextualmente, piensa en tu situación.” - Saša Jurić&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;testing&quot;&gt;Testing&lt;/h2&gt;
+
+&lt;p&gt;¿Para qué creamos tests? Obviamente, para probar. ¿Pero qué queremos probar? Saša afirma que queremos probar &lt;strong&gt;el comportamiento del software&lt;/strong&gt;. Así, las “unidades” que queremos probar son las unidades de comportamiento y no las unidades de código. Otra recomendación es evitar hacer mocks agresivos, solamente en dónde sea estrictamente necesario para lograr comportamientos repetibles. Esto es porque, el uso de dobles en los tests (como los mocks) complica el código de pruebas, pero también complica el código de producción.&lt;/p&gt;
+
+&lt;p&gt;Cuando los tests son demasiado complicados o están ligados a la implementación en vez del al comportamiento externo, vas a tener que dividirte entre arreglar los test o arreglar el código de producción, lo cuál es frustrante y una mala idea para tu productividad en general. Un test debe ser fácil de entender y comunicar exactamente lo que está probando, nada más, nada menos.&lt;/p&gt;
+
+&lt;p&gt;Recomendación: Libro &lt;a href=&quot;https://www.manning.com/books/unit-testing&quot;&gt;Unit Testing&lt;/a&gt; de Vladimir Khorikov. Saša lo recomienda como una muy buena lectura.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672450947/Screen_Shot_2022-12-30_at_12.03.25_nedtbg.png&quot; alt=&quot;Recomendación de libro TDD por Saša Jurić: Unit Testing de editorial Manning&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Una de las tareas más importantes cuando hacemos código es hacer que comunique claramente el problema que resuelve y cómo lo resuelve. Si hacemos eso, lograremos que nuestro equipo o nosotros mismos podamos continuar con el trabajo y lo mejor: evolucionarlo.&lt;/p&gt;
+
+&lt;p&gt;En la siguiente imagen verás el resumen de las recomendaciones de Saša Jurić para escribir código más claro:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672450967/Screen_Shot_2022-12-30_at_18.48.20_hekzsv.png&quot; alt=&quot;Usa el código para comunicarte, revisa el código, separación de responsabilidades y prueba el comportamiento del código&quot; /&gt;.&lt;/p&gt;
+
+&lt;p&gt;Puedes ver la charla completa en &lt;a href=&quot;https://www.youtube.com/watch?v=6sNmJtoKDCo&quot;&gt;YouTube&lt;/a&gt;. &lt;a href=&quot;https://twitter.com/mronerlang&quot;&gt;Manuel Rubio&lt;/a&gt; y yo platicamos extensamente sobre ese tema:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Gswx3ko3A_E&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Finalmente, te recomiendo mucho el artículo en el que Manuel Rubio hizo su propio resumen en &lt;a href=&quot;https://altenwald.org/2021/09/27/claridad/&quot;&gt;el blog de Altenwald&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="claridad" /><category term="código-claro" /><category term="pláticas" /><summary type="html">Todos quisiéramos tener bases de código perfectas, fáciles de mantener y totalmente claras. Esto es casi imposible, pero podemos acercarnos. Vemos cómo.</summary></entry><entry><title type="html">Explicaciones elocuentes</title><link href="https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes.html" rel="alternate" type="text/html" title="Explicaciones elocuentes" /><published>2022-12-26T00:00:00-06:00</published><updated>2022-12-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes.html">&lt;p&gt;Aunque el principal trabajo de un desarrollador es comunicar sus pensamientos a la computadora a través de instrucciones precisas (el código), ningún trabajo serio o que valga la pena se puede hacer solo. Casi siempre formamos parte de un equipo, puede ser con otros roles o con más desarrolladores. Para trabajar efectivamente, hay que comunicarse lo mejor posible. &lt;a href=&quot;https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&quot;&gt;Russ Olsen&lt;/a&gt; tiene una plática llamada &lt;a href=&quot;https://www.youtube.com/watch?v=80EE4mZmp3A&quot;&gt;Eloquent Explanations&lt;/a&gt; en la que nos da consejos sobre cómo comunicarnos claramente, además de que da razones por las que es importante hacerlo.&lt;/p&gt;
 
 &lt;p&gt;En este artículo resumiremos esta charla con algunas adaptaciones y extensiones.&lt;/p&gt;
 
@@ -829,43 +947,4 @@
   &lt;li&gt;Aumento en mi disciplina.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Por último, pero no menos importante. Quiero agradecer a las personas de las que fui mentora, por todo lo que me enseñaron durante este tiempo; hoy, gracias a ustedes, soy mejor Ingeniera Senior que ayer.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional," /><category term="comunidad," /><category term="mentor" /><summary type="html">¿Has tenido la inquietud de apoyar a una persona en su crecimiento profesional? Te comparto mi experiencia intentandolo.</summary></entry><entry><title type="html">¿Estás cambiando de trabajo?</title><link href="https://blog.thedojo.mx/2022/08/11/estas-cambiando-de-trabajo.html" rel="alternate" type="text/html" title="¿Estás cambiando de trabajo?" /><published>2022-08-11T00:00:00-05:00</published><updated>2022-08-11T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/08/11/estas-cambiando-de-trabajo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/08/11/estas-cambiando-de-trabajo.html">&lt;p&gt;Era noviembre de 2020, sí 2020, el primer año del caos… Momento, aqui va más contexto: llevaba 7 años trabajando para un comercio electrónico, era muy apreciada en ese trabajo y lo disfrutaba mucho. Fuimos una de las mejores empresas de comercio electrónico en LATAM. Empecé a trabajar allí cuando era una startup y disfruté participando en su crecimiento. Durante mi último año allí, una gran corporación multinacional de LATAM adquirió la empresa y con esa adquisición llegaron nuevos desafíos.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-estaba-haciendo-en-ese-entonces&quot;&gt;¿Qué estaba haciendo en ese entonces?&lt;/h2&gt;
-
-&lt;p&gt;Estaba trabajando en algo importante, la primera API que desarrolle por mi cuenta y que tendría impacto en los procesos de negocio. Después de desarrollar el MVP, se unieron más desarrolladores al proyecto, y construimos la primera versión de la API (que, hasta donde yo sé, todavía está en uso). El equipo era genial, mi posición era buena y mis opiniones eran respetadas, perode repente, recibí el mensaje de un amigo:&lt;/p&gt;
-
-&lt;h3 id=&quot;oye-estoy-trabajando-en--y-me-gustaría-referirte-a-un-puesto-de-ingeniero-de-software-sénior-te-interesaría&quot;&gt;“¡Oye! Estoy trabajando en […] y me gustaría referirte a un puesto de ingeniero de software sénior, ¿te interesaría?”&lt;/h3&gt;
-
-&lt;p&gt;Me tomó por sorpresa. Honestamente solía ser una persona que disfrutaba de la estabilidad antes del dinero o los desafíos (jaja), pero estábamos en plena pandemia y comencé a preguntarme:&lt;/p&gt;
-
-&lt;p&gt;“Ya tengo 7 años de experiencia con este producto, ¿qué pasaría si cambio de trabajo?”
-“¿Es un buen momento para hacer este cambio?”&lt;/p&gt;
-
-&lt;p&gt;¡En ese momento me di cuenta de que estaba en una especie de zona de confort! No me malinterpretén, no está mal disfrutar de la comodidad. Lo hice, y fue una etapa maravillosa. Pero en aquel entonces, estaba pensando en nuevos desafíos…&lt;/p&gt;
-
-&lt;h2 id=&quot;la-decisión&quot;&gt;La decisión&lt;/h2&gt;
-
-&lt;p&gt;Mi amigo me habló de todas las cosas buenas que traería el nuevo puesto. Decidí comenzar el proceso y ¿adivinen qué? ¡Recibí la oferta! Respiré hondo y di un “salto de fe”. No fue fácil, ¿sabes? Hay ingenieros increíbles que a menudo cambian de trabajo y los admiro por su fuerza y ​​experiencia al hacerlo. Pero, por otro lado, estaba yo, especializándome en el producto de una empresa, siendo buena en mi trabajo y realmente no buscaba cambios hasta ese día.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-pasó-con-mi-trabajo-anterior&quot;&gt;¿Qué pasó con mi trabajo anterior?&lt;/h2&gt;
-
-&lt;p&gt;Bueno, considerando que ya no era la única que trabajaba en la API, escribí la documentación, con algunas propuestas que imaginaba como los próximos pasos en el crecimiento de la API, hablé con mis compañeros de trabajo avisándoles con anticipación  de mi partida y dejé la empresa, un empresa que permanece en mi corazón como la que me ayudó a convertirme en la ingeniera que soy actualmente.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-comienzo-de-una-nueva-etapa&quot;&gt;¡El comienzo de una nueva etapa!&lt;/h2&gt;
-
-&lt;p&gt;No tenía idea de qué es lo que venía, pero la parte difícil ya estaba hecha. La empresa en la que trabajo actualmente es un proveedor global de servicios de tecnología, lo que significa que no estoy necesariamente trabajando en un producto específico. Para una persona como yo, que estuvo 7 años en el mismo lugar, esta fue una muy buena oportunidad. Comenzar el proceso de ser entrevistado, una vez más, obtener nuevas certificaciones y, lo más importante, cambiar a un nuevo lenguaje de programación. Sin duda, este último punto es algo que muchos pueden hacer sin cambiar de trabajo. Sin embargo, en mi opinión, hacer un proyecto paralelo en diferentes tecnologías no es lo mismo que obtener experiencia profesional en esas tecnologías en su trabajo de tiempo completo. En Noviembre 2022 cumpliré 2 años en este trabajo y la verdad es que disfruto mucho de mi puesto actual.&lt;/p&gt;
-
-&lt;p&gt;Así es como evolucionó mi escritorio en casa durante este tiempo (Dios bendiga el home office):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1660258408/182005458-80093fb7-e46c-49d9-ae4d-c35b8cf437ea_ptlwdt.png&quot; alt=&quot;Sag oficina en casa&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;por-qué-escribo-este-post&quot;&gt;¿Por qué escribo este post?&lt;/h2&gt;
-
-&lt;p&gt;Con los cambios actuales en la industria y la difícil situación de la economía mundial, hay muchas personas que estan cambiando de trabajo. Si eres uno de los afortunados como yo, y decidiste cambiar a un nuevo trabajo porque es una mejor oportunidad para ti, quiero felicitarte, toma esa curva de aprendizaje y no mires atrás. No es fácil, pero cada nuevo logro es un nuevo paso en el desarrollo de tu carrera. Por otro lado, si tuviste que cambiar de trabajo no porque quisieras, sino porque algo sucedió, déjame decirte que los cambios son buenos. Incluso si los sufrimos sin planearlo, definitivamente será difícil, pero ¿qué en la vida no lo es? Solo espero que puedas encontrar un buen lugar para tus próximos desafíos y que tu situación sea lo suficientemente buena para soportar el cambio.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Por último, pero no menos importante, para todos, como ingenieros de software, algunas claves, mantener un perfil profesional actualizado(LinkedIn, GitHub, etc.), estar abierto a nuevas ofertas de trabajo y establecer relaciones con otros profesionales en esta industria tanto como se pueda. Además, no seas egoísta con tus conocimientos y habilidades, estamos en el mismo gremio y es importante que nos apoyemos unos a otros para construir la tecnología que merecemos.&lt;/p&gt;
-
-&lt;p&gt;Gracias por leer este pedacito de mi vida. Deseo, de todo corazón, que logres todas tus metas.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional," /><category term="comunidad," /><category term="trabajo" /><summary type="html">Los cambios siempre son buenos, pero no siempre sencillos de manejar, te comparto un poco del último cambio de trabajo que yo atravese.</summary></entry></feed>
+&lt;p&gt;Por último, pero no menos importante. Quiero agradecer a las personas de las que fui mentora, por todo lo que me enseñaron durante este tiempo; hoy, gracias a ustedes, soy mejor Ingeniera Senior que ayer.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional," /><category term="comunidad," /><category term="mentor" /><summary type="html">¿Has tenido la inquietud de apoyar a una persona en su crecimiento profesional? Te comparto mi experiencia intentandolo.</summary></entry></feed>

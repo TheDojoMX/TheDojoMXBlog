@@ -562,4 +562,10 @@ var store = [{
         "tags": [],
         "url": "/2022/12/26/explicaciones-elocuentes.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_lfill,h_450,w_1200/v1671858924/ryan-baker-VgROGebCi80-unsplash_p2jzj3.jpg"
+      },{
+        "title": "Claridad de  Saša Jurić",
+        "excerpt":"Escucha este artículo: Descargar audio Hablemos de las cosas que hacen más entendible y claro tu código. Muchas de estas ideas están basadas en la plática “Clarity” de Saša Jurić de la Elixir Conf EU de 2021, de hecho, podríamos considerar este artículo como un análisis y extensión de esa...","categories": [],
+        "tags": ["claridad","código-claro","pláticas"],
+        "url": "/2022/12/30/claridad-en-el-codigo.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1672204121/ivan-bandura-8VePVILfCKU-unsplash_bhsnsa.jpg"
       }]

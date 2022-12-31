@@ -1,0 +1,867 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Claridad de  Saša Jurić - The Dojo MX Blog</title>
+<meta name="description" content="Todos quisiéramos tener bases de código perfectas, fáciles de mantener y totalmente claras. Esto es casi imposible, pero podemos acercarnos. Vemos cómo.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Claridad de  Saša Jurić">
+<meta property="og:url" content="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html">
+
+
+  <meta property="og:description" content="Todos quisiéramos tener bases de código perfectas, fáciles de mantener y totalmente claras. Esto es casi imposible, pero podemos acercarnos. Vemos cómo.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1672204121/ivan-bandura-8VePVILfCKU-unsplash_bhsnsa.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-30T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html",
+      "name": "Claridad de  Saša Jurić",
+      "headline": "Claridad de  Saša Jurić",
+      "keywords": "claridad,código-claro,pláticas",
+      "description": "Todos quisiéramos tener bases de código perfectas, fáciles de mantener y totalmente claras. Esto es casi imposible, pero podemos acercarnos. Vemos cómo.",
+      "articleBody": "\n    Escucha este artículo:\n    \n            \n                Descargar audio\n            \n    \n\nHablemos de las cosas que hacen más entendible y claro tu código.\n\nMuchas de estas ideas están basadas en la plática “Clarity” de Saša Jurić de la Elixir Conf EU de 2021, de hecho, podríamos considerar este artículo como un análisis y extensión de esa plática.\n\n\n  \n    Cuando trabajamos con bases de código normalmente necesitamos entenderlas. Incluso aunque vayamos a escribir algo nuevo necesitamos entender lo demás para poder integrarlo. Esto lo hacemos mediante la lectura de código.\n  \n  \n    Los escritores del código nos transmiten información mediante ese código, lo quieran o no.\n  \n  \n    La forma en la que obtenemos conocimiento del código es leyéndolo.\n  \n\n\n¿Qué es la claridad y por qué es mejor que ‘el código limpio’?\n\nLa claridad como se define en esta plática, es qué tan bien una pieza de código comunica sus verdaderas intenciones. El código claro puede ser entendido sin mucho esfuerzo por alguien que conoce bien el lenguaje: se entiende tanto el problema como la solución que el autor escogió.\n\nLa claridad nos hace más eficientes y efectivos. Primero porque obtenemos información más rápido y segundo porque obtenemos la información correcta.\n\nFinalmente, la claridad le da poder al equipo porque hace que cualquiera pueda tomar el código y trabajar con él, en vez de sólo el autor, como muchos estamos acostumbrados.\n\nPara conseguir claridad se tiene que invertir tiempo constantemente. Tienes que recordar que el código es una herramienta de comunicación con otros seres humanos, no sólo con la máquina.\n\n\n\nPrácticas que mejoran la claridad\n\nHablemos de cosas que tú y tu equipo pueden hacer para producir código más claro.\n\nRevisión de código\n\nEsto es la práctica de un equipo de integrar el código a la rama principal solamente cuando ha sido evaluado por cierto números de miembros del equipo. El foco principal de la revisión debería ser la claridad del código.\n\nPara facilitar el proceso, tanto el autor como el revisor pueden seguir ciertas reglas para que el resultado sea código más claro y la revisión sea más fácil.\n\nEl que envía el código puede facilitar el trabajo del revisor de tres maneras:\n\n\n  Envía solicitudes de integración pequeñas: siempre es más fácil de entender poco código que mucho.\n  Commits pequeños como unidades de cambio más fáciles de tratar individualmente. Un commit no debería tener cambios en muchos lugares para no hacerlo demasiado difícil de entender.\n  Clarifica tu código lo mejor posible: la historia de los commits debería estar estructurada linealmente. Además debería revisar su código para asegurarse de que está lo más claro posible.\n\n\nEl revisor:\n\n\n  \n    Sugerir y mandar mejoras. El revisor debería señalar todos los puntos en los que se le hizo difícil entender el código. También podría mandar los cambios directamente, como un pull request al autor, invirtiendo los papeles temporalmente.\n  \n  \n    Sincronizar. Es importante tener sesiones si algo no se puede resolver. Estas sesiones de pair programming servirán para clarificar todo aquello que siga siendo confuso.\n  \n\n\nPrácticas en el código\n\nSaša sugiere seguir las prácticas de progrmación comunes aplicables al código:\n\n\n  Nombrar variables y funciones de manera explicativa.\n  Seguir los idiomas y patrones de programación aplicables a tu caso.\n\n\nSeparación de responsabilidades\n\nPero además, podemos seguir lo que en español llamamos “separación de responsabilidades” (en inglés “separation of concerns”). Esta idea Dijkstra lo mencionó en su artículo On the scientific thougth. Dijkstra se refería a la forma de pensar en los asuntos complejos desde diferentes ángulos para poder “ignorar” temporalmente los aspectos que no tienen que ver con ese ángulo. Esto permitirá que podamos entender mejor el sistema entero poco a poco.\n\nEn el código lo podemos aplicar haciendo que nuestro código esté separado en módulos que sólo abarquen un aspecto del problema. Esto es imposible de hacer perfectamente, pero nuestro código debería tender hacia allá lo más posible. Por ejemplo, algo que normalmente se hace muy bien es separar el código que maneja la lógica de los datos de la interfaz. Recuerda: esto es importante porque permitirá al lector solo lidiar con un problema a la vez.\n\nSi ponemos todos los conceptos posibles de programación en una pieza de código (aquí cito directamente a Saša) “¿Quién va a ser capaz de entender algo de eso?”\n\n\n\n\n\nAdvertencia: Una idea que Saša menciona bastante es la de no seguir arquitecturas o ideas sólo porque un líder de opinión o alguien con autoridad lo dice. Si haces esto puede que la parte más compleja de tu código sea tu arquitectura, lo cuál es un grave error porque el trabajo de la arquitectura deberías ser crear un sistema más claro.\n\n\n  “Consider te actual situation you’re dealing with, [..], don’t just do something because some thought leader or authority says so, even if that person is me. Just think contextually, think inside of your situation.” - Saša Jurić\n\n\n\n  “Considera tu situación actual, [..], no hagas algo sólo porque un líder de opinión o alguien con autoridad lo dice, incluso si esa persona soy yo. Simplemente piensa contextualmente, piensa en tu situación.” - Saša Jurić\n\n\nTesting\n\n¿Para qué creamos tests? Obviamente, para probar. ¿Pero qué queremos probar? Saša afirma que queremos probar el comportamiento del software. Así, las “unidades” que queremos probar son las unidades de comportamiento y no las unidades de código. Otra recomendación es evitar hacer mocks agresivos, solamente en dónde sea estrictamente necesario para lograr comportamientos repetibles. Esto es porque, el uso de dobles en los tests (como los mocks) complica el código de pruebas, pero también complica el código de producción.\n\nCuando los tests son demasiado complicados o están ligados a la implementación en vez del al comportamiento externo, vas a tener que dividirte entre arreglar los test o arreglar el código de producción, lo cuál es frustrante y una mala idea para tu productividad en general. Un test debe ser fácil de entender y comunicar exactamente lo que está probando, nada más, nada menos.\n\nRecomendación: Libro Unit Testing de Vladimir Khorikov. Saša lo recomienda como una muy buena lectura.\n\n\n\nConclusión\n\nUna de las tareas más importantes cuando hacemos código es hacer que comunique claramente el problema que resuelve y cómo lo resuelve. Si hacemos eso, lograremos que nuestro equipo o nosotros mismos podamos continuar con el trabajo y lo mejor: evolucionarlo.\n\nEn la siguiente imagen verás el resumen de las recomendaciones de Saša Jurić para escribir código más claro:\n\n.\n\nPuedes ver la charla completa en YouTube. Manuel Rubio y yo platicamos extensamente sobre ese tema:\n\n\n\nFinalmente, te recomiendo mucho el artículo en el que Manuel Rubio hizo su propio resumen en el blog de Altenwald.\n",
+      "datePublished": "2022-12-30 00:00:00 -0600",
+      "dateModified": "2022-12-30 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1672204121/ivan-bandura-8VePVILfCKU-unsplash_bhsnsa.jpg"
+      }
+    }
+</script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1672204121/ivan-bandura-8VePVILfCKU-unsplash_bhsnsa.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Claridad de  Saša Jurić
+
+        
+      </h1>
+      
+        <p class="page__lead">Todos quisiéramos tener bases de código perfectas, fáciles de mantener y totalmente claras. Esto es casi imposible, pero podemos acercarnos. Vemos cómo.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1087 palabras | 5 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Claridad de  Saša Jurić">
+    <meta itemprop="description" content="Todos quisiéramos tener bases de código perfectas, fáciles de mantener y totalmente claras. Esto es casi imposible, pero podemos acercarnos. Vemos cómo.">
+    <meta itemprop="datePublished" content="2022-12-30T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <figure>
+    <figcaption>Escucha este artículo:</figcaption>
+    <audio controls="" src="/media/cc0-audio/t-rex-roar.mp3">
+            <a href="https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav">
+                Descargar audio
+            </a>
+    </audio>
+</figure>
+<p>Hablemos de las cosas que hacen más entendible y claro tu código.</p>
+
+<p>Muchas de estas ideas están basadas en la plática <a href="https://www.youtube.com/watch?v=6sNmJtoKDCo">“Clarity” de Saša Jurić</a> de la Elixir Conf EU de 2021, de hecho, podríamos considerar este artículo como un análisis y extensión de esa plática.</p>
+
+<ul>
+  <li>
+    <p>Cuando trabajamos con bases de código normalmente necesitamos entenderlas. Incluso aunque vayamos a escribir algo nuevo necesitamos entender lo demás para poder integrarlo. Esto lo hacemos mediante la lectura de código.</p>
+  </li>
+  <li>
+    <p>Los escritores del código nos transmiten información mediante ese código, lo quieran o no.</p>
+  </li>
+  <li>
+    <p>La forma en la que obtenemos conocimiento del código es leyéndolo.</p>
+  </li>
+</ul>
+
+<h2 id="qué-es-la-claridad-y-por-qué-es-mejor-que-el-código-limpio">¿Qué es la claridad y por qué es mejor que ‘el código limpio’?</h2>
+
+<p>La claridad como se define en esta plática, es qué tan bien una pieza de código comunica sus verdaderas intenciones. El código claro puede ser entendido sin mucho esfuerzo por alguien que conoce bien el lenguaje: se entiende tanto el problema como la solución que el autor escogió.</p>
+
+<p>La claridad nos hace más eficientes y efectivos. Primero porque obtenemos información más rápido y segundo porque obtenemos la información correcta.</p>
+
+<p>Finalmente, la claridad le da poder al equipo porque hace que cualquiera pueda tomar el código y trabajar con él, en vez de sólo el autor, como muchos estamos acostumbrados.</p>
+
+<p>Para conseguir claridad se tiene que invertir tiempo constantemente. Tienes que recordar que el código es una herramienta de comunicación con otros seres humanos, no sólo con la máquina.</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672409158/Screen_Shot_2022-12-28_at_9.37.57_aje64x.png" alt="Claridad es más concreto que otros términos"></p>
+
+<h2 id="prácticas-que-mejoran-la-claridad">Prácticas que mejoran la claridad</h2>
+
+<p>Hablemos de cosas que tú y tu equipo pueden hacer para producir código más claro.</p>
+
+<h3 id="revisión-de-código">Revisión de código</h3>
+
+<p>Esto es la práctica de un equipo de integrar el código a la rama principal solamente cuando ha sido evaluado por cierto números de miembros del equipo. El foco principal de la revisión debería ser la claridad del código.</p>
+
+<p>Para facilitar el proceso, tanto el autor como el revisor pueden seguir ciertas reglas para que el resultado sea código más claro y la revisión sea más fácil.</p>
+
+<p>El que envía el código puede facilitar el trabajo del revisor de tres maneras:</p>
+
+<ol>
+  <li>Envía solicitudes de integración pequeñas: siempre es más fácil de entender poco código que mucho.</li>
+  <li>Commits pequeños como unidades de cambio más fáciles de tratar individualmente. Un commit no debería tener cambios en muchos lugares para no hacerlo demasiado difícil de entender.</li>
+  <li>Clarifica tu código lo mejor posible: la historia de los commits debería estar estructurada linealmente. Además debería revisar su código para asegurarse de que está lo más claro posible.</li>
+</ol>
+
+<p>El revisor:</p>
+
+<ol>
+  <li>
+    <p>Sugerir y mandar mejoras. El revisor debería señalar todos los puntos en los que se le hizo difícil entender el código. También podría mandar los cambios directamente, como un pull request al autor, invirtiendo los papeles temporalmente.</p>
+  </li>
+  <li>
+    <p>Sincronizar. Es importante tener sesiones si algo no se puede resolver. Estas sesiones de pair programming servirán para clarificar todo aquello que siga siendo confuso.</p>
+  </li>
+</ol>
+
+<h3 id="prácticas-en-el-código">Prácticas en el código</h3>
+
+<p>Saša sugiere seguir las prácticas de progrmación comunes <strong>aplicables al código</strong>:</p>
+
+<ol>
+  <li>Nombrar variables y funciones de manera explicativa.</li>
+  <li>Seguir los idiomas y patrones de programación <em>aplicables</em> a tu caso.</li>
+</ol>
+
+<h3 id="separación-de-responsabilidades">Separación de responsabilidades</h3>
+
+<p>Pero además, podemos seguir lo que en español llamamos “separación de responsabilidades” (en inglés “separation of concerns”). Esta idea Dijkstra lo mencionó en su artículo <a href="https://www.cs.utexas.edu/users/EWD/transcriptions/EWD04xx/EWD447.html">On the scientific thougth</a>. Dijkstra se refería a la forma de pensar en los asuntos complejos desde diferentes ángulos para poder “ignorar” temporalmente los aspectos que no tienen que ver con ese ángulo. Esto permitirá que podamos entender mejor el sistema entero poco a poco.</p>
+
+<p>En el código lo podemos aplicar haciendo que nuestro código esté separado en módulos que sólo abarquen un aspecto del problema. Esto es imposible de hacer perfectamente, pero nuestro código debería tender hacia allá lo más posible. Por ejemplo, algo que normalmente se hace muy bien es separar el código que maneja la lógica de los datos de la interfaz. Recuerda: <strong>esto es importante porque permitirá al lector solo lidiar con un problema a la vez</strong>.</p>
+
+<p>Si ponemos todos los conceptos posibles de programación en una pieza de código (aquí cito directamente a Saša) “¿Quién va a ser capaz de entender algo de eso?”</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672409162/Screen_Shot_2022-12-30_at_8.05.42_ycvhe7.png" alt="Imagen: Separación de responsabilidades en una base de código"></p>
+
+<hr>
+
+<p><strong>Advertencia</strong>: Una idea que Saša menciona bastante es la de no seguir arquitecturas o ideas sólo porque un líder de opinión o alguien con autoridad lo dice. Si haces esto <strong>puede que la parte más compleja de tu código sea tu arquitectura</strong>, lo cuál es un grave error porque el trabajo de la arquitectura deberías ser crear un sistema más claro.</p>
+
+<blockquote>
+  <p>“Consider te actual situation you’re dealing with, [..], don’t just do something because some thought leader or authority says so, even if that person is me. Just think contextually, think inside of your situation.” - Saša Jurić</p>
+</blockquote>
+
+<blockquote>
+  <p>“Considera tu situación actual, [..], no hagas algo sólo porque un líder de opinión o alguien con autoridad lo dice, incluso si esa persona soy yo. Simplemente piensa contextualmente, piensa en tu situación.” - Saša Jurić</p>
+</blockquote>
+
+<h2 id="testing">Testing</h2>
+
+<p>¿Para qué creamos tests? Obviamente, para probar. ¿Pero qué queremos probar? Saša afirma que queremos probar <strong>el comportamiento del software</strong>. Así, las “unidades” que queremos probar son las unidades de comportamiento y no las unidades de código. Otra recomendación es evitar hacer mocks agresivos, solamente en dónde sea estrictamente necesario para lograr comportamientos repetibles. Esto es porque, el uso de dobles en los tests (como los mocks) complica el código de pruebas, pero también complica el código de producción.</p>
+
+<p>Cuando los tests son demasiado complicados o están ligados a la implementación en vez del al comportamiento externo, vas a tener que dividirte entre arreglar los test o arreglar el código de producción, lo cuál es frustrante y una mala idea para tu productividad en general. Un test debe ser fácil de entender y comunicar exactamente lo que está probando, nada más, nada menos.</p>
+
+<p>Recomendación: Libro <a href="https://www.manning.com/books/unit-testing">Unit Testing</a> de Vladimir Khorikov. Saša lo recomienda como una muy buena lectura.</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672450947/Screen_Shot_2022-12-30_at_12.03.25_nedtbg.png" alt="Recomendación de libro TDD por Saša Jurić: Unit Testing de editorial Manning"></p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Una de las tareas más importantes cuando hacemos código es hacer que comunique claramente el problema que resuelve y cómo lo resuelve. Si hacemos eso, lograremos que nuestro equipo o nosotros mismos podamos continuar con el trabajo y lo mejor: evolucionarlo.</p>
+
+<p>En la siguiente imagen verás el resumen de las recomendaciones de Saša Jurić para escribir código más claro:</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672450967/Screen_Shot_2022-12-30_at_18.48.20_hekzsv.png" alt="Usa el código para comunicarte, revisa el código, separación de responsabilidades y prueba el comportamiento del código">.</p>
+
+<p>Puedes ver la charla completa en <a href="https://www.youtube.com/watch?v=6sNmJtoKDCo">YouTube</a>. <a href="https://twitter.com/mronerlang">Manuel Rubio</a> y yo platicamos extensamente sobre ese tema:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gswx3ko3A_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>Finalmente, te recomiendo mucho el artículo en el que Manuel Rubio hizo su propio resumen en <a href="https://altenwald.org/2021/09/27/claridad/">el blog de Altenwald</a>.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#claridad" class="page__taxonomy-item" rel="tag">claridad</a><span class="sep">, </span>
+    
+      <a href="/tags/#c%C3%B3digo-claro" class="page__taxonomy-item" rel="tag">código-claro</a><span class="sep">, </span>
+    
+      <a href="/tags/#pl%C3%A1ticas" class="page__taxonomy-item" rel="tag">pláticas</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2022-12-30T00:00:00-06:00">December 30, 2022</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Claridad+de++Sa%C5%A1a+Juri%C4%87%20https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F30%2Fclaridad-en-el-codigo.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F30%2Fclaridad-en-el-codigo.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2022%2F12%2F30%2Fclaridad-en-el-codigo.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2022/12/26/explicaciones-elocuentes.html" class="pagination--pager" title="Explicaciones elocuentes
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_lfill,h_450,w_1200/v1671858924/ryan-baker-VgROGebCi80-unsplash_p2jzj3.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/26/explicaciones-elocuentes.html" rel="permalink">Explicaciones elocuentes
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+5 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 26-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Comunicar claramente y de manera efectiva es una de las tareas más importantes de los desarrolladores. Hablemos de las técnicas que puedes seguir para mejora...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_fill,g_north,h_150,q_59,w_300,x_100,y_100/v1661094369/DALL_E_2022-08-12_11.14.36_-_dangerous_green_and_black_python_ready_to_byte_digital_art_bgspv1.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/24/creando-codigo-de-python-robusto.html" rel="permalink">Creando código de Python robusto, Parte 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+5 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 24-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Normalmente no basta con saber lo básico de un lenguaje para hacer código que sea fácil de mantener y seguro. Hablemos de algunas maneras de hacer código rob...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1671514771/jj-ying-8bghKxNU1j0-unsplash_knucbs.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/22/tomando-notas-efectivamente-zettelkasten.html" rel="permalink">Tomando notas efectivamente: Zettelkasten
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+8 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 22-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos de la importancia de tener un sistema efectivo para tomar notas, usado por académicos y científicos para ser productivos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1024/v1671168726/DALL_E_2022-12-06_16.53.33_-_mandelbrot_set_fractal_made_of_rust_on_a_gold_wall_digital_art_illustration_cinematic_t5cz0h.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/18/como-aprender-rust.html" rel="permalink">¿Cómo aprender Rust? Recursos para empezar
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+3 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 18-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">En este artículo encontrarás algunos recursos para aprender Rust tanto en inglés como en español. Empezaremos desde lo más básico hasta llevarte a hacer cosa...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2022 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2022/12/30/claridad-en-el-codigo"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
