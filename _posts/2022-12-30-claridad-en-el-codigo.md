@@ -15,7 +15,7 @@ header:
     <figcaption>Escucha este artículo:</figcaption>
     <audio
         controls
-        src="/media/cc0-audio/t-rex-roar.mp3">
+        src="https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav">
             <a href="https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav">
                 Descargar audio
             </a>
