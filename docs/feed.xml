@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-30T22:31:45-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Claridad de Saša Jurić</title><link href="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html" rel="alternate" type="text/html" title="Claridad de Saša Jurić" /><published>2022-12-30T00:00:00-06:00</published><updated>2022-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html">&lt;figure&gt;
-    &lt;figcaption&gt;Escucha este artículo:&lt;/figcaption&gt;
-    &lt;audio controls=&quot;&quot; src=&quot;/media/cc0-audio/t-rex-roar.mp3&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2022-12-31T08:14:24-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Claridad de Saša Jurić</title><link href="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html" rel="alternate" type="text/html" title="Claridad de Saša Jurić" /><published>2022-12-30T00:00:00-06:00</published><updated>2022-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html">&lt;figure&gt;
+    &lt;figcaption class=&quot;caption-audio&quot;&gt;Escucha este artículo:&lt;/figcaption&gt;
+    &lt;audio style=&quot;width: 100%;&quot; controls=&quot;&quot; src=&quot;https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav&quot;&gt;
             &lt;a href=&quot;https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav&quot;&gt;
                 Descargar audio
             &lt;/a&gt;
     &lt;/audio&gt;
 &lt;/figure&gt;
+
 &lt;p&gt;Hablemos de las cosas que hacen más entendible y claro tu código.&lt;/p&gt;
 
 &lt;p&gt;Muchas de estas ideas están basadas en la plática &lt;a href=&quot;https://www.youtube.com/watch?v=6sNmJtoKDCo&quot;&gt;“Clarity” de Saša Jurić&lt;/a&gt; de la Elixir Conf EU de 2021, de hecho, podríamos considerar este artículo como un análisis y extensión de esa plática.&lt;/p&gt;

@@ -11,9 +11,10 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
+
 <figure>
-    <figcaption>Escucha este artículo:</figcaption>
-    <audio
+    <figcaption class="caption-audio">Escucha este artículo:</figcaption>
+    <audio style="width: 100%;"
         controls
         src="https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav">
             <a href="https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav">
@@ -21,6 +22,7 @@ header:
             </a>
     </audio>
 </figure>
+
 Hablemos de las cosas que hacen más entendible y claro tu código.
 
 Muchas de estas ideas están basadas en la plática ["Clarity" de Saša Jurić](https://www.youtube.com/watch?v=6sNmJtoKDCo) de la Elixir Conf EU de 2021, de hecho, podríamos considerar este artículo como un análisis y extensión de esa plática.
