@@ -15,11 +15,12 @@ En este post platicaremos acerca de cómo funciona un perceptrón a nivel de có
 
 Si no tienes claro lo que es un perceptrón, puedes leer nuestro [artículo anterior](/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html){:target="_blank"}.
 
+Vamos a sacar un conjunto de datos con dos clases separables (recuerda que es lo más que puede lograr un perceptrón). Escogimos: <https://www.data-is-plural.com/>
+
 ## El conjunto de datos
 
 Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo _aprenda_ de estos datos. Los datos que un perceptrón puede clasificar deben estar divididos en dos clases separables, ya si lo representáramos como una función, es un línea recta en un plano de dos variables, o su equivalente dependiendo del espacio y sus dimensiones.
 
 ## Aproximando la función
-
 
 ## Resultado
