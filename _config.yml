@@ -17,6 +17,7 @@ plugins:
 logo: https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png
 masthead_title: "The Dojo MX Blog"
 title: "The Dojo MX Blog"
+words_per_minute: 150
 
 defaults:
   # _posts
