@@ -1,6 +1,6 @@
 ---
 title: "Ejercicio: programando un perceptrón"
-date: 2021-12-12
+date: 2022-
 author: Héctor Patricio
 tags: machine-learning ia
 comments: true
@@ -13,14 +13,29 @@ header:
 
 En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.
 
-Si no tienes claro lo que es un perceptrón, puedes leer nuestro [artículo anterior](/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html){:target="_blank"}.
+Si no tienes claro lo que es un perceptrón, puedes leer nuestro [artículo anterior](/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html){:target="_blank"}. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar.
 
-Vamos a sacar un conjunto de datos con dos clases separables (recuerda que es lo más que puede lograr un perceptrón). Escogimos: <https://www.data-is-plural.com/>
+Escogimos: <https://www.data-is-plural.com/>
 
 ## El conjunto de datos
 
-Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo _aprenda_ de estos datos. Los datos que un perceptrón puede clasificar deben estar divididos en dos clases separables, ya si lo representáramos como una función, es un línea recta en un plano de dos variables, o su equivalente dependiendo del espacio y sus dimensiones.
+Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo _aprenda_ de estos datos.
 
-## Aproximando la función
+Los datos que un perceptrón puede clasificar deben estar divididos en dos clases completamente separables, ya que si representáramos al perceptrón como una función, es un línea recta en un plano de dos variables (o su equivalente dependiendo del espacio y sus dimensiones, lo que en para más de tres dimensiones llamamos un _hiperespacio_ matemáticamente).
+
+No es necesario que los datos _sólo_ puedan estar divididos en dos clases, por ejemplo, imagínate un conjunto de datos que representa los dígitos escritos a mano, del 0 al 9 (este es conocido como el [MNIST dataset](https://www.tensorflow.org/datasets/catalog/mnist)). Cada dígito es una clase, pero un perceptrón nos puede servir para clasificar un solo número, por ejemplo, el 5. El perceptrón serviría para clasificar si un dígito es un 5 o no, lo importante es que el conjunto de datos que representa el 5 sea más o menos separable de los demás dígitos.
+
+Con esto te puedes empezar a dar cuenta de que el perceptrón es el bloque de construcción más básico de las redes neuronales. Por ejemplo, ¿cómo haríamos para clasificar todos los números del conjunto del que hablamos arriba? Necesitamos un perceptrón por cada número, y tomamos el que más confianza nos devuelva.
+
+Ahora sí veamos qué dataset usaremos nosotros. Ejemplos usando el MNIST o el [Iris](https://archive.ics.uci.edu/ml/datasets/iris) encontrarás en muchos lados, así que vamos a escoger uno diferente.
+Este es una alternativa a Iris y se conoce como el [Penguin dataset](https://github.com/allisonhorst/palmerpenguins). Para facilitarnos la vida, lo vamos a extraer de la biblioteca [Vega datasets](https://vega.github.io/vega-datasets/) que lo tiene como un conjunto de ejemplos.
+
+El conjunto de datos de los pingüinos tiene
+
+## Repaso del funcionamiento básico
+
+El perceptrón es un algoritmo de aprendizaje **supervisado**, por lo que necesita datos etiquetados, es decir, las características junto con su clase. El trabajo del perceptrón es encontrar los parámetros para una función matemática que defina la frontera de separación entre las clases.
+
+Esta función matemática es una línea recta en un plano de dos dimensiones, o un plano en un espacio de tres dimensiones, o un **hiperplano** en un espacio de más de tres dimensiones. Puedes pensar en todos estos términos matemáticos como el equivalente a una linea recta en cualquier espacio.s
 
 ## Resultado
