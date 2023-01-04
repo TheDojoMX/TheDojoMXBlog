@@ -1,6 +1,6 @@
 ---
 title: "Ejercicio: programando un perceptrón"
-date: 2022-
+date: 07-01-2023
 author: Héctor Patricio
 tags: machine-learning ia
 comments: true
@@ -30,15 +30,17 @@ Con esto te puedes empezar a dar cuenta de que el perceptrón es el bloque de co
 Ahora sí veamos qué dataset usaremos nosotros. Ejemplos usando el MNIST o el [Iris](https://archive.ics.uci.edu/ml/datasets/iris) encontrarás en muchos lados, así que vamos a escoger uno diferente.
 Este es una alternativa a Iris y se conoce como el [Penguin dataset](https://github.com/allisonhorst/palmerpenguins). Para facilitarnos la vida, lo vamos a extraer de la biblioteca [Vega datasets](https://vega.github.io/vega-datasets/) que lo tiene como un conjunto de ejemplos.
 
-El conjunto de datos de los pingüinos tiene 344 registros, cada uno con 8 características, y una clase que indica a qué especie pertenece el pingüino. Tiene 3 clases: Adelie, Chinstrap y Gentoo. Las características son:
+El conjunto de datos de los pingüinos tiene 344 registros etiquetados, cada uno con máximo 6 características (a parte de la etiqueta). Tiene 3 etiquetas diferentes: Adelie, Chinstrap y Gentoo. Las columnas del dataset son:
 
-1. **species**: especie del pingüino
-2. **island**: isla donde fue capturado el pingüino
-3. **bill_length_mm**: longitud de la pata del pingüino
-4. **bill_depth_mm**: profundidad de la pata del pingüino
+1. **species**: especie del pingüino, esta es la clase o etiqueta
+2. **island**: isla donde fue visto el pingüino, tiene 3 valores diferentes: Dream, Torgersen, or Biscoe
+3. **culmen_lenth_mm**: longitud de la pico del pingüino
+4. **culmen_depth_mm**: profundidad de la pico del pingüino
 5. **flipper_length_mm**: longitud de la aleta del pingüino
 6. **body_mass_g**: masa del cuerpo del pingüino
 7. **sex**: sexo del pingüino
+
+Tenemos que explorar los datos brevemente para ver qué variables podemos usar para separar. Como este no es el obejtivo de este artículo vamos a usar las variables **culmen_lenth_mm** y **culmen_depth_mm**.
 
 ## Repaso del funcionamiento básico
 
