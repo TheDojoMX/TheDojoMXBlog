@@ -1,27 +1,25 @@
 ---
-title: "Ejercicio: programando un perceptrón"
+title: "Ejercicio: programando un perceptrón con Python"
 date: 07-01-2023
 author: Héctor Patricio
-tags: machine-learning ia
+tags: machine-learning ia inteligencia-artificial
 comments: true
 excerpt: "Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos."
 header:
-  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_1400/v1618030907/arseny-togulev-MECKPoKJYjM-unsplash_nakl3a.jpg
-  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_300/v1618030907/arseny-togulev-MECKPoKJYjM-unsplash_nakl3a.jpg
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_crop,h_600,w_1200/v1673056123/DALL_E_2023-01-06_19.47.48_-_Perceptron_artistic_digital_paint_high_quality_detailed_wpoohz.png
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_crop,h_600,w_300/v1673056123/DALL_E_2023-01-06_19.47.48_-_Perceptron_artistic_digital_paint_high_quality_detailed_wpoohz.png
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-En este post platicaremos acerca de cómo funciona un perceptrón a nivel de código y las técnicas que utiliza para aproximar una función a partir de datos.
+En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos.
 
-Si no tienes claro lo que es un perceptrón, puedes leer nuestro [artículo anterior](/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html){:target="_blank"}. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar.
-
-Escogimos: <https://www.data-is-plural.com/>
+Si no tienes claro lo que es un perceptrón, puedes leer nuestro [artículo anterior](/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html){:target="_blank"}. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar de la manera más sencilla posible.
 
 ## El conjunto de datos
 
 Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo _aprenda_ de estos datos.
 
-Los datos que un perceptrón puede clasificar deben estar divididos en dos clases completamente separables, ya que si representáramos al perceptrón como una función, es un línea recta en un plano de dos variables (o su equivalente dependiendo del espacio y sus dimensiones, lo que en para más de tres dimensiones llamamos un _hiperespacio_ matemáticamente).
+Los datos que un perceptrón puede clasificar deben poder ser separados en mínimo dos clases por alguna característica, ya que si representáramos al perceptrón como una función, es un línea recta en un plano de dos variables (o su equivalente dependiendo del espacio y sus dimensiones, lo que en para más de tres dimensiones llamamos un _hiperespacio_ matemáticamente).
 
 No es necesario que los datos _sólo_ puedan estar divididos en dos clases, por ejemplo, imagínate un conjunto de datos que representa los dígitos escritos a mano, del 0 al 9 (este es conocido como el [MNIST dataset](https://www.tensorflow.org/datasets/catalog/mnist)). Cada dígito es una clase, pero un perceptrón nos puede servir para clasificar un solo número, por ejemplo, el 5. El perceptrón serviría para clasificar si un dígito es un 5 o no, lo importante es que el conjunto de datos que representa el 5 sea más o menos separable de los demás dígitos.
 
@@ -40,7 +38,11 @@ El conjunto de datos de los pingüinos tiene 344 registros etiquetados, cada uno
 6. **body_mass_g**: masa del cuerpo del pingüino
 7. **sex**: sexo del pingüino
 
-Tenemos que explorar los datos brevemente para ver qué variables podemos usar para separar. Como este no es el obejtivo de este artículo vamos a usar las variables **culmen_lenth_mm** y **culmen_depth_mm**.
+Tenemos que explorar los datos brevemente para ver qué variables podemos usar para separar. Como este no es el objetivo de este artículo vamos a ver una imagen en la que comparan por pares las variables y seleccionemos las que nos ayuden a separar mejor las clases. Vamos a hacerlo sólamente con dos variables para que el código nos quede más sencillo y se comprenda la idea principal.
+
+La siguiente imagen es una gráfica de dos variables: la anchura del pico (**culmen_depth_mm**) y la masa del pingüino (**body_mass_g**). Observa qué bien separa a la clase Gentoo de las otras dos.
+
+![Gráfica de dos variables](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1673052386/Screen_Shot_2023-01-06_at_18.46.10_kmbunq.png){: .align-center}
 
 ## Repaso del funcionamiento básico
 
