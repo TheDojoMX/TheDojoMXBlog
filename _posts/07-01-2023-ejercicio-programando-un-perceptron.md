@@ -241,6 +241,7 @@ def entrenar(datos, iteraciones, lr=0.01):
             etiqueta_real = int(x["species"] == "Gentoo")
             clase = clasificar(x, w1, w2, b)
 
+            ## Esta es la revisión de "la verdad", más adelante la explicamos en la sección "función de pérdida"
             if etiqueta_real == 1 and clase == 0:
                 # Aquí tenemos un Gentoo mal clasificado, tenemos que
                 # aumentar w1 y w2 para que la función lineal se acerque
@@ -273,3 +274,29 @@ Resultados:
 Correctos: 69 - 100.0%
 Incorrectos: 0 - 0.0%
 ```
+
+## Función de pérdida
+
+El último detalle de nuestro perceptrón es la forma en la que revisa si se está acercando a "la verdad". En este perceptrón simplemente verificamos si la etiqueta está equivocada y elegimos si "acercar" o "alejar" la línea del punto en cuestión.
+
+Esta es una forma no tradicional de hacerlo, pero con lo que te debes quedar es que debe existir una función que te diga qué tan equivocado estás y que te ayude a acercarte a la verdad. Esta función se llama "función de pérdida" (loss function). En las siguientes versiones del perceptrón vamos a incluir una función de pérdida más sofisticada, "de verdad".
+
+## Repaso
+
+En este artículo vimos todas las partes que un perceptrón, la unidad de construcción más básica de una red neuronal. Un perceptrón tiene:
+
+1. Una función de predicción. Es la que llamamos `clasificar` y nos dice si un punto de datos pertenece a una clase o no.
+
+2. Una función de entrenamiento. Es la que llamamos `entrenar` y nos ayuda a ajustar los parámetros que le vamos a pasar a la función de predicción para que nos de un resultado correcto.
+
+3. Una función de pérdida. Es la parte en la función `entrenar` que nos dice si estamos cerca o lejos de "la verdad". Esta función es la que vamos a mejorar en las siguientes versiones del perceptrón.
+
+4. Una función de activación. Esta es la que llamamos `paso` y nos ayuda a transformar la salida de la función matemática pura que representa una línea en la salida final de nuestro perceptrón. En nuestro caso necesitábamos 0 o 1.
+
+## Conclusión
+
+Este perceptrón funciona, pero no es muy flexible, no se puede usar con otros conjuntos de datos y además con un conjunto de datos más complejo y menos separable probablemente no podría encontrar los parámetros correctos, sin embargo, sigue la arquitectura básica de un perceptrón, que era el punto de este artículo.
+
+En un siguiente artículo vamos a integrar herramientas matemáticas más poderosas, y vamos a empezar a ver qué tiene qué ver el álgebra lineal con la inteligencia artificial.
+
+Puedes ver el código completo en este [repositorio](https://github.com/hectorip/penguins_perceptron).
