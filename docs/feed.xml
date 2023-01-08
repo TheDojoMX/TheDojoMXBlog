@@ -1,4 +1,289 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-01-07T20:58:25-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Claridad de Saša Jurić</title><link href="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html" rel="alternate" type="text/html" title="Claridad de Saša Jurić" /><published>2022-12-30T00:00:00-06:00</published><updated>2022-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html">&lt;figure&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-01-08T04:46:31-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Ejercicio: programando un perceptrón con Python</title><link href="https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html" rel="alternate" type="text/html" title="Ejercicio: programando un perceptrón con Python" /><published>2023-01-07T00:00:00-06:00</published><updated>2023-01-07T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html">&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
+
+&lt;p&gt;Si no tienes claro lo que es un perceptrón, puedes leer nuestro &lt;a href=&quot;/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html&quot; target=&quot;_blank&quot;&gt;artículo anterior&lt;/a&gt;. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar de la manera más sencilla posible.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-conjunto-de-datos&quot;&gt;El conjunto de datos&lt;/h2&gt;
+
+&lt;p&gt;Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo &lt;em&gt;aprenda&lt;/em&gt; de estos datos.&lt;/p&gt;
+
+&lt;p&gt;Los datos que un perceptrón puede clasificar deben poder ser separados en mínimo dos clases por alguna característica, ya que si representáramos al perceptrón como una función, es un línea recta en un plano de dos variables (o su equivalente dependiendo del espacio y sus dimensiones, lo que en para más de tres dimensiones llamamos un &lt;em&gt;hiperespacio&lt;/em&gt; matemáticamente).&lt;/p&gt;
+
+&lt;p&gt;No es necesario que los datos &lt;em&gt;sólo&lt;/em&gt; puedan estar divididos en dos clases, por ejemplo, imagínate un conjunto de datos que representa los dígitos escritos a mano, del 0 al 9 (este es conocido como el &lt;a href=&quot;https://www.tensorflow.org/datasets/catalog/mnist&quot;&gt;MNIST dataset&lt;/a&gt;). Cada dígito es una clase, pero un perceptrón nos puede servir para clasificar un solo número, por ejemplo, el 5. El perceptrón serviría para clasificar si un dígito es un 5 o no, lo importante es que el conjunto de datos que representa el 5 sea más o menos separable de los demás dígitos.&lt;/p&gt;
+
+&lt;p&gt;Con esto te puedes empezar a dar cuenta de que el perceptrón es el bloque de construcción más básico de las redes neuronales. Por ejemplo, ¿cómo haríamos para clasificar todos los números del conjunto del que hablamos arriba? Necesitamos un perceptrón por cada número, y tomamos el que más confianza nos devuelva.&lt;/p&gt;
+
+&lt;p&gt;Ahora sí veamos qué dataset usaremos nosotros. Ejemplos usando el MNIST o el &lt;a href=&quot;https://archive.ics.uci.edu/ml/datasets/iris&quot;&gt;Iris&lt;/a&gt; encontrarás en muchos lados, así que vamos a escoger uno diferente.
+Este es una alternativa a Iris y se conoce como el &lt;a href=&quot;https://github.com/allisonhorst/palmerpenguins&quot;&gt;Penguin dataset&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;El conjunto de datos de los pingüinos tiene 344 registros etiquetados, cada uno con máximo 6 características (a parte de la etiqueta). Tiene 3 etiquetas diferentes: Adelie, Chinstrap y Gentoo. Las columnas del dataset son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;species&lt;/strong&gt;: especie del pingüino, esta es la clase o etiqueta&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;island&lt;/strong&gt;: isla donde fue visto el pingüino, tiene 3 valores diferentes: Dream, Torgersen, or Biscoe&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;bill_lenth_mm&lt;/strong&gt;: longitud de la pico del pingüino&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;bill_depth_mm&lt;/strong&gt;: profundidad de la pico del pingüino&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;flipper_length_mm&lt;/strong&gt;: longitud de la aleta del pingüino&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;body_mass_g&lt;/strong&gt;: masa del cuerpo del pingüino&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sex&lt;/strong&gt;: sexo del pingüino&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Tenemos que explorar los datos brevemente para ver qué variables podemos usar para separar. Como este no es el objetivo de este artículo vamos a ver una imagen en la que comparan por pares las variables y seleccionemos las que nos ayuden a separar mejor las clases. Vamos a hacerlo sólamente con dos variables para que el código nos quede más sencillo y se comprenda la idea principal.&lt;/p&gt;
+
+&lt;p&gt;La siguiente imagen es una gráfica de dos variables: la anchura del pico (&lt;strong&gt;bill_depth_mm&lt;/strong&gt;) y el largo de su aleta (&lt;strong&gt;flipper_length_mm&lt;/strong&gt;). Observa qué bien separa a la clase Gentoo de las otras dos.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1673111878/a1f1d1b7-d87c-478d-b67a-c344c802f4d6_spefvh.png&quot; alt=&quot;Gráfica de dos variables&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Nota&lt;/strong&gt;: para el entrenamiento de una rede neuronal se hace una exploración mucho más profunda de los datos, pero para este ejemplo no es necesario.&lt;/p&gt;
+
+&lt;h2 id=&quot;repaso-del-funcionamiento-básico&quot;&gt;Repaso del funcionamiento básico&lt;/h2&gt;
+
+&lt;p&gt;El perceptrón es un algoritmo de aprendizaje &lt;strong&gt;supervisado&lt;/strong&gt;, por lo que necesita datos etiquetados, es decir, &lt;em&gt;las características junto con su clase&lt;/em&gt;. El trabajo del perceptrón es encontrar los parámetros para una función matemática que defina la frontera de separación entre las clases.&lt;/p&gt;
+
+&lt;p&gt;Esta función matemática es una línea recta en un plano de dos dimensiones, o un plano en un espacio de tres dimensiones, o un &lt;strong&gt;hiperplano&lt;/strong&gt; en un espacio de más de tres dimensiones. Puedes pensar en todos estos términos matemáticos como el equivalente a una linea recta en cualquier espacio.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-algoritmo&quot;&gt;El algoritmo&lt;/h2&gt;
+
+&lt;p&gt;El perceptron es busca ajustar una función lineal que separa las clases. En este caso separaremos “Gentoo” de “no es un Gentoo”. El algoritmos nos dirá “1” si es un Gentoo y “0” si no lo es. Una función lieneal tiene la forma:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Con un término &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wn * xn&lt;/code&gt; para cada variable de entrada, y un término &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b&lt;/code&gt; para el sesgo. El perceptrón ajusta los valores de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;w1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;w2&lt;/code&gt;, y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b&lt;/code&gt; para que la función lineal se ajuste a los datos.&lt;/p&gt;
+
+&lt;p&gt;Podemos empezar combinando las dos variables que elegimos de la siguiente manera:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;penguins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bill_depth_mm'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;penguins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'flipper_length_mm'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Nota&lt;/strong&gt;: En este ejemplo no usaremos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;numpy&lt;/code&gt; o &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pandas&lt;/code&gt;, para hacer la programación lo más tradicional posible. Más adelante nos empezaremos a meter en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;numpy&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pandas&lt;/code&gt; y esas cosas que parecen magia negra.&lt;/p&gt;
+
+&lt;p&gt;Esto nos dará un número que tenemos que convertir en un 1 o un 0. Usemos una función sencilla. Todos lo números negativos los convertimos en un 0 y todos los positivos y el 0 en un 1. Esto se puede programar sencillo. Vamos a llamar a esta función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paso&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;paso&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ahora podemos usar esta función para convertir la salida de la función lineal en un 1 o un 0:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;clasificar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Recibe una fila de datos y devuelve 1 si es Gentoo y 0 si no lo es&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paso&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bill_depth_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;flipper_length_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Nuestra función de clasificación ya está lista. Pero el trabajo del perceptrón es encontrar los valores de &lt;strong&gt;los parámetros&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;w1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;w2&lt;/code&gt;, y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b&lt;/code&gt;. Creemos el algoritmo que define estos valores, que llamaremos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrenar&lt;/code&gt;. Esta función aprende a base de prueba y error. Para aprender hace lo siguiente:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Clasifica cada dato de entrenamiento&lt;/li&gt;
+  &lt;li&gt;Verifica si la etiqueta es correcta (para esto necesitamos las etiquetas de los datos de entrenamiento)&lt;/li&gt;
+  &lt;li&gt;Ajusta sus parámetros: cambiar los valores de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;w1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;w2&lt;/code&gt;, y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b&lt;/code&gt; para que la función lineal se ajuste a los datos.&lt;/li&gt;
+  &lt;li&gt;Repite el proceso&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Este proceso puede terminar por dos razones:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Se alcanza un número máximo de iteraciones&lt;/li&gt;
+  &lt;li&gt;Se alcanza un resultado satisfactorio (ej. el número de elementos mal clasificados es menor a un umbral)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Para hacerlo sencillo vamos a hacer que el algoritmo se ejecute un número fijo de veces:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;entrenar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iteraciones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# inicializamos los parámetros, esto puede ser aleatorio o cero, como lo hacemos aquí
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iteraciones&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;iteraciones&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;etiqueta_real&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;species&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Gentoo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;clase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clasificar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;etiqueta_real&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;# Aquí tenemos un Gentoo mal clasificado, tenemos que
+&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# aumentar w1 y w2 para que la función lineal se acerque
+&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# a la etiqueta real
+&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bill_depth_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;flipper_length_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Valor escogido arbitrariamente
+&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;etiqueta_real&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;# Aquí tenemos un NO Gentoo mal clasificado, tenemos que
+&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# disminuir w1 y w2 para que la función lineal se acerque
+&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# a la etiqueta real
+&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bill_depth_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;flipper_length_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# valor escogido arbitrariamente
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Iteración&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iteraciones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;w1:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;w2:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;b:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Podríamos decir que esto es básicamente todo el algoritmo del perceptrón. Ahora podemos entrenar nuestro perceptrón con los datos de entrenamiento. Antes le hacemos unas cuantas modificaciones para que sea más fácil de usar:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# cargar el archivo CSV con los datos de entrenamiento como diccionario, el archivo está en la carpeta data, un nivel arriba
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;../data/penguins.csv&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csvfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DictReader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;csvfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Limpiando los los datos, eliminando los que no tienen bill_depth_mm o flipper_length_mm
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bill_depth_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;NA&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;flipper_length_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;NA&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bill_depth_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bill_depth_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;flipper_length_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;flipper_length_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Estos datos ya está listos para para ser usados. Ahora podemos entrenar el perceptrón:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Escogemos las iteraciones arbitrariamente
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entrenar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lo podemos probar con los mismos datos de entrenamiento:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;probar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;correctos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;incorrectos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;clase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clasificar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;etiqueta_real&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;species&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Gentoo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;etiqueta_real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;correctos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;incorrectos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Resultados:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Correctos: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;correctos&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; - &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;correctos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Incorrectos: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;incorrectos&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; - &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;incorrectos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;probar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y el resultado es:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Resultados:
+Correctos: 219 - 64.03508771929825%
+Incorrectos: 123 - 35.96491228070175%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Parece que nuestro perceptrón no logró ni siquiera aprender bien con los datos de entrenamiento. ¿Qué pasa si aumentamos las iteraciones, digamos a 1000?&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entrenar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;probar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El resultado es:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Resultados:
+Correctos: 342 - 100%
+Incorrectos: 0 - 0.0%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Parece que con las suficientes iteraciones el perceptrón logra aprender a clasificar perfectamente los datos de entrenamiento. &lt;strong&gt;Tip&lt;/strong&gt;: siempre debes dudar de un algoritmo de inteligencia artificial que clasifique perfectamente, eso puede indicar que se sobreajustó a los datos de entrenamiento y cuando encuentre datos no vistos, fallará.&lt;/p&gt;
+
+&lt;p&gt;Para evitarlo, necesitamos probarlo con datos que no ha visto antes. Para esto vamos a dividir los datos en dos grupos, uno para entrenamiento y otro para pruebas:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Dividir los datos en dos grupos, uno para entrenamiento y otro para pruebas
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;entrenamiento&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pruebas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entrenar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entrenamiento&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;probar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pruebas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El resultado es:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Resultados:
+Correctos: 69 - 100.0%
+Incorrectos: 0 - 0.0%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y como vemos, sigue funcionando bien con este dataset sencillo. Esta es le estructura básica de un perceptrón, pero en realidad le faltan muchas partes para que funcione de manera general sin gastar demasiado tiempo de cómputo. Por ejemplo, en este código simplemente sumamos o restamos el valor de las variables a w1 y w2. Estos saltos pueden ser muy bruscos y hacernos saltar fácilmente el valor que necesitamos. Para evitar esto, se usa otro parámetro para la función de entrenamiento llamado “ritmo de aprendizaje” (learning rate - lr).&lt;/p&gt;
+
+&lt;p&gt;Vamos a incluirlo en nuestro código:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;entrenar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iteraciones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# inicializamos los parámetros, esto puede ser aleatorio o cero, como lo hacemos aquí
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iteraciones&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;iteraciones&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;etiqueta_real&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;species&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Gentoo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;clase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clasificar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;## Esta es la revisión de &quot;la verdad&quot;, más adelante la explicamos en la sección &quot;función de pérdida&quot;
+&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;etiqueta_real&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;# Aquí tenemos un Gentoo mal clasificado, tenemos que
+&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# aumentar w1 y w2 para que la función lineal se acerque
+&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# a la etiqueta real
+&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bill_depth_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;flipper_length_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Valor escogido arbitrariamente
+&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;etiqueta_real&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;# Aquí tenemos un NO Gentoo mal clasificado, tenemos que
+&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# disminuir w1 y w2 para que la función lineal se acerque
+&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# a la etiqueta real
+&lt;/span&gt;                &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bill_depth_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;flipper_length_mm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# valor escogido arbitrariamente
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Iteración&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iteraciones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;w1:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;w2:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;b:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y ahora vamos a probarlo de nuevo con 100 iteraciones y el lr default:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entrenar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entrenamiento&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;probar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pruebas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;En esta versión podemos ver que con muchas menos iteraciones el perceptrón logra clasificar correctamente los datos de prueba. El resultado es:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Resultados:
+Correctos: 69 - 100.0%
+Incorrectos: 0 - 0.0%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;función-de-pérdida&quot;&gt;Función de pérdida&lt;/h2&gt;
+
+&lt;p&gt;El último detalle de nuestro perceptrón es la forma en la que revisa si se está acercando a “la verdad”. En este perceptrón simplemente verificamos si la etiqueta está equivocada y elegimos si “acercar” o “alejar” la línea del punto en cuestión.&lt;/p&gt;
+
+&lt;p&gt;Esta es una forma no tradicional de hacerlo, pero con lo que te debes quedar es que debe existir una función que te diga qué tan equivocado estás y que te ayude a acercarte a la verdad. Esta función se llama “función de pérdida” (loss function). En las siguientes versiones del perceptrón vamos a incluir una función de pérdida más sofisticada, “de verdad”.&lt;/p&gt;
+
+&lt;h2 id=&quot;repaso&quot;&gt;Repaso&lt;/h2&gt;
+
+&lt;p&gt;En este artículo vimos todas las partes que un perceptrón, la unidad de construcción más básica de una red neuronal. Un perceptrón tiene:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una función de predicción. Es la que llamamos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clasificar&lt;/code&gt; y nos dice si un punto de datos pertenece a una clase o no.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una función de entrenamiento. Es la que llamamos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrenar&lt;/code&gt; y nos ayuda a ajustar los parámetros que le vamos a pasar a la función de predicción para que nos de un resultado correcto.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una función de pérdida. Es la parte en la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrenar&lt;/code&gt; que nos dice si estamos cerca o lejos de “la verdad”. Esta función es la que vamos a mejorar en las siguientes versiones del perceptrón.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una función de activación. Esta es la que llamamos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;paso&lt;/code&gt; y nos ayuda a transformar la salida de la función matemática pura que representa una línea en la salida final de nuestro perceptrón. En nuestro caso necesitábamos 0 o 1.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Este perceptrón funciona, pero no es muy flexible, no se puede usar con otros conjuntos de datos y además con un conjunto de datos más complejo y menos separable probablemente no podría encontrar los parámetros correctos, sin embargo, sigue la arquitectura básica de un perceptrón, que era el punto de este artículo.&lt;/p&gt;
+
+&lt;p&gt;En un siguiente artículo vamos a integrar herramientas matemáticas más poderosas, y vamos a empezar a ver qué tiene qué ver el álgebra lineal con la inteligencia artificial.&lt;/p&gt;
+
+&lt;p&gt;Puedes ver el código completo en este &lt;a href=&quot;https://github.com/hectorip/penguins_perceptron&quot;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ia" /><category term="inteligencia-artificial" /><summary type="html">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.</summary></entry><entry><title type="html">Claridad de Saša Jurić</title><link href="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html" rel="alternate" type="text/html" title="Claridad de Saša Jurić" /><published>2022-12-30T00:00:00-06:00</published><updated>2022-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html">&lt;figure&gt;
     &lt;figcaption class=&quot;caption-audio&quot;&gt;Escucha este artículo:&lt;/figcaption&gt;
     &lt;audio style=&quot;width: 100%;&quot; controls=&quot;&quot; src=&quot;https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav&quot;&gt;
             &lt;a href=&quot;https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav&quot;&gt;
@@ -882,70 +1167,4 @@
 
 &lt;h2 id=&quot;por-qué-usar-keccak&quot;&gt;¿Por qué usar Keccak?&lt;/h2&gt;
 
-&lt;p&gt;SHA-3 o Keccak es una función más fuerte, sin vulnerabilidades conocidas, estandarizada y lista para ser usada como reemplazo de SHA-2 en cualquier lado sin grandes cambios. No hay pretexto para no usarla si existe una buena implementación en tu lenguaje.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografia" /><category term="crypto" /><category term="hash" /><category term="keccak" /><summary type="html">¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.</summary></entry><entry><title type="html">Mi experiencia como Mentora</title><link href="https://blog.thedojo.mx/2022/09/19/mi-experiencia-como-mentora.html" rel="alternate" type="text/html" title="Mi experiencia como Mentora" /><published>2022-09-19T00:00:00-05:00</published><updated>2022-09-19T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/09/19/mi-experiencia-como-mentora</id><content type="html" xml:base="https://blog.thedojo.mx/2022/09/19/mi-experiencia-como-mentora.html">&lt;blockquote&gt;
-  &lt;p&gt;“El círculo está completo. Cuando te dejé, yo erá el alumno. Ahora, soy el maestro”. - &lt;strong&gt;Darth Vader.&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Intentando evitar ser una maestra del mal; en los últimos meses tuve la oportunidad de ser mentora de dos mujeres increíbles.&lt;/p&gt;
-
-&lt;p&gt;El viaje comenzó con mi participación en un programa de capacitación en mi actual trabajo; la empresa invitó a personas con experiencia Senior para ser mentores de los niveles Junior y Mid. Creé un perfil siguiendo las recomendaciones del equipo en la empresa. La verdad es que al principio tenia algunas limitaciones, como por ejemplo:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;“No sé qué compartir.”&lt;/li&gt;
-  &lt;li&gt;“No estoy segura de que mi experiencia sea útil para alguien.”&lt;/li&gt;
-  &lt;li&gt;“Tal vez, no tengo el perfil de una mentora.”&lt;/li&gt;
-  &lt;li&gt;“¿Qué puedo enseñar que no sepan ya?”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Afortunadamente, se me asignó una excelente Ingeniera de QA. Ella me ayudó a romper esos límites porque desde el principio creamos un sólido vínculo mentor-mentee. Compartir con ella sesiones de mentoría, escuchar sus situaciones, tratar de darle recomendaciones o hablar de mi experiencia fue una oportunidad que disfruté muchísimo.&lt;/p&gt;
-
-&lt;p&gt;Casi al mismo tiempo, una persona de la comunidad tecnológica de mujeres en la que participo me contactó y me pidió que fuera mentora de otra mujer con un perfil diferente, esta vez más similar al mío (Ingeniera Backend), y nuevamente me llegaron mis limitaciones a la mente &lt;em&gt;“Oh… no sé si podré hacerlo.”&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Pero gracias a Dios acepté y una vez más, construimos un vínculo sólido mentor-mentee y fue una oportunidad muy buena para mí.&lt;/p&gt;
-
-&lt;p&gt;Ahi estaba yo apoyando y compartiendo experiencias con dos ingenieras increíbles. Al día de hoy, no me arrepiento de nada; por el contrario, mis dos nuevas amigas me dieron retroalimentación muy positiva sobre mi desempeño como mentora. Además durante este tiempo, una de ellas decidió aceptar una nuevo trabajo y estuve ahi disfrutando del proceso con ella.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,q_64,w_540/v1663559999/190726122-af5f2027-62c3-4ccb-8e4e-0cd3d78061df_weepz8.png&quot; alt=&quot;Hercules 1&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,q_61,w_540/v1663560004/190726136-7bce6bad-633b-457a-b7f7-fb0876b2822d_ebghm2.png&quot; alt=&quot;Hercules 2&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;(Fuente de las imágenes: Hercules 1997 &lt;a href=&quot;https://www.disney.com/&quot;&gt;Disney&lt;/a&gt; película)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Mis primeras mentees son mujeres, y estoy orgullosa de eso, pues hoy día sigo trabajando en equipos de ingeniería donde &lt;strong&gt;hay un 10% de presencia femenina&lt;/strong&gt;. Sin embargo, no limito el compartir mis conocimientos por género; constantemente trato de hacerlo en charlas, artículos o simplemente ofreciendo mi ayuda en el trabajo. Creo que el primer paso para aportar a la comunidad es definitivamente &lt;strong&gt;“comenzar”&lt;/strong&gt;; no permitas que tus inseguridades te impidan compartir tu &lt;strong&gt;conocimiento&lt;/strong&gt;. Siempre tendremos algo que enseñar.&lt;/p&gt;
-
-&lt;h3 id=&quot;mis-aprendizajes&quot;&gt;Mis aprendizajes&lt;/h3&gt;
-
-&lt;p&gt;Aquí una lista de cosas que aprendí de esta experiencia:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Todos tenemos inseguridades; ayuda a la persona que estés mentoreando a identificar y manejar las suyas.&lt;/li&gt;
-  &lt;li&gt;Cuando nos comparten algo, debemos escuchar activamente, esto implica pedir detalles y así construir un espacio seguro.&lt;/li&gt;
-  &lt;li&gt;Ayuda a la persona que estas mentoreando a ser consciente de sus capacidades; que sea capaz de reconocer y comparar su avance.&lt;/li&gt;
-  &lt;li&gt;Por lo general, las personas no necesitan conocimientos; ya los tienen o saben dónde conseguirlos. Lo que necesitan es &lt;strong&gt;inspiración&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Ser abierto y compartir momentos vulnerables de nuestra vida puede ayudar a otros a identificar y atravesar sus momentos difíciles más rápido.&lt;/li&gt;
-  &lt;li&gt;La visibilidad puede impulsar una carrera muy rápidamente. Apoya a la persona que estas mentoreando a ser visible en lo que hace en su equipo o trabajo.&lt;/li&gt;
-  &lt;li&gt;Una charla informal puede ser más valiosa que una formal. Sin embargo, no pierdas de vista que en las mentorías profesionales, la relación que establecemos, debe mantenerse profesional, &lt;strong&gt;los ingenieros no somos psicólogos&lt;/strong&gt;. Si lo consideras oportuno, puedes redirigirlos con un especialista.&lt;/li&gt;
-  &lt;li&gt;Compartir tu experiencia en procesos de entrevista es importante; &lt;strong&gt;lo que hayas atravesado puede acelerar el proceso de alguien más&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Es muy importante brindar y solicitar &lt;strong&gt;retroalimentación&lt;/strong&gt; constantemente. Todos estamos en continuo crecimiento como profesionales, intercambia información sobre tus y sus áreas de oportunidad.&lt;/li&gt;
-  &lt;li&gt;Comparte tus fuentes de conocimiento, libros, publicaciones, podcasts, etc., cualquiera que pueda ser útil, pero recuerda que no debes compartirlo como tarea a completar; si la persona que estas mentoreando tienen la oportunidad, puede usar esos recursos.&lt;/li&gt;
-  &lt;li&gt;Hemos sido testigos de cómo en el área de tecnología las oportunidades se multiplican cuando somos capaces de dominar otro idioma, usualmente es el inglés el que nos abre esas puertas. Si tu ya te eres capaz de manejar este idioma y la persona que estas mentoreando no, o aún tiene sus dudas, hacer las sesiones de mentoría en inglés puede ser muy útil.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Podría enumerar más cosas aquí. Pero preferí limitarlo a estos puntos porque, al final, somos personas diferentes, y no hay una receta mágica para ser un &lt;strong&gt;buen mentor&lt;/strong&gt;. Solo puedo decirte que si quieres intentarlo, hazlo y hazlo teniendo en mente que estamos en crecimiento constante como profesionales.&lt;/p&gt;
-
-&lt;h3 id=&quot;cuál-fue-mi-crecimiento-profesional-durante-esta-experiencia&quot;&gt;¿Cuál fue mi crecimiento profesional durante esta experiencia?&lt;/h3&gt;
-
-&lt;p&gt;Identificó lo siguiente.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Aumento en mi confianza.&lt;/li&gt;
-  &lt;li&gt;Oportunidad de repasar conocimientos.&lt;/li&gt;
-  &lt;li&gt;Práctica en proceso de entrevista.&lt;/li&gt;
-  &lt;li&gt;Mejoras en mi comunicación.&lt;/li&gt;
-  &lt;li&gt;Aprendí de otras áreas.&lt;/li&gt;
-  &lt;li&gt;Aumenté mis contactos en el área.&lt;/li&gt;
-  &lt;li&gt;Experimenté sentimientos agradables (diversión, felicidad, me sentí orgullosa de ellas)&lt;/li&gt;
-  &lt;li&gt;Aumento en mi disciplina.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Por último, pero no menos importante. Quiero agradecer a las personas de las que fui mentora, por todo lo que me enseñaron durante este tiempo; hoy, gracias a ustedes, soy mejor Ingeniera Senior que ayer.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional," /><category term="comunidad," /><category term="mentor" /><summary type="html">¿Has tenido la inquietud de apoyar a una persona en su crecimiento profesional? Te comparto mi experiencia intentandolo.</summary></entry></feed>
+&lt;p&gt;SHA-3 o Keccak es una función más fuerte, sin vulnerabilidades conocidas, estandarizada y lista para ser usada como reemplazo de SHA-2 en cualquier lado sin grandes cambios. No hay pretexto para no usarla si existe una buena implementación en tu lenguaje.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografia" /><category term="crypto" /><category term="hash" /><category term="keccak" /><summary type="html">¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.</summary></entry></feed>

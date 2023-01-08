@@ -568,4 +568,10 @@ var store = [{
         "tags": ["claridad","código-claro","pláticas"],
         "url": "/2022/12/30/claridad-en-el-codigo.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1672204121/ivan-bandura-8VePVILfCKU-unsplash_bhsnsa.jpg"
+      },{
+        "title": "Ejercicio: programando un perceptrón con Python",
+        "excerpt":"En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos. Si no tienes claro lo que es un perceptrón, puedes leer nuestro artículo anterior. Ahí también explicamos las bases de funcionamiento. En...","categories": [],
+        "tags": ["machine-learning","ia","inteligencia-artificial"],
+        "url": "/2023/01/07/ejercicio-programando-un-perceptron.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_600,w_300/v1673056123/DALL_E_2023-01-06_19.47.48_-_Perceptron_artistic_digital_paint_high_quality_detailed_wpoohz.png"
       }]

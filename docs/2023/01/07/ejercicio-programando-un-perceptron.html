@@ -1,0 +1,1042 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Ejercicio: programando un perceptrón con Python - The Dojo MX Blog</title>
+<meta name="description" content="Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Ejercicio: programando un perceptrón con Python">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html">
+
+
+  <meta property="og:description" content="Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_600,w_1200/v1673056123/DALL_E_2023-01-06_19.47.48_-_Perceptron_artistic_digital_paint_high_quality_detailed_wpoohz.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-01-07T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html",
+      "name": "Ejercicio: programando un perceptrón con Python",
+      "headline": "Ejercicio: programando un perceptrón con Python",
+      "keywords": "machine-learning,ia,inteligencia-artificial",
+      "description": "Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.",
+      "articleBody": "En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos.\n\nSi no tienes claro lo que es un perceptrón, puedes leer nuestro artículo anterior. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar de la manera más sencilla posible.\n\nEl conjunto de datos\n\nRecuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo aprenda de estos datos.\n\nLos datos que un perceptrón puede clasificar deben poder ser separados en mínimo dos clases por alguna característica, ya que si representáramos al perceptrón como una función, es un línea recta en un plano de dos variables (o su equivalente dependiendo del espacio y sus dimensiones, lo que en para más de tres dimensiones llamamos un hiperespacio matemáticamente).\n\nNo es necesario que los datos sólo puedan estar divididos en dos clases, por ejemplo, imagínate un conjunto de datos que representa los dígitos escritos a mano, del 0 al 9 (este es conocido como el MNIST dataset). Cada dígito es una clase, pero un perceptrón nos puede servir para clasificar un solo número, por ejemplo, el 5. El perceptrón serviría para clasificar si un dígito es un 5 o no, lo importante es que el conjunto de datos que representa el 5 sea más o menos separable de los demás dígitos.\n\nCon esto te puedes empezar a dar cuenta de que el perceptrón es el bloque de construcción más básico de las redes neuronales. Por ejemplo, ¿cómo haríamos para clasificar todos los números del conjunto del que hablamos arriba? Necesitamos un perceptrón por cada número, y tomamos el que más confianza nos devuelva.\n\nAhora sí veamos qué dataset usaremos nosotros. Ejemplos usando el MNIST o el Iris encontrarás en muchos lados, así que vamos a escoger uno diferente.\nEste es una alternativa a Iris y se conoce como el Penguin dataset.\n\nEl conjunto de datos de los pingüinos tiene 344 registros etiquetados, cada uno con máximo 6 características (a parte de la etiqueta). Tiene 3 etiquetas diferentes: Adelie, Chinstrap y Gentoo. Las columnas del dataset son:\n\n\n  species: especie del pingüino, esta es la clase o etiqueta\n  island: isla donde fue visto el pingüino, tiene 3 valores diferentes: Dream, Torgersen, or Biscoe\n  bill_lenth_mm: longitud de la pico del pingüino\n  bill_depth_mm: profundidad de la pico del pingüino\n  flipper_length_mm: longitud de la aleta del pingüino\n  body_mass_g: masa del cuerpo del pingüino\n  sex: sexo del pingüino\n\n\nTenemos que explorar los datos brevemente para ver qué variables podemos usar para separar. Como este no es el objetivo de este artículo vamos a ver una imagen en la que comparan por pares las variables y seleccionemos las que nos ayuden a separar mejor las clases. Vamos a hacerlo sólamente con dos variables para que el código nos quede más sencillo y se comprenda la idea principal.\n\nLa siguiente imagen es una gráfica de dos variables: la anchura del pico (bill_depth_mm) y el largo de su aleta (flipper_length_mm). Observa qué bien separa a la clase Gentoo de las otras dos.\n\n\n\nNota: para el entrenamiento de una rede neuronal se hace una exploración mucho más profunda de los datos, pero para este ejemplo no es necesario.\n\nRepaso del funcionamiento básico\n\nEl perceptrón es un algoritmo de aprendizaje supervisado, por lo que necesita datos etiquetados, es decir, las características junto con su clase. El trabajo del perceptrón es encontrar los parámetros para una función matemática que defina la frontera de separación entre las clases.\n\nEsta función matemática es una línea recta en un plano de dos dimensiones, o un plano en un espacio de tres dimensiones, o un hiperplano en un espacio de más de tres dimensiones. Puedes pensar en todos estos términos matemáticos como el equivalente a una linea recta en cualquier espacio.\n\nEl algoritmo\n\nEl perceptron es busca ajustar una función lineal que separa las clases. En este caso separaremos “Gentoo” de “no es un Gentoo”. El algoritmos nos dirá “1” si es un Gentoo y “0” si no lo es. Una función lieneal tiene la forma:\n\ny = w1 * x1 + w2 * x2 + b\n\n\nCon un término wn * xn para cada variable de entrada, y un término b para el sesgo. El perceptrón ajusta los valores de w1, w2, y b para que la función lineal se ajuste a los datos.\n\nPodemos empezar combinando las dos variables que elegimos de la siguiente manera:\n\ny = w1 * penguins['bill_depth_mm'] + w2 * penguins['flipper_length_mm'] + b\n\n\nNota: En este ejemplo no usaremos numpy o pandas, para hacer la programación lo más tradicional posible. Más adelante nos empezaremos a meter en numpy, pandas y esas cosas que parecen magia negra.\n\nEsto nos dará un número que tenemos que convertir en un 1 o un 0. Usemos una función sencilla. Todos lo números negativos los convertimos en un 0 y todos los positivos y el 0 en un 1. Esto se puede programar sencillo. Vamos a llamar a esta función paso:\n\ndef paso(x):\n    if x &lt; 0:\n        return 0\n    else:\n        return 1\n\n\nAhora podemos usar esta función para convertir la salida de la función lineal en un 1 o un 0:\n\ndef clasificar(x, w1, w2, b):\n    \"\"\"Recibe una fila de datos y devuelve 1 si es Gentoo y 0 si no lo es\"\"\"\n    return paso(w1 * x[\"bill_depth_mm\"] + w2 * x[\"flipper_length_mm\"] + b)\n\n\nNuestra función de clasificación ya está lista. Pero el trabajo del perceptrón es encontrar los valores de los parámetros: w1, w2, y b. Creemos el algoritmo que define estos valores, que llamaremos entrenar. Esta función aprende a base de prueba y error. Para aprender hace lo siguiente:\n\n\n  Clasifica cada dato de entrenamiento\n  Verifica si la etiqueta es correcta (para esto necesitamos las etiquetas de los datos de entrenamiento)\n  Ajusta sus parámetros: cambiar los valores de w1, w2, y b para que la función lineal se ajuste a los datos.\n  Repite el proceso\n\n\nEste proceso puede terminar por dos razones:\n\n\n  Se alcanza un número máximo de iteraciones\n  Se alcanza un resultado satisfactorio (ej. el número de elementos mal clasificados es menor a un umbral)\n\n\nPara hacerlo sencillo vamos a hacer que el algoritmo se ejecute un número fijo de veces:\n\n\ndef entrenar(datos, iteraciones):\n    # inicializamos los parámetros, esto puede ser aleatorio o cero, como lo hacemos aquí\n    w1 = w2 = b = 0\n    while iteraciones &gt; 0:\n        iteraciones -= 1\n        for x in datos:\n            etiqueta_real = int(x[\"species\"] == \"Gentoo\")\n            clase = clasificar(x, w1, w2, b)\n\n            if etiqueta_real == 1 and clase == 0:\n                # Aquí tenemos un Gentoo mal clasificado, tenemos que\n                # aumentar w1 y w2 para que la función lineal se acerque\n                # a la etiqueta real\n                w1 += x[\"bill_depth_mm\"]\n                w2 += x[\"flipper_length_mm\"]\n                b += 1  # Valor escogido arbitrariamente\n            elif etiqueta_real == 0 and clase == 1:\n                # Aquí tenemos un NO Gentoo mal clasificado, tenemos que\n                # disminuir w1 y w2 para que la función lineal se acerque\n                # a la etiqueta real\n                w1 -= x[\"bill_depth_mm\"]\n                w2 -= x[\"flipper_length_mm\"]\n                b -= 1  # valor escogido arbitrariamente\n        print(\"Iteración\", iteraciones, \"w1:\", w1, \"w2:\", w2, \"b:\", b)\n    return w1, w2, b\n\n\nPodríamos decir que esto es básicamente todo el algoritmo del perceptrón. Ahora podemos entrenar nuestro perceptrón con los datos de entrenamiento. Antes le hacemos unas cuantas modificaciones para que sea más fácil de usar:\n\n# cargar el archivo CSV con los datos de entrenamiento como diccionario, el archivo está en la carpeta data, un nivel arriba\nwith open(\"../data/penguins.csv\") as csvfile:\n    data = list(csv.DictReader(csvfile))\n\n# Limpiando los los datos, eliminando los que no tienen bill_depth_mm o flipper_length_mm\ndata = [\n    row\n    for row in data\n    if row[\"bill_depth_mm\"] != \"NA\" and row[\"flipper_length_mm\"] != \"NA\"\n]\n\nfor row in data:\n    row[\"bill_depth_mm\"] = float(row[\"bill_depth_mm\"])\n    row[\"flipper_length_mm\"] = float(row[\"flipper_length_mm\"])\n\n\n\nEstos datos ya está listos para para ser usados. Ahora podemos entrenar el perceptrón:\n\n# Escogemos las iteraciones arbitrariamente\nw1, w2, b = entrenar(data, 100)\n\n\nLo podemos probar con los mismos datos de entrenamiento:\n\ndef probar(data, w1, w2, b):\n    correctos = 0\n    incorrectos = 0\n    for x in data:\n        clase = clasificar(x, w1, w2, b)\n        etiqueta_real = int(x[\"species\"] == \"Gentoo\")\n\n        if clase == etiqueta_real:\n            correctos += 1\n        else:\n            incorrectos += 1\n\n      print(\"\\n\\nResultados:\")\n      print(f\"Correctos: {correctos} - {(correctos / len(data)) * 100}%\")\n      print(f\"Incorrectos: {incorrectos} - {(incorrectos / len(data)) * 100}%\")\nprobar(data, w1, w2, b)\n\n\nY el resultado es:\n\nResultados:\nCorrectos: 219 - 64.03508771929825%\nIncorrectos: 123 - 35.96491228070175%\n\n\nParece que nuestro perceptrón no logró ni siquiera aprender bien con los datos de entrenamiento. ¿Qué pasa si aumentamos las iteraciones, digamos a 1000?\n\nw1, w2, b = entrenar(data, 1000)\nprobar(data, w1, w2, b)\n\n\nEl resultado es:\n\nResultados:\nCorrectos: 342 - 100%\nIncorrectos: 0 - 0.0%\n\n\nParece que con las suficientes iteraciones el perceptrón logra aprender a clasificar perfectamente los datos de entrenamiento. Tip: siempre debes dudar de un algoritmo de inteligencia artificial que clasifique perfectamente, eso puede indicar que se sobreajustó a los datos de entrenamiento y cuando encuentre datos no vistos, fallará.\n\nPara evitarlo, necesitamos probarlo con datos que no ha visto antes. Para esto vamos a dividir los datos en dos grupos, uno para entrenamiento y otro para pruebas:\n\n# Dividir los datos en dos grupos, uno para entrenamiento y otro para pruebas\nimport random\nrandom.shuffle(data)\nentrenamiento = data[:int(len(data) * 0.8)]\npruebas = data[int(len(data) * 0.8):]\n\nw1, w2, b = entrenar(entrenamiento, 1000)\nprobar(pruebas, w1, w2, b)\n\n\n\nEl resultado es:\n\nResultados:\nCorrectos: 69 - 100.0%\nIncorrectos: 0 - 0.0%\n\n\nY como vemos, sigue funcionando bien con este dataset sencillo. Esta es le estructura básica de un perceptrón, pero en realidad le faltan muchas partes para que funcione de manera general sin gastar demasiado tiempo de cómputo. Por ejemplo, en este código simplemente sumamos o restamos el valor de las variables a w1 y w2. Estos saltos pueden ser muy bruscos y hacernos saltar fácilmente el valor que necesitamos. Para evitar esto, se usa otro parámetro para la función de entrenamiento llamado “ritmo de aprendizaje” (learning rate - lr).\n\nVamos a incluirlo en nuestro código:\n\n\ndef entrenar(datos, iteraciones, lr=0.01):\n    # inicializamos los parámetros, esto puede ser aleatorio o cero, como lo hacemos aquí\n    w1 = w2 = b = 0\n    while iteraciones &gt; 0:\n        iteraciones -= 1\n        for x in datos:\n            etiqueta_real = int(x[\"species\"] == \"Gentoo\")\n            clase = clasificar(x, w1, w2, b)\n\n            ## Esta es la revisión de \"la verdad\", más adelante la explicamos en la sección \"función de pérdida\"\n            if etiqueta_real == 1 and clase == 0:\n                # Aquí tenemos un Gentoo mal clasificado, tenemos que\n                # aumentar w1 y w2 para que la función lineal se acerque\n                # a la etiqueta real\n                w1 += x[\"bill_depth_mm\"] * lr\n                w2 += x[\"flipper_length_mm\"] * lr\n                b += 1 * lr  # Valor escogido arbitrariamente\n            elif etiqueta_real == 0 and clase == 1:\n                # Aquí tenemos un NO Gentoo mal clasificado, tenemos que\n                # disminuir w1 y w2 para que la función lineal se acerque\n                # a la etiqueta real\n                w1 -= x[\"bill_depth_mm\"] * lr\n                w2 -= x[\"flipper_length_mm\"] * lr\n                b -= 1 * lr  # valor escogido arbitrariamente\n        print(\"Iteración\", iteraciones, \"w1:\", w1, \"w2:\", w2, \"b:\", b)\n    return w1, w2, b\n\n\nY ahora vamos a probarlo de nuevo con 100 iteraciones y el lr default:\n\nw1, w2, b = entrenar(entrenamiento, 100)\nprobar(pruebas, w1, w2, b)\n\n\nEn esta versión podemos ver que con muchas menos iteraciones el perceptrón logra clasificar correctamente los datos de prueba. El resultado es:\n\nResultados:\nCorrectos: 69 - 100.0%\nIncorrectos: 0 - 0.0%\n\n\nFunción de pérdida\n\nEl último detalle de nuestro perceptrón es la forma en la que revisa si se está acercando a “la verdad”. En este perceptrón simplemente verificamos si la etiqueta está equivocada y elegimos si “acercar” o “alejar” la línea del punto en cuestión.\n\nEsta es una forma no tradicional de hacerlo, pero con lo que te debes quedar es que debe existir una función que te diga qué tan equivocado estás y que te ayude a acercarte a la verdad. Esta función se llama “función de pérdida” (loss function). En las siguientes versiones del perceptrón vamos a incluir una función de pérdida más sofisticada, “de verdad”.\n\nRepaso\n\nEn este artículo vimos todas las partes que un perceptrón, la unidad de construcción más básica de una red neuronal. Un perceptrón tiene:\n\n\n  \n    Una función de predicción. Es la que llamamos clasificar y nos dice si un punto de datos pertenece a una clase o no.\n  \n  \n    Una función de entrenamiento. Es la que llamamos entrenar y nos ayuda a ajustar los parámetros que le vamos a pasar a la función de predicción para que nos de un resultado correcto.\n  \n  \n    Una función de pérdida. Es la parte en la función entrenar que nos dice si estamos cerca o lejos de “la verdad”. Esta función es la que vamos a mejorar en las siguientes versiones del perceptrón.\n  \n  \n    Una función de activación. Esta es la que llamamos paso y nos ayuda a transformar la salida de la función matemática pura que representa una línea en la salida final de nuestro perceptrón. En nuestro caso necesitábamos 0 o 1.\n  \n\n\nConclusión\n\nEste perceptrón funciona, pero no es muy flexible, no se puede usar con otros conjuntos de datos y además con un conjunto de datos más complejo y menos separable probablemente no podría encontrar los parámetros correctos, sin embargo, sigue la arquitectura básica de un perceptrón, que era el punto de este artículo.\n\nEn un siguiente artículo vamos a integrar herramientas matemáticas más poderosas, y vamos a empezar a ver qué tiene qué ver el álgebra lineal con la inteligencia artificial.\n\nPuedes ver el código completo en este repositorio.\n",
+      "datePublished": "2023-01-07 00:00:00 -0600",
+      "dateModified": "2023-01-07 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_600,w_1200/v1673056123/DALL_E_2023-01-06_19.47.48_-_Perceptron_artistic_digital_paint_high_quality_detailed_wpoohz.png"
+      }
+    }
+</script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_crop,h_600,w_1200/v1673056123/DALL_E_2023-01-06_19.47.48_-_Perceptron_artistic_digital_paint_high_quality_detailed_wpoohz.png');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Ejercicio: programando un perceptrón con Python
+
+        
+      </h1>
+      
+        <p class="page__lead">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        2267 palabras | 15 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Ejercicio: programando un perceptrón con Python">
+    <meta itemprop="description" content="Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.">
+    <meta itemprop="datePublished" content="2023-01-07T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos.</p>
+
+<p>Si no tienes claro lo que es un perceptrón, puedes leer nuestro <a href="/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html" target="_blank">artículo anterior</a>. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar de la manera más sencilla posible.</p>
+
+<h2 id="el-conjunto-de-datos">El conjunto de datos</h2>
+
+<p>Recuerda que para poder crear un algoritmo de machine learning necesitamos un conjunto de datos, ya que el punto es que este algoritmo <em>aprenda</em> de estos datos.</p>
+
+<p>Los datos que un perceptrón puede clasificar deben poder ser separados en mínimo dos clases por alguna característica, ya que si representáramos al perceptrón como una función, es un línea recta en un plano de dos variables (o su equivalente dependiendo del espacio y sus dimensiones, lo que en para más de tres dimensiones llamamos un <em>hiperespacio</em> matemáticamente).</p>
+
+<p>No es necesario que los datos <em>sólo</em> puedan estar divididos en dos clases, por ejemplo, imagínate un conjunto de datos que representa los dígitos escritos a mano, del 0 al 9 (este es conocido como el <a href="https://www.tensorflow.org/datasets/catalog/mnist">MNIST dataset</a>). Cada dígito es una clase, pero un perceptrón nos puede servir para clasificar un solo número, por ejemplo, el 5. El perceptrón serviría para clasificar si un dígito es un 5 o no, lo importante es que el conjunto de datos que representa el 5 sea más o menos separable de los demás dígitos.</p>
+
+<p>Con esto te puedes empezar a dar cuenta de que el perceptrón es el bloque de construcción más básico de las redes neuronales. Por ejemplo, ¿cómo haríamos para clasificar todos los números del conjunto del que hablamos arriba? Necesitamos un perceptrón por cada número, y tomamos el que más confianza nos devuelva.</p>
+
+<p>Ahora sí veamos qué dataset usaremos nosotros. Ejemplos usando el MNIST o el <a href="https://archive.ics.uci.edu/ml/datasets/iris">Iris</a> encontrarás en muchos lados, así que vamos a escoger uno diferente.
+Este es una alternativa a Iris y se conoce como el <a href="https://github.com/allisonhorst/palmerpenguins">Penguin dataset</a>.</p>
+
+<p>El conjunto de datos de los pingüinos tiene 344 registros etiquetados, cada uno con máximo 6 características (a parte de la etiqueta). Tiene 3 etiquetas diferentes: Adelie, Chinstrap y Gentoo. Las columnas del dataset son:</p>
+
+<ol>
+  <li>
+<strong>species</strong>: especie del pingüino, esta es la clase o etiqueta</li>
+  <li>
+<strong>island</strong>: isla donde fue visto el pingüino, tiene 3 valores diferentes: Dream, Torgersen, or Biscoe</li>
+  <li>
+<strong>bill_lenth_mm</strong>: longitud de la pico del pingüino</li>
+  <li>
+<strong>bill_depth_mm</strong>: profundidad de la pico del pingüino</li>
+  <li>
+<strong>flipper_length_mm</strong>: longitud de la aleta del pingüino</li>
+  <li>
+<strong>body_mass_g</strong>: masa del cuerpo del pingüino</li>
+  <li>
+<strong>sex</strong>: sexo del pingüino</li>
+</ol>
+
+<p>Tenemos que explorar los datos brevemente para ver qué variables podemos usar para separar. Como este no es el objetivo de este artículo vamos a ver una imagen en la que comparan por pares las variables y seleccionemos las que nos ayuden a separar mejor las clases. Vamos a hacerlo sólamente con dos variables para que el código nos quede más sencillo y se comprenda la idea principal.</p>
+
+<p>La siguiente imagen es una gráfica de dos variables: la anchura del pico (<strong>bill_depth_mm</strong>) y el largo de su aleta (<strong>flipper_length_mm</strong>). Observa qué bien separa a la clase Gentoo de las otras dos.</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/v1673111878/a1f1d1b7-d87c-478d-b67a-c344c802f4d6_spefvh.png" alt="Gráfica de dos variables" class="align-center"></p>
+
+<p><strong>Nota</strong>: para el entrenamiento de una rede neuronal se hace una exploración mucho más profunda de los datos, pero para este ejemplo no es necesario.</p>
+
+<h2 id="repaso-del-funcionamiento-básico">Repaso del funcionamiento básico</h2>
+
+<p>El perceptrón es un algoritmo de aprendizaje <strong>supervisado</strong>, por lo que necesita datos etiquetados, es decir, <em>las características junto con su clase</em>. El trabajo del perceptrón es encontrar los parámetros para una función matemática que defina la frontera de separación entre las clases.</p>
+
+<p>Esta función matemática es una línea recta en un plano de dos dimensiones, o un plano en un espacio de tres dimensiones, o un <strong>hiperplano</strong> en un espacio de más de tres dimensiones. Puedes pensar en todos estos términos matemáticos como el equivalente a una linea recta en cualquier espacio.</p>
+
+<h2 id="el-algoritmo">El algoritmo</h2>
+
+<p>El perceptron es busca ajustar una función lineal que separa las clases. En este caso separaremos “Gentoo” de “no es un Gentoo”. El algoritmos nos dirá “1” si es un Gentoo y “0” si no lo es. Una función lieneal tiene la forma:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="n">w1</span> <span class="o">*</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">w2</span> <span class="o">*</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p>Con un término <code class="language-plaintext highlighter-rouge">wn * xn</code> para cada variable de entrada, y un término <code class="language-plaintext highlighter-rouge">b</code> para el sesgo. El perceptrón ajusta los valores de <code class="language-plaintext highlighter-rouge">w1</code>, <code class="language-plaintext highlighter-rouge">w2</code>, y <code class="language-plaintext highlighter-rouge">b</code> para que la función lineal se ajuste a los datos.</p>
+
+<p>Podemos empezar combinando las dos variables que elegimos de la siguiente manera:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="n">w1</span> <span class="o">*</span> <span class="n">penguins</span><span class="p">[</span><span class="s">'bill_depth_mm'</span><span class="p">]</span> <span class="o">+</span> <span class="n">w2</span> <span class="o">*</span> <span class="n">penguins</span><span class="p">[</span><span class="s">'flipper_length_mm'</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p><strong>Nota</strong>: En este ejemplo no usaremos <code class="language-plaintext highlighter-rouge">numpy</code> o <code class="language-plaintext highlighter-rouge">pandas</code>, para hacer la programación lo más tradicional posible. Más adelante nos empezaremos a meter en <code class="language-plaintext highlighter-rouge">numpy</code>, <code class="language-plaintext highlighter-rouge">pandas</code> y esas cosas que parecen magia negra.</p>
+
+<p>Esto nos dará un número que tenemos que convertir en un 1 o un 0. Usemos una función sencilla. Todos lo números negativos los convertimos en un 0 y todos los positivos y el 0 en un 1. Esto se puede programar sencillo. Vamos a llamar a esta función <code class="language-plaintext highlighter-rouge">paso</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">paso</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>Ahora podemos usar esta función para convertir la salida de la función lineal en un 1 o un 0:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="s">"""Recibe una fila de datos y devuelve 1 si es Gentoo y 0 si no lo es"""</span>
+    <span class="k">return</span> <span class="n">paso</span><span class="p">(</span><span class="n">w1</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span> <span class="o">+</span> <span class="n">w2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Nuestra función de clasificación ya está lista. Pero el trabajo del perceptrón es encontrar los valores de <strong>los parámetros</strong>: <code class="language-plaintext highlighter-rouge">w1</code>, <code class="language-plaintext highlighter-rouge">w2</code>, y <code class="language-plaintext highlighter-rouge">b</code>. Creemos el algoritmo que define estos valores, que llamaremos <code class="language-plaintext highlighter-rouge">entrenar</code>. Esta función aprende a base de prueba y error. Para aprender hace lo siguiente:</p>
+
+<ol>
+  <li>Clasifica cada dato de entrenamiento</li>
+  <li>Verifica si la etiqueta es correcta (para esto necesitamos las etiquetas de los datos de entrenamiento)</li>
+  <li>Ajusta sus parámetros: cambiar los valores de <code class="language-plaintext highlighter-rouge">w1</code>, <code class="language-plaintext highlighter-rouge">w2</code>, y <code class="language-plaintext highlighter-rouge">b</code> para que la función lineal se ajuste a los datos.</li>
+  <li>Repite el proceso</li>
+</ol>
+
+<p>Este proceso puede terminar por dos razones:</p>
+
+<ol>
+  <li>Se alcanza un número máximo de iteraciones</li>
+  <li>Se alcanza un resultado satisfactorio (ej. el número de elementos mal clasificados es menor a un umbral)</li>
+</ol>
+
+<p>Para hacerlo sencillo vamos a hacer que el algoritmo se ejecute un número fijo de veces:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">entrenar</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">):</span>
+    <span class="c1"># inicializamos los parámetros, esto puede ser aleatorio o cero, como lo hacemos aquí
+</span>    <span class="n">w1</span> <span class="o">=</span> <span class="n">w2</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">iteraciones</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">iteraciones</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">datos</span><span class="p">:</span>
+            <span class="n">etiqueta_real</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Gentoo"</span><span class="p">)</span>
+            <span class="n">clase</span> <span class="o">=</span> <span class="n">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">etiqueta_real</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">clase</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># Aquí tenemos un Gentoo mal clasificado, tenemos que
+</span>                <span class="c1"># aumentar w1 y w2 para que la función lineal se acerque
+</span>                <span class="c1"># a la etiqueta real
+</span>                <span class="n">w1</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span>
+                <span class="n">w2</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span>
+                <span class="n">b</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Valor escogido arbitrariamente
+</span>            <span class="k">elif</span> <span class="n">etiqueta_real</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">clase</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># Aquí tenemos un NO Gentoo mal clasificado, tenemos que
+</span>                <span class="c1"># disminuir w1 y w2 para que la función lineal se acerque
+</span>                <span class="c1"># a la etiqueta real
+</span>                <span class="n">w1</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span>
+                <span class="n">w2</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span>
+                <span class="n">b</span> <span class="o">-=</span> <span class="mi">1</span>  <span class="c1"># valor escogido arbitrariamente
+</span>        <span class="k">print</span><span class="p">(</span><span class="s">"Iteración"</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">,</span> <span class="s">"w1:"</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="s">"w2:"</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="s">"b:"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p>Podríamos decir que esto es básicamente todo el algoritmo del perceptrón. Ahora podemos entrenar nuestro perceptrón con los datos de entrenamiento. Antes le hacemos unas cuantas modificaciones para que sea más fácil de usar:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cargar el archivo CSV con los datos de entrenamiento como diccionario, el archivo está en la carpeta data, un nivel arriba
+</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"../data/penguins.csv"</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv</span><span class="p">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">))</span>
+
+<span class="c1"># Limpiando los los datos, eliminando los que no tienen bill_depth_mm o flipper_length_mm
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">row</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span> <span class="o">!=</span> <span class="s">"NA"</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span> <span class="o">!=</span> <span class="s">"NA"</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">row</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">])</span>
+    <span class="n">row</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">])</span>
+
+</code></pre></div></div>
+
+<p>Estos datos ya está listos para para ser usados. Ahora podemos entrenar el perceptrón:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Escogemos las iteraciones arbitrariamente
+</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">entrenar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Lo podemos probar con los mismos datos de entrenamiento:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">probar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">correctos</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">incorrectos</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">clase</span> <span class="o">=</span> <span class="n">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        <span class="n">etiqueta_real</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Gentoo"</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">clase</span> <span class="o">==</span> <span class="n">etiqueta_real</span><span class="p">:</span>
+            <span class="n">correctos</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">incorrectos</span> <span class="o">+=</span> <span class="mi">1</span>
+
+      <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n</span><span class="s">Resultados:"</span><span class="p">)</span>
+      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Correctos: </span><span class="si">{</span><span class="n">correctos</span><span class="si">}</span><span class="s"> - </span><span class="si">{</span><span class="p">(</span><span class="n">correctos</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="si">}</span><span class="s">%"</span><span class="p">)</span>
+      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Incorrectos: </span><span class="si">{</span><span class="n">incorrectos</span><span class="si">}</span><span class="s"> - </span><span class="si">{</span><span class="p">(</span><span class="n">incorrectos</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="si">}</span><span class="s">%"</span><span class="p">)</span>
+<span class="n">probar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Y el resultado es:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Resultados:
+Correctos: 219 - 64.03508771929825%
+Incorrectos: 123 - 35.96491228070175%
+</code></pre></div></div>
+
+<p>Parece que nuestro perceptrón no logró ni siquiera aprender bien con los datos de entrenamiento. ¿Qué pasa si aumentamos las iteraciones, digamos a 1000?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">entrenar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">probar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>El resultado es:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Resultados:
+Correctos: 342 - 100%
+Incorrectos: 0 - 0.0%
+</code></pre></div></div>
+
+<p>Parece que con las suficientes iteraciones el perceptrón logra aprender a clasificar perfectamente los datos de entrenamiento. <strong>Tip</strong>: siempre debes dudar de un algoritmo de inteligencia artificial que clasifique perfectamente, eso puede indicar que se sobreajustó a los datos de entrenamiento y cuando encuentre datos no vistos, fallará.</p>
+
+<p>Para evitarlo, necesitamos probarlo con datos que no ha visto antes. Para esto vamos a dividir los datos en dos grupos, uno para entrenamiento y otro para pruebas:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Dividir los datos en dos grupos, uno para entrenamiento y otro para pruebas
+</span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">entrenamiento</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)]</span>
+<span class="n">pruebas</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">):]</span>
+
+<span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">entrenar</span><span class="p">(</span><span class="n">entrenamiento</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">probar</span><span class="p">(</span><span class="n">pruebas</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>El resultado es:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Resultados:
+Correctos: 69 - 100.0%
+Incorrectos: 0 - 0.0%
+</code></pre></div></div>
+
+<p>Y como vemos, sigue funcionando bien con este dataset sencillo. Esta es le estructura básica de un perceptrón, pero en realidad le faltan muchas partes para que funcione de manera general sin gastar demasiado tiempo de cómputo. Por ejemplo, en este código simplemente sumamos o restamos el valor de las variables a w1 y w2. Estos saltos pueden ser muy bruscos y hacernos saltar fácilmente el valor que necesitamos. Para evitar esto, se usa otro parámetro para la función de entrenamiento llamado “ritmo de aprendizaje” (learning rate - lr).</p>
+
+<p>Vamos a incluirlo en nuestro código:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">entrenar</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+    <span class="c1"># inicializamos los parámetros, esto puede ser aleatorio o cero, como lo hacemos aquí
+</span>    <span class="n">w1</span> <span class="o">=</span> <span class="n">w2</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">iteraciones</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">iteraciones</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">datos</span><span class="p">:</span>
+            <span class="n">etiqueta_real</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Gentoo"</span><span class="p">)</span>
+            <span class="n">clase</span> <span class="o">=</span> <span class="n">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+            <span class="c1">## Esta es la revisión de "la verdad", más adelante la explicamos en la sección "función de pérdida"
+</span>            <span class="k">if</span> <span class="n">etiqueta_real</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">clase</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># Aquí tenemos un Gentoo mal clasificado, tenemos que
+</span>                <span class="c1"># aumentar w1 y w2 para que la función lineal se acerque
+</span>                <span class="c1"># a la etiqueta real
+</span>                <span class="n">w1</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
+                <span class="n">w2</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
+                <span class="n">b</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">lr</span>  <span class="c1"># Valor escogido arbitrariamente
+</span>            <span class="k">elif</span> <span class="n">etiqueta_real</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">clase</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># Aquí tenemos un NO Gentoo mal clasificado, tenemos que
+</span>                <span class="c1"># disminuir w1 y w2 para que la función lineal se acerque
+</span>                <span class="c1"># a la etiqueta real
+</span>                <span class="n">w1</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
+                <span class="n">w2</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
+                <span class="n">b</span> <span class="o">-=</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">lr</span>  <span class="c1"># valor escogido arbitrariamente
+</span>        <span class="k">print</span><span class="p">(</span><span class="s">"Iteración"</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">,</span> <span class="s">"w1:"</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="s">"w2:"</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="s">"b:"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p>Y ahora vamos a probarlo de nuevo con 100 iteraciones y el lr default:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">entrenar</span><span class="p">(</span><span class="n">entrenamiento</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">probar</span><span class="p">(</span><span class="n">pruebas</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>En esta versión podemos ver que con muchas menos iteraciones el perceptrón logra clasificar correctamente los datos de prueba. El resultado es:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Resultados:
+Correctos: 69 - 100.0%
+Incorrectos: 0 - 0.0%
+</code></pre></div></div>
+
+<h2 id="función-de-pérdida">Función de pérdida</h2>
+
+<p>El último detalle de nuestro perceptrón es la forma en la que revisa si se está acercando a “la verdad”. En este perceptrón simplemente verificamos si la etiqueta está equivocada y elegimos si “acercar” o “alejar” la línea del punto en cuestión.</p>
+
+<p>Esta es una forma no tradicional de hacerlo, pero con lo que te debes quedar es que debe existir una función que te diga qué tan equivocado estás y que te ayude a acercarte a la verdad. Esta función se llama “función de pérdida” (loss function). En las siguientes versiones del perceptrón vamos a incluir una función de pérdida más sofisticada, “de verdad”.</p>
+
+<h2 id="repaso">Repaso</h2>
+
+<p>En este artículo vimos todas las partes que un perceptrón, la unidad de construcción más básica de una red neuronal. Un perceptrón tiene:</p>
+
+<ol>
+  <li>
+    <p>Una función de predicción. Es la que llamamos <code class="language-plaintext highlighter-rouge">clasificar</code> y nos dice si un punto de datos pertenece a una clase o no.</p>
+  </li>
+  <li>
+    <p>Una función de entrenamiento. Es la que llamamos <code class="language-plaintext highlighter-rouge">entrenar</code> y nos ayuda a ajustar los parámetros que le vamos a pasar a la función de predicción para que nos de un resultado correcto.</p>
+  </li>
+  <li>
+    <p>Una función de pérdida. Es la parte en la función <code class="language-plaintext highlighter-rouge">entrenar</code> que nos dice si estamos cerca o lejos de “la verdad”. Esta función es la que vamos a mejorar en las siguientes versiones del perceptrón.</p>
+  </li>
+  <li>
+    <p>Una función de activación. Esta es la que llamamos <code class="language-plaintext highlighter-rouge">paso</code> y nos ayuda a transformar la salida de la función matemática pura que representa una línea en la salida final de nuestro perceptrón. En nuestro caso necesitábamos 0 o 1.</p>
+  </li>
+</ol>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Este perceptrón funciona, pero no es muy flexible, no se puede usar con otros conjuntos de datos y además con un conjunto de datos más complejo y menos separable probablemente no podría encontrar los parámetros correctos, sin embargo, sigue la arquitectura básica de un perceptrón, que era el punto de este artículo.</p>
+
+<p>En un siguiente artículo vamos a integrar herramientas matemáticas más poderosas, y vamos a empezar a ver qué tiene qué ver el álgebra lineal con la inteligencia artificial.</p>
+
+<p>Puedes ver el código completo en este <a href="https://github.com/hectorip/penguins_perceptron">repositorio</a>.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ia" class="page__taxonomy-item" rel="tag">ia</a><span class="sep">, </span>
+    
+      <a href="/tags/#inteligencia-artificial" class="page__taxonomy-item" rel="tag">inteligencia-artificial</a><span class="sep">, </span>
+    
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine-learning</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-01-07T00:00:00-06:00">January 7, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Ejercicio%3A+programando+un+perceptr%C3%B3n+con+Python%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F01%2F07%2Fejercicio-programando-un-perceptron.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F01%2F07%2Fejercicio-programando-un-perceptron.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F01%2F07%2Fejercicio-programando-un-perceptron.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2022/12/30/claridad-en-el-codigo.html" class="pagination--pager" title="Claridad de  Saša Jurić
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1672204121/ivan-bandura-8VePVILfCKU-unsplash_bhsnsa.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/30/claridad-en-el-codigo.html" rel="permalink">Claridad de  Saša Jurić
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Todos quisiéramos tener bases de código perfectas, fáciles de mantener y totalmente claras. Esto es casi imposible, pero podemos acercarnos. Vemos cómo.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_lfill,h_450,w_1200/v1671858924/ryan-baker-VgROGebCi80-unsplash_p2jzj3.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/26/explicaciones-elocuentes.html" rel="permalink">Explicaciones elocuentes
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 26-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Comunicar claramente y de manera efectiva es una de las tareas más importantes de los desarrolladores. Hablemos de las técnicas que puedes seguir para mejora...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_fill,g_north,h_150,q_59,w_300,x_100,y_100/v1661094369/DALL_E_2022-08-12_11.14.36_-_dangerous_green_and_black_python_ready_to_byte_digital_art_bgspv1.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/24/creando-codigo-de-python-robusto.html" rel="permalink">Creando código de Python robusto, Parte 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 24-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Normalmente no basta con saber lo básico de un lenguaje para hacer código que sea fácil de mantener y seguro. Hablemos de algunas maneras de hacer código rob...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1671514771/jj-ying-8bghKxNU1j0-unsplash_knucbs.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/22/tomando-notas-efectivamente-zettelkasten.html" rel="permalink">Tomando notas efectivamente: Zettelkasten
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 22-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos de la importancia de tener un sistema efectivo para tomar notas, usado por académicos y científicos para ser productivos.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/01/07/ejercicio-programando-un-perceptron"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
