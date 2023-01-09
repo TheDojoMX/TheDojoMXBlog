@@ -11,8 +11,6 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-De los algoritmos de cifrado que hemos hablado hasta ahora.
-
 Con la criptografía simétrica no nos enfrentamos a ciertos problemas que criptografía de llave pública sí tenemos en cada escenario, por ejemplo, coordinar y escoger una llave segura para comunicaciones privadas sin conocer al previamente a la contraparte.
 
 En post futuros vamos a ahondar en detalles de algoritmos como Diffie-Hellman, RSA, ECDSA, etc, pero ahora centrémonos en la teoría computacional que soporta todos estos algoritmos.

@@ -1,6 +1,6 @@
 ---
 title: "Ejercicio: programando un perceptrón con Python"
-date: 07-01-2023
+date: 2023-01-07
 author: Héctor Patricio
 tags: machine-learning ia inteligencia-artificial
 comments: true

@@ -13,7 +13,7 @@ header:
 
 Cuando se habla de **matemáticas** muchas personas prefieren cambiar de tema.
 
-Pero las matemáticas son la base de muchas otras ciencias incluída la computación. Podríamos considerar las ciencias de la computación como **una rama de las matemáticas**, pero que ha evolucionado todavía más allá de ellas.
+Pero las matemáticas son la base de muchas otras ciencias incluida la computación. Podríamos considerar las ciencias de la computación como **una rama de las matemáticas**, pero que ha evolucionado todavía más allá de ellas.
 
 Para programar con eficacia no necesitas saber muchas matemáticas, con el entendimiento básico es suficiente. En este artículo hablaremos de aquello que debes dominar.
 
@@ -21,35 +21,35 @@ Si ya programas, ya _usas_ matemáticas. Saber más te ayudará a programar mejo
 
 ## ¿Qué son las matemáticas?
 
-Definir las matemáticas es difícil. Según lo que (de manera muy irresponsable) nos han enseñado en la escuela, las matemáticas es el tratamiento de los **números**. Eso está muy lejos de la realidad, y ya te habrás dado cuenta si has avanzado lo suficiente en matemáticas.
+**Definir las matemáticas es difícil.** Según lo que (de manera _muy irresponsable_) nos han enseñado en la escuela, las matemáticas son el tratamiento de los **números**. Eso está muy lejos de la realidad, y ya te habrás dado cuenta si has avanzado lo suficiente en esta área del conocimiento.
 
 Es cierto, las matemáticas más elementales se pueden reducir a números, pero no es su centro, el espíritu de su estudio.
 
 Algunas definiciones que encontré útiles:
 
-> Las matemáticas son la manera que tenemos de elevar a la categoría de un arte nuestros **esfuerzos cognoscitivos**. - Fausto Ongay
+> Las matemáticas son la manera que tenemos de elevar a la categoría de un arte nuestros **esfuerzos cognoscitivos**. - **Fausto Ongay**
 
-Ongay también menciona que la etimología de la palabra matemáticas tiene que ver con conocer o saber. Así, en cierta medida las matemáticas se pueden pensar como la ciencia o el arte **de la certidumbre**. Es decir, de saber algo con certeza y poder verificarlo.
+Ongay también menciona que la etimología de la palabra matemáticas tiene que ver con **conocer o saber**. Así, en cierta medida las matemáticas se pueden pensar como la ciencia **de la certidumbre**. Es decir, de saber algo con certeza y poder verificarlo.
 
-> La matemática, como una expresión de la mente humana, refleja la voluntad activa, la razón contemplativa, y el deseo de la perfección. Sus elementos básicos son: lógica e intuición, análisis y construcción, generalidad y particularidad. - Richard Courant
+> La matemática, como una expresión de la mente humana, refleja la voluntad activa, la razón contemplativa, y el deseo de la perfección. Sus elementos básicos son: lógica e intuición, análisis y construcción, generalidad y particularidad. - **Richard Courant**
 
 En esta definición más abstracta se mencionan los elementos usados para lograr su cometido: lógica, intuición, análisis, construcción (o síntesis), generalidad (inducción), particularidad (deducción). Ya hablamos un poco de esto en los artículos acerca de las idea de [George Polya](http://bit.ly/39madQm).
 
 Si quieres adentrarte en esto el libro [**¿Qué son las matemáticas?**](http://bit.ly/2F4Dn8N) habla de ello a fondo.
 
-Pero no estamos aquí para filosofar acerca de las matemáticas. Lo único que quiero quede claro con esto es que las matemáticas no tienen que ver con sólo con **números**, sino con el *razonamiento*, *certidumbre* y resolución de problemas.
+Pero no estamos aquí para filosofar acerca de las matemáticas. Lo único que quiero quede claro con esto es que las matemáticas no tienen que ver con sólo con **números**, sino con el _razonamiento_, _certidumbre_ y resolución de problemas.
 
 ## Matemáticas Básicas
 
-Empecemos hablando brevemente de las matemáticas que debes conocer como programador y como ser humano.
+Empecemos hablando brevemente de las matemáticas que debes conocer como programador y como ser humano funcional.
 
 ### Operaciones básicas
 
 Saber operar con números en la vida cotidiana es una habilidad que todos necesitamos. Pero más importante aún es entender el significado de estas operaciones:
 
-- ¿Qué significa una multiplicación?
-- ¿Qué significa una división?
-- ¿Qué significado tiene el elevar un número a una potencia?
+- ¿Qué significa **una multiplicación**?
+- ¿Qué significa **una división**?
+- ¿Qué significado tiene el **elevar un número a una potencia**?
 
 Entender esto te ayudará a **resolver problemas** que es la actividad principal que se realiza cuando programas. Todo lo demás está alrededor de esto.
 
@@ -57,13 +57,13 @@ Entender esto te ayudará a **resolver problemas** que es la actividad principal
 
 Tener las nociones de estas áreas es una de las herramientas más útiles a la hora de resolver problemas y sobre todo atacarlos prácticamente. Varias de las áreas de la ciencia de la computación basan sus resultados y procesos en estas dos áreas.
 
-Un ejemplo es la **criptografía**: los algoritmos de cifrado como **AES** trabajan con una llave que es usada para cifrar y descifrar el mensaje. Asignar el tamaño de la llave depende totalmente de la _probabilidad_ de que un atacante sea capaz de adivinar la llave en un número de intentos razonable. 
+Un ejemplo es la **criptografía**: los algoritmos de cifrado como **AES** trabajan con una llave que es usada para cifrar y descifrar el mensaje. Asignar el tamaño de la llave depende totalmente de la _probabilidad_ de que un atacante sea capaz de adivinar la llave en un número de intentos razonable.
 
 Ahora imagina que la llave tiene 128 bits de longitud. Aquí entra otro par de conceptos importantes para la computación.
 
 ### Combinaciones y permutaciones
 
-¿Cuál es el número de llaves diferentes que se pueden generar con 128 bits? La respuesta es: 2^128 (2 elevado a la potencia 128). *¿Cómo llegamos a esa respuesta?* Esto se conoce como **conteo** en matemáticas y las bases son la **permutación** y la **combinación** de elementos. En este caso es la permutación de 2 elementos que permiten repetición en 128 lugares.
+¿Cuál es el número de llaves diferentes que se pueden generar con 128 bits? La respuesta es: 2^128 (2 elevado a la potencia 128). _¿Cómo llegamos a esa respuesta?_ Esto se conoce como **conteo** en matemáticas y las bases son la **permutación** y la **combinación** de elementos. En este caso es la permutación de 2 elementos que permiten repetición en 128 lugares.
 
 ¿Qué probabilidad hay de que alguien encuentre esa llave por suerte en el primer intento?
 
@@ -79,9 +79,9 @@ Las matemáticas discretas son una de las áreas más abstractas de las matemát
 
 La **lógica** es uno de los campos de estudio de las matemáticas discretas. Se enfoca en estudiar **el razonamiento** y sobre todo _si el razonamiento es **correcto**_.
 
-Para lograr esto la lógica se vale del estudio de las **proposiciones** (o afirmaciones) y sus relaciones. Una proposición es un enunciado que dice algo que puede ser *verdadero* o *falso*. En matemáticas se dice que tiene un **valor de verdad**.
+Para lograr esto la lógica se vale del estudio de las **proposiciones** (o afirmaciones) y sus relaciones. Una proposición es un enunciado que dice algo que puede ser _verdadero_ o _falso_. En matemáticas se dice que tiene un **valor de verdad**.
 
-Dos proposiciones se pueden relacionar mediante un *conector* (en electrónica: compuertas lógicas, en programación son operadores booleanos). Los conectores más conocidos son el **or** (o) y el **and**(y).
+Dos proposiciones se pueden relacionar mediante un _conector_ (en electrónica: compuertas lógicas, en programación son operadores booleanos). Los conectores más conocidos son el **or** (o) y el **and**(y).
 
 Esto da origen a demostraciones tanto matemáticas como prácticas. En el desarrollo de sistemas se pueden usar para demostrar que tu algoritmo o solución es correcto, es decir, va a funcionar con los datos de entrada propuestos que cumplan con los valores de verdad.
 
@@ -112,7 +112,7 @@ Para programar es muy conveniente que entiendas básicamente cómo se define un 
 
 El sistema decimal lo usamos en la vida diaria. Con entender básicamente el binario y hexadecimal estarás bien.
 
-# Matemáticas avanzadas y especificas
+## Matemáticas avanzadas y especificas
 
 En muchas áreas de la programación se usan matemáticas más avanzadas, sobre todo en áreas que están sonando mucho recientemente: análisis de datos e inteligencia artificial. Si quieres entender a fondo estas y otras áreas del desarrollo de sistemas, es conveniente tener un conocimiento amplio en algunas de las siguientes áreas:
 
@@ -128,7 +128,7 @@ Hablé de los campos finales pero para entender esto debes tener conocimiento pr
 - Cálculo Integral y diferencial
 - Cálculo Vectorial
 
-Por suerte, para los campos de los que hablá arriba no tienes que saber todo esto, a menos que quieras ser el desarrollador de los algoritmos originales. Generalmente somos usuarios de bibliotecas creadas por genios que ya hacen lo que necesitamos.
+Por suerte, para los campos de los que habla arriba no tienes que saber todo esto, a menos que quieras ser el desarrollador de los algoritmos originales. Generalmente somos usuarios de bibliotecas creadas por genios que ya hacen lo que necesitamos.
 
 ## No te preocupes
 
