@@ -11,13 +11,13 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo de software. Hace tiempo ha empezado a sonar más comúnmente un término: **JIT** o compilación **Just In Time**, ya que varios lenguajes lo han integrado a sus entornos de ejecución.
+Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo de software. Hace tiempo ha empezado a sonar más un término: **JIT** o compilación **Just In Time**, ya que varios lenguajes lo han integrado a sus entornos de ejecución. Aquí llamaremos a la compilación "just in time" como "compilación bajo demanda" (gracias a Manuel Rubio por la sugerencia). Durante el artículo entenderás por qué.
 
-Sin embargo, es poco entendida, en este artículo hablaremos de por qué es algo tan sonado y usado. Primero empecemos hablando de la compilación en general y después entendamos este tipo especial de ejecución.
+Este tipo de compilación es poco entendida, por eso en este artículo hablaremos de por qué es algo tan usado. Primero empecemos hablando de la compilación en general y después entendamos este tipo especial de ejecución.
 
 ## ¿Qué es compilar?
 
-Compilar es **traducir de un lenguaje a otro**. Lo que entendemos como lenguajes compilados generalmente son lenguajes que traducen de un lenguaje de programación a un lenguaje de máquina, es decir, a código binario que puede ser ejecutado por un procesador en algunos casos o a código para una máquina virtual.
+Compilar es sencillamente **traducir de un lenguaje a otro**. Lo que entendemos como lenguajes compilados generalmente son lenguajes que traducen de un lenguaje de programación a un lenguaje de máquina, es decir, a código binario que puede ser ejecutado por un procesador en algunos casos o a código para una máquina virtual.
 
 A veces usamos el término "traspilación" (_transpilation_ en inglés), que se entiende como una forma de traducir o transformar de un lenguaje entendido por los humanos (de alto nivel a veces se les llama) a otro del mismo nivel. Por ejemplo de TypeScript a JavaScript. Esto no es más que otra forma de compilación.
 
@@ -31,11 +31,11 @@ Es interesante pensar que cuando **Grace** tuvo la idea de crear un programa que
 
 ## Compilación por adelantado
 
-La compilación tradicional, conocida en inglés como "ahead of time" (AOT), o en español la llamaríamos "por adelantado", es la que se ha usado desde hace mucho tiempo. En esta compilación, el código fuente se traduce a código final antes de que el programa sea ejecutado. Esto como siempre, tiene ventajas y desventajas.
+La compilación tradicional, conocida en inglés como "ahead of time" (AOT), o en español la llamaríamos "compilación adelantada", es la que se ha usado desde hace mucho tiempo. En esta compilación, el código fuente se traduce a código final antes de que el programa sea ejecutado. Esto como siempre, tiene ventajas y desventajas.
 
 ## Compilación "Just in Time" (JIT)
 
-La compilación "Just in time", que significa "justo a tiempo" (en realidad, español me gustaría llamarla compilación retardada), más que un proceso de traducción se trata de **optimización**.
+La compilación "Just in time", que significa literalmente "justo a tiempo" (en realidad, español me gustaría llamarla compilación bajo demanda), más que un proceso de traducción se trata de **optimización**.
 
 ## Ejemplo con V8
 
@@ -50,4 +50,4 @@ JavaScript
 
 ## poner historia de JIT?
 
-[Lars Bak]() desarrolló V8 y también participó en la creación de y de JAVA. [Dart](https://dart.dev/), un lenguaje de programación que se ejecuta en la máquina virtual de Google, [Dart VM](https://dart.dev/tools/dart-vm). En una entrevista, [Lars Bak](https://www.youtube.com/watch?v=5q6X0Z9Z1Zs) habla de cómo se desarrolló V8 y cómo se creó Dart.
+[Lars Bak](https://dblp.org/pid/30/2083.html) desarrolló V8 y también participó en la creación de y de JAVA. [Dart](https://dart.dev/), un lenguaje de programación que se ejecuta en la máquina virtual de Google, [Dart VM](https://dart.dev/tools/dart-vm). En una entrevista, [Lars Bak](https://www.youtube.com/watch?v=5q6X0Z9Z1Zs) habla de cómo se desarrolló V8 y cómo se creó Dart.
