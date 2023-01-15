@@ -2,7 +2,7 @@
 title: "Compilación Just in Time: qué es y cuándo te conviene"
 date: 2023-01-09
 author: Héctor Patricio
-tags:
+tags: jit compiladores compilers
 comments: true
 excerpt: "¿Has escuchado que varios lenguajes están agregando la capacidad de compilación Just In Time a sus entornos? Hablemos de qué es y cómo te beneficia."
 header:
@@ -11,19 +11,19 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo de software. Hace tiempo ha empezado a sonar más un término: **JIT** o compilación **Just In Time**, ya que varios lenguajes lo han integrado a sus entornos de ejecución. Aquí llamaremos a la compilación "just in time" como "compilación bajo demanda" (gracias a Manuel Rubio por la sugerencia). Durante el artículo entenderás por qué.
+Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo de software. Hace tiempo ha empezado a sonar más un término: **JIT** o compilación **Just In Time**, ya que varios lenguajes lo han integrado a sus entornos de ejecución, aquí la llamaremos "compilación bajo demanda" (gracias a Manuel Rubio por la sugerencia). Durante el artículo entenderás por qué creemos que esta traducción es adecuada.
 
-Este tipo de compilación es poco entendida, por eso en este artículo hablaremos de por qué es algo tan usado. Primero empecemos hablando de la compilación en general y después entendamos este tipo especial de ejecución.
+Este tipo de compilación es poco entendida, por eso en este artículo hablaremos de por qué es algo tan usado. Primero empecemos hablando de la compilación en general y después entendamos este **_tipo especial de ejecución_**. Pero empecemos desde las bases.
 
 ## ¿Qué es compilar?
 
-Compilar es sencillamente **traducir de un lenguaje a otro**. Lo que entendemos como lenguajes compilados generalmente son lenguajes que traducen de un lenguaje de programación a un lenguaje de máquina, es decir, a código binario que puede ser ejecutado por un procesador en algunos casos o a código para una máquina virtual.
+Compilar es sencillamente **traducir de un lenguaje a otro**. Lo que entendemos como lenguajes compilados generalmente son lenguajes que traducen de un lenguaje de programación a un lenguaje de máquina, es decir, a código binario que puede ser ejecutado por un procesador en algunos casos o a código para una máquina virtual (aquí a veces se llama código de bytes o _bytecode_).
 
-A veces usamos el término "traspilación" (_transpilation_ en inglés), que se entiende como una forma de traducir o transformar de un lenguaje entendido por los humanos (de alto nivel a veces se les llama) a otro del mismo nivel. Por ejemplo de TypeScript a JavaScript. Esto no es más que otra forma de compilación.
+A veces usamos el término _"transpilación"_ (_transpilation_ en inglés), que se entiende como una forma de traducir o transformar de un lenguaje entendido por los humanos (de alto nivel a veces se les llama) a otro del mismo nivel. Por ejemplo de TypeScript a JavaScript. Esto no es más que otra forma de compilación.
 
 ### Historia de la compilación
 
-En el libro ["Historia de los lenguajes de programación"](https://altenwald.com/historia-de-los-lenguajes-de-programacion) de [Manuel Rubio](https://mobile.twitter.com/mronerlang), se nos cuenta cómo la compilación nació. Al principio los programadores hacían todo lo que su programa necesitaba desde cero. Una programadora muy experimentada y que estuvo desde los comienzos, **Grace Hopper**, empezó a juntar código que hacía tareas que se repetían vez tras vez y simplemente lo insertaba donde necesitaba esa tarea.
+En el capítulo 9 del libro ["Historia de los lenguajes de programación"](https://altenwald.com/historia-de-los-lenguajes-de-programacion) de [Manuel Rubio](https://mobile.twoitter.com/mronerlang), se nos cuenta cómo la compilación nació. Al principio los programadores hacían todo lo que su programa necesitaba desde cero. Una programadora muy experimentada y que estuvo desde los comienzos, **Grace Hopper**, empezó a juntar código que hacía tareas que se repetían vez tras vez y simplemente lo insertaba donde necesitaba esa tarea.
 
 Después, se dio cuenta que podía hacer un programa que hiciera lo mismo que ella hacía, pero que lo hiciera de manera más rápida y eficiente. Así nació el primer compilador, se llama **compilador** y no "traductor" porque más allá de simplemente pasar de un lenguaje a otro, junta (compila) todas las piezas de código invocadas en el programa original y las pone en el programa resultante.
 
@@ -39,15 +39,22 @@ La compilación "Just in time", que significa literalmente "justo a tiempo" (en 
 
 ## Ejemplo con V8
 
-JavaScript y el popular motor V8 creado por Google, es uno de ejemplo birllate del uso de compilación en el momento.
+JavaScript y el popular motor V8 creado por Google, es uno de ejemplo brillante del uso de compilación en el momento.
 
 ## Otros lenguajes que la usan
 
+Erlang
 Julia
 Ruby
 Lua
 JavaScript
 
-## poner historia de JIT?
+## Historia de JIT
 
 [Lars Bak](https://dblp.org/pid/30/2083.html) desarrolló V8 y también participó en la creación de y de JAVA. [Dart](https://dart.dev/), un lenguaje de programación que se ejecuta en la máquina virtual de Google, [Dart VM](https://dart.dev/tools/dart-vm). En una entrevista, [Lars Bak](https://www.youtube.com/watch?v=5q6X0Z9Z1Zs) habla de cómo se desarrolló V8 y cómo se creó Dart.
+
+## Conclusión
+
+La compilación bajo demanda ha sido un gran avance en el desarrollo de software. Permite que la ejecución de nuestros programas sea más eficiente y rápida. Además, a mi punto de ver, es una maravilla de la ingeniería de software. Si quieres aprender más: puedes visitar el [sitio oficial de V8](https://v8.dev/), en el que explican muchas cosas acerca del desarrollo de este sistema pionero en compilación bajo demanda.
+
+También puedes ver como funciona un compilador por adelantado todavía más antiguo y muy interesante: [Java HotSpot VM](https://developers.redhat.com/articles/2021/06/23/how-jit-compiler-boosts-java-performance-openjdk#deoptimization_and_speculation).
