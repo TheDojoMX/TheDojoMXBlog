@@ -25,13 +25,15 @@ A veces usamos el término _"transpilación"_ (_transpilation_ en inglés), que 
 
 En el capítulo 9 del libro ["Historia de los lenguajes de programación"](https://altenwald.com/historia-de-los-lenguajes-de-programacion) de [Manuel Rubio](https://mobile.twoitter.com/mronerlang), se nos cuenta cómo la compilación nació. Al principio los programadores hacían todo lo que su programa necesitaba desde cero. Una programadora muy experimentada y que estuvo desde los comienzos, **Grace Hopper**, empezó a juntar código que hacía tareas que se repetían vez tras vez y simplemente lo insertaba donde necesitaba esa tarea.
 
-Después, se dio cuenta que podía hacer un programa que hiciera lo mismo que ella hacía, pero que lo hiciera de manera más rápida y eficiente. Así nació el primer compilador, se llama **compilador** y no "traductor" porque más allá de simplemente pasar de un lenguaje a otro, junta (compila) todas las piezas de código invocadas en el programa original y las pone en el programa resultante.
+Después, se dio cuenta que podía hacer un programa que hiciera lo mismo que ella hacía manualmente, pero que lo hiciera de manera más rápida y eficiente. Así nació el primer compilador el A-0, se llama **compilador** (Hopper acuñó el término) y no "traductor" porque más allá de simplemente pasar de un lenguaje a otro, junta (compila) todas las piezas de código invocadas en el programa original y las pone en el programa resultante. El programa original para el A-0 consistía en códigos numéricos que indicaban la subrutina a usar seguidos de los datos a introducir en cada una.
 
 Es interesante pensar que cuando **Grace** tuvo la idea de crear un programa que hiciera esto, muchos se opusieron diciendo que no era posible que una computadora se programara a sí misma y que aunque lo hiciera, los programas nunca iban a ser tan buenos como los que podía hacer un programador humano.
 
-## Compilación por adelantado
+A partir de ahí, se fueron creando compiladores más avanzados y la comunidad al poco tiempo se dio cuenta de que el ahorro de tiempo era muy conveniente para todos, aunque con una pequeña penalización en el desempeño del programa final.
 
-La compilación tradicional, conocida en inglés como "ahead of time" (AOT), o en español la llamaríamos "compilación adelantada", es la que se ha usado desde hace mucho tiempo. En esta compilación, el código fuente se traduce a código final antes de que el programa sea ejecutado. Esto como siempre, tiene ventajas y desventajas.
+### Compilación por adelantado
+
+La compilación tradicional, conocida en inglés como _"ahead of time"_ (AOT), que en español la llamaríamos **"compilación adelantada"**, es la que se ha usado desde el principio de la programación. En este tipo compilación, el código fuente se traduce a código final que se ejecutará por un CPU o por una máquina virtual. El código puede ser el código binario o bytecode.
 
 ## Compilación "Just in Time" (JIT)
 
@@ -50,6 +52,8 @@ Lua
 JavaScript
 
 ## Historia de JIT
+
+Las primeras instancias de compilación bajo demanda (también llamada compilación dinámica)
 
 [Lars Bak](https://dblp.org/pid/30/2083.html) desarrolló V8 y también participó en la creación de y de JAVA. [Dart](https://dart.dev/), un lenguaje de programación que se ejecuta en la máquina virtual de Google, [Dart VM](https://dart.dev/tools/dart-vm). En una entrevista, [Lars Bak](https://www.youtube.com/watch?v=5q6X0Z9Z1Zs) habla de cómo se desarrolló V8 y cómo se creó Dart.
 
