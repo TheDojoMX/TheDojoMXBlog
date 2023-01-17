@@ -43,6 +43,12 @@ Gran parte de lo que hacen los compiladores actuales hacen a parte de traducir e
 
 La compilación "Just in time", que significa literalmente "justo a tiempo" (en realidad, español me gustaría llamarla compilación bajo demanda), más que un proceso de traducción se trata de **optimización**.
 
+Esta compilación sucede solamente en lenguajes que usan una representación intermedia antes de que el procesador los ejecute. Esta representación intermedia normalmente es un [bytecode](https://www.techopedia.com/definition/3760/bytecode).
+
+En el artículo ["Qué es un Engine de JavaScript"](/2020/05/17/que-es-un-engine-de-javascript.html) explicamos el funcionamiento.
+
+<https://v8.dev/blog/sparkplug>
+
 ## Ejemplo con V8
 
 JavaScript y el popular motor V8 creado por Google, es uno de ejemplo brillante del uso de compilación en el momento.
