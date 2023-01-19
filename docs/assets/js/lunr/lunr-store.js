@@ -574,4 +574,10 @@ var store = [{
         "tags": ["machine-learning","ia","inteligencia-artificial"],
         "url": "/2023/01/07/ejercicio-programando-un-perceptron.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_600,w_300/v1673056123/DALL_E_2023-01-06_19.47.48_-_Perceptron_artistic_digital_paint_high_quality_detailed_wpoohz.png"
+      },{
+        "title": "Qué es la compilación Just In Time (JIT)",
+        "excerpt":"Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo de software. Hace tiempo ha empezado a sonar más un término: JIT o compilación Just In Time, ya que varios lenguajes lo han integrado a sus entornos de ejecución, aquí la llamaremos “compilación bajo...","categories": [],
+        "tags": ["jit","compiladores","compilers","compilación","just-in-time"],
+        "url": "/2023/01/18/compilacion-just-in-time-que-es.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_450,w_1024/v1673577537/DALL_E_2023-01-12_20.38.31_-_a_mechanical_brain_in_the_back_of_a_robot_s_head_made_as_a__membrane__that_is_a_complex_machine_made_of_very_tiny_gears_levers_and_other_mechanical_dexwfs.png"
       }]

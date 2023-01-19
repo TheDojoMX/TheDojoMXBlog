@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-01-08T23:59:05-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Ejercicio: programando un perceptrón con Python</title><link href="https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html" rel="alternate" type="text/html" title="Ejercicio: programando un perceptrón con Python" /><published>2023-01-07T00:00:00-06:00</published><updated>2023-01-07T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html">&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-01-18T23:35:17-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Qué es la compilación Just In Time (JIT)</title><link href="https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es.html" rel="alternate" type="text/html" title="Qué es la compilación Just In Time (JIT)" /><published>2023-01-18T00:00:00-06:00</published><updated>2023-01-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es.html">&lt;p&gt;Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo   de software. Hace tiempo ha empezado a sonar más un término: &lt;strong&gt;JIT&lt;/strong&gt; o compilación &lt;strong&gt;Just In Time&lt;/strong&gt;, ya que varios lenguajes lo han integrado a sus entornos de ejecución, aquí la llamaremos “compilación bajo demanda” (gracias a Manuel Rubio por la sugerencia). Durante el artículo entenderás por qué creemos que esta traducción es adecuada.&lt;/p&gt;
+
+&lt;p&gt;Este tipo de compilación es poco entendida, por eso en este artículo hablaremos de por qué es algo tan usado. Primero empecemos hablando de la compilación en general y después entendamos este &lt;strong&gt;&lt;em&gt;tipo especial de ejecución&lt;/em&gt;&lt;/strong&gt;. Pero empecemos desde las bases.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-compilar&quot;&gt;¿Qué es compilar?&lt;/h2&gt;
+
+&lt;p&gt;Compilar es &lt;strong&gt;traducir de un lenguaje a otro&lt;/strong&gt;. Lo que entendemos como lenguajes compilados generalmente son lenguajes que se  traducen de un lenguaje de programación a un lenguaje de máquina, es decir, a código binario que puede ser ejecutado por un procesador en algunos casos o a código para una máquina virtual (aquí a veces se llama &lt;em&gt;código de bytes&lt;/em&gt; o &lt;em&gt;bytecode&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;A veces usamos el término &lt;em&gt;“transpilación”&lt;/em&gt; (&lt;em&gt;transpilation&lt;/em&gt; en inglés), que se entiende como una forma de traducir o transformar de un lenguaje entendido por los humanos a otro del mismo nivel. Por ejemplo de TypeScript a JavaScript. Esto no es más que otra forma de compilación. Hablemos de cómo surgió la compilación.&lt;/p&gt;
+
+&lt;h3 id=&quot;historia-de-la-compilación&quot;&gt;Historia de la compilación&lt;/h3&gt;
+
+&lt;p&gt;En el capítulo 9 del libro &lt;a href=&quot;https://altenwald.com/historia-de-los-lenguajes-de-programacion&quot;&gt;“Historia de los lenguajes de programación”&lt;/a&gt; de &lt;a href=&quot;https://mobile.twoitter.com/mronerlang&quot;&gt;Manuel Rubio&lt;/a&gt;, se nos cuenta cómo la compilación nació. Al principio los programadores escribían todo lo que su programa necesitaba desde cero. Una programadora muy experimentada y que estuvo desde los comienzos de la programación, &lt;strong&gt;Grace Hopper&lt;/strong&gt;, empezó a juntar código que hacía tareas que se repetían vez tras vez y simplemente lo insertaba donde necesitaba esa tarea.&lt;/p&gt;
+
+&lt;p&gt;Después, se dio cuenta que podía hacer un programa que hiciera lo mismo que ella hacía manualmente, pero que lo hiciera de manera más rápida y eficiente. Así nació el primer compilador” &lt;a href=&quot;https://www.computinghistory.org.uk/det/5487/Grace-Hopper-completes-the-A-0-Compiler/&quot;&gt;&lt;strong&gt;el A-0&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Se llama &lt;strong&gt;compilador&lt;/strong&gt; (Hopper acuñó el término) y no “traductor” porque más allá de simplemente pasar de un lenguaje a otro, junta (compila) todas las piezas de código invocadas en el programa original y las pone en el programa resultante. El programa original para el A-0 consistía en códigos numéricos que indicaban la subrutina a usar seguidos de los datos a introducir en cada una.&lt;/p&gt;
+
+&lt;p&gt;Es interesante pensar que cuando &lt;strong&gt;Grace&lt;/strong&gt; tuvo la idea de crear un programa que hiciera esto, muchos se opusieron diciendo que no era posible que una computadora se programara a sí misma y que aunque lo hiciera, los programas nunca iban a ser tan buenos como los que podía hacer un programador humano.&lt;/p&gt;
+
+&lt;p&gt;A partir de ahí, se fueron creando compiladores más avanzados y la comunidad al poco tiempo se dio cuenta de que el ahorro de tiempo era muy conveniente para todos, aunque con una pequeña penalización en el desempeño del programa final.&lt;/p&gt;
+
+&lt;h3 id=&quot;compilación-por-adelantado&quot;&gt;Compilación por adelantado&lt;/h3&gt;
+
+&lt;p&gt;La compilación tradicional, conocida en inglés como &lt;em&gt;“ahead of time”&lt;/em&gt; (AOT), que en español la llamaríamos &lt;strong&gt;“compilación adelantada”&lt;/strong&gt;, es la que se ha usado desde el principio de la programación. En este tipo compilación, el código fuente se traduce a código final que se ejecutará por un CPU o por una máquina virtual. El código puede ser el código binario o bytecode.&lt;/p&gt;
+
+&lt;p&gt;Gran parte de lo que hacen los compiladores actuales hacen a parte de traducir es optimizar el código, con el objetivo de que el programa sea lo más eficiente posible en ejecución.&lt;/p&gt;
+
+&lt;h2 id=&quot;compilación-just-in-time-jit&quot;&gt;Compilación “Just in Time” (JIT)&lt;/h2&gt;
+
+&lt;p&gt;La compilación “Just in time”, que significa literalmente “justo a tiempo” (en español me gustaría llamarla compilación bajo demanda), más que un proceso de traducción se trata de &lt;strong&gt;optimización&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esta compilación sucede solamente en lenguajes que usan una representación intermedia antes de que el procesador los ejecute. Esta representación intermedia normalmente es un &lt;a href=&quot;https://www.techopedia.com/definition/3760/bytecode&quot;&gt;bytecode&lt;/a&gt;. El bytecode puede ser ejecutado por una máquina virtual o intérprete. El compilador JIT transforma este bytecode en código máquina directamente para acelerar su ejecución.&lt;/p&gt;
+
+&lt;h3 id=&quot;funcionamiento-de-un-compilador-bajo-demanda&quot;&gt;Funcionamiento de un compilador bajo demanda&lt;/h3&gt;
+
+&lt;p&gt;Para optimizar la ejecución mientras está sucediendo el compilador JIT tiene que hacer por lo menos tres cosas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Observar&lt;/strong&gt; la ejecución y el código para &lt;em&gt;identificar&lt;/em&gt; partes que se beneficiarían de compilar su código a código máquina. Por ejemplo, código que se ejecuta muchas veces o que se lleva la mayor parte del tiempo de ejecución. A esta etapa se le llama &lt;em&gt;profiling&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Compilar el bytecode&lt;/strong&gt; en código máquina y &lt;em&gt;optimizarlo&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Como puede que esta compilación no sea tan buena como el bytecode original, el compilador debe &lt;strong&gt;regresar&lt;/strong&gt; el bytecode original si la ejecución no mejora.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ejemplo-con-v8&quot;&gt;Ejemplo con V8&lt;/h2&gt;
+
+&lt;p&gt;El motor de JavaScript V8 creado por Google, es un ejemplo brillante del uso de compilación bajo demanda.&lt;/p&gt;
+
+&lt;p&gt;En el artículo &lt;a href=&quot;/2020/05/17/que-es-un-engine-de-javascript.html&quot;&gt;“Qué es un Engine de JavaScript”&lt;/a&gt; explicamos el funcionamiento con más detalle. Pero en este diagrama puedes ver las partes principales:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1589700777/1_ZIH_wjqDfZn6NRKsDi9mvA_wc08nl.png&quot; alt=&quot;diagrama de funcionamiento de V8&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Después de la lectura del código fuente y la transformación en una estructura que ya puede ser ejecutada (el Abstract Syntax Tree), el código se ejecuta en el intérprete.&lt;/p&gt;
+
+&lt;p&gt;El intérprete, llamado &lt;strong&gt;Ignition&lt;/strong&gt; genera además el bytecode que más adelante será compilado por el compilador &lt;strong&gt;TurboFan&lt;/strong&gt; en caso de que sea conveniente. TurboFan recibe las métricas de uso del bytecode (recogidas por Ignition), es decir, los resultados del profiling y basado en eso decide qué compilará a código máquina. Después de compilarlo y observar su funcionamiento (si mejoró la velocidad y se mantuvo la estabilidad) del código, V8 decide si lo mantiene o si regresa al bytecode original. Esta es la línea roja que vemos en el diagrama, cuando algo se “des-optimiza”.&lt;/p&gt;
+
+&lt;p&gt;Y esto es básicamente el funcionamiento de un compilador bajo demanda. La observación del código en acción y la mejora en el mismo momento.&lt;/p&gt;
+
+&lt;h2 id=&quot;otros-lenguajes-que-la-usan&quot;&gt;Otros lenguajes que la usan&lt;/h2&gt;
+
+&lt;p&gt;Las primeras instancias de compilación bajo demanda (también llamada compilación dinámica) se vieron desde los años 60, en Lisp y más adelante con Smalltalk y Self. En este documento puedes ver una historia corta de la compilación bajo demanda y los lenguajes que lo han usado: &lt;a href=&quot;http://eecs.ucf.edu/~dcm/Teaching/COT4810-Spring2011/Literature/JustInTimeCompilation.pdf&quot;&gt;A Brief History of Just-In-Time&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;El lenguaje que popularizó el término JIT fue Java con su máquina virtual &lt;a href=&quot;https://www.oracle.com/java/technologies/whitepaper.html&quot;&gt;HotSpot&lt;/a&gt; creada en Sun Microsystems y ahora poseída por Oracle. Esta máquina virtual se caracterizó por el desempeño que logra. &lt;a href=&quot;https://dblp.org/pid/30/2083.html&quot;&gt;Lars Bak&lt;/a&gt; participó en el desaarrollo de HotSpot, V8 y recientemente en el de la máquina virtual de &lt;a href=&quot;https://dart.dev/&quot;&gt;Dart&lt;/a&gt;. Como te puedes imaginar, Dart también usa compilación bajo demanda. &lt;a href=&quot;https://luajit.org/luajit.html&quot;&gt;Lua&lt;/a&gt; también tie su compilador JIT. Y finalmente, &lt;a href=&quot;https://www.telerik.com/blogs/understanding-net-just-in-time-compilation&quot;&gt;C#&lt;/a&gt;, al ser un competidor directo de Java, tiene usar JIT para ser por lo menos tan rápido como su este.&lt;/p&gt;
+
+&lt;p&gt;Los lenguajes que recientemente han agregado JIT a su máquina virtual o intérprete son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ruby con &lt;a href=&quot;https://www.infoworld.com/article/3647999/ruby-31-arrives-with-new-jit-compiler.html&quot;&gt;YJIT&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;PHP desde su versión 8: &lt;a href=&quot;https://php.watch/versions/8.0/JIT&quot;&gt;PHP 8.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Erlang desde su versión 24: &lt;a href=&quot;https://www.erlang.org/blog/a-first-look-at-the-jit/&quot;&gt;Erlang 24&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como puedes ver, tanto lenguajes compilados como interpretados usan JIT. El único requisito es que el lenguaje utilice un código intermedio.&lt;/p&gt;
+
+&lt;h2 id=&quot;desventajas&quot;&gt;Desventajas&lt;/h2&gt;
+
+&lt;p&gt;Como te imaginarás, no todo es miel sobre hojuelas. La compilación bajo demanda tiene algunas desventajas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Al ser un proceso de compilación dinámica, abre la puerta a algunas vulnerabilidades de seguridad, por ejemplo el &lt;a href=&quot;https://conference.hitb.org/hitbsecconf2010ams/materials/D1T2%20-%20Alexey%20Sintsov%20-%20JIT%20Spray%20Attacks%20and%20Advanced%20Shellcode.pdf&quot;&gt;JIT Spraying&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;El compilador JIT compite con el intérprete por el uso de la CPU. Esto puede afectar el rendimiento del programa.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;El consumo de recursos en general es mayor.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Puede que la forma en la que está hecha tu programa no se beneficie en absoluto de la compilación bajo demanda, por lo que incluso a veces es posible apagarlos.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Si estás en un entorno en el que algo de esto sea muy importante, considera si el entorno en el que estás trabajando puede dessactivarse el JIT. V8, por ejemplo, puede funcionar sin JIT: &lt;a href=&quot;https://v8.dev/blog/jitless&quot;&gt;JIT-less V8&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;La compilación bajo demanda ha sido un gran avance en el desarrollo de software, y es un trabajo de ingeniería muy interesante.&lt;/p&gt;
+
+&lt;p&gt;Permite que la ejecución de nuestros programas sea más eficiente y rápida.  Además, a mi punto de ver, es una maravilla de la ingeniería de software. Si quieres aprender más: puedes visitar el &lt;a href=&quot;https://v8.dev/&quot;&gt;sitio oficial de V8&lt;/a&gt;, en el que explican muchas cosas acerca del desarrollo de este sistema pionero en compilación bajo demanda.&lt;/p&gt;
+
+&lt;p&gt;También puedes ver como funciona un compilador por adelantado todavía más antiguo y muy interesante: &lt;a href=&quot;https://developers.redhat.com/articles/2021/06/23/how-jit-compiler-boosts-java-performance-openjdk#deoptimization_and_speculation&quot;&gt;Java HotSpot VM&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="jit" /><category term="compiladores" /><category term="compilers" /><category term="compilación" /><category term="just-in-time" /><summary type="html">¿Has escuchado que varios lenguajes están agregando la capacidad de compilación Just In Time a sus entornos? Hablemos de qué es y cómo te beneficia.</summary></entry><entry><title type="html">Ejercicio: programando un perceptrón con Python</title><link href="https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html" rel="alternate" type="text/html" title="Ejercicio: programando un perceptrón con Python" /><published>2023-01-07T00:00:00-06:00</published><updated>2023-01-07T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptron.html">&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
 
 &lt;p&gt;Si no tienes claro lo que es un perceptrón, puedes leer nuestro &lt;a href=&quot;/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html&quot; target=&quot;_blank&quot;&gt;artículo anterior&lt;/a&gt;. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar de la manera más sencilla posible.&lt;/p&gt;
 
@@ -1037,134 +1144,4 @@ Incorrectos: 0 - 0.0%
 
 &lt;p&gt;Todos estos consejos se tratan de mejor manera en el libro “A Philosophy of Software Design” de John Ousterhout, pero también me gustaría hacer eco de un consejo de Dan North: &lt;strong&gt;Busca crear código simple.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Esta fue la crítica y aplicación del principio de Responsabilidad Única. En el siguiente artículo veremos el principio de Abierto/Cerrado (Open/Closed Principle).&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="principios" /><summary type="html">¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.</summary></entry><entry><title type="html">Crea hashes resistentes a balas con Keccak (SHA-3)</title><link href="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html" rel="alternate" type="text/html" title="Crea hashes resistentes a balas con Keccak (SHA-3)" /><published>2022-10-12T00:00:00-05:00</published><updated>2022-10-12T00:00:00-05:00</updated><id>https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3</id><content type="html" xml:base="https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-tambien-llamado-sha-3.html">&lt;p&gt;Ya hemos hablado en este blog de lo que es un &lt;a href=&quot;/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&quot;&gt;hash&lt;/a&gt; e incluso qué hashes puedes usar para guardar tus &lt;a href=&quot;/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html&quot;&gt;passwords de manera segura&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;En este artículo vamos a hablar de uno en específico, el que estamos seguros que deberías usar para cualquier uso futuro en tus programas y sistemas, el que ha sido nombrado como el Secure Hash Algorithm 3 (&lt;a href=&quot;https://www.nist.gov/publications/sha-3-standard-permutation-based-hash-and-extendable-output-functions?pub_id=919061&quot;&gt;SHA-3&lt;/a&gt;): &lt;strong&gt;Keccak&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-es-keccak&quot;&gt;¿Qué es Keccak?&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://keccak.team/&quot;&gt;Keccak&lt;/a&gt; es una familia de funciones, creadas para cubrir la necesidad de un sucesor de la versión 2 del &lt;em&gt;Secure Hash Algorithm&lt;/em&gt;, que tiene algunas limitaciones y vulnerabilidades (por ejemplo, el ataque de extensión de longitud).&lt;/p&gt;
-
-&lt;p&gt;Está basada en una construcción de esponja, y usa internamente una función criptográfica llamada &lt;strong&gt;Keccak-f&lt;/strong&gt;, que se encarga de permutar (cambiar de lugar o mezclar) los bits de la entrada de manera segura.&lt;/p&gt;
-
-&lt;p&gt;Después de haber ganado la competición para la versión 3 del &lt;em&gt;Secure Hash Algorithm&lt;/em&gt;, y por lo tanto ser nombrada &lt;strong&gt;SHA-3&lt;/strong&gt;, ha sido estandarizada en diferentes documentos para diferentes usos. La estandarización implica que ha sido examinada y analizada criptográficamente por organismos internacionales, empresas e individuales para estar seguros de que no tiene deficiencias como función hash criptográfica.&lt;/p&gt;
-
-&lt;p&gt;Un punto interesante es que uno de los diseñadores de esta función, también participó en la creación del actual AES: &lt;a href=&quot;https://cs.ru.nl/~joan/&quot;&gt;Joan Daemen&lt;/a&gt;, probablmente es un investigador al que le debamos prestar más atención, ya que casi toda nuestra seguridad actual y futura está influida por él.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-es-una-construcción-de-esponja&quot;&gt;¿Qué es una construcción de esponja?&lt;/h2&gt;
-
-&lt;p&gt;La “arquitectura” interna de Keccak se distingue de otras funciones &lt;em&gt;hash criptográficas&lt;/em&gt; por ser tener una &lt;strong&gt;construcción de esponja&lt;/strong&gt;. SHA-1 y SHA-2 usan una construcción de &lt;a href=&quot;https://www.coursera.org/lecture/crypto/the-merkle-damgard-paradigm-Hfnu9&quot;&gt;Merkle–Damgård&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;¿Qué es una &lt;strong&gt;construcción de esponja&lt;/strong&gt; y por qué nos importa como desarrolladores de software?&lt;/p&gt;
-
-&lt;p&gt;Una construcción de esponja usa una función de &lt;em&gt;permutación&lt;/em&gt; (en el caso de Keccak esta función se llama &lt;strong&gt;keccak-f&lt;/strong&gt;). Un función de permutación mapea todas las combinaciones posibles de bits en la entrada a todas las combinaciones posibles de esa misma cantidad de bits, intercambiándolas. Por ejemplo, imagina una función que acepta 3 bits y devuelve 4 bits, y que intercambia los bits de la siguiente manera:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-center&quot;&gt;000 --(f)--&amp;gt; 010
-001 --(f)--&amp;gt; 100
-010 --(f)--&amp;gt; 001
-011 --(f)--&amp;gt; 111
-100 --(f)--&amp;gt; 000
-101 --(f)--&amp;gt; 110
-110 --(f)--&amp;gt; 101
-111 --(f)--&amp;gt; 011
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Observa como ninguna de las combinaciones se repite en ninguno de los dos lados. &lt;strong&gt;keccak-f&lt;/strong&gt; es una permutación de 1600 bits.&lt;/p&gt;
-
-&lt;p&gt;La construcción de esponja divide los bits de la salida en dos partes: &lt;em&gt;velocidad&lt;/em&gt; y &lt;em&gt;capacidad&lt;/em&gt;. Esta división arbitraria, en el caso de &lt;strong&gt;Keccak&lt;/strong&gt; depende de la versión que se quiera usar. La parte de la &lt;em&gt;velocidad&lt;/em&gt; define cuántas veces se tiene que aplicar la función, ya que mientras más grande sea, más rápido se conseguirá el tamaño deseado. La parte de la &lt;em&gt;capacidad&lt;/em&gt; define qué tan segura es la función, mientras más grande sea, más segura es la construcción de esponja (y más pequeña es la parte de velocidad, por lo que la función hash tardará más).&lt;/p&gt;
-
-&lt;p&gt;Keccak empieza este ciclo con un estado inicial de puros ceros. La entrada se divide en bloques del tamaño de la velocidad (si es más pequeña que la velocidad, se &lt;a href=&quot;https://crypto.stackexchange.com/questions/40511/padding-in-keccak-sha3-hashing-algorithm&quot;&gt;aplica un padding&lt;/a&gt;). Se aplica un XOR entre cada bloque y el primer bloque de la velocidad, y se le da como entrada a la función de permutación. Esto se hace &lt;strong&gt;tantas veces como bloques haya&lt;/strong&gt;. Esta fue la etapa de absorción.&lt;/p&gt;
-
-&lt;p&gt;Finalmente, para obtener el hash, se “exprime” la función, siendo el primer bloque del resultado la parte de la &lt;em&gt;velocidad&lt;/em&gt; de la última iteración y para obtener los siguientes bloques se aplica la función de permutación sucesivamente hasta obtener la cantidad de bytes requeridos. La siguiente imagen ilustra el proceso (con una permutación de 8 bits y una velocidad de  5 bits):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1666498363/Screen_Shot_2022-10-22_at_21.51.41_h0u7s0.png&quot; alt=&quot;Arquitectura interna de una función construcción de esponja&quot; class=&quot;align-center&quot; /&gt;
-&lt;em&gt;Ejemplo de construcción de esponja con permutación de 5 bits. (Tomado del libro &lt;a href=&quot;https://www.manning.com/books/real-world-cryptography&quot;&gt;Real World Cryptography de David Wong&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Ahora ya sabes cómo funciona a grandes rasgos &lt;strong&gt;Keccak&lt;/strong&gt; internamente. &lt;strong&gt;¿Por qué nos interesa esto?&lt;/strong&gt; Las funciones de esponja pueden ser configuradas para que absorban más o menos bits y por lo tanto son bastante flexibles, lo que permite crear funciones configurables y que pueden crear salidas de diferentes tamaños.&lt;/p&gt;
-
-&lt;h2 id=&quot;tamaños-de-keccak&quot;&gt;Tamaños de Keccak&lt;/h2&gt;
-
-&lt;p&gt;Keccak ofrece los mismos tamaños de salida que SHA-2. Existen las siguientes versiones:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;SHA-3-224&lt;/strong&gt;: 224 bits&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SHA-3-256&lt;/strong&gt;: 256 bits&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SHA-3-384&lt;/strong&gt;: 384 bits&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SHA-3-512&lt;/strong&gt;: 512 bits&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Como siempre, mientras más grande sea la salida, más bits de seguridad ofrece y más difícil es de ser vulnerada.&lt;/p&gt;
-
-&lt;h2 id=&quot;usando-keccak&quot;&gt;Usando Keccak&lt;/h2&gt;
-
-&lt;p&gt;El siguiente ejemplo muestra cómo usar Keccak como SHA-3-256 en Python (SHA-3 está disponible desde la versión 3.6 de Python):&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hashlib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3_256&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3_256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hexdigest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# resultado '369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2'
-&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Aquí hay un ejemplo en Go:&lt;/p&gt;
-
-&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&quot;golang.org/x/crypto/sha3&quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello world&quot;&lt;/span&gt;
-
- &lt;span class=&quot;c&quot;&gt;// Un hash de 256 bits&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sha3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
- &lt;span class=&quot;n&quot;&gt;bs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// terminamos la cadena&lt;/span&gt;
-
- &lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// hello world&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%x&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;// 369183d3786773cef4e56c7b849e7ef5f742867510b676d6b38f8e38a222d8a2&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Aquí hay una implementación de Java:&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.security.MessageDigest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.security.NoSuchAlgorithmException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;MessageDigest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;md&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;md&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MessageDigest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SHA3-256&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;NoSuchAlgorithmException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;IllegalArgumentException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;md&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;digest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello world&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;bytesToHex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;bytesToHex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;StringBuilder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;StringBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%02x&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Además, aquí puedes ver ejemplos de cómo usar Keccak (SHA-3) en otros lenguajes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/sha3&quot;&gt;SHA-3 en JavaScript o TypeScript&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/johanns/sha3&quot;&gt;SHA-3 en Ruby&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.erlang.org/doc/man/crypto.html#type-hash_algorithm&quot;&gt;SHA-3 en Elixir, usando Erlang&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;por-qué-usar-keccak&quot;&gt;¿Por qué usar Keccak?&lt;/h2&gt;
-
-&lt;p&gt;SHA-3 o Keccak es una función más fuerte, sin vulnerabilidades conocidas, estandarizada y lista para ser usada como reemplazo de SHA-2 en cualquier lado sin grandes cambios. No hay pretexto para no usarla si existe una buena implementación en tu lenguaje.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografia" /><category term="crypto" /><category term="hash" /><category term="keccak" /><summary type="html">¿Por qué deberías usar SHA-3 para tus nuevos desarrollos? No hay pretexto ya para que uses lo mejor y más probado.</summary></entry></feed>
+&lt;p&gt;Esta fue la crítica y aplicación del principio de Responsabilidad Única. En el siguiente artículo veremos el principio de Abierto/Cerrado (Open/Closed Principle).&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="principios" /><summary type="html">¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.</summary></entry></feed>
