@@ -10,3 +10,5 @@ header:
   teaser: #image
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
+
+En este artículo vamos a hablar acerca de un patrón de aprendizaje encontrado en el libro [Apprenticeship Patterns]()
