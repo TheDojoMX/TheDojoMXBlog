@@ -41,3 +41,5 @@ El proceso que Elixir sigue para ejecutarse es el siguiente:
 ![Procesamiento de Elixir al Bytecode de BEAM](https://res.cloudinary.com/hectorip/image/upload/v1674191298/58786d8c955aaa5df2ebdb5a2c2790da5216b705_bllv3i.png){: .align-center}
 
 Fuente: [Getting each stage of Elixir’s compilation all the way to the BEAM bytecode](https://elixirforum.com/t/getting-each-stage-of-elixirs-compilation-all-the-way-to-the-beam-bytecode/1873/7).
+
+La Bogdan Erlang Abstract Machine tiene un [set de instrucciones](http://www.cs-lab.org/historical_beam_instruction_set.html).
