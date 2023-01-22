@@ -1,6 +1,6 @@
 ---
 title: "Entendiendo el bytecode"
-date: 2023-01-19
+date: 2023-01-22
 author: Héctor Patricio
 tags: bytecode complación intérprete
 comments: true
@@ -98,9 +98,19 @@ label17:  jump                 label16
           int_code_end
 ```
 
+Como puedes ver después de las etiquetas que tienen nombres como `label01`, `label02`, etc., tenemos instrucciones como `func_info`, `select_val`, `move`, `return`, `call_ext_only`, `call_only`, `jump`, `int_code_end`, etc. y datos como `Elixir.Hello`, `Hello, world!`. Esto es lo que la maquina virtual ya puede ejecutar directamente, o se puede usar para propósitos como optimizaciones si se puede garantizar que la semántica se mantiene.
+
 ### Ejemplo con JavaScript
 
-También podemos ver el bytecode de JavaScript. Si tienes instalado `node` en tu computadora.
+También podemos ver el bytecode de JavaScript. Si tienes instalado `node` en tu computadora puedes correr algo como lo siguiente para ver el bytecode de JavaScript:
+
+```bash
+node --print-bytecode --eval "console.log('Hello, world!')"
+```
+
+Te dará un motón de código en bytes que es lo que el intérprete de JavaScript ejecuta. Para entender las partes que tiene podemos empezar por aquí: [Understanding V8's Bytecode](https://medium.com/dailyjs/understanding-v8s-bytecode-317d46c94775) y aquí [Node.js Under the Hood #8 - Understanding Bytecodes](https://dev.to/_staticvoid/node-js-under-the-hood-8-oh-the-bytecodes-1p6p)
+
+Como puedes, en ambos casos el bytecode no es sencillo, de hecho, pero no está diseñado para que los programadores trabajemos con él.
 
 ## Resumen
 
@@ -108,6 +118,4 @@ El bytecode es un producto secundario e intermedio de la compilación en algunos
 
 A veces se puede usar el bytecode con otros propósitos, por ejemplo, para hacer optimizaciones en tiempo de ejecución, que es lo que hacen los compiladores bajo de demanda o JIt's.
 
-## Aprende más
-
-* [Bytecode](https://en.wikipedia.org/wiki/Bytecode) en Wikipedia
+Este pequeño artículo tiene el objetivo de que por lo menos veas físicamente lo que muchas veces se menciona como producto de la compilación o interpretación de un programa, pero que no se explica qué es en la mayoría de los casos.
