@@ -1,0 +1,857 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>¿Qué es el bytecode? - The Dojo MX Blog</title>
+<meta name="description" content="En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="¿Qué es el bytecode?">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html">
+
+
+  <meta property="og:description" content="En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1674189353/1829084045_mad_cat_scientist_looking_into_a_black_screen_with_binary_code__detailed_concept_art___artstation__H_bttvyj.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-01-22T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html",
+      "name": "¿Qué es el bytecode?",
+      "headline": "¿Qué es el bytecode?",
+      "keywords": "bytecode,complación,intérprete",
+      "description": "En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.",
+      "articleBody": "Tanto para Java como para otros lenguajes que son interpretados, por ejemplo Python o JavaScript, se genera una representación intermedia como resultado de la ejecución o compilación. A este código le llamamos bytecode.\n\nHablemos de qué es y para qué existe.\n\n¿Qué es el bytecode?\n\nEl bytecode es una representación intermedia de tu programa que tiene dos características principales:\n\n\n  No es tan legible como el código fuente, por ser más compacta.\n  Es independiente de la arquitectura de la máquina, por lo que siempre es la misma representación para tu máquina virtual.\n\n\nEl objetivo del bytecode entonces es conservar la semántica de tu programa, pero de una forma que sea más fácil de ejecutar en una máquina virtual o el intérprete.\n\nSe llama bytecode porque normalmente es una secuencia de bytes que representan tanto las instrucciones como los datos.\n\nEjemplo de un bytecode\n\nVeamos el ejemplo de Elixir y el código de bytes que produce, para entender el con un ejemplo.\n\ndefmodule Hello do\n  def greet do\n    IO.puts \"Hello, world!\"\n  end\nend\n\n\nEl proceso que Elixir sigue para ejecutarse es el siguiente:\n\n\n\nFuente: Getting each stage of Elixir’s compilation all the way to the BEAM bytecode.\n\nLa Bogdan/Björn Erlang Abstract Machine (BEAM) tiene un set de instrucciones, que constituyen su bytecode. Estos aunque están semi-documentados aquí, no están documentados oficialmente y pueden cambiar en cada release.\n\nCuando compilas una archivo de Elixir, se crea un archivo con el mismo nombre de tu módulo, pero con la extensión .beam. Este archivo contiene el bytecode de tu programa. Para poder verlo en nuestro editor, necesitamos herramientas especiales. Para VSCode, podemos usar la extensión BEAMdasm.\n\nAquí podemos ver el ejemplo de lo que genera el programa anterior:\n\nModule:  Elixir.Hello\n\nAttributes: [{vsn, [72315C84EFAF57A23F8E5FD7551E9C5D]}]\n\nCompilation Info: [{version, 8.2.2}, {options, [no_spawn_compiler_process, from_core, no_core_prepare, no_auto_import]}, {source, /Users/hectorip/Development/elixir/hello_world/hello_world.exs}]\n\n\n//Function  Elixir.Hello:__info__/1\nlabel01:  func_info            Elixir.Hello __info__ 1\nlabel02:  select_val           X[0] label09 [attributes, label08, compile, label08, deprecated, label07, exports_md5, label06, functions, label05, macros, label07, md5, label08, module, label04, struct, label03]\nlabel03:  move                 nil X[0]\n          return\nlabel04:  move                 Elixir.Hello X[0]\n          return\nlabel05:  move                 [{greet, 0}] X[0]\n          return\nlabel06:  move                 7~�t�jO;_���lS\u0007 X[0]\n          return\nlabel07:  move                 nil X[0]\n          return\nlabel08:  move                 X[0] X[1]\n          move                 Elixir.Hello X[0]\n          call_ext_only        2 erlang:get_module_info/2\nlabel09:  call_only            1 label17\n\n//Function  Elixir.Hello:greet/0\nlabel10:  func_info            Elixir.Hello greet 0 //line hello_world.exs, 2\nlabel11:  move                 Hello, world! X[0]\n          call_ext_only        1 Elixir.IO:puts/1 //line hello_world.exs, 3\n\n//Function  Elixir.Hello:module_info/0\nlabel12:  func_info            Elixir.Hello module_info 0\nlabel13:  move                 Elixir.Hello X[0]\n          call_ext_only        1 erlang:get_module_info/1\n\n//Function  Elixir.Hello:module_info/1\nlabel14:  func_info            Elixir.Hello module_info 1\nlabel15:  move                 X[0] X[1]\n          move                 Elixir.Hello X[0]\n          call_ext_only        2 erlang:get_module_info/2\n\n//Function  Elixir.Hello:-inlined-__info__/1-/1\nlabel16:  func_info            Elixir.Hello -inlined-__info__/1- 1\nlabel17:  jump                 label16\n          int_code_end\n\n\nComo puedes ver después de las etiquetas que tienen nombres como label01, label02, etc., tenemos instrucciones como func_info, select_val, move, return, call_ext_only, call_only, jump, int_code_end, etc. y datos como Elixir.Hello, Hello, world!. Esto es lo que la maquina virtual ya puede ejecutar directamente, o se puede usar para propósitos como optimizaciones si se puede garantizar que la semántica se mantiene.\n\nEjemplo con JavaScript\n\nTambién podemos ver el bytecode de JavaScript. Si tienes instalado node en tu computadora puedes correr algo como lo siguiente para ver el bytecode de JavaScript:\n\nnode --print-bytecode --eval \"console.log('Hello, world!')\"\n\n\nTe dará un motón de código en bytes que es lo que el intérprete de JavaScript ejecuta. Para entender las partes que tiene podemos empezar por aquí: Understanding V8’s Bytecode y aquí Node.js Under the Hood #8 - Understanding Bytecodes\n\nComo puedes, en ambos casos el bytecode no es sencillo, de hecho, pero no está diseñado para que los programadores trabajemos con él.\n\nResumen\n\nEl bytecode es un producto secundario e intermedio de la compilación en algunos lenguajes y entornos de ejecución. En algunos casos es directamente el objeto que la máquina virtual ejecuta y en otros se puede pensar como un caché de la ejecución que se puede usar en las ejecuciones posteriores de un programa para mejorar el rendimiento.\n\nA veces se puede usar el bytecode con otros propósitos, por ejemplo, para hacer optimizaciones en tiempo de ejecución, que es lo que hacen los compiladores bajo de demanda o JIt’s.\n\nEste pequeño artículo tiene el objetivo de que por lo menos veas físicamente lo que muchas veces se menciona como producto de la compilación o interpretación de un programa, pero que no se explica qué es en la mayoría de los casos.\n",
+      "datePublished": "2023-01-22 00:00:00 -0600",
+      "dateModified": "2023-01-22 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1674189353/1829084045_mad_cat_scientist_looking_into_a_black_screen_with_binary_code__detailed_concept_art___artstation__H_bttvyj.png"
+      }
+    }
+</script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1674189353/1829084045_mad_cat_scientist_looking_into_a_black_screen_with_binary_code__detailed_concept_art___artstation__H_bttvyj.png');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          ¿Qué es el bytecode?
+
+        
+      </h1>
+      
+        <p class="page__lead">En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        719 palabras | 4 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="¿Qué es el bytecode?">
+    <meta itemprop="description" content="En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.">
+    <meta itemprop="datePublished" content="2023-01-22T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>Tanto para Java como para otros lenguajes que son interpretados, por ejemplo Python o JavaScript, se genera una representación intermedia como resultado de la ejecución o compilación. A este código le llamamos bytecode.</p>
+
+<p>Hablemos de qué es y para qué existe.</p>
+
+<h2 id="qué-es-el-bytecode">¿Qué es el bytecode?</h2>
+
+<p>El bytecode es una representación intermedia de tu programa que tiene dos características principales:</p>
+
+<ol>
+  <li>No es tan legible como el código fuente, por ser más compacta.</li>
+  <li>Es independiente de la arquitectura de la máquina, por lo que siempre es la misma representación para tu máquina virtual.</li>
+</ol>
+
+<p>El objetivo del bytecode entonces es conservar la semántica de tu programa, pero de una forma que sea más fácil de ejecutar en una máquina virtual o el intérprete.</p>
+
+<p>Se llama <em>bytecode</em> porque normalmente es una secuencia de bytes que representan tanto las instrucciones como los datos.</p>
+
+<h2 id="ejemplo-de-un-bytecode">Ejemplo de un bytecode</h2>
+
+<p>Veamos el ejemplo de Elixir y el código de bytes que produce, para entender el con un ejemplo.</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">Hello</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">greet</span> <span class="k">do</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Hello, world!"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>El proceso que Elixir sigue para ejecutarse es el siguiente:</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/v1674191298/58786d8c955aaa5df2ebdb5a2c2790da5216b705_bllv3i.png" alt="Procesamiento de Elixir al Bytecode de BEAM" class="align-center"></p>
+
+<p>Fuente: <a href="https://elixirforum.com/t/getting-each-stage-of-elixirs-compilation-all-the-way-to-the-beam-bytecode/1873/7">Getting each stage of Elixir’s compilation all the way to the BEAM bytecode</a>.</p>
+
+<p>La <strong>Bogdan/Björn Erlang Abstract Machine</strong> (BEAM) tiene un <a href="http://www.cs-lab.org/historical_beam_instruction_set.html">set de instrucciones</a>, que constituyen su bytecode. Estos aunque están semi-documentados aquí, no están documentados oficialmente y pueden cambiar en cada release.</p>
+
+<p>Cuando compilas una archivo de Elixir, se crea un archivo con el mismo nombre de tu módulo, pero con la extensión <code class="language-plaintext highlighter-rouge">.beam</code>. Este archivo contiene el bytecode de tu programa. Para poder verlo en nuestro editor, necesitamos herramientas especiales. Para VSCode, podemos usar la extensión <a href="https://marketplace.visualstudio.com/items?itemName=Valentin.beamdasm">BEAMdasm</a>.</p>
+
+<p>Aquí podemos ver el ejemplo de lo que genera el programa anterior:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Module:  Elixir.Hello
+
+Attributes: <span class="o">[{</span>vsn, <span class="o">[</span>72315C84EFAF57A23F8E5FD7551E9C5D]<span class="o">}]</span>
+
+Compilation Info: <span class="o">[{</span>version, 8.2.2<span class="o">}</span>, <span class="o">{</span>options, <span class="o">[</span>no_spawn_compiler_process, from_core, no_core_prepare, no_auto_import]<span class="o">}</span>, <span class="o">{</span><span class="nb">source</span>, /Users/hectorip/Development/elixir/hello_world/hello_world.exs<span class="o">}]</span>
+
+
+//Function  Elixir.Hello:__info__/1
+label01:  func_info            Elixir.Hello __info__ 1
+label02:  select_val           X[0] label09 <span class="o">[</span>attributes, label08, compile, label08, deprecated, label07, exports_md5, label06, functions, label05, macros, label07, md5, label08, module, label04, struct, label03]
+label03:  move                 nil X[0]
+          <span class="k">return
+</span>label04:  move                 Elixir.Hello X[0]
+          <span class="k">return
+</span>label05:  move                 <span class="o">[{</span>greet, 0<span class="o">}]</span> X[0]
+          <span class="k">return
+</span>label06:  move                 7~�t�jO<span class="p">;</span>_���lS X[0]
+          <span class="k">return
+</span>label07:  move                 nil X[0]
+          <span class="k">return
+</span>label08:  move                 X[0] X[1]
+          move                 Elixir.Hello X[0]
+          call_ext_only        2 erlang:get_module_info/2
+label09:  call_only            1 label17
+
+//Function  Elixir.Hello:greet/0
+label10:  func_info            Elixir.Hello greet 0 //line hello_world.exs, 2
+label11:  move                 Hello, world! X[0]
+          call_ext_only        1 Elixir.IO:puts/1 //line hello_world.exs, 3
+
+//Function  Elixir.Hello:module_info/0
+label12:  func_info            Elixir.Hello module_info 0
+label13:  move                 Elixir.Hello X[0]
+          call_ext_only        1 erlang:get_module_info/1
+
+//Function  Elixir.Hello:module_info/1
+label14:  func_info            Elixir.Hello module_info 1
+label15:  move                 X[0] X[1]
+          move                 Elixir.Hello X[0]
+          call_ext_only        2 erlang:get_module_info/2
+
+//Function  Elixir.Hello:-inlined-__info__/1-/1
+label16:  func_info            Elixir.Hello <span class="nt">-inlined-__info__</span>/1- 1
+label17:  jump                 label16
+          int_code_end
+</code></pre></div></div>
+
+<p>Como puedes ver después de las etiquetas que tienen nombres como <code class="language-plaintext highlighter-rouge">label01</code>, <code class="language-plaintext highlighter-rouge">label02</code>, etc., tenemos instrucciones como <code class="language-plaintext highlighter-rouge">func_info</code>, <code class="language-plaintext highlighter-rouge">select_val</code>, <code class="language-plaintext highlighter-rouge">move</code>, <code class="language-plaintext highlighter-rouge">return</code>, <code class="language-plaintext highlighter-rouge">call_ext_only</code>, <code class="language-plaintext highlighter-rouge">call_only</code>, <code class="language-plaintext highlighter-rouge">jump</code>, <code class="language-plaintext highlighter-rouge">int_code_end</code>, etc. y datos como <code class="language-plaintext highlighter-rouge">Elixir.Hello</code>, <code class="language-plaintext highlighter-rouge">Hello, world!</code>. Esto es lo que la maquina virtual ya puede ejecutar directamente, o se puede usar para propósitos como optimizaciones si se puede garantizar que la semántica se mantiene.</p>
+
+<h3 id="ejemplo-con-javascript">Ejemplo con JavaScript</h3>
+
+<p>También podemos ver el bytecode de JavaScript. Si tienes instalado <code class="language-plaintext highlighter-rouge">node</code> en tu computadora puedes correr algo como lo siguiente para ver el bytecode de JavaScript:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node <span class="nt">--print-bytecode</span> <span class="nt">--eval</span> <span class="s2">"console.log('Hello, world!')"</span>
+</code></pre></div></div>
+
+<p>Te dará un motón de código en bytes que es lo que el intérprete de JavaScript ejecuta. Para entender las partes que tiene podemos empezar por aquí: <a href="https://medium.com/dailyjs/understanding-v8s-bytecode-317d46c94775">Understanding V8’s Bytecode</a> y aquí <a href="https://dev.to/_staticvoid/node-js-under-the-hood-8-oh-the-bytecodes-1p6p">Node.js Under the Hood #8 - Understanding Bytecodes</a></p>
+
+<p>Como puedes, en ambos casos el bytecode no es sencillo, de hecho, pero no está diseñado para que los programadores trabajemos con él.</p>
+
+<h2 id="resumen">Resumen</h2>
+
+<p>El bytecode es un producto secundario e intermedio de la compilación en algunos lenguajes y entornos de ejecución. En algunos casos es directamente el objeto que la máquina virtual ejecuta y en otros se puede pensar como un caché de la ejecución que se puede usar en las ejecuciones posteriores de un programa para mejorar el rendimiento.</p>
+
+<p>A veces se puede usar el bytecode con otros propósitos, por ejemplo, para hacer optimizaciones en tiempo de ejecución, que es lo que hacen los compiladores bajo de demanda o JIt’s.</p>
+
+<p>Este pequeño artículo tiene el objetivo de que por lo menos veas físicamente lo que muchas veces se menciona como producto de la compilación o interpretación de un programa, pero que no se explica qué es en la mayoría de los casos.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#bytecode" class="page__taxonomy-item" rel="tag">bytecode</a><span class="sep">, </span>
+    
+      <a href="/tags/#complaci%C3%B3n" class="page__taxonomy-item" rel="tag">complación</a><span class="sep">, </span>
+    
+      <a href="/tags/#int%C3%A9rprete" class="page__taxonomy-item" rel="tag">intérprete</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-01-22T00:00:00-06:00">January 22, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%C2%BFQu%C3%A9+es+el+bytecode%3F%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F01%2F22%2Fentendiendo-el-bytecode.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F01%2F22%2Fentendiendo-el-bytecode.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F01%2F22%2Fentendiendo-el-bytecode.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/01/18/compilacion-just-in-time-que-es.html" class="pagination--pager" title="Qué es la compilación Just In Time (JIT)
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_450,w_1024/v1673577537/DALL_E_2023-01-12_20.38.31_-_a_mechanical_brain_in_the_back_of_a_robot_s_head_made_as_a__membrane__that_is_a_complex_machine_made_of_very_tiny_gears_levers_and_other_mechanical_dexwfs.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/01/18/compilacion-just-in-time-que-es.html" rel="permalink">Qué es la compilación Just In Time (JIT)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 18-01-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Has escuchado que varios lenguajes están agregando la capacidad de compilación Just In Time a sus entornos? Hablemos de qué es y cómo te beneficia.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_600,w_300/v1673056123/DALL_E_2023-01-06_19.47.48_-_Perceptron_artistic_digital_paint_high_quality_detailed_wpoohz.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/01/07/ejercicio-programando-un-perceptron.html" rel="permalink">Ejercicio: programando un perceptrón con Python
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+15 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 07-01-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1672204121/ivan-bandura-8VePVILfCKU-unsplash_bhsnsa.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/30/claridad-en-el-codigo.html" rel="permalink">Claridad de  Saša Jurić
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Todos quisiéramos tener bases de código perfectas, fáciles de mantener y totalmente claras. Esto es casi imposible, pero podemos acercarnos. Vemos cómo.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_lfill,h_450,w_1200/v1671858924/ryan-baker-VgROGebCi80-unsplash_p2jzj3.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/26/explicaciones-elocuentes.html" rel="permalink">Explicaciones elocuentes
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 26-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Comunicar claramente y de manera efectiva es una de las tareas más importantes de los desarrolladores. Hablemos de las técnicas que puedes seguir para mejora...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/01/22/entendiendo-el-bytecode"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

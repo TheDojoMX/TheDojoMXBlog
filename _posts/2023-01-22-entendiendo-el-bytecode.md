@@ -1,5 +1,5 @@
 ---
-title: "Entendiendo el bytecode"
+title: "¿Qué es el bytecode?"
 date: 2023-01-22
 author: Héctor Patricio
 tags: bytecode complación intérprete

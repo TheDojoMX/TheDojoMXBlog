@@ -580,4 +580,10 @@ var store = [{
         "tags": ["jit","compiladores","compilers","compilación","just-in-time"],
         "url": "/2023/01/18/compilacion-just-in-time-que-es.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_450,w_1024/v1673577537/DALL_E_2023-01-12_20.38.31_-_a_mechanical_brain_in_the_back_of_a_robot_s_head_made_as_a__membrane__that_is_a_complex_machine_made_of_very_tiny_gears_levers_and_other_mechanical_dexwfs.png"
+      },{
+        "title": "¿Qué es el bytecode?",
+        "excerpt":"Tanto para Java como para otros lenguajes que son interpretados, por ejemplo Python o JavaScript, se genera una representación intermedia como resultado de la ejecución o compilación. A este código le llamamos bytecode. Hablemos de qué es y para qué existe. ¿Qué es el bytecode? El bytecode es una representación...","categories": [],
+        "tags": ["bytecode","complación","intérprete"],
+        "url": "/2023/01/22/entendiendo-el-bytecode.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1674189353/1829084045_mad_cat_scientist_looking_into_a_black_screen_with_binary_code__detailed_concept_art___artstation__H_bttvyj.png"
       }]

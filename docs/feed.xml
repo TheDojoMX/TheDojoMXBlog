@@ -1,4 +1,110 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-01-21T23:35:14-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Qué es la compilación Just In Time (JIT)</title><link href="https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es.html" rel="alternate" type="text/html" title="Qué es la compilación Just In Time (JIT)" /><published>2023-01-18T00:00:00-06:00</published><updated>2023-01-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es.html">&lt;p&gt;Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo   de software. Hace tiempo ha empezado a sonar más un término: &lt;strong&gt;JIT&lt;/strong&gt; o compilación &lt;strong&gt;Just In Time&lt;/strong&gt;, ya que varios lenguajes lo han integrado a sus entornos de ejecución, aquí la llamaremos “compilación bajo demanda” (gracias a Manuel Rubio por la sugerencia). Durante el artículo entenderás por qué creemos que esta traducción es adecuada.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-01-22T07:32:13-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es el bytecode?</title><link href="https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html" rel="alternate" type="text/html" title="¿Qué es el bytecode?" /><published>2023-01-22T00:00:00-06:00</published><updated>2023-01-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html">&lt;p&gt;Tanto para Java como para otros lenguajes que son interpretados, por ejemplo Python o JavaScript, se genera una representación intermedia como resultado de la ejecución o compilación. A este código le llamamos bytecode.&lt;/p&gt;
+
+&lt;p&gt;Hablemos de qué es y para qué existe.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-el-bytecode&quot;&gt;¿Qué es el bytecode?&lt;/h2&gt;
+
+&lt;p&gt;El bytecode es una representación intermedia de tu programa que tiene dos características principales:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;No es tan legible como el código fuente, por ser más compacta.&lt;/li&gt;
+  &lt;li&gt;Es independiente de la arquitectura de la máquina, por lo que siempre es la misma representación para tu máquina virtual.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;El objetivo del bytecode entonces es conservar la semántica de tu programa, pero de una forma que sea más fácil de ejecutar en una máquina virtual o el intérprete.&lt;/p&gt;
+
+&lt;p&gt;Se llama &lt;em&gt;bytecode&lt;/em&gt; porque normalmente es una secuencia de bytes que representan tanto las instrucciones como los datos.&lt;/p&gt;
+
+&lt;h2 id=&quot;ejemplo-de-un-bytecode&quot;&gt;Ejemplo de un bytecode&lt;/h2&gt;
+
+&lt;p&gt;Veamos el ejemplo de Elixir y el código de bytes que produce, para entender el con un ejemplo.&lt;/p&gt;
+
+&lt;div class=&quot;language-elixir highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;defmodule&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;IO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello, world!&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El proceso que Elixir sigue para ejecutarse es el siguiente:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1674191298/58786d8c955aaa5df2ebdb5a2c2790da5216b705_bllv3i.png&quot; alt=&quot;Procesamiento de Elixir al Bytecode de BEAM&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fuente: &lt;a href=&quot;https://elixirforum.com/t/getting-each-stage-of-elixirs-compilation-all-the-way-to-the-beam-bytecode/1873/7&quot;&gt;Getting each stage of Elixir’s compilation all the way to the BEAM bytecode&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;La &lt;strong&gt;Bogdan/Björn Erlang Abstract Machine&lt;/strong&gt; (BEAM) tiene un &lt;a href=&quot;http://www.cs-lab.org/historical_beam_instruction_set.html&quot;&gt;set de instrucciones&lt;/a&gt;, que constituyen su bytecode. Estos aunque están semi-documentados aquí, no están documentados oficialmente y pueden cambiar en cada release.&lt;/p&gt;
+
+&lt;p&gt;Cuando compilas una archivo de Elixir, se crea un archivo con el mismo nombre de tu módulo, pero con la extensión &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.beam&lt;/code&gt;. Este archivo contiene el bytecode de tu programa. Para poder verlo en nuestro editor, necesitamos herramientas especiales. Para VSCode, podemos usar la extensión &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=Valentin.beamdasm&quot;&gt;BEAMdasm&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Aquí podemos ver el ejemplo de lo que genera el programa anterior:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Module:  Elixir.Hello
+
+Attributes: &lt;span class=&quot;o&quot;&gt;[{&lt;/span&gt;vsn, &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;72315C84EFAF57A23F8E5FD7551E9C5D]&lt;span class=&quot;o&quot;&gt;}]&lt;/span&gt;
+
+Compilation Info: &lt;span class=&quot;o&quot;&gt;[{&lt;/span&gt;version, 8.2.2&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;, &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;options, &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;no_spawn_compiler_process, from_core, no_core_prepare, no_auto_import]&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;, &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;, /Users/hectorip/Development/elixir/hello_world/hello_world.exs&lt;span class=&quot;o&quot;&gt;}]&lt;/span&gt;
+
+
+//Function  Elixir.Hello:__info__/1
+label01:  func_info            Elixir.Hello __info__ 1
+label02:  select_val           X[0] label09 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;attributes, label08, compile, label08, deprecated, label07, exports_md5, label06, functions, label05, macros, label07, md5, label08, module, label04, struct, label03]
+label03:  move                 nil X[0]
+          &lt;span class=&quot;k&quot;&gt;return
+&lt;/span&gt;label04:  move                 Elixir.Hello X[0]
+          &lt;span class=&quot;k&quot;&gt;return
+&lt;/span&gt;label05:  move                 &lt;span class=&quot;o&quot;&gt;[{&lt;/span&gt;greet, 0&lt;span class=&quot;o&quot;&gt;}]&lt;/span&gt; X[0]
+          &lt;span class=&quot;k&quot;&gt;return
+&lt;/span&gt;label06:  move                 7~�t�jO&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;_���lS X[0]
+          &lt;span class=&quot;k&quot;&gt;return
+&lt;/span&gt;label07:  move                 nil X[0]
+          &lt;span class=&quot;k&quot;&gt;return
+&lt;/span&gt;label08:  move                 X[0] X[1]
+          move                 Elixir.Hello X[0]
+          call_ext_only        2 erlang:get_module_info/2
+label09:  call_only            1 label17
+
+//Function  Elixir.Hello:greet/0
+label10:  func_info            Elixir.Hello greet 0 //line hello_world.exs, 2
+label11:  move                 Hello, world! X[0]
+          call_ext_only        1 Elixir.IO:puts/1 //line hello_world.exs, 3
+
+//Function  Elixir.Hello:module_info/0
+label12:  func_info            Elixir.Hello module_info 0
+label13:  move                 Elixir.Hello X[0]
+          call_ext_only        1 erlang:get_module_info/1
+
+//Function  Elixir.Hello:module_info/1
+label14:  func_info            Elixir.Hello module_info 1
+label15:  move                 X[0] X[1]
+          move                 Elixir.Hello X[0]
+          call_ext_only        2 erlang:get_module_info/2
+
+//Function  Elixir.Hello:-inlined-__info__/1-/1
+label16:  func_info            Elixir.Hello &lt;span class=&quot;nt&quot;&gt;-inlined-__info__&lt;/span&gt;/1- 1
+label17:  jump                 label16
+          int_code_end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Como puedes ver después de las etiquetas que tienen nombres como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label01&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label02&lt;/code&gt;, etc., tenemos instrucciones como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func_info&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;select_val&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;move&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;call_ext_only&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;call_only&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jump&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int_code_end&lt;/code&gt;, etc. y datos como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Elixir.Hello&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hello, world!&lt;/code&gt;. Esto es lo que la maquina virtual ya puede ejecutar directamente, o se puede usar para propósitos como optimizaciones si se puede garantizar que la semántica se mantiene.&lt;/p&gt;
+
+&lt;h3 id=&quot;ejemplo-con-javascript&quot;&gt;Ejemplo con JavaScript&lt;/h3&gt;
+
+&lt;p&gt;También podemos ver el bytecode de JavaScript. Si tienes instalado &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node&lt;/code&gt; en tu computadora puedes correr algo como lo siguiente para ver el bytecode de JavaScript:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node &lt;span class=&quot;nt&quot;&gt;--print-bytecode&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;console.log('Hello, world!')&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Te dará un motón de código en bytes que es lo que el intérprete de JavaScript ejecuta. Para entender las partes que tiene podemos empezar por aquí: &lt;a href=&quot;https://medium.com/dailyjs/understanding-v8s-bytecode-317d46c94775&quot;&gt;Understanding V8’s Bytecode&lt;/a&gt; y aquí &lt;a href=&quot;https://dev.to/_staticvoid/node-js-under-the-hood-8-oh-the-bytecodes-1p6p&quot;&gt;Node.js Under the Hood #8 - Understanding Bytecodes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Como puedes, en ambos casos el bytecode no es sencillo, de hecho, pero no está diseñado para que los programadores trabajemos con él.&lt;/p&gt;
+
+&lt;h2 id=&quot;resumen&quot;&gt;Resumen&lt;/h2&gt;
+
+&lt;p&gt;El bytecode es un producto secundario e intermedio de la compilación en algunos lenguajes y entornos de ejecución. En algunos casos es directamente el objeto que la máquina virtual ejecuta y en otros se puede pensar como un caché de la ejecución que se puede usar en las ejecuciones posteriores de un programa para mejorar el rendimiento.&lt;/p&gt;
+
+&lt;p&gt;A veces se puede usar el bytecode con otros propósitos, por ejemplo, para hacer optimizaciones en tiempo de ejecución, que es lo que hacen los compiladores bajo de demanda o JIt’s.&lt;/p&gt;
+
+&lt;p&gt;Este pequeño artículo tiene el objetivo de que por lo menos veas físicamente lo que muchas veces se menciona como producto de la compilación o interpretación de un programa, pero que no se explica qué es en la mayoría de los casos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="bytecode" /><category term="complación" /><category term="intérprete" /><summary type="html">En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.</summary></entry><entry><title type="html">Qué es la compilación Just In Time (JIT)</title><link href="https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es.html" rel="alternate" type="text/html" title="Qué es la compilación Just In Time (JIT)" /><published>2023-01-18T00:00:00-06:00</published><updated>2023-01-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es.html">&lt;p&gt;Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo   de software. Hace tiempo ha empezado a sonar más un término: &lt;strong&gt;JIT&lt;/strong&gt; o compilación &lt;strong&gt;Just In Time&lt;/strong&gt;, ya que varios lenguajes lo han integrado a sus entornos de ejecución, aquí la llamaremos “compilación bajo demanda” (gracias a Manuel Rubio por la sugerencia). Durante el artículo entenderás por qué creemos que esta traducción es adecuada.&lt;/p&gt;
 
 &lt;p&gt;Este tipo de compilación es poco entendida, por eso en este artículo hablaremos de por qué es algo tan usado. Primero empecemos hablando de la compilación en general y después entendamos este &lt;strong&gt;&lt;em&gt;tipo especial de ejecución&lt;/em&gt;&lt;/strong&gt;. Pero empecemos desde las bases.&lt;/p&gt;
 
@@ -1045,103 +1151,4 @@ Incorrectos: 0 - 0.0%
 
 &lt;h2 id=&quot;los-límites-de-la-extensión&quot;&gt;Los límites de la extensión&lt;/h2&gt;
 
-&lt;p&gt;Es natural que llegue el punto en el que no puedas seguir extendiendo el sistema y tengas que cambiar código que ya está funcionando, nada de lo que estamos diciendo es una ley absoluta o moral que te tengas que sentir mal por no cumplir, recuerda que todo esto es por tu conveniencia, la de tus desarrollos y de tu equipo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="open/closed" /><category term="abierto/cerrado" /><summary type="html">Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código</summary></entry><entry><title type="html">Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link href="https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html" rel="alternate" type="text/html" title="Análisis de los principios SOLID: Principio de Responsabilidad Única" /><published>2022-12-01T00:00:00-06:00</published><updated>2022-12-01T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y &lt;em&gt;“limpio”&lt;/em&gt; debe conocer y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Explicación del principio&lt;/li&gt;
-  &lt;li&gt;Ejemplos y contraejemplos para pensar&lt;/li&gt;
-  &lt;li&gt;Críticas y alternativas&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Esta serie de artículos surge debido a que &lt;strong&gt;aunque son poco entendidos por la mayoría de los programadores&lt;/strong&gt;, estos principios se toman como &lt;em&gt;verdades universales&lt;/em&gt; que hay que seguir. Si queremos desarrollar buen software, no podemos ir por allí solamente aceptando lo que &lt;em&gt;la mayoría&lt;/em&gt; dice que está bien sin entenderlo a fondo y cuestionarlo.&lt;/p&gt;
-
-&lt;p&gt;Así que esta serie estará enfocada más bien en el lado débil de los principios SOLID y ver si tenemos mejores alternativas, o por lo menos, ver cuando podemos usarlos y cuando no.&lt;/p&gt;
-
-&lt;p&gt;Empecemos diseccionando el primer principio de los aclamados SOLID: el principio de Responsabilidad Única. Como verás a lo largo de los artículos, estos principios casi siempre se aplican con ejemplos de programación orientada a objetos, por lo que los verás explicados con &lt;em&gt;“clases”&lt;/em&gt; y &lt;em&gt;“objetos”&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-principio-de-responsabilidad-única&quot;&gt;El principio de Responsabilidad Única&lt;/h2&gt;
-
-&lt;p&gt;Este principio se puede enunciar como:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Una clase debe tener una única razón para ser modificada” según en libro &lt;em&gt;Rober Martin&lt;/em&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Otros lo enuncian como:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Una clase debe hacer sólo una cosa y hacerla bien.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Esto es un resumen del principio que nos puede servir para ayudarnos a pensar sobre las &lt;em&gt;responsabilidades&lt;/em&gt; que nuestro código tiene, específicamente una clase. Pero, ¿qué es una &lt;em&gt;responsabilidad&lt;/em&gt;? Aquí es donde empiezan a entrar los problemas al definir este principio y a tomar pasos prácticos para aplicarlo. Pensemos en algunos ejemplos:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Una clase que se encarga de transformar un archivo de un formato en otro debería encargarse sólo de esta transformación. ¿En dónde empieza y dónde acaba la &lt;em&gt;responsabilidad&lt;/em&gt; de esta clase? ¿Tiene que encargarse de leer y guardar el archivo? ¿Debe existir una clase para guardar el archivo y otra para leerlo?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Una clase que se encarga de la comunicación con la API, transformando las peticiones del programa interno en peticiones HTTP y transformando las respuestas de la API en objetos y tipos de datos internos. ¿Dónde acaba su &lt;em&gt;responsabilidad&lt;/em&gt;?¿Es la encargada de verificar la condición de la red? ¿Se encarga de verificar que los datos sean correctos, o es responsabilidad de otra clase?&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Como puedes ver, el principio, aunque suena simple, deja muchas cosas sin resolver y vagas, por lo que pocos encuentran un manera clara de aplicarlo. A mi me parece que tiene aplicaciones, pero solamente si acotamos más su alcance y definimos algunos límites, incluso cambiando el enfoque del consejo.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-problema&quot;&gt;El problema&lt;/h2&gt;
-
-&lt;p&gt;El gran problema con este consejo es que la definición de lo que una &lt;strong&gt;responsabilidad&lt;/strong&gt; significa es completamente arbitraria. Todo dependerá de quién esté dividiendo el problema más grande en &lt;em&gt;responsabilidades&lt;/em&gt;. Además, esta división puede tener diferentes niveles de granularidad, por lo que una sola &lt;em&gt;responsabilidad&lt;/em&gt; a cierto nivel puede significar varias &lt;em&gt;responsabilidades&lt;/em&gt; en un nivel más bajo.&lt;/p&gt;
-
-&lt;h2 id=&quot;transformando-el-principio&quot;&gt;Transformando el principio&lt;/h2&gt;
-
-&lt;p&gt;¿Cuál es la &lt;em&gt;esencia&lt;/em&gt; del principio? Para mi el corazón de este consejo tiene que ver con controlar la &lt;strong&gt;información&lt;/strong&gt; que una clase maneja. También tiene que ver con el &lt;strong&gt;cambio&lt;/strong&gt;. Finalmente el consejo tiene que ver con la cantidad de información que podemos mantener en nuestra mente en un tiempo específico. Si una pieza de código hace demasiadas cosas, será difícil de entender y por lo tanto propensa a errores y omisiones.&lt;/p&gt;
-
-&lt;p&gt;La primera  cosa de la que vamos a hablar es de la &lt;strong&gt;información&lt;/strong&gt;. La idea de que se encapsule una responsabilidad en un una clase es que si la información que tenemos sobre un problema cambia, se propague por la menor cantidad de código posible en nuestra base, rediciendo el impacto y la posibilidad de crear problemas.&lt;/p&gt;
-
-&lt;p&gt;Entonces, lo primero que tenemos que pensar es si el nivel de granularidad del que se está hablando (clases) es el correcto. Para mi, no se puede establecer un nivel de granularidad tan fijo, sino que dependerá del programador que decida dónde &lt;strong&gt;encapsular o esconder&lt;/strong&gt; la información que esta responsabilidad maneja. Puede que sea un módulo, paquete, clase o función. Hay problemas grandes y pequeños.&lt;/p&gt;
-
-&lt;p&gt;Para aplicar esto, piensa:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;¿Qué procedimientos, información y datos va a manejar esta pieza de código? Si no tienes claro esto, puede que te falte pensar un poco más en problema, e incluso dividirlo mejor.&lt;/li&gt;
-  &lt;li&gt;¿Cómo puedo aislar la información que esta pieza de código maneja, de tal forma que si cambiar, no afecte a todo lo que está fuera de ella?&lt;/li&gt;
-  &lt;li&gt;¿De dónde viene y a dónde va la información que esta pieza de código transforma?&lt;/li&gt;
-  &lt;li&gt;¿Cómo puedo definir &lt;em&gt;exactamente&lt;/em&gt; qué hace esta pieza de código? Esta definición junto con la justificación de la decisión debería estar bien documentada.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;técnicas-para-concretar-el-principio&quot;&gt;Técnicas para concretar el principio&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Divide en problemas (responsabilidades) bien definidas tu problema principal. No hay una forma correcta de hacerlo, estas divisiones siempre serán arbitrarias, así que trata de documentar estas decisiones lo mejor posible. Estas decisiones deben ser fáciles de entender en la medida de lo posible.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Define exactamente que hará cada pieza de código que tenga una interfaz. Un módulo, una clase y una función tienen una interfaz, una parte que permite a otras piezas de código usar su funcionalidad interna. La función de esta interfaz es &lt;em&gt;esconder&lt;/em&gt; los detalles de implementación permitiendo el uso de la funcionalidad encapsulada. También esto debe estar bien documentado en el lugar adecuado. Documenta lo que hace, no cómo lo hace.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Estos dos puntos anteriores los puedes aplicar recursivamente a nivel cada vez más bajo, hasta que consideres que el problema es lo suficientemente pequeño como para resolverlo directamente.&lt;/p&gt;
-
-&lt;p&gt;El último consejo tiene varias partes, por lo que trataremos en un subtítulo aparte.&lt;/p&gt;
-
-&lt;h2 id=&quot;evita-las-fugas-de-información&quot;&gt;Evita las fugas de información&lt;/h2&gt;
-
-&lt;p&gt;Aunque tengamos completamente claro lo que una clase, módulo o función hace, nuestros detalles de implementación pueden dejar escapar información que no es conveniente que esté fuera de ella.&lt;/p&gt;
-
-&lt;p&gt;Piensa por ejemplo en la clase que se comunica con la API. ¿Qué pasaría si pasaras directamente los errores que la API da hacia las demás partes del código? Si esta parte cambia en el futuro, afectarás a todas estas partes que consumen esos errores.&lt;/p&gt;
-
-&lt;p&gt;Puedes seguir estos consejos para evitar fugas de información:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Define estructuras de datos para comunicar información entre clases, módulos y funciones que sean uniformes a todos. Si alguien necesita un formato diferente, sólo lo transformará dentro de sus límites, siempre encargándose de devolver y  recibir la información en el formato correcto.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Evita las dependencias temporales. Siempre que tienes que llamar las mismas funciones, clases o módulos en el mismo orden quiere decir que tienes una dependencia temporal. La información se está escapando en el orden de las llamadas. Piensa si estas piezas de código en realidad debieron ser una sola pieza.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Evita usar la misma abstracción a diferentes niveles. Imagínate que estás haciendo una aplicación para editar texto. Tienes una clase central que se encarga de mantener el estado del texto. Esta clase tiene la interfaz básica para realizar todas las transformaciones necesarias básicas, pero no le puedes exponer esto al usuario. El usuario necesita comandos como Copiar, Pegar y Cortar. Sería una mala idea usar estas mismas abstracciones en tu clase central, porque encadenaría completamente tu interfaz con tu centro y viceversa. Por eso, la clase que maneja el código debe tener abstracciones más básicas, adecuadas para crear funcionalidades como Copiar, Pegar, Cortar, u otras, si se necesitara.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Todos estos consejos se tratan de mejor manera en el libro “A Philosophy of Software Design” de John Ousterhout, pero también me gustaría hacer eco de un consejo de Dan North: &lt;strong&gt;Busca crear código simple.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Esta fue la crítica y aplicación del principio de Responsabilidad Única. En el siguiente artículo veremos el principio de Abierto/Cerrado (Open/Closed Principle).&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="principios" /><summary type="html">¿Son útiles los principios SOLID? En esta serie empezaremos una exploración para ver si podemos aplicarlos mejor o si vale la pena seguirlos.</summary></entry></feed>
+&lt;p&gt;Es natural que llegue el punto en el que no puedas seguir extendiendo el sistema y tengas que cambiar código que ya está funcionando, nada de lo que estamos diciendo es una ley absoluta o moral que te tengas que sentir mal por no cumplir, recuerda que todo esto es por tu conveniencia, la de tus desarrollos y de tu equipo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="open/closed" /><category term="abierto/cerrado" /><summary type="html">Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código</summary></entry></feed>
