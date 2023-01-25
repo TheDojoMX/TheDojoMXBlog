@@ -25,4 +25,12 @@ Aunque este libro tiene sus cosas negativas, tiene grandes consejos, como el que
 
 ## La situación y el problema
 
-Eres un desarrollador o desarrolladora de software que se desenvuelve más que decentemente en su trabajo. Te piden algo y aunque no lo conozcas, tienes la habilidad de entender lo suficiente del problema rápidamente para "sacar" el trabajo. Sin embargo, cuando te preguntan en qué te sientes más cómodo programando...
+Eres un desarrollador o desarrolladora de software que se desenvuelve más que decentemente en su trabajo. Te piden algo y aunque no lo conozcas, tienes la habilidad de entender lo suficiente del problema rápidamente para "sacar" el trabajo. Sin embargo, cuando te preguntan en qué te sientes más cómodo programando, o en qué podrías decir que eres un experto, te sientes inseguro de contestar.
+
+El problema es que no te has dado el tiempo de conocer nada profundamente y sabes un poco, muy poco de hecho, de muchas cosas, generalmente las cosas más superficiales. No entiendes los principios de funcionamiento de las cosas que usas.
+
+## La solución
+
+En el principio que David Hoover nombra "Cava más hondo" (Dig Deeper), sugiere lo siguiente:
+
+En vez de sólo conformarte por entender lo mínimo aprende a estudiar aquellos problemas que se te presentan con más profundidad. Aprender a investigar el funcionamiento fundamental de las herramientas, lenguajes y técnicas que usas te separará de los desarrolladores que se conforman con el conocimiento mínimo necesario que el día a día nos deja.
