@@ -586,4 +586,10 @@ var store = [{
         "tags": ["bytecode","complación","intérprete"],
         "url": "/2023/01/22/entendiendo-el-bytecode.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1674189353/1829084045_mad_cat_scientist_looking_into_a_black_screen_with_binary_code__detailed_concept_art___artstation__H_bttvyj.png"
+      },{
+        "title": "Patrones para aprendices: Cava más hondo",
+        "excerpt":"¿Sientes que sabes un poquito de muchas cosas pero no te sientes con lo confianza de decir que eres experto en algo? Muchos desarrolladores de software sentimos eso, exacerbado por la gran cantidad de herramientas, lenguajes y situaciones que las necesidades del negocio nos impone. En este artículo vamos a...","categories": [],
+        "tags": ["aprendizaje","patrones-de-aprendizaje","profundizar","conocimiento"],
+        "url": "/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1674709094/ned-daniels-dr_9oxbVnuc-unsplash_enbwxa.jpg"
       }]

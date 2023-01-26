@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-01-22T07:32:13-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es el bytecode?</title><link href="https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html" rel="alternate" type="text/html" title="¿Qué es el bytecode?" /><published>2023-01-22T00:00:00-06:00</published><updated>2023-01-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html">&lt;p&gt;Tanto para Java como para otros lenguajes que son interpretados, por ejemplo Python o JavaScript, se genera una representación intermedia como resultado de la ejecución o compilación. A este código le llamamos bytecode.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-01-25T23:07:22-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Patrones para aprendices: Cava más hondo</title><link href="https://blog.thedojo.mx/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html" rel="alternate" type="text/html" title="Patrones para aprendices: Cava más hondo" /><published>2023-01-25T00:00:00-06:00</published><updated>2023-01-25T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html">&lt;p&gt;¿Sientes que sabes un poquito de muchas cosas pero no te sientes con lo confianza de decir que eres experto en algo? Muchos desarrolladores de software sentimos eso, exacerbado por la gran cantidad de herramientas, lenguajes y situaciones que las necesidades del negocio nos impone.&lt;/p&gt;
+
+&lt;p&gt;En este artículo vamos a hablar acerca de un un consejo encontrado en el libro &lt;a href=&quot;https://www.oreilly.com/library/view/apprenticeship-patterns/9780596806842/&quot;&gt;Apprenticeship Patterns&lt;/a&gt; que en español llamaríamos “Patrones para aprendices”. En este libro se mencionan una serie de consejos con acciones para los desarrolladores de software que se consideran aprendices. En realidad es una buena idea siempre tener “la mentalidad del aprendiz”, aquella que considera que tiene mucho que aprender y se mantiene humilde.&lt;/p&gt;
+
+&lt;p&gt;Los consejos de este libro se enmarcan en la misma forma que lo que conocemos como &lt;em&gt;patrones de diseño&lt;/em&gt;, en cada uno se dan tres partes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Contexto&lt;/strong&gt;: describe una situación típica en la que puedes estar en la que el consejo puede ser útil&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Problema&lt;/strong&gt;: describe específicamente el conflicto que surge y que se puede resolver con el consejo&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Solución&lt;/strong&gt;: describe las acciones que puedes tomas para resolver el problema de manera efectiva&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Aunque este libro tiene sus cosas negativas, tiene grandes consejos, como el que vamos a ver en este artículo. Empecemos a hablar de él.&lt;/p&gt;
+
+&lt;h2 id=&quot;la-situación-y-el-problema&quot;&gt;La situación y el problema&lt;/h2&gt;
+
+&lt;p&gt;Eres un desarrollador o desarrolladora de software que se desenvuelve más que decentemente en su trabajo. Te piden algo y aunque no lo conozcas, tienes la habilidad de entender lo suficiente del problema rápidamente para “sacar” el trabajo. Sin embargo, cuando te preguntan en qué te sientes más cómodo programando, o en qué podrías decir que eres un experto, te sientes inseguro de contestar.&lt;/p&gt;
+
+&lt;p&gt;El problema es que no te has dado el tiempo de conocer nada profundamente y sabes un poco, muy poco de hecho, de muchas cosas, generalmente las cosas más superficiales. No entiendes los principios de funcionamiento de las cosas que usas.&lt;/p&gt;
+
+&lt;h2 id=&quot;la-solución&quot;&gt;La solución&lt;/h2&gt;
+
+&lt;p&gt;En el principio que David Hoover nombra “Cava más hondo” (Dig Deeper), sugiere lo siguiente:&lt;/p&gt;
+
+&lt;p&gt;En vez de sólo conformarte por entender lo mínimo aprende a estudiar aquellos problemas que se te presentan con más profundidad. Aprender a investigar el funcionamiento fundamental de las herramientas, lenguajes y técnicas que usas te separará de los desarrolladores que se conforman con el conocimiento mínimo necesario que el día a día nos deja.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Leer las especificaciones y la documentación.&lt;/strong&gt; Esto te va a dar el conocimiento directo de la fuente primaria de la información. Es muy importante leerlo directamente del primer creador porque nadie (o muy pocas personas más) te pueden explicar el trasfondo del asunto tan bien como él. Existen miles de tutoriales o videos ahí afuera, que son útiles en ciertas situaciones, pero para profundizar, hay pocas cosas mejores que las referencias o documentos de diseño originales.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Aprender a usar las herramientas de tu entorno a profundidad.&lt;/strong&gt; La mayoría de los lenguajes de programación tienen herramientas que te permiten entender cómo está corriendo cierta parte del programa. Si tu lenguaje no lo tienen, existen herramientas a nivel del sistema operativo que te permitirán entender el funcionamiento a fondo.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Entiende los problemas a fondo.&lt;/strong&gt; Cuando estés analizando código, un tutorial, o alguien que te explique algo, intenta entender las ideas que están en el fondo de las cosas que te están explicando, no sólo las cosas que están en la superficie. Intenta absorber el pensamiento que los guió a la solución que están presentando. Para hacer esto, debes reconstruir el contexto en el que surgió el problema y la solución que se presenta.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ventajas&quot;&gt;Ventajas&lt;/h2&gt;
+
+&lt;p&gt;Tener estas habilidades te permitirá entender cómo debería funcionar algo, además de el funcionamiento real en acción de lo que estás usando. Si algo no te gusta como funciona, puedes cambiarlo o mejorarlo.&lt;/p&gt;
+
+&lt;p&gt;Al tener conocimiento profundo en ciencias de la computación, es probable que puedas resolver cosas que nunca te imaginaste o que crees una solución que se destaque y deje a las soluciones existentes muy por detrás.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, este conocimiento te puede dar la capacidad de ayudar a tu equipo, enseñándole cosas que harán que tanto ellos como tu empresa avancen más rápido.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Te preguntarás: &lt;strong&gt;¿de dónde sale el tiempo para aprender esto?&lt;/strong&gt; Puedes apartar un poco de tiempo de tu trabajo, pero debido a las exigencias que el día a día impone, debes considerar esto como un ejercicio de aprendizaje que la mayoría de las veces va a correr por tu cuenta.&lt;/p&gt;
+
+&lt;p&gt;Profundizar en algo es una habilidad que tienes que desarrollar si quieres destacar en tu carrera. El libro menciona una idea que me gusta: el conocimiento profundo es lo que distingue a los constructores de catedrales de los que hacen software común. Me gusta la idea de pensar en el software como una construcción y pensar que puede ser algo tan bonito y tan grande como una catedral.&lt;/p&gt;
+
+&lt;p&gt;Así que ya sabes: si quieres ser un desarrollador o desarrolladora de software que es capaz de construir catedrales, cava más hondo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="patrones-de-aprendizaje" /><category term="profundizar" /><category term="conocimiento" /><summary type="html">Hablemos de por qué aprender a profundizar en los temas en los que trabajas día a día es importante para avanzar en tu carrera como desarrolldor de software.</summary></entry><entry><title type="html">¿Qué es el bytecode?</title><link href="https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html" rel="alternate" type="text/html" title="¿Qué es el bytecode?" /><published>2023-01-22T00:00:00-06:00</published><updated>2023-01-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html">&lt;p&gt;Tanto para Java como para otros lenguajes que son interpretados, por ejemplo Python o JavaScript, se genera una representación intermedia como resultado de la ejecución o compilación. A este código le llamamos bytecode.&lt;/p&gt;
 
 &lt;p&gt;Hablemos de qué es y para qué existe.&lt;/p&gt;
 
@@ -1083,72 +1135,4 @@ Incorrectos: 0 - 0.0%
 
 &lt;p&gt;Como desarrollador, también puedes pensar que Rust seguirá creciendo en popularidad y puede que el número de desarrolladores necesitados aumente en los próximos años, por lo que aprenderlo te abriría las posibilidades de encontrar buenos trabajos y bien pagados.&lt;/p&gt;
 
-&lt;p&gt;En los próximos artículos hablaremos de las herramientas ya desarrolladas para facilitar el trabajo con Rust, es decir, su entorno Open Source y también de recursos para aprender Rust. ¿Qué piensas? ¿Valdrá la pena aprenderlo?&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="rust" /><category term="aprendizaje" /><category term="lenguajes-de-programacion" /><summary type="html">¿Por qué es Rust uno de los lenguajes más amados de la actualiad? ¿Te conviene aprenderlo? Vamos a platicar de eso en este artículo.</summary></entry><entry><title type="html">El principio Abierto/Cerrado (Open/Closed)</title><link href="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html" rel="alternate" type="text/html" title="El principio Abierto/Cerrado (Open/Closed)" /><published>2022-12-03T00:00:00-06:00</published><updated>2022-12-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/03/el-principio-abierto-cerrado-open-closed.html">&lt;p&gt;El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por &lt;a href=&quot;https://drive.google.com/file/d/0BwhCYaYDn8EgN2M5MTkwM2EtNWFkZC00ZTI3LWFjZTUtNTFhZGZiYmUzODc1/view?resourcekey=0-FsS837CGML599A_o5D-nAw&quot; target=&quot;_blank&quot;&gt;Robert Martin&lt;/a&gt;), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.&lt;/p&gt;
-
-&lt;p&gt;Vamos a analizarlo, ver sus caso de uso y finalmente a establecer sus relaciones con otros principios de diseño de software que te pueden ayudar a crear mejores programas.&lt;/p&gt;
-
-&lt;h2 id=&quot;el-principio-abiertocerrado&quot;&gt;El principio Abierto/Cerrado&lt;/h2&gt;
-
-&lt;p&gt;Este principio establece que:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Cualquier módulo de software debería estar abierto para la extensión, pero cerrado para modificación.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Otra vez nos encontramos con palabras vagas que tenemos que examinar, pero por suerte en este principio es más fácil llegar a una conclusión.&lt;/p&gt;
-
-&lt;p&gt;En pocas palabras cuando tengas que modificar el comportamiento de un programa, lo último que deberías hacer siempre es modificar el código que ya existe, más bien, debes crear módulos (clases, métodos, funciones, paquetes) que permitan modificar su comportamiento agregando &lt;strong&gt;código nuevo&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;No hay ningún mecanismo casi en ningún lenguaje de programación que te permita “cerrar” o “abrir” módulos, así que estas ideas son puramente conceptuales y guías de comportamiento.&lt;/p&gt;
-
-&lt;h2 id=&quot;aplicaciones-y-ejemplos&quot;&gt;Aplicaciones y ejemplos&lt;/h2&gt;
-
-&lt;p&gt;La forma de ejemplo más clásica de aplicarlo es mediante la preparación de tus módulos o clases para usar &lt;strong&gt;polimorfismo&lt;/strong&gt;. Por ejemplo, imagínate que estás haciendo una aplicación para procesar pagos y quieres cobrar por diferentes medios. Cada uno de estos medios es un “método de pago”. Si implementas cada uno de estos métodos como dependientes de una clase padre, mediante la herencia, clases abstractas, protocolos o interfaces, tu procesador principal podrá, por ejemplo, llamar al método &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;procesar&lt;/code&gt; de cada clase, sin importar el tipo de método de pago que sea o sus detalles de implementación.&lt;/p&gt;
-
-&lt;p&gt;En el ejemplo anterior, cuando quieras implementar un nuevo método de pago, simplemente creas un nuevo módulo que cumpla con las especificaciones de la clase padre y no tendrás que modificar el código existente. Así solo has añadido código nuevo y has eliminado la probabilidad de afectar cosas que ya existían y funcionaban bien.&lt;/p&gt;
-
-&lt;p&gt;Como puedes ver, los principios de funcionamiento de estas técnicas tienen que ver con dos cosas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Ocultar información (esconder la mayor cantidad de detalles de implementación de tus módulos, detrás de una interfaz)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Programación por contrato, cumplir con una interfaz dada para que otros módulos puedan usarla con seguridad. De esto hablaremos en otro artículo, pero quiero que veas como es un tema que se va a repetir.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;aplicaciones-más-amplias&quot;&gt;Aplicaciones más amplias&lt;/h2&gt;
-
-&lt;p&gt;Este principio también se puede aplicar a niveles diferentes del sistema, por ejemplo a nivel arquitectónico.&lt;/p&gt;
-
-&lt;p&gt;Un situación en que puedes usar esta estrategia es cuando tienes un módulo que quieres cambiar pero no quieres deshacer o poner en riesgo el funcionamiento de todo el sistema, ya que puede tener consecuencias catastróficas.&lt;/p&gt;
-
-&lt;p&gt;Para aplicarlo, tienes que dejar intacto el módulo de la funcionalidad afectada, mientras lo envuelves con tu nuevo código, usándolo como la interfaz principal cuando te conviene y reemplazándolo poco a poco cuando te sientas seguro.&lt;/p&gt;
-
-&lt;p&gt;Como puedes notar, para poder aplicar esta técnica, los módulos deben ser completamente independientes o no podrías de ninguna manera aislar los cambios que estás intentando hacer. Esto casi siempre se logra con paso de mensajes, como por ejemplo una interfaz RPC, ReST o respetando un contrato (interfaz).&lt;/p&gt;
-
-&lt;h2 id=&quot;otros-ideas-parecidas&quot;&gt;Otros ideas parecidas&lt;/h2&gt;
-
-&lt;p&gt;Lo primero que quiero que notes es que este principio tiene mucho que ver con la &lt;strong&gt;separación de funciones&lt;/strong&gt;, la &lt;strong&gt;ocultación de información&lt;/strong&gt; y el respeto a la interfaces.&lt;/p&gt;
-
-&lt;p&gt;Espero que para este momento te empieces a dar cuenta de que todo lo que llamamos “principios SOLID” tienen en el fondo: &lt;strong&gt;Ocultar Información&lt;/strong&gt;. Esto ha sido ha hablado mucho por &lt;a href=&quot;https://levelup.gitconnected.com/open-closed-principle-is-nothing-about-the-code-270f1c04bebf&quot; target=&quot;_blank&quot;&gt;David L. Parnas&lt;/a&gt;, y para mi, es gran parte de lo que se requiere para hacer gran software que pueda ser mantenido y funcional mucho tiempo.&lt;/p&gt;
-
-&lt;p&gt;Esta mismo concepto ha sido tratado por otras personas, como Alistair Cockburn con su concepto de &lt;a href=&quot;https://martinfowler.com/ieeeSoftware/protectedVariation.pdf&quot; target=&quot;_blank&quot;&gt;“Variación protegida”&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;La idea natural del concepto, puedes entenderla más fácilmente con máquinas reales:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Una cámara con lentes intercambiables que, cuando requieres una nueva óptica, pones un lente con el mismo conector (interfaz)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Un carro, que cuando una llanta se poncha se la puedes cambiar, o si requieres para un terreno diferente, puedes ponerle llantas de otro tipo.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;El punto es darle a tu sistema puntos “naturales” de extensión, en los que los cambios puedan caber sin hacer grandes cambios en todo el sistema.&lt;/p&gt;
-
-&lt;h2 id=&quot;los-límites-de-la-extensión&quot;&gt;Los límites de la extensión&lt;/h2&gt;
-
-&lt;p&gt;Es natural que llegue el punto en el que no puedas seguir extendiendo el sistema y tengas que cambiar código que ya está funcionando, nada de lo que estamos diciendo es una ley absoluta o moral que te tengas que sentir mal por no cumplir, recuerda que todo esto es por tu conveniencia, la de tus desarrollos y de tu equipo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="open/closed" /><category term="abierto/cerrado" /><summary type="html">Hablemos del segundo principio mencionado en los principios SOLID: el principio Open/Closed, que habla de cómo tratar de los cambios en el código</summary></entry></feed>
+&lt;p&gt;En los próximos artículos hablaremos de las herramientas ya desarrolladas para facilitar el trabajo con Rust, es decir, su entorno Open Source y también de recursos para aprender Rust. ¿Qué piensas? ¿Valdrá la pena aprenderlo?&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="rust" /><category term="aprendizaje" /><category term="lenguajes-de-programacion" /><summary type="html">¿Por qué es Rust uno de los lenguajes más amados de la actualiad? ¿Te conviene aprenderlo? Vamos a platicar de eso en este artículo.</summary></entry></feed>

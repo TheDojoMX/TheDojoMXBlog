@@ -1,0 +1,809 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Patrones para aprendices: Cava más hondo - The Dojo MX Blog</title>
+<meta name="description" content="Hablemos de por qué aprender a profundizar en los temas en los que trabajas día a día es importante para avanzar en tu carrera como desarrolldor de software.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Patrones para aprendices: Cava más hondo">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html">
+
+
+  <meta property="og:description" content="Hablemos de por qué aprender a profundizar en los temas en los que trabajas día a día es importante para avanzar en tu carrera como desarrolldor de software.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1674709094/ned-daniels-dr_9oxbVnuc-unsplash_enbwxa.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-01-25T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html",
+      "name": "Patrones para aprendices: Cava más hondo",
+      "headline": "Patrones para aprendices: Cava más hondo",
+      "keywords": "aprendizaje,patrones-de-aprendizaje,profundizar,conocimiento",
+      "description": "Hablemos de por qué aprender a profundizar en los temas en los que trabajas día a día es importante para avanzar en tu carrera como desarrolldor de software.",
+      "articleBody": "¿Sientes que sabes un poquito de muchas cosas pero no te sientes con lo confianza de decir que eres experto en algo? Muchos desarrolladores de software sentimos eso, exacerbado por la gran cantidad de herramientas, lenguajes y situaciones que las necesidades del negocio nos impone.\n\nEn este artículo vamos a hablar acerca de un un consejo encontrado en el libro Apprenticeship Patterns que en español llamaríamos “Patrones para aprendices”. En este libro se mencionan una serie de consejos con acciones para los desarrolladores de software que se consideran aprendices. En realidad es una buena idea siempre tener “la mentalidad del aprendiz”, aquella que considera que tiene mucho que aprender y se mantiene humilde.\n\nLos consejos de este libro se enmarcan en la misma forma que lo que conocemos como patrones de diseño, en cada uno se dan tres partes:\n\n\n  Contexto: describe una situación típica en la que puedes estar en la que el consejo puede ser útil\n  Problema: describe específicamente el conflicto que surge y que se puede resolver con el consejo\n  Solución: describe las acciones que puedes tomas para resolver el problema de manera efectiva\n\n\nAunque este libro tiene sus cosas negativas, tiene grandes consejos, como el que vamos a ver en este artículo. Empecemos a hablar de él.\n\nLa situación y el problema\n\nEres un desarrollador o desarrolladora de software que se desenvuelve más que decentemente en su trabajo. Te piden algo y aunque no lo conozcas, tienes la habilidad de entender lo suficiente del problema rápidamente para “sacar” el trabajo. Sin embargo, cuando te preguntan en qué te sientes más cómodo programando, o en qué podrías decir que eres un experto, te sientes inseguro de contestar.\n\nEl problema es que no te has dado el tiempo de conocer nada profundamente y sabes un poco, muy poco de hecho, de muchas cosas, generalmente las cosas más superficiales. No entiendes los principios de funcionamiento de las cosas que usas.\n\nLa solución\n\nEn el principio que David Hoover nombra “Cava más hondo” (Dig Deeper), sugiere lo siguiente:\n\nEn vez de sólo conformarte por entender lo mínimo aprende a estudiar aquellos problemas que se te presentan con más profundidad. Aprender a investigar el funcionamiento fundamental de las herramientas, lenguajes y técnicas que usas te separará de los desarrolladores que se conforman con el conocimiento mínimo necesario que el día a día nos deja.\n\n\n  \n    Leer las especificaciones y la documentación. Esto te va a dar el conocimiento directo de la fuente primaria de la información. Es muy importante leerlo directamente del primer creador porque nadie (o muy pocas personas más) te pueden explicar el trasfondo del asunto tan bien como él. Existen miles de tutoriales o videos ahí afuera, que son útiles en ciertas situaciones, pero para profundizar, hay pocas cosas mejores que las referencias o documentos de diseño originales.\n  \n  \n    Aprender a usar las herramientas de tu entorno a profundidad. La mayoría de los lenguajes de programación tienen herramientas que te permiten entender cómo está corriendo cierta parte del programa. Si tu lenguaje no lo tienen, existen herramientas a nivel del sistema operativo que te permitirán entender el funcionamiento a fondo.\n  \n  \n    Entiende los problemas a fondo. Cuando estés analizando código, un tutorial, o alguien que te explique algo, intenta entender las ideas que están en el fondo de las cosas que te están explicando, no sólo las cosas que están en la superficie. Intenta absorber el pensamiento que los guió a la solución que están presentando. Para hacer esto, debes reconstruir el contexto en el que surgió el problema y la solución que se presenta.\n  \n\n\nVentajas\n\nTener estas habilidades te permitirá entender cómo debería funcionar algo, además de el funcionamiento real en acción de lo que estás usando. Si algo no te gusta como funciona, puedes cambiarlo o mejorarlo.\n\nAl tener conocimiento profundo en ciencias de la computación, es probable que puedas resolver cosas que nunca te imaginaste o que crees una solución que se destaque y deje a las soluciones existentes muy por detrás.\n\nFinalmente, este conocimiento te puede dar la capacidad de ayudar a tu equipo, enseñándole cosas que harán que tanto ellos como tu empresa avancen más rápido.\n\nConclusión\n\nTe preguntarás: ¿de dónde sale el tiempo para aprender esto? Puedes apartar un poco de tiempo de tu trabajo, pero debido a las exigencias que el día a día impone, debes considerar esto como un ejercicio de aprendizaje que la mayoría de las veces va a correr por tu cuenta.\n\nProfundizar en algo es una habilidad que tienes que desarrollar si quieres destacar en tu carrera. El libro menciona una idea que me gusta: el conocimiento profundo es lo que distingue a los constructores de catedrales de los que hacen software común. Me gusta la idea de pensar en el software como una construcción y pensar que puede ser algo tan bonito y tan grande como una catedral.\n\nAsí que ya sabes: si quieres ser un desarrollador o desarrolladora de software que es capaz de construir catedrales, cava más hondo.\n",
+      "datePublished": "2023-01-25 00:00:00 -0600",
+      "dateModified": "2023-01-25 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1674709094/ned-daniels-dr_9oxbVnuc-unsplash_enbwxa.jpg"
+      }
+    }
+</script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1674709094/ned-daniels-dr_9oxbVnuc-unsplash_enbwxa.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Patrones para aprendices: Cava más hondo
+
+        
+      </h1>
+      
+        <p class="page__lead">Hablemos de por qué aprender a profundizar en los temas en los que trabajas día a día es importante para avanzar en tu carrera como desarrolldor de software.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        830 palabras | 5 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Patrones para aprendices: Cava más hondo">
+    <meta itemprop="description" content="Hablemos de por qué aprender a profundizar en los temas en los que trabajas día a día es importante para avanzar en tu carrera como desarrolldor de software.">
+    <meta itemprop="datePublished" content="2023-01-25T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>¿Sientes que sabes un poquito de muchas cosas pero no te sientes con lo confianza de decir que eres experto en algo? Muchos desarrolladores de software sentimos eso, exacerbado por la gran cantidad de herramientas, lenguajes y situaciones que las necesidades del negocio nos impone.</p>
+
+<p>En este artículo vamos a hablar acerca de un un consejo encontrado en el libro <a href="https://www.oreilly.com/library/view/apprenticeship-patterns/9780596806842/">Apprenticeship Patterns</a> que en español llamaríamos “Patrones para aprendices”. En este libro se mencionan una serie de consejos con acciones para los desarrolladores de software que se consideran aprendices. En realidad es una buena idea siempre tener “la mentalidad del aprendiz”, aquella que considera que tiene mucho que aprender y se mantiene humilde.</p>
+
+<p>Los consejos de este libro se enmarcan en la misma forma que lo que conocemos como <em>patrones de diseño</em>, en cada uno se dan tres partes:</p>
+
+<ul>
+  <li>
+<strong>Contexto</strong>: describe una situación típica en la que puedes estar en la que el consejo puede ser útil</li>
+  <li>
+<strong>Problema</strong>: describe específicamente el conflicto que surge y que se puede resolver con el consejo</li>
+  <li>
+<strong>Solución</strong>: describe las acciones que puedes tomas para resolver el problema de manera efectiva</li>
+</ul>
+
+<p>Aunque este libro tiene sus cosas negativas, tiene grandes consejos, como el que vamos a ver en este artículo. Empecemos a hablar de él.</p>
+
+<h2 id="la-situación-y-el-problema">La situación y el problema</h2>
+
+<p>Eres un desarrollador o desarrolladora de software que se desenvuelve más que decentemente en su trabajo. Te piden algo y aunque no lo conozcas, tienes la habilidad de entender lo suficiente del problema rápidamente para “sacar” el trabajo. Sin embargo, cuando te preguntan en qué te sientes más cómodo programando, o en qué podrías decir que eres un experto, te sientes inseguro de contestar.</p>
+
+<p>El problema es que no te has dado el tiempo de conocer nada profundamente y sabes un poco, muy poco de hecho, de muchas cosas, generalmente las cosas más superficiales. No entiendes los principios de funcionamiento de las cosas que usas.</p>
+
+<h2 id="la-solución">La solución</h2>
+
+<p>En el principio que David Hoover nombra “Cava más hondo” (Dig Deeper), sugiere lo siguiente:</p>
+
+<p>En vez de sólo conformarte por entender lo mínimo aprende a estudiar aquellos problemas que se te presentan con más profundidad. Aprender a investigar el funcionamiento fundamental de las herramientas, lenguajes y técnicas que usas te separará de los desarrolladores que se conforman con el conocimiento mínimo necesario que el día a día nos deja.</p>
+
+<ul>
+  <li>
+    <p><strong>Leer las especificaciones y la documentación.</strong> Esto te va a dar el conocimiento directo de la fuente primaria de la información. Es muy importante leerlo directamente del primer creador porque nadie (o muy pocas personas más) te pueden explicar el trasfondo del asunto tan bien como él. Existen miles de tutoriales o videos ahí afuera, que son útiles en ciertas situaciones, pero para profundizar, hay pocas cosas mejores que las referencias o documentos de diseño originales.</p>
+  </li>
+  <li>
+    <p><strong>Aprender a usar las herramientas de tu entorno a profundidad.</strong> La mayoría de los lenguajes de programación tienen herramientas que te permiten entender cómo está corriendo cierta parte del programa. Si tu lenguaje no lo tienen, existen herramientas a nivel del sistema operativo que te permitirán entender el funcionamiento a fondo.</p>
+  </li>
+  <li>
+    <p><strong>Entiende los problemas a fondo.</strong> Cuando estés analizando código, un tutorial, o alguien que te explique algo, intenta entender las ideas que están en el fondo de las cosas que te están explicando, no sólo las cosas que están en la superficie. Intenta absorber el pensamiento que los guió a la solución que están presentando. Para hacer esto, debes reconstruir el contexto en el que surgió el problema y la solución que se presenta.</p>
+  </li>
+</ul>
+
+<h2 id="ventajas">Ventajas</h2>
+
+<p>Tener estas habilidades te permitirá entender cómo debería funcionar algo, además de el funcionamiento real en acción de lo que estás usando. Si algo no te gusta como funciona, puedes cambiarlo o mejorarlo.</p>
+
+<p>Al tener conocimiento profundo en ciencias de la computación, es probable que puedas resolver cosas que nunca te imaginaste o que crees una solución que se destaque y deje a las soluciones existentes muy por detrás.</p>
+
+<p>Finalmente, este conocimiento te puede dar la capacidad de ayudar a tu equipo, enseñándole cosas que harán que tanto ellos como tu empresa avancen más rápido.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Te preguntarás: <strong>¿de dónde sale el tiempo para aprender esto?</strong> Puedes apartar un poco de tiempo de tu trabajo, pero debido a las exigencias que el día a día impone, debes considerar esto como un ejercicio de aprendizaje que la mayoría de las veces va a correr por tu cuenta.</p>
+
+<p>Profundizar en algo es una habilidad que tienes que desarrollar si quieres destacar en tu carrera. El libro menciona una idea que me gusta: el conocimiento profundo es lo que distingue a los constructores de catedrales de los que hacen software común. Me gusta la idea de pensar en el software como una construcción y pensar que puede ser algo tan bonito y tan grande como una catedral.</p>
+
+<p>Así que ya sabes: si quieres ser un desarrollador o desarrolladora de software que es capaz de construir catedrales, cava más hondo.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#aprendizaje" class="page__taxonomy-item" rel="tag">aprendizaje</a><span class="sep">, </span>
+    
+      <a href="/tags/#conocimiento" class="page__taxonomy-item" rel="tag">conocimiento</a><span class="sep">, </span>
+    
+      <a href="/tags/#patrones-de-aprendizaje" class="page__taxonomy-item" rel="tag">patrones-de-aprendizaje</a><span class="sep">, </span>
+    
+      <a href="/tags/#profundizar" class="page__taxonomy-item" rel="tag">profundizar</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-01-25T00:00:00-06:00">January 25, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Patrones+para+aprendices%3A+Cava+m%C3%A1s+hondo%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F01%2F25%2Fpatrones-de-aprendizaje-cava-mas-hondo.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F01%2F25%2Fpatrones-de-aprendizaje-cava-mas-hondo.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F01%2F25%2Fpatrones-de-aprendizaje-cava-mas-hondo.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/01/22/entendiendo-el-bytecode.html" class="pagination--pager" title="¿Qué es el bytecode?
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1674189353/1829084045_mad_cat_scientist_looking_into_a_black_screen_with_binary_code__detailed_concept_art___artstation__H_bttvyj.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/01/22/entendiendo-el-bytecode.html" rel="permalink">¿Qué es el bytecode?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+4 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 22-01-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_450,w_1024/v1673577537/DALL_E_2023-01-12_20.38.31_-_a_mechanical_brain_in_the_back_of_a_robot_s_head_made_as_a__membrane__that_is_a_complex_machine_made_of_very_tiny_gears_levers_and_other_mechanical_dexwfs.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/01/18/compilacion-just-in-time-que-es.html" rel="permalink">Qué es la compilación Just In Time (JIT)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 18-01-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Has escuchado que varios lenguajes están agregando la capacidad de compilación Just In Time a sus entornos? Hablemos de qué es y cómo te beneficia.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_600,w_300/v1673056123/DALL_E_2023-01-06_19.47.48_-_Perceptron_artistic_digital_paint_high_quality_detailed_wpoohz.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/01/07/ejercicio-programando-un-perceptron.html" rel="permalink">Ejercicio: programando un perceptrón con Python
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+15 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 07-01-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1672204121/ivan-bandura-8VePVILfCKU-unsplash_bhsnsa.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2022/12/30/claridad-en-el-codigo.html" rel="permalink">Claridad de  Saša Jurić
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-12-2022
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Todos quisiéramos tener bases de código perfectas, fáciles de mantener y totalmente claras. Esto es casi imposible, pero podemos acercarnos. Vemos cómo.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
