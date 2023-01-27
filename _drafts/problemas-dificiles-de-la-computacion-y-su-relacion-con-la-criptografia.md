@@ -1,19 +1,19 @@
 ---
-title: "Problemas difíciles de la computación y su relación con la criptografía"
-date: 2022-01-14
+title: "Problemas difíciles de la computación: P vs NP"
+date: 2023-02-03
 author: Héctor Patricio
 tags: criptografía computer-science cs complejidad-computacional
 comments: true
-excerpt: "Hablemos de los problemas matemáticos que hacen posible que tengamos criptografía asimétrica y sistemas que se ponen de acuerdo para hablar de manera segura sin conocerse antes."
+excerpt: "En esta serie de posts vamos a hablar de una serie de problemas difíciles de la ciencia de la computación y su relación con la criptografía."
 header:
   overlay_image: #image
   teaser: #image
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Con la criptografía simétrica no nos enfrentamos a ciertos problemas que criptografía de llave pública sí tenemos en cada escenario, por ejemplo, coordinar y escoger una llave segura para comunicaciones privadas sin conocer al previamente a la contraparte.
+La criptografía actual está soportada por una serie de problemas que suponemos muy difíciles de resolver de la ciencias de la computación. En esta serie de artículos vamos a estar hablando de ellos para entenderlos a profundidad y sobre todo para entender cómo es que se relacionan con los algoritmos criptográficos, principalmente con los algoritmos de llave pública, cmo Diffie-Hellman y RSA.
 
-En post futuros vamos a ahondar en detalles de algoritmos como Diffie-Hellman, RSA, ECDSA, etc, pero ahora centrémonos en la teoría computacional que soporta todos estos algoritmos.
+Primero hablemos de lo que consideramos un problema difícil de la computación y la complejidad computacional.
 
 ## Complejidad computacional
 
@@ -31,4 +31,6 @@ La complejidad computacional se puede entender como la cantidad de operaciones q
 
 ## Problema de la factorización
 
-## Curvas elípticas
+En los siguientes artículos vamos a estar hablando de los siguientes problemas:
+
+- Campos de Galois en curvas elípticas
