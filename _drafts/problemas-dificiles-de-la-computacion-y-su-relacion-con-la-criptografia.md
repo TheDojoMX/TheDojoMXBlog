@@ -9,6 +9,7 @@ header:
   overlay_image: #image
   teaser: #image
   overlay_filter: rgba(0, 0, 0, 0.5)
+usemathjax: true
 ---
 
 La criptografía actual está soportada por una serie de problemas que suponemos muy difíciles de resolver de la ciencias de la computación. En esta serie de artículos vamos a estar hablando de ellos para entenderlos a profundidad y sobre todo para entender cómo es que se relacionan con los algoritmos criptográficos, principalmente con los algoritmos de llave pública, cmo Diffie-Hellman y RSA.
@@ -21,7 +22,7 @@ La complejidad computacional se puede entender como la **cantidad de operaciones
 
 Por ejemplo si te piden contar todas las letras "a" e una cadena, esto podría resolverse de la siguiente manera en Python:
 
-```Python
+```python
   def contar_a(string):
       count = 0
       for char in string:
@@ -38,13 +39,45 @@ $$f(n) = 2n$$
 
 Donde $n$ es la longitud de la cadena de entrada. Esta función es una función lineal, y se puede representar gráficamente de la siguiente manera:
 
-### Tiempo polinomial (P)
+## Tiempo polinomial (P)
 
-Un algoritmo es polinomial si su tiempo de ejecución es una función polinomial de la entrada.
+Un algoritmo es de complejidad polinomial si su tiempo de ejecución es una función que consiste en multiplicaciones, sumas o elevaciones a _ciertas_ potencias del tamaño de la entrada. Algunos ejemplos de complejidad polinomial son:
+
+$$f(n) = 2n$$
+
+$$f(n) = 3n^2$$
+
+$$f(n) = 4n^3$$
+
+$$f(n) = n^{log(n)}$$
+
+En la práctica, si un algoritmo es tiene complejidad polinomial quiere decir que su ejecución es más o menos rápida (o por lo menos posible en caso de polinomios muy grandes) para cualquier entrada.
+
+## La notación Big O
+
+La notación más usada para expresar esas complejidades no es una función como lo hemos hecho hasta ahora. Normalmente, lo que nos interesa es expresar o conocer **el peor de los casos** para un algoritmo específico. Por ejemplo, si estamos observando un algoritmo de búsqueda como el siguiente:
+
+```python
+  def buscar(lista, elemento):
+      for i in range(len(lista)):
+          if lista[i] == elemento:
+              return i
+      return -1
+```
+
+Sabemos que el peor de los casos es cuando el elemento esté en el último lugar. Por lo tanto, su complejidad depende directamente de la longitud de la lista de entrada. Podemos expresar esta complejidad como:
+
+$$O(n)$$
+
+En este artículo no vamos a hablar de cómo calcular esas complejidades, pero si quieres saber más, te recomiendo este artículo: [Big O Cheatsheet](https://www.bigocheatsheet.com/).
 
 ### Tiempo súper polinomial (SP)
 
-### Tiempos no polinomiales (NP)
+Una clase que estaría bien separar de los polinomios es la de los tiempos súper polinomiales. Estos algoritmos son polinomiales, pero con un polinomio muy grande. Por ejemplo:
+
+$$f(n) = 2^{n^2}$$
+
+### Tiempos polinomiales no deterministas (NP)
 
 ### Exponencial (EXP)
 
