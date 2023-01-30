@@ -17,7 +17,8 @@ plugins:
 logo: https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png
 masthead_title: "The Dojo MX Blog"
 title: "The Dojo MX Blog"
-words_per_minute: 150
+words_per_minute: 120
+
 
 defaults:
   # _posts
@@ -48,7 +49,7 @@ author:
   avatar : "/assets/images/me.jpg"
   bio    : "Desarrollador de software, tech lead @ HAL y The Dojo MX"
   uri    : "https://github.com/hectorip"
-  home   : # null (default), "absolute or relative url to link to author home"
+  home   : https://til.hectorip.com/
 
 analytics:
   provider: "google"
