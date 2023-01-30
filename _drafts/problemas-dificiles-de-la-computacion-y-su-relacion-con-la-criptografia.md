@@ -41,9 +41,11 @@ En este ejemplo específico, tenemos que hacer  1 ó 2 operaciones por cada letr
 
 $$f(n) = 2n$$
 
-Donde $n$ es la longitud de la cadena de entrada. Esta función es una función lineal, y se puede representar gráficamente de la siguiente manera:
+Donde $n$ es la longitud de la cadena de entrada. Como esta relación crece proporcionalmente a la entrada, es decir, lo mismo que crece la entrada crece el tiempo de ejecución, decimos que este algoritmo es de complejidad lineal.
 
 ## Tiempo polinomial (P)
+
+Un polinomio es una expresión matemática que consiste en sumas, restas, multiplicaciones, divisiones y potencias de números.
 
 Un algoritmo es de complejidad polinomial si su tiempo de ejecución es una función que consiste en multiplicaciones, sumas o elevaciones a _ciertas_ potencias del tamaño de la entrada. Algunos ejemplos de complejidad polinomial son:
 
@@ -69,11 +71,27 @@ La notación más usada para expresar la complejidad no es la de una función co
       return -1
 ```
 
-El peor de los casos es cuando el elemento esté en el último lugar. Por lo tanto, su complejidad en el peor de los casos depende directamente de la longitud de la lista de entrada. Podemos expresar esta complejidad como:
+El peor de los casos es cuando el elemento esté en el último lugar. Por lo tanto, su complejidad en el peor de los casos depende directamente de la longitud de la lista de entrada. Podemos expresar esta complejidad con una función como:
+
+$$f(n) = n$$
+
+Pero la notación Big O nos permite expresar esto de una manera más simple:
 
 $$O(n)$$
 
-En este artículo no vamos a hablar de cómo calcular esas complejidades, pero si quieres saber más, te recomiendo este artículo: [Big O Cheatsheet](https://www.bigocheatsheet.com/).
+En el ejemplo de arriba, de la búsqueda de las letras "a" en una cadena, la complejidad que calculamos expresada como función en el peor de los casos es:
+
+$$f(n) = 2n$$
+
+En la notación Big O se eliminan todas los valores constantes, y por la tanto esta complejidad se expresa como:
+
+$$O(n)$$
+
+Equivalente al ejemplo anterior. Lo que tienes que recordar de la notación Big O es que te da un **límite superior** de operaciones que se ejecutarán para un algoritmo.
+
+En este artículo no vamos a hablar de cómo calcular más complejidades, pero probablemente lo hagamos en uno futuro.
+
+Ahora, con esta notación, estamos listos para seguir hablando de las clases de complejidad.
 
 ### Tiempo súper polinomial (SP)
 
