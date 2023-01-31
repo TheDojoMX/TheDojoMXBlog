@@ -43,7 +43,7 @@ $$f(n) = 2n$$
 
 Donde $n$ es la longitud de la cadena de entrada. Como esta relación crece proporcionalmente a la entrada, es decir, lo mismo que crece la entrada crece el tiempo de ejecución, decimos que este algoritmo es de complejidad lineal.
 
-## Tiempo polinomial (P)
+## Complejidad polinomial (P)
 
 Un polinomio es una expresión matemática que consiste en sumas, restas, multiplicaciones, divisiones y potencias de números.
 
@@ -87,25 +87,39 @@ En la notación Big O se eliminan todas los valores constantes, y por la tanto e
 
 $$O(n)$$
 
-Equivalente al ejemplo anterior. Lo que tienes que recordar de la notación Big O es que te da un **límite superior** de operaciones que se ejecutarán para un algoritmo.
+Equivalente al ejemplo anterior. Lo que tienes que recordar de la notación Big O es que te da un **límite superior** de operaciones que se ejecutarán para un algoritmo. Este límite lo podemos pensar como una línea que el algoritmo nunca va a tocar y mucho menos a rebasar, esto se llama una asíntota en matemáticas, por lo que también se le conoce como **notación asintótica**.
 
-En este artículo no vamos a hablar de cómo calcular más complejidades, pero probablemente lo hagamos en uno futuro.
+En este artículo no vamos a hablar de cómo calcular más complejidades, pero probablemente lo hagamos en uno futuro. A este tipo de cálculo, o análisis de algoritmos se le llama **"análisis asintótico"**.
 
 Ahora, con esta notación, estamos listos para seguir hablando de las clases de complejidad.
 
-### Tiempo súper polinomial (SP)
+## Complejidad súper polinomial
 
-Una clase que estaría bien separar de los polinomios es la de los tiempos súper polinomiales. Estos algoritmos son polinomiales, pero con un polinomio muy grande. Por ejemplo:
+Una clase que estaría bien separar de los polinomios que acabamos de hablar, es la de los tiempos _súper polinomiales_. Estos algoritmos tienen una complejidad que crece muy rápido con respecto a su entrada. Por ejemplo:
 
-$$f(n) = 2^{n^2}$$
+$$O(n^{n ^ 2})$$
 
-### Tiempos polinomiales no deterministas (NP)
+$$O(n!)$$
 
-### Exponencial (EXP)
+$$O(2^n)$$
+
+Estos tres ejemplos crecen más rápido que cualquier función polinomial que común que podamos representar como $$O(n^k)$$, siendo k _una constante_ (que normalmente es un número pequeño).
+
+A esta clase de complejidad la empezamos ya a considerar como problemas intratables en la computación. Pero hablemos, dentro de los tiempos súper polinomiales de otra clase característica.
+
+### Complejidad Exponencial (EXP)
+
+La clase de complejidad exponencial se expresa como $$O(2^n)$$. Cuando un algoritmo tiene un complejidad de esta categoría o mayor, se considera completamente incaculable.
+
+Por ejemplo, si midiéramos la entrada en bits y tuviéramos una entrada de 100 bits, el número de operaciones sería $$2^{100}$$. Suponiendo que una buena computadora pudiera hacer 1,000,000 de operaciones por segundo, esta tardaría $$2^{81}$$ segundos en completar el cálculo. Sin embargo, calculamos que el universo "sólo" ha existido por menos de $$2^{34}$$. Así de grande es la complejidad exponencial.
+
+Te preguntarás si con una computadora más rápida podemos resolver el problema. Veamos el récord de la computadora más poderosa en 2023, que puede hacer 1,000,000,000,000,000,000 de operaciones por segundo. Esto es $$2^{59.8}$$. Esto significa que una computadora de este tamaño tardaría $$2^{40.2}$$ segundos. "Poco" más que la edad del universo.
+
+Este tipo de algoritmos son los que hay que ejecutar para encontrar una llave por fuerza bruta. Si quieres por ejemplo encontrar una llave de AES, tendrías que hacer $$2^128$$ intentos, en el peor de los casos.
+
+## Tiempos polinomiales no deterministas (NP)
 
 ## Problemas que creemos que son difíciles
-
-## Problema de la factorización
 
 En los siguientes artículos vamos a estar hablando de los siguientes problemas:
 
