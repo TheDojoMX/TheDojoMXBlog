@@ -109,7 +109,7 @@ A esta clase de complejidad la empezamos ya a considerar como problemas intratab
 
 ### Complejidad Exponencial (EXP)
 
-La clase de complejidad exponencial se expresa como $$O(2^n)$$. Cuando un algoritmo tiene un complejidad de esta categoría o mayor, se considera completamente incaculable.
+La clase de complejidad exponencial se expresa como $$O(2^n)$$. Cuando un algoritmo tiene un complejidad de esta categoría o mayor, se considera completamente incalculable.
 
 Por ejemplo, si midiéramos la entrada en bits y tuviéramos una entrada de 100 bits, el número de operaciones sería $$2^{100}$$. Suponiendo que una buena computadora pudiera hacer 1,000,000 de operaciones por segundo, esta tardaría $$2^{81}$$ segundos en completar el cálculo. Sin embargo, calculamos que el universo "sólo" ha existido por menos de $$2^{34}$$. Así de grande es la complejidad exponencial.
 
@@ -119,9 +119,18 @@ Este tipo de algoritmos son los que hay que ejecutar para encontrar una llave po
 
 ## Tiempos polinomiales no deterministas (NP)
 
+Hasta ahora hemos hablado de tiempos polinomiales que estamos seguros que _siempre_ se van a comportar como los conocemos o incluso van a mejorar.
+
+Para las clases que hemos hablado existe su equivalente _no determinista_.
+
+¿Qué tiene que ver el determinismo con la complejidad? El determinismo en las clases anteriores significa que sabemos con certeza que el resultado está abajo de la línea de complejidad que la notación Big O describe.
+
+En el caso de los tiempos polinomiales no deterministas significa que una máquina de Turing no determinista puede resolver el problema en un tiempo polinomial. El que la máquina sea no determinista significa que no sabemos si el resultado está abajo de la línea de complejidad que la notación Big O describe, o que a veces lo logrará y otras veces no.
+
+Esto en otras palabras, significa que para los problemas con complejidad NP se puede **adivinar** una solución en un tiempo finito no muy grande o también verificar si esta solución es correcta, pero no se puede encontrar esta solución o garantizar que se encontrará en un tiempo razonable.
+
 ## Problemas que creemos que son difíciles
 
 En los siguientes artículos vamos a estar hablando de los siguientes problemas:
 
 - Campos de Galois en curvas elípticas
-- Algo más
