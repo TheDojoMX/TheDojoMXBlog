@@ -115,7 +115,7 @@ Por ejemplo, si midiéramos la entrada en bits y tuviéramos una entrada de 100 
 
 Te preguntarás si con una computadora más rápida podemos resolver el problema. Veamos el récord de la computadora más poderosa en 2023, que puede hacer 1,000,000,000,000,000,000 de operaciones por segundo. Esto es $$2^{59.8}$$. Esto significa que una computadora de este tamaño tardaría $$2^{40.2}$$ segundos. "Poco" más que la edad del universo.
 
-Este tipo de algoritmos son los que hay que ejecutar para encontrar una llave por fuerza bruta. Si quieres por ejemplo encontrar una llave de AES, tendrías que hacer $$2^128$$ intentos, en el peor de los casos.
+Este tipo de algoritmos son los que hay que ejecutar para encontrar una llave por fuerza bruta. Si quieres por ejemplo encontrar una llave de [AES](/2020/12/03/tipos-de-algoritmos-criptograficos.html#aes), tendrías que hacer $$2^128$$ intentos, en el peor de los casos.
 
 ## Tiempos polinomiales no deterministas (NP)
 
@@ -127,7 +127,15 @@ Para las clases que hemos hablado existe su equivalente _no determinista_.
 
 En el caso de los tiempos polinomiales no deterministas significa que una máquina de Turing no determinista puede resolver el problema en un tiempo polinomial. El que la máquina sea no determinista significa que no sabemos si el resultado está abajo de la línea de complejidad que la notación Big O describe, o que a veces lo logrará y otras veces no.
 
-Esto en otras palabras, significa que para los problemas con complejidad NP se puede **adivinar** una solución en un tiempo finito no muy grande o también verificar si esta solución es correcta, pero no se puede encontrar esta solución o garantizar que se encontrará en un tiempo razonable.
+Esto en otras palabras, significa que para los problemas con complejidad NP se puede **adivinar** una solución en un tiempo finito no muy grande, pero no se puede encontrar esta solución o garantizar que se encontrará en un tiempo razonable para cada una de las entradas del algoritmo.
+
+Otra característica que tienen los problemas NP es que aunque encontrar una solución sea difícil, verificarla es fácil.
+
+Un ejemplo de un problema NP es el de encontrar una llave de [AES](/2020/12/03/tipos-de-algoritmos-criptograficos.html#aes) cuando conocemos el texto plano. Usando la fuerza bruta por ejemplo, podríamos encontrar la llave en un golpe de suerte y podríamos verificar que la llave es la correcta comparando el texto plano con el texto descifrado, si son iguales, entonces la llave es correcta.
+
+Muchos de los problemas NP tienen que ver con combinatoria, con problemas que tienen que ver con la cantidad de combinaciones posibles que hay en un conjunto de elementos, justo como las llaves criptográficas.
+
+## NP-Completo
 
 ## Problemas que creemos que son difíciles
 
