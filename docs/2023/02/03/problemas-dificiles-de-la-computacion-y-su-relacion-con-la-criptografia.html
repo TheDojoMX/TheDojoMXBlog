@@ -1,0 +1,899 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Problemas difíciles de la computación y su relación con la criptografía: Problemas NP - The Dojo MX Blog</title>
+<meta name="description" content="En esta serie de posts vamos a hablar de una serie de problemas difíciles de la ciencia de la computación y su relación con la criptografía.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Problemas difíciles de la computación y su relación con la criptografía: Problemas NP">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html">
+
+
+  <meta property="og:description" content="En esta serie de posts vamos a hablar de una serie de problemas difíciles de la ciencia de la computación y su relación con la criptografía.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_700,w_1400/v1675031879/marek-okon-dHUhghn9mrI-unsplash_p3ng6t.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-03T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+<script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html",
+      "name": "Problemas difíciles de la computación y su relación con la criptografía: Problemas NP",
+      "headline": "Problemas difíciles de la computación y su relación con la criptografía: Problemas NP",
+      "keywords": "criptografía,computer-science,cs,complejidad-computacional",
+      "description": "En esta serie de posts vamos a hablar de una serie de problemas difíciles de la ciencia de la computación y su relación con la criptografía.",
+      "articleBody": "La intuición a veces nos dice que cualquier cálculo numérico debería ser muy fácil para una computadora. Sin embargo, hay problemas numéricos y no numéricos que son imposibles de resolver para las computadoras actuales, independientemente de su poder de procesamiento.\n\nLa criptografía actual está soportada por una serie de problemas que suponemos muy difíciles de resolver de la ciencias de la computación.\n\nEn esta serie de artículos vamos a estar hablando de ellos para entenderlos a profundidad y sobre todo para entender cómo es que se relacionan con los algoritmos criptográficos, como con los algoritmos de llave pública, como Diffie-Hellman y RSA.\n\nPero primero hablemos de lo que consideramos un problema difícil de la computación y la complejidad computacional.\n\nComplejidad computacional\n\nLa complejidad computacional se puede entender como la cantidad de operaciones que un algoritmo ejecuta para finalizar. Esta cantidad de operaciones es una función (en el sentido matemático) de la entrada del problema. Puedes pensar en una función como una relación entre la entrada y el tiempo de ejecución.\n\nPor ejemplo, si te piden contar todas las letras “a” e una cadena, esto podría resolverse de la siguiente manera en Python:\n\ndef contar_a(string):\n    count = 0\n    for char in string:\n        if char == \"a\":\n            count += 1\n    return count\n\n\n¿Cuántas operaciones tarda este algoritmo? Como dijimos depende de la entrada. Esa relación de dependencia es una función. Lo que la función nos dice es qué relación existe entre la entrada y la cantidad de operaciones que se ejecutan.\n\nEn este ejemplo específico, tenemos que hacer  1 ó 2 operaciones por cada letra de la entrada, y esto no cambia, independientemente de la longitud de esta cadena de entrada. Por lo tanto la función que describe la relación entre la entrada y la cantidad de operaciones es:\n\n\\[f(n) = 2n\\]\n\nDonde $n$ es la longitud de la cadena de entrada. Como esta relación crece proporcionalmente a la entrada, es decir, lo mismo que crece la entrada crece el tiempo de ejecución, decimos que este algoritmo es de complejidad lineal.\n\nComplejidad polinomial (P)\n\nUn polinomio es una expresión matemática que consiste en sumas, restas, multiplicaciones, divisiones y potencias de números.\n\nUn algoritmo es de complejidad polinomial si su tiempo de ejecución es una función que consiste en multiplicaciones, sumas o elevaciones a ciertas potencias del tamaño de la entrada. Algunos ejemplos de complejidad polinomial son:\n\n\\[f(n) = 2n\\]\n\n\\[f(n) = 3n^2\\]\n\n\\[f(n) = 4n^3\\]\n\n\\[f(n) = n^{log(n)}\\]\n\nEn la práctica, si un algoritmo es tiene complejidad polinomial quiere decir que su ejecución es más o menos rápida (o por lo menos posible en caso de polinomios muy grandes) para cualquier entrada.\n\nLa notación Big O\n\nLa notación más usada para expresar la complejidad no es la de una función común como lo hemos hecho hasta ahora. Normalmente, lo que nos interesa es expresar o conocer el peor de los casos para un algoritmo específico. Por ejemplo, si estamos observando un algoritmo de búsqueda como el siguiente:\n\n  def buscar(lista, elemento):\n      for i in range(len(lista)):\n          if lista[i] == elemento:\n              return i\n      return -1\n\n\nEl peor de los casos es cuando el elemento esté en el último lugar. Por lo tanto, su complejidad en el peor de los casos depende directamente de la longitud de la lista de entrada. Podemos expresar esta complejidad con una función como:\n\n\\[f(n) = n\\]\n\nPero la notación Big O nos permite expresar esto de una manera más simple:\n\n\\[O(n)\\]\n\nEn el ejemplo de arriba, de la búsqueda de las letras “a” en una cadena, la complejidad que calculamos expresada como función en el peor de los casos es:\n\n\\[f(n) = 2n\\]\n\nEn la notación Big O se eliminan todas los valores constantes, y por la tanto esta complejidad se expresa como:\n\n\\[O(n)\\]\n\nEquivalente al ejemplo anterior. Lo que tienes que recordar de la notación Big O es que te da un límite superior de operaciones que se ejecutarán para un algoritmo. Este límite lo podemos pensar como una línea que el algoritmo nunca va a tocar y mucho menos a rebasar, esto se llama una asíntota en matemáticas, por lo que también se le conoce como notación asintótica.\n\nEn este artículo no vamos a hablar de cómo calcular más complejidades, pero probablemente lo hagamos en uno futuro. A este tipo de cálculo, o análisis de algoritmos se le llama “análisis asintótico”.\n\nAhora, con esta notación, estamos listos para seguir hablando de las clases de complejidad.\n\nComplejidad súper polinomial\n\nUna clase que estaría bien separar de los polinomios que acabamos de hablar, es la de los tiempos súper polinomiales. Estos algoritmos tienen una complejidad que crece muy rápido con respecto a su entrada. Por ejemplo:\n\n\\[O(n^{n ^ 2})\\]\n\n\\[O(n!)\\]\n\n\\[O(2^n)\\]\n\nEstos tres ejemplos crecen más rápido que cualquier función polinomial que común que podamos representar como \\(O(n^k)\\), siendo k una constante (que normalmente es un número pequeño).\n\nA esta clase de complejidad la empezamos ya a considerar como problemas intratables en la computación. Pero hablemos, dentro de los tiempos súper polinomiales de otra clase característica.\n\nComplejidad Exponencial (EXP)\n\nLa clase de complejidad exponencial se expresa como \\(O(2^n)\\). Cuando un algoritmo tiene un complejidad de esta categoría o mayor, se considera completamente incalculable.\n\nPor ejemplo, si midiéramos la entrada en bits y tuviéramos una entrada de 100 bits, el número de operaciones sería \\(2^{100}\\). Suponiendo que una buena computadora pudiera hacer 1,000,000 de operaciones por segundo, esta tardaría \\(2^{81}\\) segundos en completar el cálculo. Sin embargo, calculamos que el universo “sólo” ha existido por menos de \\(2^{34}\\). Así de grande es la complejidad exponencial.\n\nTe preguntarás si con una computadora más rápida podemos resolver el problema. Veamos el récord de la computadora más poderosa en 2023, que puede hacer 1,000,000,000,000,000,000 de operaciones por segundo. Esto es \\(2^{59.8}\\). Esto significa que una computadora de este tamaño tardaría \\(2^{40.2}\\) segundos. “Poco” más que la edad del universo.\n\nEste tipo de algoritmos son los que hay que ejecutar para encontrar una llave por fuerza bruta. Si quieres por ejemplo encontrar una llave de AES, tendrías que hacer \\(2^128\\) intentos, en el peor de los casos.\n\nTiempos polinomiales no deterministas (NP)\n\nHasta ahora hemos hablado de tiempos polinomiales que estamos seguros que siempre se van a comportar como los conocemos o incluso van a mejorar.\n\nPara las clases que hemos hablado existe su equivalente no determinista.\n\n¿Qué tiene que ver el determinismo con la complejidad? El determinismo en las clases anteriores significa que sabemos con certeza que el resultado está abajo de la línea de complejidad que la notación Big O describe.\n\nEn el caso de los tiempos polinomiales no deterministas significa que una máquina de Turing no determinista puede resolver el problema en un tiempo polinomial. El que la máquina sea no determinista significa que no sabemos si el resultado está abajo de la línea de complejidad que la notación Big O describe, o que a veces lo logrará y otras veces no.\n\nEsto en otras palabras, significa que para los problemas con complejidad NP se puede adivinar una solución en un tiempo finito no muy grande, pero no se puede encontrar esta solución o garantizar que se encontrará en un tiempo razonable para cada una de las entradas del algoritmo.\n\nOtra característica que tienen los problemas NP es que aunque encontrar una solución sea difícil, verificarla es fácil.\n\nUn ejemplo de un problema NP es el de encontrar una llave de AES cuando conocemos el texto plano. Usando la fuerza bruta por ejemplo, podríamos encontrar la llave en un golpe de suerte y podríamos verificar que la llave es la correcta comparando el texto plano con el texto descifrado, si son iguales, entonces la llave es correcta.\n\nMuchos de los problemas NP tienen que ver con combinatoria, con problemas que tienen que ver con la cantidad de combinaciones posibles que hay en un conjunto de elementos, justo como las llaves criptográficas.\n\nNP-Complete\n\nLos problemas NP-Complete son la clase más difícil de resolver dentro de los problemas NP. Estos problemas se pueden transformar en otros problemas NP-complete, lo que significa que si se puede resolver un problema NP-complete, se puede resolver cualquier otro problema NP-complete en un tiempo razonable.\n\nProblemas que creemos que son difíciles y problemas NP\n\nLa criptografía actual se basa en problemas que creemos que son por lo menos NP. ¿Por qué usamos la palabra “creemos”? Porque no podemos probar que son NP, pero hasta el momento nadie ha encontrado una forma de resolverlos en tiempo polinomial, pero creemos que lo pueden ser. Lo ideal sería usar problemas que sean NP-Complete, pero no hay muchos problemas NP-Complete que se puedan usar en la criptografía, además de que existe la posibilidad de que si resuelven un problema NP-Complete, se resuelvan todos los problemas NP-Complete, lo que rompería la criptografía actual.\n\nConclusión\n\nLa criptografía moderna se basa en problemas muy difíciles de resolver para cualquier computadora, para los que no existe un algoritmo eficiente que pueda encontrar una solución garantizada cada vez. Algunos de estos problemas son fáciles de verificar una vez que se propone una solución y son justo estos los que son más útiles para la criptografía.\n\nLo más interesante es que la criptografía simétrica crea un problema NP con sus llaves: encontrar una llave de cifrado es casi imposible en un tiempo razonable, pero verificar si es correcta si se tiene el tiempo original es muy fácil.\n\nEn los próximos artículos hablaremos específicamente de algunos de estos problemas, sobre todo aquellos en los que la criptografía asimétrica se basa.\n",
+      "datePublished": "2023-02-03 00:00:00 -0600",
+      "dateModified": "2023-02-03 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_700,w_1400/v1675031879/marek-okon-dHUhghn9mrI-unsplash_p3ng6t.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://res.cloudinary.com/hectorip/image/upload/c_crop,h_700,w_1400/v1675031879/marek-okon-dHUhghn9mrI-unsplash_p3ng6t.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Problemas difíciles de la computación y su relación con la criptografía: Problemas NP
+
+        
+      </h1>
+      
+        <p class="page__lead">En esta serie de posts vamos a hablar de una serie de problemas difíciles de la ciencia de la computación y su relación con la criptografía.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1580 palabras | 13 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Problemas difíciles de la computación y su relación con la criptografía: Problemas NP">
+    <meta itemprop="description" content="En esta serie de posts vamos a hablar de una serie de problemas difíciles de la ciencia de la computación y su relación con la criptografía.">
+    <meta itemprop="datePublished" content="2023-02-03T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>La intuición a veces nos dice que cualquier cálculo numérico <em>debería</em> ser muy fácil para una computadora. Sin embargo, hay problemas numéricos y no numéricos que son imposibles de resolver para las computadoras actuales, independientemente de su poder de procesamiento.</p>
+
+<p>La <strong>criptografía</strong> actual está soportada por una serie de problemas que <em>suponemos muy difíciles</em> de resolver de la ciencias de la computación.</p>
+
+<p>En esta serie de artículos vamos a estar hablando de ellos para entenderlos a profundidad y sobre todo para entender cómo es que se relacionan con los algoritmos criptográficos, como con los algoritmos de llave pública, como Diffie-Hellman y RSA.</p>
+
+<p>Pero primero hablemos de lo que consideramos un problema difícil de la computación y la complejidad computacional.</p>
+
+<h2 id="complejidad-computacional">Complejidad computacional</h2>
+
+<p>La complejidad computacional se puede entender como la <strong>cantidad de operaciones</strong> que un algoritmo ejecuta para finalizar. Esta cantidad de operaciones es una función (en el sentido <em>matemático</em>) de la entrada del problema. Puedes pensar en una función como una relación entre la entrada y el tiempo de ejecución.</p>
+
+<p>Por ejemplo, si te piden contar todas las letras “a” e una cadena, esto podría resolverse de la siguiente manera en Python:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">contar_a</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s">"a"</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">count</span>
+</code></pre></div></div>
+
+<p>¿Cuántas operaciones tarda este algoritmo? Como dijimos <em>depende</em> de la entrada. Esa relación de dependencia es una función. Lo que la función nos dice es <em>qué relación existe</em> entre la entrada y la cantidad de operaciones que se ejecutan.</p>
+
+<p>En este ejemplo específico, tenemos que hacer  1 ó 2 operaciones por cada letra de la entrada, y esto no cambia, independientemente de la longitud de esta cadena de entrada. Por lo tanto la función que describe la relación entre la entrada y la cantidad de operaciones es:</p>
+
+\[f(n) = 2n\]
+
+<p>Donde $n$ es la longitud de la cadena de entrada. Como esta relación crece proporcionalmente a la entrada, es decir, lo mismo que crece la entrada crece el tiempo de ejecución, decimos que este algoritmo es de complejidad lineal.</p>
+
+<h2 id="complejidad-polinomial-p">Complejidad polinomial (P)</h2>
+
+<p>Un polinomio es una expresión matemática que consiste en sumas, restas, multiplicaciones, divisiones y potencias de números.</p>
+
+<p>Un algoritmo es de complejidad polinomial si su tiempo de ejecución es una función que consiste en multiplicaciones, sumas o elevaciones a <em>ciertas</em> potencias del tamaño de la entrada. Algunos ejemplos de complejidad polinomial son:</p>
+
+\[f(n) = 2n\]
+
+\[f(n) = 3n^2\]
+
+\[f(n) = 4n^3\]
+
+\[f(n) = n^{log(n)}\]
+
+<p>En la práctica, si un algoritmo es tiene complejidad polinomial quiere decir que su ejecución es más o menos rápida (o por lo menos posible en caso de polinomios muy grandes) para cualquier entrada.</p>
+
+<h2 id="la-notación-big-o">La notación Big O</h2>
+
+<p>La notación más usada para expresar la complejidad no es la de una función común como lo hemos hecho hasta ahora. Normalmente, lo que nos interesa es expresar o conocer <strong>el peor de los casos</strong> para un algoritmo específico. Por ejemplo, si estamos observando un algoritmo de búsqueda como el siguiente:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">buscar</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">elemento</span><span class="p">):</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span>
+          <span class="k">if</span> <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">elemento</span><span class="p">:</span>
+              <span class="k">return</span> <span class="n">i</span>
+      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<p>El peor de los casos es cuando el elemento esté en el último lugar. Por lo tanto, su complejidad en el peor de los casos depende directamente de la longitud de la lista de entrada. Podemos expresar esta complejidad con una función como:</p>
+
+\[f(n) = n\]
+
+<p>Pero la notación Big O nos permite expresar esto de una manera más simple:</p>
+
+\[O(n)\]
+
+<p>En el ejemplo de arriba, de la búsqueda de las letras “a” en una cadena, la complejidad que calculamos expresada como función en el peor de los casos es:</p>
+
+\[f(n) = 2n\]
+
+<p>En la notación Big O se eliminan todas los valores constantes, y por la tanto esta complejidad se expresa como:</p>
+
+\[O(n)\]
+
+<p>Equivalente al ejemplo anterior. Lo que tienes que recordar de la notación Big O es que te da un <strong>límite superior</strong> de operaciones que se ejecutarán para un algoritmo. Este límite lo podemos pensar como una línea que el algoritmo nunca va a tocar y mucho menos a rebasar, esto se llama una asíntota en matemáticas, por lo que también se le conoce como <strong>notación asintótica</strong>.</p>
+
+<p>En este artículo no vamos a hablar de cómo calcular más complejidades, pero probablemente lo hagamos en uno futuro. A este tipo de cálculo, o análisis de algoritmos se le llama <strong>“análisis asintótico”</strong>.</p>
+
+<p>Ahora, con esta notación, estamos listos para seguir hablando de las clases de complejidad.</p>
+
+<h2 id="complejidad-súper-polinomial">Complejidad súper polinomial</h2>
+
+<p>Una clase que estaría bien separar de los polinomios que acabamos de hablar, es la de los tiempos <em>súper polinomiales</em>. Estos algoritmos tienen una complejidad que crece muy rápido con respecto a su entrada. Por ejemplo:</p>
+
+\[O(n^{n ^ 2})\]
+
+\[O(n!)\]
+
+\[O(2^n)\]
+
+<p>Estos tres ejemplos crecen más rápido que cualquier función polinomial que común que podamos representar como \(O(n^k)\), siendo k <em>una constante</em> (que normalmente es un número pequeño).</p>
+
+<p>A esta clase de complejidad la empezamos ya a considerar como problemas intratables en la computación. Pero hablemos, dentro de los tiempos súper polinomiales de otra clase característica.</p>
+
+<h3 id="complejidad-exponencial-exp">Complejidad Exponencial (EXP)</h3>
+
+<p>La clase de complejidad exponencial se expresa como \(O(2^n)\). Cuando un algoritmo tiene un complejidad de esta categoría o mayor, se considera completamente incalculable.</p>
+
+<p>Por ejemplo, si midiéramos la entrada en bits y tuviéramos una entrada de 100 bits, el número de operaciones sería \(2^{100}\). Suponiendo que una buena computadora pudiera hacer 1,000,000 de operaciones por segundo, esta tardaría \(2^{81}\) segundos en completar el cálculo. Sin embargo, calculamos que el universo “sólo” ha existido por menos de \(2^{34}\). Así de grande es la complejidad exponencial.</p>
+
+<p>Te preguntarás si con una computadora más rápida podemos resolver el problema. Veamos el récord de la computadora más poderosa en 2023, que puede hacer 1,000,000,000,000,000,000 de operaciones por segundo. Esto es \(2^{59.8}\). Esto significa que una computadora de este tamaño tardaría \(2^{40.2}\) segundos. “Poco” más que la edad del universo.</p>
+
+<p>Este tipo de algoritmos son los que hay que ejecutar para encontrar una llave por fuerza bruta. Si quieres por ejemplo encontrar una llave de <a href="/2020/12/03/tipos-de-algoritmos-criptograficos.html#aes">AES</a>, tendrías que hacer \(2^128\) intentos, en el peor de los casos.</p>
+
+<h2 id="tiempos-polinomiales-no-deterministas-np">Tiempos polinomiales no deterministas (NP)</h2>
+
+<p>Hasta ahora hemos hablado de tiempos polinomiales que estamos seguros que <em>siempre</em> se van a comportar como los conocemos o incluso van a mejorar.</p>
+
+<p>Para las clases que hemos hablado existe su equivalente <em>no determinista</em>.</p>
+
+<p>¿Qué tiene que ver el determinismo con la complejidad? El determinismo en las clases anteriores significa que sabemos con certeza que el resultado está abajo de la línea de complejidad que la notación Big O describe.</p>
+
+<p>En el caso de los tiempos polinomiales no deterministas significa que una máquina de Turing no determinista puede resolver el problema en un tiempo polinomial. El que la máquina sea no determinista significa que no sabemos si el resultado está abajo de la línea de complejidad que la notación Big O describe, o que a veces lo logrará y otras veces no.</p>
+
+<p>Esto en otras palabras, significa que para los problemas con complejidad NP se puede <strong>adivinar</strong> una solución en un tiempo finito no muy grande, pero no se puede encontrar esta solución o garantizar que se encontrará en un tiempo razonable para cada una de las entradas del algoritmo.</p>
+
+<p>Otra característica que tienen los problemas NP es que aunque encontrar una solución sea difícil, verificarla es fácil.</p>
+
+<p>Un ejemplo de un problema NP es el de encontrar una llave de <a href="/2020/12/03/tipos-de-algoritmos-criptograficos.html#aes">AES</a> cuando conocemos el texto plano. Usando la fuerza bruta por ejemplo, podríamos encontrar la llave en un golpe de suerte y podríamos verificar que la llave es la correcta comparando el texto plano con el texto descifrado, si son iguales, entonces la llave es correcta.</p>
+
+<p>Muchos de los problemas NP tienen que ver con combinatoria, con problemas que tienen que ver con la cantidad de combinaciones posibles que hay en un conjunto de elementos, justo como las llaves criptográficas.</p>
+
+<h2 id="np-complete">NP-Complete</h2>
+
+<p>Los problemas NP-Complete son la clase más difícil de resolver dentro de los problemas NP. Estos problemas se pueden transformar en otros problemas NP-complete, lo que significa que si se puede resolver un problema NP-complete, se puede resolver cualquier otro problema NP-complete en un tiempo razonable.</p>
+
+<h2 id="problemas-que-creemos-que-son-difíciles-y-problemas-np">Problemas que creemos que son difíciles y problemas NP</h2>
+
+<p>La criptografía actual se basa en problemas que creemos que son por lo menos NP. ¿Por qué usamos la palabra “creemos”? Porque no podemos probar que son NP, pero hasta el momento nadie ha encontrado una forma de resolverlos en tiempo polinomial, pero creemos que lo pueden ser. Lo ideal sería usar problemas que sean NP-Complete, pero no hay muchos problemas NP-Complete que se puedan usar en la criptografía, además de que existe la posibilidad de que si resuelven un problema NP-Complete, se resuelvan todos los problemas NP-Complete, lo que rompería la criptografía actual.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>La criptografía moderna se basa en problemas muy difíciles de resolver para cualquier computadora, para los que no existe un algoritmo eficiente que pueda encontrar una solución garantizada cada vez. Algunos de estos problemas son fáciles de verificar una vez que se propone una solución y son justo estos los que son más útiles para la criptografía.</p>
+
+<p>Lo más interesante es que la criptografía simétrica crea un problema NP con sus llaves: encontrar una llave de cifrado es casi imposible en un tiempo razonable, pero verificar si es correcta si se tiene el tiempo original es muy fácil.</p>
+
+<p>En los próximos artículos hablaremos específicamente de algunos de estos problemas, sobre todo aquellos en los que la criptografía asimétrica se basa.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#complejidad-computacional" class="page__taxonomy-item" rel="tag">complejidad-computacional</a><span class="sep">, </span>
+    
+      <a href="/tags/#computer-science" class="page__taxonomy-item" rel="tag">computer-science</a><span class="sep">, </span>
+    
+      <a href="/tags/#criptograf%C3%ADa" class="page__taxonomy-item" rel="tag">criptografía</a><span class="sep">, </span>
+    
+      <a href="/tags/#cs" class="page__taxonomy-item" rel="tag">cs</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-03T00:00:00-06:00">February 3, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Problemas+dif%C3%ADciles+de+la+computaci%C3%B3n+y+su+relaci%C3%B3n+con+la+criptograf%C3%ADa%3A+Problemas+NP%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F02%2F03%2Fproblemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F02%2F03%2Fproblemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F02%2F03%2Fproblemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html" class="pagination--pager" title="Patrones para aprendices: Cava más hondo
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1674709094/ned-daniels-dr_9oxbVnuc-unsplash_enbwxa.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html" rel="permalink">Patrones para aprendices: Cava más hondo
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 25-01-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos de por qué aprender a profundizar en los temas en los que trabajas día a día es importante para avanzar en tu carrera como desarrolldor de software.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_300/v1674189353/1829084045_mad_cat_scientist_looking_into_a_black_screen_with_binary_code__detailed_concept_art___artstation__H_bttvyj.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/01/22/entendiendo-el-bytecode.html" rel="permalink">¿Qué es el bytecode?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+5 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 22-01-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_450,w_1024/v1673577537/DALL_E_2023-01-12_20.38.31_-_a_mechanical_brain_in_the_back_of_a_robot_s_head_made_as_a__membrane__that_is_a_complex_machine_made_of_very_tiny_gears_levers_and_other_mechanical_dexwfs.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/01/18/compilacion-just-in-time-que-es.html" rel="permalink">Qué es la compilación Just In Time (JIT)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+11 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 18-01-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Has escuchado que varios lenguajes están agregando la capacidad de compilación Just In Time a sus entornos? Hablemos de qué es y cómo te beneficia.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_600,w_300/v1673056123/DALL_E_2023-01-06_19.47.48_-_Perceptron_artistic_digital_paint_high_quality_detailed_wpoohz.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/01/07/ejercicio-programando-un-perceptron.html" rel="permalink">Ejercicio: programando un perceptrón con Python
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+18 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 07-01-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

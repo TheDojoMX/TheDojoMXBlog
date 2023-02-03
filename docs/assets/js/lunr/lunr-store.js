@@ -592,4 +592,10 @@ var store = [{
         "tags": ["aprendizaje","patrones-de-aprendizaje","profundizar","conocimiento"],
         "url": "/2023/01/25/patrones-de-aprendizaje-cava-mas-hondo.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1674709094/ned-daniels-dr_9oxbVnuc-unsplash_enbwxa.jpg"
+      },{
+        "title": "Problemas difíciles de la computación y su relación con la criptografía: Problemas NP",
+        "excerpt":"La intuición a veces nos dice que cualquier cálculo numérico debería ser muy fácil para una computadora. Sin embargo, hay problemas numéricos y no numéricos que son imposibles de resolver para las computadoras actuales, independientemente de su poder de procesamiento. La criptografía actual está soportada por una serie de problemas...","categories": [],
+        "tags": ["criptografía","computer-science","cs","complejidad-computacional"],
+        "url": "/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_350,w_700/v1675031879/marek-okon-dHUhghn9mrI-unsplash_p3ng6t.jpg"
       }]
