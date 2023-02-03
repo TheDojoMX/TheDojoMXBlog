@@ -145,6 +145,8 @@ La criptografía actual se basa en problemas que creemos que son por lo menos NP
 
 ## Conclusión
 
-La criptografía moderna se basa en problemas muy difíciles de resolver para cualquier computadora, para los que no existe un algoritmo eficiente que pueda encontrar una solución garantizada cada vez. Algunos de estos problemas son fáciles de verificar una vez que se propone una solución y son justo estos los que son más útiles para la criptografía. Lo más interesante es que la criptografía simétrica crea un problema NP con sus llaves: encontrar una llave.
+La criptografía moderna se basa en problemas muy difíciles de resolver para cualquier computadora, para los que no existe un algoritmo eficiente que pueda encontrar una solución garantizada cada vez. Algunos de estos problemas son fáciles de verificar una vez que se propone una solución y son justo estos los que son más útiles para la criptografía.
+
+Lo más interesante es que la criptografía simétrica crea un problema NP con sus llaves: encontrar una llave de cifrado es casi imposible en un tiempo razonable, pero verificar si es correcta si se tiene el tiempo original es muy fácil.
 
 En los próximos artículos hablaremos específicamente de algunos de estos problemas, sobre todo aquellos en los que la criptografía asimétrica se basa.
