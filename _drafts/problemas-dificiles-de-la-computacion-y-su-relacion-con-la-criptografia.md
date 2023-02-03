@@ -1,5 +1,5 @@
 ---
-title: "Problemas difíciles de la computación y su relación con la criptografía: NP-Hard"
+title: "Problemas difíciles de la computación y su relación con la criptografía: Problemas NP"
 date: 2023-02-03
 author: Héctor Patricio
 tags: criptografía computer-science cs complejidad-computacional
@@ -135,10 +135,16 @@ Un ejemplo de un problema NP es el de encontrar una llave de [AES](/2020/12/03/t
 
 Muchos de los problemas NP tienen que ver con combinatoria, con problemas que tienen que ver con la cantidad de combinaciones posibles que hay en un conjunto de elementos, justo como las llaves criptográficas.
 
-## NP-Completo
+## NP-Complete
 
-## Problemas que creemos que son difíciles
+Los problemas NP-Complete son la clase más difícil de resolver dentro de los problemas NP. Estos problemas se pueden transformar en otros problemas NP-complete, lo que significa que si se puede resolver un problema NP-complete, se puede resolver cualquier otro problema NP-complete en un tiempo razonable.
 
-En los siguientes artículos vamos a estar hablando de los siguientes problemas:
+## Problemas que creemos que son difíciles y problemas NP
 
-- Campos de Galois en curvas elípticas
+La criptografía actual se basa en problemas que creemos que son por lo menos NP. ¿Por qué usamos la palabra "creemos"? Porque no podemos probar que son NP, pero hasta el momento nadie ha encontrado una forma de resolverlos en tiempo polinomial, pero creemos que lo pueden ser. Lo ideal sería usar problemas que sean NP-Complete, pero no hay muchos problemas NP-Complete que se puedan usar en la criptografía, además de que existe la posibilidad de que si resuelven un problema NP-Complete, se resuelvan todos los problemas NP-Complete, lo que rompería la criptografía actual.
+
+## Conclusión
+
+La criptografía moderna se basa en problemas muy difíciles de resolver para cualquier computadora, para los que no existe un algoritmo eficiente que pueda encontrar una solución garantizada cada vez. Algunos de estos problemas son fáciles de verificar una vez que se propone una solución y son justo estos los que son más útiles para la criptografía. Lo más interesante es que la criptografía simétrica crea un problema NP con sus llaves: encontrar una llave.
+
+En los próximos artículos hablaremos específicamente de algunos de estos problemas, sobre todo aquellos en los que la criptografía asimétrica se basa.
