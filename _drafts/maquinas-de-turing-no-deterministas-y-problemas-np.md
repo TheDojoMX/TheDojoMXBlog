@@ -19,7 +19,19 @@ En este artículo vamos a entender qué son las máquinas de Turing no determini
 
 En la física y las ciencias existen básicamente dos tipos de sistemas basados en el conocimiento que podemos tener de su comportamiento en un momento dado.
 
-El primer tipo es el de los sistemas deterministas, en el que saber el estado actual del sistema y el evento (o la entrada del sistema) nos permite predecir el estado futuro del sistema, sin errores y con una precisión infinita. En estos sistemas existen una serie de reglas que no se pueden romper y que nos dan la capacidad saber exactamente lo que sucederá. Estos sistemas son casi siempre simplificaciones del mundo real o sistemas creados y diseñados por el hombre.
+El primer tipo es el de los sistemas deterministas, en el que saber el estado actual del sistema y el evento (o la entrada del sistema) nos permite predecir el estado futuro del sistema, sin errores y con una precisión infinita. En estos sistemas existen una serie de reglas que no se pueden romper y que nos dan la capacidad saber exactamente lo que sucederá. Estos sistemas son casi siempre simplificaciones del mundo real o sistemas creados y diseñados por el hombre. Ejemplos de estos sistemas son:
+
+- El juego de la vida
+- El ajedrez
+- El juego de Go
+- Casi todos los problemas que analizamos en un clase de física son tratados como deterministas, por ejemplo, el movimiento de un proyectil, una mesa de billar, etc., aunque no lo sean realmente, se tratan como tales para simplificar el análisis.
+
+El segundo tipo son los **sistemas no deterministas o estocásticos**. En estos sistemas no tenemos la información suficiente para poder predecir estados futuros del sistema de manera precisa, solamente podemos predecir probabilidades. Algunos ejemplos de estos sistemas son:
+
+- El clima
+- El comportamiento de una persona
+- El comportamiento de un mercado de un mercado financiero
+- Una rifa
 
 ## Máquinas de Turing deterministas
 
