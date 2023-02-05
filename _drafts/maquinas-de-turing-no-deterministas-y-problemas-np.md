@@ -39,9 +39,11 @@ En pocas palabras, en un sistema determinista podemos predecir la salida si cono
 
 Si no sabes lo que es una máquina de Turing tradicional, una de las mejores explicaciones que hemos encontrado está en el libro ["La Mente nueva del Emperador"](/assets/pdfs/la_mente_nueva_del_emperador.pdf){:target="_blank"} de **Roger Penrose**.
 
-Lo que debes saber es que estas representan un modelo universal de computación, todo lo que se puede computar se puede representar en una máquina de Turing.
+Lo que debes saber es que estas representan un modelo universal de computación, todo lo que se puede computar (calcular, o conocer con certeza) se puede representar en una máquina de Turing. Te la puedes imaginar como una máquina que lee de una cinta infinita que contiene tanto las instrucciones como los datos de entrada. ¿Te suena? Es como funcionan las computadoras actualmente el ejecutor es el CPU y la cinta es la memoria.
 
-## Máquinas de turing no deterministas
+La máquina de Turing como se definió es determinista, es decir siempre para el la misma entrada obtendremos la misma salida. En cada punto de su cálculo la máquina de Turing sabe **exactamente qué hacer**.
+
+## Máquinas de Turing no deterministas
 
 ## Relación con los problemas NP
 
