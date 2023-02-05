@@ -31,9 +31,15 @@ El segundo tipo son los **sistemas no deterministas o estocásticos**. En estos 
 - El clima
 - El comportamiento de una persona
 - El comportamiento de un mercado de un mercado financiero
-- Una rifa
+- Una selección aleatoria de elementos de un conjunto
+
+En pocas palabras, en un sistema determinista podemos predecir la salida si conocemos la entrada con toda seguridad. En un sistema no determinista o estocástico sólo podemos dar una probabilidad de que algo suceda en el mejor de los casos.
 
 ## Máquinas de Turing deterministas
+
+Si no sabes lo que es una máquina de Turing tradicional, una de las mejores explicaciones que hemos encontrado está en el libro ["La Mente nueva del Emperador"](/assets/pdfs/la_mente_nueva_del_emperador.pdf){:target="_blank"} de **Roger Penrose**.
+
+Lo que debes saber es que estas representan un modelo universal de computación, todo lo que se puede computar se puede representar en una máquina de Turing.
 
 ## Máquinas de turing no deterministas
 
