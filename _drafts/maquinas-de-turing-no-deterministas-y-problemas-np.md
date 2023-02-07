@@ -43,7 +43,24 @@ Lo que debes saber es que estas representan un modelo universal de computación,
 
 La máquina de Turing como se definió es determinista, es decir siempre para el la misma entrada obtendremos la misma salida. En cada punto de su cálculo la máquina de Turing sabe **exactamente qué hacer**.
 
+Ahora hablemos de otro modelo de computación: las máquinas de Turing no deterministas.
+
 ## Máquinas de Turing no deterministas
+
+Apliquemos el concepto del "no determinismo" al modelo de computación de lo que acabamos de hablar. Recordemos que la en la máquina de Turing tradicional, para un mismo estado y una misma entrada de datos (o eventos), siempre obtendremos la misma acción.
+En contraparte, una máquina no determinista puede tener múltiples acciones para un mismo estado y una misma entrada o evento.
+
+Esto implica que este tipo de computación también puede tener múltiples resultados posibles para un mismo conjunto de entrada.
+
+El comportamiento de una máquina de Turing no determinista es hasta cierto grado impredecible. Incluso con las mismas entradas y estados, la máquina puede devolver diferentes resultados en diferentes ejecuciones.
+
+Estas máquinas también fueron definidas en el mismo documento en que Turing definió las máquinas tradicionales. A estas él las llamó **máquinas de selección** (choice machines o _c-machine_).
+
+A diferencia de los sistemas no deterministas de los que hablamos arriba, las máquinas de Turing no deterministas no es que tengan una probabilidad de pasar a un estado a otro, sino que la máquina puede "seleccionar" una transición de un estado a otro.
+
+Esto significa que para una misma entrada una máquina de Turing no determinista puede tener múltiples salidas posibles, algunas de ellas válidas y otras no. Sin embargo, en teoría una máquina.
+
+"Let N be a nondeterministic Turing machine that is a decider. The running time of N is the function f: N→N, where f(n) is the maximum number of steps that N uses on any branch of its computation on any input of length n, ...The definition of the running time of a nondeterministic Turing machine is not intended to correspond to any real-world computing device. Rather, it is a useful mathematical definition that assists in characterizing the complexity of an important class of computation problems, as we demostrate shortly."
 
 ## Relación con los problemas NP
 
