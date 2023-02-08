@@ -2,12 +2,12 @@
 title: "Máquinas de Turing no deterministas y problemas NP"
 date: 2023-02-10
 author: Héctor Patricio
-tags:
+tags: turing ntm non-deterministic
 comments: true
-excerpt: "Escribe aquí un buen resumen de tu artículo"
+excerpt: "Hablemos de la relación que existe entre las máquinas de Turing no deterministas (NTM), la complejidad y los problemas NP."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1675835077/pawel-czerwinski-tMbQpdguDVQ-unsplash_amld7p.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1675835077/pawel-czerwinski-tMbQpdguDVQ-unsplash_amld7p.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -58,12 +58,26 @@ Estas máquinas también fueron definidas en el mismo documento en que Turing de
 
 A diferencia de los sistemas no deterministas de los que hablamos arriba, las máquinas de Turing no deterministas no es que tengan una probabilidad de pasar a un estado a otro, sino que la máquina puede "seleccionar" una transición de un estado a otro.
 
-Esto significa que para una misma entrada una máquina de Turing no determinista puede tener múltiples salidas posibles, algunas de ellas válidas y otras no. Sin embargo, en teoría una máquina.
+Esto significa que para una misma entrada una máquina de Turing no determinista puede tener múltiples salidas posibles, algunas de ellas válidas y otras no. Para que una máquina de turing encuentre el resultado correcto, **debe probar todas las posibles salidas y seleccionar la correcta**.
 
-"Let N be a nondeterministic Turing machine that is a decider. The running time of N is the function f: N→N, where f(n) is the maximum number of steps that N uses on any branch of its computation on any input of length n, ...The definition of the running time of a nondeterministic Turing machine is not intended to correspond to any real-world computing device. Rather, it is a useful mathematical definition that assists in characterizing the complexity of an important class of computation problems, as we demostrate shortly."
+Una NTM (_Non-deterministic Turing Machine_, así la llamaremos a partir de ahora) es una construcción matemática que no existe en la vida real, es decir, no hay computadora que funcione como una NTM.
+
+## Relación entre las máquinas de Turing deterministas y no deterministas
+
+Se ha demostrado que para cada máquina de Turing no determinista existe una máquina de Turing determinista equivalente. Lo malo es que esta máquina de Turing determinista necesita **exponencialmente** más nodos o _pasos_. Por ejemplo, si una NTM necesita tiene 100 posibles estados, entonces la máquina de Turing equivalente necesitará aproximadamente 2^100 estados.
+
+Y aquí es donde entra la relación con los problemas NP.
 
 ## Relación con los problemas NP
 
+Como te darás cuenta, las NTM tienen mucho que ver con la combinatoria, porque necesitan probar todas las posibles combinaciones de estados y transiciones para encontrar la solución correcta.
+
+Si ejecutáramos una NTM en una computadora, tendríamos que probar cada uno de esos estados. Esto es exactamente lo mismo que sucede con muchos problemas NP o NP-completo, para encontrar una solución se tienen que probar todas las posibles combinaciones en un conjunto de elementos.
+
+Las siglas NP significan _Non-deterministic Polynomial_ (polinomial no determinista), y esto significa que en una NTM hay por lo menos un camino que resuelve el problema en un tiempo polinomial. _El problema es saber cuál de todos los caminos_.
+
+Y de ahí viene su nombre. Todos estos problemas tienen una solución que corre en tiempo polinomial, pero para encontrarla tenemos que _adivinar_ o _probar todas las combinaciones_.
+
 ## Conclusión
 
-Ahora que sabemos como funciona una máquina de Turing no deter
+Ahora que sabemos como funciona una máquina de Turing no determinista, que es una construcción teórica que nos sirve para hacer experimentos del pensamiento y  además que tienen una relación muy estrecha con la teoría de la complejidad y los problemas NP.
