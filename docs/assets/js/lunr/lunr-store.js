@@ -598,4 +598,10 @@ var store = [{
         "tags": ["criptografía","computer-science","cs","complejidad-computacional"],
         "url": "/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_350,w_700/v1675031879/marek-okon-dHUhghn9mrI-unsplash_p3ng6t.jpg"
+      },{
+        "title": "Máquinas de Turing no deterministas y problemas NP",
+        "excerpt":"En el artículo anterior hablamos de las clases de complejidad y su relación con la criptografía. Hablamos brevemente de los problemas NP y de dijimos que pueden ser resueltos por una máquina de Turing no determinista en un tiempo razonable (complejidad polinomial). En este artículo vamos a entender qué son...","categories": [],
+        "tags": ["turing","ntm","non-deterministic"],
+        "url": "/2023/02/08/maquinas-de-turing-no-deterministas-y-problemas-np.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1675835077/pawel-czerwinski-tMbQpdguDVQ-unsplash_amld7p.jpg"
       }]
