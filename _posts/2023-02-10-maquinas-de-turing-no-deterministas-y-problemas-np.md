@@ -1,6 +1,6 @@
 ---
 title: "Máquinas de Turing no deterministas y problemas NP"
-date: 2023-02-10
+date: 2023-02-08
 author: Héctor Patricio
 tags: turing ntm non-deterministic
 comments: true
