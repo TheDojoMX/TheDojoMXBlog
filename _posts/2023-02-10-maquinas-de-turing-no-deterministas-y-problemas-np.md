@@ -39,7 +39,7 @@ En pocas palabras, en un sistema determinista podemos predecir la salida si cono
 
 Si no sabes lo que es una máquina de Turing tradicional, una de las mejores explicaciones que hemos encontrado está en el libro ["La Mente nueva del Emperador"](/assets/pdfs/la_mente_nueva_del_emperador.pdf){:target="_blank"} de **Roger Penrose**.
 
-Lo que debes saber es que estas representan un modelo universal de computación, todo lo que se puede computar (calcular, o conocer con certeza) se puede representar en una máquina de Turing. Te la puedes imaginar como una máquina que lee de una cinta infinita que contiene tanto las instrucciones como los datos de entrada. ¿Te suena? Es como funcionan las computadoras actualmente el ejecutor es el CPU y la cinta es la memoria.
+Lo que debes saber es que estas representan un modelo universal de computación, todo lo que se puede computar (calcular, o conocer con certeza) se puede representar en una máquina de Turing. Te la puedes imaginar como una máquina que lee de una cinta infinita que contiene tanto las instrucciones como los datos de entrada. ¿Te suena? Es como funcionan las computadoras actualmente: el ejecutor es el CPU y la cinta es la memoria.
 
 La máquina de Turing como se definió es determinista, es decir siempre para el la misma entrada obtendremos la misma salida. En cada punto de su cálculo la máquina de Turing sabe **exactamente qué hacer**.
 
@@ -54,11 +54,11 @@ Esto implica que este tipo de computación también puede tener múltiples resul
 
 El comportamiento de una máquina de Turing no determinista es hasta cierto grado impredecible. Incluso con las mismas entradas y estados, la máquina puede devolver diferentes resultados en diferentes ejecuciones.
 
-Estas máquinas también fueron definidas en el mismo documento en que Turing definió las máquinas tradicionales. A estas él las llamó **máquinas de selección** (choice machines o _c-machine_).
+Estas máquinas también fueron definidas (o más bien, mencionadas) en el mismo documento en que Turing definió las máquinas tradicionales: [ON COMPUTABLE NUMBERS, WITH AN APPLICATION TO THE ENTSCHEIDUNGSPROBLEM](/assets/pdfs/Turing_Paper_1936.pdf){:target="_blank"}. A estas él las llamó **máquinas de selección** (choice machines o_c-machine_).
 
-A diferencia de los sistemas no deterministas de los que hablamos arriba, las máquinas de Turing no deterministas no es que tengan una probabilidad de pasar a un estado a otro, sino que la máquina puede "seleccionar" una transición de un estado a otro.
+A diferencia de los sistemas no deterministas de los que hablamos arriba, las máquinas de Turing no deterministas no es que tengan una probabilidad de pasar de un estado a otro, sino que la máquina puede "seleccionar" una transición de un estado a otro. En el documento de Turing mencionado anteriormente, se menciona que estas máquinas son "operadas" por un humano, que **elige** qué camino tomar, por eso las llamó máquinas de selección. En referencias más modernas no se especifica el mecanismo de selección.
 
-Esto significa que para una misma entrada una máquina de Turing no determinista puede tener múltiples salidas posibles, algunas de ellas válidas y otras no. Para que una máquina de turing encuentre el resultado correcto, **debe probar todas las posibles salidas y seleccionar la correcta**.
+Para una misma entrada una máquina de Turing no determinista puede tener múltiples salidas posibles, algunas de ellas válidas y otras no. Para que una máquina de Turing encuentre el resultado correcto, **debe probar todas las posibles salidas y seleccionar la correcta**.
 
 Una NTM (_Non-deterministic Turing Machine_, así la llamaremos a partir de ahora) es una construcción matemática que no existe en la vida real, es decir, no hay computadora que funcione como una NTM.
 
