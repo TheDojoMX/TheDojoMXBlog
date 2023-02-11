@@ -54,17 +54,17 @@ Esto implica que este tipo de computación también puede tener múltiples resul
 
 El comportamiento de una máquina de Turing no determinista es hasta cierto grado impredecible. Incluso con las mismas entradas y estados, la máquina puede devolver diferentes resultados en diferentes ejecuciones.
 
-Estas máquinas también fueron definidas (o más bien, mencionadas) en el mismo documento en que Turing definió las máquinas tradicionales: [ON COMPUTABLE NUMBERS, WITH AN APPLICATION TO THE ENTSCHEIDUNGSPROBLEM](/assets/pdfs/Turing_Paper_1936.pdf){:target="_blank"}. A estas él las llamó **máquinas de selección** (choice machines o_c-machine_).
+Estas máquinas también fueron definidas (o más bien, mencionadas) en el mismo documento en que Turing definió las máquinas tradicionales: [ON COMPUTABLE NUMBERS, WITH AN APPLICATION TO THE ENTSCHEIDUNGSPROBLEM](/assets/pdfs/Turing_Paper_1936.pdf){:target="_blank"}. A estas él las llamó **máquinas de selección** (choice machines o *c-machine*). La definición más formal la podemos encontrar en  un documento escrito por Rabin y Scott en 1959: [Finite Automata and Their Decision Problems](/assets/pdfs/rabin_scott_1959.pdf){:target="_blank"}, en el que se habla de Autómatas Finitos No Deterministas (AFND), una especialización finita de las máquinas de Turing.
 
 A diferencia de los sistemas no deterministas de los que hablamos arriba, las máquinas de Turing no deterministas no es que tengan una probabilidad de pasar de un estado a otro, sino que la máquina puede "seleccionar" una transición de un estado a otro. En el documento de Turing mencionado anteriormente, se menciona que estas máquinas son "operadas" por un humano, que **elige** qué camino tomar, por eso las llamó máquinas de selección. En referencias más modernas no se especifica el mecanismo de selección.
 
 Para una misma entrada una máquina de Turing no determinista puede tener múltiples salidas posibles, algunas de ellas válidas y otras no. Para que una máquina de Turing encuentre el resultado correcto, **debe probar todas las posibles salidas y seleccionar la correcta**.
 
-Una NTM (_Non-deterministic Turing Machine_, así la llamaremos a partir de ahora) es una construcción matemática que no existe en la vida real, es decir, no hay computadora que funcione como una NTM.
+Una NTM (*Non-deterministic Turing Machine*, así la llamaremos a partir de ahora) es una construcción matemática que no existe en la vida real, es decir, no hay computadora que funcione como una NTM.
 
 ## Relación entre las máquinas de Turing deterministas y no deterministas
 
-Se ha demostrado que para cada máquina de Turing no determinista existe una máquina de Turing determinista equivalente. Lo malo es que esta máquina de Turing determinista necesita **exponencialmente** más nodos o _pasos_. Por ejemplo, si una NTM necesita tiene 100 posibles estados, entonces la máquina de Turing equivalente necesitará aproximadamente 2^100 estados.
+Se ha demostrado que para cada máquina de Turing no determinista existe una máquina de Turing determinista equivalente. Lo malo es que esta máquina de Turing determinista necesita **exponencialmente** más nodos o *pasos*. Por ejemplo, si una NTM necesita tiene 100 posibles estados, entonces la máquina de Turing equivalente necesitará aproximadamente 2^100 estados.
 
 Y aquí es donde entra la relación con los problemas NP.
 
@@ -74,9 +74,9 @@ Como te darás cuenta, las NTM tienen mucho que ver con la combinatoria, porque 
 
 Si ejecutáramos una NTM en una computadora, tendríamos que probar cada uno de esos estados. Esto es exactamente lo mismo que sucede con muchos problemas NP o NP-completo, para encontrar una solución se tienen que probar todas las posibles combinaciones en un conjunto de elementos.
 
-Las siglas NP significan _Non-deterministic Polynomial_ (polinomial no determinista), y esto significa que en una NTM hay por lo menos un camino que resuelve el problema en un tiempo polinomial. _El problema es saber cuál de todos los caminos_.
+Las siglas NP significan *Non-deterministic Polynomial* (polinomial no determinista), y esto significa que en una NTM hay por lo menos un camino que resuelve el problema en un tiempo polinomial. *El problema es saber cuál de todos los caminos*.
 
-Y de ahí viene su nombre. Todos estos problemas tienen una solución que corre en tiempo polinomial, pero para encontrarla tenemos que _adivinar_ o _probar todas las combinaciones_.
+Y de ahí viene su nombre. Todos estos problemas tienen una solución que corre en tiempo polinomial, pero para encontrarla tenemos que *adivinar* o *probar todas las combinaciones*.
 
 ## Conclusión
 
