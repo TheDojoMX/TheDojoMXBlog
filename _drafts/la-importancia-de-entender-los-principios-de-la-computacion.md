@@ -1,8 +1,8 @@
 ---
 title: "La importancia de entender los principios de la computación"
-date: 2023-02-13
+date: 2023-02-17
 author: Héctor Patricio
-tags:
+tags: computer-science computación principios
 comments: true
 excerpt: "A veces, entre tantas herramientas y tecnologías que podemos usar día a día, nos olvidamos de los principios básicos que soportan todo lo que hacemos como desarrolladores."
 header:
@@ -21,10 +21,18 @@ En ciencia, un principio es lo mismo, un hecho comprobado que da pie y soporte a
 
 ## Principios importantes de la computación
 
+Desde mi punto de vista, los principios más importantes tienen que ver con la naturaleza misma de la computación y nuestra manera de interactuar con ella.
+
 ## Principios de conducta
+
+Como casi todas las carreras humanas, las ciencias de la computación y el desarrollo de software tiene prácticas que conviene seguir, sobre todo si se quiero dominarlas y pasársela bien haciéndolas. A estos los llamamos principios de conducta.
+
+¿Qué prácticas nos conviene tener? Aquí hay algunos ejemplos:
 
 ## Principios de Programación (libro)
 
 ## Conclusión
 
-Conocer y aplicar los principios de la ciencias de la computación y relacionados con la creación de software te ayudará a disfrutar más del trabajo, a avanzar en tu carrera y conseguir mejores resultados. Continua profundizando en ellos y aprendiendo más formas de aplicarlos.
+Conocer y aplicar los principios de la ciencias de la computación y relacionados con la creación de software te ayudará a disfrutar más del trabajo, a avanzar en tu carrera y conseguir mejores resultados. Continua profundizando en ellos y aprendiendo más formas de aplicarlos, para mejorar tu trabajo y tu vida.
+
+Gracias a Camilo Chacón Sartori por escribir sobre este tipo de cosas y levantar temas tan importantes.
