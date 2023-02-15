@@ -27,12 +27,14 @@ Desde mi punto de vista, los principios más importantes tienen que ver con la n
 
 Como casi todas las carreras humanas, las ciencias de la computación y el desarrollo de software tiene prácticas que conviene seguir, sobre todo si se quiero dominarlas y pasársela bien haciéndolas. A estos los llamamos principios de conducta.
 
-¿Qué prácticas nos conviene tener? Aquí hay algunos ejemplos:
+¿Qué prácticas nos conviene tener? La mayoría tiene que ver con la capacidad de tratar bien con las personas.
 
 ## Principios de Programación (libro)
+
+Camilo Chacón Sartori un gran amigo de The Dojo MX, está terminando de escribir un libro que se llama "Principios de Programación" (tal vez para cuando leas esto ya esté disponible). En él, habla mucho más extensamente de los principios que hemos mencionado en este post.
 
 ## Conclusión
 
 Conocer y aplicar los principios de la ciencias de la computación y relacionados con la creación de software te ayudará a disfrutar más del trabajo, a avanzar en tu carrera y conseguir mejores resultados. Continua profundizando en ellos y aprendiendo más formas de aplicarlos, para mejorar tu trabajo y tu vida.
 
-Gracias a Camilo Chacón Sartori por escribir sobre este tipo de cosas y levantar temas tan importantes.
+Gracias a [Camilo Chacón Sartori](https://camilochacon) por escribir sobre este tipo de cosas y levantar temas tan importantes.
