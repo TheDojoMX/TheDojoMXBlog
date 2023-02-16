@@ -6,12 +6,14 @@ tags: computer-science computación principios
 comments: true
 excerpt: "A veces, entre tantas herramientas y tecnologías que podemos usar día a día, nos olvidamos de los principios básicos que soportan todo lo que hacemos como desarrolladores."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1674189354/753963464_A_dream_of_a_distant_galaxy__concept_art__matte_painting___artstation__HQ__4k_cfn82z.png
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1674189354/753963464_A_dream_of_a_distant_galaxy__concept_art__matte_painting___artstation__HQ__4k_cfn82z.png
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Este artículo es una traducción del artículo está inspirado por lo que leí en el resumen del libro que Camilo Chacón Sartori estrá escribiendo y que muy amablemente me compartió. El libro se llama **"Principios de programación".** Espero que pronto esté disponible, pero mientras, hablemos de la importancia de estos comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.
+Este artículo está inspirado por lo que leí en el resumen del libro que [Camilo Chacón Sartori](https://camilochs.github.io/web/) está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama **"Principios de programación".** Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.
+
+Empecemos hablando de qué son los principios.
 
 ## ¿Qué es un principio?
 
@@ -31,7 +33,9 @@ Como casi todas las carreras humanas, las ciencias de la computación y el desar
 
 ## Principios de Programación (libro)
 
-Camilo Chacón Sartori un gran amigo de The Dojo MX, está terminando de escribir un libro que se llama "Principios de Programación" (tal vez para cuando leas esto ya esté disponible). En él, habla mucho más extensamente de los principios que hemos mencionado en este post.
+Camilo Chacón Sartori, un gran amigo de The Dojo MX, está terminando de escribir un libro que se llama "Principios de Programación" (tal vez para cuando leas esto ya esté disponible). En él, habla mucho más extensamente de los principios que hemos mencionado en este post.
+
+En él podrás encontrar temas como las cosas que debes entender fundamentalmente de la computación hasta sus recomendaciones de lo que hace falta para tener una buena vida, claro, todo relacionado con la actividad de programar como tu profesión.
 
 ## Conclusión
 
