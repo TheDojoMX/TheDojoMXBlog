@@ -17,13 +17,19 @@ Empecemos hablando de qué son los principios.
 
 ## ¿Qué es un principio?
 
-En donde más se oye esto si no estás metido en ciencia es en ética. Se dice que una persona tiene "principios". ¿A qué se refiere? Yo definiría un principio como un hecho que está en los fundamentos de un sistema de creencias. Por eso, cuando una hablamos de una persona con principios, nos referimos a alguien que tiene bien claro lo que piensa del mundo y de las situaciones que se le presentan.
+En donde más se oye este término si no estás metido en ciencia es en ética. Por ejemplo, dice que una persona o una empresa tiene "principios". ¿A qué se refiere?
 
-En ciencia, un principio es lo mismo, un hecho comprobado que da pie y soporte a una teoría más amplia, que nos permite comprender el mundo y generar más conocimiento, sea mediante la experimentación o la reflexión (esto incluye la inducción o la deducción).
+Yo definiría un principio como un hecho que está en **los fundamentos** de un sistema de creencias. Por eso, cuando hablamos de una persona con principios, nos referimos a alguien que tiene bien claro lo que _piensa del mundo_ y de las situaciones que se le presentan. Como consecuencia, tiene claro cómo _actuará_ en cada situación.
+
+En las ciencias, un principio es más o menos lo mismo, un hecho comprobado que da pie y soporte a una teoría más amplia, que nos permite comprender el mundo y generar más conocimiento, sea mediante la experimentación o la reflexión (esto incluye la inducción, deducción y predicción).
+
+En las leyes, un principio es una guía general que da soporte a normas y leyes.
+
+Como resumen: un principio fundamenta un sistema de creencias, una teoría o una ley. Así que esto te puede dar una idea de lo importante que es entender los principios de tu profesión. Hablemos de los principios más importantes relacionados con la computación y el desarrollo de software.
 
 ## Principios importantes de la computación
 
-Desde mi punto de vista, los principios más importantes tienen que ver con la naturaleza misma de la computación y nuestra manera de interactuar con ella.
+Desde mi punto de vista, los principios más importantes tienen que ver con la naturaleza misma de la computación y nuestra manera de interactuar con ella. Entender los límites y lo que podemos hacer con ella es primordial para poder desarrollar software de calidad.
 
 ## Principios de conducta
 
