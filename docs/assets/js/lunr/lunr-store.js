@@ -604,4 +604,10 @@ var store = [{
         "tags": ["turing","ntm","non-deterministic"],
         "url": "/2023/02/08/maquinas-de-turing-no-deterministas-y-problemas-np.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1675835077/pawel-czerwinski-tMbQpdguDVQ-unsplash_amld7p.jpg"
+      },{
+        "title": "La importancia de entender los principios de la computación",
+        "excerpt":"Este artículo está inspirado por lo que leí en el resumen del libro que Camilo Chacón Sartori está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama “Principios de programación”. Espero que pronto esté disponible, pero mientras, hablemos de la importancia de...","categories": [],
+        "tags": ["computer-science","computación","principios"],
+        "url": "/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1674189354/753963464_A_dream_of_a_distant_galaxy__concept_art__matte_painting___artstation__HQ__4k_cfn82z.png"
       }]

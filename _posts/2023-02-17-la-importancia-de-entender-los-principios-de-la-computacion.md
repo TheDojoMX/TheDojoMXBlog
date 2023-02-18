@@ -29,19 +29,43 @@ Como resumen: un principio fundamenta un sistema de creencias, una teoría o una
 
 ## Principios importantes de la computación
 
-Desde mi punto de vista, los principios más importantes tienen que ver con la naturaleza misma de la computación y nuestra manera de interactuar con ella. Entender los límites y lo que podemos hacer con ella es primordial para poder desarrollar software de calidad.
+Desde mi punto de vista, los principios más importantes tienen que ver con la naturaleza misma de la computación y nuestra manera de interactuar con ella. Entender los límites y lo que podemos hacer con una computadora es primordial para poder desarrollar software de calidad.
+
+Estos principios incluyen:
+
+- Las mejores formas de representar información
+- Los algoritmos y su complejidad
+- Las estructuras de datos
+- Cosas imposibles de lograr con una computadora
+- Los diferentes modelos de computación que se han inventado (¿o descubierto?)
+
+¿Se te ocurre algún otro? Me gustaría leerlo en los comentarios.
 
 ## Principios de conducta
 
-Como casi todas las carreras humanas, las ciencias de la computación y el desarrollo de software tiene prácticas que conviene seguir, sobre todo si se quiero dominarlas y pasársela bien haciéndolas. A estos los llamamos principios de conducta.
+Como casi todas las carreras humanas, las ciencias de la computación y el desarrollo de software tiene prácticas que conviene seguir, sobre todo si se quiere dominarlas y pasarla bien haciéndola. A estos los llamamos principios de conducta.
 
-¿Qué prácticas nos conviene tener? La mayoría tiene que ver con la capacidad de tratar bien con las personas.
+**¿Qué prácticas nos conviene tener?** La mayoría tiene que ver con la capacidad de tratar bien con las personas. Casi ningún software serio se puede hacer solo en tiempo razonable (pero por supuesto que hay [excepciones](https://stackoverflow.blog/2021/12/31/700000-lines-of-code-20-years-and-one-developer-how-dwarf-fortress-is-built/)). Por eso, considero que los principios de conducta más importantes son:
+
+- La capacidad de comunicar tus ideas efectivamente
+- Responsabilidad
+- Capacidad de resolver conflictos
+- Organización del tiempo de trabajo
+- Capacidad de dividir el trabajo y repartirlo
+
+Además de estas capacidades o principios se tienen que desarrollar otra conductas que son importantes individualmente:
+
+- La capacidad de aprender de forma efectiva
+- Atención a los detalles
+- Resiliencia y perseverancia
+
+Todas estas son cosas que casi cualquier profesional debe tener, pero son superlativamente importantes en el desarrollo de software si quieres avanzar. Aquí sólo hablamos de los nombres, pero si te interesa alguna puedes investigar más profundamente sobre ese principio.
 
 ## Principios de Programación (libro)
 
 Camilo Chacón Sartori, un gran amigo de The Dojo MX, está terminando de escribir un libro que se llama "Principios de Programación" (tal vez para cuando leas esto ya esté disponible). En él, habla mucho más extensamente de los principios que hemos mencionado en este post.
 
-En él podrás encontrar temas como las cosas que debes entender fundamentalmente de la computación hasta sus recomendaciones de lo que hace falta para tener una buena vida, claro, todo relacionado con la actividad de programar como tu profesión.
+Ahí podrás encontrar temas como las cosas que debes entender fundamentalmente de la computación hasta sus recomendaciones de lo que hace falta para tener una buena vida, claro, todo relacionado con la actividad de programar como tu profesión. No te lo pierdas si quieres seguir avanzando en tu carrera como desarrollador@ de software.
 
 ## Conclusión
 
