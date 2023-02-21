@@ -34,8 +34,7 @@ Desde mi punto de vista, los principios más importantes tienen que ver con la n
 Estos principios incluyen:
 
 - Las mejores formas de representar información
-- Los algoritmos y su complejidad
-- Las estructuras de datos
+- La complejidad de las operaciones en tiempo y espacio (memoria)
 - Cosas imposibles de lograr con una computadora
 - Los diferentes modelos de computación que se han inventado (¿o descubierto?)
 

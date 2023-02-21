@@ -11,3 +11,12 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
+En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada `transformer` o de transformador. En este artículo vamos a hablar en qué consiste y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.
+
+## Redes neuronales convolucionales
+
+## Redes neuronales recurrentes
+
+## Redes neuronales de transformadores
+
+## Conclusión
