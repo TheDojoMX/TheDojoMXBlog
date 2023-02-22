@@ -6,8 +6,8 @@ tags: transformers transformadores gpt-3 inteligencia-artificial
 comments: true
 excerpt: "Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1350/v1675031892/vinicius-amnx-amano-IPemgbj9aDY-unsplash_cttyeh.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1675031892/vinicius-amnx-amano-IPemgbj9aDY-unsplash_cttyeh.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
