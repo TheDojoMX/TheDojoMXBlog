@@ -15,9 +15,19 @@ En los últimos años los modelos de inteligencia artificial generativos han ava
 
 ## Redes neuronales recurrentes
 
+Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores.
+
+Esta arquitectura permite que la red desarrolle memoria, algo que sirve.
+
 ## Redes neuronales de transformador
 
-Es una arquitectura más sencilla que las utilizadas anteriormente, que tenían un codificador y un decodificador. Los transformadores están construidos completamente por mecanismos de **atención**.
+Es una arquitectura más sencilla que las utilizadas anteriormente, que tenían un codificador y un decodificador. Los transformadores están construidos completamente por mecanismos de **atención**. Pero las redes neuronales tienen otros componentes también. Podemos decir que tiene tres componentes principales:
+
+1. Codificación de posición
+2. Mecanismo de atención
+3. Mecanismo de auto-atención
+
+Hablemos de cada una de estas partes más detenidamente, como explicadas para un desarrollador de software y no un matemático.
 
 ## Conclusión
 
