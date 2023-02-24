@@ -17,7 +17,9 @@ En los últimos años los modelos de inteligencia artificial generativos han ava
 
 Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores.
 
-Esta arquitectura permite que la red desarrolle memoria, algo que sirve.
+Esta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.
+
+Sin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.
 
 ## Redes neuronales de transformador
 
@@ -27,7 +29,17 @@ Es una arquitectura más sencilla que las utilizadas anteriormente, que tenían 
 2. Mecanismo de atención
 3. Mecanismo de auto-atención
 
-Hablemos de cada una de estas partes más detenidamente, como explicadas para un desarrollador de software y no un matemático.
+Hablemos de cada una de estas partes más detenidamente, como explicadas para un desarrollador de software y no un _matemático_.
+
+### Codificación de posición
+
+Esta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.
+
+### Atención
+
+El mecanismo de atención le da un peso diferente a cada palabra en función.
+
+### Auto-atención
 
 ## Conclusión
 
