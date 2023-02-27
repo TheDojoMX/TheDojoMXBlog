@@ -6,7 +6,7 @@ tags: crecimiento-profesional, comunidad, mentoria, programación, productividad
 excerpt: "¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto."
 ---
 
-## ¿Qué el "Code Review"?
+## ¿Qué es "Code Review"?
 Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal.
 
 ## Dónde se aplica
