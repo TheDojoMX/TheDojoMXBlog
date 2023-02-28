@@ -612,8 +612,8 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1674189354/753963464_A_dream_of_a_distant_galaxy__concept_art__matte_painting___artstation__HQ__4k_cfn82z.png"
       },{
         "title": "Code Review: La practica Milenaria que seguimos haciendo mal.",
-        "excerpt":"¿Qué es “Code Review”? Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal. Dónde se aplica En todas partes, cuando eres miembro de un equipo, como colaborador individual o como estudiante. Tienes la oportunidad...","categories": [],
-        "tags": ["crecimiento-profesional,","comunidad,","mentoria,","programación,","productividad"],
+        "excerpt":"¿Qué es un “Code Review”? Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal. Dónde se aplica En todas partes, cuando eres miembro de un equipo, como colaborador individual o como estudiante. Tienes la...","categories": [],
+        "tags": ["crecimiento-profesional","comunidad","mentoria","programación","productividad"],
         "url": "/2023/02/27/code-review.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1677550573/221453137-8e8b0887-953a-43f4-a34d-a1f36c7deb00_wxg5wx.png"
       }]

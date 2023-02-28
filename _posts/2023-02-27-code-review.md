@@ -2,7 +2,7 @@
 title: "Code Review: La practica Milenaria que seguimos haciendo mal."
 date: 2023-02-27
 author: Sagrario Meneses
-tags: crecimiento-profesional, comunidad, mentoria, programación, productividad
+tags: crecimiento-profesional comunidad mentoria programación productividad
 excerpt: "¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1677550573/221453137-8e8b0887-953a-43f4-a34d-a1f36c7deb00_wxg5wx.png
@@ -10,7 +10,7 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-## ¿Qué es "Code Review"?
+## ¿Qué es un "Code Review"?
 
 Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal.
 
@@ -19,7 +19,7 @@ Es la práctica que realizan los equipos de ingeniería de software para verific
 En todas partes, cuando eres miembro de un equipo, como colaborador individual o como estudiante. Tienes la oportunidad de involucrarte, contribuir y dar tu opinión a código escrito por otra persona. Algunos ejemplos:
 
 ### Durante una sesión de "pair programming"
->
+
 > "Dos cabezas piensan mejor que una."
 
 Revisando una pieza de código con alguien más, los desarrolladores podemos hacer recomendaciones, mejoras y adiciones a un sistema en tiempo real.
@@ -28,18 +28,19 @@ Revisando una pieza de código con alguien más, los desarrolladores podemos hac
 
 - El Pull Request (PR) en GitHub.
 - El Merge Request (MR) en GitLab.
-Estas funciónes permiten a los desarrolladores proponer cambios en un código propiedad de otra persona. Es una forma de revisar y discutir cambios propuestos antes de fusionarlos, lo que permite a otros desarrolladores dejar comentarios, solicitar cambios o aprobar una solicitud de forma asíncrona.
+
+Estas funciones permiten a los desarrolladores proponer cambios en un código propiedad de otra persona. Es una forma de revisar y discutir cambios propuestos antes de fusionarlos, lo que permite a otros desarrolladores dejar comentarios, solicitar cambios o aprobar una solicitud de forma asíncrona.
 
 ### En cualquier fragmento de código propuesto
 
-Hay otros canales o formas de compartir código con un equipo. A veces, los desarrolladores lo hacen a través de Slack (u otros servicios de mensajeria) u otra, simplemente compartiendo enlaces.
+Hay otros canales o formas de compartir código con un equipo. A veces, los desarrolladores lo hacen a través de Slack (u otros servicios de mensajería) u otra, simplemente compartiendo enlaces.
 Si como desarrollador notas algo para mejorar o agregar, tu equipo de tecnología debe ser el lugar que permita que esas interacciones y comentarios sucedan orgánicamente.
 
 ## Beneficios de la revisión de código
 
 Esta práctica aumenta significativamente el trabajo en equipo. Involucrarse con el código de los demás e involucrar a otros en tus contribuciones aumenta el éxito en la creación de productos. Algunos de los beneficios son:
 
-### Solucion temprana de errores
+### Solución 77 temprana de errores
 >
 > "Aquel de ustedes que esté libre de romper producción, que tire la primera piedra."
 
@@ -124,7 +125,7 @@ Evite por completo el uso de signos de exclamación e íconos para enfatizar com
 
 Adicionalmente, recuerda tomarte el tiempo. El trabajo es exigente y, a veces, no dedicamos suficiente tiempo a las revisiones, y comentamos "¡LGTM!" (Me parece bien) para seguir adelante, pero recordemos que el otro desarrollador dedicó tiempo a trabajar en esos cambios, por lo que vale la pena revisarlos con cuidado.
 
-Otra sugerencia que les dejo es establecer el prefijo "NIT" (nitpicker) en los comentarios, lo que significa que puedes sugerir un cambio, pero no bloquea ni impide que ese el codigo en revisión sea aceptado; es simplemente una "perfección" que sugieres pero que puede ser ignorada.
+Otra sugerencia que les dejo es establecer el prefijo "NIT" (*nitpicker*) en los comentarios, lo que significa que puedes sugerir un cambio, pero no bloquea ni impide que ese el código en revisión sea aceptado; es simplemente una "perfección" que sugieres pero que puede ser ignorada.
 
 ## Mi código es el que esta en revisión
 

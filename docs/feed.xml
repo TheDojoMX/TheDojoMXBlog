@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-02-27T20:24:38-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-code-review&quot;&gt;¿Qué es “Code Review”?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-02-27T21:57:54-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
 
 &lt;p&gt;Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal.&lt;/p&gt;
 
@@ -7,8 +7,8 @@
 &lt;p&gt;En todas partes, cuando eres miembro de un equipo, como colaborador individual o como estudiante. Tienes la oportunidad de involucrarte, contribuir y dar tu opinión a código escrito por otra persona. Algunos ejemplos:&lt;/p&gt;
 
 &lt;h3 id=&quot;durante-una-sesión-de-pair-programming&quot;&gt;Durante una sesión de “pair programming”&lt;/h3&gt;
-&lt;blockquote&gt;
 
+&lt;blockquote&gt;
   &lt;p&gt;“Dos cabezas piensan mejor que una.”&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -18,20 +18,21 @@
 
 &lt;ul&gt;
   &lt;li&gt;El Pull Request (PR) en GitHub.&lt;/li&gt;
-  &lt;li&gt;El Merge Request (MR) en GitLab.
-Estas funciónes permiten a los desarrolladores proponer cambios en un código propiedad de otra persona. Es una forma de revisar y discutir cambios propuestos antes de fusionarlos, lo que permite a otros desarrolladores dejar comentarios, solicitar cambios o aprobar una solicitud de forma asíncrona.&lt;/li&gt;
+  &lt;li&gt;El Merge Request (MR) en GitLab.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;Estas funciones permiten a los desarrolladores proponer cambios en un código propiedad de otra persona. Es una forma de revisar y discutir cambios propuestos antes de fusionarlos, lo que permite a otros desarrolladores dejar comentarios, solicitar cambios o aprobar una solicitud de forma asíncrona.&lt;/p&gt;
 
 &lt;h3 id=&quot;en-cualquier-fragmento-de-código-propuesto&quot;&gt;En cualquier fragmento de código propuesto&lt;/h3&gt;
 
-&lt;p&gt;Hay otros canales o formas de compartir código con un equipo. A veces, los desarrolladores lo hacen a través de Slack (u otros servicios de mensajeria) u otra, simplemente compartiendo enlaces.
+&lt;p&gt;Hay otros canales o formas de compartir código con un equipo. A veces, los desarrolladores lo hacen a través de Slack (u otros servicios de mensajería) u otra, simplemente compartiendo enlaces.
 Si como desarrollador notas algo para mejorar o agregar, tu equipo de tecnología debe ser el lugar que permita que esas interacciones y comentarios sucedan orgánicamente.&lt;/p&gt;
 
 &lt;h2 id=&quot;beneficios-de-la-revisión-de-código&quot;&gt;Beneficios de la revisión de código&lt;/h2&gt;
 
 &lt;p&gt;Esta práctica aumenta significativamente el trabajo en equipo. Involucrarse con el código de los demás e involucrar a otros en tus contribuciones aumenta el éxito en la creación de productos. Algunos de los beneficios son:&lt;/p&gt;
 
-&lt;h3 id=&quot;solucion-temprana-de-errores&quot;&gt;Solucion temprana de errores&lt;/h3&gt;
+&lt;h3 id=&quot;solución-77-temprana-de-errores&quot;&gt;Solución 77 temprana de errores&lt;/h3&gt;
 &lt;blockquote&gt;
 
   &lt;p&gt;“Aquel de ustedes que esté libre de romper producción, que tire la primera piedra.”&lt;/p&gt;
@@ -136,7 +137,7 @@ Si como desarrollador notas algo para mejorar o agregar, tu equipo de tecnologí
 
 &lt;p&gt;Adicionalmente, recuerda tomarte el tiempo. El trabajo es exigente y, a veces, no dedicamos suficiente tiempo a las revisiones, y comentamos “¡LGTM!” (Me parece bien) para seguir adelante, pero recordemos que el otro desarrollador dedicó tiempo a trabajar en esos cambios, por lo que vale la pena revisarlos con cuidado.&lt;/p&gt;
 
-&lt;p&gt;Otra sugerencia que les dejo es establecer el prefijo “NIT” (nitpicker) en los comentarios, lo que significa que puedes sugerir un cambio, pero no bloquea ni impide que ese el codigo en revisión sea aceptado; es simplemente una “perfección” que sugieres pero que puede ser ignorada.&lt;/p&gt;
+&lt;p&gt;Otra sugerencia que les dejo es establecer el prefijo “NIT” (&lt;em&gt;nitpicker&lt;/em&gt;) en los comentarios, lo que significa que puedes sugerir un cambio, pero no bloquea ni impide que ese el código en revisión sea aceptado; es simplemente una “perfección” que sugieres pero que puede ser ignorada.&lt;/p&gt;
 
 &lt;h2 id=&quot;mi-código-es-el-que-esta-en-revisión&quot;&gt;Mi código es el que esta en revisión&lt;/h2&gt;
 
@@ -163,7 +164,7 @@ No seas solo un espectador que genera código para ser revisado. Considera que i
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional," /><category term="comunidad," /><category term="mentoria," /><category term="programación," /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry><entry><title type="html">La importancia de entender los principios de la computación</title><link href="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="alternate" type="text/html" title="La importancia de entender los principios de la computación" /><published>2023-02-17T00:00:00-06:00</published><updated>2023-02-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html">&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;“Principios de programación”.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;
+&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional" /><category term="comunidad" /><category term="mentoria" /><category term="programación" /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry><entry><title type="html">La importancia de entender los principios de la computación</title><link href="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="alternate" type="text/html" title="La importancia de entender los principios de la computación" /><published>2023-02-17T00:00:00-06:00</published><updated>2023-02-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html">&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;“Principios de programación”.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;
 
 &lt;p&gt;Empecemos hablando de qué son los principios.&lt;/p&gt;
 
