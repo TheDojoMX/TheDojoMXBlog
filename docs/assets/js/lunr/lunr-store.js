@@ -616,4 +616,10 @@ var store = [{
         "tags": ["crecimiento-profesional","comunidad","mentoria","programación","productividad"],
         "url": "/2023/02/27/code-review.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1677550573/221453137-8e8b0887-953a-43f4-a34d-a1f36c7deb00_wxg5wx.png"
+      },{
+        "title": "¿Qué es un modelo transformador de inteligencia artificial?",
+        "excerpt":"En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada transformer o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria...","categories": [],
+        "tags": ["transformers","transformadores","gpt-3","inteligencia-artificial"],
+        "url": "/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1675031892/vinicius-amnx-amano-IPemgbj9aDY-unsplash_cttyeh.jpg"
       }]

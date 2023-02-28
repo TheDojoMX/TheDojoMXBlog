@@ -1,0 +1,822 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>¿Qué es un modelo transformador de inteligencia artificial? - The Dojo MX Blog</title>
+<meta name="description" content="Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="¿Qué es un modelo transformador de inteligencia artificial?">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html">
+
+
+  <meta property="og:description" content="Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1350/v1675031892/vinicius-amnx-amano-IPemgbj9aDY-unsplash_cttyeh.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-27T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html",
+      "name": "¿Qué es un modelo transformador de inteligencia artificial?",
+      "headline": "¿Qué es un modelo transformador de inteligencia artificial?",
+      "keywords": "transformers,transformadores,gpt-3,inteligencia-artificial",
+      "description": "Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.",
+      "articleBody": "En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada transformer o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.\n\nRedes neuronales recurrentes (RNN)\n\nEstas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores o a la misma capa.\n\nEsta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.\n\nSin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien.\n\nAdemás, la forma secuencial de tratar las palabras las hace difíciles de entrenar. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.\n\nRedes neuronales de transformador (Transformers)\n\nEs una arquitectura más sencilla que las utilizadas anteriormente. Los transformadores están construidos en gran parte por mecanismos de atención. Podemos decir que tiene tres componentes principales:\n\n\n  Codificación de posición\n  Mecanismo de atención\n  Mecanismo de auto-atención\n\n\nHablemos de cada una de estas partes más detenidamente, explicadas para un desarrollador de software.\n\nCodificación de posición\n\nEsta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.\n\nLa posición del texto como se explica en Attention is all you need depende de una función basada en el seno y coseno, no un número entero de donde se encontró en el texto.\n\nEsta primera innovación permite que el entrenamiento sea paralelizable y por lo tanto que se puedan procesar más ejemplos, lo que mejora el aprendizaje.\n\nAtención\n\nLa atención se introdujo algunos años antes en el proceso de traducción automática. Este proceso consiste en que el modelo “mire” a otro texto para saber cómo traducir la palabra o el texto que está procesando. En las tareas de traducción, este mecanismo se da entre el texto que necesita ser traducido y la salida de la traducción.\n\nEl mecanismo de atención le da un peso diferente a cada palabra del texto original, con respecto a la palabra que ese está procesando. Este peso determina en donde se está “fijando” el modelo para procesar la palabra actual.\n\nEste mecanismo de atención es básicamente un montón de operaciones matriciales.\n\nAuto-atención\n\nEl mecanismo de atención anterior tiene que ver con la influencia que otro texto en la salida del proceso actual. El mecanismo de auto-atención se refiere al análisis del mismo texto que se está procesando, y la relación entre las palabras.\n\nEste mecanismo de auto-atención permite que el modelo encuentre patrones a través de muchos ejemplos de entrenamiento. Estos patrones tienen que ver con el significado de la palabra, los sinónimos, la gramática, etc.\n\nEsta es la parte más importante de un transformador y es lo que hace que los modelos que tienen esta arquitectura sean tan poderosos, permitiéndoles trabajar con textos largos y con una gran variedad de tareas, más allá de solamente traducción.\n\nEsta es una explicación muy básica de los mecanismos dentro de un modelo de transformador, si quieres aprender más a profundidad puedes leer:\n\n\n  El documento donde se presentó la arquitectura: Attention is all you need.\n  The Illustrated Transformer, un artículo en donde con buenos dibujos se explica cómo funcionan.\n  The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning), un artículo en donde se explica cómo funciona BERT, basado en ideas similares a las de los transformadores.\n\n\nVentajas de los transformadores\n\nLa principal ventaja es que al ser más fáciles y eficientes de entrenar, se pueden crear modelos más grandes que normalmente harán mejor su tarea. Esto es lo que ha permitido que modelos como PALM y GPT-3 existan.\n\nLos modelos de transformador nos siguen sorprendiendo y parece que continuarán así en los próximos años.\n\nConclusión\n\nLas redes neuronales con arquitectura de transformador permiten lograr cosas que no creíamos posibles y son la base de los grandes modelos de lengua natural como GPT-3. Conocer un poco más cómo funcionan nos puede dar una idea de lo que son capaces y sus límites, además de que es bastante interesante. Si quieres que hablemos de algún tema en específico puedes dejarnos un comentario.\n",
+      "datePublished": "2023-02-27 00:00:00 -0600",
+      "dateModified": "2023-02-27 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1350/v1675031892/vinicius-amnx-amano-IPemgbj9aDY-unsplash_cttyeh.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1350/v1675031892/vinicius-amnx-amano-IPemgbj9aDY-unsplash_cttyeh.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          ¿Qué es un modelo transformador de inteligencia artificial?
+
+        
+      </h1>
+      
+        <p class="page__lead">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        820 palabras | 6 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="¿Qué es un modelo transformador de inteligencia artificial?">
+    <meta itemprop="description" content="Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.">
+    <meta itemprop="datePublished" content="2023-02-27T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada <em>transformer</em> o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.</p>
+
+<h2 id="redes-neuronales-recurrentes-rnn">Redes neuronales recurrentes (RNN)</h2>
+
+<p>Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores o a la misma capa.</p>
+
+<p>Esta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.</p>
+
+<p>Sin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien.</p>
+
+<p>Además, la forma secuencial de tratar las palabras las hace difíciles de entrenar. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.</p>
+
+<h2 id="redes-neuronales-de-transformador-transformers">Redes neuronales de transformador (Transformers)</h2>
+
+<p>Es una arquitectura más sencilla que las utilizadas anteriormente. Los transformadores están construidos en gran parte por mecanismos de <strong>atención</strong>. Podemos decir que tiene tres componentes principales:</p>
+
+<ol>
+  <li>Codificación de posición</li>
+  <li>Mecanismo de atención</li>
+  <li>Mecanismo de auto-atención</li>
+</ol>
+
+<p>Hablemos de cada una de estas partes más detenidamente, explicadas para un desarrollador de software.</p>
+
+<h3 id="codificación-de-posición">Codificación de posición</h3>
+
+<p>Esta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.</p>
+
+<p>La posición del texto como se explica en <a href="https://arxiv.org/abs/1706.03762">Attention is all you need</a> depende de una función basada en el seno y coseno, no un número entero de donde se encontró en el texto.</p>
+
+<p>Esta primera innovación permite que el entrenamiento sea paralelizable y por lo tanto que se puedan procesar más ejemplos, lo que mejora el aprendizaje.</p>
+
+<h3 id="atención">Atención</h3>
+
+<p>La atención se introdujo algunos años antes en el proceso de traducción automática. Este proceso consiste en que el modelo “mire” a otro texto para saber cómo traducir la palabra o el texto que está procesando. En las tareas de traducción, este mecanismo se da entre el texto que necesita ser traducido y la salida de la traducción.</p>
+
+<p>El mecanismo de atención le da un peso diferente a cada palabra del texto original, con respecto a la palabra que ese está procesando. Este peso determina en donde se está “fijando” el modelo para procesar la palabra actual.</p>
+
+<p>Este mecanismo de atención es básicamente un montón de operaciones matriciales.</p>
+
+<h3 id="auto-atención">Auto-atención</h3>
+
+<p>El mecanismo de atención anterior tiene que ver con la influencia que otro texto en la salida del proceso actual. El mecanismo de auto-atención se refiere al análisis <strong>del mismo texto</strong> que se está procesando, y la relación entre las palabras.</p>
+
+<p>Este mecanismo de auto-atención permite que el modelo encuentre patrones a través de muchos ejemplos de entrenamiento. Estos patrones tienen que ver con el significado de la palabra, los sinónimos, la gramática, etc.</p>
+
+<p>Esta es la parte más importante de un transformador y es lo que hace que los modelos que tienen esta arquitectura sean tan poderosos, permitiéndoles trabajar con textos largos y con una gran variedad de tareas, más allá de solamente traducción.</p>
+
+<p>Esta es una explicación muy básica de los mecanismos dentro de un modelo de transformador, si quieres aprender más a profundidad puedes leer:</p>
+
+<ul>
+  <li>El documento donde se presentó la arquitectura: <a href="https://arxiv.org/abs/1706.03762">Attention is all you need</a>.</li>
+  <li>
+<a href="http://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a>, un artículo en donde con buenos dibujos se explica cómo funcionan.</li>
+  <li>
+<a href="http://jalammar.github.io/illustrated-bert/">The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)</a>, un artículo en donde se explica cómo funciona BERT, basado en ideas similares a las de los transformadores.</li>
+</ul>
+
+<h3 id="ventajas-de-los-transformadores">Ventajas de los transformadores</h3>
+
+<p>La principal ventaja es que al ser más fáciles y eficientes de entrenar, se pueden crear modelos más grandes que normalmente harán mejor su tarea. Esto es lo que ha permitido que modelos como PALM y GPT-3 existan.</p>
+
+<p>Los modelos de transformador nos siguen sorprendiendo y parece que continuarán así en los próximos años.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Las redes neuronales con arquitectura de transformador permiten lograr cosas que no creíamos posibles y son la base de los grandes modelos de lengua natural como GPT-3. Conocer un poco más cómo funcionan nos puede dar una idea de lo que son capaces y sus límites, además de que es bastante interesante. Si quieres que hablemos de algún tema en específico puedes dejarnos un comentario.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#gpt-3" class="page__taxonomy-item" rel="tag">gpt-3</a><span class="sep">, </span>
+    
+      <a href="/tags/#inteligencia-artificial" class="page__taxonomy-item" rel="tag">inteligencia-artificial</a><span class="sep">, </span>
+    
+      <a href="/tags/#transformadores" class="page__taxonomy-item" rel="tag">transformadores</a><span class="sep">, </span>
+    
+      <a href="/tags/#transformers" class="page__taxonomy-item" rel="tag">transformers</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-27T00:00:00-06:00">February 27, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%C2%BFQu%C3%A9+es+un+modelo+transformador+de+inteligencia+artificial%3F%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F02%2F27%2Fque-es-un-modelo-transformador-de-inteligencia-artificial.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F02%2F27%2Fque-es-un-modelo-transformador-de-inteligencia-artificial.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F02%2F27%2Fque-es-un-modelo-transformador-de-inteligencia-artificial.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/02/27/code-review.html" class="pagination--pager" title="Code Review: La practica Milenaria que seguimos haciendo mal.
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1677550573/221453137-8e8b0887-953a-43f4-a34d-a1f36c7deb00_wxg5wx.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/27/code-review.html" rel="permalink">Code Review: La practica Milenaria que seguimos haciendo mal.
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+12 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 27-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1674189354/753963464_A_dream_of_a_distant_galaxy__concept_art__matte_painting___artstation__HQ__4k_cfn82z.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="permalink">La importancia de entender los principios de la computación
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 17-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">A veces, entre tantas herramientas y tecnologías que podemos usar día a día, nos olvidamos de los principios básicos que soportan todo lo que hacemos como de...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1675835077/pawel-czerwinski-tMbQpdguDVQ-unsplash_amld7p.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/08/maquinas-de-turing-no-deterministas-y-problemas-np.html" rel="permalink">Máquinas de Turing no deterministas y problemas NP
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 08-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos de la relación que existe entre las máquinas de Turing no deterministas (NTM), la complejidad y los problemas NP.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,h_350,w_700/v1675031879/marek-okon-dHUhghn9mrI-unsplash_p3ng6t.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html" rel="permalink">Problemas difíciles de la computación y su relación con la criptografía: Problemas NP
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+13 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 03-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">En esta serie de posts vamos a hablar de una serie de problemas difíciles de la ciencia de la computación y su relación con la criptografía.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
