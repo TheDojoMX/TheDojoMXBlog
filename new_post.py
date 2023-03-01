@@ -6,7 +6,7 @@ from slugify import slugify
 
 template = """---
 title: "{}"
-date: {}
+date: {{date}}
 author: {}
 tags:
 comments: true
@@ -20,7 +20,7 @@ header:
 
 @begin.start(auto_convert=True)
 def main(draft=False, author="Héctor Patricio", *names):
-    """Creates a new file with today's date and title as slug in _posts dir"""
+    """Creates a new file with today's date and title as slug in the selected dir"""
 
     t = datetime.today()
     date = f"{t.year}-{t.month:02d}-{t.day:02d}"
@@ -33,4 +33,4 @@ def main(draft=False, author="Héctor Patricio", *names):
         date_string = (date + "-") * (not draft)
         file_name = f"{directory}/{date_string}{slugify(name)}.md"
         with open(file_name, "w", encoding="utf-8") as f:
-            f.write(template.format(name, date, author))
+            f.write(template.format(name, author))
