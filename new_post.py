@@ -6,7 +6,7 @@ from slugify import slugify
 
 template = """---
 title: "{}"
-date: {{date}}
+date: {}
 author: {}
 tags:
 comments: true
@@ -33,4 +33,4 @@ def main(draft=False, author="Héctor Patricio", *names):
         date_string = (date + "-") * (not draft)
         file_name = f"{directory}/{date_string}{slugify(name)}.md"
         with open(file_name, "w", encoding="utf-8") as f:
-            f.write(template.format(name, author))
+            f.write(template.format(name, date, author))
