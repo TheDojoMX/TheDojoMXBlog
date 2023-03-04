@@ -23,6 +23,10 @@ En su libro, ["Mentes Geniales. La vida y obra de 12 grandes informáticos"](htt
 - Sistemas distribuidos (inventó Paxos antes que Leslie Lamport)
 - Abstracción de datos y tipos de datos abstractos
 
+Si quieres saber más de ella en poco tiempo, te recomiendo mucho su capítulo en ese libro, es muy interesante, además de que obtiene lecciones muy valiosas de su vida. Ahora sí hablemos de lo que más gente conoce de ella.
+
 ## El principio de sustitución de Liskov
 
-El espíritu de este principio está basado en las ideas sobre **subtipado** de Bárbara Liskov. Estas ideas tienen muy poco que ver en realidad con herencia en los lenguajes de programación orientados a objetos y mucho más con la **abstracción**.
+El artículo en el que lo definió se llama ["A Behavioral Notion of Subtyping"](/assets/pdfs/subtyping.pdf). Es un artículo con notación matemática que cuesta un poco leer si no tienes nociones de lenguaje matemático formal, pero resumiremos las ideas básicas aquí.
+
+El espíritu del LSP está basado en las ideas sobre **subtipado** que Liskov describió en este artículo. Estas ideas tienen muy poco que ver en realidad con herencia en los lenguajes de programación orientados a objetos y mucho más con la **abstracción** y restricciones que hay que tener en cuenta para considerar que un tipo es un subtipo de otro.
