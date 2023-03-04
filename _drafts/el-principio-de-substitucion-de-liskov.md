@@ -27,6 +27,31 @@ Si quieres saber más de ella en poco tiempo, te recomiendo mucho su capítulo e
 
 ## El principio de sustitución de Liskov
 
-El artículo en el que lo definió se llama ["A Behavioral Notion of Subtyping"](/assets/pdfs/subtyping.pdf). Es un artículo con notación matemática que cuesta un poco leer si no tienes nociones de lenguaje matemático formal, pero resumiremos las ideas básicas aquí.
+El artículo en el que lo definió se llama ["A Behavioral Notion of Subtyping"](/assets/pdfs/subtyping.pdf). Tiene notación matemática que cuesta un poco leer si no tienes nociones de lenguaje matemático formal, pero resumiremos las ideas básicas aquí.
 
-El espíritu del LSP está basado en las ideas sobre **subtipado** que Liskov describió en este artículo. Estas ideas tienen muy poco que ver en realidad con herencia en los lenguajes de programación orientados a objetos y mucho más con la **abstracción** y restricciones que hay que tener en cuenta para considerar que un tipo es un subtipo de otro.
+El espíritu del LSP está basado en las ideas de **subtipado** que Liskov describió en este artículo. Estas ideas tienen _muy poco_ que ver en realidad con herencia en los lenguajes de programación orientados a objetos y mucho más con la **abstracción** y restricciones que hay que tener en cuenta para considerar que un tipo es un subtipo de otro.
+Es cierto que Liskov usó las jerarquías de clases para ilustrar sus ideas, pero el principio de su trabajo tiene que ver mucho más con el comportamiento externo de un tipo de datos que con la forma en la que se encapsula este comportamiento.
+
+Pero vayamos a la parte más profunda de la teoría para entender si lo que Liskov propone tiene sentido.
+
+### ¿Qué es un tipo?
+
+Un tipo es la definición de lo que un valor almacenado tiene, puede hacer o las operaciones que se pueden hacer sobre él.
+
+Pongamos un ejemplo. En JavaScript el tipo `Number` define un valor que representa un número de cualquier tipo. Este tipo de dato define las operaciones que podemos hacer sobre los valores con este tipo, por ejemplo:
+
+- Podemos usar el operador `+` para sumar dos datos de este tipo
+- Podemos usar el operador `-` para restar dos datos de este tipo
+- Las operaciones (excepto las comparativas) entre el tipo de dato `Number` siempre devuelven un valor de este tipo
+
+También definen la _interfaz_ de este tipo de datos, es decir, la forma en la que podemos interactuar con ellos. Normalmente, en lenguajes orientados a objetos, esta interfaz está compuesta por los métodos públicos que se pueden llamar sobre este tipo de dato.
+
+Por ejemplo en JavaScript, el tipo `Number` tiene definido el método `toString` que nos devuelve este valor como una cadena de texto.
+
+Pero Bárbara Liskov expandió esto, proponiendo lo que llamamos **Abstract Data Type** o **Tipo de Dato Abstracto**. Este tipo de dato no tiene una implementación concreta, sino que define la interfaz que debe tener cualquier implementación de este tipo de dato, siendo responsabilidad del programador implementar esta interfaz.
+
+### ¿Qué es un subtipo?
+
+Una de las restricciones más importantes que Liskov propone es que si un tipo de datos tiene definido un método X, entonces cualquier subtipo de est tipo (que en relación con este se llama "supertipo") también debe tener este método definido.
+
+Para hacerlo más generalizable podemos cambiar "método" por cualquier elemento visible en la interfaz de este tipo de dato.
