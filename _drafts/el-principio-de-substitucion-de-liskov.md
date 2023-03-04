@@ -48,10 +48,36 @@ También definen la _interfaz_ de este tipo de datos, es decir, la forma en la q
 
 Por ejemplo en JavaScript, el tipo `Number` tiene definido el método `toString` que nos devuelve este valor como una cadena de texto.
 
-Pero Bárbara Liskov expandió esto, proponiendo lo que llamamos **Abstract Data Type** o **Tipo de Dato Abstracto**. Este tipo de dato no tiene una implementación concreta, sino que define la interfaz que debe tener cualquier implementación de este tipo de dato, siendo responsabilidad del programador implementar esta interfaz.
+Pero Bárbara Liskov expandió esto, proponiendo lo que llamamos **Abstract Data Type** o **Tipo de Dato Abstracto** (les llamaremos **ADT**). Un tipo abstracto de dato es una **definición de un tipo de dato**.
+
+Este tipo de dato no tiene una implementación concreta, sino que define la interfaz que debe tener cualquier implementación de este tipo de dato, siendo responsabilidad del programador implementar esta interfaz.
+
+Ejemplos de ADT's son por ejemplo las Colas (Queues), Listas (Lists), Pilas (Stacks), etc. El ADT define que interfaz debe tener cualquier implementación de este, y cada lenguaje o programador puede implementarlo como le convenga.
+
+Ahora, ¿qué es un subtipo?
 
 ### ¿Qué es un subtipo?
 
-Una de las restricciones más importantes que Liskov propone es que si un tipo de datos tiene definido un método X, entonces cualquier subtipo de est tipo (que en relación con este se llama "supertipo") también debe tener este método definido.
+Un subtipo es una derivación de un tipo. Esta derivación puede ser una variación, una generalización o una especialización de este tipo. Normalmente se usan para hacer **especializaciones**.
+
+Y aquí es donde empezamos a entrar en el terreno del LSP. Una de las restricciones más importantes que Liskov propone es que si un tipo de dato tiene definido un método X, entonces cualquier subtipo de este tipo (que en relación con este se llama "supertipo") también debe tener este método definido.
 
 Para hacerlo más generalizable podemos cambiar "método" por cualquier elemento visible en la interfaz de este tipo de dato.
+
+Así, nos podremos usar que estas clases sean intercambiables entre ellas, sin siquiera tener que hacer consciente a la parte del programa que la usa de qué clase se está usando, mientras sea una clase derivada de la clase base.
+
+Un ejemplo de la vida real puede ser con un cámara. Todos tenemos en la mente las funciones básicas de una cámara electrónica:
+
+- Podemos encenderla y apagarla
+- Puede tomar fotos (disparador)
+- Puede mostrarnos las fotos
+- Podemos descargar las fotos
+- Podemos borrar las fotos
+
+Mientras la cámara cumpla con esas características (su interfaz) no tendremos problema para usarla, independientemente de la marca o modelo de la cámara.
+
+En realidad en la programación, esta interfaz es un poco más estricta: los métodos deben de llamarse igual y tener la misma firma (parámetros y tipo de retorno).
+
+Y esto es el principio de sustitución de Liskov. ¿Crees que es útil?
+
+## Crítica sobre el LSP
