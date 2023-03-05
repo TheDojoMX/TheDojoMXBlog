@@ -89,4 +89,18 @@ Y esto es básicamente el principio de sustitución de Liskov, la capacidad de u
 
 Tal como lo describimos aquí (mal llamado, para mi) principio de sustitución de Liskov parece una muy buena idea, ya que permitirá que crees nuevos comportamientos en partes específicas de tu código sin en tener que afectar a muchas partes de tu código.
 
-Lo que no estuvo tan bien, históricamente, es que este principio siempre ha sido explicado y relacionado con la HERENCIA de clases, en lugar de poner énfasis en la abstracción de tipos de datos.
+Lo que no estuvo tan bien, _históricamente_, es que este principio siempre ha sido explicado y relacionado con la HERENCIA de clases, en lugar de poner énfasis en la abstracción de tipos de datos. Esto ha hecho que muchos desarrolladores piensen que esta práctica sólo aplica a la programación orientada a objetos y no al paradigma funcional, por ejemplo.
+
+De hecho, el principio como es enunciado en [Design Principles and Patterns](/assets/pdfs/DesignPrinciplesAndPatterns.pdf) dice:
+
+> Subclasses should be substitutable for their base classes.
+---
+> Las subclases deben ser sustituibles por sus clases base.
+
+También, como se menciona en el artículo en el que se presenta originalmente este principio dice:
+
+> FUNCTIONS THAT USE POINTERS OR REFERENCES TO BASE CLASSES MUST BE ABLE TO USE OBJECTS OF DERIVED CLASSES WITHOUT KNOWING IT
+---
+> Funciones que usen punteros o referencias a clases base deben ser capaces de usar objetos de clases derivadas sin saberlo
+
+Como puedes ver, el consejo es que está directamente relacionado con la herencia de clases y jerarquías de objetos. Incluso llega a hablar de punteros y referencias a clases base, es decir, a la clase padre.
