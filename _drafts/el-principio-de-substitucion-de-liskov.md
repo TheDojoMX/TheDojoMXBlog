@@ -74,10 +74,19 @@ Un ejemplo de la vida real puede ser con un cámara. Todos tenemos en la mente l
 - Podemos descargar las fotos
 - Podemos borrar las fotos
 
-Mientras la cámara cumpla con esas características (su interfaz) no tendremos problema para usarla, independientemente de la marca o modelo de la cámara.
+Mientras la cámara cumpla con esas características (su interfaz) no tendremos problema para usarla, independientemente de la marca o modelo de la cámara. Los subtipos del tipo de dato abstracto `Cámara` podría ser entonces:
 
-En realidad en la programación, esta interfaz es un poco más estricta: los métodos deben de llamarse igual y tener la misma firma (parámetros y tipo de retorno).
+- `Cámara DSLR`
+- `Cámara Compacta`
+- `Cámara Mirrorless`
+- `Cámara de teléfono móvil`
 
-Y esto es el principio de sustitución de Liskov. ¿Crees que es útil?
+En realidad en la programación, esta interfaz es un poco más estricta: los métodos deben de llamarse igual y tener la misma firma (parámetros y tipo de retorno). Es como si la cámara tuviera los botones en el mismo lugar y se usaran de la misma forma.
+
+Y esto es básicamente el principio de sustitución de Liskov, la capacidad de usar clases derivadas de una clase principal sin ningún cambio en el código que rodea. ¿Crees que es útil?
 
 ## Crítica sobre el LSP
+
+Tal como lo describimos aquí (mal llamado, para mi) principio de sustitución de Liskov parece una muy buena idea, ya que permitirá que crees nuevos comportamientos en partes específicas de tu código sin en tener que afectar a muchas partes de tu código.
+
+Lo que no estuvo tan bien, históricamente, es que este principio siempre ha sido explicado y relacionado con la HERENCIA de clases, en lugar de poner énfasis en la abstracción de tipos de datos.
