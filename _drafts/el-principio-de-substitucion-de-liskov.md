@@ -1,8 +1,8 @@
 ---
 title: "El principio de sustitución de Liskov"
-date: 2023-03-01
+date: 2023-03-05
 author: Héctor Patricio
-tags: lsp liskov solid principios
+tags: lsp liskov solid principios solid-principles
 comments: true
 excerpt: "El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa."
 header:
@@ -104,3 +104,11 @@ También, como se menciona en el artículo en el que se presenta originalmente e
 > Funciones que usen punteros o referencias a clases base deben ser capaces de usar objetos de clases derivadas sin saberlo
 
 Como puedes ver, el consejo es que está directamente relacionado con la herencia de clases y jerarquías de objetos. Incluso llega a hablar de punteros y referencias a clases base, es decir, a la clase padre.
+
+De hecho, esto tiene cierta justificación, porque Barbara Liskov siempre habla de objetos. Lo que Liskov nunca hace es hablar de _Clases_ y jerarquías de clases. Ella habla de tipos de datos abstractos, que son una abstracción de los objetos, por lo que esta idea se extiende a **cualquier artefacto computacional que se encargue de encapsular un comportamiento**.
+
+¿Qué es encapsular? Es **ocultar la implementación** y exponer sólo lo necesario para que el resto del programa pueda usarlo. Esto es lo que hace una clase, un módulo, una función, etc.
+
+¿Qué te recuerda esto? Lo mismo de lo que hemos hablado en los principios anteriores: **abstracción**. Esconder lo más que se pueda la información, _Information Hiding_.
+
+### Conclusión
