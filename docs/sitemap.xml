@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://blog.thedojo.mx/authors/sag.html</loc>
-<lastmod>2023-02-27T23:25:07-06:00</lastmod>
+<lastmod>2023-03-06T23:31:18-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/2018/10/28/bienvenidos.html</loc>
@@ -417,6 +417,10 @@
 <lastmod>2023-02-27T00:00:00-06:00</lastmod>
 </url>
 <url>
+<loc>https://blog.thedojo.mx/2023/03/06/el-principio-de-substitucion-de-liskov.html</loc>
+<lastmod>2023-03-06T00:00:00-06:00</lastmod>
+</url>
+<url>
 <loc>https://blog.thedojo.mx/about/</loc>
 </url>
 <url>
@@ -444,6 +448,14 @@
 <loc>https://blog.thedojo.mx/latest/5/</loc>
 </url>
 <url>
+<loc>https://blog.thedojo.mx/assets/pdfs/DesignPrinciplesAndPatterns.pdf</loc>
+<lastmod>2023-03-05T09:51:45-06:00</lastmod>
+</url>
+<url>
+<loc>https://blog.thedojo.mx/assets/pdfs/InstructivoNormativo.pdf</loc>
+<lastmod>2023-03-04T23:26:22-06:00</lastmod>
+</url>
+<url>
 <loc>https://blog.thedojo.mx/assets/pdfs/Turing_Paper_1936.pdf</loc>
 <lastmod>2023-02-06T17:06:54-06:00</lastmod>
 </url>
@@ -452,7 +464,15 @@
 <lastmod>2023-02-04T20:59:48-06:00</lastmod>
 </url>
 <url>
+<loc>https://blog.thedojo.mx/assets/pdfs/lsp.pdf</loc>
+<lastmod>2023-03-05T09:58:07-06:00</lastmod>
+</url>
+<url>
 <loc>https://blog.thedojo.mx/assets/pdfs/rabin_scott_1959.pdf</loc>
 <lastmod>2023-02-10T22:40:49-06:00</lastmod>
+</url>
+<url>
+<loc>https://blog.thedojo.mx/assets/pdfs/subtyping.pdf</loc>
+<lastmod>2023-03-03T23:31:03-06:00</lastmod>
 </url>
 </urlset>

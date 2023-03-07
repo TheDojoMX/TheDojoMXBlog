@@ -622,4 +622,10 @@ var store = [{
         "tags": ["transformers","transformadores","gpt-3","inteligencia-artificial"],
         "url": "/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1675031892/vinicius-amnx-amano-IPemgbj9aDY-unsplash_cttyeh.jpg"
+      },{
+        "title": "El principio de sustitución de Liskov",
+        "excerpt":"El tercer principio enunciado en los principios SOLID es el principio de sustitución de Liskov. ¿Qué significa este principio? Y más importante, ¿vale la pena seguirlo? Pero antes de hablar del principio, hablemos de Barbara Liskov, la persona que lo inspiró y que estableció los conceptos principales. Un poco de...","categories": [],
+        "tags": ["lsp","liskov","solid","principios","solid-principles"],
+        "url": "/2023/03/06/el-principio-de-substitucion-de-liskov.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1677648049/brett-jordan-DDupbpu4MS4-unsplash_jdapyu.jpg"
       }]

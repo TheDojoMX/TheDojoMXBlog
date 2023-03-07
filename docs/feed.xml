@@ -1,4 +1,126 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-02-27T23:25:07-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-03-06T23:31:18-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">El principio de sustitución de Liskov</title><link href="https://blog.thedojo.mx/2023/03/06/el-principio-de-substitucion-de-liskov.html" rel="alternate" type="text/html" title="El principio de sustitución de Liskov" /><published>2023-03-06T00:00:00-06:00</published><updated>2023-03-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/06/el-principio-de-substitucion-de-liskov</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/06/el-principio-de-substitucion-de-liskov.html">&lt;p&gt;El tercer principio enunciado en los principios &lt;strong&gt;SOLID&lt;/strong&gt; es el principio de sustitución de Liskov. ¿Qué significa este principio? Y más importante, ¿vale la pena seguirlo? Pero antes de hablar del principio, hablemos de &lt;strong&gt;Barbara Liskov&lt;/strong&gt;, la persona que lo inspiró y que estableció los conceptos principales.&lt;/p&gt;
+
+&lt;h2 id=&quot;un-poco-de-historia-barbara-liskov&quot;&gt;Un poco de historia: Barbara Liskov&lt;/h2&gt;
+
+&lt;p&gt;Barbara Liskov es una matemática muy reconocida en las ciencias de la computación por los grandes aportes que ha hecho. Es conocida por su trabajo en el diseño de lenguajes de programación y la teoría de tipos. En 1994 junto con Jeannette Wing publicó el artículo del que Robert Martin se sacó lo que el llamó “el principio de sustitución de Liskov” o “LSP” (Liskov Substitution Principle). Ya ves que los &lt;em&gt;inicialismos&lt;/em&gt; le dan un aire de importancia a lo que escribes.&lt;/p&gt;
+
+&lt;p&gt;En su libro, &lt;a href=&quot;https://www.marcombo.com/mentes-geniales-la-vida-y-obra-de-12-grandes-informaticos-9788426733573/&quot;&gt;“Mentes Geniales. La vida y obra de 12 grandes informáticos”&lt;/a&gt;, Camilo Chacón nos da una semblanza de las contribuciones de Barbara a las ciencias de la computación. Sus principales aportaciones, resumidas son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Lenguajes de programación que aplican ideas de polimorfismo, modularidad, abstracción de datos y manejo de excepciones&lt;/li&gt;
+  &lt;li&gt;Sistemas distribuidos (inventó Paxos antes que Leslie Lamport)&lt;/li&gt;
+  &lt;li&gt;Abstracción de datos y tipos de datos abstractos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Si quieres saber más de ella en poco tiempo, te recomiendo mucho su capítulo en ese libro, es muy interesante, además de que obtiene lecciones muy valiosas de su vida. Ahora sí hablemos de lo que más gente conoce de ella.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-principio-de-sustitución-de-liskov&quot;&gt;El principio de sustitución de Liskov&lt;/h2&gt;
+
+&lt;p&gt;El artículo en el que lo definió se llama &lt;a href=&quot;/assets/pdfs/subtyping.pdf&quot;&gt;“A Behavioral Notion of Subtyping”&lt;/a&gt;. Tiene notación matemática que cuesta un poco leer si no tienes nociones de lenguaje matemático formal, pero resumiremos las ideas básicas aquí.&lt;/p&gt;
+
+&lt;p&gt;El espíritu del LSP está basado en las ideas de &lt;strong&gt;subtipado&lt;/strong&gt; que Liskov describió en este artículo. Estas ideas tienen &lt;em&gt;muy poco&lt;/em&gt; que ver en realidad con herencia en los lenguajes de programación orientados a objetos y mucho más con la &lt;strong&gt;abstracción&lt;/strong&gt; y restricciones que hay que tener en cuenta para considerar que un tipo es un subtipo de otro.
+Es cierto que Liskov usó las jerarquías de clases para ilustrar sus ideas, pero el principio de su trabajo tiene que ver mucho más con el comportamiento externo de un tipo de datos que con la forma en la que se encapsula este comportamiento.&lt;/p&gt;
+
+&lt;p&gt;Pero vayamos a la parte más profunda de la teoría para entender si lo que Liskov propone tiene sentido.&lt;/p&gt;
+
+&lt;h3 id=&quot;qué-es-un-tipo&quot;&gt;¿Qué es un tipo?&lt;/h3&gt;
+
+&lt;p&gt;Un tipo es la definición de lo que un valor almacenado tiene, puede hacer o las operaciones que se pueden hacer sobre él.&lt;/p&gt;
+
+&lt;p&gt;Pongamos un ejemplo. En JavaScript el tipo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Number&lt;/code&gt; define un valor que representa un número de cualquier tipo. Este tipo de dato define las operaciones que podemos hacer sobre los valores con este tipo, por ejemplo:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Podemos usar el operador &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; para sumar dos datos de este tipo&lt;/li&gt;
+  &lt;li&gt;Podemos usar el operador &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt; para restar dos datos de este tipo&lt;/li&gt;
+  &lt;li&gt;Las operaciones (excepto las comparativas) entre el tipo de dato &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Number&lt;/code&gt; siempre devuelven un valor de este tipo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;También definen la &lt;em&gt;interfaz&lt;/em&gt; de este tipo de datos, es decir, la forma en la que podemos interactuar con ellos. Normalmente, en lenguajes orientados a objetos, esta interfaz está compuesta por los métodos públicos que se pueden llamar sobre este tipo de dato.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo en JavaScript, el tipo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Number&lt;/code&gt; tiene definido el método &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toString&lt;/code&gt; que nos devuelve este valor como una cadena de texto.&lt;/p&gt;
+
+&lt;p&gt;Pero Bárbara Liskov expandió esto, proponiendo lo que llamamos &lt;strong&gt;Abstract Data Type&lt;/strong&gt; o &lt;strong&gt;Tipo de Dato Abstracto&lt;/strong&gt; (les llamaremos &lt;strong&gt;ADT&lt;/strong&gt;). Un tipo abstracto de dato es una &lt;strong&gt;definición de un tipo de dato&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Este tipo de dato no tiene una implementación concreta, sino que define la interfaz que debe tener cualquier implementación de este tipo de dato, siendo responsabilidad del programador implementar esta interfaz.&lt;/p&gt;
+
+&lt;p&gt;Ejemplos de ADT’s son por ejemplo las Colas (Queues), Listas (Lists), Pilas (Stacks), etc. El ADT define que interfaz debe tener cualquier implementación de este, y cada lenguaje o programador puede implementarlo como le convenga.&lt;/p&gt;
+
+&lt;p&gt;Ahora, ¿qué es un subtipo?&lt;/p&gt;
+
+&lt;h3 id=&quot;qué-es-un-subtipo&quot;&gt;¿Qué es un subtipo?&lt;/h3&gt;
+
+&lt;p&gt;Un subtipo es una derivación de un tipo. Esta derivación puede ser una variación, una generalización o una especialización de este tipo. Normalmente se usan para hacer &lt;strong&gt;especializaciones&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Y aquí es donde empezamos a entrar en el terreno del LSP. Una de las restricciones más importantes que Liskov propone es que si un tipo de dato tiene definido un método X, entonces cualquier subtipo de este tipo (que en relación con este se llama “supertipo”) también debe tener este método definido.&lt;/p&gt;
+
+&lt;p&gt;Para hacerlo más generalizable podemos cambiar “método” por cualquier elemento visible en la interfaz de este tipo de dato.&lt;/p&gt;
+
+&lt;p&gt;Así, nos podremos usar que estas clases sean intercambiables entre ellas, sin siquiera tener que hacer consciente a la parte del programa que la usa de qué clase se está usando, mientras sea una clase derivada de la clase base.&lt;/p&gt;
+
+&lt;p&gt;Un ejemplo de la vida real puede ser con un cámara. Todos tenemos en la mente las funciones básicas de una cámara electrónica:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Podemos encenderla y apagarla&lt;/li&gt;
+  &lt;li&gt;Puede tomar fotos (disparador)&lt;/li&gt;
+  &lt;li&gt;Puede mostrarnos las fotos&lt;/li&gt;
+  &lt;li&gt;Podemos descargar las fotos&lt;/li&gt;
+  &lt;li&gt;Podemos borrar las fotos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mientras la cámara cumpla con esas características (su interfaz) no tendremos problema para usarla, independientemente de la marca o modelo de la cámara. Los subtipos del tipo de dato abstracto &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cámara&lt;/code&gt; podría ser entonces:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cámara DSLR&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cámara Compacta&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cámara Mirrorless&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cámara de teléfono móvil&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En realidad en la programación, esta interfaz es un poco más estricta: los métodos deben de llamarse igual y tener la misma firma (parámetros y tipo de retorno). Es como si la cámara tuviera los botones en el mismo lugar y se usaran de la misma forma.&lt;/p&gt;
+
+&lt;p&gt;Y esto es básicamente el principio de sustitución de Liskov, la capacidad de usar clases derivadas de una clase principal sin ningún cambio en el código que rodea. ¿Crees que es útil?&lt;/p&gt;
+
+&lt;h2 id=&quot;crítica-sobre-el-lsp&quot;&gt;Crítica sobre el LSP&lt;/h2&gt;
+
+&lt;p&gt;Tal como lo describimos aquí (mal llamado, para mi) principio de sustitución de Liskov parece una muy buena idea, ya que permitirá que crees nuevos comportamientos en partes específicas de tu código sin en tener que afectar a muchas partes de tu código.&lt;/p&gt;
+
+&lt;p&gt;Lo que no estuvo tan bien, &lt;em&gt;históricamente&lt;/em&gt;, es que este principio siempre ha sido explicado y relacionado con la HERENCIA de clases, en lugar de poner énfasis en la abstracción de tipos de datos. Esto ha hecho que muchos desarrolladores piensen que esta práctica sólo aplica a la programación orientada a objetos y no al paradigma funcional, por ejemplo.&lt;/p&gt;
+
+&lt;p&gt;De hecho, el principio como es enunciado en &lt;a href=&quot;/assets/pdfs/DesignPrinciplesAndPatterns.pdf&quot;&gt;Design Principles and Patterns&lt;/a&gt; dice:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;subclasses-should-be-substitutable-for-their-base-classes&quot;&gt;Subclasses should be substitutable for their base classes.&lt;/h2&gt;
+  &lt;p&gt;Las subclases deben ser sustituibles por sus clases base.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;También, como se menciona en el artículo en el que se presenta originalmente este principio dice:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;functions-that-use-pointers-or-references-to-base-classes-must-be-able-to-use-objects-of-derived-classes-without-knowing-it&quot;&gt;FUNCTIONS THAT USE POINTERS OR REFERENCES TO BASE CLASSES MUST BE ABLE TO USE OBJECTS OF DERIVED CLASSES WITHOUT KNOWING IT&lt;/h2&gt;
+  &lt;p&gt;Funciones que usen punteros o referencias a clases base deben ser capaces de usar objetos de clases derivadas sin saberlo&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Como puedes ver, el consejo es que está directamente relacionado con la herencia de clases y jerarquías de objetos. Incluso llega a hablar de punteros y referencias a clases base, es decir, a la clase padre.&lt;/p&gt;
+
+&lt;p&gt;De hecho, esto tiene cierta justificación, porque Barbara Liskov siempre habla de objetos. Lo que Liskov nunca hace es hablar de &lt;em&gt;Clases&lt;/em&gt; y jerarquías de clases. Ella habla de tipos de datos abstractos, que son una abstracción de los objetos, por lo que esta idea se extiende a &lt;strong&gt;cualquier artefacto computacional que se encargue de encapsular un comportamiento&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;¿Qué es encapsular? Es &lt;strong&gt;ocultar la implementación&lt;/strong&gt; y exponer sólo lo necesario para que el resto del programa pueda usarlo. Esto es lo que hace una clase, un módulo, una función, etc.&lt;/p&gt;
+
+&lt;p&gt;¿Qué te recuerda esto? Lo mismo de lo que hemos hablado en los principios anteriores: &lt;strong&gt;abstracción&lt;/strong&gt;. Esconder lo más que se pueda la información, &lt;em&gt;Information Hiding&lt;/em&gt;, como le llamaría John Ousterhout.&lt;/p&gt;
+
+&lt;p&gt;Lo que es más, seguir esta idea de que diferentes tipos de datos puedan ser intercambiables hace que selecciones mejor los elementos que van a componer tu interfaz (en este caso le llamaríamos &lt;strong&gt;API&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;Para mí, las ideas de Liskov son un aplicación particular de la idea de ocultar la mayor cantidad de información posible dentro de interfaces lo mejor diseñadas posible, tal como se explica en el libro &lt;a href=&quot;https://web.stanford.edu/~ouster/cgi-bin/book.php&quot;&gt;A Philosophy of Software Design de John Ousterhout&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h3&gt;
+
+&lt;p&gt;La ideas sobre &lt;strong&gt;subtipos&lt;/strong&gt; y la forma de usarlos lo mejor posible que Bárbara Liskov y Jeannette Wing propusieron son muy útiles para crear mejor código, sobre todo mejor separación y ocultado de la implementación.&lt;/p&gt;
+
+&lt;p&gt;Esto lo vamos a repetir hasta el cansancio: &lt;strong&gt;ocultar información&lt;/strong&gt; te ayudará a hacer que tus programas sea más fáciles de entender y de mantener.&lt;/p&gt;
+
+&lt;p&gt;Como lección, podemos decir que seguir las guías de Liskov para el subtipado es una forma de aplicar este principio de diseño aún más amplio, digamos que en realidad la especificación de cómo deben comportarse los subtipos es más como una &lt;em&gt;regla&lt;/em&gt; de diseño que un &lt;em&gt;principio&lt;/em&gt; de diseño.&lt;/p&gt;
+
+&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
 
 &lt;p&gt;Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal.&lt;/p&gt;
 
@@ -1051,123 +1173,4 @@ Incorrectos: 0 - 0.0%
 
 &lt;p&gt;En un siguiente artículo vamos a integrar herramientas matemáticas más poderosas, y vamos a empezar a ver qué tiene qué ver el álgebra lineal con la inteligencia artificial.&lt;/p&gt;
 
-&lt;p&gt;Puedes ver el código completo en este &lt;a href=&quot;https://github.com/hectorip/penguins_perceptron&quot;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ia" /><category term="inteligencia-artificial" /><summary type="html">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.</summary></entry><entry><title type="html">Claridad de Saša Jurić</title><link href="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html" rel="alternate" type="text/html" title="Claridad de Saša Jurić" /><published>2022-12-30T00:00:00-06:00</published><updated>2022-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2022/12/30/claridad-en-el-codigo.html">&lt;figure&gt;
-    &lt;figcaption class=&quot;caption-audio&quot;&gt;Escucha este artículo:&lt;/figcaption&gt;
-    &lt;audio style=&quot;width: 100%;&quot; controls=&quot;&quot; src=&quot;https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav&quot;&gt;
-            &lt;a href=&quot;https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav&quot;&gt;
-                Descargar audio
-            &lt;/a&gt;
-    &lt;/audio&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Hablemos de las cosas que hacen más entendible y claro tu código.&lt;/p&gt;
-
-&lt;p&gt;Muchas de estas ideas están basadas en la plática &lt;a href=&quot;https://www.youtube.com/watch?v=6sNmJtoKDCo&quot;&gt;“Clarity” de Saša Jurić&lt;/a&gt; de la Elixir Conf EU de 2021, de hecho, podríamos considerar este artículo como un análisis y extensión de esa plática.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cuando trabajamos con bases de código normalmente necesitamos entenderlas. Incluso aunque vayamos a escribir algo nuevo necesitamos entender lo demás para poder integrarlo. Esto lo hacemos mediante la lectura de código.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Los escritores del código nos transmiten información mediante ese código, lo quieran o no.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;La forma en la que obtenemos conocimiento del código es leyéndolo.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;qué-es-la-claridad-y-por-qué-es-mejor-que-el-código-limpio&quot;&gt;¿Qué es la claridad y por qué es mejor que ‘el código limpio’?&lt;/h2&gt;
-
-&lt;p&gt;La claridad como se define en esta plática, es qué tan bien una pieza de código comunica sus verdaderas intenciones. El código claro puede ser entendido sin mucho esfuerzo por alguien que conoce bien el lenguaje: se entiende tanto el problema como la solución que el autor escogió.&lt;/p&gt;
-
-&lt;p&gt;La claridad nos hace más eficientes y efectivos. Primero porque obtenemos información más rápido y segundo porque obtenemos la información correcta.&lt;/p&gt;
-
-&lt;p&gt;Finalmente, la claridad le da poder al equipo porque hace que cualquiera pueda tomar el código y trabajar con él, en vez de sólo el autor, como muchos estamos acostumbrados.&lt;/p&gt;
-
-&lt;p&gt;Para conseguir claridad se tiene que invertir tiempo constantemente. Tienes que recordar que el código es una herramienta de comunicación con otros seres humanos, no sólo con la máquina.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672409158/Screen_Shot_2022-12-28_at_9.37.57_aje64x.png&quot; alt=&quot;Claridad es más concreto que otros términos&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;prácticas-que-mejoran-la-claridad&quot;&gt;Prácticas que mejoran la claridad&lt;/h2&gt;
-
-&lt;p&gt;Hablemos de cosas que tú y tu equipo pueden hacer para producir código más claro.&lt;/p&gt;
-
-&lt;h3 id=&quot;revisión-de-código&quot;&gt;Revisión de código&lt;/h3&gt;
-
-&lt;p&gt;Esto es la práctica de un equipo de integrar el código a la rama principal solamente cuando ha sido evaluado por cierto números de miembros del equipo. El foco principal de la revisión debería ser la claridad del código.&lt;/p&gt;
-
-&lt;p&gt;Para facilitar el proceso, tanto el autor como el revisor pueden seguir ciertas reglas para que el resultado sea código más claro y la revisión sea más fácil.&lt;/p&gt;
-
-&lt;p&gt;El que envía el código puede facilitar el trabajo del revisor de tres maneras:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Envía solicitudes de integración pequeñas: siempre es más fácil de entender poco código que mucho.&lt;/li&gt;
-  &lt;li&gt;Commits pequeños como unidades de cambio más fáciles de tratar individualmente. Un commit no debería tener cambios en muchos lugares para no hacerlo demasiado difícil de entender.&lt;/li&gt;
-  &lt;li&gt;Clarifica tu código lo mejor posible: la historia de los commits debería estar estructurada linealmente. Además debería revisar su código para asegurarse de que está lo más claro posible.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;El revisor:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sugerir y mandar mejoras. El revisor debería señalar todos los puntos en los que se le hizo difícil entender el código. También podría mandar los cambios directamente, como un pull request al autor, invirtiendo los papeles temporalmente.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sincronizar. Es importante tener sesiones si algo no se puede resolver. Estas sesiones de pair programming servirán para clarificar todo aquello que siga siendo confuso.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;prácticas-en-el-código&quot;&gt;Prácticas en el código&lt;/h3&gt;
-
-&lt;p&gt;Saša sugiere seguir las prácticas de progrmación comunes &lt;strong&gt;aplicables al código&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Nombrar variables y funciones de manera explicativa.&lt;/li&gt;
-  &lt;li&gt;Seguir los idiomas y patrones de programación &lt;em&gt;aplicables&lt;/em&gt; a tu caso.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;separación-de-responsabilidades&quot;&gt;Separación de responsabilidades&lt;/h3&gt;
-
-&lt;p&gt;Pero además, podemos seguir lo que en español llamamos “separación de responsabilidades” (en inglés “separation of concerns”). Esta idea Dijkstra lo mencionó en su artículo &lt;a href=&quot;https://www.cs.utexas.edu/users/EWD/transcriptions/EWD04xx/EWD447.html&quot;&gt;On the scientific thougth&lt;/a&gt;. Dijkstra se refería a la forma de pensar en los asuntos complejos desde diferentes ángulos para poder “ignorar” temporalmente los aspectos que no tienen que ver con ese ángulo. Esto permitirá que podamos entender mejor el sistema entero poco a poco.&lt;/p&gt;
-
-&lt;p&gt;En el código lo podemos aplicar haciendo que nuestro código esté separado en módulos que sólo abarquen un aspecto del problema. Esto es imposible de hacer perfectamente, pero nuestro código debería tender hacia allá lo más posible. Por ejemplo, algo que normalmente se hace muy bien es separar el código que maneja la lógica de los datos de la interfaz. Recuerda: &lt;strong&gt;esto es importante porque permitirá al lector solo lidiar con un problema a la vez&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Si ponemos todos los conceptos posibles de programación en una pieza de código (aquí cito directamente a Saša) “¿Quién va a ser capaz de entender algo de eso?”&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672409162/Screen_Shot_2022-12-30_at_8.05.42_ycvhe7.png&quot; alt=&quot;Imagen: Separación de responsabilidades en una base de código&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Advertencia&lt;/strong&gt;: Una idea que Saša menciona bastante es la de no seguir arquitecturas o ideas sólo porque un líder de opinión o alguien con autoridad lo dice. Si haces esto &lt;strong&gt;puede que la parte más compleja de tu código sea tu arquitectura&lt;/strong&gt;, lo cuál es un grave error porque el trabajo de la arquitectura deberías ser crear un sistema más claro.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Consider te actual situation you’re dealing with, [..], don’t just do something because some thought leader or authority says so, even if that person is me. Just think contextually, think inside of your situation.” - Saša Jurić&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Considera tu situación actual, [..], no hagas algo sólo porque un líder de opinión o alguien con autoridad lo dice, incluso si esa persona soy yo. Simplemente piensa contextualmente, piensa en tu situación.” - Saša Jurić&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;testing&quot;&gt;Testing&lt;/h2&gt;
-
-&lt;p&gt;¿Para qué creamos tests? Obviamente, para probar. ¿Pero qué queremos probar? Saša afirma que queremos probar &lt;strong&gt;el comportamiento del software&lt;/strong&gt;. Así, las “unidades” que queremos probar son las unidades de comportamiento y no las unidades de código. Otra recomendación es evitar hacer mocks agresivos, solamente en dónde sea estrictamente necesario para lograr comportamientos repetibles. Esto es porque, el uso de dobles en los tests (como los mocks) complica el código de pruebas, pero también complica el código de producción.&lt;/p&gt;
-
-&lt;p&gt;Cuando los tests son demasiado complicados o están ligados a la implementación en vez del al comportamiento externo, vas a tener que dividirte entre arreglar los test o arreglar el código de producción, lo cuál es frustrante y una mala idea para tu productividad en general. Un test debe ser fácil de entender y comunicar exactamente lo que está probando, nada más, nada menos.&lt;/p&gt;
-
-&lt;p&gt;Recomendación: Libro &lt;a href=&quot;https://www.manning.com/books/unit-testing&quot;&gt;Unit Testing&lt;/a&gt; de Vladimir Khorikov. Saša lo recomienda como una muy buena lectura.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672450947/Screen_Shot_2022-12-30_at_12.03.25_nedtbg.png&quot; alt=&quot;Recomendación de libro TDD por Saša Jurić: Unit Testing de editorial Manning&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Una de las tareas más importantes cuando hacemos código es hacer que comunique claramente el problema que resuelve y cómo lo resuelve. Si hacemos eso, lograremos que nuestro equipo o nosotros mismos podamos continuar con el trabajo y lo mejor: evolucionarlo.&lt;/p&gt;
-
-&lt;p&gt;En la siguiente imagen verás el resumen de las recomendaciones de Saša Jurić para escribir código más claro:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1672450967/Screen_Shot_2022-12-30_at_18.48.20_hekzsv.png&quot; alt=&quot;Usa el código para comunicarte, revisa el código, separación de responsabilidades y prueba el comportamiento del código&quot; /&gt;.&lt;/p&gt;
-
-&lt;p&gt;Puedes ver la charla completa en &lt;a href=&quot;https://www.youtube.com/watch?v=6sNmJtoKDCo&quot;&gt;YouTube&lt;/a&gt;. &lt;a href=&quot;https://twitter.com/mronerlang&quot;&gt;Manuel Rubio&lt;/a&gt; y yo platicamos extensamente sobre ese tema:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Gswx3ko3A_E&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Finalmente, te recomiendo mucho el artículo en el que Manuel Rubio hizo su propio resumen en &lt;a href=&quot;https://altenwald.org/2021/09/27/claridad/&quot;&gt;el blog de Altenwald&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="claridad" /><category term="código-claro" /><category term="pláticas" /><summary type="html">Todos quisiéramos tener bases de código perfectas, fáciles de mantener y totalmente claras. Esto es casi imposible, pero podemos acercarnos. Vemos cómo.</summary></entry></feed>
+&lt;p&gt;Puedes ver el código completo en este &lt;a href=&quot;https://github.com/hectorip/penguins_perceptron&quot;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="machine-learning" /><category term="ia" /><category term="inteligencia-artificial" /><summary type="html">Programemos un perceptrón en Python para entender a fondo como funciona y poder construir sobre eso para temas más complejos.</summary></entry></feed>

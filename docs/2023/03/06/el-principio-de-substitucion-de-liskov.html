@@ -1,0 +1,879 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>El principio de sustitución de Liskov - The Dojo MX Blog</title>
+<meta name="description" content="El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="El principio de sustitución de Liskov">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/03/06/el-principio-de-substitucion-de-liskov.html">
+
+
+  <meta property="og:description" content="El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1677648049/brett-jordan-DDupbpu4MS4-unsplash_jdapyu.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-06T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/03/06/el-principio-de-substitucion-de-liskov.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/03/06/el-principio-de-substitucion-de-liskov.html",
+      "name": "El principio de sustitución de Liskov",
+      "headline": "El principio de sustitución de Liskov",
+      "keywords": "lsp,liskov,solid,principios,solid-principles",
+      "description": "El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.",
+      "articleBody": "El tercer principio enunciado en los principios SOLID es el principio de sustitución de Liskov. ¿Qué significa este principio? Y más importante, ¿vale la pena seguirlo? Pero antes de hablar del principio, hablemos de Barbara Liskov, la persona que lo inspiró y que estableció los conceptos principales.\n\nUn poco de historia: Barbara Liskov\n\nBarbara Liskov es una matemática muy reconocida en las ciencias de la computación por los grandes aportes que ha hecho. Es conocida por su trabajo en el diseño de lenguajes de programación y la teoría de tipos. En 1994 junto con Jeannette Wing publicó el artículo del que Robert Martin se sacó lo que el llamó “el principio de sustitución de Liskov” o “LSP” (Liskov Substitution Principle). Ya ves que los inicialismos le dan un aire de importancia a lo que escribes.\n\nEn su libro, “Mentes Geniales. La vida y obra de 12 grandes informáticos”, Camilo Chacón nos da una semblanza de las contribuciones de Barbara a las ciencias de la computación. Sus principales aportaciones, resumidas son:\n\n\n  Lenguajes de programación que aplican ideas de polimorfismo, modularidad, abstracción de datos y manejo de excepciones\n  Sistemas distribuidos (inventó Paxos antes que Leslie Lamport)\n  Abstracción de datos y tipos de datos abstractos\n\n\nSi quieres saber más de ella en poco tiempo, te recomiendo mucho su capítulo en ese libro, es muy interesante, además de que obtiene lecciones muy valiosas de su vida. Ahora sí hablemos de lo que más gente conoce de ella.\n\nEl principio de sustitución de Liskov\n\nEl artículo en el que lo definió se llama “A Behavioral Notion of Subtyping”. Tiene notación matemática que cuesta un poco leer si no tienes nociones de lenguaje matemático formal, pero resumiremos las ideas básicas aquí.\n\nEl espíritu del LSP está basado en las ideas de subtipado que Liskov describió en este artículo. Estas ideas tienen muy poco que ver en realidad con herencia en los lenguajes de programación orientados a objetos y mucho más con la abstracción y restricciones que hay que tener en cuenta para considerar que un tipo es un subtipo de otro.\nEs cierto que Liskov usó las jerarquías de clases para ilustrar sus ideas, pero el principio de su trabajo tiene que ver mucho más con el comportamiento externo de un tipo de datos que con la forma en la que se encapsula este comportamiento.\n\nPero vayamos a la parte más profunda de la teoría para entender si lo que Liskov propone tiene sentido.\n\n¿Qué es un tipo?\n\nUn tipo es la definición de lo que un valor almacenado tiene, puede hacer o las operaciones que se pueden hacer sobre él.\n\nPongamos un ejemplo. En JavaScript el tipo Number define un valor que representa un número de cualquier tipo. Este tipo de dato define las operaciones que podemos hacer sobre los valores con este tipo, por ejemplo:\n\n\n  Podemos usar el operador + para sumar dos datos de este tipo\n  Podemos usar el operador - para restar dos datos de este tipo\n  Las operaciones (excepto las comparativas) entre el tipo de dato Number siempre devuelven un valor de este tipo\n\n\nTambién definen la interfaz de este tipo de datos, es decir, la forma en la que podemos interactuar con ellos. Normalmente, en lenguajes orientados a objetos, esta interfaz está compuesta por los métodos públicos que se pueden llamar sobre este tipo de dato.\n\nPor ejemplo en JavaScript, el tipo Number tiene definido el método toString que nos devuelve este valor como una cadena de texto.\n\nPero Bárbara Liskov expandió esto, proponiendo lo que llamamos Abstract Data Type o Tipo de Dato Abstracto (les llamaremos ADT). Un tipo abstracto de dato es una definición de un tipo de dato.\n\nEste tipo de dato no tiene una implementación concreta, sino que define la interfaz que debe tener cualquier implementación de este tipo de dato, siendo responsabilidad del programador implementar esta interfaz.\n\nEjemplos de ADT’s son por ejemplo las Colas (Queues), Listas (Lists), Pilas (Stacks), etc. El ADT define que interfaz debe tener cualquier implementación de este, y cada lenguaje o programador puede implementarlo como le convenga.\n\nAhora, ¿qué es un subtipo?\n\n¿Qué es un subtipo?\n\nUn subtipo es una derivación de un tipo. Esta derivación puede ser una variación, una generalización o una especialización de este tipo. Normalmente se usan para hacer especializaciones.\n\nY aquí es donde empezamos a entrar en el terreno del LSP. Una de las restricciones más importantes que Liskov propone es que si un tipo de dato tiene definido un método X, entonces cualquier subtipo de este tipo (que en relación con este se llama “supertipo”) también debe tener este método definido.\n\nPara hacerlo más generalizable podemos cambiar “método” por cualquier elemento visible en la interfaz de este tipo de dato.\n\nAsí, nos podremos usar que estas clases sean intercambiables entre ellas, sin siquiera tener que hacer consciente a la parte del programa que la usa de qué clase se está usando, mientras sea una clase derivada de la clase base.\n\nUn ejemplo de la vida real puede ser con un cámara. Todos tenemos en la mente las funciones básicas de una cámara electrónica:\n\n\n  Podemos encenderla y apagarla\n  Puede tomar fotos (disparador)\n  Puede mostrarnos las fotos\n  Podemos descargar las fotos\n  Podemos borrar las fotos\n\n\nMientras la cámara cumpla con esas características (su interfaz) no tendremos problema para usarla, independientemente de la marca o modelo de la cámara. Los subtipos del tipo de dato abstracto Cámara podría ser entonces:\n\n\n  Cámara DSLR\n  Cámara Compacta\n  Cámara Mirrorless\n  Cámara de teléfono móvil\n\n\nEn realidad en la programación, esta interfaz es un poco más estricta: los métodos deben de llamarse igual y tener la misma firma (parámetros y tipo de retorno). Es como si la cámara tuviera los botones en el mismo lugar y se usaran de la misma forma.\n\nY esto es básicamente el principio de sustitución de Liskov, la capacidad de usar clases derivadas de una clase principal sin ningún cambio en el código que rodea. ¿Crees que es útil?\n\nCrítica sobre el LSP\n\nTal como lo describimos aquí (mal llamado, para mi) principio de sustitución de Liskov parece una muy buena idea, ya que permitirá que crees nuevos comportamientos en partes específicas de tu código sin en tener que afectar a muchas partes de tu código.\n\nLo que no estuvo tan bien, históricamente, es que este principio siempre ha sido explicado y relacionado con la HERENCIA de clases, en lugar de poner énfasis en la abstracción de tipos de datos. Esto ha hecho que muchos desarrolladores piensen que esta práctica sólo aplica a la programación orientada a objetos y no al paradigma funcional, por ejemplo.\n\nDe hecho, el principio como es enunciado en Design Principles and Patterns dice:\n\n\n  Subclasses should be substitutable for their base classes.\n  Las subclases deben ser sustituibles por sus clases base.\n\n\nTambién, como se menciona en el artículo en el que se presenta originalmente este principio dice:\n\n\n  FUNCTIONS THAT USE POINTERS OR REFERENCES TO BASE CLASSES MUST BE ABLE TO USE OBJECTS OF DERIVED CLASSES WITHOUT KNOWING IT\n  Funciones que usen punteros o referencias a clases base deben ser capaces de usar objetos de clases derivadas sin saberlo\n\n\nComo puedes ver, el consejo es que está directamente relacionado con la herencia de clases y jerarquías de objetos. Incluso llega a hablar de punteros y referencias a clases base, es decir, a la clase padre.\n\nDe hecho, esto tiene cierta justificación, porque Barbara Liskov siempre habla de objetos. Lo que Liskov nunca hace es hablar de Clases y jerarquías de clases. Ella habla de tipos de datos abstractos, que son una abstracción de los objetos, por lo que esta idea se extiende a cualquier artefacto computacional que se encargue de encapsular un comportamiento.\n\n¿Qué es encapsular? Es ocultar la implementación y exponer sólo lo necesario para que el resto del programa pueda usarlo. Esto es lo que hace una clase, un módulo, una función, etc.\n\n¿Qué te recuerda esto? Lo mismo de lo que hemos hablado en los principios anteriores: abstracción. Esconder lo más que se pueda la información, Information Hiding, como le llamaría John Ousterhout.\n\nLo que es más, seguir esta idea de que diferentes tipos de datos puedan ser intercambiables hace que selecciones mejor los elementos que van a componer tu interfaz (en este caso le llamaríamos API).\n\nPara mí, las ideas de Liskov son un aplicación particular de la idea de ocultar la mayor cantidad de información posible dentro de interfaces lo mejor diseñadas posible, tal como se explica en el libro A Philosophy of Software Design de John Ousterhout.\n\nConclusión\n\nLa ideas sobre subtipos y la forma de usarlos lo mejor posible que Bárbara Liskov y Jeannette Wing propusieron son muy útiles para crear mejor código, sobre todo mejor separación y ocultado de la implementación.\n\nEsto lo vamos a repetir hasta el cansancio: ocultar información te ayudará a hacer que tus programas sea más fáciles de entender y de mantener.\n\nComo lección, podemos decir que seguir las guías de Liskov para el subtipado es una forma de aplicar este principio de diseño aún más amplio, digamos que en realidad la especificación de cómo deben comportarse los subtipos es más como una regla de diseño que un principio de diseño.\n\nEntender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.\n",
+      "datePublished": "2023-03-06 00:00:00 -0600",
+      "dateModified": "2023-03-06 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/03/06/el-principio-de-substitucion-de-liskov.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1677648049/brett-jordan-DDupbpu4MS4-unsplash_jdapyu.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1677648049/brett-jordan-DDupbpu4MS4-unsplash_jdapyu.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          El principio de sustitución de Liskov
+
+        
+      </h1>
+      
+        <p class="page__lead">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1565 palabras | 13 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="El principio de sustitución de Liskov">
+    <meta itemprop="description" content="El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.">
+    <meta itemprop="datePublished" content="2023-03-06T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>El tercer principio enunciado en los principios <strong>SOLID</strong> es el principio de sustitución de Liskov. ¿Qué significa este principio? Y más importante, ¿vale la pena seguirlo? Pero antes de hablar del principio, hablemos de <strong>Barbara Liskov</strong>, la persona que lo inspiró y que estableció los conceptos principales.</p>
+
+<h2 id="un-poco-de-historia-barbara-liskov">Un poco de historia: Barbara Liskov</h2>
+
+<p>Barbara Liskov es una matemática muy reconocida en las ciencias de la computación por los grandes aportes que ha hecho. Es conocida por su trabajo en el diseño de lenguajes de programación y la teoría de tipos. En 1994 junto con Jeannette Wing publicó el artículo del que Robert Martin se sacó lo que el llamó “el principio de sustitución de Liskov” o “LSP” (Liskov Substitution Principle). Ya ves que los <em>inicialismos</em> le dan un aire de importancia a lo que escribes.</p>
+
+<p>En su libro, <a href="https://www.marcombo.com/mentes-geniales-la-vida-y-obra-de-12-grandes-informaticos-9788426733573/">“Mentes Geniales. La vida y obra de 12 grandes informáticos”</a>, Camilo Chacón nos da una semblanza de las contribuciones de Barbara a las ciencias de la computación. Sus principales aportaciones, resumidas son:</p>
+
+<ul>
+  <li>Lenguajes de programación que aplican ideas de polimorfismo, modularidad, abstracción de datos y manejo de excepciones</li>
+  <li>Sistemas distribuidos (inventó Paxos antes que Leslie Lamport)</li>
+  <li>Abstracción de datos y tipos de datos abstractos</li>
+</ul>
+
+<p>Si quieres saber más de ella en poco tiempo, te recomiendo mucho su capítulo en ese libro, es muy interesante, además de que obtiene lecciones muy valiosas de su vida. Ahora sí hablemos de lo que más gente conoce de ella.</p>
+
+<h2 id="el-principio-de-sustitución-de-liskov">El principio de sustitución de Liskov</h2>
+
+<p>El artículo en el que lo definió se llama <a href="/assets/pdfs/subtyping.pdf">“A Behavioral Notion of Subtyping”</a>. Tiene notación matemática que cuesta un poco leer si no tienes nociones de lenguaje matemático formal, pero resumiremos las ideas básicas aquí.</p>
+
+<p>El espíritu del LSP está basado en las ideas de <strong>subtipado</strong> que Liskov describió en este artículo. Estas ideas tienen <em>muy poco</em> que ver en realidad con herencia en los lenguajes de programación orientados a objetos y mucho más con la <strong>abstracción</strong> y restricciones que hay que tener en cuenta para considerar que un tipo es un subtipo de otro.
+Es cierto que Liskov usó las jerarquías de clases para ilustrar sus ideas, pero el principio de su trabajo tiene que ver mucho más con el comportamiento externo de un tipo de datos que con la forma en la que se encapsula este comportamiento.</p>
+
+<p>Pero vayamos a la parte más profunda de la teoría para entender si lo que Liskov propone tiene sentido.</p>
+
+<h3 id="qué-es-un-tipo">¿Qué es un tipo?</h3>
+
+<p>Un tipo es la definición de lo que un valor almacenado tiene, puede hacer o las operaciones que se pueden hacer sobre él.</p>
+
+<p>Pongamos un ejemplo. En JavaScript el tipo <code class="language-plaintext highlighter-rouge">Number</code> define un valor que representa un número de cualquier tipo. Este tipo de dato define las operaciones que podemos hacer sobre los valores con este tipo, por ejemplo:</p>
+
+<ul>
+  <li>Podemos usar el operador <code class="language-plaintext highlighter-rouge">+</code> para sumar dos datos de este tipo</li>
+  <li>Podemos usar el operador <code class="language-plaintext highlighter-rouge">-</code> para restar dos datos de este tipo</li>
+  <li>Las operaciones (excepto las comparativas) entre el tipo de dato <code class="language-plaintext highlighter-rouge">Number</code> siempre devuelven un valor de este tipo</li>
+</ul>
+
+<p>También definen la <em>interfaz</em> de este tipo de datos, es decir, la forma en la que podemos interactuar con ellos. Normalmente, en lenguajes orientados a objetos, esta interfaz está compuesta por los métodos públicos que se pueden llamar sobre este tipo de dato.</p>
+
+<p>Por ejemplo en JavaScript, el tipo <code class="language-plaintext highlighter-rouge">Number</code> tiene definido el método <code class="language-plaintext highlighter-rouge">toString</code> que nos devuelve este valor como una cadena de texto.</p>
+
+<p>Pero Bárbara Liskov expandió esto, proponiendo lo que llamamos <strong>Abstract Data Type</strong> o <strong>Tipo de Dato Abstracto</strong> (les llamaremos <strong>ADT</strong>). Un tipo abstracto de dato es una <strong>definición de un tipo de dato</strong>.</p>
+
+<p>Este tipo de dato no tiene una implementación concreta, sino que define la interfaz que debe tener cualquier implementación de este tipo de dato, siendo responsabilidad del programador implementar esta interfaz.</p>
+
+<p>Ejemplos de ADT’s son por ejemplo las Colas (Queues), Listas (Lists), Pilas (Stacks), etc. El ADT define que interfaz debe tener cualquier implementación de este, y cada lenguaje o programador puede implementarlo como le convenga.</p>
+
+<p>Ahora, ¿qué es un subtipo?</p>
+
+<h3 id="qué-es-un-subtipo">¿Qué es un subtipo?</h3>
+
+<p>Un subtipo es una derivación de un tipo. Esta derivación puede ser una variación, una generalización o una especialización de este tipo. Normalmente se usan para hacer <strong>especializaciones</strong>.</p>
+
+<p>Y aquí es donde empezamos a entrar en el terreno del LSP. Una de las restricciones más importantes que Liskov propone es que si un tipo de dato tiene definido un método X, entonces cualquier subtipo de este tipo (que en relación con este se llama “supertipo”) también debe tener este método definido.</p>
+
+<p>Para hacerlo más generalizable podemos cambiar “método” por cualquier elemento visible en la interfaz de este tipo de dato.</p>
+
+<p>Así, nos podremos usar que estas clases sean intercambiables entre ellas, sin siquiera tener que hacer consciente a la parte del programa que la usa de qué clase se está usando, mientras sea una clase derivada de la clase base.</p>
+
+<p>Un ejemplo de la vida real puede ser con un cámara. Todos tenemos en la mente las funciones básicas de una cámara electrónica:</p>
+
+<ul>
+  <li>Podemos encenderla y apagarla</li>
+  <li>Puede tomar fotos (disparador)</li>
+  <li>Puede mostrarnos las fotos</li>
+  <li>Podemos descargar las fotos</li>
+  <li>Podemos borrar las fotos</li>
+</ul>
+
+<p>Mientras la cámara cumpla con esas características (su interfaz) no tendremos problema para usarla, independientemente de la marca o modelo de la cámara. Los subtipos del tipo de dato abstracto <code class="language-plaintext highlighter-rouge">Cámara</code> podría ser entonces:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Cámara DSLR</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Cámara Compacta</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Cámara Mirrorless</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Cámara de teléfono móvil</code></li>
+</ul>
+
+<p>En realidad en la programación, esta interfaz es un poco más estricta: los métodos deben de llamarse igual y tener la misma firma (parámetros y tipo de retorno). Es como si la cámara tuviera los botones en el mismo lugar y se usaran de la misma forma.</p>
+
+<p>Y esto es básicamente el principio de sustitución de Liskov, la capacidad de usar clases derivadas de una clase principal sin ningún cambio en el código que rodea. ¿Crees que es útil?</p>
+
+<h2 id="crítica-sobre-el-lsp">Crítica sobre el LSP</h2>
+
+<p>Tal como lo describimos aquí (mal llamado, para mi) principio de sustitución de Liskov parece una muy buena idea, ya que permitirá que crees nuevos comportamientos en partes específicas de tu código sin en tener que afectar a muchas partes de tu código.</p>
+
+<p>Lo que no estuvo tan bien, <em>históricamente</em>, es que este principio siempre ha sido explicado y relacionado con la HERENCIA de clases, en lugar de poner énfasis en la abstracción de tipos de datos. Esto ha hecho que muchos desarrolladores piensen que esta práctica sólo aplica a la programación orientada a objetos y no al paradigma funcional, por ejemplo.</p>
+
+<p>De hecho, el principio como es enunciado en <a href="/assets/pdfs/DesignPrinciplesAndPatterns.pdf">Design Principles and Patterns</a> dice:</p>
+
+<blockquote>
+  <h2 id="subclasses-should-be-substitutable-for-their-base-classes">Subclasses should be substitutable for their base classes.</h2>
+  <p>Las subclases deben ser sustituibles por sus clases base.</p>
+</blockquote>
+
+<p>También, como se menciona en el artículo en el que se presenta originalmente este principio dice:</p>
+
+<blockquote>
+  <h2 id="functions-that-use-pointers-or-references-to-base-classes-must-be-able-to-use-objects-of-derived-classes-without-knowing-it">FUNCTIONS THAT USE POINTERS OR REFERENCES TO BASE CLASSES MUST BE ABLE TO USE OBJECTS OF DERIVED CLASSES WITHOUT KNOWING IT</h2>
+  <p>Funciones que usen punteros o referencias a clases base deben ser capaces de usar objetos de clases derivadas sin saberlo</p>
+</blockquote>
+
+<p>Como puedes ver, el consejo es que está directamente relacionado con la herencia de clases y jerarquías de objetos. Incluso llega a hablar de punteros y referencias a clases base, es decir, a la clase padre.</p>
+
+<p>De hecho, esto tiene cierta justificación, porque Barbara Liskov siempre habla de objetos. Lo que Liskov nunca hace es hablar de <em>Clases</em> y jerarquías de clases. Ella habla de tipos de datos abstractos, que son una abstracción de los objetos, por lo que esta idea se extiende a <strong>cualquier artefacto computacional que se encargue de encapsular un comportamiento</strong>.</p>
+
+<p>¿Qué es encapsular? Es <strong>ocultar la implementación</strong> y exponer sólo lo necesario para que el resto del programa pueda usarlo. Esto es lo que hace una clase, un módulo, una función, etc.</p>
+
+<p>¿Qué te recuerda esto? Lo mismo de lo que hemos hablado en los principios anteriores: <strong>abstracción</strong>. Esconder lo más que se pueda la información, <em>Information Hiding</em>, como le llamaría John Ousterhout.</p>
+
+<p>Lo que es más, seguir esta idea de que diferentes tipos de datos puedan ser intercambiables hace que selecciones mejor los elementos que van a componer tu interfaz (en este caso le llamaríamos <strong>API</strong>).</p>
+
+<p>Para mí, las ideas de Liskov son un aplicación particular de la idea de ocultar la mayor cantidad de información posible dentro de interfaces lo mejor diseñadas posible, tal como se explica en el libro <a href="https://web.stanford.edu/~ouster/cgi-bin/book.php">A Philosophy of Software Design de John Ousterhout</a>.</p>
+
+<h3 id="conclusión">Conclusión</h3>
+
+<p>La ideas sobre <strong>subtipos</strong> y la forma de usarlos lo mejor posible que Bárbara Liskov y Jeannette Wing propusieron son muy útiles para crear mejor código, sobre todo mejor separación y ocultado de la implementación.</p>
+
+<p>Esto lo vamos a repetir hasta el cansancio: <strong>ocultar información</strong> te ayudará a hacer que tus programas sea más fáciles de entender y de mantener.</p>
+
+<p>Como lección, podemos decir que seguir las guías de Liskov para el subtipado es una forma de aplicar este principio de diseño aún más amplio, digamos que en realidad la especificación de cómo deben comportarse los subtipos es más como una <em>regla</em> de diseño que un <em>principio</em> de diseño.</p>
+
+<p>Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#liskov" class="page__taxonomy-item" rel="tag">liskov</a><span class="sep">, </span>
+    
+      <a href="/tags/#lsp" class="page__taxonomy-item" rel="tag">lsp</a><span class="sep">, </span>
+    
+      <a href="/tags/#principios" class="page__taxonomy-item" rel="tag">principios</a><span class="sep">, </span>
+    
+      <a href="/tags/#solid" class="page__taxonomy-item" rel="tag">solid</a><span class="sep">, </span>
+    
+      <a href="/tags/#solid-principles" class="page__taxonomy-item" rel="tag">solid-principles</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-03-06T00:00:00-06:00">March 6, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=El+principio+de+sustituci%C3%B3n+de+Liskov%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F03%2F06%2Fel-principio-de-substitucion-de-liskov.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F03%2F06%2Fel-principio-de-substitucion-de-liskov.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F03%2F06%2Fel-principio-de-substitucion-de-liskov.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" class="pagination--pager" title="¿Qué es un modelo transformador de inteligencia artificial?
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1675031892/vinicius-amnx-amano-IPemgbj9aDY-unsplash_cttyeh.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="permalink">¿Qué es un modelo transformador de inteligencia artificial?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 27-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1677550573/221453137-8e8b0887-953a-43f4-a34d-a1f36c7deb00_wxg5wx.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/27/code-review.html" rel="permalink">Code Review: La practica Milenaria que seguimos haciendo mal.
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+12 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 27-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1674189354/753963464_A_dream_of_a_distant_galaxy__concept_art__matte_painting___artstation__HQ__4k_cfn82z.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="permalink">La importancia de entender los principios de la computación
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 17-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">A veces, entre tantas herramientas y tecnologías que podemos usar día a día, nos olvidamos de los principios básicos que soportan todo lo que hacemos como de...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1675835077/pawel-czerwinski-tMbQpdguDVQ-unsplash_amld7p.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/08/maquinas-de-turing-no-deterministas-y-problemas-np.html" rel="permalink">Máquinas de Turing no deterministas y problemas NP
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 08-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos de la relación que existe entre las máquinas de Turing no deterministas (NTM), la complejidad y los problemas NP.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/03/06/el-principio-de-substitucion-de-liskov.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/03/06/el-principio-de-substitucion-de-liskov"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -20,7 +20,7 @@ header:
 
 @begin.start(auto_convert=True)
 def main(draft=False, author="Héctor Patricio", *names):
-    """Creates a new file with today's date and title as slug in _posts dir"""
+    """Creates a new file with today's date and title as slug in the selected dir"""
 
     t = datetime.today()
     date = f"{t.year}-{t.month:02d}-{t.day:02d}"
