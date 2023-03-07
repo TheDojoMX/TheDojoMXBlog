@@ -1,6 +1,6 @@
 ---
 title: "El principio de sustitución de Liskov"
-date: 2023-03-05
+date: 2023-03-06
 author: Héctor Patricio
 tags: lsp liskov solid principios solid-principles
 comments: true
@@ -109,6 +109,18 @@ De hecho, esto tiene cierta justificación, porque Barbara Liskov siempre habla 
 
 ¿Qué es encapsular? Es **ocultar la implementación** y exponer sólo lo necesario para que el resto del programa pueda usarlo. Esto es lo que hace una clase, un módulo, una función, etc.
 
-¿Qué te recuerda esto? Lo mismo de lo que hemos hablado en los principios anteriores: **abstracción**. Esconder lo más que se pueda la información, _Information Hiding_.
+¿Qué te recuerda esto? Lo mismo de lo que hemos hablado en los principios anteriores: **abstracción**. Esconder lo más que se pueda la información, _Information Hiding_, como le llamaría John Ousterhout.
+
+Lo que es más, seguir esta idea de que diferentes tipos de datos puedan ser intercambiables hace que selecciones mejor los elementos que van a componer tu interfaz (en este caso le llamaríamos **API**).
+
+Para mí, las ideas de Liskov son un aplicación particular de la idea de ocultar la mayor cantidad de información posible dentro de interfaces lo mejor diseñadas posible, tal como se explica en el libro [A Philosophy of Software Design de John Ousterhout](https://web.stanford.edu/~ouster/cgi-bin/book.php).
 
 ### Conclusión
+
+La ideas sobre **subtipos** y la forma de usarlos lo mejor posible que Bárbara Liskov y Jeannette Wing propusieron son muy útiles para crear mejor código, sobre todo mejor separación y ocultado de la implementación.
+
+Esto lo vamos a repetir hasta el cansancio: **ocultar información** te ayudará a hacer que tus programas sea más fáciles de entender y de mantener.
+
+Como lección, podemos decir que seguir las guías de Liskov para el subtipado es una forma de aplicar este principio de diseño aún más amplio, digamos que en realidad la especificación de cómo deben comportarse los subtipos es más como una _regla_ de diseño que un _principio_ de diseño.
+
+Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.
