@@ -15,7 +15,7 @@ Muchos programadores saben intuitivamente que gran parte del trabajo que hacemos
 
 ## Etimología: ¿de dónde viene la palabra abstracción?
 
-La palabra abstracción viene del latín *abstractio* que significa "acción de apartar, separar, retirar". En el ámbito de la filosofía, la abstracción es la capacidad de separar un concepto de sus atributos o propiedades. Por ejemplo, si hablamos de un perro, podemos abstraerse de su color, tamaño, raza, etc. y hablar de él como un animal doméstico.
+La palabra abstracción viene del latín _abstrahere_, que tiene dos partes principales: **abs** que significa fuera de y **trahere** que significa tirar. La palabra _abstrahere_ significa literalmente "tirar fuera". La palabra _abstrahere_ se usa en el sentido de "separar" o "extraer" en el contexto de la filosofía, la matemática y la física. En el contexto de la filosofía, la abstracción es el proceso de separar un concepto de sus atributos o propiedades. En el contexto de la matemática, la abstracción es el proceso de separar un concepto de sus propiedades físicas. En el contexto de la física, la abstracción es el proceso de separar un concepto de sus propiedades físicas.
 
 ## Cómo la usamos en la programación
 
@@ -23,8 +23,20 @@ Según lo que acabamos de ver, la capacidad de abstraer es muy importante en cas
 
 ### Ejemplo: un inventario de productos
 
+Cuando queremos representar algo en el c
+
 ## Cómo mejorar tu capacidad de abstraer
+
+Esta es una de las preguntas que todo programador se hace cuando quiere mejorar su manera y velocidad al programar. Cuando hablamos de "la manera" de programar, nos referimos a la calidad del código que produce.
 
 ## Caveats
 
+A veces nos pasamos con las abstracciones.
+
+## El costo de las abstacciones
+
+### Zero-cost abstractions (Abstracciones sin costo)
+
 ## Conclusión
+
+Mejorar tu capacidad de abstraer conceptos, pero sobre todo de
