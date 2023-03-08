@@ -13,7 +13,7 @@ header:
 
 Muchos programadores saben intuitivamente que gran parte del trabajo que hacemos como desarrolladores de software consiste en "abstraer", sin llegar a entender completamente qué significa esto. En este artículo vamos a empezar explicando qué es la abstracción en general y luego cómo puedes mejorar tu habilidad de abstraer para primeramente programar más rápido y segundo para crear mejores programas. Pero no sólo eso, la capacidad de crear mejores abstracciones te permitirá crear programas que no creías que pudieran existir o que tú pudieras crear.
 
-## Etimología
+## Etimología: ¿de dónde viene la palabra abstracción?
 
 La palabra abstracción viene del latín *abstractio* que significa "acción de apartar, separar, retirar". En el ámbito de la filosofía, la abstracción es la capacidad de separar un concepto de sus atributos o propiedades. Por ejemplo, si hablamos de un perro, podemos abstraerse de su color, tamaño, raza, etc. y hablar de él como un animal doméstico.
 
