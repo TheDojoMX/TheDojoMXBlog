@@ -1,6 +1,6 @@
 ---
 title: "¿Qué es la abstracción?"
-date: 2023-03-06
+date: 2023-03-10
 author: Héctor Patricio
 tags: abstracción abstracto abstraction
 comments: true
@@ -15,11 +15,11 @@ Muchos programadores saben intuitivamente que gran parte del trabajo que hacemos
 
 ## Etimología: ¿de dónde viene la palabra abstracción?
 
-La palabra abstracción viene del latín _abstrahere_, que tiene dos partes principales: **abs** que significa fuera de y **trahere** que significa tirar. La palabra _abstrahere_ significa literalmente "tirar fuera". La palabra _abstrahere_ se usa en el sentido de "separar" o "extraer" en el contexto de la filosofía, la matemática y la física. En el contexto de la filosofía, la abstracción es el proceso de separar un concepto de sus atributos o propiedades. En el contexto de la matemática, la abstracción es el proceso de separar un concepto de sus propiedades físicas. En el contexto de la física, la abstracción es el proceso de separar un concepto de sus propiedades físicas.
+La palabra abstracción viene del latín _abstrahere_, que tiene dos partes principales: **abs** que significa fuera de y **trahere** que significa tirar. La palabra _abstrahere_ significa literalmente "tirar fuera". La palabra _abstrahere_ se usa en el sentido de "separar" o "extraer" en el contexto de la filosofía, la matemática y la física. En el contexto de la filosofía, la abstracción es el proceso de separar un concepto de sus atributos o propiedades. En el contexto de la matemática, la abstracción es el proceso de separar un concepto de sus propiedades físicas.
 
 ## Cómo la usamos en la programación
 
-Según lo que acabamos de ver, la capacidad de abstraer es muy importante en casi todo trabajo intelectual, pero es supremamente importante en la programación. ¿Por qué decimos esto? Es en esto en lo que la programación se parece al trabajo de un matemático: **debes traducir un problema informal de la vida real, normalmente en lenguaje natural a un lenguaje formal que una computadora pueda entender**. Para hacer esto, debes abstraer los aspectos más importantes del problema para representarlos de manera efectiva en tu programa final.
+Según lo que acabamos de ver, la capacidad de abstraer es muy importante en casi todo trabajo intelectual, sobre todo aquellos relacionados con la lógica, por eso es supremamente importante en la programación. ¿Por qué decimos esto? Es en esto en lo que la programación se parece al trabajo de un matemático: **debes traducir un problema informal de la vida real, normalmente en lenguaje natural a un lenguaje formal que una computadora pueda entender**. Para hacer esto, debes abstraer los aspectos más importantes del problema para representarlos de manera efectiva en tu programa final.
 
 ### Ejemplo: un inventario de productos
 
@@ -31,12 +31,14 @@ Esta es una de las preguntas que todo programador se hace cuando quiere mejorar 
 
 ## Caveats
 
-A veces nos pasamos con las abstracciones.
+A veces nos pasamos con las abstracciones, tanto en el nivel de abstracción que usamos como en el momento en el que lo hacemos.
 
-## El costo de las abstacciones
+## El costo de las abstracciones
 
 ### Zero-cost abstractions (Abstracciones sin costo)
 
+Las abstracciones de costo cero son una propuesta de algunos entornos y lenguajes de programación.
+
 ## Conclusión
 
-Mejorar tu capacidad de abstraer conceptos, pero sobre todo de
+Mejorar tu capacidad de abstraer conceptos, pero sobre todo de representarlos de manera eficiente en el lenguaje de programación de tu elección te llevará lejos en la carrera de desarrollo de software.
