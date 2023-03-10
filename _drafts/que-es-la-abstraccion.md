@@ -73,9 +73,11 @@ En sistemas como AWS, GCP y Azure, por ejemplo, existen cuentas para computadora
 
 Pensando en esto, ¿qué representa a un usuario? Yo me atrevería a decir que los únicos datos absolutamente esenciales para esta abstracción son los que permiten verificar **la identidad**, aquellos que le permiten a la entidad comprobar que en efecto es ella, o en el caso de sistemas, que puede actuar en nombre de ella.
 
-Pensando más ampliamente, la abstracción del usuario tendrá más atributos dependiendo de lo que aplicación haga. Imagínate una aplicación en la que los usuarios sean pacientes clínicos. ¿Qué datos nos interesan de una persona para esta aplicación? Aquí entra...
+Pensando más ampliamente, la abstracción del usuario tendrá más atributos dependiendo de lo que aplicación haga. Imagínate una aplicación en la que los usuarios sean pacientes clínicos. ¿Qué datos nos interesan de una persona para esta aplicación?
 
 ## Dificultades para abstraer
+
+Abstraer no es tan sencillo como ha sonado hasta ahorita. De hecho, si te has dedicado a programar por un tiempo, puede que ya te hayas dado cuenta de eso. La primera dificultad es la naturaleza de la información.
 
 No nos vamos a poner a filosofar lo que define algo, para eso te recomiendo el libro [Data and Reality de William Kent](https://www.goodreads.com/en/book/show/1753248), que te romperá la cabeza con respecto a las abstracciones y las diferentes cosas que debes analizar para representar la realidad en una computadora, más concretamente, en una base de datos.
 
