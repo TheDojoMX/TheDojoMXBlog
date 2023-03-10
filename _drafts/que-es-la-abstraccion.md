@@ -46,13 +46,42 @@ La capacidad de abstraer es muy importante en casi todo trabajo intelectual, sob
 
 ¿Por qué decimos esto? Es en esto en lo que la programación se parece al trabajo de un matemático: **debes traducir un problema informal de la vida real, normalmente en lenguaje natural a un lenguaje formal que una computadora pueda entender**. Para hacer esto, debes abstraer los aspectos más importantes del problema para representarlos de manera efectiva en tu programa final.
 
-No nos vamos a poner a filosofar lo que define algo, para eso te recomiendo el libro [Data and Reality de William Kent](https://www.goodreads.com/en/book/show/1753248)
+### Ejemplos de abstracciones
 
-### Ejemplo: un inventario de productos
+Hablemos de algunos ejemplos y cómo caen en las definiciones que hemos hablado.
+
+### Carrito de compras
 
 Cuando queremos representar algo en un carrito de compra en un programa, lo que hacemos es abstraer el concepto de "carrito de compra" y representarlo en el programa.
 
-En este caso, el carrito de compra es un conjunto de productos, cada uno con su precio y cantidad. En el programa, el carrito de compra es una lista de productos, cada uno con su precio y cantidad.
+En la vida real, un carrito o una bolsa de compra es donde almacenamos las cosas que estamos a punto de comprar mientras estamos en la tienda.
+
+La abstracción del carrito de compra, entonces, es un conjunto de productos, cada uno con su precio y cantidad. En el programa, el carrito de compra es una lista de productos que se guarda mientras el usuario no termine de comprar.
+
+En esta abstracción se mantuvieron las propiedades importantes:
+para no ir a pagar artículo por artículo, se tiene un contenedor que nos ayuda a mantener lo que vamos a comprar y pagarlo todo de una vez.
+
+La abstracción consiste en que "tiramos fuera" esas propiedades y eliminamos los detalles, por ejemplo si es un carrito, una canasta, una bolsa, un acompañante que carga tus productos, etc.
+
+Aquí entra otra de las características de las abstracciones. Aunque normalmente somos capaces de entender para lo que sirve el carrito de compra, si le preguntas a un cliente común sobre la abstracción, va a ser difícil que la ponga en palabras, por lo que simplemente usamos ese objeto para representar la abstracción en los lugares en los que el usuario lo ve. No le decimos "contenedor de tus productos mientras terminas la compra".
+
+### Abstracción de un usuario
+
+Esta es una de las abstracciones más comunes en los sistemas de software. ¿Qué características esenciales necesitamos de alguna entidad para que use nuestro sistema? Nota que mencionamos "entidad" y no "humano", porque puede que el usuario de nuestro sistema sea otro sistema, por ejemplo.
+
+En sistemas como AWS, GCP y Azure, por ejemplo, existen cuentas para computadoras o para que sean usadas por otro servicio (se llaman _cuentas de servicio_).
+
+Pensando en esto, ¿qué representa a un usuario? Yo me atrevería a decir que los únicos datos absolutamente esenciales para esta abstracción son los que permiten verificar **la identidad**, aquellos que le permiten a la entidad comprobar que en efecto es ella, o en el caso de sistemas, que puede actuar en nombre de ella.
+
+Pensando más ampliamente, la abstracción del usuario tendrá más atributos dependiendo de lo que aplicación haga. Imagínate una aplicación en la que los usuarios sean pacientes clínicos. ¿Qué datos nos interesan de una persona para esta aplicación? Aquí entra...
+
+## Dificultades para abstraer
+
+No nos vamos a poner a filosofar lo que define algo, para eso te recomiendo el libro [Data and Reality de William Kent](https://www.goodreads.com/en/book/show/1753248), que te romperá la cabeza con respecto a las abstracciones y las diferentes cosas que debes analizar para representar la realidad en una computadora, más concretamente, en una base de datos.
+
+Lo único que quiero sacar de este libro por el momento es: el mundo real, a diferencia del mundo ideal que nos imaginamos, **no tiene límites definidos**, no existen los conceptos tan delimitados y tan claros como los queremos hacer ven en los diccionarios.
+
+Esto nos lleva a que las representaciones (las abstracciones que hacemos en el código) **siempre sean subjetivas y arbitrarias**. No existe **LA ABSTRACCIÓN** que represente la realidad sin fallas.
 
 ## Cómo mejorar tu capacidad de abstraer
 
