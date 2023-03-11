@@ -38,13 +38,13 @@ Ya hemos dicho que aunque los seres humanos nos la pasamos abstrayendo todo lo q
 1. Delimitar precisamente la abstracción
 2. Expresar o explicar esa abstracción a otras personas
 
-Y esto precisamente es lo que necesitamos al programar: delimitar nuestras abstracciones y expresarlas en algún lenguaje de programación, como una tabla en una base de datos o de alguna otra forma que las computadoras puedan capturar y procesar, **a esto es a lo que nos referimos cuando hablamos de abstraer en la programación**.
+Y esto **_precisamente_** es lo que necesitamos al programar: delimitar nuestras abstracciones y expresarlas en algún lenguaje de programación, como una tabla en una base de datos o de alguna otra forma que las computadoras puedan capturar y procesar, **a esto es a lo que nos referimos cuando hablamos de abstraer en la programación**.
 
 Lo que hace más difíciles las abstracciones en la programación es que normalmente los conceptos no son tan sencillos e incluso son de áreas con las que no estamos familiarizados o no tenemos experiencia.
 
 La capacidad de abstraer es muy importante en casi todo trabajo intelectual, sobre todo aquellos relacionados con la lógica, por eso es supremamente importante en la programación.
 
-¿Por qué decimos esto? Es en esto en lo que la programación se parece al trabajo de un matemático: **debes traducir un problema informal de la vida real, normalmente en lenguaje natural a un lenguaje formal que una computadora pueda entender**. Para hacer esto, debes abstraer los aspectos más importantes del problema para representarlos de manera efectiva en tu programa final.
+¿Por qué decimos esto? Aquí es donde la programación se parece al trabajo de un matemático: **debes traducir un problema informal de la vida real, normalmente en lenguaje natural a un lenguaje formal que una computadora pueda entender**. Para hacer esto, debes abstraer los aspectos más importantes del problema para representarlos de manera efectiva en tu programa final.
 
 ### Ejemplos de abstracciones
 
@@ -90,7 +90,7 @@ El carrito es la abstracción de más alto nivel, porque es la que más se acerc
 
 Por lo tanto un nivel de abstracción son todas las abstracciones de nuestro programa que están más o menos igual de separadas que el pensamiento humano. Por ejemplo, el carrito de compras, el checkout, una biblioteca, un producto, etc. son abstracciones que están al mismo nivel porque son cosas que el usuario puede entender y con las que trata directamente.
 
-Es importante entender esto de los niveles de abstracción porque es buena idea mantener cerrados los niveles de abstracción, es decir, no dejar pasar detalles de niveles superiores o inferiores hacia el otro lado. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.
+Es importante entender los niveles de abstracción porque es buena idea mantener cerrados los niveles de abstracción mientras programas, es decir, no dejar pasar detalles de niveles superiores o inferiores hacia el otro lado de la cadena de abstracción. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.
 
 ## Dificultades para abstraer
 
