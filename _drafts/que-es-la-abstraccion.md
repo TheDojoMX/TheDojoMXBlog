@@ -90,6 +90,8 @@ El carrito es la abstracción de más alto nivel, porque es la que más se acerc
 
 Por lo tanto un nivel de abstracción son todas las abstracciones de nuestro programa que están más o menos igual de separadas que el pensamiento humano. Por ejemplo, el carrito de compras, el checkout, una biblioteca, un producto, etc. son abstracciones que están al mismo nivel porque son cosas que el usuario puede entender y con las que trata directamente.
 
+Es importante entender esto de los niveles de abstracción porque es buena idea mantener cerrados los niveles de abstracción, es decir, no dejar pasar detalles de niveles superiores o inferiores hacia el otro lado. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.
+
 ## Dificultades para abstraer
 
 Abstraer no es tan sencillo como ha sonado hasta ahorita. De hecho, si te has dedicado a programar por un tiempo, puede que ya te hayas dado cuenta de eso. La primera dificultad es la naturaleza de la información.
