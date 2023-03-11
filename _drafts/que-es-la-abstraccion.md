@@ -35,8 +35,8 @@ A estas abstracciones a veces las llamamos **modelos**. ¿Te suena?
 
 Ya hemos dicho que aunque los seres humanos nos la pasamos abstrayendo todo lo que vemos en la vida real, no siempre podemos:
 
-1. Delimitar precisamente la abstracción.
-2. Expresar o explicar esa abstracción a otras personas.
+1. Delimitar precisamente la abstracción
+2. Expresar o explicar esa abstracción a otras personas
 
 Y esto precisamente es lo que necesitamos al programar: delimitar nuestras abstracciones y expresarlas en algún lenguaje de programación, como una tabla en una base de datos o de alguna otra forma que las computadoras puedan capturar y procesar, **a esto es a lo que nos referimos cuando hablamos de abstraer en la programación**.
 
@@ -74,6 +74,10 @@ En sistemas como AWS, GCP y Azure, por ejemplo, existen cuentas para computadora
 Pensando en esto, ¿qué representa a un usuario? Yo me atrevería a decir que los únicos datos absolutamente esenciales para esta abstracción son los que permiten verificar **la identidad**, aquellos que le permiten a la entidad comprobar que en efecto es ella, o en el caso de sistemas, que puede actuar en nombre de ella.
 
 Pensando más ampliamente, la abstracción del usuario tendrá más atributos dependiendo de lo que aplicación haga. Imagínate una aplicación en la que los usuarios sean pacientes clínicos. ¿Qué datos nos interesan de una persona para esta aplicación?
+
+## Niveles de abstracción
+
+Cuando hablamos de abstracción en programación...
 
 ## Dificultades para abstraer
 
