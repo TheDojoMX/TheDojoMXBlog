@@ -77,7 +77,18 @@ Pensando más ampliamente, la abstracción del usuario tendrá más atributos de
 
 ## Niveles de abstracción
 
-Cuando hablamos de abstracción en programación...
+Cuando hablamos de abstracción en programación, a veces se escucha el término "nivel de abstracción".
+¿A qué se refiere un "nivel"? La siguiente imagen nos puede ayudar a entenderlo:
+
+![Niveles de abstracción](https://i.imgur.com/0Z7Z7Zm.png)
+
+Mientras más cerca esté de la implementación técnica (llegando hasta el hardware), podemos decir que la abstracción está más "abajo". Mientras más cerca esté de los pensamientos o la forma en la que los humanos vemos las cosas cotidianamente, la abstracción está más "arriba".
+
+A esto se refiere la abstracción de bajo nivel y la abstracción de alto nivel. Cuando hacemos un programa, utilizamos una "cadena" de abstracciones, es decir, abstracciones que se sirven de otras abstracciones para funcionar. Usemos de nuevo el carrito de compras como ejemplo.
+
+El carrito es la abstracción de más alto nivel, porque es la que más se acerca al pensamiento cotidiano. Esta se sirve de la abstracción del "contenedor". Pensando en que la implementamos como una lista, la lista es la siguiente abstracción. La lista, dependiendo del lenguaje en el que estemos, se sirve de la abstracción de un arreglo. El arreglo, a su vez, se sirve de la abstracción de la memoria. La memoria usa la abstracción de los bits. Y finalmente los bits son un voltaje presente en un circuito, pero esto a lo que llamamos "voltaje" sigue siendo una abstracción.
+
+Por lo tanto un nivel de abstracción son todas las abstracciones de nuestro programa que están más o menos igual de separadas que el pensamiento humano. Por ejemplo, el carrito de compras, el checkout, una biblioteca, un producto, etc. son abstracciones que están al mismo nivel porque son cosas que el usuario puede entender y con las que trata directamente.
 
 ## Dificultades para abstraer
 
