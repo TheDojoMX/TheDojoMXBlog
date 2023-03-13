@@ -88,15 +88,15 @@ A esto se refiere la abstracción de bajo nivel y la abstracción de alto nivel.
 
 El carrito es la abstracción de más alto nivel, porque es la que más se acerca al pensamiento cotidiano. Esta se sirve de la abstracción del "contenedor". Pensando en que la implementamos como una lista, la lista es la siguiente abstracción. La lista, dependiendo del lenguaje en el que estemos, se sirve de la abstracción de un arreglo. El arreglo, a su vez, se sirve de la abstracción de la memoria. La memoria usa la abstracción de los bits. Y finalmente los bits son un voltaje presente en un circuito, pero esto a lo que llamamos "voltaje" sigue siendo una abstracción.
 
-Por lo tanto un nivel de abstracción son todas las abstracciones de nuestro programa que están más o menos igual de separadas que el pensamiento humano. Por ejemplo, el carrito de compras, el checkout, una biblioteca, un producto, etc. son abstracciones que están al mismo nivel porque son cosas que el usuario puede entender y con las que trata directamente.
+Por lo tanto un nivel de abstracción son todas las abstracciones de nuestro programa que están más o menos igual de separadas que el pensamiento humano. Por ejemplo, el carrito de compras, el checkout (terminar y pagar la compra), una biblioteca, un producto, etc. son abstracciones que están al mismo nivel porque son cosas que el usuario puede entender y con las que trata directamente.
 
 Es importante entender los niveles de abstracción porque es buena idea mantener cerrados los niveles de abstracción mientras programas, es decir, no dejar pasar detalles de niveles superiores o inferiores hacia el otro lado de la cadena de abstracción. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.
 
 ## Dificultades para abstraer
 
-Abstraer no es tan sencillo como ha sonado hasta ahorita. De hecho, si te has dedicado a programar por un tiempo, puede que ya te hayas dado cuenta de eso. La primera dificultad es la naturaleza de la información.
+Abstraer no es tan sencillo como ha parecido hasta ahorita. De hecho, si te has dedicado a programar por un tiempo, puede que ya te hayas dado cuenta de eso. La primera dificultad es **la naturaleza de la información**.
 
-No nos vamos a poner a filosofar lo que define algo, para eso te recomiendo el libro [Data and Reality de William Kent](https://www.goodreads.com/en/book/show/1753248), que te romperá la cabeza con respecto a las abstracciones y las diferentes cosas que debes analizar para representar la realidad en una computadora, más concretamente, en una base de datos.
+No nos vamos a poner a filosofar sobre qué es lo que permite definir algo, para eso te recomiendo el libro [Data and Reality de William Kent](https://www.goodreads.com/en/book/show/1753248), que te romperá la cabeza con respecto a las abstracciones y las diferentes cosas que debes analizar para representar la realidad en una computadora, más concretamente, en una base de datos.
 
 Lo único que quiero sacar de este libro por el momento es: el mundo real, a diferencia del mundo ideal que nos imaginamos, **no tiene límites definidos**, no existen los conceptos tan delimitados y tan claros como los queremos hacer ven en los diccionarios.
 
