@@ -100,11 +100,21 @@ No nos vamos a poner a filosofar sobre qué es lo que permite definir algo, para
 
 Lo único que quiero sacar de este libro por el momento es: el mundo real, a diferencia del mundo ideal que nos imaginamos, **no tiene límites definidos**, no existen los conceptos tan delimitados y tan claros como los queremos hacer ven en los diccionarios.
 
-Esto nos lleva a que las representaciones (las abstracciones que hacemos en el código) **siempre sean subjetivas y arbitrarias**. No existe **LA ABSTRACCIÓN** que represente la realidad sin fallas.
+Esto nos lleva a que las representaciones (las abstracciones que hacemos en el código) **siempre sean subjetivas y arbitrarias**. No existe **LA ABSTRACCIÓN** que represente la realidad sin fallas, todas ellas tienen un punto de vista y se tienen que adecuar para la función que las crees.
+
+Otra dificultad es lo que hablamos arriba sobre los _niveles de abstracción_. Algo para lo que se usan las abstracciones en la programación es para _ocultar_ información entre componentes del sistema. Crear abstracciones que no revelen detalles no necesarios a veces no es tan sencillos, y se tienen que pensar detenidamente.
 
 ## Cómo mejorar tu capacidad de abstraer
 
 Esta es una de las preguntas que todo programador se hace cuando quiere mejorar su manera y velocidad al programar. Cuando hablamos de "la manera" de programar, nos referimos a la calidad del código que produce.
+
+Vamos a hablar de
+
+### Encontrar patrones
+
+Quiero citar a Manuel Rubio en una respuesta que me dio personalmente:
+
+> Estar atento a estos patrones y saber cómo aprovecharlos en nuestro beneficio puede ayudarnos a crear abstracciones del código que desarrollamos. Hay que ser metódico y organizar bien los datos, nombrar las cosas correctamente, mantener las responsabilidades desligadas unas de otras y entonces los patrones se ven claros.
 
 ## Evita los extremos
 
