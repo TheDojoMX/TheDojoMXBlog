@@ -1,6 +1,6 @@
 ---
 title: "¿Qué es la abstracción?"
-date: 2023-03-10
+date: 2023-03-13
 author: Héctor Patricio
 tags: abstracción abstracto abstraction
 comments: true
@@ -156,26 +156,76 @@ Es muy difícil que este diseño te quede bien a la primera, por lo que debes te
 
 ### Encontrar patrones
 
-Quiero citar a **Manuel Rubio** en una respuesta que me dio personalmente:
+Quiero citar a [**Manuel Rubio**](https://altenwald.com/) en una respuesta que me dio personalmente:
 
 > Estar atento a estos patrones y saber cómo aprovecharlos en nuestro beneficio puede ayudarnos a crear abstracciones del código que desarrollamos. Hay que ser metódico y organizar bien los datos, nombrar las cosas correctamente, mantener las responsabilidades desligadas unas de otras y entonces los patrones se ven claros.
 
+Este consejo está directamente ligado a la cantidad de información que tenemos sobre el problema. Mientras más diversa y rica sea, más probable es que encontremos los patrones que subyacen en los comportamientos y procesos que tenemos que abstraer (o modelar). Aquí lo importante es ser explícitos con esos patrones, expresarlos y documentarlos de la manera más clara posible.
+
+Haber visto y sobre todo documentado una gran cantidad de patrones también nos puede ayudar a diseñar abstracciones de manera más efectiva y rápida en el futuro. Esto es de lo que los **patrones de diseño** se tratan: soluciones comunes a problemas recurrentes. Sólo hay que ser muy cuidadosos de no encajar problemas en patrones que no corresponden completamente al problema, sólo por el hecho de querer salir rápido del problema o de querer aplicar cierto patrón.
+
+### Diseña dos veces
+
+El diseño del software puede hacerse como la escritura: primero escribes y después editas. Son dos etapas diferentes y tan independientes que dos personas diferentes las pueden hacer. El diseño en el software puede hacerse de manera parecida. Primero diseñas tus representaciones y puedes pedirle a alguien que te corrija o revise, o puedes hacerlo tú mismo después de haber dejado pasar un poco de tiempo.
+
+Esta revisión te llevará a pensar cosas como "¿Qué estaba pensando cuando escribí esto?" o "Creo que esta no es la abstracción correcta", gracias a que normalmente te has parado un poco a distancia de tu propio diseño.
+
+## Desarrolla la capacidad de absorber información
+
+Debido a que tienes que representar cosas de dominios en los que probablemente no conoces, tener la capacidad de estudiar de manera efectiva te permitirá analizar la información necesaria para crear buenas abstracciones.
+
+### Expande tu mente
+
+Mientras más cosas sepas de diferentes campos o dominios, será más probable que encuentres cosas que te puedan servir para _entender_ lo que estás tratando de representar y sobre todo para extraer sus componentes principales, así como la información que vale la pena excluir. Así que no te limites en aprender todo lo que puedas de todos los campos posibles, pero recuerda también que esto tiene rendimientos decrecientes: mientras más profundices en un campo, más te costará adquirir nueva información que valga la pena.
+
+Es por esto mismo que muchos programadores son buenos programando para ciertos dominios: financiero, de automatización industrial, de juegos, de programas científicos, etc. No lo podemos saber todo y muchas veces son el conocimiento de una sóla área es suficiente para entretenernos por décadas.
+
+### Practica
+
+Este es el concepto más gastado de todos, pero aquí le vamos a dar un pequeño giro. No sirve de mucho para mejorar sólo hacer abstracciones sin reflexionar en ellas. Tienes que pensar detenidamente en tus diseños y contestar preguntas como:
+
+- ¿Qué información tenía disponible y pasé por alto?
+- ¿Cómo hubiera podido conocer u obtener esa información?
+- ¿Qué detalles de implementación dejé escapar de mi abstracción?
+- ¿Quién pudo haberme dado más ejemplos sobre el problema?
+- ¿Quién puede hacer una revisión sobre el diseño y darme comentarios para mejorar?
+
+A esto se le llama práctica enfocada y hay ejercicios llamados [Code Katas](http://codekata.com/) que te pueden ayudar a mejorar en el diseño de software.
+
+¿Tienes algún consejo más que te haya ayudado a mejorar la forma en la que creas abstracciones? Me gustaría escucharlo en los comentarios.
+
 ## Evita los extremos
 
-A veces nos pasamos con las abstracciones, tanto en el nivel de abstracción que usamos como en el momento en el que lo hacemos.
+A veces nos pasamos con las abstracciones, tanto en el nivel como en el momento en el que lo hacemos. En esta sección nos referimos exclusivamente a las abstracciones que generalizan un proceso o concepto, y las que ocultan información de otras partes del programa.
 
-Es importante entender los niveles de abstracción porque es buena idea mantener cerrados los niveles de abstracción mientras programas, es decir, no dejar pasar detalles de niveles superiores o inferiores hacia el otro lado de la cadena de abstracción. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.
+Una señal de que estamos abstrayendo demasiado es que haya una gran diferencia entre la dificultad natural del problema base y nuestro código. Por ejemplo, imagina que tienes que encontrar una cadena de texto en un texto más grande. La cadena a encontrar es una de tres posibles "Kilo", "Mega", "Giga". ¿Valdrá la pena hacer la abstracción de un buscador general de cadenas cualquiera en textos arbitrarios con el uso de autómatas finitos deterministas? Lo más probable es que no: con un un simple "contains" o la función equivalente usado en el lugar de la búsqueda es suficiente.
+
+Esto se puede meter directamente con nuestro orgullo: lo fácil o sencillo no nos hace parecer inteligente. Pero recuerda que la simplicidad es la mejor sofisticación. Mientras más simples sean tus diseños, mejor.
+
+El otro punto importante es **cuándo** creamos estas abstracciones. Si quieres crear el programa más complejo desde el principio, lo más probable es que vas a tardar mucho en implementarlo, además de que puede que crees abstracciones que no vas a necesitar. Mejor usa las cosas más concretas posible hasta que de verdad el problema o los requerimientos de los usuarios te hagan generalizar algo. Es cierto que a veces prever algún cambio simplificará tu trabajo en el futuro, pero la mayoría de veces nos equivocamos. Lo hacemos tanto, que existe un inicialismo para refrenarnos de crear abstracciones prematuramente: YAGNI (You aren't gonna need it - No lo vas a necesitar).
 
 ## El costo de las abstracciones
 
-Las abstracciones cuestan más que el código que las sustituyen.
+Una abstracción del tipo que esconde código de otras partes del programa, es decir, de las que están detrás de una interfaz (Clase, módulo, función, etc), normalmente cuestan más en tiempo de diseño, de compilación o de ejecución. Normalmente en los tres, a menos que sea una abstracción con la que tengas mucha familiaridad. Esta es otra razón para refrenarnos de crear todas las abstracciones que se nos ocurran en un programa, o de crear cadenas de abstracciones demasiado grandes.
+
+Esto lo tienes que pensar sobre todo cuando los beneficios de crear cierta abstracción no están tan claros. Con algunos entornos, hay excepciones.
 
 ### Zero-cost abstractions (Abstracciones sin costo)
 
-Las abstracciones de costo cero son una propuesta de algunos entornos y lenguajes de programación. Como abstraer normalmente supone un costo en el tiempo de ejecución del programa, las abstracciones sin costo proponen que, aunque puedes usar elementos de más alto nivel en el código, no te van a costar rendimiento en tiempo de ejecución.
+Las abstracciones de costo cero son una propuesta de algunos entornos y lenguajes de programación modernos. Como abstraer normalmente supone un costo en el tiempo de ejecución del programa, las abstracciones sin costo proponen que, aunque puedes usar elementos de más alto nivel en el código, no te van a costar rendimiento en tiempo de ejecución.
 
-¿Entonces en dónde cuestan? Normalmente le cuestan al compilador, reemplazar o expandir macros en tiempo de construcción.
+¿Entonces en dónde cuestan? Normalmente le cuestan al compilador, reemplazar o expandir macros en tiempo de construcción. Rust es un ejemplo de esto, aunque estas abstracciones están a bastante bajo nivel (te evitan manejos de memoria que podrían ser complicados, por ejemplo).
 
 ## Conclusión
 
-Mejorar tu capacidad de abstraer conceptos, pero sobr e todo de representarlos de manera eficiente en el lenguaje de programación de tu elección te llevará lejos en la carrera de desarrollo de software.
+Mejorar tu capacidad de abstraer conceptos, pero sobre todo de representarlos de manera eficiente en el lenguaje de programación de tu elección te llevará lejos en la carrera de desarrollo de software.
+
+Este tema es de los más importantes en las ciencias de la computación y desarrollo de software, así que es algo de lo que puedes seguir aprendiendo a lo largo de toda tu carrera. Algunos documentos que puedes consultar para aprender más son:
+
+1. [Programación y Tecnología: Un camino equivocado hacia la construcción de
+artefactos](https://www.docdroid.com/ST0qbY8/programacion-y-tecnologia-un-camino-equivocado-pdf)
+2. [Abstraction in Computer Science Education:
+An Overview](/assets/pdfs/EJ1329311.pdf)
+3. [Abstraction](/assets/pdfs/chap02.pdf)
+
+Espero que este artículo te sirva en tu camino profesional en la carrera de desarrollo de software.
