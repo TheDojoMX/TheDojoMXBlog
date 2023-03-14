@@ -29,7 +29,9 @@ Los seres humanos somos máquinas de abstraer. Si a un niño pequeño le present
 
 Como **resumen**: abstraer es "tirar fuera", sacar las características que definen algo de su contexto concreto y ser capaz de entender ese concepto de manera general.
 
-A estas abstracciones a veces las llamamos **modelos**. ¿Te suena?
+Algunos definen las abstracciones como lo contrario: quitarle todo lo que no es necesario a un concepto para 1) resaltar y hacer visible lo que importa y 2) Ocultar detalles que no _deben_ ser tomados en cuenta.
+
+A estas abstracciones a veces las llamamos **modelos**_. **¿Te suena?**
 
 ## Cómo la usamos en la programación
 
@@ -42,9 +44,22 @@ Y esto **_precisamente_** es lo que necesitamos al programar: delimitar nuestras
 
 Lo que hace más difíciles las abstracciones en la programación es que normalmente los conceptos no son tan sencillos e incluso son de áreas con las que no estamos familiarizados o no tenemos experiencia.
 
-La capacidad de abstraer es muy importante en casi todo trabajo intelectual, sobre todo aquellos relacionados con la lógica, por eso es supremamente importante en la programación.
+La capacidad de abstraer es muy importante en casi todo trabajo intelectual, sobre todo aquellos relacionados con la lógica, por eso es supremamente importante en la programación. Aquí es donde la programación se parece al trabajo de un matemático: **debes traducir un problema informal de la vida real, normalmente en lenguaje natural a un lenguaje formal que una computadora pueda entender**. Para hacer esto, debes dejar los aspectos más importantes del problema para representarlos de manera efectiva en tu programa final.
 
-¿Por qué decimos esto? Aquí es donde la programación se parece al trabajo de un matemático: **debes traducir un problema informal de la vida real, normalmente en lenguaje natural a un lenguaje formal que una computadora pueda entender**. Para hacer esto, debes abstraer los aspectos más importantes del problema para representarlos de manera efectiva en tu programa final.
+Pero recuerda que las abstracciones en programación también deben _ocultar_ detalles que no _queremos_ que se vean en otras partes del programa, por lo que se incluye una tarea más: refinar estas abstracciones hasta que contengan la información completamente necesaria.
+
+La abstracciones las podemos ver en muchas formas en la programación:
+
+- Modelos de datos
+- Tipos de datos
+- Clases y objetos
+- Funciones
+- Clases
+
+Todas estas cosas que mencionamos tienen una característica en común: presentan una **interfaz**. Así estas abstracciones lo pueden ser en dos sentidos:
+
+1. La representación de un concepto de la vida real en el programa
+2. El lugar donde se _ocultan_ detalles o información detrás de una interfaz a otra parte del programa
 
 ### Ejemplos de abstracciones
 
@@ -63,7 +78,17 @@ para no ir a pagar artículo por artículo, se tiene un contenedor que nos ayuda
 
 La abstracción consiste en que "tiramos fuera" esas propiedades y eliminamos los detalles, por ejemplo si es un carrito, una canasta, una bolsa, un acompañante que carga tus productos, etc.
 
-Aquí entra otra de las características de las abstracciones. Aunque normalmente somos capaces de entender para lo que sirve el carrito de compra, si le preguntas a un cliente común sobre la abstracción, va a ser difícil que la ponga en palabras, por lo que simplemente usamos ese objeto para representar la abstracción en los lugares en los que el usuario lo ve. No le decimos "contenedor de tus productos mientras terminas la compra".
+Aquí entra otra de las características de las abstracciones. Aunque normalmente somos capaces de entender para lo que sirve el carrito de compra, si le preguntas a un cliente común sobre la abstracción, va a ser difícil que la ponga en palabras, por lo que simplemente usamos ese objeto para representar la abstracción para el usuario. No le decimos "contenedor de tus productos mientras terminas la compra" sino simplemente "carrito de compras".
+
+En la segunda forma en la que este carrito de compras puede ser una abstracción es que en tu programa, tal vez hay un clase que representa este contenedor. Para el resto del programa, este carrito tiene una interfaz que podría consistir en:
+
+- Agregar producto
+- Obtener total
+- Vaciar carrito
+- Agregar Cupón
+- Obtener total
+
+La manera en que esta clase hace todas esas operaciones debería estar oculta de todo el resto del programa. Incluso la manera en que almacena la información sólo le concierne a esta _abstracción_. Esto permite **ocultar información** y hace que las piezas del programa sean menos dependientes entre ellas.
 
 ### Abstracción de un usuario
 
@@ -77,48 +102,56 @@ Pensando más ampliamente, la abstracción del usuario tendrá más atributos de
 
 ## Niveles de abstracción
 
-Cuando hablamos de abstracción en programación, a veces se escucha el término "nivel de abstracción".
+Cuando hablamos de abstracciones en programación, a veces se escucha el término "nivel de abstracción".
 ¿A qué se refiere un "nivel"? La siguiente imagen nos puede ayudar a entenderlo:
 
-![Niveles de abstracción](https://i.imgur.com/0Z7Z7Zm.png)
+![Niveles de abstracción](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1678759133/Ilustracio%CC%81n_sin_ti%CC%81tulo_f7ag0e.png)
 
 Mientras más cerca esté de la implementación técnica (llegando hasta el hardware), podemos decir que la abstracción está más "abajo". Mientras más cerca esté de los pensamientos o la forma en la que los humanos vemos las cosas cotidianamente, la abstracción está más "arriba".
 
 A esto se refiere la abstracción de bajo nivel y la abstracción de alto nivel. Cuando hacemos un programa, utilizamos una "cadena" de abstracciones, es decir, abstracciones que se sirven de otras abstracciones para funcionar. Usemos de nuevo el carrito de compras como ejemplo.
 
-El carrito es la abstracción de más alto nivel, porque es la que más se acerca al pensamiento cotidiano. Esta se sirve de la abstracción del "contenedor". Pensando en que la implementamos como una lista, la lista es la siguiente abstracción. La lista, dependiendo del lenguaje en el que estemos, se sirve de la abstracción de un arreglo. El arreglo, a su vez, se sirve de la abstracción de la memoria. La memoria usa la abstracción de los bits. Y finalmente los bits son un voltaje presente en un circuito, pero esto a lo que llamamos "voltaje" sigue siendo una abstracción.
+El carrito es la abstracción de más alto nivel, porque es la que más se acerca al pensamiento cotidiano. Esta se sirve de la abstracción del "contenedor". Si lo implementamos como una lista, esta es la siguiente abstracción. La lista, dependiendo del lenguaje en el que estemos, puede servirse de la abstracción de un arreglo dinámico. El arreglo, a su vez, se sirve de la abstracción de los bloques y direcciones de memoria. La memoria usa la abstracción de los bits. Y finalmente los bits son un voltaje presente en un circuito, pero esto, a lo que llamamos "voltaje" sigue siendo una abstracción.
 
-Por lo tanto un nivel de abstracción son todas las abstracciones de nuestro programa que están más o menos igual de separadas que el pensamiento humano. Por ejemplo, el carrito de compras, el checkout (terminar y pagar la compra), una biblioteca, un producto, etc. son abstracciones que están al mismo nivel porque son cosas que el usuario puede entender y con las que trata directamente.
-
-Es importante entender los niveles de abstracción porque es buena idea mantener cerrados los niveles de abstracción mientras programas, es decir, no dejar pasar detalles de niveles superiores o inferiores hacia el otro lado de la cadena de abstracción. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.
+Un **nivel de abstracción** está compuesto por todas las abstracciones de nuestro programa que están más o menos igual de separadas de el pensamiento humano. Por ejemplo, el carrito de compras, el checkout (terminar y pagar la compra), una biblioteca, un producto, etc. son abstracciones que están al mismo nivel porque son cosas que el usuario puede entender y con las que trata directamente. Una lista, un cola, un árbol (estructura de datos), una pila, son cosas que están al mismo nivel porque las entendemos como maneras de organizar datos.
 
 ## Dificultades para abstraer
 
-Abstraer no es tan sencillo como ha parecido hasta ahorita. De hecho, si te has dedicado a programar por un tiempo, puede que ya te hayas dado cuenta de eso. La primera dificultad es **la naturaleza de la información**.
+Abstraer no es tan sencillo como ha parecido hasta ahorita. Más bien, abstraer es algo que hacemos todo el tiempo, pero crear abstracciones adecuadas y expresarlas correctamente no es tan sencillo. De hecho, si te has dedicado a programar por un tiempo, puede que ya te hayas dado cuenta de eso. La primera dificultad es **la naturaleza de la información**.
 
 No nos vamos a poner a filosofar sobre qué es lo que permite definir algo, para eso te recomiendo el libro [Data and Reality de William Kent](https://www.goodreads.com/en/book/show/1753248), que te romperá la cabeza con respecto a las abstracciones y las diferentes cosas que debes analizar para representar la realidad en una computadora, más concretamente, en una base de datos.
 
 Lo único que quiero sacar de este libro por el momento es: el mundo real, a diferencia del mundo ideal que nos imaginamos, **no tiene límites definidos**, no existen los conceptos tan delimitados y tan claros como los queremos hacer ven en los diccionarios.
 
-Esto nos lleva a que las representaciones (las abstracciones que hacemos en el código) **siempre sean subjetivas y arbitrarias**. No existe **LA ABSTRACCIÓN** que represente la realidad sin fallas, todas ellas tienen un punto de vista y se tienen que adecuar para la función que las crees.
+Esto nos lleva a que las representaciones (las abstracciones que hacemos en el código) **siempre sean subjetivas y arbitrarias**. No existe **LA ABSTRACCIÓN** que represente la realidad sin fallas, todas ellas tienen un punto de vista y se tienen que adecuar para la función que las necesites. Una misma cosa puede ser representada de millones de maneras diferentes y todas estas maneras pueden ser válidas.
 
-Otra dificultad es lo que hablamos arriba sobre los _niveles de abstracción_. Algo para lo que se usan las abstracciones en la programación es para _ocultar_ información entre componentes del sistema. Crear abstracciones que no revelen detalles no necesarios a veces no es tan sencillos, y se tienen que pensar detenidamente.
+Otra dificultad es lo que hablamos arriba sobre los _niveles de abstracción_. Algo para lo que se usan las abstracciones en la programación es para _ocultar_ información entre componentes del sistema. Crear abstracciones que no revelen detalles no necesarios a veces no es tan sencillo, y se tienen que pensar detenidamente.
+
+Finalmente, la complejidad intrínseca de los elementos que representamos puede ser en sí mismo un gran reto para crear abstracciones convenientes. Por ejemplo, en vez de representar gatos, tenemos que representar un proceso de suministro de insumos para una cadena de producción, la logística compleja de programación de vuelos y asignación de aviones y tripulación para una aerolínea, o el estado de una conversación compleja entre dos entidades.
+
+Es por eso que a veces creemos que necesitamos ayuda para mejorar nuestras capacidades de abstracción.
 
 ## Cómo mejorar tu capacidad de abstraer
 
-Esta es una de las preguntas que todo programador se hace cuando quiere mejorar su manera y velocidad al programar. Cuando hablamos de "la manera" de programar, nos referimos a la calidad del código que produce.
+Esta es una de las preguntas que todo programador se hace cuando quiere mejorar su manera y velocidad al programar. Cuando hablamos de "la manera" de programar, nos referimos a _la calidad_ del código que produce.
 
-Vamos a hablar de
+Vamos a hablar de las técnicas que puedes seguir para mejorar tu capacidad de crear y _expresar_ mejores abstracciones.
+
+### Consigue información y ejemplos
+
+Ya hemos dicho que los seres humanos somos muy buenos creando abstracciones por naturaleza, pero somos tan buenos que podemos crear abstracciones demasiado temprano. Mientras más ejemplos diferentes del mismo fenómeno o entidad tengamos, mejores abstracciones vamos a crear.
 
 ### Encontrar patrones
 
-Quiero citar a Manuel Rubio en una respuesta que me dio personalmente:
+Quiero citar a **Manuel Rubio** en una respuesta que me dio personalmente:
 
 > Estar atento a estos patrones y saber cómo aprovecharlos en nuestro beneficio puede ayudarnos a crear abstracciones del código que desarrollamos. Hay que ser metódico y organizar bien los datos, nombrar las cosas correctamente, mantener las responsabilidades desligadas unas de otras y entonces los patrones se ven claros.
 
 ## Evita los extremos
 
 A veces nos pasamos con las abstracciones, tanto en el nivel de abstracción que usamos como en el momento en el que lo hacemos.
+
+Es importante entender los niveles de abstracción porque es buena idea mantener cerrados los niveles de abstracción mientras programas, es decir, no dejar pasar detalles de niveles superiores o inferiores hacia el otro lado de la cadena de abstracción. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.
 
 ## El costo de las abstracciones
 
