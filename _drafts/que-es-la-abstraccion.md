@@ -139,7 +139,20 @@ Vamos a hablar de las técnicas que puedes seguir para mejorar tu capacidad de c
 
 ### Consigue información y ejemplos
 
-Ya hemos dicho que los seres humanos somos muy buenos creando abstracciones por naturaleza, pero somos tan buenos que podemos crear abstracciones demasiado temprano. Mientras más ejemplos diferentes del mismo fenómeno o entidad tengamos, mejores abstracciones vamos a crear.
+Ya hemos dicho que los seres humanos somos _muy buenos_ creando abstracciones por naturaleza, pero somos tan buenos que podemos crear abstracciones demasiado temprano cuando entendemos algo bien.
+
+Para evitar las abstracciones tempranas, **consigue la mmayor cantidad de información posible**. Mientras más ejemplos diferentes del mismo fenómeno o entidad tengamos, mejores abstracciones vamos a crear, ya que encontraremos ejemplos que se contradicen entre ellos, excepciones y casos límite (aquellos que están en los valores extremos o combinaciones de características raras).
+
+### Crear niveles de abstracción cerrados
+
+Es importante entender los _niveles de abstracción_ porque esto nos permitirá diseñar abstracciones que no dejen pasar detalles de niveles superiores o inferiores hacia el otro lado de la cadena de abstracción. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.
+
+Estos niveles de abstracción se mantienen de dos formas:
+
+1. Creando conjuntos de abstracciones relacionados que tengan el mismo nivel. A esto le llamamos una "capa".
+2. Creando interfaces que oculten los detalles de capas superiores o inferiores.
+
+Es muy difícil que este diseño te quede bien a la primera, por lo que debes tener en cuenta que tus interfaces y tus abstracciones irán evolucionando con el tiempo.
 
 ### Encontrar patrones
 
