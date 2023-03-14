@@ -628,4 +628,10 @@ var store = [{
         "tags": ["lsp","liskov","solid","principios","solid-principles"],
         "url": "/2023/03/06/el-principio-de-substitucion-de-liskov.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1677648049/brett-jordan-DDupbpu4MS4-unsplash_jdapyu.jpg"
+      },{
+        "title": "¿Qué es la abstracción?",
+        "excerpt":"Muchos programadores saben intuitivamente que gran parte del trabajo que hacemos como desarrolladores de software consiste en “abstraer”, sin llegar a entender completamente qué significa esto. En este artículo vamos a empezar explicando qué es la abstracción en general y luego cómo puedes mejorar tu habilidad de abstraer para programar...","categories": [],
+        "tags": ["abstracción","abstracto","abstraction"],
+        "url": "/2023/03/13/que-es-la-abstraccion.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1678168555/shubham-dhage-w06BFh5bRRA-unsplash_xek5go.jpg"
       }]

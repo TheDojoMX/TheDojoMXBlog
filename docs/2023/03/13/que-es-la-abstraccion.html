@@ -1,0 +1,986 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>¿Qué es la abstracción? - The Dojo MX Blog</title>
+<meta name="description" content="Muchos programadores piden consejos para mejorar su capacidad de abstracción. Vamos a hablar de lo que es y cómo se puede usar para programar mejor.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="¿Qué es la abstracción?">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html">
+
+
+  <meta property="og:description" content="Muchos programadores piden consejos para mejorar su capacidad de abstracción. Vamos a hablar de lo que es y cómo se puede usar para programar mejor.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1678168555/shubham-dhage-w06BFh5bRRA-unsplash_xek5go.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-13T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html",
+      "name": "¿Qué es la abstracción?",
+      "headline": "¿Qué es la abstracción?",
+      "keywords": "abstracción,abstracto,abstraction",
+      "description": "Muchos programadores piden consejos para mejorar su capacidad de abstracción. Vamos a hablar de lo que es y cómo se puede usar para programar mejor.",
+      "articleBody": "Muchos programadores saben intuitivamente que gran parte del trabajo que hacemos como desarrolladores de software consiste en “abstraer”, sin llegar a entender completamente qué significa esto.\n\nEn este artículo vamos a empezar explicando qué es la abstracción en general y luego cómo puedes mejorar tu habilidad de abstraer para programar más rápido y para crear mejores programas. La capacidad de crear mejores abstracciones te permitirá crear programas que no creías que pudieran existir o que tú pudieras crear.\n\nEmpecemos por las mismísimas bases.\n\nEtimología: ¿de dónde viene la palabra abstracción?\n\n“Abstracción” viene del latín abstrahere, que tiene dos partes principales: abs que significa “fuera de”, “sin”, “a distancia” y trahere que significa “tirar”. La palabra abstrahere significa literalmente “tirar fuera”.\n\nLa palabra abstrahere se usa en el sentido de “separar” o “extraer” en el contexto de la filosofía, la matemática y la física. En el contexto de las matemáticas, la abstracción es el proceso de separar un concepto de sus propiedades físicas.\n\nA veces entendemos el proceso de abstraer como la capacidad de generalización. Por ejemplo, si queremos abstraer el concepto de “mesa”, lo que hacemos es quitar todas las características concretas de todas las mesas que hemos visto en la vida y entonces vemos lo que tienen todas en común: nos permiten hacer algo sobre ellas, sea parados o sentados. De esta manera tenemos el concepto abstracto de una mesa en nuestra mente. Después podemos aplicar ese concepto a diferentes cosas que veamos.\n\nLos seres humanos somos máquinas de abstraer. Si a un niño pequeño le presentas unos cuantos gatos o perros, es capaz de aprender el concepto “gato” y extenderlo a otros gatos que vea aunque no se parezcan mucho a los que ya vio. Lo que no es capaz de hacer normalmente, es definir en palabras lo que es un “gato” de manera precisa.\n\nComo resumen: abstraer es “tirar fuera”, sacar las características que definen algo de su contexto concreto y ser capaz de entender ese concepto de manera general.\n\nAlgunos definen las abstracciones como lo contrario: quitarle todo lo que no es necesario a un concepto para 1) resaltar y hacer visible lo que importa y 2) Ocultar detalles que no deben ser tomados en cuenta.\n\nA estas abstracciones a veces las llamamos modelos_. ¿Te suena?\n\nCómo la usamos en la programación\n\nYa hemos dicho que aunque los seres humanos nos la pasamos abstrayendo todo lo que vemos en la vida real, no siempre podemos:\n\n\n  Delimitar precisamente la abstracción\n  Expresar o explicar esa abstracción a otras personas\n\n\nY esto precisamente es lo que necesitamos al programar: delimitar nuestras abstracciones y expresarlas en algún lenguaje de programación, como una tabla en una base de datos o de alguna otra forma que las computadoras puedan capturar y procesar, a esto es a lo que nos referimos cuando hablamos de abstraer en la programación.\n\nLo que hace más difíciles las abstracciones en la programación es que normalmente los conceptos no son tan sencillos e incluso son de áreas con las que no estamos familiarizados o no tenemos experiencia.\n\nLa capacidad de abstraer es muy importante en casi todo trabajo intelectual, sobre todo aquellos relacionados con la lógica, por eso es supremamente importante en la programación. Aquí es donde la programación se parece al trabajo de un matemático: debes traducir un problema informal de la vida real, normalmente en lenguaje natural a un lenguaje formal que una computadora pueda entender. Para hacer esto, debes dejar los aspectos más importantes del problema para representarlos de manera efectiva en tu programa final.\n\nPero recuerda que las abstracciones en programación también deben ocultar detalles que no queremos que se vean en otras partes del programa, por lo que se incluye una tarea más: refinar estas abstracciones hasta que contengan la información completamente necesaria.\n\nLa abstracciones las podemos ver en muchas formas en la programación:\n\n\n  Modelos de datos\n  Tipos de datos\n  Clases y objetos\n  Funciones\n  Clases\n\n\nTodas estas cosas que mencionamos tienen una característica en común: presentan una interfaz. Así estas abstracciones lo pueden ser en dos sentidos:\n\n\n  La representación de un concepto de la vida real en el programa\n  El lugar donde se ocultan detalles o información detrás de una interfaz a otra parte del programa\n\n\nEjemplos de abstracciones\n\nHablemos de algunos ejemplos y cómo caen en las definiciones que hemos hablado.\n\nCarrito de compras\n\nCuando queremos representar algo en un carrito de compra en un programa, lo que hacemos es abstraer el concepto de “carrito de compra” y representarlo en el programa.\n\nEn la vida real, un carrito o una bolsa de compra es donde almacenamos las cosas que estamos a punto de comprar mientras estamos en la tienda.\n\nLa abstracción del carrito de compra, entonces, es un conjunto de productos, cada uno con su precio y cantidad. En el programa, el carrito de compra es una lista de productos que se guarda mientras el usuario no termine de comprar.\n\nEn esta abstracción se mantuvieron las propiedades importantes:\npara no ir a pagar artículo por artículo, se tiene un contenedor que nos ayuda a mantener lo que vamos a comprar y pagarlo todo de una vez.\n\nLa abstracción consiste en que “tiramos fuera” esas propiedades y eliminamos los detalles, por ejemplo si es un carrito, una canasta, una bolsa, un acompañante que carga tus productos, etc.\n\nAquí entra otra de las características de las abstracciones. Aunque normalmente somos capaces de entender para lo que sirve el carrito de compra, si le preguntas a un cliente común sobre la abstracción, va a ser difícil que la ponga en palabras, por lo que simplemente usamos ese objeto para representar la abstracción para el usuario. No le decimos “contenedor de tus productos mientras terminas la compra” sino simplemente “carrito de compras”.\n\nEn la segunda forma en la que este carrito de compras puede ser una abstracción es que en tu programa, tal vez hay un clase que representa este contenedor. Para el resto del programa, este carrito tiene una interfaz que podría consistir en:\n\n\n  Agregar producto\n  Obtener total\n  Vaciar carrito\n  Agregar Cupón\n  Obtener total\n\n\nLa manera en que esta clase hace todas esas operaciones debería estar oculta de todo el resto del programa. Incluso la manera en que almacena la información sólo le concierne a esta abstracción. Esto permite ocultar información y hace que las piezas del programa sean menos dependientes entre ellas.\n\nAbstracción de un usuario\n\nEsta es una de las abstracciones más comunes en los sistemas de software. ¿Qué características esenciales necesitamos de alguna entidad para que use nuestro sistema? Nota que mencionamos “entidad” y no “humano”, porque puede que el usuario de nuestro sistema sea otro sistema, por ejemplo.\n\nEn sistemas como AWS, GCP y Azure, por ejemplo, existen cuentas para computadoras o para que sean usadas por otro servicio (se llaman cuentas de servicio).\n\nPensando en esto, ¿qué representa a un usuario? Yo me atrevería a decir que los únicos datos absolutamente esenciales para esta abstracción son los que permiten verificar la identidad, aquellos que le permiten a la entidad comprobar que en efecto es ella, o en el caso de sistemas, que puede actuar en nombre de ella.\n\nPensando más ampliamente, la abstracción del usuario tendrá más atributos dependiendo de lo que aplicación haga. Imagínate una aplicación en la que los usuarios sean pacientes clínicos. ¿Qué datos nos interesan de una persona para esta aplicación?\n\nNiveles de abstracción\n\nCuando hablamos de abstracciones en programación, a veces se escucha el término “nivel de abstracción”.\n¿A qué se refiere un “nivel”? La siguiente imagen nos puede ayudar a entenderlo:\n\n\n\nMientras más cerca esté de la implementación técnica (llegando hasta el hardware), podemos decir que la abstracción está más “abajo”. Mientras más cerca esté de los pensamientos o la forma en la que los humanos vemos las cosas cotidianamente, la abstracción está más “arriba”.\n\nA esto se refiere la abstracción de bajo nivel y la abstracción de alto nivel. Cuando hacemos un programa, utilizamos una “cadena” de abstracciones, es decir, abstracciones que se sirven de otras abstracciones para funcionar. Usemos de nuevo el carrito de compras como ejemplo.\n\nEl carrito es la abstracción de más alto nivel, porque es la que más se acerca al pensamiento cotidiano. Esta se sirve de la abstracción del “contenedor”. Si lo implementamos como una lista, esta es la siguiente abstracción. La lista, dependiendo del lenguaje en el que estemos, puede servirse de la abstracción de un arreglo dinámico. El arreglo, a su vez, se sirve de la abstracción de los bloques y direcciones de memoria. La memoria usa la abstracción de los bits. Y finalmente los bits son un voltaje presente en un circuito, pero esto, a lo que llamamos “voltaje” sigue siendo una abstracción.\n\nUn nivel de abstracción está compuesto por todas las abstracciones de nuestro programa que están más o menos igual de separadas de el pensamiento humano. Por ejemplo, el carrito de compras, el checkout (terminar y pagar la compra), una biblioteca, un producto, etc. son abstracciones que están al mismo nivel porque son cosas que el usuario puede entender y con las que trata directamente. Una lista, un cola, un árbol (estructura de datos), una pila, son cosas que están al mismo nivel porque las entendemos como maneras de organizar datos.\n\nDificultades para abstraer\n\nAbstraer no es tan sencillo como ha parecido hasta ahorita. Más bien, abstraer es algo que hacemos todo el tiempo, pero crear abstracciones adecuadas y expresarlas correctamente no es tan sencillo. De hecho, si te has dedicado a programar por un tiempo, puede que ya te hayas dado cuenta de eso. La primera dificultad es la naturaleza de la información.\n\nNo nos vamos a poner a filosofar sobre qué es lo que permite definir algo, para eso te recomiendo el libro Data and Reality de William Kent, que te romperá la cabeza con respecto a las abstracciones y las diferentes cosas que debes analizar para representar la realidad en una computadora, más concretamente, en una base de datos.\n\nLo único que quiero sacar de este libro por el momento es: el mundo real, a diferencia del mundo ideal que nos imaginamos, no tiene límites definidos, no existen los conceptos tan delimitados y tan claros como los queremos hacer ven en los diccionarios.\n\nEsto nos lleva a que las representaciones (las abstracciones que hacemos en el código) siempre sean subjetivas y arbitrarias. No existe LA ABSTRACCIÓN que represente la realidad sin fallas, todas ellas tienen un punto de vista y se tienen que adecuar para la función que las necesites. Una misma cosa puede ser representada de millones de maneras diferentes y todas estas maneras pueden ser válidas.\n\nOtra dificultad es lo que hablamos arriba sobre los niveles de abstracción. Algo para lo que se usan las abstracciones en la programación es para ocultar información entre componentes del sistema. Crear abstracciones que no revelen detalles no necesarios a veces no es tan sencillo, y se tienen que pensar detenidamente.\n\nFinalmente, la complejidad intrínseca de los elementos que representamos puede ser en sí mismo un gran reto para crear abstracciones convenientes. Por ejemplo, en vez de representar gatos, tenemos que representar un proceso de suministro de insumos para una cadena de producción, la logística compleja de programación de vuelos y asignación de aviones y tripulación para una aerolínea, o el estado de una conversación compleja entre dos entidades.\n\nEs por eso que a veces creemos que necesitamos ayuda para mejorar nuestras capacidades de abstracción.\n\nCómo mejorar tu capacidad de abstraer\n\nEsta es una de las preguntas que todo programador se hace cuando quiere mejorar su manera y velocidad al programar. Cuando hablamos de “la manera” de programar, nos referimos a la calidad del código que produce.\n\nVamos a hablar de las técnicas que puedes seguir para mejorar tu capacidad de crear y expresar mejores abstracciones.\n\nConsigue información y ejemplos\n\nYa hemos dicho que los seres humanos somos muy buenos creando abstracciones por naturaleza, pero somos tan buenos que podemos crear abstracciones demasiado temprano cuando entendemos algo bien.\n\nPara evitar las abstracciones tempranas, consigue la mmayor cantidad de información posible. Mientras más ejemplos diferentes del mismo fenómeno o entidad tengamos, mejores abstracciones vamos a crear, ya que encontraremos ejemplos que se contradicen entre ellos, excepciones y casos límite (aquellos que están en los valores extremos o combinaciones de características raras).\n\nCrear niveles de abstracción cerrados\n\nEs importante entender los niveles de abstracción porque esto nos permitirá diseñar abstracciones que no dejen pasar detalles de niveles superiores o inferiores hacia el otro lado de la cadena de abstracción. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.\n\nEstos niveles de abstracción se mantienen de dos formas:\n\n\n  Creando conjuntos de abstracciones relacionados que tengan el mismo nivel. A esto le llamamos una “capa”.\n  Creando interfaces que oculten los detalles de capas superiores o inferiores.\n\n\nEs muy difícil que este diseño te quede bien a la primera, por lo que debes tener en cuenta que tus interfaces y tus abstracciones irán evolucionando con el tiempo.\n\nEncontrar patrones\n\nQuiero citar a Manuel Rubio en una respuesta que me dio personalmente:\n\n\n  Estar atento a estos patrones y saber cómo aprovecharlos en nuestro beneficio puede ayudarnos a crear abstracciones del código que desarrollamos. Hay que ser metódico y organizar bien los datos, nombrar las cosas correctamente, mantener las responsabilidades desligadas unas de otras y entonces los patrones se ven claros.\n\n\nEste consejo está directamente ligado a la cantidad de información que tenemos sobre el problema. Mientras más diversa y rica sea, más probable es que encontremos los patrones que subyacen en los comportamientos y procesos que tenemos que abstraer (o modelar). Aquí lo importante es ser explícitos con esos patrones, expresarlos y documentarlos de la manera más clara posible.\n\nHaber visto y sobre todo documentado una gran cantidad de patrones también nos puede ayudar a diseñar abstracciones de manera más efectiva y rápida en el futuro. Esto es de lo que los patrones de diseño se tratan: soluciones comunes a problemas recurrentes. Sólo hay que ser muy cuidadosos de no encajar problemas en patrones que no corresponden completamente al problema, sólo por el hecho de querer salir rápido del problema o de querer aplicar cierto patrón.\n\nDiseña dos veces\n\nEl diseño del software puede hacerse como la escritura: primero escribes y después editas. Son dos etapas diferentes y tan independientes que dos personas diferentes las pueden hacer. El diseño en el software puede hacerse de manera parecida. Primero diseñas tus representaciones y puedes pedirle a alguien que te corrija o revise, o puedes hacerlo tú mismo después de haber dejado pasar un poco de tiempo.\n\nEsta revisión te llevará a pensar cosas como “¿Qué estaba pensando cuando escribí esto?” o “Creo que esta no es la abstracción correcta”, gracias a que normalmente te has parado un poco a distancia de tu propio diseño.\n\nDesarrolla la capacidad de absorber información\n\nDebido a que tienes que representar cosas de dominios en los que probablemente no conoces, tener la capacidad de estudiar de manera efectiva te permitirá analizar la información necesaria para crear buenas abstracciones.\n\nExpande tu mente\n\nMientras más cosas sepas de diferentes campos o dominios, será más probable que encuentres cosas que te puedan servir para entender lo que estás tratando de representar y sobre todo para extraer sus componentes principales, así como la información que vale la pena excluir. Así que no te limites en aprender todo lo que puedas de todos los campos posibles, pero recuerda también que esto tiene rendimientos decrecientes: mientras más profundices en un campo, más te costará adquirir nueva información que valga la pena.\n\nEs por esto mismo que muchos programadores son buenos programando para ciertos dominios: financiero, de automatización industrial, de juegos, de programas científicos, etc. No lo podemos saber todo y muchas veces son el conocimiento de una sóla área es suficiente para entretenernos por décadas.\n\nPractica\n\nEste es el concepto más gastado de todos, pero aquí le vamos a dar un pequeño giro. No sirve de mucho para mejorar sólo hacer abstracciones sin reflexionar en ellas. Tienes que pensar detenidamente en tus diseños y contestar preguntas como:\n\n\n  ¿Qué información tenía disponible y pasé por alto?\n  ¿Cómo hubiera podido conocer u obtener esa información?\n  ¿Qué detalles de implementación dejé escapar de mi abstracción?\n  ¿Quién pudo haberme dado más ejemplos sobre el problema?\n  ¿Quién puede hacer una revisión sobre el diseño y darme comentarios para mejorar?\n\n\nA esto se le llama práctica enfocada y hay ejercicios llamados Code Katas que te pueden ayudar a mejorar en el diseño de software.\n\n¿Tienes algún consejo más que te haya ayudado a mejorar la forma en la que creas abstracciones? Me gustaría escucharlo en los comentarios.\n\nEvita los extremos\n\nA veces nos pasamos con las abstracciones, tanto en el nivel como en el momento en el que lo hacemos. En esta sección nos referimos exclusivamente a las abstracciones que generalizan un proceso o concepto, y las que ocultan información de otras partes del programa.\n\nUna señal de que estamos abstrayendo demasiado es que haya una gran diferencia entre la dificultad natural del problema base y nuestro código. Por ejemplo, imagina que tienes que encontrar una cadena de texto en un texto más grande. La cadena a encontrar es una de tres posibles “Kilo”, “Mega”, “Giga”. ¿Valdrá la pena hacer la abstracción de un buscador general de cadenas cualquiera en textos arbitrarios con el uso de autómatas finitos deterministas? Lo más probable es que no: con un un simple “contains” o la función equivalente usado en el lugar de la búsqueda es suficiente.\n\nEsto se puede meter directamente con nuestro orgullo: lo fácil o sencillo no nos hace parecer inteligente. Pero recuerda que la simplicidad es la mejor sofisticación. Mientras más simples sean tus diseños, mejor.\n\nEl otro punto importante es cuándo creamos estas abstracciones. Si quieres crear el programa más complejo desde el principio, lo más probable es que vas a tardar mucho en implementarlo, además de que puede que crees abstracciones que no vas a necesitar. Mejor usa las cosas más concretas posible hasta que de verdad el problema o los requerimientos de los usuarios te hagan generalizar algo. Es cierto que a veces prever algún cambio simplificará tu trabajo en el futuro, pero la mayoría de veces nos equivocamos. Lo hacemos tanto, que existe un inicialismo para refrenarnos de crear abstracciones prematuramente: YAGNI (You aren’t gonna need it - No lo vas a necesitar).\n\nEl costo de las abstracciones\n\nUna abstracción del tipo que esconde código de otras partes del programa, es decir, de las que están detrás de una interfaz (Clase, módulo, función, etc), normalmente cuestan más en tiempo de diseño, de compilación o de ejecución. Normalmente en los tres, a menos que sea una abstracción con la que tengas mucha familiaridad. Esta es otra razón para refrenarnos de crear todas las abstracciones que se nos ocurran en un programa, o de crear cadenas de abstracciones demasiado grandes.\n\nEsto lo tienes que pensar sobre todo cuando los beneficios de crear cierta abstracción no están tan claros. Con algunos entornos, hay excepciones.\n\nZero-cost abstractions (Abstracciones sin costo)\n\nLas abstracciones de costo cero son una propuesta de algunos entornos y lenguajes de programación modernos. Como abstraer normalmente supone un costo en el tiempo de ejecución del programa, las abstracciones sin costo proponen que, aunque puedes usar elementos de más alto nivel en el código, no te van a costar rendimiento en tiempo de ejecución.\n\n¿Entonces en dónde cuestan? Normalmente le cuestan al compilador, reemplazar o expandir macros en tiempo de construcción. Rust es un ejemplo de esto, aunque estas abstracciones están a bastante bajo nivel (te evitan manejos de memoria que podrían ser complicados, por ejemplo).\n\nConclusión\n\nMejorar tu capacidad de abstraer conceptos, pero sobre todo de representarlos de manera eficiente en el lenguaje de programación de tu elección te llevará lejos en la carrera de desarrollo de software.\n\nEste tema es de los más importantes en las ciencias de la computación y desarrollo de software, así que es algo de lo que puedes seguir aprendiendo a lo largo de toda tu carrera. Algunos documentos que puedes consultar para aprender más son:\n\n\n  Programación y Tecnología: Un camino equivocado hacia la construcción de\nartefactos\n  Abstraction in Computer Science Education:\nAn Overview\n  Abstraction\n\n\nEspero que este artículo te sirva en tu camino profesional en la carrera de desarrollo de software.\n",
+      "datePublished": "2023-03-13 00:00:00 -0600",
+      "dateModified": "2023-03-13 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1678168555/shubham-dhage-w06BFh5bRRA-unsplash_xek5go.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1678168555/shubham-dhage-w06BFh5bRRA-unsplash_xek5go.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          ¿Qué es la abstracción?
+
+        
+      </h1>
+      
+        <p class="page__lead">Muchos programadores piden consejos para mejorar su capacidad de abstracción. Vamos a hablar de lo que es y cómo se puede usar para programar mejor.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        3419 palabras | 28 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="¿Qué es la abstracción?">
+    <meta itemprop="description" content="Muchos programadores piden consejos para mejorar su capacidad de abstracción. Vamos a hablar de lo que es y cómo se puede usar para programar mejor.">
+    <meta itemprop="datePublished" content="2023-03-13T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>Muchos programadores saben intuitivamente que gran parte del trabajo que hacemos como desarrolladores de software consiste en “abstraer”, sin llegar a entender completamente qué significa esto.</p>
+
+<p>En este artículo vamos a empezar explicando qué es la abstracción en general y luego cómo puedes mejorar tu habilidad de abstraer para programar más rápido y para crear mejores programas. La capacidad de <strong>crear mejores abstracciones te permitirá crear programas que no creías que pudieran existir o que tú pudieras crear</strong>.</p>
+
+<p>Empecemos por las mismísimas bases.</p>
+
+<h2 id="etimología-de-dónde-viene-la-palabra-abstracción">Etimología: ¿de dónde viene la palabra abstracción?</h2>
+
+<p><strong>“Abstracción”</strong> viene del latín <em>abstrahere</em>, que tiene dos partes principales: <strong>abs</strong> que significa “fuera de”, “sin”, “a distancia” y <strong>trahere</strong> que significa “tirar”. La palabra <em>abstrahere</em> significa literalmente “tirar fuera”.</p>
+
+<p>La palabra <em>abstrahere</em> se usa en el sentido de “separar” o “extraer” en el contexto de la filosofía, la matemática y la física. En el contexto de las matemáticas, la abstracción es el proceso de separar un concepto de sus propiedades físicas.</p>
+
+<p>A veces entendemos el proceso de abstraer como la capacidad de generalización. Por ejemplo, si queremos abstraer el concepto de “mesa”, lo que hacemos es quitar todas las características concretas de todas las mesas que hemos visto en la vida y entonces vemos lo que tienen todas en común: nos permiten hacer algo sobre ellas, sea parados o sentados. De esta manera tenemos el concepto abstracto de una mesa en nuestra mente. Después podemos aplicar ese concepto a diferentes cosas que veamos.</p>
+
+<p>Los seres humanos somos máquinas de abstraer. Si a un niño pequeño le presentas unos cuantos gatos o perros, es capaz de aprender el concepto “gato” y extenderlo a otros gatos que vea aunque no se parezcan mucho a los que ya vio. Lo que no es capaz de hacer normalmente, es definir en palabras lo que es un “gato” de manera precisa.</p>
+
+<p>Como <strong>resumen</strong>: abstraer es “tirar fuera”, sacar las características que definen algo de su contexto concreto y ser capaz de entender ese concepto de manera general.</p>
+
+<p>Algunos definen las abstracciones como lo contrario: quitarle todo lo que no es necesario a un concepto para 1) resaltar y hacer visible lo que importa y 2) Ocultar detalles que no <em>deben</em> ser tomados en cuenta.</p>
+
+<p>A estas abstracciones a veces las llamamos <strong>modelos</strong>_. <strong>¿Te suena?</strong></p>
+
+<h2 id="cómo-la-usamos-en-la-programación">Cómo la usamos en la programación</h2>
+
+<p>Ya hemos dicho que aunque los seres humanos nos la pasamos abstrayendo todo lo que vemos en la vida real, no siempre podemos:</p>
+
+<ol>
+  <li>Delimitar precisamente la abstracción</li>
+  <li>Expresar o explicar esa abstracción a otras personas</li>
+</ol>
+
+<p>Y esto <strong><em>precisamente</em></strong> es lo que necesitamos al programar: delimitar nuestras abstracciones y expresarlas en algún lenguaje de programación, como una tabla en una base de datos o de alguna otra forma que las computadoras puedan capturar y procesar, <strong>a esto es a lo que nos referimos cuando hablamos de abstraer en la programación</strong>.</p>
+
+<p>Lo que hace más difíciles las abstracciones en la programación es que normalmente los conceptos no son tan sencillos e incluso son de áreas con las que no estamos familiarizados o no tenemos experiencia.</p>
+
+<p>La capacidad de abstraer es muy importante en casi todo trabajo intelectual, sobre todo aquellos relacionados con la lógica, por eso es supremamente importante en la programación. Aquí es donde la programación se parece al trabajo de un matemático: <strong>debes traducir un problema informal de la vida real, normalmente en lenguaje natural a un lenguaje formal que una computadora pueda entender</strong>. Para hacer esto, debes dejar los aspectos más importantes del problema para representarlos de manera efectiva en tu programa final.</p>
+
+<p>Pero recuerda que las abstracciones en programación también deben <em>ocultar</em> detalles que no <em>queremos</em> que se vean en otras partes del programa, por lo que se incluye una tarea más: refinar estas abstracciones hasta que contengan la información completamente necesaria.</p>
+
+<p>La abstracciones las podemos ver en muchas formas en la programación:</p>
+
+<ul>
+  <li>Modelos de datos</li>
+  <li>Tipos de datos</li>
+  <li>Clases y objetos</li>
+  <li>Funciones</li>
+  <li>Clases</li>
+</ul>
+
+<p>Todas estas cosas que mencionamos tienen una característica en común: presentan una <strong>interfaz</strong>. Así estas abstracciones lo pueden ser en dos sentidos:</p>
+
+<ol>
+  <li>La representación de un concepto de la vida real en el programa</li>
+  <li>El lugar donde se <em>ocultan</em> detalles o información detrás de una interfaz a otra parte del programa</li>
+</ol>
+
+<h3 id="ejemplos-de-abstracciones">Ejemplos de abstracciones</h3>
+
+<p>Hablemos de algunos ejemplos y cómo caen en las definiciones que hemos hablado.</p>
+
+<h3 id="carrito-de-compras">Carrito de compras</h3>
+
+<p>Cuando queremos representar algo en un carrito de compra en un programa, lo que hacemos es abstraer el concepto de “carrito de compra” y representarlo en el programa.</p>
+
+<p>En la vida real, un carrito o una bolsa de compra es donde almacenamos las cosas que estamos a punto de comprar mientras estamos en la tienda.</p>
+
+<p>La abstracción del carrito de compra, entonces, es un conjunto de productos, cada uno con su precio y cantidad. En el programa, el carrito de compra es una lista de productos que se guarda mientras el usuario no termine de comprar.</p>
+
+<p>En esta abstracción se mantuvieron las propiedades importantes:
+para no ir a pagar artículo por artículo, se tiene un contenedor que nos ayuda a mantener lo que vamos a comprar y pagarlo todo de una vez.</p>
+
+<p>La abstracción consiste en que “tiramos fuera” esas propiedades y eliminamos los detalles, por ejemplo si es un carrito, una canasta, una bolsa, un acompañante que carga tus productos, etc.</p>
+
+<p>Aquí entra otra de las características de las abstracciones. Aunque normalmente somos capaces de entender para lo que sirve el carrito de compra, si le preguntas a un cliente común sobre la abstracción, va a ser difícil que la ponga en palabras, por lo que simplemente usamos ese objeto para representar la abstracción para el usuario. No le decimos “contenedor de tus productos mientras terminas la compra” sino simplemente “carrito de compras”.</p>
+
+<p>En la segunda forma en la que este carrito de compras puede ser una abstracción es que en tu programa, tal vez hay un clase que representa este contenedor. Para el resto del programa, este carrito tiene una interfaz que podría consistir en:</p>
+
+<ul>
+  <li>Agregar producto</li>
+  <li>Obtener total</li>
+  <li>Vaciar carrito</li>
+  <li>Agregar Cupón</li>
+  <li>Obtener total</li>
+</ul>
+
+<p>La manera en que esta clase hace todas esas operaciones debería estar oculta de todo el resto del programa. Incluso la manera en que almacena la información sólo le concierne a esta <em>abstracción</em>. Esto permite <strong>ocultar información</strong> y hace que las piezas del programa sean menos dependientes entre ellas.</p>
+
+<h3 id="abstracción-de-un-usuario">Abstracción de un usuario</h3>
+
+<p>Esta es una de las abstracciones más comunes en los sistemas de software. ¿Qué características esenciales necesitamos de alguna entidad para que use nuestro sistema? Nota que mencionamos “entidad” y no “humano”, porque puede que el usuario de nuestro sistema sea otro sistema, por ejemplo.</p>
+
+<p>En sistemas como AWS, GCP y Azure, por ejemplo, existen cuentas para computadoras o para que sean usadas por otro servicio (se llaman <em>cuentas de servicio</em>).</p>
+
+<p>Pensando en esto, ¿qué representa a un usuario? Yo me atrevería a decir que los únicos datos absolutamente esenciales para esta abstracción son los que permiten verificar <strong>la identidad</strong>, aquellos que le permiten a la entidad comprobar que en efecto es ella, o en el caso de sistemas, que puede actuar en nombre de ella.</p>
+
+<p>Pensando más ampliamente, la abstracción del usuario tendrá más atributos dependiendo de lo que aplicación haga. Imagínate una aplicación en la que los usuarios sean pacientes clínicos. ¿Qué datos nos interesan de una persona para esta aplicación?</p>
+
+<h2 id="niveles-de-abstracción">Niveles de abstracción</h2>
+
+<p>Cuando hablamos de abstracciones en programación, a veces se escucha el término “nivel de abstracción”.
+¿A qué se refiere un “nivel”? La siguiente imagen nos puede ayudar a entenderlo:</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1678759133/Ilustracio%CC%81n_sin_ti%CC%81tulo_f7ag0e.png" alt="Niveles de abstracción"></p>
+
+<p>Mientras más cerca esté de la implementación técnica (llegando hasta el hardware), podemos decir que la abstracción está más “abajo”. Mientras más cerca esté de los pensamientos o la forma en la que los humanos vemos las cosas cotidianamente, la abstracción está más “arriba”.</p>
+
+<p>A esto se refiere la abstracción de bajo nivel y la abstracción de alto nivel. Cuando hacemos un programa, utilizamos una “cadena” de abstracciones, es decir, abstracciones que se sirven de otras abstracciones para funcionar. Usemos de nuevo el carrito de compras como ejemplo.</p>
+
+<p>El carrito es la abstracción de más alto nivel, porque es la que más se acerca al pensamiento cotidiano. Esta se sirve de la abstracción del “contenedor”. Si lo implementamos como una lista, esta es la siguiente abstracción. La lista, dependiendo del lenguaje en el que estemos, puede servirse de la abstracción de un arreglo dinámico. El arreglo, a su vez, se sirve de la abstracción de los bloques y direcciones de memoria. La memoria usa la abstracción de los bits. Y finalmente los bits son un voltaje presente en un circuito, pero esto, a lo que llamamos “voltaje” sigue siendo una abstracción.</p>
+
+<p>Un <strong>nivel de abstracción</strong> está compuesto por todas las abstracciones de nuestro programa que están más o menos igual de separadas de el pensamiento humano. Por ejemplo, el carrito de compras, el checkout (terminar y pagar la compra), una biblioteca, un producto, etc. son abstracciones que están al mismo nivel porque son cosas que el usuario puede entender y con las que trata directamente. Una lista, un cola, un árbol (estructura de datos), una pila, son cosas que están al mismo nivel porque las entendemos como maneras de organizar datos.</p>
+
+<h2 id="dificultades-para-abstraer">Dificultades para abstraer</h2>
+
+<p>Abstraer no es tan sencillo como ha parecido hasta ahorita. Más bien, abstraer es algo que hacemos todo el tiempo, pero crear abstracciones adecuadas y expresarlas correctamente no es tan sencillo. De hecho, si te has dedicado a programar por un tiempo, puede que ya te hayas dado cuenta de eso. La primera dificultad es <strong>la naturaleza de la información</strong>.</p>
+
+<p>No nos vamos a poner a filosofar sobre qué es lo que permite definir algo, para eso te recomiendo el libro <a href="https://www.goodreads.com/en/book/show/1753248">Data and Reality de William Kent</a>, que te romperá la cabeza con respecto a las abstracciones y las diferentes cosas que debes analizar para representar la realidad en una computadora, más concretamente, en una base de datos.</p>
+
+<p>Lo único que quiero sacar de este libro por el momento es: el mundo real, a diferencia del mundo ideal que nos imaginamos, <strong>no tiene límites definidos</strong>, no existen los conceptos tan delimitados y tan claros como los queremos hacer ven en los diccionarios.</p>
+
+<p>Esto nos lleva a que las representaciones (las abstracciones que hacemos en el código) <strong>siempre sean subjetivas y arbitrarias</strong>. No existe <strong>LA ABSTRACCIÓN</strong> que represente la realidad sin fallas, todas ellas tienen un punto de vista y se tienen que adecuar para la función que las necesites. Una misma cosa puede ser representada de millones de maneras diferentes y todas estas maneras pueden ser válidas.</p>
+
+<p>Otra dificultad es lo que hablamos arriba sobre los <em>niveles de abstracción</em>. Algo para lo que se usan las abstracciones en la programación es para <em>ocultar</em> información entre componentes del sistema. Crear abstracciones que no revelen detalles no necesarios a veces no es tan sencillo, y se tienen que pensar detenidamente.</p>
+
+<p>Finalmente, la complejidad intrínseca de los elementos que representamos puede ser en sí mismo un gran reto para crear abstracciones convenientes. Por ejemplo, en vez de representar gatos, tenemos que representar un proceso de suministro de insumos para una cadena de producción, la logística compleja de programación de vuelos y asignación de aviones y tripulación para una aerolínea, o el estado de una conversación compleja entre dos entidades.</p>
+
+<p>Es por eso que a veces creemos que necesitamos ayuda para mejorar nuestras capacidades de abstracción.</p>
+
+<h2 id="cómo-mejorar-tu-capacidad-de-abstraer">Cómo mejorar tu capacidad de abstraer</h2>
+
+<p>Esta es una de las preguntas que todo programador se hace cuando quiere mejorar su manera y velocidad al programar. Cuando hablamos de “la manera” de programar, nos referimos a <em>la calidad</em> del código que produce.</p>
+
+<p>Vamos a hablar de las técnicas que puedes seguir para mejorar tu capacidad de crear y <em>expresar</em> mejores abstracciones.</p>
+
+<h3 id="consigue-información-y-ejemplos">Consigue información y ejemplos</h3>
+
+<p>Ya hemos dicho que los seres humanos somos <em>muy buenos</em> creando abstracciones por naturaleza, pero somos tan buenos que podemos crear abstracciones demasiado temprano cuando entendemos algo bien.</p>
+
+<p>Para evitar las abstracciones tempranas, <strong>consigue la mmayor cantidad de información posible</strong>. Mientras más ejemplos diferentes del mismo fenómeno o entidad tengamos, mejores abstracciones vamos a crear, ya que encontraremos ejemplos que se contradicen entre ellos, excepciones y casos límite (aquellos que están en los valores extremos o combinaciones de características raras).</p>
+
+<h3 id="crear-niveles-de-abstracción-cerrados">Crear niveles de abstracción cerrados</h3>
+
+<p>Es importante entender los <em>niveles de abstracción</em> porque esto nos permitirá diseñar abstracciones que no dejen pasar detalles de niveles superiores o inferiores hacia el otro lado de la cadena de abstracción. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.</p>
+
+<p>Estos niveles de abstracción se mantienen de dos formas:</p>
+
+<ol>
+  <li>Creando conjuntos de abstracciones relacionados que tengan el mismo nivel. A esto le llamamos una “capa”.</li>
+  <li>Creando interfaces que oculten los detalles de capas superiores o inferiores.</li>
+</ol>
+
+<p>Es muy difícil que este diseño te quede bien a la primera, por lo que debes tener en cuenta que tus interfaces y tus abstracciones irán evolucionando con el tiempo.</p>
+
+<h3 id="encontrar-patrones">Encontrar patrones</h3>
+
+<p>Quiero citar a <a href="https://altenwald.com/"><strong>Manuel Rubio</strong></a> en una respuesta que me dio personalmente:</p>
+
+<blockquote>
+  <p>Estar atento a estos patrones y saber cómo aprovecharlos en nuestro beneficio puede ayudarnos a crear abstracciones del código que desarrollamos. Hay que ser metódico y organizar bien los datos, nombrar las cosas correctamente, mantener las responsabilidades desligadas unas de otras y entonces los patrones se ven claros.</p>
+</blockquote>
+
+<p>Este consejo está directamente ligado a la cantidad de información que tenemos sobre el problema. Mientras más diversa y rica sea, más probable es que encontremos los patrones que subyacen en los comportamientos y procesos que tenemos que abstraer (o modelar). Aquí lo importante es ser explícitos con esos patrones, expresarlos y documentarlos de la manera más clara posible.</p>
+
+<p>Haber visto y sobre todo documentado una gran cantidad de patrones también nos puede ayudar a diseñar abstracciones de manera más efectiva y rápida en el futuro. Esto es de lo que los <strong>patrones de diseño</strong> se tratan: soluciones comunes a problemas recurrentes. Sólo hay que ser muy cuidadosos de no encajar problemas en patrones que no corresponden completamente al problema, sólo por el hecho de querer salir rápido del problema o de querer aplicar cierto patrón.</p>
+
+<h3 id="diseña-dos-veces">Diseña dos veces</h3>
+
+<p>El diseño del software puede hacerse como la escritura: primero escribes y después editas. Son dos etapas diferentes y tan independientes que dos personas diferentes las pueden hacer. El diseño en el software puede hacerse de manera parecida. Primero diseñas tus representaciones y puedes pedirle a alguien que te corrija o revise, o puedes hacerlo tú mismo después de haber dejado pasar un poco de tiempo.</p>
+
+<p>Esta revisión te llevará a pensar cosas como “¿Qué estaba pensando cuando escribí esto?” o “Creo que esta no es la abstracción correcta”, gracias a que normalmente te has parado un poco a distancia de tu propio diseño.</p>
+
+<h2 id="desarrolla-la-capacidad-de-absorber-información">Desarrolla la capacidad de absorber información</h2>
+
+<p>Debido a que tienes que representar cosas de dominios en los que probablemente no conoces, tener la capacidad de estudiar de manera efectiva te permitirá analizar la información necesaria para crear buenas abstracciones.</p>
+
+<h3 id="expande-tu-mente">Expande tu mente</h3>
+
+<p>Mientras más cosas sepas de diferentes campos o dominios, será más probable que encuentres cosas que te puedan servir para <em>entender</em> lo que estás tratando de representar y sobre todo para extraer sus componentes principales, así como la información que vale la pena excluir. Así que no te limites en aprender todo lo que puedas de todos los campos posibles, pero recuerda también que esto tiene rendimientos decrecientes: mientras más profundices en un campo, más te costará adquirir nueva información que valga la pena.</p>
+
+<p>Es por esto mismo que muchos programadores son buenos programando para ciertos dominios: financiero, de automatización industrial, de juegos, de programas científicos, etc. No lo podemos saber todo y muchas veces son el conocimiento de una sóla área es suficiente para entretenernos por décadas.</p>
+
+<h3 id="practica">Practica</h3>
+
+<p>Este es el concepto más gastado de todos, pero aquí le vamos a dar un pequeño giro. No sirve de mucho para mejorar sólo hacer abstracciones sin reflexionar en ellas. Tienes que pensar detenidamente en tus diseños y contestar preguntas como:</p>
+
+<ul>
+  <li>¿Qué información tenía disponible y pasé por alto?</li>
+  <li>¿Cómo hubiera podido conocer u obtener esa información?</li>
+  <li>¿Qué detalles de implementación dejé escapar de mi abstracción?</li>
+  <li>¿Quién pudo haberme dado más ejemplos sobre el problema?</li>
+  <li>¿Quién puede hacer una revisión sobre el diseño y darme comentarios para mejorar?</li>
+</ul>
+
+<p>A esto se le llama práctica enfocada y hay ejercicios llamados <a href="http://codekata.com/">Code Katas</a> que te pueden ayudar a mejorar en el diseño de software.</p>
+
+<p>¿Tienes algún consejo más que te haya ayudado a mejorar la forma en la que creas abstracciones? Me gustaría escucharlo en los comentarios.</p>
+
+<h2 id="evita-los-extremos">Evita los extremos</h2>
+
+<p>A veces nos pasamos con las abstracciones, tanto en el nivel como en el momento en el que lo hacemos. En esta sección nos referimos exclusivamente a las abstracciones que generalizan un proceso o concepto, y las que ocultan información de otras partes del programa.</p>
+
+<p>Una señal de que estamos abstrayendo demasiado es que haya una gran diferencia entre la dificultad natural del problema base y nuestro código. Por ejemplo, imagina que tienes que encontrar una cadena de texto en un texto más grande. La cadena a encontrar es una de tres posibles “Kilo”, “Mega”, “Giga”. ¿Valdrá la pena hacer la abstracción de un buscador general de cadenas cualquiera en textos arbitrarios con el uso de autómatas finitos deterministas? Lo más probable es que no: con un un simple “contains” o la función equivalente usado en el lugar de la búsqueda es suficiente.</p>
+
+<p>Esto se puede meter directamente con nuestro orgullo: lo fácil o sencillo no nos hace parecer inteligente. Pero recuerda que la simplicidad es la mejor sofisticación. Mientras más simples sean tus diseños, mejor.</p>
+
+<p>El otro punto importante es <strong>cuándo</strong> creamos estas abstracciones. Si quieres crear el programa más complejo desde el principio, lo más probable es que vas a tardar mucho en implementarlo, además de que puede que crees abstracciones que no vas a necesitar. Mejor usa las cosas más concretas posible hasta que de verdad el problema o los requerimientos de los usuarios te hagan generalizar algo. Es cierto que a veces prever algún cambio simplificará tu trabajo en el futuro, pero la mayoría de veces nos equivocamos. Lo hacemos tanto, que existe un inicialismo para refrenarnos de crear abstracciones prematuramente: YAGNI (You aren’t gonna need it - No lo vas a necesitar).</p>
+
+<h2 id="el-costo-de-las-abstracciones">El costo de las abstracciones</h2>
+
+<p>Una abstracción del tipo que esconde código de otras partes del programa, es decir, de las que están detrás de una interfaz (Clase, módulo, función, etc), normalmente cuestan más en tiempo de diseño, de compilación o de ejecución. Normalmente en los tres, a menos que sea una abstracción con la que tengas mucha familiaridad. Esta es otra razón para refrenarnos de crear todas las abstracciones que se nos ocurran en un programa, o de crear cadenas de abstracciones demasiado grandes.</p>
+
+<p>Esto lo tienes que pensar sobre todo cuando los beneficios de crear cierta abstracción no están tan claros. Con algunos entornos, hay excepciones.</p>
+
+<h3 id="zero-cost-abstractions-abstracciones-sin-costo">Zero-cost abstractions (Abstracciones sin costo)</h3>
+
+<p>Las abstracciones de costo cero son una propuesta de algunos entornos y lenguajes de programación modernos. Como abstraer normalmente supone un costo en el tiempo de ejecución del programa, las abstracciones sin costo proponen que, aunque puedes usar elementos de más alto nivel en el código, no te van a costar rendimiento en tiempo de ejecución.</p>
+
+<p>¿Entonces en dónde cuestan? Normalmente le cuestan al compilador, reemplazar o expandir macros en tiempo de construcción. Rust es un ejemplo de esto, aunque estas abstracciones están a bastante bajo nivel (te evitan manejos de memoria que podrían ser complicados, por ejemplo).</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Mejorar tu capacidad de abstraer conceptos, pero sobre todo de representarlos de manera eficiente en el lenguaje de programación de tu elección te llevará lejos en la carrera de desarrollo de software.</p>
+
+<p>Este tema es de los más importantes en las ciencias de la computación y desarrollo de software, así que es algo de lo que puedes seguir aprendiendo a lo largo de toda tu carrera. Algunos documentos que puedes consultar para aprender más son:</p>
+
+<ol>
+  <li><a href="https://www.docdroid.com/ST0qbY8/programacion-y-tecnologia-un-camino-equivocado-pdf">Programación y Tecnología: Un camino equivocado hacia la construcción de
+artefactos</a></li>
+  <li><a href="/assets/pdfs/EJ1329311.pdf">Abstraction in Computer Science Education:
+An Overview</a></li>
+  <li><a href="/assets/pdfs/chap02.pdf">Abstraction</a></li>
+</ol>
+
+<p>Espero que este artículo te sirva en tu camino profesional en la carrera de desarrollo de software.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#abstracci%C3%B3n" class="page__taxonomy-item" rel="tag">abstracción</a><span class="sep">, </span>
+    
+      <a href="/tags/#abstraction" class="page__taxonomy-item" rel="tag">abstraction</a><span class="sep">, </span>
+    
+      <a href="/tags/#abstracto" class="page__taxonomy-item" rel="tag">abstracto</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-03-13T00:00:00-06:00">March 13, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%C2%BFQu%C3%A9+es+la+abstracci%C3%B3n%3F%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F03%2F13%2Fque-es-la-abstraccion.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F03%2F13%2Fque-es-la-abstraccion.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F03%2F13%2Fque-es-la-abstraccion.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/03/06/el-principio-de-substitucion-de-liskov.html" class="pagination--pager" title="El principio de sustitución de Liskov
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1677648049/brett-jordan-DDupbpu4MS4-unsplash_jdapyu.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/03/06/el-principio-de-substitucion-de-liskov.html" rel="permalink">El principio de sustitución de Liskov
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+13 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 06-03-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1675031892/vinicius-amnx-amano-IPemgbj9aDY-unsplash_cttyeh.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="permalink">¿Qué es un modelo transformador de inteligencia artificial?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 27-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1677550573/221453137-8e8b0887-953a-43f4-a34d-a1f36c7deb00_wxg5wx.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/27/code-review.html" rel="permalink">Code Review: La practica Milenaria que seguimos haciendo mal.
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+12 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 27-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1674189354/753963464_A_dream_of_a_distant_galaxy__concept_art__matte_painting___artstation__HQ__4k_cfn82z.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="permalink">La importancia de entender los principios de la computación
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 17-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">A veces, entre tantas herramientas y tecnologías que podemos usar día a día, nos olvidamos de los principios básicos que soportan todo lo que hacemos como de...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/03/13/que-es-la-abstraccion"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
