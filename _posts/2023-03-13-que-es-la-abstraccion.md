@@ -11,7 +11,7 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Muchos programadores saben intuitivamente que gran parte del trabajo que hacemos como desarrolladores de software consiste en "abstraer", sin llegar a entender completamente qué significa esto.
+Gran parte del trabajo que hacemos como desarrolladores de software consiste en "abstraer", pero a veces no entendemos lo que esto significa.
 
 En este artículo vamos a empezar explicando qué es la abstracción en general y luego cómo puedes mejorar tu habilidad de abstraer para programar más rápido y para crear mejores programas. La capacidad de **crear mejores abstracciones te permitirá crear programas que no creías que pudieran existir o que tú pudieras crear**.
 
@@ -23,22 +23,24 @@ Empecemos por las mismísimas bases.
 
 La palabra _abstrahere_ se usa en el sentido de "separar" o "extraer" en el contexto de la filosofía, la matemática y la física. En el contexto de las matemáticas, la abstracción es el proceso de separar un concepto de sus propiedades físicas.
 
-A veces entendemos el proceso de abstraer como la capacidad de generalización. Por ejemplo, si queremos abstraer el concepto de "mesa", lo que hacemos es quitar todas las características concretas de todas las mesas que hemos visto en la vida y entonces vemos lo que tienen todas en común: nos permiten hacer algo sobre ellas, sea parados o sentados. De esta manera tenemos el concepto abstracto de una mesa en nuestra mente. Después podemos aplicar ese concepto a diferentes cosas que veamos.
+A veces entendemos el proceso de abstraer como la capacidad de generalización. Por ejemplo, si queremos abstraer el concepto de "mesa", lo que hacemos es quitar todas las _características concretas_ de todas las mesas que hemos visto en la vida y entonces vemos lo que tienen todas en común: nos permiten hacer algo sobre ellas, sea parados o sentados. De esta manera tenemos el concepto abstracto de una mesa en nuestra mente. Después podemos aplicar ese concepto a diferentes cosas que veamos.
 
-Los seres humanos somos máquinas de abstraer. Si a un niño pequeño le presentas unos cuantos gatos o perros, es capaz de aprender el concepto "gato" y extenderlo a otros gatos que vea aunque no se parezcan mucho a los que ya vio. Lo que no es capaz de hacer normalmente, es definir en palabras lo que es un "gato" de manera precisa.
+**Los seres humanos somos máquinas de abstraer.** Si a un niño pequeño le presentas unos cuantos gatos o perros, es capaz de aprender el concepto "gato" y extenderlo a otros gatos que vea aunque no se parezcan mucho a los que ya vio. Lo que no es capaz de hacer normalmente, es definir en palabras lo que es un "gato" de manera precisa.
 
-Como **resumen**: abstraer es "tirar fuera", sacar las características que definen algo de su contexto concreto y ser capaz de entender ese concepto de manera general.
+Como **resumen**: abstraer es "tirar fuera", sacar las características que definen algo de su contexto concreto y ser capaz de entender ese concepto de manera general. Esta capacidad nos permite comprender el mundo y movernos en él.
 
-Algunos definen las abstracciones como lo contrario: quitarle todo lo que no es necesario a un concepto para 1) resaltar y hacer visible lo que importa y 2) Ocultar detalles que no _deben_ ser tomados en cuenta.
+Algunos definen las abstracciones como lo contrario: quitarle todo lo que no es necesario a un concepto para 1) resaltar y hacer **visible** lo que importa y 2) Ocultar detalles que _no deben_ ser tomados en cuenta.
 
-A estas abstracciones a veces las llamamos **modelos**_. **¿Te suena?**
+A estas abstracciones a veces las llamamos _**modelos**_. **¿Te suena?**
+
+![Imagen que ilustra la abstracción]()
 
 ## Cómo la usamos en la programación
 
-Ya hemos dicho que aunque los seres humanos nos la pasamos abstrayendo todo lo que vemos en la vida real, no siempre podemos:
+Aunque los seres humanos nos la pasamos abstrayendo todo lo que vemos en la vida real (de hecho, lo único que tenemos en nuestra cabeza son abstracciones), no siempre podemos hacer las siguientes dos cosas:
 
-1. Delimitar precisamente la abstracción
-2. Expresar o explicar esa abstracción a otras personas
+1. Delimitar **precisamente** la abstracción
+2. Expresar o explicar esa abstracción a otras personas, en lenguaje común.
 
 Y esto **_precisamente_** es lo que necesitamos al programar: delimitar nuestras abstracciones y expresarlas en algún lenguaje de programación, como una tabla en una base de datos o de alguna otra forma que las computadoras puedan capturar y procesar, **a esto es a lo que nos referimos cuando hablamos de abstraer en la programación**.
 
@@ -105,7 +107,7 @@ Pensando más ampliamente, la abstracción del usuario tendrá más atributos de
 Cuando hablamos de abstracciones en programación, a veces se escucha el término "nivel de abstracción".
 ¿A qué se refiere un "nivel"? La siguiente imagen nos puede ayudar a entenderlo:
 
-![Niveles de abstracción](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1678759133/Ilustracio%CC%81n_sin_ti%CC%81tulo_f7ag0e.png)
+![Niveles de abstracción](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1678759133/Ilustracio%CC%81n_sin_ti%CC%81tulo_f7ag0e.png){: .align-center}
 
 Mientras más cerca esté de la implementación técnica (llegando hasta el hardware), podemos decir que la abstracción está más "abajo". Mientras más cerca esté de los pensamientos o la forma en la que los humanos vemos las cosas cotidianamente, la abstracción está más "arriba".
 
