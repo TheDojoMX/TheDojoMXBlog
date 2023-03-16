@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-03-13T23:59:28-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es la abstracción?</title><link href="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html" rel="alternate" type="text/html" title="¿Qué es la abstracción?" /><published>2023-03-13T00:00:00-06:00</published><updated>2023-03-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html">&lt;p&gt;Muchos programadores saben intuitivamente que gran parte del trabajo que hacemos como desarrolladores de software consiste en “abstraer”, sin llegar a entender completamente qué significa esto.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-03-15T23:23:40-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es la abstracción?</title><link href="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html" rel="alternate" type="text/html" title="¿Qué es la abstracción?" /><published>2023-03-13T00:00:00-06:00</published><updated>2023-03-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html">&lt;p&gt;Gran parte del trabajo que hacemos como desarrolladores de software consiste en “abstraer”, pero a veces no entendemos lo que esto significa.&lt;/p&gt;
 
 &lt;p&gt;En este artículo vamos a empezar explicando qué es la abstracción en general y luego cómo puedes mejorar tu habilidad de abstraer para programar más rápido y para crear mejores programas. La capacidad de &lt;strong&gt;crear mejores abstracciones te permitirá crear programas que no creías que pudieran existir o que tú pudieras crear&lt;/strong&gt;.&lt;/p&gt;
 
@@ -10,23 +10,25 @@
 
 &lt;p&gt;La palabra &lt;em&gt;abstrahere&lt;/em&gt; se usa en el sentido de “separar” o “extraer” en el contexto de la filosofía, la matemática y la física. En el contexto de las matemáticas, la abstracción es el proceso de separar un concepto de sus propiedades físicas.&lt;/p&gt;
 
-&lt;p&gt;A veces entendemos el proceso de abstraer como la capacidad de generalización. Por ejemplo, si queremos abstraer el concepto de “mesa”, lo que hacemos es quitar todas las características concretas de todas las mesas que hemos visto en la vida y entonces vemos lo que tienen todas en común: nos permiten hacer algo sobre ellas, sea parados o sentados. De esta manera tenemos el concepto abstracto de una mesa en nuestra mente. Después podemos aplicar ese concepto a diferentes cosas que veamos.&lt;/p&gt;
+&lt;p&gt;A veces entendemos el proceso de abstraer como la capacidad de generalización. Por ejemplo, si queremos abstraer el concepto de “mesa”, lo que hacemos es quitar todas las &lt;em&gt;características concretas&lt;/em&gt; de todas las mesas que hemos visto en la vida y entonces vemos lo que tienen todas en común: nos permiten hacer algo sobre ellas, sea parados o sentados. De esta manera tenemos el concepto abstracto de una mesa en nuestra mente. Después podemos aplicar ese concepto a diferentes cosas que veamos.&lt;/p&gt;
 
-&lt;p&gt;Los seres humanos somos máquinas de abstraer. Si a un niño pequeño le presentas unos cuantos gatos o perros, es capaz de aprender el concepto “gato” y extenderlo a otros gatos que vea aunque no se parezcan mucho a los que ya vio. Lo que no es capaz de hacer normalmente, es definir en palabras lo que es un “gato” de manera precisa.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Los seres humanos somos máquinas de abstraer.&lt;/strong&gt; Si a un niño pequeño le presentas unos cuantos gatos o perros, es capaz de aprender el concepto “gato” y extenderlo a otros gatos que vea aunque no se parezcan mucho a los que ya vio. Lo que no es capaz de hacer normalmente, es definir en palabras lo que es un “gato” de manera precisa.&lt;/p&gt;
 
-&lt;p&gt;Como &lt;strong&gt;resumen&lt;/strong&gt;: abstraer es “tirar fuera”, sacar las características que definen algo de su contexto concreto y ser capaz de entender ese concepto de manera general.&lt;/p&gt;
+&lt;p&gt;Como &lt;strong&gt;resumen&lt;/strong&gt;: abstraer es “tirar fuera”, sacar las características que definen algo de su contexto concreto y ser capaz de entender ese concepto de manera general. Esta capacidad nos permite comprender el mundo y movernos en él.&lt;/p&gt;
 
-&lt;p&gt;Algunos definen las abstracciones como lo contrario: quitarle todo lo que no es necesario a un concepto para 1) resaltar y hacer visible lo que importa y 2) Ocultar detalles que no &lt;em&gt;deben&lt;/em&gt; ser tomados en cuenta.&lt;/p&gt;
+&lt;p&gt;Algunos definen las abstracciones como lo contrario: quitarle todo lo que no es necesario a un concepto para 1) resaltar y hacer &lt;strong&gt;visible&lt;/strong&gt; lo que importa y 2) Ocultar detalles que &lt;em&gt;no deben&lt;/em&gt; ser tomados en cuenta.&lt;/p&gt;
 
-&lt;p&gt;A estas abstracciones a veces las llamamos &lt;strong&gt;modelos&lt;/strong&gt;_. &lt;strong&gt;¿Te suena?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A estas abstracciones a veces las llamamos &lt;em&gt;&lt;strong&gt;modelos&lt;/strong&gt;&lt;/em&gt;. &lt;strong&gt;¿Te suena?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1678944166/Ilustracio%CC%81n_sin_ti%CC%81tulo_2_cwrhak.png&quot; alt=&quot;Imagen que ilustra la abstracción&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;cómo-la-usamos-en-la-programación&quot;&gt;Cómo la usamos en la programación&lt;/h2&gt;
 
-&lt;p&gt;Ya hemos dicho que aunque los seres humanos nos la pasamos abstrayendo todo lo que vemos en la vida real, no siempre podemos:&lt;/p&gt;
+&lt;p&gt;Aunque los seres humanos nos la pasamos abstrayendo todo lo que vemos en la vida real (de hecho, lo único que tenemos en nuestra cabeza son abstracciones), no siempre podemos hacer las siguientes dos cosas:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Delimitar precisamente la abstracción&lt;/li&gt;
-  &lt;li&gt;Expresar o explicar esa abstracción a otras personas&lt;/li&gt;
+  &lt;li&gt;Delimitar &lt;strong&gt;precisamente&lt;/strong&gt; la abstracción&lt;/li&gt;
+  &lt;li&gt;Expresar o explicar esa abstracción a otras personas, en lenguaje común.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Y esto &lt;strong&gt;&lt;em&gt;precisamente&lt;/em&gt;&lt;/strong&gt; es lo que necesitamos al programar: delimitar nuestras abstracciones y expresarlas en algún lenguaje de programación, como una tabla en una base de datos o de alguna otra forma que las computadoras puedan capturar y procesar, &lt;strong&gt;a esto es a lo que nos referimos cuando hablamos de abstraer en la programación&lt;/strong&gt;.&lt;/p&gt;
@@ -100,7 +102,7 @@ para no ir a pagar artículo por artículo, se tiene un contenedor que nos ayuda
 &lt;p&gt;Cuando hablamos de abstracciones en programación, a veces se escucha el término “nivel de abstracción”.
 ¿A qué se refiere un “nivel”? La siguiente imagen nos puede ayudar a entenderlo:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1678759133/Ilustracio%CC%81n_sin_ti%CC%81tulo_f7ag0e.png&quot; alt=&quot;Niveles de abstracción&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1678759133/Ilustracio%CC%81n_sin_ti%CC%81tulo_f7ag0e.png&quot; alt=&quot;Niveles de abstracción&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Mientras más cerca esté de la implementación técnica (llegando hasta el hardware), podemos decir que la abstracción está más “abajo”. Mientras más cerca esté de los pensamientos o la forma en la que los humanos vemos las cosas cotidianamente, la abstracción está más “arriba”.&lt;/p&gt;
 
