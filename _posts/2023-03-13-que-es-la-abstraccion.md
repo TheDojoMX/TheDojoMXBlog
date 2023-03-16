@@ -33,7 +33,7 @@ Algunos definen las abstracciones como lo contrario: quitarle todo lo que no es 
 
 A estas abstracciones a veces las llamamos _**modelos**_. **¿Te suena?**
 
-![Imagen que ilustra la abstracción]()
+![Imagen que ilustra la abstracción](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1678944166/Ilustracio%CC%81n_sin_ti%CC%81tulo_2_cwrhak.png){: .align-center}
 
 ## Cómo la usamos en la programación
 
