@@ -38,4 +38,8 @@ Si la interfaz cumple con esto, entonces es una interfaz de programación.
 
 ### Interfaz de Programación de Aplicación
 
-El último término nos dice a quién la pertenece esta interfaz: **a otra APLICACIÓN**. Esto nos dice...
+El último término nos dice a quién la pertenece esta interfaz: **a otra APLICACIÓN**. Esto nos dice que la interfaz pertenece a un programa para que **otro programa se comunique**.
+
+Resumen: un API es lo que permite la comunicación entre dos programas de manera automática, es decir, sin que tengan que intervenir humanos en esa comunicación. Le permite a un programa usar otro.
+
+Con el tiempo, lo que llamamos "Aplicación" se ha extendido a otras partes del programa...
