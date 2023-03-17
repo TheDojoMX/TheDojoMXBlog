@@ -58,3 +58,11 @@ Seguro existen muchas otras formas de crear un API en un sistema distribuido per
 Ahora hablemos de otro uso de la palabra: en el diseño de software.
 
 ### API's en el diseño de software
+
+Cuando se usa la palabra API en contexto de diseño de software, normalmente se refiere a la interfaz que otro sistema, módulo, o en general, componente del software presenta.
+
+Por ejemplo, podemos decir que una clase tiene un API en el sentido de que presenta una cara a los demás parte del sistema para que lo usen, pero sobre todo **oculta** la implementación de las funciones que da. Como te podrás dar cuenta, una API es la parte pragmática de una [abstracción](/2023/03/13/que-es-la-abstraccion.html), y por eso es importante entenderlas.
+
+El diseño del API de tus módulos, clases y aplicaciones en general es importantísimo para hacer buen software.
+
+Retomando lo que siempre repetimos en este blog: las interfaces bien diseñadas te permiten ocultar información que no quieres que otras partes del sistema tengan en cuenta.
