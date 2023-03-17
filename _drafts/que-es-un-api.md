@@ -54,3 +54,7 @@ Dependiendo de los estándares que sigan, estas API's pueden ser llamadas **RPC*
 Este tipo de comunicación a través de la red tiene varias versiones, no sólo HTTP. Por ejemplo, existen alternativas más modernas como **gRPC** (Google Remote Procedure Call), que usa HTTP2 como medio de transporte y Protocol Buffers com formato de serialización (el lenguaje que puede ser fácilmente procesado por otro programa).
 
 Seguro existen muchas otras formas de crear un API en un sistema distribuido pero la idea básica ya la tienes. Este es el uso más común de la palabra.
+
+Ahora hablemos de otro uso de la palabra: en el diseño de software.
+
+### API's en el diseño de software

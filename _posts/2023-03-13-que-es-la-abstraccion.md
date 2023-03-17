@@ -54,9 +54,11 @@ La abstracciones las podemos ver en muchas formas en la programación:
 
 - Modelos de datos
 - Tipos de datos
-- Clases y objetos
+- Objetos
 - Funciones
 - Clases
+- Módulos
+- Interfaces
 
 Todas estas cosas que mencionamos tienen una característica en común: presentan una **interfaz**. Así estas abstracciones lo pueden ser en dos sentidos:
 
@@ -170,7 +172,7 @@ Haber visto y sobre todo documentado una gran cantidad de patrones también nos 
 
 El diseño del software puede hacerse como la escritura: primero escribes y después editas. Son dos etapas diferentes y tan independientes que dos personas diferentes las pueden hacer. El diseño en el software puede hacerse de manera parecida. Primero diseñas tus representaciones y puedes pedirle a alguien que te corrija o revise, o puedes hacerlo tú mismo después de haber dejado pasar un poco de tiempo.
 
-Esta revisión te llevará a pensar cosas como "¿Qué estaba pensando cuando escribí esto?" o "Creo que esta no es la abstracción correcta", gracias a que normalmente te has parado un poco a distancia de tu propio diseño.
+Esta revisión te llevará a pensar cosas como "¿Qué estaba pensando cuando escribí esto?" o "Creo que esta no es la abstracción correcta, porque deja escapar detalles no necesarios", gracias a que normalmente te has parado un poco a distancia de tu propio diseño.
 
 ## Desarrolla la capacidad de absorber información
 
@@ -180,11 +182,11 @@ Debido a que tienes que representar cosas de dominios en los que probablemente n
 
 Mientras más cosas sepas de diferentes campos o dominios, será más probable que encuentres cosas que te puedan servir para _entender_ lo que estás tratando de representar y sobre todo para extraer sus componentes principales, así como la información que vale la pena excluir. Así que no te limites en aprender todo lo que puedas de todos los campos posibles, pero recuerda también que esto tiene rendimientos decrecientes: mientras más profundices en un campo, más te costará adquirir nueva información que valga la pena.
 
-Es por esto mismo que muchos programadores son buenos programando para ciertos dominios: financiero, de automatización industrial, de juegos, de programas científicos, etc. No lo podemos saber todo y muchas veces son el conocimiento de una sóla área es suficiente para entretenernos por décadas.
+Es por esto mismo que muchos programadores son buenos programando para ciertos dominios: financiero, de automatización industrial, de juegos, de programas científicos, etc. No lo podemos saber todo y muchas veces son el conocimiento de una sola área es suficiente para entretenernos por décadas.
 
 ### Practica
 
-Este es el concepto más gastado de todos, pero aquí le vamos a dar un pequeño giro. No sirve de mucho para mejorar sólo hacer abstracciones sin reflexionar en ellas. Tienes que pensar detenidamente en tus diseños y contestar preguntas como:
+Este es el consejo más gastado de todos, pero aquí le vamos a dar un pequeño giro. No sirve de mucho para mejorar sólo hacer abstracciones sin reflexionar en ellas. Tienes que pensar detenidamente en tus diseños y contestar preguntas como:
 
 - ¿Qué información tenía disponible y pasé por alto?
 - ¿Cómo hubiera podido conocer u obtener esa información?
@@ -202,9 +204,9 @@ A veces nos pasamos con las abstracciones, tanto en el nivel como en el momento 
 
 Una señal de que estamos abstrayendo demasiado es que haya una gran diferencia entre la dificultad natural del problema base y nuestro código. Por ejemplo, imagina que tienes que encontrar una cadena de texto en un texto más grande. La cadena a encontrar es una de tres posibles "Kilo", "Mega", "Giga". ¿Valdrá la pena hacer la abstracción de un buscador general de cadenas cualquiera en textos arbitrarios con el uso de autómatas finitos deterministas? Lo más probable es que no: con un un simple "contains" o la función equivalente usado en el lugar de la búsqueda es suficiente.
 
-Esto se puede meter directamente con nuestro orgullo: lo fácil o sencillo no nos hace parecer inteligente. Pero recuerda que la simplicidad es la mejor sofisticación. Mientras más simples sean tus diseños, mejor.
+Esto se puede meter directamente con nuestro _orgullo_: lo fácil o sencillo no nos hace parecer inteligentes. Pero recuerda que **la simplicidad es la mejor sofisticación**. Mientras más simples sean tus diseños, mejor. Más fácil será reconocerlos en el futuro, más fácil será que otros los entiendan y lo mejor: los bloques de construcción simples son el mejor fundamento para crear cosas complejas mediante la composición de estos.
 
-El otro punto importante es **cuándo** creamos estas abstracciones. Si quieres crear el programa más complejo desde el principio, lo más probable es que vas a tardar mucho en implementarlo, además de que puede que crees abstracciones que no vas a necesitar. Mejor usa las cosas más concretas posible hasta que de verdad el problema o los requerimientos de los usuarios te hagan generalizar algo. Es cierto que a veces prever algún cambio simplificará tu trabajo en el futuro, pero la mayoría de veces nos equivocamos. Lo hacemos tanto, que existe un inicialismo para refrenarnos de crear abstracciones prematuramente: YAGNI (You aren't gonna need it - No lo vas a necesitar).
+El otro punto importante es **cuándo** creamos estas abstracciones. Si quieres crear el programa más complejo desde el principio, lo más probable es que vas a tardar mucho en implementarlo, además de que puede que crees abstracciones que no vas a necesitar. Mejor usa las cosas más concretas posible hasta que de verdad el problema o los requerimientos de los usuarios te hagan generalizar algo. Es cierto que a veces prever algún cambio simplificará tu trabajo en el futuro, pero la mayoría de veces nos equivocamos. Lo hacemos tanto, que existe un inicialismo para refrenarnos de crear abstracciones prematuramente: YAGNI (You aren't gonna need it - **No lo vas a necesitar**).
 
 ## El costo de las abstracciones
 
