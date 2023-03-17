@@ -65,4 +65,46 @@ Por ejemplo, podemos decir que una clase tiene un API en el sentido de que prese
 
 El diseño del API de tus módulos, clases y aplicaciones en general es importantísimo para hacer buen software.
 
-Retomando lo que siempre repetimos en este blog: las interfaces bien diseñadas te permiten ocultar información que no quieres que otras partes del sistema tengan en cuenta.
+Retomando lo que siempre repetimos en este blog: **las interfaces bien diseñadas te permiten ocultar información** que no quieres que otras partes del sistema tengan en cuenta.
+
+Por ejemplo en [Elixir](https://elixirlang.com), la forma de crear separación entre diferentes partes del sistema, a parte de módulos, son lo que llamamos **aplicaciones**. Esta aplicación puede tener un API bien definida que permita que sea 1) fácil de usar 2) que oculte todos los detalles de implementación posibles para que no se escape nada de información no concerniente a otras aplicaciones.
+
+### Cómo diseñar una buena API
+
+En esta sección voy a mencionar lo que a mi me ha servido para crear interfaces que, al mismo tiempo que son fáciles de usar, son efectivas escondiendo información.
+
+**Las interfaces deben tener una complejidad relativa a la funcionalidad que están ocultando**. Es decir si tienes una función o clase que hace muy poquito, como por ejemplo, hacer un cálculo sencillo y casi autoexplicativo, no te conviene que tengas que pasar veinte datos diferentes para que lo puedas usar, lo único que vas a lograr es que tu programa sea más complicado de usar. En cambio, si la funcionalidad que está detrás de la API es grande y compleja, por supuesto que vale más la pena que la interfaz sea más compleja y requiera que pienses más para usarla.
+
+Como analogía: el control de una bicicleta consiste en un manubrio análogo, mientras que el de un avión tiene decenas (¿tal vez más de 100?) de botones.
+
+Esto está muy relacionado con el concepto que John Ousterhout presenta en ["A Philosophy of Software Design"](https://amzn.to/2H92nwA): crear módulos profundos, es decir, que tengan una interfaz lo más pequeña posible en relación con su funcionalidad, que debe ser lo más grande posible. Como un iceberg.
+
+**Documenta bien las interfaces**. No sirve de mucho una interfaz que nadie sepa como usar. Como en las películas de ciencia ficción donde encuentran aparatos que nadie tiene idea de cómo funcionan, así nos puede pasar con una pieza de software. La documentación de la interfaz debe incluir, además de los nombres de los métodos o llamadas, los tipos de datos esperados (enteros, flotantes, cadenas, fechas), el comportamiento dependiendo de la entrada y el tipo y estructura de la información que devuelve. Es supremamente importante además que se mencione si el uso de la interfaz tiene un efecto secundario, como el disparo de un correo, la creación o manipulación de un archivo.
+
+**Explica la razón de ser**. Esta parte de la documentación cuenta como un ejercicio que tiene dos objetivos: aclararte a ti mismo la razón de la existencia de la interfaz (aquí te vas a dar cuenta de que tal vez no vale la pena crearla o de que debe ser diferente de alguna forma). Si encuentras una buena explicación, entonces definitivamente el contenedor que tiene una API debe ser creado, y lo que vale la pena ser creado en programación, vale la pena ser documentado.
+
+**No ocultes información demasiado temprano**. Los puntos anteriores te pueden ayudar a no caer en este error, pero por si las dudas vamos a dejarlo claro: no tienes por qué separar o crear abstracciones de todo y ponerlo detrás de una API. La separación de implementaciones a final de cuentas puede crear una carga extra: cómo transferir la información. El caso más claro es el de las interfaces que se comunican a través de un red, en las que necesitamos usar una capa de transporte. Pero en otras ocasiones también implica un poco de trabajo extra, que puede no valer la pena si no estamos en la etapa correcta.
+
+## Ventajas de usar un API bien diseñada
+
+Usar un API tiene varias ventajas, pero yo veo tres principales que pueden llevar tu desarrollo a niveles que no esperabas. Hablemos de ellas y tú evaluarás si es algo que te interese.
+
+### Menor carga cognitiva
+
+Al separar tu software en varios componentes o aplicaciones que trabajen mediante interfaces, puedes reducir el número de cosas que tienes que mantener en la cabeza debido a que no te preocuparás por todos los detalles: solamente te interesarás por la interacción entre las API's o tu software y un API.
+
+Esto es justo lo que pasa cuando un front-end se hace separado de un backend. Después de establecer la forma de la API, cuando trabajas en un lado, en front por ejemplo, sólo te preocupas de mostrar los datos que sabes a recibir de la interfaz sin preocuparte de los detalles de procesamiento o de almacenamiento de información de los que el backend se hace cargo.
+
+### Mejor evolución del software
+
+Esto se logra gracias a que, si los diferentes componentes de un sistema están comunicados por API's claramente definidas, que además protejan bien los detalles de implementación de escaparse, estas partes pueden cambiarse internamente sin necesidad de afectar a otras parte si la forma de la interfaz se respeta. Además permite extender el software si creamos otro componente con la misma interfaz pero otro funcionamiento, por ejemplo.
+
+Podríamos decir que las piezas son intercambiables, tal como cuando tienes un foco que se descompone y quieres reemplazarlo por otro, o simplemente quieres cambiar tu viejo foco incandescente por uno de led. Mientras consigas uno con la misma interfaz y que trabaje con el mismo voltaje, no importa la "implementación", es decir, cómo cumpla con su función de entregar luz: podría ser otro incandescente, flourescente, de led, o incluso podrías poner una cámara o un ventilador.
+
+Esto se puede llevar al extremo si la interfaz que estás usando está estandarizada y tienes un programa que sepa utilizar este tipo de interfaces automáticamente. Por ejemplo esa es la idea de ReST y GraphQL.
+
+### Mejor separación del trabajo
+
+Esto se puede inferir del comentario que hicimos, en el primer punto de las ventajas de usar un API. Si creas una interfaz estable y bien documentada, puedes delegar el trabajo de implementar las funciones detrás de esa interfaz a otra personas, otro equipo o de plano otra empresa.
+
+En Open Source, por ejemplo, después de definir la API de un componente y hacer una implementación de referencia, se deja en manos de la comunidad crear otras implementaciones de ese módulo.
