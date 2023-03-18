@@ -634,4 +634,10 @@ var store = [{
         "tags": ["abstracción","abstracto","abstraction"],
         "url": "/2023/03/13/que-es-la-abstraccion.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1678168555/shubham-dhage-w06BFh5bRRA-unsplash_xek5go.jpg"
+      },{
+        "title": "¿Qué es un API?",
+        "excerpt":"A veces limitamos el uso de la palabra API a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que...","categories": [],
+        "tags": ["apis","abstraccion","diseño-de-software","definiciones"],
+        "url": "/2023/03/18/que-es-un-api.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1679119390/denny-muller-JyRTi3LoQnc-unsplash_dfikgt.jpg"
       }]

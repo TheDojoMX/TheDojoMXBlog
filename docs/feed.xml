@@ -1,4 +1,114 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-03-15T23:23:40-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es la abstracción?</title><link href="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html" rel="alternate" type="text/html" title="¿Qué es la abstracción?" /><published>2023-03-13T00:00:00-06:00</published><updated>2023-03-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html">&lt;p&gt;Gran parte del trabajo que hacemos como desarrolladores de software consiste en “abstraer”, pero a veces no entendemos lo que esto significa.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-03-18T00:03:54-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es un API?</title><link href="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html" rel="alternate" type="text/html" title="¿Qué es un API?" /><published>2023-03-18T00:00:00-06:00</published><updated>2023-03-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/18/que-es-un-api</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html">&lt;p&gt;A veces limitamos el uso de la palabra &lt;strong&gt;API&lt;/strong&gt; a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.&lt;/p&gt;
+
+&lt;h2 id=&quot;application-programming-interface&quot;&gt;Application Programming Interface&lt;/h2&gt;
+
+&lt;p&gt;La realidad es que el inicialismo “API” es casi auto-explicativo: Interfaz de Programación de Aplicación. Bueno, vamos a analizarlo un poco.&lt;/p&gt;
+
+&lt;h3 id=&quot;interfaz&quot;&gt;Interfaz&lt;/h3&gt;
+
+&lt;p&gt;Primeramente es un &lt;strong&gt;interfaz&lt;/strong&gt;. Una interfaz es el lugar en donde dos sistemas o entidades convergen e &lt;strong&gt;interactúan&lt;/strong&gt;. Podemos entender como interfaz a la parte que te permite usar un aparato electrónico, por ejemplo. En una computadora, su interfaz para los humanos son el teclado, la pantalla y el mouse o trackpad. En una televisión, la interfaz es la pantalla, el control remoto y los controles integrados en el cuerpo principal.&lt;/p&gt;
+
+&lt;p&gt;La interfaz normalmente &lt;strong&gt;esconde&lt;/strong&gt; la mayor parte del sistema y muestra solamente las partes que son relevantes o &lt;em&gt;que se pueden usar&lt;/em&gt; por un sistema externo. En el caso de la computadora, ver o interactuar directamente con el procesador o la RAM no nos interesa, por eso la computadora expone un conjunto limitado de todas las características que la componen. Esta interfaz en realidad representa una &lt;strong&gt;abstracción&lt;/strong&gt; de lo que el sistema completo es. Este elemento habilita y simplifica el uso de este sistema.&lt;/p&gt;
+
+&lt;p&gt;Las interfaces definen &lt;strong&gt;la forma&lt;/strong&gt; de un sistema para entidades externas a él.&lt;/p&gt;
+
+&lt;h3 id=&quot;interfaz-de-programación&quot;&gt;Interfaz de Programación&lt;/h3&gt;
+
+&lt;p&gt;Ya que sabemos que es una interfaz, ahora agreguemos el siguiente término: &lt;strong&gt;programación&lt;/strong&gt;. Que sea un interfaz de programación nos indica la forma en la que esta interfaz puede ser usada: mediante el fino arte de la programación. Otra forma en la que creo que suena bien la traducción es &lt;em&gt;Interfaz Programática&lt;/em&gt;. Así como las interfaces visuales se entienden mediante la visión, las interfaces programáticas se entienden y usan con &lt;strong&gt;programas&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;¿Qué hace que una interfaz pueda ser usada de manera sencilla por un programa? Listemos algunas de las características:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;La comunicación con la interfaz se puede hacer por medio un programa. La manera más sencilla es por medio de texto plano en formatos establecidos o formatos binarios. Estos pueden ser, por ejemplo, HTTP y para facilitar más las cosas JSON o XML. Hay formatos binarios usados como Protcolbuffers. Pero no &lt;strong&gt;tiene&lt;/strong&gt; que ser ninguno de estos. Mientras el formato se pueda procesar de manera automática con un programa, es una interfaz de programación. Por ejemplo, una aplicación podría escribir a un archivo y la otra simplemente leerlo de ahí (ejem. así funcionan los &lt;em&gt;sockets&lt;/em&gt; en UNIX). O por ejemplo, la “aplicación” puede ser cargada en el mismo espacio de memoria y ser usada por el mismo entorno de ejecución.&lt;/li&gt;
+  &lt;li&gt;La interfaz puede recibir peticiones o instrucciones creadas por un programa. Muy en la línea del punto anterior, la interfaz debe exponer formas de que otro programa la llame mediante medios programables.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Si la interfaz cumple con esto, entonces es una interfaz de programación.&lt;/p&gt;
+
+&lt;h3 id=&quot;interfaz-de-programación-de-aplicación&quot;&gt;Interfaz de Programación de Aplicación&lt;/h3&gt;
+
+&lt;p&gt;El último término nos dice a quién la pertenece esta interfaz: &lt;strong&gt;a otra APLICACIÓN&lt;/strong&gt;. Esto nos dice que la interfaz pertenece a un programa para que &lt;strong&gt;otro programa se comunique&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Resumen: un API es lo que permite la comunicación entre dos programas de manera automática, es decir, sin que tengan que intervenir humanos en esa comunicación. Le permite a un programa usar otro.&lt;/p&gt;
+
+&lt;p&gt;Con el tiempo, lo que llamamos &lt;em&gt;“aplicación”&lt;/em&gt; se ha extendido para referirse a cualquier programa o parte de un programa, como un módulo, una clase, etc.&lt;/p&gt;
+
+&lt;h3 id=&quot;uso-de-api-en-el-contexto-actual&quot;&gt;Uso de “API” en el contexto actual&lt;/h3&gt;
+
+&lt;p&gt;Recapitulemos: una API es una interfaz entre dos programas, que permite a ambos una comunicación unidireccional o bidireccional.&lt;/p&gt;
+
+&lt;p&gt;El uso más común tiene que ver con interfaces que tienen comunicación a través de una red de computadoras, como Internet. Normalmente son un servidores HTTP que pueden responder con formatos que pueden ser procesados de automáticamente de manera sencilla, los más comunes son JSON y XML.
+Dependiendo de los estándares que sigan, estas API’s pueden ser llamadas &lt;strong&gt;RPC&lt;/strong&gt; (Remote Procedure Call), &lt;strong&gt;ReST&lt;/strong&gt; (Representational State Transfer) o &lt;strong&gt;SOAP&lt;/strong&gt; (Simple Object Access Protocol).&lt;/p&gt;
+
+&lt;p&gt;Este tipo de comunicación a través de la red tiene varias versiones, no sólo HTTP. Por ejemplo, existen alternativas más modernas como &lt;strong&gt;gRPC&lt;/strong&gt; (Google Remote Procedure Call), que usa HTTP2 como medio de transporte y Protocol Buffers com formato de serialización (el lenguaje que puede ser fácilmente procesado por otro programa).&lt;/p&gt;
+
+&lt;p&gt;Seguro existen muchas otras formas de crear un API en un sistema distribuido pero la idea básica ya la tienes. Este es el uso más común de la palabra.&lt;/p&gt;
+
+&lt;p&gt;Ahora hablemos de otro uso de la palabra: en el diseño de software.&lt;/p&gt;
+
+&lt;h3 id=&quot;apis-en-el-diseño-de-software&quot;&gt;API’s en el diseño de software&lt;/h3&gt;
+
+&lt;p&gt;Cuando se usa la palabra API en contexto de diseño de software, normalmente se refiere a la interfaz que otro sistema, módulo, o en general, componente del software presenta.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, podemos decir que una clase tiene un API en el sentido de que presenta una cara a los demás parte del sistema para que lo usen, pero sobre todo &lt;strong&gt;oculta&lt;/strong&gt; la implementación de las funciones que da. Como te podrás dar cuenta, una API es la parte pragmática de una &lt;a href=&quot;/2023/03/13/que-es-la-abstraccion.html&quot;&gt;abstracción&lt;/a&gt;, y por eso es importante entenderlas.&lt;/p&gt;
+
+&lt;p&gt;El diseño del API de tus módulos, clases y aplicaciones en general es importantísimo para hacer buen software.&lt;/p&gt;
+
+&lt;p&gt;Retomando lo que siempre repetimos en este blog: &lt;strong&gt;las interfaces bien diseñadas te permiten ocultar información&lt;/strong&gt; que no quieres que otras partes del sistema tengan en cuenta.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo en &lt;a href=&quot;https://elixirlang.com&quot;&gt;Elixir&lt;/a&gt;, la forma de crear separación entre diferentes partes del sistema, a parte de módulos, son lo que llamamos &lt;strong&gt;aplicaciones&lt;/strong&gt;. Esta aplicación puede tener un API bien definida que permita que sea 1) fácil de usar 2) que oculte todos los detalles de implementación posibles para que no se escape nada de información no concerniente a otras aplicaciones.&lt;/p&gt;
+
+&lt;h3 id=&quot;cómo-diseñar-una-buena-api&quot;&gt;Cómo diseñar una buena API&lt;/h3&gt;
+
+&lt;p&gt;En esta sección voy a mencionar lo que a mi me ha servido para crear interfaces que, al mismo tiempo que son fáciles de usar, son efectivas escondiendo información.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Las interfaces deben tener una complejidad relativa a la funcionalidad que están ocultando&lt;/strong&gt;. Es decir si tienes una función o clase que hace muy poquito, como por ejemplo, hacer un cálculo sencillo y casi autoexplicativo, no te conviene que tengas que pasar veinte datos diferentes para que lo puedas usar, lo único que vas a lograr es que tu programa sea más complicado de usar. En cambio, si la funcionalidad que está detrás de la API es grande y compleja, por supuesto que vale más la pena que la interfaz sea más compleja y requiera que pienses más para usarla.&lt;/p&gt;
+
+&lt;p&gt;Como analogía: el control de una bicicleta consiste en un manubrio análogo, mientras que el de un avión tiene decenas (¿tal vez más de 100?) de botones.&lt;/p&gt;
+
+&lt;p&gt;Esto está muy relacionado con el concepto que John Ousterhout presenta en &lt;a href=&quot;https://amzn.to/2H92nwA&quot;&gt;“A Philosophy of Software Design”&lt;/a&gt;: crear módulos profundos, es decir, que tengan una interfaz lo más pequeña posible en relación con su funcionalidad, que debe ser lo más grande posible. Como un iceberg.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Documenta bien las interfaces&lt;/strong&gt;. No sirve de mucho una interfaz que nadie sepa como usar. Como en las películas de ciencia ficción donde encuentran aparatos que nadie tiene idea de cómo funcionan, así nos puede pasar con una pieza de software. La documentación de la interfaz debe incluir, además de los nombres de los métodos o llamadas, los tipos de datos esperados (enteros, flotantes, cadenas, fechas), el comportamiento dependiendo de la entrada y el tipo y estructura de la información que devuelve. Es supremamente importante además que se mencione si el uso de la interfaz tiene un efecto secundario, como el disparo de un correo, la creación o manipulación de un archivo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Explica la razón de ser&lt;/strong&gt;. Esta parte de la documentación cuenta como un ejercicio que tiene dos objetivos: aclararte a ti mismo la razón de la existencia de la interfaz (aquí te vas a dar cuenta de que tal vez no vale la pena crearla o de que debe ser diferente de alguna forma). Si encuentras una buena explicación, entonces definitivamente el contenedor que tiene una API debe ser creado, y lo que vale la pena ser creado en programación, vale la pena ser documentado.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;No ocultes información demasiado temprano&lt;/strong&gt;. Los puntos anteriores te pueden ayudar a no caer en este error, pero por si las dudas vamos a dejarlo claro: no tienes por qué separar o crear abstracciones de todo y ponerlo detrás de una API. La separación de implementaciones a final de cuentas puede crear una carga extra: cómo transferir la información. El caso más claro es el de las interfaces que se comunican a través de un red, en las que necesitamos usar una capa de transporte. Pero en otras ocasiones también implica un poco de trabajo extra, que puede no valer la pena si no estamos en la etapa correcta.&lt;/p&gt;
+
+&lt;h2 id=&quot;ventajas-de-usar-un-api-bien-diseñada&quot;&gt;Ventajas de usar un API bien diseñada&lt;/h2&gt;
+
+&lt;p&gt;Usar un API tiene varias ventajas, pero yo veo tres principales que pueden llevar tu desarrollo a niveles que no esperabas. Hablemos de ellas y tú evaluarás si es algo que te interese.&lt;/p&gt;
+
+&lt;h3 id=&quot;menor-carga-cognitiva&quot;&gt;Menor carga cognitiva&lt;/h3&gt;
+
+&lt;p&gt;Al separar tu software en varios componentes o aplicaciones que trabajen mediante interfaces, puedes reducir el número de cosas que tienes que mantener en la cabeza debido a que no te preocuparás por todos los detalles: solamente te interesarás por la interacción entre las API’s o tu software y un API.&lt;/p&gt;
+
+&lt;p&gt;Esto es justo lo que pasa cuando un front-end se hace separado de un backend. Después de establecer la forma de la API, cuando trabajas en un lado, en front por ejemplo, sólo te preocupas de mostrar los datos que sabes a recibir de la interfaz sin preocuparte de los detalles de procesamiento o de almacenamiento de información de los que el backend se hace cargo.&lt;/p&gt;
+
+&lt;h3 id=&quot;mejor-evolución-del-software&quot;&gt;Mejor evolución del software&lt;/h3&gt;
+
+&lt;p&gt;Esto se logra gracias a que, si los diferentes componentes de un sistema están comunicados por API’s claramente definidas, que además protejan bien los detalles de implementación de escaparse, estas partes pueden cambiarse internamente sin necesidad de afectar a otras parte si la forma de la interfaz se respeta. Además permite extender el software si creamos otro componente con la misma interfaz pero otro funcionamiento, por ejemplo.&lt;/p&gt;
+
+&lt;p&gt;Podríamos decir que las piezas son intercambiables, tal como cuando tienes un foco que se descompone y quieres reemplazarlo por otro, o simplemente quieres cambiar tu viejo foco incandescente por uno de led. Mientras consigas uno con la misma interfaz y que trabaje con el mismo voltaje, no importa la “implementación”, es decir, cómo cumpla con su función de entregar luz: podría ser otro incandescente, flourescente, de led, o incluso podrías poner una cámara o un ventilador.&lt;/p&gt;
+
+&lt;p&gt;Esto se puede llevar al extremo si la interfaz que estás usando está estandarizada y tienes un programa que sepa utilizar este tipo de interfaces automáticamente. Por ejemplo esa es la idea de ReST y GraphQL.&lt;/p&gt;
+
+&lt;h3 id=&quot;mejor-separación-del-trabajo&quot;&gt;Mejor separación del trabajo&lt;/h3&gt;
+
+&lt;p&gt;Esto se puede inferir del comentario que hicimos, en el primer punto de las ventajas de usar un API. Si creas una interfaz estable y bien documentada, puedes delegar el trabajo de implementar las funciones detrás de esa interfaz a otra personas, otro equipo o de plano otra empresa.&lt;/p&gt;
+
+&lt;p&gt;En Open Source, por ejemplo, después de definir la API de un componente y hacer una implementación de referencia, se deja en manos de la comunidad crear otras implementaciones de ese módulo.&lt;/p&gt;
+
+&lt;h2 id=&quot;cómo-decidir-los-módulos&quot;&gt;Cómo decidir los módulos&lt;/h2&gt;
+
+&lt;p&gt;Finalmente, surge la pregunta, ¿cómo puedo decidir qué irá detrás de una interfaz y cómo crear la separación de funciones entre módulos?&lt;/p&gt;
+
+&lt;p&gt;De eso hablaremos en un artículo futuro, basándonos en un artículo de David L. Parnas, &lt;a href=&quot;https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf&quot;&gt;“On the Criteria to be Used in Decomposing Systems into Modules”&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Lo importante de saber que es un API es entender su función y tener técnicas para diseñarlas lo mejor posible. Recuerda, un API no se limita a un servidor web que sirve JSON, sino que es toda aquella interfaz que puede ser usada con un programa. De ahí que los navegadores expongan API’s como la File API, Fetch API, Device API, &lt;a href=&quot;https://www.educative.io/answers/what-are-browser-apis&quot; target=&quot;_blank&quot;&gt;etc.&lt;/a&gt;, que no tienen nada que ver con una API de un servidor web, sino con el &lt;strong&gt;uso de otras partes del software&lt;/strong&gt; y que mediante esta interfaz nos olvidamos de los detalles de implementación.&lt;/p&gt;
+
+&lt;p&gt;Cuando a ti te toque diseñar un API, recuerda su principal función: separar dos partes de un software al mismo tiempo que permites la comunicación.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="apis" /><category term="abstraccion" /><category term="diseño-de-software" /><category term="definiciones" /><summary type="html">Definamos que es un 'Application Programming Interface' en el desarrollo de software.</summary></entry><entry><title type="html">¿Qué es la abstracción?</title><link href="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html" rel="alternate" type="text/html" title="¿Qué es la abstracción?" /><published>2023-03-13T00:00:00-06:00</published><updated>2023-03-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html">&lt;p&gt;Gran parte del trabajo que hacemos como desarrolladores de software consiste en “abstraer”, pero a veces no entendemos lo que esto significa.&lt;/p&gt;
 
 &lt;p&gt;En este artículo vamos a empezar explicando qué es la abstracción en general y luego cómo puedes mejorar tu habilidad de abstraer para programar más rápido y para crear mejores programas. La capacidad de &lt;strong&gt;crear mejores abstracciones te permitirá crear programas que no creías que pudieran existir o que tú pudieras crear&lt;/strong&gt;.&lt;/p&gt;
 
@@ -44,9 +154,11 @@
 &lt;ul&gt;
   &lt;li&gt;Modelos de datos&lt;/li&gt;
   &lt;li&gt;Tipos de datos&lt;/li&gt;
-  &lt;li&gt;Clases y objetos&lt;/li&gt;
+  &lt;li&gt;Objetos&lt;/li&gt;
   &lt;li&gt;Funciones&lt;/li&gt;
   &lt;li&gt;Clases&lt;/li&gt;
+  &lt;li&gt;Módulos&lt;/li&gt;
+  &lt;li&gt;Interfaces&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Todas estas cosas que mencionamos tienen una característica en común: presentan una &lt;strong&gt;interfaz&lt;/strong&gt;. Así estas abstracciones lo pueden ser en dos sentidos:&lt;/p&gt;
@@ -169,7 +281,7 @@ para no ir a pagar artículo por artículo, se tiene un contenedor que nos ayuda
 
 &lt;p&gt;El diseño del software puede hacerse como la escritura: primero escribes y después editas. Son dos etapas diferentes y tan independientes que dos personas diferentes las pueden hacer. El diseño en el software puede hacerse de manera parecida. Primero diseñas tus representaciones y puedes pedirle a alguien que te corrija o revise, o puedes hacerlo tú mismo después de haber dejado pasar un poco de tiempo.&lt;/p&gt;
 
-&lt;p&gt;Esta revisión te llevará a pensar cosas como “¿Qué estaba pensando cuando escribí esto?” o “Creo que esta no es la abstracción correcta”, gracias a que normalmente te has parado un poco a distancia de tu propio diseño.&lt;/p&gt;
+&lt;p&gt;Esta revisión te llevará a pensar cosas como “¿Qué estaba pensando cuando escribí esto?” o “Creo que esta no es la abstracción correcta, porque deja escapar detalles no necesarios”, gracias a que normalmente te has parado un poco a distancia de tu propio diseño.&lt;/p&gt;
 
 &lt;h2 id=&quot;desarrolla-la-capacidad-de-absorber-información&quot;&gt;Desarrolla la capacidad de absorber información&lt;/h2&gt;
 
@@ -179,11 +291,11 @@ para no ir a pagar artículo por artículo, se tiene un contenedor que nos ayuda
 
 &lt;p&gt;Mientras más cosas sepas de diferentes campos o dominios, será más probable que encuentres cosas que te puedan servir para &lt;em&gt;entender&lt;/em&gt; lo que estás tratando de representar y sobre todo para extraer sus componentes principales, así como la información que vale la pena excluir. Así que no te limites en aprender todo lo que puedas de todos los campos posibles, pero recuerda también que esto tiene rendimientos decrecientes: mientras más profundices en un campo, más te costará adquirir nueva información que valga la pena.&lt;/p&gt;
 
-&lt;p&gt;Es por esto mismo que muchos programadores son buenos programando para ciertos dominios: financiero, de automatización industrial, de juegos, de programas científicos, etc. No lo podemos saber todo y muchas veces son el conocimiento de una sóla área es suficiente para entretenernos por décadas.&lt;/p&gt;
+&lt;p&gt;Es por esto mismo que muchos programadores son buenos programando para ciertos dominios: financiero, de automatización industrial, de juegos, de programas científicos, etc. No lo podemos saber todo y muchas veces son el conocimiento de una sola área es suficiente para entretenernos por décadas.&lt;/p&gt;
 
 &lt;h3 id=&quot;practica&quot;&gt;Practica&lt;/h3&gt;
 
-&lt;p&gt;Este es el concepto más gastado de todos, pero aquí le vamos a dar un pequeño giro. No sirve de mucho para mejorar sólo hacer abstracciones sin reflexionar en ellas. Tienes que pensar detenidamente en tus diseños y contestar preguntas como:&lt;/p&gt;
+&lt;p&gt;Este es el consejo más gastado de todos, pero aquí le vamos a dar un pequeño giro. No sirve de mucho para mejorar sólo hacer abstracciones sin reflexionar en ellas. Tienes que pensar detenidamente en tus diseños y contestar preguntas como:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;¿Qué información tenía disponible y pasé por alto?&lt;/li&gt;
@@ -203,9 +315,9 @@ para no ir a pagar artículo por artículo, se tiene un contenedor que nos ayuda
 
 &lt;p&gt;Una señal de que estamos abstrayendo demasiado es que haya una gran diferencia entre la dificultad natural del problema base y nuestro código. Por ejemplo, imagina que tienes que encontrar una cadena de texto en un texto más grande. La cadena a encontrar es una de tres posibles “Kilo”, “Mega”, “Giga”. ¿Valdrá la pena hacer la abstracción de un buscador general de cadenas cualquiera en textos arbitrarios con el uso de autómatas finitos deterministas? Lo más probable es que no: con un un simple “contains” o la función equivalente usado en el lugar de la búsqueda es suficiente.&lt;/p&gt;
 
-&lt;p&gt;Esto se puede meter directamente con nuestro orgullo: lo fácil o sencillo no nos hace parecer inteligente. Pero recuerda que la simplicidad es la mejor sofisticación. Mientras más simples sean tus diseños, mejor.&lt;/p&gt;
+&lt;p&gt;Esto se puede meter directamente con nuestro &lt;em&gt;orgullo&lt;/em&gt;: lo fácil o sencillo no nos hace parecer inteligentes. Pero recuerda que &lt;strong&gt;la simplicidad es la mejor sofisticación&lt;/strong&gt;. Mientras más simples sean tus diseños, mejor. Más fácil será reconocerlos en el futuro, más fácil será que otros los entiendan y lo mejor: los bloques de construcción simples son el mejor fundamento para crear cosas complejas mediante la composición de estos.&lt;/p&gt;
 
-&lt;p&gt;El otro punto importante es &lt;strong&gt;cuándo&lt;/strong&gt; creamos estas abstracciones. Si quieres crear el programa más complejo desde el principio, lo más probable es que vas a tardar mucho en implementarlo, además de que puede que crees abstracciones que no vas a necesitar. Mejor usa las cosas más concretas posible hasta que de verdad el problema o los requerimientos de los usuarios te hagan generalizar algo. Es cierto que a veces prever algún cambio simplificará tu trabajo en el futuro, pero la mayoría de veces nos equivocamos. Lo hacemos tanto, que existe un inicialismo para refrenarnos de crear abstracciones prematuramente: YAGNI (You aren’t gonna need it - No lo vas a necesitar).&lt;/p&gt;
+&lt;p&gt;El otro punto importante es &lt;strong&gt;cuándo&lt;/strong&gt; creamos estas abstracciones. Si quieres crear el programa más complejo desde el principio, lo más probable es que vas a tardar mucho en implementarlo, además de que puede que crees abstracciones que no vas a necesitar. Mejor usa las cosas más concretas posible hasta que de verdad el problema o los requerimientos de los usuarios te hagan generalizar algo. Es cierto que a veces prever algún cambio simplificará tu trabajo en el futuro, pero la mayoría de veces nos equivocamos. Lo hacemos tanto, que existe un inicialismo para refrenarnos de crear abstracciones prematuramente: YAGNI (You aren’t gonna need it - &lt;strong&gt;No lo vas a necesitar&lt;/strong&gt;).&lt;/p&gt;
 
 &lt;h2 id=&quot;el-costo-de-las-abstracciones&quot;&gt;El costo de las abstracciones&lt;/h2&gt;
 
@@ -355,71 +467,7 @@ Es cierto que Liskov usó las jerarquías de clases para ilustrar sus ideas, per
 
 &lt;p&gt;Como lección, podemos decir que seguir las guías de Liskov para el subtipado es una forma de aplicar este principio de diseño aún más amplio, digamos que en realidad la especificación de cómo deben comportarse los subtipos es más como una &lt;em&gt;regla&lt;/em&gt; de diseño que un &lt;em&gt;principio&lt;/em&gt; de diseño.&lt;/p&gt;
 
-&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry><entry><title type="html">¿Qué es un modelo transformador de inteligencia artificial?</title><link href="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="alternate" type="text/html" title="¿Qué es un modelo transformador de inteligencia artificial?" /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html">&lt;p&gt;En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada &lt;em&gt;transformer&lt;/em&gt; o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.&lt;/p&gt;
-
-&lt;h2 id=&quot;redes-neuronales-recurrentes-rnn&quot;&gt;Redes neuronales recurrentes (RNN)&lt;/h2&gt;
-
-&lt;p&gt;Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores o a la misma capa.&lt;/p&gt;
-
-&lt;p&gt;Esta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.&lt;/p&gt;
-
-&lt;p&gt;Sin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien.&lt;/p&gt;
-
-&lt;p&gt;Además, la forma secuencial de tratar las palabras las hace difíciles de entrenar. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.&lt;/p&gt;
-
-&lt;h2 id=&quot;redes-neuronales-de-transformador-transformers&quot;&gt;Redes neuronales de transformador (Transformers)&lt;/h2&gt;
-
-&lt;p&gt;Es una arquitectura más sencilla que las utilizadas anteriormente. Los transformadores están construidos en gran parte por mecanismos de &lt;strong&gt;atención&lt;/strong&gt;. Podemos decir que tiene tres componentes principales:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Codificación de posición&lt;/li&gt;
-  &lt;li&gt;Mecanismo de atención&lt;/li&gt;
-  &lt;li&gt;Mecanismo de auto-atención&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Hablemos de cada una de estas partes más detenidamente, explicadas para un desarrollador de software.&lt;/p&gt;
-
-&lt;h3 id=&quot;codificación-de-posición&quot;&gt;Codificación de posición&lt;/h3&gt;
-
-&lt;p&gt;Esta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.&lt;/p&gt;
-
-&lt;p&gt;La posición del texto como se explica en &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt; depende de una función basada en el seno y coseno, no un número entero de donde se encontró en el texto.&lt;/p&gt;
-
-&lt;p&gt;Esta primera innovación permite que el entrenamiento sea paralelizable y por lo tanto que se puedan procesar más ejemplos, lo que mejora el aprendizaje.&lt;/p&gt;
-
-&lt;h3 id=&quot;atención&quot;&gt;Atención&lt;/h3&gt;
-
-&lt;p&gt;La atención se introdujo algunos años antes en el proceso de traducción automática. Este proceso consiste en que el modelo “mire” a otro texto para saber cómo traducir la palabra o el texto que está procesando. En las tareas de traducción, este mecanismo se da entre el texto que necesita ser traducido y la salida de la traducción.&lt;/p&gt;
-
-&lt;p&gt;El mecanismo de atención le da un peso diferente a cada palabra del texto original, con respecto a la palabra que ese está procesando. Este peso determina en donde se está “fijando” el modelo para procesar la palabra actual.&lt;/p&gt;
-
-&lt;p&gt;Este mecanismo de atención es básicamente un montón de operaciones matriciales.&lt;/p&gt;
-
-&lt;h3 id=&quot;auto-atención&quot;&gt;Auto-atención&lt;/h3&gt;
-
-&lt;p&gt;El mecanismo de atención anterior tiene que ver con la influencia que otro texto en la salida del proceso actual. El mecanismo de auto-atención se refiere al análisis &lt;strong&gt;del mismo texto&lt;/strong&gt; que se está procesando, y la relación entre las palabras.&lt;/p&gt;
-
-&lt;p&gt;Este mecanismo de auto-atención permite que el modelo encuentre patrones a través de muchos ejemplos de entrenamiento. Estos patrones tienen que ver con el significado de la palabra, los sinónimos, la gramática, etc.&lt;/p&gt;
-
-&lt;p&gt;Esta es la parte más importante de un transformador y es lo que hace que los modelos que tienen esta arquitectura sean tan poderosos, permitiéndoles trabajar con textos largos y con una gran variedad de tareas, más allá de solamente traducción.&lt;/p&gt;
-
-&lt;p&gt;Esta es una explicación muy básica de los mecanismos dentro de un modelo de transformador, si quieres aprender más a profundidad puedes leer:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;El documento donde se presentó la arquitectura: &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer&lt;/a&gt;, un artículo en donde con buenos dibujos se explica cómo funcionan.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-bert/&quot;&gt;The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)&lt;/a&gt;, un artículo en donde se explica cómo funciona BERT, basado en ideas similares a las de los transformadores.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ventajas-de-los-transformadores&quot;&gt;Ventajas de los transformadores&lt;/h3&gt;
-
-&lt;p&gt;La principal ventaja es que al ser más fáciles y eficientes de entrenar, se pueden crear modelos más grandes que normalmente harán mejor su tarea. Esto es lo que ha permitido que modelos como PALM y GPT-3 existan.&lt;/p&gt;
-
-&lt;p&gt;Los modelos de transformador nos siguen sorprendiendo y parece que continuarán así en los próximos años.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Las redes neuronales con arquitectura de transformador permiten lograr cosas que no creíamos posibles y son la base de los grandes modelos de lengua natural como GPT-3. Conocer un poco más cómo funcionan nos puede dar una idea de lo que son capaces y sus límites, además de que es bastante interesante. Si quieres que hablemos de algún tema en específico puedes dejarnos un comentario.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="transformers" /><category term="transformadores" /><category term="gpt-3" /><category term="inteligencia-artificial" /><summary type="html">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.</summary></entry><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
+&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
 
 &lt;p&gt;Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal.&lt;/p&gt;
 
@@ -585,7 +633,71 @@ No seas solo un espectador que genera código para ser revisado. Considera que i
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional" /><category term="comunidad" /><category term="mentoria" /><category term="programación" /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry><entry><title type="html">La importancia de entender los principios de la computación</title><link href="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="alternate" type="text/html" title="La importancia de entender los principios de la computación" /><published>2023-02-17T00:00:00-06:00</published><updated>2023-02-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html">&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;“Principios de programación”.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;
+&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional" /><category term="comunidad" /><category term="mentoria" /><category term="programación" /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry><entry><title type="html">¿Qué es un modelo transformador de inteligencia artificial?</title><link href="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="alternate" type="text/html" title="¿Qué es un modelo transformador de inteligencia artificial?" /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html">&lt;p&gt;En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada &lt;em&gt;transformer&lt;/em&gt; o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.&lt;/p&gt;
+
+&lt;h2 id=&quot;redes-neuronales-recurrentes-rnn&quot;&gt;Redes neuronales recurrentes (RNN)&lt;/h2&gt;
+
+&lt;p&gt;Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores o a la misma capa.&lt;/p&gt;
+
+&lt;p&gt;Esta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien.&lt;/p&gt;
+
+&lt;p&gt;Además, la forma secuencial de tratar las palabras las hace difíciles de entrenar. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.&lt;/p&gt;
+
+&lt;h2 id=&quot;redes-neuronales-de-transformador-transformers&quot;&gt;Redes neuronales de transformador (Transformers)&lt;/h2&gt;
+
+&lt;p&gt;Es una arquitectura más sencilla que las utilizadas anteriormente. Los transformadores están construidos en gran parte por mecanismos de &lt;strong&gt;atención&lt;/strong&gt;. Podemos decir que tiene tres componentes principales:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Codificación de posición&lt;/li&gt;
+  &lt;li&gt;Mecanismo de atención&lt;/li&gt;
+  &lt;li&gt;Mecanismo de auto-atención&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hablemos de cada una de estas partes más detenidamente, explicadas para un desarrollador de software.&lt;/p&gt;
+
+&lt;h3 id=&quot;codificación-de-posición&quot;&gt;Codificación de posición&lt;/h3&gt;
+
+&lt;p&gt;Esta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.&lt;/p&gt;
+
+&lt;p&gt;La posición del texto como se explica en &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt; depende de una función basada en el seno y coseno, no un número entero de donde se encontró en el texto.&lt;/p&gt;
+
+&lt;p&gt;Esta primera innovación permite que el entrenamiento sea paralelizable y por lo tanto que se puedan procesar más ejemplos, lo que mejora el aprendizaje.&lt;/p&gt;
+
+&lt;h3 id=&quot;atención&quot;&gt;Atención&lt;/h3&gt;
+
+&lt;p&gt;La atención se introdujo algunos años antes en el proceso de traducción automática. Este proceso consiste en que el modelo “mire” a otro texto para saber cómo traducir la palabra o el texto que está procesando. En las tareas de traducción, este mecanismo se da entre el texto que necesita ser traducido y la salida de la traducción.&lt;/p&gt;
+
+&lt;p&gt;El mecanismo de atención le da un peso diferente a cada palabra del texto original, con respecto a la palabra que ese está procesando. Este peso determina en donde se está “fijando” el modelo para procesar la palabra actual.&lt;/p&gt;
+
+&lt;p&gt;Este mecanismo de atención es básicamente un montón de operaciones matriciales.&lt;/p&gt;
+
+&lt;h3 id=&quot;auto-atención&quot;&gt;Auto-atención&lt;/h3&gt;
+
+&lt;p&gt;El mecanismo de atención anterior tiene que ver con la influencia que otro texto en la salida del proceso actual. El mecanismo de auto-atención se refiere al análisis &lt;strong&gt;del mismo texto&lt;/strong&gt; que se está procesando, y la relación entre las palabras.&lt;/p&gt;
+
+&lt;p&gt;Este mecanismo de auto-atención permite que el modelo encuentre patrones a través de muchos ejemplos de entrenamiento. Estos patrones tienen que ver con el significado de la palabra, los sinónimos, la gramática, etc.&lt;/p&gt;
+
+&lt;p&gt;Esta es la parte más importante de un transformador y es lo que hace que los modelos que tienen esta arquitectura sean tan poderosos, permitiéndoles trabajar con textos largos y con una gran variedad de tareas, más allá de solamente traducción.&lt;/p&gt;
+
+&lt;p&gt;Esta es una explicación muy básica de los mecanismos dentro de un modelo de transformador, si quieres aprender más a profundidad puedes leer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;El documento donde se presentó la arquitectura: &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer&lt;/a&gt;, un artículo en donde con buenos dibujos se explica cómo funcionan.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-bert/&quot;&gt;The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)&lt;/a&gt;, un artículo en donde se explica cómo funciona BERT, basado en ideas similares a las de los transformadores.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ventajas-de-los-transformadores&quot;&gt;Ventajas de los transformadores&lt;/h3&gt;
+
+&lt;p&gt;La principal ventaja es que al ser más fáciles y eficientes de entrenar, se pueden crear modelos más grandes que normalmente harán mejor su tarea. Esto es lo que ha permitido que modelos como PALM y GPT-3 existan.&lt;/p&gt;
+
+&lt;p&gt;Los modelos de transformador nos siguen sorprendiendo y parece que continuarán así en los próximos años.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Las redes neuronales con arquitectura de transformador permiten lograr cosas que no creíamos posibles y son la base de los grandes modelos de lengua natural como GPT-3. Conocer un poco más cómo funcionan nos puede dar una idea de lo que son capaces y sus límites, además de que es bastante interesante. Si quieres que hablemos de algún tema en específico puedes dejarnos un comentario.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="transformers" /><category term="transformadores" /><category term="gpt-3" /><category term="inteligencia-artificial" /><summary type="html">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.</summary></entry><entry><title type="html">La importancia de entender los principios de la computación</title><link href="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="alternate" type="text/html" title="La importancia de entender los principios de la computación" /><published>2023-02-17T00:00:00-06:00</published><updated>2023-02-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html">&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;“Principios de programación”.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;
 
 &lt;p&gt;Empecemos hablando de qué son los principios.&lt;/p&gt;
 
@@ -1016,111 +1128,4 @@ label17:  jump                 label16
 
 &lt;p&gt;A veces se puede usar el bytecode con otros propósitos, por ejemplo, para hacer optimizaciones en tiempo de ejecución, que es lo que hacen los compiladores bajo de demanda o JIt’s.&lt;/p&gt;
 
-&lt;p&gt;Este pequeño artículo tiene el objetivo de que por lo menos veas físicamente lo que muchas veces se menciona como producto de la compilación o interpretación de un programa, pero que no se explica qué es en la mayoría de los casos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="bytecode" /><category term="complación" /><category term="intérprete" /><summary type="html">En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.</summary></entry><entry><title type="html">Qué es la compilación Just In Time (JIT)</title><link href="https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es.html" rel="alternate" type="text/html" title="Qué es la compilación Just In Time (JIT)" /><published>2023-01-18T00:00:00-06:00</published><updated>2023-01-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es.html">&lt;p&gt;Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo   de software. Hace tiempo ha empezado a sonar más un término: &lt;strong&gt;JIT&lt;/strong&gt; o compilación &lt;strong&gt;Just In Time&lt;/strong&gt;, ya que varios lenguajes lo han integrado a sus entornos de ejecución, aquí la llamaremos “compilación bajo demanda” (gracias a Manuel Rubio por la sugerencia). Durante el artículo entenderás por qué creemos que esta traducción es adecuada.&lt;/p&gt;
-
-&lt;p&gt;Este tipo de compilación es poco entendida, por eso en este artículo hablaremos de por qué es algo tan usado. Primero empecemos hablando de la compilación en general y después entendamos este &lt;strong&gt;&lt;em&gt;tipo especial de ejecución&lt;/em&gt;&lt;/strong&gt;. Pero empecemos desde las bases.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-es-compilar&quot;&gt;¿Qué es compilar?&lt;/h2&gt;
-
-&lt;p&gt;Compilar es &lt;strong&gt;traducir de un lenguaje a otro&lt;/strong&gt;. Lo que entendemos como lenguajes compilados generalmente son lenguajes que se  traducen de un lenguaje de programación a un lenguaje de máquina, es decir, a código binario que puede ser ejecutado por un procesador en algunos casos o a código para una máquina virtual (aquí a veces se llama &lt;em&gt;código de bytes&lt;/em&gt; o &lt;em&gt;bytecode&lt;/em&gt;).&lt;/p&gt;
-
-&lt;p&gt;A veces usamos el término &lt;em&gt;“transpilación”&lt;/em&gt; (&lt;em&gt;transpilation&lt;/em&gt; en inglés), que se entiende como una forma de traducir o transformar de un lenguaje entendido por los humanos a otro del mismo nivel. Por ejemplo de TypeScript a JavaScript. Esto no es más que otra forma de compilación. Hablemos de cómo surgió la compilación.&lt;/p&gt;
-
-&lt;h3 id=&quot;historia-de-la-compilación&quot;&gt;Historia de la compilación&lt;/h3&gt;
-
-&lt;p&gt;En el capítulo 9 del libro &lt;a href=&quot;https://altenwald.com/historia-de-los-lenguajes-de-programacion&quot;&gt;“Historia de los lenguajes de programación”&lt;/a&gt; de &lt;a href=&quot;https://mobile.twoitter.com/mronerlang&quot;&gt;Manuel Rubio&lt;/a&gt;, se nos cuenta cómo la compilación nació. Al principio los programadores escribían todo lo que su programa necesitaba desde cero. Una programadora muy experimentada y que estuvo desde los comienzos de la programación, &lt;strong&gt;Grace Hopper&lt;/strong&gt;, empezó a juntar código que hacía tareas que se repetían vez tras vez y simplemente lo insertaba donde necesitaba esa tarea.&lt;/p&gt;
-
-&lt;p&gt;Después, se dio cuenta que podía hacer un programa que hiciera lo mismo que ella hacía manualmente, pero que lo hiciera de manera más rápida y eficiente. Así nació el primer compilador” &lt;a href=&quot;https://www.computinghistory.org.uk/det/5487/Grace-Hopper-completes-the-A-0-Compiler/&quot;&gt;&lt;strong&gt;el A-0&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Se llama &lt;strong&gt;compilador&lt;/strong&gt; (Hopper acuñó el término) y no “traductor” porque más allá de simplemente pasar de un lenguaje a otro, junta (compila) todas las piezas de código invocadas en el programa original y las pone en el programa resultante. El programa original para el A-0 consistía en códigos numéricos que indicaban la subrutina a usar seguidos de los datos a introducir en cada una.&lt;/p&gt;
-
-&lt;p&gt;Es interesante pensar que cuando &lt;strong&gt;Grace&lt;/strong&gt; tuvo la idea de crear un programa que hiciera esto, muchos se opusieron diciendo que no era posible que una computadora se programara a sí misma y que aunque lo hiciera, los programas nunca iban a ser tan buenos como los que podía hacer un programador humano.&lt;/p&gt;
-
-&lt;p&gt;A partir de ahí, se fueron creando compiladores más avanzados y la comunidad al poco tiempo se dio cuenta de que el ahorro de tiempo era muy conveniente para todos, aunque con una pequeña penalización en el desempeño del programa final.&lt;/p&gt;
-
-&lt;h3 id=&quot;compilación-por-adelantado&quot;&gt;Compilación por adelantado&lt;/h3&gt;
-
-&lt;p&gt;La compilación tradicional, conocida en inglés como &lt;em&gt;“ahead of time”&lt;/em&gt; (AOT), que en español la llamaríamos &lt;strong&gt;“compilación adelantada”&lt;/strong&gt;, es la que se ha usado desde el principio de la programación. En este tipo compilación, el código fuente se traduce a código final que se ejecutará por un CPU o por una máquina virtual. El código puede ser el código binario o bytecode.&lt;/p&gt;
-
-&lt;p&gt;Gran parte de lo que hacen los compiladores actuales hacen a parte de traducir es optimizar el código, con el objetivo de que el programa sea lo más eficiente posible en ejecución.&lt;/p&gt;
-
-&lt;h2 id=&quot;compilación-just-in-time-jit&quot;&gt;Compilación “Just in Time” (JIT)&lt;/h2&gt;
-
-&lt;p&gt;La compilación “Just in time”, que significa literalmente “justo a tiempo” (en español me gustaría llamarla compilación bajo demanda), más que un proceso de traducción se trata de &lt;strong&gt;optimización&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Esta compilación sucede solamente en lenguajes que usan una representación intermedia antes de que el procesador los ejecute. Esta representación intermedia normalmente es un &lt;a href=&quot;https://www.techopedia.com/definition/3760/bytecode&quot;&gt;bytecode&lt;/a&gt;. El bytecode puede ser ejecutado por una máquina virtual o intérprete. El compilador JIT transforma este bytecode en código máquina directamente para acelerar su ejecución.&lt;/p&gt;
-
-&lt;h3 id=&quot;funcionamiento-de-un-compilador-bajo-demanda&quot;&gt;Funcionamiento de un compilador bajo demanda&lt;/h3&gt;
-
-&lt;p&gt;Para optimizar la ejecución mientras está sucediendo el compilador JIT tiene que hacer por lo menos tres cosas:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Observar&lt;/strong&gt; la ejecución y el código para &lt;em&gt;identificar&lt;/em&gt; partes que se beneficiarían de compilar su código a código máquina. Por ejemplo, código que se ejecuta muchas veces o que se lleva la mayor parte del tiempo de ejecución. A esta etapa se le llama &lt;em&gt;profiling&lt;/em&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Compilar el bytecode&lt;/strong&gt; en código máquina y &lt;em&gt;optimizarlo&lt;/em&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Como puede que esta compilación no sea tan buena como el bytecode original, el compilador debe &lt;strong&gt;regresar&lt;/strong&gt; el bytecode original si la ejecución no mejora.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;ejemplo-con-v8&quot;&gt;Ejemplo con V8&lt;/h2&gt;
-
-&lt;p&gt;El motor de JavaScript V8 creado por Google, es un ejemplo brillante del uso de compilación bajo demanda.&lt;/p&gt;
-
-&lt;p&gt;En el artículo &lt;a href=&quot;/2020/05/17/que-es-un-engine-de-javascript.html&quot;&gt;“Qué es un Engine de JavaScript”&lt;/a&gt; explicamos el funcionamiento con más detalle. Pero en este diagrama puedes ver las partes principales:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1589700777/1_ZIH_wjqDfZn6NRKsDi9mvA_wc08nl.png&quot; alt=&quot;diagrama de funcionamiento de V8&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Después de la lectura del código fuente y la transformación en una estructura que ya puede ser ejecutada (el Abstract Syntax Tree), el código se ejecuta en el intérprete.&lt;/p&gt;
-
-&lt;p&gt;El intérprete, llamado &lt;strong&gt;Ignition&lt;/strong&gt; genera además el bytecode que más adelante será compilado por el compilador &lt;strong&gt;TurboFan&lt;/strong&gt; en caso de que sea conveniente. TurboFan recibe las métricas de uso del bytecode (recogidas por Ignition), es decir, los resultados del profiling y basado en eso decide qué compilará a código máquina. Después de compilarlo y observar su funcionamiento (si mejoró la velocidad y se mantuvo la estabilidad) del código, V8 decide si lo mantiene o si regresa al bytecode original. Esta es la línea roja que vemos en el diagrama, cuando algo se “des-optimiza”.&lt;/p&gt;
-
-&lt;p&gt;Y esto es básicamente el funcionamiento de un compilador bajo demanda. La observación del código en acción y la mejora en el mismo momento.&lt;/p&gt;
-
-&lt;h2 id=&quot;otros-lenguajes-que-la-usan&quot;&gt;Otros lenguajes que la usan&lt;/h2&gt;
-
-&lt;p&gt;Las primeras instancias de compilación bajo demanda (también llamada compilación dinámica) se vieron desde los años 60, en Lisp y más adelante con Smalltalk y Self. En este documento puedes ver una historia corta de la compilación bajo demanda y los lenguajes que lo han usado: &lt;a href=&quot;http://eecs.ucf.edu/~dcm/Teaching/COT4810-Spring2011/Literature/JustInTimeCompilation.pdf&quot;&gt;A Brief History of Just-In-Time&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;El lenguaje que popularizó el término JIT fue Java con su máquina virtual &lt;a href=&quot;https://www.oracle.com/java/technologies/whitepaper.html&quot;&gt;HotSpot&lt;/a&gt; creada en Sun Microsystems y ahora poseída por Oracle. Esta máquina virtual se caracterizó por el desempeño que logra. &lt;a href=&quot;https://dblp.org/pid/30/2083.html&quot;&gt;Lars Bak&lt;/a&gt; participó en el desaarrollo de HotSpot, V8 y recientemente en el de la máquina virtual de &lt;a href=&quot;https://dart.dev/&quot;&gt;Dart&lt;/a&gt;. Como te puedes imaginar, Dart también usa compilación bajo demanda. &lt;a href=&quot;https://luajit.org/luajit.html&quot;&gt;Lua&lt;/a&gt; también tie su compilador JIT. Y finalmente, &lt;a href=&quot;https://www.telerik.com/blogs/understanding-net-just-in-time-compilation&quot;&gt;C#&lt;/a&gt;, al ser un competidor directo de Java, tiene usar JIT para ser por lo menos tan rápido como su este.&lt;/p&gt;
-
-&lt;p&gt;Los lenguajes que recientemente han agregado JIT a su máquina virtual o intérprete son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Ruby con &lt;a href=&quot;https://www.infoworld.com/article/3647999/ruby-31-arrives-with-new-jit-compiler.html&quot;&gt;YJIT&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;PHP desde su versión 8: &lt;a href=&quot;https://php.watch/versions/8.0/JIT&quot;&gt;PHP 8.0&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Erlang desde su versión 24: &lt;a href=&quot;https://www.erlang.org/blog/a-first-look-at-the-jit/&quot;&gt;Erlang 24&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Como puedes ver, tanto lenguajes compilados como interpretados usan JIT. El único requisito es que el lenguaje utilice un código intermedio.&lt;/p&gt;
-
-&lt;h2 id=&quot;desventajas&quot;&gt;Desventajas&lt;/h2&gt;
-
-&lt;p&gt;Como te imaginarás, no todo es miel sobre hojuelas. La compilación bajo demanda tiene algunas desventajas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Al ser un proceso de compilación dinámica, abre la puerta a algunas vulnerabilidades de seguridad, por ejemplo el &lt;a href=&quot;https://conference.hitb.org/hitbsecconf2010ams/materials/D1T2%20-%20Alexey%20Sintsov%20-%20JIT%20Spray%20Attacks%20and%20Advanced%20Shellcode.pdf&quot;&gt;JIT Spraying&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;El compilador JIT compite con el intérprete por el uso de la CPU. Esto puede afectar el rendimiento del programa.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;El consumo de recursos en general es mayor.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Puede que la forma en la que está hecha tu programa no se beneficie en absoluto de la compilación bajo demanda, por lo que incluso a veces es posible apagarlos.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Si estás en un entorno en el que algo de esto sea muy importante, considera si el entorno en el que estás trabajando puede dessactivarse el JIT. V8, por ejemplo, puede funcionar sin JIT: &lt;a href=&quot;https://v8.dev/blog/jitless&quot;&gt;JIT-less V8&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;La compilación bajo demanda ha sido un gran avance en el desarrollo de software, y es un trabajo de ingeniería muy interesante.&lt;/p&gt;
-
-&lt;p&gt;Permite que la ejecución de nuestros programas sea más eficiente y rápida.  Además, a mi punto de ver, es una maravilla de la ingeniería de software. Si quieres aprender más: puedes visitar el &lt;a href=&quot;https://v8.dev/&quot;&gt;sitio oficial de V8&lt;/a&gt;, en el que explican muchas cosas acerca del desarrollo de este sistema pionero en compilación bajo demanda.&lt;/p&gt;
-
-&lt;p&gt;También puedes ver como funciona un compilador por adelantado todavía más antiguo y muy interesante: &lt;a href=&quot;https://developers.redhat.com/articles/2021/06/23/how-jit-compiler-boosts-java-performance-openjdk#deoptimization_and_speculation&quot;&gt;Java HotSpot VM&lt;/a&gt;.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="jit" /><category term="compiladores" /><category term="compilers" /><category term="compilación" /><category term="just-in-time" /><summary type="html">¿Has escuchado que varios lenguajes están agregando la capacidad de compilación Just In Time a sus entornos? Hablemos de qué es y cómo te beneficia.</summary></entry></feed>
+&lt;p&gt;Este pequeño artículo tiene el objetivo de que por lo menos veas físicamente lo que muchas veces se menciona como producto de la compilación o interpretación de un programa, pero que no se explica qué es en la mayoría de los casos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="bytecode" /><category term="complación" /><category term="intérprete" /><summary type="html">En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.</summary></entry></feed>
