@@ -1,13 +1,13 @@
 ---
-title: "¿Qué es un API?"
-date: 2023-03-15
+title: "¿Qué es una API?"
+date: 2023-03-18
 author: Héctor Patricio
-tags:
+tags: apis abstracción diseño-de-software definiciones
 comments: true
-excerpt: "Definamos que es un 'Application Programming Interface' en el desarrollo de software."
+excerpt: "Definamos que es un 'Application Programming Interface' en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API's."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/v1674189353/266979132_mad_alligator_scientist_looking_at_a_screen_with_binary_code__concept_art___artstation__HQ__4k_nkojwn.png
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_600/v1674189353/266979132_mad_alligator_scientist_looking_at_a_screen_with_binary_code__concept_art___artstation__HQ__4k_nkojwn.png
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -21,9 +21,13 @@ La realidad es que el inicialismo "API" es casi auto-explicativo: Interfaz de Pr
 
 Primeramente es un **interfaz**. Una interfaz es el lugar en donde dos sistemas o entidades convergen e **interactúan**. Podemos entender como interfaz a la parte que te permite usar un aparato electrónico, por ejemplo. En una computadora, su interfaz para los humanos son el teclado, la pantalla y el mouse o trackpad. En una televisión, la interfaz es la pantalla, el control remoto y los controles integrados en el cuerpo principal.
 
-La interfaz normalmente **esconde** la mayor parte del sistema y muestra solamente las partes que son relevantes o _que se pueden usar_ por un sistema externo. En el caso de la computadora, ver o interactuar directamente con el procesador o la RAM no nos interesa, por eso la computadora expone un conjunto limitado de todas las características que la componen. Esta interfaz en realidad representa una **abstracción** de lo que el sistema completo es. Este elemento habilita y simplifica el uso de este sistema.
+La interfaz normalmente **esconde** la mayor parte del sistema y muestra solamente las partes que son relevantes o _que se pueden usar_ por un sistema externo. En el caso de la computadora, ver o interactuar directamente con el procesador o la RAM no nos interesa, por eso la computadora expone un conjunto limitado de todas las características que la componen. Esta interfaz en realidad representa una **abstracción** de lo que el sistema completo es. Este elemento habilita y simplifica el uso de este sistema. Las interfaces definen **la forma** de un sistema para entidades externas a él.
 
-Las interfaces definen **la forma** de un sistema para entidades externas a él.
+Una interfaz podría entenderse como un iceberg: la parte "visible" o con la que puedes interactuar es la punta, mientras que la gran masa es la funcionalidad que está oculta y a la que no puedes acceder.
+
+![Una interfaz es como un Iceberg](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1679188585/Ilustracio%CC%81n_sin_ti%CC%81tulo_3_fi05qn.png){: .align-center}
+
+(Probablemente ese iceberg está mal dibujado: [The topple of an iceberg: You're drawing it wrong](https://axbom.com/iceberg/))
 
 ### Interfaz de Programación
 
@@ -73,7 +77,7 @@ Por ejemplo en [Elixir](https://elixirlang.com), la forma de crear separación e
 
 En esta sección voy a mencionar lo que a mi me ha servido para crear interfaces que, al mismo tiempo que son fáciles de usar, son efectivas escondiendo información.
 
-**Las interfaces deben tener una complejidad relativa a la funcionalidad que están ocultando**. Es decir si tienes una función o clase que hace muy poquito, como por ejemplo, hacer un cálculo sencillo y casi autoexplicativo, no te conviene que tengas que pasar veinte datos diferentes para que lo puedas usar, lo único que vas a lograr es que tu programa sea más complicado de usar. En cambio, si la funcionalidad que está detrás de la API es grande y compleja, por supuesto que vale más la pena que la interfaz sea más compleja y requiera que pienses más para usarla.
+**Las interfaces deben tener una complejidad relativa a la funcionalidad que están ocultando**. Es decir si tienes una función o clase que hace muy poquito, como por ejemplo, hacer un cálculo sencillo y casi auto-explicativo, no te conviene que tengas que pasar veinte datos diferentes para que lo puedas usar, lo único que vas a lograr es que tu programa sea más complicado de usar. En cambio, si la funcionalidad que está detrás de la API es grande y compleja, por supuesto que vale más la pena que la interfaz sea más compleja y requiera que pienses más para usarla.
 
 Como analogía: el control de una bicicleta consiste en un manubrio análogo, mientras que el de un avión tiene decenas (¿tal vez más de 100?) de botones.
 
@@ -99,12 +103,28 @@ Esto es justo lo que pasa cuando un front-end se hace separado de un backend. De
 
 Esto se logra gracias a que, si los diferentes componentes de un sistema están comunicados por API's claramente definidas, que además protejan bien los detalles de implementación de escaparse, estas partes pueden cambiarse internamente sin necesidad de afectar a otras parte si la forma de la interfaz se respeta. Además permite extender el software si creamos otro componente con la misma interfaz pero otro funcionamiento, por ejemplo.
 
-Podríamos decir que las piezas son intercambiables, tal como cuando tienes un foco que se descompone y quieres reemplazarlo por otro, o simplemente quieres cambiar tu viejo foco incandescente por uno de led. Mientras consigas uno con la misma interfaz y que trabaje con el mismo voltaje, no importa la "implementación", es decir, cómo cumpla con su función de entregar luz: podría ser otro incandescente, flourescente, de led, o incluso podrías poner una cámara o un ventilador.
+Podríamos decir que las piezas son intercambiables, tal como cuando tienes un foco que se descompone y quieres reemplazarlo por otro, o simplemente quieres cambiar tu viejo foco incandescente por uno de led. Mientras consigas uno con la misma interfaz y que trabaje con el mismo voltaje, no importa la "implementación", es decir, cómo cumpla con su función de entregar luz: podría ser otro incandescente, fluorescente, de led, o incluso podrías poner una cámara o un ventilador.
 
 Esto se puede llevar al extremo si la interfaz que estás usando está estandarizada y tienes un programa que sepa utilizar este tipo de interfaces automáticamente. Por ejemplo esa es la idea de ReST y GraphQL.
+
+![Power plug](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1679188820/paul-hanaoka-RJkKjLu8I9I-unsplash_o5k8ex.jpg){: .align-center}
+
+Las interfaces proveen la función de **"plug and play"**, mientras el aparato tenga la misma interfaz, podemos conectar cualquier cosa, como en los contactos eléctricos.
 
 ### Mejor separación del trabajo
 
 Esto se puede inferir del comentario que hicimos, en el primer punto de las ventajas de usar un API. Si creas una interfaz estable y bien documentada, puedes delegar el trabajo de implementar las funciones detrás de esa interfaz a otra personas, otro equipo o de plano otra empresa.
 
 En Open Source, por ejemplo, después de definir la API de un componente y hacer una implementación de referencia, se deja en manos de la comunidad crear otras implementaciones de ese módulo.
+
+## Cómo decidir los módulos
+
+Finalmente, surge la pregunta, ¿cómo puedo decidir qué irá detrás de una interfaz y cómo crear la separación de funciones entre módulos?
+
+De eso hablaremos en un artículo futuro, basándonos en un artículo de David L. Parnas, ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf).
+
+## Conclusión
+
+Lo importante de saber que es un API es entender su función y tener técnicas para diseñarlas lo mejor posible. Recuerda, un API no se limita a un servidor web que sirve JSON, sino que es toda aquella interfaz que puede ser usada con un programa. De ahí que los navegadores expongan API's como la File API, Fetch API, Device API, [etc.](https://www.educative.io/answers/what-are-browser-apis){:target="_blank"}, que no tienen nada que ver con una API de un servidor web, sino con el **uso de otras partes del software** y que mediante esta interfaz nos olvidamos de los detalles de implementación.
+
+Cuando a ti te toque diseñar un API, recuerda su principal función: separar dos partes de un software al mismo tiempo que permites la comunicación.
