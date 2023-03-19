@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-03-18T19:24:43-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es una API?</title><link href="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html" rel="alternate" type="text/html" title="¿Qué es una API?" /><published>2023-03-18T00:00:00-06:00</published><updated>2023-03-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/18/que-es-un-api</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html">&lt;p&gt;A veces limitamos el uso de la palabra &lt;strong&gt;API&lt;/strong&gt; a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-03-18T19:49:35-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es una API?</title><link href="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html" rel="alternate" type="text/html" title="¿Qué es una API?" /><published>2023-03-18T00:00:00-06:00</published><updated>2023-03-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/18/que-es-un-api</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html">&lt;p&gt;A veces limitamos el uso de la palabra &lt;strong&gt;API&lt;/strong&gt; a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.&lt;/p&gt;
 
 &lt;h2 id=&quot;application-programming-interface&quot;&gt;Application Programming Interface&lt;/h2&gt;
 
@@ -13,6 +13,8 @@
 &lt;p&gt;Una interfaz podría entenderse como un iceberg: la parte “visible” o con la que puedes interactuar es la punta, mientras que la gran masa es la funcionalidad que está oculta y a la que no puedes acceder.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1679188585/Ilustracio%CC%81n_sin_ti%CC%81tulo_3_fi05qn.png&quot; alt=&quot;Una interfaz es como un Iceberg&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(Probablemente ese iceberg está mal dibujado: &lt;a href=&quot;https://axbom.com/iceberg/&quot;&gt;The topple of an iceberg: You’re drawing it wrong&lt;/a&gt;)&lt;/p&gt;
 
 &lt;h3 id=&quot;interfaz-de-programación&quot;&gt;Interfaz de Programación&lt;/h3&gt;
 
@@ -96,7 +98,7 @@ Dependiendo de los estándares que sigan, estas API’s pueden ser llamadas &lt;
 
 &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1679188820/paul-hanaoka-RJkKjLu8I9I-unsplash_o5k8ex.jpg&quot; alt=&quot;Power plug&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Las interfaces proveen la función de “plug and play”, mientras el aparato tenga la misma interfaz, podemos conectar cualquier cosa, como en los contactos eléctricos.&lt;/p&gt;
+&lt;p&gt;Las interfaces proveen la función de &lt;strong&gt;“plug and play”&lt;/strong&gt;, mientras el aparato tenga la misma interfaz, podemos conectar cualquier cosa, como en los contactos eléctricos.&lt;/p&gt;
 
 &lt;h3 id=&quot;mejor-separación-del-trabajo&quot;&gt;Mejor separación del trabajo&lt;/h3&gt;
 
