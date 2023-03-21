@@ -11,15 +11,25 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Hay un dicho que tiene que ver con la guerra que es un gran consejo también para crear gran software:
+Hay un dicho que tiene que ver con la guerra que es un gran consejo para crear gran software:
 
 > Divide y vencerás
 
-Dividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de esas ventajas, así como de las técnicas y los criterios que puedes seguir para hacerlo efectivamente.
+Dividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de ellas, así como de las técnicas y los criterios que puedes seguir para hacerlo efectivamente. Específicamente, en este artículo vamos a hablar de cómo dividir la aplicación en módulos. Pero antes definamos lo que es un módulo.
 
 ## ¿Qué es un módulo?
 
-### Ventajas
+En este artículo los módulos son cualquier cosa que encapsule una implementación detrás de una API o interfaz. Los módulos tienen diferentes nombres dependiendo del lenguaje de programación, pueden ser:
+
+- Paquetes en Python
+- Módulos en JavaScript
+- Clases y paquetes en Java
+- Bibliotecas en C
+- Aplicaciones en Erlang o Elixir
+
+Esta lista no es para nada exhaustiva, pero comunica la idea de lo que es un módulo conceptualmente.
+
+### Ventajas de dividir tu aplicación en módulos
 
 ¿Qué es más sencillo? ¿Dar subir 100 escalones de 15cm o dar un salto de 15m? Humanamente ni siquiera es posible dar un salto de 15m, por lo que tenemos que recurrir a usar las escaleras.
 
@@ -43,4 +53,10 @@ Además, dividir en módulos introduce el riesgo de crear complejidad adicional 
 
 ## Recursos para aprender más
 
+El artículo en el que está basado este artículo es ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf).
+
+Otro recurso del que tal vez ya estés harto de escuchar si lees este blog es [A Philosophy of Software Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201).
+
 ## Conclusión
+
+Descomponer tus aplicaciones en módulos es algo esencial en el desarrollo de software. Pensarlo un poco antes de hacerlo nos dará una gran ventaja para crear software de mejor calidad, que sea más fácil de mantener y que podamos evolucionar mejor.
