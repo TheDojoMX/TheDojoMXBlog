@@ -26,30 +26,40 @@ En este artículo los módulos son cualquier cosa que encapsule una implementaci
 - Clases y paquetes en Java
 - Bibliotecas en C
 - Aplicaciones en Erlang o Elixir
+- Un microservicio en una arquitectura de distribuida
+- Otro sistema
 
-Esta lista no es para nada exhaustiva, pero comunica la idea de lo que es un módulo conceptualmente.
+Esta lista no es para nada exhaustiva, pero comunica la idea de lo que es un módulo conceptualmente, repitiendo: cualquier artefacto que encapsule una implementación o funcionalidad detrás de una API.
 
 ### Ventajas de dividir tu aplicación en módulos
 
-¿Qué es más sencillo? ¿Dar subir 100 escalones de 15cm o dar un salto de 15m? Humanamente ni siquiera es posible dar un salto de 15m, por lo que tenemos que recurrir a usar las escaleras.
+¿Qué es más sencillo? ¿Subir 100 escalones de 15cm o dar un salto de 15m? Humanamente ni siquiera es posible dar un salto de 15m, por lo que tenemos que recurrir a usar las escaleras.
 
 Lo mismo sucede intelectualmente, la mayoría de los problemas que resolvemos en programación son más grandes de lo que puede caber en nuestra mente en un tiempo determinado. Es por esto que tenemos que descomponer los problemas en partes más pequeñas.
 
-La modularización a parte te permite cambiar el sistema de forma más sencilla, mientras respetes la interfaz entre los módulos (su API), puedes cambiar el módulo que resuelve cierta parte del problema sin afectar el sistema entero.
+La modularización te permite cambiar el sistema de forma más sencilla, mientras respetes la interfaz entre los módulos (su _API_), puedes cambiar el módulo que resuelve cierta parte del problema sin afectar el sistema entero. A esto a veces le llaman **programación por contrato**.
 
-Finalmente, crear módulos lo más independientes posible te permite reutilizarlos en otros sistemas, lo que llamamos reutilización de código. Dependiendo de tu entorno de programación estos módulos pueden ser paquetes, bibliotecas, aplicaciones, o un incluso puedes construir un framework.
+Crear módulos lo más independientes posible te permite reutilizarlos en otros sistemas, lo que llamamos reutilización de código. Si sigues los lineamientos de tu lenguajes de programación, probablemente puedas crear el artefacto para distribuirlo y que incluso otras personas lo usen.
+
+Finalmente, dependiendo de lo independiente que sean los módulos, puedes asignarle la tarea de la implementación a otras personas.
 
 ### Desventajas
 
 Al igual que si pudiéramos mágicamente dar un salto de 15m nos evitaría construir unas escaleras, con todo lo que ello implica, el uso de módulos en tu aplicación agregar algo más de complejidad.
 
-En primero, se requiere una infraestructura para que los módulos puedan comunicarse entre sí. Si los módulos son construcciones naturales de tus sistema de programación, entonces sólo tienes que preocuparte por usarla bien y crear interfaces convenientes.
+En primera, se requiere una infraestructura para que los módulos puedan comunicarse entre sí. Si los módulos son construcciones naturales de tus sistema de programación, entonces sólo tienes que preocuparte por usarlos bien y crear interfaces convenientes.
+
+Pero si estás haciendo sistemas independientes, microservicios, etc. entonces también tienes que preocuparte por el transporte de información, la seguridad, etc. Este tipo de modularidad convierte tu aplicación en un sistema distribuido, lo que agrega gran complejidad.
+
+Además, dividir en módulos introduce el riesgo de crear complejidad adicional debida a las dependencias entre los módulos.
+
+Pero normalmente, las ventajas de modularizar te habilitan para lograr cosas que no es posible hacer de otra forma, así que ahora surge la pregunta, ¿por dónde empiezo?
 
 ## Criterios para dividir tu aplicación en módulos
 
-Esto en realidad es una exploración de las diferentes formas en las que tu aplicación podría estar dividida y las abstracciones que creas.
+Esto en realidad es una exploración de las diferentes formas en las que tu aplicación podría estar dividida y las abstracciones que creas. ¿Los divido por grupos de funcionalidades? ¿Por el tipo de información a los que tienen acceso? ¿Por el lugar en el que van a estar implementados? ¿Por el nivel de abstracción?
 
-Además, dividir en módulos introduce el riesgo de crear complejidad adicional debida a las dependencias entre los módulos.
+David Parnas explica en ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf) diferentes formas de dividir un sistema en módulos.
 
 ## Recursos para aprender más
 
