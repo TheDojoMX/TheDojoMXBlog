@@ -29,7 +29,7 @@ En este artículo los módulos son cualquier cosa que encapsule una implementaci
 - Un microservicio en una arquitectura de distribuida
 - Otro sistema
 
-Esta lista no es para nada exhaustiva, pero comunica la idea de lo que es un módulo conceptualmente, repitiendo: cualquier artefacto que encapsule una implementación o funcionalidad detrás de una API.
+Esta lista no es para nada exhaustiva, pero comunica la idea de lo que es un módulo conceptualmente, repitiendo: cualquier artefacto que encapsule una implementación o funcionalidad detrás de una API, es decir que tenga una _asignación de responsabilidad_ (según David L. Parnas).
 
 ### Ventajas de dividir tu aplicación en módulos
 
@@ -59,7 +59,9 @@ Pero normalmente, las ventajas de modularizar te habilitan para lograr cosas que
 
 Esto en realidad es una exploración de las diferentes formas en las que tu aplicación podría estar dividida y las abstracciones que creas. ¿Los divido por grupos de funcionalidades? ¿Por el tipo de información a los que tienen acceso? ¿Por el lugar en el que van a estar implementados? ¿Por el nivel de abstracción?
 
-David Parnas explica en ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf) diferentes formas de dividir un sistema en módulos.
+David Parnas explica en ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf) diferentes formas o criterios de dividir un sistema en módulos.
+
+La primera y que el piensa que era la más común cuando se escribió el artículo, es la de dividir el programa en sus pasos lógicos. Imagínate que el trabajo de tu programa es transformar un texto en imágenes, crear una publicación personalizada del texto y las imágenes y enviarlo a diferentes destinatarios.
 
 ## Recursos para aprender más
 
@@ -73,4 +75,4 @@ Descomponer tus aplicaciones en módulos es algo esencial en el desarrollo de so
 
 Esta descomposición no siempre te va a salir bien a la primera, por lo que hay que tener la capacidad de evaluar la efectividad de tu diseño y la humildad para reconocer o aceptar los puntos débiles y cambiarlos. Es cierto que ciertas plataformas lo hacen mejor que otras, por lo que también es un gran punto a considerar cuando estés eligiendo la tecnología para tu próximo proyecto.
 
-Sigue cultivando esta habilidad, porque es de lo más importante que un desarrollador de software puede saber, pensando también que a futuro tal vez seamos en gran parte diseñadores mientras la implementación estará a cargo de máquinas (te estoy viendo, Codex)
+Sigue cultivando esta habilidad, porque es de lo más importante que un desarrollador de software puede saber, pensando también que a futuro tal vez seamos en gran parte diseñadores mientras la implementación estará a cargo de máquinas (te estoy viendo, [Codex](https://openai.com/blog/openai-codex)).
