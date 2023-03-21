@@ -65,8 +65,12 @@ David Parnas explica en ["On the Criteria to be Used in Decomposing Systems into
 
 El artículo en el que está basado este artículo es ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf).
 
-Otro recurso del que tal vez ya estés harto de escuchar si lees este blog es [A Philosophy of Software Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201).
+Otro recurso del que tal vez ya estés harto de escuchar si lees este blog es [A Philosophy of Software Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201). Aquí se explican varios principios para poder descomponer tu aplicación en módulos de forma efectiva.
 
 ## Conclusión
 
 Descomponer tus aplicaciones en módulos es algo esencial en el desarrollo de software. Pensarlo un poco antes de hacerlo nos dará una gran ventaja para crear software de mejor calidad, que sea más fácil de mantener y que podamos evolucionar mejor.
+
+Esta descomposición no siempre te va a salir bien a la primera, por lo que hay que tener la capacidad de evaluar la efectividad de tu diseño y la humildad para reconocer o aceptar los puntos débiles y cambiarlos. Es cierto que ciertas plataformas lo hacen mejor que otras, por lo que también es un gran punto a considerar cuando estés eligiendo la tecnología para tu próximo proyecto.
+
+Sigue cultivando esta habilidad, porque es de lo más importante que un desarrollador de software puede saber, pensando también que a futuro tal vez seamos en gran parte diseñadores mientras la implementación estará a cargo de máquinas (te estoy viendo, Codex)
