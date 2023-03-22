@@ -63,6 +63,15 @@ David Parnas explica en ["On the Criteria to be Used in Decomposing Systems into
 
 La primera y que el piensa que era la más común cuando se escribió el artículo, es la de dividir el programa en sus pasos lógicos. Imagínate que el trabajo de tu programa es transformar un texto en imágenes, crear una publicación personalizada del texto y las imágenes y enviarlo a diferentes destinatarios.
 
+El proceso puede tener las siguientes etapas:
+
+1. Obtener el texto
+2. Generar las imágenes
+3. Crear la publicación, basado en la plantilla para cada destinatario
+4. Enviar la publicación a los destinatarios
+
+Usando el primer y más tradicional criterio, entonces, lo que haríamos sería crear un módulo para cada una de las etapas.
+
 ## Recursos para aprender más
 
 El artículo en el que está basado este artículo es ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf).
