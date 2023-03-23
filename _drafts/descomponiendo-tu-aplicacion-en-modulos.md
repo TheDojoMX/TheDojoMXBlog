@@ -72,11 +72,13 @@ El proceso puede tener las siguientes etapas:
 
 Usando el primer y más tradicional criterio, entonces, lo que haríamos sería crear un módulo para cada una de las etapas.
 
+Usando el segundo criterio, los módulos no corresponterían tal vez directamente con los pasos de la transformación...
+
 ## Recursos para aprender más
 
 El artículo en el que está basado este artículo es ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf).
 
-Otro recurso del que tal vez ya estés harto de escuchar si lees este blog es [A Philosophy of Software Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201). Aquí se explican varios principios para poder descomponer tu aplicación en módulos de forma efectiva.
+Otro recurso del que tal vez ya estés harto de escuchar si lees este blog es [A Philosophy of Software Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201). Aquí se explican varios principios para poder descomponer tu aplicación en módulos de forma efectiva, tomando como principal referencia este artículo de Parnas, y expandiéndolo con la experiencia de Ousterhout.
 
 ## Conclusión
 
