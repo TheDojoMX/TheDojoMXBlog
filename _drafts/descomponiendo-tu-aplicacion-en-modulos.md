@@ -61,7 +61,7 @@ Esto en realidad es una exploración de las diferentes formas en las que tu apli
 
 David Parnas explica en ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf) diferentes formas o criterios de dividir un sistema en módulos.
 
-La primera y que el piensa que era la más común cuando se escribió el artículo, es la de dividir el programa en sus pasos lógicos. Imagínate que el trabajo de tu programa es transformar un texto en imágenes, crear una publicación personalizada del texto y las imágenes y enviarlo a diferentes destinatarios.
+La primera y que él piensa que era la más común cuando se escribió el artículo, es la de dividir el programa en sus pasos lógicos. Imagínate que el trabajo de tu programa es transformar un texto en imágenes, crear una publicación personalizada del texto y las imágenes y enviarlo a diferentes destinatarios.
 
 El proceso puede tener las siguientes etapas:
 
@@ -72,11 +72,11 @@ El proceso puede tener las siguientes etapas:
 
 Usando el primer y más tradicional criterio, entonces, lo que haríamos sería crear un módulo para cada una de las etapas.
 
-Usando el segundo criterio, los módulos no corresponterían tal vez directamente con los pasos de la transformación...
+Usando el segundo criterio, los módulos no corresponderían tal vez directamente con los pasos de la transformación, **sino con la información que manejan** y sobre todo, _que ocultan de los demás módulos_, de la que sólo ellos tienen conocimiento. Por ejemplo un módulo está completamente encargado de obtener la información inicial y transformarla en un formato interno. Otro sabe cómo consultar el servicio de generación de imágenes o generarlas él mismo, otro más sabe leer el repositorio de plantillas y hacer la mezcla de la plantilla con la información y finalmente otro
 
 ## Recursos para aprender más
 
-El artículo en el que está basado este artículo es ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf).
+El artículo en el que está basado este artículo es ["On the Criteria to be Used in Decomposing Systems into Modules"](https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf) de David L. Parnas.
 
 Otro recurso del que tal vez ya estés harto de escuchar si lees este blog es [A Philosophy of Software Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201). Aquí se explican varios principios para poder descomponer tu aplicación en módulos de forma efectiva, tomando como principal referencia este artículo de Parnas, y expandiéndolo con la experiencia de Ousterhout.
 
