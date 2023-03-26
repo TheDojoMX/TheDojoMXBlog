@@ -4,7 +4,7 @@ date: 2023-03-25
 author: Héctor Patricio
 tags: módulos diseño arquitectura
 comments: true
-excerpt: "La tarea principal de un desarrollador de software es "
+excerpt: "La tarea principal de un desarrollador de software es crear software que funcione, pero además que sea mantenible y entendible. Dividir en módulos es una técnica que te puede ayudar. Hablemos de algunas formas de hacerlo."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1679205046/javier-miranda-3yQY9GPM8Mg-unsplash_nkacdz.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1679205046/javier-miranda-3yQY9GPM8Mg-unsplash_nkacdz.jpg
