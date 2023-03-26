@@ -640,4 +640,10 @@ var store = [{
         "tags": ["apis","abstracción","diseño-de-software","definiciones"],
         "url": "/2023/03/18/que-es-un-api.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_600/v1674189353/266979132_mad_alligator_scientist_looking_at_a_screen_with_binary_code__concept_art___artstation__HQ__4k_nkojwn.png"
+      },{
+        "title": "Descomponiendo tu aplicación en módulos",
+        "excerpt":"Hay un dicho que tiene que ver con la guerra que es un gran consejo para crear gran software: Divide y vencerás Dividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de ellas, así como de las técnicas y los criterios que puedes...","categories": [],
+        "tags": ["módulos","diseño","arquitectura"],
+        "url": "/2023/03/25/descomponiendo-tu-aplicacion-en-modulos.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1679205046/javier-miranda-3yQY9GPM8Mg-unsplash_nkacdz.jpg"
       }]

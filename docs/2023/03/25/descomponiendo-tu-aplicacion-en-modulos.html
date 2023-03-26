@@ -1,0 +1,906 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Descomponiendo tu aplicación en módulos - The Dojo MX Blog</title>
+<meta name="description" content="La tarea principal de un desarrollador de software es">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Descomponiendo tu aplicación en módulos">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicacion-en-modulos.html">
+
+
+  <meta property="og:description" content="La tarea principal de un desarrollador de software es">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1679205046/javier-miranda-3yQY9GPM8Mg-unsplash_nkacdz.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-25T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicacion-en-modulos.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicacion-en-modulos.html",
+      "name": "Descomponiendo tu aplicación en módulos",
+      "headline": "Descomponiendo tu aplicación en módulos",
+      "keywords": "módulos,diseño,arquitectura",
+      "description": "La tarea principal de un desarrollador de software es",
+      "articleBody": "Hay un dicho que tiene que ver con la guerra que es un gran consejo para crear gran software:\n\n\n  Divide y vencerás\n\n\nDividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de ellas, así como de las técnicas y los criterios que puedes seguir para hacerlo efectivamente. Específicamente, en este artículo vamos a hablar de cómo dividir la aplicación en módulos. Pero antes definamos lo que es un módulo.\n\n¿Qué es un módulo?\n\nEn este artículo los módulos son cualquier cosa que encapsule una implementación detrás de una API o interfaz. Los módulos tienen diferentes nombres dependiendo del lenguaje de programación, pueden ser:\n\n\n  Paquetes en Python\n  Módulos en JavaScript\n  Clases y paquetes en Java\n  Bibliotecas en C\n  Aplicaciones en Erlang o Elixir\n  Un microservicio en una arquitectura de distribuida\n  Otro sistema\n\n\nEsta lista no es para nada exhaustiva, pero comunica la idea de lo que es un módulo conceptualmente, repitiendo: cualquier artefacto que encapsule una implementación o funcionalidad detrás de una API, es decir que tenga una asignación de responsabilidad (según David L. Parnas).\n\nVentajas de dividir tu aplicación en módulos\n\n¿Qué es más sencillo? ¿Subir 100 escalones de 15cm o dar un salto de 15m? Humanamente ni siquiera es posible dar un salto de 15m, por lo que tenemos que recurrir a usar las escaleras.\n\nLo mismo sucede intelectualmente, la mayoría de los problemas que resolvemos en programación son más grandes de lo que puede caber en nuestra mente en un tiempo determinado. Es por esto que tenemos que descomponer los problemas en partes más pequeñas.\n\nLa modularización te permite cambiar el sistema de forma más sencilla, mientras respetes la interfaz entre los módulos (su API), puedes cambiar el módulo que resuelve cierta parte del problema sin afectar el sistema entero. A esto a veces le llaman programación por contrato.\n\nCrear módulos lo más independientes posible te permite reutilizarlos en otros sistemas, lo que llamamos reutilización de código. Si sigues los lineamientos de tu lenguajes de programación, probablemente puedas crear el artefacto para distribuirlo y que incluso otras personas lo usen.\n\nFinalmente, dependiendo de lo independiente que sean los módulos, puedes asignarle la tarea de la implementación a otras personas.\n\nDesventajas\n\nAl igual que si pudiéramos mágicamente dar un salto de 15m nos evitaría construir unas escaleras, con todo lo que ello implica, el uso de módulos en tu aplicación agregar algo más de complejidad.\n\nEn primera, se requiere una infraestructura para que los módulos puedan comunicarse entre sí. Si los módulos son construcciones naturales de tus sistema de programación, entonces sólo tienes que preocuparte por usarlos bien y crear interfaces convenientes.\n\nPero si estás haciendo sistemas independientes, microservicios, etc. entonces también tienes que preocuparte por el transporte de información, la seguridad, etc. Este tipo de modularidad convierte tu aplicación en un sistema distribuido, lo que agrega gran complejidad.\n\nAdemás, dividir en módulos introduce el riesgo de crear complejidad adicional debida a las dependencias entre los módulos.\n\nPero normalmente, las ventajas de modularizar te habilitan para lograr cosas que no es posible hacer de otra forma, así que ahora surge la pregunta, ¿por dónde empiezo?\n\nCriterios para dividir tu aplicación en módulos\n\nEsto en realidad es una exploración de las diferentes formas en las que tu aplicación podría estar dividida y las abstracciones que creas. ¿Los divido por grupos de funcionalidades? ¿Por el tipo de información a los que tienen acceso? ¿Por el lugar en el que van a estar implementados? ¿Por el nivel de abstracción?\n\nDavid Parnas explica en “On the Criteria to be Used in Decomposing Systems into Modules” dos diferentes formas o criterios de dividir un sistema en módulos:\n\n\n  \n    La que él piensa que era la más común cuando se escribió el artículo, es la de dividir el programa en sus pasos lógicos. Después de hacer un diagrama de flujo del proceso que quieres automatizar o representar, los pasos del diagrama se convierten en módulos.\n  \n  \n    La segunda forma es la de dividir o “cortar” el programa en módulos por especialidad, es decir, por las cosas que saben hacer y que ocultan de los demás módulos. Estos módulos encapsulan decisiones de diseño.\n  \n\n\nEjemplo práctico: una pasarela de pago\n\nLa función de una pasarela de pago es procesar las transacciones de pago de los usuarios. Debe registrar datos como quién hace el pago, a quién se lo hace, el monto, la fecha y hora, el método de pago y el estado de la transacción.\n\nHagamos el ejercicio de descomponer el sistema en módulos. Primero usemos el primer criterio. Pensando en el flujo de operaciones que se tienen que hacer podemos pensar en los siguientes pasos:\n\n\n  Recibir los datos de la transacción a ejecutar.\n  Recibir los datos de pago del usuario.\n  Validar los datos de la transacción.\n  Intentar ejecutar la transacción.\n  Registrar el estado de la transacción.\n  Notificar a los involucrados del resultado de la operación.\n\n\nVamos a delimitar las funciones para hacerlo más sencillo: pongamos que sólo se puede pagar con tarjeta de crédito y que se notificará al usuario por correo electrónico.\n\nLos módulos que podríamos crear usando este flujo son:\n\n\n  \n    Módulo de recepción de datos. Este sistema recibe los datos de la transacción a ejecutar y los pone en una base de datos. También se encarga de validarlos.\n  \n  \n    Módulo de recepción de datos del usuario. Recibe los datos de pago del usuario y actualiza el registro de la transacción.\n  \n  \n    Módulo de ejecución de la transacción. Lee los datos de la transacción de la base de datos e intenta ejecutar la transacción, actualizando el registro con el resultado de la operación.\n  \n  \n    Módulo de notificación. Es capaz de leer el registro de la base de datos para extraer los datos de la transacción y enviar un correo electrónico al usuario.\n  \n  \n    Módulo central. Se encarga de coordinar el funcionamiento de los demás módulos, los llama en el orden correcto y maneja los errores.\n  \n\n\nEste diseño sin duda funcionaría, pero tiene algunas desventajas. ¿Qué pasaría si se aumentara la información que se tiene que registrar de la transacción? A todos los módulos les afectaría, ya que todos leen de un repositorio central que es la base de datos. ¿Y si en vez de recibir los datos por separado, se quisiera leer todos los datos de un archivo para ejecutar pagos en masa? Por lo menos dos módulos saldrían afectados, el de recepción de información de la transacción y de información del usuario.\n\nPara dividir el trabajo en varios equipos, antes tendría que establecerse la forma en la que se van a guardar los datos en la base de datos y cualquier cambio les afectaría a todos.\n\nDividiendo por especialidad\n\nEn vez de dividirlo por el flujo de operaciones, como si fuera una cadena de producción usemos el criterio de la especialidad, o de ocultar información. ¿Cuáles son las decisiones de diseño que quisiéramos ocultar detrás de una interfaz?\n\nUsando este criterio podemos tener los siguientes módulos:\n\n\n  \n    Módulo de recepción de información. Recibe todos los datos, tanto de la transacción como se pago y los valida. Envía estos datos al almacenamiento indicado mediante una interfaz. ¿Qué decisiones de diseño oculta? La forma en la que se reciben y validan los datos\n  \n  \n    Módulo de registro de transacciones. Recibe la información de las transacciones, las almacena y es capaz de devolver la transacción solicitada. También puede actualizar los datos de una transacción y borrarla. ¿Qué decisiones de diseño oculta? La forma en la que se persiste la información. Ninguno de los otros módulos necesita saber cómo se almacenan los datos.\n  \n  \n    Módulo de procesamiento de transacciones.. Este módulo recibe los datos absolutamente necesarios para procesar una transacción con la institución bancaria, la ejecuta y devuelve un estado de la transacción. Tiene funciones para ejecutar, re-intentar y revertir transacciones. ¿Qué decisiones de diseño oculta? La comunicación con la institución bancaria, la forma en la que se reciben los datos de estas y el procesamiento de errores en la transacción.\n  \n  \n    Módulo de notificaciones. Es capaz de mandar notificaciones por correo electrónico, recibiendo los datos de los destinatarios y el mensaje que se tiene que mandar. ¿Qué decisiones de diseño oculta? La forma de comunicación con los medios de transporte de notificaciones, en este caso, el correo electrónico.\n  \n  \n    Módulo de coordinación o central. Es el encargado de usar los módulos anteriores para procesar el pago.\n  \n\n\nLa principal diferencia de este diseño con el anterior, es la forma en la que los módulos se comunican y la información que cada módulo debe de tener. Cualquier cambio en la implementación de sus funciones no afectará a los demás módulos, sobre todo cambios en la persistencia de la información, que era un punto crítico en el diseño anterior.\n\n¿Que pasa si quisiéramos cambiar la forma en la que se reciban los datos, por ejemplo, con el archivo para procesar los pagos en masa? El módulo de recepción de información se vería afectado o reemplazado, pero los demás módulos no.\n\nSi queremos dividir el trabajo en equipos, cada equipo puede trabajar en un módulo siempre y cuando se establezca la interfaz de su módulo, y las dependencias entre ellos se reducen.\n\nResumen\n\nNo existe una forma absolutamente correcta de dividir tu sistema, casi siempre es subjetiva y todas presentan ventajas y desventajas. Pero una decisión con la que no te puedes equivocar es la de aislar los detalles de implementación y las decisiones de diseño en módulos autocontenidos.\n\nPiensa en un módulo como en una caja que sabe hacer algo y que puedes usar en varios lugares de tus sistema, no como en un paso de un proceso, que normalmente lo casa con esa posición y lo hace poco reutilizable, además de que puede hacer que no esté tan autocontenido como debería, dejando escapar información que crea dependencias entre módulos.\n\nRecursos para aprender más\n\nEl artículo en el que está basado este artículo es “On the Criteria to be Used in Decomposing Systems into Modules” de David L. Parnas.\n\nOtro recurso del que tal vez ya estés harto de escuchar si lees este blog es A Philosophy of Software Design. Aquí se explican varios principios para poder descomponer tu aplicación en módulos de forma efectiva, tomando como principal referencia este artículo de Parnas, y expandiéndolo con la experiencia de Ousterhout.\n\nConclusión\n\nDescomponer tus aplicaciones en módulos es algo esencial en el desarrollo de software. Pensarlo un poco antes de hacerlo nos dará una gran ventaja para crear software de mejor calidad, que sea más fácil de mantener y que podamos evolucionar mejor.\n\nEsta descomposición no siempre te va a salir bien a la primera, por lo que hay que tener la capacidad de evaluar la efectividad de tu diseño y la humildad para reconocer o aceptar los puntos débiles y cambiarlos. Es cierto que ciertas plataformas te pueden ayudar a descomponer mejor tu aplicación que otras, por lo que también es un gran punto a considerar cuando estés eligiendo la tecnología para tu próximo proyecto.\n\nSigue cultivando esta habilidad, porque es de lo más importante que un desarrollador de software puede saber, pensando también que a futuro tal vez seamos en gran parte diseñadores mientras la implementación estará a cargo de máquinas (te estoy viendo, Codex).\n",
+      "datePublished": "2023-03-25 00:00:00 -0600",
+      "dateModified": "2023-03-25 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicacion-en-modulos.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1679205046/javier-miranda-3yQY9GPM8Mg-unsplash_nkacdz.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1679205046/javier-miranda-3yQY9GPM8Mg-unsplash_nkacdz.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Descomponiendo tu aplicación en módulos
+
+        
+      </h1>
+      
+        <p class="page__lead">La tarea principal de un desarrollador de software es
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1862 palabras | 15 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Descomponiendo tu aplicación en módulos">
+    <meta itemprop="description" content="La tarea principal de un desarrollador de software es">
+    <meta itemprop="datePublished" content="2023-03-25T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>Hay un dicho que tiene que ver con la guerra que es un gran consejo para crear gran software:</p>
+
+<blockquote>
+  <p>Divide y vencerás</p>
+</blockquote>
+
+<p>Dividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de ellas, así como de las técnicas y los criterios que puedes seguir para hacerlo efectivamente. Específicamente, en este artículo vamos a hablar de cómo dividir la aplicación en módulos. Pero antes definamos lo que es un módulo.</p>
+
+<h2 id="qué-es-un-módulo">¿Qué es un módulo?</h2>
+
+<p>En este artículo los módulos son cualquier cosa que encapsule una implementación detrás de una API o interfaz. Los módulos tienen diferentes nombres dependiendo del lenguaje de programación, pueden ser:</p>
+
+<ul>
+  <li>Paquetes en Python</li>
+  <li>Módulos en JavaScript</li>
+  <li>Clases y paquetes en Java</li>
+  <li>Bibliotecas en C</li>
+  <li>Aplicaciones en Erlang o Elixir</li>
+  <li>Un microservicio en una arquitectura de distribuida</li>
+  <li>Otro sistema</li>
+</ul>
+
+<p>Esta lista no es para nada exhaustiva, pero comunica la idea de lo que es un módulo conceptualmente, repitiendo: cualquier artefacto que encapsule una implementación o funcionalidad detrás de una API, es decir que tenga una <em>asignación de responsabilidad</em> (según David L. Parnas).</p>
+
+<h3 id="ventajas-de-dividir-tu-aplicación-en-módulos">Ventajas de dividir tu aplicación en módulos</h3>
+
+<p>¿Qué es más sencillo? ¿Subir 100 escalones de 15cm o dar un salto de 15m? Humanamente ni siquiera es posible dar un salto de 15m, por lo que tenemos que recurrir a usar las escaleras.</p>
+
+<p>Lo mismo sucede intelectualmente, la mayoría de los problemas que resolvemos en programación son más grandes de lo que puede caber en nuestra mente en un tiempo determinado. Es por esto que tenemos que descomponer los problemas en partes más pequeñas.</p>
+
+<p>La modularización te permite cambiar el sistema de forma más sencilla, mientras respetes la interfaz entre los módulos (su <em>API</em>), puedes cambiar el módulo que resuelve cierta parte del problema sin afectar el sistema entero. A esto a veces le llaman <strong>programación por contrato</strong>.</p>
+
+<p>Crear módulos lo más independientes posible te permite reutilizarlos en otros sistemas, lo que llamamos reutilización de código. Si sigues los lineamientos de tu lenguajes de programación, probablemente puedas crear el artefacto para distribuirlo y que incluso otras personas lo usen.</p>
+
+<p>Finalmente, dependiendo de lo independiente que sean los módulos, puedes asignarle la tarea de la implementación a otras personas.</p>
+
+<h3 id="desventajas">Desventajas</h3>
+
+<p>Al igual que si pudiéramos mágicamente dar un salto de 15m nos evitaría construir unas escaleras, con todo lo que ello implica, el uso de módulos en tu aplicación agregar algo más de complejidad.</p>
+
+<p>En primera, se requiere una infraestructura para que los módulos puedan comunicarse entre sí. Si los módulos son construcciones naturales de tus sistema de programación, entonces sólo tienes que preocuparte por usarlos bien y crear interfaces convenientes.</p>
+
+<p>Pero si estás haciendo sistemas independientes, microservicios, etc. entonces también tienes que preocuparte por el transporte de información, la seguridad, etc. Este tipo de modularidad convierte tu aplicación en un sistema distribuido, lo que agrega gran complejidad.</p>
+
+<p>Además, dividir en módulos introduce el riesgo de crear complejidad adicional debida a las dependencias entre los módulos.</p>
+
+<p>Pero normalmente, las ventajas de modularizar te habilitan para lograr cosas que no es posible hacer de otra forma, así que ahora surge la pregunta, ¿por dónde empiezo?</p>
+
+<h2 id="criterios-para-dividir-tu-aplicación-en-módulos">Criterios para dividir tu aplicación en módulos</h2>
+
+<p>Esto en realidad es una exploración de las diferentes formas en las que tu aplicación podría estar dividida y las abstracciones que creas. ¿Los divido por grupos de funcionalidades? ¿Por el tipo de información a los que tienen acceso? ¿Por el lugar en el que van a estar implementados? ¿Por el nivel de abstracción?</p>
+
+<p>David Parnas explica en <a href="https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf">“On the Criteria to be Used in Decomposing Systems into Modules”</a> dos diferentes formas o criterios de dividir un sistema en módulos:</p>
+
+<ol>
+  <li>
+    <p>La que él piensa que era la más común cuando se escribió el artículo, es la de dividir el programa en sus pasos lógicos. Después de hacer un diagrama de flujo del proceso que quieres automatizar o representar, los pasos del diagrama se convierten en módulos.</p>
+  </li>
+  <li>
+    <p>La segunda forma es la de dividir o “cortar” el programa en módulos por <em>especialidad</em>, es decir, por las cosas que saben hacer y que ocultan de los demás módulos. Estos módulos encapsulan <strong>decisiones de diseño</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="ejemplo-práctico-una-pasarela-de-pago">Ejemplo práctico: una pasarela de pago</h2>
+
+<p>La función de una pasarela de pago es procesar las transacciones de pago de los usuarios. Debe registrar datos como quién hace el pago, a quién se lo hace, el monto, la fecha y hora, el método de pago y el estado de la transacción.</p>
+
+<p>Hagamos el ejercicio de descomponer el sistema en módulos. Primero usemos el primer criterio. Pensando en el flujo de operaciones que se tienen que hacer podemos pensar en los siguientes pasos:</p>
+
+<ol>
+  <li>Recibir los datos de la transacción a ejecutar.</li>
+  <li>Recibir los datos de pago del usuario.</li>
+  <li>Validar los datos de la transacción.</li>
+  <li>Intentar ejecutar la transacción.</li>
+  <li>Registrar el estado de la transacción.</li>
+  <li>Notificar a los involucrados del resultado de la operación.</li>
+</ol>
+
+<p>Vamos a delimitar las funciones para hacerlo más sencillo: pongamos que sólo se puede pagar con tarjeta de crédito y que se notificará al usuario por correo electrónico.</p>
+
+<p>Los módulos que podríamos crear usando este flujo son:</p>
+
+<ol>
+  <li>
+    <p><strong>Módulo de recepción de datos</strong>. Este sistema recibe los datos de la transacción a ejecutar y los pone en una base de datos. También se encarga de validarlos.</p>
+  </li>
+  <li>
+    <p><strong>Módulo de recepción de datos del usuario</strong>. Recibe los datos de pago del usuario y actualiza el registro de la transacción.</p>
+  </li>
+  <li>
+    <p><strong>Módulo de ejecución de la transacción</strong>. Lee los datos de la transacción de la base de datos e intenta ejecutar la transacción, actualizando el registro con el resultado de la operación.</p>
+  </li>
+  <li>
+    <p><strong>Módulo de notificación</strong>. Es capaz de leer el registro de la base de datos para extraer los datos de la transacción y enviar un correo electrónico al usuario.</p>
+  </li>
+  <li>
+    <p><strong>Módulo central</strong>. Se encarga de coordinar el funcionamiento de los demás módulos, los llama en el orden correcto y maneja los errores.</p>
+  </li>
+</ol>
+
+<p>Este diseño sin duda funcionaría, pero tiene algunas desventajas. ¿Qué pasaría si se aumentara la información que se tiene que registrar de la transacción? A todos los módulos les afectaría, ya que todos leen de un repositorio central que es la base de datos. ¿Y si en vez de recibir los datos por separado, se quisiera leer todos los datos de un archivo para ejecutar pagos en masa? Por lo menos dos módulos saldrían afectados, el de recepción de información de la transacción y de información del usuario.</p>
+
+<p>Para dividir el trabajo en varios equipos, antes tendría que establecerse la forma en la que se van a guardar los datos en la base de datos y cualquier cambio les afectaría a todos.</p>
+
+<h3 id="dividiendo-por-especialidad">Dividiendo por especialidad</h3>
+
+<p>En vez de dividirlo por el flujo de operaciones, como si fuera una cadena de producción usemos el criterio de la especialidad, o de <strong>ocultar información</strong>. ¿Cuáles son las decisiones de diseño que quisiéramos ocultar detrás de una interfaz?</p>
+
+<p>Usando este criterio podemos tener los siguientes módulos:</p>
+
+<ol>
+  <li>
+    <p><strong>Módulo de recepción de información</strong>. Recibe todos los datos, tanto de la transacción como se pago y los valida. Envía estos datos al almacenamiento indicado mediante una interfaz. ¿Qué decisiones de diseño oculta? La forma en la que se reciben y validan los datos</p>
+  </li>
+  <li>
+    <p><strong>Módulo de registro de transacciones</strong>. Recibe la información de las transacciones, las almacena y es capaz de devolver la transacción solicitada. También puede actualizar los datos de una transacción y borrarla. ¿Qué decisiones de diseño oculta? La forma en la que se <em>persiste</em> la información. Ninguno de los otros módulos necesita saber cómo se almacenan los datos.</p>
+  </li>
+  <li>
+    <p><strong>Módulo de procesamiento de transacciones.</strong>. Este módulo recibe los datos absolutamente necesarios para procesar una transacción con la institución bancaria, la ejecuta y devuelve un estado de la transacción. Tiene funciones para ejecutar, re-intentar y revertir transacciones. ¿Qué decisiones de diseño oculta? La comunicación con la institución bancaria, la forma en la que se reciben los datos de estas y el procesamiento de errores en la transacción.</p>
+  </li>
+  <li>
+    <p><strong>Módulo de notificaciones</strong>. Es capaz de mandar notificaciones por correo electrónico, recibiendo los datos de los destinatarios y el mensaje que se tiene que mandar. ¿Qué decisiones de diseño oculta? La forma de comunicación con los medios de transporte de notificaciones, en este caso, el correo electrónico.</p>
+  </li>
+  <li>
+    <p><strong>Módulo de coordinación o central</strong>. Es el encargado de usar los módulos anteriores para procesar el pago.</p>
+  </li>
+</ol>
+
+<p>La principal diferencia de este diseño con el anterior, es la forma en la que los módulos se comunican y la información que cada módulo debe de tener. Cualquier cambio en la implementación de sus funciones no afectará a los demás módulos, sobre todo cambios en la persistencia de la información, que era un punto crítico en el diseño anterior.</p>
+
+<p>¿Que pasa si quisiéramos cambiar la forma en la que se reciban los datos, por ejemplo, con el archivo para procesar los pagos en masa? El módulo de recepción de información se vería afectado o reemplazado, pero los demás módulos no.</p>
+
+<p>Si queremos dividir el trabajo en equipos, cada equipo puede trabajar en un módulo siempre y cuando se establezca la interfaz de su módulo, y las dependencias entre ellos se reducen.</p>
+
+<h2 id="resumen">Resumen</h2>
+
+<p>No existe una forma absolutamente correcta de dividir tu sistema, casi siempre es subjetiva y todas presentan ventajas y desventajas. Pero una decisión con la que no te puedes equivocar es la de aislar los detalles de implementación y las decisiones de diseño en módulos autocontenidos.</p>
+
+<p>Piensa en un módulo como en una caja que <em>sabe hacer algo</em> y que puedes usar en varios lugares de tus sistema, no como en un paso de un proceso, que normalmente lo casa con esa posición y lo hace poco reutilizable, además de que puede hacer que no esté tan autocontenido como debería, dejando escapar información que crea dependencias entre módulos.</p>
+
+<h2 id="recursos-para-aprender-más">Recursos para aprender más</h2>
+
+<p>El artículo en el que está basado este artículo es <a href="https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf">“On the Criteria to be Used in Decomposing Systems into Modules”</a> de David L. Parnas.</p>
+
+<p>Otro recurso del que tal vez ya estés harto de escuchar si lees este blog es <a href="https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201">A Philosophy of Software Design</a>. Aquí se explican varios principios para poder descomponer tu aplicación en módulos de forma efectiva, tomando como principal referencia este artículo de Parnas, y expandiéndolo con la experiencia de Ousterhout.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Descomponer tus aplicaciones en módulos es algo esencial en el desarrollo de software. Pensarlo un poco antes de hacerlo nos dará una gran ventaja para crear software de mejor calidad, que sea más fácil de mantener y que podamos evolucionar mejor.</p>
+
+<p>Esta descomposición no siempre te va a salir bien a la primera, por lo que hay que tener la capacidad de evaluar la efectividad de tu diseño y la humildad para reconocer o aceptar los puntos débiles y cambiarlos. Es cierto que ciertas plataformas te pueden ayudar a descomponer mejor tu aplicación que otras, por lo que también es un gran punto a considerar cuando estés eligiendo la tecnología para tu próximo proyecto.</p>
+
+<p>Sigue cultivando esta habilidad, porque es de lo más importante que un desarrollador de software puede saber, pensando también que a futuro tal vez seamos en gran parte diseñadores mientras la implementación estará a cargo de máquinas (te estoy viendo, <a href="https://openai.com/blog/openai-codex">Codex</a>).</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#arquitectura" class="page__taxonomy-item" rel="tag">arquitectura</a><span class="sep">, </span>
+    
+      <a href="/tags/#dise%C3%B1o" class="page__taxonomy-item" rel="tag">diseño</a><span class="sep">, </span>
+    
+      <a href="/tags/#m%C3%B3dulos" class="page__taxonomy-item" rel="tag">módulos</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-03-25T00:00:00-06:00">March 25, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Descomponiendo+tu+aplicaci%C3%B3n+en+m%C3%B3dulos%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F03%2F25%2Fdescomponiendo-tu-aplicacion-en-modulos.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F03%2F25%2Fdescomponiendo-tu-aplicacion-en-modulos.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F03%2F25%2Fdescomponiendo-tu-aplicacion-en-modulos.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/03/18/que-es-un-api.html" class="pagination--pager" title="¿Qué es una API?
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_600/v1674189353/266979132_mad_alligator_scientist_looking_at_a_screen_with_binary_code__concept_art___artstation__HQ__4k_nkojwn.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/03/18/que-es-un-api.html" rel="permalink">¿Qué es una API?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+18 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 18-03-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Definamos que es un ‘Application Programming Interface’ en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API’s.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1678168555/shubham-dhage-w06BFh5bRRA-unsplash_xek5go.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/03/13/que-es-la-abstraccion.html" rel="permalink">¿Qué es la abstracción?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+29 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 13-03-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Muchos programadores piden consejos para mejorar su capacidad de abstracción. Vamos a hablar de lo que es y cómo se puede usar para programar mejor.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1677648049/brett-jordan-DDupbpu4MS4-unsplash_jdapyu.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/03/06/el-principio-de-substitucion-de-liskov.html" rel="permalink">El principio de sustitución de Liskov
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+13 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 06-03-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1675031892/vinicius-amnx-amano-IPemgbj9aDY-unsplash_cttyeh.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="permalink">¿Qué es un modelo transformador de inteligencia artificial?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 27-02-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicacion-en-modulos.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/03/25/descomponiendo-tu-aplicacion-en-modulos"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

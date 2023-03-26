@@ -1,4 +1,156 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-03-18T19:49:35-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es una API?</title><link href="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html" rel="alternate" type="text/html" title="¿Qué es una API?" /><published>2023-03-18T00:00:00-06:00</published><updated>2023-03-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/18/que-es-un-api</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html">&lt;p&gt;A veces limitamos el uso de la palabra &lt;strong&gt;API&lt;/strong&gt; a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-03-25T23:21:24-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Descomponiendo tu aplicación en módulos</title><link href="https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicacion-en-modulos.html" rel="alternate" type="text/html" title="Descomponiendo tu aplicación en módulos" /><published>2023-03-25T00:00:00-06:00</published><updated>2023-03-25T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicacion-en-modulos</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicacion-en-modulos.html">&lt;p&gt;Hay un dicho que tiene que ver con la guerra que es un gran consejo para crear gran software:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Divide y vencerás&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Dividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de ellas, así como de las técnicas y los criterios que puedes seguir para hacerlo efectivamente. Específicamente, en este artículo vamos a hablar de cómo dividir la aplicación en módulos. Pero antes definamos lo que es un módulo.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-un-módulo&quot;&gt;¿Qué es un módulo?&lt;/h2&gt;
+
+&lt;p&gt;En este artículo los módulos son cualquier cosa que encapsule una implementación detrás de una API o interfaz. Los módulos tienen diferentes nombres dependiendo del lenguaje de programación, pueden ser:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Paquetes en Python&lt;/li&gt;
+  &lt;li&gt;Módulos en JavaScript&lt;/li&gt;
+  &lt;li&gt;Clases y paquetes en Java&lt;/li&gt;
+  &lt;li&gt;Bibliotecas en C&lt;/li&gt;
+  &lt;li&gt;Aplicaciones en Erlang o Elixir&lt;/li&gt;
+  &lt;li&gt;Un microservicio en una arquitectura de distribuida&lt;/li&gt;
+  &lt;li&gt;Otro sistema&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Esta lista no es para nada exhaustiva, pero comunica la idea de lo que es un módulo conceptualmente, repitiendo: cualquier artefacto que encapsule una implementación o funcionalidad detrás de una API, es decir que tenga una &lt;em&gt;asignación de responsabilidad&lt;/em&gt; (según David L. Parnas).&lt;/p&gt;
+
+&lt;h3 id=&quot;ventajas-de-dividir-tu-aplicación-en-módulos&quot;&gt;Ventajas de dividir tu aplicación en módulos&lt;/h3&gt;
+
+&lt;p&gt;¿Qué es más sencillo? ¿Subir 100 escalones de 15cm o dar un salto de 15m? Humanamente ni siquiera es posible dar un salto de 15m, por lo que tenemos que recurrir a usar las escaleras.&lt;/p&gt;
+
+&lt;p&gt;Lo mismo sucede intelectualmente, la mayoría de los problemas que resolvemos en programación son más grandes de lo que puede caber en nuestra mente en un tiempo determinado. Es por esto que tenemos que descomponer los problemas en partes más pequeñas.&lt;/p&gt;
+
+&lt;p&gt;La modularización te permite cambiar el sistema de forma más sencilla, mientras respetes la interfaz entre los módulos (su &lt;em&gt;API&lt;/em&gt;), puedes cambiar el módulo que resuelve cierta parte del problema sin afectar el sistema entero. A esto a veces le llaman &lt;strong&gt;programación por contrato&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Crear módulos lo más independientes posible te permite reutilizarlos en otros sistemas, lo que llamamos reutilización de código. Si sigues los lineamientos de tu lenguajes de programación, probablemente puedas crear el artefacto para distribuirlo y que incluso otras personas lo usen.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, dependiendo de lo independiente que sean los módulos, puedes asignarle la tarea de la implementación a otras personas.&lt;/p&gt;
+
+&lt;h3 id=&quot;desventajas&quot;&gt;Desventajas&lt;/h3&gt;
+
+&lt;p&gt;Al igual que si pudiéramos mágicamente dar un salto de 15m nos evitaría construir unas escaleras, con todo lo que ello implica, el uso de módulos en tu aplicación agregar algo más de complejidad.&lt;/p&gt;
+
+&lt;p&gt;En primera, se requiere una infraestructura para que los módulos puedan comunicarse entre sí. Si los módulos son construcciones naturales de tus sistema de programación, entonces sólo tienes que preocuparte por usarlos bien y crear interfaces convenientes.&lt;/p&gt;
+
+&lt;p&gt;Pero si estás haciendo sistemas independientes, microservicios, etc. entonces también tienes que preocuparte por el transporte de información, la seguridad, etc. Este tipo de modularidad convierte tu aplicación en un sistema distribuido, lo que agrega gran complejidad.&lt;/p&gt;
+
+&lt;p&gt;Además, dividir en módulos introduce el riesgo de crear complejidad adicional debida a las dependencias entre los módulos.&lt;/p&gt;
+
+&lt;p&gt;Pero normalmente, las ventajas de modularizar te habilitan para lograr cosas que no es posible hacer de otra forma, así que ahora surge la pregunta, ¿por dónde empiezo?&lt;/p&gt;
+
+&lt;h2 id=&quot;criterios-para-dividir-tu-aplicación-en-módulos&quot;&gt;Criterios para dividir tu aplicación en módulos&lt;/h2&gt;
+
+&lt;p&gt;Esto en realidad es una exploración de las diferentes formas en las que tu aplicación podría estar dividida y las abstracciones que creas. ¿Los divido por grupos de funcionalidades? ¿Por el tipo de información a los que tienen acceso? ¿Por el lugar en el que van a estar implementados? ¿Por el nivel de abstracción?&lt;/p&gt;
+
+&lt;p&gt;David Parnas explica en &lt;a href=&quot;https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf&quot;&gt;“On the Criteria to be Used in Decomposing Systems into Modules”&lt;/a&gt; dos diferentes formas o criterios de dividir un sistema en módulos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;La que él piensa que era la más común cuando se escribió el artículo, es la de dividir el programa en sus pasos lógicos. Después de hacer un diagrama de flujo del proceso que quieres automatizar o representar, los pasos del diagrama se convierten en módulos.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;La segunda forma es la de dividir o “cortar” el programa en módulos por &lt;em&gt;especialidad&lt;/em&gt;, es decir, por las cosas que saben hacer y que ocultan de los demás módulos. Estos módulos encapsulan &lt;strong&gt;decisiones de diseño&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ejemplo-práctico-una-pasarela-de-pago&quot;&gt;Ejemplo práctico: una pasarela de pago&lt;/h2&gt;
+
+&lt;p&gt;La función de una pasarela de pago es procesar las transacciones de pago de los usuarios. Debe registrar datos como quién hace el pago, a quién se lo hace, el monto, la fecha y hora, el método de pago y el estado de la transacción.&lt;/p&gt;
+
+&lt;p&gt;Hagamos el ejercicio de descomponer el sistema en módulos. Primero usemos el primer criterio. Pensando en el flujo de operaciones que se tienen que hacer podemos pensar en los siguientes pasos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Recibir los datos de la transacción a ejecutar.&lt;/li&gt;
+  &lt;li&gt;Recibir los datos de pago del usuario.&lt;/li&gt;
+  &lt;li&gt;Validar los datos de la transacción.&lt;/li&gt;
+  &lt;li&gt;Intentar ejecutar la transacción.&lt;/li&gt;
+  &lt;li&gt;Registrar el estado de la transacción.&lt;/li&gt;
+  &lt;li&gt;Notificar a los involucrados del resultado de la operación.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Vamos a delimitar las funciones para hacerlo más sencillo: pongamos que sólo se puede pagar con tarjeta de crédito y que se notificará al usuario por correo electrónico.&lt;/p&gt;
+
+&lt;p&gt;Los módulos que podríamos crear usando este flujo son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Módulo de recepción de datos&lt;/strong&gt;. Este sistema recibe los datos de la transacción a ejecutar y los pone en una base de datos. También se encarga de validarlos.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Módulo de recepción de datos del usuario&lt;/strong&gt;. Recibe los datos de pago del usuario y actualiza el registro de la transacción.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Módulo de ejecución de la transacción&lt;/strong&gt;. Lee los datos de la transacción de la base de datos e intenta ejecutar la transacción, actualizando el registro con el resultado de la operación.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Módulo de notificación&lt;/strong&gt;. Es capaz de leer el registro de la base de datos para extraer los datos de la transacción y enviar un correo electrónico al usuario.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Módulo central&lt;/strong&gt;. Se encarga de coordinar el funcionamiento de los demás módulos, los llama en el orden correcto y maneja los errores.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Este diseño sin duda funcionaría, pero tiene algunas desventajas. ¿Qué pasaría si se aumentara la información que se tiene que registrar de la transacción? A todos los módulos les afectaría, ya que todos leen de un repositorio central que es la base de datos. ¿Y si en vez de recibir los datos por separado, se quisiera leer todos los datos de un archivo para ejecutar pagos en masa? Por lo menos dos módulos saldrían afectados, el de recepción de información de la transacción y de información del usuario.&lt;/p&gt;
+
+&lt;p&gt;Para dividir el trabajo en varios equipos, antes tendría que establecerse la forma en la que se van a guardar los datos en la base de datos y cualquier cambio les afectaría a todos.&lt;/p&gt;
+
+&lt;h3 id=&quot;dividiendo-por-especialidad&quot;&gt;Dividiendo por especialidad&lt;/h3&gt;
+
+&lt;p&gt;En vez de dividirlo por el flujo de operaciones, como si fuera una cadena de producción usemos el criterio de la especialidad, o de &lt;strong&gt;ocultar información&lt;/strong&gt;. ¿Cuáles son las decisiones de diseño que quisiéramos ocultar detrás de una interfaz?&lt;/p&gt;
+
+&lt;p&gt;Usando este criterio podemos tener los siguientes módulos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Módulo de recepción de información&lt;/strong&gt;. Recibe todos los datos, tanto de la transacción como se pago y los valida. Envía estos datos al almacenamiento indicado mediante una interfaz. ¿Qué decisiones de diseño oculta? La forma en la que se reciben y validan los datos&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Módulo de registro de transacciones&lt;/strong&gt;. Recibe la información de las transacciones, las almacena y es capaz de devolver la transacción solicitada. También puede actualizar los datos de una transacción y borrarla. ¿Qué decisiones de diseño oculta? La forma en la que se &lt;em&gt;persiste&lt;/em&gt; la información. Ninguno de los otros módulos necesita saber cómo se almacenan los datos.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Módulo de procesamiento de transacciones.&lt;/strong&gt;. Este módulo recibe los datos absolutamente necesarios para procesar una transacción con la institución bancaria, la ejecuta y devuelve un estado de la transacción. Tiene funciones para ejecutar, re-intentar y revertir transacciones. ¿Qué decisiones de diseño oculta? La comunicación con la institución bancaria, la forma en la que se reciben los datos de estas y el procesamiento de errores en la transacción.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Módulo de notificaciones&lt;/strong&gt;. Es capaz de mandar notificaciones por correo electrónico, recibiendo los datos de los destinatarios y el mensaje que se tiene que mandar. ¿Qué decisiones de diseño oculta? La forma de comunicación con los medios de transporte de notificaciones, en este caso, el correo electrónico.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Módulo de coordinación o central&lt;/strong&gt;. Es el encargado de usar los módulos anteriores para procesar el pago.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;La principal diferencia de este diseño con el anterior, es la forma en la que los módulos se comunican y la información que cada módulo debe de tener. Cualquier cambio en la implementación de sus funciones no afectará a los demás módulos, sobre todo cambios en la persistencia de la información, que era un punto crítico en el diseño anterior.&lt;/p&gt;
+
+&lt;p&gt;¿Que pasa si quisiéramos cambiar la forma en la que se reciban los datos, por ejemplo, con el archivo para procesar los pagos en masa? El módulo de recepción de información se vería afectado o reemplazado, pero los demás módulos no.&lt;/p&gt;
+
+&lt;p&gt;Si queremos dividir el trabajo en equipos, cada equipo puede trabajar en un módulo siempre y cuando se establezca la interfaz de su módulo, y las dependencias entre ellos se reducen.&lt;/p&gt;
+
+&lt;h2 id=&quot;resumen&quot;&gt;Resumen&lt;/h2&gt;
+
+&lt;p&gt;No existe una forma absolutamente correcta de dividir tu sistema, casi siempre es subjetiva y todas presentan ventajas y desventajas. Pero una decisión con la que no te puedes equivocar es la de aislar los detalles de implementación y las decisiones de diseño en módulos autocontenidos.&lt;/p&gt;
+
+&lt;p&gt;Piensa en un módulo como en una caja que &lt;em&gt;sabe hacer algo&lt;/em&gt; y que puedes usar en varios lugares de tus sistema, no como en un paso de un proceso, que normalmente lo casa con esa posición y lo hace poco reutilizable, además de que puede hacer que no esté tan autocontenido como debería, dejando escapar información que crea dependencias entre módulos.&lt;/p&gt;
+
+&lt;h2 id=&quot;recursos-para-aprender-más&quot;&gt;Recursos para aprender más&lt;/h2&gt;
+
+&lt;p&gt;El artículo en el que está basado este artículo es &lt;a href=&quot;https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf&quot;&gt;“On the Criteria to be Used in Decomposing Systems into Modules”&lt;/a&gt; de David L. Parnas.&lt;/p&gt;
+
+&lt;p&gt;Otro recurso del que tal vez ya estés harto de escuchar si lees este blog es &lt;a href=&quot;https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201&quot;&gt;A Philosophy of Software Design&lt;/a&gt;. Aquí se explican varios principios para poder descomponer tu aplicación en módulos de forma efectiva, tomando como principal referencia este artículo de Parnas, y expandiéndolo con la experiencia de Ousterhout.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Descomponer tus aplicaciones en módulos es algo esencial en el desarrollo de software. Pensarlo un poco antes de hacerlo nos dará una gran ventaja para crear software de mejor calidad, que sea más fácil de mantener y que podamos evolucionar mejor.&lt;/p&gt;
+
+&lt;p&gt;Esta descomposición no siempre te va a salir bien a la primera, por lo que hay que tener la capacidad de evaluar la efectividad de tu diseño y la humildad para reconocer o aceptar los puntos débiles y cambiarlos. Es cierto que ciertas plataformas te pueden ayudar a descomponer mejor tu aplicación que otras, por lo que también es un gran punto a considerar cuando estés eligiendo la tecnología para tu próximo proyecto.&lt;/p&gt;
+
+&lt;p&gt;Sigue cultivando esta habilidad, porque es de lo más importante que un desarrollador de software puede saber, pensando también que a futuro tal vez seamos en gran parte diseñadores mientras la implementación estará a cargo de máquinas (te estoy viendo, &lt;a href=&quot;https://openai.com/blog/openai-codex&quot;&gt;Codex&lt;/a&gt;).&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="módulos" /><category term="diseño" /><category term="arquitectura" /><summary type="html">La tarea principal de un desarrollador de software es</summary></entry><entry><title type="html">¿Qué es una API?</title><link href="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html" rel="alternate" type="text/html" title="¿Qué es una API?" /><published>2023-03-18T00:00:00-06:00</published><updated>2023-03-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/18/que-es-un-api</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html">&lt;p&gt;A veces limitamos el uso de la palabra &lt;strong&gt;API&lt;/strong&gt; a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.&lt;/p&gt;
 
 &lt;h2 id=&quot;application-programming-interface&quot;&gt;Application Programming Interface&lt;/h2&gt;
 
@@ -23,7 +175,7 @@
 &lt;p&gt;¿Qué hace que una interfaz pueda ser usada de manera sencilla por un programa? Listemos algunas de las características:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;La comunicación con la interfaz se puede hacer por medio un programa. La manera más sencilla es por medio de texto plano en formatos establecidos o formatos binarios. Estos pueden ser, por ejemplo, HTTP y para facilitar más las cosas JSON o XML. Hay formatos binarios usados como Protcolbuffers. Pero no &lt;strong&gt;tiene&lt;/strong&gt; que ser ninguno de estos. Mientras el formato se pueda procesar de manera automática con un programa, es una interfaz de programación. Por ejemplo, una aplicación podría escribir a un archivo y la otra simplemente leerlo de ahí (ejem. así funcionan los &lt;em&gt;sockets&lt;/em&gt; en UNIX). O por ejemplo, la “aplicación” puede ser cargada en el mismo espacio de memoria y ser usada por el mismo entorno de ejecución.&lt;/li&gt;
+  &lt;li&gt;La comunicación con la interfaz se puede hacer por medio un programa. La manera más sencilla es por medio de texto plano en formatos establecidos o formatos binarios. Estos pueden ser, por ejemplo, HTTP y para facilitar más las cosas JSON o XML. Hay formatos binarios usados como &lt;a href=&quot;https://protobuf.dev/&quot;&gt;Protcol Buffers&lt;/a&gt;. Pero no &lt;strong&gt;tiene&lt;/strong&gt; que ser ninguno de estos. Mientras el formato se pueda procesar de manera automática con un programa, es una interfaz de programación. Por ejemplo, una aplicación podría escribir a un archivo y la otra simplemente leerlo de ahí (ejem. así funcionan los &lt;em&gt;sockets&lt;/em&gt; en UNIX). O por ejemplo, la “aplicación” puede ser cargada en el mismo espacio de memoria y ser usada por el mismo entorno de ejecución.&lt;/li&gt;
   &lt;li&gt;La interfaz puede recibir peticiones o instrucciones creadas por un programa. Muy en la línea del punto anterior, la interfaz debe exponer formas de que otro programa la llame mediante medios programables.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -475,7 +627,71 @@ Es cierto que Liskov usó las jerarquías de clases para ilustrar sus ideas, per
 
 &lt;p&gt;Como lección, podemos decir que seguir las guías de Liskov para el subtipado es una forma de aplicar este principio de diseño aún más amplio, digamos que en realidad la especificación de cómo deben comportarse los subtipos es más como una &lt;em&gt;regla&lt;/em&gt; de diseño que un &lt;em&gt;principio&lt;/em&gt; de diseño.&lt;/p&gt;
 
-&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
+&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry><entry><title type="html">¿Qué es un modelo transformador de inteligencia artificial?</title><link href="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="alternate" type="text/html" title="¿Qué es un modelo transformador de inteligencia artificial?" /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html">&lt;p&gt;En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada &lt;em&gt;transformer&lt;/em&gt; o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.&lt;/p&gt;
+
+&lt;h2 id=&quot;redes-neuronales-recurrentes-rnn&quot;&gt;Redes neuronales recurrentes (RNN)&lt;/h2&gt;
+
+&lt;p&gt;Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores o a la misma capa.&lt;/p&gt;
+
+&lt;p&gt;Esta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien.&lt;/p&gt;
+
+&lt;p&gt;Además, la forma secuencial de tratar las palabras las hace difíciles de entrenar. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.&lt;/p&gt;
+
+&lt;h2 id=&quot;redes-neuronales-de-transformador-transformers&quot;&gt;Redes neuronales de transformador (Transformers)&lt;/h2&gt;
+
+&lt;p&gt;Es una arquitectura más sencilla que las utilizadas anteriormente. Los transformadores están construidos en gran parte por mecanismos de &lt;strong&gt;atención&lt;/strong&gt;. Podemos decir que tiene tres componentes principales:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Codificación de posición&lt;/li&gt;
+  &lt;li&gt;Mecanismo de atención&lt;/li&gt;
+  &lt;li&gt;Mecanismo de auto-atención&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hablemos de cada una de estas partes más detenidamente, explicadas para un desarrollador de software.&lt;/p&gt;
+
+&lt;h3 id=&quot;codificación-de-posición&quot;&gt;Codificación de posición&lt;/h3&gt;
+
+&lt;p&gt;Esta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.&lt;/p&gt;
+
+&lt;p&gt;La posición del texto como se explica en &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt; depende de una función basada en el seno y coseno, no un número entero de donde se encontró en el texto.&lt;/p&gt;
+
+&lt;p&gt;Esta primera innovación permite que el entrenamiento sea paralelizable y por lo tanto que se puedan procesar más ejemplos, lo que mejora el aprendizaje.&lt;/p&gt;
+
+&lt;h3 id=&quot;atención&quot;&gt;Atención&lt;/h3&gt;
+
+&lt;p&gt;La atención se introdujo algunos años antes en el proceso de traducción automática. Este proceso consiste en que el modelo “mire” a otro texto para saber cómo traducir la palabra o el texto que está procesando. En las tareas de traducción, este mecanismo se da entre el texto que necesita ser traducido y la salida de la traducción.&lt;/p&gt;
+
+&lt;p&gt;El mecanismo de atención le da un peso diferente a cada palabra del texto original, con respecto a la palabra que ese está procesando. Este peso determina en donde se está “fijando” el modelo para procesar la palabra actual.&lt;/p&gt;
+
+&lt;p&gt;Este mecanismo de atención es básicamente un montón de operaciones matriciales.&lt;/p&gt;
+
+&lt;h3 id=&quot;auto-atención&quot;&gt;Auto-atención&lt;/h3&gt;
+
+&lt;p&gt;El mecanismo de atención anterior tiene que ver con la influencia que otro texto en la salida del proceso actual. El mecanismo de auto-atención se refiere al análisis &lt;strong&gt;del mismo texto&lt;/strong&gt; que se está procesando, y la relación entre las palabras.&lt;/p&gt;
+
+&lt;p&gt;Este mecanismo de auto-atención permite que el modelo encuentre patrones a través de muchos ejemplos de entrenamiento. Estos patrones tienen que ver con el significado de la palabra, los sinónimos, la gramática, etc.&lt;/p&gt;
+
+&lt;p&gt;Esta es la parte más importante de un transformador y es lo que hace que los modelos que tienen esta arquitectura sean tan poderosos, permitiéndoles trabajar con textos largos y con una gran variedad de tareas, más allá de solamente traducción.&lt;/p&gt;
+
+&lt;p&gt;Esta es una explicación muy básica de los mecanismos dentro de un modelo de transformador, si quieres aprender más a profundidad puedes leer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;El documento donde se presentó la arquitectura: &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer&lt;/a&gt;, un artículo en donde con buenos dibujos se explica cómo funcionan.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-bert/&quot;&gt;The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)&lt;/a&gt;, un artículo en donde se explica cómo funciona BERT, basado en ideas similares a las de los transformadores.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ventajas-de-los-transformadores&quot;&gt;Ventajas de los transformadores&lt;/h3&gt;
+
+&lt;p&gt;La principal ventaja es que al ser más fáciles y eficientes de entrenar, se pueden crear modelos más grandes que normalmente harán mejor su tarea. Esto es lo que ha permitido que modelos como PALM y GPT-3 existan.&lt;/p&gt;
+
+&lt;p&gt;Los modelos de transformador nos siguen sorprendiendo y parece que continuarán así en los próximos años.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Las redes neuronales con arquitectura de transformador permiten lograr cosas que no creíamos posibles y son la base de los grandes modelos de lengua natural como GPT-3. Conocer un poco más cómo funcionan nos puede dar una idea de lo que son capaces y sus límites, además de que es bastante interesante. Si quieres que hablemos de algún tema en específico puedes dejarnos un comentario.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="transformers" /><category term="transformadores" /><category term="gpt-3" /><category term="inteligencia-artificial" /><summary type="html">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.</summary></entry><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
 
 &lt;p&gt;Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal.&lt;/p&gt;
 
@@ -641,71 +857,7 @@ No seas solo un espectador que genera código para ser revisado. Considera que i
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional" /><category term="comunidad" /><category term="mentoria" /><category term="programación" /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry><entry><title type="html">¿Qué es un modelo transformador de inteligencia artificial?</title><link href="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="alternate" type="text/html" title="¿Qué es un modelo transformador de inteligencia artificial?" /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html">&lt;p&gt;En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada &lt;em&gt;transformer&lt;/em&gt; o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.&lt;/p&gt;
-
-&lt;h2 id=&quot;redes-neuronales-recurrentes-rnn&quot;&gt;Redes neuronales recurrentes (RNN)&lt;/h2&gt;
-
-&lt;p&gt;Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores o a la misma capa.&lt;/p&gt;
-
-&lt;p&gt;Esta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.&lt;/p&gt;
-
-&lt;p&gt;Sin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien.&lt;/p&gt;
-
-&lt;p&gt;Además, la forma secuencial de tratar las palabras las hace difíciles de entrenar. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.&lt;/p&gt;
-
-&lt;h2 id=&quot;redes-neuronales-de-transformador-transformers&quot;&gt;Redes neuronales de transformador (Transformers)&lt;/h2&gt;
-
-&lt;p&gt;Es una arquitectura más sencilla que las utilizadas anteriormente. Los transformadores están construidos en gran parte por mecanismos de &lt;strong&gt;atención&lt;/strong&gt;. Podemos decir que tiene tres componentes principales:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Codificación de posición&lt;/li&gt;
-  &lt;li&gt;Mecanismo de atención&lt;/li&gt;
-  &lt;li&gt;Mecanismo de auto-atención&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Hablemos de cada una de estas partes más detenidamente, explicadas para un desarrollador de software.&lt;/p&gt;
-
-&lt;h3 id=&quot;codificación-de-posición&quot;&gt;Codificación de posición&lt;/h3&gt;
-
-&lt;p&gt;Esta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.&lt;/p&gt;
-
-&lt;p&gt;La posición del texto como se explica en &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt; depende de una función basada en el seno y coseno, no un número entero de donde se encontró en el texto.&lt;/p&gt;
-
-&lt;p&gt;Esta primera innovación permite que el entrenamiento sea paralelizable y por lo tanto que se puedan procesar más ejemplos, lo que mejora el aprendizaje.&lt;/p&gt;
-
-&lt;h3 id=&quot;atención&quot;&gt;Atención&lt;/h3&gt;
-
-&lt;p&gt;La atención se introdujo algunos años antes en el proceso de traducción automática. Este proceso consiste en que el modelo “mire” a otro texto para saber cómo traducir la palabra o el texto que está procesando. En las tareas de traducción, este mecanismo se da entre el texto que necesita ser traducido y la salida de la traducción.&lt;/p&gt;
-
-&lt;p&gt;El mecanismo de atención le da un peso diferente a cada palabra del texto original, con respecto a la palabra que ese está procesando. Este peso determina en donde se está “fijando” el modelo para procesar la palabra actual.&lt;/p&gt;
-
-&lt;p&gt;Este mecanismo de atención es básicamente un montón de operaciones matriciales.&lt;/p&gt;
-
-&lt;h3 id=&quot;auto-atención&quot;&gt;Auto-atención&lt;/h3&gt;
-
-&lt;p&gt;El mecanismo de atención anterior tiene que ver con la influencia que otro texto en la salida del proceso actual. El mecanismo de auto-atención se refiere al análisis &lt;strong&gt;del mismo texto&lt;/strong&gt; que se está procesando, y la relación entre las palabras.&lt;/p&gt;
-
-&lt;p&gt;Este mecanismo de auto-atención permite que el modelo encuentre patrones a través de muchos ejemplos de entrenamiento. Estos patrones tienen que ver con el significado de la palabra, los sinónimos, la gramática, etc.&lt;/p&gt;
-
-&lt;p&gt;Esta es la parte más importante de un transformador y es lo que hace que los modelos que tienen esta arquitectura sean tan poderosos, permitiéndoles trabajar con textos largos y con una gran variedad de tareas, más allá de solamente traducción.&lt;/p&gt;
-
-&lt;p&gt;Esta es una explicación muy básica de los mecanismos dentro de un modelo de transformador, si quieres aprender más a profundidad puedes leer:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;El documento donde se presentó la arquitectura: &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer&lt;/a&gt;, un artículo en donde con buenos dibujos se explica cómo funcionan.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-bert/&quot;&gt;The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)&lt;/a&gt;, un artículo en donde se explica cómo funciona BERT, basado en ideas similares a las de los transformadores.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ventajas-de-los-transformadores&quot;&gt;Ventajas de los transformadores&lt;/h3&gt;
-
-&lt;p&gt;La principal ventaja es que al ser más fáciles y eficientes de entrenar, se pueden crear modelos más grandes que normalmente harán mejor su tarea. Esto es lo que ha permitido que modelos como PALM y GPT-3 existan.&lt;/p&gt;
-
-&lt;p&gt;Los modelos de transformador nos siguen sorprendiendo y parece que continuarán así en los próximos años.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Las redes neuronales con arquitectura de transformador permiten lograr cosas que no creíamos posibles y son la base de los grandes modelos de lengua natural como GPT-3. Conocer un poco más cómo funcionan nos puede dar una idea de lo que son capaces y sus límites, además de que es bastante interesante. Si quieres que hablemos de algún tema en específico puedes dejarnos un comentario.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="transformers" /><category term="transformadores" /><category term="gpt-3" /><category term="inteligencia-artificial" /><summary type="html">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.</summary></entry><entry><title type="html">La importancia de entender los principios de la computación</title><link href="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="alternate" type="text/html" title="La importancia de entender los principios de la computación" /><published>2023-02-17T00:00:00-06:00</published><updated>2023-02-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html">&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;“Principios de programación”.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;
+&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional" /><category term="comunidad" /><category term="mentoria" /><category term="programación" /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry><entry><title type="html">La importancia de entender los principios de la computación</title><link href="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="alternate" type="text/html" title="La importancia de entender los principios de la computación" /><published>2023-02-17T00:00:00-06:00</published><updated>2023-02-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html">&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;“Principios de programación”.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;
 
 &lt;p&gt;Empecemos hablando de qué son los principios.&lt;/p&gt;
 
@@ -1030,110 +1182,4 @@ En contraparte, una máquina no determinista puede tener múltiples acciones par
 
 &lt;p&gt;Profundizar en algo es una habilidad que tienes que desarrollar si quieres destacar en tu carrera. El libro menciona una idea que me gusta: el conocimiento profundo es lo que distingue a los constructores de catedrales de los que hacen software común. Me gusta la idea de pensar en el software como una construcción y pensar que puede ser algo tan bonito y tan grande como una catedral.&lt;/p&gt;
 
-&lt;p&gt;Así que ya sabes: si quieres ser un desarrollador o desarrolladora de software que es capaz de construir catedrales, cava más hondo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="patrones-de-aprendizaje" /><category term="profundizar" /><category term="conocimiento" /><summary type="html">Hablemos de por qué aprender a profundizar en los temas en los que trabajas día a día es importante para avanzar en tu carrera como desarrolldor de software.</summary></entry><entry><title type="html">¿Qué es el bytecode?</title><link href="https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html" rel="alternate" type="text/html" title="¿Qué es el bytecode?" /><published>2023-01-22T00:00:00-06:00</published><updated>2023-01-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode</id><content type="html" xml:base="https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html">&lt;p&gt;Tanto para Java como para otros lenguajes que son interpretados, por ejemplo Python o JavaScript, se genera una representación intermedia como resultado de la ejecución o compilación. A este código le llamamos bytecode.&lt;/p&gt;
-
-&lt;p&gt;Hablemos de qué es y para qué existe.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-es-el-bytecode&quot;&gt;¿Qué es el bytecode?&lt;/h2&gt;
-
-&lt;p&gt;El bytecode es una representación intermedia de tu programa que tiene dos características principales:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;No es tan legible como el código fuente, por ser más compacta.&lt;/li&gt;
-  &lt;li&gt;Es independiente de la arquitectura de la máquina, por lo que siempre es la misma representación para tu máquina virtual.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;El objetivo del bytecode entonces es conservar la semántica de tu programa, pero de una forma que sea más fácil de ejecutar en una máquina virtual o el intérprete.&lt;/p&gt;
-
-&lt;p&gt;Se llama &lt;em&gt;bytecode&lt;/em&gt; porque normalmente es una secuencia de bytes que representan tanto las instrucciones como los datos.&lt;/p&gt;
-
-&lt;h2 id=&quot;ejemplo-de-un-bytecode&quot;&gt;Ejemplo de un bytecode&lt;/h2&gt;
-
-&lt;p&gt;Veamos el ejemplo de Elixir y el código de bytes que produce, para entender el con un ejemplo.&lt;/p&gt;
-
-&lt;div class=&quot;language-elixir highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;defmodule&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-    &lt;span class=&quot;no&quot;&gt;IO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello, world!&quot;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;El proceso que Elixir sigue para ejecutarse es el siguiente:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1674191298/58786d8c955aaa5df2ebdb5a2c2790da5216b705_bllv3i.png&quot; alt=&quot;Procesamiento de Elixir al Bytecode de BEAM&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Fuente: &lt;a href=&quot;https://elixirforum.com/t/getting-each-stage-of-elixirs-compilation-all-the-way-to-the-beam-bytecode/1873/7&quot;&gt;Getting each stage of Elixir’s compilation all the way to the BEAM bytecode&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;La &lt;strong&gt;Bogdan/Björn Erlang Abstract Machine&lt;/strong&gt; (BEAM) tiene un &lt;a href=&quot;http://www.cs-lab.org/historical_beam_instruction_set.html&quot;&gt;set de instrucciones&lt;/a&gt;, que constituyen su bytecode. Estos aunque están semi-documentados aquí, no están documentados oficialmente y pueden cambiar en cada release.&lt;/p&gt;
-
-&lt;p&gt;Cuando compilas una archivo de Elixir, se crea un archivo con el mismo nombre de tu módulo, pero con la extensión &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.beam&lt;/code&gt;. Este archivo contiene el bytecode de tu programa. Para poder verlo en nuestro editor, necesitamos herramientas especiales. Para VSCode, podemos usar la extensión &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=Valentin.beamdasm&quot;&gt;BEAMdasm&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Aquí podemos ver el ejemplo de lo que genera el programa anterior:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Module:  Elixir.Hello
-
-Attributes: &lt;span class=&quot;o&quot;&gt;[{&lt;/span&gt;vsn, &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;72315C84EFAF57A23F8E5FD7551E9C5D]&lt;span class=&quot;o&quot;&gt;}]&lt;/span&gt;
-
-Compilation Info: &lt;span class=&quot;o&quot;&gt;[{&lt;/span&gt;version, 8.2.2&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;, &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;options, &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;no_spawn_compiler_process, from_core, no_core_prepare, no_auto_import]&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;, &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;, /Users/hectorip/Development/elixir/hello_world/hello_world.exs&lt;span class=&quot;o&quot;&gt;}]&lt;/span&gt;
-
-
-//Function  Elixir.Hello:__info__/1
-label01:  func_info            Elixir.Hello __info__ 1
-label02:  select_val           X[0] label09 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;attributes, label08, compile, label08, deprecated, label07, exports_md5, label06, functions, label05, macros, label07, md5, label08, module, label04, struct, label03]
-label03:  move                 nil X[0]
-          &lt;span class=&quot;k&quot;&gt;return
-&lt;/span&gt;label04:  move                 Elixir.Hello X[0]
-          &lt;span class=&quot;k&quot;&gt;return
-&lt;/span&gt;label05:  move                 &lt;span class=&quot;o&quot;&gt;[{&lt;/span&gt;greet, 0&lt;span class=&quot;o&quot;&gt;}]&lt;/span&gt; X[0]
-          &lt;span class=&quot;k&quot;&gt;return
-&lt;/span&gt;label06:  move                 7~�t�jO&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;_���lS X[0]
-          &lt;span class=&quot;k&quot;&gt;return
-&lt;/span&gt;label07:  move                 nil X[0]
-          &lt;span class=&quot;k&quot;&gt;return
-&lt;/span&gt;label08:  move                 X[0] X[1]
-          move                 Elixir.Hello X[0]
-          call_ext_only        2 erlang:get_module_info/2
-label09:  call_only            1 label17
-
-//Function  Elixir.Hello:greet/0
-label10:  func_info            Elixir.Hello greet 0 //line hello_world.exs, 2
-label11:  move                 Hello, world! X[0]
-          call_ext_only        1 Elixir.IO:puts/1 //line hello_world.exs, 3
-
-//Function  Elixir.Hello:module_info/0
-label12:  func_info            Elixir.Hello module_info 0
-label13:  move                 Elixir.Hello X[0]
-          call_ext_only        1 erlang:get_module_info/1
-
-//Function  Elixir.Hello:module_info/1
-label14:  func_info            Elixir.Hello module_info 1
-label15:  move                 X[0] X[1]
-          move                 Elixir.Hello X[0]
-          call_ext_only        2 erlang:get_module_info/2
-
-//Function  Elixir.Hello:-inlined-__info__/1-/1
-label16:  func_info            Elixir.Hello &lt;span class=&quot;nt&quot;&gt;-inlined-__info__&lt;/span&gt;/1- 1
-label17:  jump                 label16
-          int_code_end
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Como puedes ver después de las etiquetas que tienen nombres como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label01&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label02&lt;/code&gt;, etc., tenemos instrucciones como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func_info&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;select_val&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;move&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;call_ext_only&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;call_only&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jump&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int_code_end&lt;/code&gt;, etc. y datos como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Elixir.Hello&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hello, world!&lt;/code&gt;. Esto es lo que la maquina virtual ya puede ejecutar directamente, o se puede usar para propósitos como optimizaciones si se puede garantizar que la semántica se mantiene.&lt;/p&gt;
-
-&lt;h3 id=&quot;ejemplo-con-javascript&quot;&gt;Ejemplo con JavaScript&lt;/h3&gt;
-
-&lt;p&gt;También podemos ver el bytecode de JavaScript. Si tienes instalado &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node&lt;/code&gt; en tu computadora puedes correr algo como lo siguiente para ver el bytecode de JavaScript:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node &lt;span class=&quot;nt&quot;&gt;--print-bytecode&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;console.log('Hello, world!')&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Te dará un motón de código en bytes que es lo que el intérprete de JavaScript ejecuta. Para entender las partes que tiene podemos empezar por aquí: &lt;a href=&quot;https://medium.com/dailyjs/understanding-v8s-bytecode-317d46c94775&quot;&gt;Understanding V8’s Bytecode&lt;/a&gt; y aquí &lt;a href=&quot;https://dev.to/_staticvoid/node-js-under-the-hood-8-oh-the-bytecodes-1p6p&quot;&gt;Node.js Under the Hood #8 - Understanding Bytecodes&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Como puedes, en ambos casos el bytecode no es sencillo, de hecho, pero no está diseñado para que los programadores trabajemos con él.&lt;/p&gt;
-
-&lt;h2 id=&quot;resumen&quot;&gt;Resumen&lt;/h2&gt;
-
-&lt;p&gt;El bytecode es un producto secundario e intermedio de la compilación en algunos lenguajes y entornos de ejecución. En algunos casos es directamente el objeto que la máquina virtual ejecuta y en otros se puede pensar como un caché de la ejecución que se puede usar en las ejecuciones posteriores de un programa para mejorar el rendimiento.&lt;/p&gt;
-
-&lt;p&gt;A veces se puede usar el bytecode con otros propósitos, por ejemplo, para hacer optimizaciones en tiempo de ejecución, que es lo que hacen los compiladores bajo de demanda o JIt’s.&lt;/p&gt;
-
-&lt;p&gt;Este pequeño artículo tiene el objetivo de que por lo menos veas físicamente lo que muchas veces se menciona como producto de la compilación o interpretación de un programa, pero que no se explica qué es en la mayoría de los casos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="bytecode" /><category term="complación" /><category term="intérprete" /><summary type="html">En algunos lenguajes de programación se genera algo que llamamos bytecode antes de que se ejecute. Hablemos de qué es para que lo entiendas mejor.</summary></entry></feed>
+&lt;p&gt;Así que ya sabes: si quieres ser un desarrollador o desarrolladora de software que es capaz de construir catedrales, cava más hondo.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aprendizaje" /><category term="patrones-de-aprendizaje" /><category term="profundizar" /><category term="conocimiento" /><summary type="html">Hablemos de por qué aprender a profundizar en los temas en los que trabajas día a día es importante para avanzar en tu carrera como desarrolldor de software.</summary></entry></feed>
