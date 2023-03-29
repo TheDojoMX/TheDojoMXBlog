@@ -25,6 +25,10 @@ La frase que define el principio es:
 
 Creo que el nombre lo hace sonar demasiado complicado para lo que es: se trata de pensar bien tus interfaces para que no sean lo más sencillas posible.
 
+De esta manera evitarás que los clientes tengan que implementar métodos que no usan, y que no deberían tener que implementar.
+## Generado automáticamente
+
+
 El principio de segregación de interfaces es un concepto de diseño que se enfoca en dividir los sistemas en componentes independientes, cada uno de los cuales tiene una función claramente definida y una interfaz bien definida. El objetivo de la segregación de interfaces es reducir la interdependencia entre los componentes y aumentar la modularidad del sistema, lo que puede mejorar la flexibilidad, escalabilidad, mantenibilidad y seguridad del sistema.
 
 En términos simples, el principio de segregación de interfaces implica separar los distintos componentes de un sistema en módulos distintos, cada uno con una función específica y bien definida. Cada módulo debe tener una interfaz clara y definida que permita la comunicación con otros módulos. Al mantener los módulos separados e interconectados solo a través de sus interfaces, se minimiza la complejidad y se reduce la posibilidad de que cambios en un módulo afecten a otros.
