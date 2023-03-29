@@ -6,8 +6,8 @@ tags: solid principios-solid isp
 comments: true
 excerpt: "Analicemos el cuarto principio de SOLID: El principio de segregación de interfaces, y veamos qué tanto vale la pena tenerlo en cuenta en nuetros desarrollos."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image:https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1669958588/3018709125_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__aexjen.png
+  teaser:https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1669958588/3018709125_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__aexjen.png
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -15,9 +15,6 @@ Continuemos con el estudio de los principios SOLID. En esta ocasión hablaremos 
 
 Recuerda que el objetivo de estos artículos no es explicártelos como si fueran una religión que estás mal si no sigues, sino analizarlos bajo una luz crítica y decidir si de verdad son útiles o podemos usar otro
 principio.
-
-
-
 
 El principio de segregación de interfaces es un concepto de diseño que se enfoca en dividir los sistemas en componentes independientes, cada uno de los cuales tiene una función claramente definida y una interfaz bien definida. El objetivo de la segregación de interfaces es reducir la interdependencia entre los componentes y aumentar la modularidad del sistema, lo que puede mejorar la flexibilidad, escalabilidad, mantenibilidad y seguridad del sistema.
 
