@@ -13,8 +13,17 @@ header:
 
 Continuemos con el estudio de los principios SOLID. En esta ocasión hablaremos del cuarto principio: El principio de segregación de interfaces.
 
-Recuerda que el objetivo de estos artículos no es explicártelos como si fueran una religión que estás mal si no sigues, sino analizarlos bajo una luz crítica y decidir si de verdad son útiles o podemos usar otro
-principio.
+Recuerda que el objetivo de estos artículos **no es explicártelos como si fueran una religión que estás mal si no sigues**, sino analizarlos bajo una luz crítica y decidir si de verdad son útiles o podemos usar otro principio.
+
+Analicemos primero el principio, junto con algunos ejemplos y veamos si nos conviene aplicarlo directamente o no.
+
+## El principio de segregación de interfaces
+
+La frase que define el principio es:
+
+> Los clientes no deberían ser forzados a depender de interfaces que no usan.
+
+Creo que el nombre lo hace sonar demasiado complicado para lo que es: se trata de pensar bien tus interfaces para que no sean lo más sencillas posible.
 
 El principio de segregación de interfaces es un concepto de diseño que se enfoca en dividir los sistemas en componentes independientes, cada uno de los cuales tiene una función claramente definida y una interfaz bien definida. El objetivo de la segregación de interfaces es reducir la interdependencia entre los componentes y aumentar la modularidad del sistema, lo que puede mejorar la flexibilidad, escalabilidad, mantenibilidad y seguridad del sistema.
 
