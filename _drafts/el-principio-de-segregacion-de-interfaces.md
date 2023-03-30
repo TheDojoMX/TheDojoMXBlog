@@ -15,7 +15,7 @@ Continuemos con el estudio de los principios SOLID. En esta ocasión hablaremos 
 
 Recuerda que el objetivo de estos artículos **no es explicártelos como si fueran una religión que estás mal si no sigues**, sino analizarlos bajo una luz crítica y decidir si de verdad son útiles o podemos usar otro principio.
 
-Analicemos primero el principio, junto con algunos ejemplos y veamos si nos conviene aplicarlo directamente o no.
+Analicemos primero el enunciado, junto con algunos ejemplos y veamos si nos conviene aplicarlo directamente o no.
 
 ## El principio de segregación de interfaces
 
@@ -23,11 +23,14 @@ La frase que define el principio es:
 
 > Los clientes no deberían ser forzados a depender de interfaces que no usan.
 
-Creo que el nombre lo hace sonar demasiado complicado para lo que es: se trata de pensar bien tus interfaces para que no sean lo más sencillas posible.
+Creo que el nombre y este enunciado lo hace sonar demasiado complicado para lo que es: se trata de pensar bien tus interfaces para que no sean lo más sencillo que se pueda. _"Los clientes"_ son todas las partes del código que usan **una interfaz**.
 
-De esta manera evitarás que los clientes tengan que implementar métodos que no usan, y que no deberían tener que implementar.
+Al hacer tus interfaces lo más sencillas que puedas, evitarás que los clientes tengan que implementar métodos que no usan, y que no deberían tener que implementar.
+
+Pongamos un ejemplo de la vida real:
+
+¿Te ha tocado llenar un formulario que te pregunta cosas que no te aplican? Por ejemplo un formulario que te pregunta por los datos de tus hijos independientemente si no tienes o no. Sin duda es molesto y una pérdida de tiempo.
 ## Generado automáticamente
-
 
 El principio de segregación de interfaces es un concepto de diseño que se enfoca en dividir los sistemas en componentes independientes, cada uno de los cuales tiene una función claramente definida y una interfaz bien definida. El objetivo de la segregación de interfaces es reducir la interdependencia entre los componentes y aumentar la modularidad del sistema, lo que puede mejorar la flexibilidad, escalabilidad, mantenibilidad y seguridad del sistema.
 
