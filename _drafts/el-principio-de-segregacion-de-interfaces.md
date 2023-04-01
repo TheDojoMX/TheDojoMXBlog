@@ -29,11 +29,19 @@ Al hacer tus interfaces lo más sencillas que puedas, evitarás que los clientes
 
 Pongamos un ejemplo de la vida real:
 
-¿Te ha tocado llenar un formulario que te pregunta cosas que no te aplican? Por ejemplo un formulario que te pregunta por los datos de tus hijos independientemente si no tienes o no. Sin duda es molesto y una pérdida de tiempo.
-## Generado automáticamente
+¿Te ha tocado llenar un formulario que te pregunta cosas que no te aplican? Por ejemplo un formulario que te pregunta por los datos de tus hijos independientemente si no tienes o no. Sin duda es molesto y una pérdida de tiempo. Aquí, te están forzando a cumplir con una interfaz que no usas.
 
-El principio de segregación de interfaces es un concepto de diseño que se enfoca en dividir los sistemas en componentes independientes, cada uno de los cuales tiene una función claramente definida y una interfaz bien definida. El objetivo de la segregación de interfaces es reducir la interdependencia entre los componentes y aumentar la modularidad del sistema, lo que puede mejorar la flexibilidad, escalabilidad, mantenibilidad y seguridad del sistema.
+Lo mismo exactamente puede pasar con el software. Si una interfaz, por ejemplo, al usar un método con muchos parámetros obligatorios que no siempre se ocupan, o una clase con métodos que corresponden a otros usos.
 
-En términos simples, el principio de segregación de interfaces implica separar los distintos componentes de un sistema en módulos distintos, cada uno con una función específica y bien definida. Cada módulo debe tener una interfaz clara y definida que permita la comunicación con otros módulos. Al mantener los módulos separados e interconectados solo a través de sus interfaces, se minimiza la complejidad y se reduce la posibilidad de que cambios en un módulo afecten a otros.
+Esto se puede dar cuando tienes una clase o una función que implementa algo que puede ser ocupado en diversos lugares (estos son sus _clientes_). Imagina que los diferentes lugares tienen ligeras variaciones, por las que hay que modificar la interfaz para que se pueda usar en cada uno de ellos. Hacer esto te llevaría a crear una interfaz complicada de usar y además frágil.
 
-Este principio se aplica en una amplia variedad de sistemas, desde software y hardware hasta sistemas organizacionales y de gestión de proyectos. Por ejemplo, en el diseño de software, la segregación de interfaces se puede lograr mediante la implementación de interfaces claras y bien definidas para cada módulo del software, lo que permite una comunicación clara y efectiva entre los componentes. En una organización, la segregación de interfaces se puede lograr mediante la creación de equipos y departamentos separados, cada uno con su propia función y responsabilidades claramente definidas.
+Es por esto que John Ousterhout da varios consejos relacionados:
+
+1. Mientras más simple la interfaz, mejor.
+2. Son mejores los módulos de propósito **general**, que después puedan ser especializados o combinados para crear interfaces específicas, para cada caso.
+3. Crear las interfaces pensando en el caso más común.
+
+Sin embargo, este último consejo de Ousterhout puede ir en contra de este principio, pero aquí preferimos la practicidad sobre la pureza. Más adelante daremos un ejemplo.
+
+## Ejmplos
+
