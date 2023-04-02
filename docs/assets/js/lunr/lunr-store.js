@@ -646,4 +646,10 @@ var store = [{
         "tags": ["módulos","diseño","arquitectura"],
         "url": "/2023/03/25/descomponiendo-tu-aplicacion-en-modulos.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1679205046/javier-miranda-3yQY9GPM8Mg-unsplash_nkacdz.jpg"
+      },{
+        "title": "El principio de segregación de Interfaces",
+        "excerpt":"Continuemos con el estudio de los principios SOLID. En esta ocasión hablaremos del cuarto principio: El principio de segregación de interfaces. Recuerda que el objetivo de estos artículos no es explicártelos como si fueran una religión que estás mal si no sigues, sino analizarlos bajo una luz crítica y decidir...","categories": [],
+        "tags": ["solid","principios-solid","isp"],
+        "url": "/2023/04/01/el-principio-de-segregacion-de-interfaces.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1669958588/3018709125_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__aexjen.png"
       }]
