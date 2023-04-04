@@ -31,10 +31,14 @@ Hablemos de algunos ejemplos en los que se puede ver claramente los diferentes c
 
 John Ousterhout da el ejemplo de la funcionalidad de "deshacer" en editor de texto. Eso que sucede cuando das `CTRL+Z` en casi cualquier programa.
 
+¿En qué consiste? En que cuando se realiza una acción, se guarda para que pueda ser contrarrestada con la acción contraria. Esta función puede ser implementada en el módulo central del editor o fuera de él. ¿Cuál es la mejor opción?
+
 ## Abriendo y modificando archivos
 
 Cuando escribimos archivos y escribimos en ellos, normalmente no se va todo el contenido directamente a disco. En vez de eso, guardamos los datos en un área temporal llamada buffer. Cuando el buffer se llena o se manda una orden, los datos pasan al disco duro.
 
+La pregunta es: ¿la implementación del buffer debe ir pegada al código que maneja los archivos? O, ¿debería ser un módulo separado?
+
 ## Conclusión
 
-Aprender a separar tu código es algo que se logra con la práctica y que sin duda vale la pena hacer, porque un código con una complejidad controlada tiene un tama
+Aprender a separar tu código es algo que se logra con la práctica y que sin duda vale la pena hacer, porque un código con una complejidad controlada logra un equilibrio entre módulos demasiado pequeños (que hacen muy poco) y demasiado grandes (que juntan mucha información).
