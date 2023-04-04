@@ -19,16 +19,22 @@ Dominar la división de software en módulos es una pilar del buen diseño de so
 
 Lo que tienes que mantener enfrente es que la meta de hacerte es pregunta es disminuir complejidad de tu código en general, pero también de hacerlo más fácil de evolucionar haciéndolo **más modular**.
 
-## Cuando dejarlo junto o cobinarlo
+## Cuando dejarlo junto o combinarlo
 
-La primera cosa que hay que considerar es la información con la que el módulo trata. Si es un sólo conjunto de información que en sí mismo es difícil de separar, entonces el código que trata con él **debería permanecer junto**.
+**Acceso a la información**. La primera cosa que hay que considerar es la información con la que el módulo trata. Si es un sólo conjunto de información que en sí mismo es difícil de separar, entonces el código que trata con él **debería permanecer junto**.
 
 ## Ejemplos
 
-### Funcionalidad de UNDO
+Hablemos de algunos ejemplos en los que se puede ver claramente los diferentes criterios para sepa rar dejar combinado el código.
 
-### Pensar en un buen otro ejemplo
+### Funcionalidad de UNDO (Deshacer)
 
+John Ousterhout da el ejemplo de la funcionalidad de "deshacer" en editor de texto. Eso que sucede cuando das `CTRL+Z` en casi cualquier programa.
+
+## Abriendo y modificando archivos
+
+Cuando escribimos archivos y escribimos en ellos, normalmente no se va todo el contenido directamente a disco. En vez de eso, guardamos los datos en un área temporal llamada buffer. Cuando el buffer se llena o se manda una orden, los datos pasan al disco duro.
 
 ## Conclusión
 
+Aprender a separar tu código es algo que se logra con la práctica y que sin duda vale la pena hacer, porque un código con una complejidad controlada tiene un tama
