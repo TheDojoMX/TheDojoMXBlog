@@ -37,7 +37,12 @@ John Ousterhout da el ejemplo de la funcionalidad de "deshacer" en editor de tex
 
 Cuando escribimos archivos y escribimos en ellos, normalmente no se va todo el contenido directamente a disco. En vez de eso, guardamos los datos en un área temporal llamada buffer. Cuando el buffer se llena o se manda una orden, los datos pasan al disco duro.
 
-La pregunta es: ¿la implementación del buffer debe ir pegada al código que maneja los archivos? O, ¿debería ser un módulo separado?
+La pregunta es: ¿la implementación del buffer debe ir junto al código que maneja los archivos? O, ¿debería ser un módulo separado?
+
+Hay varias cosas a analizar:
+
+- **¿Se puede usar este buffer en otras situaciones?**
+- **¿Se puede guardar información en un archivo sin usar un buffer?**
 
 ## Conclusión
 
