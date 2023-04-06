@@ -21,11 +21,14 @@ Lo que tienes que mantener enfrente es que la meta de hacerte es pregunta es dis
 
 ## Cuando dejarlo junto o combinarlo
 
-**Acceso a la información**. La primera cosa que hay que considerar es la información con la que el módulo trata. Si es un sólo conjunto de información que en sí mismo es difícil de separar, entonces el código que trata con él **debería permanecer junto**.
+**Acceso a la información**. Lo primero que hay que considerar es la información con la que el módulo trata. Si es un slo conjunto de información que en sí mismo es difícil de separar, entonces el código que trata con él **debería permanecer junto**. También te puedes imaginar un protocolo como HTTP, que para simplemente para verificar que el mensaje está bien formado, se requiere de un información para parsearlo. En este caso, el parseo y la verificación del mensaje deberían estar juntos.
 
+**Cercanía semántica**. Si dos partes de código se pueden categorizar fácilmente bajo la misma categoría, muy probablemente ese código puede estar bajo la misma clase, módulo o paquete. El ejemplo que da Ousterhout tiene que ver con cadenas de texto y las funciones que las transforman.
+
+**Dependencia**. Si siempre que quieras entender una parte, de código tienes que mirar a otra, estas dos piezas de código probablemente deben de vivir bajo el mismo módulo. Esto mismo aplica si se usan siempre (o casi siempre) juntas esas dos piezas de código.
 ## Ejemplos
 
-Hablemos de algunos ejemplos en los que se puede ver claramente los diferentes criterios para sepa rar dejar combinado el código.
+Hablemos de algunos ejemplos en los que se puede ver claramente los diferentes criterios para separar dejar combinado el código.
 
 ### Funcionalidad de UNDO (Deshacer)
 
@@ -42,8 +45,12 @@ La pregunta es: ¿la implementación del buffer debe ir junto al código que man
 Hay varias cosas a analizar:
 
 - **¿Se puede usar este buffer en otras situaciones?**
-- **¿Se puede guardar información en un archivo sin usar un buffer?**
+- ¿Se puede guardar información en un archivo sin usar un buffer?
+- ¿Puede haber otro tipo de buffer, tal vez que se comporte diferente?
+
 
 ## Conclusión
 
 Aprender a separar tu código es algo que se logra con la práctica y que sin duda vale la pena hacer, porque un código con una complejidad controlada logra un equilibrio entre módulos demasiado pequeños (que hacen muy poco) y demasiado grandes (que juntan mucha información).
+
+
