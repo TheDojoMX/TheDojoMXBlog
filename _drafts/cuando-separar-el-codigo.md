@@ -26,6 +26,9 @@ Lo que tienes que mantener enfrente es que la meta de hacerte es pregunta es dis
 **Cercanía semántica**. Si dos partes de código se pueden categorizar fácilmente bajo la misma categoría, muy probablemente ese código puede estar bajo la misma clase, módulo o paquete. El ejemplo que da Ousterhout tiene que ver con cadenas de texto y las funciones que las transforman.
 
 **Dependencia**. Si siempre que quieras entender una parte, de código tienes que mirar a otra, estas dos piezas de código probablemente deben de vivir bajo el mismo módulo. Esto mismo aplica si se usan siempre (o casi siempre) juntas esas dos piezas de código.
+
+Juntar el código a veces traerá un beneficio extra: eliminarás interfaces que no necesitas.
+Imagínate dos piezas de código que siempre llamas en secuencia, por ejemplo, la función `obtenerHash` y `verificarHash`. Si el 99% de las veces necesitas verificar un hash después de crearlo y al revés, casi siempre que verificas un Hash es porque lo acabas de crear, entonces es mejor que ambas funciones estén juntas, algo como `crearHashVericado`. Esto es una buena señal de que el código debería estar junto: **si terminas con menos interfaces que al principio**.
 ## Ejemplos
 
 Hablemos de algunos ejemplos en los que se puede ver claramente los diferentes criterios para separar dejar combinado el código.
