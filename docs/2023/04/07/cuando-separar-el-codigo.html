@@ -1,0 +1,802 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Cuando separar el código - The Dojo MX Blog</title>
+<meta name="description" content="¿Cuándo es buena idea que lo existe en un clase o función lo descompongas en varios elementos? En este artículo veremos algunos criterios para tomar esta decisión.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Cuando separar el código">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html">
+
+
+  <meta property="og:description" content="¿Cuándo es buena idea que lo existe en un clase o función lo descompongas en varios elementos? En este artículo veremos algunos criterios para tomar esta decisión.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1680411928/risto-kokkonen-HAIDBanzi8o-unsplash_okktgd.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-07T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html",
+      "name": "Cuando separar el código",
+      "headline": "Cuando separar el código",
+      "keywords": "aposd,ousterhout,diseño-de-software",
+      "description": "¿Cuándo es buena idea que lo existe en un clase o función lo descompongas en varios elementos? En este artículo veremos algunos criterios para tomar esta decisión.",
+      "articleBody": "Hay quienes afirman que mientras más pequeñas sean tus clases o funciones, mejor. Hasta llegan a poner un límite de la líneas que pueden ir en un método o función. Esto crea código súper fragmentado que llega a ser complejo por el simple hecho de tener muchos elementos individuales que luego se tienen que unir mediante más código. Además, trazar la causa de algo a través de un código similar es casi imposible o, por lo menos, te puede tomar mucho tiempo.\n\nEs por eso que otros proponentes sobre diseño de software mencionan que mientras más cosas estén detrás de un interfaz y que oculten una implementación, mejor. Esto implica que las funciones y los métodos deben tener un tamaño razonable, sin llegar a ser demasiado grandes. Y este es el punto de este artículo, ¿cómo sabemos cuando es buena idea separar el código en otro módulo? Recuerda que a lo que nos referimos con módulo es cualquier construcción de tu lenguaje que permita encapsular una implementación: clases, funciones, paquetes, etc.\n\nDominar la división de software en módulos es una pilar del buen diseño de software. Veamos algunos de los criterios que John Ousterhout propone en su libro A Philosophy of Software Design, precisamente en el capítulo nueve que llama “¿Mejor juntos o separados?” (“Better together or better apart?”). Empecemos hablando de cuándo es mejor dejarlo junto.\n\nLo que tienes que mantener enfrente es que la meta de hacerte es pregunta es disminuir complejidad de tu código en general, pero también de hacerlo más fácil de evolucionar haciéndolo más modular.\n\nCuando dejarlo junto o combinarlo\n\nAcceso a la información. Lo primero que hay que considerar es la información con la que el módulo trata. Si es un slo conjunto de información que en sí mismo es difícil de separar, entonces el código que trata con él debería permanecer junto. También te puedes imaginar un protocolo como HTTP, que para simplemente para verificar que el mensaje está bien formado, se requiere de un información para parsearlo. En este caso, el parseo y la verificación del mensaje deberían estar juntos.\n\nCercanía semántica. Si dos partes de código se pueden categorizar fácilmente bajo la misma categoría, muy probablemente ese código puede estar bajo la misma clase, módulo o paquete. El ejemplo que da Ousterhout tiene que ver con cadenas de texto y las funciones que las transforman.\n\nDependencia. Si siempre que quieras entender una parte, de código tienes que mirar a otra, estas dos piezas de código probablemente deben de vivir bajo el mismo módulo. Esto mismo aplica si se usan siempre (o casi siempre) juntas esas dos piezas de código.\n\nEliminación de código duplicado. Esta es una situación a la que hay que prestarle especial atención. Si notas que estás duplicando código en alguna parte, lo más sensato es juntarlo en un alguna clase o función y llamar desde los diferentes lugares en donde lo estás ocupando. Aquí hay que poner un poco de atención: si este código duplicado son unas pocas líneas, puede que no sea conveniente pasar por la molestia de crear un nuevo módulo y las cosas que se requieren para integrarlo en tu código actual. Algo todavía mejor que puedes hacer es refactorizar tu código para que en vez de se llame en diferentes lugares, se reduzca el número de lugares en donde se llama. Esto es posible sobre todo con las excepciones, dependiendo de  tu lenguaje de programación y su estilo de manejo de errores.\n\nJuntar el código a veces traerá un beneficio extra: eliminarás interfaces que no necesitas. Imagínate dos piezas de código que siempre llamas en secuencia, por ejemplo, la función obtenerHash y verificarHash. Si el 99% de las veces necesitas verificar un hash después de crearlo y al revés, casi siempre que verificas un Hash es porque lo acabas de crear, entonces es mejor que ambas funciones estén juntas, algo como crearHashVerificado. Esto es una buena señal de que el código debería estar junto: si terminas con menos interfaces que al principio, o con interfaces más sencillas.\n\nCuando separar el código\n\nAlgunas personas cuentan la líneas de código y creen que esto es un buen indicador de cuando romper una pieza de código en varias. Esto no es conveniente porque aunque es cierto que mientras más grande sea algo, más probable es que sea difícil de entender, no tiene por qué ser así si está bien organizado.\n\nUn buen criterio para separar el código es por su nivel de abstracción. No es buena idea tener junto código general y específico para la misma funcionalidad en el mismo módulo, ya que cambios en las funcionalidades específicas podrían afectar a la implementación más general.\n\nEjemplo: imagina que tienes que crear un editor de texto. Un editor de texto tiene funciones generales como insertar texto donde está el cursor, pero también funcionalidades más específicas, como por ejemplo, seleccionar texto con una interfaz gráfica. Aquí decimos que la inserción de texto es general porque todos los editores de texto lo tienen, mientras que la selección de texto es específica porque no todos los editores de texto tienen una interfaz gráfica (piensa que puedes editar texto mediante instrucciones en un API, por ejemplo).\n\nEn este caso, dejar en el core solamente las funciones más básicas de edición de texto es buena idea. La selección y borrado de texto pueden ser implementados en otro módulo usando las funciones que el core provee.\n\nEsto lo puedes ver en práctica en los sistemas diseñados en capas, sobre todo en los MVC: el modelo tiene toda la información específica del negocio, la vista todo lo relacionado con la interfaz hacia el exterior y el controlador la conexión entre estas dos partes. Hay componentes extra, como el ORM o el sistema que se encargue de persistir la información. Aunque esto es un buen comienzo, no es suficiente. Tu propio código debe ser organizado de forma que sea fácil de entender siguiendo estos principios.\n\nEjemplo: funcionalidad de UNDO (Deshacer) en un editor de texto\n\nJohn Ousterhout da el ejemplo de la funcionalidad de “deshacer” en editor de texto. Eso que sucede cuando das CTRL+Z en casi cualquier programa. ¿En qué consiste? En que cuando se realiza una acción, se guarda para que pueda ser contrarrestada con la acción contraria. Esta función puede ser implementada en el módulo central del editor o fuera de él. ¿Cuál es la mejor opción? Imagina que no sólo tienes que poder deshacer acciones directas en el texto, sino también cosas como selecciones o posicionamiento del cursor.\n\nUna forma de hacerlo sería implementarlo directamente en el módulo o clase encargado de manejar el texto, guardando la lista de acciones que se pueden deshacer y cuando se invoque la acción de deshacer o rehacer, este módulo sería el encargado de ejecutar las acciones de regreso. Este diseño crearía una interacción un poco extraña entre el módulo de interfaz, por ejemplo y el módulo de texto, ya que las acciones de interfaz que se tengan que deshacer, viajarían hacia “arriba”.\n\n\n\nUn mejor diseño sería separar completamente el módulo de encargado de mantener las acciones que se pueden deshacer, al que podemos llamar Historia. Este módulo sería encargado de guardar y administrar todas las acciones que el usuario tiene disponibles para rehacer o deshacer. Las acciones pueden estar autocontenidas: cada una tiene además información sobre cómo revertirla. ¿Quién pone las acciones en la historia? El módulo que realizó la acción. Por ejemplo, si es una inserción de texto, el encargado sería el módulo core, encargado de manejar el texto. Si es una selección visual, puede ser el módulo de interfaz de usuario. Las acciones son clases con una interfaz común que el módulo de historia puede invocar para deshacer o rehacer.\n\n\n\nConclusión\n\nAprender a separar tu código es algo que se logra con la práctica y que sin duda vale la pena hacer, porque un código con una complejidad controlada logra un equilibrio entre módulos demasiado pequeños (que hacen muy poco) y demasiado grandes (que juntan mucha información).\n\nLa guía principal para saber cuándo separar o juntar tu código es esta: escoge la estructura que genere menores dependencias, oculte mejor el conocimiento y cree interfaces más simples.\n",
+      "datePublished": "2023-04-07 00:00:00 -0600",
+      "dateModified": "2023-04-07 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1680411928/risto-kokkonen-HAIDBanzi8o-unsplash_okktgd.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1680411928/risto-kokkonen-HAIDBanzi8o-unsplash_okktgd.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Cuando separar el código
+
+        
+      </h1>
+      
+        <p class="page__lead">¿Cuándo es buena idea que lo existe en un clase o función lo descompongas en varios elementos? En este artículo veremos algunos criterios para tomar esta decisión.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1363 palabras | 11 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Cuando separar el código">
+    <meta itemprop="description" content="¿Cuándo es buena idea que lo existe en un clase o función lo descompongas en varios elementos? En este artículo veremos algunos criterios para tomar esta decisión.">
+    <meta itemprop="datePublished" content="2023-04-07T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>Hay quienes afirman que mientras más pequeñas sean tus clases o funciones, mejor. Hasta llegan a poner un límite de la líneas que pueden ir en un método o función. Esto crea código súper fragmentado que llega a ser complejo por el simple hecho de tener muchos elementos individuales que luego se tienen que unir mediante más código. Además, trazar la causa de algo a través de un código similar es casi imposible o, por lo menos, te puede tomar mucho tiempo.</p>
+
+<p>Es por eso que otros proponentes sobre diseño de software mencionan que mientras más cosas estén detrás de un interfaz y que oculten una implementación, mejor. Esto implica que las funciones y los métodos deben tener un tamaño razonable, sin llegar a ser demasiado grandes. Y este es el punto de este artículo, ¿cómo sabemos cuando es buena idea separar el código en otro módulo? Recuerda que a lo que nos referimos con módulo es cualquier construcción de tu lenguaje que permita encapsular una implementación: clases, funciones, paquetes, etc.</p>
+
+<p>Dominar la división de software en módulos es una pilar del buen diseño de software. Veamos algunos de los criterios que John Ousterhout propone en su libro <a href="https://web.stanford.edu/~ouster/cgi-bin/book.php">A Philosophy of Software Design</a>, precisamente en el capítulo nueve que llama “¿Mejor juntos o separados?” (<em>“Better together or better apart?”</em>). Empecemos hablando de cuándo es mejor dejarlo junto.</p>
+
+<p>Lo que tienes que mantener enfrente es que la meta de hacerte es pregunta es disminuir complejidad de tu código en general, pero también de hacerlo más fácil de evolucionar haciéndolo <strong>más modular</strong>.</p>
+
+<h2 id="cuando-dejarlo-junto-o-combinarlo">Cuando dejarlo junto o combinarlo</h2>
+
+<p><strong>Acceso a la información</strong>. Lo primero que hay que considerar es la información con la que el módulo trata. Si es un slo conjunto de información que en sí mismo es difícil de separar, entonces el código que trata con él <strong>debería permanecer junto</strong>. También te puedes imaginar un protocolo como HTTP, que para simplemente para verificar que el mensaje está bien formado, se requiere de un información para parsearlo. En este caso, el parseo y la verificación del mensaje deberían estar juntos.</p>
+
+<p><strong>Cercanía semántica</strong>. Si dos partes de código se pueden categorizar fácilmente bajo la misma categoría, muy probablemente ese código puede estar bajo la misma clase, módulo o paquete. El ejemplo que da Ousterhout tiene que ver con cadenas de texto y las funciones que las transforman.</p>
+
+<p><strong>Dependencia</strong>. Si siempre que quieras entender una parte, de código tienes que mirar a otra, estas dos piezas de código probablemente deben de vivir bajo el mismo módulo. Esto mismo aplica si se usan siempre (o casi siempre) juntas esas dos piezas de código.</p>
+
+<p><strong>Eliminación de código duplicado</strong>. Esta es una situación a la que hay que prestarle especial atención. Si notas que estás duplicando código en alguna parte, lo más sensato es juntarlo en un alguna clase o función y llamar desde los diferentes lugares en donde lo estás ocupando. Aquí hay que poner un poco de atención: si este código duplicado son unas pocas líneas, puede que no sea conveniente pasar por la molestia de crear un nuevo módulo y las cosas que se requieren para integrarlo en tu código actual. Algo todavía mejor que puedes hacer es refactorizar tu código para que en vez de se llame en diferentes lugares, se reduzca el número de lugares en donde se llama. Esto es posible sobre todo con las excepciones, dependiendo de  tu lenguaje de programación y su estilo de manejo de errores.</p>
+
+<p>Juntar el código a veces traerá un beneficio extra: eliminarás interfaces que no necesitas. Imagínate dos piezas de código que siempre llamas en secuencia, por ejemplo, la función <code class="language-plaintext highlighter-rouge">obtenerHash</code> y <code class="language-plaintext highlighter-rouge">verificarHash</code>. Si el 99% de las veces necesitas verificar un hash después de crearlo y al revés, casi siempre que verificas un Hash es porque lo acabas de crear, entonces es mejor que ambas funciones estén juntas, algo como <code class="language-plaintext highlighter-rouge">crearHashVerificado</code>. Esto es una buena señal de que el código debería estar junto: <strong>si terminas con menos interfaces que al principio, o con interfaces más sencillas</strong>.</p>
+
+<h2 id="cuando-separar-el-código">Cuando separar el código</h2>
+
+<p>Algunas personas cuentan la líneas de código y creen que esto es un buen indicador de cuando romper una pieza de código en varias. Esto no es conveniente porque aunque es cierto que mientras más grande sea algo, más probable es que sea difícil de entender, no tiene por qué ser así si está bien organizado.</p>
+
+<p>Un buen criterio para separar el código es por su <strong>nivel de abstracción</strong>. No es buena idea tener junto código general y específico para la misma funcionalidad en el mismo módulo, ya que cambios en las funcionalidades específicas podrían afectar a la implementación más general.</p>
+
+<p><strong>Ejemplo</strong>: imagina que tienes que crear un editor de texto. Un editor de texto tiene funciones generales como insertar texto donde está el cursor, pero también funcionalidades más específicas, como por ejemplo, seleccionar texto con una interfaz gráfica. Aquí decimos que la inserción de texto es general porque todos los editores de texto lo tienen, mientras que la selección de texto es específica porque no todos los editores de texto tienen una interfaz gráfica (piensa que puedes editar texto mediante instrucciones en un API, por ejemplo).</p>
+
+<p>En este caso, dejar en el core solamente las funciones más básicas de edición de texto es buena idea. La selección y borrado de texto pueden ser implementados en otro módulo usando las funciones que el core provee.</p>
+
+<p>Esto lo puedes ver en práctica en los sistemas diseñados en capas, sobre todo en los MVC: el modelo tiene toda la información específica del negocio, la vista todo lo relacionado con la interfaz hacia el exterior y el controlador la conexión entre estas dos partes. Hay componentes extra, como el ORM o el sistema que se encargue de persistir la información. Aunque esto es un buen comienzo, no es suficiente. Tu propio código debe ser organizado de forma que sea fácil de entender siguiendo estos principios.</p>
+
+<h2 id="ejemplo-funcionalidad-de-undo-deshacer-en-un-editor-de-texto">Ejemplo: funcionalidad de UNDO (Deshacer) en un editor de texto</h2>
+
+<p>John Ousterhout da el ejemplo de la funcionalidad de “deshacer” en editor de texto. Eso que sucede cuando das <code class="language-plaintext highlighter-rouge">CTRL+Z</code> en casi cualquier programa. ¿En qué consiste? En que cuando se realiza una acción, se guarda para que pueda ser contrarrestada con la acción contraria. Esta función puede ser implementada en el módulo central del editor o fuera de él. ¿Cuál es la mejor opción? Imagina que no sólo tienes que poder deshacer acciones directas en el texto, sino también cosas como selecciones o posicionamiento del cursor.</p>
+
+<p>Una forma de hacerlo sería implementarlo directamente en el módulo o clase encargado de manejar el texto, guardando la lista de acciones que se pueden deshacer y cuando se invoque la acción de deshacer o rehacer, este módulo sería el encargado de ejecutar las acciones de regreso. Este diseño crearía una interacción un poco extraña entre el módulo de interfaz, por ejemplo y el módulo de texto, ya que las acciones de interfaz que se tengan que deshacer, viajarían hacia “arriba”.</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/v1680914313/separacion_gvalss.png" alt="arquitectura conjunta de lo descrito" class="align-center"></p>
+
+<p>Un mejor diseño sería separar completamente el módulo de encargado de mantener las acciones que se pueden deshacer, al que podemos llamar Historia. Este módulo sería encargado de guardar y administrar todas las acciones que el usuario tiene disponibles para rehacer o deshacer. Las acciones pueden estar autocontenidas: cada una tiene además información sobre cómo revertirla. ¿Quién pone las acciones en la historia? El módulo que realizó la acción. Por ejemplo, si es una inserción de texto, el encargado sería el módulo core, encargado de manejar el texto. Si es una selección visual, puede ser el módulo de interfaz de usuario. Las acciones son clases con una interfaz común que el módulo de historia puede invocar para deshacer o rehacer.</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/v1680914316/separacion_2_nnuihs.png" alt="Imagen separada" class="align-center"></p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Aprender a separar tu código es algo que se logra con la práctica y que sin duda vale la pena hacer, porque un código con una complejidad controlada logra un equilibrio entre módulos demasiado pequeños (que hacen muy poco) y demasiado grandes (que juntan mucha información).</p>
+
+<p>La guía principal para saber cuándo separar o juntar tu código es esta: escoge la estructura que genere menores dependencias, oculte mejor el conocimiento y cree interfaces más simples.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#aposd" class="page__taxonomy-item" rel="tag">aposd</a><span class="sep">, </span>
+    
+      <a href="/tags/#dise%C3%B1o-de-software" class="page__taxonomy-item" rel="tag">diseño-de-software</a><span class="sep">, </span>
+    
+      <a href="/tags/#ousterhout" class="page__taxonomy-item" rel="tag">ousterhout</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-04-07T00:00:00-06:00">April 7, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Cuando+separar+el+c%C3%B3digo%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F04%2F07%2Fcuando-separar-el-codigo.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F04%2F07%2Fcuando-separar-el-codigo.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F04%2F07%2Fcuando-separar-el-codigo.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/04/01/el-principio-de-segregacion-de-interfaces.html" class="pagination--pager" title="El principio de segregación de Interfaces
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1669958588/3018709125_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__aexjen.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/04/01/el-principio-de-segregacion-de-interfaces.html" rel="permalink">El principio de segregación de Interfaces
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 01-04-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Analicemos el cuarto principio de SOLID: El principio de segregación de interfaces, y veamos qué tanto vale la pena tenerlo en cuenta en nuetros desarrollos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1679205046/javier-miranda-3yQY9GPM8Mg-unsplash_nkacdz.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/03/25/descomponiendo-tu-aplicacion-en-modulos.html" rel="permalink">Descomponiendo tu aplicación en módulos
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+15 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 25-03-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">La tarea principal de un desarrollador de software es crear software que funcione, pero además que sea mantenible y entendible. Dividir en módulos es una téc...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_600/v1674189353/266979132_mad_alligator_scientist_looking_at_a_screen_with_binary_code__concept_art___artstation__HQ__4k_nkojwn.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/03/18/que-es-un-api.html" rel="permalink">¿Qué es una API?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+18 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 18-03-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Definamos que es un ‘Application Programming Interface’ en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API’s.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1678168555/shubham-dhage-w06BFh5bRRA-unsplash_xek5go.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/03/13/que-es-la-abstraccion.html" rel="permalink">¿Qué es la abstracción?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+29 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 13-03-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Muchos programadores piden consejos para mejorar su capacidad de abstracción. Vamos a hablar de lo que es y cómo se puede usar para programar mejor.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/04/07/cuando-separar-el-codigo"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

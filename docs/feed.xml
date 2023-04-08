@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-04-01T19:33:54-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">El principio de segregación de Interfaces</title><link href="https://blog.thedojo.mx/2023/04/01/el-principio-de-segregacion-de-interfaces.html" rel="alternate" type="text/html" title="El principio de segregación de Interfaces" /><published>2023-04-01T00:00:00-06:00</published><updated>2023-04-01T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/01/el-principio-de-segregacion-de-interfaces</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/01/el-principio-de-segregacion-de-interfaces.html">&lt;p&gt;Continuemos con el estudio de los principios SOLID. En esta ocasión hablaremos del cuarto principio: El principio de segregación de interfaces.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-04-07T19:17:06-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Cuando separar el código</title><link href="https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html" rel="alternate" type="text/html" title="Cuando separar el código" /><published>2023-04-07T00:00:00-06:00</published><updated>2023-04-07T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html">&lt;p&gt;Hay quienes afirman que mientras más pequeñas sean tus clases o funciones, mejor. Hasta llegan a poner un límite de la líneas que pueden ir en un método o función. Esto crea código súper fragmentado que llega a ser complejo por el simple hecho de tener muchos elementos individuales que luego se tienen que unir mediante más código. Además, trazar la causa de algo a través de un código similar es casi imposible o, por lo menos, te puede tomar mucho tiempo.&lt;/p&gt;
+
+&lt;p&gt;Es por eso que otros proponentes sobre diseño de software mencionan que mientras más cosas estén detrás de un interfaz y que oculten una implementación, mejor. Esto implica que las funciones y los métodos deben tener un tamaño razonable, sin llegar a ser demasiado grandes. Y este es el punto de este artículo, ¿cómo sabemos cuando es buena idea separar el código en otro módulo? Recuerda que a lo que nos referimos con módulo es cualquier construcción de tu lenguaje que permita encapsular una implementación: clases, funciones, paquetes, etc.&lt;/p&gt;
+
+&lt;p&gt;Dominar la división de software en módulos es una pilar del buen diseño de software. Veamos algunos de los criterios que John Ousterhout propone en su libro &lt;a href=&quot;https://web.stanford.edu/~ouster/cgi-bin/book.php&quot;&gt;A Philosophy of Software Design&lt;/a&gt;, precisamente en el capítulo nueve que llama “¿Mejor juntos o separados?” (&lt;em&gt;“Better together or better apart?”&lt;/em&gt;). Empecemos hablando de cuándo es mejor dejarlo junto.&lt;/p&gt;
+
+&lt;p&gt;Lo que tienes que mantener enfrente es que la meta de hacerte es pregunta es disminuir complejidad de tu código en general, pero también de hacerlo más fácil de evolucionar haciéndolo &lt;strong&gt;más modular&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;cuando-dejarlo-junto-o-combinarlo&quot;&gt;Cuando dejarlo junto o combinarlo&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Acceso a la información&lt;/strong&gt;. Lo primero que hay que considerar es la información con la que el módulo trata. Si es un slo conjunto de información que en sí mismo es difícil de separar, entonces el código que trata con él &lt;strong&gt;debería permanecer junto&lt;/strong&gt;. También te puedes imaginar un protocolo como HTTP, que para simplemente para verificar que el mensaje está bien formado, se requiere de un información para parsearlo. En este caso, el parseo y la verificación del mensaje deberían estar juntos.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Cercanía semántica&lt;/strong&gt;. Si dos partes de código se pueden categorizar fácilmente bajo la misma categoría, muy probablemente ese código puede estar bajo la misma clase, módulo o paquete. El ejemplo que da Ousterhout tiene que ver con cadenas de texto y las funciones que las transforman.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Dependencia&lt;/strong&gt;. Si siempre que quieras entender una parte, de código tienes que mirar a otra, estas dos piezas de código probablemente deben de vivir bajo el mismo módulo. Esto mismo aplica si se usan siempre (o casi siempre) juntas esas dos piezas de código.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Eliminación de código duplicado&lt;/strong&gt;. Esta es una situación a la que hay que prestarle especial atención. Si notas que estás duplicando código en alguna parte, lo más sensato es juntarlo en un alguna clase o función y llamar desde los diferentes lugares en donde lo estás ocupando. Aquí hay que poner un poco de atención: si este código duplicado son unas pocas líneas, puede que no sea conveniente pasar por la molestia de crear un nuevo módulo y las cosas que se requieren para integrarlo en tu código actual. Algo todavía mejor que puedes hacer es refactorizar tu código para que en vez de se llame en diferentes lugares, se reduzca el número de lugares en donde se llama. Esto es posible sobre todo con las excepciones, dependiendo de  tu lenguaje de programación y su estilo de manejo de errores.&lt;/p&gt;
+
+&lt;p&gt;Juntar el código a veces traerá un beneficio extra: eliminarás interfaces que no necesitas. Imagínate dos piezas de código que siempre llamas en secuencia, por ejemplo, la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;obtenerHash&lt;/code&gt; y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;verificarHash&lt;/code&gt;. Si el 99% de las veces necesitas verificar un hash después de crearlo y al revés, casi siempre que verificas un Hash es porque lo acabas de crear, entonces es mejor que ambas funciones estén juntas, algo como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;crearHashVerificado&lt;/code&gt;. Esto es una buena señal de que el código debería estar junto: &lt;strong&gt;si terminas con menos interfaces que al principio, o con interfaces más sencillas&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;cuando-separar-el-código&quot;&gt;Cuando separar el código&lt;/h2&gt;
+
+&lt;p&gt;Algunas personas cuentan la líneas de código y creen que esto es un buen indicador de cuando romper una pieza de código en varias. Esto no es conveniente porque aunque es cierto que mientras más grande sea algo, más probable es que sea difícil de entender, no tiene por qué ser así si está bien organizado.&lt;/p&gt;
+
+&lt;p&gt;Un buen criterio para separar el código es por su &lt;strong&gt;nivel de abstracción&lt;/strong&gt;. No es buena idea tener junto código general y específico para la misma funcionalidad en el mismo módulo, ya que cambios en las funcionalidades específicas podrían afectar a la implementación más general.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;: imagina que tienes que crear un editor de texto. Un editor de texto tiene funciones generales como insertar texto donde está el cursor, pero también funcionalidades más específicas, como por ejemplo, seleccionar texto con una interfaz gráfica. Aquí decimos que la inserción de texto es general porque todos los editores de texto lo tienen, mientras que la selección de texto es específica porque no todos los editores de texto tienen una interfaz gráfica (piensa que puedes editar texto mediante instrucciones en un API, por ejemplo).&lt;/p&gt;
+
+&lt;p&gt;En este caso, dejar en el core solamente las funciones más básicas de edición de texto es buena idea. La selección y borrado de texto pueden ser implementados en otro módulo usando las funciones que el core provee.&lt;/p&gt;
+
+&lt;p&gt;Esto lo puedes ver en práctica en los sistemas diseñados en capas, sobre todo en los MVC: el modelo tiene toda la información específica del negocio, la vista todo lo relacionado con la interfaz hacia el exterior y el controlador la conexión entre estas dos partes. Hay componentes extra, como el ORM o el sistema que se encargue de persistir la información. Aunque esto es un buen comienzo, no es suficiente. Tu propio código debe ser organizado de forma que sea fácil de entender siguiendo estos principios.&lt;/p&gt;
+
+&lt;h2 id=&quot;ejemplo-funcionalidad-de-undo-deshacer-en-un-editor-de-texto&quot;&gt;Ejemplo: funcionalidad de UNDO (Deshacer) en un editor de texto&lt;/h2&gt;
+
+&lt;p&gt;John Ousterhout da el ejemplo de la funcionalidad de “deshacer” en editor de texto. Eso que sucede cuando das &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CTRL+Z&lt;/code&gt; en casi cualquier programa. ¿En qué consiste? En que cuando se realiza una acción, se guarda para que pueda ser contrarrestada con la acción contraria. Esta función puede ser implementada en el módulo central del editor o fuera de él. ¿Cuál es la mejor opción? Imagina que no sólo tienes que poder deshacer acciones directas en el texto, sino también cosas como selecciones o posicionamiento del cursor.&lt;/p&gt;
+
+&lt;p&gt;Una forma de hacerlo sería implementarlo directamente en el módulo o clase encargado de manejar el texto, guardando la lista de acciones que se pueden deshacer y cuando se invoque la acción de deshacer o rehacer, este módulo sería el encargado de ejecutar las acciones de regreso. Este diseño crearía una interacción un poco extraña entre el módulo de interfaz, por ejemplo y el módulo de texto, ya que las acciones de interfaz que se tengan que deshacer, viajarían hacia “arriba”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1680914313/separacion_gvalss.png&quot; alt=&quot;arquitectura conjunta de lo descrito&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Un mejor diseño sería separar completamente el módulo de encargado de mantener las acciones que se pueden deshacer, al que podemos llamar Historia. Este módulo sería encargado de guardar y administrar todas las acciones que el usuario tiene disponibles para rehacer o deshacer. Las acciones pueden estar autocontenidas: cada una tiene además información sobre cómo revertirla. ¿Quién pone las acciones en la historia? El módulo que realizó la acción. Por ejemplo, si es una inserción de texto, el encargado sería el módulo core, encargado de manejar el texto. Si es una selección visual, puede ser el módulo de interfaz de usuario. Las acciones son clases con una interfaz común que el módulo de historia puede invocar para deshacer o rehacer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1680914316/separacion_2_nnuihs.png&quot; alt=&quot;Imagen separada&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Aprender a separar tu código es algo que se logra con la práctica y que sin duda vale la pena hacer, porque un código con una complejidad controlada logra un equilibrio entre módulos demasiado pequeños (que hacen muy poco) y demasiado grandes (que juntan mucha información).&lt;/p&gt;
+
+&lt;p&gt;La guía principal para saber cuándo separar o juntar tu código es esta: escoge la estructura que genere menores dependencias, oculte mejor el conocimiento y cree interfaces más simples.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aposd" /><category term="ousterhout" /><category term="diseño-de-software" /><summary type="html">¿Cuándo es buena idea que lo existe en un clase o función lo descompongas en varios elementos? En este artículo veremos algunos criterios para tomar esta decisión.</summary></entry><entry><title type="html">El principio de segregación de Interfaces</title><link href="https://blog.thedojo.mx/2023/04/01/el-principio-de-segregacion-de-interfaces.html" rel="alternate" type="text/html" title="El principio de segregación de Interfaces" /><published>2023-04-01T00:00:00-06:00</published><updated>2023-04-01T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/01/el-principio-de-segregacion-de-interfaces</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/01/el-principio-de-segregacion-de-interfaces.html">&lt;p&gt;Continuemos con el estudio de los principios SOLID. En esta ocasión hablaremos del cuarto principio: El principio de segregación de interfaces.&lt;/p&gt;
 
 &lt;p&gt;Recuerda que el objetivo de estos artículos &lt;strong&gt;no es explicártelos como si fueran una religión que estás mal si no sigues&lt;/strong&gt;, sino analizarlos bajo una luz crítica y decidir si de verdad son útiles o podemos usar otro principio.&lt;/p&gt;
 
@@ -697,7 +745,71 @@ Es cierto que Liskov usó las jerarquías de clases para ilustrar sus ideas, per
 
 &lt;p&gt;Como lección, podemos decir que seguir las guías de Liskov para el subtipado es una forma de aplicar este principio de diseño aún más amplio, digamos que en realidad la especificación de cómo deben comportarse los subtipos es más como una &lt;em&gt;regla&lt;/em&gt; de diseño que un &lt;em&gt;principio&lt;/em&gt; de diseño.&lt;/p&gt;
 
-&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
+&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry><entry><title type="html">¿Qué es un modelo transformador de inteligencia artificial?</title><link href="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="alternate" type="text/html" title="¿Qué es un modelo transformador de inteligencia artificial?" /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html">&lt;p&gt;En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada &lt;em&gt;transformer&lt;/em&gt; o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.&lt;/p&gt;
+
+&lt;h2 id=&quot;redes-neuronales-recurrentes-rnn&quot;&gt;Redes neuronales recurrentes (RNN)&lt;/h2&gt;
+
+&lt;p&gt;Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores o a la misma capa.&lt;/p&gt;
+
+&lt;p&gt;Esta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien.&lt;/p&gt;
+
+&lt;p&gt;Además, la forma secuencial de tratar las palabras las hace difíciles de entrenar. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.&lt;/p&gt;
+
+&lt;h2 id=&quot;redes-neuronales-de-transformador-transformers&quot;&gt;Redes neuronales de transformador (Transformers)&lt;/h2&gt;
+
+&lt;p&gt;Es una arquitectura más sencilla que las utilizadas anteriormente. Los transformadores están construidos en gran parte por mecanismos de &lt;strong&gt;atención&lt;/strong&gt;. Podemos decir que tiene tres componentes principales:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Codificación de posición&lt;/li&gt;
+  &lt;li&gt;Mecanismo de atención&lt;/li&gt;
+  &lt;li&gt;Mecanismo de auto-atención&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hablemos de cada una de estas partes más detenidamente, explicadas para un desarrollador de software.&lt;/p&gt;
+
+&lt;h3 id=&quot;codificación-de-posición&quot;&gt;Codificación de posición&lt;/h3&gt;
+
+&lt;p&gt;Esta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.&lt;/p&gt;
+
+&lt;p&gt;La posición del texto como se explica en &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt; depende de una función basada en el seno y coseno, no un número entero de donde se encontró en el texto.&lt;/p&gt;
+
+&lt;p&gt;Esta primera innovación permite que el entrenamiento sea paralelizable y por lo tanto que se puedan procesar más ejemplos, lo que mejora el aprendizaje.&lt;/p&gt;
+
+&lt;h3 id=&quot;atención&quot;&gt;Atención&lt;/h3&gt;
+
+&lt;p&gt;La atención se introdujo algunos años antes en el proceso de traducción automática. Este proceso consiste en que el modelo “mire” a otro texto para saber cómo traducir la palabra o el texto que está procesando. En las tareas de traducción, este mecanismo se da entre el texto que necesita ser traducido y la salida de la traducción.&lt;/p&gt;
+
+&lt;p&gt;El mecanismo de atención le da un peso diferente a cada palabra del texto original, con respecto a la palabra que ese está procesando. Este peso determina en donde se está “fijando” el modelo para procesar la palabra actual.&lt;/p&gt;
+
+&lt;p&gt;Este mecanismo de atención es básicamente un montón de operaciones matriciales.&lt;/p&gt;
+
+&lt;h3 id=&quot;auto-atención&quot;&gt;Auto-atención&lt;/h3&gt;
+
+&lt;p&gt;El mecanismo de atención anterior tiene que ver con la influencia que otro texto en la salida del proceso actual. El mecanismo de auto-atención se refiere al análisis &lt;strong&gt;del mismo texto&lt;/strong&gt; que se está procesando, y la relación entre las palabras.&lt;/p&gt;
+
+&lt;p&gt;Este mecanismo de auto-atención permite que el modelo encuentre patrones a través de muchos ejemplos de entrenamiento. Estos patrones tienen que ver con el significado de la palabra, los sinónimos, la gramática, etc.&lt;/p&gt;
+
+&lt;p&gt;Esta es la parte más importante de un transformador y es lo que hace que los modelos que tienen esta arquitectura sean tan poderosos, permitiéndoles trabajar con textos largos y con una gran variedad de tareas, más allá de solamente traducción.&lt;/p&gt;
+
+&lt;p&gt;Esta es una explicación muy básica de los mecanismos dentro de un modelo de transformador, si quieres aprender más a profundidad puedes leer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;El documento donde se presentó la arquitectura: &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer&lt;/a&gt;, un artículo en donde con buenos dibujos se explica cómo funcionan.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-bert/&quot;&gt;The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)&lt;/a&gt;, un artículo en donde se explica cómo funciona BERT, basado en ideas similares a las de los transformadores.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ventajas-de-los-transformadores&quot;&gt;Ventajas de los transformadores&lt;/h3&gt;
+
+&lt;p&gt;La principal ventaja es que al ser más fáciles y eficientes de entrenar, se pueden crear modelos más grandes que normalmente harán mejor su tarea. Esto es lo que ha permitido que modelos como PALM y GPT-3 existan.&lt;/p&gt;
+
+&lt;p&gt;Los modelos de transformador nos siguen sorprendiendo y parece que continuarán así en los próximos años.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Las redes neuronales con arquitectura de transformador permiten lograr cosas que no creíamos posibles y son la base de los grandes modelos de lengua natural como GPT-3. Conocer un poco más cómo funcionan nos puede dar una idea de lo que son capaces y sus límites, además de que es bastante interesante. Si quieres que hablemos de algún tema en específico puedes dejarnos un comentario.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="transformers" /><category term="transformadores" /><category term="gpt-3" /><category term="inteligencia-artificial" /><summary type="html">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.</summary></entry><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
 
 &lt;p&gt;Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal.&lt;/p&gt;
 
@@ -863,71 +975,7 @@ No seas solo un espectador que genera código para ser revisado. Considera que i
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional" /><category term="comunidad" /><category term="mentoria" /><category term="programación" /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry><entry><title type="html">¿Qué es un modelo transformador de inteligencia artificial?</title><link href="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="alternate" type="text/html" title="¿Qué es un modelo transformador de inteligencia artificial?" /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html">&lt;p&gt;En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada &lt;em&gt;transformer&lt;/em&gt; o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.&lt;/p&gt;
-
-&lt;h2 id=&quot;redes-neuronales-recurrentes-rnn&quot;&gt;Redes neuronales recurrentes (RNN)&lt;/h2&gt;
-
-&lt;p&gt;Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores o a la misma capa.&lt;/p&gt;
-
-&lt;p&gt;Esta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.&lt;/p&gt;
-
-&lt;p&gt;Sin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien.&lt;/p&gt;
-
-&lt;p&gt;Además, la forma secuencial de tratar las palabras las hace difíciles de entrenar. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.&lt;/p&gt;
-
-&lt;h2 id=&quot;redes-neuronales-de-transformador-transformers&quot;&gt;Redes neuronales de transformador (Transformers)&lt;/h2&gt;
-
-&lt;p&gt;Es una arquitectura más sencilla que las utilizadas anteriormente. Los transformadores están construidos en gran parte por mecanismos de &lt;strong&gt;atención&lt;/strong&gt;. Podemos decir que tiene tres componentes principales:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Codificación de posición&lt;/li&gt;
-  &lt;li&gt;Mecanismo de atención&lt;/li&gt;
-  &lt;li&gt;Mecanismo de auto-atención&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Hablemos de cada una de estas partes más detenidamente, explicadas para un desarrollador de software.&lt;/p&gt;
-
-&lt;h3 id=&quot;codificación-de-posición&quot;&gt;Codificación de posición&lt;/h3&gt;
-
-&lt;p&gt;Esta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.&lt;/p&gt;
-
-&lt;p&gt;La posición del texto como se explica en &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt; depende de una función basada en el seno y coseno, no un número entero de donde se encontró en el texto.&lt;/p&gt;
-
-&lt;p&gt;Esta primera innovación permite que el entrenamiento sea paralelizable y por lo tanto que se puedan procesar más ejemplos, lo que mejora el aprendizaje.&lt;/p&gt;
-
-&lt;h3 id=&quot;atención&quot;&gt;Atención&lt;/h3&gt;
-
-&lt;p&gt;La atención se introdujo algunos años antes en el proceso de traducción automática. Este proceso consiste en que el modelo “mire” a otro texto para saber cómo traducir la palabra o el texto que está procesando. En las tareas de traducción, este mecanismo se da entre el texto que necesita ser traducido y la salida de la traducción.&lt;/p&gt;
-
-&lt;p&gt;El mecanismo de atención le da un peso diferente a cada palabra del texto original, con respecto a la palabra que ese está procesando. Este peso determina en donde se está “fijando” el modelo para procesar la palabra actual.&lt;/p&gt;
-
-&lt;p&gt;Este mecanismo de atención es básicamente un montón de operaciones matriciales.&lt;/p&gt;
-
-&lt;h3 id=&quot;auto-atención&quot;&gt;Auto-atención&lt;/h3&gt;
-
-&lt;p&gt;El mecanismo de atención anterior tiene que ver con la influencia que otro texto en la salida del proceso actual. El mecanismo de auto-atención se refiere al análisis &lt;strong&gt;del mismo texto&lt;/strong&gt; que se está procesando, y la relación entre las palabras.&lt;/p&gt;
-
-&lt;p&gt;Este mecanismo de auto-atención permite que el modelo encuentre patrones a través de muchos ejemplos de entrenamiento. Estos patrones tienen que ver con el significado de la palabra, los sinónimos, la gramática, etc.&lt;/p&gt;
-
-&lt;p&gt;Esta es la parte más importante de un transformador y es lo que hace que los modelos que tienen esta arquitectura sean tan poderosos, permitiéndoles trabajar con textos largos y con una gran variedad de tareas, más allá de solamente traducción.&lt;/p&gt;
-
-&lt;p&gt;Esta es una explicación muy básica de los mecanismos dentro de un modelo de transformador, si quieres aprender más a profundidad puedes leer:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;El documento donde se presentó la arquitectura: &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer&lt;/a&gt;, un artículo en donde con buenos dibujos se explica cómo funcionan.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-bert/&quot;&gt;The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)&lt;/a&gt;, un artículo en donde se explica cómo funciona BERT, basado en ideas similares a las de los transformadores.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ventajas-de-los-transformadores&quot;&gt;Ventajas de los transformadores&lt;/h3&gt;
-
-&lt;p&gt;La principal ventaja es que al ser más fáciles y eficientes de entrenar, se pueden crear modelos más grandes que normalmente harán mejor su tarea. Esto es lo que ha permitido que modelos como PALM y GPT-3 existan.&lt;/p&gt;
-
-&lt;p&gt;Los modelos de transformador nos siguen sorprendiendo y parece que continuarán así en los próximos años.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Las redes neuronales con arquitectura de transformador permiten lograr cosas que no creíamos posibles y son la base de los grandes modelos de lengua natural como GPT-3. Conocer un poco más cómo funcionan nos puede dar una idea de lo que son capaces y sus límites, además de que es bastante interesante. Si quieres que hablemos de algún tema en específico puedes dejarnos un comentario.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="transformers" /><category term="transformadores" /><category term="gpt-3" /><category term="inteligencia-artificial" /><summary type="html">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.</summary></entry><entry><title type="html">La importancia de entender los principios de la computación</title><link href="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="alternate" type="text/html" title="La importancia de entender los principios de la computación" /><published>2023-02-17T00:00:00-06:00</published><updated>2023-02-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html">&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;“Principios de programación”.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;
+&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional" /><category term="comunidad" /><category term="mentoria" /><category term="programación" /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry><entry><title type="html">La importancia de entender los principios de la computación</title><link href="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="alternate" type="text/html" title="La importancia de entender los principios de la computación" /><published>2023-02-17T00:00:00-06:00</published><updated>2023-02-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html">&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;“Principios de programación”.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;
 
 &lt;p&gt;Empecemos hablando de qué son los principios.&lt;/p&gt;
 
@@ -1065,139 +1113,4 @@ En contraparte, una máquina no determinista puede tener múltiples acciones par
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Ahora que sabemos como funciona una máquina de Turing no determinista, que es una construcción teórica que nos sirve para hacer experimentos del pensamiento y  además que tienen una relación muy estrecha con la teoría de la complejidad y los problemas NP.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="turing" /><category term="ntm" /><category term="non-deterministic" /><summary type="html">Hablemos de la relación que existe entre las máquinas de Turing no deterministas (NTM), la complejidad y los problemas NP.</summary></entry><entry><title type="html">Problemas difíciles de la computación y su relación con la criptografía: Problemas NP</title><link href="https://blog.thedojo.mx/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html" rel="alternate" type="text/html" title="Problemas difíciles de la computación y su relación con la criptografía: Problemas NP" /><published>2023-02-03T00:00:00-06:00</published><updated>2023-02-03T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/03/problemas-dificiles-de-la-computacion-y-su-relacion-con-la-criptografia.html">&lt;p&gt;La intuición a veces nos dice que cualquier cálculo numérico &lt;em&gt;debería&lt;/em&gt; ser muy fácil para una computadora. Sin embargo, hay problemas numéricos y no numéricos que son imposibles de resolver para las computadoras actuales, independientemente de su poder de procesamiento.&lt;/p&gt;
-
-&lt;p&gt;La &lt;strong&gt;criptografía&lt;/strong&gt; actual está soportada por una serie de problemas que &lt;em&gt;suponemos muy difíciles&lt;/em&gt; de resolver de la ciencias de la computación.&lt;/p&gt;
-
-&lt;p&gt;En esta serie de artículos vamos a estar hablando de ellos para entenderlos a profundidad y sobre todo para entender cómo es que se relacionan con los algoritmos criptográficos, como con los algoritmos de llave pública, como Diffie-Hellman y RSA.&lt;/p&gt;
-
-&lt;p&gt;Pero primero hablemos de lo que consideramos un problema difícil de la computación y la complejidad computacional.&lt;/p&gt;
-
-&lt;h2 id=&quot;complejidad-computacional&quot;&gt;Complejidad computacional&lt;/h2&gt;
-
-&lt;p&gt;La complejidad computacional se puede entender como la &lt;strong&gt;cantidad de operaciones&lt;/strong&gt; que un algoritmo ejecuta para finalizar. Esta cantidad de operaciones es una función (en el sentido &lt;em&gt;matemático&lt;/em&gt;) de la entrada del problema. Puedes pensar en una función como una relación entre la entrada y el tiempo de ejecución.&lt;/p&gt;
-
-&lt;p&gt;Por ejemplo, si te piden contar todas las letras “a” e una cadena, esto podría resolverse de la siguiente manera en Python:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;contar_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;¿Cuántas operaciones tarda este algoritmo? Como dijimos &lt;em&gt;depende&lt;/em&gt; de la entrada. Esa relación de dependencia es una función. Lo que la función nos dice es &lt;em&gt;qué relación existe&lt;/em&gt; entre la entrada y la cantidad de operaciones que se ejecutan.&lt;/p&gt;
-
-&lt;p&gt;En este ejemplo específico, tenemos que hacer  1 ó 2 operaciones por cada letra de la entrada, y esto no cambia, independientemente de la longitud de esta cadena de entrada. Por lo tanto la función que describe la relación entre la entrada y la cantidad de operaciones es:&lt;/p&gt;
-
-\[f(n) = 2n\]
-
-&lt;p&gt;Donde $n$ es la longitud de la cadena de entrada. Como esta relación crece proporcionalmente a la entrada, es decir, lo mismo que crece la entrada crece el tiempo de ejecución, decimos que este algoritmo es de complejidad lineal.&lt;/p&gt;
-
-&lt;h2 id=&quot;complejidad-polinomial-p&quot;&gt;Complejidad polinomial (P)&lt;/h2&gt;
-
-&lt;p&gt;Un polinomio es una expresión matemática que consiste en sumas, restas, multiplicaciones, divisiones y potencias de números.&lt;/p&gt;
-
-&lt;p&gt;Un algoritmo es de complejidad polinomial si su tiempo de ejecución es una función que consiste en multiplicaciones, sumas o elevaciones a &lt;em&gt;ciertas&lt;/em&gt; potencias del tamaño de la entrada. Algunos ejemplos de complejidad polinomial son:&lt;/p&gt;
-
-\[f(n) = 2n\]
-
-\[f(n) = 3n^2\]
-
-\[f(n) = 4n^3\]
-
-\[f(n) = n^{log(n)}\]
-
-&lt;p&gt;En la práctica, si un algoritmo es tiene complejidad polinomial quiere decir que su ejecución es más o menos rápida (o por lo menos posible en caso de polinomios muy grandes) para cualquier entrada.&lt;/p&gt;
-
-&lt;h2 id=&quot;la-notación-big-o&quot;&gt;La notación Big O&lt;/h2&gt;
-
-&lt;p&gt;La notación más usada para expresar la complejidad no es la de una función común como lo hemos hecho hasta ahora. Normalmente, lo que nos interesa es expresar o conocer &lt;strong&gt;el peor de los casos&lt;/strong&gt; para un algoritmo específico. Por ejemplo, si estamos observando un algoritmo de búsqueda como el siguiente:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;buscar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lista&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elemento&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lista&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lista&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elemento&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-              &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;El peor de los casos es cuando el elemento esté en el último lugar. Por lo tanto, su complejidad en el peor de los casos depende directamente de la longitud de la lista de entrada. Podemos expresar esta complejidad con una función como:&lt;/p&gt;
-
-\[f(n) = n\]
-
-&lt;p&gt;Pero la notación Big O nos permite expresar esto de una manera más simple:&lt;/p&gt;
-
-\[O(n)\]
-
-&lt;p&gt;En el ejemplo de arriba, de la búsqueda de las letras “a” en una cadena, la complejidad que calculamos expresada como función en el peor de los casos es:&lt;/p&gt;
-
-\[f(n) = 2n\]
-
-&lt;p&gt;En la notación Big O se eliminan todas los valores constantes, y por la tanto esta complejidad se expresa como:&lt;/p&gt;
-
-\[O(n)\]
-
-&lt;p&gt;Equivalente al ejemplo anterior. Lo que tienes que recordar de la notación Big O es que te da un &lt;strong&gt;límite superior&lt;/strong&gt; de operaciones que se ejecutarán para un algoritmo. Este límite lo podemos pensar como una línea que el algoritmo nunca va a tocar y mucho menos a rebasar, esto se llama una asíntota en matemáticas, por lo que también se le conoce como &lt;strong&gt;notación asintótica&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;En este artículo no vamos a hablar de cómo calcular más complejidades, pero probablemente lo hagamos en uno futuro. A este tipo de cálculo, o análisis de algoritmos se le llama &lt;strong&gt;“análisis asintótico”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ahora, con esta notación, estamos listos para seguir hablando de las clases de complejidad.&lt;/p&gt;
-
-&lt;h2 id=&quot;complejidad-súper-polinomial&quot;&gt;Complejidad súper polinomial&lt;/h2&gt;
-
-&lt;p&gt;Una clase que estaría bien separar de los polinomios que acabamos de hablar, es la de los tiempos &lt;em&gt;súper polinomiales&lt;/em&gt;. Estos algoritmos tienen una complejidad que crece muy rápido con respecto a su entrada. Por ejemplo:&lt;/p&gt;
-
-\[O(n^{n ^ 2})\]
-
-\[O(n!)\]
-
-\[O(2^n)\]
-
-&lt;p&gt;Estos tres ejemplos crecen más rápido que cualquier función polinomial que común que podamos representar como \(O(n^k)\), siendo k &lt;em&gt;una constante&lt;/em&gt; (que normalmente es un número pequeño).&lt;/p&gt;
-
-&lt;p&gt;A esta clase de complejidad la empezamos ya a considerar como problemas intratables en la computación. Pero hablemos, dentro de los tiempos súper polinomiales de otra clase característica.&lt;/p&gt;
-
-&lt;h3 id=&quot;complejidad-exponencial-exp&quot;&gt;Complejidad Exponencial (EXP)&lt;/h3&gt;
-
-&lt;p&gt;La clase de complejidad exponencial se expresa como \(O(2^n)\). Cuando un algoritmo tiene un complejidad de esta categoría o mayor, se considera completamente incalculable.&lt;/p&gt;
-
-&lt;p&gt;Por ejemplo, si midiéramos la entrada en bits y tuviéramos una entrada de 100 bits, el número de operaciones sería \(2^{100}\). Suponiendo que una buena computadora pudiera hacer 1,000,000 de operaciones por segundo, esta tardaría \(2^{81}\) segundos en completar el cálculo. Sin embargo, calculamos que el universo “sólo” ha existido por menos de \(2^{34}\). Así de grande es la complejidad exponencial.&lt;/p&gt;
-
-&lt;p&gt;Te preguntarás si con una computadora más rápida podemos resolver el problema. Veamos el récord de la computadora más poderosa en 2023, que puede hacer 1,000,000,000,000,000,000 de operaciones por segundo. Esto es \(2^{59.8}\). Esto significa que una computadora de este tamaño tardaría \(2^{40.2}\) segundos. “Poco” más que la edad del universo.&lt;/p&gt;
-
-&lt;p&gt;Este tipo de algoritmos son los que hay que ejecutar para encontrar una llave por fuerza bruta. Si quieres por ejemplo encontrar una llave de &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html#aes&quot;&gt;AES&lt;/a&gt;, tendrías que hacer \(2^128\) intentos, en el peor de los casos.&lt;/p&gt;
-
-&lt;h2 id=&quot;tiempos-polinomiales-no-deterministas-np&quot;&gt;Tiempos polinomiales no deterministas (NP)&lt;/h2&gt;
-
-&lt;p&gt;Hasta ahora hemos hablado de tiempos polinomiales que estamos seguros que &lt;em&gt;siempre&lt;/em&gt; se van a comportar como los conocemos o incluso van a mejorar.&lt;/p&gt;
-
-&lt;p&gt;Para las clases que hemos hablado existe su equivalente &lt;em&gt;no determinista&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;¿Qué tiene que ver el determinismo con la complejidad? El determinismo en las clases anteriores significa que sabemos con certeza que el resultado está abajo de la línea de complejidad que la notación Big O describe.&lt;/p&gt;
-
-&lt;p&gt;En el caso de los tiempos polinomiales no deterministas significa que una máquina de Turing no determinista puede resolver el problema en un tiempo polinomial. El que la máquina sea no determinista significa que no sabemos si el resultado está abajo de la línea de complejidad que la notación Big O describe, o que a veces lo logrará y otras veces no.&lt;/p&gt;
-
-&lt;p&gt;Esto en otras palabras, significa que para los problemas con complejidad NP se puede &lt;strong&gt;adivinar&lt;/strong&gt; una solución en un tiempo finito no muy grande, pero no se puede encontrar esta solución o garantizar que se encontrará en un tiempo razonable para cada una de las entradas del algoritmo.&lt;/p&gt;
-
-&lt;p&gt;Otra característica que tienen los problemas NP es que aunque encontrar una solución sea difícil, verificarla es fácil.&lt;/p&gt;
-
-&lt;p&gt;Un ejemplo de un problema NP es el de encontrar una llave de &lt;a href=&quot;/2020/12/03/tipos-de-algoritmos-criptograficos.html#aes&quot;&gt;AES&lt;/a&gt; cuando conocemos el texto plano. Usando la fuerza bruta por ejemplo, podríamos encontrar la llave en un golpe de suerte y podríamos verificar que la llave es la correcta comparando el texto plano con el texto descifrado, si son iguales, entonces la llave es correcta.&lt;/p&gt;
-
-&lt;p&gt;Muchos de los problemas NP tienen que ver con combinatoria, con problemas que tienen que ver con la cantidad de combinaciones posibles que hay en un conjunto de elementos, justo como las llaves criptográficas.&lt;/p&gt;
-
-&lt;h2 id=&quot;np-complete&quot;&gt;NP-Complete&lt;/h2&gt;
-
-&lt;p&gt;Los problemas NP-Complete son la clase más difícil de resolver dentro de los problemas NP. Estos problemas se pueden transformar en otros problemas NP-complete, lo que significa que si se puede resolver un problema NP-complete, se puede resolver cualquier otro problema NP-complete en un tiempo razonable.&lt;/p&gt;
-
-&lt;h2 id=&quot;problemas-que-creemos-que-son-difíciles-y-problemas-np&quot;&gt;Problemas que creemos que son difíciles y problemas NP&lt;/h2&gt;
-
-&lt;p&gt;La criptografía actual se basa en problemas que creemos que son por lo menos NP. ¿Por qué usamos la palabra “creemos”? Porque no podemos probar que son NP, pero hasta el momento nadie ha encontrado una forma de resolverlos en tiempo polinomial, pero creemos que lo pueden ser. Lo ideal sería usar problemas que sean NP-Complete, pero no hay muchos problemas NP-Complete que se puedan usar en la criptografía, además de que existe la posibilidad de que si resuelven un problema NP-Complete, se resuelvan todos los problemas NP-Complete, lo que rompería la criptografía actual.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;La criptografía moderna se basa en problemas muy difíciles de resolver para cualquier computadora, para los que no existe un algoritmo eficiente que pueda encontrar una solución garantizada cada vez. Algunos de estos problemas son fáciles de verificar una vez que se propone una solución y son justo estos los que son más útiles para la criptografía.&lt;/p&gt;
-
-&lt;p&gt;Lo más interesante es que la criptografía simétrica crea un problema NP con sus llaves: encontrar una llave de cifrado es casi imposible en un tiempo razonable, pero verificar si es correcta si se tiene el tiempo original es muy fácil.&lt;/p&gt;
-
-&lt;p&gt;En los próximos artículos hablaremos específicamente de algunos de estos problemas, sobre todo aquellos en los que la criptografía asimétrica se basa.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="criptografía" /><category term="computer-science" /><category term="cs" /><category term="complejidad-computacional" /><summary type="html">En esta serie de posts vamos a hablar de una serie de problemas difíciles de la ciencia de la computación y su relación con la criptografía.</summary></entry></feed>
+&lt;p&gt;Ahora que sabemos como funciona una máquina de Turing no determinista, que es una construcción teórica que nos sirve para hacer experimentos del pensamiento y  además que tienen una relación muy estrecha con la teoría de la complejidad y los problemas NP.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="turing" /><category term="ntm" /><category term="non-deterministic" /><summary type="html">Hablemos de la relación que existe entre las máquinas de Turing no deterministas (NTM), la complejidad y los problemas NP.</summary></entry></feed>
