@@ -28,7 +28,8 @@ John Hughes es un gran proponente e investigador de la programación funcional e
 
 > Divide y vencerás
 
-Una ventaja secundaria de dividir el software en piezas pequeñas, es que si diseñamos correctamente nuestras piezas y tenemos las herramientas adecuadas para unirlas después, podemos **reutilizar** las piezas que ya hemos construido en otras partes.
+Una ventaja secundaria de dividir el software en piezas pequeñas, es que si diseñamos correctamente nuestros componentes y tenemos las herramientas adecuadas para unirlas después, podemos **reutilizar** las piezas que ya hemos construido en otras partes.
+
 ## Composición de funciones
 
 ## Composición de objetos
