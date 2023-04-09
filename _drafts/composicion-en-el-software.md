@@ -23,4 +23,10 @@ Veamos algunas formas de hacer composición en el software y por qué es más ef
 
 ## Composición de objetos
 
+### ¿Por qué es más efectiva la composición de objetos que la herencia?
+
 ## ¿Cuál es el pegamento que te da tu lenguaje?
+
+## Conclusión
+
+Aprender a usr la composición es obligatorio para desarrollar buen software. Lo quieras o no, mientras desarrollas, siempre estás juntando componentes, si conoces las técnicas correctas, podrás crear software de mejor calidad de manera más rápida.
