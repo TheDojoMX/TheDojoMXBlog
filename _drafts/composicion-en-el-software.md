@@ -30,7 +30,18 @@ John Hughes es un gran proponente e investigador de la programación funcional e
 
 Una ventaja secundaria de dividir el software en piezas pequeñas, es que si diseñamos correctamente nuestros componentes y tenemos las herramientas adecuadas para unirlas después, podemos **reutilizar** las piezas que ya hemos construido en otras partes.
 
+Veamos dos formas de aplicar la composición en el software.
+
 ## Composición de funciones
+
+Las funciones son la unidad de abstracción más pequeña que tenemos en la programación. Crear un montón de pequeñas funciones útiles que resuelvan problemas generales, de manera completa y precisa, es muy buena idea.
+
+¿Cómo aplicamos la composición? Puedes usar la composición al dividir tu problema principal en funciones sencillas y luego juntarlas.Veamos un ejemplo: vamos a crear un validador de passwords. El validador debe verificar las siguientes condiciones:
+
+- Verificar una longitud mínima, que podría ser 8 caracteres.
+- Checar que no tenga ciertas palabras (lista negra).
+- Verificar que tiene un número
+- Verificar que tiene un carácter especial
 
 ## Composición de objetos
 
