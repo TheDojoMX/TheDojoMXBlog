@@ -26,4 +26,14 @@ de cadenas de componentes (_[composición](/) de software, ¿te suena?_) con cas
 
 ## Componentes principales
 
-LangChain provee varios tipos de componentes, muchos de los cuáles son abstracciones de los conceptos más usados en la interacción con LLM's.
+LangChain provee varios tipos de componentes, muchos de los cuales son abstracciones de los conceptos más usados en la interacción con LLM's, veamos algunos de ellos:
+
+- **Texto**. La abstracción más básica es la que representa un texto cualquiera que le mandamos a un LLM.
+
+- **Índices**. Es una abstracción que presenta el texto de mejor manera para que un LLM pueda acceder a la información mejor.
+
+- **Modelo**. Esto es la interfaz con un modelo de lenguaje. Te lo puedes imaginar como el equivalente a un conector a base de datos, abstraen los detalles de la conexión y te dan una interfaz común.
+
+- **Agente**. Un agente puede recibir instrucciones en forma de alguna abstracción de texto, para ejecutar acciones en _sistemas externos_ o consultando para consultar al LLM.
+
+- **Cadena**. Es una composición de componentes que se ejecutan en orden.
