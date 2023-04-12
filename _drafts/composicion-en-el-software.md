@@ -43,6 +43,45 @@ Las funciones son la unidad de abstracción más pequeña que tenemos en la prog
 - Verificar que tiene un número
 - Verificar que tiene un carácter especial
 
+Podríamos hacer esto en una sola función que verificara todas estas características, una por una a través de un serie de if's. Pero veamos una implementación usando composición, y sus ventajas.
+
+```python
+
+def min_length(password, min_length):
+    return len(password) >= min_length
+
+def has_number(password):
+    return any(char.isdigit() for char in password)
+
+def has_special_char(password):
+    return any(char in "!@#$%^&*()_+" for char in password)
+
+def not_in_blacklist(password, blacklist=[]):
+    if not blacklist:
+      blacklist = ['password', '12345678']
+    return not any(word in password for word in blacklist)
+
+def validate_password(password, min_length, blacklist):
+    return min_length(password, min_length) and \
+           has_number(password) and \
+           has_special_char(password) and \
+           not_in_blacklist(password, blacklist)
+```
+
+Quiero que te fijes especialmente en la última función, `validate_password`. Aunque funciona, es un poco rígida. La composición puede ayudarnos a hacerla más flexible.
+
+```python
+validators = [
+    lambda password: min_length(password, 8),
+    has_number,
+    has_special_char,
+    lambda password: not_in_blacklist(password, ['palabra_uno', 'palabra_dos'])
+
+]
+def validate_password(password, min_length, blacklist, validators):
+    return all(validator(password) for validator in validators)
+```
+
 ## Composición de objetos
 
 ### ¿Por qué es más efectiva la composición de objetos que la herencia?
