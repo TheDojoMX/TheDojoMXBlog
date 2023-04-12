@@ -30,10 +30,16 @@ LangChain provee varios tipos de componentes, muchos de los cuales son abstracci
 
 - **Texto**. La abstracción más básica es la que representa un texto cualquiera que le mandamos a un LLM.
 
+- **Divisores de texto**. Generalmente, un modelo de lenguaje no puede consumir mucho texto al mismo tiempo, por lo que para poder procesar textos grandes hay que mandarlos por partes. Este componente se encarga de ayudarte a dividir el texto en partes que el LLM pueda procesar.
+
 - **Índices**. Es una abstracción que presenta el texto de mejor manera para que un LLM pueda acceder a la información mejor.
 
 - **Modelo**. Esto es la interfaz con un modelo de lenguaje. Te lo puedes imaginar como el equivalente a un conector a base de datos, abstraen los detalles de la conexión y te dan una interfaz común.
 
 - **Agente**. Un agente puede recibir instrucciones en forma de alguna abstracción de texto, para ejecutar acciones en _sistemas externos_ o consultando para consultar al LLM.
 
-- **Cadena**. Es una composición de componentes que se ejecutan en orden.
+- **Cadena**. Las cadenas son conjuntos de componentes que sirven para resolver problemas comunes o crear aplicaciones completas.
+
+## Creando una aplicación de ejemplo
+
+Vamos a crear una aplicación que
