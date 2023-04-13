@@ -42,4 +42,4 @@ LangChain provee varios tipos de componentes, muchos de los cuales son abstracci
 
 ## Creando una aplicación de ejemplo
 
-Vamos a crear una aplicación que
+Vamos a crear una aplicación que nos permita consultar todos los posts de este blog y contestar preguntas. Por suerte, existe una cadena que ya nos permite hacer esto.
