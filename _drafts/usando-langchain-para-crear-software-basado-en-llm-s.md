@@ -43,3 +43,80 @@ LangChain provee varios tipos de componentes, muchos de los cuales son abstracci
 ## Creando una aplicación de ejemplo
 
 Vamos a crear una aplicación que nos permita consultar todos los posts de este blog y contestar preguntas. Por suerte, existe una cadena que ya nos permite hacer esto.
+
+### Instalación
+
+Primero veamos los requisitos: además de langchain, neceistas los siguientes paquetes:
+
+- openai
+- chromadb
+- tiktoken
+
+Por lo que tu requirements.txt debería verse así:
+
+```bash
+langchain
+openai
+chromadb
+tiktoken
+```
+
+Aquí, recomiendo usar un entorno virtual con [Anaconda](https://www.anaconda.com/products/distribution), sobre todo si tienes planes de seguir trabajando con cosas relacionadas con
+procesamiento de datos.
+
+Para hacer la creación e instalación puedes correr los siguientes comandos si tienes `conda`:
+
+```bash
+
+conda create -n entorno_langchain pip
+conda activate entorno_langchain
+pip install requeriments.txt
+
+```
+
+Aquí `entorno_langchain` es el nombre de nuestro entorno virtual y puede ser cualquiera que tú quieras.
+También, para empezar, necesito una fuente de datos para empezar a probar, por lo que voy a copiar algunos posts de este blog, que están en formato markdown y pueden ser consumidas sin ningún programa adicional. Voy a crear una carpeta llamada docs y dentro copiaré los archivos markdown de este blog, que están en _posts. Tú puedes poner ahí los diferentes archivos que quieras consultar, tal vez directamente en docs.
+
+Mi estructura de archivos se ve así (mi carpeta de trabajo es `thedojo_agent`):
+
+```bash
+
+thedojo_agent
+├── docs
+│   ├── _posts
+│   │   ├── 2018-10-28-bienvenidos.md
+... muchos archivos más
+├── requeriments.txt
+```
+
+Teniendo esto listo podemos seguir el ejemplo básico del tutorial de LangChain.
+
+## Creando un script mínimo que funciona
+
+Dentro de un archivo que se llame `main.py` vamos a escribir el siguiente código:
+
+```python
+
+from langchain.document_loaders import TextLoader
+from langchain.indexes import VectorstoreIndexCreator
+
+loader = TextLoader("./docs/_posts/2023-04-07-cuando-separar-el-codigo.md")
+index = VectorstoreIndexCreator().from_loaders([loader])
+
+
+query = "¿Cuándo separar el código?"
+print(index.query(query))
+
+query = "¿Qué es un módulo?"
+print(index.query_with_sources(query))
+
+```
+
+Primero importamos el componente TextLoader que nos permitirá cargar texto de un archivo y el componente VectorstoreIndexCreator que nos permitirá crear un índice y almacenarlo como un vector.
+
+Ya nos estamos empezando a meter en cosas que no son tan conocidas. Vamos a explicarlas. Un índice es parecido a lo que se hace en las bases de datos, se analiza la información del texto para guardarle de manera organizada, para que cuando necesitemos encontrar algo, sea fácil de encontrar. Por ejemplo, podría estar organizado por palabras clave y con las referencias a donde se puede encontrar en los textos.
+
+Que se guarde como un vector tiene que ver con la forma en que trabajan los modelos de lenguaje. Lo que en realidad ve un modelo es una lista de tokens, que son números que representan el texto. Cuando un modelo te da una respuesta, te da una lista de tokens junto con la probabilidad de que cada token vaya en ese orden. Esto son los "embeddings", y a final de cuenta son colecciones de números, como listas, lo que se conoce como vectores en este mundo del procesamiento de datos.
+
+Así que primero generamos un índice, que consiste en un conjunto de vectores y después lo guardamos.
+
