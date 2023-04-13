@@ -34,18 +34,18 @@ AWS X-Ray es un servicio de AWS que recolecta datos sobre los requests servidos 
 
 Algunos puntos a favor de X-Ray sobre otras herramientas similares son:
 
-* Facilidad de integración con oros servicios de AWS
-* No hay infraestructura extra qué mantener (el daemon de X-Ray está incluído en las plataformas AWS Elastic Beanstalk y AWS Lambda)
-* Puede funcionar sólo como visualizador (usando OpenTelemetry como tracer)
-* Para servicios soportados, el SDK de X-Ray puede enviar y rastrear automáticamente los "ID de request" entre los servicios
-* Es administrado por AWS
-* Los primeros 100k rastreos del mes son gratis
-* El primer millón de rastreos obtenidos o escaneados cada mes es gratis
+* Facilidad de integración con otros servicios de AWS.
+* No hay infraestructura extra qué mantener (el daemon de X-Ray está incluído en las plataformas AWS Elastic Beanstalk y AWS Lambda).
+* Puede funcionar sólo como visualizador (usando OpenTelemetry como tracer).
+* Para servicios soportados, el SDK de X-Ray puede enviar y rastrear automáticamente los "ID de request" entre los servicios.
+* Es administrado por AWS.
+* Los primeros 100k rastreos del mes son gratis.
+* El primer millón de rastreos obtenidos o escaneados cada mes es gratis.
 
 Sin embargo algunos puntos en contra son:
 
-* AWS X-Ray sólo puede ser usado con aplicaciones corriendo en Amazon EC2, Amazon EC2 containser service, AWS Lambda, y AWS Elastic Beanstalk
-* Después de agotar los rastreos gratuitos del mes, cada rastreo indexado y consultado tiene un costo
+* AWS X-Ray sólo puede ser usado con aplicaciones corriendo en Amazon EC2, Amazon EC2 containser service, AWS Lambda, y AWS Elastic Beanstalk.
+* Después de agotar los rastreos gratuitos del mes, cada rastreo indexado y consultado tiene un costo.
 * Soporte limitado de lenguajes: Mientras que el SDK de X-Ray tiene soporte para varios lenguajes de programación, no soporta todos los lenguajes o plataformas, lo cual puede limitar su utilidad en algunos casos.
 * Vendor lock-in: El uso de X-Ray puede llevar a la dependencia exclusiva de AWS, ya que es un servicio propietario disponible sólo en la plataforma de AWS. Esto puede limitar su capacidad para cambiar a otros proveedores de nube o herramientas en el futuro.
 
@@ -55,12 +55,12 @@ Si, después de leer algunos de los pros y contras, aún estás inclinado a usar
 
 Para ver la información de rastreo en AWS X-Ray, necesitas una cuenta de AWS y una aplicación corriendo en la infraestructura de AWS o que esté integrada con los servicios de AWS. Además, necesitarás:
 
-* Una instancia del X-Ray daemon, que se puede ejecutar como un binario o como un contenedor de Docker. Puedes encontrar instrucciones detalladas sobre cómo ejecutar y configurar el daemon [aquí](https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-local.html). Para éste artículo, estaré usando el binario para OS X
-* Tu aplicación debe de tener los permisos necesarios para interactuar con AWS X-Ray y otros servicios que use
+* Una instancia del X-Ray daemon, que se puede ejecutar como un binario o como un contenedor de Docker. Puedes encontrar instrucciones detalladas sobre cómo ejecutar y configurar el daemon [aquí](https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-local.html). Para éste artículo, estaré usando el binario para OS X.
+* Tu aplicación debe de tener los permisos necesarios para interactuar con AWS X-Ray y otros servicios que use.
 
 #### IAM Role
 
-Para permitir que t u aplicación mande información sobre tus requests a X-Ray, tienes que proveerle al daemon de X-Ray un rol. Para crear un rol, vamos a entrar a nuestra consola web de AWS y de allí navegamos a la página principal de IAM y allí encontraremos el botón "Create Role" (o crear rol si tienes configurado tu panel de AWS en español).
+Para permitir que tu aplicación mande información sobre tus requests a X-Ray, tienes que proveerle al daemon de X-Ray un rol. Para crear un rol, vamos a entrar a nuestra consola web de AWS y de allí navegamos a la página principal de IAM y allí encontraremos el botón "Create Role" (o "Crear Rol" si tienes configurado tu panel de AWS en español).
 
 ![Crear nuevo rol](https://github.com/makkoman/blogposts/blob/main/x-ray/images/create-role.png)
 
@@ -103,13 +103,13 @@ En [la guía del desarrollador de AWS X-Ray](https://docs.aws.amazon.com/xray/la
 
 ### Instrumentando tu microservicio en Go
 
-Ahora que ya tenemos el X-Ray daemin configurado y corriendo, podemos proceder a instrumentar nuestro servicio.
+Ahora que ya tenemos el X-Ray daemon configurado y corriendo, podemos proceder a instrumentar nuestro servicio.
 
 AWS recomienda empezar agregando rastreo para requests entrantes envolviendo los controladores de servicio con `xray.Handler`. Pero, como estamos usando Gin, el enfoque que implementaremos es ligeramente diferente.
 
 Mientras buscaba recursos sobre cómo instrumentar una aplicación con Gin, me encontré con éste [middleware](https://github.com/oroshnivskyy/go-gin-aws-x-ray), el cual está basado en la función [`xray.Handler`](https://github.com/aws/aws-xray-sdk-go/blob/1e154184282bb3b0166cb1b154f2b4abed0b1e6f/xray/handler.go#L99).
 
-Éste middleware hace el mismo trabajo que `xray.Handler`, abrirá y cerrará un segmento para cada request recibido. También se encargará de manejar el header para IDs de rastreo (`"x-amzn-trace-id"`), que es un header que contiene un identificador que será generado para cada petición nueva y ue será propagado a travéz de todos nuestros microservicios.
+Éste middleware hace el mismo trabajo que `xray.Handler`, abrirá y cerrará un segmento para cada request recibido. También se encargará de manejar el header para IDs de rastreo (`"x-amzn-trace-id"`), que es un header que contiene un identificador que será generado para cada petición nueva y que será propagado a travéz de todos nuestros microservicios.
 
 Así que vamos a agregar el middleware a las rutas que queremos intrumentar:
 
@@ -187,7 +187,7 @@ err = xray.Capture(ctx, "BuildRolesDetail", func(ctx1 context.Context) error {
 })
 ```
 
-Vamo a correr nuestro servicio y llamemos de nuevo nuestro endpoint instrumentado.
+Vamos a correr nuestro servicio y llamemos de nuevo nuestro endpoint instrumentado.
 
 Éste es el nuevo registro en AWS CloudWatch -> Traces:
 
@@ -239,7 +239,7 @@ Yo estoy corriendo DynamoDB localmente, pero ya puedes ver qué tanto tiempo tom
 ## Conclusión
 Instrumentar un servicio con X-Ray es relativamente sencillo, pero puede complicarse muy rápido dependiendo de las cosas que queremos monitorear. Debido a esto, el esfuerzo para agregar trazabilidad a su servicio puede variar de caso en caso.
 
-Otra cosa a considerar es el límite de 64KB por segmento. Puede que no sea suficiente si desea rastrear muchos subsegmentos o agregar más metadatos. Existen formas de evitar esto, pero están fuera del alcance de esta publicación.
+Otra cosa a considerar es el límite de 64KB por segmento. Puede que no sea suficiente si deseas rastrear muchos subsegmentos o agregar más metadatos. Existen formas de evitar esto, pero están fuera del alcance de esta publicación.
 
 En conclusión, implementar X-Ray en un microservicio en Go es un proceso sencillo que puede beneficiar enormemente la observabilidad y las capacidades de resolución de problemas de tu aplicación. El proceso de integración es relativamente fácil, y el SDK de X-Ray proporciona una serie de características útiles que facilitan la trazabilidad de las solicitudes y la identificación de cuellos de botella. Sin embargo, es importante tener en cuenta que X-Ray tiene algunas desventajas, como el costo asociado con su uso y las limitaciones de sus capacidades de muestreo.
 
