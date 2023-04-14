@@ -112,7 +112,7 @@ print(index.query_with_sources(query))
 
 ```
 
-Primero importamos el componente TextLoader que nos permitirá cargar texto de un archivo y el componente VectorstoreIndexCreator que nos permitirá crear un índice y almacenarlo como un vector.
+Primero importamos el componente `TextLoader` que nos permitirá cargar texto de un archivo y el componente `VectorstoreIndexCreator` que nos permitirá crear un índice y almacenarlo como un vector.
 
 Ya nos estamos empezando a meter en cosas que no son tan conocidas. Vamos a explicarlas. Un índice es parecido a lo que se hace en las bases de datos, se analiza la información del texto para guardarle de manera organizada, para que cuando necesitemos encontrar algo, sea fácil de encontrar. Por ejemplo, podría estar organizado por palabras clave y con las referencias a donde se puede encontrar en los textos.
 
@@ -120,3 +120,14 @@ Que se guarde como un vector tiene que ver con la forma en que trabajan los mode
 
 Así que primero generamos un índice, que consiste en un conjunto de vectores y después lo guardamos.
 
+Eso es justo lo que hacen las dos líneas que siguen al import.
+
+```python
+loader = TextLoader("./docs/_posts/2023-04-07-cuando-separar-el-codigo.md")
+index = VectorstoreIndexCreator().from_loaders([loader])
+```
+
+Después de esto, ahora consultamos el texto de dos formas:
+
+1. Primero que nos de la respuesta solita.
+2. Que nos de la respuestas junto con la fuente de donde la sacó.
