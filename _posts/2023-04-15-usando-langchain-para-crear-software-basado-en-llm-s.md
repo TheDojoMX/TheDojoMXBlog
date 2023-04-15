@@ -1,6 +1,6 @@
 ---
 title: "Usando LangChain 🦜 para crear software basado en LLM's"
-date: 2023-04-07
+date: 2023-04-15
 author: Héctor Patricio
 tags: langchain llm tutorial
 comments: true
@@ -136,3 +136,28 @@ Después de esto, ahora consultamos el texto de dos formas:
 1. Primero que nos de la respuesta solita.
 2. Que nos de la respuestas junto con la fuente de donde la sacó.
 
+Este ejemplo básico ya empieza a hacer por nosotros lo que queríamos en un principio: consultar un texto y obtener una respuesta.
+
+Vamos a ir un poco más hondo en el código.
+
+### ¿Qué hace VectorstoreIndexCreator?
+
+La parte que más magia esconde es el objeto `VectorstoreIndexCreator`. Este objeto es una composición de otros que cumplen estos roles:
+
+1. Un "cortador" de texto, que ayuda a procesar el texto de la fuente.
+2. Un modelo de lenguaje para generar los embeddings.
+3. Un almacén de datos, en nuestro caso, un `Vectorstore`, o una base de datos que almacene vectores.
+
+El objeto ya hace por nosotros todo el trabajo, el flujo de información, desde la fuente, que en el ejemplo es un texto cargado desde un conjunto de archivos, hasta el almacén de datos, que en el ejemplo es ChromaDB, que es una base de datos que almacena vectores.
+
+ChromaDB puede correr en memoria o como servidor, pero aquí corre como base de datos en memoria, usando por debajo DuckDB, una base de datos completamente en memoria, así que cuando salgas del programa, se borra todo.
+
+Vamos a dejar para un artículo futuro la creación de un índice, explicando sus parámetros.
+
+Si quieres ver un ejmplo funcionando, Alex y yo hicimos un ejemplo y platicamos más de esto en este directo:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IamEow08Zas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
+
+¡Esperamos tus comentarios!
