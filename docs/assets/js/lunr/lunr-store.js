@@ -658,4 +658,10 @@ var store = [{
         "tags": ["aposd","ousterhout","diseño-de-software"],
         "url": "/2023/04/07/cuando-separar-el-codigo.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1680411928/risto-kokkonen-HAIDBanzi8o-unsplash_okktgd.jpg"
+      },{
+        "title": "Usando LangChain 🦜 para crear software basado en LLM's",
+        "excerpt":"Los grandes modelos de lenguaje o LLM’s (Large Language Models) han sido noticia en este 2023. Es por eso que han surgido muchos proyectos y herramientas que permiten crear software basado en estas herramientas. En este artículo vamos a poner un pequeño tutorial de una herramienta creada para hacer aplicaciones...","categories": [],
+        "tags": ["langchain","llm","tutorial"],
+        "url": "/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,g_face,h_550,w_1024/v1681538471/DALL_E_2023-04-14_23.53.02_-_a_green_parrot_in_a_cybernetic_setting_plotting_a_plan_to_conquer_the_universe_digital_illustration_detailed_cinematic_light_ff6lm8.png"
       }]

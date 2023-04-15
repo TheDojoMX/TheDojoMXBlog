@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://blog.thedojo.mx/authors/sag.html</loc>
-<lastmod>2023-04-07T19:17:06-06:00</lastmod>
+<lastmod>2023-04-15T10:02:27-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/2018/10/28/bienvenidos.html</loc>
@@ -439,6 +439,10 @@
 <url>
 <loc>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html</loc>
 <lastmod>2023-04-07T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html</loc>
+<lastmod>2023-04-15T00:00:00-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/about/</loc>

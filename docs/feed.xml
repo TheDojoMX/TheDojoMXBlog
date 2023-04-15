@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-04-07T19:17:06-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Cuando separar el código</title><link href="https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html" rel="alternate" type="text/html" title="Cuando separar el código" /><published>2023-04-07T00:00:00-06:00</published><updated>2023-04-07T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html">&lt;p&gt;Hay quienes afirman que mientras más pequeñas sean tus clases o funciones, mejor. Hasta llegan a poner un límite de la líneas que pueden ir en un método o función. Esto crea código súper fragmentado que llega a ser complejo por el simple hecho de tener muchos elementos individuales que luego se tienen que unir mediante más código. Además, trazar la causa de algo a través de un código similar es casi imposible o, por lo menos, te puede tomar mucho tiempo.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-04-15T10:02:27-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Usando LangChain 🦜 para crear software basado en LLM’s</title><link href="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html" rel="alternate" type="text/html" title="Usando LangChain 🦜 para crear software basado en LLM’s" /><published>2023-04-15T00:00:00-06:00</published><updated>2023-04-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html">&lt;p&gt;Los grandes modelos de lenguaje o LLM’s (Large Language Models) han sido noticia en este 2023. Es por eso que han surgido muchos proyectos y herramientas que permiten crear software basado en estas herramientas.&lt;/p&gt;
+
+&lt;p&gt;En este artículo vamos a poner un pequeño tutorial de una herramienta creada para hacer aplicaciones basadas en LLM’s: &lt;a href=&quot;https://python.langchain.com/en/latest/index.html&quot;&gt;LangChain&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-es-langchain&quot;&gt;¿Qué es LangChain?&lt;/h2&gt;
+
+&lt;p&gt;Las aplicaciones basadas en procesamiento de lenguaje natural, sea como una herramienta de comunicación o como su producto principal, normalmente requieren fuentes de información para potenciar sus capacidades.&lt;/p&gt;
+
+&lt;p&gt;También es una muy buena idea que estas aplicaciones puedan actuar por sí mismas usando las instrucciones creadas por un LLM. Para hacer esto podemos usar &lt;strong&gt;agentes&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;LangChain&lt;/strong&gt; provee componentes que te permiten lograr estas dos tareas, para que tú los uses como quieras, pero también te provee
+de cadenas de componentes (&lt;em&gt;&lt;a href=&quot;/&quot;&gt;composición&lt;/a&gt; de software, ¿te suena?&lt;/em&gt;) con casos de uso comunes, digamos que prefabricados, para hacer software basado en LLM’s de manera más rápida.&lt;/p&gt;
+
+&lt;p&gt;Hablemos de qué componentes te provee LangChain para empezar a construir tus programas basados en LLM’s.&lt;/p&gt;
+
+&lt;h2 id=&quot;componentes-principales&quot;&gt;Componentes principales&lt;/h2&gt;
+
+&lt;p&gt;LangChain provee varios tipos de componentes, muchos de los cuales son abstracciones de los conceptos más usados en la interacción con LLM’s, veamos algunos de ellos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Texto&lt;/strong&gt;. La abstracción más básica es la que representa un texto cualquiera que le mandamos a un LLM. Este texto puede provenir de diferentes fuentes, como archivos, por ejemplo.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Divisores de texto&lt;/strong&gt;. Generalmente, un modelo de lenguaje no puede consumir mucho texto al mismo tiempo, por lo que para poder procesar textos grandes hay que mandárselos por partes. Este componente se encarga de ayudarte a dividir el texto en partes que el LLM pueda procesar.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Índices&lt;/strong&gt;. Es una abstracción que presenta el texto de mejor manera para que un LLM pueda acceder a la información mejor. Los índices se tienen que guardar de alguna manera y LangChain provee una interfaz para guardarlos en una base de datos especializada.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Modelo&lt;/strong&gt;. Esto es la interfaz con un modelo de lenguaje. Te lo puedes imaginar como el equivalente a un conector a base de datos, abstraen los detalles de la conexión y te dan una interfaz común.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Agente&lt;/strong&gt;. Un agente puede recibir instrucciones en forma de alguna abstracción de texto, para ejecutar acciones en &lt;em&gt;sistemas externos&lt;/em&gt; o consultando para consultar al LLM.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cadena&lt;/strong&gt;. Las cadenas son conjuntos de componentes que sirven para resolver problemas comunes o crear aplicaciones completas.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ya que entendemos las cosas que LangChain nos da, veamos cómo usarlas.&lt;/p&gt;
+
+&lt;h2 id=&quot;creando-una-aplicación-de-ejemplo&quot;&gt;Creando una aplicación de ejemplo&lt;/h2&gt;
+
+&lt;p&gt;Vamos a crear una aplicación que nos permita consultar todos los posts de este blog y contestar preguntas. Por suerte, existe una cadena que ya nos permite hacer esto.&lt;/p&gt;
+
+&lt;h3 id=&quot;instalación&quot;&gt;Instalación&lt;/h3&gt;
+
+&lt;p&gt;Primero veamos los requisitos: además de LangChain, necesitas los siguientes paquetes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;openai&lt;/li&gt;
+  &lt;li&gt;chromadb&lt;/li&gt;
+  &lt;li&gt;tiktoken&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Por lo que tu requirements.txt debería verse así:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;langchain
+openai
+chromadb
+tiktoken
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Aquí, recomiendo usar un entorno virtual con &lt;a href=&quot;https://www.anaconda.com/products/distribution&quot;&gt;Anaconda&lt;/a&gt;, sobre todo si tienes planes de seguir trabajando con cosas relacionadas con
+procesamiento de datos.&lt;/p&gt;
+
+&lt;p&gt;Para hacer la creación e instalación puedes correr los siguientes comandos si tienes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;conda&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+conda create &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; entorno_langchain pip
+conda activate entorno_langchain
+pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;requeriments.txt
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Aquí &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entorno_langchain&lt;/code&gt; es el nombre de nuestro entorno virtual y puede ser cualquiera que tú quieras.
+También, para empezar, necesito una fuente de datos para empezar a probar, por lo que voy a copiar algunos posts de este blog, que están en formato markdown y pueden ser consumidas sin ningún programa adicional. Voy a crear una carpeta llamada docs y dentro copiaré los archivos markdown de este blog, que están en _posts. Tú puedes poner ahí los diferentes archivos que quieras consultar, tal vez directamente en docs.&lt;/p&gt;
+
+&lt;p&gt;Mi estructura de archivos se ve así (mi carpeta de trabajo es &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;thedojo_agent&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+thedojo_agent
+├── docs
+│   ├── _posts
+│   │   ├── 2018-10-28-bienvenidos.md
+... muchos archivos más
+├── requeriments.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Teniendo esto listo podemos seguir el ejemplo básico del tutorial de LangChain.&lt;/p&gt;
+
+&lt;h2 id=&quot;creando-un-script-mínimo-que-funciona&quot;&gt;Creando un script mínimo que funciona&lt;/h2&gt;
+
+&lt;p&gt;Dentro de un archivo que se llame &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.py&lt;/code&gt; vamos a escribir el siguiente código:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.document_loaders&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextLoader&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.indexes&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VectorstoreIndexCreator&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;./docs/_posts/2023-04-07-cuando-separar-el-codigo.md&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VectorstoreIndexCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_loaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+
+&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;¿Cuándo separar el código?&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;¿Qué es un módulo?&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query_with_sources&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Primero importamos el componente &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TextLoader&lt;/code&gt; que nos permitirá cargar texto de un archivo y el componente &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VectorstoreIndexCreator&lt;/code&gt; que nos permitirá crear un índice y almacenarlo como un vector.&lt;/p&gt;
+
+&lt;p&gt;Ya nos estamos empezando a meter en cosas que no son tan conocidas. Vamos a explicarlas. Un índice es parecido a lo que se hace en las bases de datos, se analiza la información del texto para guardarle de manera organizada, para que cuando necesitemos encontrar algo, sea fácil de encontrar. Por ejemplo, podría estar organizado por palabras clave y con las referencias a donde se puede encontrar en los textos.&lt;/p&gt;
+
+&lt;p&gt;Que se guarde como un vector tiene que ver con la forma en que trabajan los modelos de lenguaje. Lo que en realidad ve un modelo es una lista de tokens, que son números que representan el texto. Cuando un modelo te da una respuesta, te da una lista de tokens junto con la probabilidad de que cada token vaya en ese orden. Esto son los “embeddings”, y a final de cuenta son colecciones de números, como listas, lo que se conoce como vectores en este mundo del procesamiento de datos.&lt;/p&gt;
+
+&lt;p&gt;Así que primero generamos un índice, que consiste en un conjunto de vectores y después lo guardamos.&lt;/p&gt;
+
+&lt;p&gt;Eso es justo lo que hacen las dos líneas que siguen al import.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;./docs/_posts/2023-04-07-cuando-separar-el-codigo.md&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VectorstoreIndexCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_loaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Después de esto, ahora consultamos el texto de dos formas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Primero que nos de la respuesta solita.&lt;/li&gt;
+  &lt;li&gt;Que nos de la respuestas junto con la fuente de donde la sacó.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Este ejemplo básico ya empieza a hacer por nosotros lo que queríamos en un principio: consultar un texto y obtener una respuesta.&lt;/p&gt;
+
+&lt;p&gt;Vamos a ir un poco más hondo en el código.&lt;/p&gt;
+
+&lt;h3 id=&quot;qué-hace-vectorstoreindexcreator&quot;&gt;¿Qué hace VectorstoreIndexCreator?&lt;/h3&gt;
+
+&lt;p&gt;La parte que más magia esconde es el objeto &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VectorstoreIndexCreator&lt;/code&gt;. Este objeto es una composición de otros que cumplen estos roles:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Un “cortador” de texto, que ayuda a procesar el texto de la fuente.&lt;/li&gt;
+  &lt;li&gt;Un modelo de lenguaje para generar los embeddings.&lt;/li&gt;
+  &lt;li&gt;Un almacén de datos, en nuestro caso, un &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vectorstore&lt;/code&gt;, o una base de datos que almacene vectores.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;El objeto ya hace por nosotros todo el trabajo, el flujo de información, desde la fuente, que en el ejemplo es un texto cargado desde un conjunto de archivos, hasta el almacén de datos, que en el ejemplo es ChromaDB, que es una base de datos que almacena vectores.&lt;/p&gt;
+
+&lt;p&gt;ChromaDB puede correr en memoria o como servidor, pero aquí corre como base de datos en memoria, usando por debajo DuckDB, una base de datos completamente en memoria, así que cuando salgas del programa, se borra todo.&lt;/p&gt;
+
+&lt;p&gt;Vamos a dejar para un artículo futuro la creación de un índice, explicando sus parámetros.&lt;/p&gt;
+
+&lt;p&gt;Si quieres ver un ejmplo funcionando, Alex y yo hicimos un ejemplo y platicamos más de esto en este directo:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/IamEow08Zas&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;¡Esperamos tus comentarios!&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="langchain" /><category term="llm" /><category term="tutorial" /><summary type="html">Vamos a ver cómo funciona LangChain, una herramienta que le puede dar oídos, ojos y manos a tu modelo de lenguaje preferido.</summary></entry><entry><title type="html">Cuando separar el código</title><link href="https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html" rel="alternate" type="text/html" title="Cuando separar el código" /><published>2023-04-07T00:00:00-06:00</published><updated>2023-04-07T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html">&lt;p&gt;Hay quienes afirman que mientras más pequeñas sean tus clases o funciones, mejor. Hasta llegan a poner un límite de la líneas que pueden ir en un método o función. Esto crea código súper fragmentado que llega a ser complejo por el simple hecho de tener muchos elementos individuales que luego se tienen que unir mediante más código. Además, trazar la causa de algo a través de un código similar es casi imposible o, por lo menos, te puede tomar mucho tiempo.&lt;/p&gt;
 
 &lt;p&gt;Es por eso que otros proponentes sobre diseño de software mencionan que mientras más cosas estén detrás de un interfaz y que oculten una implementación, mejor. Esto implica que las funciones y los métodos deben tener un tamaño razonable, sin llegar a ser demasiado grandes. Y este es el punto de este artículo, ¿cómo sabemos cuando es buena idea separar el código en otro módulo? Recuerda que a lo que nos referimos con módulo es cualquier construcción de tu lenguaje que permita encapsular una implementación: clases, funciones, paquetes, etc.&lt;/p&gt;
 
@@ -745,71 +904,7 @@ Es cierto que Liskov usó las jerarquías de clases para ilustrar sus ideas, per
 
 &lt;p&gt;Como lección, podemos decir que seguir las guías de Liskov para el subtipado es una forma de aplicar este principio de diseño aún más amplio, digamos que en realidad la especificación de cómo deben comportarse los subtipos es más como una &lt;em&gt;regla&lt;/em&gt; de diseño que un &lt;em&gt;principio&lt;/em&gt; de diseño.&lt;/p&gt;
 
-&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry><entry><title type="html">¿Qué es un modelo transformador de inteligencia artificial?</title><link href="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="alternate" type="text/html" title="¿Qué es un modelo transformador de inteligencia artificial?" /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html">&lt;p&gt;En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada &lt;em&gt;transformer&lt;/em&gt; o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.&lt;/p&gt;
-
-&lt;h2 id=&quot;redes-neuronales-recurrentes-rnn&quot;&gt;Redes neuronales recurrentes (RNN)&lt;/h2&gt;
-
-&lt;p&gt;Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores o a la misma capa.&lt;/p&gt;
-
-&lt;p&gt;Esta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.&lt;/p&gt;
-
-&lt;p&gt;Sin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien.&lt;/p&gt;
-
-&lt;p&gt;Además, la forma secuencial de tratar las palabras las hace difíciles de entrenar. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.&lt;/p&gt;
-
-&lt;h2 id=&quot;redes-neuronales-de-transformador-transformers&quot;&gt;Redes neuronales de transformador (Transformers)&lt;/h2&gt;
-
-&lt;p&gt;Es una arquitectura más sencilla que las utilizadas anteriormente. Los transformadores están construidos en gran parte por mecanismos de &lt;strong&gt;atención&lt;/strong&gt;. Podemos decir que tiene tres componentes principales:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Codificación de posición&lt;/li&gt;
-  &lt;li&gt;Mecanismo de atención&lt;/li&gt;
-  &lt;li&gt;Mecanismo de auto-atención&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Hablemos de cada una de estas partes más detenidamente, explicadas para un desarrollador de software.&lt;/p&gt;
-
-&lt;h3 id=&quot;codificación-de-posición&quot;&gt;Codificación de posición&lt;/h3&gt;
-
-&lt;p&gt;Esta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.&lt;/p&gt;
-
-&lt;p&gt;La posición del texto como se explica en &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt; depende de una función basada en el seno y coseno, no un número entero de donde se encontró en el texto.&lt;/p&gt;
-
-&lt;p&gt;Esta primera innovación permite que el entrenamiento sea paralelizable y por lo tanto que se puedan procesar más ejemplos, lo que mejora el aprendizaje.&lt;/p&gt;
-
-&lt;h3 id=&quot;atención&quot;&gt;Atención&lt;/h3&gt;
-
-&lt;p&gt;La atención se introdujo algunos años antes en el proceso de traducción automática. Este proceso consiste en que el modelo “mire” a otro texto para saber cómo traducir la palabra o el texto que está procesando. En las tareas de traducción, este mecanismo se da entre el texto que necesita ser traducido y la salida de la traducción.&lt;/p&gt;
-
-&lt;p&gt;El mecanismo de atención le da un peso diferente a cada palabra del texto original, con respecto a la palabra que ese está procesando. Este peso determina en donde se está “fijando” el modelo para procesar la palabra actual.&lt;/p&gt;
-
-&lt;p&gt;Este mecanismo de atención es básicamente un montón de operaciones matriciales.&lt;/p&gt;
-
-&lt;h3 id=&quot;auto-atención&quot;&gt;Auto-atención&lt;/h3&gt;
-
-&lt;p&gt;El mecanismo de atención anterior tiene que ver con la influencia que otro texto en la salida del proceso actual. El mecanismo de auto-atención se refiere al análisis &lt;strong&gt;del mismo texto&lt;/strong&gt; que se está procesando, y la relación entre las palabras.&lt;/p&gt;
-
-&lt;p&gt;Este mecanismo de auto-atención permite que el modelo encuentre patrones a través de muchos ejemplos de entrenamiento. Estos patrones tienen que ver con el significado de la palabra, los sinónimos, la gramática, etc.&lt;/p&gt;
-
-&lt;p&gt;Esta es la parte más importante de un transformador y es lo que hace que los modelos que tienen esta arquitectura sean tan poderosos, permitiéndoles trabajar con textos largos y con una gran variedad de tareas, más allá de solamente traducción.&lt;/p&gt;
-
-&lt;p&gt;Esta es una explicación muy básica de los mecanismos dentro de un modelo de transformador, si quieres aprender más a profundidad puedes leer:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;El documento donde se presentó la arquitectura: &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer&lt;/a&gt;, un artículo en donde con buenos dibujos se explica cómo funcionan.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-bert/&quot;&gt;The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)&lt;/a&gt;, un artículo en donde se explica cómo funciona BERT, basado en ideas similares a las de los transformadores.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ventajas-de-los-transformadores&quot;&gt;Ventajas de los transformadores&lt;/h3&gt;
-
-&lt;p&gt;La principal ventaja es que al ser más fáciles y eficientes de entrenar, se pueden crear modelos más grandes que normalmente harán mejor su tarea. Esto es lo que ha permitido que modelos como PALM y GPT-3 existan.&lt;/p&gt;
-
-&lt;p&gt;Los modelos de transformador nos siguen sorprendiendo y parece que continuarán así en los próximos años.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Las redes neuronales con arquitectura de transformador permiten lograr cosas que no creíamos posibles y son la base de los grandes modelos de lengua natural como GPT-3. Conocer un poco más cómo funcionan nos puede dar una idea de lo que son capaces y sus límites, además de que es bastante interesante. Si quieres que hablemos de algún tema en específico puedes dejarnos un comentario.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="transformers" /><category term="transformadores" /><category term="gpt-3" /><category term="inteligencia-artificial" /><summary type="html">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.</summary></entry><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
+&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
 
 &lt;p&gt;Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal.&lt;/p&gt;
 
@@ -975,7 +1070,71 @@ No seas solo un espectador que genera código para ser revisado. Considera que i
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional" /><category term="comunidad" /><category term="mentoria" /><category term="programación" /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry><entry><title type="html">La importancia de entender los principios de la computación</title><link href="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="alternate" type="text/html" title="La importancia de entender los principios de la computación" /><published>2023-02-17T00:00:00-06:00</published><updated>2023-02-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html">&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;“Principios de programación”.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;
+&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional" /><category term="comunidad" /><category term="mentoria" /><category term="programación" /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry><entry><title type="html">¿Qué es un modelo transformador de inteligencia artificial?</title><link href="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html" rel="alternate" type="text/html" title="¿Qué es un modelo transformador de inteligencia artificial?" /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/que-es-un-modelo-transformador-de-inteligencia-artificial.html">&lt;p&gt;En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada &lt;em&gt;transformer&lt;/em&gt; o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.&lt;/p&gt;
+
+&lt;h2 id=&quot;redes-neuronales-recurrentes-rnn&quot;&gt;Redes neuronales recurrentes (RNN)&lt;/h2&gt;
+
+&lt;p&gt;Estas eran el estándar para hacer varias tareas, entre ellas la traducción. Las redes neuronales recurrentes se llaman así porque sus entradas se alimentan en ciclos, es decir, en vez de siempre mandar su salida a las siguientes capas, también manda la salida a capas anteriores o a la misma capa.&lt;/p&gt;
+
+&lt;p&gt;Esta arquitectura permite que la red desarrolle memoria, algo que sirve bien para tratar con textos porque normalmente las palabras que van adelante están influidas por las que están antes.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, el entrenamiento de este tipo de redes neuronales requiere de mucho tiempo y recursos. Además, su memoria no es tan buena como para manejar textos muy largos. Así que la traducción o tratamiento de textos largos no les salía muy bien.&lt;/p&gt;
+
+&lt;p&gt;Además, la forma secuencial de tratar las palabras las hace difíciles de entrenar. Aquí es cuando los investigadores de Google diseñaron otra arquitectura.&lt;/p&gt;
+
+&lt;h2 id=&quot;redes-neuronales-de-transformador-transformers&quot;&gt;Redes neuronales de transformador (Transformers)&lt;/h2&gt;
+
+&lt;p&gt;Es una arquitectura más sencilla que las utilizadas anteriormente. Los transformadores están construidos en gran parte por mecanismos de &lt;strong&gt;atención&lt;/strong&gt;. Podemos decir que tiene tres componentes principales:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Codificación de posición&lt;/li&gt;
+  &lt;li&gt;Mecanismo de atención&lt;/li&gt;
+  &lt;li&gt;Mecanismo de auto-atención&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hablemos de cada una de estas partes más detenidamente, explicadas para un desarrollador de software.&lt;/p&gt;
+
+&lt;h3 id=&quot;codificación-de-posición&quot;&gt;Codificación de posición&lt;/h3&gt;
+
+&lt;p&gt;Esta es la primera innovación del modelo transformador. En vez de procesar las palabras como una secuencia para conservar su orden, lo que limita el paralelismo o la capacidad de procesar varias palabras a la vez, se crean tuplas que contienen la palabra y su posición en el texto. Esto permite que la red pueda procesar varias palabras a la vez.&lt;/p&gt;
+
+&lt;p&gt;La posición del texto como se explica en &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt; depende de una función basada en el seno y coseno, no un número entero de donde se encontró en el texto.&lt;/p&gt;
+
+&lt;p&gt;Esta primera innovación permite que el entrenamiento sea paralelizable y por lo tanto que se puedan procesar más ejemplos, lo que mejora el aprendizaje.&lt;/p&gt;
+
+&lt;h3 id=&quot;atención&quot;&gt;Atención&lt;/h3&gt;
+
+&lt;p&gt;La atención se introdujo algunos años antes en el proceso de traducción automática. Este proceso consiste en que el modelo “mire” a otro texto para saber cómo traducir la palabra o el texto que está procesando. En las tareas de traducción, este mecanismo se da entre el texto que necesita ser traducido y la salida de la traducción.&lt;/p&gt;
+
+&lt;p&gt;El mecanismo de atención le da un peso diferente a cada palabra del texto original, con respecto a la palabra que ese está procesando. Este peso determina en donde se está “fijando” el modelo para procesar la palabra actual.&lt;/p&gt;
+
+&lt;p&gt;Este mecanismo de atención es básicamente un montón de operaciones matriciales.&lt;/p&gt;
+
+&lt;h3 id=&quot;auto-atención&quot;&gt;Auto-atención&lt;/h3&gt;
+
+&lt;p&gt;El mecanismo de atención anterior tiene que ver con la influencia que otro texto en la salida del proceso actual. El mecanismo de auto-atención se refiere al análisis &lt;strong&gt;del mismo texto&lt;/strong&gt; que se está procesando, y la relación entre las palabras.&lt;/p&gt;
+
+&lt;p&gt;Este mecanismo de auto-atención permite que el modelo encuentre patrones a través de muchos ejemplos de entrenamiento. Estos patrones tienen que ver con el significado de la palabra, los sinónimos, la gramática, etc.&lt;/p&gt;
+
+&lt;p&gt;Esta es la parte más importante de un transformador y es lo que hace que los modelos que tienen esta arquitectura sean tan poderosos, permitiéndoles trabajar con textos largos y con una gran variedad de tareas, más allá de solamente traducción.&lt;/p&gt;
+
+&lt;p&gt;Esta es una explicación muy básica de los mecanismos dentro de un modelo de transformador, si quieres aprender más a profundidad puedes leer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;El documento donde se presentó la arquitectura: &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is all you need&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-transformer/&quot;&gt;The Illustrated Transformer&lt;/a&gt;, un artículo en donde con buenos dibujos se explica cómo funcionan.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jalammar.github.io/illustrated-bert/&quot;&gt;The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)&lt;/a&gt;, un artículo en donde se explica cómo funciona BERT, basado en ideas similares a las de los transformadores.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ventajas-de-los-transformadores&quot;&gt;Ventajas de los transformadores&lt;/h3&gt;
+
+&lt;p&gt;La principal ventaja es que al ser más fáciles y eficientes de entrenar, se pueden crear modelos más grandes que normalmente harán mejor su tarea. Esto es lo que ha permitido que modelos como PALM y GPT-3 existan.&lt;/p&gt;
+
+&lt;p&gt;Los modelos de transformador nos siguen sorprendiendo y parece que continuarán así en los próximos años.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Las redes neuronales con arquitectura de transformador permiten lograr cosas que no creíamos posibles y son la base de los grandes modelos de lengua natural como GPT-3. Conocer un poco más cómo funcionan nos puede dar una idea de lo que son capaces y sus límites, además de que es bastante interesante. Si quieres que hablemos de algún tema en específico puedes dejarnos un comentario.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="transformers" /><category term="transformadores" /><category term="gpt-3" /><category term="inteligencia-artificial" /><summary type="html">Con GPT-3 y Dall-e 2 ha explotado de nuevo el interés en las capacidades de los modelos de inteligencia artifical generativos. En este post vamos a hablar de la arquitectura en la que están basados.</summary></entry><entry><title type="html">La importancia de entender los principios de la computación</title><link href="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html" rel="alternate" type="text/html" title="La importancia de entender los principios de la computación" /><published>2023-02-17T00:00:00-06:00</published><updated>2023-02-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computacion.html">&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;“Principios de programación”.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;
 
 &lt;p&gt;Empecemos hablando de qué son los principios.&lt;/p&gt;
 
@@ -1040,77 +1199,4 @@ No seas solo un espectador que genera código para ser revisado. Considera que i
 
 &lt;p&gt;Conocer y aplicar los principios de la ciencias de la computación y relacionados con la creación de software te ayudará a disfrutar más del trabajo, a avanzar en tu carrera y conseguir mejores resultados. Continua profundizando en ellos y aprendiendo más formas de aplicarlos, para mejorar tu trabajo y tu vida.&lt;/p&gt;
 
-&lt;p&gt;Gracias a &lt;a href=&quot;https://camilochacon&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; por escribir sobre este tipo de cosas y levantar temas tan importantes.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="computer-science" /><category term="computación" /><category term="principios" /><summary type="html">A veces, entre tantas herramientas y tecnologías que podemos usar día a día, nos olvidamos de los principios básicos que soportan todo lo que hacemos como desarrolladores.</summary></entry><entry><title type="html">Máquinas de Turing no deterministas y problemas NP</title><link href="https://blog.thedojo.mx/2023/02/08/maquinas-de-turing-no-deterministas-y-problemas-np.html" rel="alternate" type="text/html" title="Máquinas de Turing no deterministas y problemas NP" /><published>2023-02-08T00:00:00-06:00</published><updated>2023-02-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/08/maquinas-de-turing-no-deterministas-y-problemas-np</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/08/maquinas-de-turing-no-deterministas-y-problemas-np.html">&lt;p&gt;En el artículo anterior hablamos de las clases de complejidad y su relación con la criptografía. Hablamos brevemente de los problemas NP y de dijimos que pueden ser resueltos por una máquina de Turing no determinista en un tiempo razonable (complejidad polinomial).&lt;/p&gt;
-
-&lt;p&gt;En este artículo vamos a entender qué son las máquinas de Turing no deterministas, pero empecemos entendiendo la diferencia entre determinismo y no determinismo.&lt;/p&gt;
-
-&lt;h2 id=&quot;determinismo-y-no-determinismo&quot;&gt;Determinismo y no determinismo&lt;/h2&gt;
-
-&lt;p&gt;En la física y las ciencias existen básicamente dos tipos de sistemas basados en el conocimiento que podemos tener de su comportamiento en un momento dado.&lt;/p&gt;
-
-&lt;p&gt;El primer tipo es el de los sistemas deterministas, en el que saber el estado actual del sistema y el evento (o la entrada del sistema) nos permite predecir el estado futuro del sistema, sin errores y con una precisión infinita. En estos sistemas existen una serie de reglas que no se pueden romper y que nos dan la capacidad saber exactamente lo que sucederá. Estos sistemas son casi siempre simplificaciones del mundo real o sistemas creados y diseñados por el hombre. Ejemplos de estos sistemas son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;El juego de la vida&lt;/li&gt;
-  &lt;li&gt;El ajedrez&lt;/li&gt;
-  &lt;li&gt;El juego de Go&lt;/li&gt;
-  &lt;li&gt;Casi todos los problemas que analizamos en un clase de física son tratados como deterministas, por ejemplo, el movimiento de un proyectil, una mesa de billar, etc., aunque no lo sean realmente, se tratan como tales para simplificar el análisis.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;El segundo tipo son los &lt;strong&gt;sistemas no deterministas o estocásticos&lt;/strong&gt;. En estos sistemas no tenemos la información suficiente para poder predecir estados futuros del sistema de manera precisa, solamente podemos predecir probabilidades. Algunos ejemplos de estos sistemas son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;El clima&lt;/li&gt;
-  &lt;li&gt;El comportamiento de una persona&lt;/li&gt;
-  &lt;li&gt;El comportamiento de un mercado de un mercado financiero&lt;/li&gt;
-  &lt;li&gt;Una selección aleatoria de elementos de un conjunto&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;En pocas palabras, en un sistema determinista podemos predecir la salida si conocemos la entrada con toda seguridad. En un sistema no determinista o estocástico sólo podemos dar una probabilidad de que algo suceda en el mejor de los casos.&lt;/p&gt;
-
-&lt;h2 id=&quot;máquinas-de-turing-deterministas&quot;&gt;Máquinas de Turing deterministas&lt;/h2&gt;
-
-&lt;p&gt;Si no sabes lo que es una máquina de Turing tradicional, una de las mejores explicaciones que hemos encontrado está en el libro &lt;a href=&quot;/assets/pdfs/la_mente_nueva_del_emperador.pdf&quot; target=&quot;_blank&quot;&gt;“La Mente nueva del Emperador”&lt;/a&gt; de &lt;strong&gt;Roger Penrose&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Lo que debes saber es que estas representan un modelo universal de computación, todo lo que se puede computar (calcular, o conocer con certeza) se puede representar en una máquina de Turing. Te la puedes imaginar como una máquina que lee de una cinta infinita que contiene tanto las instrucciones como los datos de entrada. ¿Te suena? Es como funcionan las computadoras actualmente: el ejecutor es el CPU y la cinta es la memoria.&lt;/p&gt;
-
-&lt;p&gt;La máquina de Turing como se definió es determinista, es decir siempre para el la misma entrada obtendremos la misma salida. En cada punto de su cálculo la máquina de Turing sabe &lt;strong&gt;exactamente qué hacer&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ahora hablemos de otro modelo de computación: las máquinas de Turing no deterministas.&lt;/p&gt;
-
-&lt;h2 id=&quot;máquinas-de-turing-no-deterministas&quot;&gt;Máquinas de Turing no deterministas&lt;/h2&gt;
-
-&lt;p&gt;Apliquemos el concepto del “no determinismo” al modelo de computación de lo que acabamos de hablar. Recordemos que la en la máquina de Turing tradicional, para un mismo estado y una misma entrada de datos (o eventos), siempre obtendremos la misma acción.
-En contraparte, una máquina no determinista puede tener múltiples acciones para un mismo estado y una misma entrada o evento.&lt;/p&gt;
-
-&lt;p&gt;Esto implica que este tipo de computación también puede tener múltiples resultados posibles para un mismo conjunto de entrada.&lt;/p&gt;
-
-&lt;p&gt;El comportamiento de una máquina de Turing no determinista es hasta cierto grado impredecible. Incluso con las mismas entradas y estados, la máquina puede devolver diferentes resultados en diferentes ejecuciones.&lt;/p&gt;
-
-&lt;p&gt;Estas máquinas también fueron definidas (o más bien, mencionadas) en el mismo documento en que Turing definió las máquinas tradicionales: &lt;a href=&quot;/assets/pdfs/Turing_Paper_1936.pdf&quot; target=&quot;_blank&quot;&gt;ON COMPUTABLE NUMBERS, WITH AN APPLICATION TO THE ENTSCHEIDUNGSPROBLEM&lt;/a&gt;. A estas él las llamó &lt;strong&gt;máquinas de selección&lt;/strong&gt; (choice machines o &lt;em&gt;c-machine&lt;/em&gt;). La definición más formal la podemos encontrar en  un documento escrito por Rabin y Scott en 1959: &lt;a href=&quot;/assets/pdfs/rabin_scott_1959.pdf&quot; target=&quot;_blank&quot;&gt;Finite Automata and Their Decision Problems&lt;/a&gt;, en el que se habla de Autómatas Finitos No Deterministas (AFND), una especialización finita de las máquinas de Turing.&lt;/p&gt;
-
-&lt;p&gt;A diferencia de los sistemas no deterministas de los que hablamos arriba, las máquinas de Turing no deterministas no es que tengan una probabilidad de pasar de un estado a otro, sino que la máquina puede “seleccionar” una transición de un estado a otro. En el documento de Turing mencionado anteriormente, se menciona que estas máquinas son “operadas” por un humano, que &lt;strong&gt;elige&lt;/strong&gt; qué camino tomar, por eso las llamó máquinas de selección. En referencias más modernas no se especifica el mecanismo de selección.&lt;/p&gt;
-
-&lt;p&gt;Para una misma entrada una máquina de Turing no determinista puede tener múltiples salidas posibles, algunas de ellas válidas y otras no. Para que una máquina de Turing encuentre el resultado correcto, &lt;strong&gt;debe probar todas las posibles salidas y seleccionar la correcta&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Una NTM (&lt;em&gt;Non-deterministic Turing Machine&lt;/em&gt;, así la llamaremos a partir de ahora) es una construcción matemática que no existe en la vida real, es decir, no hay computadora que funcione como una NTM.&lt;/p&gt;
-
-&lt;h2 id=&quot;relación-entre-las-máquinas-de-turing-deterministas-y-no-deterministas&quot;&gt;Relación entre las máquinas de Turing deterministas y no deterministas&lt;/h2&gt;
-
-&lt;p&gt;Se ha demostrado que para cada máquina de Turing no determinista existe una máquina de Turing determinista equivalente. Lo malo es que esta máquina de Turing determinista necesita &lt;strong&gt;exponencialmente&lt;/strong&gt; más nodos o &lt;em&gt;pasos&lt;/em&gt;. Por ejemplo, si una NTM necesita tiene 100 posibles estados, entonces la máquina de Turing equivalente necesitará aproximadamente 2^100 estados.&lt;/p&gt;
-
-&lt;p&gt;Y aquí es donde entra la relación con los problemas NP.&lt;/p&gt;
-
-&lt;h2 id=&quot;relación-con-los-problemas-np&quot;&gt;Relación con los problemas NP&lt;/h2&gt;
-
-&lt;p&gt;Como te darás cuenta, las NTM tienen mucho que ver con la combinatoria, porque necesitan probar todas las posibles combinaciones de estados y transiciones para encontrar la solución correcta.&lt;/p&gt;
-
-&lt;p&gt;Si ejecutáramos una NTM en una computadora, tendríamos que probar cada uno de esos estados. Esto es exactamente lo mismo que sucede con muchos problemas NP o NP-completo, para encontrar una solución se tienen que probar todas las posibles combinaciones en un conjunto de elementos.&lt;/p&gt;
-
-&lt;p&gt;Las siglas NP significan &lt;em&gt;Non-deterministic Polynomial&lt;/em&gt; (polinomial no determinista), y esto significa que en una NTM hay por lo menos un camino que resuelve el problema en un tiempo polinomial. &lt;em&gt;El problema es saber cuál de todos los caminos&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Y de ahí viene su nombre. Todos estos problemas tienen una solución que corre en tiempo polinomial, pero para encontrarla tenemos que &lt;em&gt;adivinar&lt;/em&gt; o &lt;em&gt;probar todas las combinaciones&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Ahora que sabemos como funciona una máquina de Turing no determinista, que es una construcción teórica que nos sirve para hacer experimentos del pensamiento y  además que tienen una relación muy estrecha con la teoría de la complejidad y los problemas NP.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="turing" /><category term="ntm" /><category term="non-deterministic" /><summary type="html">Hablemos de la relación que existe entre las máquinas de Turing no deterministas (NTM), la complejidad y los problemas NP.</summary></entry></feed>
+&lt;p&gt;Gracias a &lt;a href=&quot;https://camilochacon&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; por escribir sobre este tipo de cosas y levantar temas tan importantes.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="computer-science" /><category term="computación" /><category term="principios" /><summary type="html">A veces, entre tantas herramientas y tecnologías que podemos usar día a día, nos olvidamos de los principios básicos que soportan todo lo que hacemos como desarrolladores.</summary></entry></feed>
