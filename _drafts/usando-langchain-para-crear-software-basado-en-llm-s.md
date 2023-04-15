@@ -2,12 +2,12 @@
 title: "Usando LangChain 🦜 para crear software basado en LLM's"
 date: 2023-04-07
 author: Héctor Patricio
-tags:
+tags: langchain llm tutorial
 comments: true
-excerpt: "Escribe aquí un buen resumen de tu artículo"
+excerpt: "Vamos a ver cómo funciona LangChain, una herramienta que le puede dar oídos, ojos y manos a tu modelo de lenguaje preferido."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_crop,g_face,h_550,w_1024/v1681538471/DALL_E_2023-04-14_23.53.02_-_a_green_parrot_in_a_cybernetic_setting_plotting_a_plan_to_conquer_the_universe_digital_illustration_detailed_cinematic_light_ff6lm8.png
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_crop,g_face,h_550,w_1024/v1681538471/DALL_E_2023-04-14_23.53.02_-_a_green_parrot_in_a_cybernetic_setting_plotting_a_plan_to_conquer_the_universe_digital_illustration_detailed_cinematic_light_ff6lm8.png
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -19,20 +19,22 @@ En este artículo vamos a poner un pequeño tutorial de una herramienta creada p
 
 Las aplicaciones basadas en procesamiento de lenguaje natural, sea como una herramienta de comunicación o como su producto principal, normalmente requieren fuentes de información para potenciar sus capacidades.
 
-También es una muy buena idea que estas aplicaciones puedan actuar por sí mismas usando las instrucciones creadas por un LLM. Para hacer esto puede crear **agentes**.
+También es una muy buena idea que estas aplicaciones puedan actuar por sí mismas usando las instrucciones creadas por un LLM. Para hacer esto podemos usar **agentes**.
 
 **LangChain** provee componentes que te permiten lograr estas dos tareas, para que tú los uses como quieras, pero también te provee
-de cadenas de componentes (_[composición](/) de software, ¿te suena?_) con casos de uso comunes, digamos que prefabricados para hacer software basado en LLM's de manera más rápida.
+de cadenas de componentes (_[composición](/) de software, ¿te suena?_) con casos de uso comunes, digamos que prefabricados, para hacer software basado en LLM's de manera más rápida.
+
+Hablemos de qué componentes te provee LangChain para empezar a construir tus programas basados en LLM's.
 
 ## Componentes principales
 
 LangChain provee varios tipos de componentes, muchos de los cuales son abstracciones de los conceptos más usados en la interacción con LLM's, veamos algunos de ellos:
 
-- **Texto**. La abstracción más básica es la que representa un texto cualquiera que le mandamos a un LLM.
+- **Texto**. La abstracción más básica es la que representa un texto cualquiera que le mandamos a un LLM. Este texto puede provenir de diferentes fuentes, como archivos, por ejemplo.
 
-- **Divisores de texto**. Generalmente, un modelo de lenguaje no puede consumir mucho texto al mismo tiempo, por lo que para poder procesar textos grandes hay que mandarlos por partes. Este componente se encarga de ayudarte a dividir el texto en partes que el LLM pueda procesar.
+- **Divisores de texto**. Generalmente, un modelo de lenguaje no puede consumir mucho texto al mismo tiempo, por lo que para poder procesar textos grandes hay que mandárselos por partes. Este componente se encarga de ayudarte a dividir el texto en partes que el LLM pueda procesar.
 
-- **Índices**. Es una abstracción que presenta el texto de mejor manera para que un LLM pueda acceder a la información mejor.
+- **Índices**. Es una abstracción que presenta el texto de mejor manera para que un LLM pueda acceder a la información mejor. Los índices se tienen que guardar de alguna manera y LangChain provee una interfaz para guardarlos en una base de datos especializada.
 
 - **Modelo**. Esto es la interfaz con un modelo de lenguaje. Te lo puedes imaginar como el equivalente a un conector a base de datos, abstraen los detalles de la conexión y te dan una interfaz común.
 
@@ -40,13 +42,15 @@ LangChain provee varios tipos de componentes, muchos de los cuales son abstracci
 
 - **Cadena**. Las cadenas son conjuntos de componentes que sirven para resolver problemas comunes o crear aplicaciones completas.
 
+Ya que entendemos las cosas que LangChain nos da, veamos cómo usarlas.
+
 ## Creando una aplicación de ejemplo
 
 Vamos a crear una aplicación que nos permita consultar todos los posts de este blog y contestar preguntas. Por suerte, existe una cadena que ya nos permite hacer esto.
 
 ### Instalación
 
-Primero veamos los requisitos: además de langchain, neceistas los siguientes paquetes:
+Primero veamos los requisitos: además de LangChain, necesitas los siguientes paquetes:
 
 - openai
 - chromadb
@@ -131,3 +135,4 @@ Después de esto, ahora consultamos el texto de dos formas:
 
 1. Primero que nos de la respuesta solita.
 2. Que nos de la respuestas junto con la fuente de donde la sacó.
+
