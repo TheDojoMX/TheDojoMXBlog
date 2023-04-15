@@ -6,8 +6,8 @@ tags:
 comments: true
 excerpt: "La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1679150874/sam-moghadam-khamseh-VwHzE0aFQfY-unsplash_lpqwqn.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1679150874/sam-moghadam-khamseh-VwHzE0aFQfY-unsplash_lpqwqn.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -84,6 +84,7 @@ def validate_password(password, min_length, blacklist, validators):
 
 ## Composición de objetos
 
+Una alternativa...
 ### ¿Por qué es más efectiva la composición de objetos que la herencia?
 
 ## ¿Cuál es el pegamento que te da tu lenguaje?
