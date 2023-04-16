@@ -81,14 +81,41 @@ def validate_password(password, min_length=8, blacklist=['b1', 'b2']):
     return all(validator(password) for validator in validators)
 ```
 
-Esta función es más flexible, pudiendo agregar o quitar validadores sin tener que modificar más código, simplemente modificando la lista de validadores.
+Esta función es más flexible, pudiendo agregar o quitar validadores sin tener que modificar más código, simplemente modificando la lista de validadores, pero todavía no es como la queremos. ¿Qué pasas si queremos agregar el conjunto de errores por los que falla una validación? Tenemos que ir **acumulando**:
+
+```python
+
+def validate_password(password, min_length=8, blacklist=['b1', 'b2']):
+    """Devuelve la lista de errores de la contraseña, si está vacía, la contraseña es válida"""
+    validators = [
+        {"validator": lambda password: min_length(password, 8), "mesage": "La contraseña es muy corta"},
+        {"validator": has_number, "message": "La contraseña no tiene un número"},
+        {"validator": has_special_char, "message": "La contraseña no tiene un carácter especial"},
+        {"validator": lambda password: not_in_blacklist(password, ['palabra_uno', 'palabra_dos']), "message": "La contraseña tiene palabras prohibidas"}
+    ]
+    errors = []
+
+    reduce(lambda errors, validator: errors.append(validator["message"]) if not validator["validator"](password) else errors, validators, errors)
+
+    return errors
+
+```
+
+Aquí `reduce` que recibe una función, una lista de elementos por las que iterar y un valor inicial, nos ayuda a acumular los errores. Si quisiéramos hacerlo aún más flexible, podríamos hacer dos cosas:
+
+- Hacer que la función `validate_password` reciba una lista de validadores (junto con el mensaje), en vez de tenerlos definidos dentro de la función
+- Definir una clase `Validator` que tenga un método `validate` y un atributo `message` y que reciba una función y un mensaje en su constructor, para tener una interfaz más clara.
+
 
 ## Composición de objetos
 
 Otra técnica que te puede ayudar a crear mejor software es la composición de objetos.
+
 ### ¿Por qué es más efectiva la composición de objetos que la herencia?
 
-## ¿Cuál es el pegamento que te da tu lenguaje?
+## ¿Cuál es el "pegamento" que te da tu lenguaje?
+
+
 
 ## Conclusión
 
