@@ -13,7 +13,7 @@ header:
 
 Composición:
 
-> Es la acción de combinar componentes individuales para formar un todo más complejo.
+> Es la acción de combinar componentes individuales para formar un sistema más complejo.
 
 Componer es la técnica más efectiva para construir software de manera organizada. La composición nos permite crear software complejo porque nos permite construir piezas pequeñas que resuelven problemas manejables y luego "juntarlas" para entregar la solución de nuestro problema.
 
@@ -36,7 +36,7 @@ Veamos dos formas de aplicar la composición en el software.
 
 Las funciones son la unidad de abstracción más pequeña que tenemos en la programación. Crear un montón de pequeñas funciones útiles que resuelvan problemas generales, de manera completa y precisa, es muy buena idea.
 
-¿Cómo aplicamos la composición? Puedes usar la composición al dividir tu problema principal en funciones sencillas y luego juntarlas.Veamos un ejemplo: vamos a crear un validador de passwords. El validador debe verificar las siguientes condiciones:
+¿Cómo aplicamos la composición? Puedes usar la composición al dividir tu problema principal en funciones sencillas y luego juntarlas.Veamos un ejemplo: vamos a crear un validador de contraseñas. Este debe verificar las siguientes condiciones:
 
 - Verificar una longitud mínima, que podría ser 8 caracteres.
 - Checar que no tenga ciertas palabras (lista negra).
@@ -71,20 +71,21 @@ def validate_password(password, min_length, blacklist):
 Quiero que te fijes especialmente en la última función, `validate_password`. Aunque funciona, es un poco rígida. La composición puede ayudarnos a hacerla más flexible.
 
 ```python
-validators = [
-    lambda password: min_length(password, 8),
-    has_number,
-    has_special_char,
-    lambda password: not_in_blacklist(password, ['palabra_uno', 'palabra_dos'])
-
-]
-def validate_password(password, min_length, blacklist, validators):
+def validate_password(password, min_length=8, blacklist=['b1', 'b2']):
+    validators = [
+        lambda password: min_length(password, 8),
+        has_number,
+        has_special_char,
+        lambda password: not_in_blacklist(password, ['palabra_uno', 'palabra_dos'])
+    ]
     return all(validator(password) for validator in validators)
 ```
 
+Esta función es más flexible, pudiendo agregar o quitar validadores sin tener que modificar más código, simplemente modificando la lista de validadores.
+
 ## Composición de objetos
 
-Una alternativa...
+Otra técnica que te puede ayudar a crear mejor software es la composición de objetos.
 ### ¿Por qué es más efectiva la composición de objetos que la herencia?
 
 ## ¿Cuál es el pegamento que te da tu lenguaje?
