@@ -664,4 +664,10 @@ var store = [{
         "tags": ["langchain","llm","tutorial"],
         "url": "/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,g_face,h_550,w_1024/v1681538471/DALL_E_2023-04-14_23.53.02_-_a_green_parrot_in_a_cybernetic_setting_plotting_a_plan_to_conquer_the_universe_digital_illustration_detailed_cinematic_light_ff6lm8.png"
+      },{
+        "title": "Composición en el software",
+        "excerpt":"Composición: Es la acción de combinar componentes individuales para formar un sistema más complejo. Componer es la técnica más efectiva para construir software de manera organizada. La composición nos permite crear software complejo porque nos permite construir piezas pequeñas que resuelven problemas manejables y luego “juntarlas” para entregar la solución...","categories": [],
+        "tags": ["fp","composición"],
+        "url": "/2023/04/17/composicion-en-el-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1679150874/sam-moghadam-khamseh-VwHzE0aFQfY-unsplash_lpqwqn.jpg"
       }]
