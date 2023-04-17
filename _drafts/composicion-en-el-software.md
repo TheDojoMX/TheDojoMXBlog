@@ -34,7 +34,7 @@ Veamos dos formas de aplicar la composición en el software.
 
 ## Composición de funciones
 
-Las funciones son la unidad de abstracción más pequeña que tenemos en la programación. Crear un montón de pequeñas funciones útiles que resuelvan problemas generales, de manera completa y precisa, es muy buena idea.
+Las funciones son la unidad de abstracción más pequeña que tenemos en la programación. Crear pequeñas funciones útiles que resuelvan problemas generales, de manera **completa y precisa**, es muy buena idea.
 
 ¿Cómo aplicamos la composición? Puedes usar la composición al dividir tu problema principal en funciones sencillas y luego juntarlas.Veamos un ejemplo: vamos a crear un validador de contraseñas. Este debe verificar las siguientes condiciones:
 
@@ -106,16 +106,13 @@ Aquí `reduce` que recibe una función, una lista de elementos por las que itera
 - Hacer que la función `validate_password` reciba una lista de validadores (junto con el mensaje), en vez de tenerlos definidos dentro de la función
 - Definir una clase `Validator` que tenga un método `validate` y un atributo `message` y que reciba una función y un mensaje en su constructor, para tener una interfaz más clara.
 
-
 ## Composición de objetos
 
-Otra técnica que te puede ayudar a crear mejor software es la composición de objetos.
+Otra técnica que te puede ayudar a crear mejor software es la composición de objetos. Esta se entiende como formar objetos más complejos a partir de objetos más simples. Aunque la **herencia** es una forma de composición, al hacer completamente dependientes una clase de otra, no es la mejor forma de crear objetos complejos. De hecho, hay grandes dudas sobre si la herencia es una buena idea. Pero no estamos aquí para discutir sobre las ventajas y desventajas de la herencia, sino para aprender a usar otros tipos de composición.
 
-### ¿Por qué es más efectiva la composición de objetos que la herencia?
+Una forma de crear objetos complejos, en vez de tener la relación "es un" que nos da la herencia, es tener la relación "tiene un". No estamos diciendo que la herencia nunca se deba usar, pero en muchas ocasiones podemos pensar en la composición como una alternativa mejor.
 
-## ¿Cuál es el "pegamento" que te da tu lenguaje?
-
-
+<!-- Observa este ejemplo  -->
 
 ## Conclusión
 
