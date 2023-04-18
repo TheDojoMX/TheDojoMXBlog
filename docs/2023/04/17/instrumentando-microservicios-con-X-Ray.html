@@ -1,0 +1,991 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Instrumentando microservicios en Go con Gin y AWS X-Ray - The Dojo MX Blog</title>
+<meta name="description" content="Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.">
+
+
+  <meta name="author" content="Héctor Vela">
+  
+  <meta property="article:author" content="Héctor Vela">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Instrumentando microservicios en Go con Gin y AWS X-Ray">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html">
+
+
+  <meta property="og:description" content="Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1350/v1681785117/cam-c9WkEaPBqLI-unsplash_tdzflr.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-17T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html",
+      "name": "Instrumentando microservicios en Go con Gin y AWS X-Ray",
+      "headline": "Instrumentando microservicios en Go con Gin y AWS X-Ray",
+      "keywords": "programación,instrumentación,microservicios,AWS,Go",
+      "description": "Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.",
+      "articleBody": "En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.\n\nSi nuestro código provee información de traceo para requests, y logs, podemos decir que está instrumentado y que podemos observar cómo se está desempeñando nuestro sistema.\n\nLa instrumentación de servicios es especialmente útil para identificar y resolver problemas de rendimiento y errores. Los datos recolectados pueden ser usados para planear la capacidad de nuestros servicios al ayudarnos a entender el tráfico y patrones de uso en nuestras aplicaciones.\n\nExisten varias soluciones para instrumentar nuestros servicios, como OpenTelemetry, Zipkin y datadog. AWS también ofrece una Distribución de OpenTelemetry para poder usar OpenTelemetry como backend de obserbabilidad mientras usas X-Ray o cualquier otra solución de terceros para recibir datos de telemetría y proveer procesamiento, agregación y visualización de éstos.\n\nEn este post, les voy a contar sobre mi experiencia al instrumentar un microservicio en Go usando Gin y AWS X-Ray.\n\nGin\n\nGin es un framework para el lenguaje de programación Go para crear aplicaciones web, se destaca por ser ligero y tener un alto rendimiento, diseñado para facilitar la creación de aplicaciones web escalables de una manera rápida.\n\nOfrece una API minimalista, un router robusto, soporte para middleware y características de seguridad integradas, lo que lo convierte en una opción ideal para construir microservicios y otras aplicaciones web de alto rendimiento.\n\nSi bien Gin puede tener una curva de aprendizaje empinada y características limitadas integradas, su simplicidad y capacidad de extensión lo convierten en una opción popular para los desarrolladores que priorizan el rendimiento y la escalabilidad.\n\nCrear un servicio de Gin desde cero está fuera del alcance de esta publicación, pero puedes leer más sobre Gin en la página oficial de su documentación.\n\nAWS X-Ray\n\nAWS X-Ray es un servicio de AWS que recolecta datos sobre los requests servidos por tu aplicación y provee herramientas para ver, filtrar y obtener información sobre esos datos para identificar problemas y oportunidades de optimización.\n\nAlgunos puntos a favor de X-Ray sobre otras herramientas similares son:\n\n\n  Facilidad de integración con otros servicios de AWS.\n  No hay infraestructura extra qué mantener (el daemon de X-Ray está incluído en las plataformas AWS Elastic Beanstalk y AWS Lambda).\n  Puede funcionar sólo como visualizador (usando OpenTelemetry como tracer).\n  Para servicios soportados, el SDK de X-Ray puede enviar y rastrear automáticamente los “ID de request” entre los servicios.\n  Es administrado por AWS.\n  Los primeros 100k rastreos del mes son gratis.\n  El primer millón de rastreos obtenidos o escaneados cada mes es gratis.\n\n\nSin embargo algunos puntos en contra son:\n\n\n  AWS X-Ray sólo puede ser usado con aplicaciones corriendo en Amazon EC2, Amazon EC2 containser service, AWS Lambda, y AWS Elastic Beanstalk.\n  Después de agotar los rastreos gratuitos del mes, cada rastreo indexado y consultado tiene un costo.\n  Soporte limitado de lenguajes: Mientras que el SDK de X-Ray tiene soporte para varios lenguajes de programación, no soporta todos los lenguajes o plataformas, lo cual puede limitar su utilidad en algunos casos.\n  Vendor lock-in: El uso de X-Ray puede llevar a la dependencia exclusiva de AWS, ya que es un servicio propietario disponible sólo en la plataforma de AWS. Esto puede limitar su capacidad para cambiar a otros proveedores de nube o herramientas en el futuro.\n\n\nSi, después de leer algunos de los pros y contras, aún estás inclinado a usar X-Ray, entonces puedes seguir leyendo.\n\nRequerimientos\n\nPara ver la información de rastreo en AWS X-Ray, necesitas una cuenta de AWS y una aplicación corriendo en la infraestructura de AWS o que esté integrada con los servicios de AWS. Además, necesitarás:\n\n\n  Una instancia del X-Ray daemon, que se puede ejecutar como un binario o como un contenedor de Docker. Puedes encontrar instrucciones detalladas sobre cómo ejecutar y configurar el daemon aquí. Para éste artículo, estaré usando el binario para OS X.\n  Tu aplicación debe de tener los permisos necesarios para interactuar con AWS X-Ray y otros servicios que use.\n\n\nIAM Role\n\nPara permitir que tu aplicación mande información sobre tus requests a X-Ray, tienes que proveerle al daemon de X-Ray un rol. Para crear un rol, vamos a entrar a nuestra consola web de AWS y de allí navegamos a la página principal de IAM y allí encontraremos el botón “Create Role” (o “Crear Rol” si tienes configurado tu panel de AWS en español).\n\n\n\nEn el asistente, selecciona “AWS Account” para Trusted Entity y da click en “Next”/”Siguiente”. En la siguiente pantalla, busca por la política de permisos llamada “AWSXRayDaemonWriteAccess”. Da click en “Next”/”Siguiente” para continuar..\n\n\n\nAgrega un nombre y descripción para el rol, y después da click en “Create Role”. Ésto te llevará a la lista de roles. Busca el rol que acabas de crear para ver y copiar su ARN.\n\n\n\nX-Ray Daemon\n\nAhora que ya tenemos el rol para el daemon, vamos a configurarlo.\n\nPara mi proyecto de prueba, solo tuve que cambiar algunos valores de la configuración, como el nivel del logger, especificar el modo local a verdadero, y agregar el ARN del rol que creamos y la región de AWS en la que estamos operando nuestros servicios.\n\nAquí está la configuración que usé:\n\n# Send segments to AWS X-Ray service in a specific region\nRegion: \"us-west-2\"\nSocket:\n  # Change the address and port on which the daemon listens for UDP packets containing segment documents.\n  UDPAddress: \"127.0.0.1:2000\"\n  # Change the address and port on which the daemon listens for HTTP requests to proxy to AWS X-Ray.\n  TCPAddress: \"127.0.0.1:2000\"\nLogging:\n  # Change the log level, from most verbose to least: dev, debug, info, warn, error, prod (default).\n  LogLevel: \"dev\"\n# Turn on local mode to skip EC2 instance metadata check.\nLocalMode: true\n# Assume an IAM role to upload segments to a different account.\nRoleARN: \"arn:aws:iam::269174633178:role/X-Ray_Daemon_role\"\n# Daemon configuration file format version.\nVersion: 2\n\n\nEn la guía del desarrollador de AWS X-Ray puedes aprender más sobre otros valores que puedes configurar.\n\nInstrumentando tu microservicio en Go\n\nAhora que ya tenemos el X-Ray daemon configurado y corriendo, podemos proceder a instrumentar nuestro servicio.\n\nAWS recomienda empezar agregando rastreo para requests entrantes envolviendo los controladores de servicio con xray.Handler. Pero, como estamos usando Gin, el enfoque que implementaremos es ligeramente diferente.\n\nMientras buscaba recursos sobre cómo instrumentar una aplicación con Gin, me encontré con éste middleware, el cual está basado en la función xray.Handler.\n\nÉste middleware hace el mismo trabajo que xray.Handler, abrirá y cerrará un segmento para cada request recibido. También se encargará de manejar el header para IDs de rastreo (\"x-amzn-trace-id\"), que es un header que contiene un identificador que será generado para cada petición nueva y que será propagado a travéz de todos nuestros microservicios.\n\nAsí que vamos a agregar el middleware a las rutas que queremos intrumentar:\n\n// as part of my gin routes\nv1.GET(\"/auth/roles\", xraymid.Middleware(xray.NewFixedSegmentNamer(\"GetRoles\")), controller.GetRoles)\n\n\nAquí estamos agregando el middleware de X-Ray (con el alias xraymid) a una ruta del grupo v1. El valor que estamos pasando como argumento a NewFixedSegmentNamer debe de ser un nombre descriptivo para tu ruta. Éste será el nombre para el grupo principal de rastreo para éste endpoint.\n\n¡Bien! ¡Ahora veamos si funciona! Inicia tu servicio y verifica que el daemon esté corriendo.\n\nDespués de hacer un request, podemos ver en los logs del daemon algo como:\n2023-03-21T13:10:47-06:00 [Debug] Received request on HTTP Proxy server : /GetSamplingRules\n2023-03-21T13:10:48-06:00 [Debug] processor: sending partial batch\n2023-03-21T13:10:48-06:00 [Debug] processor: segment batch size: 1. capacity: 50\n2023-03-21T13:10:48-06:00 [Info] Successfully sent batch of 1 segments (0.109 seconds)\n2023-03-21T13:10:49-06:00 [Debug] Send 1 telemetry record(s)\n\n\n¡Parece que está funcionando! Vamos a ver qué dice la consola de AWS.\n\nEn tu consola web de AWS, ve a CloudWatch y en el panel lateral busca la opción para X-Ray, y da click en la opción “traces”.\n\nSi todo salió bien, deberías estar viendo el número de rastreos recibidos recientemente, y una tabla con la información de esos rastreos.\n\n\n\nEn la tabla de registros, da click en alguno. Aparecerá la vista de rastreo/seguimiento, donde puedes ver la información registrada.\n\n\n\nAquí podemos ver los datos de seguimiento. Hasta el momento sólo estamos creando un segmento y cerrándolo para cada llamada, por lo que no tenemos mucha otra información, pero podemos ver el código de estado de respuesta, el tiempo que tomó para que se atendiera la solicitud y, por supuesto, el mapa de seguimiento, que por ahora incluye sólo el cliente y el servicio.\n\nCreando sub segmentos\n\nAhora que tenemos nuestra configuración básica de instrumentación, ¿qué más podemos rastrear?\n\nHasta el momento, solo estamos rastreando una solicitud y algunos de sus metadatos. Pero, ¿qué pasa si queremos ser más detallados?\n\nDigamos que tenemos un proceso intensivo que se ejecuta como parte de la solicitud; podemos agregar un subsegmento para monitorearlo.\n\nEn algún lugar de mi servicio, se ejecuta el siguiente código cuando llamo al endpoint auth/roles:\n\n// dentro de alguna función\nroles := make([]Role, len(rolesList))\nfor i, roleItem := range rolesList {\n\trole, err := u.buildRole(roleItem)\n\tif err != nil {\n\t\treturn model.RoleList{}, err\n\t}\n\troles[i] = role\n}\n\n\nAquí podemos envolver el bucle for en un subsegmento para ver cuánto tiempo del request tarda en ejecutar éste proceso.\n\nPara crear el subsegmento, envolvemos el ciclo:\n\nerr = xray.Capture(ctx, \"BuildRolesDetail\", func(ctx1 context.Context) error {\n\tfor i, roleItem := range rolesList {\n\t\trole, err := u.buildRole(roleItem)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\troles[i] = role\n\t}\n\tif err = xray.AddMetadata(ctx1, \"No. roles built\", len(roles)); err != nil {\n\t\treturn nepErrors.InternalServerError.WithDetail(err.Error())\n\t}\n\treturn nil\n})\n\n\nVamos a correr nuestro servicio y llamemos de nuevo nuestro endpoint instrumentado.\n\nÉste es el nuevo registro en AWS CloudWatch -&gt; Traces:\n\n\n\nAhora podemos ver que la petición tomó 215ms, y de esos, el ciclo BuildRolesDetail tomó 205ms.\n\n¿Ya estás pensando en las posibilidades? ¡Deberías! puedes usar xray.AddMetadata para agregar cualquier dato que te sea de utilidad. Únicamente toma en cuenta que el Daemon de X-Ray sólo envía a AWS hasta 64KB de metadata por segmento.\n\nInstrumentando clientes de AWS con X-Ray\n\nInstrumentar clientes de AWS usando el SDK-V1 es bastante sencillo, puedes seguir la guía oficial para hacerlo.\n\nNo hay mucha documentación sobre cómo instrumentar clientes de AWS usando el AWS SDK-v2, pero la configuración es bastante sencilla.\n\nEn algún lugar en el código de tu servicio, estás inicializando tu(s) cliente(s) de AWS. Para instrumentarlos, necesitas proveer a tus clientes con un cliente HTTP de X-Ray y pasar el contexto del request para cada llamada.\n\ncfg, err := config.LoadDefaultConfig(ctx)\nif err != nil {\n\treturn nil, err\n}\n\n// Create an HTTP client\nhttpClient := &amp;http.Client{}\n\n// Set the HTTP client as the AWS configuration's HTTP client\ncfg.HTTPClient = httpClient\n\n// Create an X-Ray client\nxrayClient := xray.Client(httpClient)\n\ndynamoClient := dynamodb.NewFromConfig(cfg, func(options *dynamodb.Options) {\n\t// Wrap the http.Client with an xray.Client\n\toptions.HTTPClient = xrayClient\n})\n\n\nAquí, estoy agregando el cliente HTTP de X-Ray al cliente de AWS DynamoDB.\n\nUna vez hecho esto, llamemos de nuevo a nuestro endpoint instrumentado.\n\n\n\nYo estoy corriendo DynamoDB localmente, pero ya puedes ver qué tanto tiempo toma cada llamada a DynamoDB. También podemos ver que el mapa de rastreo ha sido acualizado para mostrar mi instancia local de DynamoDB.\n\nConclusión\nInstrumentar un servicio con X-Ray es relativamente sencillo, pero puede complicarse muy rápido dependiendo de las cosas que queremos monitorear. Debido a esto, el esfuerzo para agregar trazabilidad a su servicio puede variar de caso en caso.\n\nOtra cosa a considerar es el límite de 64KB por segmento. Puede que no sea suficiente si deseas rastrear muchos subsegmentos o agregar más metadatos. Existen formas de evitar esto, pero están fuera del alcance de esta publicación.\n\nEn conclusión, implementar X-Ray en un microservicio en Go es un proceso sencillo que puede beneficiar enormemente la observabilidad y las capacidades de resolución de problemas de tu aplicación. El proceso de integración es relativamente fácil, y el SDK de X-Ray proporciona una serie de características útiles que facilitan la trazabilidad de las solicitudes y la identificación de cuellos de botella. Sin embargo, es importante tener en cuenta que X-Ray tiene algunas desventajas, como el costo asociado con su uso y las limitaciones de sus capacidades de muestreo.\n\nNo obstante, con una consideración cuidadosa y una implementación adecuada, X-Ray puede ser una herramienta invaluable para la depuración y optimización de tu arquitectura de microservicios. Así que no dudes en probarlo y ver cómo puede mejorar el rendimiento y la confiabilidad de tus microservicios en Go.\n",
+      "datePublished": "2023-04-17 00:00:00 -0600",
+      "dateModified": "2023-04-17 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Vela",
+        "givenName": "Héctor Vela",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1350/v1681785117/cam-c9WkEaPBqLI-unsplash_tdzflr.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1350/v1681785117/cam-c9WkEaPBqLI-unsplash_tdzflr.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Instrumentando microservicios en Go con Gin y AWS X-Ray
+
+        
+      </h1>
+      
+        <p class="page__lead">Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        2080 palabras | 17 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://2.gravatar.com/avatar/80b9db28bcd02ca71b2279290361be38?size=256" alt="Héctor Vela" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Vela</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Sr Software Engineer. I have approximate knowledge of many things</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hevela" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:vell.once@gmail.com">
+            <meta itemprop="email" content="vell.once@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/makko_man" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Instrumentando microservicios en Go con Gin y AWS X-Ray">
+    <meta itemprop="description" content="Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.">
+    <meta itemprop="datePublished" content="2023-04-17T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.</p>
+
+<p>Si nuestro código provee información de traceo para requests, y logs, podemos decir que está instrumentado y que podemos observar cómo se está desempeñando nuestro sistema.</p>
+
+<p>La instrumentación de servicios es especialmente útil para identificar y resolver problemas de rendimiento y errores. Los datos recolectados pueden ser usados para planear la capacidad de nuestros servicios al ayudarnos a entender el tráfico y patrones de uso en nuestras aplicaciones.</p>
+
+<p>Existen varias soluciones para instrumentar nuestros servicios, como <a href="https://opentelemetry.io/">OpenTelemetry</a>, <a href="https://zipkin.io/">Zipkin</a> y <a href="https://www.datadoghq.com/">datadog</a>. AWS también ofrece una <a href="https://aws-otel.github.io/">Distribución de OpenTelemetry</a> para poder usar OpenTelemetry como backend de obserbabilidad mientras usas X-Ray o cualquier otra solución de terceros para recibir datos de telemetría y proveer procesamiento, agregación y visualización de éstos.</p>
+
+<p>En este post, les voy a contar sobre mi experiencia al instrumentar un microservicio en Go usando Gin y AWS X-Ray.</p>
+
+<h2 id="gin">Gin</h2>
+
+<p>Gin es un framework para el lenguaje de programación Go para crear aplicaciones web, se destaca por ser ligero y tener un alto rendimiento, diseñado para facilitar la creación de aplicaciones web escalables de una manera rápida.</p>
+
+<p>Ofrece una API minimalista, un router robusto, soporte para middleware y características de seguridad integradas, lo que lo convierte en una opción ideal para construir microservicios y otras aplicaciones web de alto rendimiento.</p>
+
+<p>Si bien Gin puede tener una curva de aprendizaje empinada y características limitadas integradas, su simplicidad y capacidad de extensión lo convierten en una opción popular para los desarrolladores que priorizan el rendimiento y la escalabilidad.</p>
+
+<p><strong>Crear un servicio de Gin desde cero está fuera del alcance de esta publicación</strong>, pero puedes leer más sobre Gin en la <a href="(https://gin-gonic.com/docs/)">página oficial de su documentación</a>.</p>
+
+<h2 id="aws-x-ray">AWS X-Ray</h2>
+
+<p>AWS X-Ray es un servicio de AWS que recolecta datos sobre los requests servidos por tu aplicación y provee herramientas para ver, filtrar y obtener información sobre esos datos para identificar problemas y oportunidades de optimización.</p>
+
+<p>Algunos puntos a favor de X-Ray sobre otras herramientas similares son:</p>
+
+<ul>
+  <li>Facilidad de integración con otros servicios de AWS.</li>
+  <li>No hay infraestructura extra qué mantener (el daemon de X-Ray está incluído en las plataformas AWS Elastic Beanstalk y AWS Lambda).</li>
+  <li>Puede funcionar sólo como visualizador (usando OpenTelemetry como tracer).</li>
+  <li>Para servicios soportados, el SDK de X-Ray puede enviar y rastrear automáticamente los “ID de request” entre los servicios.</li>
+  <li>Es administrado por AWS.</li>
+  <li>Los primeros 100k rastreos del mes son gratis.</li>
+  <li>El primer millón de rastreos obtenidos o escaneados cada mes es gratis.</li>
+</ul>
+
+<p>Sin embargo algunos puntos en contra son:</p>
+
+<ul>
+  <li>AWS X-Ray sólo puede ser usado con aplicaciones corriendo en Amazon EC2, Amazon EC2 containser service, AWS Lambda, y AWS Elastic Beanstalk.</li>
+  <li>Después de agotar los rastreos gratuitos del mes, cada rastreo indexado y consultado tiene un costo.</li>
+  <li>Soporte limitado de lenguajes: Mientras que el SDK de X-Ray tiene soporte para varios lenguajes de programación, no soporta todos los lenguajes o plataformas, lo cual puede limitar su utilidad en algunos casos.</li>
+  <li>Vendor lock-in: El uso de X-Ray puede llevar a la dependencia exclusiva de AWS, ya que es un servicio propietario disponible sólo en la plataforma de AWS. Esto puede limitar su capacidad para cambiar a otros proveedores de nube o herramientas en el futuro.</li>
+</ul>
+
+<p>Si, después de leer algunos de los pros y contras, aún estás inclinado a usar X-Ray, entonces puedes seguir leyendo.</p>
+
+<h3 id="requerimientos">Requerimientos</h3>
+
+<p>Para ver la información de rastreo en AWS X-Ray, necesitas una cuenta de AWS y una aplicación corriendo en la infraestructura de AWS o que esté integrada con los servicios de AWS. Además, necesitarás:</p>
+
+<ul>
+  <li>Una instancia del X-Ray daemon, que se puede ejecutar como un binario o como un contenedor de Docker. Puedes encontrar instrucciones detalladas sobre cómo ejecutar y configurar el daemon <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-local.html">aquí</a>. Para éste artículo, estaré usando el binario para OS X.</li>
+  <li>Tu aplicación debe de tener los permisos necesarios para interactuar con AWS X-Ray y otros servicios que use.</li>
+</ul>
+
+<h4 id="iam-role">IAM Role</h4>
+
+<p>Para permitir que tu aplicación mande información sobre tus requests a X-Ray, tienes que proveerle al daemon de X-Ray un rol. Para crear un rol, vamos a entrar a nuestra consola web de AWS y de allí navegamos a la página principal de IAM y allí encontraremos el botón “Create Role” (o “Crear Rol” si tienes configurado tu panel de AWS en español).</p>
+
+<p><img src="https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/create-role.png" alt="Crear nuevo rol"></p>
+
+<p>En el asistente, selecciona “AWS Account” para Trusted Entity y da click en “Next”/”Siguiente”. En la siguiente pantalla, busca por la política de permisos llamada “AWSXRayDaemonWriteAccess”. Da click en “Next”/”Siguiente” para continuar..</p>
+
+<p><img src="https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/name-review-create.png" alt="Nombra, Revisa y Crea"></p>
+
+<p>Agrega un nombre y descripción para el rol, y después da click en “Create Role”. Ésto te llevará a la lista de roles. Busca el rol que acabas de crear para ver y copiar su ARN.</p>
+
+<p><img src="https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/role-details.png" alt="Detalles del rol"></p>
+
+<h3 id="x-ray-daemon">X-Ray Daemon</h3>
+
+<p>Ahora que ya tenemos el rol para el daemon, vamos a configurarlo.</p>
+
+<p>Para mi proyecto de prueba, solo tuve que cambiar algunos valores de la configuración, como el nivel del logger, especificar el modo local a verdadero, y agregar el ARN del rol que creamos y la región de AWS en la que estamos operando nuestros servicios.</p>
+
+<p>Aquí está la configuración que usé:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Send segments to AWS X-Ray service in a specific region</span>
+<span class="na">Region</span><span class="pi">:</span> <span class="s2">"</span><span class="s">us-west-2"</span>
+<span class="na">Socket</span><span class="pi">:</span>
+  <span class="c1"># Change the address and port on which the daemon listens for UDP packets containing segment documents.</span>
+  <span class="na">UDPAddress</span><span class="pi">:</span> <span class="s2">"</span><span class="s">127.0.0.1:2000"</span>
+  <span class="c1"># Change the address and port on which the daemon listens for HTTP requests to proxy to AWS X-Ray.</span>
+  <span class="na">TCPAddress</span><span class="pi">:</span> <span class="s2">"</span><span class="s">127.0.0.1:2000"</span>
+<span class="na">Logging</span><span class="pi">:</span>
+  <span class="c1"># Change the log level, from most verbose to least: dev, debug, info, warn, error, prod (default).</span>
+  <span class="na">LogLevel</span><span class="pi">:</span> <span class="s2">"</span><span class="s">dev"</span>
+<span class="c1"># Turn on local mode to skip EC2 instance metadata check.</span>
+<span class="na">LocalMode</span><span class="pi">:</span> <span class="no">true</span>
+<span class="c1"># Assume an IAM role to upload segments to a different account.</span>
+<span class="na">RoleARN</span><span class="pi">:</span> <span class="s2">"</span><span class="s">arn:aws:iam::269174633178:role/X-Ray_Daemon_role"</span>
+<span class="c1"># Daemon configuration file format version.</span>
+<span class="na">Version</span><span class="pi">:</span> <span class="m">2</span>
+</code></pre></div></div>
+
+<p>En <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-configuration.html">la guía del desarrollador de AWS X-Ray</a> puedes aprender más sobre otros valores que puedes configurar.</p>
+
+<h3 id="instrumentando-tu-microservicio-en-go">Instrumentando tu microservicio en Go</h3>
+
+<p>Ahora que ya tenemos el X-Ray daemon configurado y corriendo, podemos proceder a instrumentar nuestro servicio.</p>
+
+<p>AWS recomienda empezar agregando rastreo para requests entrantes envolviendo los controladores de servicio con <code class="language-plaintext highlighter-rouge">xray.Handler</code>. Pero, como estamos usando Gin, el enfoque que implementaremos es ligeramente diferente.</p>
+
+<p>Mientras buscaba recursos sobre cómo instrumentar una aplicación con Gin, me encontré con éste <a href="https://raw.githubusercontent.com/oroshnivskyy/go-gin-aws-x-ray">middleware</a>, el cual está basado en la función <a href="https://raw.githubusercontent.com/aws/aws-xray-sdk-go/1e154184282bb3b0166cb1b154f2b4abed0b1e6f/xray/handler.go#L99"><code class="language-plaintext highlighter-rouge">xray.Handler</code></a>.</p>
+
+<p>Éste middleware hace el mismo trabajo que <code class="language-plaintext highlighter-rouge">xray.Handler</code>, abrirá y cerrará un segmento para cada request recibido. También se encargará de manejar el header para IDs de rastreo (<code class="language-plaintext highlighter-rouge">"x-amzn-trace-id"</code>), que es un header que contiene un identificador que será generado para cada petición nueva y que será propagado a travéz de todos nuestros microservicios.</p>
+
+<p>Así que vamos a agregar el middleware a las rutas que queremos intrumentar:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// as part of my gin routes</span>
+<span class="n">v1</span><span class="o">.</span><span class="n">GET</span><span class="p">(</span><span class="s">"/auth/roles"</span><span class="p">,</span> <span class="n">xraymid</span><span class="o">.</span><span class="n">Middleware</span><span class="p">(</span><span class="n">xray</span><span class="o">.</span><span class="n">NewFixedSegmentNamer</span><span class="p">(</span><span class="s">"GetRoles"</span><span class="p">)),</span> <span class="n">controller</span><span class="o">.</span><span class="n">GetRoles</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Aquí estamos agregando el middleware de X-Ray (con el alias <code class="language-plaintext highlighter-rouge">xraymid</code>) a una ruta del grupo <code class="language-plaintext highlighter-rouge">v1</code>. El valor que estamos pasando como argumento a <code class="language-plaintext highlighter-rouge">NewFixedSegmentNamer</code> debe de ser un nombre descriptivo para tu ruta. Éste será el nombre para el grupo principal de rastreo para éste endpoint.</p>
+
+<p>¡Bien! ¡Ahora veamos si funciona! Inicia tu servicio y verifica que el daemon esté corriendo.</p>
+
+<p>Después de hacer un request, podemos ver en los logs del daemon algo como:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2023-03-21T13:10:47-06:00 [Debug] Received request on HTTP Proxy server : /GetSamplingRules
+2023-03-21T13:10:48-06:00 [Debug] processor: sending partial batch
+2023-03-21T13:10:48-06:00 [Debug] processor: segment batch size: 1. capacity: 50
+2023-03-21T13:10:48-06:00 [Info] Successfully sent batch of 1 segments (0.109 seconds)
+2023-03-21T13:10:49-06:00 [Debug] Send 1 telemetry record(s)
+</code></pre></div></div>
+
+<p>¡Parece que está funcionando! Vamos a ver qué dice la consola de AWS.</p>
+
+<p>En tu consola web de AWS, ve a CloudWatch y en el panel lateral busca la opción para X-Ray, y da click en la opción “traces”.</p>
+
+<p>Si todo salió bien, deberías estar viendo el número de rastreos recibidos recientemente, y una tabla con la información de esos rastreos.</p>
+
+<p><img src="https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/cloudwatch-xray-traces.png" alt="Cloudwatch -&gt; X-Ray -&gt; Traces"></p>
+
+<p>En la tabla de registros, da click en alguno. Aparecerá la vista de rastreo/seguimiento, donde puedes ver la información registrada.</p>
+
+<p><img src="https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/simple-trace-info.png" alt="Información de rastreo"></p>
+
+<p>Aquí podemos ver los datos de seguimiento. Hasta el momento sólo estamos creando un segmento y cerrándolo para cada llamada, por lo que no tenemos mucha otra información, pero podemos ver el código de estado de respuesta, el tiempo que tomó para que se atendiera la solicitud y, por supuesto, el mapa de seguimiento, que por ahora incluye sólo el cliente y el servicio.</p>
+
+<h4 id="creando-sub-segmentos">Creando sub segmentos</h4>
+
+<p>Ahora que tenemos nuestra configuración básica de instrumentación, ¿qué más podemos rastrear?</p>
+
+<p>Hasta el momento, solo estamos rastreando una solicitud y algunos de sus metadatos. Pero, ¿qué pasa si queremos ser más detallados?</p>
+
+<p>Digamos que tenemos un proceso intensivo que se ejecuta como parte de la solicitud; podemos agregar un subsegmento para monitorearlo.</p>
+
+<p>En algún lugar de mi servicio, se ejecuta el siguiente código cuando llamo al endpoint <code class="language-plaintext highlighter-rouge">auth/roles</code>:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// dentro de alguna función</span>
+<span class="n">roles</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="n">Role</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rolesList</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">roleItem</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">rolesList</span> <span class="p">{</span>
+	<span class="n">role</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">u</span><span class="o">.</span><span class="n">buildRole</span><span class="p">(</span><span class="n">roleItem</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">model</span><span class="o">.</span><span class="n">RoleList</span><span class="p">{},</span> <span class="n">err</span>
+	<span class="p">}</span>
+	<span class="n">roles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">role</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Aquí podemos envolver el bucle <code class="language-plaintext highlighter-rouge">for</code> en un subsegmento para ver cuánto tiempo del request tarda en ejecutar éste proceso.</p>
+
+<p>Para crear el subsegmento, envolvemos el ciclo:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">err</span> <span class="o">=</span> <span class="n">xray</span><span class="o">.</span><span class="n">Capture</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="s">"BuildRolesDetail"</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">ctx1</span> <span class="n">context</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+	<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">roleItem</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">rolesList</span> <span class="p">{</span>
+		<span class="n">role</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">u</span><span class="o">.</span><span class="n">buildRole</span><span class="p">(</span><span class="n">roleItem</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="n">err</span>
+		<span class="p">}</span>
+		<span class="n">roles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">role</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">=</span> <span class="n">xray</span><span class="o">.</span><span class="n">AddMetadata</span><span class="p">(</span><span class="n">ctx1</span><span class="p">,</span> <span class="s">"No. roles built"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">roles</span><span class="p">));</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">nepErrors</span><span class="o">.</span><span class="n">InternalServerError</span><span class="o">.</span><span class="n">WithDetail</span><span class="p">(</span><span class="n">err</span><span class="o">.</span><span class="n">Error</span><span class="p">())</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="no">nil</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>Vamos a correr nuestro servicio y llamemos de nuevo nuestro endpoint instrumentado.</p>
+
+<p>Éste es el nuevo registro en AWS CloudWatch -&gt; Traces:</p>
+
+<p><img src="https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/trace-with-sub-segment.png" alt="Rastreo con subsegmentos"></p>
+
+<p>Ahora podemos ver que la petición tomó <strong>215ms</strong>, y de esos, el ciclo <code class="language-plaintext highlighter-rouge">BuildRolesDetail</code> tomó <strong>205ms</strong>.</p>
+
+<p>¿Ya estás pensando en las posibilidades? ¡Deberías! puedes usar <code class="language-plaintext highlighter-rouge">xray.AddMetadata</code> para agregar cualquier dato que te sea de utilidad. Únicamente toma en cuenta que el Daemon de X-Ray sólo envía a AWS <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">hasta 64KB de metadata por segmento</a>.</p>
+
+<h3 id="instrumentando-clientes-de-aws-con-x-ray">Instrumentando clientes de AWS con X-Ray</h3>
+
+<p>Instrumentar clientes de AWS usando el SDK-V1 es bastante sencillo, puedes seguir la <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-go-awssdkclients.html">guía oficial</a> para hacerlo.</p>
+
+<p>No hay mucha documentación sobre cómo instrumentar clientes de AWS usando el AWS SDK-v2, pero la configuración es bastante sencilla.</p>
+
+<p>En algún lugar en el código de tu servicio, estás inicializando tu(s) cliente(s) de AWS. Para instrumentarlos, necesitas proveer a tus clientes con un cliente HTTP de X-Ray y pasar el contexto del request para cada llamada.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cfg</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">config</span><span class="o">.</span><span class="n">LoadDefaultConfig</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">err</span>
+<span class="p">}</span>
+
+<span class="c">// Create an HTTP client</span>
+<span class="n">httpClient</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
+
+<span class="c">// Set the HTTP client as the AWS configuration's HTTP client</span>
+<span class="n">cfg</span><span class="o">.</span><span class="n">HTTPClient</span> <span class="o">=</span> <span class="n">httpClient</span>
+
+<span class="c">// Create an X-Ray client</span>
+<span class="n">xrayClient</span> <span class="o">:=</span> <span class="n">xray</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">httpClient</span><span class="p">)</span>
+
+<span class="n">dynamoClient</span> <span class="o">:=</span> <span class="n">dynamodb</span><span class="o">.</span><span class="n">NewFromConfig</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">options</span> <span class="o">*</span><span class="n">dynamodb</span><span class="o">.</span><span class="n">Options</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c">// Wrap the http.Client with an xray.Client</span>
+	<span class="n">options</span><span class="o">.</span><span class="n">HTTPClient</span> <span class="o">=</span> <span class="n">xrayClient</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>Aquí, estoy agregando el cliente HTTP de X-Ray al cliente de AWS DynamoDB.</p>
+
+<p>Una vez hecho esto, llamemos de nuevo a nuestro endpoint instrumentado.</p>
+
+<p><img src="https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/instrumenting-ddb-client.png" alt="Instrumentando el cliente de DynamoDB"></p>
+
+<p>Yo estoy corriendo DynamoDB localmente, pero ya puedes ver qué tanto tiempo toma cada llamada a DynamoDB. También podemos ver que el mapa de rastreo ha sido acualizado para mostrar mi instancia local de DynamoDB.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+<p>Instrumentar un servicio con X-Ray es relativamente sencillo, pero puede complicarse muy rápido dependiendo de las cosas que queremos monitorear. Debido a esto, el esfuerzo para agregar trazabilidad a su servicio puede variar de caso en caso.</p>
+
+<p>Otra cosa a considerar es el límite de 64KB por segmento. Puede que no sea suficiente si deseas rastrear muchos subsegmentos o agregar más metadatos. Existen formas de evitar esto, pero están fuera del alcance de esta publicación.</p>
+
+<p>En conclusión, implementar X-Ray en un microservicio en Go es un proceso sencillo que puede beneficiar enormemente la observabilidad y las capacidades de resolución de problemas de tu aplicación. El proceso de integración es relativamente fácil, y el SDK de X-Ray proporciona una serie de características útiles que facilitan la trazabilidad de las solicitudes y la identificación de cuellos de botella. Sin embargo, es importante tener en cuenta que X-Ray tiene algunas desventajas, como el costo asociado con su uso y las limitaciones de sus capacidades de muestreo.</p>
+
+<p>No obstante, con una consideración cuidadosa y una implementación adecuada, X-Ray puede ser una herramienta invaluable para la depuración y optimización de tu arquitectura de microservicios. Así que no dudes en probarlo y ver cómo puede mejorar el rendimiento y la confiabilidad de tus microservicios en Go.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#aws" class="page__taxonomy-item" rel="tag">AWS</a><span class="sep">, </span>
+    
+      <a href="/tags/#go" class="page__taxonomy-item" rel="tag">Go</a><span class="sep">, </span>
+    
+      <a href="/tags/#instrumentaci%C3%B3n" class="page__taxonomy-item" rel="tag">instrumentación</a><span class="sep">, </span>
+    
+      <a href="/tags/#microservicios" class="page__taxonomy-item" rel="tag">microservicios</a><span class="sep">, </span>
+    
+      <a href="/tags/#programaci%C3%B3n" class="page__taxonomy-item" rel="tag">programación</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-04-17T00:00:00-06:00">April 17, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Instrumentando+microservicios+en+Go+con+Gin+y+AWS+X-Ray%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F04%2F17%2Finstrumentando-microservicios-con-X-Ray.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F04%2F17%2Finstrumentando-microservicios-con-X-Ray.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F04%2F17%2Finstrumentando-microservicios-con-X-Ray.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/04/17/composicion-en-el-software.html" class="pagination--pager" title="Composición en el software
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1679150874/sam-moghadam-khamseh-VwHzE0aFQfY-unsplash_lpqwqn.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/04/17/composicion-en-el-software.html" rel="permalink">Composición en el software
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 17-04-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,g_face,h_550,w_1024/v1681538471/DALL_E_2023-04-14_23.53.02_-_a_green_parrot_in_a_cybernetic_setting_plotting_a_plan_to_conquer_the_universe_digital_illustration_detailed_cinematic_light_ff6lm8.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html" rel="permalink">Usando LangChain 🦜 para crear software basado en LLM’s
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 15-04-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Vamos a ver cómo funciona LangChain, una herramienta que le puede dar oídos, ojos y manos a tu modelo de lenguaje preferido.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1680411928/risto-kokkonen-HAIDBanzi8o-unsplash_okktgd.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/04/07/cuando-separar-el-codigo.html" rel="permalink">Cuando separar el código
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+11 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 07-04-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Cuándo es buena idea que lo existe en un clase o función lo descompongas en varios elementos? En este artículo veremos algunos criterios para tomar esta dec...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1669958588/3018709125_star_explosion_Highly_detailed__surrealism__trending_on_art_station__triadic_color_scheme__smooth__sharp_focus__matte__elegant__the_most_beautiful_image_ever_seen__illustration__digital_paint__dark__gloomy__octane_render__8k__4k__aexjen.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/04/01/el-principio-de-segregacion-de-interfaces.html" rel="permalink">El principio de segregación de Interfaces
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 01-04-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Analicemos el cuarto principio de SOLID: El principio de segregación de interfaces, y veamos qué tanto vale la pena tenerlo en cuenta en nuetros desarrollos.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/04/17/instrumentando-microservicios-con-X-Ray"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

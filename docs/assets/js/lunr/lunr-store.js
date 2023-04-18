@@ -1,4 +1,10 @@
 var store = [{
+        "title": "Mako",
+        "excerpt":"Posts          ","categories": [],
+        "tags": [],
+        "url": "/authors/mako.html",
+        "teaser": null
+      },{
         "title": "Sag",
         "excerpt":"Posts          ","categories": [],
         "tags": [],
@@ -670,4 +676,10 @@ var store = [{
         "tags": ["fp","composición"],
         "url": "/2023/04/17/composicion-en-el-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1679150874/sam-moghadam-khamseh-VwHzE0aFQfY-unsplash_lpqwqn.jpg"
+      },{
+        "title": "Instrumentando microservicios en Go con Gin y AWS X-Ray",
+        "excerpt":"En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software. Si nuestro código provee información de traceo para requests,...","categories": [],
+        "tags": ["programación","instrumentación","microservicios","AWS","Go"],
+        "url": "/2023/04/17/instrumentando-microservicios-con-X-Ray.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1681785117/cam-c9WkEaPBqLI-unsplash_tdzflr.jpg"
       }]
