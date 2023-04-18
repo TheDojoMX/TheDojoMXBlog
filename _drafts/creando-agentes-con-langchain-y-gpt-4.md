@@ -15,11 +15,14 @@ En este pequeño tutorial vamos a hablar de cómo puedes crear agentes que inter
 
 ### ¿Qué es un agente?
 
-En este contexto, además de una cosa que puede actuar por sí mismo, se entiende que puede hacer dos cosas más:
+En este contexto, además de una cosa que puede actuar por sí mismo, se entiende que un agente puede hacer dos cosas más:
 
 - Decidir qué hacer y qué herramienta usar
 - Aprender a usar herramientas automáticamente (si le proporcionas las cosas que necesita)
 
+Los agentes tradicionalmente se entienden como programas que trabajan de manera autónoma y con su propio espacio de memoria, con los que te comunicas por medio de mensajes, pero que no tienes el control completo sobre ellos. Un agente puede decidir qué hacer con tu mensaje.
+
+Combinando ambos contextos, un agente es un pedazo del programa que actúa autónomamente, que decide cómo lograr lo que has pedido y que aprende a hacerlo por su cuenta. Al estar basado en un LLM, no está garantizado su éxito.
 ## Agentes en LangChain
 
 LangChain provee de un conjunto de agentes prefabricados.
