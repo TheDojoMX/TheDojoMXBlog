@@ -1,16 +1,18 @@
 ---
 title: "Instrumentando microservicios en Go con Gin y AWS X-Ray"
-date: 2023-04-13
+date: 2023-04-17
 author: Héctor Vela
-tags: programación, instrumentación, microservicios, AWS, Go
+tags: programación instrumentación microservicios AWS Go
 excerpt: "Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray."
+header:
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1350/v1681785117/cam-c9WkEaPBqLI-unsplash_tdzflr.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1681785117/cam-c9WkEaPBqLI-unsplash_tdzflr.jpg
+  overlay_filter: rgba(0, 0, 0, 0.5)
 ---
-
-# Instrumentando microservicios en Go con Gin y AWS X-Ray
 
 En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.
 
-Si nuestro código provee información de traceo para requests, y logs, podemos decir que está instrumentado y que podemos observar cómo se está desempeñando nuestro sistema. 
+Si nuestro código provee información de traceo para requests, y logs, podemos decir que está instrumentado y que podemos observar cómo se está desempeñando nuestro sistema.
 
 La instrumentación de servicios es especialmente útil para identificar y resolver problemas de rendimiento y errores. Los datos recolectados pueden ser usados para planear la capacidad de nuestros servicios al ayudarnos a entender el tráfico y patrones de uso en nuestras aplicaciones.
 
@@ -62,15 +64,15 @@ Para ver la información de rastreo en AWS X-Ray, necesitas una cuenta de AWS y 
 
 Para permitir que tu aplicación mande información sobre tus requests a X-Ray, tienes que proveerle al daemon de X-Ray un rol. Para crear un rol, vamos a entrar a nuestra consola web de AWS y de allí navegamos a la página principal de IAM y allí encontraremos el botón "Create Role" (o "Crear Rol" si tienes configurado tu panel de AWS en español).
 
-![Crear nuevo rol](https://github.com/makkoman/blogposts/blob/main/x-ray/images/create-role.png)
+![Crear nuevo rol](https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/create-role.png)
 
 En el asistente, selecciona "AWS Account" para Trusted Entity y da click en "Next"/"Siguiente". En la siguiente pantalla, busca por la política de permisos llamada "AWSXRayDaemonWriteAccess". Da click en "Next"/"Siguiente" para continuar..
 
-![Nombra, Revisa y Crea](https://github.com/makkoman/blogposts/blob/main/x-ray/images/name-review-create.png)
+![Nombra, Revisa y Crea](https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/name-review-create.png)
 
 Agrega un nombre y descripción para el rol, y después da click en "Create Role". Ésto te llevará a la lista de roles. Busca el rol que acabas de crear para ver y copiar su ARN.
 
-![Detalles del rol](https://github.com/makkoman/blogposts/blob/main/x-ray/images/role-details.png)
+![Detalles del rol](https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/role-details.png)
 
 ### X-Ray Daemon
 
@@ -107,7 +109,7 @@ Ahora que ya tenemos el X-Ray daemon configurado y corriendo, podemos proceder a
 
 AWS recomienda empezar agregando rastreo para requests entrantes envolviendo los controladores de servicio con `xray.Handler`. Pero, como estamos usando Gin, el enfoque que implementaremos es ligeramente diferente.
 
-Mientras buscaba recursos sobre cómo instrumentar una aplicación con Gin, me encontré con éste [middleware](https://github.com/oroshnivskyy/go-gin-aws-x-ray), el cual está basado en la función [`xray.Handler`](https://github.com/aws/aws-xray-sdk-go/blob/1e154184282bb3b0166cb1b154f2b4abed0b1e6f/xray/handler.go#L99).
+Mientras buscaba recursos sobre cómo instrumentar una aplicación con Gin, me encontré con éste [middleware](https://raw.githubusercontent.com/oroshnivskyy/go-gin-aws-x-ray), el cual está basado en la función [`xray.Handler`](https://raw.githubusercontent.com/aws/aws-xray-sdk-go/1e154184282bb3b0166cb1b154f2b4abed0b1e6f/xray/handler.go#L99).
 
 Éste middleware hace el mismo trabajo que `xray.Handler`, abrirá y cerrará un segmento para cada request recibido. También se encargará de manejar el header para IDs de rastreo (`"x-amzn-trace-id"`), que es un header que contiene un identificador que será generado para cada petición nueva y que será propagado a travéz de todos nuestros microservicios.
 
@@ -137,11 +139,11 @@ En tu consola web de AWS, ve a CloudWatch y en el panel lateral busca la opción
 
 Si todo salió bien, deberías estar viendo el número de rastreos recibidos recientemente, y una tabla con la información de esos rastreos.
 
-![Cloudwatch -> X-Ray -> Traces](https://github.com/makkoman/blogposts/blob/main/x-ray/images/cloudwatch-xray-traces.png)
+![Cloudwatch -> X-Ray -> Traces](https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/cloudwatch-xray-traces.png)
 
 En la tabla de registros, da click en alguno. Aparecerá la vista de rastreo/seguimiento, donde puedes ver la información registrada.
 
-![Información de rastreo](https://github.com/makkoman/blogposts/blob/main/x-ray/images/simple-trace-info.png)
+![Información de rastreo](https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/simple-trace-info.png)
 
 Aquí podemos ver los datos de seguimiento. Hasta el momento sólo estamos creando un segmento y cerrándolo para cada llamada, por lo que no tenemos mucha otra información, pero podemos ver el código de estado de respuesta, el tiempo que tomó para que se atendiera la solicitud y, por supuesto, el mapa de seguimiento, que por ahora incluye sólo el cliente y el servicio.
 
@@ -192,7 +194,7 @@ Vamos a correr nuestro servicio y llamemos de nuevo nuestro endpoint instrumenta
 Éste es el nuevo registro en AWS CloudWatch -> Traces:
 
 
-![Rastreo con subsegmentos](https://github.com/makkoman/blogposts/blob/main/x-ray/images/trace-with-sub-segment.png)
+![Rastreo con subsegmentos](https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/trace-with-sub-segment.png)
 
 Ahora podemos ver que la petición tomó **215ms**, y de esos, el ciclo `BuildRolesDetail` tomó **205ms**.
 
@@ -231,7 +233,7 @@ Aquí, estoy agregando el cliente HTTP de X-Ray al cliente de AWS DynamoDB.
 
 Una vez hecho esto, llamemos de nuevo a nuestro endpoint instrumentado.
 
-![Instrumentando el cliente de DynamoDB](https://github.com/makkoman/blogposts/blob/main/x-ray/images/instrumenting-ddb-client.png)
+![Instrumentando el cliente de DynamoDB](https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/instrumenting-ddb-client.png)
 
 Yo estoy corriendo DynamoDB localmente, pero ya puedes ver qué tanto tiempo toma cada llamada a DynamoDB. También podemos ver que el mapa de rastreo ha sido acualizado para mostrar mi instancia local de DynamoDB.
 
