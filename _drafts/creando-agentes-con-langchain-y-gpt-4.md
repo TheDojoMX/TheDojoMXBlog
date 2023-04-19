@@ -23,6 +23,44 @@ En este contexto, además de una cosa que puede actuar por sí mismo, se entiend
 Los agentes tradicionalmente se entienden como programas que trabajan de manera autónoma y con su propio espacio de memoria, con los que te comunicas por medio de mensajes, pero que no tienes el control completo sobre ellos. Un agente puede decidir qué hacer con tu mensaje.
 
 Combinando ambos contextos, un agente es un pedazo del programa que actúa autónomamente, que decide cómo lograr lo que has pedido y que aprende a hacerlo por su cuenta. Al estar basado en un LLM, no está garantizado su éxito.
+
 ## Agentes en LangChain
 
-LangChain provee de un conjunto de agentes prefabricados.
+LangChain provee de un conjunto de agentes prefabricados. Los más fáciles de usar están basados en un framework llamado ReAct, que propone una forma de crear estos agentes. Puedes ver el paper en el que se habla de ReAct en el siguiente documento: **[ReAct: Synergizing Reasoning and Acting in Language Models
+](https://arxiv.org/abs/2210.03629)**.
+
+Básicamente este framework da las guías para crear agentes que usen herramientas de manera efectiva. LangChain provee tres agentes básicos:
+
+- **ReActAgent**: Este agente es el más básico, y no tiene ninguna habilidad especial. Puedes usarlo para crear agentes que no necesiten usar herramientas.
+- **ReActAgentWithTools**: Este agente es un poco más avanzado, y puede usar herramientas para lograr sus objetivos.
+- **ReActAgentWithToolsAndMemory**: Este agente es el más avanzado, y puede usar herramientas para lograr sus objetivos, además de recordar lo que ha hecho.
+
+<!-- Not sure -->
+### Creando un agente
+
+El siguiente código crea un agente que puede usar herramientas para lograr sus objetivos:
+
+```python
+ # Creando un agente con LangChain
+
+from langchain.agents import load_tools
+from langchain.agents import initialize_agent
+from langchain.agents import AgentType
+from langchain.llms import OpenAI
+
+llm = OpenAI(temperature=0)
+
+tools = load_tools(["serpapi", "llm-math"], llm=llm)
+
+agent = initialize_agent(
+    tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True
+)
+
+print("Este agente puede buscar en Google y hacer aritmética básica.")
+while True:
+    query = input("Pregunta algo: ")
+    if not query:
+        break
+    print(agent.run(query))
+
+```
