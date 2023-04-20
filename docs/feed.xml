@@ -1,4 +1,365 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-04-17T22:41:05-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Instrumentando microservicios en Go con Gin y AWS X-Ray</title><link href="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html" rel="alternate" type="text/html" title="Instrumentando microservicios en Go con Gin y AWS X-Ray" /><published>2023-04-17T00:00:00-06:00</published><updated>2023-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html">&lt;p&gt;En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-04-20T00:55:22-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Creando agentes con LangChain y GPT-4</title><link href="https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html" rel="alternate" type="text/html" title="Creando agentes con LangChain y GPT-4" /><published>2023-04-20T00:00:00-06:00</published><updated>2023-04-20T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html">&lt;p&gt;En este pequeño tutorial vamos a hablar de cómo puedes crear agentes que interactúen con el mundo exterior, usando LangChain y como modelo de lenguaje GPT-4. Como siempre, la mejor manera de aprender es haciendo algo, por lo que vamos a crear un agente&lt;/p&gt;
+
+&lt;h3 id=&quot;qué-es-un-agente&quot;&gt;¿Qué es un agente?&lt;/h3&gt;
+
+&lt;p&gt;En este contexto, además de una cosa que puede actuar por sí mismo, se entiende que un agente puede hacer dos cosas más:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Decidir qué hacer y qué herramienta usar&lt;/li&gt;
+  &lt;li&gt;Aprender a usar herramientas automáticamente (si le proporcionas las cosas que necesita)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Los agentes tradicionalmente se entienden como programas que trabajan de manera autónoma y con su propio espacio de memoria, con los que te comunicas por medio de mensajes, pero que no tienes el control completo sobre ellos. Un agente puede decidir qué hacer con tu mensaje.&lt;/p&gt;
+
+&lt;p&gt;Combinando ambos contextos, un agente es un pedazo del programa que actúa autónomamente, que decide cómo lograr lo que has pedido y que aprende a hacerlo por su cuenta. Al estar basado en un LLM, no está garantizado su éxito.&lt;/p&gt;
+
+&lt;h2 id=&quot;agentes-en-langchain&quot;&gt;Agentes en LangChain&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;LangChain&lt;/strong&gt; provee de un conjunto de agentes prefabricados. Los más fáciles de usar están basados en un framework llamado ReAct, que propone una forma de crear estos agentes. Puedes ver el documento en el que se habla de ReAct en el siguiente documento: &lt;strong&gt;&lt;a href=&quot;https://arxiv.org/abs/2210.03629&quot;&gt;ReAct: Synergizing Reasoning and Acting in Language Models
+&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Básicamente este framework da las guías para crear agentes que usen herramientas de manera efectiva. LangChain provee tres agentes básicos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;zero-shot-react-description&lt;/strong&gt;: este tipo de agentes determinan qué tipo de herramientas usar basándose en la descripción de las herramientas proporcionadas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;react-docstore&lt;/strong&gt;: basado completamente en el framework ReAct, este tipo de agentes usan herramientas para buscar documentos y luego buscar términos en esos documentos. Recibe una herramienta de búsqueda y una de consulta.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;self-ask-with-search&lt;/strong&gt;: utiliza una sola herramienta llamada ‘Intermediate Answer’ que debe ser capaz de buscar respuestas correctas a preguntas. En el paper original de ReAct se usa Google como herramienta de búsqueda.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;conversational-react-description&lt;/strong&gt;: está pensado para ser usado de manera conversacional, puede decidir qué herramienta usar y tiene memoria para recordar lo que ya se ha hablado.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;creando-un-agente&quot;&gt;Creando un agente&lt;/h3&gt;
+
+&lt;p&gt;El siguiente código crea un agente que puede usar herramientas para lograr sus objetivos:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;c1&quot;&gt;# Creando un agente con LangChain
+&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_tools&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialize_agent&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AgentType&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.llms&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OpenAI&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OpenAI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temperature&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;serpapi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;llm-math&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialize_agent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AgentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ZERO_SHOT_REACT_DESCRIPTION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Este agente puede buscar en Google y hacer aritmética básica.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Pregunta algo: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El código anterior es suficiente para crear una agente que tiene dos capacidades: buscar en internet con Google y hacer operaciones matemáticas básicas. El código es bastante simple, pero vamos a explicarlo paso a paso.&lt;/p&gt;
+
+&lt;p&gt;Como siempre, la primera parte es importar las funciones y tipos necesarios:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_tools&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Es una función que te ayuda a cargar las herramientas que los agentes serán capaces de usar
+&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialize_agent&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Es una función que te ayuda a crear un agente de manera sencilla
+&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AgentType&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Es un tipo que te ayuda a especificar el tipo de agente que quieres crear, contiene todos los tipos de agentes que LangChain provee
+&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.llms&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OpenAI&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Es la clase que abstrae la conexión con el LLM que usaremos: GPT, creado por OpenAI
+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Después, creamos una instancia de conexión con el LLM:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OpenAI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temperature&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El que le digamos que queremos cero de temperatura significa que la respuesta será menos aleatoria, por lo que podemos pensar que será menos “creativa” o arriesgada. Esto es buena idea cuando quieres crear planes, usar herramientas con una interfaz formal, como una API. Para poder usarlo, tienes que poner en el entorno de ejecución la variable de entorno &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OPENAI_API_KEY&lt;/code&gt; con tu API key de OpenAI.&lt;/p&gt;
+
+&lt;p&gt;Seguido de esto, cargamos las herramientas que queremos que el agente pueda usar, indicando el modelo de lenguaje que usará para interactuar con ellas:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;serpapi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;llm-math&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;La primera es una herramienta para buscar en Google, se llama &lt;a href=&quot;https://serpapi.com/&quot;&gt;SerpApi&lt;/a&gt;, y permite usar la búsqueda que nosotros hacemos en Google mediante una interfaz más amigable para programas. La versión gratuita te da 100 búsquedas mensuales.&lt;/p&gt;
+
+&lt;p&gt;La segunda herramienta, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;llm-math&lt;/code&gt;, tiene como objetivo permitir que el agente haga matemáticas básicas, aunque tampoco están garantizadas porque se ejecuta código que el LLM devuelve. El prompt que usa es (lo traduzco a español después):&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;You are GPT-3, and you can't do math.
+
+You can do basic math, and your memorization abilities are impressive, but you can't do any complex calculations that a human could not do in their head. You also have an annoying tendency to just make up highly specific, but wrong, answers.
+
+So we hooked you up to a Python 3 kernel, and now you can execute code. If you execute code, you must print out the final answer using the print function. You MUST use the python package numpy to answer your question. You must import numpy as np.
+
+
+Question: $
+```python
+$
+print($)
+```
+```output
+$
+```
+Answer: $
+
+Begin.
+
+Question: What is 37593 * 67?
+
+```python
+import numpy as np
+print(np.multiply(37593, 67))
+```
+```output
+2518731
+```
+Answer: 2518731
+
+Question: {question}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Traducido al español:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+Eres GPT-3, y no puedes hacer matemáticas.
+
+Puedes hacer matemáticas básicas, y tus habilidades de memorización son impresionantes, pero no puedes hacer ningún cálculo complejo que un humano no pudiera hacer en su cabeza. También tienes una tendencia molesta a inventar respuestas específicas, pero incorrectas.
+
+Así que te conectamos a un kernel de Python 3, y ahora puedes ejecutar código. Si ejecutas código, debes imprimir el resultado final usando la función print. DEBES usar el paquete python numpy para responder tu pregunta. Debes importar numpy como np.
+
+Pregunta: $
+```python
+$
+print($)
+```
+```output
+$
+```
+```
+Respuesta: $
+
+Comienza.
+
+Pregunta: ¿Cuánto es 37593 * 67?
+
+```python
+import numpy as np
+print(np.multiply(37593, 67))
+```
+```output
+2518731
+```
+Respuesta: 2518731
+
+Pregunta: {Pregunta}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Este módulo después extrae la respuesta de la salida del LLM y la ejecuta en un ejecutor de Python y extrae de aquí la respuesta.&lt;/p&gt;
+
+&lt;p&gt;Aunque por ser un ejecutor de Python tenemos garantizado que el cálculo es correcto, no tenemos garantizado que el código introducido sea adecuado, así que no confíes siempre en sus cálculos.&lt;/p&gt;
+
+&lt;p&gt;Después de eso inicializamos un agente, al que le pasamos las herramientas que usará, el modelo de lenguaje y el tipo de agente que queremos crear. Además, le decimos que escriba en la salida estándar todo su proceso con la opción &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;verbose=True&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialize_agent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AgentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ZERO_SHOT_REACT_DESCRIPTION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;De este modo LangChain hará todo lo necesario para inicializar un agente que use actúe de manera autónoma. Ahora le podemos preguntar cosas:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Este agente puede buscar en Google y hacer aritmética básica.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Creamos un loop para que
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Pregunta algo: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Recuerda que esto puede contestar preguntas que se puedan encontrar en internet y hacer aritmética.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;En este tutorial hemos visto cómo crear un agente básico. Falta explorar los demás tipos de agentes, así como las demás herramientas que LangChain provee para que podamos crear agentes más complejos y funcionales. Además, hay que probar con diferentes agentes y ver cómo se comportan.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="langchain" /><category term="gpt4" /><category term="agentes" /><summary type="html">Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.</summary></entry><entry><title type="html">Composición en el software</title><link href="https://blog.thedojo.mx/2023/04/17/composicion-en-el-software.html" rel="alternate" type="text/html" title="Composición en el software" /><published>2023-04-17T00:00:00-06:00</published><updated>2023-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/17/composicion-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/17/composicion-en-el-software.html">&lt;p&gt;Composición:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Es la acción de combinar componentes individuales para formar un sistema más complejo.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Componer es la técnica más efectiva para construir software de manera organizada. La composición nos permite crear software complejo porque nos permite construir piezas pequeñas que resuelven problemas manejables y luego “juntarlas” para entregar la solución de nuestro problema.&lt;/p&gt;
+
+&lt;p&gt;Veamos algunas formas de hacer composición en el software y por qué es más efectivo que otras formas de reutilizar código.&lt;/p&gt;
+
+&lt;h2 id=&quot;por-que-es-importante-aprender-a-usar-la-composición&quot;&gt;¿Por que es importante aprender a usar la composición?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nuestra habilidad para descomponer un problema en partes, depende
+directamente de nuestra habilidad para combinar soluciones. - &lt;strong&gt;John Hughes&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;John Hughes es un gran proponente e investigador de la programación funcional en la actualidad. Él propone que la composición es importante porque nos da la confianza de poder romper nuestros problemas en problemas más pequeños, sabiendo que después podremos juntarlos de manera efectiva para entregar una solución al problema original.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Divide y vencerás&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Una ventaja secundaria de dividir el software en piezas pequeñas, es que si diseñamos correctamente nuestros componentes y tenemos las herramientas adecuadas para unirlas después, podemos &lt;strong&gt;reutilizar&lt;/strong&gt; las piezas que ya hemos construido en otras partes.&lt;/p&gt;
+
+&lt;p&gt;Veamos dos formas de aplicar la composición en el software.&lt;/p&gt;
+
+&lt;h2 id=&quot;composición-de-funciones&quot;&gt;Composición de funciones&lt;/h2&gt;
+
+&lt;p&gt;Las funciones son la unidad de abstracción más pequeña que tenemos en la programación. Crear pequeñas funciones útiles que resuelvan problemas generales, de manera &lt;strong&gt;completa y precisa&lt;/strong&gt;, es muy buena idea.&lt;/p&gt;
+
+&lt;p&gt;¿Cómo aplicamos la composición? Puedes usar la composición al dividir tu problema principal en funciones sencillas y luego juntarlas.Veamos un ejemplo: vamos a crear un validador de contraseñas. Este debe verificar las siguientes condiciones:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Verificar una longitud mínima, que podría ser 8 caracteres.&lt;/li&gt;
+  &lt;li&gt;Checar que no tenga ciertas palabras (lista negra).&lt;/li&gt;
+  &lt;li&gt;Verificar que tiene un número&lt;/li&gt;
+  &lt;li&gt;Verificar que tiene un carácter especial&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Podríamos hacer esto en una sola función que verificara todas estas características, una por una a través de un serie de if’s. Pero veamos una implementación usando composición, y sus ventajas.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;!@#$%^&amp;amp;*()_+&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'12345678'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
+           &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
+           &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
+           &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Quiero que te fijes especialmente en la última función, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate_password&lt;/code&gt;. Aunque funciona, es un poco rígida. La composición puede ayudarnos a hacerla más flexible.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'palabra_uno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'palabra_dos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Esta función es más flexible, pudiendo agregar o quitar validadores sin tener que modificar más código, simplemente modificando la lista de validadores, pero todavía no es como la queremos. ¿Qué pasas si queremos agregar el conjunto de errores por los que falla una validación? Tenemos que ir &lt;strong&gt;acumulando&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Devuelve la lista de errores de la contraseña, si está vacía, la contraseña es válida&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;mesage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña es muy corta&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña no tiene un número&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña no tiene un carácter especial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'palabra_uno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'palabra_dos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña tiene palabras prohibidas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+
+    &lt;span class=&quot;nb&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Aquí &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reduce&lt;/code&gt; que recibe una función, una lista de elementos por las que iterar y un valor inicial, nos ayuda a acumular los errores. Si quisiéramos hacerlo aún más flexible, podríamos hacer dos cosas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hacer que la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate_password&lt;/code&gt; reciba una lista de validadores (junto con el mensaje), en vez de tenerlos definidos dentro de la función&lt;/li&gt;
+  &lt;li&gt;Definir una clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Validator&lt;/code&gt; que tenga un método &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate&lt;/code&gt; y un atributo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;message&lt;/code&gt; y que reciba una función y un mensaje en su constructor, para tener una interfaz más clara.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;composición-matemática&quot;&gt;Composición matemática&lt;/h3&gt;
+
+&lt;p&gt;Este tipo de composición fue un poco más empírica, simplemente juntando funciones. A veces, cuando oigas de composición, se van a referir a la composición de funciones en sentido matemático. Veamos un ejemplo en Python:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;LETTERS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quitar_no_ascii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LETTERS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reemplazar_acentos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;accents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'á'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'é'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'í'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'i'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'ó'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'o'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'ú'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'u'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'ñ'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'n'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;limpiar_cadena&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quitar_no_ascii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reemplazar_acentos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El código anterior deja una cadena solamente con letras ASCII, sin acentos. Lo que ves en la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;limpiar_cadena&lt;/code&gt; es una composición de funciones, en el sentido matemático, aplicar una función después de otra, o la salida de una como argumento de la otra.&lt;/p&gt;
+
+&lt;p&gt;Siempre que pienses en un proceso que lleve una cadena de pasos, lo puedes representar como una cadena de funciones. En lenguajes funcionales hay operadores para hacer esto.&lt;/p&gt;
+
+&lt;p&gt;Puedes pensar en este tipo de composición como en hacer &lt;strong&gt;fluir&lt;/strong&gt; la información por un conjunto de funciones. Ejemplos en lenguajes como Haskell, Clojure y Elixir te pueden ayudar a expandir sobre esto, puedes buscarlo como “composición funcional”.&lt;/p&gt;
+
+&lt;h2 id=&quot;composición-de-objetos&quot;&gt;Composición de objetos&lt;/h2&gt;
+
+&lt;p&gt;Otra técnica que te puede ayudar a crear mejor software es la composición de objetos. Esta se entiende como formar objetos más complejos a partir de objetos más simples. Aunque la &lt;strong&gt;herencia&lt;/strong&gt; es una forma de composición, al hacer completamente dependientes una clase de otra, no es la mejor forma de crear objetos complejos. De hecho, hay grandes dudas sobre si la herencia es una buena idea. Pero no estamos aquí para discutir sobre las ventajas y desventajas de la herencia, sino para aprender a usar otros tipos de composición.&lt;/p&gt;
+
+&lt;p&gt;Una forma de crear objetos complejos, en vez de tener la relación “es un” que nos da la herencia, es tener la relación “tiene un”. No estamos diciendo que la herencia nunca se deba usar, pero en muchas ocasiones podemos pensar en la composición como una alternativa mejor.&lt;/p&gt;
+
+&lt;p&gt;Observa el siguiente ejemplo, en el que representamos la información de un usuario y su relación con al entidad Empleado:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Empleado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info_usuario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usuario&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Esta implementación está menos acoplada o es menos dependiente que la implementación basada en herencia. Por ejemplo, si queremos evolucionar la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Usuario&lt;/code&gt;, no tenemos que hacer que nada de esto afecte directamente a la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Empleado&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Otra forma de usar la composición es la &lt;strong&gt;delegación&lt;/strong&gt;, a la que le dedicaremos más tiempo en un futuro. Esta te la puedes imaginar como que un objeto le deja todo el trabajo a otro a través, por ejemplo, de un método. Esto es más común en lenguajes no basados en clases, ya que se da de manera más natural, como en JavaScript, donde puedes usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.assign&lt;/code&gt; para copiar las propiedades de un objeto a otro.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Aprender a usar la composición es &lt;strong&gt;obligatorio para desarrollar buen software&lt;/strong&gt;. Lo quieras o no, mientras desarrollas, siempre estás juntando componentes, es decir &lt;em&gt;componiendo&lt;/em&gt;, si conoces las técnicas correctas, podrás crear software de mejor calidad de manera más rápida.&lt;/p&gt;
+
+&lt;p&gt;Piensa en el desarrollo de software como el arte de deconstruir los problemas, resolverlos por cachitos y después juntar las soluciones de regreso para tener la solución completa.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="fp" /><category term="composición" /><summary type="html">La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella.</summary></entry><entry><title type="html">Instrumentando microservicios en Go con Gin y AWS X-Ray</title><link href="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html" rel="alternate" type="text/html" title="Instrumentando microservicios en Go con Gin y AWS X-Ray" /><published>2023-04-17T00:00:00-06:00</published><updated>2023-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html">&lt;p&gt;En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.&lt;/p&gt;
 
 &lt;p&gt;Si nuestro código provee información de traceo para requests, y logs, podemos decir que está instrumentado y que podemos observar cómo se está desempeñando nuestro sistema.&lt;/p&gt;
 
@@ -231,172 +592,7 @@
 
 &lt;p&gt;En conclusión, implementar X-Ray en un microservicio en Go es un proceso sencillo que puede beneficiar enormemente la observabilidad y las capacidades de resolución de problemas de tu aplicación. El proceso de integración es relativamente fácil, y el SDK de X-Ray proporciona una serie de características útiles que facilitan la trazabilidad de las solicitudes y la identificación de cuellos de botella. Sin embargo, es importante tener en cuenta que X-Ray tiene algunas desventajas, como el costo asociado con su uso y las limitaciones de sus capacidades de muestreo.&lt;/p&gt;
 
-&lt;p&gt;No obstante, con una consideración cuidadosa y una implementación adecuada, X-Ray puede ser una herramienta invaluable para la depuración y optimización de tu arquitectura de microservicios. Así que no dudes en probarlo y ver cómo puede mejorar el rendimiento y la confiabilidad de tus microservicios en Go.&lt;/p&gt;</content><author><name>Héctor Vela</name><email>vell.once@gmail.com</email><uri>https://github.com/hevela</uri></author><category term="programación" /><category term="instrumentación" /><category term="microservicios" /><category term="AWS" /><category term="Go" /><summary type="html">Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.</summary></entry><entry><title type="html">Composición en el software</title><link href="https://blog.thedojo.mx/2023/04/17/composicion-en-el-software.html" rel="alternate" type="text/html" title="Composición en el software" /><published>2023-04-17T00:00:00-06:00</published><updated>2023-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/17/composicion-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/17/composicion-en-el-software.html">&lt;p&gt;Composición:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Es la acción de combinar componentes individuales para formar un sistema más complejo.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Componer es la técnica más efectiva para construir software de manera organizada. La composición nos permite crear software complejo porque nos permite construir piezas pequeñas que resuelven problemas manejables y luego “juntarlas” para entregar la solución de nuestro problema.&lt;/p&gt;
-
-&lt;p&gt;Veamos algunas formas de hacer composición en el software y por qué es más efectivo que otras formas de reutilizar código.&lt;/p&gt;
-
-&lt;h2 id=&quot;por-que-es-importante-aprender-a-usar-la-composición&quot;&gt;¿Por que es importante aprender a usar la composición?&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Nuestra habilidad para descomponer un problema en partes, depende
-directamente de nuestra habilidad para combinar soluciones. - &lt;strong&gt;John Hughes&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;John Hughes es un gran proponente e investigador de la programación funcional en la actualidad. Él propone que la composición es importante porque nos da la confianza de poder romper nuestros problemas en problemas más pequeños, sabiendo que después podremos juntarlos de manera efectiva para entregar una solución al problema original.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Divide y vencerás&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Una ventaja secundaria de dividir el software en piezas pequeñas, es que si diseñamos correctamente nuestros componentes y tenemos las herramientas adecuadas para unirlas después, podemos &lt;strong&gt;reutilizar&lt;/strong&gt; las piezas que ya hemos construido en otras partes.&lt;/p&gt;
-
-&lt;p&gt;Veamos dos formas de aplicar la composición en el software.&lt;/p&gt;
-
-&lt;h2 id=&quot;composición-de-funciones&quot;&gt;Composición de funciones&lt;/h2&gt;
-
-&lt;p&gt;Las funciones son la unidad de abstracción más pequeña que tenemos en la programación. Crear pequeñas funciones útiles que resuelvan problemas generales, de manera &lt;strong&gt;completa y precisa&lt;/strong&gt;, es muy buena idea.&lt;/p&gt;
-
-&lt;p&gt;¿Cómo aplicamos la composición? Puedes usar la composición al dividir tu problema principal en funciones sencillas y luego juntarlas.Veamos un ejemplo: vamos a crear un validador de contraseñas. Este debe verificar las siguientes condiciones:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Verificar una longitud mínima, que podría ser 8 caracteres.&lt;/li&gt;
-  &lt;li&gt;Checar que no tenga ciertas palabras (lista negra).&lt;/li&gt;
-  &lt;li&gt;Verificar que tiene un número&lt;/li&gt;
-  &lt;li&gt;Verificar que tiene un carácter especial&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Podríamos hacer esto en una sola función que verificara todas estas características, una por una a través de un serie de if’s. Pero veamos una implementación usando composición, y sus ventajas.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;!@#$%^&amp;amp;*()_+&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'12345678'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
-           &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
-           &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
-           &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Quiero que te fijes especialmente en la última función, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate_password&lt;/code&gt;. Aunque funciona, es un poco rígida. La composición puede ayudarnos a hacerla más flexible.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'palabra_uno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'palabra_dos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Esta función es más flexible, pudiendo agregar o quitar validadores sin tener que modificar más código, simplemente modificando la lista de validadores, pero todavía no es como la queremos. ¿Qué pasas si queremos agregar el conjunto de errores por los que falla una validación? Tenemos que ir &lt;strong&gt;acumulando&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Devuelve la lista de errores de la contraseña, si está vacía, la contraseña es válida&quot;&quot;&quot;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;mesage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña es muy corta&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña no tiene un número&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña no tiene un carácter especial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'palabra_uno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'palabra_dos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña tiene palabras prohibidas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-
-    &lt;span class=&quot;nb&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Aquí &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reduce&lt;/code&gt; que recibe una función, una lista de elementos por las que iterar y un valor inicial, nos ayuda a acumular los errores. Si quisiéramos hacerlo aún más flexible, podríamos hacer dos cosas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Hacer que la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate_password&lt;/code&gt; reciba una lista de validadores (junto con el mensaje), en vez de tenerlos definidos dentro de la función&lt;/li&gt;
-  &lt;li&gt;Definir una clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Validator&lt;/code&gt; que tenga un método &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate&lt;/code&gt; y un atributo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;message&lt;/code&gt; y que reciba una función y un mensaje en su constructor, para tener una interfaz más clara.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;composición-matemática&quot;&gt;Composición matemática&lt;/h3&gt;
-
-&lt;p&gt;Este tipo de composición fue un poco más empírica, simplemente juntando funciones. A veces, cuando oigas de composición, se van a referir a la composición de funciones en sentido matemático. Veamos un ejemplo en Python:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;LETTERS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quitar_no_ascii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LETTERS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reemplazar_acentos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;accents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'á'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'é'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'í'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'i'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ó'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'o'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ú'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'u'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ñ'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'n'&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;limpiar_cadena&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quitar_no_ascii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reemplazar_acentos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;El código anterior deja una cadena solamente con letras ASCII, sin acentos. Lo que ves en la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;limpiar_cadena&lt;/code&gt; es una composición de funciones, en el sentido matemático, aplicar una función después de otra, o la salida de una como argumento de la otra.&lt;/p&gt;
-
-&lt;p&gt;Siempre que pienses en un proceso que lleve una cadena de pasos, lo puedes representar como una cadena de funciones. En lenguajes funcionales hay operadores para hacer esto.&lt;/p&gt;
-
-&lt;p&gt;Puedes pensar en este tipo de composición como en hacer &lt;strong&gt;fluir&lt;/strong&gt; la información por un conjunto de funciones. Ejemplos en lenguajes como Haskell, Clojure y Elixir te pueden ayudar a expandir sobre esto, puedes buscarlo como “composición funcional”.&lt;/p&gt;
-
-&lt;h2 id=&quot;composición-de-objetos&quot;&gt;Composición de objetos&lt;/h2&gt;
-
-&lt;p&gt;Otra técnica que te puede ayudar a crear mejor software es la composición de objetos. Esta se entiende como formar objetos más complejos a partir de objetos más simples. Aunque la &lt;strong&gt;herencia&lt;/strong&gt; es una forma de composición, al hacer completamente dependientes una clase de otra, no es la mejor forma de crear objetos complejos. De hecho, hay grandes dudas sobre si la herencia es una buena idea. Pero no estamos aquí para discutir sobre las ventajas y desventajas de la herencia, sino para aprender a usar otros tipos de composición.&lt;/p&gt;
-
-&lt;p&gt;Una forma de crear objetos complejos, en vez de tener la relación “es un” que nos da la herencia, es tener la relación “tiene un”. No estamos diciendo que la herencia nunca se deba usar, pero en muchas ocasiones podemos pensar en la composición como una alternativa mejor.&lt;/p&gt;
-
-&lt;p&gt;Observa el siguiente ejemplo, en el que representamos la información de un usuario y su relación con al entidad Empleado:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Empleado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info_usuario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usuario&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Esta implementación está menos acoplada o es menos dependiente que la implementación basada en herencia. Por ejemplo, si queremos evolucionar la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Usuario&lt;/code&gt;, no tenemos que hacer que nada de esto afecte directamente a la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Empleado&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Otra forma de usar la composición es la &lt;strong&gt;delegación&lt;/strong&gt;, a la que le dedicaremos más tiempo en un futuro. Esta te la puedes imaginar como que un objeto le deja todo el trabajo a otro a través, por ejemplo, de un método. Esto es más común en lenguajes no basados en clases, ya que se da de manera más natural, como en JavaScript, donde puedes usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.assign&lt;/code&gt; para copiar las propiedades de un objeto a otro.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Aprender a usar la composición es &lt;strong&gt;obligatorio para desarrollar buen software&lt;/strong&gt;. Lo quieras o no, mientras desarrollas, siempre estás juntando componentes, es decir &lt;em&gt;componiendo&lt;/em&gt;, si conoces las técnicas correctas, podrás crear software de mejor calidad de manera más rápida.&lt;/p&gt;
-
-&lt;p&gt;Piensa en el desarrollo de software como el arte de deconstruir los problemas, resolverlos por cachitos y después juntar las soluciones de regreso para tener la solución completa.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="fp" /><category term="composición" /><summary type="html">La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella.</summary></entry><entry><title type="html">Usando LangChain 🦜 para crear software basado en LLM’s</title><link href="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html" rel="alternate" type="text/html" title="Usando LangChain 🦜 para crear software basado en LLM’s" /><published>2023-04-15T00:00:00-06:00</published><updated>2023-04-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html">&lt;p&gt;Los grandes modelos de lenguaje o LLM’s (Large Language Models) han sido noticia en este 2023. Es por eso que han surgido muchos proyectos y herramientas que permiten crear software basado en estas herramientas.&lt;/p&gt;
+&lt;p&gt;No obstante, con una consideración cuidadosa y una implementación adecuada, X-Ray puede ser una herramienta invaluable para la depuración y optimización de tu arquitectura de microservicios. Así que no dudes en probarlo y ver cómo puede mejorar el rendimiento y la confiabilidad de tus microservicios en Go.&lt;/p&gt;</content><author><name>Héctor Vela</name><email>vell.once@gmail.com</email><uri>https://github.com/hevela</uri></author><category term="programación" /><category term="instrumentación" /><category term="microservicios" /><category term="AWS" /><category term="Go" /><summary type="html">Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.</summary></entry><entry><title type="html">Usando LangChain 🦜 para crear software basado en LLM’s</title><link href="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html" rel="alternate" type="text/html" title="Usando LangChain 🦜 para crear software basado en LLM’s" /><published>2023-04-15T00:00:00-06:00</published><updated>2023-04-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html">&lt;p&gt;Los grandes modelos de lenguaje o LLM’s (Large Language Models) han sido noticia en este 2023. Es por eso que han surgido muchos proyectos y herramientas que permiten crear software basado en estas herramientas.&lt;/p&gt;
 
 &lt;p&gt;En este artículo vamos a poner un pequeño tutorial de una herramienta creada para hacer aplicaciones basadas en LLM’s: &lt;a href=&quot;https://python.langchain.com/en/latest/index.html&quot;&gt;LangChain&lt;/a&gt;.&lt;/p&gt;
 
@@ -1302,170 +1498,4 @@ Es cierto que Liskov usó las jerarquías de clases para ilustrar sus ideas, per
 
 &lt;p&gt;Como lección, podemos decir que seguir las guías de Liskov para el subtipado es una forma de aplicar este principio de diseño aún más amplio, digamos que en realidad la especificación de cómo deben comportarse los subtipos es más como una &lt;em&gt;regla&lt;/em&gt; de diseño que un &lt;em&gt;principio&lt;/em&gt; de diseño.&lt;/p&gt;
 
-&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry><entry><title type="html">Code Review: La practica Milenaria que seguimos haciendo mal.</title><link href="https://blog.thedojo.mx/2023/02/27/code-review.html" rel="alternate" type="text/html" title="Code Review: La practica Milenaria que seguimos haciendo mal." /><published>2023-02-27T00:00:00-06:00</published><updated>2023-02-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/02/27/code-review</id><content type="html" xml:base="https://blog.thedojo.mx/2023/02/27/code-review.html">&lt;h2 id=&quot;qué-es-un-code-review&quot;&gt;¿Qué es un “Code Review”?&lt;/h2&gt;
-
-&lt;p&gt;Es la práctica que realizan los equipos de ingeniería de software para verificar los cambios de código antes de fusionarlos con el código fuente principal.&lt;/p&gt;
-
-&lt;h2 id=&quot;dónde-se-aplica&quot;&gt;Dónde se aplica&lt;/h2&gt;
-
-&lt;p&gt;En todas partes, cuando eres miembro de un equipo, como colaborador individual o como estudiante. Tienes la oportunidad de involucrarte, contribuir y dar tu opinión a código escrito por otra persona. Algunos ejemplos:&lt;/p&gt;
-
-&lt;h3 id=&quot;durante-una-sesión-de-pair-programming&quot;&gt;Durante una sesión de “pair programming”&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Dos cabezas piensan mejor que una.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Revisando una pieza de código con alguien más, los desarrolladores podemos hacer recomendaciones, mejoras y adiciones a un sistema en tiempo real.&lt;/p&gt;
-
-&lt;h3 id=&quot;en-aplicaciones-de-control-de-versiones-tales-como&quot;&gt;En aplicaciones de control de versiones, tales como&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;El Pull Request (PR) en GitHub.&lt;/li&gt;
-  &lt;li&gt;El Merge Request (MR) en GitLab.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Estas funciones permiten a los desarrolladores proponer cambios en un código propiedad de otra persona. Es una forma de revisar y discutir cambios propuestos antes de fusionarlos, lo que permite a otros desarrolladores dejar comentarios, solicitar cambios o aprobar una solicitud de forma asíncrona.&lt;/p&gt;
-
-&lt;h3 id=&quot;en-cualquier-fragmento-de-código-propuesto&quot;&gt;En cualquier fragmento de código propuesto&lt;/h3&gt;
-
-&lt;p&gt;Hay otros canales o formas de compartir código con un equipo. A veces, los desarrolladores lo hacen a través de Slack (u otros servicios de mensajería) u otra, simplemente compartiendo enlaces.
-Si como desarrollador notas algo para mejorar o agregar, tu equipo de tecnología debe ser el lugar que permita que esas interacciones y comentarios sucedan orgánicamente.&lt;/p&gt;
-
-&lt;h2 id=&quot;beneficios-de-la-revisión-de-código&quot;&gt;Beneficios de la revisión de código&lt;/h2&gt;
-
-&lt;p&gt;Esta práctica aumenta significativamente el trabajo en equipo. Involucrarse con el código de los demás e involucrar a otros en tus contribuciones aumenta el éxito en la creación de productos. Algunos de los beneficios son:&lt;/p&gt;
-
-&lt;h3 id=&quot;solución-77-temprana-de-errores&quot;&gt;Solución 77 temprana de errores&lt;/h3&gt;
-&lt;blockquote&gt;
-
-  &lt;p&gt;“Aquel de ustedes que esté libre de romper producción, que tire la primera piedra.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Como humanos, los ingenieros de software no están exentos de cometer errores, y es una gran ventaja contar con un equipo que te apoye, revise y libere tareas en conjunto. Durante una revisión de código, estos errores se pueden detectar y corregir.&lt;/p&gt;
-
-&lt;h3 id=&quot;mejorar-la-calidad&quot;&gt;Mejorar la calidad&lt;/h3&gt;
-&lt;blockquote&gt;
-
-  &lt;p&gt;“Es más barato hacer las cosas bien la primera vez.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Establecer reglas en el estilo de código que aumenten la legibilidad, el mantenimiento y la escalabilidad del código ayuda a escribir software de calidad.&lt;/p&gt;
-
-&lt;h3 id=&quot;intercambio-de-conocimientos&quot;&gt;Intercambio de conocimientos&lt;/h3&gt;
-
-&lt;p&gt;El Code Review es una excelente herramienta para recibir y dar retroalimentación, aprender las mejores prácticas de los desarrolladores con más experiencia e intercambiar soluciones.&lt;/p&gt;
-
-&lt;h3 id=&quot;sincronización&quot;&gt;Sincronización&lt;/h3&gt;
-
-&lt;p&gt;Con esta práctica, se puede saber en qué está trabajando cada miembro del equipo, evitar duplicación de esfuerzos y mantenerse actualizado con la lógica del negocio.&lt;/p&gt;
-
-&lt;h2 id=&quot;primeros-pasos&quot;&gt;Primeros pasos&lt;/h2&gt;
-
-&lt;p&gt;Una buena idea para aplicar correctamente esta práctica en tu equipo es establecer reglas antes de empezar.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Establezca una plantilla de descripción con los puntos mínimos que el equipo necesitará para comprender el contexto y el propósito de una solicitud de cambios de código y apliquen esa plantilla de manera consistente en todas las solicitudes futuras.&lt;/li&gt;
-  &lt;li&gt;El número mínimo de revisores para aprobar un fragmento de código; esto dependerá del tamaño del equipo.&lt;/li&gt;
-  &lt;li&gt;Canales o herramientas de comunicación al equipo cuando un código este listo para ser revisado.&lt;/li&gt;
-  &lt;li&gt;El tiempo entre las revisiones, es decir, que si un desarrollador marca un fragmento de código listo para revisarse y el equipo hace sugerencias o solicita cambios, y seguido de eso el desarrollador aplica los cambios solicitados, debe establecerse la cantidad de tiempo que debe pasar para solicitar una nueva revisión. Esta regla puede ser útil en equipos grandes que están involucrados en diferentes sistemas y necesitan dividir el tiempo entre el desarrollo y la revisión. En equipos pequeños, una regla de este tipo es opcional.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;revisión-efectiva&quot;&gt;Revisión efectiva&lt;/h2&gt;
-&lt;blockquote&gt;
-
-  &lt;p&gt;“Una buena revisión necesita de experiencia y profesionalismo y no de nivel de seniority.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Solo algunos desarrolladores son capaces de aplicar una buena revisión del código, esa es la razón principal por la que escribir esta publicación. El Code Review no es una práctica nueva en lo absoluto. Por el contrario, ha existido durante décadas, desde que las personas comenzaran a escribir código. Una de las primeras referencias a esta práctica como proceso formal se encuentra en el libro “The Mythical Man-Month” de Fred Brooks, publicado en 1975.&lt;/p&gt;
-
-&lt;p&gt;Entonces, ¿por qué te pareció un tema importante? he estado trabajando con equipos de Ingeniería de Software durante aproximadamente 12 años y sigo leyendo comentarios que tienen un tono vago o agresivo o que carecen de explicación y contexto, lo que dificulta la aplicación efectiva de cambios en el código.&lt;/p&gt;
-
-&lt;h3 id=&quot;la-revisión-de-código-no-es-una-práctica-para&quot;&gt;La revisión de código &lt;em&gt;NO ES&lt;/em&gt; una práctica para&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Demostrar superioridad.&lt;/li&gt;
-  &lt;li&gt;Hacer que otros se sientan inseguros.&lt;/li&gt;
-  &lt;li&gt;Imponer estilos de codificación.&lt;/li&gt;
-  &lt;li&gt;En resumen, ser un idiota.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1677550574/221453027-36a424b8-7ff5-4b17-bc8a-9bda2e223c22_rahapd.png&quot; alt=&quot;No&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Aquí algunos ejemplos.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,q_100,w_800/v1677550576/221453038-b93d320a-5389-40e8-bf58-cd24b42910c4_ta57tb.png&quot; alt=&quot;code example&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Mala revisión:
-“Este código es malo. ¿Por qué estás haciendo una búsqueda lineal?”&lt;/p&gt;
-
-&lt;p&gt;Buena revisión:
-“Este bloque de código podría optimizarse mediante el uso de una búsqueda binaria en lugar de una lineal. Esto mejoraría el rendimiento al buscar en grandes conjuntos de datos”.&lt;/p&gt;
-
-&lt;p&gt;Como puedes ver en la mala revisión, hay más críticas que propuestas de alternativas o solución, o carece de la explicación del por qué se debe mejorar el código. Por el otro lado, la buena revisión ofrece una optimización, explicando por qué el enfoque diferente puede mejorar la función.&lt;/p&gt;
-
-&lt;p&gt;Más malos ejemplos:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;“Este código apesta”. - Esto no es útil y no proporciona comentarios ni sugerencias para mejorar.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“No entiendo lo que estás tratando de hacer aquí”. - Esto es desdeñoso y no proporciona comentarios constructivos. Si hay una duda genuina de la implementación lo ideal es expresar esa duda lo mejor posible.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“Yo no lo haría de esta manera”. - Este comentario no es útil y le faltan razones o sugerencias para mejorar el código en revisión.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Los comentarios en una revisión del código deben ser específicos, constructivos y aplicables, evitando agresiones personales, un lenguaje desdeñoso y generalizaciones.&lt;/p&gt;
-
-&lt;p&gt;Evite por completo el uso de signos de exclamación e íconos para enfatizar comentarios negativos. Por último, recuerda que las malas interpretaciones son comunes en la comunicación escrita y pueden ocurrir aunque la intención sea buena.&lt;/p&gt;
-
-&lt;h3 id=&quot;la-revisión-de-código-si-es-una-práctica-para&quot;&gt;La revisión de código &lt;em&gt;SI ES&lt;/em&gt; una práctica para&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Incentivar el trabajo en equipo.&lt;/li&gt;
-  &lt;li&gt;Reconocer el buen trabajo.&lt;/li&gt;
-  &lt;li&gt;Ser flexible con los estilos de código y aprender de el equipo.&lt;/li&gt;
-  &lt;li&gt;En resumen, es para ser un miembro del equipo.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1677550578/221453050-3cc5f85d-a2bd-4f67-9aa6-9a0e1ddf76b2_hol1iu.png&quot; alt=&quot;approved symbol&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Aquí te dejo una sugerencia poderosa&lt;/em&gt;, no solo comentes lo que consideres que se puede cambiar o mejorar, sino también comenta lo que te gustó en una implementación, por ejemplo:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;“¡Buen trabajo! Este código está muy bien organizado y es fácil de entender. Aprecio especialmente cómo usaste las funciones integradas en la biblioteca estándar de Go para simplificar el código. ¡Sigue con el excelente trabajo!””&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Adicionalmente, recuerda tomarte el tiempo. El trabajo es exigente y, a veces, no dedicamos suficiente tiempo a las revisiones, y comentamos “¡LGTM!” (Me parece bien) para seguir adelante, pero recordemos que el otro desarrollador dedicó tiempo a trabajar en esos cambios, por lo que vale la pena revisarlos con cuidado.&lt;/p&gt;
-
-&lt;p&gt;Otra sugerencia que les dejo es establecer el prefijo “NIT” (&lt;em&gt;nitpicker&lt;/em&gt;) en los comentarios, lo que significa que puedes sugerir un cambio, pero no bloquea ni impide que ese el código en revisión sea aceptado; es simplemente una “perfección” que sugieres pero que puede ser ignorada.&lt;/p&gt;
-
-&lt;h2 id=&quot;mi-código-es-el-que-esta-en-revisión&quot;&gt;Mi código es el que esta en revisión&lt;/h2&gt;
-
-&lt;p&gt;Por último, ser la persona que recibe las revisiones también requiere práctica.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;No te lo tomes como algo personal.
-Aunque recibas un mal comentario, recuerda que el objetivo del equipo siempre será entregar un software de calidad. Se está revisando una parte de tu código, no su persona o tu trabajo en sí.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Se un miembro de equipo.
-Otras personas usarán el código que escribiste hoy. Por lo tanto, es fundamental estar abierto a modificar tu trabajo por el bien del equipo y del producto final.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Responde positivamente a los comentarios.
-Habrá casos en los que, como desarrollador que escribió el código en revisión, tendrás razones para creer que es la solución que debe fusionarse, sin embargo, si alguien solicita cambios o sugiere algo, debes comunicar tus razones de forma clara y justificada.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Participa en el intercambio de revisiones.
-No seas solo un espectador que genera código para ser revisado. Considera que independientemente de tu nivel, la experiencia que se obtiene leyendo código al máximo no se ve superada por nada.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Estamos en el año 2023, y la IA nos acompaña a diario en nuestras actividades, algunas prácticas desaparecerán pero los diferenciadores permanecerán. Una máquina puede decirnos qué está mal o dónde se puede mejorar una parte del código, sin embargo, la calidez, la empatía y el apoyo que otro ser humano puede brindarnos no se puede reemplazar (todavía), sigamos practicándolo y demos lo mejor de nosotros en todos los procesos en los que participamos.&lt;/p&gt;</content><author><name>Sagrario Meneses</name><email>sagrario.meneses@gmail.com</email><uri>https://github.com/smmd</uri></author><category term="crecimiento-profesional" /><category term="comunidad" /><category term="mentoria" /><category term="programación" /><category term="productividad" /><summary type="html">¿Quieres saber si haces una buena revisión de código? Estas en el lugar correcto.</summary></entry></feed>
+&lt;p&gt;Entender el verdadero significado de lo que Liskov propone, te ayudará a ver que no sólo se aplica a la programación orientada a objetos, tal como se enunciaba en SOLID originalmente, sino a muchas otras situaciones.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="lsp" /><category term="liskov" /><category term="solid" /><category term="principios" /><category term="solid-principles" /><summary type="html">El principio de sustitución de Liskov es uno de las reglas de comportamiento más famosas entre los desarrolladores. Hablemos de lo que significa.</summary></entry></feed>

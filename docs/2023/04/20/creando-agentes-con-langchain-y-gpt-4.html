@@ -1,0 +1,950 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Creando agentes con LangChain y GPT-4 - The Dojo MX Blog</title>
+<meta name="description" content="Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Creando agentes con LangChain y GPT-4">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html">
+
+
+  <meta property="og:description" content="Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,q_54,w_1200/v1681776700/DALL_E_2023-04-14_23.49.15_-_a_parrot_in_a_cybernetic_setting_plotting_a_great_plan_to_conquer_the_universe_digital_art_digital_illustration_detailed_cinematic_lightning_pkrwml.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-20T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html",
+      "name": "Creando agentes con LangChain y GPT-4",
+      "headline": "Creando agentes con LangChain y GPT-4",
+      "keywords": "langchain,gpt4,agentes",
+      "description": "Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.",
+      "articleBody": "En este pequeño tutorial vamos a hablar de cómo puedes crear agentes que interactúen con el mundo exterior, usando LangChain y como modelo de lenguaje GPT-4. Como siempre, la mejor manera de aprender es haciendo algo, por lo que vamos a crear un agente\n\n¿Qué es un agente?\n\nEn este contexto, además de una cosa que puede actuar por sí mismo, se entiende que un agente puede hacer dos cosas más:\n\n\n  Decidir qué hacer y qué herramienta usar\n  Aprender a usar herramientas automáticamente (si le proporcionas las cosas que necesita)\n\n\nLos agentes tradicionalmente se entienden como programas que trabajan de manera autónoma y con su propio espacio de memoria, con los que te comunicas por medio de mensajes, pero que no tienes el control completo sobre ellos. Un agente puede decidir qué hacer con tu mensaje.\n\nCombinando ambos contextos, un agente es un pedazo del programa que actúa autónomamente, que decide cómo lograr lo que has pedido y que aprende a hacerlo por su cuenta. Al estar basado en un LLM, no está garantizado su éxito.\n\nAgentes en LangChain\n\nLangChain provee de un conjunto de agentes prefabricados. Los más fáciles de usar están basados en un framework llamado ReAct, que propone una forma de crear estos agentes. Puedes ver el documento en el que se habla de ReAct en el siguiente documento: ReAct: Synergizing Reasoning and Acting in Language Models\n.\n\nBásicamente este framework da las guías para crear agentes que usen herramientas de manera efectiva. LangChain provee tres agentes básicos:\n\n\n  \n    zero-shot-react-description: este tipo de agentes determinan qué tipo de herramientas usar basándose en la descripción de las herramientas proporcionadas.\n  \n  \n    react-docstore: basado completamente en el framework ReAct, este tipo de agentes usan herramientas para buscar documentos y luego buscar términos en esos documentos. Recibe una herramienta de búsqueda y una de consulta.\n  \n  \n    self-ask-with-search: utiliza una sola herramienta llamada ‘Intermediate Answer’ que debe ser capaz de buscar respuestas correctas a preguntas. En el paper original de ReAct se usa Google como herramienta de búsqueda.\n  \n  \n    conversational-react-description: está pensado para ser usado de manera conversacional, puede decidir qué herramienta usar y tiene memoria para recordar lo que ya se ha hablado.\n  \n\n\nCreando un agente\n\nEl siguiente código crea un agente que puede usar herramientas para lograr sus objetivos:\n\n # Creando un agente con LangChain\n\nfrom langchain.agents import load_tools\nfrom langchain.agents import initialize_agent\nfrom langchain.agents import AgentType\nfrom langchain.llms import OpenAI\n\nllm = OpenAI(temperature=0)\n\ntools = load_tools([\"serpapi\", \"llm-math\"], llm=llm)\n\nagent = initialize_agent(\n    tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True\n)\n\nprint(\"Este agente puede buscar en Google y hacer aritmética básica.\")\nwhile True:\n    query = input(\"Pregunta algo: \")\n    if not query:\n        break\n    print(agent.run(query))\n\n\n\nEl código anterior es suficiente para crear una agente que tiene dos capacidades: buscar en internet con Google y hacer operaciones matemáticas básicas. El código es bastante simple, pero vamos a explicarlo paso a paso.\n\nComo siempre, la primera parte es importar las funciones y tipos necesarios:\n\nfrom langchain.agents import load_tools # Es una función que te ayuda a cargar las herramientas que los agentes serán capaces de usar\n\nfrom langchain.agents import initialize_agent # Es una función que te ayuda a crear un agente de manera sencilla\n\nfrom langchain.agents import AgentType # Es un tipo que te ayuda a especificar el tipo de agente que quieres crear, contiene todos los tipos de agentes que LangChain provee\n\nfrom langchain.llms import OpenAI # Es la clase que abstrae la conexión con el LLM que usaremos: GPT, creado por OpenAI\n\n\n\nDespués, creamos una instancia de conexión con el LLM:\n\nllm = OpenAI(temperature=0)\n\n\nEl que le digamos que queremos cero de temperatura significa que la respuesta será menos aleatoria, por lo que podemos pensar que será menos “creativa” o arriesgada. Esto es buena idea cuando quieres crear planes, usar herramientas con una interfaz formal, como una API. Para poder usarlo, tienes que poner en el entorno de ejecución la variable de entorno OPENAI_API_KEY con tu API key de OpenAI.\n\nSeguido de esto, cargamos las herramientas que queremos que el agente pueda usar, indicando el modelo de lenguaje que usará para interactuar con ellas:\n\ntools = load_tools([\"serpapi\", \"llm-math\"], llm=llm)\n\n\nLa primera es una herramienta para buscar en Google, se llama SerpApi, y permite usar la búsqueda que nosotros hacemos en Google mediante una interfaz más amigable para programas. La versión gratuita te da 100 búsquedas mensuales.\n\nLa segunda herramienta, llm-math, tiene como objetivo permitir que el agente haga matemáticas básicas, aunque tampoco están garantizadas porque se ejecuta código que el LLM devuelve. El prompt que usa es (lo traduzco a español después):\n\nYou are GPT-3, and you can't do math.\n\nYou can do basic math, and your memorization abilities are impressive, but you can't do any complex calculations that a human could not do in their head. You also have an annoying tendency to just make up highly specific, but wrong, answers.\n\nSo we hooked you up to a Python 3 kernel, and now you can execute code. If you execute code, you must print out the final answer using the print function. You MUST use the python package numpy to answer your question. You must import numpy as np.\n\n\nQuestion: $\n```python\n$\nprint($)\n```\n```output\n$\n```\nAnswer: $\n\nBegin.\n\nQuestion: What is 37593 * 67?\n\n```python\nimport numpy as np\nprint(np.multiply(37593, 67))\n```\n```output\n2518731\n```\nAnswer: 2518731\n\nQuestion: {question}\n\n\n\nTraducido al español:\n\n\nEres GPT-3, y no puedes hacer matemáticas.\n\nPuedes hacer matemáticas básicas, y tus habilidades de memorización son impresionantes, pero no puedes hacer ningún cálculo complejo que un humano no pudiera hacer en su cabeza. También tienes una tendencia molesta a inventar respuestas específicas, pero incorrectas.\n\nAsí que te conectamos a un kernel de Python 3, y ahora puedes ejecutar código. Si ejecutas código, debes imprimir el resultado final usando la función print. DEBES usar el paquete python numpy para responder tu pregunta. Debes importar numpy como np.\n\nPregunta: $\n```python\n$\nprint($)\n```\n```output\n$\n```\n```\nRespuesta: $\n\nComienza.\n\nPregunta: ¿Cuánto es 37593 * 67?\n\n```python\nimport numpy as np\nprint(np.multiply(37593, 67))\n```\n```output\n2518731\n```\nRespuesta: 2518731\n\nPregunta: {Pregunta}\n\n\nEste módulo después extrae la respuesta de la salida del LLM y la ejecuta en un ejecutor de Python y extrae de aquí la respuesta.\n\nAunque por ser un ejecutor de Python tenemos garantizado que el cálculo es correcto, no tenemos garantizado que el código introducido sea adecuado, así que no confíes siempre en sus cálculos.\n\nDespués de eso inicializamos un agente, al que le pasamos las herramientas que usará, el modelo de lenguaje y el tipo de agente que queremos crear. Además, le decimos que escriba en la salida estándar todo su proceso con la opción verbose=True:\n\nagent = initialize_agent(\n    tools,\n    llm,\n    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,\n    verbose=True\n)\n\n\nDe este modo LangChain hará todo lo necesario para inicializar un agente que use actúe de manera autónoma. Ahora le podemos preguntar cosas:\n\nprint(\"Este agente puede buscar en Google y hacer aritmética básica.\")\n\n# Creamos un loop para que\n\nwhile True:\n    query = input(\"Pregunta algo: \")\n    if not query:\n        break\n    print(agent.run(query))\n\n\nRecuerda que esto puede contestar preguntas que se puedan encontrar en internet y hacer aritmética.\n\nConclusión\n\nEn este tutorial hemos visto cómo crear un agente básico. Falta explorar los demás tipos de agentes, así como las demás herramientas que LangChain provee para que podamos crear agentes más complejos y funcionales. Además, hay que probar con diferentes agentes y ver cómo se comportan.\n",
+      "datePublished": "2023-04-20 00:00:00 -0600",
+      "dateModified": "2023-04-20 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,q_54,w_1200/v1681776700/DALL_E_2023-04-14_23.49.15_-_a_parrot_in_a_cybernetic_setting_plotting_a_great_plan_to_conquer_the_universe_digital_art_digital_illustration_detailed_cinematic_lightning_pkrwml.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,q_54,w_1200/v1681776700/DALL_E_2023-04-14_23.49.15_-_a_parrot_in_a_cybernetic_setting_plotting_a_great_plan_to_conquer_the_universe_digital_art_digital_illustration_detailed_cinematic_lightning_pkrwml.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Creando agentes con LangChain y GPT-4
+
+        
+      </h1>
+      
+        <p class="page__lead">Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1226 palabras | 10 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Creando agentes con LangChain y GPT-4">
+    <meta itemprop="description" content="Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.">
+    <meta itemprop="datePublished" content="2023-04-20T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>En este pequeño tutorial vamos a hablar de cómo puedes crear agentes que interactúen con el mundo exterior, usando LangChain y como modelo de lenguaje GPT-4. Como siempre, la mejor manera de aprender es haciendo algo, por lo que vamos a crear un agente</p>
+
+<h3 id="qué-es-un-agente">¿Qué es un agente?</h3>
+
+<p>En este contexto, además de una cosa que puede actuar por sí mismo, se entiende que un agente puede hacer dos cosas más:</p>
+
+<ul>
+  <li>Decidir qué hacer y qué herramienta usar</li>
+  <li>Aprender a usar herramientas automáticamente (si le proporcionas las cosas que necesita)</li>
+</ul>
+
+<p>Los agentes tradicionalmente se entienden como programas que trabajan de manera autónoma y con su propio espacio de memoria, con los que te comunicas por medio de mensajes, pero que no tienes el control completo sobre ellos. Un agente puede decidir qué hacer con tu mensaje.</p>
+
+<p>Combinando ambos contextos, un agente es un pedazo del programa que actúa autónomamente, que decide cómo lograr lo que has pedido y que aprende a hacerlo por su cuenta. Al estar basado en un LLM, no está garantizado su éxito.</p>
+
+<h2 id="agentes-en-langchain">Agentes en LangChain</h2>
+
+<p><strong>LangChain</strong> provee de un conjunto de agentes prefabricados. Los más fáciles de usar están basados en un framework llamado ReAct, que propone una forma de crear estos agentes. Puedes ver el documento en el que se habla de ReAct en el siguiente documento: <strong><a href="https://arxiv.org/abs/2210.03629">ReAct: Synergizing Reasoning and Acting in Language Models
+</a></strong>.</p>
+
+<p>Básicamente este framework da las guías para crear agentes que usen herramientas de manera efectiva. LangChain provee tres agentes básicos:</p>
+
+<ul>
+  <li>
+    <p><strong>zero-shot-react-description</strong>: este tipo de agentes determinan qué tipo de herramientas usar basándose en la descripción de las herramientas proporcionadas.</p>
+  </li>
+  <li>
+    <p><strong>react-docstore</strong>: basado completamente en el framework ReAct, este tipo de agentes usan herramientas para buscar documentos y luego buscar términos en esos documentos. Recibe una herramienta de búsqueda y una de consulta.</p>
+  </li>
+  <li>
+    <p><strong>self-ask-with-search</strong>: utiliza una sola herramienta llamada ‘Intermediate Answer’ que debe ser capaz de buscar respuestas correctas a preguntas. En el paper original de ReAct se usa Google como herramienta de búsqueda.</p>
+  </li>
+  <li>
+    <p><strong>conversational-react-description</strong>: está pensado para ser usado de manera conversacional, puede decidir qué herramienta usar y tiene memoria para recordar lo que ya se ha hablado.</p>
+  </li>
+</ul>
+
+<h3 id="creando-un-agente">Creando un agente</h3>
+
+<p>El siguiente código crea un agente que puede usar herramientas para lograr sus objetivos:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># Creando un agente con LangChain
+</span>
+<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span>
+<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span>
+<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">AgentType</span>
+<span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">tools</span> <span class="o">=</span> <span class="n">load_tools</span><span class="p">([</span><span class="s">"serpapi"</span><span class="p">,</span> <span class="s">"llm-math"</span><span class="p">],</span> <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">)</span>
+
+<span class="n">agent</span> <span class="o">=</span> <span class="n">initialize_agent</span><span class="p">(</span>
+    <span class="n">tools</span><span class="p">,</span> <span class="n">llm</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="n">AgentType</span><span class="p">.</span><span class="n">ZERO_SHOT_REACT_DESCRIPTION</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span>
+<span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Este agente puede buscar en Google y hacer aritmética básica."</span><span class="p">)</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Pregunta algo: "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">query</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">agent</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+
+</code></pre></div></div>
+
+<p>El código anterior es suficiente para crear una agente que tiene dos capacidades: buscar en internet con Google y hacer operaciones matemáticas básicas. El código es bastante simple, pero vamos a explicarlo paso a paso.</p>
+
+<p>Como siempre, la primera parte es importar las funciones y tipos necesarios:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span> <span class="c1"># Es una función que te ayuda a cargar las herramientas que los agentes serán capaces de usar
+</span>
+<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span> <span class="c1"># Es una función que te ayuda a crear un agente de manera sencilla
+</span>
+<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">AgentType</span> <span class="c1"># Es un tipo que te ayuda a especificar el tipo de agente que quieres crear, contiene todos los tipos de agentes que LangChain provee
+</span>
+<span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span> <span class="c1"># Es la clase que abstrae la conexión con el LLM que usaremos: GPT, creado por OpenAI
+</span>
+</code></pre></div></div>
+
+<p>Después, creamos una instancia de conexión con el LLM:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>El que le digamos que queremos cero de temperatura significa que la respuesta será menos aleatoria, por lo que podemos pensar que será menos “creativa” o arriesgada. Esto es buena idea cuando quieres crear planes, usar herramientas con una interfaz formal, como una API. Para poder usarlo, tienes que poner en el entorno de ejecución la variable de entorno <code class="language-plaintext highlighter-rouge">OPENAI_API_KEY</code> con tu API key de OpenAI.</p>
+
+<p>Seguido de esto, cargamos las herramientas que queremos que el agente pueda usar, indicando el modelo de lenguaje que usará para interactuar con ellas:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tools</span> <span class="o">=</span> <span class="n">load_tools</span><span class="p">([</span><span class="s">"serpapi"</span><span class="p">,</span> <span class="s">"llm-math"</span><span class="p">],</span> <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>La primera es una herramienta para buscar en Google, se llama <a href="https://serpapi.com/">SerpApi</a>, y permite usar la búsqueda que nosotros hacemos en Google mediante una interfaz más amigable para programas. La versión gratuita te da 100 búsquedas mensuales.</p>
+
+<p>La segunda herramienta, <code class="language-plaintext highlighter-rouge">llm-math</code>, tiene como objetivo permitir que el agente haga matemáticas básicas, aunque tampoco están garantizadas porque se ejecuta código que el LLM devuelve. El prompt que usa es (lo traduzco a español después):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You are GPT-3, and you can't do math.
+
+You can do basic math, and your memorization abilities are impressive, but you can't do any complex calculations that a human could not do in their head. You also have an annoying tendency to just make up highly specific, but wrong, answers.
+
+So we hooked you up to a Python 3 kernel, and now you can execute code. If you execute code, you must print out the final answer using the print function. You MUST use the python package numpy to answer your question. You must import numpy as np.
+
+
+Question: $
+```python
+$
+print($)
+```
+```output
+$
+```
+Answer: $
+
+Begin.
+
+Question: What is 37593 * 67?
+
+```python
+import numpy as np
+print(np.multiply(37593, 67))
+```
+```output
+2518731
+```
+Answer: 2518731
+
+Question: {question}
+
+</code></pre></div></div>
+
+<p>Traducido al español:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Eres GPT-3, y no puedes hacer matemáticas.
+
+Puedes hacer matemáticas básicas, y tus habilidades de memorización son impresionantes, pero no puedes hacer ningún cálculo complejo que un humano no pudiera hacer en su cabeza. También tienes una tendencia molesta a inventar respuestas específicas, pero incorrectas.
+
+Así que te conectamos a un kernel de Python 3, y ahora puedes ejecutar código. Si ejecutas código, debes imprimir el resultado final usando la función print. DEBES usar el paquete python numpy para responder tu pregunta. Debes importar numpy como np.
+
+Pregunta: $
+```python
+$
+print($)
+```
+```output
+$
+```
+```
+Respuesta: $
+
+Comienza.
+
+Pregunta: ¿Cuánto es 37593 * 67?
+
+```python
+import numpy as np
+print(np.multiply(37593, 67))
+```
+```output
+2518731
+```
+Respuesta: 2518731
+
+Pregunta: {Pregunta}
+</code></pre></div></div>
+
+<p>Este módulo después extrae la respuesta de la salida del LLM y la ejecuta en un ejecutor de Python y extrae de aquí la respuesta.</p>
+
+<p>Aunque por ser un ejecutor de Python tenemos garantizado que el cálculo es correcto, no tenemos garantizado que el código introducido sea adecuado, así que no confíes siempre en sus cálculos.</p>
+
+<p>Después de eso inicializamos un agente, al que le pasamos las herramientas que usará, el modelo de lenguaje y el tipo de agente que queremos crear. Además, le decimos que escriba en la salida estándar todo su proceso con la opción <code class="language-plaintext highlighter-rouge">verbose=True</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="o">=</span> <span class="n">initialize_agent</span><span class="p">(</span>
+    <span class="n">tools</span><span class="p">,</span>
+    <span class="n">llm</span><span class="p">,</span>
+    <span class="n">agent</span><span class="o">=</span><span class="n">AgentType</span><span class="p">.</span><span class="n">ZERO_SHOT_REACT_DESCRIPTION</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>De este modo LangChain hará todo lo necesario para inicializar un agente que use actúe de manera autónoma. Ahora le podemos preguntar cosas:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Este agente puede buscar en Google y hacer aritmética básica."</span><span class="p">)</span>
+
+<span class="c1"># Creamos un loop para que
+</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Pregunta algo: "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">query</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">agent</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Recuerda que esto puede contestar preguntas que se puedan encontrar en internet y hacer aritmética.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>En este tutorial hemos visto cómo crear un agente básico. Falta explorar los demás tipos de agentes, así como las demás herramientas que LangChain provee para que podamos crear agentes más complejos y funcionales. Además, hay que probar con diferentes agentes y ver cómo se comportan.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#agentes" class="page__taxonomy-item" rel="tag">agentes</a><span class="sep">, </span>
+    
+      <a href="/tags/#gpt4" class="page__taxonomy-item" rel="tag">gpt4</a><span class="sep">, </span>
+    
+      <a href="/tags/#langchain" class="page__taxonomy-item" rel="tag">langchain</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-04-20T00:00:00-06:00">April 20, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Creando+agentes+con+LangChain+y+GPT-4%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F04%2F20%2Fcreando-agentes-con-langchain-y-gpt-4.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F04%2F20%2Fcreando-agentes-con-langchain-y-gpt-4.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F04%2F20%2Fcreando-agentes-con-langchain-y-gpt-4.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/04/17/instrumentando-microservicios-con-X-Ray.html" class="pagination--pager" title="Instrumentando microservicios en Go con Gin y AWS X-Ray
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1681785117/cam-c9WkEaPBqLI-unsplash_tdzflr.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/04/17/instrumentando-microservicios-con-X-Ray.html" rel="permalink">Instrumentando microservicios en Go con Gin y AWS X-Ray
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+17 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 17-04-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1679150874/sam-moghadam-khamseh-VwHzE0aFQfY-unsplash_lpqwqn.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/04/17/composicion-en-el-software.html" rel="permalink">Composición en el software
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 17-04-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_crop,g_face,h_550,w_1024/v1681538471/DALL_E_2023-04-14_23.53.02_-_a_green_parrot_in_a_cybernetic_setting_plotting_a_plan_to_conquer_the_universe_digital_illustration_detailed_cinematic_light_ff6lm8.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html" rel="permalink">Usando LangChain 🦜 para crear software basado en LLM’s
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 15-04-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Vamos a ver cómo funciona LangChain, una herramienta que le puede dar oídos, ojos y manos a tu modelo de lenguaje preferido.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1680411928/risto-kokkonen-HAIDBanzi8o-unsplash_okktgd.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/04/07/cuando-separar-el-codigo.html" rel="permalink">Cuando separar el código
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+11 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 07-04-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">¿Cuándo es buena idea que lo existe en un clase o función lo descompongas en varios elementos? En este artículo veremos algunos criterios para tomar esta dec...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+    //   facebook: true,
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#ff4081',
+      iconColor: '#fff'
+    }).init();
+
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/04/20/creando-agentes-con-langchain-y-gpt-4"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

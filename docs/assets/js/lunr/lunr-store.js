@@ -682,4 +682,10 @@ var store = [{
         "tags": ["programación","instrumentación","microservicios","AWS","Go"],
         "url": "/2023/04/17/instrumentando-microservicios-con-X-Ray.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1681785117/cam-c9WkEaPBqLI-unsplash_tdzflr.jpg"
+      },{
+        "title": "Creando agentes con LangChain y GPT-4",
+        "excerpt":"En este pequeño tutorial vamos a hablar de cómo puedes crear agentes que interactúen con el mundo exterior, usando LangChain y como modelo de lenguaje GPT-4. Como siempre, la mejor manera de aprender es haciendo algo, por lo que vamos a crear un agente ¿Qué es un agente? En este...","categories": [],
+        "tags": ["langchain","gpt4","agentes"],
+        "url": "/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,q_54,w_1200/v1681776700/DALL_E_2023-04-14_23.49.15_-_a_parrot_in_a_cybernetic_setting_plotting_a_great_plan_to_conquer_the_universe_digital_art_digital_illustration_detailed_cinematic_lightning_pkrwml.jpg"
       }]

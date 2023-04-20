@@ -2,11 +2,11 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://blog.thedojo.mx/authors/mako.html</loc>
-<lastmod>2023-04-17T22:41:05-06:00</lastmod>
+<lastmod>2023-04-20T00:55:22-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/authors/sag.html</loc>
-<lastmod>2023-04-17T22:41:05-06:00</lastmod>
+<lastmod>2023-04-20T00:55:22-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/2018/10/28/bienvenidos.html</loc>
@@ -455,6 +455,10 @@
 <url>
 <loc>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html</loc>
 <lastmod>2023-04-17T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html</loc>
+<lastmod>2023-04-20T00:00:00-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/about/</loc>
