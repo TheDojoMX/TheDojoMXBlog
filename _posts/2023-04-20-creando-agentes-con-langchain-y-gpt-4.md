@@ -1,6 +1,6 @@
 ---
 title: "Creando agentes con LangChain y GPT-4"
-date: 2023-04-17
+date: 2023-04-20
 author: Héctor Patricio
 tags: langchain gpt4 agentes
 comments: true
@@ -26,13 +26,18 @@ Combinando ambos contextos, un agente es un pedazo del programa que actúa autó
 
 ## Agentes en LangChain
 
-LangChain provee de un conjunto de agentes prefabricados. Los más fáciles de usar están basados en un framework llamado ReAct, que propone una forma de crear estos agentes. Puedes ver el paper en el que se habla de ReAct en el siguiente documento: **[ReAct: Synergizing Reasoning and Acting in Language Models
+**LangChain** provee de un conjunto de agentes prefabricados. Los más fáciles de usar están basados en un framework llamado ReAct, que propone una forma de crear estos agentes. Puedes ver el documento en el que se habla de ReAct en el siguiente documento: **[ReAct: Synergizing Reasoning and Acting in Language Models
 ](https://arxiv.org/abs/2210.03629)**.
 
 Básicamente este framework da las guías para crear agentes que usen herramientas de manera efectiva. LangChain provee tres agentes básicos:
 
-- **Zero-shot React Description**: Este agente puede usar herramientas para lograr sus objetivos, pero no puede aprender a usarlas por sí mismo.
+- **zero-shot-react-description**: este tipo de agentes determinan qué tipo de herramientas usar basándose en la descripción de las herramientas proporcionadas.
 
+- **react-docstore**: basado completamente en el framework ReAct, este tipo de agentes usan herramientas para buscar documentos y luego buscar términos en esos documentos. Recibe una herramienta de búsqueda y una de consulta.
+
+- **self-ask-with-search**: utiliza una sola herramienta llamada 'Intermediate Answer' que debe ser capaz de buscar respuestas correctas a preguntas. En el paper original de ReAct se usa Google como herramienta de búsqueda.
+
+- **conversational-react-description**: está pensado para ser usado de manera conversacional, puede decidir qué herramienta usar y tiene memoria para recordar lo que ya se ha hablado.
 
 ### Creando un agente
 
@@ -198,3 +203,7 @@ while True:
 ```
 
 Recuerda que esto puede contestar preguntas que se puedan encontrar en internet y hacer aritmética.
+
+## Conclusión
+
+En este tutorial hemos visto cómo crear un agente básico. Falta explorar los demás tipos de agentes, así como las demás herramientas que LangChain provee para que podamos crear agentes más complejos y funcionales. Además, hay que probar con diferentes agentes y ver cómo se comportan.
