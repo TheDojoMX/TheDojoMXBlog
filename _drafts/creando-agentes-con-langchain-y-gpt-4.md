@@ -171,3 +171,30 @@ Pregunta: {Pregunta}
 Este módulo después extrae la respuesta de la salida del LLM y la ejecuta en un ejecutor de Python y extrae de aquí la respuesta.
 
 Aunque por ser un ejecutor de Python tenemos garantizado que el cálculo es correcto, no tenemos garantizado que el código introducido sea adecuado, así que no confíes siempre en sus cálculos.
+
+Después de eso inicializamos un agente, al que le pasamos las herramientas que usará, el modelo de lenguaje y el tipo de agente que queremos crear. Además, le decimos que escriba en la salida estándar todo su proceso con la opción `verbose=True`:
+
+```python
+agent = initialize_agent(
+    tools,
+    llm,
+    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    verbose=True
+)
+```
+
+De este modo LangChain hará todo lo necesario para inicializar un agente que use actúe de manera autónoma. Ahora le podemos preguntar cosas:
+
+```python
+print("Este agente puede buscar en Google y hacer aritmética básica.")
+
+# Creamos un loop para que
+
+while True:
+    query = input("Pregunta algo: ")
+    if not query:
+        break
+    print(agent.run(query))
+```
+
+Recuerda que esto puede contestar preguntas que se puedan encontrar en internet y hacer aritmética.
