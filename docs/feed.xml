@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-04-20T00:55:22-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Creando agentes con LangChain y GPT-4</title><link href="https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html" rel="alternate" type="text/html" title="Creando agentes con LangChain y GPT-4" /><published>2023-04-20T00:00:00-06:00</published><updated>2023-04-20T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html">&lt;p&gt;En este pequeño tutorial vamos a hablar de cómo puedes crear agentes que interactúen con el mundo exterior, usando LangChain y como modelo de lenguaje GPT-4. Como siempre, la mejor manera de aprender es haciendo algo, por lo que vamos a crear un agente&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-04-20T22:38:43-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Creando agentes con LangChain y GPT-4</title><link href="https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html" rel="alternate" type="text/html" title="Creando agentes con LangChain y GPT-4" /><published>2023-04-20T00:00:00-06:00</published><updated>2023-04-20T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html">&lt;p&gt;En este pequeño tutorial vamos a hablar de cómo puedes crear agentes que interactúen con el mundo exterior, usando LangChain y como modelo de lenguaje GPT-4. Como siempre, la mejor manera de aprender es haciendo algo, por lo que vamos a crear un agente&lt;/p&gt;
 
 &lt;h3 id=&quot;qué-es-un-agente&quot;&gt;¿Qué es un agente?&lt;/h3&gt;
 
@@ -95,18 +95,25 @@
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;You are GPT-3, and you can't do math.
 
-You can do basic math, and your memorization abilities are impressive, but you can't do any complex calculations that a human could not do in their head. You also have an annoying tendency to just make up highly specific, but wrong, answers.
+You can do basic math, and your memorization abilities are
+impressive, but you can't do any complex calculations that
+a human could not do in their head. You also have an annoying
+tendency to just make up highly specific, but wrong, answers.
 
-So we hooked you up to a Python 3 kernel, and now you can execute code. If you execute code, you must print out the final answer using the print function. You MUST use the python package numpy to answer your question. You must import numpy as np.
+So we hooked you up to a Python 3 kernel, and now you can execute
+code. If you execute code, you must print out the final answer
+using the print function. You MUST use the python package
+numpy to answer your question. You must import numpy as np.
 
 
-Question: $
+Question: ${Question with hard calculation.}
+
 ```python
-$
-print($)
+${Code that prints what you need to know}
+print(${code})
 ```
 ```output
-$
+${Output of your code}
 ```
 Answer: $
 
@@ -132,20 +139,28 @@ Question: {question}
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 Eres GPT-3, y no puedes hacer matemáticas.
 
-Puedes hacer matemáticas básicas, y tus habilidades de memorización son impresionantes, pero no puedes hacer ningún cálculo complejo que un humano no pudiera hacer en su cabeza. También tienes una tendencia molesta a inventar respuestas específicas, pero incorrectas.
+Puedes hacer matemáticas básicas, y tus habilidades de
+memorización son impresionantes, pero no puedes hacer ningún
+cálculo complejo que un humano no pudiera hacer en su cabeza.
+También tienes una tendencia molesta a inventar respuestas
+específicas, pero incorrectas.
 
-Así que te conectamos a un kernel de Python 3, y ahora puedes ejecutar código. Si ejecutas código, debes imprimir el resultado final usando la función print. DEBES usar el paquete python numpy para responder tu pregunta. Debes importar numpy como np.
+Así que te conectamos a un kernel de Python 3, y ahora puedes
+ejecutar código. Si ejecutas código, debes imprimir el resultado
+final usando la función print. DEBES usar el paquete Python
+numpy para responder tu pregunta. Debes importar numpy como np.
 
-Pregunta: $
+Pregunta: ${Pregunta con cálculos duros.}
+
 ```python
-$
-print($)
+${Código que imprime lo que necesitas saber}
+print(${código})
 ```
 ```output
-$
+${Salida de tu código}
 ```
 ```
-Respuesta: $
+Respuesta: ${Respuesta}
 
 Comienza.
 

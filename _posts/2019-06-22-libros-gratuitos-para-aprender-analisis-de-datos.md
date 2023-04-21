@@ -105,7 +105,6 @@ Es una guía práctica para minería de datos y sistema de recomendación, con l
 
 ![MMDS cover](http://i.stanford.edu/~ullman/gifs/mmds2.jpg)
 
-
 Este libro está basado en el curso [CS246](http://cs246.stanford.edu/) de Stanford del mismo nombre. Está enfocado en la minería de datos en grandes cantidades, es decir que no puedan ser mantenidos en la memoria principal.
 
 >  "Data mining is about applying algorithms
@@ -117,6 +116,7 @@ En enfoque es en e los algoritmos que podemos aplicarle a los datos para obtener
 Puedes descargar la [segunda edición](http://bit.ly/2RsGkoR) y ver el beta de la [tercera edición](https://stanford.io/2RAaJ4M).
 
 ## 9. Deep Learning
+
 ![Deep learning cover book](https://res.cloudinary.com/hectorip/image/upload/v1561233648/Screenshot_2019-06-22_15.00.27_fxtwob.png)
 Es un recurso introductorio al campo de machine learning específicamente enfocado en deep learning.
 Es un buen recurso para programadores que no tienen preparación en estadística porque la primera parte del libro está enfocada en dar las bases matemáticas para comprender los algoritmos y técnicas de deep learning.
@@ -144,7 +144,7 @@ Provee todos sus recursos de manera gratuita para descarga. Puedes [**visitarlos
 ![Roger D. Peng libros](https://res.cloudinary.com/hectorip/image/upload/v1561235101/Screenshot_2019-06-22_15.24.56_xkx1qk.png)
 
 [Roger D. Peng](http://bit.ly/2Rvyg6Y) es un profesor de bioestadística la
-Escuela Johns Hopkins Bloomberg de Salud Pública. Tiene varios cursos en Coursera sobre análisis de datos, y también lo podemos considerar uno de los grandes contribuidores a la educación sobre análisis de datos.
+Escuela John Hopkins Bloomberg de Salud Pública. Tiene varios cursos en Coursera sobre análisis de datos, y también lo podemos considerar uno de los grandes contribuidores a la educación sobre análisis de datos.
 
 Ha escito numerosos libros sobre análisis de datos y manejo de proyectos de análisis de datos. Su especialidad es R.
 
@@ -155,4 +155,4 @@ Puedes ver el [índice de sus libros **aquí**](http://bit.ly/2Rrleai), casi tod
 
 Si sabes inglés, hay más material del que podríamos leer decentemente en un buen tiempo sin tener que gastar un solo peso directamente en esta información. ¿Por qué no aprovecharla?
 
-Cuéantanos si ya leíste uno de ellos y qué te pareció.
+Cuéntanos si ya leíste uno de ellos y qué te pareció.

@@ -104,18 +104,25 @@ La segunda herramienta, `llm-math`, tiene como objetivo permitir que el agente h
 ````
 You are GPT-3, and you can't do math.
 
-You can do basic math, and your memorization abilities are impressive, but you can't do any complex calculations that a human could not do in their head. You also have an annoying tendency to just make up highly specific, but wrong, answers.
+You can do basic math, and your memorization abilities are
+impressive, but you can't do any complex calculations that
+a human could not do in their head. You also have an annoying
+tendency to just make up highly specific, but wrong, answers.
 
-So we hooked you up to a Python 3 kernel, and now you can execute code. If you execute code, you must print out the final answer using the print function. You MUST use the python package numpy to answer your question. You must import numpy as np.
+So we hooked you up to a Python 3 kernel, and now you can execute
+code. If you execute code, you must print out the final answer
+using the print function. You MUST use the python package
+numpy to answer your question. You must import numpy as np.
 
 
-Question: ${{Question with hard calculation.}}
+Question: ${Question with hard calculation.}
+
 ```python
-${{Code that prints what you need to know}}
-print(${{code}})
+${Code that prints what you need to know}
+print(${code})
 ```
 ```output
-${{Output of your code}}
+${Output of your code}
 ```
 Answer: ${{Answer}}
 
@@ -142,20 +149,28 @@ Traducido al español:
 
 Eres GPT-3, y no puedes hacer matemáticas.
 
-Puedes hacer matemáticas básicas, y tus habilidades de memorización son impresionantes, pero no puedes hacer ningún cálculo complejo que un humano no pudiera hacer en su cabeza. También tienes una tendencia molesta a inventar respuestas específicas, pero incorrectas.
+Puedes hacer matemáticas básicas, y tus habilidades de
+memorización son impresionantes, pero no puedes hacer ningún
+cálculo complejo que un humano no pudiera hacer en su cabeza.
+También tienes una tendencia molesta a inventar respuestas
+específicas, pero incorrectas.
 
-Así que te conectamos a un kernel de Python 3, y ahora puedes ejecutar código. Si ejecutas código, debes imprimir el resultado final usando la función print. DEBES usar el paquete python numpy para responder tu pregunta. Debes importar numpy como np.
+Así que te conectamos a un kernel de Python 3, y ahora puedes
+ejecutar código. Si ejecutas código, debes imprimir el resultado
+final usando la función print. DEBES usar el paquete Python
+numpy para responder tu pregunta. Debes importar numpy como np.
 
-Pregunta: ${{Pregunta con cálculos duros.}}
+Pregunta: ${Pregunta con cálculos duros.}
+
 ```python
-${{Código que imprime lo que necesitas saber}}
-print(${{código}})
+${Código que imprime lo que necesitas saber}
+print(${código})
 ```
 ```output
-${{Salida de tu código}}
+${Salida de tu código}
 ```
 ```
-Respuesta: ${{Respuesta}}
+Respuesta: ${Respuesta}
 
 Comienza.
 

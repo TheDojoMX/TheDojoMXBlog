@@ -1,8 +1,8 @@
 var store = [{
-        "title": "Mako",
+        "title": "Makko",
         "excerpt":"Posts          ","categories": [],
         "tags": [],
-        "url": "/authors/mako.html",
+        "url": "/authors/makko.html",
         "teaser": null
       },{
         "title": "Sag",
@@ -73,7 +73,7 @@ var store = [{
       },{
         "title": "Las mejores fuentes tipográficas para programar",
         "excerpt":"Personalizar el entorno de programación se ha convertido en uno de los temas más relevantes para los desarrolladores de software, nos permite ser más productivos y estar más contentos en general con el trabajo día a día. No dudo que el lugar en el que más pasamos tiempo los desarrolladores...","categories": [],
-        "tags": ["fuente","editor","ide"],
+        "tags": ["fuente","editor","ide","monospace"],
         "url": "/2019/04/19/fuentes-tipograficas-para-programar.html",
         "teaser": "https://cdn-images-1.medium.com/max/2046/0*Jf0p8R5uMnhStfHR.png"
       },{

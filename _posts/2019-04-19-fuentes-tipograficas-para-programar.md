@@ -2,14 +2,13 @@
 title: "Las mejores fuentes tipográficas para programar"
 date: 2019-04-19
 author: Héctor Patricio
-tags: fuente editor ide
-categories: 
+tags: fuente editor ide monospace
 comments: true
 excerpt: "Las mejores fuentes para tu editor de código."
 header:
   overlay_image: https://cdn-images-1.medium.com/max/2046/0*Jf0p8R5uMnhStfHR.png
   teaser: https://cdn-images-1.medium.com/max/2046/0*Jf0p8R5uMnhStfHR.png
-  overlay_filter: rgba(0, 0, 0, 0.5)
+  overlay_filter: rgba(0, 0, 0, 0.7)
 ---
 
 Personalizar el entorno de programación se ha convertido en uno de los temas más relevantes para los desarrolladores de software, nos permite ser más productivos y estar más contentos en general con el trabajo día a día. No dudo que el lugar en el que más pasamos tiempo los desarrolladores sea el editor de texto o IDE, y, por lo tanto, aprender a personalizarlo es bastante importante. Uno de los aspectos más importantes del editor de texto es la fuente tipográfica.
@@ -28,19 +27,21 @@ Las fuentes usadas usadas en entornos cotidianos, como este post, en los procesa
 
 Las fuentes espaciadas proporcionalmente facilitan la lectura o el escaneo de **palabras enteras**, por lo que nos permiten leer más rápido. Sin embargo, tienen algunas desventajas: los los signos de puntuación, las letras delgadas y otros símbolos son fáciles de pasar por alto. **Algo que no conviene en la programación**, como ya sabrás.
 
-Por la razón anterior, y [otras mencionadas en esta pregunta de Stack Overflow](http://stackoverflow.com/questions/218623/why-use-monospace-fonts-in-your-ide), los programadores estamos acostumbrados a usar fuentes *monoespaciadas* o con *espaciado fijo*. En este tipo de fuentes las letras ocupan el mismo espacio horizontal sin importar el ancho natural de la letra en cuestión, incluídos los signos de puntuación. Así se puede crear una “cuadrícula” de letras. Veamos otra vez el ejemplo de las letras **i** y **m**:
+Por la razón anterior, y [otras mencionadas en esta pregunta de Stack Overflow](http://stackoverflow.com/questions/218623/why-use-monospace-fonts-in-your-ide), los programadores estamos acostumbrados a usar fuentes *monoespaciadas* o con *espaciado fijo*. En este tipo de fuentes las letras ocupan el mismo espacio horizontal sin importar el ancho natural de la letra en cuestión, incluidos los signos de puntuación. Así se puede crear una “cuadrícula” de letras. Veamos otra vez el ejemplo de las letras **i** y **m**:
 
 ```
   iiiiiiiiii
   mmmmmmmmmm
 ```
-Ahora puedes afirmar que hay el mismo número de carácteres aunque no sepas exactamente cuántos. ¿Cómo ayuda esto a los programadores? Aquí un ejemplo:
+
+Ahora puedes afirmar que hay el mismo número de caracteres aunque no sepas exactamente cuántos. ¿Cómo ayuda esto a los programadores? Aquí un ejemplo:
 
 >if !i, do: func()
 
 ```elixir
 if !i, do: func()
 ```
+
 ¿En qué tipo de fuente es más legible la expresión anterior? Al dar un espaciado fijo a cada letra podemos distinguir mejor los dos caracteres que existen. Por ejemplo, en la fuente monoespaciada podemos ver claramente el símbolo de negación.
 
 Después de entender esto sabemos porque muchas de las fuentes usadas para programar llevan en su nombre “Mono”, quiere decir que es una fuente monoespaciada. Ahora sólo un detalle más acerca de algunas fuentes: las ligaduras.
@@ -51,7 +52,7 @@ Las ligaduras en las fuentes tipográficas suceden cuando el conjunto de caracte
 
 ![Ligaduras tradicionales](https://cdn-images-1.medium.com/max/2000/0*kZ5QtY4t8GMhrtLl.jpg)
 
-Ahora bien, las ligaduras se pueden usar para mostrar carácteres especiales más legibles y entendibles como en el caso de los conjuntos de caracteres: =>, !=, ==. Varias fuentes han aprovechado las ligaduras para poder llevar esto a la realidad. Lo triste de esto es que no todos los editores de texto, IDE’s y terminales los soportan. Algo que debe quedar claro que sólo cambia la *representación* del texto, no los caracteres realmente escritos, por lo que no produce ningún problema con el código fuente.
+Ahora bien, las ligaduras se pueden usar para mostrar caracteres especiales más legibles y entendibles como en el caso de los conjuntos de caracteres: =>, !=, ==. Varias fuentes han aprovechado las ligaduras para poder llevar esto a la realidad. Lo triste de esto es que no todos los editores de texto, IDE’s y terminales los soportan. Algo que debe quedar claro que sólo cambia la *representación* del texto, no los caracteres realmente escritos, por lo que no produce ningún problema con el código fuente.
 
 Ahora sí, hablemos de algunas de las fuentes bonitas que podemos usar.
 
@@ -73,12 +74,12 @@ Fuente monoespaciada semicondensada, también con ligaduras. Esta fuente al ser 
 
 ## Hasklig
 
-Fuente diseñada por y para programadores de Haskell (aunque no limitada para ellos), debido al extenso uso que hace de los símbolos compuestos como =>, ==, >-, -<<, ::, el creador decidió hacer un fork de la fuente Source Code Pro y añadirle ligaduras. Se puede descargar en su [repositorio de Github](https://github.com/i-tu/Hasklig). 
+Fuente diseñada por y para programadores de Haskell (aunque no limitada para ellos), debido al extenso uso que hace de los símbolos compuestos como =>, ==, >-, -<<, ::, el creador decidió hacer un fork de la fuente Source Code Pro y añadirle ligaduras. Se puede descargar en su [repositorio de Github](https://github.com/i-tu/Hasklig).
  Aquí un ejemplo de cómo luce:
 
 ![](https://cdn-images-1.medium.com/max/2000/0*J4JomQCofwrPbqAV.png)
 
-Y aquí cómo se verían esos carácteres en [Source Code Pro](https://github.com/adobe-fonts/source-code-pro):
+Y aquí cómo se verían esos caracteres en [Source Code Pro](https://github.com/adobe-fonts/source-code-pro):
 
 ![](https://cdn-images-1.medium.com/max/2000/0*OOk-BjFh8OLHN19E.png)
 
@@ -90,11 +91,11 @@ Input es una familia de fuentes tipográficas específicamente diseñadas para p
 
 ![](https://cdn-images-1.medium.com/max/2000/0*aRObIWuheijDt52-.png)
 
-Para resolver esto, su fuente proporcional intenta importar los atributos que hacen que una fuente monoespaciada sea atractiva: **símbolos de puntución grandes, espaciado generoso y caractéres fáciles de reconocer individualmente**.
+Para resolver esto, su fuente proporcional intenta importar los atributos que hacen que una fuente monoespaciada sea atractiva: **símbolos de puntuación grandes, espaciado generoso y caracteres fáciles de reconocer individualmente**.
 
 ![](https://cdn-images-1.medium.com/max/2000/0*DRcoyMX3o-_lh5RH.png)
 
-Una gran cualidad de esta fuente es que es completamente personalizable. Se pueden personalizar carácteres como **i**, **a**, **l**, **0** (cero) y también se puede escoger que tan condensada (espacio horizontal) está la fuente, este es muy valioso en el caso de tener una pantalla pequeña con líneas de código largas.
+Una gran cualidad de esta fuente es que es completamente personalizable. Se pueden personalizar caracteres como **i**, **a**, **l**, **0** (cero) y también se puede escoger que tan condensada (espacio horizontal) está la fuente, este es muy valioso en el caso de tener una pantalla pequeña con líneas de código largas.
 
 En su [página oficial](http://input.fontbureau.com) pueden encontrar una muestra, esto es un ejemplo de cómo puede llegar a verse:
 
@@ -106,7 +107,7 @@ En la [página de personalización](http://input.fontbureau.com/download/?custom
 
 ### Operator Mono
 
-Esta fuente la vi usada en un tutorial [Laracasts](http://laracasts.com) y me enamoré de ella, es una fuente monoespaciada sans-serif, diseñada para progrmadores y diseñadores, que tiene una característica que la hace muy notable: el estilo itálico cambia completamente del normal, se vuelve una fuente más estilizada, simulando las letras manuscritas.
+Esta fuente la vi usada en un tutorial [Laracasts](http://laracasts.com) y me enamoré de ella, es una fuente monoespaciada sans-serif, diseñada para programadores y diseñadores, que tiene una característica que la hace muy notable: el estilo itálico cambia completamente del normal, se vuelve una fuente más estilizada, simulando las letras manuscritas.
 
 ![](https://cdn-images-1.medium.com/max/2046/0*Jf0p8R5uMnhStfHR.png)
 
@@ -122,17 +123,14 @@ Este sitio tiene varias fuentes de la familia Proggy, lucen con un toque retro p
 
 Aquí un ejemplo:
 
-![Ejemplo Proggy Square](https://cdn.proggyfonts.net/wp-content/uploads/2017/08/26195436/code_proggysquaresz.png)
+![Ejemplo Proggy Square](https://raw.githubusercontent.com/bluescan/proggyfonts/master/ProggyVector/ProggyVector_SampleVS.png)
 
-En el sitio puedes encontrar otras fuentes exclusivas para progrmar, todas gratis.
-
+En el sitio puedes encontrar otras fuentes exclusivas para programar, todas gratis.
 
 ## Bonus
 
 En [Programming Fonts](http://programmingfonts.org/) puedes encontrar más opciones si no te convenció ninguna de las que mostramos aquí. También puedes probar muchos [estilos diferentes](https://app.programmingfonts.org/).
 
-En [este repo de Github](https://github.com/chrissimpkins/codeface) puedes encontrar más ejemplos. 
-
+En [este repo de Github](https://github.com/chrissimpkins/codeface) puedes encontrar más ejemplos.
 
 _Nota: Este post es una actualización [de otro](https://medium.com/@HectorIP/fuentes-tipogr%C3%A1ficas-para-programadores-7d93c55f1223) que hice tiempo._
-
