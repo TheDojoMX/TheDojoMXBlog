@@ -688,4 +688,10 @@ var store = [{
         "tags": ["langchain","gpt4","agentes"],
         "url": "/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,q_54,w_1200/v1681776700/DALL_E_2023-04-14_23.49.15_-_a_parrot_in_a_cybernetic_setting_plotting_a_great_plan_to_conquer_the_universe_digital_art_digital_illustration_detailed_cinematic_lightning_pkrwml.jpg"
+      },{
+        "title": "El principio de Inversión de Dependencias",
+        "excerpt":"Este es el artículo final sobre el análisis de los principios SOLID. En este artículo veremos el principio de Inversión de Dependencias, el cual nos dice que las clases de alto nivel no deben depender de las clases de bajo nivel, sino que ambas deben depender de abstracciones. Veamos qué...","categories": [],
+        "tags": ["solid","dependency-inversion","inversion-dependencias"],
+        "url": "/2023/04/22/el-principio-de-inversion-de-dependencias.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1682052442/milad-fakurian-PGdW_bHDbpI-unsplash_teqmvg.jpg"
       }]
