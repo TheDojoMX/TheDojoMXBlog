@@ -1,6 +1,6 @@
 ---
 title: "El principio de Inversión de Dependencias"
-date: 2023-04-20
+date: 2023-04-22
 author: Héctor Patricio
 tags: solid dependency-inversion inversion-dependencias
 comments: true
@@ -120,5 +120,16 @@ En este artículo hemos visto el principio de Inversión de Dependencias, el cua
 
 Aunque puede ser útil en ciertos casos, para mi **bastante específicos**, creo que intentar aplicarlo siempre ha creado más problemas que luego hacen código difícil de entender y mantener, agregándole complejidad al código innecesariamente. Es mejor tener interfaces bien diseñadas, que sea fácil entenderlas y mantener en la cabeza.
 
-En general, respecto a los principios SOLID, opino algo muy similar a lo que Dan North menciona: es más importante escribir código simple, que se entienda fácilmente.
+En general, respecto a los principios **SOLID**, opino algo muy similar a lo que Dan North menciona: es más importante escribir código simple, que se entienda fácilmente.
 
+Todos los principios se pueden resumir en estos que son el fundamento de la buena programación:
+
+1. Código simple, lo más simple posible (Single Responsiility Principle)
+2. Ocultar información detrás de interfaces bien diseñadas (Single Responsibility Principle, Open/Closed Principle, Liskov Substitution Principle, Interface Segregation Principle)
+3. Pensar bien las abstracciones que se usarán y mejorarlas constantemente (Dependency Inversion Principle)
+
+Nunca tendrás el diseño perfecto y siempre podrás mejorar tanto la arquitectura como tu código. Mientras más simple sea el código original, más probable es que tu código evolucione en algo que cumpla con lo que se espera de él. Por eso, siempre debes estar mejorando tu diseño en lo que puedas, revisando el diseño y creando mejores abstracciones.
+
+Por último, siempre se habla de los principios SOLID como si fueran los dogmas de una religión y se habla de "violarlos" como si estos fueran obligatorios, o principios morales que siempre se deben seguir. Además, siempre se habla de ellos como si fueran las reglas que definen lo bueno y lo malo.
+
+Para mi, conviene más seguir principios más generales, que un acrónimo creado con nombres de principios rimbombantes, que muchas veces son tan ambiguos que nadie qué significan exactamente, y cuando tienen aplicaciones reales, son tan complicadas que no se conviene aplicar en la mayoría de los casos.
