@@ -1,7 +1,8 @@
 ---
-short_name: sag
-name: Sagrario Meneses
-position: Senior Developer en Wizeline
+short_name: alexs
+name: Alejandro Santamaría
+position: Engineering Manager en Platzi
+layout: single
 ---
 
 
