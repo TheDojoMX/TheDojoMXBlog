@@ -78,7 +78,7 @@ class Model:
 
 my_model = Model(DatabaseManager(MySQLDatabase()))
 ```
-...
+...........
 
 ## Crítica de Dan North
 
@@ -90,9 +90,9 @@ The real principle here is option inversion. A dependency is only interesting wh
 
 > The promise of “you can just swap out the database” evaporates as soon as you try to, well, swap out the database.
 
-Most dependencies don’t need inverting, because most dependencies aren’t options, they are just the way we are going to do it this time. So my - by now entirely unsurprising - suggestion is to write simple code, by focusing on use rather than reuse.
+Veamos otra cita de Dan North:
 
-
+> **Most dependencies don’t need inverting, because most dependencies aren’t options, they are just the way we are going to do it this time.** So my - by now entirely unsurprising - suggestion is to write simple code, by focusing on use rather than reuse.
 
 ## Conclusión
 
