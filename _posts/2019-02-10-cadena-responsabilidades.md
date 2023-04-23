@@ -12,10 +12,9 @@ header:
 ---
 
 
-#### Propósito:
+#### Propósito
+
  > Asegurar el bajo acoplamiento entre un _request_ y su _receiver_ dando a múltiples objetos oportunidad de manejar el _request_
-
-
 
 Hace unas semanas me enfrenté a un tema de procesar un mensaje de un usuario y darle tratamiento por medio de un algoritmo de Natrual Language Processing. Antes de pasar el mensaje por el set de algoritmos apropiados hay que darle una serie de tratamientos previos:
 
@@ -23,7 +22,9 @@ Hace unas semanas me enfrenté a un tema de procesar un mensaje de un usuario y 
  2. Pasar el mensaje a lowercase.
 
 A primera luz, un código que puede fácilmente satisfacer es:
+
 ```python
+
 message = "Dios bendiga a los héroes que nos dieron el internet."
 message = message.lower()
 message = message.replace("á","a").replace("é","e") \
@@ -96,7 +97,7 @@ print(new_message)
 
 ```
 
-El código anterior es un código más profesional, más fácil de mantener ya que cumplimos con el principio _open/close_ y de paso de responsabilidad única.
+El código anterior es un código más profesional, más fácil de mantener ya que cumplimos con el principio _open/closed_ y de paso de responsabilidad única.
 
 Podemos ir agregando funciones de procesamiento de manera más legible, también podemos quitarlas a voluntad dado que el nivel de acoplamiento es muy bajo. A todo ésto hay que añadir la ventaja de facilidad al escribir test unitarios que dan pie para el CI/CD.
 
