@@ -75,6 +75,10 @@ Hay varias posturas con respecto a "la realidad". Las dos extremas son:
 En el libro se nos habla sobre una postura intermedia, y que me parece completamente razonable: es que existe una realidad objetiva, pero que los seres humanos **no la pueden conocer completamente**, la accedemos a través de la percepción, pero como en mucha posturas filosóficas, la percepción es imperfecta.
 
 ## ¿Qué es un modelo?
+
+De esto ya hemos hablado repetidas veces en este blog, pero vamos a decirlo una vez más: uno modelo es una abstracción, una representación simplificada de la realidad.
+
+Lo que el análisis de este libro nos hace entender es que esa representación simplificada tiene más que ver con NUESTRA VISIÓN y NUESTROS INTERESES que con una visión objetiva de la realidad.
 ## Conclusión
 
 ### ¿Qué sigue?
