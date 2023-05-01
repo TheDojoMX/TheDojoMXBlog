@@ -72,9 +72,20 @@ Pero si la entidad tiene un identificador único inmutable, ¿por qué no usarlo
 
 ¿Qué pasa cuando lo que creíamos inmutable cambia? Eso es algo que normalmente rompe lo que hicimos y tenemos que idear formas de componerlo.
 
+### Atributos
+
+Los atributos son los datos que "pertenecen" a una entidad. Forman el conjunto de información que tenemos sobre esta.
+
+Los atributos en el mundo real pueden ser infinitos, pero a nosotros normalmente sólo nos interesa un subconjunto de ellos.
+### Relaciones
+
+### Categorías
+
 ## El modelo de registros
 
-Casi todo lo que hacemos para guardar datos en gestores de bases de datos y también en una computadora en general, está basado o pensado en el modelo de "registros". Un registro es un conjunto de datos relacionados con una entidad, lo que pensaríamos que es una fila en una tabla de una base de datos, mientras que cada una de las columnas sería un atributo de la entidad.
+Casi todo lo que hacemos para guardar datos en gestores de bases de datos y también en una computadora en general, está basado o pensado en el modelo de "registros".
+
+Un registro es un conjunto de datos relacionados con una entidad, lo que pensaríamos que es una fila en una tabla de una base de datos, mientras que cada una de las columnas sería un atributo de la entidad.
 
 ## Filosofía del conocimiento
 
