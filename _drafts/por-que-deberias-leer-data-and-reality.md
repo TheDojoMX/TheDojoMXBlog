@@ -2,7 +2,7 @@
 title: "¿Por qué deberías leer Data and Reality?"
 date: 2023-04-22
 author: Héctor Patricio
-tags: libros modelado-de-datos filosofía desarrollo-de-software
+tags: libros modelado-de-datos filosofía desarrollo-de-software data-and-reality
 comments: true
 excerpt: "Hablemos de Data and Reality, un libro que te ayudará a ser mejor desarrollador de software, porque se va a las raíces de los problemas que resolvemos a diario."
 header:
@@ -11,13 +11,17 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Todos los desarrolladores de software tienen algo que ver con el modelado de datos, aunque nunca tengan que trabajar con una base de datos directamente.
+Todos los desarrolladores de software deberían estar interesados en el modelado de datos, aunque nunca tengan que trabajar con una base de datos directamente.
 
-Gran parte de nuestro trabajo consiste en modelar entidades del mundo real en el código, transformarlas, guardarlas y recuperarlas. En mi opinión, es una de las habilidades **fundamentales** cuando estamos desarrollando. De hecho, si lo piensas, cuando estás programando un algoritmo, estás modelando un _procedimiento_ de la vida real en código. Este proceso normalmente incluye **datos**, que son representaciones de _entidades_ del mundo real.
+Gran parte de nuestro trabajo consiste en **modelar entidades** del mundo real en el código, transformarlas, guardarlas y recuperarlas. Estas entidades se pasan entre diferentes procesos para producir un resultado.
+
+En mi opinión, **modelar datos** es una de las habilidades **fundamentales** cuando estamos desarrollando. Si lo piensas, cuando estás programando un algoritmo, estás modelando un _procedimiento_ de la vida real en código. Este proceso normalmente incluye **datos**, que son representaciones de _entidades_ del mundo real.
 
 Por lo anterior, cualquier cosa que puedas aprender sobre modelado de datos, te ayudará directamente en tu carrera como desarrollador. En este artículo hablaremos de un libro muy especial que te puede ayudar a ser mejor en esta área independientemente del nivel en el que te encuentres en tu carrera. Y si lo piensas más profundamente, puede que te ayude a desarrollar una forma de pensar más adecuada a los problemas que queremos resolver en la actualidad.
 
-**Data and Reality** trata sobre modelado de datos, escrito po William Kent, alguien con mucha experiencia en el tema. El libro tiene tres ediciones la primera es de 1978, la segunda (una actualización) es de 2000 y la tercera, después que Kent murió, es de 2012. La mejor de todas es segunda edición, ya que la tercera se podría considerar un libro completamente diferente, recortado y con comentarios de [Steve Hoberman](https://technicspub.com/steve-hoberman/), otro modelador de datos pero siento que con u enfoque bastante diferente al de Kent.
+**Data and Reality** trata sobre modelado de datos, escrito po William Kent, alguien con mucha experiencia en el tema. El libro tiene tres ediciones la primera es de 1978, la segunda (una actualización) es de 2000 y la tercera, después que Kent murió, es de 2012.
+
+La mejor de todas es segunda edición, ya que la tercera se podría considerar un libro completamente diferente, recortado y con comentarios de [Steve Hoberman](https://technicspub.com/steve-hoberman/), otro modelador de datos pero siento que con un enfoque bastante diferente al de Kent.
 
 Hablemos de los temas principales del libro y por qué te conviene leerlo.
 
@@ -25,9 +29,9 @@ Hablemos de los temas principales del libro y por qué te conviene leerlo.
 
 Hay muchas cosas difíciles de resolver en el desarrollo de software y parece que siempre estamos buscando la respuesta en el lugar que parece más obvio o en el que es más fácil buscar, en lugar de donde es más probable que encontremos las respuestas.
 
-El ejemplo que utilizan en el libro para explicarlo y que me parece completamente acertado es una broma acerca de un borracho que pierde sus llaves y se la pasa toda la noche buscando bajo una farola. Cuando alguien le pregunta por qué no busca en otro lado, **el borracho responde que es porque ahí hay luz.**
+El ejemplo que utilizan en el libro para explicarlo y que me parece acertado es una broma acerca de un borracho que pierde sus llaves y se la pasa toda la noche buscando bajo una farola. Cuando alguien le pregunta por qué no busca en otro lado, **el borracho responde que es porque AHÍ HAY MÁS LUZ.**
 
-En el desarrollo de software podría parecer que a veces hacemos lo mismo. Para buscar la solución a un problema, siempre nos vamos a los mismos lados porque es donde nos sentimos cómodos o porque siempre se ha buscado ahí. Por ejemplo, nos centramos en la tecnología, en las plataformas o en los lenguajes. Pero es muy probable que el problema no esté ahí, sino en lugares más profundos.
+En el desarrollo de software podría parecer que a veces hacemos exactamente lo mismo. Para buscar la solución a un problema, siempre nos vamos a los mismos lados porque es donde nos sentimos cómodos o porque **siempre se ha buscado ahí**. Por ejemplo, nos centramos en la tecnología, en las plataformas o en los lenguajes. Pero es muy probable que el problema no esté ahí, sino en lugares más profundos.
 
 Es por eso que este libro se enfoca en cuestiones más profundas del modelado de datos. No en los lugares comunes, ni siquiera en hablar de cómo hacerlo, sino en preguntas que te llevaran a pensar cosas profundas y que probablemente modifiquen tu visión del mundo y tu forma de trabajar **permanentemente**.
 
@@ -35,15 +39,14 @@ Así que, empecemos hablando de lo que este libro enseña y de qué lecciones po
 
 ## Cuestiones principales
 
-Hablemos de los conceptos principales de representación de información.
-
+Hablemos de los conceptos principales de representación de información en los sistemas electrónicos.
 ### Entidades
 
 Cuando guardamos cosas en una base de datos o las representamos en código, casi siempre nos referimos a ellas como **entidades**.
 
 El libro empieza cuestionando, **¿qué es una entidad?**
 
-La primera respuesta y que ya te pone a pensar es que una entidad "es un estado de la mente". ¿Cómo? Está bastante rara esa definición. Esta frase va por el lado de que una **entidad** más allá de algo que exista en la **realidad** como algo identificable e indivisible, algo que tiene límites fijos, _en realidad_ es algo a lo que nosotros le damos significado, y que nosotros delimitamos o entendemos en ciertos contextos.
+La primera respuesta es que una entidad "es un _estado_ de la mente". **¿Cómo?** Está bastante rara esa definición. Esta frase va por el lado de que una **entidad** más allá de algo que exista en la **realidad** como algo identificable e indivisible, algo que tiene límites fijos, es algo a lo que nosotros le damos significado, y que nosotros delimitamos o entendemos en ciertos contextos. Esta delimitación normalmente no es singular, tiene que ser compartida por un grupo de personas para que tenga sentido.
 
 Pongamos algunos ejemplos para entender eso. La leyenda del barco de **Teseo** relata que cuando él regresó de Creta, donde había matado al **Minotauro**, el pueblo de Atenas le rindió honores y conservó su barco en lo alto de una colina como un monumento para recordar su hazaña.
 
@@ -68,9 +71,9 @@ y único entre todas las entidades de nuestro sistemas. Aquí nos podemos encont
 
 Pensar en la naturaleza de nuestro problema, en los términos de arriba nos puede llevar a la solución. Piensa en el primer caso, por ejemplo: cuando algo no tiene identificador natural, tendemos a asignar un identificador único arbitrario a la entidad cuando la metemos en el sistema. Por ejemplo, es un práctica muy común asignar identificadores numéricos incrementales. La primera entidad registrada del tipo es la 1, la segunda es la 2, etc. También se pueden usar los UUIDs, que son identificadores únicos generados aleatoriamente, y que por lo general evitan problemas como el de permitir que alguien adivine el identificador de otra entidad.
 
-Pero si la entidad tiene un identificador único inmutable, ¿por qué no usarlo? ¿Puede ser una solución más natural?
+Pero si la entidad tiene un identificador único inmutable, ¿por qué no usarlo? ¿Puede ser una solución más _natural_?
 
-¿Qué pasa cuando lo que creíamos inmutable cambia? Eso es algo que normalmente rompe lo que hicimos y tenemos que idear formas de componerlo.
+¿Qué pasa cuando lo que creíamos inmutable cambia? Eso es algo que normalmente rompe lo que hicimos y tenemos que idear formas de componerlo. Todo este tipo de preguntas
 
 ### Atributos
 
@@ -78,6 +81,7 @@ Los atributos son los datos que "pertenecen" a una entidad. Forman el conjunto d
 
 Los atributos en el mundo real pueden ser infinitos, pero a nosotros normalmente sólo nos interesa un subconjunto de ellos.
 ### Relaciones
+
 
 ### Categorías
 
