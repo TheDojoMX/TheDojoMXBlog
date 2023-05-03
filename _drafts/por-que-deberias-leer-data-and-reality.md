@@ -60,7 +60,7 @@ Exactamente así se comportan las entidades que como desarrolladores modelamos e
 
 ## Identidad y cambio
 
-Cuando queremos registrar algo en una computadora, normalmente necesitamos una forma de referirnos a ese "algo", a esa entidad. Esto que usamos para referirnos a las entidades se llama **identidad**.
+Cuando queremos registrar algo en una computadora, normalmente necesitamos una forma de referirnos a ese "algo" para después poder recuperarlo. Esto que usamos para referirnos a las entidades se llama **identidad**.
 
 Idealmente una identidad es un elemento inmutable
 y único entre todas las entidades de nuestro sistemas. Aquí nos podemos encontrar con varios casos:
