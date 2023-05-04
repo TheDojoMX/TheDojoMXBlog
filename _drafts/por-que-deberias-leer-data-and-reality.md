@@ -11,11 +11,9 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Todos los desarrolladores de software deberían estar interesados en el modelado de datos, aunque nunca tengan que trabajar con una base de datos directamente.
+Gran parte de nuestro trabajo como desarrolladores consiste en **modelar entidades** del mundo real en el código, transformarlas, guardarlas y recuperarlas. Estas entidades se pasan entre diferentes procesos para producir un resultado. A veces también nos tenemos que inventar entidades para representar conceptos abstractos que no existen físicamente.
 
-Gran parte de nuestro trabajo consiste en **modelar entidades** del mundo real en el código, transformarlas, guardarlas y recuperarlas. Estas entidades se pasan entre diferentes procesos para producir un resultado.
-
-En mi opinión, **modelar datos** es una de las habilidades **fundamentales** cuando estamos desarrollando. Si lo piensas, cuando estás programando un algoritmo, estás modelando un _procedimiento_ de la vida real en código. Este proceso normalmente incluye **datos**, que son representaciones de _entidades_ del mundo real.
+**Modelar datos** es una de las habilidades **fundamentales** cuando estamos desarrollando.Cuando estás programando un algoritmo, estás modelando un _procedimiento_ de la vida real en código. Este proceso normalmente incluye **datos**, que son representaciones de _entidades_ del mundo real.
 
 Por lo anterior, cualquier cosa que puedas aprender sobre modelado de datos, te ayudará directamente en tu carrera como desarrollador. En este artículo hablaremos de un libro muy especial que te puede ayudar a ser mejor en esta área independientemente del nivel en el que te encuentres en tu carrera. Y si lo piensas más profundamente, puede que te ayude a desarrollar una forma de pensar más adecuada a los problemas que queremos resolver en la actualidad.
 
@@ -60,9 +58,9 @@ Exactamente así se comportan las entidades que como desarrolladores modelamos e
 
 ## Identidad y cambio
 
-Cuando queremos registrar algo en una computadora, normalmente necesitamos una forma de referirnos a ese "algo" para después poder recuperarlo. Esto que usamos para referirnos a las entidades se llama **identidad**.
+Cuando queremos registrar algo en una computadora, normalmente necesitamos una forma de referirnos a ese registro para después poder recuperarlo. Esto que usamos para referirnos a las entidades se llama **identificador**.
 
-Idealmente una identidad es un elemento inmutable
+Un identificador es un elemento inmutable
 y único entre todas las entidades de nuestro sistemas. Aquí nos podemos encontrar con varios casos:
 
 - La entidad no tiene nada único por lo que podamos referirnos a ella (elementos que se hacen repiten, por ejemplo libros)
