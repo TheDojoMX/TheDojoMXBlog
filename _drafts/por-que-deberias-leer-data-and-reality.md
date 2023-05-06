@@ -15,13 +15,13 @@ Gran parte de nuestro trabajo como desarrolladores consiste en **modelar entidad
 
 **Modelar datos** es una de las habilidades **fundamentales** cuando estamos desarrollando.Cuando estás programando un algoritmo, estás modelando un _procedimiento_ de la vida real en código. Este proceso normalmente incluye **datos**, que son representaciones de _entidades_ del mundo real.
 
-Por lo anterior, cualquier cosa que puedas aprender sobre modelado de datos, te ayudará directamente en tu carrera como desarrollador. En este artículo hablaremos de un libro muy especial que te puede ayudar a ser mejor en esta área independientemente del nivel en el que te encuentres en tu carrera. Y si lo piensas más profundamente, puede que te ayude a desarrollar una forma de pensar más adecuada a los problemas que queremos resolver en la actualidad.
+Por lo anterior, cualquier cosa que puedas aprender sobre modelado de datos, te ayudará directamente en tu carrera como desarrollador. En este artículo hablaremos de un libro muy especial que te puede ayudar a ser mejor en esta área, independientemente del nivel en el que te encuentres en tu carrera. Y si después de leerlo lo meditas más profundamente, puede que te ayude a desarrollar una forma de pensar más adecuada a los problemas que queremos resolver en la actualidad.
 
 **Data and Reality** trata sobre modelado de datos, escrito po William Kent, alguien con mucha experiencia en el tema. El libro tiene tres ediciones la primera es de 1978, la segunda (una actualización) es de 2000 y la tercera, después que Kent murió, es de 2012.
 
 La mejor de todas es segunda edición, ya que la tercera se podría considerar un libro completamente diferente, recortado y con comentarios de [Steve Hoberman](https://technicspub.com/steve-hoberman/), otro modelador de datos pero siento que con un enfoque bastante diferente al de Kent.
 
-Hablemos de los temas principales del libro y por qué te conviene leerlo.
+Hablemos de los temas principales del libro y por qué te conviene leerlo. Pero antes, veamos algo de lo que se habla en el prefacio de la edición de 2012 que me parece muy relevante.
 
 ## Buscando las respuestas donde parece más sencillo
 
@@ -29,20 +29,21 @@ Hay muchas cosas difíciles de resolver en el desarrollo de software y parece qu
 
 El ejemplo que utilizan en el libro para explicarlo y que me parece acertado es una broma acerca de un borracho que pierde sus llaves y se la pasa toda la noche buscando bajo una farola. Cuando alguien le pregunta por qué no busca en otro lado, **el borracho responde que es porque AHÍ HAY MÁS LUZ.**
 
-En el desarrollo de software podría parecer que a veces hacemos exactamente lo mismo. Para buscar la solución a un problema, siempre nos vamos a los mismos lados porque es donde nos sentimos cómodos o porque **siempre se ha buscado ahí**. Por ejemplo, nos centramos en la tecnología, en las plataformas o en los lenguajes. Pero es muy probable que el problema no esté ahí, sino en lugares más profundos.
+En el desarrollo de software podría parecer que a veces hacemos exactamente lo mismo. Para buscar la solución a un problema siempre nos vamos a los mismos lados porque es donde nos sentimos cómodos o porque **SIEMPRE SE HA BUSCADO AHÍ**. Por ejemplo, nos centramos en la tecnología, en las plataformas o en los lenguajes. Pero es muy probable que el problema no esté ahí, sino en lugares más profundos.
 
-Es por eso que este libro se enfoca en cuestiones más profundas del modelado de datos. No en los lugares comunes, ni siquiera en hablar de cómo hacerlo, sino en preguntas que te llevaran a pensar cosas profundas y que probablemente modifiquen tu visión del mundo y tu forma de trabajar **permanentemente**.
+Es por eso que este libro se enfoca en cuestiones profundas del modelado de datos. No en los lugares comunes, ni siquiera en hablar de cómo hacerlo, sino en preguntas que te llevaran a pensar cosas de las que se habla poco y que probablemente modifiquen tu visión del mundo y tu forma de trabajar **permanentemente**.
 
-Así que, empecemos hablando de lo que este libro enseña y de qué lecciones podemos sacar de él.
+La intención de este artículo es dejarte con más dudas, pero llevarte a lugares en los que tal ve no habías estado antes, tal como avanzar a un nuevo lugar en el mapa en un juego de video.
 
 ## Cuestiones principales
 
 Hablemos de los conceptos principales de representación de información en los sistemas electrónicos.
+
 ### Entidades
 
 Cuando guardamos cosas en una base de datos o las representamos en código, casi siempre nos referimos a ellas como **entidades**.
 
-El libro empieza cuestionando, **¿qué es una entidad?**
+Por eso el libro empieza cuestionando, **¿qué es una entidad?**
 
 La primera respuesta es que una entidad "es un _estado_ de la mente". **¿Cómo?** Está bastante rara esa definición. Esta frase va por el lado de que una **entidad** más allá de algo que exista en la **realidad** como algo identificable e indivisible, algo que tiene límites fijos, es algo a lo que nosotros le damos significado, y que nosotros delimitamos o entendemos en ciertos contextos. Esta delimitación normalmente no es singular, tiene que ser compartida por un grupo de personas para que tenga sentido.
 
