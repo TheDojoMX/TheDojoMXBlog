@@ -45,50 +45,57 @@ Cuando guardamos cosas en una base de datos o las representamos en código, casi
 
 Por eso el libro empieza cuestionando, **¿qué es una entidad?**
 
-La primera respuesta es que una entidad "es un _estado_ de la mente". **¿Cómo?** Está bastante rara esa definición. Esta frase va por el lado de que una **entidad** más allá de algo que exista en la **realidad** como algo identificable e indivisible, algo que tiene límites fijos, es algo a lo que nosotros le damos significado, y que nosotros delimitamos o entendemos en ciertos contextos. Esta delimitación normalmente no es singular, tiene que ser compartida por un grupo de personas para que tenga sentido.
+La primera respuesta es que una entidad "es un **_estado_** de la mente". **¿Cómo?** Está bastante rara esa definición. Esta frase significa que una **entidad** más allá de algo que exista en la **realidad** como algo identificable e indivisible, algo que tiene límites fijos, es algo a lo que nosotros le damos significado, y que nosotros delimitamos o entendemos en ciertos contextos. Esta delimitación normalmente no es singular, tiene que ser compartida por un grupo de personas para que tenga sentido.
 
-Pongamos algunos ejemplos para entender eso. La leyenda del barco de **Teseo** relata que cuando él regresó de Creta, donde había matado al **Minotauro**, el pueblo de Atenas le rindió honores y conservó su barco en lo alto de una colina como un monumento para recordar su hazaña.
+Pongamos algunos ejemplos para entender eso. La leyenda del barco de **Teseo** relata que cuando él regresó de Creta, donde había matado al Minotauro, el pueblo de Atenas le rindió honores y conservó su barco en lo alto de una colina como un monumento para recordar su hazaña.
 
 Con el tiempo, el barco se fue deteriorando y se le fueron cambiando las partes, hasta que ya no quedó ninguna parte original.
 
 La pregunta es: ¿sigue siendo el _"Barco de Teseo"_? ¿Es el mismo barco si no tiene ninguna parte original? ¿Es el mismo barco si se le cambia una sola parte, o muy pocas?
 
-Esta historia sirve para ilustrar que las entidades como objetos inmutables no existen en la vida real, sino que son cosas que en nuestra mente delimitamos y que, junto con otras personas, les asignamos una identidad y un significado. El _"Barco de Teseo"_ sigue siendo el mismo mientras nosotros lo consideremos así.
+Esta historia sirve para ilustrar que las entidades como objetos inmutables y permanentes no existen en la vida real, sino que son cosas que en nuestra mente delimitamos y que, junto con otras personas, les asignamos una identidad y un significado. El _"Barco de Teseo"_ sigue siendo el mismo mientras nosotros lo consideremos así.
 
 Exactamente así se comportan las entidades que como desarrolladores modelamos en nuestros programas. No son cosas permanentes, a veces ni siquiera cosas completamente definidas, sino que nosotros les asignamos límites y **significado**.
+
+Las personas, los objetos e incluso los conceptos están en constante evolución y parte de nuestro trabajo es capturar esa evolución en nuestros sistemas.
 
 ## Identidad y cambio
 
 Cuando queremos registrar algo en una computadora, normalmente necesitamos una forma de referirnos a ese registro para después poder recuperarlo. Esto que usamos para referirnos a las entidades se llama **identificador**.
 
-Un identificador es un elemento inmutable
-y único entre todas las entidades de nuestro sistemas. Aquí nos podemos encontrar con varios casos:
+Un identificador es un elemento inmutable y único entre todas las entidades de nuestro sistemas. Aquí nos podemos encontrar con varios casos:
 
-- La entidad no tiene nada único por lo que podamos referirnos a ella (elementos que se hacen repiten, por ejemplo libros)
+- La entidad no tiene nada único por lo que podamos referirnos a ella (elementos que se repiten, por ejemplo libros producidos en serie)
 - El conjunto de todos los _atributos_ de la entidad puede constituir una identidad
 - Las entidades tienen varios atributos únicos y hay que escoger uno
 
-Pensar en la naturaleza de nuestro problema, en los términos de arriba nos puede llevar a la solución. Piensa en el primer caso, por ejemplo: cuando algo no tiene identificador natural, tendemos a asignar un identificador único arbitrario a la entidad cuando la metemos en el sistema. Por ejemplo, es un práctica muy común asignar identificadores numéricos incrementales. La primera entidad registrada del tipo es la 1, la segunda es la 2, etc. También se pueden usar los UUIDs, que son identificadores únicos generados aleatoriamente, y que por lo general evitan problemas como el de permitir que alguien adivine el identificador de otra entidad.
+Pensar en la naturaleza de nuestro problema, en los términos de arriba nos puede llevar a la solución de seleccionar un elemento identificador. Piensa en el primer caso, por ejemplo: cuando algo no tiene identificador natural, tendemos a asignar un identificador único arbitrario a la entidad cuando la metemos en el sistema.
 
-Pero si la entidad tiene un identificador único inmutable, ¿por qué no usarlo? ¿Puede ser una solución más _natural_?
+Por ejemplo, es un práctica muy común asignar identificadores numéricos incrementales. La primera entidad registrada del tipo es la 1, la segunda es la 2, etc. También se pueden usar los UUIDs, que son identificadores únicos generados aleatoriamente, y que por lo general evitan problemas como el de permitir que alguien adivine el identificador de otra entidad.
 
-¿Qué pasa cuando lo que creíamos inmutable cambia? Eso es algo que normalmente rompe lo que hicimos y tenemos que idear formas de componerlo. Todo este tipo de preguntas
+Pero si la entidad tiene un identificador único inmutable, ¿por qué no usarlo? **¿Puede ser una solución más _natural_?**
+
+¿Qué pasa cuando lo que creíamos inmutable cambia? Eso es algo que normalmente rompe lo que hicimos y tenemos que idear formas de componerlo. Todo este tipo de preguntas pensadas por adelantado te pueden llevar a crear sistemas de software que soporten mejor el paso del tiempo y te den menos problemas cuando estén funcionando en producción.
 
 ### Atributos
 
 Los atributos son los datos que "pertenecen" a una entidad. Forman el conjunto de información que tenemos sobre esta.
 
-Los atributos en el mundo real pueden ser infinitos, pero a nosotros normalmente sólo nos interesa un subconjunto de ellos.
-### Relaciones
+Los atributos en el mundo real pueden ser infinitos, pero a nosotros normalmente sólo nos interesa un subconjunto de ellos. Data and Reality propone que los atributos son un conjunto de tres elementos:
 
+- El sujeto, la entidad a la que pertenece el atributo
+- El objeto, el valor del atributo
+- La _relación_, que es por lo que el sujeto y el objeto están conectados
 
-### Categorías
+Supongamos por ejemplo el atributo `nombre` de una persona. "Él se llama Héctor": El sujeto es la persona a la que nos estamos refiriendo, el objeto es el nombre "Héctor" y la relación es el hecho de que la persona se llama así.
 
-## El modelo de registros
+Si puedes ver, esto nos empieza a meter en problemas de definición. Son realmente los atributos, ¿relaciones?
 
-Casi todo lo que hacemos para guardar datos en gestores de bases de datos y también en una computadora en general, está basado o pensado en el modelo de "registros".
+## Símbolos y valores
 
-Un registro es un conjunto de datos relacionados con una entidad, lo que pensaríamos que es una fila en una tabla de una base de datos, mientras que cada una de las columnas sería un atributo de la entidad.
+Otra cosa que hay que aprender a distinguir cuando estamos modelando entidades y registrándolas es la diferencia entre el valor y el **símbolo**. Cuando ponemos un valor para representarlo en una computadora usamos una representación, esto es el símbolo. El valor es la entidad que estamos representando.
+
+Por ejemplo, hablando de atributos podemos querer expresar la altura de una persona. Esta altura se puede expresar como "172cm", "1.72m", "5'8''", `172` (como entero) etc. Todos estos son símbolos que representan el valor de la altura de la persona. Lo que en realidad queremos expresar es la distancia que existe entre dos puntos.
 
 ## Filosofía del conocimiento
 
@@ -124,4 +131,3 @@ Algunas representaciones son más útiles que otras desde el punto de vista de o
 Pensar en todas estas cuestiones te ayudará a notar que no todo lo que tiene que ver con la tecnología y más importante aún: **no siempre hay una respuesta correcta**. Sigue flexibilizando tu pensamiento y abriéndolo, sigue pensando más allá de lo establecido y no te centres en la tecnología.
 
 No seas como el borracho que busca las llaves perdidas bajo el poste porque ahí hay más luz, busca las llaves donde sea más probable encontrarlas.
-
