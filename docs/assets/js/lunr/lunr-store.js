@@ -1,12 +1,18 @@
 var store = [{
+        "title": "Alexs",
+        "excerpt":"Posts             ¿Qué son los modelos generativos?        Traducción automática: API's vs tu propio modelo        De Bash a Zsh     ","categories": [],
+        "tags": [],
+        "url": "/authors/alexs.html",
+        "teaser": null
+      },{
         "title": "Makko",
-        "excerpt":"Posts          ","categories": [],
+        "excerpt":"Posts             Instrumentando microservicios en Go con Gin y AWS X-Ray     ","categories": [],
         "tags": [],
         "url": "/authors/makko.html",
         "teaser": null
       },{
         "title": "Sag",
-        "excerpt":"Posts          ","categories": [],
+        "excerpt":"Posts             Code Review: La practica Milenaria que seguimos haciendo mal.        Mi experiencia como Mentora        ¿Estás cambiando de trabajo?        La Importancia de los Estándares de Código     ","categories": [],
         "tags": [],
         "url": "/authors/sag.html",
         "teaser": null
@@ -18,7 +24,7 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_200/v1551938206/fancycrave-284219-unsplash_ylbmvr.jpg"
       },{
         "title": "Patrón de diseño: Cadena de responsabilidad",
-        "excerpt":"Propósito: Asegurar el bajo acoplamiento entre un request y su receiver dando a múltiples objetos oportunidad de manejar el request Hace unas semanas me enfrenté a un tema de procesar un mensaje de un usuario y darle tratamiento por medio de un algoritmo de Natrual Language Processing. Antes de pasar...","categories": [],
+        "excerpt":"Propósito Asegurar el bajo acoplamiento entre un request y su receiver dando a múltiples objetos oportunidad de manejar el request Hace unas semanas me enfrenté a un tema de procesar un mensaje de un usuario y darle tratamiento por medio de un algoritmo de Natrual Language Processing. Antes de pasar...","categories": [],
         "tags": ["python","patrones","SOLID","Chain-of-Responsibility","design-patterns"],
         "url": "/2019/02/21/cadena-responsabilidades.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_200/v1550949447/mike-alonzo-3347-unsplash_cwqcud.jpg"
@@ -694,4 +700,10 @@ var store = [{
         "tags": ["solid","dependency-inversion","inversion-dependencias"],
         "url": "/2023/04/22/el-principio-de-inversion-de-dependencias.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1682052442/milad-fakurian-PGdW_bHDbpI-unsplash_teqmvg.jpg"
+      },{
+        "title": "¿Por qué deberías leer Data and Reality?",
+        "excerpt":"Gran parte de nuestro trabajo como desarrolladores consiste en modelar entidades del mundo real en el código, transformarlas, guardarlas y recuperarlas. Estas entidades se pasan entre diferentes procesos para producir un resultado. A veces también nos tenemos que inventar entidades para representar conceptos abstractos que no existen físicamente. Modelar datos...","categories": [],
+        "tags": ["libros","modelado-de-datos","filosofía","desarrollo-de-software","data-and-reality"],
+        "url": "/2023/05/06/por-que-deberias-leer-data-and-reality.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1682777065/ilgmyzin-GHazVhDDPZs-unsplash_poxzc5.jpg"
       }]

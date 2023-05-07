@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://blog.thedojo.mx/authors/alexs.html</loc>
+<lastmod>2023-05-06T23:31:17-06:00</lastmod>
+</url>
+<url>
 <loc>https://blog.thedojo.mx/authors/makko.html</loc>
-<lastmod>2023-04-22T00:45:58-06:00</lastmod>
+<lastmod>2023-05-06T23:31:17-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/authors/sag.html</loc>
-<lastmod>2023-04-22T00:45:58-06:00</lastmod>
+<lastmod>2023-05-06T23:31:17-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/2018/10/28/bienvenidos.html</loc>
@@ -463,6 +467,10 @@
 <url>
 <loc>https://blog.thedojo.mx/2023/04/22/el-principio-de-inversion-de-dependencias.html</loc>
 <lastmod>2023-04-22T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality.html</loc>
+<lastmod>2023-05-06T00:00:00-06:00</lastmod>
 </url>
 <url>
 <loc>https://blog.thedojo.mx/about/</loc>

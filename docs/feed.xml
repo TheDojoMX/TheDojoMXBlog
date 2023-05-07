@@ -1,4 +1,160 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-04-22T00:45:58-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">El principio de Inversión de Dependencias</title><link href="https://blog.thedojo.mx/2023/04/22/el-principio-de-inversion-de-dependencias.html" rel="alternate" type="text/html" title="El principio de Inversión de Dependencias" /><published>2023-04-22T00:00:00-06:00</published><updated>2023-04-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/22/el-principio-de-inversion-de-dependencias</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/22/el-principio-de-inversion-de-dependencias.html">&lt;p&gt;Este es el artículo final sobre el análisis de los principios SOLID. En este artículo veremos el principio de &lt;strong&gt;Inversión de Dependencias&lt;/strong&gt;, el cual nos dice que las clases de alto nivel no deben depender de las clases de bajo nivel, sino que ambas deben &lt;strong&gt;depender de abstracciones&lt;/strong&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-05-06T23:31:17-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Por qué deberías leer Data and Reality?</title><link href="https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality.html" rel="alternate" type="text/html" title="¿Por qué deberías leer Data and Reality?" /><published>2023-05-06T00:00:00-06:00</published><updated>2023-05-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality</id><content type="html" xml:base="https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality.html">&lt;p&gt;Gran parte de nuestro trabajo como desarrolladores consiste en &lt;strong&gt;modelar entidades&lt;/strong&gt; del mundo real en el código, transformarlas, guardarlas y recuperarlas. Estas entidades se pasan entre diferentes procesos para producir un resultado. A veces también nos tenemos que inventar entidades para representar conceptos abstractos que no existen físicamente.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Modelar datos&lt;/strong&gt; es una de las habilidades &lt;strong&gt;fundamentales&lt;/strong&gt; cuando estamos desarrollando.Cuando estás programando un algoritmo, estás modelando un &lt;em&gt;procedimiento&lt;/em&gt; de la vida real en código. Este proceso normalmente incluye &lt;strong&gt;datos&lt;/strong&gt;, que son representaciones de &lt;em&gt;entidades&lt;/em&gt; del mundo real.&lt;/p&gt;
+
+&lt;p&gt;Por lo anterior, cualquier cosa que puedas aprender sobre modelado de datos, te ayudará directamente en tu carrera como desarrollador. En este artículo hablaremos de un libro muy especial que te puede ayudar a ser mejor en esta área, independientemente del nivel en el que te encuentres en tu carrera. Y si después de leerlo lo meditas más profundamente, puede que te ayude a desarrollar una forma de pensar más adecuada a los problemas que queremos resolver en la actualidad.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Data and Reality&lt;/strong&gt; trata sobre modelado de datos, escrito po William Kent, alguien con mucha experiencia en el tema. El libro tiene tres ediciones la primera es de 1978, la segunda (una actualización) es de 2000 y la tercera, después que Kent murió, es de 2012.&lt;/p&gt;
+
+&lt;p&gt;La mejor de todas es segunda edición, ya que la tercera se podría considerar un libro completamente diferente, recortado y con comentarios de &lt;a href=&quot;https://technicspub.com/steve-hoberman/&quot;&gt;Steve Hoberman&lt;/a&gt;, otro modelador de datos pero siento que con un enfoque bastante diferente al de Kent.&lt;/p&gt;
+
+&lt;p&gt;Hablemos de los temas principales del libro y por qué te conviene leerlo. Pero antes, veamos algo de lo que se habla en el prefacio de la edición de 2012 que me parece muy relevante.&lt;/p&gt;
+
+&lt;h2 id=&quot;buscando-las-respuestas-donde-parece-más-sencillo&quot;&gt;Buscando las respuestas donde parece más sencillo&lt;/h2&gt;
+
+&lt;p&gt;Hay muchas cosas difíciles de resolver en el desarrollo de software y parece que siempre estamos buscando la respuesta en el lugar que parece más obvio o en el que es más fácil buscar, en lugar de donde es más probable que encontremos las respuestas.&lt;/p&gt;
+
+&lt;p&gt;El ejemplo que utilizan en el libro para explicarlo y que me parece acertado es una broma acerca de un borracho que pierde sus llaves y se la pasa toda la noche buscando bajo una farola. Cuando alguien le pregunta por qué no busca en otro lado, &lt;strong&gt;el borracho responde que es porque AHÍ HAY MÁS LUZ.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;En el desarrollo de software podría parecer que a veces hacemos exactamente lo mismo. Para buscar la solución a un problema siempre nos vamos a los mismos lados porque es donde nos sentimos cómodos o porque &lt;strong&gt;SIEMPRE SE HA BUSCADO AHÍ&lt;/strong&gt;. Por ejemplo, nos centramos en la tecnología, en las plataformas o en los lenguajes. Pero es muy probable que el problema no esté ahí, sino en lugares más profundos.&lt;/p&gt;
+
+&lt;p&gt;Es por eso que este libro se enfoca en cuestiones profundas del modelado de datos. No en los lugares comunes, ni siquiera en hablar de cómo hacerlo, sino en preguntas que te llevaran a pensar cosas de las que se habla poco y que probablemente modifiquen tu visión del mundo y tu forma de trabajar &lt;strong&gt;permanentemente&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;La intención de este artículo es dejarte con más dudas, pero llevarte a lugares en los que tal ve no habías estado antes, tal como avanzar a un nuevo lugar en el mapa en un juego de video.&lt;/p&gt;
+
+&lt;h2 id=&quot;cuestiones-principales&quot;&gt;Cuestiones principales&lt;/h2&gt;
+
+&lt;p&gt;Hablemos de los conceptos principales de representación de información en los sistemas electrónicos.&lt;/p&gt;
+
+&lt;h3 id=&quot;entidades&quot;&gt;Entidades&lt;/h3&gt;
+
+&lt;p&gt;Cuando guardamos cosas en una base de datos o las representamos en código, casi siempre nos referimos a ellas como &lt;strong&gt;entidades&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Por eso el libro empieza cuestionando, &lt;strong&gt;¿qué es una entidad?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;La primera respuesta es que una entidad “es un &lt;strong&gt;&lt;em&gt;estado&lt;/em&gt;&lt;/strong&gt; de la mente”. &lt;strong&gt;¿Cómo?&lt;/strong&gt; Está bastante rara esa definición. Esta frase significa que una &lt;strong&gt;entidad&lt;/strong&gt; más allá de algo que exista en la &lt;strong&gt;realidad&lt;/strong&gt; como algo identificable e indivisible, algo que tiene límites fijos, es algo a lo que nosotros le damos significado, y que nosotros delimitamos o entendemos en ciertos contextos. Esta delimitación normalmente no es singular, tiene que ser compartida por un grupo de personas para que tenga sentido.&lt;/p&gt;
+
+&lt;p&gt;Pongamos algunos ejemplos para entender eso. La leyenda del barco de &lt;strong&gt;Teseo&lt;/strong&gt; relata que cuando él regresó de Creta, donde había matado al Minotauro, el pueblo de Atenas le rindió honores y conservó su barco en lo alto de una colina como un monumento para recordar su hazaña.&lt;/p&gt;
+
+&lt;p&gt;Con el tiempo, el barco se fue deteriorando y se le fueron cambiando las partes, hasta que ya no quedó ninguna parte original.&lt;/p&gt;
+
+&lt;p&gt;La pregunta es: ¿sigue siendo el &lt;em&gt;“Barco de Teseo”&lt;/em&gt;? ¿Es el mismo barco si no tiene ninguna parte original? ¿Es el mismo barco si se le cambia una sola parte, o muy pocas?&lt;/p&gt;
+
+&lt;p&gt;Esta historia sirve para ilustrar que las entidades como objetos inmutables y permanentes no existen en la vida real, sino que son cosas que en nuestra mente delimitamos y que, junto con otras personas, les asignamos una identidad y un significado. El &lt;em&gt;“Barco de Teseo”&lt;/em&gt; sigue siendo el mismo mientras nosotros lo consideremos así.&lt;/p&gt;
+
+&lt;p&gt;Exactamente así se comportan las entidades que como desarrolladores modelamos en nuestros programas. No son cosas permanentes, a veces ni siquiera cosas completamente definidas, sino que nosotros les asignamos límites y &lt;strong&gt;significado&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Las personas, los objetos e incluso los conceptos están en constante evolución y parte de nuestro trabajo es capturar esa evolución en nuestros sistemas.&lt;/p&gt;
+
+&lt;h2 id=&quot;identidad-y-cambio&quot;&gt;Identidad y cambio&lt;/h2&gt;
+
+&lt;p&gt;Cuando queremos registrar algo en una computadora, normalmente necesitamos una forma de referirnos a ese registro para después poder recuperarlo. Esto que usamos para referirnos a las entidades se llama &lt;strong&gt;identificador&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Un identificador es un elemento inmutable y único entre todas las entidades de nuestro sistemas. Aquí nos podemos encontrar con varios casos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La entidad no tiene nada único por lo que podamos referirnos a ella (elementos que se repiten, por ejemplo libros producidos en serie)&lt;/li&gt;
+  &lt;li&gt;El conjunto de todos los &lt;em&gt;atributos&lt;/em&gt; de la entidad puede constituir una identidad&lt;/li&gt;
+  &lt;li&gt;Las entidades tienen varios atributos únicos y hay que escoger uno&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pensar en la naturaleza de nuestro problema, en los términos de arriba nos puede llevar a la solución de seleccionar un elemento identificador. Piensa en el primer caso, por ejemplo: cuando algo no tiene identificador natural, tendemos a asignar un identificador único arbitrario a la entidad cuando la metemos en el sistema.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, es un práctica muy común asignar identificadores numéricos incrementales. La primera entidad registrada del tipo es la 1, la segunda es la 2, etc. También se pueden usar los UUIDs, que son identificadores únicos generados aleatoriamente, y que por lo general evitan problemas como el de permitir que alguien adivine el identificador de otra entidad.&lt;/p&gt;
+
+&lt;p&gt;Pero si la entidad tiene un identificador único inmutable, ¿por qué no usarlo? &lt;strong&gt;¿Puede ser una solución más &lt;em&gt;natural&lt;/em&gt;?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;¿Qué pasa cuando lo que creíamos inmutable cambia? Eso es algo que normalmente rompe lo que hicimos y tenemos que idear formas de componerlo. Todo este tipo de preguntas pensadas por adelantado te pueden llevar a crear sistemas de software que soporten mejor el paso del tiempo y te den menos problemas cuando estén funcionando en producción.&lt;/p&gt;
+
+&lt;h2 id=&quot;relaciones&quot;&gt;Relaciones&lt;/h2&gt;
+
+&lt;p&gt;Will Kent afirma que las relaciones son el tejido de la información que representamos en nuestros sistemas. Se puede entender una relación como una asociación o una conexión entre mínimo dos entidades.&lt;/p&gt;
+
+&lt;p&gt;Las relaciones tienen varias características que las pueden definir:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Grado: El número de entidades de diferentes tipos que participan en la relación&lt;/li&gt;
+  &lt;li&gt;Dominios: El conjunto de valores que son válidos en cada lado de la relación&lt;/li&gt;
+  &lt;li&gt;Rol: El papel que juega cada entidad en la relación&lt;/li&gt;
+  &lt;li&gt;Complejidad (cardinalidad): el número de entidades de cada tipo que participan en la relación&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Aquí en las relaciones y su representación empezan a surgir diferentes preguntas y problemas ya de definición, por ejmplo: ¿cómo identificas una relación? Algunas relaciones sólo son significativas con un contexto, ¿cómo lo representas? ¿Deberían ser las relaciones entidades también?&lt;/p&gt;
+
+&lt;p&gt;Sin duda, leer este capítulo del libro te ayudará a plantearte todas estas cuestiones y a entender mejor cómo representar la información en tus sistemas.&lt;/p&gt;
+
+&lt;h3 id=&quot;atributos&quot;&gt;Atributos&lt;/h3&gt;
+
+&lt;p&gt;Los atributos son los datos que “pertenecen” a una entidad. Forman el conjunto de información que tenemos sobre esta.&lt;/p&gt;
+
+&lt;p&gt;Los atributos en el mundo real pueden ser infinitos, pero a nosotros normalmente sólo nos interesa un subconjunto de ellos. Data and Reality propone que los atributos son un conjunto de tres elementos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;El sujeto, la entidad a la que pertenece el atributo&lt;/li&gt;
+  &lt;li&gt;El objeto, el valor del atributo&lt;/li&gt;
+  &lt;li&gt;La &lt;em&gt;relación&lt;/em&gt;, que es por lo que el sujeto y el objeto están conectados&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Supongamos por ejemplo el atributo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nombre&lt;/code&gt; de una persona. “Él se llama Héctor”: El sujeto es la persona a la que nos estamos refiriendo, el objeto es el nombre “Héctor” y la relación es el hecho de que la persona se llama así.&lt;/p&gt;
+
+&lt;p&gt;Si puedes ver, esto nos empieza a meter en problemas de definición. Son realmente los atributos, ¿relaciones?&lt;/p&gt;
+
+&lt;h2 id=&quot;símbolos-y-valores&quot;&gt;Símbolos y valores&lt;/h2&gt;
+
+&lt;p&gt;Otra cosa que hay que aprender a distinguir cuando estamos modelando entidades y registrándolas es la diferencia entre el valor y el &lt;strong&gt;símbolo&lt;/strong&gt;. Cuando ponemos un valor para representarlo en una computadora usamos una representación, esto es el símbolo. El valor es la entidad que estamos representando.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, hablando de atributos podemos querer expresar la altura de una persona. Esta altura se puede expresar como “172cm”, “1.72m”, “5’8’’”, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;172&lt;/code&gt; (como entero) etc. Todos estos son símbolos que representan el valor de la altura de la persona. Lo que en realidad queremos expresar es la distancia que existe entre dos puntos.&lt;/p&gt;
+
+&lt;h2 id=&quot;categorías&quot;&gt;Categorías&lt;/h2&gt;
+
+&lt;p&gt;Cuando guardamos información en los sistemas informáticos normalmente queremos organizarla. Las categorías son una forma de hacerlo, y la manera intuitiva de entenderlo parece suficiente.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, la creación de categorías es algo que también se debe pensar muy bien, ya que esto repercutirá en la forma en que guardamos información y en cómo la recuperamos.&lt;/p&gt;
+
+&lt;p&gt;Algunos de los problemas en los que tienes que pensar:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;¿Qué pasa cuando una entidad puede pertenecer a más de una categoría?&lt;/li&gt;
+  &lt;li&gt;¿Qué clasificación es más conveniente para el problema que estás resolviendo?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Las respuestas a estas preguntas son completamente arbitrarias y finalmente dependen del problema y del campo para el que estés programando.&lt;/p&gt;
+&lt;h2 id=&quot;filosofía-del-conocimiento&quot;&gt;Filosofía del conocimiento&lt;/h2&gt;
+
+&lt;p&gt;Finalicemos este resumen hablando de la cosa más profunda o analítica que el libro trata: la naturaleza del conocimiento mismo. Hay varias posturas con respecto a “la realidad”. Las dos extremas son:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;No existe una realidad objetiva, todo es subjetivo, y los seres humanos construyen esta realidad con su mente.&lt;/li&gt;
+  &lt;li&gt;Existe una realidad objetiva, y los seres humanos la perciben y la pueden conocer siempre.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;En el libro se habla sobre una postura intermedia, y que me parece completamente razonable: es que existe una realidad objetiva, pero que los seres humanos &lt;strong&gt;no la pueden conocer completamente&lt;/strong&gt;, la accedemos a través de la percepción, pero como en mucha posturas filosóficas, la percepción es imperfecta.&lt;/p&gt;
+
+&lt;h3 id=&quot;qué-es-un-modelo&quot;&gt;¿Qué es un modelo?&lt;/h3&gt;
+
+&lt;p&gt;De esto ya hemos hablado repetidas veces en este blog, pero vamos a decirlo una vez más: uno modelo es una abstracción, una representación simplificada de la realidad.&lt;/p&gt;
+
+&lt;p&gt;Lo que el análisis de este libro nos hace entender es que esa &lt;strong&gt;representación simplificada&lt;/strong&gt; tiene más que ver con NUESTRA VISIÓN y NUESTROS INTERESES que con una visión objetiva de la realidad.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;La conclusión más grande que me gustaría sacar de este libro es esta:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;La realidad es compleja, confusa y no tiene los límites que nos imaginamos&lt;/strong&gt;. Todo el orden que intentamos poner en nuestros sistemas es en realidad &lt;strong&gt;uno de los múltiples&lt;/strong&gt; órdenes posibles que podemos ponerle a la realidad, es un punto de vista, y eso no quiere decir que sea el mejor o el más correcto, o que los demás son incorrectos. La representación de la realidad en los sistemas de información dependerá siempre de para quién lo estemos haciendo, y del uso que se le vaya a dar.&lt;/p&gt;
+
+&lt;p&gt;Hablando del dominio de modelado de datos, no hay una distinción clara entre lo que es un atributo, una categoría y una relación, nosotros definimos cuándo un aspecto del mundo real se comporta como uno u otro.&lt;/p&gt;
+
+&lt;p&gt;Las entidades, su naturaleza y permanencia, están completamente definidos por el uso que les vayamos a dar.&lt;/p&gt;
+
+&lt;p&gt;En resumen: &lt;strong&gt;gran parte de lo que creemos que es una representación objetiva, en realidad es una representación subjetiva y arbitraria&lt;/strong&gt;. Pero eso no es malo, es como las cosas funcionan y tenerlo en cuenta nos ayudará a tener discusiones más productivas y a entender mejor los sistemas que construimos.&lt;/p&gt;
+
+&lt;p&gt;Algunas representaciones son más útiles que otras desde el punto de vista de otras personas, así que esforzarnos por entender lo que otros están viendo es muy buena idea.&lt;/p&gt;
+
+&lt;h3 id=&quot;qué-sigue&quot;&gt;¿Qué sigue?&lt;/h3&gt;
+
+&lt;p&gt;Pensar en todas estas cuestiones te ayudará a notar que no todo lo que tiene que ver con la tecnología y más importante aún: &lt;strong&gt;no siempre hay una respuesta correcta&lt;/strong&gt;. Sigue flexibilizando tu pensamiento y abriéndolo, sigue pensando más allá de lo establecido y no te centres en la tecnología.&lt;/p&gt;
+
+&lt;p&gt;No seas como el borracho que busca las llaves perdidas bajo el poste porque ahí hay más luz, busca las llaves donde sea más probable encontrarlas.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="modelado-de-datos" /><category term="filosofía" /><category term="desarrollo-de-software" /><category term="data-and-reality" /><summary type="html">Hablemos de Data and Reality, un libro que te ayudará a ser mejor desarrollador de software, porque se va a las raíces de los problemas que resolvemos a diario.</summary></entry><entry><title type="html">El principio de Inversión de Dependencias</title><link href="https://blog.thedojo.mx/2023/04/22/el-principio-de-inversion-de-dependencias.html" rel="alternate" type="text/html" title="El principio de Inversión de Dependencias" /><published>2023-04-22T00:00:00-06:00</published><updated>2023-04-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/22/el-principio-de-inversion-de-dependencias</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/22/el-principio-de-inversion-de-dependencias.html">&lt;p&gt;Este es el artículo final sobre el análisis de los principios SOLID. En este artículo veremos el principio de &lt;strong&gt;Inversión de Dependencias&lt;/strong&gt;, el cual nos dice que las clases de alto nivel no deben depender de las clases de bajo nivel, sino que ambas deben &lt;strong&gt;depender de abstracciones&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Veamos qué tan útil es en la vida real, aplicándolo día a día, cuáles son las formas de implementarlo y algunos ejemplos, asó como &lt;strong&gt;algunas críticas&lt;/strong&gt;.&lt;/p&gt;
 
@@ -338,7 +494,172 @@ Pregunta: {Pregunta}
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;En este tutorial hemos visto cómo crear un agente básico. Falta explorar los demás tipos de agentes, así como las demás herramientas que LangChain provee para que podamos crear agentes más complejos y funcionales. Además, hay que probar con diferentes agentes y ver cómo se comportan.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="langchain" /><category term="gpt4" /><category term="agentes" /><summary type="html">Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.</summary></entry><entry><title type="html">Instrumentando microservicios en Go con Gin y AWS X-Ray</title><link href="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html" rel="alternate" type="text/html" title="Instrumentando microservicios en Go con Gin y AWS X-Ray" /><published>2023-04-17T00:00:00-06:00</published><updated>2023-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html">&lt;p&gt;En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.&lt;/p&gt;
+&lt;p&gt;En este tutorial hemos visto cómo crear un agente básico. Falta explorar los demás tipos de agentes, así como las demás herramientas que LangChain provee para que podamos crear agentes más complejos y funcionales. Además, hay que probar con diferentes agentes y ver cómo se comportan.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="langchain" /><category term="gpt4" /><category term="agentes" /><summary type="html">Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.</summary></entry><entry><title type="html">Composición en el software</title><link href="https://blog.thedojo.mx/2023/04/17/composicion-en-el-software.html" rel="alternate" type="text/html" title="Composición en el software" /><published>2023-04-17T00:00:00-06:00</published><updated>2023-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/17/composicion-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/17/composicion-en-el-software.html">&lt;p&gt;Composición:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Es la acción de combinar componentes individuales para formar un sistema más complejo.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Componer es la técnica más efectiva para construir software de manera organizada. La composición nos permite crear software complejo porque nos permite construir piezas pequeñas que resuelven problemas manejables y luego “juntarlas” para entregar la solución de nuestro problema.&lt;/p&gt;
+
+&lt;p&gt;Veamos algunas formas de hacer composición en el software y por qué es más efectivo que otras formas de reutilizar código.&lt;/p&gt;
+
+&lt;h2 id=&quot;por-que-es-importante-aprender-a-usar-la-composición&quot;&gt;¿Por que es importante aprender a usar la composición?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nuestra habilidad para descomponer un problema en partes, depende
+directamente de nuestra habilidad para combinar soluciones. - &lt;strong&gt;John Hughes&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;John Hughes es un gran proponente e investigador de la programación funcional en la actualidad. Él propone que la composición es importante porque nos da la confianza de poder romper nuestros problemas en problemas más pequeños, sabiendo que después podremos juntarlos de manera efectiva para entregar una solución al problema original.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Divide y vencerás&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Una ventaja secundaria de dividir el software en piezas pequeñas, es que si diseñamos correctamente nuestros componentes y tenemos las herramientas adecuadas para unirlas después, podemos &lt;strong&gt;reutilizar&lt;/strong&gt; las piezas que ya hemos construido en otras partes.&lt;/p&gt;
+
+&lt;p&gt;Veamos dos formas de aplicar la composición en el software.&lt;/p&gt;
+
+&lt;h2 id=&quot;composición-de-funciones&quot;&gt;Composición de funciones&lt;/h2&gt;
+
+&lt;p&gt;Las funciones son la unidad de abstracción más pequeña que tenemos en la programación. Crear pequeñas funciones útiles que resuelvan problemas generales, de manera &lt;strong&gt;completa y precisa&lt;/strong&gt;, es muy buena idea.&lt;/p&gt;
+
+&lt;p&gt;¿Cómo aplicamos la composición? Puedes usar la composición al dividir tu problema principal en funciones sencillas y luego juntarlas.Veamos un ejemplo: vamos a crear un validador de contraseñas. Este debe verificar las siguientes condiciones:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Verificar una longitud mínima, que podría ser 8 caracteres.&lt;/li&gt;
+  &lt;li&gt;Checar que no tenga ciertas palabras (lista negra).&lt;/li&gt;
+  &lt;li&gt;Verificar que tiene un número&lt;/li&gt;
+  &lt;li&gt;Verificar que tiene un carácter especial&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Podríamos hacer esto en una sola función que verificara todas estas características, una por una a través de un serie de if’s. Pero veamos una implementación usando composición, y sus ventajas.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;!@#$%^&amp;amp;*()_+&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'12345678'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
+           &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
+           &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
+           &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Quiero que te fijes especialmente en la última función, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate_password&lt;/code&gt;. Aunque funciona, es un poco rígida. La composición puede ayudarnos a hacerla más flexible.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'palabra_uno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'palabra_dos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Esta función es más flexible, pudiendo agregar o quitar validadores sin tener que modificar más código, simplemente modificando la lista de validadores, pero todavía no es como la queremos. ¿Qué pasas si queremos agregar el conjunto de errores por los que falla una validación? Tenemos que ir &lt;strong&gt;acumulando&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Devuelve la lista de errores de la contraseña, si está vacía, la contraseña es válida&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;mesage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña es muy corta&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña no tiene un número&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña no tiene un carácter especial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'palabra_uno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'palabra_dos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña tiene palabras prohibidas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+
+    &lt;span class=&quot;nb&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Aquí &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reduce&lt;/code&gt; que recibe una función, una lista de elementos por las que iterar y un valor inicial, nos ayuda a acumular los errores. Si quisiéramos hacerlo aún más flexible, podríamos hacer dos cosas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hacer que la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate_password&lt;/code&gt; reciba una lista de validadores (junto con el mensaje), en vez de tenerlos definidos dentro de la función&lt;/li&gt;
+  &lt;li&gt;Definir una clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Validator&lt;/code&gt; que tenga un método &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate&lt;/code&gt; y un atributo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;message&lt;/code&gt; y que reciba una función y un mensaje en su constructor, para tener una interfaz más clara.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;composición-matemática&quot;&gt;Composición matemática&lt;/h3&gt;
+
+&lt;p&gt;Este tipo de composición fue un poco más empírica, simplemente juntando funciones. A veces, cuando oigas de composición, se van a referir a la composición de funciones en sentido matemático. Veamos un ejemplo en Python:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;LETTERS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quitar_no_ascii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LETTERS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reemplazar_acentos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;accents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'á'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'é'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'í'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'i'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'ó'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'o'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'ú'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'u'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'ñ'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'n'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;limpiar_cadena&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quitar_no_ascii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reemplazar_acentos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El código anterior deja una cadena solamente con letras ASCII, sin acentos. Lo que ves en la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;limpiar_cadena&lt;/code&gt; es una composición de funciones, en el sentido matemático, aplicar una función después de otra, o la salida de una como argumento de la otra.&lt;/p&gt;
+
+&lt;p&gt;Siempre que pienses en un proceso que lleve una cadena de pasos, lo puedes representar como una cadena de funciones. En lenguajes funcionales hay operadores para hacer esto.&lt;/p&gt;
+
+&lt;p&gt;Puedes pensar en este tipo de composición como en hacer &lt;strong&gt;fluir&lt;/strong&gt; la información por un conjunto de funciones. Ejemplos en lenguajes como Haskell, Clojure y Elixir te pueden ayudar a expandir sobre esto, puedes buscarlo como “composición funcional”.&lt;/p&gt;
+
+&lt;h2 id=&quot;composición-de-objetos&quot;&gt;Composición de objetos&lt;/h2&gt;
+
+&lt;p&gt;Otra técnica que te puede ayudar a crear mejor software es la composición de objetos. Esta se entiende como formar objetos más complejos a partir de objetos más simples. Aunque la &lt;strong&gt;herencia&lt;/strong&gt; es una forma de composición, al hacer completamente dependientes una clase de otra, no es la mejor forma de crear objetos complejos. De hecho, hay grandes dudas sobre si la herencia es una buena idea. Pero no estamos aquí para discutir sobre las ventajas y desventajas de la herencia, sino para aprender a usar otros tipos de composición.&lt;/p&gt;
+
+&lt;p&gt;Una forma de crear objetos complejos, en vez de tener la relación “es un” que nos da la herencia, es tener la relación “tiene un”. No estamos diciendo que la herencia nunca se deba usar, pero en muchas ocasiones podemos pensar en la composición como una alternativa mejor.&lt;/p&gt;
+
+&lt;p&gt;Observa el siguiente ejemplo, en el que representamos la información de un usuario y su relación con al entidad Empleado:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Empleado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info_usuario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usuario&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Esta implementación está menos acoplada o es menos dependiente que la implementación basada en herencia. Por ejemplo, si queremos evolucionar la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Usuario&lt;/code&gt;, no tenemos que hacer que nada de esto afecte directamente a la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Empleado&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Otra forma de usar la composición es la &lt;strong&gt;delegación&lt;/strong&gt;, a la que le dedicaremos más tiempo en un futuro. Esta te la puedes imaginar como que un objeto le deja todo el trabajo a otro a través, por ejemplo, de un método. Esto es más común en lenguajes no basados en clases, ya que se da de manera más natural, como en JavaScript, donde puedes usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.assign&lt;/code&gt; para copiar las propiedades de un objeto a otro.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Aprender a usar la composición es &lt;strong&gt;obligatorio para desarrollar buen software&lt;/strong&gt;. Lo quieras o no, mientras desarrollas, siempre estás juntando componentes, es decir &lt;em&gt;componiendo&lt;/em&gt;, si conoces las técnicas correctas, podrás crear software de mejor calidad de manera más rápida.&lt;/p&gt;
+
+&lt;p&gt;Piensa en el desarrollo de software como el arte de deconstruir los problemas, resolverlos por cachitos y después juntar las soluciones de regreso para tener la solución completa.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="fp" /><category term="composición" /><summary type="html">La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella.</summary></entry><entry><title type="html">Instrumentando microservicios en Go con Gin y AWS X-Ray</title><link href="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html" rel="alternate" type="text/html" title="Instrumentando microservicios en Go con Gin y AWS X-Ray" /><published>2023-04-17T00:00:00-06:00</published><updated>2023-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html">&lt;p&gt;En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.&lt;/p&gt;
 
 &lt;p&gt;Si nuestro código provee información de traceo para requests, y logs, podemos decir que está instrumentado y que podemos observar cómo se está desempeñando nuestro sistema.&lt;/p&gt;
 
@@ -571,172 +892,7 @@ Pregunta: {Pregunta}
 
 &lt;p&gt;En conclusión, implementar X-Ray en un microservicio en Go es un proceso sencillo que puede beneficiar enormemente la observabilidad y las capacidades de resolución de problemas de tu aplicación. El proceso de integración es relativamente fácil, y el SDK de X-Ray proporciona una serie de características útiles que facilitan la trazabilidad de las solicitudes y la identificación de cuellos de botella. Sin embargo, es importante tener en cuenta que X-Ray tiene algunas desventajas, como el costo asociado con su uso y las limitaciones de sus capacidades de muestreo.&lt;/p&gt;
 
-&lt;p&gt;No obstante, con una consideración cuidadosa y una implementación adecuada, X-Ray puede ser una herramienta invaluable para la depuración y optimización de tu arquitectura de microservicios. Así que no dudes en probarlo y ver cómo puede mejorar el rendimiento y la confiabilidad de tus microservicios en Go.&lt;/p&gt;</content><author><name>Héctor Vela</name><email>vell.once@gmail.com</email><uri>https://github.com/hevela</uri></author><category term="programación" /><category term="instrumentación" /><category term="microservicios" /><category term="AWS" /><category term="Go" /><summary type="html">Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.</summary></entry><entry><title type="html">Composición en el software</title><link href="https://blog.thedojo.mx/2023/04/17/composicion-en-el-software.html" rel="alternate" type="text/html" title="Composición en el software" /><published>2023-04-17T00:00:00-06:00</published><updated>2023-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/17/composicion-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/17/composicion-en-el-software.html">&lt;p&gt;Composición:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Es la acción de combinar componentes individuales para formar un sistema más complejo.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Componer es la técnica más efectiva para construir software de manera organizada. La composición nos permite crear software complejo porque nos permite construir piezas pequeñas que resuelven problemas manejables y luego “juntarlas” para entregar la solución de nuestro problema.&lt;/p&gt;
-
-&lt;p&gt;Veamos algunas formas de hacer composición en el software y por qué es más efectivo que otras formas de reutilizar código.&lt;/p&gt;
-
-&lt;h2 id=&quot;por-que-es-importante-aprender-a-usar-la-composición&quot;&gt;¿Por que es importante aprender a usar la composición?&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Nuestra habilidad para descomponer un problema en partes, depende
-directamente de nuestra habilidad para combinar soluciones. - &lt;strong&gt;John Hughes&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;John Hughes es un gran proponente e investigador de la programación funcional en la actualidad. Él propone que la composición es importante porque nos da la confianza de poder romper nuestros problemas en problemas más pequeños, sabiendo que después podremos juntarlos de manera efectiva para entregar una solución al problema original.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Divide y vencerás&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Una ventaja secundaria de dividir el software en piezas pequeñas, es que si diseñamos correctamente nuestros componentes y tenemos las herramientas adecuadas para unirlas después, podemos &lt;strong&gt;reutilizar&lt;/strong&gt; las piezas que ya hemos construido en otras partes.&lt;/p&gt;
-
-&lt;p&gt;Veamos dos formas de aplicar la composición en el software.&lt;/p&gt;
-
-&lt;h2 id=&quot;composición-de-funciones&quot;&gt;Composición de funciones&lt;/h2&gt;
-
-&lt;p&gt;Las funciones son la unidad de abstracción más pequeña que tenemos en la programación. Crear pequeñas funciones útiles que resuelvan problemas generales, de manera &lt;strong&gt;completa y precisa&lt;/strong&gt;, es muy buena idea.&lt;/p&gt;
-
-&lt;p&gt;¿Cómo aplicamos la composición? Puedes usar la composición al dividir tu problema principal en funciones sencillas y luego juntarlas.Veamos un ejemplo: vamos a crear un validador de contraseñas. Este debe verificar las siguientes condiciones:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Verificar una longitud mínima, que podría ser 8 caracteres.&lt;/li&gt;
-  &lt;li&gt;Checar que no tenga ciertas palabras (lista negra).&lt;/li&gt;
-  &lt;li&gt;Verificar que tiene un número&lt;/li&gt;
-  &lt;li&gt;Verificar que tiene un carácter especial&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Podríamos hacer esto en una sola función que verificara todas estas características, una por una a través de un serie de if’s. Pero veamos una implementación usando composición, y sus ventajas.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;!@#$%^&amp;amp;*()_+&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'12345678'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
-           &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
-           &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
-           &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Quiero que te fijes especialmente en la última función, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate_password&lt;/code&gt;. Aunque funciona, es un poco rígida. La composición puede ayudarnos a hacerla más flexible.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'palabra_uno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'palabra_dos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Esta función es más flexible, pudiendo agregar o quitar validadores sin tener que modificar más código, simplemente modificando la lista de validadores, pero todavía no es como la queremos. ¿Qué pasas si queremos agregar el conjunto de errores por los que falla una validación? Tenemos que ir &lt;strong&gt;acumulando&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Devuelve la lista de errores de la contraseña, si está vacía, la contraseña es válida&quot;&quot;&quot;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;mesage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña es muy corta&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña no tiene un número&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña no tiene un carácter especial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'palabra_uno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'palabra_dos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña tiene palabras prohibidas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-
-    &lt;span class=&quot;nb&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Aquí &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reduce&lt;/code&gt; que recibe una función, una lista de elementos por las que iterar y un valor inicial, nos ayuda a acumular los errores. Si quisiéramos hacerlo aún más flexible, podríamos hacer dos cosas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Hacer que la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate_password&lt;/code&gt; reciba una lista de validadores (junto con el mensaje), en vez de tenerlos definidos dentro de la función&lt;/li&gt;
-  &lt;li&gt;Definir una clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Validator&lt;/code&gt; que tenga un método &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate&lt;/code&gt; y un atributo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;message&lt;/code&gt; y que reciba una función y un mensaje en su constructor, para tener una interfaz más clara.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;composición-matemática&quot;&gt;Composición matemática&lt;/h3&gt;
-
-&lt;p&gt;Este tipo de composición fue un poco más empírica, simplemente juntando funciones. A veces, cuando oigas de composición, se van a referir a la composición de funciones en sentido matemático. Veamos un ejemplo en Python:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;LETTERS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quitar_no_ascii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LETTERS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reemplazar_acentos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;accents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'á'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'é'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'í'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'i'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ó'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'o'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ú'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'u'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ñ'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'n'&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;limpiar_cadena&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quitar_no_ascii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reemplazar_acentos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;El código anterior deja una cadena solamente con letras ASCII, sin acentos. Lo que ves en la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;limpiar_cadena&lt;/code&gt; es una composición de funciones, en el sentido matemático, aplicar una función después de otra, o la salida de una como argumento de la otra.&lt;/p&gt;
-
-&lt;p&gt;Siempre que pienses en un proceso que lleve una cadena de pasos, lo puedes representar como una cadena de funciones. En lenguajes funcionales hay operadores para hacer esto.&lt;/p&gt;
-
-&lt;p&gt;Puedes pensar en este tipo de composición como en hacer &lt;strong&gt;fluir&lt;/strong&gt; la información por un conjunto de funciones. Ejemplos en lenguajes como Haskell, Clojure y Elixir te pueden ayudar a expandir sobre esto, puedes buscarlo como “composición funcional”.&lt;/p&gt;
-
-&lt;h2 id=&quot;composición-de-objetos&quot;&gt;Composición de objetos&lt;/h2&gt;
-
-&lt;p&gt;Otra técnica que te puede ayudar a crear mejor software es la composición de objetos. Esta se entiende como formar objetos más complejos a partir de objetos más simples. Aunque la &lt;strong&gt;herencia&lt;/strong&gt; es una forma de composición, al hacer completamente dependientes una clase de otra, no es la mejor forma de crear objetos complejos. De hecho, hay grandes dudas sobre si la herencia es una buena idea. Pero no estamos aquí para discutir sobre las ventajas y desventajas de la herencia, sino para aprender a usar otros tipos de composición.&lt;/p&gt;
-
-&lt;p&gt;Una forma de crear objetos complejos, en vez de tener la relación “es un” que nos da la herencia, es tener la relación “tiene un”. No estamos diciendo que la herencia nunca se deba usar, pero en muchas ocasiones podemos pensar en la composición como una alternativa mejor.&lt;/p&gt;
-
-&lt;p&gt;Observa el siguiente ejemplo, en el que representamos la información de un usuario y su relación con al entidad Empleado:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Empleado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info_usuario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usuario&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Esta implementación está menos acoplada o es menos dependiente que la implementación basada en herencia. Por ejemplo, si queremos evolucionar la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Usuario&lt;/code&gt;, no tenemos que hacer que nada de esto afecte directamente a la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Empleado&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Otra forma de usar la composición es la &lt;strong&gt;delegación&lt;/strong&gt;, a la que le dedicaremos más tiempo en un futuro. Esta te la puedes imaginar como que un objeto le deja todo el trabajo a otro a través, por ejemplo, de un método. Esto es más común en lenguajes no basados en clases, ya que se da de manera más natural, como en JavaScript, donde puedes usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.assign&lt;/code&gt; para copiar las propiedades de un objeto a otro.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Aprender a usar la composición es &lt;strong&gt;obligatorio para desarrollar buen software&lt;/strong&gt;. Lo quieras o no, mientras desarrollas, siempre estás juntando componentes, es decir &lt;em&gt;componiendo&lt;/em&gt;, si conoces las técnicas correctas, podrás crear software de mejor calidad de manera más rápida.&lt;/p&gt;
-
-&lt;p&gt;Piensa en el desarrollo de software como el arte de deconstruir los problemas, resolverlos por cachitos y después juntar las soluciones de regreso para tener la solución completa.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="fp" /><category term="composición" /><summary type="html">La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella.</summary></entry><entry><title type="html">Usando LangChain 🦜 para crear software basado en LLM’s</title><link href="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html" rel="alternate" type="text/html" title="Usando LangChain 🦜 para crear software basado en LLM’s" /><published>2023-04-15T00:00:00-06:00</published><updated>2023-04-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html">&lt;p&gt;Los grandes modelos de lenguaje o LLM’s (Large Language Models) han sido noticia en este 2023. Es por eso que han surgido muchos proyectos y herramientas que permiten crear software basado en estas herramientas.&lt;/p&gt;
+&lt;p&gt;No obstante, con una consideración cuidadosa y una implementación adecuada, X-Ray puede ser una herramienta invaluable para la depuración y optimización de tu arquitectura de microservicios. Así que no dudes en probarlo y ver cómo puede mejorar el rendimiento y la confiabilidad de tus microservicios en Go.&lt;/p&gt;</content><author><name>Héctor Vela</name><email>vell.once@gmail.com</email><uri>https://github.com/hevela</uri></author><category term="programación" /><category term="instrumentación" /><category term="microservicios" /><category term="AWS" /><category term="Go" /><summary type="html">Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.</summary></entry><entry><title type="html">Usando LangChain 🦜 para crear software basado en LLM’s</title><link href="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html" rel="alternate" type="text/html" title="Usando LangChain 🦜 para crear software basado en LLM’s" /><published>2023-04-15T00:00:00-06:00</published><updated>2023-04-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html">&lt;p&gt;Los grandes modelos de lenguaje o LLM’s (Large Language Models) han sido noticia en este 2023. Es por eso que han surgido muchos proyectos y herramientas que permiten crear software basado en estas herramientas.&lt;/p&gt;
 
 &lt;p&gt;En este artículo vamos a poner un pequeño tutorial de una herramienta creada para hacer aplicaciones basadas en LLM’s: &lt;a href=&quot;https://python.langchain.com/en/latest/index.html&quot;&gt;LangChain&lt;/a&gt;.&lt;/p&gt;
 
@@ -1283,241 +1439,4 @@ Dependiendo de los estándares que sigan, estas API’s pueden ser llamadas &lt;
 
 &lt;p&gt;Lo importante de saber que es un API es entender su función y tener técnicas para diseñarlas lo mejor posible. Recuerda, un API no se limita a un servidor web que sirve JSON, sino que es toda aquella interfaz que puede ser usada con un programa. De ahí que los navegadores expongan API’s como la File API, Fetch API, Device API, &lt;a href=&quot;https://www.educative.io/answers/what-are-browser-apis&quot; target=&quot;_blank&quot;&gt;etc.&lt;/a&gt;, que no tienen nada que ver con una API de un servidor web, sino con el &lt;strong&gt;uso de otras partes del software&lt;/strong&gt; y que mediante esta interfaz nos olvidamos de los detalles de implementación.&lt;/p&gt;
 
-&lt;p&gt;Cuando a ti te toque diseñar un API, recuerda su principal función: separar dos partes de un software al mismo tiempo que permites la comunicación.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="apis" /><category term="abstracción" /><category term="diseño-de-software" /><category term="definiciones" /><summary type="html">Definamos que es un 'Application Programming Interface' en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API's.</summary></entry><entry><title type="html">¿Qué es la abstracción?</title><link href="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html" rel="alternate" type="text/html" title="¿Qué es la abstracción?" /><published>2023-03-13T00:00:00-06:00</published><updated>2023-03-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html">&lt;p&gt;Gran parte del trabajo que hacemos como desarrolladores de software consiste en “abstraer”, pero a veces no entendemos lo que esto significa.&lt;/p&gt;
-
-&lt;p&gt;En este artículo vamos a empezar explicando qué es la abstracción en general y luego cómo puedes mejorar tu habilidad de abstraer para programar más rápido y para crear mejores programas. La capacidad de &lt;strong&gt;crear mejores abstracciones te permitirá crear programas que no creías que pudieran existir o que tú pudieras crear&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Empecemos por las mismísimas bases.&lt;/p&gt;
-
-&lt;h2 id=&quot;etimología-de-dónde-viene-la-palabra-abstracción&quot;&gt;Etimología: ¿de dónde viene la palabra abstracción?&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;“Abstracción”&lt;/strong&gt; viene del latín &lt;em&gt;abstrahere&lt;/em&gt;, que tiene dos partes principales: &lt;strong&gt;abs&lt;/strong&gt; que significa “fuera de”, “sin”, “a distancia” y &lt;strong&gt;trahere&lt;/strong&gt; que significa “tirar”. La palabra &lt;em&gt;abstrahere&lt;/em&gt; significa literalmente “tirar fuera”.&lt;/p&gt;
-
-&lt;p&gt;La palabra &lt;em&gt;abstrahere&lt;/em&gt; se usa en el sentido de “separar” o “extraer” en el contexto de la filosofía, la matemática y la física. En el contexto de las matemáticas, la abstracción es el proceso de separar un concepto de sus propiedades físicas.&lt;/p&gt;
-
-&lt;p&gt;A veces entendemos el proceso de abstraer como la capacidad de generalización. Por ejemplo, si queremos abstraer el concepto de “mesa”, lo que hacemos es quitar todas las &lt;em&gt;características concretas&lt;/em&gt; de todas las mesas que hemos visto en la vida y entonces vemos lo que tienen todas en común: nos permiten hacer algo sobre ellas, sea parados o sentados. De esta manera tenemos el concepto abstracto de una mesa en nuestra mente. Después podemos aplicar ese concepto a diferentes cosas que veamos.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Los seres humanos somos máquinas de abstraer.&lt;/strong&gt; Si a un niño pequeño le presentas unos cuantos gatos o perros, es capaz de aprender el concepto “gato” y extenderlo a otros gatos que vea aunque no se parezcan mucho a los que ya vio. Lo que no es capaz de hacer normalmente, es definir en palabras lo que es un “gato” de manera precisa.&lt;/p&gt;
-
-&lt;p&gt;Como &lt;strong&gt;resumen&lt;/strong&gt;: abstraer es “tirar fuera”, sacar las características que definen algo de su contexto concreto y ser capaz de entender ese concepto de manera general. Esta capacidad nos permite comprender el mundo y movernos en él.&lt;/p&gt;
-
-&lt;p&gt;Algunos definen las abstracciones como lo contrario: quitarle todo lo que no es necesario a un concepto para 1) resaltar y hacer &lt;strong&gt;visible&lt;/strong&gt; lo que importa y 2) Ocultar detalles que &lt;em&gt;no deben&lt;/em&gt; ser tomados en cuenta.&lt;/p&gt;
-
-&lt;p&gt;A estas abstracciones a veces las llamamos &lt;em&gt;&lt;strong&gt;modelos&lt;/strong&gt;&lt;/em&gt;. &lt;strong&gt;¿Te suena?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1678944166/Ilustracio%CC%81n_sin_ti%CC%81tulo_2_cwrhak.png&quot; alt=&quot;Imagen que ilustra la abstracción&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;cómo-la-usamos-en-la-programación&quot;&gt;Cómo la usamos en la programación&lt;/h2&gt;
-
-&lt;p&gt;Aunque los seres humanos nos la pasamos abstrayendo todo lo que vemos en la vida real (de hecho, lo único que tenemos en nuestra cabeza son abstracciones), no siempre podemos hacer las siguientes dos cosas:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Delimitar &lt;strong&gt;precisamente&lt;/strong&gt; la abstracción&lt;/li&gt;
-  &lt;li&gt;Expresar o explicar esa abstracción a otras personas, en lenguaje común.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Y esto &lt;strong&gt;&lt;em&gt;precisamente&lt;/em&gt;&lt;/strong&gt; es lo que necesitamos al programar: delimitar nuestras abstracciones y expresarlas en algún lenguaje de programación, como una tabla en una base de datos o de alguna otra forma que las computadoras puedan capturar y procesar, &lt;strong&gt;a esto es a lo que nos referimos cuando hablamos de abstraer en la programación&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Lo que hace más difíciles las abstracciones en la programación es que normalmente los conceptos no son tan sencillos e incluso son de áreas con las que no estamos familiarizados o no tenemos experiencia.&lt;/p&gt;
-
-&lt;p&gt;La capacidad de abstraer es muy importante en casi todo trabajo intelectual, sobre todo aquellos relacionados con la lógica, por eso es supremamente importante en la programación. Aquí es donde la programación se parece al trabajo de un matemático: &lt;strong&gt;debes traducir un problema informal de la vida real, normalmente en lenguaje natural a un lenguaje formal que una computadora pueda entender&lt;/strong&gt;. Para hacer esto, debes dejar los aspectos más importantes del problema para representarlos de manera efectiva en tu programa final.&lt;/p&gt;
-
-&lt;p&gt;Pero recuerda que las abstracciones en programación también deben &lt;em&gt;ocultar&lt;/em&gt; detalles que no &lt;em&gt;queremos&lt;/em&gt; que se vean en otras partes del programa, por lo que se incluye una tarea más: refinar estas abstracciones hasta que contengan la información completamente necesaria.&lt;/p&gt;
-
-&lt;p&gt;La abstracciones las podemos ver en muchas formas en la programación:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Modelos de datos&lt;/li&gt;
-  &lt;li&gt;Tipos de datos&lt;/li&gt;
-  &lt;li&gt;Objetos&lt;/li&gt;
-  &lt;li&gt;Funciones&lt;/li&gt;
-  &lt;li&gt;Clases&lt;/li&gt;
-  &lt;li&gt;Módulos&lt;/li&gt;
-  &lt;li&gt;Interfaces&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Todas estas cosas que mencionamos tienen una característica en común: presentan una &lt;strong&gt;interfaz&lt;/strong&gt;. Así estas abstracciones lo pueden ser en dos sentidos:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;La representación de un concepto de la vida real en el programa&lt;/li&gt;
-  &lt;li&gt;El lugar donde se &lt;em&gt;ocultan&lt;/em&gt; detalles o información detrás de una interfaz a otra parte del programa&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;ejemplos-de-abstracciones&quot;&gt;Ejemplos de abstracciones&lt;/h3&gt;
-
-&lt;p&gt;Hablemos de algunos ejemplos y cómo caen en las definiciones que hemos hablado.&lt;/p&gt;
-
-&lt;h3 id=&quot;carrito-de-compras&quot;&gt;Carrito de compras&lt;/h3&gt;
-
-&lt;p&gt;Cuando queremos representar algo en un carrito de compra en un programa, lo que hacemos es abstraer el concepto de “carrito de compra” y representarlo en el programa.&lt;/p&gt;
-
-&lt;p&gt;En la vida real, un carrito o una bolsa de compra es donde almacenamos las cosas que estamos a punto de comprar mientras estamos en la tienda.&lt;/p&gt;
-
-&lt;p&gt;La abstracción del carrito de compra, entonces, es un conjunto de productos, cada uno con su precio y cantidad. En el programa, el carrito de compra es una lista de productos que se guarda mientras el usuario no termine de comprar.&lt;/p&gt;
-
-&lt;p&gt;En esta abstracción se mantuvieron las propiedades importantes:
-para no ir a pagar artículo por artículo, se tiene un contenedor que nos ayuda a mantener lo que vamos a comprar y pagarlo todo de una vez.&lt;/p&gt;
-
-&lt;p&gt;La abstracción consiste en que “tiramos fuera” esas propiedades y eliminamos los detalles, por ejemplo si es un carrito, una canasta, una bolsa, un acompañante que carga tus productos, etc.&lt;/p&gt;
-
-&lt;p&gt;Aquí entra otra de las características de las abstracciones. Aunque normalmente somos capaces de entender para lo que sirve el carrito de compra, si le preguntas a un cliente común sobre la abstracción, va a ser difícil que la ponga en palabras, por lo que simplemente usamos ese objeto para representar la abstracción para el usuario. No le decimos “contenedor de tus productos mientras terminas la compra” sino simplemente “carrito de compras”.&lt;/p&gt;
-
-&lt;p&gt;En la segunda forma en la que este carrito de compras puede ser una abstracción es que en tu programa, tal vez hay un clase que representa este contenedor. Para el resto del programa, este carrito tiene una interfaz que podría consistir en:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Agregar producto&lt;/li&gt;
-  &lt;li&gt;Obtener total&lt;/li&gt;
-  &lt;li&gt;Vaciar carrito&lt;/li&gt;
-  &lt;li&gt;Agregar Cupón&lt;/li&gt;
-  &lt;li&gt;Obtener total&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;La manera en que esta clase hace todas esas operaciones debería estar oculta de todo el resto del programa. Incluso la manera en que almacena la información sólo le concierne a esta &lt;em&gt;abstracción&lt;/em&gt;. Esto permite &lt;strong&gt;ocultar información&lt;/strong&gt; y hace que las piezas del programa sean menos dependientes entre ellas.&lt;/p&gt;
-
-&lt;h3 id=&quot;abstracción-de-un-usuario&quot;&gt;Abstracción de un usuario&lt;/h3&gt;
-
-&lt;p&gt;Esta es una de las abstracciones más comunes en los sistemas de software. ¿Qué características esenciales necesitamos de alguna entidad para que use nuestro sistema? Nota que mencionamos “entidad” y no “humano”, porque puede que el usuario de nuestro sistema sea otro sistema, por ejemplo.&lt;/p&gt;
-
-&lt;p&gt;En sistemas como AWS, GCP y Azure, por ejemplo, existen cuentas para computadoras o para que sean usadas por otro servicio (se llaman &lt;em&gt;cuentas de servicio&lt;/em&gt;).&lt;/p&gt;
-
-&lt;p&gt;Pensando en esto, ¿qué representa a un usuario? Yo me atrevería a decir que los únicos datos absolutamente esenciales para esta abstracción son los que permiten verificar &lt;strong&gt;la identidad&lt;/strong&gt;, aquellos que le permiten a la entidad comprobar que en efecto es ella, o en el caso de sistemas, que puede actuar en nombre de ella.&lt;/p&gt;
-
-&lt;p&gt;Pensando más ampliamente, la abstracción del usuario tendrá más atributos dependiendo de lo que aplicación haga. Imagínate una aplicación en la que los usuarios sean pacientes clínicos. ¿Qué datos nos interesan de una persona para esta aplicación?&lt;/p&gt;
-
-&lt;h2 id=&quot;niveles-de-abstracción&quot;&gt;Niveles de abstracción&lt;/h2&gt;
-
-&lt;p&gt;Cuando hablamos de abstracciones en programación, a veces se escucha el término “nivel de abstracción”.
-¿A qué se refiere un “nivel”? La siguiente imagen nos puede ayudar a entenderlo:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1678759133/Ilustracio%CC%81n_sin_ti%CC%81tulo_f7ag0e.png&quot; alt=&quot;Niveles de abstracción&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Mientras más cerca esté de la implementación técnica (llegando hasta el hardware), podemos decir que la abstracción está más “abajo”. Mientras más cerca esté de los pensamientos o la forma en la que los humanos vemos las cosas cotidianamente, la abstracción está más “arriba”.&lt;/p&gt;
-
-&lt;p&gt;A esto se refiere la abstracción de bajo nivel y la abstracción de alto nivel. Cuando hacemos un programa, utilizamos una “cadena” de abstracciones, es decir, abstracciones que se sirven de otras abstracciones para funcionar. Usemos de nuevo el carrito de compras como ejemplo.&lt;/p&gt;
-
-&lt;p&gt;El carrito es la abstracción de más alto nivel, porque es la que más se acerca al pensamiento cotidiano. Esta se sirve de la abstracción del “contenedor”. Si lo implementamos como una lista, esta es la siguiente abstracción. La lista, dependiendo del lenguaje en el que estemos, puede servirse de la abstracción de un arreglo dinámico. El arreglo, a su vez, se sirve de la abstracción de los bloques y direcciones de memoria. La memoria usa la abstracción de los bits. Y finalmente los bits son un voltaje presente en un circuito, pero esto, a lo que llamamos “voltaje” sigue siendo una abstracción.&lt;/p&gt;
-
-&lt;p&gt;Un &lt;strong&gt;nivel de abstracción&lt;/strong&gt; está compuesto por todas las abstracciones de nuestro programa que están más o menos igual de separadas de el pensamiento humano. Por ejemplo, el carrito de compras, el checkout (terminar y pagar la compra), una biblioteca, un producto, etc. son abstracciones que están al mismo nivel porque son cosas que el usuario puede entender y con las que trata directamente. Una lista, un cola, un árbol (estructura de datos), una pila, son cosas que están al mismo nivel porque las entendemos como maneras de organizar datos.&lt;/p&gt;
-
-&lt;h2 id=&quot;dificultades-para-abstraer&quot;&gt;Dificultades para abstraer&lt;/h2&gt;
-
-&lt;p&gt;Abstraer no es tan sencillo como ha parecido hasta ahorita. Más bien, abstraer es algo que hacemos todo el tiempo, pero crear abstracciones adecuadas y expresarlas correctamente no es tan sencillo. De hecho, si te has dedicado a programar por un tiempo, puede que ya te hayas dado cuenta de eso. La primera dificultad es &lt;strong&gt;la naturaleza de la información&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;No nos vamos a poner a filosofar sobre qué es lo que permite definir algo, para eso te recomiendo el libro &lt;a href=&quot;https://www.goodreads.com/en/book/show/1753248&quot;&gt;Data and Reality de William Kent&lt;/a&gt;, que te romperá la cabeza con respecto a las abstracciones y las diferentes cosas que debes analizar para representar la realidad en una computadora, más concretamente, en una base de datos.&lt;/p&gt;
-
-&lt;p&gt;Lo único que quiero sacar de este libro por el momento es: el mundo real, a diferencia del mundo ideal que nos imaginamos, &lt;strong&gt;no tiene límites definidos&lt;/strong&gt;, no existen los conceptos tan delimitados y tan claros como los queremos hacer ven en los diccionarios.&lt;/p&gt;
-
-&lt;p&gt;Esto nos lleva a que las representaciones (las abstracciones que hacemos en el código) &lt;strong&gt;siempre sean subjetivas y arbitrarias&lt;/strong&gt;. No existe &lt;strong&gt;LA ABSTRACCIÓN&lt;/strong&gt; que represente la realidad sin fallas, todas ellas tienen un punto de vista y se tienen que adecuar para la función que las necesites. Una misma cosa puede ser representada de millones de maneras diferentes y todas estas maneras pueden ser válidas.&lt;/p&gt;
-
-&lt;p&gt;Otra dificultad es lo que hablamos arriba sobre los &lt;em&gt;niveles de abstracción&lt;/em&gt;. Algo para lo que se usan las abstracciones en la programación es para &lt;em&gt;ocultar&lt;/em&gt; información entre componentes del sistema. Crear abstracciones que no revelen detalles no necesarios a veces no es tan sencillo, y se tienen que pensar detenidamente.&lt;/p&gt;
-
-&lt;p&gt;Finalmente, la complejidad intrínseca de los elementos que representamos puede ser en sí mismo un gran reto para crear abstracciones convenientes. Por ejemplo, en vez de representar gatos, tenemos que representar un proceso de suministro de insumos para una cadena de producción, la logística compleja de programación de vuelos y asignación de aviones y tripulación para una aerolínea, o el estado de una conversación compleja entre dos entidades.&lt;/p&gt;
-
-&lt;p&gt;Es por eso que a veces creemos que necesitamos ayuda para mejorar nuestras capacidades de abstracción.&lt;/p&gt;
-
-&lt;h2 id=&quot;cómo-mejorar-tu-capacidad-de-abstraer&quot;&gt;Cómo mejorar tu capacidad de abstraer&lt;/h2&gt;
-
-&lt;p&gt;Esta es una de las preguntas que todo programador se hace cuando quiere mejorar su manera y velocidad al programar. Cuando hablamos de “la manera” de programar, nos referimos a &lt;em&gt;la calidad&lt;/em&gt; del código que produce.&lt;/p&gt;
-
-&lt;p&gt;Vamos a hablar de las técnicas que puedes seguir para mejorar tu capacidad de crear y &lt;em&gt;expresar&lt;/em&gt; mejores abstracciones.&lt;/p&gt;
-
-&lt;h3 id=&quot;consigue-información-y-ejemplos&quot;&gt;Consigue información y ejemplos&lt;/h3&gt;
-
-&lt;p&gt;Ya hemos dicho que los seres humanos somos &lt;em&gt;muy buenos&lt;/em&gt; creando abstracciones por naturaleza, pero somos tan buenos que podemos crear abstracciones demasiado temprano cuando entendemos algo bien.&lt;/p&gt;
-
-&lt;p&gt;Para evitar las abstracciones tempranas, &lt;strong&gt;consigue la mmayor cantidad de información posible&lt;/strong&gt;. Mientras más ejemplos diferentes del mismo fenómeno o entidad tengamos, mejores abstracciones vamos a crear, ya que encontraremos ejemplos que se contradicen entre ellos, excepciones y casos límite (aquellos que están en los valores extremos o combinaciones de características raras).&lt;/p&gt;
-
-&lt;h3 id=&quot;crear-niveles-de-abstracción-cerrados&quot;&gt;Crear niveles de abstracción cerrados&lt;/h3&gt;
-
-&lt;p&gt;Es importante entender los &lt;em&gt;niveles de abstracción&lt;/em&gt; porque esto nos permitirá diseñar abstracciones que no dejen pasar detalles de niveles superiores o inferiores hacia el otro lado de la cadena de abstracción. Por ejemplo, al cliente no le debería afectar si el carrito está implementado como una lista, un arreglo directamente, una tupla o un árbol. Dejar pasar esos detalles afectaría la experiencia del usuario, al mismo tiempo que haría más difícil de mantener el código.&lt;/p&gt;
-
-&lt;p&gt;Estos niveles de abstracción se mantienen de dos formas:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Creando conjuntos de abstracciones relacionados que tengan el mismo nivel. A esto le llamamos una “capa”.&lt;/li&gt;
-  &lt;li&gt;Creando interfaces que oculten los detalles de capas superiores o inferiores.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Es muy difícil que este diseño te quede bien a la primera, por lo que debes tener en cuenta que tus interfaces y tus abstracciones irán evolucionando con el tiempo.&lt;/p&gt;
-
-&lt;h3 id=&quot;encontrar-patrones&quot;&gt;Encontrar patrones&lt;/h3&gt;
-
-&lt;p&gt;Quiero citar a &lt;a href=&quot;https://altenwald.com/&quot;&gt;&lt;strong&gt;Manuel Rubio&lt;/strong&gt;&lt;/a&gt; en una respuesta que me dio personalmente:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Estar atento a estos patrones y saber cómo aprovecharlos en nuestro beneficio puede ayudarnos a crear abstracciones del código que desarrollamos. Hay que ser metódico y organizar bien los datos, nombrar las cosas correctamente, mantener las responsabilidades desligadas unas de otras y entonces los patrones se ven claros.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Este consejo está directamente ligado a la cantidad de información que tenemos sobre el problema. Mientras más diversa y rica sea, más probable es que encontremos los patrones que subyacen en los comportamientos y procesos que tenemos que abstraer (o modelar). Aquí lo importante es ser explícitos con esos patrones, expresarlos y documentarlos de la manera más clara posible.&lt;/p&gt;
-
-&lt;p&gt;Haber visto y sobre todo documentado una gran cantidad de patrones también nos puede ayudar a diseñar abstracciones de manera más efectiva y rápida en el futuro. Esto es de lo que los &lt;strong&gt;patrones de diseño&lt;/strong&gt; se tratan: soluciones comunes a problemas recurrentes. Sólo hay que ser muy cuidadosos de no encajar problemas en patrones que no corresponden completamente al problema, sólo por el hecho de querer salir rápido del problema o de querer aplicar cierto patrón.&lt;/p&gt;
-
-&lt;h3 id=&quot;diseña-dos-veces&quot;&gt;Diseña dos veces&lt;/h3&gt;
-
-&lt;p&gt;El diseño del software puede hacerse como la escritura: primero escribes y después editas. Son dos etapas diferentes y tan independientes que dos personas diferentes las pueden hacer. El diseño en el software puede hacerse de manera parecida. Primero diseñas tus representaciones y puedes pedirle a alguien que te corrija o revise, o puedes hacerlo tú mismo después de haber dejado pasar un poco de tiempo.&lt;/p&gt;
-
-&lt;p&gt;Esta revisión te llevará a pensar cosas como “¿Qué estaba pensando cuando escribí esto?” o “Creo que esta no es la abstracción correcta, porque deja escapar detalles no necesarios”, gracias a que normalmente te has parado un poco a distancia de tu propio diseño.&lt;/p&gt;
-
-&lt;h2 id=&quot;desarrolla-la-capacidad-de-absorber-información&quot;&gt;Desarrolla la capacidad de absorber información&lt;/h2&gt;
-
-&lt;p&gt;Debido a que tienes que representar cosas de dominios en los que probablemente no conoces, tener la capacidad de estudiar de manera efectiva te permitirá analizar la información necesaria para crear buenas abstracciones.&lt;/p&gt;
-
-&lt;h3 id=&quot;expande-tu-mente&quot;&gt;Expande tu mente&lt;/h3&gt;
-
-&lt;p&gt;Mientras más cosas sepas de diferentes campos o dominios, será más probable que encuentres cosas que te puedan servir para &lt;em&gt;entender&lt;/em&gt; lo que estás tratando de representar y sobre todo para extraer sus componentes principales, así como la información que vale la pena excluir. Así que no te limites en aprender todo lo que puedas de todos los campos posibles, pero recuerda también que esto tiene rendimientos decrecientes: mientras más profundices en un campo, más te costará adquirir nueva información que valga la pena.&lt;/p&gt;
-
-&lt;p&gt;Es por esto mismo que muchos programadores son buenos programando para ciertos dominios: financiero, de automatización industrial, de juegos, de programas científicos, etc. No lo podemos saber todo y muchas veces son el conocimiento de una sola área es suficiente para entretenernos por décadas.&lt;/p&gt;
-
-&lt;h3 id=&quot;practica&quot;&gt;Practica&lt;/h3&gt;
-
-&lt;p&gt;Este es el consejo más gastado de todos, pero aquí le vamos a dar un pequeño giro. No sirve de mucho para mejorar sólo hacer abstracciones sin reflexionar en ellas. Tienes que pensar detenidamente en tus diseños y contestar preguntas como:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;¿Qué información tenía disponible y pasé por alto?&lt;/li&gt;
-  &lt;li&gt;¿Cómo hubiera podido conocer u obtener esa información?&lt;/li&gt;
-  &lt;li&gt;¿Qué detalles de implementación dejé escapar de mi abstracción?&lt;/li&gt;
-  &lt;li&gt;¿Quién pudo haberme dado más ejemplos sobre el problema?&lt;/li&gt;
-  &lt;li&gt;¿Quién puede hacer una revisión sobre el diseño y darme comentarios para mejorar?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A esto se le llama práctica enfocada y hay ejercicios llamados &lt;a href=&quot;http://codekata.com/&quot;&gt;Code Katas&lt;/a&gt; que te pueden ayudar a mejorar en el diseño de software.&lt;/p&gt;
-
-&lt;p&gt;¿Tienes algún consejo más que te haya ayudado a mejorar la forma en la que creas abstracciones? Me gustaría escucharlo en los comentarios.&lt;/p&gt;
-
-&lt;h2 id=&quot;evita-los-extremos&quot;&gt;Evita los extremos&lt;/h2&gt;
-
-&lt;p&gt;A veces nos pasamos con las abstracciones, tanto en el nivel como en el momento en el que lo hacemos. En esta sección nos referimos exclusivamente a las abstracciones que generalizan un proceso o concepto, y las que ocultan información de otras partes del programa.&lt;/p&gt;
-
-&lt;p&gt;Una señal de que estamos abstrayendo demasiado es que haya una gran diferencia entre la dificultad natural del problema base y nuestro código. Por ejemplo, imagina que tienes que encontrar una cadena de texto en un texto más grande. La cadena a encontrar es una de tres posibles “Kilo”, “Mega”, “Giga”. ¿Valdrá la pena hacer la abstracción de un buscador general de cadenas cualquiera en textos arbitrarios con el uso de autómatas finitos deterministas? Lo más probable es que no: con un un simple “contains” o la función equivalente usado en el lugar de la búsqueda es suficiente.&lt;/p&gt;
-
-&lt;p&gt;Esto se puede meter directamente con nuestro &lt;em&gt;orgullo&lt;/em&gt;: lo fácil o sencillo no nos hace parecer inteligentes. Pero recuerda que &lt;strong&gt;la simplicidad es la mejor sofisticación&lt;/strong&gt;. Mientras más simples sean tus diseños, mejor. Más fácil será reconocerlos en el futuro, más fácil será que otros los entiendan y lo mejor: los bloques de construcción simples son el mejor fundamento para crear cosas complejas mediante la composición de estos.&lt;/p&gt;
-
-&lt;p&gt;El otro punto importante es &lt;strong&gt;cuándo&lt;/strong&gt; creamos estas abstracciones. Si quieres crear el programa más complejo desde el principio, lo más probable es que vas a tardar mucho en implementarlo, además de que puede que crees abstracciones que no vas a necesitar. Mejor usa las cosas más concretas posible hasta que de verdad el problema o los requerimientos de los usuarios te hagan generalizar algo. Es cierto que a veces prever algún cambio simplificará tu trabajo en el futuro, pero la mayoría de veces nos equivocamos. Lo hacemos tanto, que existe un inicialismo para refrenarnos de crear abstracciones prematuramente: YAGNI (You aren’t gonna need it - &lt;strong&gt;No lo vas a necesitar&lt;/strong&gt;).&lt;/p&gt;
-
-&lt;h2 id=&quot;el-costo-de-las-abstracciones&quot;&gt;El costo de las abstracciones&lt;/h2&gt;
-
-&lt;p&gt;Una abstracción del tipo que esconde código de otras partes del programa, es decir, de las que están detrás de una interfaz (Clase, módulo, función, etc), normalmente cuestan más en tiempo de diseño, de compilación o de ejecución. Normalmente en los tres, a menos que sea una abstracción con la que tengas mucha familiaridad. Esta es otra razón para refrenarnos de crear todas las abstracciones que se nos ocurran en un programa, o de crear cadenas de abstracciones demasiado grandes.&lt;/p&gt;
-
-&lt;p&gt;Esto lo tienes que pensar sobre todo cuando los beneficios de crear cierta abstracción no están tan claros. Con algunos entornos, hay excepciones.&lt;/p&gt;
-
-&lt;h3 id=&quot;zero-cost-abstractions-abstracciones-sin-costo&quot;&gt;Zero-cost abstractions (Abstracciones sin costo)&lt;/h3&gt;
-
-&lt;p&gt;Las abstracciones de costo cero son una propuesta de algunos entornos y lenguajes de programación modernos. Como abstraer normalmente supone un costo en el tiempo de ejecución del programa, las abstracciones sin costo proponen que, aunque puedes usar elementos de más alto nivel en el código, no te van a costar rendimiento en tiempo de ejecución.&lt;/p&gt;
-
-&lt;p&gt;¿Entonces en dónde cuestan? Normalmente le cuestan al compilador, reemplazar o expandir macros en tiempo de construcción. Rust es un ejemplo de esto, aunque estas abstracciones están a bastante bajo nivel (te evitan manejos de memoria que podrían ser complicados, por ejemplo).&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Mejorar tu capacidad de abstraer conceptos, pero sobre todo de representarlos de manera eficiente en el lenguaje de programación de tu elección te llevará lejos en la carrera de desarrollo de software.&lt;/p&gt;
-
-&lt;p&gt;Este tema es de los más importantes en las ciencias de la computación y desarrollo de software, así que es algo de lo que puedes seguir aprendiendo a lo largo de toda tu carrera. Algunos documentos que puedes consultar para aprender más son:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.docdroid.com/ST0qbY8/programacion-y-tecnologia-un-camino-equivocado-pdf&quot;&gt;Programación y Tecnología: Un camino equivocado hacia la construcción de
-artefactos&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/assets/pdfs/EJ1329311.pdf&quot;&gt;Abstraction in Computer Science Education:
-An Overview&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/assets/pdfs/chap02.pdf&quot;&gt;Abstraction&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Espero que este artículo te sirva en tu camino profesional en la carrera de desarrollo de software.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="abstracción" /><category term="abstracto" /><category term="abstraction" /><summary type="html">Muchos programadores piden consejos para mejorar su capacidad de abstracción. Vamos a hablar de lo que es y cómo se puede usar para programar mejor.</summary></entry></feed>
+&lt;p&gt;Cuando a ti te toque diseñar un API, recuerda su principal función: separar dos partes de un software al mismo tiempo que permites la comunicación.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="apis" /><category term="abstracción" /><category term="diseño-de-software" /><category term="definiciones" /><summary type="html">Definamos que es un 'Application Programming Interface' en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API's.</summary></entry></feed>

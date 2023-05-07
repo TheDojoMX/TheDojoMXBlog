@@ -1,6 +1,6 @@
 ---
 title: "¿Por qué deberías leer Data and Reality?"
-date: 2023-04-22
+date: 2023-05-06
 author: Héctor Patricio
 tags: libros modelado-de-datos filosofía desarrollo-de-software data-and-reality
 comments: true
@@ -77,6 +77,22 @@ Pero si la entidad tiene un identificador único inmutable, ¿por qué no usarlo
 
 ¿Qué pasa cuando lo que creíamos inmutable cambia? Eso es algo que normalmente rompe lo que hicimos y tenemos que idear formas de componerlo. Todo este tipo de preguntas pensadas por adelantado te pueden llevar a crear sistemas de software que soporten mejor el paso del tiempo y te den menos problemas cuando estén funcionando en producción.
 
+
+## Relaciones
+
+Will Kent afirma que las relaciones son el tejido de la información que representamos en nuestros sistemas. Se puede entender una relación como una asociación o una conexión entre mínimo dos entidades.
+
+Las relaciones tienen varias características que las pueden definir:
+
+- Grado: El número de entidades de diferentes tipos que participan en la relación
+- Dominios: El conjunto de valores que son válidos en cada lado de la relación
+- Rol: El papel que juega cada entidad en la relación
+- Complejidad (cardinalidad): el número de entidades de cada tipo que participan en la relación
+
+Aquí en las relaciones y su representación empezan a surgir diferentes preguntas y problemas ya de definición, por ejmplo: ¿cómo identificas una relación? Algunas relaciones sólo son significativas con un contexto, ¿cómo lo representas? ¿Deberían ser las relaciones entidades también?
+
+Sin duda, leer este capítulo del libro te ayudará a plantearte todas estas cuestiones y a entender mejor cómo representar la información en tus sistemas.
+
 ### Atributos
 
 Los atributos son los datos que "pertenecen" a una entidad. Forman el conjunto de información que tenemos sobre esta.
@@ -97,16 +113,28 @@ Otra cosa que hay que aprender a distinguir cuando estamos modelando entidades y
 
 Por ejemplo, hablando de atributos podemos querer expresar la altura de una persona. Esta altura se puede expresar como "172cm", "1.72m", "5'8''", `172` (como entero) etc. Todos estos son símbolos que representan el valor de la altura de la persona. Lo que en realidad queremos expresar es la distancia que existe entre dos puntos.
 
+## Categorías
+
+Cuando guardamos información en los sistemas informáticos normalmente queremos organizarla. Las categorías son una forma de hacerlo, y la manera intuitiva de entenderlo parece suficiente.
+
+Sin embargo, la creación de categorías es algo que también se debe pensar muy bien, ya que esto repercutirá en la forma en que guardamos información y en cómo la recuperamos.
+
+Algunos de los problemas en los que tienes que pensar:
+
+- ¿Qué pasa cuando una entidad puede pertenecer a más de una categoría?
+- ¿Qué clasificación es más conveniente para el problema que estás resolviendo?
+
+Las respuestas a estas preguntas son completamente arbitrarias y finalmente dependen del problema y del campo para el que estés programando.
 ## Filosofía del conocimiento
 
-Hay varias posturas con respecto a "la realidad". Las dos extremas son:
+Finalicemos este resumen hablando de la cosa más profunda o analítica que el libro trata: la naturaleza del conocimiento mismo. Hay varias posturas con respecto a "la realidad". Las dos extremas son:
 
 1. No existe una realidad objetiva, todo es subjetivo, y los seres humanos construyen esta realidad con su mente.
 2. Existe una realidad objetiva, y los seres humanos la perciben y la pueden conocer siempre.
 
-En el libro se nos habla sobre una postura intermedia, y que me parece completamente razonable: es que existe una realidad objetiva, pero que los seres humanos **no la pueden conocer completamente**, la accedemos a través de la percepción, pero como en mucha posturas filosóficas, la percepción es imperfecta.
+En el libro se habla sobre una postura intermedia, y que me parece completamente razonable: es que existe una realidad objetiva, pero que los seres humanos **no la pueden conocer completamente**, la accedemos a través de la percepción, pero como en mucha posturas filosóficas, la percepción es imperfecta.
 
-## ¿Qué es un modelo?
+### ¿Qué es un modelo?
 
 De esto ya hemos hablado repetidas veces en este blog, pero vamos a decirlo una vez más: uno modelo es una abstracción, una representación simplificada de la realidad.
 

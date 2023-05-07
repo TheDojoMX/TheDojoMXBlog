@@ -133,7 +133,7 @@
       "headline": "Patrón de diseño: Cadena de responsabilidad",
       "keywords": "python,patrones,SOLID,Chain-of-Responsibility,design-patterns",
       "description": "Manejar múltiples handlers, conocidos y no conocidos.",
-      "articleBody": "Propósito:\n\n  Asegurar el bajo acoplamiento entre un request y su receiver dando a múltiples objetos oportunidad de manejar el request\n\n\nHace unas semanas me enfrenté a un tema de procesar un mensaje de un usuario y darle tratamiento por medio de un algoritmo de Natrual Language Processing. Antes de pasar el mensaje por el set de algoritmos apropiados hay que darle una serie de tratamientos previos:\n\n\n  Eliminar los acentos y solo dejar en ASCII el mensaje.\n  Pasar el mensaje a lowercase.\n\n\nA primera luz, un código que puede fácilmente satisfacer es:\nmessage = \"Dios bendiga a los héroes que nos dieron el internet.\"\nmessage = message.lower()\nmessage = message.replace(\"á\",\"a\").replace(\"é\",\"e\") \\\n    .replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")\nprint(message)\n# dios bendiga a los heroes que nos dieron el internet.\n\nFuncionó, se cumplió el objetivo.\n\nEl problema sobrevino en el momento que los algoritmos posteriores requieren más modificaciones en la cadena original.\nPoco a poco se fue agregando y agregando código para tareas como eliminar emojis, eliminar signos de puntuación, contraer palabras como hooooooola en hola y en el futuro no se sabe que más cosas habrá que hacer a la cadena original, pueden ser cosas tan diversas como “A cada cadena que se procese quiero que se quede un historial de la cadena original”, en ese momento hay que ir a reescribir código quebrantando el principio **open/closed** “software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification”.\n\nSolución\n\nEl patrón de diseño Chain of responsibility como premisa principal es que más de una entidad de software (clase y/o función) pueda atender una petición. Dichas entidades pueden ser conocidas y de hecho se acaban implementando, pero también pueden ser desconocidas y esas no las podemos implementar pero debemos ser capaces de implementarlas en un futuro.\n\nPero, si el código anterior es muy sencillo, no veo caso de hacerlo complejo; a medida que los requerimientos van cambiando en el tiempo es muy probable que ese código se acabe agrupando en una función y esa función no hará más que crecer y entre más lo haga perderá el foco y se convertirá en una función que hará de todo, no cumplirá con otro principio (single responsibility) una entidad debe hacer solo una cosa y hacerla bien, la función además de escribir en disco tiene que pasar la frase a minúsculas, reemplazar caracteres no ASCII con caracteres ASCII por mencionar algo. El partir una gran función (gran ~= muchas responsabilidades) en muchas más pequeñas facilita la escritura de test unitarios y propicia a la re usabilidad de esa función en distintas partes de nuestro proyecto principalmente.\n\nEn este patrón la petición (request) es mandada de entidad en entidad (cada entidad es un eslabón de la cadena o handler), cada entidad maneja la petición y la pasa al siguiente eslabón hasta que se terminen los eslabones de la cadena o uno de ellos decida que hay que regresar un valor.\n\n\n\nSiguiendo con el problema original, el código propuesto es el siguiente (aquí uno en Java):\n\ndef to_lower(message=\"\"):\n    if not isinstance(message,str):\n        raise ValueError(\"Message is not a string\")\n    return message.strip().lower()\n\ndef to_ascii(message):\n    if not isinstance(message,str):\n        raise ValueError(\"Message is not a string\")\n    message = message.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")\n    return message\n\ndef to_disk(message):\n    FILENAME = \"historial.log\"\n    if not isinstance(message,str):\n        raise ValueError(\"Message is not a string\")\n    with open(FILENAME,\"a\",encoding=\"UTF-8\") as fp:\n        fp.write(f\"{message}\\n\")\n    return message\n\ndef remove_all_punctuation(message):\n    #all code to remove punctuation marks\n    return message\n\nclass Pipe:\n    def __init__(self,message):\n        self._message = message\n        self.processors = []\n\n    def add_process(self,process_function):\n        self.processors.append(process_function)\n\n    def run(self):\n        for process in self.processors:\n            self._message = process(self._message)\n        return self._message\n\npipe=Pipe(\"Dios bendiga a los héroes que nos dieron el internet.\")\npipe.add_process(to_disk)\npipe.add_process(to_lower)\npipe.add_process(to_ascii)\npipe.add_process(remove_all_punctuation)\nnew_message=pipe.run()\nprint(new_message)\n\n\n\nEl código anterior es un código más profesional, más fácil de mantener ya que cumplimos con el principio open/close y de paso de responsabilidad única.\n\nPodemos ir agregando funciones de procesamiento de manera más legible, también podemos quitarlas a voluntad dado que el nivel de acoplamiento es muy bajo. A todo ésto hay que añadir la ventaja de facilidad al escribir test unitarios que dan pie para el CI/CD.\n\nSe puede pensar al inicio que es una sobre-ingeniería para algo tan sencillo, pero los negocios son tan cambiantes en el tiempo que se vuelve un poco ingenuo pensar que lo que escribamos nunca lo tendremos que modificar, ¿Por qué no diseñar software que pueda ser modificable en el ahora y el futuro?. Este tema de los patrones de diseño es un tema muy extenso que poco a poco iremos cubriendo con entradas en este blog dando ejemplos sencillos como el anterior.\n\nLo importante es quedarse con el concepto de qué es lo que hace el patrón y no con la implementación como tal del código, en Java el código anterior puede ser muy diferente, sin embargo cumple el patrón. Tuve conciencia de esto leyendo que en un principio, en los años dorados de C, este patrón se implementaba con listas enlazadas,a su vez implementadas con apuntadores.\n\nSaludos y no dudes en ejercer tu derecho de réplica :) , discutamos un poco al respecto :D.\n",
+      "articleBody": "Propósito\n\n\n  Asegurar el bajo acoplamiento entre un request y su receiver dando a múltiples objetos oportunidad de manejar el request\n\n\nHace unas semanas me enfrenté a un tema de procesar un mensaje de un usuario y darle tratamiento por medio de un algoritmo de Natrual Language Processing. Antes de pasar el mensaje por el set de algoritmos apropiados hay que darle una serie de tratamientos previos:\n\n\n  Eliminar los acentos y solo dejar en ASCII el mensaje.\n  Pasar el mensaje a lowercase.\n\n\nA primera luz, un código que puede fácilmente satisfacer es:\n\n\nmessage = \"Dios bendiga a los héroes que nos dieron el internet.\"\nmessage = message.lower()\nmessage = message.replace(\"á\",\"a\").replace(\"é\",\"e\") \\\n    .replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")\nprint(message)\n# dios bendiga a los heroes que nos dieron el internet.\n\nFuncionó, se cumplió el objetivo.\n\nEl problema sobrevino en el momento que los algoritmos posteriores requieren más modificaciones en la cadena original.\nPoco a poco se fue agregando y agregando código para tareas como eliminar emojis, eliminar signos de puntuación, contraer palabras como hooooooola en hola y en el futuro no se sabe que más cosas habrá que hacer a la cadena original, pueden ser cosas tan diversas como “A cada cadena que se procese quiero que se quede un historial de la cadena original”, en ese momento hay que ir a reescribir código quebrantando el principio **open/closed** “software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification”.\n\nSolución\n\nEl patrón de diseño Chain of responsibility como premisa principal es que más de una entidad de software (clase y/o función) pueda atender una petición. Dichas entidades pueden ser conocidas y de hecho se acaban implementando, pero también pueden ser desconocidas y esas no las podemos implementar pero debemos ser capaces de implementarlas en un futuro.\n\nPero, si el código anterior es muy sencillo, no veo caso de hacerlo complejo; a medida que los requerimientos van cambiando en el tiempo es muy probable que ese código se acabe agrupando en una función y esa función no hará más que crecer y entre más lo haga perderá el foco y se convertirá en una función que hará de todo, no cumplirá con otro principio (single responsibility) una entidad debe hacer solo una cosa y hacerla bien, la función además de escribir en disco tiene que pasar la frase a minúsculas, reemplazar caracteres no ASCII con caracteres ASCII por mencionar algo. El partir una gran función (gran ~= muchas responsabilidades) en muchas más pequeñas facilita la escritura de test unitarios y propicia a la re usabilidad de esa función en distintas partes de nuestro proyecto principalmente.\n\nEn este patrón la petición (request) es mandada de entidad en entidad (cada entidad es un eslabón de la cadena o handler), cada entidad maneja la petición y la pasa al siguiente eslabón hasta que se terminen los eslabones de la cadena o uno de ellos decida que hay que regresar un valor.\n\n\n\nSiguiendo con el problema original, el código propuesto es el siguiente (aquí uno en Java):\n\ndef to_lower(message=\"\"):\n    if not isinstance(message,str):\n        raise ValueError(\"Message is not a string\")\n    return message.strip().lower()\n\ndef to_ascii(message):\n    if not isinstance(message,str):\n        raise ValueError(\"Message is not a string\")\n    message = message.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\")\n    return message\n\ndef to_disk(message):\n    FILENAME = \"historial.log\"\n    if not isinstance(message,str):\n        raise ValueError(\"Message is not a string\")\n    with open(FILENAME,\"a\",encoding=\"UTF-8\") as fp:\n        fp.write(f\"{message}\\n\")\n    return message\n\ndef remove_all_punctuation(message):\n    #all code to remove punctuation marks\n    return message\n\nclass Pipe:\n    def __init__(self,message):\n        self._message = message\n        self.processors = []\n\n    def add_process(self,process_function):\n        self.processors.append(process_function)\n\n    def run(self):\n        for process in self.processors:\n            self._message = process(self._message)\n        return self._message\n\npipe=Pipe(\"Dios bendiga a los héroes que nos dieron el internet.\")\npipe.add_process(to_disk)\npipe.add_process(to_lower)\npipe.add_process(to_ascii)\npipe.add_process(remove_all_punctuation)\nnew_message=pipe.run()\nprint(new_message)\n\n\n\nEl código anterior es un código más profesional, más fácil de mantener ya que cumplimos con el principio open/closed y de paso de responsabilidad única.\n\nPodemos ir agregando funciones de procesamiento de manera más legible, también podemos quitarlas a voluntad dado que el nivel de acoplamiento es muy bajo. A todo ésto hay que añadir la ventaja de facilidad al escribir test unitarios que dan pie para el CI/CD.\n\nSe puede pensar al inicio que es una sobre-ingeniería para algo tan sencillo, pero los negocios son tan cambiantes en el tiempo que se vuelve un poco ingenuo pensar que lo que escribamos nunca lo tendremos que modificar, ¿Por qué no diseñar software que pueda ser modificable en el ahora y el futuro?. Este tema de los patrones de diseño es un tema muy extenso que poco a poco iremos cubriendo con entradas en este blog dando ejemplos sencillos como el anterior.\n\nLo importante es quedarse con el concepto de qué es lo que hace el patrón y no con la implementación como tal del código, en Java el código anterior puede ser muy diferente, sin embargo cumple el patrón. Tuve conciencia de esto leyendo que en un principio, en los años dorados de C, este patrón se implementaba con listas enlazadas,a su vez implementadas con apuntadores.\n\nSaludos y no dudes en ejercer tu derecho de réplica :) , discutamos un poco al respecto :D.\n",
       "datePublished": "2019-02-21 00:00:00 -0600",
       "dateModified": "2019-02-21 00:00:00 -0600",
       "author": {
@@ -394,7 +394,8 @@
           Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
 
         </div>
-        <h4 id="propósito">Propósito:</h4>
+        <h4 id="propósito">Propósito</h4>
+
 <blockquote>
   <p>Asegurar el bajo acoplamiento entre un <em>request</em> y su <em>receiver</em> dando a múltiples objetos oportunidad de manejar el <em>request</em></p>
 </blockquote>
@@ -407,7 +408,9 @@
 </ol>
 
 <p>A primera luz, un código que puede fácilmente satisfacer es:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">message</span> <span class="o">=</span> <span class="s">"Dios bendiga a los héroes que nos dieron el internet."</span>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">message</span> <span class="o">=</span> <span class="s">"Dios bendiga a los héroes que nos dieron el internet."</span>
 <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span>
 <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"á"</span><span class="p">,</span><span class="s">"a"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"é"</span><span class="p">,</span><span class="s">"e"</span><span class="p">)</span> \
     <span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"í"</span><span class="p">,</span><span class="s">"i"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"ó"</span><span class="p">,</span><span class="s">"o"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"ú"</span><span class="p">,</span><span class="s">"u"</span><span class="p">)</span>
@@ -477,7 +480,7 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
 
 </code></pre></div></div>
 
-<p>El código anterior es un código más profesional, más fácil de mantener ya que cumplimos con el principio <em>open/close</em> y de paso de responsabilidad única.</p>
+<p>El código anterior es un código más profesional, más fácil de mantener ya que cumplimos con el principio <em>open/closed</em> y de paso de responsabilidad única.</p>
 
 <p>Podemos ir agregando funciones de procesamiento de manera más legible, también podemos quitarlas a voluntad dado que el nivel de acoplamiento es muy bajo. A todo ésto hay que añadir la ventaja de facilidad al escribir test unitarios que dan pie para el CI/CD.</p>
 
@@ -582,6 +585,41 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1682777065/ilgmyzin-GHazVhDDPZs-unsplash_poxzc5.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/05/06/por-que-deberias-leer-data-and-reality.html" rel="permalink">¿Por qué deberías leer Data and Reality?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+18 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 06-05-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos de Data and Reality, un libro que te ayudará a ser mejor desarrollador de software, porque se va a las raíces de los problemas que resolvemos a diar...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
         <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1682052442/milad-fakurian-PGdW_bHDbpI-unsplash_teqmvg.jpg" alt="">
       </div>
     
@@ -677,42 +715,6 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1679150874/sam-moghadam-khamseh-VwHzE0aFQfY-unsplash_lpqwqn.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2023/04/17/composicion-en-el-software.html" rel="permalink">Composición en el software
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-10 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 17-04-2023
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella.
 </p>
   </article>
 </div>
