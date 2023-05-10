@@ -1,8 +1,8 @@
 ---
-title: "Libros que todo desarrollador de software debería leer"
+title: "Libros que todo desarrollador de software debería leer: ciencias de la computación"
 date: 2023-04-22
 author: Héctor Patricio
-tags: libros desarrollo-de-software
+tags: libros desarrollo-de-software cs ciencias-computacion
 comments: true
 excerpt: "En este artículo hablaremos de los libros que creemos que son fundamentales para los desarrolladores de software para avanzar en su carrera y cada vez hacer mejor su trabajo."
 header:
@@ -43,47 +43,16 @@ En este libro encontrarás un entendimiento básico del funcionamiento de una co
 
 ### The Algorithm Design Manual
 
+[https://google.com](![]())
+
 Este es uno de los mejores libros para aprender sobre algoritmos y estructuras de datos, es una lectura que te ayudará mucho.
 
-## Desarrollo de software
+Está escrito por **Steven S. Skienna** y va en su 4ta edición. Y es una lectura que puede ayudarte de manera _no tan compleja_ a aprender sobre algoritmos y estructuras de datos.
 
-### A Philosophy of Software Design
-### Making Softare
-### Modern Software Development
-### Refactoring
-
-## Arquitectura de software
-
-### Release it!
-### Designing Data-Intensive Applications
-### Sofware Architecture 1 & 2
-
-Simon Brown es un arquitecto de software que también enseña arquitectura de software mediante
+Puedes comprarlo aquí: [The Algorithm Design Manual](https://amzn.to/42GGAnv)
 
 
-### Software Architecture the Hard Parts
-
-###
-
-
-
-###
-
-## Desarrollo de carrera
-
-### The Pragmatic Programmer
-
-## Libros de historia
-
-### Historia de los lenguajes de programación
-### Mentes Geniales
-### Dealers of Lightning
-
-
-
-## Temas relacionados
-
-### How to solve it
+También puedes leer de manera gratuita la segunda edición en [este link](https://mimoza.marmara.edu.tr/~msakalli/cse706_12/SkienaTheAlgorithmDesignManual.pdf)
 
 ## Conclusión
 
