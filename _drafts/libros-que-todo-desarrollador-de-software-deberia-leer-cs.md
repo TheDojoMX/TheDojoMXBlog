@@ -15,7 +15,7 @@ Hablemos de algunos libros que te pueden ayudar a avanzar en tu carrera como des
 
 ## Ciencias de la computación
 
-Empecemos por los fundamentos mismos de lo que hacemos. Los siguientes libros te ayudarán a entender mejor cómo funciona la computación desde sus raíces.
+Empecemos por los fundamentos mismos de lo que hacemos. Los siguientes libros te ayudarán a entender mejor cómo  funciona la computación desde sus raíces.
 
 Aunque esta sección está en primer lugar, no significa que debas leerlos antes que todo. Por ejemplo, cuando aprendiste español no aprendiste primero teoría de lenguajes, semántica, semiótica y todas las cosas que soportan el lenguaje. Aprendiste a hablar y a escribir, y luego, para profundizar aprendiste los soportes teóricos, por gusto o por necesidad. Lo mismo pasa con la computación.
 
@@ -43,14 +43,13 @@ En este libro encontrarás un entendimiento básico del funcionamiento de una co
 
 ### The Algorithm Design Manual
 
-[https://google.com](![]())
+[![Portada de The Algorithm Design Manual](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683777664/Screen_Shot_2023-05-10_at_21.48.04_cwmr6v.png){: .align-center}](https://google.com)
 
 Este es uno de los mejores libros para aprender sobre algoritmos y estructuras de datos, es una lectura que te ayudará mucho.
 
 Está escrito por **Steven S. Skienna** y va en su 4ta edición. Y es una lectura que puede ayudarte de manera _no tan compleja_ a aprender sobre algoritmos y estructuras de datos.
 
-Puedes comprarlo aquí: [The Algorithm Design Manual](https://amzn.to/42GGAnv)
-
+Puedes comprarlo aquí: [The Algorithm Design Manual](https://amzn.to/42GGAnv){:target="_blank" rel="noopener"}
 
 También puedes leer de manera gratuita la segunda edición en [este link](https://mimoza.marmara.edu.tr/~msakalli/cse706_12/SkienaTheAlgorithmDesignManual.pdf)
 
