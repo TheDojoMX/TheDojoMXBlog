@@ -23,9 +23,9 @@ Lamentablemente, la mayoría de los libros de este artículo están en inglés. 
 
 Empecemos con la lista de libros.
 
-## Computational Thinking
+## Computational Thinking - Peter J. Denning y Matti Tedre
 
-[Este libro](https://mitpress.mit.edu/9780262536561/computational-thinking/) se me hace una lectura fundamental para todos los estudiantes de ciencias de la computación o incluso para desarrolladores de software con más experiencia. Está escrito por Matti Tedre y Peter J. Denning, y es una lectura muy amena y fácil de entender. Pero no por eso es superficial, trata profundamente una pregunta: ¿qué es el pensamiento computacional? Y de ahí, lo explora en varios aspectos: las máquinas, la ingeniería y el diseño de software, la educación, la ciencia y el nacimiento del campo.
+[Este libro](https://mitpress.mit.edu/9780262536561/computational-thinking/) me parece una lectura fundamental para todos los estudiantes de ciencias de la computación o incluso para desarrolladores de software con más experiencia. Está escrito por Matti Tedre y Peter J. Denning, y es una lectura muy amena y fácil de entender. Pero no por eso es superficial, trata profundamente una pregunta: ¿qué es el pensamiento computacional? Y de ahí, lo explora en varios aspectos: las máquinas, la ingeniería y el diseño de software, la educación, la ciencia y el nacimiento del campo.
 
 Los dos autores parte de las personas que se encargan de la recomendación de currículos de ciencias de la computación de la ACM.
 
@@ -35,26 +35,29 @@ Puedes comprarlo aquí: [https://amzn.to/3LJf95S](https://amzn.to/3M3Tg2l)
 
 Para muchos esto parecerá una mala elección, sin embargo creo que este libro tiene todo lo que se necesita para ser una buena introducción a los temas principales de la ciencias de la computación, ya de manera práctica y sencilla. Es cierto que por su extensión no puede tratar ninguno a profundidad, pero te da una visión amplia de todos los temas que tienes que conoces. Está escrito por Wladston Ferreira Filho.
 
-### The Elements of Computing Systems
+### The Elements of Computing Systems: building a modern computer from first principles - Noam Nisan y Shimon Schocken
 
-En este libro encontrarás un entendimiento básico del funcionamiento de una computadora digital, pero desde el mismo fondo.
+[![Portada de The Elements of Computing Systems](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683867419/Screen_Shot_2023-05-11_at_22.38.34_hnsjrp.png){: .align-center}](https://amzn.to/3O3rK6E)
 
-[The Elements of Computing Systems](https://www.amazon.com.mx/Elements-Computing-Systems-Building-Principles/dp/0262640686/ref=sr_1_1?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2QZQZQZQZQZQZ&dchild=1&keywords=the+elements+of+computing+systems&qid=1633466663&sprefix=the+elements+of+computing%2Caps%2C252&sr=8-1)
+En este libro encontrarás un entendimiento básico del funcionamiento de una computadora digital, pero desde el mismísimo fondo.
 
-### The Algorithm Design Manual
+[The Elements of Computing Systems](https://amzn.to/3O3rK6E)
 
-[![Portada de The Algorithm Design Manual](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683777664/Screen_Shot_2023-05-10_at_21.48.04_cwmr6v.png){: .align-center}](https://google.com)
+### The Algorithm Design Manual - Steven S. Skiena
+
+[![Portada de The Algorithm Design Manual](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683777664/Screen_Shot_2023-05-10_at_21.48.04_cwmr6v.png){: .align-center}](https://amzn.to/42GGAnv)
 
 Este es uno de los mejores libros para aprender sobre algoritmos y estructuras de datos, es una lectura que te ayudará mucho.
 
-Está escrito por **Steven S. Skienna** y va en su 4ta edición. Y es una lectura que puede ayudarte de manera _no tan compleja_ a aprender sobre algoritmos y estructuras de datos.
+Está escrito por **Steven S. Skiena** y va en su 4ta edición. Y es una lectura que puede ayudarte de manera _no tan compleja_ a aprender sobre algoritmos y estructuras de datos.
 
 Puedes comprarlo aquí: [The Algorithm Design Manual](https://amzn.to/42GGAnv){:target="_blank" rel="noopener"}
+
 
 También puedes leer de manera gratuita la segunda edición en [este link](https://mimoza.marmara.edu.tr/~msakalli/cse706_12/SkienaTheAlgorithmDesignManual.pdf)
 
 ## Conclusión
 
-Personalmente, siento que los libros son los mejores maestros que puedes tener.
+Personalmente, siento que los libros son los mejores maestros que puedes tener. Un libro serio, bien escrito y bien editado es un maestro que acumula la experiencia de muchas personas, principalmente del autor,
 
 [^1]: Algunos de los links son links de afiliado de Amazon, por lo que puede que me lleve una pequeña comisión si compras el libro a través de ellos. Esto no afecta el precio que pagas por el libro además de que no afecta para NADA mi recomendación.
