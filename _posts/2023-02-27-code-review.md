@@ -125,7 +125,7 @@ Evite por completo el uso de signos de exclamación e íconos para enfatizar com
 
 Adicionalmente, recuerda tomarte el tiempo. El trabajo es exigente y, a veces, no dedicamos suficiente tiempo a las revisiones, y comentamos "¡LGTM!" (Me parece bien) para seguir adelante, pero recordemos que el otro desarrollador dedicó tiempo a trabajar en esos cambios, por lo que vale la pena revisarlos con cuidado.
 
-Otra sugerencia que les dejo es establecer el prefijo "NIT" (*nitpicker*) en los comentarios, lo que significa que puedes sugerir un cambio, pero no bloquea ni impide que ese el código en revisión sea aceptado; es simplemente una "perfección" que sugieres pero que puede ser ignorada.
+Otra sugerencia que les dejo es establecer convenciones para los comentarios como lo es el uso del prefijo "NIT" (*nitpicker*), este se usa para sugerir un cambio, que no bloquea ni impide que ese el código en revisión sea aceptado o fusionado; es simplemente una "perfección" a la que estas apuntando pero que puede ser ignorada. Para obtener más información sobre convenciones de este tipo visten este [sitio](https://conventionalcomments.org/).
 
 ## Mi código es el que esta en revisión
 
