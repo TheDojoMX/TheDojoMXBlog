@@ -4,7 +4,7 @@ date: 2023-04-22
 author: Héctor Patricio
 tags: libros desarrollo-de-software cs ciencias-computacion
 comments: true
-excerpt: "En este artículo hablaremos de los libros que creemos que son fundamentales para los desarrolladores de software para avanzar en su carrera y cada vez hacer mejor su trabajo."
+excerpt: "En este artículo hablaremos de los libros de ciencias de la computación fundamentales avanzar en tu carrera y cada vez hacer mejor tu trabajo."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1683466921/libros_buqwhb.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1683466921/libros_buqwhb.jpg
@@ -12,8 +12,6 @@ header:
 ---
 
 Hablemos de algunos libros que te pueden ayudar a avanzar en tu carrera como desarrollador de software, por diferentes razones, por ejemplo te ayudarán a fortalecer tus bases, o te darán ideas para hacer mejor software, mejores arquitecturas o a mejorar como profesional en general.[^1]
-
-## Ciencias de la computación
 
 Empecemos por los fundamentos mismos de lo que hacemos. Los siguientes libros te ayudarán a entender mejor cómo  funciona la computación desde sus raíces.
 
@@ -25,9 +23,11 @@ Empecemos con la lista de libros.
 
 ## Computational Thinking - Peter J. Denning y Matti Tedre
 
-[Este libro](https://mitpress.mit.edu/9780262536561/computational-thinking/) me parece una lectura fundamental para todos los estudiantes de ciencias de la computación o incluso para desarrolladores de software con más experiencia. Está escrito por Matti Tedre y Peter J. Denning, y es una lectura muy amena y fácil de entender. Pero no por eso es superficial, trata profundamente una pregunta: ¿qué es el pensamiento computacional? Y de ahí, lo explora en varios aspectos: las máquinas, la ingeniería y el diseño de software, la educación, la ciencia y el nacimiento del campo.
+[Este libro](https://mitpress.mit.edu/9780262536561/computational-thinking/) me parece una lectura fundamental para todos los estudiantes de ciencias de la computación o incluso para desarrolladores de software con más experiencia.
 
-Los dos autores parte de las personas que se encargan de la recomendación de currículos de ciencias de la computación de la ACM.
+Está escrito por **Matti Tedre** y **Peter J. Denning**, y es una lectura muy amena y fácil de entender. Pero no por eso es superficial, trata profundamente una pregunta: ¿qué es el pensamiento computacional? Y de ahí, lo explora en varios aspectos: las máquinas, la ingeniería y el diseño de software, la educación, la ciencia y el nacimiento del campo.
+
+Los dos autores parte de las personas que se encargan de la recomendación de currículos de ciencias de la computación de la ACM. Por lo que tienen una visión muy amplia de lo que es la computación y cómo se enseña.
 
 Puedes comprarlo aquí: [https://amzn.to/3LJf95S](https://amzn.to/3M3Tg2l)
 
@@ -37,11 +37,18 @@ Para muchos esto parecerá una mala elección, sin embargo creo que este libro t
 
 ### The Elements of Computing Systems: building a modern computer from first principles - Noam Nisan y Shimon Schocken
 
-[![Portada de The Elements of Computing Systems](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683867419/Screen_Shot_2023-05-11_at_22.38.34_hnsjrp.png){: .align-center}](https://amzn.to/3O3rK6E)
+[![Portada de The Elements of Computing Systems](){: .align-center}](https://www.nand2tetris.org/book)
 
 En este libro encontrarás un entendimiento básico del funcionamiento de una computadora digital, pero desde el mismísimo fondo.
 
-[The Elements of Computing Systems](https://amzn.to/3O3rK6E)
+
+[The Elements of Computing Systems](https://amzn.to/3nXJvJR)
+
+
+## The Great Principles of Computing - Matti Tedre
+
+[![Portada de The Great Principles of Computing](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683777664/Screen_Shot_2023-05-10_at_21.48.04_cwmr6v.png){: .align-center}](https://amzn.to/3nXJvJR)
+
 
 ### The Algorithm Design Manual - Steven S. Skiena
 
@@ -53,11 +60,14 @@ Está escrito por **Steven S. Skiena** y va en su 4ta edición. Y es una lectura
 
 Puedes comprarlo aquí: [The Algorithm Design Manual](https://amzn.to/42GGAnv){:target="_blank" rel="noopener"}
 
-
 También puedes leer de manera gratuita la segunda edición en [este link](https://mimoza.marmara.edu.tr/~msakalli/cse706_12/SkienaTheAlgorithmDesignManual.pdf)
 
 ## Conclusión
 
-Personalmente, siento que los libros son los mejores maestros que puedes tener. Un libro serio, bien escrito y bien editado es un maestro que acumula la experiencia de muchas personas, principalmente del autor,
+Personalmente, siento que los libros son los mejores maestros que puedes tener. Un libro serio, bien escrito y bien editado es un maestro que acumula la experiencia de muchas personas, principalmente del autor, pero también de los editores, correctores y otras personas que participan en su creación.
+
+Un libro acumula muchos años de experiencia, y es la forma más directa de "parte en hombros de gigantes". Es cierto, leerlos cuesta trabajo, pero es algo que te va a devolver mucho más de lo que inviertes en ellos.
+
+En los próximos artículos hablaremos de libros de otras áreas relacionadas con el desarrollo de software, como la ingeniería de software, la arquitectura y otros temas variados
 
 [^1]: Algunos de los links son links de afiliado de Amazon, por lo que puede que me lleve una pequeña comisión si compras el libro a través de ellos. Esto no afecta el precio que pagas por el libro además de que no afecta para NADA mi recomendación.
