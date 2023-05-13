@@ -23,21 +23,34 @@ Empecemos con la lista de libros.
 
 ## Computational Thinking - Peter J. Denning y Matti Tedre
 
-[Este libro](https://mitpress.mit.edu/9780262536561/computational-thinking/) me parece una lectura fundamental para todos los estudiantes de ciencias de la computación o incluso para desarrolladores de software con más experiencia.
+[![Portada de Computational Thinking](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683954800/content_ylyx0g.png){: .align-center}](https://mitpress.mit.edu/9780262536561/computational-thinking/)
 
-Está escrito por **Matti Tedre** y **Peter J. Denning**, y es una lectura muy amena y fácil de entender. Pero no por eso es superficial, trata profundamente una pregunta: ¿qué es el pensamiento computacional? Y de ahí, lo explora en varios aspectos: las máquinas, la ingeniería y el diseño de software, la educación, la ciencia y el nacimiento del campo.
+Este libro me parece una lectura fundamental para todos los estudiantes de ciencias de la computación pero también para desarrolladores de software con más experiencia práctica.
 
-Los dos autores parte de las personas que se encargan de la recomendación de currículos de ciencias de la computación de la ACM. Por lo que tienen una visión muy amplia de lo que es la computación y cómo se enseña.
+Está escrito por **Matti Tedre** y **Peter J. Denning**, y es una lectura muy amena y fácil de entender. Pero no por eso es superficial, trata profundamente una pregunta: ¿qué es el pensamiento computacional? Explora el tema por varios aspectos:
+
+- Las máquinas y el nacimiento de la computación como disciplina
+- La ingeniería y el diseño de software
+- La educación de las ciencias de la computación
+- La relación de la ciencia tradicional con la computación
+
+Los dos autores son parte del grupo que se encarga de la recomendación de los temarios de ciencias de la computación de la ACM. Por lo que tienen una visión muy amplia de lo que es la computación y cómo se enseña. Este libro te dejará claro de lo que hablamos con "computación" y el tipo de pensamiento que se requiere para hacerla. También aclarará si todos necesitan estudiarla y algunos mitos alrededor de ella.
 
 Puedes comprarlo aquí: [https://amzn.to/3LJf95S](https://amzn.to/3M3Tg2l)
 
-## Computer Science Distilled
+## Computer Science Distilled - Wladston Ferreira Filho
 
-Para muchos esto parecerá una mala elección, sin embargo creo que este libro tiene todo lo que se necesita para ser una buena introducción a los temas principales de la ciencias de la computación, ya de manera práctica y sencilla. Es cierto que por su extensión no puede tratar ninguno a profundidad, pero te da una visión amplia de todos los temas que tienes que conoces. Está escrito por Wladston Ferreira Filho.
+[![Portada de Computer Science Distilled](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683955925/book_ipakcs.jpg){: .align-center}](https://code.energy/computer-science-distilled/)
+
+Para muchos esto parecerá una mala elección, sin embargo, para mi este libro tiene todo lo que se necesita para ser una buena introducción a los temas principales de la ciencias de la computación, de manera práctica y sencilla. Es cierto que por su extensión no puede tratar ninguno a profundidad, pero te da una visión amplia de todos los temas que tienes que conoces.
+
+Explica de manera sencilla los pilares principales de las ciencias de la computación y lo mejor es que te da referencias para que puedas profundizar en cada uno de los temas. Te servirá más si eres un principiante, pero aún si eres un desarrollador experimentado te puede servir para reforzar algunos temas que no tengas claro o para tener una referencia rápida de algunos temas.
+
+Puedes comprarlo en [Amazon](https://amzn.to/3nZVHKb) o en su [página oficial](https://code.energy/computer-science-distilled/).
 
 ### The Elements of Computing Systems: building a modern computer from first principles - Noam Nisan y Shimon Schocken
 
-[![Portada de The Elements of Computing Systems](){: .align-center}](https://www.nand2tetris.org/book)
+[![Portada de The Elements of Computing Systems](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683954809/Screen_Shot_2023-05-12_at_8.38.27_nzachg.png){: .align-center}](https://www.nand2tetris.org/book)
 
 En este libro encontrarás un entendimiento básico del funcionamiento de una computadora digital, pero desde el mismísimo fondo.
 
@@ -68,6 +81,6 @@ Personalmente, siento que los libros son los mejores maestros que puedes tener. 
 
 Un libro acumula muchos años de experiencia, y es la forma más directa de "parte en hombros de gigantes". Es cierto, leerlos cuesta trabajo, pero es algo que te va a devolver mucho más de lo que inviertes en ellos.
 
-En los próximos artículos hablaremos de libros de otras áreas relacionadas con el desarrollo de software, como la ingeniería de software, la arquitectura y otros temas variados
+En los próximos artículos hablaremos de libros de otras áreas relacionadas con el desarrollo de software, como la ingeniería de software, la arquitectura y otros temas variados.
 
 [^1]: Algunos de los links son links de afiliado de Amazon, por lo que puede que me lleve una pequeña comisión si compras el libro a través de ellos. Esto no afecta el precio que pagas por el libro además de que no afecta para NADA mi recomendación.
