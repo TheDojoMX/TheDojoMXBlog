@@ -706,4 +706,10 @@ var store = [{
         "tags": ["libros","modelado-de-datos","filosofía","desarrollo-de-software","data-and-reality"],
         "url": "/2023/05/06/por-que-deberias-leer-data-and-reality.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1682777065/ilgmyzin-GHazVhDDPZs-unsplash_poxzc5.jpg"
+      },{
+        "title": "Libros que todo desarrollador de software debería leer: ciencias de la computación",
+        "excerpt":"Hablemos de algunos libros que te pueden ayudar a avanzar en tu carrera como desarrollador de software, por diferentes razones, por ejemplo te ayudarán a fortalecer tus bases, o te darán ideas para hacer mejor software, mejores arquitecturas o a mejorar como profesional en general.1 Empecemos por los fundamentos mismos...","categories": [],
+        "tags": ["libros","desarrollo-de-software","cs","ciencias-computacion"],
+        "url": "/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1683466921/libros_buqwhb.jpg"
       }]

@@ -1,4 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-05-06T23:31:17-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Por qué deberías leer Data and Reality?</title><link href="https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality.html" rel="alternate" type="text/html" title="¿Por qué deberías leer Data and Reality?" /><published>2023-05-06T00:00:00-06:00</published><updated>2023-05-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality</id><content type="html" xml:base="https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality.html">&lt;p&gt;Gran parte de nuestro trabajo como desarrolladores consiste en &lt;strong&gt;modelar entidades&lt;/strong&gt; del mundo real en el código, transformarlas, guardarlas y recuperarlas. Estas entidades se pasan entre diferentes procesos para producir un resultado. A veces también nos tenemos que inventar entidades para representar conceptos abstractos que no existen físicamente.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-05-13T23:39:31-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Libros que todo desarrollador de software debería leer: ciencias de la computación</title><link href="https://blog.thedojo.mx/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs.html" rel="alternate" type="text/html" title="Libros que todo desarrollador de software debería leer: ciencias de la computación" /><published>2023-05-13T00:00:00-06:00</published><updated>2023-05-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs</id><content type="html" xml:base="https://blog.thedojo.mx/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs.html">&lt;p&gt;Hablemos de algunos libros que te pueden ayudar a avanzar en tu carrera como desarrollador de software, por diferentes razones, por ejemplo te ayudarán a fortalecer tus bases, o te darán ideas para hacer mejor software, mejores arquitecturas o a mejorar como profesional en general.&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Empecemos por los fundamentos mismos de lo que hacemos. Los siguientes libros te ayudarán a entender mejor cómo  funciona la computación desde sus raíces.&lt;/p&gt;
+
+&lt;p&gt;Aunque esta sección está en primer lugar, no significa que debas leerlos antes que todo. Por ejemplo, cuando aprendiste español no aprendiste primero teoría de lenguajes, semántica, semiótica y todas las cosas que soportan el lenguaje. Aprendiste a hablar y a escribir, y luego, para profundizar aprendiste los soportes teóricos, por gusto o por necesidad. Lo mismo pasa con la computación.&lt;/p&gt;
+
+&lt;p&gt;Lamentablemente, la mayoría de los libros de este artículo están en inglés. Pero aquí viene otro consejo que hemos aprendido con los golpes de los años: &lt;strong&gt;la gran mayoría de la información en ciencias de la computación está en inglés, y es un idioma indispensable para un desarrollador de software.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Empecemos con la lista de libros.&lt;/p&gt;
+
+&lt;h2 id=&quot;computational-thinking---peter-j-denning-y-matti-tedre&quot;&gt;Computational Thinking - Peter J. Denning y Matti Tedre&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://mitpress.mit.edu/9780262536561/computational-thinking/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683954800/content_ylyx0g.png&quot; alt=&quot;Portada de Computational Thinking&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Este libro me parece una lectura fundamental para todos los estudiantes de ciencias de la computación pero también para desarrolladores de software con más experiencia práctica.&lt;/p&gt;
+
+&lt;p&gt;Está escrito por &lt;strong&gt;Matti Tedre&lt;/strong&gt; y &lt;strong&gt;Peter J. Denning&lt;/strong&gt;, y es una lectura muy amena y fácil de entender. Pero no por eso es superficial, trata profundamente una pregunta: ¿qué es el pensamiento computacional? Explora el tema por varios aspectos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Las máquinas y el nacimiento de la computación como disciplina&lt;/li&gt;
+  &lt;li&gt;La ingeniería y el diseño de software&lt;/li&gt;
+  &lt;li&gt;La educación de las ciencias de la computación&lt;/li&gt;
+  &lt;li&gt;La relación de la ciencia tradicional con la computación&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Los dos autores son parte del grupo que se encarga de la recomendación de los temarios de ciencias de la computación de la ACM. Por lo que tienen una visión muy amplia de lo que es la computación y cómo se enseña. Este libro te dejará claro de lo que hablamos con “computación” y el tipo de pensamiento que se requiere para hacerla. También aclarará si todos necesitan estudiarla y algunos mitos alrededor de ella.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/3M3Tg2l&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://amzn.to/3LJf95S&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;computer-science-distilled---wladston-ferreira-filho&quot;&gt;Computer Science Distilled - Wladston Ferreira Filho&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://code.energy/computer-science-distilled/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683955925/book_ipakcs.jpg&quot; alt=&quot;Portada de Computer Science Distilled&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Para muchos esto parecerá una mala elección, sin embargo, para mi este libro tiene todo lo que se necesita para ser una buena introducción a los temas principales de la ciencias de la computación, de manera práctica y sencilla. Es cierto que por su extensión no puede tratar ninguno a profundidad, pero te da una visión amplia de todos los temas que tienes que conoces.&lt;/p&gt;
+
+&lt;p&gt;Explica de manera sencilla los pilares principales de las ciencias de la computación y lo mejor es que te da referencias para que puedas profundizar en cada uno de los temas. Te servirá más si eres un principiante, pero aún si eres un desarrollador experimentado te puede servir para reforzar algunos temas que no tengas claro o para tener una referencia rápida de algunos temas.&lt;/p&gt;
+
+&lt;p&gt;Este es un libro que creo que &lt;strong&gt;sí debes leer lo más temprano posible en tu carrera&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo en &lt;a href=&quot;https://amzn.to/3nZVHKb&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Amazon&lt;/a&gt; o en su &lt;a href=&quot;https://code.energy/computer-science-distilled/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;página oficial&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-elements-of-computing-systems-building-a-modern-computer-from-first-principles---noam-nisan-y-shimon-schocken&quot;&gt;The Elements of Computing Systems: building a modern computer from first principles - Noam Nisan y Shimon Schocken&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.nand2tetris.org/book&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683954809/Screen_Shot_2023-05-12_at_8.38.27_nzachg.png&quot; alt=&quot;Portada de The Elements of Computing Systems&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;En este libro encontrarás un entendimiento básico del funcionamiento de una computadora digital, pero desde el mismísimo fondo. Es un libro MUY profundo, en el que contruirás una computadora digital desde cero, tanto el hardware como el software.&lt;/p&gt;
+
+&lt;p&gt;No es un libro que recomiende leer al principio de la carrera ni mucho menos como un prerrequisito para empezar a trabajar, es más bien, algo que ir consumiendo con los años, para entender cada vez mejor cómo funciona fundamentalmente el aparato que usas a diario.&lt;/p&gt;
+
+&lt;p&gt;El principio más fundamental de este libro es “aprender haciendo”, por que lo que mejor se aprende es &lt;strong&gt;mediante la práctica&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lo puedes comprar aquí: &lt;a href=&quot;https://amzn.to/3nXJvJR&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;The Elements of Computing Systems&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-great-principles-of-computing---peter-j-denning&quot;&gt;The Great Principles of Computing - Peter J. Denning&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://amzn.to/3O8gk1u&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1684031325/great_principles_i5btll.jpg&quot; alt=&quot;Portada de The Great Principles of Computing&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;En este libro, Peter J. Denning y Craig H. Martell explican los principios que le dan forma e influyen en el campo de la coputación. Estos principios están divididos en 6 categorías:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cálculos&lt;/li&gt;
+  &lt;li&gt;Comunicación&lt;/li&gt;
+  &lt;li&gt;Coordinación&lt;/li&gt;
+  &lt;li&gt;Recolección&lt;/li&gt;
+  &lt;li&gt;Diseño&lt;/li&gt;
+  &lt;li&gt;Evaluación&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cada uno de estos principios limitan y le dan formas a las tecnologías que usamos, por lo que entenderlos profundamente sin duda te ayudará a ser mejor usando las computadoras y más específicamente, a ser un mejor desarrollador de software.&lt;/p&gt;
+
+&lt;p&gt;No creo que este libro se tenga que leer antes de cualquier otra cosa, pero sí siento que mientras más temprano lo hagas en tu carrera, mejor.&lt;/p&gt;
+
+&lt;p&gt;Lo puedes comprar aquí: &lt;a href=&quot;https://amzn.to/3O8gk1u&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;The Great Principles of Computing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-algorithm-design-manual---steven-s-skiena&quot;&gt;The Algorithm Design Manual - Steven S. Skiena&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://amzn.to/42GGAnv&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683777664/Screen_Shot_2023-05-10_at_21.48.04_cwmr6v.png&quot; alt=&quot;Portada de The Algorithm Design Manual&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Este es uno de los mejores libros para aprender sobre algoritmos y estructuras de datos, es una lectura que te ayudará mucho.&lt;/p&gt;
+
+&lt;p&gt;Está escrito por &lt;strong&gt;Steven S. Skiena&lt;/strong&gt; y va en su 3ra edición. Y es una lectura que puede ayudarte de manera &lt;em&gt;no tan compleja&lt;/em&gt; a aprender sobre algoritmos y estructuras de datos. Es un libro bastante extenso y que va avanzando poco a poco en los temas relacionados con algoritmos y estructuras de datos, bellamente ilustrado, sin demasiada carga matemática.&lt;/p&gt;
+
+&lt;p&gt;Tampoco es un libro que te tengas que leer de principio a fin, o muy temprano en la carrera. Puedes empezar con los primeros capítulos lo más pronto posible e irlo estudiando con el tiempo, o dejando los temas más avanzados para cuando los necesites puntualmente.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/42GGAnv&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;The Algorithm Design Manual&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;También puedes leer de manera gratuita la segunda edición en &lt;a href=&quot;https://mimoza.marmara.edu.tr/~msakalli/cse706_12/SkienaTheAlgorithmDesignManual.pdf&quot;&gt;este link&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Estas son mis recomendaciones en este apartado importante de nuestra área del conocimiento. Si tienes alguna recomendación, no dudes en ponerte en contacto conmigo para que la agregue.&lt;/p&gt;
+
+&lt;p&gt;Personalmente, siento que los libros son los mejores maestros que puedes tener. Un libro serio, bien escrito y bien editado es un maestro que acumula la experiencia de muchas personas, principalmente del autor, pero también de los editores, correctores y otras personas que participan en su creación.&lt;/p&gt;
+
+&lt;p&gt;Un libro acumula muchos años de experiencia, y es la forma más directa de “parte en hombros de gigantes”. Es cierto, leerlos cuesta trabajo, pero es algo que te va a devolver mucho más de lo que inviertes en ellos.&lt;/p&gt;
+
+&lt;p&gt;En los próximos artículos hablaremos de libros de otras áreas relacionadas con el desarrollo de software, como la ingeniería de software, la arquitectura y otros temas variados.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Algunos de los links son links de afiliado de Amazon, por lo que puede que me lleve una pequeña comisión si compras el libro a través de ellos. Esto no afecta el precio que pagas por el libro además de que no afecta para NADA mi recomendación. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="desarrollo-de-software" /><category term="cs" /><category term="ciencias-computacion" /><summary type="html">En este artículo hablaremos de los libros de ciencias de la computación fundamentales avanzar en tu carrera y cada vez hacer mejor tu trabajo.</summary></entry><entry><title type="html">¿Por qué deberías leer Data and Reality?</title><link href="https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality.html" rel="alternate" type="text/html" title="¿Por qué deberías leer Data and Reality?" /><published>2023-05-06T00:00:00-06:00</published><updated>2023-05-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality</id><content type="html" xml:base="https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality.html">&lt;p&gt;Gran parte de nuestro trabajo como desarrolladores consiste en &lt;strong&gt;modelar entidades&lt;/strong&gt; del mundo real en el código, transformarlas, guardarlas y recuperarlas. Estas entidades se pasan entre diferentes procesos para producir un resultado. A veces también nos tenemos que inventar entidades para representar conceptos abstractos que no existen físicamente.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Modelar datos&lt;/strong&gt; es una de las habilidades &lt;strong&gt;fundamentales&lt;/strong&gt; cuando estamos desarrollando.Cuando estás programando un algoritmo, estás modelando un &lt;em&gt;procedimiento&lt;/em&gt; de la vida real en código. Este proceso normalmente incluye &lt;strong&gt;datos&lt;/strong&gt;, que son representaciones de &lt;em&gt;entidades&lt;/em&gt; del mundo real.&lt;/p&gt;
 
@@ -1321,122 +1424,4 @@ thedojo_agent
 
 &lt;p&gt;Esta descomposición no siempre te va a salir bien a la primera, por lo que hay que tener la capacidad de evaluar la efectividad de tu diseño y la humildad para reconocer o aceptar los puntos débiles y cambiarlos. Es cierto que ciertas plataformas te pueden ayudar a descomponer mejor tu aplicación que otras, por lo que también es un gran punto a considerar cuando estés eligiendo la tecnología para tu próximo proyecto.&lt;/p&gt;
 
-&lt;p&gt;Sigue cultivando esta habilidad, porque es de lo más importante que un desarrollador de software puede saber, pensando también que a futuro tal vez seamos en gran parte diseñadores mientras la implementación estará a cargo de máquinas (te estoy viendo, &lt;a href=&quot;https://openai.com/blog/openai-codex&quot;&gt;Codex&lt;/a&gt;).&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="módulos" /><category term="diseño" /><category term="arquitectura" /><summary type="html">La tarea principal de un desarrollador de software es crear software que funcione, pero además que sea mantenible y entendible. Dividir en módulos es una técnica que te puede ayudar. Hablemos de algunas formas de hacerlo.</summary></entry><entry><title type="html">¿Qué es una API?</title><link href="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html" rel="alternate" type="text/html" title="¿Qué es una API?" /><published>2023-03-18T00:00:00-06:00</published><updated>2023-03-18T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/03/18/que-es-un-api</id><content type="html" xml:base="https://blog.thedojo.mx/2023/03/18/que-es-un-api.html">&lt;p&gt;A veces limitamos el uso de la palabra &lt;strong&gt;API&lt;/strong&gt; a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.&lt;/p&gt;
-
-&lt;h2 id=&quot;application-programming-interface&quot;&gt;Application Programming Interface&lt;/h2&gt;
-
-&lt;p&gt;La realidad es que el inicialismo “API” es casi auto-explicativo: Interfaz de Programación de Aplicación. Bueno, vamos a analizarlo un poco.&lt;/p&gt;
-
-&lt;h3 id=&quot;interfaz&quot;&gt;Interfaz&lt;/h3&gt;
-
-&lt;p&gt;Primeramente es un &lt;strong&gt;interfaz&lt;/strong&gt;. Una interfaz es el lugar en donde dos sistemas o entidades convergen e &lt;strong&gt;interactúan&lt;/strong&gt;. Podemos entender como interfaz a la parte que te permite usar un aparato electrónico, por ejemplo. En una computadora, su interfaz para los humanos son el teclado, la pantalla y el mouse o trackpad. En una televisión, la interfaz es la pantalla, el control remoto y los controles integrados en el cuerpo principal.&lt;/p&gt;
-
-&lt;p&gt;La interfaz normalmente &lt;strong&gt;esconde&lt;/strong&gt; la mayor parte del sistema y muestra solamente las partes que son relevantes o &lt;em&gt;que se pueden usar&lt;/em&gt; por un sistema externo. En el caso de la computadora, ver o interactuar directamente con el procesador o la RAM no nos interesa, por eso la computadora expone un conjunto limitado de todas las características que la componen. Esta interfaz en realidad representa una &lt;strong&gt;abstracción&lt;/strong&gt; de lo que el sistema completo es. Este elemento habilita y simplifica el uso de este sistema. Las interfaces definen &lt;strong&gt;la forma&lt;/strong&gt; de un sistema para entidades externas a él.&lt;/p&gt;
-
-&lt;p&gt;Una interfaz podría entenderse como un iceberg: la parte “visible” o con la que puedes interactuar es la punta, mientras que la gran masa es la funcionalidad que está oculta y a la que no puedes acceder.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1679188585/Ilustracio%CC%81n_sin_ti%CC%81tulo_3_fi05qn.png&quot; alt=&quot;Una interfaz es como un Iceberg&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;(Probablemente ese iceberg está mal dibujado: &lt;a href=&quot;https://axbom.com/iceberg/&quot;&gt;The topple of an iceberg: You’re drawing it wrong&lt;/a&gt;)&lt;/p&gt;
-
-&lt;h3 id=&quot;interfaz-de-programación&quot;&gt;Interfaz de Programación&lt;/h3&gt;
-
-&lt;p&gt;Ya que sabemos que es una interfaz, ahora agreguemos el siguiente término: &lt;strong&gt;programación&lt;/strong&gt;. Que sea un interfaz de programación nos indica la forma en la que esta interfaz puede ser usada: mediante el fino arte de la programación. Otra forma en la que creo que suena bien la traducción es &lt;em&gt;Interfaz Programática&lt;/em&gt;. Así como las interfaces visuales se entienden mediante la visión, las interfaces programáticas se entienden y usan con &lt;strong&gt;programas&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;¿Qué hace que una interfaz pueda ser usada de manera sencilla por un programa? Listemos algunas de las características:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;La comunicación con la interfaz se puede hacer por medio un programa. La manera más sencilla es por medio de texto plano en formatos establecidos o formatos binarios. Estos pueden ser, por ejemplo, HTTP y para facilitar más las cosas JSON o XML. Hay formatos binarios usados como &lt;a href=&quot;https://protobuf.dev/&quot;&gt;Protcol Buffers&lt;/a&gt;. Pero no &lt;strong&gt;tiene&lt;/strong&gt; que ser ninguno de estos. Mientras el formato se pueda procesar de manera automática con un programa, es una interfaz de programación. Por ejemplo, una aplicación podría escribir a un archivo y la otra simplemente leerlo de ahí (ejem. así funcionan los &lt;em&gt;sockets&lt;/em&gt; en UNIX). O por ejemplo, la “aplicación” puede ser cargada en el mismo espacio de memoria y ser usada por el mismo entorno de ejecución.&lt;/li&gt;
-  &lt;li&gt;La interfaz puede recibir peticiones o instrucciones creadas por un programa. Muy en la línea del punto anterior, la interfaz debe exponer formas de que otro programa la llame mediante medios programables.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Si la interfaz cumple con esto, entonces es una interfaz de programación.&lt;/p&gt;
-
-&lt;h3 id=&quot;interfaz-de-programación-de-aplicación&quot;&gt;Interfaz de Programación de Aplicación&lt;/h3&gt;
-
-&lt;p&gt;El último término nos dice a quién la pertenece esta interfaz: &lt;strong&gt;a otra APLICACIÓN&lt;/strong&gt;. Esto nos dice que la interfaz pertenece a un programa para que &lt;strong&gt;otro programa se comunique&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Resumen: un API es lo que permite la comunicación entre dos programas de manera automática, es decir, sin que tengan que intervenir humanos en esa comunicación. Le permite a un programa usar otro.&lt;/p&gt;
-
-&lt;p&gt;Con el tiempo, lo que llamamos &lt;em&gt;“aplicación”&lt;/em&gt; se ha extendido para referirse a cualquier programa o parte de un programa, como un módulo, una clase, etc.&lt;/p&gt;
-
-&lt;h3 id=&quot;uso-de-api-en-el-contexto-actual&quot;&gt;Uso de “API” en el contexto actual&lt;/h3&gt;
-
-&lt;p&gt;Recapitulemos: una API es una interfaz entre dos programas, que permite a ambos una comunicación unidireccional o bidireccional.&lt;/p&gt;
-
-&lt;p&gt;El uso más común tiene que ver con interfaces que tienen comunicación a través de una red de computadoras, como Internet. Normalmente son un servidores HTTP que pueden responder con formatos que pueden ser procesados de automáticamente de manera sencilla, los más comunes son JSON y XML.
-Dependiendo de los estándares que sigan, estas API’s pueden ser llamadas &lt;strong&gt;RPC&lt;/strong&gt; (Remote Procedure Call), &lt;strong&gt;ReST&lt;/strong&gt; (Representational State Transfer) o &lt;strong&gt;SOAP&lt;/strong&gt; (Simple Object Access Protocol).&lt;/p&gt;
-
-&lt;p&gt;Este tipo de comunicación a través de la red tiene varias versiones, no sólo HTTP. Por ejemplo, existen alternativas más modernas como &lt;strong&gt;gRPC&lt;/strong&gt; (Google Remote Procedure Call), que usa HTTP2 como medio de transporte y Protocol Buffers com formato de serialización (el lenguaje que puede ser fácilmente procesado por otro programa).&lt;/p&gt;
-
-&lt;p&gt;Seguro existen muchas otras formas de crear un API en un sistema distribuido pero la idea básica ya la tienes. Este es el uso más común de la palabra.&lt;/p&gt;
-
-&lt;p&gt;Ahora hablemos de otro uso de la palabra: en el diseño de software.&lt;/p&gt;
-
-&lt;h3 id=&quot;apis-en-el-diseño-de-software&quot;&gt;API’s en el diseño de software&lt;/h3&gt;
-
-&lt;p&gt;Cuando se usa la palabra API en contexto de diseño de software, normalmente se refiere a la interfaz que otro sistema, módulo, o en general, componente del software presenta.&lt;/p&gt;
-
-&lt;p&gt;Por ejemplo, podemos decir que una clase tiene un API en el sentido de que presenta una cara a los demás parte del sistema para que lo usen, pero sobre todo &lt;strong&gt;oculta&lt;/strong&gt; la implementación de las funciones que da. Como te podrás dar cuenta, una API es la parte pragmática de una &lt;a href=&quot;/2023/03/13/que-es-la-abstraccion.html&quot;&gt;abstracción&lt;/a&gt;, y por eso es importante entenderlas.&lt;/p&gt;
-
-&lt;p&gt;El diseño del API de tus módulos, clases y aplicaciones en general es importantísimo para hacer buen software.&lt;/p&gt;
-
-&lt;p&gt;Retomando lo que siempre repetimos en este blog: &lt;strong&gt;las interfaces bien diseñadas te permiten ocultar información&lt;/strong&gt; que no quieres que otras partes del sistema tengan en cuenta.&lt;/p&gt;
-
-&lt;p&gt;Por ejemplo en &lt;a href=&quot;https://elixirlang.com&quot;&gt;Elixir&lt;/a&gt;, la forma de crear separación entre diferentes partes del sistema, a parte de módulos, son lo que llamamos &lt;strong&gt;aplicaciones&lt;/strong&gt;. Esta aplicación puede tener un API bien definida que permita que sea 1) fácil de usar 2) que oculte todos los detalles de implementación posibles para que no se escape nada de información no concerniente a otras aplicaciones.&lt;/p&gt;
-
-&lt;h3 id=&quot;cómo-diseñar-una-buena-api&quot;&gt;Cómo diseñar una buena API&lt;/h3&gt;
-
-&lt;p&gt;En esta sección voy a mencionar lo que a mi me ha servido para crear interfaces que, al mismo tiempo que son fáciles de usar, son efectivas escondiendo información.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Las interfaces deben tener una complejidad relativa a la funcionalidad que están ocultando&lt;/strong&gt;. Es decir si tienes una función o clase que hace muy poquito, como por ejemplo, hacer un cálculo sencillo y casi auto-explicativo, no te conviene que tengas que pasar veinte datos diferentes para que lo puedas usar, lo único que vas a lograr es que tu programa sea más complicado de usar. En cambio, si la funcionalidad que está detrás de la API es grande y compleja, por supuesto que vale más la pena que la interfaz sea más compleja y requiera que pienses más para usarla.&lt;/p&gt;
-
-&lt;p&gt;Como analogía: el control de una bicicleta consiste en un manubrio análogo, mientras que el de un avión tiene decenas (¿tal vez más de 100?) de botones.&lt;/p&gt;
-
-&lt;p&gt;Esto está muy relacionado con el concepto que John Ousterhout presenta en &lt;a href=&quot;https://amzn.to/2H92nwA&quot;&gt;“A Philosophy of Software Design”&lt;/a&gt;: crear módulos profundos, es decir, que tengan una interfaz lo más pequeña posible en relación con su funcionalidad, que debe ser lo más grande posible. Como un iceberg.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Documenta bien las interfaces&lt;/strong&gt;. No sirve de mucho una interfaz que nadie sepa como usar. Como en las películas de ciencia ficción donde encuentran aparatos que nadie tiene idea de cómo funcionan, así nos puede pasar con una pieza de software. La documentación de la interfaz debe incluir, además de los nombres de los métodos o llamadas, los tipos de datos esperados (enteros, flotantes, cadenas, fechas), el comportamiento dependiendo de la entrada y el tipo y estructura de la información que devuelve. Es supremamente importante además que se mencione si el uso de la interfaz tiene un efecto secundario, como el disparo de un correo, la creación o manipulación de un archivo.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Explica la razón de ser&lt;/strong&gt;. Esta parte de la documentación cuenta como un ejercicio que tiene dos objetivos: aclararte a ti mismo la razón de la existencia de la interfaz (aquí te vas a dar cuenta de que tal vez no vale la pena crearla o de que debe ser diferente de alguna forma). Si encuentras una buena explicación, entonces definitivamente el contenedor que tiene una API debe ser creado, y lo que vale la pena ser creado en programación, vale la pena ser documentado.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;No ocultes información demasiado temprano&lt;/strong&gt;. Los puntos anteriores te pueden ayudar a no caer en este error, pero por si las dudas vamos a dejarlo claro: no tienes por qué separar o crear abstracciones de todo y ponerlo detrás de una API. La separación de implementaciones a final de cuentas puede crear una carga extra: cómo transferir la información. El caso más claro es el de las interfaces que se comunican a través de un red, en las que necesitamos usar una capa de transporte. Pero en otras ocasiones también implica un poco de trabajo extra, que puede no valer la pena si no estamos en la etapa correcta.&lt;/p&gt;
-
-&lt;h2 id=&quot;ventajas-de-usar-un-api-bien-diseñada&quot;&gt;Ventajas de usar un API bien diseñada&lt;/h2&gt;
-
-&lt;p&gt;Usar un API tiene varias ventajas, pero yo veo tres principales que pueden llevar tu desarrollo a niveles que no esperabas. Hablemos de ellas y tú evaluarás si es algo que te interese.&lt;/p&gt;
-
-&lt;h3 id=&quot;menor-carga-cognitiva&quot;&gt;Menor carga cognitiva&lt;/h3&gt;
-
-&lt;p&gt;Al separar tu software en varios componentes o aplicaciones que trabajen mediante interfaces, puedes reducir el número de cosas que tienes que mantener en la cabeza debido a que no te preocuparás por todos los detalles: solamente te interesarás por la interacción entre las API’s o tu software y un API.&lt;/p&gt;
-
-&lt;p&gt;Esto es justo lo que pasa cuando un front-end se hace separado de un backend. Después de establecer la forma de la API, cuando trabajas en un lado, en front por ejemplo, sólo te preocupas de mostrar los datos que sabes a recibir de la interfaz sin preocuparte de los detalles de procesamiento o de almacenamiento de información de los que el backend se hace cargo.&lt;/p&gt;
-
-&lt;h3 id=&quot;mejor-evolución-del-software&quot;&gt;Mejor evolución del software&lt;/h3&gt;
-
-&lt;p&gt;Esto se logra gracias a que, si los diferentes componentes de un sistema están comunicados por API’s claramente definidas, que además protejan bien los detalles de implementación de escaparse, estas partes pueden cambiarse internamente sin necesidad de afectar a otras parte si la forma de la interfaz se respeta. Además permite extender el software si creamos otro componente con la misma interfaz pero otro funcionamiento, por ejemplo.&lt;/p&gt;
-
-&lt;p&gt;Podríamos decir que las piezas son intercambiables, tal como cuando tienes un foco que se descompone y quieres reemplazarlo por otro, o simplemente quieres cambiar tu viejo foco incandescente por uno de led. Mientras consigas uno con la misma interfaz y que trabaje con el mismo voltaje, no importa la “implementación”, es decir, cómo cumpla con su función de entregar luz: podría ser otro incandescente, fluorescente, de led, o incluso podrías poner una cámara o un ventilador.&lt;/p&gt;
-
-&lt;p&gt;Esto se puede llevar al extremo si la interfaz que estás usando está estandarizada y tienes un programa que sepa utilizar este tipo de interfaces automáticamente. Por ejemplo esa es la idea de ReST y GraphQL.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1679188820/paul-hanaoka-RJkKjLu8I9I-unsplash_o5k8ex.jpg&quot; alt=&quot;Power plug&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Las interfaces proveen la función de &lt;strong&gt;“plug and play”&lt;/strong&gt;, mientras el aparato tenga la misma interfaz, podemos conectar cualquier cosa, como en los contactos eléctricos.&lt;/p&gt;
-
-&lt;h3 id=&quot;mejor-separación-del-trabajo&quot;&gt;Mejor separación del trabajo&lt;/h3&gt;
-
-&lt;p&gt;Esto se puede inferir del comentario que hicimos, en el primer punto de las ventajas de usar un API. Si creas una interfaz estable y bien documentada, puedes delegar el trabajo de implementar las funciones detrás de esa interfaz a otra personas, otro equipo o de plano otra empresa.&lt;/p&gt;
-
-&lt;p&gt;En Open Source, por ejemplo, después de definir la API de un componente y hacer una implementación de referencia, se deja en manos de la comunidad crear otras implementaciones de ese módulo.&lt;/p&gt;
-
-&lt;h2 id=&quot;cómo-decidir-los-módulos&quot;&gt;Cómo decidir los módulos&lt;/h2&gt;
-
-&lt;p&gt;Finalmente, surge la pregunta, ¿cómo puedo decidir qué irá detrás de una interfaz y cómo crear la separación de funciones entre módulos?&lt;/p&gt;
-
-&lt;p&gt;De eso hablaremos en un artículo futuro, basándonos en un artículo de David L. Parnas, &lt;a href=&quot;https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf&quot;&gt;“On the Criteria to be Used in Decomposing Systems into Modules”&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Lo importante de saber que es un API es entender su función y tener técnicas para diseñarlas lo mejor posible. Recuerda, un API no se limita a un servidor web que sirve JSON, sino que es toda aquella interfaz que puede ser usada con un programa. De ahí que los navegadores expongan API’s como la File API, Fetch API, Device API, &lt;a href=&quot;https://www.educative.io/answers/what-are-browser-apis&quot; target=&quot;_blank&quot;&gt;etc.&lt;/a&gt;, que no tienen nada que ver con una API de un servidor web, sino con el &lt;strong&gt;uso de otras partes del software&lt;/strong&gt; y que mediante esta interfaz nos olvidamos de los detalles de implementación.&lt;/p&gt;
-
-&lt;p&gt;Cuando a ti te toque diseñar un API, recuerda su principal función: separar dos partes de un software al mismo tiempo que permites la comunicación.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="apis" /><category term="abstracción" /><category term="diseño-de-software" /><category term="definiciones" /><summary type="html">Definamos que es un 'Application Programming Interface' en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API's.</summary></entry></feed>
+&lt;p&gt;Sigue cultivando esta habilidad, porque es de lo más importante que un desarrollador de software puede saber, pensando también que a futuro tal vez seamos en gran parte diseñadores mientras la implementación estará a cargo de máquinas (te estoy viendo, &lt;a href=&quot;https://openai.com/blog/openai-codex&quot;&gt;Codex&lt;/a&gt;).&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="módulos" /><category term="diseño" /><category term="arquitectura" /><summary type="html">La tarea principal de un desarrollador de software es crear software que funcione, pero además que sea mantenible y entendible. Dividir en módulos es una técnica que te puede ayudar. Hablemos de algunas formas de hacerlo.</summary></entry></feed>
