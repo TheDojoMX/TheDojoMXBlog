@@ -23,11 +23,26 @@ Empecemos con las recomendaciones.
 
 [![Portada de a Philosophy of Software Design](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1684113024/Screen_Shot_2023-05-14_at_19.10.08_ocrzmo.png){: .align-center}](https://web.stanford.edu/~ouster/cgi-bin/book.php){:target="_blank" rel="noopener"}
 
-Este es un libro que te da muchos consejos sobre cómo crear bases de código que sean más fáciles.
+Este es un libro que te da muchos consejos sobre cómo crear bases de código que sean más fáciles de evolucionar, mantener y sobre todo, de entender. Está escrito por [John Ousterhout](https://web.stanford.edu/~ouster/cgi-bin/home.php), el creador de RAMCloud, TCL/TK y co-autor del algoritmo de consenso para sistemas distribuidos [Raft](https://raft.github.io/).
 
-### Making Softare
+Es un libro muy práctico y corto, que da consejos concretos sin grandes ínfulas de superioridad sobre cómo escribir mejor código. El tema principal es la complejidad, cuáles son sus síntomas y cómo puedes evitarla. El libro se centra en _en la experiencia del autor_ tanto escribiendo código y haciendo sistemas, como enseñando a otros a hacerlo en su clase **"Software Design Studio"**.
 
-[![](){: .align-center}](){:target="_blank" rel="noopener"}
+Esto último le da una visión privilegiada: ver los errores comunes que cometen los principiantes le permite atacar directamente los problemas que es probable que cometas.
+
+Este libro se centra en los temas que para mi son los fundamentales de desarrollo de software:
+
+1. La complejidad y sus causas
+2. La abstracción
+3. La modularidad
+4. Ocultamiento de información.
+5. La mejor forma de comunicar información al resto del equipo.
+
+Si quieres darle una probada antes de comprarlo, puedes leer el [primer capítulo](https://web.stanford.edu/~ouster/cgi-bin/book.php){:target="_blank" rel="noopener"}.
+
+### Making Software - Andy Oram & Greg Wilson
+
+[![Portada de Making Software](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1684245311/Screen_Shot_2023-05-16_at_7.54.35_djc8uk.png){: .align-center}](){:target="_blank" rel="noopener"}
+
 
 
 ### Modern Software Development
