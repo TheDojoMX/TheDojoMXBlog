@@ -34,7 +34,7 @@ Este libro se centra en los temas que para mi son los fundamentales de desarroll
 1. La complejidad y sus causas
 2. La abstracción
 3. La modularidad
-4. Ocultamiento de información.
+4. Ocultar información de forma efectiva
 5. La mejor forma de comunicar información al resto del equipo.
 
 Si quieres darle una probada antes de comprarlo, puedes leer el [primer capítulo](https://web.stanford.edu/~ouster/cgi-bin/book.php){:target="_blank" rel="noopener"}.
@@ -43,7 +43,7 @@ Si quieres darle una probada antes de comprarlo, puedes leer el [primer capítul
 
 [![Portada de Making Software](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1684245311/Screen_Shot_2023-05-16_at_7.54.35_djc8uk.png){: .align-center}](){:target="_blank" rel="noopener"}
 
-
+En este libro aprenderás...
 
 ### Modern Software Development
 
