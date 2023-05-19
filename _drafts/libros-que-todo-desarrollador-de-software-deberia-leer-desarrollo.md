@@ -43,7 +43,9 @@ Si quieres darle una probada antes de comprarlo, puedes leer el [primer capítul
 
 [![Portada de Making Software](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1684245311/Screen_Shot_2023-05-16_at_7.54.35_djc8uk.png){: .align-center}](){:target="_blank" rel="noopener"}
 
-En este libro aprenderás...
+En este libro se habla de las prácticas _comunes_ que **creemos que nos ayudarán** a desarrollar mejor software, pero desde el punto de vista del escepticismo. Se analizan estas prácticas y nos dice si realmente nos ayudan o no, y por qué.
+
+Creo que este libro es **fundametal** para desarrollar una relación sana con las "buenas prácticas" y cuestionarte todas las cosas que te dicen respecto al desarrollo de software.
 
 ### Modern Software Development
 
