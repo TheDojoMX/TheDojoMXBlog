@@ -32,9 +32,20 @@ Aquí vamos a hablar de la computación como la disciplina de usar las computado
 
 Estos objetivos pueden ser tan arbitrarios y diversos como lo es la cantidad de personas que acutualmente usan las computadoras para sus propios objetivos.
 
-##
-## 2. La computación es matemáticas
-## 3. La computación es lógica
-## 4. La computación es física
-## 5. La computación es ingeniería
+## Entender las limitantes
+
+> Computing is governed by scientific principles and laws that tell us what computers can and cannot do. -
+
+
+> The computer is the tool but not the object of study. -
+
+
+## Modelos de computación
+
+## Comunicación
+## Cálculos o Computación
+## Coordinación
+## Recolección
+## Evaluación
+## Diseño
 
