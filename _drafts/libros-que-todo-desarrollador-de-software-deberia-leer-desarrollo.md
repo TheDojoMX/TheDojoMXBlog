@@ -43,20 +43,22 @@ Si quieres darle una probada antes de comprarlo, puedes leer el [primer capítul
 
 [![Portada de Making Software](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1684245311/Screen_Shot_2023-05-16_at_7.54.35_djc8uk.png){: .align-center}](){:target="_blank" rel="noopener"}
 
-En este libro se habla de las prácticas _comunes_ que **creemos que nos ayudarán** a desarrollar mejor software, pero desde el punto de vista del escepticismo. Se analizan estas prácticas y nos dice si realmente nos ayudan o no, y por qué.
+En este libro se habla de las prácticas _comunes_ que **creemos que nos ayudarán** a desarrollar mejor software, pero desde el punto de vista del escepticismo. Se analizan estas prácticas y nos dice si realmente nos ayudan o no, y por qué, todo esto con base en estudios realizados a lo largo del tiempo en muchos equipos. Los resultados probablemente te sorprendan, pero hay que recordar que ninguna práctica se comporta de la misma manera universalmente.
 
-Creo que este libro es **fundametal** para desarrollar una relación sana con las "buenas prácticas" y cuestionarte todas las cosas que te dicen respecto al desarrollo de software.
+Creo que este libro es **fundamental** para desarrollar una relación sana con las "buenas prácticas" y cuestionarte todas las cosas que te dicen respecto al desarrollo de software.
 
-### Modern Software Development
-
-[![](){: .align-center}](){:target="_blank" rel="noopener"}
-
-
-### Refactoring
+### Modern Software Development - Dave Farley
 
 [![](){: .align-center}](){:target="_blank" rel="noopener"}
 
-### Release it!
+## The Mythical Man-Month - Frederick P. Brooks
 
 [![](){: .align-center}](){:target="_blank" rel="noopener"}
 
+### Refactoring - Martin Fowler
+
+[![](){: .align-center}](){:target="_blank" rel="noopener"}
+
+### Release it! - Michael T. Nygard
+
+[![](){: .align-center}](){:target="_blank" rel="noopener"}
