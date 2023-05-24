@@ -51,9 +51,14 @@ Creo que este libro es **fundamental** para desarrollar una relación sana con l
 
 [![](){: .align-center}](){:target="_blank" rel="noopener"}
 
+Escrito por un gran ingeniero de software con mucha experiencia, explica técnicas efectivas para la organización del trabajo y la liberación de sofware lo más rápido posible. Dave es un proponente muy fuerte de la entrega continua y de la automatización de pruebas, y en este libro explica las técnicas asociadas a estos temas.
+
 ## The Mythical Man-Month - Frederick P. Brooks
 
 [![](){: .align-center}](){:target="_blank" rel="noopener"}
+
+En este libro se habla sobre cómo los proyectos de software, cómo organizar los equipos y cómo lograr los proyectos en tiempo y forma. Lo incluyo aquí porque una parte muy importante del crear
+
 
 ### Refactoring - Martin Fowler
 

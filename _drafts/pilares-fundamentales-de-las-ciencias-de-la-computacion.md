@@ -87,6 +87,13 @@ No es siempre cierto que "el orden de los factores no altera el producto". Adem�
 
 ## Evaluación
 
+Comprobar que los resultados de la computación son correctos es una parte **fundamental** para hacer el campo útil.
 
 
 ## Diseño
+
+No sólo se trata de echar código, también hay que pensarlo bien antes de ponerlo.
+
+## Conclusión
+
+Aprender CS te va a beneficiar, pero no será fácil. No te desanimes, es un camino largo y difícil, pero vale la pena.
