@@ -2,7 +2,7 @@
 title: "A Philosophy of Software Design: Descomposición Temporal"
 date: 2020-03-16
 author: Héctor Patricio
-tags: PoSD descomposición-temporal software-design complexity interfaces
+tags: APoSD descomposición-temporal software-design complexity interfaces
 comments: true
 excerpt: "Una forma de dejar escapar información es mediante forzar el orden de las operaciones de un módulo. Veamos cómo evitarlo."
 header:

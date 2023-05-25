@@ -2,7 +2,7 @@
 title: "A Philosophy of Software Design: Crea módulos de propósito general"
 date: 2020-04-02
 author: Héctor Patricio
-tags: PoSD módulos generalización module class
+tags: APoSD módulos generalización module class
 comments: true
 excerpt: "Crear módulos o clases demasiado específicas puede llevar a tu código a ser difícil de mantener, veamos por qué te conviene crear módulos de propósito general."
 header:

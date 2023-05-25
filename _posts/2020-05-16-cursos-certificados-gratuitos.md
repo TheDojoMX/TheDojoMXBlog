@@ -4,7 +4,7 @@ date: 2020-05-16
 author: Héctor Patricio
 tags: cursos aprendizaje programación matemáticas mooc
 comments: true
-excerpt: "Es emocionante todo lo que se puede aprender en internet. Revisa algunos cursos que además te certifcan gratuitamente."
+excerpt: "Es emocionante todo lo que se puede aprender en internet. Revisa algunos cursos que además te certifican gratuitamente."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/v1589666287/AE8177CF-C488-4D9E-8D4D-4914B50EB3FC_mbfv0a.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/v1589666287/AE8177CF-C488-4D9E-8D4D-4914B50EB3FC_mbfv0a.jpg
@@ -12,7 +12,7 @@ header:
 ---
 
 Debido a la emergencia sanitaria mundial, algunas universidades han liberado cursos
-que además de auditar, puedes cursar para obtener un **cetificado**. Si quieres mejorar un poco tu perfil del LinkedIn aquí te ponemos unos cursos de tecnología que puedes tomar.
+que además de auditar, puedes cursar para obtener un **certificado**. Si quieres mejorar un poco tu perfil del LinkedIn aquí te ponemos unos cursos de tecnología que puedes tomar.
 
 
 

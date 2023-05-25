@@ -2,7 +2,7 @@
 title: "A Philosophy of Software Design: Recomendaciones de diseño modular"
 date: 2020-03-18
 author: Héctor Patricio
-tags: PoSD software-design complexity interfaces defaults
+tags: APoSD software-design complexity interfaces defaults
 comments: true
 excerpt: "Hablemos de algunos consejos para lograr ocultar la mayor cantidad de información posible en tus módulos, pero también de cómo no llevarlo demasiado lejos"
 header:

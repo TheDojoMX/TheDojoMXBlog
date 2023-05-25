@@ -2,7 +2,7 @@
 title: "A Philosophy of Software Design: Ocultar información"
 date: 2020-03-07
 author: Héctor Patricio
-tags: PoSD interfaces módulo complejidad diseño-de-software
+tags: APoSD interfaces módulo complejidad diseño-de-software
 comments: true
 excerpt: "Ocultar información es una de las claves para reducir la complejidad, veamos algunas maneras de lograrlo."
 header:
