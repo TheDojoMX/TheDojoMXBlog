@@ -131,7 +131,7 @@
       "url": "https://blog.thedojo.mx/2020/03/16/a-philosophy-of-software-design-descomposicion-temporal.html",
       "name": "A Philosophy of Software Design: Descomposición Temporal",
       "headline": "A Philosophy of Software Design: Descomposición Temporal",
-      "keywords": "PoSD,descomposición-temporal,software-design,complexity,interfaces",
+      "keywords": "APoSD,descomposición-temporal,software-design,complexity,interfaces",
       "description": "Una forma de dejar escapar información es mediante forzar el orden de las operaciones de un módulo. Veamos cómo evitarlo.",
       "articleBody": "En el artículo pasado hablamos de una forma de evitar una fuga de información, que consiste en encapsular una decisión de diseño en un módulo.\n\nOtra forma de dejar escapar información no relevante para los usuarios de una pieza de software es mediante obligarlos a usarla siempre de la misma forma, con el mismo orden de operaciones reglas de operación implícita. Esto se llama descomposición temporal. Hablemos más de ella.\n\nQué es la descomposición temporal\n\n\n  En descomposición temporal, la estructura de un sistema corresponde al orden en el tiempo en el que las operaciones ocurrirán. - John Ousterhout\n\n\nLa descomposición temporal implica repetir o separar una decisión de diseño por causa del orden en que se usan diferentes partes del sistema.\n\n\n\nEjemplos\n\nJohn Ousterhout menciona un ejercicio que puso a sus alumnos en el que tenían que crear un programa implementando el protocolo HTTP.\n\nAlgunos equipos crearon una clase para recibir el mensaje desde la red y otra clase para leerlo, creando así un caso claro de descomposición temporal: como las operaciones sucedían en diferentes momentos (primero recibes y luego lees y procesas) los separaron lógicamente en dos clases que se usaban siempre una detrás de otra. La fuga de información se dio porque para recibir un paquete HTTP tienes que leer parte del mensaje y entonces la lógica de lectura del mensaje está en ambas clases.\n\nOtro ejemplo más o menos obvio es la lectura y escritura de archivos. Si quieres trabajar con archivos, el orden de las operaciones es la siguiente:\n\n\n  Abrir y leer\n  Operar con información del archivo\n  Escribir el archivo\n\n\nUn diseño que deja escapar información sería tener dos clases diferentes para la parte de escritura y lectura, cada una con código repetido que sabe leer el formato del archivo.\n\nEjemplo 3: imagina las diferentes situaciones en las que un elemento de datos cambia de estado a través de su ciclo de vida. Puede ser una solicitud de crédito, un reporte, un blogpost, etc.\n\nEs tentador crear diferentes entidades de datos y clases para representar algún estado en específico, ya que podría hacer que nuestro código fuera un poco más explícito cuando llamamos las clases o métodos.\n\nPero si no hay operaciones especiales que correspondan a ese estado, o datos únicos para esta etapa, crear un módulo específico implicaría descomposición temporal: estarías dividiendo o duplicando conocimiento a través de diferentes módulos debido al orden en que suceden los eventos.\n\nComposición de funciones\n\nEn los lenguajes funcionales es común usar una serie de funciones aplicadas a una entidad de datos. Por ejemplo en Elixir es común hacer lo siguiente.\n\n# El operador |&gt; Toma el resultado de la función o valor\n# de la expresión anterior (o a su izquierda) y lo manda\n# como primer parámetro a la función a la derecha, parecido\n# a una redirección de salida de Unix\n\n\" the dojo \"\n  |&gt; String.trim # Limpiar los espacios sobrante a la cadena \" the dojo \"\n  |&gt; String.split(\" \")  # Separar la cadena\n  |&gt; Enum.map(&amp;(String.capitalize(&amp;1)))  # Poner en mayúsculas cada uno de los elementos\n  |&gt; Enum.join  # Volver a juntar la cadena\n\n# Resultado: \"The Dojo\"\n\n\nEste ejemplo es un poco exagerado para la función que realiza: poner un texto con capitalización estilo título, Todas Las Iniciales En Mayúsculas.\n\nLa idea viene de las matemáticas y se llama “composición funcional” y como se puede ver es excelente para usar funciones existentes en la creación de procesos más complejos. Una de las virtudes de esta técnica es la reutilización de las funciones.\n\nSin embargo, queriendo aplicar esta idea, puedes cometer el error modificar tus módulos (en lenguajes funcionales: funciones), para aplicar esta técnica y terminar con funciones que siempre se usen una tras otra, esperando la entrada de la misma función y mandando su resultado siempre a la misma función. Algo así:\n\n\"datos\"\n  |&gt; MiModulo.mi_funcion_1\n  |&gt; MiModulo.mi_funcion_2\n  |&gt; MiModulo.mi_funcion_3\n\n\nEsto es un error que yo he cometido y que ha hecho mi código muy difícil de mantener, ya que al cambiar una función de esta cadena tengo que cambiar las demás, haciéndolas no reutilizables.\n\nSolución a la descomposición temporal\n\nLa solución propuesta por A Philosophy of Software Design es muy sencilla: concentra todas las operaciones relacionadas con una decisión de diseño en un módulo.\n\nSi nada necesita ser conocido fuera de este módulo (ni detalles de la implementación, ni el orden de operación), has logrado un diseño más limpio. Esto puede implicar que la clase se haga más grande, pero es una mejor solución comparada con tener información repartida por todos lados.\n\nAsí, si la decisión de diseño cambia, sólo tienes que cambiar la implementación y no la interfaz ni mucho menos su uso.\n\nEn el siguiente artículo veremos finalmente una serie de recomendaciones para evitar las fugas de información y como no llevarlo demasiado lejos.\n",
       "datePublished": "2020-03-16 00:00:00 -0600",
@@ -510,13 +510,13 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
     <span itemprop="keywords">
     
+      <a href="/tags/#aposd" class="page__taxonomy-item" rel="tag">APoSD</a><span class="sep">, </span>
+    
       <a href="/tags/#complexity" class="page__taxonomy-item" rel="tag">complexity</a><span class="sep">, </span>
     
       <a href="/tags/#descomposici%C3%B3n-temporal" class="page__taxonomy-item" rel="tag">descomposición-temporal</a><span class="sep">, </span>
     
       <a href="/tags/#interfaces" class="page__taxonomy-item" rel="tag">interfaces</a><span class="sep">, </span>
-    
-      <a href="/tags/#posd" class="page__taxonomy-item" rel="tag">PoSD</a><span class="sep">, </span>
     
       <a href="/tags/#software-design" class="page__taxonomy-item" rel="tag">software-design</a>
     
@@ -577,6 +577,42 @@
     <div class="page__related">
       <h2 class="page__related-title">Podrías ver también</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:19,w_400/v1684180864/A2F74C59-DAC0-411A-970A-0BF85AD55F91_1_201_a_t4llcq.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/05/25/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo.html" rel="permalink">Libros que todo desarrollador de software debería leer: desarrollo
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 25-05-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos ahora de los libros relacionados con desarrollo de software que te ayudarán a mejorar tu carrera y a tener mejores proyectos.
+</p>
+  </article>
+</div>
+
         
           
 
@@ -680,42 +716,6 @@
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Analicemos el principio de Inversión de Dependencias, el último principio de SOLID y veamos si conviene, además cuándo aplicarlo.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,q_54,w_1200/v1681776700/DALL_E_2023-04-14_23.49.15_-_a_parrot_in_a_cybernetic_setting_plotting_a_great_plan_to_conquer_the_universe_digital_art_digital_illustration_detailed_cinematic_lightning_pkrwml.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html" rel="permalink">Creando agentes con LangChain y GPT-4
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-10 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 20-04-2023
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.
 </p>
   </article>
 </div>

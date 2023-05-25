@@ -131,7 +131,7 @@
       "url": "https://blog.thedojo.mx/2020/03/07/a-philosophy-of-software-design-ocultar-informacion.html",
       "name": "A Philosophy of Software Design: Ocultar información",
       "headline": "A Philosophy of Software Design: Ocultar información",
-      "keywords": "PoSD,interfaces,módulo,complejidad,diseño-de-software",
+      "keywords": "APoSD,interfaces,módulo,complejidad,diseño-de-software",
       "description": "Ocultar información es una de las claves para reducir la complejidad, veamos algunas maneras de lograrlo.",
       "articleBody": "\n  La idea básica es que cada módulo debería encapsular algunas piezas de conocimiento, que representen decisiones de diseño. - John Ousterhout\n\n\nEn el artículo anterior vimos por qué es bueno que los módulos sean profundos, es decir, oculten detalles de implementación y funcionalidades detrás de una interfaz lo más sencilla posible. En este y los siguientes artículos vamos a ver maneras prácticas de lograr esto, basado en ejemplos de “A Philosophy of Software Design”.\n\nEn este artículo hablaremos de cómo ocultar información que no es necesaria saber para usar los módulos, ya que complicaría su uso, creando carga cognitiva, uno de los síntomas y consecuencias de la complejidad innecesaria.\n\nPara saber cómo esconder la información debemos entender por dónde se escapa, prácticas comunes que llevan a un mal diseño y que pueden hacer que nuestro programa sea difícil de entender y mantener.\n\nFugas de información\n\nTener fuga de información es revelar información que no deberíamos, porque se rompe el propósito del encapsulamiento en el módulo.\n\nRecuerda la cita del principio: un módulo tiene que ocultar y mantener decisiones de diseño. Si esta decisión cambia y tienes que modificar varios módulos, tienes una fuga de información. En otras palabras, una fuga de información sucede cuando una decisión de diseño se ve reflejada en varios módulos.\n\nEjemplo. Piensa en una clase se conecte a una API para obtener información relacionada con los códigos postales. Para todos los usuarios de esta clase, debería ser irrelevante qué API se está usando, si es una API HTTP externa, un archivo gigantesco con todos los datos, una base de datos o lo que sea, mientras la clase cumpla con su trabajo.\n\nSi al hacer cambios en esta decisión de diseño tienes que cambiar otras cosas a parte de esta clase, tienes algún tipo de fuga de información. ¿Ya pensaste en las formas en las que se puede escapar la información?\n\nJohn Ousterhout sugiere hacerte la siguiente pregunta:\n\n\n  ¿Cómo puedo reorganizar estas clases para que esta parte del conocimiento general sólo afecte a esta clase?\n\n\nVeamos un ejemplo de una fuga de información. Piensa en una aplicación en la que la principal tarea sea obtener el estado del clima y mostrarlo al usuario. Para esto usaremos una API que nos dará los datos y nosotros seremos los encargados de mostrarla.\n\nUna pieza de información importante para obtener el clima es ala ubicación. Considera que la API actual recibe el nombre de la ciudad para devolver las predicciones meteorológicas.\n\nVeamos dos diseños:\n\n\n  \n    En este escenario hacemos que la inicialización de la clase o cada una de las llamadas a sus métodos para obtener los diferentes valores manden el nombre de la ciudad de los datos que buscamos. Así, si buscamos los datos acerca de México mandamos “México” como parámetro para obtener la temperatura.\n  \n  \n    En otro escenario decidimos que aunque la API reciba el nombre de la ciudad, nuestra clase recibirá las coordenadas e internamente obtendremos el nombre de la ciudad de esas coordenadas y lo mandaremos a la API. Es probable que para esta transformación usemos otra clase u otro paquete.\n  \n\n\n¿Qué diseño te parece correcto?\n\nEn el diseño 1 estamos revelando información acerca de  la implementación de esta API específicamente. ¿Qué pasaría si tenemos que cambiar de API y la próxima necesita las coordenadas en vez de el nombre de la ciudad? Tendríamos que cambiar el diseño en la clase de la API y en los lugares en los que se usa.\n\nEn el segundo diseño estamos ocultando más detalles detalles de implementación, ya que las coordenadas son una forma más natural de comunicar lugares y es probable que se lo que se obtenga del usuario (por ejemplo, desde su geolocalización por dispositivo). La transformación de las coordenadas en un nombre de ciudad quita carga del usuario de nuestra clase.\n\n¿Puedes pensar en otros ejemplos? En el libro PoSD vienen algunos.\n\nEn el próximo artículo hablaremos de otra forma de fugas de información: la descomposición temporal.\n",
       "datePublished": "2020-03-07 00:00:00 -0600",
@@ -483,15 +483,15 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
     <span itemprop="keywords">
     
+      <a href="/tags/#aposd" class="page__taxonomy-item" rel="tag">APoSD</a><span class="sep">, </span>
+    
       <a href="/tags/#complejidad" class="page__taxonomy-item" rel="tag">complejidad</a><span class="sep">, </span>
     
       <a href="/tags/#dise%C3%B1o-de-software" class="page__taxonomy-item" rel="tag">diseño-de-software</a><span class="sep">, </span>
     
       <a href="/tags/#interfaces" class="page__taxonomy-item" rel="tag">interfaces</a><span class="sep">, </span>
     
-      <a href="/tags/#m%C3%B3dulo" class="page__taxonomy-item" rel="tag">módulo</a><span class="sep">, </span>
-    
-      <a href="/tags/#posd" class="page__taxonomy-item" rel="tag">PoSD</a>
+      <a href="/tags/#m%C3%B3dulo" class="page__taxonomy-item" rel="tag">módulo</a>
     
     </span>
   </p>
@@ -550,6 +550,42 @@
     <div class="page__related">
       <h2 class="page__related-title">Podrías ver también</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:19,w_400/v1684180864/A2F74C59-DAC0-411A-970A-0BF85AD55F91_1_201_a_t4llcq.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/05/25/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo.html" rel="permalink">Libros que todo desarrollador de software debería leer: desarrollo
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 25-05-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos ahora de los libros relacionados con desarrollo de software que te ayudarán a mejorar tu carrera y a tener mejores proyectos.
+</p>
+  </article>
+</div>
+
         
           
 
@@ -653,42 +689,6 @@
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Analicemos el principio de Inversión de Dependencias, el último principio de SOLID y veamos si conviene, además cuándo aplicarlo.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,q_54,w_1200/v1681776700/DALL_E_2023-04-14_23.49.15_-_a_parrot_in_a_cybernetic_setting_plotting_a_great_plan_to_conquer_the_universe_digital_art_digital_illustration_detailed_cinematic_lightning_pkrwml.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html" rel="permalink">Creando agentes con LangChain y GPT-4
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-10 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 20-04-2023
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.
 </p>
   </article>
 </div>

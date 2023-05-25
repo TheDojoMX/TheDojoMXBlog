@@ -187,7 +187,7 @@ var store = [{
       },{
         "title": "A Philosophy of Software Design: Desarrollo Táctico vs Estratégico",
         "excerpt":"Cuando desarrollas software tienes dos actitudes para escoger: desarrollas de forma rápida y sucia (desarrollo táctico) o de forma ordenada, planeada y pensando en el futuro. Cada uno de estos tipos de desarrollo o filosofías de desarrollo tiene ventajas y desventajas. Pero veamos a más detalle de qué trata cada...","categories": [],
-        "tags": ["a-philosophy-of-software-design","complejidad"],
+        "tags": ["a-philosophy-of-software-design","complejidad","APoSD"],
         "url": "/2020/02/11/a-philosophy-of-software-design-programacion-tactica-vs-estrategica.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_200/v1585958798/877DD1C2-5C29-428A-8FEE-BC9685FE108F_ym4tl1.jpg"
       },{
@@ -211,7 +211,7 @@ var store = [{
       },{
         "title": "A Philosophy of Software Design: Ocultar información",
         "excerpt":"La idea básica es que cada módulo debería encapsular algunas piezas de conocimiento, que representen decisiones de diseño. - John Ousterhout En el artículo anterior vimos por qué es bueno que los módulos sean profundos, es decir, oculten detalles de implementación y funcionalidades detrás de una interfaz lo más sencilla...","categories": [],
-        "tags": ["PoSD","interfaces","módulo","complejidad","diseño-de-software"],
+        "tags": ["APoSD","interfaces","módulo","complejidad","diseño-de-software"],
         "url": "/2020/03/07/a-philosophy-of-software-design-ocultar-informacion.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_200/v1583357998/IMG_3866_owfbzj.jpg"
       },{
@@ -223,19 +223,19 @@ var store = [{
       },{
         "title": "A Philosophy of Software Design: Descomposición Temporal",
         "excerpt":"En el artículo pasado hablamos de una forma de evitar una fuga de información, que consiste en encapsular una decisión de diseño en un módulo. Otra forma de dejar escapar información no relevante para los usuarios de una pieza de software es mediante obligarlos a usarla siempre de la misma...","categories": [],
-        "tags": ["PoSD","descomposición-temporal","software-design","complexity","interfaces"],
+        "tags": ["APoSD","descomposición-temporal","software-design","complexity","interfaces"],
         "url": "/2020/03/16/a-philosophy-of-software-design-descomposicion-temporal.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_200/v1584251653/A240034B-230E-4BA2-843D-32357D921811_mwdnzk.jpg"
       },{
         "title": "A Philosophy of Software Design: Recomendaciones de diseño modular",
         "excerpt":"En los artículos anteriores hemos estado hablando de cómo evitar la complejidad mediante ocultar información. En este daremos algunas recomendaciones más y hablaremos de cómo no llevar este principio al extremo. Hablemos primero de consejos que te ayudarán a mantener oculta la información que debe de estarlo. Exponer lo menos...","categories": [],
-        "tags": ["PoSD","software-design","complexity","interfaces","defaults"],
+        "tags": ["APoSD","software-design","complexity","interfaces","defaults"],
         "url": "/2020/03/18/a-philosophy-of-software-design-recomendaciones-disenio-modular.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_200/v1584519537/2E4D3407-0447-4034-BEFA-188831BF5971_x4th6g.jpg"
       },{
         "title": "A Philosophy of Software Design: Crea módulos de propósito general",
         "excerpt":"Una burla común hacia los programadores es que todo lo queremos hacer demasiado general. Nos piden una funcionalidad y en ese momento empezamos a pensar en todos los casos en los que podría ser usado en el universo. Hay muchos consejos en contra de escribir código que abarque muchos casos....","categories": [],
-        "tags": ["PoSD","módulos","generalización","module","class"],
+        "tags": ["APoSD","módulos","generalización","module","class"],
         "url": "/2020/04/02/a-philosophy-of-software-design-crea-modulos-de-proposito-general.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_200/v1584726013/D750CDED-7745-4A56-8B3D-5CD33D2893E6_vqdgzb.jpg"
       },{
@@ -246,7 +246,7 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_200/v1587973000/6CF7535E-4D2E-4140-A758-32DD166D508C_hztakt.jpg"
       },{
         "title": "Cursos certificados gratuitos",
-        "excerpt":"Debido a la emergencia sanitaria mundial, algunas universidades han liberado cursos que además de auditar, puedes cursar para obtener un cetificado. Si quieres mejorar un poco tu perfil del LinkedIn aquí te ponemos unos cursos de tecnología que puedes tomar. Programación Computer Programming For Everyone C++ For C Programmers Code...","categories": [],
+        "excerpt":"Debido a la emergencia sanitaria mundial, algunas universidades han liberado cursos que además de auditar, puedes cursar para obtener un certificado. Si quieres mejorar un poco tu perfil del LinkedIn aquí te ponemos unos cursos de tecnología que puedes tomar. Programación Computer Programming For Everyone C++ For C Programmers Code...","categories": [],
         "tags": ["cursos","aprendizaje","programación","matemáticas","mooc"],
         "url": "/2020/05/16/cursos-certificados-gratuitos.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/v1589666287/AE8177CF-C488-4D9E-8D4D-4914B50EB3FC_mbfv0a.jpg"
@@ -712,4 +712,10 @@ var store = [{
         "tags": ["libros","desarrollo-de-software","cs","ciencias-computacion"],
         "url": "/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1683466921/libros_buqwhb.jpg"
+      },{
+        "title": "Libros que todo desarrollador de software debería leer: desarrollo",
+        "excerpt":"Ya hablamos en un artículo anterior sobre los libros que te haría bien leer en el tema de ciencias de la computación. Ahora vamos a hablar sobre el tema de desarrollo de software, cómo crear mejor software y con mejor calidad. En este artículo también se incluyen libros sobre ingeniería...","categories": [],
+        "tags": ["libros","desarrollo-de-software"],
+        "url": "/2023/05/25/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:19,w_400/v1684180864/A2F74C59-DAC0-411A-970A-0BF85AD55F91_1_201_a_t4llcq.jpg"
       }]

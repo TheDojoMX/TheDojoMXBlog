@@ -131,7 +131,7 @@
       "url": "https://blog.thedojo.mx/2020/03/18/a-philosophy-of-software-design-recomendaciones-disenio-modular.html",
       "name": "A Philosophy of Software Design: Recomendaciones de diseño modular",
       "headline": "A Philosophy of Software Design: Recomendaciones de diseño modular",
-      "keywords": "PoSD,software-design,complexity,interfaces,defaults",
+      "keywords": "APoSD,software-design,complexity,interfaces,defaults",
       "description": "Hablemos de algunos consejos para lograr ocultar la mayor cantidad de información posible en tus módulos, pero también de cómo no llevarlo demasiado lejos",
       "articleBody": "En los artículos anteriores hemos estado hablando de cómo evitar la complejidad mediante ocultar información.\n\nEn este daremos algunas recomendaciones más y hablaremos de cómo no llevar este principio al extremo.\n\nHablemos primero de consejos que te ayudarán a mantener oculta la información que debe de estarlo.\n\nExponer lo menos posible estructuras de datos\n\nUn error común cuando creamos un módulo es exponer las estructuras de datos internas hacia otros módulos. Esto hace el código que usa tu módulo sea dependiente de detalles de implementación que no le conciernen y, como hemos repetido hasta el cansancio, que una decisión de diseño se vea reflejada en varios lugares.\n\nTransforma las estructuras de datos internas en estructuras de uso general que no dependan de la implementación de tu módulo. Por ejemplo, si estás haciendo una conexión con una API de la que extraes información para otros lados del sistema, comunica esa información en una estructura de datos diseñada para tu sistema no dependiente de la API.\n\nEjemplo. Imagina un módulo de comunicación con diferentes API’s de mensajería como WhatsApp, Messenger, etc. Cada una las API’s avisa de la entrada de un nuevo mensaje con sus datos específicos y en su formato. Para que to módulo encapsule la mayo cantidad de decisiones de diseño posible debería crear una estructura de mensajes que los demás módulos recibieran independientemente del medio por el que llegó el mensaje. Lo mismo para responder: la función encargada de la respuesta debería recibir siempre los mismos datos independientemente del mensajero que se esté usando.\n\nDefaults útiles\n\nTal vez este punto merezca su propio artículo pero tratemos de resumirlo.\n\nLa idea de crear un módulo es, a parte de ocultar complejidad, crear un pieza de código que pueda ser reutilizable. Como la operación no es siempre exactamente igual, a veces hay que incluir parámetros que permitan modificar el comportamiento del módulo. Los parámetros pueden llegar a revelar detalles de implementación, así que es conveniente saber diseñarlos, primero para no contaminar la interfaz y segundo para mantener la interfaz fácil de usar.\n\nJohn Ousterhout habla como ejemplo de lo mal diseñada que está la interfaz de la clase FileInputStream de Java, que no es capaz de realizar una lectura con buffer sin que le pases una clase que lo hace explícitamente. La lectura de un archivo con un buffer es normal, generalmente no quieres leer un archivo sin tener el buffer disponible. Entonces el default de esta clase debería ser la lectura con buffer, sin que se lo tengas que pedir explícitamente.\n\nLos módulos deberían hacer lo normal o lo correcto siempre que sea posible, sin que se tenga que pedir explícitamente. Es decir, tus módulos deberían estar diseñados para hacer el caso más común muy fácil de usar.\n\n\n  Las mejores funciones son las que obtienes sin siquiera saber que existen. - John Ousterhout\n\n\nUn ejemplo de buen diseño son los lenguajes modernos con la codificación de las cadenas: son utf-8 por default, ya que es ‘lo correcto’ y lo común.\n\nOtro ejemplo son las funciones split (separar una cadena) y join (juntar los elementos de un array o lista en una cadena) de Python, Elixir y otros lenguajes: si no le pasas el carácter que usarán para dividir o pegar, lo harán por la cadena vacía, facilitando un caso de uso muy común.\n\nPodemos aprender de estos buenos diseños para crear los propios. Por ejemplo, imagina que tienes un módulo que usa la fecha y hora para registrar algo. El caso común es que registres algo en el momento inmediato que sucedió. Un buen default sería que el módulo automáticamente registrara la hora actual sin esperarla del usuario, pero dando la opción de modificarla en caso de que se necesite. Un programa que hace esto es Git, registra automáticamente un commit con la hora en que lo hiciste pero tiene la opción de que la especifiques o modifiques.\n\nAisla dentro de las clases y paquetes\n\nCuando trabajas con clases, es buena idea crear métodos independientes (privados en caso de ser posible), que oculten información del resto de la clase. Piensa en esto como en aplicar los principios anteriores a nivel de clase. Además las variables de clase o de instancia deberían ser usadas en el menor número de lugares posible.\n\nSi estás usando un lenguaje funcional o procedural, aplica este principio al nivel de tus paquetes (y definitivamente evita variables globales lo más que puedas).\n\nFinalmente hablemos de cómo llevar todo esto demasiado lejos.\n\nLa clase dios\n\nEn artículos pasados hablamos un poco de que es mejor crear clases grandes que encapsulen decisiones de diseño completas en vez de dividir esas decisiones de diseño. Pero si no tenemos cuidado, esto nos puede llevar a crear lo que algunos conoce como ‘the God Class’ o la clase dios.\n\nEsta infame clase es la que en muchos sistemas se ha creado para mantener la mayoría de la información y operación, es decir, es una clase que lo sabe y lo puede todo. Crearla romería el propósito de ocultar información: pasarías la mayor parte del tiempo trabajando en esta clase, que por lo general sería muy complicada, teniendo tantas cosas que hacer. Así que evítala a toda costa.\n\nOcultar información que sí se usa afuera\n\nSería un error grave de diseño hacer inaccesible (en lenguajes que lo permiten), o difícil de encontrar, información que se usa afuera de tu módulo. Un ejemplo que da A Philosophy of Software Design es en el caso de parámetros de configuración que afecten el rendimiento de una pieza de software y que sea absolutamente necesario conocer para operar bien (podría ser el método de conexión en una red, por ejemplo).\n\nEn el ejemplo de las API’s de mensajería del que hablamos arriba, piensa por ejemplo que la parte del código encargada de generar un mensaje necesita saber de dónde viene el mensaje para generar un mensaje adecuado al medio (si viene de SMS hará un mensaje mejor de 100 carácteres, por ejemplo).\n\nO algo a lo que la mayoría de los lenguajes de programación nos obligan: especificar el modo de apertura de u archivo.\n\nSin embargo, tu trabajo como diseñador de software consiste en minimizar la información que se necesita fuera del módulo, para que sea lo más fácil de usar dentro de los límites.\n\nConclusión\n\nEste y los artículos anteriores quieren dejar claro algo: el trabajo principal de un módulo es ocultar información. Hay varias formas de lograrlo y detalles a los cuáles ponerles atención. Hacerlo creará código que sea más fácil de entender y mantener.\n\nEn el próximo artículo hablaremos de por qué es mejor crear módulos de propósito general.\n",
       "datePublished": "2020-03-18 00:00:00 -0600",
@@ -496,13 +496,13 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
     <span itemprop="keywords">
     
+      <a href="/tags/#aposd" class="page__taxonomy-item" rel="tag">APoSD</a><span class="sep">, </span>
+    
       <a href="/tags/#complexity" class="page__taxonomy-item" rel="tag">complexity</a><span class="sep">, </span>
     
       <a href="/tags/#defaults" class="page__taxonomy-item" rel="tag">defaults</a><span class="sep">, </span>
     
       <a href="/tags/#interfaces" class="page__taxonomy-item" rel="tag">interfaces</a><span class="sep">, </span>
-    
-      <a href="/tags/#posd" class="page__taxonomy-item" rel="tag">PoSD</a><span class="sep">, </span>
     
       <a href="/tags/#software-design" class="page__taxonomy-item" rel="tag">software-design</a>
     
@@ -563,6 +563,42 @@
     <div class="page__related">
       <h2 class="page__related-title">Podrías ver también</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:19,w_400/v1684180864/A2F74C59-DAC0-411A-970A-0BF85AD55F91_1_201_a_t4llcq.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/05/25/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo.html" rel="permalink">Libros que todo desarrollador de software debería leer: desarrollo
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 25-05-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos ahora de los libros relacionados con desarrollo de software que te ayudarán a mejorar tu carrera y a tener mejores proyectos.
+</p>
+  </article>
+</div>
+
         
           
 
@@ -666,42 +702,6 @@
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Analicemos el principio de Inversión de Dependencias, el último principio de SOLID y veamos si conviene, además cuándo aplicarlo.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,q_54,w_1200/v1681776700/DALL_E_2023-04-14_23.49.15_-_a_parrot_in_a_cybernetic_setting_plotting_a_great_plan_to_conquer_the_universe_digital_art_digital_illustration_detailed_cinematic_lightning_pkrwml.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html" rel="permalink">Creando agentes con LangChain y GPT-4
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-10 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 20-04-2023
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.
 </p>
   </article>
 </div>
