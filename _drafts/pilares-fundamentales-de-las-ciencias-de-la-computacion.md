@@ -4,7 +4,7 @@ date: 2023-05-19
 author: Héctor Patricio
 tags: computer-science cs ciencias-de-la-computación
 comments: true
-excerpt: "Siempre que se habla de ciencias de la computación se habla de complejidas, algortimos, etc. Pero hay cosas más importantes que tenemos que comprender."
+excerpt: "Siempre que se habla de ciencias de la computación se habla de complejidad, algoritmos, etc. Pero hay cosas más importantes que tenemos que comprender."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1684557119/IMG_3866_xtomdi.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1684557119/IMG_3866_xtomdi.jpg
@@ -14,18 +14,18 @@ header:
 Entender la computación profundamente es importante para cualquier desarrollador de software, porque al avanzar en su carrera se encontrará con problemas relacionados con las principios más fundamentales de la computación. Piensa en los siguientes casos:
 
 - ¿Es mejor mantener este sistema como un monolito o dividirlo en _microservicios_?
-- ¿Cómo puedo hacer que este sistema sea más rápido?
-- ¿Cómo puedo hacer mi base de código más mantenible?
-- ¿Cómo puedo representar mejor este problema en código?
-- ¿Cómo puedo asegurar el mayor tiempo de actividad posible en el sistema?
-- ¿Puedo garantizar que los mensajes que envío lleguen a su destino?
-- ¿Cómo evito que la complejidad de esta base de código crezca más de lo que la voy a poder controlar?
+- ¿Cómo puedo hacer que este sistema sea más **rápido**?
+- ¿Cómo puedo hacer mi base de código más **mantenible**?
+- ¿Cómo puedo **representar mejor** este problema en código?
+- ¿Cómo puedo **asegurar el mayor tiempo de actividad** posible en el sistema?
+- ¿Puedo **garantizar** que los mensajes que envío lleguen a su destino?
+- ¿Cómo evito que la **complejidad** de esta base de código crezca más de lo que la voy a poder controlar?
 
 Tener herramientas para entender estos problemas evitará que te estanques o frustres, y te habilitará para crear sistemas que cumplan con lo se necesita de ellos. Además, esto te hará un miembro más valioso de cualquier organización.
 
-Tener un conocimiento sólido de cómo funciona la computación te ayudará, por lo menos en los siguientes puntos:
+Un conocimiento sólido de cómo funciona la computación te ayudará, por lo menos en los siguientes puntos:
 
- . Entender los entender los límites de lo que se puede hacer
+ . Entender los entender los **límites** de lo que se puede hacer
  . Diseñar mejor software (y hardware si se necesita)
  . Trasladar mejor los problemas del mundo real a algo que la computadora pueda entender
  . Explicar en palabras comunes tus ideas
@@ -36,7 +36,9 @@ Entender la computación profundamente incluye "mejorar tu lógica de programaci
 
 En este artículo vamos a hablar de los seis aspectos que tienes que entender acerca de la computación, digamos que son sus **principios fundamentales**. Además veremos cómo se relaciona esto con las cosas comunes que oímos acerca de las ciencias de la computación: complejidad, algoritmos, estructuras de datos, etc.
 
-## Computación
+Pero antes definamos qué es la computación.
+
+## ¿Qué es la Computación?
 
 Aquí vamos a hablar de la computación como la disciplina de usar las computadoras y el software para lograr nuestros objetivos, sean estos científicos, de negocios, de entretenimiento, etc.
 
@@ -69,7 +71,7 @@ Entender esta historia no te dará súper poderes de programación, pero te ayud
 
 ## Modelos de computación
 
-Un modelo de computación es una forma de representar la computación mediante un sistema matemático.
+Un modelo de computación es una forma de representar una  mediante un sistema matemático. Esto nos permite analizar el problema y encontrar soluciones.
 
 ## Comunicación
 
@@ -85,15 +87,26 @@ No es siempre cierto que "el orden de los factores no altera el producto". Adem�
 
 ## Recolección
 
+¿Cómo conseguimos los datos para procesar? ¿O cómo recogemos los resultados de la computación? ¿Cómo los almacenamos y acomodamos?
+
+De esto trata
+
 ## Evaluación
 
 Comprobar que los resultados de la computación son correctos es una parte **fundamental** para hacer el campo útil.
 
-
 ## Diseño
 
-No sólo se trata de echar código, también hay que pensarlo bien antes de ponerlo.
+No sólo se trata de echar código, también hay que pensarlo bien antes de ponerlo. El tiempo gastado en el diseño de un sistemas puede pagar dividendos grandes en el futuro.
+
+## Más recursos
+
+En  este blog tenemos un post dedicado a los libros que te pueden servir para aprender más acerca de las ciencias de la computación: [Libros para aprender ciencias de la computación](https://blog.thedojo.mx/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs.html).
+
+También puedes visitar la página [Teach Yourself Computer Science](https://teachyourselfcs.com/), que tiene una lista de los temas que debes aprender y los recursos que puedes usar para aprenderlos.
 
 ## Conclusión
 
-Aprender CS te va a beneficiar, pero no será fácil. No te desanimes, es un camino largo y difícil, pero vale la pena.
+Aprender ciencias de la computación es algo que todo desarrollador debe aprender en su carrera. Te puede ayudar a ser más eficiente, a disfrutar mucho más de tu trabajo y resolver problemas que antes no creías posibles. Pero como acabas de ver, es un camino largo, que requiere de bastante esfuerzo sostenido.
+
+Sigue aprendiendo y verás cómo cada cosa nueva que le sumes a tus bases de conocimiento te ayudará a ser un mejor profesional.
