@@ -58,7 +58,7 @@ Se traduce como:
 
 > La computación está gobernada por principios y leyes científicas que nos dicen qué pueden y qué no pueden hacer las computadoras. - Peter Denning
 
-Así que las computadoras tienen límites y estos están dictados por los principios científicos que conocemos de otras áreas como la física y las matemáticas.
+Así que las computación tiene límites y estos están dictados por los principios científicos que conocemos de otras áreas como la física y las matemáticas.
 
 > The computer is the tool but not the object of study. - **Peter Denning**
 
@@ -85,23 +85,20 @@ Un modelo de computación es una forma de representar una  mediante un sistema m
 
 ## Comunicación
 
-Gran parte de la computación tiene que ver con transmitir datos entre diferentes partes que ejecutan los cálculos.
+Gran parte de la computación tiene que ver con transmitir datos entre diferentes partes que ejecutan los cálculos, pueden ser diferentes computadoras o diferentes ejecutores de una misma computadora.
 
 ## Cálculos o Computación
 
 Cuando pensamos en la computación muchas veces sólo nos fijamos en el aspecto de los cálculos. Es una parte central del entendimiento
 
+
 ## Coordinación
 
-No es siempre cierto que "el orden de los factores no altera el producto". Además, para aprovechar el poder completo de una
+No es siempre cierto que "el orden de los factores no altera el producto". Además, para aprovechar el poder completo de un sistema, normalmente se necesita coordinar las diferentes partes que lo componen.
 
 ## Recolección
 
 ¿Cómo conseguimos los datos para procesar? ¿O cómo recogemos los resultados de la computación? ¿Cómo los almacenamos y acomodamos?
-
-De esto trata
-
-## Evaluación
 
 Comprobar que los resultados de la computación son correctos es una parte **fundamental** para hacer el campo útil.
 
@@ -117,6 +114,8 @@ También puedes visitar la página [Teach Yourself Computer Science](https://tea
 
 ## Conclusión
 
-Aprender ciencias de la computación es algo que todo desarrollador debe aprender en su carrera. Te puede ayudar a ser más eficiente, a disfrutar mucho más de tu trabajo y resolver problemas que antes no creías posibles. Pero como acabas de ver, es un camino largo, que requiere de bastante esfuerzo sostenido.
+Aprender ciencias de la computación es algo que todo desarrollador debe **aprender en su carrera**. Te puede ayudar a ser más eficiente, a disfrutar mucho más de tu trabajo y resolver problemas que antes no creías posibles. Pero como acabas de ver, es un camino largo, que requiere de bastante esfuerzo sostenido.
 
-Sigue aprendiendo y verás cómo cada cosa nueva que le sumes a tus bases de conocimiento te ayudará a ser un mejor profesional.
+Sigue aprendiendo y verás cómo cada cosa nueva que le sumes a tus bases de conocimiento te ayudará a ser un **mejor profesional**.
+
+## Referencias
