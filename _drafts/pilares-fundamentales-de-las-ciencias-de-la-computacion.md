@@ -21,9 +21,9 @@ Entender la computación profundamente es importante para cualquier desarrollado
 - ¿Puedo **garantizar** que los mensajes que envío lleguen a su destino?
 - ¿Cómo evito que la **complejidad** de esta base de código crezca más de lo que la voy a poder controlar?
 
-Tener herramientas para entender estos problemas evitará que te estanques o frustres, y te habilitará para crear sistemas que cumplan con lo se necesita de ellos. Además, esto te hará un miembro más valioso de cualquier organización.
+Tener herramientas para entender estos problemas evitará que te estanques o frustres, y te habilitará para crear sistemas que cumplan con lo se necesita de ellos. Además, te hará un miembro más valioso de cualquier organización.
 
-Un conocimiento sólido de cómo funciona la computación te ayudará, por lo menos en los siguientes puntos:
+Un conocimiento sólido de cómo funciona la computación te ayudará por lo menos en los siguientes puntos:
 
  . Entender los entender los **límites** de lo que se puede hacer
  . Diseñar mejor software (y hardware si se necesita)
@@ -32,11 +32,11 @@ Un conocimiento sólido de cómo funciona la computación te ayudará, por lo me
  . Descomponer los problemas computacionales en sus componentes básicos
  . Disfrutar más de tu trabajo
 
-Entender la computación profundamente incluye "mejorar tu lógica de programación", un objetivo que muchos quieren lograr.
+Entender la computación profundamente incluye "_mejorar tu lógica de programación_", un objetivo que muchos quieren lograr para obtener un nuevo puesto o trabajar en la empresa de sus sueños.
 
 En este artículo vamos a hablar de los seis aspectos que tienes que entender acerca de la computación, digamos que son sus **principios fundamentales**. Además veremos cómo se relaciona esto con las cosas comunes que oímos acerca de las ciencias de la computación: complejidad, algoritmos, estructuras de datos, etc.
 
-Pero antes definamos qué es la computación.
+Pero antes definamos qué es la **computación**.
 
 ## ¿Qué es la Computación?
 
@@ -44,11 +44,21 @@ Aquí vamos a hablar de la computación como la disciplina de usar las computado
 
 Estos objetivos pueden ser tan arbitrarios y diversos como lo es la cantidad de personas que actualmente usan las computadoras para sus propios objetivos.
 
-## Entender las limitantes
+> It has been argued that there are three particularly lucid traditions in computer science: the theoretical tradition, the empirical tradition, and the engineering tradition.
 
-> Computing is governed by scientific principles and laws that tell us what computers can and cannot do. - Peter Denning
+
+
+## Las limitantes de la computación
+
+Algunas personas piensan que todo es posible dentro de una computadora. Sin embargo, "The Great Principles of Computing" nos dice que:
+
+> Computing is governed by scientific principles and laws that tell us what computers can and cannot do. - **Peter Denning**
+
+Se traduce como:
 
 > La computación está gobernada por principios y leyes científicas que nos dicen qué pueden y qué no pueden hacer las computadoras. - Peter Denning
+
+Así que las computadoras tienen límites y estos están dictados por los principios científicos que conocemos de otras áreas como la física y las matemáticas.
 
 > The computer is the tool but not the object of study. - **Peter Denning**
 
