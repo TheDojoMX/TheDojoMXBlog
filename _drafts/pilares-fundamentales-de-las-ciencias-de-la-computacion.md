@@ -40,23 +40,31 @@ Pero antes definamos qué es la **computación**.
 
 ## ¿Qué es la Computación?
 
-Aquí vamos a hablar de la computación como la disciplina de usar las computadoras y el software para lograr nuestros objetivos, sean estos científicos, de negocios, de entretenimiento, etc.
+Aquí vamos a hablar de la computación como la **disciplina de usar las computadoras y el software** para lograr nuestros objetivos, sean estos científicos, de negocios, de entretenimiento, etc.
 
 Estos objetivos pueden ser tan arbitrarios y diversos como lo es la cantidad de personas que actualmente usan las computadoras para sus propios objetivos.
 
-> It has been argued that there are three particularly lucid traditions in computer science: the theoretical tradition, the empirical tradition, and the engineering tradition.
+La computación se puede ver desde tres perspectivas diferentes:
 
+> It has been argued that there are three particularly lucid traditions in computer science: the theoretical tradition, the empirical tradition, and the engineering tradition. - **Peter Denning**
 
+Según esto podemos ver la computación desde tres perspectivas:
 
-## Las limitantes de la computación
+- La tradición teórica: ver la computación como una ciencia
+- La tradición empírica: ver la computación en la práctica
+- La tradición de la ingeniería: ver la computación como una herramienta
+
+Con tradición, el Denning se refiere a la forma en la que se ha desarrollado históricamente el área. Cada una de estas tradiciones ha desarrollado el área de una forma diferente, pero todas son importantes para entender la computación. Para que seamos profesionales completos, debemos entender lo suficiente de cada una de las áreas.
+
+## Los límites de la computación
 
 Algunas personas piensan que todo es posible dentro de una computadora. Sin embargo, "The Great Principles of Computing" nos dice que:
 
 > Computing is governed by scientific principles and laws that tell us what computers can and cannot do. - **Peter Denning**
 
-Se traduce como:
+Que podemos traducir como:
 
-> La computación está gobernada por principios y leyes científicas que nos dicen qué pueden y qué no pueden hacer las computadoras. - Peter Denning
+> La computación **está gobernada por principios** y leyes científicas que nos dicen qué pueden y qué no pueden hacer las computadoras. - Peter Denning
 
 Así que las computación tiene límites y estos están dictados por los principios científicos que conocemos de otras áreas como la física y las matemáticas.
 
@@ -89,8 +97,7 @@ Gran parte de la computación tiene que ver con transmitir datos entre diferente
 
 ## Cálculos o Computación
 
-Cuando pensamos en la computación muchas veces sólo nos fijamos en el aspecto de los cálculos. Es una parte central del entendimiento
-
+En este "cristal" queremos entender que es lo que puede ser calculado o resuelto usando una computadora. Esto incluye conocer la complejidad de las soluciones...
 
 ## Coordinación
 
@@ -119,3 +126,7 @@ Aprender ciencias de la computación es algo que todo desarrollador debe **apren
 Sigue aprendiendo y verás cómo cada cosa nueva que le sumes a tus bases de conocimiento te ayudará a ser un **mejor profesional**.
 
 ## Referencias
+
+- The Great Principles of Computing, Peter Denning y Craig Martell
+- Teach Yourself Computer Science, https://teachyourselfcs.com/
+- Concrethe Mathematics, Ronald L. Graham, Donald E. Knuth y Oren Patashnik
