@@ -11,7 +11,7 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Entender la computación profundamente es importante para cualquier desarrollador de software, porque al avanzar en su carrera se encontrará con problemas relacionados con las principios más fundamentales de la computación. Piensa en los siguientes casos:
+Entender la computación **profundamente** es importante para cualquier desarrollador de software, porque al avanzar en su carrera se encontrará con problemas relacionados con las principios más fundamentales de la computación. Piensa en los siguientes casos:
 
 - ¿Es mejor mantener este sistema como un monolito o dividirlo en _microservicios_?
 - ¿Cómo puedo hacer que este sistema sea más **rápido**?
@@ -87,27 +87,33 @@ Aunque la computación en sí misma es mucho más que las computadoras que usamo
 
 Entender esta historia no te dará súper poderes de programación, pero te ayudará a saber donde estás parado en el flujo del tiempo.
 
+Este contexto te dará más bases para buscar por diferentes lados.
+
 ## Modelos de computación
 
 Un modelo de computación es una forma de representar una  mediante un sistema matemático. Esto nos permite analizar el problema y encontrar soluciones.
 
 ## Comunicación
 
-Gran parte de la computación tiene que ver con transmitir datos entre diferentes partes que ejecutan los cálculos, pueden ser diferentes computadoras o diferentes ejecutores de una misma computadora.
+Gran parte de la computación tiene que ver con transmitir datos entre diferentes partes que ejecutan los cálculos, pueden ser diferentes computadoras o diferentes ejecutores de una misma computadora. También puede incluir mover información entre diferentes lugares de almacenamiento.
+
+Asegurarnos de que la información llegue a su destino consistentemente y sin errores (o poder detectarlos y corregirlos) es uno de los problemas que la computación tiene que resolver. Esto es especialmente importante en los sistemas distribuidos.
 
 ## Cálculos o Computación
 
-En este "cristal" queremos entender que es lo que puede ser calculado o resuelto usando una computadora. Esto incluye conocer la complejidad de las soluciones...
+En este "cristal" queremos entender que es lo que puede ser calculado o resuelto usando una computadora. Esto incluye conocer la complejidad de las soluciones y en general, si es posible resolver el problema, en qué tiempo y en **qué medios de cómputo**.
+
+Para esto se necesita un poco de matemáticas, pero además creatividad e inventiva, ya que hay que pensar en las diferentes formas en las que un algoritmo se puede comportar. Además, hay que saber notar y demostrar cuando un problema no tiene solución, o las soluciones que existen no son factibles.
 
 ## Coordinación
 
-No es siempre cierto que "el orden de los factores no altera el producto". Además, para aprovechar el poder completo de un sistema, normalmente se necesita coordinar las diferentes partes que lo componen.
+No es siempre cierto que _"el orden de los factores no altera el producto"_. Además, para aprovechar el poder completo de un sistema, normalmente se necesita coordinar las diferentes partes que lo componen. Esto es cierto sobre todo con los sistemas de cómputo actuales, pero además con los sistemas de software que ocupan muchas computadoras.
+
+La coordinación tiene que ver con la concurrencia, el paralelismo y la forma de compartir datos y ponerse de acuerdo entre múltiples ejecutores para realizar una tarea de forma correcta.
 
 ## Recolección
 
-¿Cómo conseguimos los datos para procesar? ¿O cómo recogemos los resultados de la computación? ¿Cómo los almacenamos y acomodamos?
-
-Comprobar que los resultados de la computación son correctos es una parte **fundamental** para hacer el campo útil.
+¿Cómo conseguimos los datos para procesar? ¿O cómo recogemos los resultados de la computación? ¿Cómo los almacenamos y acomodamos? Esto es la recolección de datos.
 
 ## Diseño
 
@@ -127,6 +133,9 @@ Sigue aprendiendo y verás cómo cada cosa nueva que le sumes a tus bases de con
 
 ## Referencias
 
+A continuación algunas de las fuentes usadas para este artículo:
+
 - The Great Principles of Computing, Peter Denning y Craig Martell
 - Teach Yourself Computer Science, https://teachyourselfcs.com/
 - Concrethe Mathematics, Ronald L. Graham, Donald E. Knuth y Oren Patashnik
+- The Art of Computer Programming, Donald E. Knuth
