@@ -718,4 +718,10 @@ var store = [{
         "tags": ["libros","desarrollo-de-software"],
         "url": "/2023/05/25/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:19,w_400/v1684180864/A2F74C59-DAC0-411A-970A-0BF85AD55F91_1_201_a_t4llcq.jpg"
+      },{
+        "title": "Pilares fundamentales de las ciencias de la computación",
+        "excerpt":"The computer is the tool but not the object of study. - Peter Denning Entender la computación profundamente es importante para cualquier desarrollador de software, porque al avanzar en su carrera se encontrará con problemas relacionados con las principios más fundamentales de la computación. Piensa en los siguientes casos: ¿Es...","categories": [],
+        "tags": ["computer-science","cs","ciencias-de-la-computación"],
+        "url": "/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computacion.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1684557119/IMG_3866_xtomdi.jpg"
       }]

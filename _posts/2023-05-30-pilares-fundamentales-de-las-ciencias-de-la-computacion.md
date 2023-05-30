@@ -1,6 +1,6 @@
 ---
 title: "Pilares fundamentales de las ciencias de la computación"
-date: 2023-05-19
+date: 2023-05-30
 author: Héctor Patricio
 tags: computer-science cs ciencias-de-la-computación
 comments: true
@@ -10,6 +10,7 @@ header:
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1684557119/IMG_3866_xtomdi.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
+> The computer is the tool but not the object of study. - **Peter Denning**
 
 Entender la computación **profundamente** es importante para cualquier desarrollador de software, porque al avanzar en su carrera se encontrará con problemas relacionados con las principios más fundamentales de la computación. Piensa en los siguientes casos:
 
@@ -35,6 +36,17 @@ Un conocimiento sólido de cómo funciona la computación te ayudará por lo men
 Entender la computación profundamente incluye "_mejorar tu lógica de programación_", un objetivo que muchos quieren lograr para obtener un nuevo puesto o trabajar en la empresa de sus sueños.
 
 En este artículo vamos a hablar de los seis aspectos que tienes que entender acerca de la computación, digamos que son sus **principios fundamentales**. Además veremos cómo se relaciona esto con las cosas comunes que oímos acerca de las ciencias de la computación: complejidad, algoritmos, estructuras de datos, etc.
+
+Aunque nos hemos dividido en áreas de dominios como:
+
+. Inteligencia artificial
+. Sistemas distribuidos
+. Computación en la nube
+. Tratamiento y análisis de datos
+. Seguridad informática
+. Muchas más y siguen apareciendo
+
+Todas estas áreas que tienen que ver con la computación **obedecen a los mismos principios de los que hablaremos** en este artículo.
 
 Pero antes definamos qué es la **computación**.
 
@@ -68,19 +80,6 @@ Que podemos traducir como:
 
 Así que las computación tiene límites y estos están dictados por los principios científicos que conocemos de otras áreas como la física y las matemáticas.
 
-> The computer is the tool but not the object of study. - **Peter Denning**
-
-Aunque nos hemos dividido en áreas de dominios como:
-
-. Inteligencia artificial
-. Sistemas distribuidos
-. Computación en la nube
-. Tratamiento y análisis de datos
-. Seguridad informática
-. Muchas más y siguen apareciendo
-
-Todas estas áreas que tienen que ver con la computación **obedecen a los mismos principios de los que hablaremos** en este artículo.
-
 ## Historia y nacimiento de la computación moderna
 
 Aunque la computación en sí misma es mucho más que las computadoras que usamos, es importante entender cómo llegamos a este punto y junto con eso, las limitaciones que esto nos ha creado, así como las oportunidades que tenemos.
@@ -113,11 +112,17 @@ La coordinación tiene que ver con la concurrencia, el paralelismo y la forma de
 
 ## Recolección
 
-¿Cómo conseguimos los datos para procesar? ¿O cómo recogemos los resultados de la computación? ¿Cómo los almacenamos y acomodamos? Esto es la recolección de datos.
+¿Cómo conseguimos los datos para procesar? ¿O cómo recogemos los resultados de la computación? ¿Cómo los almacenamos y acomodamos? Esto es la recolección de datos. Además en dónde guardarla, en qué estructura ponerla y cómo recuperarla, es parte importante de este pilar de la computación.
+
+## Evaluación
+
+Comprobar que los resultados de la computación son correctos, diseñar sistemas que puedan verificar los resultado y además medir el desempeño de los sistemas es una parte fundamental para hacer sistemas útiles.
 
 ## Diseño
 
-No sólo se trata de echar código, también hay que pensarlo bien antes de ponerlo. El tiempo gastado en el diseño de un sistemas puede pagar dividendos grandes en el futuro.
+No sólo se trata de echar código, también hay que pensarlo bien antes de ponerlo. El tiempo gastado en el diseño de un sistemas puede pagar dividendos grandes en el futuro. Los sistemas complejos, que son todos los que existen hoy, deben descomponerse en módulos para que sean manejables por los seres humanos.
+
+Cómo descomponerlos, qué interfaces crear y qué tipo módulos tendrá el sistema es dominio del diseño de la computación.
 
 ## Más recursos
 
