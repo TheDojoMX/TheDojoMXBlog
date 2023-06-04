@@ -89,6 +89,23 @@ Martin Fowler también es uno de los más grandes nombres en el campo del desarr
 
 Puedes comprarlo aquí: [Refactoring](https://amzn.to/3osHZj6){:target="_blank"}
 
+### Software Engineering at Google | Titus Winters, Tom Manshreck, Hyrum Wright
+
+[![Portada de Software Engineering at Google](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685757582/swe_at_google.2.cover_y3khmc.jpg){:.align-center}](https://abseil.io/resources/swe-book){:target="_blank"}
+
+Este libro explica la forma en la que se practica la ingeniería de software
+en Google, uno de los más grandes creadores de software de la historia. El libro abarca tres grandes áreas:
+
+- La cultura
+- Los procesos
+- Las herramientas
+
+El libro no habla tanto de código sino que se centra más en el _desarrollo de software_.
+
+Algo que hay que tener en cuenta es que Google no tiene el monopolio de la verdad sobre el desarrollo de software, así que esta es una perspectiva que te va a dar ideas, y una visión más amplia de cómo desarrollar software.
+
+Puedes comprarlo en [Amazon](https://amzn.to/43EiOJt){:target="_blank"} o leerlo gratis aquí: [Software Engineering at Google](https://abseil.io/resources/swe-book/html/toc.html){:target="_blank"}
+
 ## Conclusión
 
 Estos son los libros que pude pensar como las mejores recomendaciones para aprender desarrollo de software.
