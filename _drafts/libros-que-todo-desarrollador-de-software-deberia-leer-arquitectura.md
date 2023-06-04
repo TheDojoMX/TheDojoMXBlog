@@ -46,30 +46,12 @@ En el "The C4 Model" explica una forma específica de comunicar la información 
 
 Puedes comprarlos aquí: [Software Architecture for Developers](https://leanpub.com/b/software-architecture){:target="_blank"}
 
-
 ### Software Engineering at Google | Titus Winters, Tom Manshreck, Hyrum Wright
 
-[![Portada de Software Engineering at Google](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685757582/swe_at_google.2.cover_y3khmc.jpg){:.align-center}](https://leanpub.com/softwareengineeringatgoogle){:target="_blank"}
+[![Portada de Software Engineering at Google](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685757582/swe_at_google.2.cover_y3khmc.jpg){:.align-center}](https://abseil.io/resources/swe-book){:target="_blank"}
 
+Este libro explica la forma en la que se hace ingeniería de software y las prácticas comunes en Google para desarrollar nuevos proyectos y a
 ### Software Architecture the Hard Parts
 
+[![Portada de Software Architecture the Hard Parts](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685757582/swe_at_google.2.cover_y3khmc.jpg){:.align-center}](https://leanpub.com/softwareengineeringatgoogle){:target="_blank"}
 
-
-
-###
-
-## Desarrollo de carrera
-
-### The Pragmatic Programmer
-
-## Libros de historia
-
-### Historia de los lenguajes de programación
-### Mentes Geniales
-### Dealers of Lightning
-
-
-
-## Temas relacionados
-
-### How to solve it
