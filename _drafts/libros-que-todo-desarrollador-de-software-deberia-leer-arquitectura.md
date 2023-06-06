@@ -46,7 +46,16 @@ En el "The C4 Model" explica una forma específica de comunicar la información 
 
 Puedes comprarlos aquí: [Software Architecture for Developers](https://leanpub.com/b/software-architecture){:target="_blank"}
 
-### Software Architecture the Hard Parts
+### Software Architecture the Hard Parts | George Fairbanks
 
-[![Portada de Software Architecture the Hard Parts](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685757582/swe_at_google.2.cover_y3khmc.jpg){:.align-center}](https://leanpub.com/softwareengineeringatgoogle){:target="_blank"}
+[![Portada de Software Architecture the Hard Parts](){:.align-center}](https://www.oreilly.com/library/view/software-architecture-the/9781492086888/){:target="_blank"}
 
+
+
+### System Design Interview 1 y 2 | Alex Xu
+
+[![Portada de System Design Interview 1](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685744265/s_hero2x_h5emvj.png){:.align-center}](https://www.amazon.com.mx/System-Design-Interview-insiders-Second/dp/1718501183){:target="_blank"}
+
+Este libro te enseña de manera concisa las bases del diseño de sistemas de software, desde los principios de diseño, hasta las diferentes partes que componen un sistema complejo que necesita soportar muchos usuarios.
+
+Alex Xu es un gran creador de contenido de muy buena calidad y en estos libros explica lo necesario de forma lo suficientemente sencilla.
