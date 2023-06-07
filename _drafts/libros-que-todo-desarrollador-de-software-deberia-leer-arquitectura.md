@@ -40,9 +40,9 @@ Puedes comprarlo aquí: [Designing Data-Intensive Applications](https://www.orei
 
 [Simon Brown](https://simonbrown.je/) es un desarrollador y arquitecto que enseña a otros desarrolladores a practicar lo mejor posible la arquitectura de software.
 
-Simon explica en Software Architecture fo Developers lo que es la arquitectura de software, desde su comparación con la arquitectura de edificios, las responsabilidades y el conocimiento que es necesario para esta actividad.
+Simon explica en Software Architecture for Developers lo que es la arquitectura de software, desde su comparación con la arquitectura de edificios, las responsabilidades y el conocimiento que es necesario para esta actividad.
 
-En el "The C4 Model" explica una forma específica de comunicar la información que el diseño de un sistema contiene, incluyendo cuatro diagramas a diferentes niveles de abstracción, con el objetivo de que quienes lo analicen se lleven una buena idea de cómo funciona el sistema.
+En el **"The C4 Model"** explica una forma específica de comunicar la información que el diseño de un sistema contiene, incluyendo cuatro diagramas a diferentes niveles de abstracción, con el objetivo de que quienes lo analicen se lleven una buena idea de cómo funciona el sistema.
 
 Puedes comprarlos aquí: [Software Architecture for Developers](https://leanpub.com/b/software-architecture){:target="_blank"}
 
@@ -50,12 +50,26 @@ Puedes comprarlos aquí: [Software Architecture for Developers](https://leanpub.
 
 [![Portada de Software Architecture the Hard Parts](){:.align-center}](https://www.oreilly.com/library/view/software-architecture-the/9781492086888/){:target="_blank"}
 
+Los sistemas distribuidos son lo que más se desarrolla hoy en día, debido a las necesidades de la industria.
 
+### Domain Driven Design | Eric Evans
+
+[![Portada de Domain Driven Design](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685744265/s_hero2x_h5emvj.png){:.align-center}](https://www.amazon.com.mx/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215){:target="_blank"}
 
 ### System Design Interview 1 y 2 | Alex Xu
 
-[![Portada de System Design Interview 1](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685744265/s_hero2x_h5emvj.png){:.align-center}](https://www.amazon.com.mx/System-Design-Interview-insiders-Second/dp/1718501183){:target="_blank"}
+[![Portada de System Design Interview 1](){:.align-center}](https://www.amazon.com.mx/System-Design-Interview-insiders-Second/dp/1718501183){:target="_blank"}
 
 Este libro te enseña de manera concisa las bases del diseño de sistemas de software, desde los principios de diseño, hasta las diferentes partes que componen un sistema complejo que necesita soportar muchos usuarios.
 
-Alex Xu es un gran creador de contenido de muy buena calidad y en estos libros explica lo necesario de forma lo suficientemente sencilla.
+**Alex Xu** es un gran creador de contenido de muy buena calidad y en estos libros explica lo necesario de forma lo suficientemente sencilla. Te lo recomiendo si quieres aprender sobre una gran cantidad de temas relacionados con el diseño de sistemas y la arquitectura de software.
+
+Puedes ver la página en la que publica más información acerca de lo que hace en: [https://www.systemdesigninterview.com/](https://www.systemdesigninterview.com/){:target="_blank"}
+
+Lo puedes comprar aquí: [System Design Interview 1](https://www.amazon.com.mx/System-Design-Interview-insiders-Second/dp/1718501183){:target="_blank"} y [System Design Interview 2](https://www.amazon.com.mx/System-Design-Interview-insiders-Second/dp/1718501183){:target="_blank"}
+
+## Conclusión
+
+Hay una buena colección de libros que te pueden ayudar a ser un mejor desarrollador de software mejor preparado, fortaleciendo una parte que todos los desarrolladores tenemos que ejercer: la arquitectura de software.
+
+Empieza con estos libros uno a uno, o úsalos como referencia para cuando tengas que resolver un problema específico.
