@@ -1,0 +1,827 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Libros que todo desarrollador de software debería leer: arquitectura - The Dojo MX Blog</title>
+<meta name="description" content="Hablemos ahora de los libros de arquitectura de software que te pueden ayudar a destacar en tu carrera como desarrollador de software.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Libros que todo desarrollador de software debería leer: arquitectura">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html">
+
+
+  <meta property="og:description" content="Hablemos ahora de los libros de arquitectura de software que te pueden ayudar a destacar en tu carrera como desarrollador de software.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1639259084/markus-spiske-Y8R6_97_6Ps-unsplash_jlidn6.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-06-08T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html",
+      "name": "Libros que todo desarrollador de software debería leer: arquitectura",
+      "headline": "Libros que todo desarrollador de software debería leer: arquitectura",
+      "keywords": "arquitectura,libros",
+      "description": "Hablemos ahora de los libros de arquitectura de software que te pueden ayudar a destacar en tu carrera como desarrollador de software.",
+      "articleBody": "Hablemos sobre los libros de arquitectura de software que te enseñarán a tomar en cuenta los aspectos importantes de este campo y te pueden hacer mejor desarrollador. Como muchos desarrolladores con experiencia mencionan, la arquitectura es un rol, no un puesto de trabajo. Como rol, lo puedes ejercer parcialmente, y todos los desarrolladores deberíamos hacer arquitectura de software a diferentes escalas. El arquitecto que sólo hace diseños no debería existir.\n\nEn ninguno de estos libros vas a encontrar la sugerencia de que el arquitecto es un puesto de trabajo que sólo se dedica a hacer “planos”, sino que lo verás como una habilidad más que los desarrolladores de software debemos de tener. Empecemos con las recomendaciones, y como siempre, si quieres contribuir con alguna recomendación, puedes hacerlo en los comentarios.\n\nDesigning Data-Intensive Applications | Martin Kleppmann\n\n\n\nAceptémoslo: 90% de las aplicaciones útiles necesitan procesar grandes cantidades de datos para funcionar. A veces sólo a eso se dedican.\n\nEs por eso que un libro como este, que habla del funcionamiento interno de diferentes sistemas que procesan grandes cantidades de datos, su arquitectura y las técnicas que los hacen funcionar, es un libro esencial para los desarrolladores de software modernos.\n\nAlgunos temas que vas a poder aprender son:\n\n\n  Las características de un buen sistema que procesa información\n  Las estructuras de datos que le dan el poder sistemas como las bases de datos\n  Modelos de datos y lenguajes de consulta\n  Replicación\n\n\nTodos estos temas son esenciales para ser un buen desarrollador de software.\n\nPuedes comprarlo aquí: Designing Data-Intensive Applications o en Amazon\n\nSofware Architecture for Developers y The C4 Model | Simon Brown\n\n\n\nSimon Brown es un desarrollador y arquitecto que enseña a otros desarrolladores a practicar lo mejor posible la arquitectura de software.\n\nSimon explica en Software Architecture for Developers lo que es la arquitectura de software, desde su comparación con la arquitectura de edificios, las cosas en las que se parece y diferencia, junto las responsabilidades y el conocimiento que es necesario para esta actividad.\n\nEn el “The C4 Model” explica una forma específica de comunicar la información que el diseño de un sistema contiene, incluyendo cuatro diagramas a diferentes niveles de abstracción, con el objetivo de que quienes lo analicen se lleven una buena idea de cómo funciona el sistema.\n\nPuedes comprarlos aquí: Software Architecture for Developers, también puedes comprarlos por separado, pero te llevas un mejor valor si los compras juntos.\n\nFundamentals of Software Architecture | Mark Richards &amp; Neal Ford\n\n\n\n¿Quieres obtener el conocimiento más básico de arquitectura de software? En este libro, los autores te lo enseñarán.\n\nEmpieza desde lo esencial y avanza hasta las mejores prácticas para analizar las características que necesitas implementar. El libro pasa (a grandes rasgos) por los siguientes temas:\n\n\n  ¿Qué es la arquitectura de software?\n  Cómo adquirir la forma de pensar de un arquitecto\n  Estilos arquitectónicos\n  Softskills para arquitectos\n\n\nEs un gran libro con muy buenas temas para empezar a practicar directamente, además escrito por expertos en el tema.\n\nPuedes comprarlo aquí: Fundamentals of Software Architecture\nSoftware Architecture the Hard Parts | Neal Ford, Mark Richards, Pramod Sadalage &amp; Zhamak Dehghani\n\n\n\nLos sistemas distribuidos son lo que más se desarrolla hoy en día, debido a las necesidades de la industria. Saber crear arquitecturas distribuidas es algo que un desarrollador avanzado debe dominar.\n\nEn este libro se habla de tres cosas principales:\n\n\n  Buenas ideas para empezar a hacer y documentar arquitecturas\n  Separación: diseñar los componentes, los módulos, separación de datos, etc.\n  Juntar todo de nuevo: contratos, service meshes, transacciones distribuidas, flujos de trabajo, etc.\n\n\nEs un libro que maneja temas avanzados y temas sobre los que tienes que saber bastante antes de empezar a leer el libro, así que te recomiendo empezar con los libros anteriores, además de obtener nociones de sistemas distribuidos.\n\nPuedes comprarlo aquí: Software Architecture the Hard Parts\n\nDomain Driven Design | Eric Evans\n\n\n\nEste libro es la Biblia del diseño dirigido por el dominio, un estilo que se enfoca en crear un modelo de software que refleje el negocio (o el dominio) de la mejor manera posible.\n\nLa principal idea de esta técnica es que los desarrolladores de software se entiendan y puedan hablar como un experto más en el dominio. Esto se logra creando un lenguaje común entre los desarrolladores y los expertos en el dominio, soportado por el modelo de software que se crea.\n\nCreo que aunque no siempre es aplicable, es bueno conocerlo y tener listas las técnicas para la aplicación completa o parcial de este estilo de diseño.\n\nPuedes comprarlo aquí: Domain Driven Design\nUn libro alternativo a este, más moderno y ligero es: Learnig Domain Driven Design.\n\nSystem Design Interview 1 y 2 | Alex Xu\n\n\n\nEstos libros te enseña de manera concisa las bases del diseño de sistemas de software, desde los principios de diseño, hasta las diferentes partes que componen un sistema complejo que necesita soportar muchos usuarios.\n\nAlex Xu es un buen creador de contenido de muy buena calidad y en estos libros explica lo necesario de forma lo suficientemente sencilla. Te lo recomiendo si quieres aprender sobre una gran cantidad de temas relacionados con el diseño de sistemas y la arquitectura de software.\n\nPuedes ver la página en la que publica más información acerca de lo que hace en: ByteByteGo {:target=”_blank”}, además de que puedes suscribirte para aprender más sobre el diseño de sistemas y prepararte para entrevistas de trabajo.\n\nLo puedes comprar aquí: System Design Interview 1 y System Design Interview 2\n\nConclusión\n\nHay una buena colección de libros que te pueden ayudar a ser un mejor desarrollador de software mejor preparado, fortaleciendo una parte que todos los desarrolladores tenemos que ejercer: la arquitectura de software.\n\nEmpieza con estos libros uno a uno, o úsalos como referencia para cuando tengas que resolver un problema específico.\n\n",
+      "datePublished": "2023-06-08 00:00:00 -0600",
+      "dateModified": "2023-06-08 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1639259084/markus-spiske-Y8R6_97_6Ps-unsplash_jlidn6.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1639259084/markus-spiske-Y8R6_97_6Ps-unsplash_jlidn6.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Libros que todo desarrollador de software debería leer: arquitectura
+
+        
+      </h1>
+      
+        <p class="page__lead">Hablemos ahora de los libros de arquitectura de software que te pueden ayudar a destacar en tu carrera como desarrollador de software.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        966 palabras | 8 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Libros que todo desarrollador de software debería leer: arquitectura">
+    <meta itemprop="description" content="Hablemos ahora de los libros de arquitectura de software que te pueden ayudar a destacar en tu carrera como desarrollador de software.">
+    <meta itemprop="datePublished" content="2023-06-08T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>Hablemos sobre los libros de arquitectura de software que te enseñarán a tomar en cuenta los aspectos importantes de este campo y te pueden hacer mejor desarrollador. Como muchos desarrolladores con experiencia mencionan, la arquitectura es un rol, no un puesto de trabajo. Como rol, lo puedes ejercer parcialmente, y todos los desarrolladores deberíamos hacer arquitectura de software a diferentes escalas. El arquitecto que sólo hace diseños no debería existir.</p>
+
+<p>En ninguno de estos libros vas a encontrar la sugerencia de que el arquitecto es un puesto de trabajo que sólo se dedica a hacer “planos”, sino que lo verás como una habilidad más que los desarrolladores de software debemos de tener. Empecemos con las recomendaciones, y como siempre, si quieres contribuir con alguna recomendación, puedes hacerlo en los comentarios.</p>
+
+<h3 id="designing-data-intensive-applications--martin-kleppmann">Designing Data-Intensive Applications | Martin Kleppmann</h3>
+
+<p><a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685729621/Screen_Shot_2023-06-02_at_12.13.03_ws9bgp.png" alt="Portada de Designing Data Intensive Applications" class="align-center"></a></p>
+
+<p>Aceptémoslo: 90% de las aplicaciones útiles necesitan procesar grandes cantidades de datos para funcionar. A veces sólo a eso se dedican.</p>
+
+<p>Es por eso que un libro como este, que habla del funcionamiento interno de diferentes sistemas que procesan grandes cantidades de datos, su arquitectura y las técnicas que los hacen funcionar, es un libro esencial para los desarrolladores de software modernos.</p>
+
+<p>Algunos temas que vas a poder aprender son:</p>
+
+<ul>
+  <li>Las características de un buen sistema que procesa información</li>
+  <li>Las estructuras de datos que le dan el poder sistemas como las bases de datos</li>
+  <li>Modelos de datos y lenguajes de consulta</li>
+  <li>Replicación</li>
+</ul>
+
+<p>Todos estos temas son esenciales para ser un buen desarrollador de software.</p>
+
+<p>Puedes comprarlo aquí: <a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/" target="_blank">Designing Data-Intensive Applications</a> o en <a href="https://www.amazon.com.mx/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321" target="_blank">Amazon</a></p>
+
+<h3 id="sofware-architecture-for-developers-y-the-c4-model--simon-brown">Sofware Architecture for Developers y The C4 Model | Simon Brown</h3>
+
+<p><a href="https://softwarearchitecturefordevelopers.com/" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685744265/s_hero2x_h5emvj.png" alt="Portada de Software Architecture for Developers" class="align-center"></a></p>
+
+<p><a href="https://simonbrown.je/">Simon Brown</a> es un desarrollador y arquitecto que enseña a otros desarrolladores a practicar lo mejor posible la arquitectura de software.</p>
+
+<p>Simon explica en <strong>Software Architecture for Developers</strong> lo que es la arquitectura de software, desde su comparación con la arquitectura de edificios, las cosas en las que se parece y diferencia, junto las responsabilidades y el conocimiento que es necesario para esta actividad.</p>
+
+<p>En el <strong>“The C4 Model”</strong> explica una forma específica de comunicar la información que el diseño de un sistema contiene, incluyendo cuatro diagramas a diferentes niveles de abstracción, con el objetivo de que quienes lo analicen se lleven una buena idea de cómo funciona el sistema.</p>
+
+<p>Puedes comprarlos aquí: <a href="https://leanpub.com/b/software-architecture" target="_blank">Software Architecture for Developers</a>, también puedes comprarlos por separado, pero te llevas un mejor valor si los compras juntos.</p>
+
+<h3 id="fundamentals-of-software-architecture--mark-richards--neal-ford">Fundamentals of Software Architecture | Mark Richards &amp; Neal Ford</h3>
+
+<p><a href="https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686180937/91HMsnYFsKL._AC_UF1000_1000_QL80__pyue4w.jpg" alt="Portada de Fundamentals of Software Architecture" class="align-center"></a></p>
+
+<p>¿Quieres obtener el conocimiento más básico de arquitectura de software? En este libro, los autores te lo enseñarán.</p>
+
+<p>Empieza desde lo esencial y avanza hasta las mejores prácticas para analizar las características que necesitas implementar. El libro pasa (a grandes rasgos) por los siguientes temas:</p>
+
+<ol>
+  <li>¿Qué es la arquitectura de software?</li>
+  <li>Cómo adquirir la forma de pensar de un arquitecto</li>
+  <li>Estilos arquitectónicos</li>
+  <li>
+<strong>Softskills</strong> para arquitectos</li>
+</ol>
+
+<p>Es un gran libro con muy buenas temas para empezar a practicar directamente, además escrito por expertos en el tema.</p>
+
+<p>Puedes comprarlo aquí: <a href="https://amzn.to/3MZqT4L" target="_blank">Fundamentals of Software Architecture</a></p>
+<h3 id="software-architecture-the-hard-parts--neal-ford-mark-richards-pramod-sadalage--zhamak-dehghani">Software Architecture the Hard Parts | Neal Ford, Mark Richards, Pramod Sadalage &amp; Zhamak Dehghani</h3>
+
+<p><a href="https://www.oreilly.com/library/view/software-architecture-the/9781492086888/" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686178147/811EFOBsU7L._AC_UF1000_1000_QL80__prpedd.jpg" alt="Portada de Software Architecture the Hard Parts" class="align-center"></a></p>
+
+<p>Los sistemas distribuidos son lo que más se desarrolla hoy en día, debido a las necesidades de la industria. Saber crear arquitecturas distribuidas es algo que un desarrollador avanzado debe dominar.</p>
+
+<p>En este libro se habla de tres cosas principales:</p>
+
+<ol>
+  <li>Buenas ideas para empezar a hacer y documentar arquitecturas</li>
+  <li>Separación: diseñar los componentes, los módulos, separación de datos, etc.</li>
+  <li>Juntar todo de nuevo: contratos, service meshes, transacciones distribuidas, flujos de trabajo, etc.</li>
+</ol>
+
+<p>Es un libro que maneja temas avanzados y temas sobre los que tienes que saber bastante antes de empezar a leer el libro, así que te recomiendo empezar con los libros anteriores, además de obtener nociones de sistemas distribuidos.</p>
+
+<p>Puedes comprarlo aquí: <a href="https://amzn.to/3MWLtTe" target="_blank">Software Architecture the Hard Parts</a></p>
+
+<h3 id="domain-driven-design--eric-evans">Domain Driven Design | Eric Evans</h3>
+
+<p><a href="https://www.amazon.com.mx/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685744265/s_hero2x_h5emvj.png" alt="Portada de Domain Driven Design" class="align-center"></a></p>
+
+<p>Este libro es la Biblia del diseño dirigido por el dominio, un estilo que se enfoca en crear un modelo de software que refleje el negocio (o el <em>dominio</em>) de la mejor manera posible.</p>
+
+<p>La principal idea de esta técnica es que los desarrolladores de software se entiendan y puedan hablar como un experto más en el dominio. Esto se logra creando un lenguaje común entre los desarrolladores y los expertos en el dominio, soportado por el modelo de software que se crea.</p>
+
+<p>Creo que aunque no siempre es aplicable, es bueno conocerlo y tener listas las técnicas para la aplicación completa o parcial de este estilo de diseño.</p>
+
+<p>Puedes comprarlo aquí: <a href="https://amzn.to/3CgwaQx" target="_blank">Domain Driven Design</a>
+Un libro alternativo a este, más moderno y ligero es: <a href="https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/" target="_blank">Learnig Domain Driven Design</a>.</p>
+
+<h3 id="system-design-interview-1-y-2--alex-xu">System Design Interview 1 y 2 | Alex Xu</h3>
+
+<p><a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"><img src="" alt="Portada de System Design Interview 1" class="align-center"></a></p>
+
+<p>Estos libros te enseña de manera concisa las bases del diseño de sistemas de software, desde los principios de diseño, hasta las diferentes partes que componen un sistema complejo que necesita soportar muchos usuarios.</p>
+
+<p><strong>Alex Xu</strong> es un buen creador de contenido de muy buena calidad y en estos libros explica lo necesario de forma lo suficientemente sencilla. Te lo recomiendo si quieres aprender sobre una gran cantidad de temas relacionados con el diseño de sistemas y la arquitectura de software.</p>
+
+<p>Puedes ver la página en la que publica más información acerca de lo que hace en: <a href="https://bytebytego.com">ByteByteGo</a> {:target=”_blank”}, además de que puedes suscribirte para aprender más sobre el diseño de sistemas y prepararte para entrevistas de trabajo.</p>
+
+<p>Lo puedes comprar aquí: <a href="https://amzn.to/3qARtK1" target="_blank">System Design Interview 1</a> y <a href="https://amzn.to/3J43CgP" target="_blank">System Design Interview 2</a></p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Hay una buena colección de libros que te pueden ayudar a ser un <strong>mejor desarrollador</strong> de software mejor preparado, fortaleciendo una parte que todos los desarrolladores tenemos que ejercer: la arquitectura de software.</p>
+
+<p>Empieza con estos libros uno a uno, o <strong>úsalos como referencia</strong> para cuando tengas que resolver un problema específico.</p>
+
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#arquitectura" class="page__taxonomy-item" rel="tag">arquitectura</a><span class="sep">, </span>
+    
+      <a href="/tags/#libros" class="page__taxonomy-item" rel="tag">libros</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-06-08T00:00:00-06:00">June 8, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Libros+que+todo+desarrollador+de+software+deber%C3%ADa+leer%3A+arquitectura%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F06%2F08%2Flibros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F06%2F08%2Flibros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F06%2F08%2Flibros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computacion.html" class="pagination--pager" title="Pilares fundamentales de las ciencias de la computación
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1684557119/IMG_3866_xtomdi.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computacion.html" rel="permalink">Pilares fundamentales de las ciencias de la computación
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+11 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-05-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Siempre que se habla de ciencias de la computación se habla de complejidad, algoritmos, etc. Pero hay cosas más importantes que tenemos que comprender.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:19,w_400/v1684180864/A2F74C59-DAC0-411A-970A-0BF85AD55F91_1_201_a_t4llcq.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/05/25/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo.html" rel="permalink">Libros que todo desarrollador de software debería leer: desarrollo
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+8 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 25-05-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos ahora de los libros relacionados con desarrollo de software que te ayudarán a mejorar tu carrera y a tener mejores proyectos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1683466921/libros_buqwhb.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs.html" rel="permalink">Libros que todo desarrollador de software debería leer: ciencias de la computación
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 13-05-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">En este artículo hablaremos de los libros de ciencias de la computación fundamentales avanzar en tu carrera y cada vez hacer mejor tu trabajo.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1682777065/ilgmyzin-GHazVhDDPZs-unsplash_poxzc5.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/05/06/por-que-deberias-leer-data-and-reality.html" rel="permalink">¿Por qué deberías leer Data and Reality?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+18 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 06-05-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos de Data and Reality, un libro que te ayudará a ser mejor desarrollador de software, porque se va a las raíces de los problemas que resolvemos a diar...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#4b0082',
+      iconColor: '#fff'
+    }).init();
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -1,6 +1,6 @@
 ---
 title: "Libros que todo desarrollador de software debería leer: arquitectura"
-date: 2023-05-14
+date: 2023-06-08
 author: Héctor Patricio
 tags: arquitectura libros
 comments: true

@@ -724,4 +724,10 @@ var store = [{
         "tags": ["computer-science","cs","ciencias-de-la-computación"],
         "url": "/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computacion.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1684557119/IMG_3866_xtomdi.jpg"
+      },{
+        "title": "Libros que todo desarrollador de software debería leer: arquitectura",
+        "excerpt":"Hablemos sobre los libros de arquitectura de software que te enseñarán a tomar en cuenta los aspectos importantes de este campo y te pueden hacer mejor desarrollador. Como muchos desarrolladores con experiencia mencionan, la arquitectura es un rol, no un puesto de trabajo. Como rol, lo puedes ejercer parcialmente, y...","categories": [],
+        "tags": ["arquitectura","libros"],
+        "url": "/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1639259084/markus-spiske-Y8R6_97_6Ps-unsplash_jlidn6.jpg"
       }]

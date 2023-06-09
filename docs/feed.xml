@@ -1,4 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-05-30T00:00:43-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Pilares fundamentales de las ciencias de la computación</title><link href="https://blog.thedojo.mx/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computacion.html" rel="alternate" type="text/html" title="Pilares fundamentales de las ciencias de la computación" /><published>2023-05-30T00:00:00-06:00</published><updated>2023-05-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computacion.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-06-08T21:49:24-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Libros que todo desarrollador de software debería leer: arquitectura</title><link href="https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html" rel="alternate" type="text/html" title="Libros que todo desarrollador de software debería leer: arquitectura" /><published>2023-06-08T00:00:00-06:00</published><updated>2023-06-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html">&lt;p&gt;Hablemos sobre los libros de arquitectura de software que te enseñarán a tomar en cuenta los aspectos importantes de este campo y te pueden hacer mejor desarrollador. Como muchos desarrolladores con experiencia mencionan, la arquitectura es un rol, no un puesto de trabajo. Como rol, lo puedes ejercer parcialmente, y todos los desarrolladores deberíamos hacer arquitectura de software a diferentes escalas. El arquitecto que sólo hace diseños no debería existir.&lt;/p&gt;
+
+&lt;p&gt;En ninguno de estos libros vas a encontrar la sugerencia de que el arquitecto es un puesto de trabajo que sólo se dedica a hacer “planos”, sino que lo verás como una habilidad más que los desarrolladores de software debemos de tener. Empecemos con las recomendaciones, y como siempre, si quieres contribuir con alguna recomendación, puedes hacerlo en los comentarios.&lt;/p&gt;
+
+&lt;h3 id=&quot;designing-data-intensive-applications--martin-kleppmann&quot;&gt;Designing Data-Intensive Applications | Martin Kleppmann&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685729621/Screen_Shot_2023-06-02_at_12.13.03_ws9bgp.png&quot; alt=&quot;Portada de Designing Data Intensive Applications&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Aceptémoslo: 90% de las aplicaciones útiles necesitan procesar grandes cantidades de datos para funcionar. A veces sólo a eso se dedican.&lt;/p&gt;
+
+&lt;p&gt;Es por eso que un libro como este, que habla del funcionamiento interno de diferentes sistemas que procesan grandes cantidades de datos, su arquitectura y las técnicas que los hacen funcionar, es un libro esencial para los desarrolladores de software modernos.&lt;/p&gt;
+
+&lt;p&gt;Algunos temas que vas a poder aprender son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Las características de un buen sistema que procesa información&lt;/li&gt;
+  &lt;li&gt;Las estructuras de datos que le dan el poder sistemas como las bases de datos&lt;/li&gt;
+  &lt;li&gt;Modelos de datos y lenguajes de consulta&lt;/li&gt;
+  &lt;li&gt;Replicación&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Todos estos temas son esenciales para ser un buen desarrollador de software.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/&quot; target=&quot;_blank&quot;&gt;Designing Data-Intensive Applications&lt;/a&gt; o en &lt;a href=&quot;https://www.amazon.com.mx/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321&quot; target=&quot;_blank&quot;&gt;Amazon&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;sofware-architecture-for-developers-y-the-c4-model--simon-brown&quot;&gt;Sofware Architecture for Developers y The C4 Model | Simon Brown&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://softwarearchitecturefordevelopers.com/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685744265/s_hero2x_h5emvj.png&quot; alt=&quot;Portada de Software Architecture for Developers&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://simonbrown.je/&quot;&gt;Simon Brown&lt;/a&gt; es un desarrollador y arquitecto que enseña a otros desarrolladores a practicar lo mejor posible la arquitectura de software.&lt;/p&gt;
+
+&lt;p&gt;Simon explica en &lt;strong&gt;Software Architecture for Developers&lt;/strong&gt; lo que es la arquitectura de software, desde su comparación con la arquitectura de edificios, las cosas en las que se parece y diferencia, junto las responsabilidades y el conocimiento que es necesario para esta actividad.&lt;/p&gt;
+
+&lt;p&gt;En el &lt;strong&gt;“The C4 Model”&lt;/strong&gt; explica una forma específica de comunicar la información que el diseño de un sistema contiene, incluyendo cuatro diagramas a diferentes niveles de abstracción, con el objetivo de que quienes lo analicen se lleven una buena idea de cómo funciona el sistema.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlos aquí: &lt;a href=&quot;https://leanpub.com/b/software-architecture&quot; target=&quot;_blank&quot;&gt;Software Architecture for Developers&lt;/a&gt;, también puedes comprarlos por separado, pero te llevas un mejor valor si los compras juntos.&lt;/p&gt;
+
+&lt;h3 id=&quot;fundamentals-of-software-architecture--mark-richards--neal-ford&quot;&gt;Fundamentals of Software Architecture | Mark Richards &amp;amp; Neal Ford&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686180937/91HMsnYFsKL._AC_UF1000_1000_QL80__pyue4w.jpg&quot; alt=&quot;Portada de Fundamentals of Software Architecture&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;¿Quieres obtener el conocimiento más básico de arquitectura de software? En este libro, los autores te lo enseñarán.&lt;/p&gt;
+
+&lt;p&gt;Empieza desde lo esencial y avanza hasta las mejores prácticas para analizar las características que necesitas implementar. El libro pasa (a grandes rasgos) por los siguientes temas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;¿Qué es la arquitectura de software?&lt;/li&gt;
+  &lt;li&gt;Cómo adquirir la forma de pensar de un arquitecto&lt;/li&gt;
+  &lt;li&gt;Estilos arquitectónicos&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Softskills&lt;/strong&gt; para arquitectos&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Es un gran libro con muy buenas temas para empezar a practicar directamente, además escrito por expertos en el tema.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/3MZqT4L&quot; target=&quot;_blank&quot;&gt;Fundamentals of Software Architecture&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;software-architecture-the-hard-parts--neal-ford-mark-richards-pramod-sadalage--zhamak-dehghani&quot;&gt;Software Architecture the Hard Parts | Neal Ford, Mark Richards, Pramod Sadalage &amp;amp; Zhamak Dehghani&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.oreilly.com/library/view/software-architecture-the/9781492086888/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686178147/811EFOBsU7L._AC_UF1000_1000_QL80__prpedd.jpg&quot; alt=&quot;Portada de Software Architecture the Hard Parts&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Los sistemas distribuidos son lo que más se desarrolla hoy en día, debido a las necesidades de la industria. Saber crear arquitecturas distribuidas es algo que un desarrollador avanzado debe dominar.&lt;/p&gt;
+
+&lt;p&gt;En este libro se habla de tres cosas principales:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Buenas ideas para empezar a hacer y documentar arquitecturas&lt;/li&gt;
+  &lt;li&gt;Separación: diseñar los componentes, los módulos, separación de datos, etc.&lt;/li&gt;
+  &lt;li&gt;Juntar todo de nuevo: contratos, service meshes, transacciones distribuidas, flujos de trabajo, etc.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Es un libro que maneja temas avanzados y temas sobre los que tienes que saber bastante antes de empezar a leer el libro, así que te recomiendo empezar con los libros anteriores, además de obtener nociones de sistemas distribuidos.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/3MWLtTe&quot; target=&quot;_blank&quot;&gt;Software Architecture the Hard Parts&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;domain-driven-design--eric-evans&quot;&gt;Domain Driven Design | Eric Evans&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com.mx/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685744265/s_hero2x_h5emvj.png&quot; alt=&quot;Portada de Domain Driven Design&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Este libro es la Biblia del diseño dirigido por el dominio, un estilo que se enfoca en crear un modelo de software que refleje el negocio (o el &lt;em&gt;dominio&lt;/em&gt;) de la mejor manera posible.&lt;/p&gt;
+
+&lt;p&gt;La principal idea de esta técnica es que los desarrolladores de software se entiendan y puedan hablar como un experto más en el dominio. Esto se logra creando un lenguaje común entre los desarrolladores y los expertos en el dominio, soportado por el modelo de software que se crea.&lt;/p&gt;
+
+&lt;p&gt;Creo que aunque no siempre es aplicable, es bueno conocerlo y tener listas las técnicas para la aplicación completa o parcial de este estilo de diseño.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/3CgwaQx&quot; target=&quot;_blank&quot;&gt;Domain Driven Design&lt;/a&gt;
+Un libro alternativo a este, más moderno y ligero es: &lt;a href=&quot;https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/&quot; target=&quot;_blank&quot;&gt;Learnig Domain Driven Design&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;system-design-interview-1-y-2--alex-xu&quot;&gt;System Design Interview 1 y 2 | Alex Xu&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;Portada de System Design Interview 1&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Estos libros te enseña de manera concisa las bases del diseño de sistemas de software, desde los principios de diseño, hasta las diferentes partes que componen un sistema complejo que necesita soportar muchos usuarios.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Alex Xu&lt;/strong&gt; es un buen creador de contenido de muy buena calidad y en estos libros explica lo necesario de forma lo suficientemente sencilla. Te lo recomiendo si quieres aprender sobre una gran cantidad de temas relacionados con el diseño de sistemas y la arquitectura de software.&lt;/p&gt;
+
+&lt;p&gt;Puedes ver la página en la que publica más información acerca de lo que hace en: &lt;a href=&quot;https://bytebytego.com&quot;&gt;ByteByteGo&lt;/a&gt; {:target=”_blank”}, además de que puedes suscribirte para aprender más sobre el diseño de sistemas y prepararte para entrevistas de trabajo.&lt;/p&gt;
+
+&lt;p&gt;Lo puedes comprar aquí: &lt;a href=&quot;https://amzn.to/3qARtK1&quot; target=&quot;_blank&quot;&gt;System Design Interview 1&lt;/a&gt; y &lt;a href=&quot;https://amzn.to/3J43CgP&quot; target=&quot;_blank&quot;&gt;System Design Interview 2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Hay una buena colección de libros que te pueden ayudar a ser un &lt;strong&gt;mejor desarrollador&lt;/strong&gt; de software mejor preparado, fortaleciendo una parte que todos los desarrolladores tenemos que ejercer: la arquitectura de software.&lt;/p&gt;
+
+&lt;p&gt;Empieza con estos libros uno a uno, o &lt;strong&gt;úsalos como referencia&lt;/strong&gt; para cuando tengas que resolver un problema específico.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="arquitectura" /><category term="libros" /><summary type="html">Hablemos ahora de los libros de arquitectura de software que te pueden ayudar a destacar en tu carrera como desarrollador de software.</summary></entry><entry><title type="html">Pilares fundamentales de las ciencias de la computación</title><link href="https://blog.thedojo.mx/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computacion.html" rel="alternate" type="text/html" title="Pilares fundamentales de las ciencias de la computación" /><published>2023-05-30T00:00:00-06:00</published><updated>2023-05-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computacion.html">&lt;blockquote&gt;
   &lt;p&gt;The computer is the tool but not the object of study. - &lt;strong&gt;Peter Denning&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -228,6 +330,25 @@ confiable para crear software de calidad.&lt;/p&gt;
 &lt;p&gt;Martin Fowler también es uno de los más grandes nombres en el campo del desarrollo de software por su gran experiencia tanto desarrollando software como escribiendo, por lo que puedes estar seguro de que sus consejos son de gran valor.&lt;/p&gt;
 
 &lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/3osHZj6&quot; target=&quot;_blank&quot;&gt;Refactoring&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;software-engineering-at-google--titus-winters-tom-manshreck-hyrum-wright&quot;&gt;Software Engineering at Google | Titus Winters, Tom Manshreck, Hyrum Wright&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://abseil.io/resources/swe-book&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685757582/swe_at_google.2.cover_y3khmc.jpg&quot; alt=&quot;Portada de Software Engineering at Google&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Este libro explica la forma en la que se practica la ingeniería de software
+en Google, uno de los más grandes creadores de software de la historia. El libro abarca tres grandes áreas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La cultura&lt;/li&gt;
+  &lt;li&gt;Los procesos&lt;/li&gt;
+  &lt;li&gt;Las herramientas&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El libro no habla tanto de código sino que se centra más en el &lt;em&gt;desarrollo de software&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Algo que hay que tener en cuenta es que Google no tiene el monopolio de la verdad sobre el desarrollo de software, así que esta es una perspectiva que te va a dar ideas, y una visión más amplia de cómo desarrollar software.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo en &lt;a href=&quot;https://amzn.to/43EiOJt&quot; target=&quot;_blank&quot;&gt;Amazon&lt;/a&gt; o leerlo gratis aquí: &lt;a href=&quot;https://abseil.io/resources/swe-book/html/toc.html&quot; target=&quot;_blank&quot;&gt;Software Engineering at Google&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
@@ -1391,52 +1512,4 @@ thedojo_agent
 
 &lt;hr /&gt;
 
-&lt;p&gt;¡Esperamos tus comentarios!&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="langchain" /><category term="llm" /><category term="tutorial" /><summary type="html">Vamos a ver cómo funciona LangChain, una herramienta que le puede dar oídos, ojos y manos a tu modelo de lenguaje preferido.</summary></entry><entry><title type="html">Cuando separar el código</title><link href="https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html" rel="alternate" type="text/html" title="Cuando separar el código" /><published>2023-04-07T00:00:00-06:00</published><updated>2023-04-07T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/07/cuando-separar-el-codigo.html">&lt;p&gt;Hay quienes afirman que mientras más pequeñas sean tus clases o funciones, mejor. Hasta llegan a poner un límite de la líneas que pueden ir en un método o función. Esto crea código súper fragmentado que llega a ser complejo por el simple hecho de tener muchos elementos individuales que luego se tienen que unir mediante más código. Además, trazar la causa de algo a través de un código similar es casi imposible o, por lo menos, te puede tomar mucho tiempo.&lt;/p&gt;
-
-&lt;p&gt;Es por eso que otros proponentes sobre diseño de software mencionan que mientras más cosas estén detrás de un interfaz y que oculten una implementación, mejor. Esto implica que las funciones y los métodos deben tener un tamaño razonable, sin llegar a ser demasiado grandes. Y este es el punto de este artículo, ¿cómo sabemos cuando es buena idea separar el código en otro módulo? Recuerda que a lo que nos referimos con módulo es cualquier construcción de tu lenguaje que permita encapsular una implementación: clases, funciones, paquetes, etc.&lt;/p&gt;
-
-&lt;p&gt;Dominar la división de software en módulos es una pilar del buen diseño de software. Veamos algunos de los criterios que John Ousterhout propone en su libro &lt;a href=&quot;https://web.stanford.edu/~ouster/cgi-bin/book.php&quot;&gt;A Philosophy of Software Design&lt;/a&gt;, precisamente en el capítulo nueve que llama “¿Mejor juntos o separados?” (&lt;em&gt;“Better together or better apart?”&lt;/em&gt;). Empecemos hablando de cuándo es mejor dejarlo junto.&lt;/p&gt;
-
-&lt;p&gt;Lo que tienes que mantener enfrente es que la meta de hacerte es pregunta es disminuir complejidad de tu código en general, pero también de hacerlo más fácil de evolucionar haciéndolo &lt;strong&gt;más modular&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;cuando-dejarlo-junto-o-combinarlo&quot;&gt;Cuando dejarlo junto o combinarlo&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Acceso a la información&lt;/strong&gt;. Lo primero que hay que considerar es la información con la que el módulo trata. Si es un slo conjunto de información que en sí mismo es difícil de separar, entonces el código que trata con él &lt;strong&gt;debería permanecer junto&lt;/strong&gt;. También te puedes imaginar un protocolo como HTTP, que para simplemente para verificar que el mensaje está bien formado, se requiere de un información para parsearlo. En este caso, el parseo y la verificación del mensaje deberían estar juntos.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Cercanía semántica&lt;/strong&gt;. Si dos partes de código se pueden categorizar fácilmente bajo la misma categoría, muy probablemente ese código puede estar bajo la misma clase, módulo o paquete. El ejemplo que da Ousterhout tiene que ver con cadenas de texto y las funciones que las transforman.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Dependencia&lt;/strong&gt;. Si siempre que quieras entender una parte, de código tienes que mirar a otra, estas dos piezas de código probablemente deben de vivir bajo el mismo módulo. Esto mismo aplica si se usan siempre (o casi siempre) juntas esas dos piezas de código.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Eliminación de código duplicado&lt;/strong&gt;. Esta es una situación a la que hay que prestarle especial atención. Si notas que estás duplicando código en alguna parte, lo más sensato es juntarlo en un alguna clase o función y llamar desde los diferentes lugares en donde lo estás ocupando. Aquí hay que poner un poco de atención: si este código duplicado son unas pocas líneas, puede que no sea conveniente pasar por la molestia de crear un nuevo módulo y las cosas que se requieren para integrarlo en tu código actual. Algo todavía mejor que puedes hacer es refactorizar tu código para que en vez de se llame en diferentes lugares, se reduzca el número de lugares en donde se llama. Esto es posible sobre todo con las excepciones, dependiendo de  tu lenguaje de programación y su estilo de manejo de errores.&lt;/p&gt;
-
-&lt;p&gt;Juntar el código a veces traerá un beneficio extra: eliminarás interfaces que no necesitas. Imagínate dos piezas de código que siempre llamas en secuencia, por ejemplo, la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;obtenerHash&lt;/code&gt; y &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;verificarHash&lt;/code&gt;. Si el 99% de las veces necesitas verificar un hash después de crearlo y al revés, casi siempre que verificas un Hash es porque lo acabas de crear, entonces es mejor que ambas funciones estén juntas, algo como &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;crearHashVerificado&lt;/code&gt;. Esto es una buena señal de que el código debería estar junto: &lt;strong&gt;si terminas con menos interfaces que al principio, o con interfaces más sencillas&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;cuando-separar-el-código&quot;&gt;Cuando separar el código&lt;/h2&gt;
-
-&lt;p&gt;Algunas personas cuentan la líneas de código y creen que esto es un buen indicador de cuando romper una pieza de código en varias. Esto no es conveniente porque aunque es cierto que mientras más grande sea algo, más probable es que sea difícil de entender, no tiene por qué ser así si está bien organizado.&lt;/p&gt;
-
-&lt;p&gt;Un buen criterio para separar el código es por su &lt;strong&gt;nivel de abstracción&lt;/strong&gt;. No es buena idea tener junto código general y específico para la misma funcionalidad en el mismo módulo, ya que cambios en las funcionalidades específicas podrían afectar a la implementación más general.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Ejemplo&lt;/strong&gt;: imagina que tienes que crear un editor de texto. Un editor de texto tiene funciones generales como insertar texto donde está el cursor, pero también funcionalidades más específicas, como por ejemplo, seleccionar texto con una interfaz gráfica. Aquí decimos que la inserción de texto es general porque todos los editores de texto lo tienen, mientras que la selección de texto es específica porque no todos los editores de texto tienen una interfaz gráfica (piensa que puedes editar texto mediante instrucciones en un API, por ejemplo).&lt;/p&gt;
-
-&lt;p&gt;En este caso, dejar en el core solamente las funciones más básicas de edición de texto es buena idea. La selección y borrado de texto pueden ser implementados en otro módulo usando las funciones que el core provee.&lt;/p&gt;
-
-&lt;p&gt;Esto lo puedes ver en práctica en los sistemas diseñados en capas, sobre todo en los MVC: el modelo tiene toda la información específica del negocio, la vista todo lo relacionado con la interfaz hacia el exterior y el controlador la conexión entre estas dos partes. Hay componentes extra, como el ORM o el sistema que se encargue de persistir la información. Aunque esto es un buen comienzo, no es suficiente. Tu propio código debe ser organizado de forma que sea fácil de entender siguiendo estos principios.&lt;/p&gt;
-
-&lt;h2 id=&quot;ejemplo-funcionalidad-de-undo-deshacer-en-un-editor-de-texto&quot;&gt;Ejemplo: funcionalidad de UNDO (Deshacer) en un editor de texto&lt;/h2&gt;
-
-&lt;p&gt;John Ousterhout da el ejemplo de la funcionalidad de “deshacer” en editor de texto. Eso que sucede cuando das &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CTRL+Z&lt;/code&gt; en casi cualquier programa. ¿En qué consiste? En que cuando se realiza una acción, se guarda para que pueda ser contrarrestada con la acción contraria. Esta función puede ser implementada en el módulo central del editor o fuera de él. ¿Cuál es la mejor opción? Imagina que no sólo tienes que poder deshacer acciones directas en el texto, sino también cosas como selecciones o posicionamiento del cursor.&lt;/p&gt;
-
-&lt;p&gt;Una forma de hacerlo sería implementarlo directamente en el módulo o clase encargado de manejar el texto, guardando la lista de acciones que se pueden deshacer y cuando se invoque la acción de deshacer o rehacer, este módulo sería el encargado de ejecutar las acciones de regreso. Este diseño crearía una interacción un poco extraña entre el módulo de interfaz, por ejemplo y el módulo de texto, ya que las acciones de interfaz que se tengan que deshacer, viajarían hacia “arriba”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1680914313/separacion_gvalss.png&quot; alt=&quot;arquitectura conjunta de lo descrito&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Un mejor diseño sería separar completamente el módulo de encargado de mantener las acciones que se pueden deshacer, al que podemos llamar Historia. Este módulo sería encargado de guardar y administrar todas las acciones que el usuario tiene disponibles para rehacer o deshacer. Las acciones pueden estar autocontenidas: cada una tiene además información sobre cómo revertirla. ¿Quién pone las acciones en la historia? El módulo que realizó la acción. Por ejemplo, si es una inserción de texto, el encargado sería el módulo core, encargado de manejar el texto. Si es una selección visual, puede ser el módulo de interfaz de usuario. Las acciones son clases con una interfaz común que el módulo de historia puede invocar para deshacer o rehacer.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/v1680914316/separacion_2_nnuihs.png&quot; alt=&quot;Imagen separada&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Aprender a separar tu código es algo que se logra con la práctica y que sin duda vale la pena hacer, porque un código con una complejidad controlada logra un equilibrio entre módulos demasiado pequeños (que hacen muy poco) y demasiado grandes (que juntan mucha información).&lt;/p&gt;
-
-&lt;p&gt;La guía principal para saber cuándo separar o juntar tu código es esta: escoge la estructura que genere menores dependencias, oculte mejor el conocimiento y cree interfaces más simples.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="aposd" /><category term="ousterhout" /><category term="diseño-de-software" /><summary type="html">¿Cuándo es buena idea que lo existe en un clase o función lo descompongas en varios elementos? En este artículo veremos algunos criterios para tomar esta decisión.</summary></entry></feed>
+&lt;p&gt;¡Esperamos tus comentarios!&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="langchain" /><category term="llm" /><category term="tutorial" /><summary type="html">Vamos a ver cómo funciona LangChain, una herramienta que le puede dar oídos, ojos y manos a tu modelo de lenguaje preferido.</summary></entry></feed>
