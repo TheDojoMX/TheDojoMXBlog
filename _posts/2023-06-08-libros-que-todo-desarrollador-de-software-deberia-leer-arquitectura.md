@@ -81,7 +81,7 @@ Puedes comprarlo aquí: [Software Architecture the Hard Parts](https://amzn.to/3
 
 ### Domain Driven Design | Eric Evans
 
-[![Portada de Domain Driven Design](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685744265/s_hero2x_h5emvj.png){:.align-center}](https://www.amazon.com.mx/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215){:target="_blank"}
+[![Portada de Domain Driven Design](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686285460/61aFldsgAmL._AC_UF1000_1000_QL80__telho9.jpg){:.align-center}](https://www.amazon.com.mx/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215){:target="_blank"}
 
 Este libro es la Biblia del diseño dirigido por el dominio, un estilo que se enfoca en crear un modelo de software que refleje el negocio (o el _dominio_) de la mejor manera posible.
 
@@ -89,7 +89,8 @@ La principal idea de esta técnica es que los desarrolladores de software se ent
 
 Creo que aunque no siempre es aplicable, es bueno conocerlo y tener listas las técnicas para la aplicación completa o parcial de este estilo de diseño.
 
-Puedes comprarlo aquí: [Domain Driven Design](https://amzn.to/3CgwaQx){:target="_blank"}
+Puedes comprarlo aquí: [Domain Driven Design](https://amzn.to/3CgwaQx){:target="_blank"}.
+
 Un libro alternativo a este, más moderno y ligero es: [Learnig Domain Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/){:target="_blank"}.
 
 ### System Design Interview 1 y 2 | Alex Xu
