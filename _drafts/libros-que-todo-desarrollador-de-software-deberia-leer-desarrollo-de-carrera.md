@@ -27,18 +27,41 @@ Como siempre, si tienes alguna recomendación, puedes dejarla en los comentarios
 
 En estos libros verás consejos específicos de desarrolladores experimentados sobre la carrera de programador, qué habilidades y actitudes te conviene desarrollar.
 
-### The Pragmatic Programmer | Andrew Hunt y David Thomas
+### The Pragmatic Programmer | David Thomas & Andrew Hunt
 
 [[Portada de The Pragmatic Programmer](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686286553/71f743sOPoL._AC_UF1000_1000_QL80__vibioc.jpg){: .align-center}](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/){:target="_blank" rel="noopener"}
 
 Este es uno de los mejores libros sobre la carrera como programador, que te da consejos de dos programadores **muy muy experimentados**. Su tema principal es el **pragmatismo**, que es una filosofía que te dice que no hay una sola forma de hacer las cosas, sino que debes adaptarte a las circunstancias y hacer lo que sea necesario para lograr tus objetivos. Otra forma de ver el pragmatismo es que hay que ser práctico, y no darle tantas vueltas a las cosas.
 
-Tiene varias secciones:
+A grandes rasgos trata estos temas:
 
-1.
-### The Practice of Programming | Brian W. Kernighan
+1. Introducción a la filosofía pragmática
+2. Cómo ser pragmático al desarrollar software (nota que no es al _programar_, sino al crear programas)
+3. Herramientas que te pueden servir para desarrollar buen software
+4. Cómo llevar un proyecto pragmáticamente
 
-[[Portada de The Practice of Programming](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686286553/51Q1ZQZGZEL._SX379_BO1_204_203_200__xqjz3o.jpg){: .align-center}](https://www.amazon.com.mx/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X){:target="_blank" rel="noopener"}
+Estaba en la duda de clasificarlo entre los libros de desarrollo de software o desarrollo de carrera, porque aunque habla sobre técnicas específicas y temas técnicos, su espíritu es una meta-habilidad o una actitud hacia el desarrollo y hacia la vida: el pragmatismo.
+
+Puedes comprarlo aquí: [The Pragmatic Programmer](https://amzn.to/3oXvmNk){:target="_blank" rel="noopener"}.
+
+### The Practice of Programming | Brian W. Kernighan & Rob Pike
+
+[[Portada de The Practice of Programming](https://www.goodreads.com/book/show/1032758.The_Practice_of_Programming){: .align-center}](){:target="_blank" rel="noopener"}
+
+Brian W. Kernighan es un desarrollador de software, programador y científico de la computación de las grandes ligas. ¿Has escuchado sobre `AWK`? Es un programa y lenguaje programación legendario, y se llama así por sus creadores: Alfred Aho, Peter Weinberger y **Brian Kernighan**.
+
+**Rob Pike** es uno de los co-creadores del lenguaje de programación Go, y también es un desarrollador de software con mucha experiencia. Ha co-creado otros lenguajes de programación, como Oberon.
+
+En **"The Practice of Programming"** explican todas las prácticas que un desarrollador de software debe tener o aprender para desarrollar software exitosamente. Este libro se guía por los siguientes principios:
+
+1. Simplicidad
+2. Claridad
+3. Generalidad
+4. Automatización
+
+Estos principios son aplicados a cosas como el estilo, la documentación, las pruebas, etc. Al igual que el libro anterior, estaba dudando en clasificarlo como libro de desarrollo de software, pero creo que el enfoque general, aunque muy técnico, va más enfocado en el desarrollo de una mentalidad conveniente.
+
+Puedes comprarlo aquí: [The Practice of Programming](https://amzn.to/42zssMz){:target="_blank" rel="noopener"}.
 
 ### Code Ahead | Yegor Bugayenko
 
@@ -59,9 +82,13 @@ Puedes comprarlo en Amazon: [Code Ahead](https://amzn.to/43Dm0FK){:target="_blan
 En esta sección recomendaremos algunos libros que creemos que te pueden ayudar a conocer más la historia de tu campo y que por lo tanto te ayudarán a aprender de lo que ya se ha hecho. Esto te ayudará a no cometer los mismos errores y más mejor, **"pararte en hombros de gigantes"** para poder ver más lejos.
 
 Afortunadamente, de estos tenemos tanto libros en inglés como en español.
-### Historia de los lenguajes de programación
+### Historia de los lenguajes de programación: Años 1940-1959 | Manuel Rubio
 
-### Mentes Geniales
+[[Portada de Historia de los lenguajes de programación](https://altenwald.com/book/histlangprog){: .align-center}](https://www.amazon.com.mx/Historia-Lenguajes-Programaci%C3%B3n-Manuel-Rubio/dp/6077074789){:target="_blank" rel="noopener"}
+
+Aquí, [Manuel Rubio](https://altenwald.com/) explica en este pequeño libro
+### Mentes Geniales | Camilo Chacón Sartori
+
 ### Dealers of Lightning
 ## La Catedral de Turing
 ## Temas relacionados
