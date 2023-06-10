@@ -95,7 +95,7 @@ Un libro alternativo a este, más moderno y ligero es: [Learnig Domain Driven De
 
 ### System Design Interview 1 y 2 | Alex Xu
 
-[![Portada de System Design Interview 1](){:.align-center}](https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw){:target="_blank"}
+[![Portada de System Design Interview 1](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686286291/51xUZItrHJL._AC_UF1000_1000_QL80__kzvtkb.jpg){:.align-center}](https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw){:target="_blank"}
 
 Estos libros te enseña de manera concisa las bases del diseño de sistemas de software, desde los principios de diseño, hasta las diferentes partes que componen un sistema complejo que necesita soportar muchos usuarios.
 
@@ -110,4 +110,3 @@ Lo puedes comprar aquí: [System Design Interview 1](https://amzn.to/3qARtK1){:t
 Hay una buena colección de libros que te pueden ayudar a ser un **mejor desarrollador** de software mejor preparado, fortaleciendo una parte que todos los desarrolladores tenemos que ejercer: la arquitectura de software.
 
 Empieza con estos libros uno a uno, o **úsalos como referencia** para cuando tengas que resolver un problema específico.
-
