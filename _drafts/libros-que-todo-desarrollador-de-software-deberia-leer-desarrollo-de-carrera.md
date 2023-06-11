@@ -69,7 +69,7 @@ Puedes comprarlo aquí: [The Practice of Programming](https://amzn.to/42zssMz){:
 
 **Yegor Bugayenko** es un autor poco conocido de este lado del mundo, pero en Rusia es más famoso. Ha escrito varios libros sobre programación como **"Elegant Objects"** (1 y 2). Pero también escribió este libro sobre la carrera de programador, que es muy bueno.
 
-Yo lo describiría como una visión cínica de la carrera de programación, con algunas recomendaciones sobre actitudes, formas de trabajo y tácticas para progresar en tu carrera. No creo que se deba tomar como una guía, sino más bien como un contrapeso a las opiniones de carrera más tradicionales, para ampliar tu visión. Además sí creo que dice algunas verdades incómodas que no a todos les gustará escuchar.
+Yo lo describiría como una _visión cínica de la carrera de programación_, con algunas recomendaciones sobre actitudes, formas de trabajo y **tácticas para progresar en tu carrera**. No creo que se deba tomar como una guía, sino más bien como un contrapeso a las opiniones de carrera más tradicionales, para ampliar tu visión. Además sí creo que dice algunas verdades incómodas que no a todos les gustará escuchar.
 
 El punto débil de libro es su formato (que para mi falló completamente), en el que trató de hacer un historia de ficción (supongo que al estilo de The Phoenix Project), pero que en realidad sólo consiste en una serie de explicaciones del protagonista.
 
@@ -77,27 +77,56 @@ A pesar de lo mencionado anteriormente, creo que es un libro que vale mucho la p
 
 Puedes comprarlo en Amazon: [Code Ahead](https://amzn.to/43Dm0FK){:target="_blank" rel="noopener"}
 
+### The Phoenix Project | Gene Kim, Kevin Behr & George Spafford
+
+[[Portada de The Phoenix Project](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/phoenix_project_kjxq8y.jpg){: .align-center}](https://itrevolution.com/product/the-phoenix-project/){:target="_blank" rel="noopener"}
+
+Este libro, a diferencia del anterior es una novela que sí salió bien, en la que describe la progresión de alguien del área de IT que obligadamente se convierte en líder del área. Describe como es que las áreas de IT se convierten de cuellos de botella en partes que agregan valor a la empresa.
+
+El libro da los fundamentos de DevOps, y cuáles son los principios que todos los equipos de desarrollo de software deberían seguir para producir software más efectivamente.
+
+Aunque está enfocado en la operación y la entrega del software, a final de cuentas, es donde todos queremos que nuestro software llegue, así que todos los desarrolladores de software se pueden beneficiar de los principios que presenta.
+
+Se ha convertido en un clásico, y con justa razón. Lo puedes comprar aquí: [The Phoenix Project](https://amzn.to/3WWWMQ1){:target="_blank" rel="noopener"}.
+
 ## Libros de historia de la informática
 
-En esta sección recomendaremos algunos libros que creemos que te pueden ayudar a conocer más la historia de tu campo y que por lo tanto te ayudarán a aprender de lo que ya se ha hecho. Esto te ayudará a no cometer los mismos errores y más mejor, **"pararte en hombros de gigantes"** para poder ver más lejos.
+En esta sección recomendaremos algunos libros que creemos que te pueden ayudar a conocer más la historia de tu campo y que por lo tanto te ayudarán a _aprender de lo que ya se ha hecho_. Esto te ayudará a no cometer los mismos errores y más mejor, **"pararte en hombros de gigantes"** para poder ver más lejos.
 
 Afortunadamente, de estos tenemos tanto libros en inglés como en español.
+
 ### Historia de los lenguajes de programación: Años 1940-1959 | Manuel Rubio
 
 [[Portada de Historia de los lenguajes de programación](https://altenwald.com/book/histlangprog){: .align-center}](https://www.amazon.com.mx/Historia-Lenguajes-Programaci%C3%B3n-Manuel-Rubio/dp/6077074789){:target="_blank" rel="noopener"}
 
-Aquí, [Manuel Rubio](https://altenwald.com/) explica en este pequeño libro
+Aquí, [Manuel Rubio](https://altenwald.com/) explica el nacimiento de las lenguajes de programación y cómo esto va de la mano con la historia de la computación. Me gusta mucho de este libro que te da una visión más amplia que la centra en US que normalmente nos dan en la escuela y en la mayoría de los libros de computación.
+
+Manuel hizo una investigación muy amplia, cuestiona algunas cosas implícitamente (_¿de verdad fue Ada Lovelace la primera programadora?_) y te da una visión más amplia de lo que significa la computación.
+
+Me gusta mucho que resalta algunas cosas que nos siguen sucediendo hoy:
+
+- Nos cuesta naturalmente despegarnos del trabajo
+- El campo siempre se ha resistido a las innovaciones
+- Siempre creemos que lo que viene después de lo que ya sabemos tiene menos valor
+
+En el blog hicimos ya un [resumen de este libro](/2022/06/11/resumen-historia-de-los-lenguajes-de-programacion.html){:target="_blank" rel="noopener"} y también hicimos un [resumen en video](https://youtu.be/JDDEOi1jwDA) pero sinceramente te recomiendo leerlo completo.
+
+Lo puedes comprar aquí: [Historia de los lenguajes de programación](https://altenwald.com/book/histlangprog){:target="_blank" rel="noopener"}. Si _necesitas_ un descuento para comprarlo, no dudes en contactarme o contactar a Manuel, que es muy accesible y una gran persona.
+
 ### Mentes Geniales | Camilo Chacón Sartori
 
+[[Portada de Mentes Geniales](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/mentes_geniales_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Mentes-geniales-ingenier%C3%ADa-software-ingenieros/dp/6077074797){:target="_blank" rel="noopener"}
+
+[Camilo Chacón Sartori]() es un gran desarrollador de software, pronto Doctor en Ciencias de la computación y escritor.
 ### Dealers of Lightning
+
 ## La Catedral de Turing
-## Temas relacionados
+
+## Otros temas relacionados
 
 ### How to solve it | George Polya
 
 ### Enfócate | Cal Newport
-
-### The Phoenix Project | Gene Kim
 
 ### Accelerate | Nicole Forsgren
 
