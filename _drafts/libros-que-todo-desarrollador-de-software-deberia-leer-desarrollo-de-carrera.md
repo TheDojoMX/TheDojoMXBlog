@@ -29,7 +29,7 @@ En estos libros verás consejos específicos de desarrolladores experimentados s
 
 ### The Pragmatic Programmer | David Thomas & Andrew Hunt
 
-[[Portada de The Pragmatic Programmer](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686286553/71f743sOPoL._AC_UF1000_1000_QL80__vibioc.jpg){: .align-center}](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/){:target="_blank" rel="noopener"}
+[![Portada de The Pragmatic Programmer](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686286553/71f743sOPoL._AC_UF1000_1000_QL80__vibioc.jpg){: .align-center}](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/){:target="_blank" rel="noopener"}
 
 Este es uno de los mejores libros sobre la carrera como programador, que te da consejos de dos programadores **muy muy experimentados**. Su tema principal es el **pragmatismo**, que es una filosofía que te dice que no hay una sola forma de hacer las cosas, sino que debes adaptarte a las circunstancias y hacer lo que sea necesario para lograr tus objetivos. Otra forma de ver el pragmatismo es que hay que ser práctico, y no darle tantas vueltas a las cosas.
 
@@ -46,7 +46,7 @@ Puedes comprarlo aquí: [The Pragmatic Programmer](https://amzn.to/3oXvmNk){:tar
 
 ### The Practice of Programming | Brian W. Kernighan & Rob Pike
 
-[[Portada de The Practice of Programming](https://www.goodreads.com/book/show/1032758.The_Practice_of_Programming){: .align-center}](){:target="_blank" rel="noopener"}
+[![Portada de The Practice of Programming](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686488400/71a9H3K9cgL._AC_UF1000_1000_QL80__af2e79.jpg){: .align-center}](https://www.goodreads.com/book/show/1032758.The_Practice_of_Programming){:target="_blank" rel="noopener"}
 
 Brian W. Kernighan es un desarrollador de software, programador y científico de la computación de las grandes ligas. ¿Has escuchado sobre `AWK`? Es un programa y lenguaje programación legendario, y se llama así por sus creadores: Alfred Aho, Peter Weinberger y **Brian Kernighan**.
 
@@ -65,7 +65,7 @@ Puedes comprarlo aquí: [The Practice of Programming](https://amzn.to/42zssMz){:
 
 ### Code Ahead | Yegor Bugayenko
 
-[[Portada de Code Ahead](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/yegor_code_kislix.png){: .align-center}](https://www.yegor256.com/code-ahead.html){:target="_blank" rel="noopener"}
+[![Portada de Code Ahead](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/yegor_code_kislix.png){: .align-center}](https://www.yegor256.com/code-ahead.html){:target="_blank" rel="noopener"}
 
 **Yegor Bugayenko** es un autor poco conocido de este lado del mundo, pero en Rusia es más famoso. Ha escrito varios libros sobre programación como **"Elegant Objects"** (1 y 2). Pero también escribió este libro sobre la carrera de programador, que es muy bueno.
 
@@ -79,7 +79,7 @@ Puedes comprarlo en Amazon: [Code Ahead](https://amzn.to/43Dm0FK){:target="_blan
 
 ### The Phoenix Project | Gene Kim, Kevin Behr & George Spafford
 
-[[Portada de The Phoenix Project](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/phoenix_project_kjxq8y.jpg){: .align-center}](https://itrevolution.com/product/the-phoenix-project/){:target="_blank" rel="noopener"}
+[![Portada de The Phoenix Project](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686458596/TPP_3rd_cover_border-664x998.jpg_ohgr0o.webp){: .align-center}](https://itrevolution.com/product/the-phoenix-project/){:target="_blank" rel="noopener"}
 
 Este libro, a diferencia del anterior es una novela que sí salió bien, en la que describe la progresión de alguien del área de IT que obligadamente se convierte en líder del área. Describe como es que las áreas de IT se convierten de cuellos de botella en partes que agregan valor a la empresa.
 
@@ -97,7 +97,7 @@ Afortunadamente, de estos tenemos tanto libros en inglés como en español.
 
 ### Historia de los lenguajes de programación: Años 1940-1959 | Manuel Rubio
 
-[[Portada de Historia de los lenguajes de programación](https://altenwald.com/book/histlangprog){: .align-center}](https://www.amazon.com.mx/Historia-Lenguajes-Programaci%C3%B3n-Manuel-Rubio/dp/6077074789){:target="_blank" rel="noopener"}
+[![Portada de Historia de los lenguajes de programación](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686489306/Screen_Shot_2023-06-11_at_7.14.50_g1d4lh.png){: .align-center}](https://altenwald.com/book/histlangprog){:target="_blank" rel="noopener"}
 
 Aquí, [Manuel Rubio](https://altenwald.com/) explica el nacimiento de las lenguajes de programación y cómo esto va de la mano con la historia de la computación. Me gusta mucho de este libro que te da una visión más amplia que la centra en US que normalmente nos dan en la escuela y en la mayoría de los libros de computación.
 
@@ -118,19 +118,43 @@ Lo puedes comprar aquí: [Historia de los lenguajes de programación](https://al
 [[Portada de Mentes Geniales](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/mentes_geniales_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Mentes-geniales-ingenier%C3%ADa-software-ingenieros/dp/6077074797){:target="_blank" rel="noopener"}
 
 [Camilo Chacón Sartori]() es un gran desarrollador de software, pronto Doctor en Ciencias de la computación y escritor.
-### Dealers of Lightning
 
-## La Catedral de Turing
+### Dealers of Lightning | Michael A. Hiltzik
+
+[![Portada de Dealers of Lightning](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/dealers_of_lightning_ekqj8y.jpg){: .align-center}](https://www.goodreads.com/book/show/1101290.Dealers_of_Lightning){:target="_blank" rel="noopener"}
+
+
+### La Catedral de Turing | George Dyson
+
+[![Portada de La Catedral de Turing](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686549301/LIBRO-La-catedral-de-Turing_va7sce.jpg){: .align-center}](https://books.google.com.mx/books/about/La_catedral_de_Turing.html?id=QvjeBQAAQBAJ&redir_esc=y){:target="_blank" rel="noopener"}
+
+En este libro se narra el comienzo de la computación después de la segunda guerra mundial y de todos los actores que tuvieron un impacto en el desarrollo de la computación moderna.
+
+Es una crónica muy completa, junto con la explicación de muchos conceptos de la computación. El autor, hijo del físico Freeman Dyson, tuvo acceso a muchos de los actores de la historia y a sus documentos, lo que le permitió hacer una libro que revela muchos detalles.
+
+Sin duda es algo que muchos dedicados a esta área del conocimiento queremos leer. Lo puedes comprar aquí: [La Catedral de Turing](https://amzn.to/3NoQKV6){:target="_blank" rel="noopener"}.
 
 ## Otros temas relacionados
 
+Finalmente, como última parte de este artículo y de la serie de libros recomendados. Quiero poner algunas recomendaciones sobre temas y habilidades alternas a la programación que te ayudarán tanto como programador como a desarrollar tu carrera.
+
+Algunos de estos temas o libros pensarás que no tienen nada que ver, pero te puedo asegurar que son habilidades y temas de soporte necesarios que te van a ayudar a resaltar.
+
 ### How to solve it | George Polya
 
+[![Portada de How to solve it](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/how_to_solve_it_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/How-Solve-Mathematical-Princeton-Science/dp/069116407X){:target="_blank" rel="noopener"}
 ### Enfócate | Cal Newport
+
+[![Portada de Enfócate](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/enfocate_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Enf%C3%B3cate-estrategias-eficacia-trabajo-creativo/dp/607527998X){:target="_blank" rel="noopener"}
+
 
 ### Accelerate | Nicole Forsgren
 
+[![Portada de Accelerate](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/accelerate_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339){:target="_blank" rel="noopener"}
+
 ### Data and Reality | William Kent
+
+[![Portada de Data and Reality](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/data_and_reality_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Data-Reality-Introduction-Experiential-Database/dp/0963134509){:target="_blank" rel="noopener"}
 
 ## Conclusión
 
