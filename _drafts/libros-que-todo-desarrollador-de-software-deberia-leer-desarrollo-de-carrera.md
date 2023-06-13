@@ -133,10 +133,21 @@ Algunos de los personajes que a mi me impactaron:
 
 Sin duda te llevarás muchas buenas lecciones y aprendizajes sobre el desarrollo de la computación de este libro. Lo puedes comprar aquí: [Mentes Geniales](https://amzn.to/3oXvmNk){:target="_blank" rel="noopener"}.
 
-### Dealers of Lightning | Michael A. Hiltzik
+### Dealers of Lightning: Xerox PARC and the Dawn of the Computer Ag | Michael A. Hiltzik
 
-[![Portada de Dealers of Lightning](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/dealers_of_lightning_ekqj8y.jpg){: .align-center}](https://www.goodreads.com/book/show/1101290.Dealers_of_Lightning){:target="_blank" rel="noopener"}
+[![Portada de Dealers of Lightning](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686549204/61pJVqUUoJL._AC_UF1000_1000_QL80__gevadr.jpg){: .align-center}](https://www.goodreads.com/book/show/1101290.Dealers_of_Lightning){:target="_blank" rel="noopener"}
 
+En los años 70 y 80's, la compañía **Xerox** (sí, la de las impresoras), consiguió un equipo de personas muy hábiles con la tecnología. Eran conocidos como el PARC (Palo Alto Research Center) y fueron los creadores de muchas de las tecnologías que hoy usamos, como:
+
+- La primera computadora personal
+- La interfaz gráfica
+- La impresora láser
+
+Todas estas tecnologías cambiaron el mundo, ayudando a crear la tecnología que hoy en día nos da trabajo y ha moldeado todas las industrias y la vida en general.
+
+Este libro está basado en entrevistas con las personas que vieron de cerca estas creaciones y que muestran cómo es que Xerox nunca vio el potencial de las creaciones de este equipo de ingenieros. Si quieres aprender sobre la historia de la tecnología que tenemos hoy, ver cómo se forman equipos de altísimo rendimiento y aumentar tus posibilidades de crear algo que sea digno de mención, este libro es un gran recurso.
+
+Puedes comprarlo aquí: [Dealers of Lightning](https://amzn.to/3Cs5QTm){:target="_blank" rel="noopener"}.
 
 ### La Catedral de Turing | George Dyson
 
@@ -156,15 +167,42 @@ Algunos de estos temas o libros pensarás que no tienen nada que ver, pero te pu
 
 ### How to solve it | George Polya
 
-[![Portada de How to solve it](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/how_to_solve_it_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/How-Solve-Mathematical-Princeton-Science/dp/069116407X){:target="_blank" rel="noopener"}
+[![Portada de How to solve it](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686666135/71GFUNCh7hL._AC_UF1000_1000_QL80__q5xtrk.jpg){: .align-center}](https://math.hawaii.edu/home/pdf/putnam/PolyaHowToSolveIt.pdf){:target="_blank" rel="noopener"}
+
+George Polya fue un matemático del Siglo XX que contribuyó en el área de heurística y resolución de problemas. Fue un gran profesor al mismo tiempo que un gran investigador. Este libro es una combinación de ambas facetas de él: le preocupaba que las matemáticas se enseñaran bien al mismo tiempo que él era muy bueno haciendo matemáticas.
+
+En este escrito, Polya establece los pasos a seguir para resolver problemas matemáticos, pero que por extensión también nos sirve a los desarrolladores para aprender a establecer un método para resolver los problemas que encontramos día a día en nuestro trabajo.
+
+Los cuatro pasos que propone son:
+
+- Plantear y entender correctamente el problema
+- Idear un plan para resolverlo (aquí da algunas técnicas comunes)
+- Ejecutar el plan
+- Revisar el resultado, el proceso y los aprendizajes
+
+Cuando lo leí, noté inmediatamente que era un libro que se debería dar en todas las escuelas relacionadas con la ingeniería o la computación, ya que nos da claridad, o por lo menos una idea de cómo empezar a resolver algo.
+
+Lo puedes comprar aquí: [How to solve it](https://amzn.to/43YlSQC){:target="_blank" rel="noopener"}, pero también lo puedes leer gratis: [Cómo plantear y resolver problemas](https://cienciaymatematicas.files.wordpress.com/2012/09/como-resolver.pdf).
+
 ### Enfócate | Cal Newport
 
-[![Portada de Enfócate](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/enfocate_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Enf%C3%B3cate-estrategias-eficacia-trabajo-creativo/dp/607527998X){:target="_blank" rel="noopener"}
+[![Portada de Enfócate](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686669189/71p-QmjVoWL._AC_UF1000_1000_QL80__ymtjyl.jpg){: .align-center}](https://www.amazon.com.mx/Enf%C3%B3cate-estrategias-eficacia-trabajo-creativo/dp/607527998X){:target="_blank" rel="noopener"}
 
+La atención es uno de los bienes más preciados que tenemos los seres humanos, ya que a nuestra mente consciente sólo entra aquello a lo que la dirigimos o _enfocamos_. Pero cuando más beneficios da es cuando la enfocamos en una sola cosa por un periodo prolongado. Es como si nuestra mente fuera acelerando y tomando impulso para resolver un problema.
+
+Esa es la tesis principal de "Enfócate", un profesor de ciencias de la computación, muy interesado en temas como el logro académico, la productividad intelectual y el rendimiento a pesar de los obstáculos modernos.
+
+En este libro, presenta un caso muy sólido para convencerte de apartar tiempo ininterrumpido para lograr tus tareas más difíciles. Además, relata cómo él lo logra y te da algunos consejos para que tú lo puedas hacer.
+
+Creo que este libro es especialmente relevante para los desarrolladores de software por el entorno en el que trabajamos y porque muchos de los problemas que enfrentamos rebasan nuestra capacidad o conocimiento actual, por lo que necesitamos toda la ayuda posible para poder resolverlos.
+
+Puedes comprarlo aquí: [Enfócate](https://amzn.to/45YWNqJ){:target="_blank" rel="noopener"}.
 
 ### Accelerate | Nicole Forsgren
 
 [![Portada de Accelerate](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/accelerate_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339){:target="_blank" rel="noopener"}
+
+**¿Qué es lo que distingue a un equipo de alto rendimiento en la entrega de software de uno de bajo rendimiento?** La medida más básica es el tiempo que toma un cambio en ser liberado o en llegar a producción.
 
 ### Data and Reality | William Kent
 
