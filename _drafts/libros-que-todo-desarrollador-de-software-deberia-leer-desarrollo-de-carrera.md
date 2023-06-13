@@ -115,9 +115,23 @@ Lo puedes comprar aquí: [Historia de los lenguajes de programación](https://al
 
 ### Mentes Geniales | Camilo Chacón Sartori
 
-[[Portada de Mentes Geniales](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/mentes_geniales_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Mentes-geniales-ingenier%C3%ADa-software-ingenieros/dp/6077074797){:target="_blank" rel="noopener"}
+[![Portada de Mentes Geniales](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686488396/978607538877_xfcfmk.jpg){: .align-center}](https://www.amazon.com.mx/Mentes-geniales-ingenier%C3%ADa-software-ingenieros/dp/6077074797){:target="_blank" rel="noopener"}
 
-[Camilo Chacón Sartori]() es un gran desarrollador de software, pronto Doctor en Ciencias de la computación y escritor.
+[Camilo Chacón Sartori](https://camilochs.github.io/web/) es un gran desarrollador de software, pronto Doctor en Ciencias de la computación y escritor. Ha escrito varios libros de programación o temas relacionados y en realidad es un escritor (y lector, ¿se puede ser buen escritor sin leer mucho?) muy prolífico.
+
+En este libro, habla de 12 personas que han contribuido de diferentes formas al desarrollo de la computación y se les ha reconocido con el **Premio Turing**. Aunque no es un libro histórico en todo el sentido de la palabra, además de que no sigue una cronología, sí habla de importantes eventos históricos de la computación y desarrollo.
+
+Lo recomiendo porque no sólamente te habla de los logros de las personas que menciona, analiza su entorno, te cuenta sobre su personalidad y extrae lecciones. Además, te deja las fuentes y referencias por si quieres leer más de ellos.
+
+Algunos de los personajes que a mi me impactaron:
+
+- **Manuel Blum** - El creador de CAPTCHA
+- **Michael Stonebraker** - El creador de PostgreSQL
+- **Barbara Liskov** - Una gran proponente de los tipos abstractos de datos
+- **Leslie Lamport** - Un gran matemático que ha contribuido a la computación con cosas como el algoritmo de Paxos y TLA+
+- **Richard Manning Karp** - Un matemático que ha contribuido a la computación con cosas como el algoritmo de Karp-Rabin y el análisis de complejidad de algoritmos
+
+Sin duda te llevarás muchas buenas lecciones y aprendizajes sobre el desarrollo de la computación de este libro. Lo puedes comprar aquí: [Mentes Geniales](https://amzn.to/3oXvmNk){:target="_blank" rel="noopener"}.
 
 ### Dealers of Lightning | Michael A. Hiltzik
 
@@ -126,11 +140,11 @@ Lo puedes comprar aquí: [Historia de los lenguajes de programación](https://al
 
 ### La Catedral de Turing | George Dyson
 
-[![Portada de La Catedral de Turing](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686549301/LIBRO-La-catedral-de-Turing_va7sce.jpg){: .align-center}](https://books.google.com.mx/books/about/La_catedral_de_Turing.html?id=QvjeBQAAQBAJ&redir_esc=y){:target="_blank" rel="noopener"}
+[![Portada de La Catedral de Turing](){: .align-center}](https://books.google.com.mx/books/about/La_catedral_de_Turing.html?id=QvjeBQAAQBAJ&redir_esc=y){:target="_blank" rel="noopener"}
 
 En este libro se narra el comienzo de la computación después de la segunda guerra mundial y de todos los actores que tuvieron un impacto en el desarrollo de la computación moderna.
 
-Es una crónica muy completa, junto con la explicación de muchos conceptos de la computación. El autor, hijo del físico Freeman Dyson, tuvo acceso a muchos de los actores de la historia y a sus documentos, lo que le permitió hacer una libro que revela muchos detalles.
+Es una crónica muy completa, junto con la explicación de muchos conceptos de la computación. El autor, hijo del físico [Freeman Dyson](https://www.profisica.cl/index.php/component/content/article/115-biografias/216-freeman-dyson?Itemid=542), tuvo acceso a muchos de los actores de la historia y a sus documentos, lo que le permitió hacer una libro que revela muchos detalles.
 
 Sin duda es algo que muchos dedicados a esta área del conocimiento queremos leer. Lo puedes comprar aquí: [La Catedral de Turing](https://amzn.to/3NoQKV6){:target="_blank" rel="noopener"}.
 
