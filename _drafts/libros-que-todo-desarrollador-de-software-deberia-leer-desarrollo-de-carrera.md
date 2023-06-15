@@ -200,10 +200,19 @@ Puedes comprarlo aquí: [Enfócate](https://amzn.to/45YWNqJ){:target="_blank" re
 
 ### Accelerate | Nicole Forsgren
 
-[![Portada de Accelerate](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/accelerate_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339){:target="_blank" rel="noopener"}
+[![Portada de Accelerate](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686808509/41OoXs3W3nL._AC_UF1000_1000_QL80__knm3bn.jpg){: .align-center}](https://www.oreilly.com/library/view/accelerate/9781457191435/9){:target="_blank" rel="noopener"}
 
-**¿Qué es lo que distingue a un equipo de alto rendimiento en la entrega de software de uno de bajo rendimiento?** La medida más básica es el tiempo que toma un cambio en ser liberado o en llegar a producción.
+**¿Qué es lo que distingue a un equipo de alto rendimiento en la entrega de software de uno de bajo rendimiento?** La medida más básica es el tiempo que toma un cambio en ser liberado o en llegar a producción. En este libro se habla de 1) cómo medir esto y 2) los factores que llevan a un equipo a mejorar esas métricas.
 
+En realidad el libro es el resultado de un estudio de muchos equipos de desarrollo de software, en el que descubrieron varias cosas acerca de los equipos de alto rendimiento, entre ellas:
+
+- Las prácticas técnicas que tienen
+- El tipo de liderazgo que los guía
+- Qué tipo de arquitecturas siguen
+- Qué prácticas de administración de recursos humanos siguen
+- Cómo hacen todo el trabajo sostenible
+
+Además el libro habla de la forma en la que se realizó el estudio. Sin duda, es un libro muy valioso para los desarrolladores de software que quieren mejorar su rendimiento y el de sus equipos. Puedes comprarlo aquí: [Accelerate](https://amzn.to/3JaPTEP){:target="_blank" rel="noopener"}.
 ### Data and Reality | William Kent
 
 [![Portada de Data and Reality](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/data_and_reality_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Data-Reality-Introduction-Experiential-Database/dp/0963134509){:target="_blank" rel="noopener"}
