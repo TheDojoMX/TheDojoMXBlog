@@ -1,4 +1,239 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-06-08T22:53:08-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Libros que todo desarrollador de software debería leer: arquitectura</title><link href="https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html" rel="alternate" type="text/html" title="Libros que todo desarrollador de software debería leer: arquitectura" /><published>2023-06-08T00:00:00-06:00</published><updated>2023-06-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html">&lt;p&gt;Hablemos sobre los libros de arquitectura de software que te enseñarán a tomar en cuenta los aspectos importantes de este campo y te pueden hacer mejor desarrollador. Como muchos desarrolladores con experiencia mencionan, la arquitectura es un rol, no un puesto de trabajo. Como rol, lo puedes ejercer parcialmente, y todos los desarrolladores deberíamos hacer arquitectura de software a diferentes escalas. El arquitecto que sólo hace diseños no debería existir.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-06-15T08:09:32-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Libros que todo desarrollador de software debería leer: desarrollo de carrera</title><link href="https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera.html" rel="alternate" type="text/html" title="Libros que todo desarrollador de software debería leer: desarrollo de carrera" /><published>2023-06-15T00:00:00-06:00</published><updated>2023-06-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera.html">&lt;p&gt;En este artículo vamos a hablar de los libros que te pueden ayudar a avanzar en tu carrera como desarrollador de software, que desde mi punto de vista, son esenciales.&lt;/p&gt;
+
+&lt;p&gt;Algunos desarrolladores piensan que basta simplemente con aprender a programar o diseñar software bien, pero lo cierto es que también hay que tener otras habilidades y conocimientos para que tu carrera avance a buen ritmo, y llegues a puestos de liderazgo si así lo deseas.&lt;/p&gt;
+
+&lt;p&gt;En este post hablaremos de tres tipos de libros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Consejos de carrera para desarrolladores y habilidades blandas&lt;/li&gt;
+  &lt;li&gt;Libros de historia de la computación&lt;/li&gt;
+  &lt;li&gt;Temas que te pueden ayudar a desarrollar habilidades de soporte&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como siempre, si tienes alguna recomendación, puedes dejarla en los comentarios. Empecemos.&lt;/p&gt;
+
+&lt;h2 id=&quot;desarrollo-de-carrera&quot;&gt;Desarrollo de carrera&lt;/h2&gt;
+
+&lt;p&gt;En estos libros verás consejos específicos de desarrolladores experimentados sobre la carrera de programador, qué habilidades y actitudes te conviene desarrollar.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-pragmatic-programmer--david-thomas--andrew-hunt&quot;&gt;The Pragmatic Programmer | David Thomas &amp;amp; Andrew Hunt&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686286553/71f743sOPoL._AC_UF1000_1000_QL80__vibioc.jpg&quot; alt=&quot;Portada de The Pragmatic Programmer&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Este es uno de los mejores libros sobre la carrera como programador, que te da consejos de dos programadores &lt;strong&gt;muy muy experimentados&lt;/strong&gt;. Su tema principal es el &lt;strong&gt;pragmatismo&lt;/strong&gt;, que es una filosofía que te dice que no hay una sola forma de hacer las cosas, sino que debes adaptarte a las circunstancias y hacer lo que sea necesario para lograr tus objetivos. Otra forma de ver el pragmatismo es que hay que ser práctico, y no darle tantas vueltas a las cosas.&lt;/p&gt;
+
+&lt;p&gt;A grandes rasgos trata estos temas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Introducción a la filosofía pragmática&lt;/li&gt;
+  &lt;li&gt;Cómo ser pragmático al desarrollar software (nota que no es al &lt;em&gt;programar&lt;/em&gt;, sino al crear programas)&lt;/li&gt;
+  &lt;li&gt;Herramientas que te pueden servir para desarrollar buen software&lt;/li&gt;
+  &lt;li&gt;Cómo llevar un proyecto pragmáticamente&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Estaba en la duda de clasificarlo entre los libros de desarrollo de software o desarrollo de carrera, porque aunque habla sobre técnicas específicas y temas técnicos, su espíritu es una meta-habilidad o una actitud hacia el desarrollo y hacia la vida: el pragmatismo.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/3oXvmNk&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;The Pragmatic Programmer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-practice-of-programming--brian-w-kernighan--rob-pike&quot;&gt;The Practice of Programming | Brian W. Kernighan &amp;amp; Rob Pike&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/1032758.The_Practice_of_Programming&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686488400/71a9H3K9cgL._AC_UF1000_1000_QL80__af2e79.jpg&quot; alt=&quot;Portada de The Practice of Programming&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Brian W. Kernighan es un desarrollador de software, programador y científico de la computación de las grandes ligas. ¿Has escuchado sobre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AWK&lt;/code&gt;? Es un programa y lenguaje programación legendario, y se llama así por sus creadores: Alfred Aho, Peter Weinberger y &lt;strong&gt;Brian Kernighan&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rob Pike&lt;/strong&gt; es uno de los co-creadores del lenguaje de programación Go, y también es un desarrollador de software con mucha experiencia. Ha co-creado otros lenguajes de programación, como Oberon.&lt;/p&gt;
+
+&lt;p&gt;En &lt;strong&gt;“The Practice of Programming”&lt;/strong&gt; explican todas las prácticas que un desarrollador de software debe tener o aprender para desarrollar software exitosamente. Este libro se guía por los siguientes principios:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Simplicidad&lt;/li&gt;
+  &lt;li&gt;Claridad&lt;/li&gt;
+  &lt;li&gt;Generalidad&lt;/li&gt;
+  &lt;li&gt;Automatización&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Estos principios son aplicados a cosas como el estilo, la documentación, las pruebas, etc. Al igual que el libro anterior, estaba dudando en clasificarlo como libro de desarrollo de software, pero creo que el enfoque general, aunque muy técnico, va más enfocado en el desarrollo de una mentalidad conveniente.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/42zssMz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;The Practice of Programming&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;code-ahead--yegor-bugayenko&quot;&gt;Code Ahead | Yegor Bugayenko&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.yegor256.com/code-ahead.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/yegor_code_kislix.png&quot; alt=&quot;Portada de Code Ahead&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Yegor Bugayenko&lt;/strong&gt; es un autor poco conocido de este lado del mundo, pero en Rusia es más famoso. Ha escrito varios libros sobre programación como &lt;strong&gt;“Elegant Objects”&lt;/strong&gt; (1 y 2). Pero también escribió este libro sobre la carrera de programador, que es muy bueno.&lt;/p&gt;
+
+&lt;p&gt;Yo lo describiría como una &lt;em&gt;visión cínica de la carrera de programación&lt;/em&gt;, con algunas recomendaciones sobre actitudes, formas de trabajo y &lt;strong&gt;tácticas para progresar en tu carrera&lt;/strong&gt;. No creo que se deba tomar como una guía, sino más bien como un contrapeso a las opiniones de carrera más tradicionales, para ampliar tu visión. Además sí creo que dice algunas verdades incómodas que no a todos les gustará escuchar.&lt;/p&gt;
+
+&lt;p&gt;El punto débil de libro es su formato (que para mi falló completamente), en el que trató de hacer un historia de ficción (supongo que al estilo de The Phoenix Project), pero que en realidad sólo consiste en una serie de explicaciones del protagonista.&lt;/p&gt;
+
+&lt;p&gt;A pesar de lo mencionado anteriormente, creo que es un libro que vale mucho la pena leer y que te puede ayudar a ver las cosas desde otra perspectiva.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo en Amazon: &lt;a href=&quot;https://amzn.to/43Dm0FK&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Code Ahead&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;the-phoenix-project--gene-kim-kevin-behr--george-spafford&quot;&gt;The Phoenix Project | Gene Kim, Kevin Behr &amp;amp; George Spafford&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://itrevolution.com/product/the-phoenix-project/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686458596/TPP_3rd_cover_border-664x998.jpg_ohgr0o.webp&quot; alt=&quot;Portada de The Phoenix Project&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Este libro, a diferencia del anterior es una novela que sí salió bien, en la que describe la progresión de alguien del área de IT que obligadamente se convierte en líder del área. Describe como es que las áreas de IT se convierten de cuellos de botella en partes que agregan valor a la empresa.&lt;/p&gt;
+
+&lt;p&gt;El libro da los fundamentos de DevOps, y cuáles son los principios que todos los equipos de desarrollo de software deberían seguir para producir software más efectivamente.&lt;/p&gt;
+
+&lt;p&gt;Aunque está enfocado en la operación y la entrega del software, a final de cuentas, es donde todos queremos que nuestro software llegue, así que todos los desarrolladores de software se pueden beneficiar de los principios que presenta.&lt;/p&gt;
+
+&lt;p&gt;Se ha convertido en un clásico, y con justa razón. Lo puedes comprar aquí: &lt;a href=&quot;https://amzn.to/3WWWMQ1&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;The Phoenix Project&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;libros-de-historia-de-la-informática&quot;&gt;Libros de historia de la informática&lt;/h2&gt;
+
+&lt;p&gt;En esta sección recomendaremos algunos libros que creemos que te pueden ayudar a conocer más la historia de tu campo y que por lo tanto te ayudarán a &lt;em&gt;aprender de lo que ya se ha hecho&lt;/em&gt;. Esto te ayudará a no cometer los mismos errores y más mejor, &lt;strong&gt;“pararte en hombros de gigantes”&lt;/strong&gt; para poder ver más lejos.&lt;/p&gt;
+
+&lt;p&gt;Afortunadamente, de estos tenemos tanto libros en inglés como en español.&lt;/p&gt;
+
+&lt;h3 id=&quot;historia-de-los-lenguajes-de-programación-años-1940-1959--manuel-rubio&quot;&gt;Historia de los lenguajes de programación: Años 1940-1959 | Manuel Rubio&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://altenwald.com/book/histlangprog&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686489306/Screen_Shot_2023-06-11_at_7.14.50_g1d4lh.png&quot; alt=&quot;Portada de Historia de los lenguajes de programación&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Aquí, &lt;a href=&quot;https://altenwald.com/&quot;&gt;Manuel Rubio&lt;/a&gt; explica el nacimiento de las lenguajes de programación y cómo esto va de la mano con la historia de la computación. Me gusta mucho de este libro que te da una visión más amplia que la centra en US que normalmente nos dan en la escuela y en la mayoría de los libros de computación.&lt;/p&gt;
+
+&lt;p&gt;Manuel hizo una investigación muy amplia, cuestiona algunas cosas implícitamente (&lt;em&gt;¿de verdad fue Ada Lovelace la primera programadora?&lt;/em&gt;) y te da una visión más amplia de lo que significa la computación.&lt;/p&gt;
+
+&lt;p&gt;Me gusta mucho que resalta algunas cosas que nos siguen sucediendo hoy:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Nos cuesta naturalmente despegarnos del trabajo&lt;/li&gt;
+  &lt;li&gt;El campo siempre se ha resistido a las innovaciones&lt;/li&gt;
+  &lt;li&gt;Siempre creemos que lo que viene después de lo que ya sabemos tiene menos valor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En el blog hicimos ya un &lt;a href=&quot;/2022/06/11/resumen-historia-de-los-lenguajes-de-programacion.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;resumen de este libro&lt;/a&gt; y también hicimos un &lt;a href=&quot;https://youtu.be/JDDEOi1jwDA&quot;&gt;resumen en video&lt;/a&gt; pero sinceramente te recomiendo leerlo completo.&lt;/p&gt;
+
+&lt;p&gt;Lo puedes comprar aquí: &lt;a href=&quot;https://altenwald.com/book/histlangprog&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Historia de los lenguajes de programación&lt;/a&gt;. Si &lt;em&gt;necesitas&lt;/em&gt; un descuento para comprarlo, no dudes en contactarme o contactar a Manuel, que es muy accesible y una gran persona.&lt;/p&gt;
+
+&lt;h3 id=&quot;mentes-geniales--camilo-chacón-sartori&quot;&gt;Mentes Geniales | Camilo Chacón Sartori&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com.mx/Mentes-geniales-ingenier%C3%ADa-software-ingenieros/dp/6077074797&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686488396/978607538877_xfcfmk.jpg&quot; alt=&quot;Portada de Mentes Geniales&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://camilochs.github.io/web/&quot;&gt;Camilo Chacón Sartori&lt;/a&gt; es un gran desarrollador de software, pronto Doctor en Ciencias de la computación y escritor. Ha escrito varios libros de programación o temas relacionados y en realidad es un escritor (y lector, ¿se puede ser buen escritor sin leer mucho?) muy prolífico.&lt;/p&gt;
+
+&lt;p&gt;En este libro, habla de 12 personas que han contribuido de diferentes formas al desarrollo de la computación y se les ha reconocido con el &lt;strong&gt;Premio Turing&lt;/strong&gt;. Aunque no es un libro histórico en todo el sentido de la palabra, además de que no sigue una cronología, sí habla de importantes eventos históricos de la computación y desarrollo.&lt;/p&gt;
+
+&lt;p&gt;Lo recomiendo porque no sólamente te habla de los logros de las personas que menciona, analiza su entorno, te cuenta sobre su personalidad y extrae lecciones. Además, te deja las fuentes y referencias por si quieres leer más de ellos.&lt;/p&gt;
+
+&lt;p&gt;Algunos de los personajes que a mi me impactaron:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Manuel Blum&lt;/strong&gt; - El creador de CAPTCHA&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Michael Stonebraker&lt;/strong&gt; - El creador de PostgreSQL&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Barbara Liskov&lt;/strong&gt; - Una gran proponente de los tipos abstractos de datos&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Leslie Lamport&lt;/strong&gt; - Un gran matemático que ha contribuido a la computación con cosas como el algoritmo de Paxos y TLA+&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Richard Manning Karp&lt;/strong&gt; - Un matemático que ha contribuido a la computación con cosas como el algoritmo de Karp-Rabin y el análisis de complejidad de algoritmos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sin duda te llevarás muchas buenas lecciones y aprendizajes sobre el desarrollo de la computación de este libro. Lo puedes comprar aquí: &lt;a href=&quot;https://amzn.to/3oXvmNk&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Mentes Geniales&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;dealers-of-lightning-xerox-parc-and-the-dawn-of-the-computer-ag--michael-a-hiltzik&quot;&gt;Dealers of Lightning: Xerox PARC and the Dawn of the Computer Ag | Michael A. Hiltzik&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/1101290.Dealers_of_Lightning&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686549204/61pJVqUUoJL._AC_UF1000_1000_QL80__gevadr.jpg&quot; alt=&quot;Portada de Dealers of Lightning&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;En los años 70 y 80’s, la compañía &lt;strong&gt;Xerox&lt;/strong&gt; (sí, la de las impresoras), consiguió un equipo de personas muy hábiles con la tecnología. Eran conocidos como el PARC (Palo Alto Research Center) y fueron los creadores de muchas de las tecnologías que hoy usamos, como:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La primera computadora personal&lt;/li&gt;
+  &lt;li&gt;La interfaz gráfica&lt;/li&gt;
+  &lt;li&gt;La impresora láser&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Todas estas tecnologías cambiaron el mundo, ayudando a crear la tecnología que hoy en día nos da trabajo y ha moldeado todas las industrias y la vida en general.&lt;/p&gt;
+
+&lt;p&gt;Este libro está basado en entrevistas con las personas que vieron de cerca estas creaciones y que muestran cómo es que Xerox nunca vio el potencial de las creaciones de este equipo de ingenieros. Si quieres aprender sobre la historia de la tecnología que tenemos hoy, ver cómo se forman equipos de altísimo rendimiento y aumentar tus posibilidades de crear algo que sea digno de mención, este libro es un gran recurso.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/3Cs5QTm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Dealers of Lightning&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;la-catedral-de-turing--george-dyson&quot;&gt;La Catedral de Turing | George Dyson&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://books.google.com.mx/books/about/La_catedral_de_Turing.html?id=QvjeBQAAQBAJ&amp;amp;redir_esc=y&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;Portada de La Catedral de Turing&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;En este libro se narra el comienzo de la computación después de la segunda guerra mundial y de todos los actores que tuvieron un impacto en el desarrollo de la computación moderna.&lt;/p&gt;
+
+&lt;p&gt;Es una crónica muy completa, junto con la explicación de muchos conceptos de la computación. El autor, hijo del físico &lt;a href=&quot;https://www.profisica.cl/index.php/component/content/article/115-biografias/216-freeman-dyson?Itemid=542&quot;&gt;Freeman Dyson&lt;/a&gt;, tuvo acceso a muchos de los actores de la historia y a sus documentos, lo que le permitió hacer una libro que revela muchos detalles.&lt;/p&gt;
+
+&lt;p&gt;Sin duda es algo que muchos dedicados a esta área del conocimiento queremos leer. Lo puedes comprar aquí: &lt;a href=&quot;https://amzn.to/3NoQKV6&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;La Catedral de Turing&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;otros-temas-relacionados&quot;&gt;Otros temas relacionados&lt;/h2&gt;
+
+&lt;p&gt;Finalmente, como última parte de este artículo y de la serie de libros recomendados. Quiero poner algunas recomendaciones sobre temas y habilidades alternas a la programación que te ayudarán tanto como programador como a desarrollar tu carrera.&lt;/p&gt;
+
+&lt;p&gt;Algunos de estos temas o libros pensarás que no tienen nada que ver, pero te puedo asegurar que son habilidades y temas de soporte necesarios que te van a ayudar a resaltar.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-solve-it--george-polya&quot;&gt;How to solve it | George Polya&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://math.hawaii.edu/home/pdf/putnam/PolyaHowToSolveIt.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686666135/71GFUNCh7hL._AC_UF1000_1000_QL80__q5xtrk.jpg&quot; alt=&quot;Portada de How to solve it&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;George Polya fue un matemático del Siglo XX que contribuyó en el área de heurística y resolución de problemas. Fue un gran profesor al mismo tiempo que un gran investigador. Este libro es una combinación de ambas facetas de él: le preocupaba que las matemáticas se enseñaran bien al mismo tiempo que él era muy bueno haciendo matemáticas.&lt;/p&gt;
+
+&lt;p&gt;En este escrito, Polya establece los pasos a seguir para resolver problemas matemáticos, pero que por extensión también nos sirve a los desarrolladores para aprender a establecer un método para resolver los problemas que encontramos día a día en nuestro trabajo.&lt;/p&gt;
+
+&lt;p&gt;Los cuatro pasos que propone son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Plantear y entender correctamente el problema&lt;/li&gt;
+  &lt;li&gt;Idear un plan para resolverlo (aquí da algunas técnicas comunes)&lt;/li&gt;
+  &lt;li&gt;Ejecutar el plan&lt;/li&gt;
+  &lt;li&gt;Revisar el resultado, el proceso y los aprendizajes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cuando lo leí, noté inmediatamente que era un libro que se debería dar en todas las escuelas relacionadas con la ingeniería o la computación, ya que nos da claridad, o por lo menos una idea de cómo empezar a resolver algo.&lt;/p&gt;
+
+&lt;p&gt;Lo puedes comprar aquí: &lt;a href=&quot;https://amzn.to/43YlSQC&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;How to solve it&lt;/a&gt;, pero también lo puedes leer gratis: &lt;a href=&quot;https://cienciaymatematicas.files.wordpress.com/2012/09/como-resolver.pdf&quot;&gt;Cómo plantear y resolver problemas&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;enfócate--cal-newport&quot;&gt;Enfócate | Cal Newport&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com.mx/Enf%C3%B3cate-estrategias-eficacia-trabajo-creativo/dp/607527998X&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686669189/71p-QmjVoWL._AC_UF1000_1000_QL80__ymtjyl.jpg&quot; alt=&quot;Portada de Enfócate&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;La atención es uno de los bienes más preciados que tenemos los seres humanos, ya que a nuestra mente consciente sólo entra aquello a lo que la dirigimos o &lt;em&gt;enfocamos&lt;/em&gt;. Pero cuando más beneficios da es cuando la enfocamos en una sola cosa por un periodo prolongado. Es como si nuestra mente fuera acelerando y tomando impulso para resolver un problema.&lt;/p&gt;
+
+&lt;p&gt;Esa es la tesis principal de “Enfócate”, un profesor de ciencias de la computación, muy interesado en temas como el logro académico, la productividad intelectual y el rendimiento a pesar de los obstáculos modernos.&lt;/p&gt;
+
+&lt;p&gt;En este libro, presenta un caso muy sólido para convencerte de apartar tiempo ininterrumpido para lograr tus tareas más difíciles. Además, relata cómo él lo logra y te da algunos consejos para que tú lo puedas hacer.&lt;/p&gt;
+
+&lt;p&gt;Creo que este libro es especialmente relevante para los desarrolladores de software por el entorno en el que trabajamos y porque muchos de los problemas que enfrentamos rebasan nuestra capacidad o conocimiento actual, por lo que necesitamos toda la ayuda posible para poder resolverlos.&lt;/p&gt;
+
+&lt;p&gt;Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/45YWNqJ&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Enfócate&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;accelerate--nicole-forsgren&quot;&gt;Accelerate | Nicole Forsgren&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.oreilly.com/library/view/accelerate/9781457191435/9&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686808509/41OoXs3W3nL._AC_UF1000_1000_QL80__knm3bn.jpg&quot; alt=&quot;Portada de Accelerate&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;¿Qué es lo que distingue a un equipo de alto rendimiento en la entrega de software de uno de bajo rendimiento?&lt;/strong&gt; La medida más básica es el tiempo que toma un cambio en ser liberado o en llegar a producción. En este libro se habla de 1) cómo medir esto y 2) los factores que llevan a un equipo a mejorar esas métricas.&lt;/p&gt;
+
+&lt;p&gt;En realidad el libro es el resultado de un estudio de muchos equipos de desarrollo de software, en el que descubrieron varias cosas acerca de los equipos de alto rendimiento, entre ellas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Las prácticas técnicas que tienen&lt;/li&gt;
+  &lt;li&gt;El tipo de liderazgo que los guía&lt;/li&gt;
+  &lt;li&gt;Qué tipo de arquitecturas siguen&lt;/li&gt;
+  &lt;li&gt;Qué prácticas de administración de recursos humanos siguen&lt;/li&gt;
+  &lt;li&gt;Cómo hacen todo el trabajo sostenible&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Además el libro habla de la forma en la que se realizó el estudio. Sin duda, es un libro muy valioso para los desarrolladores de software que quieren mejorar su rendimiento y el de sus equipos. Puedes comprarlo aquí: &lt;a href=&quot;https://amzn.to/3JaPTEP&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Accelerate&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;data-and-reality--william-kent&quot;&gt;Data and Reality | William Kent&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.bkent.net/Doc/darxrp.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686837219/41351CTT93L._AC_UF1000_1000_QL80__qgzcwb.jpg&quot; alt=&quot;Portada de Data and Reality&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Creo que como programadores, gran cantidad del tiempo lo dedicamos a procesar datos, o a crear representaciones datos de procesos externos a la computación. Esto es el &lt;strong&gt;modelado de datos&lt;/strong&gt;, y es de lo que este libro habla, pero de manera bastante especial.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;William Kent&lt;/strong&gt; hace un análisis profundo de las cosas a las que estamos acostumbrados: modelos, datos, registros, relaciones, atributos, entidades. Primero, &lt;em&gt;intenta&lt;/em&gt; definirlas y después aplicarlas al modelado de datos, explorando las implicaciones de definición. Es un libro que te va a hacer pensar bastante, relacionado con la epistemología, la ontología y en nuestra percepción de la realidad.&lt;/p&gt;
+
+&lt;p&gt;Aunque el libro te deja con más dudas que respuestas, deja algo totalmente claro: no existe una forma &lt;em&gt;correcta&lt;/em&gt; de modelar el mundo, sólo &lt;strong&gt;representaciones más convenientes&lt;/strong&gt; para un caso u otro, ya que todas son arbitrarias.&lt;/p&gt;
+
+&lt;p&gt;Yo leí la &lt;a href=&quot;https://amzn.to/42FOOMs&quot;&gt;tercera edición&lt;/a&gt;, que es la que única que está en producción actualmente. Esta tiene comentarios de otro modelador de datos muy experimentado, pero que según &lt;a href=&quot;https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/&quot;&gt;Hillel Wayne&lt;/a&gt; cambió completamente el libro.Hillel recomienda leer la segunda edición, que aunque ya no está en impresión, lo puedes encontrar en &lt;a href=&quot;/assets/pdfs/Data%20and%20Reality.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PDF&lt;/a&gt;. Yo tengo pendiente leer la segunda edición, pero tengo altas expectativas ya que incluso la tercera me dejó grandes enseñanzas.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Para avanzar en tu carrera no basta con aprender sólo habilidades técnicas, también hacen falta algunas meta-habilidades, habilidades paralelas y conocimiento de la historia de tu profesión.&lt;/p&gt;
+
+&lt;p&gt;Tener estos conocimientos te puede hacer destacar de los demás profesionales, y son especialmente útiles si quieres lograr un puesto de liderazgo. Así que sigue preparándote, recuerda que un libro bien editado es de las mejores inversiones que puedes hacer.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="desarrollo-de-carrera" /><category term="career" /><category term="historia" /><summary type="html">Hablemos de los libros que te pueden ayudar a desarrollar tu carrera como desarrollador de software, escritos por personas con experiencia en el tema.</summary></entry><entry><title type="html">Libros que todo desarrollador de software debería leer: arquitectura</title><link href="https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html" rel="alternate" type="text/html" title="Libros que todo desarrollador de software debería leer: arquitectura" /><published>2023-06-08T00:00:00-06:00</published><updated>2023-06-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html">&lt;p&gt;Hablemos sobre los libros de arquitectura de software que te enseñarán a tomar en cuenta los aspectos importantes de este campo y te pueden hacer mejor desarrollador. Como muchos desarrolladores con experiencia mencionan, la arquitectura es un rol, no un puesto de trabajo. Como rol, lo puedes ejercer parcialmente, y todos los desarrolladores deberíamos hacer arquitectura de software a diferentes escalas. El arquitecto que sólo hace diseños no debería existir.&lt;/p&gt;
 
 &lt;p&gt;En ninguno de estos libros vas a encontrar la sugerencia de que el arquitecto es un puesto de trabajo que sólo se dedica a hacer “planos”, sino que lo verás como una habilidad más que los desarrolladores de software debemos de tener. Empecemos con las recomendaciones, y como siempre, si quieres contribuir con alguna recomendación, puedes hacerlo en los comentarios.&lt;/p&gt;
 
@@ -1354,163 +1589,4 @@ directamente de nuestra habilidad para combinar soluciones. - &lt;strong&gt;John
 
 &lt;p&gt;Aprender a usar la composición es &lt;strong&gt;obligatorio para desarrollar buen software&lt;/strong&gt;. Lo quieras o no, mientras desarrollas, siempre estás juntando componentes, es decir &lt;em&gt;componiendo&lt;/em&gt;, si conoces las técnicas correctas, podrás crear software de mejor calidad de manera más rápida.&lt;/p&gt;
 
-&lt;p&gt;Piensa en el desarrollo de software como el arte de deconstruir los problemas, resolverlos por cachitos y después juntar las soluciones de regreso para tener la solución completa.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="fp" /><category term="composición" /><summary type="html">La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella.</summary></entry><entry><title type="html">Usando LangChain 🦜 para crear software basado en LLM’s</title><link href="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html" rel="alternate" type="text/html" title="Usando LangChain 🦜 para crear software basado en LLM’s" /><published>2023-04-15T00:00:00-06:00</published><updated>2023-04-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llm-s.html">&lt;p&gt;Los grandes modelos de lenguaje o LLM’s (Large Language Models) han sido noticia en este 2023. Es por eso que han surgido muchos proyectos y herramientas que permiten crear software basado en estas herramientas.&lt;/p&gt;
-
-&lt;p&gt;En este artículo vamos a poner un pequeño tutorial de una herramienta creada para hacer aplicaciones basadas en LLM’s: &lt;a href=&quot;https://python.langchain.com/en/latest/index.html&quot;&gt;LangChain&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;qué-es-langchain&quot;&gt;¿Qué es LangChain?&lt;/h2&gt;
-
-&lt;p&gt;Las aplicaciones basadas en procesamiento de lenguaje natural, sea como una herramienta de comunicación o como su producto principal, normalmente requieren fuentes de información para potenciar sus capacidades.&lt;/p&gt;
-
-&lt;p&gt;También es una muy buena idea que estas aplicaciones puedan actuar por sí mismas usando las instrucciones creadas por un LLM. Para hacer esto podemos usar &lt;strong&gt;agentes&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;LangChain&lt;/strong&gt; provee componentes que te permiten lograr estas dos tareas, para que tú los uses como quieras, pero también te provee
-de cadenas de componentes (&lt;em&gt;&lt;a href=&quot;/&quot;&gt;composición&lt;/a&gt; de software, ¿te suena?&lt;/em&gt;) con casos de uso comunes, digamos que prefabricados, para hacer software basado en LLM’s de manera más rápida.&lt;/p&gt;
-
-&lt;p&gt;Hablemos de qué componentes te provee LangChain para empezar a construir tus programas basados en LLM’s.&lt;/p&gt;
-
-&lt;h2 id=&quot;componentes-principales&quot;&gt;Componentes principales&lt;/h2&gt;
-
-&lt;p&gt;LangChain provee varios tipos de componentes, muchos de los cuales son abstracciones de los conceptos más usados en la interacción con LLM’s, veamos algunos de ellos:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Texto&lt;/strong&gt;. La abstracción más básica es la que representa un texto cualquiera que le mandamos a un LLM. Este texto puede provenir de diferentes fuentes, como archivos, por ejemplo.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Divisores de texto&lt;/strong&gt;. Generalmente, un modelo de lenguaje no puede consumir mucho texto al mismo tiempo, por lo que para poder procesar textos grandes hay que mandárselos por partes. Este componente se encarga de ayudarte a dividir el texto en partes que el LLM pueda procesar.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Índices&lt;/strong&gt;. Es una abstracción que presenta el texto de mejor manera para que un LLM pueda acceder a la información mejor. Los índices se tienen que guardar de alguna manera y LangChain provee una interfaz para guardarlos en una base de datos especializada.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Modelo&lt;/strong&gt;. Esto es la interfaz con un modelo de lenguaje. Te lo puedes imaginar como el equivalente a un conector a base de datos, abstraen los detalles de la conexión y te dan una interfaz común.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Agente&lt;/strong&gt;. Un agente puede recibir instrucciones en forma de alguna abstracción de texto, para ejecutar acciones en &lt;em&gt;sistemas externos&lt;/em&gt; o consultando para consultar al LLM.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Cadena&lt;/strong&gt;. Las cadenas son conjuntos de componentes que sirven para resolver problemas comunes o crear aplicaciones completas.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ya que entendemos las cosas que LangChain nos da, veamos cómo usarlas.&lt;/p&gt;
-
-&lt;h2 id=&quot;creando-una-aplicación-de-ejemplo&quot;&gt;Creando una aplicación de ejemplo&lt;/h2&gt;
-
-&lt;p&gt;Vamos a crear una aplicación que nos permita consultar todos los posts de este blog y contestar preguntas. Por suerte, existe una cadena que ya nos permite hacer esto.&lt;/p&gt;
-
-&lt;h3 id=&quot;instalación&quot;&gt;Instalación&lt;/h3&gt;
-
-&lt;p&gt;Primero veamos los requisitos: además de LangChain, necesitas los siguientes paquetes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;openai&lt;/li&gt;
-  &lt;li&gt;chromadb&lt;/li&gt;
-  &lt;li&gt;tiktoken&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Por lo que tu requirements.txt debería verse así:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;langchain
-openai
-chromadb
-tiktoken
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Aquí, recomiendo usar un entorno virtual con &lt;a href=&quot;https://www.anaconda.com/products/distribution&quot;&gt;Anaconda&lt;/a&gt;, sobre todo si tienes planes de seguir trabajando con cosas relacionadas con
-procesamiento de datos.&lt;/p&gt;
-
-&lt;p&gt;Para hacer la creación e instalación puedes correr los siguientes comandos si tienes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;conda&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-conda create &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; entorno_langchain pip
-conda activate entorno_langchain
-pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;requeriments.txt
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Aquí &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entorno_langchain&lt;/code&gt; es el nombre de nuestro entorno virtual y puede ser cualquiera que tú quieras.
-También, para empezar, necesito una fuente de datos para empezar a probar, por lo que voy a copiar algunos posts de este blog, que están en formato markdown y pueden ser consumidas sin ningún programa adicional. Voy a crear una carpeta llamada docs y dentro copiaré los archivos markdown de este blog, que están en _posts. Tú puedes poner ahí los diferentes archivos que quieras consultar, tal vez directamente en docs.&lt;/p&gt;
-
-&lt;p&gt;Mi estructura de archivos se ve así (mi carpeta de trabajo es &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;thedojo_agent&lt;/code&gt;):&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-thedojo_agent
-├── docs
-│   ├── _posts
-│   │   ├── 2018-10-28-bienvenidos.md
-... muchos archivos más
-├── requeriments.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Teniendo esto listo podemos seguir el ejemplo básico del tutorial de LangChain.&lt;/p&gt;
-
-&lt;h2 id=&quot;creando-un-script-mínimo-que-funciona&quot;&gt;Creando un script mínimo que funciona&lt;/h2&gt;
-
-&lt;p&gt;Dentro de un archivo que se llame &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.py&lt;/code&gt; vamos a escribir el siguiente código:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.document_loaders&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextLoader&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.indexes&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VectorstoreIndexCreator&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;./docs/_posts/2023-04-07-cuando-separar-el-codigo.md&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VectorstoreIndexCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_loaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;¿Cuándo separar el código?&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;¿Qué es un módulo?&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query_with_sources&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Primero importamos el componente &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TextLoader&lt;/code&gt; que nos permitirá cargar texto de un archivo y el componente &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VectorstoreIndexCreator&lt;/code&gt; que nos permitirá crear un índice y almacenarlo como un vector.&lt;/p&gt;
-
-&lt;p&gt;Ya nos estamos empezando a meter en cosas que no son tan conocidas. Vamos a explicarlas. Un índice es parecido a lo que se hace en las bases de datos, se analiza la información del texto para guardarle de manera organizada, para que cuando necesitemos encontrar algo, sea fácil de encontrar. Por ejemplo, podría estar organizado por palabras clave y con las referencias a donde se puede encontrar en los textos.&lt;/p&gt;
-
-&lt;p&gt;Que se guarde como un vector tiene que ver con la forma en que trabajan los modelos de lenguaje. Lo que en realidad ve un modelo es una lista de tokens, que son números que representan el texto. Cuando un modelo te da una respuesta, te da una lista de tokens junto con la probabilidad de que cada token vaya en ese orden. Esto son los “embeddings”, y a final de cuenta son colecciones de números, como listas, lo que se conoce como vectores en este mundo del procesamiento de datos.&lt;/p&gt;
-
-&lt;p&gt;Así que primero generamos un índice, que consiste en un conjunto de vectores y después lo guardamos.&lt;/p&gt;
-
-&lt;p&gt;Eso es justo lo que hacen las dos líneas que siguen al import.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;./docs/_posts/2023-04-07-cuando-separar-el-codigo.md&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VectorstoreIndexCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_loaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Después de esto, ahora consultamos el texto de dos formas:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Primero que nos de la respuesta solita.&lt;/li&gt;
-  &lt;li&gt;Que nos de la respuestas junto con la fuente de donde la sacó.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Este ejemplo básico ya empieza a hacer por nosotros lo que queríamos en un principio: consultar un texto y obtener una respuesta.&lt;/p&gt;
-
-&lt;p&gt;Vamos a ir un poco más hondo en el código.&lt;/p&gt;
-
-&lt;h3 id=&quot;qué-hace-vectorstoreindexcreator&quot;&gt;¿Qué hace VectorstoreIndexCreator?&lt;/h3&gt;
-
-&lt;p&gt;La parte que más magia esconde es el objeto &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VectorstoreIndexCreator&lt;/code&gt;. Este objeto es una composición de otros que cumplen estos roles:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Un “cortador” de texto, que ayuda a procesar el texto de la fuente.&lt;/li&gt;
-  &lt;li&gt;Un modelo de lenguaje para generar los embeddings.&lt;/li&gt;
-  &lt;li&gt;Un almacén de datos, en nuestro caso, un &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vectorstore&lt;/code&gt;, o una base de datos que almacene vectores.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;El objeto ya hace por nosotros todo el trabajo, el flujo de información, desde la fuente, que en el ejemplo es un texto cargado desde un conjunto de archivos, hasta el almacén de datos, que en el ejemplo es ChromaDB, que es una base de datos que almacena vectores.&lt;/p&gt;
-
-&lt;p&gt;ChromaDB puede correr en memoria o como servidor, pero aquí corre como base de datos en memoria, usando por debajo DuckDB, una base de datos completamente en memoria, así que cuando salgas del programa, se borra todo.&lt;/p&gt;
-
-&lt;p&gt;Vamos a dejar para un artículo futuro la creación de un índice, explicando sus parámetros.&lt;/p&gt;
-
-&lt;p&gt;Si quieres ver un ejmplo funcionando, Alex y yo hicimos un ejemplo y platicamos más de esto en este directo:&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/IamEow08Zas&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;¡Esperamos tus comentarios!&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="langchain" /><category term="llm" /><category term="tutorial" /><summary type="html">Vamos a ver cómo funciona LangChain, una herramienta que le puede dar oídos, ojos y manos a tu modelo de lenguaje preferido.</summary></entry></feed>
+&lt;p&gt;Piensa en el desarrollo de software como el arte de deconstruir los problemas, resolverlos por cachitos y después juntar las soluciones de regreso para tener la solución completa.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="fp" /><category term="composición" /><summary type="html">La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella.</summary></entry></feed>

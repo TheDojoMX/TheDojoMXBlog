@@ -730,4 +730,10 @@ var store = [{
         "tags": ["arquitectura","libros"],
         "url": "/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1639259084/markus-spiske-Y8R6_97_6Ps-unsplash_jlidn6.jpg"
+      },{
+        "title": "Libros que todo desarrollador de software debería leer: desarrollo de carrera",
+        "excerpt":"En este artículo vamos a hablar de los libros que te pueden ayudar a avanzar en tu carrera como desarrollador de software, que desde mi punto de vista, son esenciales. Algunos desarrolladores piensan que basta simplemente con aprender a programar o diseñar software bien, pero lo cierto es que también...","categories": [],
+        "tags": ["libros","desarrollo-de-carrera","career","historia"],
+        "url": "/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686285710/sebastian-svenson-LpbyDENbQQg-unsplash_ubvjty.jpg"
       }]
