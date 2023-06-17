@@ -1,6 +1,6 @@
 ---
 title: "Libros que todo desarrollador de software debería leer: desarrollo de carrera"
-date: 2023-06-03
+date: 2023-06-15
 author: Héctor Patricio
 tags: libros desarrollo-de-carrera career historia
 comments: true
@@ -131,7 +131,7 @@ Algunos de los personajes que a mi me impactaron:
 - **Leslie Lamport** - Un gran matemático que ha contribuido a la computación con cosas como el algoritmo de Paxos y TLA+
 - **Richard Manning Karp** - Un matemático que ha contribuido a la computación con cosas como el algoritmo de Karp-Rabin y el análisis de complejidad de algoritmos
 
-Sin duda te llevarás muchas buenas lecciones y aprendizajes sobre el desarrollo de la computación de este libro. Lo puedes comprar aquí: [Mentes Geniales](https://amzn.to/3oXvmNk){:target="_blank" rel="noopener"}.
+Sin duda te llevarás muchas buenas lecciones y aprendizajes sobre el desarrollo de la computación de este libro. Lo puedes comprar aquí: [Mentes Geniales](https://amzn.to/43J2jfG){:target="_blank" rel="noopener"}.
 
 ### Dealers of Lightning: Xerox PARC and the Dawn of the Computer Ag | Michael A. Hiltzik
 
@@ -213,9 +213,18 @@ En realidad el libro es el resultado de un estudio de muchos equipos de desarrol
 - Cómo hacen todo el trabajo sostenible
 
 Además el libro habla de la forma en la que se realizó el estudio. Sin duda, es un libro muy valioso para los desarrolladores de software que quieren mejorar su rendimiento y el de sus equipos. Puedes comprarlo aquí: [Accelerate](https://amzn.to/3JaPTEP){:target="_blank" rel="noopener"}.
+
 ### Data and Reality | William Kent
 
-[![Portada de Data and Reality](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/data_and_reality_ekqj8y.jpg){: .align-center}](https://www.amazon.com.mx/Data-Reality-Introduction-Experiential-Database/dp/0963134509){:target="_blank" rel="noopener"}
+[![Portada de Data and Reality](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686837219/41351CTT93L._AC_UF1000_1000_QL80__qgzcwb.jpg){: .align-center}](https://www.bkent.net/Doc/darxrp.htm){:target="_blank" rel="noopener"}
+
+Creo que como programadores, gran cantidad del tiempo lo dedicamos a procesar datos, o a crear representaciones datos de procesos externos a la computación. Esto es el **modelado de datos**, y es de lo que este libro habla, pero de manera bastante especial.
+
+**William Kent** hace un análisis profundo de las cosas a las que estamos acostumbrados: modelos, datos, registros, relaciones, atributos, entidades. Primero, _intenta_ definirlas y después aplicarlas al modelado de datos, explorando las implicaciones de definición. Es un libro que te va a hacer pensar bastante, relacionado con la epistemología, la ontología y en nuestra percepción de la realidad.
+
+Aunque el libro te deja con más dudas que respuestas, deja algo totalmente claro: no existe una forma _correcta_ de modelar el mundo, sólo **representaciones más convenientes** para un caso u otro, ya que todas son arbitrarias.
+
+Yo leí la [tercera edición](https://amzn.to/42FOOMs), que es la que única que está en producción actualmente. Esta tiene comentarios de otro modelador de datos muy experimentado, pero que según [Hillel Wayne](https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/) cambió completamente el libro.Hillel recomienda leer la segunda edición, que aunque ya no está en impresión, lo puedes encontrar en [PDF](/assets/pdfs/Data%20and%20Reality.pdf){:target="_blank" rel="noopener"}. Yo tengo pendiente leer la segunda edición, pero tengo altas expectativas ya que incluso la tercera me dejó grandes enseñanzas.
 
 ## Conclusión
 
