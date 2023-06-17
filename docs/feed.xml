@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-06-17T08:26:51-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Libros que todo desarrollador de software debería leer: desarrollo de carrera</title><link href="https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera.html" rel="alternate" type="text/html" title="Libros que todo desarrollador de software debería leer: desarrollo de carrera" /><published>2023-06-15T00:00:00-06:00</published><updated>2023-06-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera.html">&lt;p&gt;En este artículo vamos a hablar de los libros que te pueden ayudar a avanzar en tu carrera como desarrollador de software, que desde mi punto de vista, son esenciales.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-06-17T12:03:36-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Son aplicables y prácticos los principios SOLID?</title><link href="https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid.html" rel="alternate" type="text/html" title="¿Son aplicables y prácticos los principios SOLID?" /><published>2023-06-17T00:00:00-06:00</published><updated>2023-06-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid.html">&lt;p&gt;Los &lt;strong&gt;principios SOLID&lt;/strong&gt;, se enseñan como verdades incuestionables sobre el buen desarrollo de software. Aunque, justo por la educación, antes era completamente partidario de estos, con el tiempo me fui dando cuenta de varias de las fallas que presentan.&lt;/p&gt;
+
+&lt;p&gt;En este artículo te voy a hablar de las fallas generales como conjunto, pero también es un índice para una serie de artículos que escribí sobre cada uno de ellos, analizándolo a profundidad.&lt;/p&gt;
+
+&lt;h2 id=&quot;ambigüedad&quot;&gt;Ambigüedad&lt;/h2&gt;
+
+&lt;p&gt;Cuando buscas la explicación sobre cómo aplicar alguno de estos principios, normalmente encuentras muchas explicaciones diferentes. Algunas de estas explicaciones se contraponen, siguen siendo ambiguas, o de plano no se entienden.&lt;/p&gt;
+
+&lt;p&gt;Con el principio que más pasa es con el “Single Responsibility” (SRP), en el cuál diferentes personas no nos ponemos de acuerdo respecto a lo que una “Responsabilidad” significa. Pero también pasa con la aplicación de los demás principios a diferentes entornos de programación.&lt;/p&gt;
+
+&lt;h2 id=&quot;complican-exageradamente-el-código&quot;&gt;Complican exageradamente el código&lt;/h2&gt;
+
+&lt;p&gt;La aplicación sin razonamiento profundo de estos principios puede complicar el código de manera exagerada, sobre todo en lenguajes inflexibles o con sistemas de tipos complicados (sí, te estoy viendo a ti, &lt;strong&gt;Java&lt;/strong&gt;), que justo es donde más se aplica.&lt;/p&gt;
+
+&lt;p&gt;El ejemplo más claro de esto es el “Dependency Inversion Principle”, que te lleva a hacer cosas bastante raras en el código para lograrlo, como ya dije, sobre todo cuando el sistema de tipos te lo complica.&lt;/p&gt;
+
+&lt;p&gt;Y aunque es cierto que a veces es necesario y bastante útil hacer lo que este principio propone, para mi el 80% del software no lo necesita y sólo estás haciendo una sobre-ingeniería que no se justifica.&lt;/p&gt;
+
+&lt;h2 id=&quot;se-usan-como-un-código-moral&quot;&gt;Se usan como un código moral&lt;/h2&gt;
+
+&lt;p&gt;Los principios SOLID, entre otras cosas, normalmente se usan para avergonzar a las personas que no los conocen o no los aplican. Normalmente hablan de tu valía como desarrollador@ de software basado en el supuesto conocimiento de cosas como estas, y otros principio o reglas (completamente) arbitrarias, sobre todo basadas en el libro Clean Code.&lt;/p&gt;
+
+&lt;p&gt;Esta revoltura de principios morales y conveniencia técnica es un &lt;strong&gt;gran error para la comunidad de software&lt;/strong&gt;, ya que lleva a la sobre-ingeniería, a la aplicación ciega de principios y técnicas que no tienen sentido en tu caso particular e incluso al desprecio del trabajo de otros programadores.&lt;/p&gt;
+
+&lt;p&gt;Para mi, este es el punto más grave, tal vez no directamente de los principios SOLID, sino de la forma en la que se enseñan.&lt;/p&gt;
+
+&lt;h2 id=&quot;análisis-más-profundo&quot;&gt;Análisis más profundo&lt;/h2&gt;
+
+&lt;p&gt;En este blog hemos escrito 5 artículos analizando cada uno de los principios que lo componen, viendo si conviene aplicarlos y describiendo alternativas. En la mayoría de los casos incluso hablamos de principios más profundos (lo que nos hace ver que los “principios SOLID” debería ser algo como “reglas SOLID”).&lt;/p&gt;
+
+&lt;p&gt;Aquí los puedes ver:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SRP: &lt;a href=&quot;/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html&quot;&gt;Análisis de los Principios SOLID: Principio de Responsabilidad Única&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;OCP: &lt;a href=&quot;/2022/12/03/el-principio-abierto-cerrado-open-closed.html&quot;&gt;El Principio Abierto/Cerrado&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;LSP: &lt;a href=&quot;/2023/03/06/el-principio-de-substitucion-de-liskov.html&quot;&gt;El Principio de Sustitución de Liskov&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;ISP: &lt;a href=&quot;/2023/04/01/el-principio-de-segregacion-de-interfaces.html&quot;&gt;El Principio de Segregación de Interfaces&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;DIP: &lt;a href=&quot;/2023/04/22/el-principio-de-inversion-de-dependencias.html&quot;&gt;El Principio de Inversión de Dependencias&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Espero que estos artículos te sirvan para analizar más profundamente lo que todos enseñan como dogmas que se deben de seguir al pie de la letra, bajo la amenaza de no ser un buen programador o programadora que se irá al infierno de los desarrolladores si no lo sigue.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="principios" /><summary type="html">Los principios SOLID son algo que se considera como 'axiomas' de las buenas prácticas del software. Pero, ¿son realmente útiles?</summary></entry><entry><title type="html">Libros que todo desarrollador de software debería leer: desarrollo de carrera</title><link href="https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera.html" rel="alternate" type="text/html" title="Libros que todo desarrollador de software debería leer: desarrollo de carrera" /><published>2023-06-15T00:00:00-06:00</published><updated>2023-06-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera.html">&lt;p&gt;En este artículo vamos a hablar de los libros que te pueden ayudar a avanzar en tu carrera como desarrollador de software, que desde mi punto de vista, son esenciales.&lt;/p&gt;
 
 &lt;p&gt;Algunos desarrolladores piensan que basta simplemente con aprender a programar o diseñar software bien, pero lo cierto es que también hay que tener otras habilidades y conocimientos para que tu carrera avance a buen ritmo, y llegues a puestos de liderazgo si así lo deseas.&lt;/p&gt;
 
@@ -134,7 +174,7 @@
 
 &lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/1101290.Dealers_of_Lightning&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686549204/61pJVqUUoJL._AC_UF1000_1000_QL80__gevadr.jpg&quot; alt=&quot;Portada de Dealers of Lightning&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;En los años 70 y 80’s, la compañía &lt;strong&gt;Xerox&lt;/strong&gt; (sí, la de las impresoras), consiguió un equipo de personas muy hábiles con la tecnología. Eran conocidos como el PARC (Palo Alto Research Center) y fueron los creadores de muchas de las tecnologías que hoy usamos, como:&lt;/p&gt;
+&lt;p&gt;En los años 70 y 80’s, la compañía &lt;strong&gt;Xerox&lt;/strong&gt; (sí, la de las impresoras), consiguió un equipo de personas muy hábiles con la tecnología. Eran conocidos como el &lt;strong&gt;PARC&lt;/strong&gt; (Palo Alto Research Center) y fueron los creadores de muchas de las tecnologías que hoy usamos, como:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;La primera computadora personal&lt;/li&gt;
@@ -1424,169 +1464,4 @@ Pregunta: {Pregunta}
 
 &lt;p&gt;En conclusión, implementar X-Ray en un microservicio en Go es un proceso sencillo que puede beneficiar enormemente la observabilidad y las capacidades de resolución de problemas de tu aplicación. El proceso de integración es relativamente fácil, y el SDK de X-Ray proporciona una serie de características útiles que facilitan la trazabilidad de las solicitudes y la identificación de cuellos de botella. Sin embargo, es importante tener en cuenta que X-Ray tiene algunas desventajas, como el costo asociado con su uso y las limitaciones de sus capacidades de muestreo.&lt;/p&gt;
 
-&lt;p&gt;No obstante, con una consideración cuidadosa y una implementación adecuada, X-Ray puede ser una herramienta invaluable para la depuración y optimización de tu arquitectura de microservicios. Así que no dudes en probarlo y ver cómo puede mejorar el rendimiento y la confiabilidad de tus microservicios en Go.&lt;/p&gt;</content><author><name>Héctor Vela</name><email>vell.once@gmail.com</email><uri>https://github.com/hevela</uri></author><category term="programación" /><category term="instrumentación" /><category term="microservicios" /><category term="AWS" /><category term="Go" /><summary type="html">Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.</summary></entry><entry><title type="html">Composición en el software</title><link href="https://blog.thedojo.mx/2023/04/17/composicion-en-el-software.html" rel="alternate" type="text/html" title="Composición en el software" /><published>2023-04-17T00:00:00-06:00</published><updated>2023-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/17/composicion-en-el-software</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/17/composicion-en-el-software.html">&lt;p&gt;Composición:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Es la acción de combinar componentes individuales para formar un sistema más complejo.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Componer es la técnica más efectiva para construir software de manera organizada. La composición nos permite crear software complejo porque nos permite construir piezas pequeñas que resuelven problemas manejables y luego “juntarlas” para entregar la solución de nuestro problema.&lt;/p&gt;
-
-&lt;p&gt;Veamos algunas formas de hacer composición en el software y por qué es más efectivo que otras formas de reutilizar código.&lt;/p&gt;
-
-&lt;h2 id=&quot;por-que-es-importante-aprender-a-usar-la-composición&quot;&gt;¿Por que es importante aprender a usar la composición?&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Nuestra habilidad para descomponer un problema en partes, depende
-directamente de nuestra habilidad para combinar soluciones. - &lt;strong&gt;John Hughes&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;John Hughes es un gran proponente e investigador de la programación funcional en la actualidad. Él propone que la composición es importante porque nos da la confianza de poder romper nuestros problemas en problemas más pequeños, sabiendo que después podremos juntarlos de manera efectiva para entregar una solución al problema original.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Divide y vencerás&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Una ventaja secundaria de dividir el software en piezas pequeñas, es que si diseñamos correctamente nuestros componentes y tenemos las herramientas adecuadas para unirlas después, podemos &lt;strong&gt;reutilizar&lt;/strong&gt; las piezas que ya hemos construido en otras partes.&lt;/p&gt;
-
-&lt;p&gt;Veamos dos formas de aplicar la composición en el software.&lt;/p&gt;
-
-&lt;h2 id=&quot;composición-de-funciones&quot;&gt;Composición de funciones&lt;/h2&gt;
-
-&lt;p&gt;Las funciones son la unidad de abstracción más pequeña que tenemos en la programación. Crear pequeñas funciones útiles que resuelvan problemas generales, de manera &lt;strong&gt;completa y precisa&lt;/strong&gt;, es muy buena idea.&lt;/p&gt;
-
-&lt;p&gt;¿Cómo aplicamos la composición? Puedes usar la composición al dividir tu problema principal en funciones sencillas y luego juntarlas.Veamos un ejemplo: vamos a crear un validador de contraseñas. Este debe verificar las siguientes condiciones:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Verificar una longitud mínima, que podría ser 8 caracteres.&lt;/li&gt;
-  &lt;li&gt;Checar que no tenga ciertas palabras (lista negra).&lt;/li&gt;
-  &lt;li&gt;Verificar que tiene un número&lt;/li&gt;
-  &lt;li&gt;Verificar que tiene un carácter especial&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Podríamos hacer esto en una sola función que verificara todas estas características, una por una a través de un serie de if’s. Pero veamos una implementación usando composición, y sus ventajas.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;!@#$%^&amp;amp;*()_+&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'12345678'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
-           &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
-           &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; \
-           &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Quiero que te fijes especialmente en la última función, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate_password&lt;/code&gt;. Aunque funciona, es un poco rígida. La composición puede ayudarnos a hacerla más flexible.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'palabra_uno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'palabra_dos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Esta función es más flexible, pudiendo agregar o quitar validadores sin tener que modificar más código, simplemente modificando la lista de validadores, pero todavía no es como la queremos. ¿Qué pasas si queremos agregar el conjunto de errores por los que falla una validación? Tenemos que ir &lt;strong&gt;acumulando&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blacklist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Devuelve la lista de errores de la contraseña, si está vacía, la contraseña es válida&quot;&quot;&quot;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;mesage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña es muy corta&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña no tiene un número&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has_special_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña no tiene un carácter especial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not_in_blacklist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'palabra_uno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'palabra_dos'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;La contraseña tiene palabras prohibidas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-
-    &lt;span class=&quot;nb&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validator&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;validators&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Aquí &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reduce&lt;/code&gt; que recibe una función, una lista de elementos por las que iterar y un valor inicial, nos ayuda a acumular los errores. Si quisiéramos hacerlo aún más flexible, podríamos hacer dos cosas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Hacer que la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate_password&lt;/code&gt; reciba una lista de validadores (junto con el mensaje), en vez de tenerlos definidos dentro de la función&lt;/li&gt;
-  &lt;li&gt;Definir una clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Validator&lt;/code&gt; que tenga un método &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;validate&lt;/code&gt; y un atributo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;message&lt;/code&gt; y que reciba una función y un mensaje en su constructor, para tener una interfaz más clara.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;composición-matemática&quot;&gt;Composición matemática&lt;/h3&gt;
-
-&lt;p&gt;Este tipo de composición fue un poco más empírica, simplemente juntando funciones. A veces, cuando oigas de composición, se van a referir a la composición de funciones en sentido matemático. Veamos un ejemplo en Python:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;LETTERS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ascii_letters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quitar_no_ascii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LETTERS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reemplazar_acentos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;accents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'á'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'é'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'í'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'i'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ó'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'o'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ú'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'u'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ñ'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'n'&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;limpiar_cadena&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quitar_no_ascii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reemplazar_acentos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;texto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;El código anterior deja una cadena solamente con letras ASCII, sin acentos. Lo que ves en la función &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;limpiar_cadena&lt;/code&gt; es una composición de funciones, en el sentido matemático, aplicar una función después de otra, o la salida de una como argumento de la otra.&lt;/p&gt;
-
-&lt;p&gt;Siempre que pienses en un proceso que lleve una cadena de pasos, lo puedes representar como una cadena de funciones. En lenguajes funcionales hay operadores para hacer esto.&lt;/p&gt;
-
-&lt;p&gt;Puedes pensar en este tipo de composición como en hacer &lt;strong&gt;fluir&lt;/strong&gt; la información por un conjunto de funciones. Ejemplos en lenguajes como Haskell, Clojure y Elixir te pueden ayudar a expandir sobre esto, puedes buscarlo como “composición funcional”.&lt;/p&gt;
-
-&lt;h2 id=&quot;composición-de-objetos&quot;&gt;Composición de objetos&lt;/h2&gt;
-
-&lt;p&gt;Otra técnica que te puede ayudar a crear mejor software es la composición de objetos. Esta se entiende como formar objetos más complejos a partir de objetos más simples. Aunque la &lt;strong&gt;herencia&lt;/strong&gt; es una forma de composición, al hacer completamente dependientes una clase de otra, no es la mejor forma de crear objetos complejos. De hecho, hay grandes dudas sobre si la herencia es una buena idea. Pero no estamos aquí para discutir sobre las ventajas y desventajas de la herencia, sino para aprender a usar otros tipos de composición.&lt;/p&gt;
-
-&lt;p&gt;Una forma de crear objetos complejos, en vez de tener la relación “es un” que nos da la herencia, es tener la relación “tiene un”. No estamos diciendo que la herencia nunca se deba usar, pero en muchas ocasiones podemos pensar en la composición como una alternativa mejor.&lt;/p&gt;
-
-&lt;p&gt;Observa el siguiente ejemplo, en el que representamos la información de un usuario y su relación con al entidad Empleado:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nombre&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apellido&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Empleado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info_usuario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usuario&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puesto&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salario&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Esta implementación está menos acoplada o es menos dependiente que la implementación basada en herencia. Por ejemplo, si queremos evolucionar la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Usuario&lt;/code&gt;, no tenemos que hacer que nada de esto afecte directamente a la clase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Empleado&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Otra forma de usar la composición es la &lt;strong&gt;delegación&lt;/strong&gt;, a la que le dedicaremos más tiempo en un futuro. Esta te la puedes imaginar como que un objeto le deja todo el trabajo a otro a través, por ejemplo, de un método. Esto es más común en lenguajes no basados en clases, ya que se da de manera más natural, como en JavaScript, donde puedes usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.assign&lt;/code&gt; para copiar las propiedades de un objeto a otro.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;Aprender a usar la composición es &lt;strong&gt;obligatorio para desarrollar buen software&lt;/strong&gt;. Lo quieras o no, mientras desarrollas, siempre estás juntando componentes, es decir &lt;em&gt;componiendo&lt;/em&gt;, si conoces las técnicas correctas, podrás crear software de mejor calidad de manera más rápida.&lt;/p&gt;
-
-&lt;p&gt;Piensa en el desarrollo de software como el arte de deconstruir los problemas, resolverlos por cachitos y después juntar las soluciones de regreso para tener la solución completa.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="fp" /><category term="composición" /><summary type="html">La composición es algo muy mencionado en la programación funcional, vamos a ver cómo se aplica al desarrollo de software también fuera de ella.</summary></entry></feed>
+&lt;p&gt;No obstante, con una consideración cuidadosa y una implementación adecuada, X-Ray puede ser una herramienta invaluable para la depuración y optimización de tu arquitectura de microservicios. Así que no dudes en probarlo y ver cómo puede mejorar el rendimiento y la confiabilidad de tus microservicios en Go.&lt;/p&gt;</content><author><name>Héctor Vela</name><email>vell.once@gmail.com</email><uri>https://github.com/hevela</uri></author><category term="programación" /><category term="instrumentación" /><category term="microservicios" /><category term="AWS" /><category term="Go" /><summary type="html">Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.</summary></entry></feed>

@@ -736,4 +736,10 @@ var store = [{
         "tags": ["libros","desarrollo-de-carrera","career","historia"],
         "url": "/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686285710/sebastian-svenson-LpbyDENbQQg-unsplash_ubvjty.jpg"
+      },{
+        "title": "¿Son aplicables y prácticos los principios SOLID?",
+        "excerpt":"Los principios SOLID, se enseñan como verdades incuestionables sobre el buen desarrollo de software. Aunque, justo por la educación, antes era completamente partidario de estos, con el tiempo me fui dando cuenta de varias de las fallas que presentan. En este artículo te voy a hablar de las fallas generales...","categories": [],
+        "tags": ["solid","principios"],
+        "url": "/2023/06/17/son-aplicables-y-practicos-los-principios-solid.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348260/conrad-crawford-k3s7LZzX5xU-unsplash_p4cdwc.jpg"
       }]
