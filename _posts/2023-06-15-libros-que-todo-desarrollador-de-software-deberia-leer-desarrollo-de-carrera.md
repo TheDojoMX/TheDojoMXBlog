@@ -137,7 +137,7 @@ Sin duda te llevarás muchas buenas lecciones y aprendizajes sobre el desarrollo
 
 [![Portada de Dealers of Lightning](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686549204/61pJVqUUoJL._AC_UF1000_1000_QL80__gevadr.jpg){: .align-center}](https://www.goodreads.com/book/show/1101290.Dealers_of_Lightning){:target="_blank" rel="noopener"}
 
-En los años 70 y 80's, la compañía **Xerox** (sí, la de las impresoras), consiguió un equipo de personas muy hábiles con la tecnología. Eran conocidos como el PARC (Palo Alto Research Center) y fueron los creadores de muchas de las tecnologías que hoy usamos, como:
+En los años 70 y 80's, la compañía **Xerox** (sí, la de las impresoras), consiguió un equipo de personas muy hábiles con la tecnología. Eran conocidos como el **PARC** (Palo Alto Research Center) y fueron los creadores de muchas de las tecnologías que hoy usamos, como:
 
 - La primera computadora personal
 - La interfaz gráfica
