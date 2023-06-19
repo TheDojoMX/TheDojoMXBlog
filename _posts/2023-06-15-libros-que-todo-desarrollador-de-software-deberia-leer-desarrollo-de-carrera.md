@@ -224,7 +224,7 @@ Creo que como programadores, gran cantidad del tiempo lo dedicamos a procesar da
 
 Aunque el libro te deja con más dudas que respuestas, deja algo totalmente claro: no existe una forma _correcta_ de modelar el mundo, sólo **representaciones más convenientes** para un caso u otro, ya que todas son arbitrarias.
 
-Yo leí la [tercera edición](https://amzn.to/42FOOMs), que es la que única que está en producción actualmente. Esta tiene comentarios de otro modelador de datos muy experimentado, pero que según [Hillel Wayne](https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/) cambió completamente el libro.Hillel recomienda leer la segunda edición, que aunque ya no está en impresión, lo puedes encontrar en [PDF](/assets/pdfs/Data%20and%20Reality.pdf){:target="_blank" rel="noopener"}. Yo tengo pendiente leer la segunda edición, pero tengo altas expectativas ya que incluso la tercera me dejó grandes enseñanzas.
+Yo leí la [tercera edición](https://amzn.to/42FOOMs), que es la que única que está en producción actualmente. Esta tiene comentarios de otro modelador de datos muy experimentado, pero que según [Hillel Wayne](https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/) cambió completamente el libro.Hillel recomienda leer la segunda edición, que aunque ya no está en impresión, lo puedes encontrar en [PDF](https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/){:target="_blank" rel="noopener"}. Yo tengo pendiente leer la segunda edición, pero tengo altas expectativas ya que incluso la tercera me dejó grandes enseñanzas.
 
 ## Conclusión
 
