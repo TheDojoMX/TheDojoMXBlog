@@ -1,8 +1,8 @@
 ---
-title: "Modelos mentales para desarrollaodores: elementales"
+title: "Modelos mentales para desarrolladores: modelos elementales"
 date: 2023-06-18
 author: Héctor Patricio
-tags: modelos-mentales desarrollo
+tags: modelos-mentales desarrollo-de-software
 comments: true
 excerpt: "Los modelos mentales te permitirán resolver problems más rápido y con mejores resultados, hablemos de algunos de ellos que nos aplican directamente como desarrolladores."
 header:
@@ -25,9 +25,9 @@ Ahora te voy a contar sobre algunos modelos mentales que creo que son esenciales
 
 ### La navaja de Ockham
 
-Este es uno de los modelos mentales generales mejor distribuidos. En líneas generales establece que cuando estés buscando explicaciones al algo que hayas observado y estés decidiendo entre varios posibles casos, **el más sencillo es el que tiene la mayor probabilidad de ser la explicación correcta**.
+Este es uno de los modelos mentales que más personas conocen. En líneas generales establece que cuando estés buscando explicaciones a algo que hayas observado y estés decidiendo entre varios posibles caminos, **el más sencillo es el que tiene la mayor probabilidad de ser la explicación correcta**.
 
-¿Cómo se puede aplicar a los problemas que nos enfrentamos comúnmente como desarrolladores?
+¿Cómo se puede aplicar a los problemas que nos enfrentamos _comúnmente_ como desarrolladores? Siempre que estés decidiendo entre diferentes diseños que cumplen con los requerimientos **actuales**, escoge el más sencillo de los diseños, sin dejarte influir demasiado _por que podrías necesitar en el futuro_.
 
 ### El mapa no es el territorio
 
@@ -35,7 +35,7 @@ Los desarrolladores de software trabajamos creando **modelos** de la realidad qu
 
 ### La falacia del costo hundido
 
-Todos hemos enfrentado esta decisión: ¿sigo invirtiendo tiempo y esfuerzo en este proyecto que no está dando resultados?
+Todos hemos enfrentado esta decisión: ¿sigo invirtiendo tiempo y esfuerzo en este proyecto que no está dando resultados? ¿Hasta cuando debo seguir invirtiendo en este proyecto?
 
 ### Rendimientos decrecientes
 
@@ -43,11 +43,13 @@ Hay muchos procesos en la vida cotidiana en los que observamos que "mientras má
 
 De eso trata la ley de rendimientos decrecientes, te hace entender que **no siempre más es mejor**. De hecho, en la mayoría de los procesos naturales se cumple una ley:
 
-> Por cada unidad añadida, el rendimiento de la siguiente unidad va a disminuir.
+> Por cada unidad añadida, **el rendimiento de la siguiente unidad va a disminuir**.
 
-Está un poco abstracto este enunciado, así que vamos a hacerlo un poco más sencillo. Hay muchas cosas en la naturaleza que mientras más tienes
+Está un poco abstracto este enunciado, así que vamos a hacerlo un poco más sencillo. Hay muchas cosas en la naturaleza que mientras más tienes de ellas, cada cosa que añades te va a dar menos beneficios que la cosa anterior que añadiste.
 
 ## Algunos libros sobre modelos mentales
+
+A continuación te recomiendo algunos libros que puedes leer para profundizar en el tema de los modelos mentales. Estos libros tienen diferentes enfoques.
 
 
 ## Conclusión
