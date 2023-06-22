@@ -742,4 +742,10 @@ var store = [{
         "tags": ["solid","principios"],
         "url": "/2023/06/17/son-aplicables-y-practicos-los-principios-solid.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348260/conrad-crawford-k3s7LZzX5xU-unsplash_p4cdwc.jpg"
+      },{
+        "title": "Modelos mentales para desarrolladores: modelos elementales",
+        "excerpt":"La mente es la principal herramienta del desarrollador de software. Puedes ayudar a que se desempeñe mejor si le das, a su vez, herramientas que te permitan organizar, comprender, combinar y analizar más rápido la información. Estas herramientas además te pueden ayudar a ver cosas claramente que antes eran imposibles...","categories": [],
+        "tags": ["modelos-mentales","desarrollo-de-software"],
+        "url": "/2023/06/22/modelos-mentales-para-desarrolladores-elementales.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686285709/nenad-novakovic-L2QB-rG5NM0-unsplash_icxsie.jpg"
       }]

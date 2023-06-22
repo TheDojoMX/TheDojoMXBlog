@@ -1,4 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-06-17T12:03:36-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Son aplicables y prácticos los principios SOLID?</title><link href="https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid.html" rel="alternate" type="text/html" title="¿Son aplicables y prácticos los principios SOLID?" /><published>2023-06-17T00:00:00-06:00</published><updated>2023-06-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid.html">&lt;p&gt;Los &lt;strong&gt;principios SOLID&lt;/strong&gt;, se enseñan como verdades incuestionables sobre el buen desarrollo de software. Aunque, justo por la educación, antes era completamente partidario de estos, con el tiempo me fui dando cuenta de varias de las fallas que presentan.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-06-22T12:53:23-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Modelos mentales para desarrolladores: modelos elementales</title><link href="https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-elementales.html" rel="alternate" type="text/html" title="Modelos mentales para desarrolladores: modelos elementales" /><published>2023-06-22T00:00:00-06:00</published><updated>2023-06-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-elementales</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-elementales.html">&lt;p&gt;La &lt;strong&gt;mente&lt;/strong&gt; es la principal herramienta del desarrollador de software. Puedes ayudar a que se desempeñe mejor si le das, a su vez, herramientas que te permitan &lt;em&gt;organizar, comprender, combinar y analizar más rápido la información&lt;/em&gt;. Estas herramientas además te pueden ayudar a ver cosas claramente que antes eran imposibles de ver, o a llegar más profundo en los análisis.&lt;/p&gt;
+
+&lt;p&gt;Estas herramientas son los &lt;strong&gt;modelos mentales&lt;/strong&gt;, que en este artículo explicaremos, pero además daremos algunos ejemplos que te servirán directamente como desarrollador. Estos ejemplos son, a nuestro modo de ver, los modelos esenciales que debes conocer. Empecemos dando una definición clara.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-son-los-modelos-mentales&quot;&gt;¿Qué son los modelos mentales?&lt;/h2&gt;
+
+&lt;p&gt;Un modelo mental es una estructura que te permite organizar la información que recibes o que observas, para que puedas ver aspectos particulares de esta, aplicarle proyecciones o simplemente para que puedas entenderla mejor. También se puede pensar en ellos como en &lt;em&gt;lentes&lt;/em&gt; que te permiten ver el mundo de una forma particular.&lt;/p&gt;
+
+&lt;p&gt;Los desarrolladores de software estamos acostumbrados a usar modelos para representar la realidad. Recuerda que un modelo es una abstracción, &lt;strong&gt;una representación simplificada&lt;/strong&gt; de la realidad que se enfoca en ciertos elementos y deja fuera otros.&lt;/p&gt;
+
+&lt;p&gt;Los modelos mentales son esto mismo, pero la diferencia es que tienen aplicación a través de muchas situaciones. Estos modelos mentales te permiten usar la información de manera más eficiente y, a veces, ver la realidad más claramente. &lt;strong&gt;Charlie Munger&lt;/strong&gt;, uno de los principales proponentes de los modelos mentales, dice que para pensar efectivamente, debes tener una &lt;strong&gt;malla o red de modelos mentales&lt;/strong&gt; que puedas usar para pensar mejor. Algo a lo que se pueden parece un poco es a los patrones de diseño, pero aplicados a la vida real.&lt;/p&gt;
+
+&lt;p&gt;Nuestro objetivo es ayudarte a construir esta malla de modelos mentales que te permitan ser más efectivo en el desarrollo de software. Empecemos con los más básicos.&lt;/p&gt;
+
+&lt;h3 id=&quot;la-navaja-de-ockham&quot;&gt;La navaja de Ockham&lt;/h3&gt;
+
+&lt;p&gt;Este es uno de los modelos mentales que más personas conocen. En líneas generales establece que cuando estés buscando explicaciones a algo que hayas observado y estés decidiendo entre varios posibles caminos, &lt;strong&gt;el más sencillo es el que tiene la mayor probabilidad de ser la explicación correcta&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;¿Cómo se puede aplicar a los problemas que nos enfrentamos &lt;em&gt;comúnmente&lt;/em&gt; como desarrolladores? Siempre que estés decidiendo entre diferentes diseños que cumplen con los requerimientos &lt;strong&gt;actuales&lt;/strong&gt;, escoge el más sencillo de los diseños, sin dejarte influir demasiado &lt;em&gt;por que podrías necesitar en el futuro&lt;/em&gt;. Esto se conecta con el principio de &lt;a href=&quot;https://martinfowler.com/bliki/Yagni.html&quot;&gt;YAGNI&lt;/a&gt; (You aren’t gonna need it), que dice que no debes implementar cosas que no necesitas ahora, porque podrías necesitarlas en el futuro. También se conecta con el principio de buscar la simplicidad al máximo en el desarrollo de software.&lt;/p&gt;
+
+&lt;p&gt;También lo puedes aplicar a los procesos que modelas en el software: cuando estés descubriendo el por qué de algo,&lt;/p&gt;
+
+&lt;h3 id=&quot;el-mapa-no-es-el-territorio&quot;&gt;El mapa no es el territorio&lt;/h3&gt;
+
+&lt;p&gt;Los desarrolladores de software trabajamos creando &lt;strong&gt;modelos&lt;/strong&gt; de la realidad que pueden ser representados dentro de una computadora, muchas veces para simular procesos o simplemente capturamos ideas que ya son abstractas para que corran dentro de la computadora.&lt;/p&gt;
+
+&lt;p&gt;Un &lt;strong&gt;mapa&lt;/strong&gt; es un &lt;strong&gt;modelo&lt;/strong&gt; de un territorio físico. Pero podemos cometer el error de pensar que el mapa y el territorio son equivalentes, cuando lo cierto es que, al ser un modelo, el mapa es una representación imperfecta y simplificada del territorio real.&lt;/p&gt;
+
+&lt;p&gt;Así son todos los modelos y debemos recordarlo, para muchos casos, la mayoría yo diría, &lt;strong&gt;no existe un modelo absolutamente&lt;/strong&gt; correcto y todos dejan algo fuera. Todos son arbitrarios y si alguien de nuestro equipo tiene una visión diferente, deberíamos escucharla, tratar de entenderla y ver cómo podemos integrar ambas visiones en un solo modelo.&lt;/p&gt;
+
+&lt;p&gt;Tus representaciones, tus modelos, &lt;strong&gt;no son la realidad&lt;/strong&gt;, por lo que siempre pueden mejorarse. Además de que confiar en un modelo como en una guía perfecta te puede llevar a cometer errores graves. Es por eso que es bueno recordar siempre, que los modelos (los mapas) son representaciones imperfectas de la realidad (el territorio), y que algunos son más &lt;em&gt;convenientes&lt;/em&gt; que otros para diferentes acciones o situaciones, además de que no &lt;strong&gt;existe EL MODELO correcto&lt;/strong&gt; para cierta situación.&lt;/p&gt;
+
+&lt;p&gt;Si aplicas este modelo mental a los mismos modelos mentales, verás por qué necesitas una variedad de ellos para poder pensar mejor.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-ganador-se-lo-lleva-todo&quot;&gt;El ganador se lo lleva todo&lt;/h2&gt;
+
+&lt;p&gt;Hay procesos en el mundo, de hecho, muchos, en los que los “premios” (puedes pensar en ellos como las recompensas o beneficios de una actividad) no se distribuyen uniformemente, sino que las ganancias se acumulan en un sólo lugar, para que unos pocos se lleven la mayoría de los beneficios.&lt;/p&gt;
+
+&lt;p&gt;En la actualidad, muchos procesos se comportan así, pero además se exacerba con la tecnología digital, en la que los ganadores de procesos como por la creación de contenido. Para aplicar este modelo, debes aprender a ver quién se lleva la mayoría de los beneficios.&lt;/p&gt;
+
+&lt;p&gt;Este modelo aplicado al software se puede ver en la puesta en marcha de las aplicaciones, pero de forma inversa. A diferencia de lo que puede pasar en otras industrias, un proyecto a medio terminar provee un valor casi nulo. Yo me atrevería a decir que un proyecto de software que no esté en producción, vale cero. Así que, siempre esfuérzate por entregar el software o ponerlo en manos de tus usuarios lo más pronto posible.&lt;/p&gt;
+
+&lt;h2 id=&quot;la-falacia-del-costo-hundido&quot;&gt;La falacia del costo hundido&lt;/h2&gt;
+
+&lt;p&gt;Todos hemos enfrentado esta pregunta: ¿sigo invirtiendo tiempo y esfuerzo en este proyecto que no está dando resultados? &lt;strong&gt;¿Hasta cuando debo seguir invirtiendo en este proyecto?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A veces llegamos a la conclusión de que lo mejor sería dejar de invertir en ese proyecto &lt;strong&gt;YA MISMO&lt;/strong&gt;, pero algo nos detiene: &lt;strong&gt;el tiempo y esfuerzo que ya hemos invertido&lt;/strong&gt;. Esto es el &lt;strong&gt;costo hundido&lt;/strong&gt;. Los seres humanos tenemos naturalmente más aversión por &lt;em&gt;perder&lt;/em&gt; algo, que deseos de &lt;em&gt;ganar&lt;/em&gt; más cosas.&lt;/p&gt;
+
+&lt;p&gt;Pensar que lo que ya invertimos lo vamos a perder si dejamos algo que no nos ha dado resultados (y no tiene pinta de que los vaya a dar) nos detiene de tomar decisiones que son muy claras: si no &lt;em&gt;hubiéramos&lt;/em&gt; invertido ese tiempo y esfuerzo, no tendríamos razones para seguir invirtiendo en este proyecto o aunque sea para mantenerlo. O sea que una inversión pasada, en vez de producirnos beneficios, nos está produciendo pérdidas, por el puro temor a perderla.&lt;/p&gt;
+
+&lt;p&gt;Este modelo mental se puede aplicar a los proyectos de desarrollo de software que después de cambiar de estrategia muchas veces no han dado rendimientos. Además como desarrolladores a veces estamos orgullosos de la arquitectura o los logros técnicos de cierto sistema o cierta parte del código, pero ha llegado el momento de reemplazarla por algo que se adecúe mejor a las necesidades actuales.&lt;/p&gt;
+
+&lt;p&gt;Recuerda que el esfuerzo o tiempo que ya invertiste &lt;strong&gt;nunca es una razón suficiente&lt;/strong&gt; para mantener algo, sobre todo si hay razones para tomar otro camino.&lt;/p&gt;
+
+&lt;h3 id=&quot;rendimientos-decrecientes&quot;&gt;Rendimientos decrecientes&lt;/h3&gt;
+
+&lt;p&gt;Hay muchos procesos en la vida cotidiana en los que observamos que “mientras más, mejor”. Como máquinas de generalización que somos, tendemos a extender este pensamiento a todas las cosas en la vida, pero muchas cosas, no se comportan así.&lt;/p&gt;
+
+&lt;p&gt;De eso trata la ley de rendimientos decrecientes, te hace entender que &lt;strong&gt;no siempre más es mejor&lt;/strong&gt;. De hecho, en la mayoría de los procesos naturales se cumple una ley:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Por cada unidad añadida, &lt;strong&gt;el rendimiento de la siguiente unidad va a disminuir&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Así es: hay muchas cosas en la naturaleza que mientras más tienes de ellas, cada cosa que añades te va a dar menos beneficios que la cosa anterior que añadiste. Algunos ejemplos empíricos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hacer ejercicio es muy bueno, si haces por lo menos 1 hora 4 veces a la semana ejercicio de cierto tipo te vas a sentir muy bien (claro combinado con otros factores como la buena alimentación). Pero si haces el doble de ejercicio, no te vas a sentir el doble de bien, de hecho si llegas a cierto punto, como hacer 3 horas diarias te vas a sentir excesivamente cansado y puede que con el tiempo tu cuerpo muestre señales de fatiga.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Si estás en un restaurante y pides un postre, el primero te va a saber muy bien, pero si pides otro, el segundo no te va a saber tan bien como el primero, y si pides otro, puede que te enfermes y termines odiando ese postre específico.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cuando riegas una planta, echarle agua es bueno hasta cierto punto, si le echas demasiada, la planta se va a ahogar y se va a morir.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Salir al sol está bien, es bueno para nuestra salud si lo haces a la hora correcta y cuidas la cantidad de sol a la que te expones. Pero si te expones demasiado, te vas a quemar y vas a tener problemas de salud.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Finalmente, el dinero: tener dinero es bueno hasta cierto punto, pero hay una cantidad que a mi parecer depende de el lugar en el que vivas, que tener dinero extra 1) no te va a hacer más feliz, 2) incrementar más tu riqueza te meterá en problemas que no tendrías antes. La siguiente gráfica muestra la relación entre el dinero y la felicidad:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hectorip/image/upload/c_scale,w_500/v1687450180/Ilustracio%CC%81n_sin_ti%CC%81tulo_4_qhinhf.png&quot; alt=&quot;Gráfica de rendimientos decrecientes&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En estos ejemplos hablamos de cosas buenas que primero te van dando cada vez menos beneficios, y luego se pueden volver perjudiciales. Para aplicarlo al desarrollo de software piensa en los siguientes ejemplos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Equipos&lt;/strong&gt;: Un equipo bien balanceado es &lt;em&gt;necesario&lt;/em&gt; para hacer proyectos serios, pero eso no significa que mientras más grande el equipo, mejor. Cada persona agregada al proyecto va agregando menos valor que la anterior y muy rápido se llega al punto en el que una persona más añadida daña la productividad del equipo.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Horas de trabajo&lt;/strong&gt;: A (casi) todos nos gusta nuestro trabajo y para lograr nuestros objetivos, en general, debemos de ponerle bastantes horas. Sin embargo, si trabajamos demasiado en un corto espacio de tiempo van a pasar dos cosas progresivamente: 1) Cada hora de trabajo sin que te distraigas va a rendir menos y 2) si sigues trabajando a pesar de esto, vas a cometer errores que después te puede costar mucho tiempo arreglar, o incluso cometer errores que no puedas arreglar, catastróficos (por ejemplo: un DELETE sin WHERE).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Abstracción&lt;/strong&gt;: En el desarrollo de software, la abstracción es una herramienta esencial y siempre se necesita de ella para crear buen software. Pero si abstraes demasiado, tu código se vuelve inmantenible y muy difícil de entender. Igual que con otras cosas, el punto de retornos negativos de la abstracción es muy fácil de alcanzar.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Pruebas unitarias&lt;/strong&gt;: Las pruebas unitarias son una gran herramienta tanto para asegurar la calidad del software como para ayudar en su diseño. Sin embargo, hay una tendencia a querer buscar que todo tu código esté cubierto por pruebas unitarias: &lt;strong&gt;tener 100% de cobertura&lt;/strong&gt;. Este es un caso muy característico de rendimientos decrecientes: mientras más pruebas unitarias tengas, cada prueba unitaria que agregues va a darte menos beneficios que la anterior, pero se pone peor. Intentar tener 100% de pruebas te lleva a hacer código que mucho más complejo y difícil de mantener.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para mi, este es uno de los modelos mentales más útiles, debido a que estamos en un mundo en el que ser eficiente en recursos te puede dar una gran ventaja competitiva.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Los modelos mentales son herramientas para organizar la información que son muy útiles para personas que trabajan principalmente pensando y analizando el mundo real. Los desarrolladores de software pertenecemos a ese grupo, así que aprender a modelar la realidad de forma más efectiva puede darnos una gran ventaja para resolver problemas y así avanzar más rápido en nuestra carrera.&lt;/p&gt;
+
+&lt;p&gt;Seguiremos creando más artículos hablando de esto, para  darte herramientas que te permitan ser un mejor desarrollador de software y mejor profesional.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="modelos-mentales" /><category term="desarrollo-de-software" /><summary type="html">Los modelos mentales te permitirán resolver problems más rápido y con mejores resultados, hablemos de algunos de ellos que nos aplican directamente como desarrolladores.</summary></entry><entry><title type="html">¿Son aplicables y prácticos los principios SOLID?</title><link href="https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid.html" rel="alternate" type="text/html" title="¿Son aplicables y prácticos los principios SOLID?" /><published>2023-06-17T00:00:00-06:00</published><updated>2023-06-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid.html">&lt;p&gt;Los &lt;strong&gt;principios SOLID&lt;/strong&gt;, se enseñan como verdades incuestionables sobre el buen desarrollo de software. Aunque, justo por la educación, antes era completamente partidario de estos, con el tiempo me fui dando cuenta de varias de las fallas que presentan.&lt;/p&gt;
 
 &lt;p&gt;En este artículo te voy a hablar de las fallas generales como conjunto, pero también es un índice para una serie de artículos que escribí sobre cada uno de ellos, analizándolo a profundidad.&lt;/p&gt;
 
@@ -267,7 +376,7 @@
 
 &lt;p&gt;Aunque el libro te deja con más dudas que respuestas, deja algo totalmente claro: no existe una forma &lt;em&gt;correcta&lt;/em&gt; de modelar el mundo, sólo &lt;strong&gt;representaciones más convenientes&lt;/strong&gt; para un caso u otro, ya que todas son arbitrarias.&lt;/p&gt;
 
-&lt;p&gt;Yo leí la &lt;a href=&quot;https://amzn.to/42FOOMs&quot;&gt;tercera edición&lt;/a&gt;, que es la que única que está en producción actualmente. Esta tiene comentarios de otro modelador de datos muy experimentado, pero que según &lt;a href=&quot;https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/&quot;&gt;Hillel Wayne&lt;/a&gt; cambió completamente el libro.Hillel recomienda leer la segunda edición, que aunque ya no está en impresión, lo puedes encontrar en &lt;a href=&quot;/assets/pdfs/Data%20and%20Reality.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PDF&lt;/a&gt;. Yo tengo pendiente leer la segunda edición, pero tengo altas expectativas ya que incluso la tercera me dejó grandes enseñanzas.&lt;/p&gt;
+&lt;p&gt;Yo leí la &lt;a href=&quot;https://amzn.to/42FOOMs&quot;&gt;tercera edición&lt;/a&gt;, que es la que única que está en producción actualmente. Esta tiene comentarios de otro modelador de datos muy experimentado, pero que según &lt;a href=&quot;https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/&quot;&gt;Hillel Wayne&lt;/a&gt; cambió completamente el libro.Hillel recomienda leer la segunda edición, que aunque ya no está en impresión, lo puedes encontrar en &lt;a href=&quot;https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PDF&lt;/a&gt;. Yo tengo pendiente leer la segunda edición, pero tengo altas expectativas ya que incluso la tercera me dejó grandes enseñanzas.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
@@ -1231,237 +1340,4 @@ Pregunta: {Pregunta}
 
 &lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
-&lt;p&gt;En este tutorial hemos visto cómo crear un agente básico. Falta explorar los demás tipos de agentes, así como las demás herramientas que LangChain provee para que podamos crear agentes más complejos y funcionales. Además, hay que probar con diferentes agentes y ver cómo se comportan.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="langchain" /><category term="gpt4" /><category term="agentes" /><summary type="html">Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.</summary></entry><entry><title type="html">Instrumentando microservicios en Go con Gin y AWS X-Ray</title><link href="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html" rel="alternate" type="text/html" title="Instrumentando microservicios en Go con Gin y AWS X-Ray" /><published>2023-04-17T00:00:00-06:00</published><updated>2023-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-con-X-Ray.html">&lt;p&gt;En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.&lt;/p&gt;
-
-&lt;p&gt;Si nuestro código provee información de traceo para requests, y logs, podemos decir que está instrumentado y que podemos observar cómo se está desempeñando nuestro sistema.&lt;/p&gt;
-
-&lt;p&gt;La instrumentación de servicios es especialmente útil para identificar y resolver problemas de rendimiento y errores. Los datos recolectados pueden ser usados para planear la capacidad de nuestros servicios al ayudarnos a entender el tráfico y patrones de uso en nuestras aplicaciones.&lt;/p&gt;
-
-&lt;p&gt;Existen varias soluciones para instrumentar nuestros servicios, como &lt;a href=&quot;https://opentelemetry.io/&quot;&gt;OpenTelemetry&lt;/a&gt;, &lt;a href=&quot;https://zipkin.io/&quot;&gt;Zipkin&lt;/a&gt; y &lt;a href=&quot;https://www.datadoghq.com/&quot;&gt;datadog&lt;/a&gt;. AWS también ofrece una &lt;a href=&quot;https://aws-otel.github.io/&quot;&gt;Distribución de OpenTelemetry&lt;/a&gt; para poder usar OpenTelemetry como backend de obserbabilidad mientras usas X-Ray o cualquier otra solución de terceros para recibir datos de telemetría y proveer procesamiento, agregación y visualización de éstos.&lt;/p&gt;
-
-&lt;p&gt;En este post, les voy a contar sobre mi experiencia al instrumentar un microservicio en Go usando Gin y AWS X-Ray.&lt;/p&gt;
-
-&lt;h2 id=&quot;gin&quot;&gt;Gin&lt;/h2&gt;
-
-&lt;p&gt;Gin es un framework para el lenguaje de programación Go para crear aplicaciones web, se destaca por ser ligero y tener un alto rendimiento, diseñado para facilitar la creación de aplicaciones web escalables de una manera rápida.&lt;/p&gt;
-
-&lt;p&gt;Ofrece una API minimalista, un router robusto, soporte para middleware y características de seguridad integradas, lo que lo convierte en una opción ideal para construir microservicios y otras aplicaciones web de alto rendimiento.&lt;/p&gt;
-
-&lt;p&gt;Si bien Gin puede tener una curva de aprendizaje empinada y características limitadas integradas, su simplicidad y capacidad de extensión lo convierten en una opción popular para los desarrolladores que priorizan el rendimiento y la escalabilidad.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Crear un servicio de Gin desde cero está fuera del alcance de esta publicación&lt;/strong&gt;, pero puedes leer más sobre Gin en la &lt;a href=&quot;(https://gin-gonic.com/docs/)&quot;&gt;página oficial de su documentación&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;aws-x-ray&quot;&gt;AWS X-Ray&lt;/h2&gt;
-
-&lt;p&gt;AWS X-Ray es un servicio de AWS que recolecta datos sobre los requests servidos por tu aplicación y provee herramientas para ver, filtrar y obtener información sobre esos datos para identificar problemas y oportunidades de optimización.&lt;/p&gt;
-
-&lt;p&gt;Algunos puntos a favor de X-Ray sobre otras herramientas similares son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Facilidad de integración con otros servicios de AWS.&lt;/li&gt;
-  &lt;li&gt;No hay infraestructura extra qué mantener (el daemon de X-Ray está incluído en las plataformas AWS Elastic Beanstalk y AWS Lambda).&lt;/li&gt;
-  &lt;li&gt;Puede funcionar sólo como visualizador (usando OpenTelemetry como tracer).&lt;/li&gt;
-  &lt;li&gt;Para servicios soportados, el SDK de X-Ray puede enviar y rastrear automáticamente los “ID de request” entre los servicios.&lt;/li&gt;
-  &lt;li&gt;Es administrado por AWS.&lt;/li&gt;
-  &lt;li&gt;Los primeros 100k rastreos del mes son gratis.&lt;/li&gt;
-  &lt;li&gt;El primer millón de rastreos obtenidos o escaneados cada mes es gratis.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Sin embargo algunos puntos en contra son:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;AWS X-Ray sólo puede ser usado con aplicaciones corriendo en Amazon EC2, Amazon EC2 containser service, AWS Lambda, y AWS Elastic Beanstalk.&lt;/li&gt;
-  &lt;li&gt;Después de agotar los rastreos gratuitos del mes, cada rastreo indexado y consultado tiene un costo.&lt;/li&gt;
-  &lt;li&gt;Soporte limitado de lenguajes: Mientras que el SDK de X-Ray tiene soporte para varios lenguajes de programación, no soporta todos los lenguajes o plataformas, lo cual puede limitar su utilidad en algunos casos.&lt;/li&gt;
-  &lt;li&gt;Vendor lock-in: El uso de X-Ray puede llevar a la dependencia exclusiva de AWS, ya que es un servicio propietario disponible sólo en la plataforma de AWS. Esto puede limitar su capacidad para cambiar a otros proveedores de nube o herramientas en el futuro.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Si, después de leer algunos de los pros y contras, aún estás inclinado a usar X-Ray, entonces puedes seguir leyendo.&lt;/p&gt;
-
-&lt;h3 id=&quot;requerimientos&quot;&gt;Requerimientos&lt;/h3&gt;
-
-&lt;p&gt;Para ver la información de rastreo en AWS X-Ray, necesitas una cuenta de AWS y una aplicación corriendo en la infraestructura de AWS o que esté integrada con los servicios de AWS. Además, necesitarás:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Una instancia del X-Ray daemon, que se puede ejecutar como un binario o como un contenedor de Docker. Puedes encontrar instrucciones detalladas sobre cómo ejecutar y configurar el daemon &lt;a href=&quot;https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-local.html&quot;&gt;aquí&lt;/a&gt;. Para éste artículo, estaré usando el binario para OS X.&lt;/li&gt;
-  &lt;li&gt;Tu aplicación debe de tener los permisos necesarios para interactuar con AWS X-Ray y otros servicios que use.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;iam-role&quot;&gt;IAM Role&lt;/h4&gt;
-
-&lt;p&gt;Para permitir que tu aplicación mande información sobre tus requests a X-Ray, tienes que proveerle al daemon de X-Ray un rol. Para crear un rol, vamos a entrar a nuestra consola web de AWS y de allí navegamos a la página principal de IAM y allí encontraremos el botón “Create Role” (o “Crear Rol” si tienes configurado tu panel de AWS en español).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/create-role.png&quot; alt=&quot;Crear nuevo rol&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;En el asistente, selecciona “AWS Account” para Trusted Entity y da click en “Next”/”Siguiente”. En la siguiente pantalla, busca por la política de permisos llamada “AWSXRayDaemonWriteAccess”. Da click en “Next”/”Siguiente” para continuar..&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/name-review-create.png&quot; alt=&quot;Nombra, Revisa y Crea&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Agrega un nombre y descripción para el rol, y después da click en “Create Role”. Ésto te llevará a la lista de roles. Busca el rol que acabas de crear para ver y copiar su ARN.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/role-details.png&quot; alt=&quot;Detalles del rol&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;x-ray-daemon&quot;&gt;X-Ray Daemon&lt;/h3&gt;
-
-&lt;p&gt;Ahora que ya tenemos el rol para el daemon, vamos a configurarlo.&lt;/p&gt;
-
-&lt;p&gt;Para mi proyecto de prueba, solo tuve que cambiar algunos valores de la configuración, como el nivel del logger, especificar el modo local a verdadero, y agregar el ARN del rol que creamos y la región de AWS en la que estamos operando nuestros servicios.&lt;/p&gt;
-
-&lt;p&gt;Aquí está la configuración que usé:&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Send segments to AWS X-Ray service in a specific region&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Region&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;us-west-2&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Socket&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# Change the address and port on which the daemon listens for UDP packets containing segment documents.&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;UDPAddress&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;127.0.0.1:2000&quot;&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# Change the address and port on which the daemon listens for HTTP requests to proxy to AWS X-Ray.&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;TCPAddress&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;127.0.0.1:2000&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Logging&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# Change the log level, from most verbose to least: dev, debug, info, warn, error, prod (default).&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;LogLevel&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;dev&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Turn on local mode to skip EC2 instance metadata check.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;LocalMode&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Assume an IAM role to upload segments to a different account.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;RoleARN&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;arn:aws:iam::269174633178:role/X-Ray_Daemon_role&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Daemon configuration file format version.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;En &lt;a href=&quot;https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-configuration.html&quot;&gt;la guía del desarrollador de AWS X-Ray&lt;/a&gt; puedes aprender más sobre otros valores que puedes configurar.&lt;/p&gt;
-
-&lt;h3 id=&quot;instrumentando-tu-microservicio-en-go&quot;&gt;Instrumentando tu microservicio en Go&lt;/h3&gt;
-
-&lt;p&gt;Ahora que ya tenemos el X-Ray daemon configurado y corriendo, podemos proceder a instrumentar nuestro servicio.&lt;/p&gt;
-
-&lt;p&gt;AWS recomienda empezar agregando rastreo para requests entrantes envolviendo los controladores de servicio con &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xray.Handler&lt;/code&gt;. Pero, como estamos usando Gin, el enfoque que implementaremos es ligeramente diferente.&lt;/p&gt;
-
-&lt;p&gt;Mientras buscaba recursos sobre cómo instrumentar una aplicación con Gin, me encontré con éste &lt;a href=&quot;https://raw.githubusercontent.com/oroshnivskyy/go-gin-aws-x-ray&quot;&gt;middleware&lt;/a&gt;, el cual está basado en la función &lt;a href=&quot;https://raw.githubusercontent.com/aws/aws-xray-sdk-go/1e154184282bb3b0166cb1b154f2b4abed0b1e6f/xray/handler.go#L99&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xray.Handler&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Éste middleware hace el mismo trabajo que &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xray.Handler&lt;/code&gt;, abrirá y cerrará un segmento para cada request recibido. También se encargará de manejar el header para IDs de rastreo (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;x-amzn-trace-id&quot;&lt;/code&gt;), que es un header que contiene un identificador que será generado para cada petición nueva y que será propagado a travéz de todos nuestros microservicios.&lt;/p&gt;
-
-&lt;p&gt;Así que vamos a agregar el middleware a las rutas que queremos intrumentar:&lt;/p&gt;
-
-&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;// as part of my gin routes&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/auth/roles&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xraymid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Middleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NewFixedSegmentNamer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;GetRoles&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetRoles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Aquí estamos agregando el middleware de X-Ray (con el alias &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xraymid&lt;/code&gt;) a una ruta del grupo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v1&lt;/code&gt;. El valor que estamos pasando como argumento a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NewFixedSegmentNamer&lt;/code&gt; debe de ser un nombre descriptivo para tu ruta. Éste será el nombre para el grupo principal de rastreo para éste endpoint.&lt;/p&gt;
-
-&lt;p&gt;¡Bien! ¡Ahora veamos si funciona! Inicia tu servicio y verifica que el daemon esté corriendo.&lt;/p&gt;
-
-&lt;p&gt;Después de hacer un request, podemos ver en los logs del daemon algo como:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2023-03-21T13:10:47-06:00 [Debug] Received request on HTTP Proxy server : /GetSamplingRules
-2023-03-21T13:10:48-06:00 [Debug] processor: sending partial batch
-2023-03-21T13:10:48-06:00 [Debug] processor: segment batch size: 1. capacity: 50
-2023-03-21T13:10:48-06:00 [Info] Successfully sent batch of 1 segments (0.109 seconds)
-2023-03-21T13:10:49-06:00 [Debug] Send 1 telemetry record(s)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;¡Parece que está funcionando! Vamos a ver qué dice la consola de AWS.&lt;/p&gt;
-
-&lt;p&gt;En tu consola web de AWS, ve a CloudWatch y en el panel lateral busca la opción para X-Ray, y da click en la opción “traces”.&lt;/p&gt;
-
-&lt;p&gt;Si todo salió bien, deberías estar viendo el número de rastreos recibidos recientemente, y una tabla con la información de esos rastreos.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/cloudwatch-xray-traces.png&quot; alt=&quot;Cloudwatch -&amp;gt; X-Ray -&amp;gt; Traces&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;En la tabla de registros, da click en alguno. Aparecerá la vista de rastreo/seguimiento, donde puedes ver la información registrada.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/simple-trace-info.png&quot; alt=&quot;Información de rastreo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Aquí podemos ver los datos de seguimiento. Hasta el momento sólo estamos creando un segmento y cerrándolo para cada llamada, por lo que no tenemos mucha otra información, pero podemos ver el código de estado de respuesta, el tiempo que tomó para que se atendiera la solicitud y, por supuesto, el mapa de seguimiento, que por ahora incluye sólo el cliente y el servicio.&lt;/p&gt;
-
-&lt;h4 id=&quot;creando-sub-segmentos&quot;&gt;Creando sub segmentos&lt;/h4&gt;
-
-&lt;p&gt;Ahora que tenemos nuestra configuración básica de instrumentación, ¿qué más podemos rastrear?&lt;/p&gt;
-
-&lt;p&gt;Hasta el momento, solo estamos rastreando una solicitud y algunos de sus metadatos. Pero, ¿qué pasa si queremos ser más detallados?&lt;/p&gt;
-
-&lt;p&gt;Digamos que tenemos un proceso intensivo que se ejecuta como parte de la solicitud; podemos agregar un subsegmento para monitorearlo.&lt;/p&gt;
-
-&lt;p&gt;En algún lugar de mi servicio, se ejecuta el siguiente código cuando llamo al endpoint &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;auth/roles&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;// dentro de alguna función&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;roles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rolesList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;roleItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;range&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rolesList&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buildRole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;roleItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoleList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;roles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;role&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Aquí podemos envolver el bucle &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; en un subsegmento para ver cuánto tiempo del request tarda en ejecutar éste proceso.&lt;/p&gt;
-
-&lt;p&gt;Para crear el subsegmento, envolvemos el ciclo:&lt;/p&gt;
-
-&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Capture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;BuildRolesDetail&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ctx1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;roleItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;range&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rolesList&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buildRole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;roleItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;roles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;role&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AddMetadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ctx1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;No. roles built&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;roles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nepErrors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InternalServerError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WithDetail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Vamos a correr nuestro servicio y llamemos de nuevo nuestro endpoint instrumentado.&lt;/p&gt;
-
-&lt;p&gt;Éste es el nuevo registro en AWS CloudWatch -&amp;gt; Traces:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/trace-with-sub-segment.png&quot; alt=&quot;Rastreo con subsegmentos&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ahora podemos ver que la petición tomó &lt;strong&gt;215ms&lt;/strong&gt;, y de esos, el ciclo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BuildRolesDetail&lt;/code&gt; tomó &lt;strong&gt;205ms&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;¿Ya estás pensando en las posibilidades? ¡Deberías! puedes usar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xray.AddMetadata&lt;/code&gt; para agregar cualquier dato que te sea de utilidad. Únicamente toma en cuenta que el Daemon de X-Ray sólo envía a AWS &lt;a href=&quot;https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html&quot;&gt;hasta 64KB de metadata por segmento&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;instrumentando-clientes-de-aws-con-x-ray&quot;&gt;Instrumentando clientes de AWS con X-Ray&lt;/h3&gt;
-
-&lt;p&gt;Instrumentar clientes de AWS usando el SDK-V1 es bastante sencillo, puedes seguir la &lt;a href=&quot;https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-go-awssdkclients.html&quot;&gt;guía oficial&lt;/a&gt; para hacerlo.&lt;/p&gt;
-
-&lt;p&gt;No hay mucha documentación sobre cómo instrumentar clientes de AWS usando el AWS SDK-v2, pero la configuración es bastante sencilla.&lt;/p&gt;
-
-&lt;p&gt;En algún lugar en el código de tu servicio, estás inicializando tu(s) cliente(s) de AWS. Para instrumentarlos, necesitas proveer a tus clientes con un cliente HTTP de X-Ray y pasar el contexto del request para cada llamada.&lt;/p&gt;
-
-&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;cfg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LoadDefaultConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;// Create an HTTP client&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;httpClient&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;// Set the HTTP client as the AWS configuration's HTTP client&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cfg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HTTPClient&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;httpClient&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;// Create an X-Ray client&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;xrayClient&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;httpClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;dynamoClient&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dynamodb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NewFromConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cfg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dynamodb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;c&quot;&gt;// Wrap the http.Client with an xray.Client&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HTTPClient&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xrayClient&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Aquí, estoy agregando el cliente HTTP de X-Ray al cliente de AWS DynamoDB.&lt;/p&gt;
-
-&lt;p&gt;Una vez hecho esto, llamemos de nuevo a nuestro endpoint instrumentado.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/makkoman/blogposts/main/x-ray/images/instrumenting-ddb-client.png&quot; alt=&quot;Instrumentando el cliente de DynamoDB&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Yo estoy corriendo DynamoDB localmente, pero ya puedes ver qué tanto tiempo toma cada llamada a DynamoDB. También podemos ver que el mapa de rastreo ha sido acualizado para mostrar mi instancia local de DynamoDB.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-&lt;p&gt;Instrumentar un servicio con X-Ray es relativamente sencillo, pero puede complicarse muy rápido dependiendo de las cosas que queremos monitorear. Debido a esto, el esfuerzo para agregar trazabilidad a su servicio puede variar de caso en caso.&lt;/p&gt;
-
-&lt;p&gt;Otra cosa a considerar es el límite de 64KB por segmento. Puede que no sea suficiente si deseas rastrear muchos subsegmentos o agregar más metadatos. Existen formas de evitar esto, pero están fuera del alcance de esta publicación.&lt;/p&gt;
-
-&lt;p&gt;En conclusión, implementar X-Ray en un microservicio en Go es un proceso sencillo que puede beneficiar enormemente la observabilidad y las capacidades de resolución de problemas de tu aplicación. El proceso de integración es relativamente fácil, y el SDK de X-Ray proporciona una serie de características útiles que facilitan la trazabilidad de las solicitudes y la identificación de cuellos de botella. Sin embargo, es importante tener en cuenta que X-Ray tiene algunas desventajas, como el costo asociado con su uso y las limitaciones de sus capacidades de muestreo.&lt;/p&gt;
-
-&lt;p&gt;No obstante, con una consideración cuidadosa y una implementación adecuada, X-Ray puede ser una herramienta invaluable para la depuración y optimización de tu arquitectura de microservicios. Así que no dudes en probarlo y ver cómo puede mejorar el rendimiento y la confiabilidad de tus microservicios en Go.&lt;/p&gt;</content><author><name>Héctor Vela</name><email>vell.once@gmail.com</email><uri>https://github.com/hevela</uri></author><category term="programación" /><category term="instrumentación" /><category term="microservicios" /><category term="AWS" /><category term="Go" /><summary type="html">Descubre cómo mejorar la observabilidad de tus microservicios en Go con X-Ray.</summary></entry></feed>
+&lt;p&gt;En este tutorial hemos visto cómo crear un agente básico. Falta explorar los demás tipos de agentes, así como las demás herramientas que LangChain provee para que podamos crear agentes más complejos y funcionales. Además, hay que probar con diferentes agentes y ver cómo se comportan.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="langchain" /><category term="gpt4" /><category term="agentes" /><summary type="html">Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.</summary></entry></feed>
