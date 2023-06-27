@@ -1,6 +1,6 @@
 # Blog The Dojo MX
 
-En este blog hablamos de:
+En este blog hablamos de los siguientes temas:
 
 - Desarrollo de software en general
 - Lenguajes de programación

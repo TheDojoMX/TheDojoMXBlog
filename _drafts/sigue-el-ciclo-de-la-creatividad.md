@@ -63,4 +63,6 @@ Después y esto es la parte más importante de este artículo (y la que te puede
 
 David Kadavy dice en su libro que esto te permite olvidarte de las ideas que no funcionan y fortalecer las que sí, y me parece una buena propuesta. Si lo comparas con un algoritmo, buscar una solución a un problema es como hacer una búsqueda en un árbol, sólo que este árbol tiene más ramas de las que puedes seguir, así que tienes que podarlas. La incubación es la poda, que además fortalece las ramas que es más probable que te lleven a la solución.
 
-Esto también se puede aplicar de manera más sencilla.Por ejemplo, ¿tienes que diseñar una pieza de software y sientes que no tienes ni idea de por dónde empezar? Combinando las enseñanzas de Polya con el ciclo de la creatividad, lo primero es definir completamente el problema.
+Esto también se puede aplicar de manera más sencilla.Por ejemplo, ¿tienes que diseñar una pieza de software y sientes que no tienes ni idea de por dónde empezar? Combinando las enseñanzas de Polya con el ciclo de la creatividad, lo primero es definir completamente el problema. Una vez que sientas que lo has entendido (muchas veces ayuda ponerlo por escrito e incluso pedir que alguien más lo revise).
+
+Después de esto, _sobre todo si no tienes una solución clara_, o propuestas que hacer, **busca alejarte lo más posible**.
