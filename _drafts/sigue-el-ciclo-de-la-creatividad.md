@@ -21,7 +21,7 @@ En el libro **"Mind Management, Not Time Management"** de David Kadavy, se habla
 
 ## El ciclo de la creatividad
 
-Creo que esto no te va enseñar nada nuevo, porque probablemente lo _has vivido_ muchas veces. Pero vamos a ponerle estructura y nombres a los diferentes pasos
+Creo que esto no te va enseñar nada nuevo, porque probablemente lo _has vivido_ muchas veces. Pero vamos a ponerle estructura y nombres a los diferentes pasos para que podamos replicarlo de manera más consciente.
 
 El ciclo de la creatividad está compuesto por cuatro fases:
 
@@ -37,4 +37,30 @@ Este ciclo me pareció muy interesante porque se me hace equivalente en pasos a 
 3. Llevar a cabo el plan == Verificación
 4. Revisar el plan == Verificación
 
-## ¿Cómo aplicar el ciclo de la creatividad?
+## Ejemplo
+
+El ejemplo más clásico en el que usamos el ciclo de la creatividad naturalmente es cuando estamos resolviendo un bug difícil. Veamos los pasos:
+
+1. Preparación: Intentamos entender el bug, y el comportamiento esperado, consultamos la documentación o el código que lo está produciendo. Si es lo suficientemente difícil, este bug se va con nosotros a dormir.
+
+2. Incubación: Después de sentirte derrotado por el bug, te alejas, ya sea porque terminó el día de trabajo, porque te vas a hacer otras cosas o porque simplemente te quieres despejar.
+
+3. **Iluminación**: Durante alguna otra actividad, como bañándote, caminando, haciendo ejercicio o también cuando regreses al código, ves la solución, como si siempre hubiera estado ahí, de manera obvia.
+
+4. Verificación: Implementas la solución y pruebas que todo esté funcionando como debería.
+
+**¿Ves cómo sí te ha pasado?** Ese es el ciclo de la creatividad, que nosotros usamos resolviendo problemas. Veamos algunas formas de extenderlo y aprovecharlo mejor.
+
+## Aplicación: el poder de la preparación
+
+Ahora que ya tienes un nombre para esto que te pasa muy constantemente, puedes aprovecharlo para desencadenarlo intencionalmente.
+
+Antes, pensemos un poco. ¿Cuál es la parte del ciclo que nos interesa aprovechar? Para mi es el poder de **incubación**, que es lo que produce la iluminación, o sea, lo que hace que te lleguen las ideas para resolver tu problema de manera creativa.
+
+Pero, ¿cómo vas a incubar si no tienes nada que hacer crecer? Es aquí donde entra el valor de la preparación. Si quieres resolver un problema difícil, inclusive uno que sientes que ahora mismo está un poco por encima de tus capacidades, la mejor manera de hacerlo es aprovechando este ciclo. Primero te preparas lo mejo que puedas, estudiando el problema, analizando los posibles caminos que puedes seguir e incluso haciendo algunas pruebas de concepto. Seguro que esto ya lo haces.
+
+Después y esto es la parte más importante de este artículo (y la que te puede estar fallando), tienes que **alejarte del problema**. Así es, olvídate de él, cambia de problema, ve a dormir, sal a pasear, date un baño. Tienes que hacer algo que ocupe tu mente.
+
+David Kadavy dice en su libro que esto te permite olvidarte de las ideas que no funcionan y fortalecer las que sí, y me parece una buena propuesta. Si lo comparas con un algoritmo, buscar una solución a un problema es como hacer una búsqueda en un árbol, sólo que este árbol tiene más ramas de las que puedes seguir, así que tienes que podarlas. La incubación es la poda, que además fortalece las ramas que es más probable que te lleven a la solución.
+
+Esto también se puede aplicar de manera más sencilla.Por ejemplo, ¿tienes que diseñar una pieza de software y sientes que no tienes ni idea de por dónde empezar? Combinando las enseñanzas de Polya con el ciclo de la creatividad, lo primero es definir completamente el problema.
