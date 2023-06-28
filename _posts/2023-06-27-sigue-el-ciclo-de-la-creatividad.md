@@ -4,7 +4,7 @@ date: 2023-06-27
 author: Héctor Patricio
 tags: creatividad resolución-de-problemas
 comments: true
-excerpt: "La programación es una profesión muy creativa y por eso es importante que aprendamos a manejarla, hablemos de los  "
+excerpt: "La programación es una profesión muy creativa y por eso es importante que aprendamos a manejarla, hablemos de las etapas para resolver un problema de forma creativa y cómo puedes aprovecharlas."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1685716414/lekoarts-fwVo1x7CktY-unsplash_stnjdh.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685716414/lekoarts-fwVo1x7CktY-unsplash_stnjdh.jpg
