@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-06-27T12:52:36-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Modelos mentales para desarrolladores: modelos elementales</title><link href="https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-elementales.html" rel="alternate" type="text/html" title="Modelos mentales para desarrolladores: modelos elementales" /><published>2023-06-22T00:00:00-06:00</published><updated>2023-06-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-elementales</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-elementales.html">&lt;p&gt;La &lt;strong&gt;mente&lt;/strong&gt; es la principal herramienta del desarrollador de software. Puedes ayudar a que se desempeñe mejor si le das, a su vez, herramientas que te permitan &lt;em&gt;organizar, comprender, combinar y analizar más rápido la información&lt;/em&gt;. Estas herramientas además te pueden ayudar a ver cosas claramente que antes eran imposibles de ver, o a llegar más profundo en los análisis.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-06-27T23:58:43-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Sigue el ciclo de la creatividad</title><link href="https://blog.thedojo.mx/2023/06/27/sigue-el-ciclo-de-la-creatividad.html" rel="alternate" type="text/html" title="Sigue el ciclo de la creatividad" /><published>2023-06-27T00:00:00-06:00</published><updated>2023-06-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/27/sigue-el-ciclo-de-la-creatividad</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/27/sigue-el-ciclo-de-la-creatividad.html">&lt;p&gt;Hay algunas personas que creen que el desarrollo de software sólo trata de resolver problemas analíticamente, pero lo cierto es que para encontrar soluciones siempre se requiere de creatividad.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, muchas veces pensamos que la creatividad como desarrolladores de software no es nuestro fuerte, pero no hay nada más lejos de la realidad. Si te has dedicado exitosamente a esto por un tiempo, has demostrado que eres creativo o creativa, sólo que no de la manera que se considera tradicionalmente, eso que tiene que ver con el arte, la belleza y otras cosas.&lt;/p&gt;
+
+&lt;p&gt;Tu creatividad generalmente se demuestra en la aplicación y mezcla de ideas para resolver problemas en nuevas situaciones.&lt;/p&gt;
+
+&lt;p&gt;En el libro &lt;a href=&quot;https://kadavy.medium.com/mind-management-not-time-management-25ebd3a58dc6&quot;&gt;&lt;strong&gt;“Mind Management, Not Time Management”&lt;/strong&gt; de David Kadavy&lt;/a&gt;, se habla de un ciclo de creatividad y en este artículo lo quiero aplicar a nuestro trabajo de desarrollo de software.&lt;/p&gt;
+
+&lt;h2 id=&quot;el-ciclo-de-la-creatividad&quot;&gt;El ciclo de la creatividad&lt;/h2&gt;
+
+&lt;p&gt;Creo que esto no te va enseñar nada nuevo, porque probablemente lo &lt;em&gt;has vivido&lt;/em&gt; muchas veces. Pero vamos a ponerle estructura y nombres a los diferentes pasos para que podamos replicarlo de manera más consciente.&lt;/p&gt;
+
+&lt;p&gt;El ciclo de la creatividad está compuesto por cuatro fases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Preparación&lt;/strong&gt;: Tienes que obtener la mayor cantidad información, estudiar el problema y se &lt;strong&gt;analizar&lt;/strong&gt; las posibles soluciones. En nuestro caso incluso puede que tengamos que hacer algunas pruebas de concepto. Es muy importante entender que en esta etapa &lt;strong&gt;no vas resolver el problema&lt;/strong&gt;, si encuentras algún tipo de bloqueo debes dejarlo pasar y seguir explorando.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Incubación&lt;/strong&gt;: En esta fase tienes que de pensar en el problema, se hace otra cosa, se descansa, se duerme, se hace ejercicio. Tu mente procesará lo que acabas de leer, de manera inconsciente.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Iluminación&lt;/strong&gt;: Esta parte no la puedes forzar, a veces incluso tienes que repetir las dos fases de manera cíclica hasta que llega la respuesta. Aquí es donde todo parece que hace click y la solución aparece “de la nada” (ya sabes que no es así porque has hecho mucho trabajo previo.)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Verificación&lt;/strong&gt;: Ahora que tienes una idea, falta comprobarla y más importante aún: llevarla a cabo. En esta tienes que asegurarte que la solución que encontraste es correcta, &lt;em&gt;o tienes que hacer lo suficiente para empezar a probarla&lt;/em&gt;. Puede que te equivoques y tengas que volver a empezar el ciclo, pero con nuevos conocimientos.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Este ciclo me pareció muy interesante porque se me hace equivalente en pasos a los pasos que &lt;strong&gt;George Polya&lt;/strong&gt; propone. En su libro &lt;strong&gt;“How to Solve It”&lt;/strong&gt; habla de cuatro pasos para resolver problemas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Entender el problema == Preparación e Incubación&lt;/li&gt;
+  &lt;li&gt;Idear un plan == Incubación e Iluminación (La parte &lt;strong&gt;&lt;em&gt;más difícil&lt;/em&gt;&lt;/strong&gt;, Polya dice que si tienes un plan, ya casi resolviste el problema)&lt;/li&gt;
+  &lt;li&gt;Llevar a cabo el plan == Verificación&lt;/li&gt;
+  &lt;li&gt;Revisar el plan == Verificación&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ejemplo&quot;&gt;Ejemplo&lt;/h2&gt;
+
+&lt;p&gt;El ejemplo más clásico en el que usamos el ciclo de la creatividad naturalmente es cuando estamos resolviendo un bug difícil. Veamos los pasos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Preparación: Intentamos entender el bug, y el comportamiento esperado, consultamos la documentación o el código que lo está produciendo. Si es lo suficientemente difícil, este bug se va con nosotros a dormir.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Incubación: Después de sentirte derrotado por el bug, te alejas, ya sea porque terminó el día de trabajo, porque te vas a hacer otras cosas o porque simplemente te quieres despejar.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Iluminación&lt;/strong&gt;: Durante alguna otra actividad, como bañándote, caminando, haciendo ejercicio o también cuando regreses al código, ves la solución, como si siempre hubiera estado ahí, de manera obvia.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Verificación: Implementas la solución y pruebas que todo esté funcionando como debería.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;¿Ves cómo sí te ha pasado?&lt;/strong&gt; Ese es el ciclo de la creatividad, que nosotros usamos resolviendo problemas. Veamos algunas formas de extenderlo y aprovecharlo mejor.&lt;/p&gt;
+
+&lt;h2 id=&quot;aplicación-el-poder-de-la-preparación&quot;&gt;Aplicación: el poder de la preparación&lt;/h2&gt;
+
+&lt;p&gt;Ahora que ya tienes un nombre para esto que te pasa muy constantemente, puedes aprovecharlo para desencadenarlo intencionalmente.&lt;/p&gt;
+
+&lt;p&gt;Antes, pensemos un poco. ¿Cuál es la parte del ciclo que nos interesa aprovechar? Para mi es el poder de &lt;strong&gt;incubación&lt;/strong&gt;, que es lo que produce la iluminación, o sea, lo que hace que te lleguen las ideas para resolver tu problema de manera creativa.&lt;/p&gt;
+
+&lt;p&gt;Pero, ¿cómo vas a incubar si no tienes nada que hacer crecer? Es aquí donde entra el valor de la preparación. Si quieres resolver un problema difícil, inclusive uno que sientes que ahora mismo está un poco por encima de tus capacidades, la mejor manera de hacerlo es aprovechando este ciclo. Primero te preparas lo mejo que puedas, estudiando el problema, analizando los posibles caminos que puedes seguir e incluso haciendo algunas pruebas de concepto. Seguro que esto ya lo haces.&lt;/p&gt;
+
+&lt;p&gt;Después y esto es la parte más importante de este artículo (y la que te puede estar fallando), tienes que &lt;strong&gt;alejarte del problema&lt;/strong&gt;. Así es, olvídate de él, cambia de problema, ve a dormir, sal a pasear, date un baño. Tienes que hacer algo que ocupe tu mente.&lt;/p&gt;
+
+&lt;p&gt;David Kadavy dice en su libro que esto te permite olvidarte de las ideas que no funcionan y fortalecer las que sí, y me parece una buena propuesta. Si lo comparas con un algoritmo, buscar una solución a un problema es como hacer una búsqueda en un árbol, sólo que este árbol tiene más ramas de las que puedes seguir, así que tienes que podarlas. La incubación es la poda, que además fortalece las ramas que es más probable que te lleven a la solución.&lt;/p&gt;
+
+&lt;p&gt;Esto también se puede aplicar de manera más sencilla.Por ejemplo, ¿tienes que diseñar una pieza de software y sientes que no tienes ni idea de por dónde empezar? Combinando las enseñanzas de Polya con el ciclo de la creatividad, lo primero es definir completamente el problema. Una vez que sientas que lo has entendido (muchas veces ayuda ponerlo por escrito e incluso pedir que alguien más lo revise).&lt;/p&gt;
+
+&lt;p&gt;Después de esto, &lt;em&gt;sobre todo si no tienes una solución clara&lt;/em&gt;, o propuestas que hacer, &lt;strong&gt;busca alejarte lo más posible&lt;/strong&gt;. Es por eso que muchos profesionales veteranos y exitosos tienen actividades alternas, alejadas de la programación e incluso de la computadora. Cuando regreses a trabajar sobre el problema, es mucho más probable que tengas una solución.&lt;/p&gt;
+
+&lt;p&gt;Se que esto suena mágico, pero nada te puede convencer más que la propia que ya tienes resolviendo problemas de otro estilo. Si esto no funciona, recuerda que puedes repetir el ciclo tantas veces como sea necesario.&lt;/p&gt;
+
+&lt;p&gt;Claro, esto no asegura que la solución te llegará mágicamente siempre, pero con esto aumentamos las probabilidades de que tu naturaleza creativa trabaje por ti.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Siempre que puedas, frente a problemas difíciles, aplica este ciclo: prepárate lo mejor que puedas, explorando soluciones, asegurándote de entender todas la variables del problema, escribiendo la definición del problema. Después &lt;strong&gt;aléjate de problema&lt;/strong&gt;, así permitirás que se &lt;strong&gt;incube&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, regresa y trata de resolverlo de nuevo. Claro que después de esto tienes que ejecutar y verificar tu solución.&lt;/p&gt;
+
+&lt;p&gt;Espero que esta información te sea útil y que la puedas aplicar en tu día a día.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="creatividad" /><category term="resolución-de-problemas" /><summary type="html">La programación es una profesión muy creativa y por eso es importante que aprendamos a manejarla, hablemos de los</summary></entry><entry><title type="html">Modelos mentales para desarrolladores: modelos elementales</title><link href="https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-elementales.html" rel="alternate" type="text/html" title="Modelos mentales para desarrolladores: modelos elementales" /><published>2023-06-22T00:00:00-06:00</published><updated>2023-06-22T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-elementales</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-elementales.html">&lt;p&gt;La &lt;strong&gt;mente&lt;/strong&gt; es la principal herramienta del desarrollador de software. Puedes ayudar a que se desempeñe mejor si le das, a su vez, herramientas que te permitan &lt;em&gt;organizar, comprender, combinar y analizar más rápido la información&lt;/em&gt;. Estas herramientas además te pueden ayudar a ver cosas claramente que antes eran imposibles de ver, o a llegar más profundo en los análisis.&lt;/p&gt;
 
 &lt;p&gt;Estas herramientas son los &lt;strong&gt;modelos mentales&lt;/strong&gt;, que en este artículo explicaremos, pero además daremos algunos ejemplos que te servirán directamente como desarrollador. Estos ejemplos son, a nuestro modo de ver, los modelos esenciales que debes conocer. Empecemos dando una definición clara.&lt;/p&gt;
 
@@ -1129,215 +1206,4 @@ B. Las abstracciones no deberían depender de los detalles, los detalles deben d
 
 &lt;p&gt;Por último, siempre se habla de los principios SOLID como si fueran los dogmas de una religión y se habla de “violarlos” como si estos fueran obligatorios, o principios morales que siempre se deben seguir. Además, siempre se habla de ellos como si fueran las reglas que definen lo bueno y lo malo.&lt;/p&gt;
 
-&lt;p&gt;Para mi, conviene más seguir principios más generales, que un acrónimo creado con nombres de principios rimbombantes, que muchas veces son tan ambiguos que nadie qué significan exactamente, y cuando tienen aplicaciones reales, son tan complicadas que no se conviene aplicar en la mayoría de los casos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="dependency-inversion" /><category term="inversion-dependencias" /><summary type="html">Analicemos el principio de Inversión de Dependencias, el último principio de SOLID y veamos si conviene, además cuándo aplicarlo.</summary></entry><entry><title type="html">Creando agentes con LangChain y GPT-4</title><link href="https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html" rel="alternate" type="text/html" title="Creando agentes con LangChain y GPT-4" /><published>2023-04-20T00:00:00-06:00</published><updated>2023-04-20T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4</id><content type="html" xml:base="https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4.html">&lt;p&gt;En este pequeño tutorial vamos a hablar de cómo puedes crear agentes que interactúen con el mundo exterior, usando LangChain y como modelo de lenguaje GPT-4. Como siempre, la mejor manera de aprender es haciendo algo, por lo que vamos a crear un agente&lt;/p&gt;
-
-&lt;h3 id=&quot;qué-es-un-agente&quot;&gt;¿Qué es un agente?&lt;/h3&gt;
-
-&lt;p&gt;En este contexto, además de una cosa que puede actuar por sí mismo, se entiende que un agente puede hacer dos cosas más:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Decidir qué hacer y qué herramienta usar&lt;/li&gt;
-  &lt;li&gt;Aprender a usar herramientas automáticamente (si le proporcionas las cosas que necesita)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Los agentes tradicionalmente se entienden como programas que trabajan de manera autónoma y con su propio espacio de memoria, con los que te comunicas por medio de mensajes, pero que no tienes el control completo sobre ellos. Un agente puede decidir qué hacer con tu mensaje.&lt;/p&gt;
-
-&lt;p&gt;Combinando ambos contextos, un agente es un pedazo del programa que actúa autónomamente, que decide cómo lograr lo que has pedido y que aprende a hacerlo por su cuenta. Al estar basado en un LLM, no está garantizado su éxito.&lt;/p&gt;
-
-&lt;h2 id=&quot;agentes-en-langchain&quot;&gt;Agentes en LangChain&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;LangChain&lt;/strong&gt; provee de un conjunto de agentes prefabricados. Los más fáciles de usar están basados en un framework llamado ReAct, que propone una forma de crear estos agentes. Puedes ver el documento en el que se habla de ReAct en el siguiente documento: &lt;strong&gt;&lt;a href=&quot;https://arxiv.org/abs/2210.03629&quot;&gt;ReAct: Synergizing Reasoning and Acting in Language Models
-&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Básicamente este framework da las guías para crear agentes que usen herramientas de manera efectiva. LangChain provee tres agentes básicos:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;zero-shot-react-description&lt;/strong&gt;: este tipo de agentes determinan qué tipo de herramientas usar basándose en la descripción de las herramientas proporcionadas.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;react-docstore&lt;/strong&gt;: basado completamente en el framework ReAct, este tipo de agentes usan herramientas para buscar documentos y luego buscar términos en esos documentos. Recibe una herramienta de búsqueda y una de consulta.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;self-ask-with-search&lt;/strong&gt;: utiliza una sola herramienta llamada ‘Intermediate Answer’ que debe ser capaz de buscar respuestas correctas a preguntas. En el paper original de ReAct se usa Google como herramienta de búsqueda.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;conversational-react-description&lt;/strong&gt;: está pensado para ser usado de manera conversacional, puede decidir qué herramienta usar y tiene memoria para recordar lo que ya se ha hablado.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;creando-un-agente&quot;&gt;Creando un agente&lt;/h3&gt;
-
-&lt;p&gt;El siguiente código crea un agente que puede usar herramientas para lograr sus objetivos:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;c1&quot;&gt;# Creando un agente con LangChain
-&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_tools&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialize_agent&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AgentType&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.llms&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OpenAI&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OpenAI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temperature&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;serpapi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;llm-math&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialize_agent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AgentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ZERO_SHOT_REACT_DESCRIPTION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Este agente puede buscar en Google y hacer aritmética básica.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Pregunta algo: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;El código anterior es suficiente para crear una agente que tiene dos capacidades: buscar en internet con Google y hacer operaciones matemáticas básicas. El código es bastante simple, pero vamos a explicarlo paso a paso.&lt;/p&gt;
-
-&lt;p&gt;Como siempre, la primera parte es importar las funciones y tipos necesarios:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_tools&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Es una función que te ayuda a cargar las herramientas que los agentes serán capaces de usar
-&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialize_agent&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Es una función que te ayuda a crear un agente de manera sencilla
-&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.agents&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AgentType&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Es un tipo que te ayuda a especificar el tipo de agente que quieres crear, contiene todos los tipos de agentes que LangChain provee
-&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;langchain.llms&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OpenAI&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Es la clase que abstrae la conexión con el LLM que usaremos: GPT, creado por OpenAI
-&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Después, creamos una instancia de conexión con el LLM:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OpenAI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temperature&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;El que le digamos que queremos cero de temperatura significa que la respuesta será menos aleatoria, por lo que podemos pensar que será menos “creativa” o arriesgada. Esto es buena idea cuando quieres crear planes, usar herramientas con una interfaz formal, como una API. Para poder usarlo, tienes que poner en el entorno de ejecución la variable de entorno &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OPENAI_API_KEY&lt;/code&gt; con tu API key de OpenAI.&lt;/p&gt;
-
-&lt;p&gt;Seguido de esto, cargamos las herramientas que queremos que el agente pueda usar, indicando el modelo de lenguaje que usará para interactuar con ellas:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;serpapi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;llm-math&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;La primera es una herramienta para buscar en Google, se llama &lt;a href=&quot;https://serpapi.com/&quot;&gt;SerpApi&lt;/a&gt;, y permite usar la búsqueda que nosotros hacemos en Google mediante una interfaz más amigable para programas. La versión gratuita te da 100 búsquedas mensuales.&lt;/p&gt;
-
-&lt;p&gt;La segunda herramienta, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;llm-math&lt;/code&gt;, tiene como objetivo permitir que el agente haga matemáticas básicas, aunque tampoco están garantizadas porque se ejecuta código que el LLM devuelve. El prompt que usa es (lo traduzco a español después):&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;You are GPT-3, and you can't do math.
-
-You can do basic math, and your memorization abilities are
-impressive, but you can't do any complex calculations that
-a human could not do in their head. You also have an annoying
-tendency to just make up highly specific, but wrong, answers.
-
-So we hooked you up to a Python 3 kernel, and now you can execute
-code. If you execute code, you must print out the final answer
-using the print function. You MUST use the python package
-numpy to answer your question. You must import numpy as np.
-
-
-Question: ${Question with hard calculation.}
-
-```python
-${Code that prints what you need to know}
-print(${code})
-```
-```output
-${Output of your code}
-```
-Answer: $
-
-Begin.
-
-Question: What is 37593 * 67?
-
-```python
-import numpy as np
-print(np.multiply(37593, 67))
-```
-```output
-2518731
-```
-Answer: 2518731
-
-Question: {question}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Traducido al español:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-Eres GPT-3, y no puedes hacer matemáticas.
-
-Puedes hacer matemáticas básicas, y tus habilidades de
-memorización son impresionantes, pero no puedes hacer ningún
-cálculo complejo que un humano no pudiera hacer en su cabeza.
-También tienes una tendencia molesta a inventar respuestas
-específicas, pero incorrectas.
-
-Así que te conectamos a un kernel de Python 3, y ahora puedes
-ejecutar código. Si ejecutas código, debes imprimir el resultado
-final usando la función print. DEBES usar el paquete Python
-numpy para responder tu pregunta. Debes importar numpy como np.
-
-Pregunta: ${Pregunta con cálculos duros.}
-
-```python
-${Código que imprime lo que necesitas saber}
-print(${código})
-```
-```output
-${Salida de tu código}
-```
-```
-Respuesta: ${Respuesta}
-
-Comienza.
-
-Pregunta: ¿Cuánto es 37593 * 67?
-
-```python
-import numpy as np
-print(np.multiply(37593, 67))
-```
-```output
-2518731
-```
-Respuesta: 2518731
-
-Pregunta: {Pregunta}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Este módulo después extrae la respuesta de la salida del LLM y la ejecuta en un ejecutor de Python y extrae de aquí la respuesta.&lt;/p&gt;
-
-&lt;p&gt;Aunque por ser un ejecutor de Python tenemos garantizado que el cálculo es correcto, no tenemos garantizado que el código introducido sea adecuado, así que no confíes siempre en sus cálculos.&lt;/p&gt;
-
-&lt;p&gt;Después de eso inicializamos un agente, al que le pasamos las herramientas que usará, el modelo de lenguaje y el tipo de agente que queremos crear. Además, le decimos que escriba en la salida estándar todo su proceso con la opción &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;verbose=True&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialize_agent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AgentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ZERO_SHOT_REACT_DESCRIPTION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;De este modo LangChain hará todo lo necesario para inicializar un agente que use actúe de manera autónoma. Ahora le podemos preguntar cosas:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Este agente puede buscar en Google y hacer aritmética básica.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Creamos un loop para que
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Pregunta algo: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Recuerda que esto puede contestar preguntas que se puedan encontrar en internet y hacer aritmética.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
-
-&lt;p&gt;En este tutorial hemos visto cómo crear un agente básico. Falta explorar los demás tipos de agentes, así como las demás herramientas que LangChain provee para que podamos crear agentes más complejos y funcionales. Además, hay que probar con diferentes agentes y ver cómo se comportan.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="langchain" /><category term="gpt4" /><category term="agentes" /><summary type="html">Ya vimos como empezar a usar LangChain, avancemos a algo más interesante: crear agentes que puedan interactuar con el exterior.</summary></entry></feed>
+&lt;p&gt;Para mi, conviene más seguir principios más generales, que un acrónimo creado con nombres de principios rimbombantes, que muchas veces son tan ambiguos que nadie qué significan exactamente, y cuando tienen aplicaciones reales, son tan complicadas que no se conviene aplicar en la mayoría de los casos.&lt;/p&gt;</content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="dependency-inversion" /><category term="inversion-dependencias" /><summary type="html">Analicemos el principio de Inversión de Dependencias, el último principio de SOLID y veamos si conviene, además cuándo aplicarlo.</summary></entry></feed>

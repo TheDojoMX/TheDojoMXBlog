@@ -1,6 +1,6 @@
 ---
 title: "Sigue el ciclo de la creatividad"
-date: 2023-06-25
+date: 2023-06-27
 author: Héctor Patricio
 tags: creatividad resolución-de-problemas
 comments: true
@@ -17,7 +17,7 @@ Sin embargo, muchas veces pensamos que la creatividad como desarrolladores de so
 
 Tu creatividad generalmente se demuestra en la aplicación y mezcla de ideas para resolver problemas en nuevas situaciones.
 
-En el libro **"Mind Management, Not Time Management"** de David Kadavy, se habla de un ciclo de creatividad y en este artículo lo quiero aplicar a nuestro trabajo de desarrollo de software.
+En el libro [**"Mind Management, Not Time Management"** de David Kadavy](https://kadavy.medium.com/mind-management-not-time-management-25ebd3a58dc6), se habla de un ciclo de creatividad y en este artículo lo quiero aplicar a nuestro trabajo de desarrollo de software.
 
 ## El ciclo de la creatividad
 
@@ -65,4 +65,16 @@ David Kadavy dice en su libro que esto te permite olvidarte de las ideas que no 
 
 Esto también se puede aplicar de manera más sencilla.Por ejemplo, ¿tienes que diseñar una pieza de software y sientes que no tienes ni idea de por dónde empezar? Combinando las enseñanzas de Polya con el ciclo de la creatividad, lo primero es definir completamente el problema. Una vez que sientas que lo has entendido (muchas veces ayuda ponerlo por escrito e incluso pedir que alguien más lo revise).
 
-Después de esto, _sobre todo si no tienes una solución clara_, o propuestas que hacer, **busca alejarte lo más posible**.
+Después de esto, _sobre todo si no tienes una solución clara_, o propuestas que hacer, **busca alejarte lo más posible**. Es por eso que muchos profesionales veteranos y exitosos tienen actividades alternas, alejadas de la programación e incluso de la computadora. Cuando regreses a trabajar sobre el problema, es mucho más probable que tengas una solución.
+
+Se que esto suena mágico, pero nada te puede convencer más que la propia que ya tienes resolviendo problemas de otro estilo. Si esto no funciona, recuerda que puedes repetir el ciclo tantas veces como sea necesario.
+
+Claro, esto no asegura que la solución te llegará mágicamente siempre, pero con esto aumentamos las probabilidades de que tu naturaleza creativa trabaje por ti.
+
+## Conclusión
+
+Siempre que puedas, frente a problemas difíciles, aplica este ciclo: prepárate lo mejor que puedas, explorando soluciones, asegurándote de entender todas la variables del problema, escribiendo la definición del problema. Después **aléjate de problema**, así permitirás que se **incube**.
+
+Finalmente, regresa y trata de resolverlo de nuevo. Claro que después de esto tienes que ejecutar y verificar tu solución.
+
+Espero que esta información te sea útil y que la puedas aplicar en tu día a día.

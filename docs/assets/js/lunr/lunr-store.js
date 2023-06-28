@@ -748,4 +748,10 @@ var store = [{
         "tags": ["modelos-mentales","desarrollo-de-software"],
         "url": "/2023/06/22/modelos-mentales-para-desarrolladores-elementales.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686285709/nenad-novakovic-L2QB-rG5NM0-unsplash_icxsie.jpg"
+      },{
+        "title": "Sigue el ciclo de la creatividad",
+        "excerpt":"Hay algunas personas que creen que el desarrollo de software sólo trata de resolver problemas analíticamente, pero lo cierto es que para encontrar soluciones siempre se requiere de creatividad. Sin embargo, muchas veces pensamos que la creatividad como desarrolladores de software no es nuestro fuerte, pero no hay nada más...","categories": [],
+        "tags": ["creatividad","resolución-de-problemas"],
+        "url": "/2023/06/27/sigue-el-ciclo-de-la-creatividad.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685716414/lekoarts-fwVo1x7CktY-unsplash_stnjdh.jpg"
       }]
