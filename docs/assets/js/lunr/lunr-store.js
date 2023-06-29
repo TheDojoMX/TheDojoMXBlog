@@ -754,4 +754,10 @@ var store = [{
         "tags": ["creatividad","resolución-de-problemas"],
         "url": "/2023/06/27/sigue-el-ciclo-de-la-creatividad.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685716414/lekoarts-fwVo1x7CktY-unsplash_stnjdh.jpg"
+      },{
+        "title": "La matriz del conocimiento para devs",
+        "excerpt":"La epistemología es la rama de la filosofía que estudia la naturaleza del conocimiento. Una de sus principales tareas es la de estudiar cómo se adquiere el conocimiento y cómo se representa. La matriz de Rumsfeld es una herramienta que nos ayuda a representar el conocimiento y a identificar qué...","categories": [],
+        "tags": ["conocimiento","epistemología"],
+        "url": "/2023/06/29/la-matriz-del-conocimiento-para-devs.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1685716433/nathan-watson-Qerg85B7JDI-unsplash_sez9u3.jpg"
       }]
