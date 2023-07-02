@@ -1,8 +1,12 @@
+# Utility to move a files tonthe publisehd 
+# posts folder (_posts)
+
 from datetime import datetime
 
 import begin
 import re
 import os
+
 
 @begin.start(auto_convert=True)
 def main(file_name):
