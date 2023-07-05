@@ -13,13 +13,13 @@ header:
 
 Gran parte de nuestro trabajo consiste en transformar datos, almacenarlos y procesarlos. Las estructuras de datos y muchos algoritmos están pensados específicamente para eso. La programación funcional es una forma excelente de procesar datos, y en este artículo veremos una de sus herramientas más poderosas: **los lentes**.
 
-Los lentes, funciones que ayudan a extraer y a transformar datos te ayudarán a tratar con los datos de una forma concisa, elegante y a sentirte como un mago de la programación como un bonus.
+Los lentes, funciones que ayudan a extraer y a transformar datos de manera **inmutable**, te ayudarán a tratar con los datos de una forma concisa, elegante y a sentirte como un mago de la programación como un bonus. Pero antes hablemos un poco de la categoría a la que pertenecen los lentes: la óptica.
 
-## ¿Qué son los lentes?
+## ¿Qué es la óptica en la programación?
 
-Los lentes son funciones que se pueden componer entre ellas, para crear lentes más poderosos y específicos.
+La óptica es todo un campo de estudio que combina el estilo funcional, los combinadores, la teoría de categorías, etc. También se les llama "ópticas" a un conjunto de elementos que tienen la propiedad de poder combinarse, o **componerse** en el sentido matemático de la palabra, para crear elementos más complejos, tal como los elementos ópticos de la vida real.
 
-## ¿Qué es la óptica?
-
-
+Estas
 ## Conclusión
+
+Puede que esto no lo vayas a ocupar inmediatamente o todos los días y a todas horas, pero
