@@ -6,7 +6,7 @@ tags:
 comments: true
 excerpt: "Escribe aquí un buen resumen de tu artículo"
 header:
-  overlay_image: #image
+  overlay_image:
   teaser: #image
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
@@ -19,7 +19,18 @@ Los lentes, funciones que ayudan a extraer y a transformar datos de manera **inm
 
 La óptica es todo un campo de estudio que combina el estilo funcional, los combinadores, la teoría de categorías, etc. También se les llama "ópticas" a un conjunto de elementos que tienen la propiedad de poder combinarse, o **componerse** en el sentido matemático de la palabra, para crear elementos más complejos, tal como los elementos ópticos de la vida real.
 
-Estas
+## Recursos de aprendizaje
+
+El principal recurso que usé para crear este artículo fue el libro [Optics by Example](https://leanpub.com/optics-by-example) de Chris Penner.
+
+Aquí además hay unas charlas que puedes ver si quieres entender un poco más:
+
+1. [John Wiegley: Putting Lenses to Work](https://www.youtube.com/watch?v=QZy4Yml3LTY)
+2. [Lenses: Compositional Data Access and Manipulation](https://www.youtube.com/watch?v=k-QwBL9Dia0)
+3. [Lenses, Folds, and Traversals](https://www.youtube.com/watch?v=cefnmjtAolY)
+
+Si quieres profundizar todavía más el libro [Category Theory for Programmers](https://github.com/hmemcpy/milewski-ctfp-pdf)
+
 ## Conclusión
 
-Puede que esto no lo vayas a ocupar inmediatamente o todos los días y a todas horas, pero
+Puede que esto no lo vayas a ocupar inmediatamente o todos los días y a todas horas, pero conocerlo sin duda abrirá tus horizontes y te hará un mejor programador, con más herramientas y estilos de los cuáles tomar inspiración cuando las cosas se pongan difíciles.
