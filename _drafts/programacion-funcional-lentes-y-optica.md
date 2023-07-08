@@ -31,6 +31,8 @@ Aquí además hay unas charlas que puedes ver si quieres entender un poco más:
 
 Si quieres profundizar todavía más el libro [Category Theory for Programmers](https://github.com/hmemcpy/milewski-ctfp-pdf)
 
+
 ## Conclusión
 
 Puede que esto no lo vayas a ocupar inmediatamente o todos los días y a todas horas, pero conocerlo sin duda abrirá tus horizontes y te hará un mejor programador, con más herramientas y estilos de los cuáles tomar inspiración cuando las cosas se pongan difíciles.
+
