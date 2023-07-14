@@ -19,12 +19,11 @@ Los lentes, funciones que ayudan a extraer y a transformar datos de manera **inm
 
 La óptica es todo un campo de estudio que combina el estilo funcional, los combinadores, la teoría de categorías, etc. También se les llama "ópticas" a un conjunto de elementos que tienen la propiedad de poder combinarse, o **componerse** en el sentido matemático de la palabra, para crear elementos más complejos, tal como los elementos ópticos de la vida real.
 
-
 ## Ejemplos en Haskell
 
-## Ejemplos en Python
+Haskell tiene un paquete llamado `lens` que contiene un montónde funciones que son lentes y combinadores:
 
-## Ejemplos en JavaScript
+## Ejemplos en Python
 
 ## Recursos de aprendizaje
 

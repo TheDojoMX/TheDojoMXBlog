@@ -19,5 +19,3 @@ Está escrito por cinco profesionales de la documentación:
 El libro usa un ejemplo de una aplicación llamada **Corgi.ly**, una aplicación hipotética que permite traducir ladridos de perros en lenguaje humano. Se usa el ciclo de vida de esta aplicación como producto para enseñarte.
 
 Con respecto a la documentación se explica cómo hay que prepararla para el lanzamiento, cómo saber qué documentar, cómo obtener feedback y cómo mantenerla y evolucionarla.
-
-# Capítulos del libro
