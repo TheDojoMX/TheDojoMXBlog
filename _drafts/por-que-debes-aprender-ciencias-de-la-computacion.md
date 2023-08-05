@@ -17,9 +17,11 @@ realidad es algo que usas a diario, por lo que te conviene comprenderlo mejor.
 
 ## ¿Qué son las ciencias de la computación?
 
+Las ciencias de la computación estudian lo que una computadora puede hacer, junto con todos los temas relacionados con ello. En esta definición, una computadora tiene una definición muy amplia: es cualquier cosa que pueda realizar operaciones lógicas y matemáticas de manera automática.
+
+
 ## ¿Por qué son importantes?
 
 ## ¿Cómo aprender ciencias de la computación?
 
 ## Conclusión
-
