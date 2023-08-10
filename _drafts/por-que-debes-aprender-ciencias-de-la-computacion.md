@@ -17,14 +17,19 @@ realidad es algo que usas a diario, por lo que te conviene comprenderlo mejor.
 
 ## ¿Qué son las ciencias de la computación?
 
-Las ciencias de la computación estudian lo que una computadora puede hacer, junto con todos los temas relacionados con ello. En esta definición, una computadora tiene una definición muy amplia: es cualquier cosa que pueda realizar operaciones lógicas y matemáticas de manera automática.
+Las ciencia de la computación es un campo de estudio que busca entender los principios que rigen el fenómeno de la computación en general. Podemos definir la computación como el proceso de transformar información en algo útil, normalmente de manera dirigida.
+
+Las ciencias de la computación abarcan desde la definición y estudio conceptual de los principios que rigen la computación, hasta la implementación de algoritmos y estructuras de datos, junto con su ejecución en medios físicos.
+
+Como podrás ver, es un campo muy amplio, pero muy interesante y que puede darte una visión más amplia de lo que haces día a día.
 
 ## ¿Por qué son importantes?
 
-La mayoría de los problemas que resolvemos día a día han sido ya resueltos en el pasado, por personas usando sus conocimientos que podemos considerar como ciencias de la computación y puestos en práctica en forma de algoritmos y estructuras de datos, implementados en los lenguajes de programación que usamos.
+La mayoría de los problemas que resolvemos en nuestro trabajo diario ya han sido resueltos en el pasado, por personas usando conocimientos que podemos considerar como ciencias de la computación y puestos en práctica en forma de algoritmos y estructuras de datos, implementados en los lenguajes de programación que usamos.
 
-Pero, ¿qué pasa cuando quieres hacer algo que va más allá de lo que tu lenguaje o tu plataforma te ofrece por default?
+Pero, ¿qué pasa cuando quieres hacer algo que va más allá de lo que tu lenguaje o tu plataforma te ofrece por default? Aquí es donde entra el conocimiento de cómo funciona la computación de manera más profunda, los principios que rigen la computación, y las técnicas para resolver problemas.
 
+Si quieres hacer cosas que vayan más allá de lo común, las ciencias de la computación te pueden proporcionar las herramientas y habilidades para lograrlo de manera sostenible.
 
 ## ¿Cómo aprender ciencias de la computación?
 
