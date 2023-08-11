@@ -44,4 +44,9 @@ Si no sabes programar, es muy buena idea empezar con algo básico, pero que prof
 
 - [How to Design Programs](https://htdp.org/2021-5-4/Book/index.html)
 - [CS50](https://pll.harvard.edu/course/cs50-introduction-computer-science)
+
 ## Conclusión
+
+Aprender ciencias de la computación es una buena idea para tu carrera, independientemente de la etapa en la que te encuentres o de la rama de la programación a la que te dediques. Te ayudará a evitar la frustración de no saber por qué algo no funciona, o peor aún, que algo funcione y no saber por qué.
+
+Consulta los recursos que recomendamos en este artículo y empieza a aprender hoy mismo.
