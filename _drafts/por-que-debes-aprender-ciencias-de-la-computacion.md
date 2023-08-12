@@ -15,6 +15,8 @@ Las ciencias de la computación a veces son algo mítico para los desarrolladore
 sólo aquellos que trabajan en Big Tech o en la NASA pueden entender. Pero si programas, en
 realidad es algo que usas a diario, por lo que te conviene comprenderlo mejor.
 
+En este artículo te queremos motivar para que las estudies más a fondo. Pero empecemos por lo más básico.
+
 ## ¿Qué son las ciencias de la computación?
 
 Las ciencia de la computación es un campo de estudio que busca entender los principios que rigen el fenómeno de la computación en general. Podemos definir la computación como el proceso de transformar información en algo útil, normalmente de manera dirigida.
