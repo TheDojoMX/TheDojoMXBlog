@@ -760,4 +760,10 @@ var store = [{
         "tags": ["conocimiento","epistemología"],
         "url": "/2023/06/29/la-matriz-del-conocimiento-para-devs.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1685716433/nathan-watson-Qerg85B7JDI-unsplash_sez9u3.jpg"
+      },{
+        "title": "¿Por qué debes aprender ciencias de la computación?",
+        "excerpt":"Las ciencias de la computación a veces parecen algo mítico para los desarrolladores, algo que sólo aquellos que trabajan en Big Tech o en la NASA pueden entender. Pero si programas, es algo ya que usas a diario, por lo que te conviene comprenderlo mejor. Empecemos por el principio definiendo...","categories": [],
+        "tags": ["ciencias-de-la-computación","cs","computer-science"],
+        "url": "/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1691472017/max-duzij-qAjJk-un3BI-unsplash_nw7bwf.jpg"
       }]
