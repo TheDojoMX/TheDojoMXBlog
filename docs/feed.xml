@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-06-29T08:23:56-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">La matriz del conocimiento para devs</title><link href="https://blog.thedojo.mx/2023/06/29/la-matriz-del-conocimiento-para-devs.html" rel="alternate" type="text/html" title="La matriz del conocimiento para devs" /><published>2023-06-29T00:00:00-06:00</published><updated>2023-06-29T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/29/la-matriz-del-conocimiento-para-devs</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/29/la-matriz-del-conocimiento-para-devs.html"><![CDATA[<p>La epistemología es la rama de la filosofía que estudia la naturaleza del conocimiento. Una de sus principales tareas es la de estudiar cómo se adquiere el conocimiento y cómo se representa.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-08-12T23:12:36-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Por qué debes aprender ciencias de la computación?</title><link href="https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html" rel="alternate" type="text/html" title="¿Por qué debes aprender ciencias de la computación?" /><published>2023-08-12T00:00:00-06:00</published><updated>2023-08-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html"><![CDATA[<p>Las ciencias de la computación a veces parecen algo mítico para los desarrolladores, algo que sólo aquellos que trabajan en <em>Big Tech</em> o en la <em>NASA</em> pueden entender. Pero si programas, es algo <em><strong>ya que usas a diario</strong></em>, por lo que te conviene comprenderlo mejor.</p>
+
+<p>Empecemos por el principio definiendo qué son y cómo te pueden ayudar.</p>
+
+<h2 id="qué-son-las-ciencias-de-la-computación">¿Qué son las ciencias de la computación?</h2>
+
+<p>Las <strong>ciencias de la computación</strong> son un campo de estudio que busca entender los principios que rigen el <strong>fenómeno de la computación</strong> en general. Podemos definir la computación como el proceso de transformar información en algo útil, normalmente de manera dirigida.</p>
+
+<p>Las ciencias de la computación abarcan desde la definición y estudio conceptual de los principios que rigen la computación, hasta la implementación de algoritmos y estructuras de datos, junto con su <strong>ejecución en medios físicos</strong>. Esta última parte es la que más nos concierne como desarrolladores.</p>
+
+<p>Como podrás ver, es un campo muy amplio, pero muy interesante y que puede darte una visión más amplia de lo que haces día a día, pero que además te puede ayudar a comprender los componentes principales del entorno en el que tus programas corren y cómo funcionan.</p>
+
+<p>Algunos de los principios temas que trata son:</p>
+
+<ul>
+  <li>Lo que es posible calcular y lo que no</li>
+  <li>En qué medios se puede ejecutar un programa</li>
+  <li>Cuáles son formas eficientes y confiables de almacenar información</li>
+  <li>Cómo se puede representar la información</li>
+  <li>Cómo se puede transmitir la información sin que se corrompa</li>
+  <li>Cómo se puede transformar la información de manera eficiente</li>
+  <li>Cómo proteger la información</li>
+  <li>Cómo coordinar varias computadoras</li>
+</ul>
+
+<p>Cómo podrás ver, son problemas a los que nos enfrentamos día a día en nuestro trabajo de manera continua.</p>
+
+<h2 id="por-qué-son-importantes">¿Por qué son importantes?</h2>
+
+<p>La mayoría de los problemas que resolvemos en nuestro trabajo diario ya han sido resueltos en el pasado, por personas usando conocimientos que podemos considerar como ciencias de la computación y puestos en práctica en forma de algoritmos y estructuras de datos, implementados en los lenguajes de programación que usamos. También los frameworks y librerías que usamos son implementaciones de estos principios.</p>
+
+<p>Pero, ¿qué pasa cuando quieres hacer algo que va más allá de lo que tu lenguaje o tu plataforma te ofrece por default? Aquí es donde entra el conocimiento de cómo funciona la computación de manera más profunda, los principios que rigen la computación, y las técnicas para resolver problemas.</p>
+
+<p>Si quieres hacer cosas que vayan más allá de lo común, las ciencias de la computación te pueden proporcionar las herramientas y habilidades para lograrlo de manera sostenible.</p>
+
+<p>Saber ciencias de la computación puede hacer la diferencia entre primero, que seas capaz de crear eficazmente lo que te estás imaginando y segundo que sea exitoso y pueda seguir creciendo.</p>
+
+<h2 id="cómo-aprender-ciencias-de-la-computación">¿Cómo aprender ciencias de la computación?</h2>
+
+<p>La parte más importante de este artículo es cómo aprender ciencias de la computación. Si cursaste la universidad en una carrera relacionada con la computación, es probable que ya tengas las bases, o por lo menos la idea de los temas principales que puedes estudiar.</p>
+
+<p>Pero lo triste es que casi siempre se enseña de manera segregada (se tratan los temas por separado sin ver la relación entre ellos) y desactualizada (se presenta la visión de los años 70s o 80s).</p>
+
+<p>Por eso, independientemente de tu formación, te recomiendo que leas los siguientes libros:</p>
+
+<ul>
+  <li><a href="https://mitpress.mit.edu/books/computational-thinking">Computational Thinking</a>. En este libro tendrás una introducción a los temas principales del pensamiento computacional, algo completamente necesario para entender las ciencias de la computación.</li>
+  <li><a href="https://mitpress.mit.edu/9780262527125/great-principles-of-computing/">Great Principles of Computing</a>. Para mi este libro presenta la visión más moderna de las ciencias de la computación. En el artículo <a href="/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs.html">“Libros que todo desarrollador debería leer: ciencias de la computación”</a>, encontrarás más recomendaciones.</li>
+</ul>
+
+<p>Si no sabes nada de ciencias de la computación puede empezar con algo más ligero como:</p>
+
+<ul>
+  <li><a href="https://www.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020">Computer Science Distilled</a></li>
+  <li><a href="https://pll.harvard.edu/course/cs50-introduction-computer-science">CS50</a></li>
+</ul>
+
+<p>Si tienes alguna otra recomendación, no dudes en ponerla en los comentarios.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Aprender ciencias de la computación es una buena idea para tu carrera, independientemente de la etapa en la que te encuentres o de la rama de la programación a la que te dediques. Te ayudará a evitar la frustración de no saber por qué algo no funciona, o peor aún, que funcione y no saber por qué.</p>
+
+<p>Consulta los recursos que recomendamos en este artículo y empieza a aprender hoy mismo. Además en este blog encontrarás muchos artículos relacionados con las ciencias de la computación, así que no dudes en explorarlos.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="ciencias-de-la-computación" /><category term="cs" /><category term="computer-science" /><summary type="html"><![CDATA[Las ciencias de la computación te ayudarán a ser mejor desarrollador, independientemente de la rama de la programación a la que te dediques. Veamos como.]]></summary></entry><entry><title type="html">La matriz del conocimiento para devs</title><link href="https://blog.thedojo.mx/2023/06/29/la-matriz-del-conocimiento-para-devs.html" rel="alternate" type="text/html" title="La matriz del conocimiento para devs" /><published>2023-06-29T00:00:00-06:00</published><updated>2023-06-29T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/29/la-matriz-del-conocimiento-para-devs</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/29/la-matriz-del-conocimiento-para-devs.html"><![CDATA[<p>La epistemología es la rama de la filosofía que estudia la naturaleza del conocimiento. Una de sus principales tareas es la de estudiar cómo se adquiere el conocimiento y cómo se representa.</p>
 
 <p>La <strong>matriz de Rumsfeld</strong> es una herramienta que nos ayuda a representar el conocimiento y a identificar qué conocimiento nos falta para tomar decisiones.</p>
 
@@ -996,160 +1059,4 @@ en Google, uno de los más grandes creadores de software de la historia. El libr
       <p>Algunos de los links son links de afiliado de Amazon, por lo que puede que me lleve una pequeña comisión si compras el libro a través de ellos. Esto no afecta el precio que pagas por el libro además de que no afecta para NADA mi recomendación. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="desarrollo-de-software" /><category term="cs" /><category term="ciencias-computacion" /><summary type="html"><![CDATA[En este artículo hablaremos de los libros de ciencias de la computación fundamentales avanzar en tu carrera y cada vez hacer mejor tu trabajo.]]></summary></entry><entry><title type="html">¿Por qué deberías leer Data and Reality?</title><link href="https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality.html" rel="alternate" type="text/html" title="¿Por qué deberías leer Data and Reality?" /><published>2023-05-06T00:00:00-06:00</published><updated>2023-05-06T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality</id><content type="html" xml:base="https://blog.thedojo.mx/2023/05/06/por-que-deberias-leer-data-and-reality.html"><![CDATA[<p>Gran parte de nuestro trabajo como desarrolladores consiste en <strong>modelar entidades</strong> del mundo real en el código, transformarlas, guardarlas y recuperarlas. Estas entidades se pasan entre diferentes procesos para producir un resultado. A veces también nos tenemos que inventar entidades para representar conceptos abstractos que no existen físicamente.</p>
-
-<p><strong>Modelar datos</strong> es una de las habilidades <strong>fundamentales</strong> cuando estamos desarrollando.Cuando estás programando un algoritmo, estás modelando un <em>procedimiento</em> de la vida real en código. Este proceso normalmente incluye <strong>datos</strong>, que son representaciones de <em>entidades</em> del mundo real.</p>
-
-<p>Por lo anterior, cualquier cosa que puedas aprender sobre modelado de datos, te ayudará directamente en tu carrera como desarrollador. En este artículo hablaremos de un libro muy especial que te puede ayudar a ser mejor en esta área, independientemente del nivel en el que te encuentres en tu carrera. Y si después de leerlo lo meditas más profundamente, puede que te ayude a desarrollar una forma de pensar más adecuada a los problemas que queremos resolver en la actualidad.</p>
-
-<p><strong>Data and Reality</strong> trata sobre modelado de datos, escrito po William Kent, alguien con mucha experiencia en el tema. El libro tiene tres ediciones la primera es de 1978, la segunda (una actualización) es de 2000 y la tercera, después que Kent murió, es de 2012.</p>
-
-<p>La mejor de todas es segunda edición, ya que la tercera se podría considerar un libro completamente diferente, recortado y con comentarios de <a href="https://technicspub.com/steve-hoberman/">Steve Hoberman</a>, otro modelador de datos pero siento que con un enfoque bastante diferente al de Kent.</p>
-
-<p>Hablemos de los temas principales del libro y por qué te conviene leerlo. Pero antes, veamos algo de lo que se habla en el prefacio de la edición de 2012 que me parece muy relevante.</p>
-
-<h2 id="buscando-las-respuestas-donde-parece-más-sencillo">Buscando las respuestas donde parece más sencillo</h2>
-
-<p>Hay muchas cosas difíciles de resolver en el desarrollo de software y parece que siempre estamos buscando la respuesta en el lugar que parece más obvio o en el que es más fácil buscar, en lugar de donde es más probable que encontremos las respuestas.</p>
-
-<p>El ejemplo que utilizan en el libro para explicarlo y que me parece acertado es una broma acerca de un borracho que pierde sus llaves y se la pasa toda la noche buscando bajo una farola. Cuando alguien le pregunta por qué no busca en otro lado, <strong>el borracho responde que es porque AHÍ HAY MÁS LUZ.</strong></p>
-
-<p>En el desarrollo de software podría parecer que a veces hacemos exactamente lo mismo. Para buscar la solución a un problema siempre nos vamos a los mismos lados porque es donde nos sentimos cómodos o porque <strong>SIEMPRE SE HA BUSCADO AHÍ</strong>. Por ejemplo, nos centramos en la tecnología, en las plataformas o en los lenguajes. Pero es muy probable que el problema no esté ahí, sino en lugares más profundos.</p>
-
-<p>Es por eso que este libro se enfoca en cuestiones profundas del modelado de datos. No en los lugares comunes, ni siquiera en hablar de cómo hacerlo, sino en preguntas que te llevaran a pensar cosas de las que se habla poco y que probablemente modifiquen tu visión del mundo y tu forma de trabajar <strong>permanentemente</strong>.</p>
-
-<p>La intención de este artículo es dejarte con más dudas, pero llevarte a lugares en los que tal ve no habías estado antes, tal como avanzar a un nuevo lugar en el mapa en un juego de video.</p>
-
-<h2 id="cuestiones-principales">Cuestiones principales</h2>
-
-<p>Hablemos de los conceptos principales de representación de información en los sistemas electrónicos.</p>
-
-<h3 id="entidades">Entidades</h3>
-
-<p>Cuando guardamos cosas en una base de datos o las representamos en código, casi siempre nos referimos a ellas como <strong>entidades</strong>.</p>
-
-<p>Por eso el libro empieza cuestionando, <strong>¿qué es una entidad?</strong></p>
-
-<p>La primera respuesta es que una entidad “es un <strong><em>estado</em></strong> de la mente”. <strong>¿Cómo?</strong> Está bastante rara esa definición. Esta frase significa que una <strong>entidad</strong> más allá de algo que exista en la <strong>realidad</strong> como algo identificable e indivisible, algo que tiene límites fijos, es algo a lo que nosotros le damos significado, y que nosotros delimitamos o entendemos en ciertos contextos. Esta delimitación normalmente no es singular, tiene que ser compartida por un grupo de personas para que tenga sentido.</p>
-
-<p>Pongamos algunos ejemplos para entender eso. La leyenda del barco de <strong>Teseo</strong> relata que cuando él regresó de Creta, donde había matado al Minotauro, el pueblo de Atenas le rindió honores y conservó su barco en lo alto de una colina como un monumento para recordar su hazaña.</p>
-
-<p>Con el tiempo, el barco se fue deteriorando y se le fueron cambiando las partes, hasta que ya no quedó ninguna parte original.</p>
-
-<p>La pregunta es: ¿sigue siendo el <em>“Barco de Teseo”</em>? ¿Es el mismo barco si no tiene ninguna parte original? ¿Es el mismo barco si se le cambia una sola parte, o muy pocas?</p>
-
-<p>Esta historia sirve para ilustrar que las entidades como objetos inmutables y permanentes no existen en la vida real, sino que son cosas que en nuestra mente delimitamos y que, junto con otras personas, les asignamos una identidad y un significado. El <em>“Barco de Teseo”</em> sigue siendo el mismo mientras nosotros lo consideremos así.</p>
-
-<p>Exactamente así se comportan las entidades que como desarrolladores modelamos en nuestros programas. No son cosas permanentes, a veces ni siquiera cosas completamente definidas, sino que nosotros les asignamos límites y <strong>significado</strong>.</p>
-
-<p>Las personas, los objetos e incluso los conceptos están en constante evolución y parte de nuestro trabajo es capturar esa evolución en nuestros sistemas.</p>
-
-<h2 id="identidad-y-cambio">Identidad y cambio</h2>
-
-<p>Cuando queremos registrar algo en una computadora, normalmente necesitamos una forma de referirnos a ese registro para después poder recuperarlo. Esto que usamos para referirnos a las entidades se llama <strong>identificador</strong>.</p>
-
-<p>Un identificador es un elemento inmutable y único entre todas las entidades de nuestro sistemas. Aquí nos podemos encontrar con varios casos:</p>
-
-<ul>
-  <li>La entidad no tiene nada único por lo que podamos referirnos a ella (elementos que se repiten, por ejemplo libros producidos en serie)</li>
-  <li>El conjunto de todos los <em>atributos</em> de la entidad puede constituir una identidad</li>
-  <li>Las entidades tienen varios atributos únicos y hay que escoger uno</li>
-</ul>
-
-<p>Pensar en la naturaleza de nuestro problema, en los términos de arriba nos puede llevar a la solución de seleccionar un elemento identificador. Piensa en el primer caso, por ejemplo: cuando algo no tiene identificador natural, tendemos a asignar un identificador único arbitrario a la entidad cuando la metemos en el sistema.</p>
-
-<p>Por ejemplo, es un práctica muy común asignar identificadores numéricos incrementales. La primera entidad registrada del tipo es la 1, la segunda es la 2, etc. También se pueden usar los UUIDs, que son identificadores únicos generados aleatoriamente, y que por lo general evitan problemas como el de permitir que alguien adivine el identificador de otra entidad.</p>
-
-<p>Pero si la entidad tiene un identificador único inmutable, ¿por qué no usarlo? <strong>¿Puede ser una solución más <em>natural</em>?</strong></p>
-
-<p>¿Qué pasa cuando lo que creíamos inmutable cambia? Eso es algo que normalmente rompe lo que hicimos y tenemos que idear formas de componerlo. Todo este tipo de preguntas pensadas por adelantado te pueden llevar a crear sistemas de software que soporten mejor el paso del tiempo y te den menos problemas cuando estén funcionando en producción.</p>
-
-<h2 id="relaciones">Relaciones</h2>
-
-<p>Will Kent afirma que las relaciones son el tejido de la información que representamos en nuestros sistemas. Se puede entender una relación como una asociación o una conexión entre mínimo dos entidades.</p>
-
-<p>Las relaciones tienen varias características que las pueden definir:</p>
-
-<ul>
-  <li>Grado: El número de entidades de diferentes tipos que participan en la relación</li>
-  <li>Dominios: El conjunto de valores que son válidos en cada lado de la relación</li>
-  <li>Rol: El papel que juega cada entidad en la relación</li>
-  <li>Complejidad (cardinalidad): el número de entidades de cada tipo que participan en la relación</li>
-</ul>
-
-<p>Aquí en las relaciones y su representación empezan a surgir diferentes preguntas y problemas ya de definición, por ejmplo: ¿cómo identificas una relación? Algunas relaciones sólo son significativas con un contexto, ¿cómo lo representas? ¿Deberían ser las relaciones entidades también?</p>
-
-<p>Sin duda, leer este capítulo del libro te ayudará a plantearte todas estas cuestiones y a entender mejor cómo representar la información en tus sistemas.</p>
-
-<h3 id="atributos">Atributos</h3>
-
-<p>Los atributos son los datos que “pertenecen” a una entidad. Forman el conjunto de información que tenemos sobre esta.</p>
-
-<p>Los atributos en el mundo real pueden ser infinitos, pero a nosotros normalmente sólo nos interesa un subconjunto de ellos. Data and Reality propone que los atributos son un conjunto de tres elementos:</p>
-
-<ul>
-  <li>El sujeto, la entidad a la que pertenece el atributo</li>
-  <li>El objeto, el valor del atributo</li>
-  <li>La <em>relación</em>, que es por lo que el sujeto y el objeto están conectados</li>
-</ul>
-
-<p>Supongamos por ejemplo el atributo <code class="language-plaintext highlighter-rouge">nombre</code> de una persona. “Él se llama Héctor”: El sujeto es la persona a la que nos estamos refiriendo, el objeto es el nombre “Héctor” y la relación es el hecho de que la persona se llama así.</p>
-
-<p>Si puedes ver, esto nos empieza a meter en problemas de definición. Son realmente los atributos, ¿relaciones?</p>
-
-<h2 id="símbolos-y-valores">Símbolos y valores</h2>
-
-<p>Otra cosa que hay que aprender a distinguir cuando estamos modelando entidades y registrándolas es la diferencia entre el valor y el <strong>símbolo</strong>. Cuando ponemos un valor para representarlo en una computadora usamos una representación, esto es el símbolo. El valor es la entidad que estamos representando.</p>
-
-<p>Por ejemplo, hablando de atributos podemos querer expresar la altura de una persona. Esta altura se puede expresar como “172cm”, “1.72m”, “5’8’’”, <code class="language-plaintext highlighter-rouge">172</code> (como entero) etc. Todos estos son símbolos que representan el valor de la altura de la persona. Lo que en realidad queremos expresar es la distancia que existe entre dos puntos.</p>
-
-<h2 id="categorías">Categorías</h2>
-
-<p>Cuando guardamos información en los sistemas informáticos normalmente queremos organizarla. Las categorías son una forma de hacerlo, y la manera intuitiva de entenderlo parece suficiente.</p>
-
-<p>Sin embargo, la creación de categorías es algo que también se debe pensar muy bien, ya que esto repercutirá en la forma en que guardamos información y en cómo la recuperamos.</p>
-
-<p>Algunos de los problemas en los que tienes que pensar:</p>
-
-<ul>
-  <li>¿Qué pasa cuando una entidad puede pertenecer a más de una categoría?</li>
-  <li>¿Qué clasificación es más conveniente para el problema que estás resolviendo?</li>
-</ul>
-
-<p>Las respuestas a estas preguntas son completamente arbitrarias y finalmente dependen del problema y del campo para el que estés programando.</p>
-<h2 id="filosofía-del-conocimiento">Filosofía del conocimiento</h2>
-
-<p>Finalicemos este resumen hablando de la cosa más profunda o analítica que el libro trata: la naturaleza del conocimiento mismo. Hay varias posturas con respecto a “la realidad”. Las dos extremas son:</p>
-
-<ol>
-  <li>No existe una realidad objetiva, todo es subjetivo, y los seres humanos construyen esta realidad con su mente.</li>
-  <li>Existe una realidad objetiva, y los seres humanos la perciben y la pueden conocer siempre.</li>
-</ol>
-
-<p>En el libro se habla sobre una postura intermedia, y que me parece completamente razonable: es que existe una realidad objetiva, pero que los seres humanos <strong>no la pueden conocer completamente</strong>, la accedemos a través de la percepción, pero como en mucha posturas filosóficas, la percepción es imperfecta.</p>
-
-<h3 id="qué-es-un-modelo">¿Qué es un modelo?</h3>
-
-<p>De esto ya hemos hablado repetidas veces en este blog, pero vamos a decirlo una vez más: uno modelo es una abstracción, una representación simplificada de la realidad.</p>
-
-<p>Lo que el análisis de este libro nos hace entender es que esa <strong>representación simplificada</strong> tiene más que ver con NUESTRA VISIÓN y NUESTROS INTERESES que con una visión objetiva de la realidad.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>La conclusión más grande que me gustaría sacar de este libro es esta:</p>
-
-<p><strong>La realidad es compleja, confusa y no tiene los límites que nos imaginamos</strong>. Todo el orden que intentamos poner en nuestros sistemas es en realidad <strong>uno de los múltiples</strong> órdenes posibles que podemos ponerle a la realidad, es un punto de vista, y eso no quiere decir que sea el mejor o el más correcto, o que los demás son incorrectos. La representación de la realidad en los sistemas de información dependerá siempre de para quién lo estemos haciendo, y del uso que se le vaya a dar.</p>
-
-<p>Hablando del dominio de modelado de datos, no hay una distinción clara entre lo que es un atributo, una categoría y una relación, nosotros definimos cuándo un aspecto del mundo real se comporta como uno u otro.</p>
-
-<p>Las entidades, su naturaleza y permanencia, están completamente definidos por el uso que les vayamos a dar.</p>
-
-<p>En resumen: <strong>gran parte de lo que creemos que es una representación objetiva, en realidad es una representación subjetiva y arbitraria</strong>. Pero eso no es malo, es como las cosas funcionan y tenerlo en cuenta nos ayudará a tener discusiones más productivas y a entender mejor los sistemas que construimos.</p>
-
-<p>Algunas representaciones son más útiles que otras desde el punto de vista de otras personas, así que esforzarnos por entender lo que otros están viendo es muy buena idea.</p>
-
-<h3 id="qué-sigue">¿Qué sigue?</h3>
-
-<p>Pensar en todas estas cuestiones te ayudará a notar que no todo lo que tiene que ver con la tecnología y más importante aún: <strong>no siempre hay una respuesta correcta</strong>. Sigue flexibilizando tu pensamiento y abriéndolo, sigue pensando más allá de lo establecido y no te centres en la tecnología.</p>
-
-<p>No seas como el borracho que busca las llaves perdidas bajo el poste porque ahí hay más luz, busca las llaves donde sea más probable encontrarlas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="modelado-de-datos" /><category term="filosofía" /><category term="desarrollo-de-software" /><category term="data-and-reality" /><summary type="html"><![CDATA[Hablemos de Data and Reality, un libro que te ayudará a ser mejor desarrollador de software, porque se va a las raíces de los problemas que resolvemos a diario.]]></summary></entry></feed>
+</div>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="desarrollo-de-software" /><category term="cs" /><category term="ciencias-computacion" /><summary type="html"><![CDATA[En este artículo hablaremos de los libros de ciencias de la computación fundamentales avanzar en tu carrera y cada vez hacer mejor tu trabajo.]]></summary></entry></feed>
