@@ -13,11 +13,11 @@ header:
 
 La filosofía es una de las ramas más importantes del saber humano y, para mi, es la fundación de todas las demás ramas del conocimiento y de las ciencias.
 
-Empecemos hablando de qué es la filosofía y luego combinandiola con la computación.
+Empecemos primero hablando de qué es la filosofía y luego combinándola con la computación.
 
 ## ¿Qué es la filosofía?
 
-La filosofía busca responder las preguntas fundamentales de la existencia humana. Casi ninguna de las preguntas importantes se ha podido responder de manera definitiva, pero lo interesante que nos puede ofrecer la filosofía es una análisis profundo de las posibles respuestas y de las implicaciones de cada una de ellas.
+La filosofía busca responder las preguntas fundamentales de la existencia humana. Casi ninguna de las preguntas importantes se ha podido responder de manera definitiva, pero lo interesante que nos puede ofrecer la filosofía es una análisis profundo de las posibles respuestas y de las implicaciones de cada una de ellas. Así, se ha generado mucho conocimiento que nos ayuda a entender mejor el mundo y a nosotros mismos.
 
 Pongamos un ejemplo. Una de las grandes preguntas que muchos filósofos han intentado responder es "¿Cuál es la mejor forma de vivir?"
 
@@ -30,3 +30,5 @@ Pongamos un ejemplo. Una de las grandes preguntas que muchos filósofos han inte
 ## Conclusión
 
 Aprender filosofía de la computación es una muy buena idea para tu carrera.
+
+
