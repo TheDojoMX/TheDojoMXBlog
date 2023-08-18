@@ -2,7 +2,7 @@
 title: "¿Qué es la filosofía de la computación?"
 date: 2023-08-13
 author: Héctor Patricio
-tags:
+tags: computación filosofía filosofía-de-la-computación
 comments: true
 excerpt: "Escribe aquí un buen resumen de tu artículo"
 header:
