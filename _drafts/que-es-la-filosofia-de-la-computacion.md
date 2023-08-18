@@ -25,6 +25,8 @@ Pongamos un ejemplo. Una de las grandes preguntas que muchos filósofos han inte
 
 ## ¿Por qué es importante la filosofía de la computación?
 
+La filosofía de la computación o de ciencias de la computación te puede ayudar dándote los fundamentos
+
 ## ¿Cómo aprender filosofía de la computación?
 
 Recomiendo mucho empezar por lo básico y para esto me ha servido el canal de [Camilo Chacón Sartori](https://camilochs.github.io/web/) en [YouTube](https://www.youtube.com/@camilo_chacon_s), en el que tiene una serie en la que te [introduce a las partes de la filosofía de la computación](https://www.youtube.com/watch?v=eVxR8io5xTg&list=PLbA-PGKWV-JhWcaZ0HzHFIFbnVakY9t1o).
