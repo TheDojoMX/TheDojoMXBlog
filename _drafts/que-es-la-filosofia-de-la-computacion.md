@@ -39,4 +39,4 @@ Y finalmente, para profundizar todavía más, tenemos el libro del mismo autor, 
 
 ## Conclusión
 
-Aprender filosofía de la computación es una muy buena idea para tu carrera.
+Aprender filosofía de la computación es una muy buena idea para tu carrera. Te ayudará a plantearte y a _intentar_ resolver las preguntas importantes, en el camino te ayudará.

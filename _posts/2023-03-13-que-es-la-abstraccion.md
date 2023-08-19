@@ -19,7 +19,7 @@ Empecemos por las mismísimas bases.
 
 ## Etimología: ¿de dónde viene la palabra abstracción?
 
-**"Abstracción"** viene del latín _abstrahere_, que tiene dos partes principales: **abs** que significa "fuera de", "sin", "a distancia" y **trahere** que significa "tirar". La palabra _abstrahere_ significa literalmente "tirar fuera".
+**"Abstracción"** viene del latín _abstrahere_, que tiene dos partes principales: **abs** que significa "fuera de", "sin" o "a distancia" y **trahere** que significa "tirar". La palabra _abstrahere_ significa literalmente algo como "tirar fuera".
 
 La palabra _abstrahere_ se usa en el sentido de "separar" o "extraer" en el contexto de la filosofía, la matemática y la física. En el contexto de las matemáticas, la abstracción es el proceso de separar un concepto de sus propiedades físicas.
 
@@ -30,6 +30,7 @@ A veces entendemos el proceso de abstraer como la capacidad de generalización. 
 Como **resumen**: abstraer es "tirar fuera", sacar las características que definen algo de su contexto concreto y ser capaz de entender ese concepto de manera general. Esta capacidad nos permite comprender el mundo y movernos en él.
 
 Algunos definen las abstracciones como lo contrario: quitarle todo lo que no es necesario a un concepto para 1) resaltar y hacer **visible** lo que importa y 2) Ocultar detalles que _no deben_ ser tomados en cuenta.
+
 
 A estas abstracciones a veces las llamamos _**modelos**_. **¿Te suena?**
 
