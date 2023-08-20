@@ -2,26 +2,28 @@
 title: "Programación funcional: lentes y óptica"
 date: 2023-07-01
 author: Héctor Patricio
-tags:
+tags: óptica fp programación-funcional lentes
 comments: true
-excerpt: "Escribe aquí un buen resumen de tu artículo"
+excerpt: "La programación funcional ofrece herramientas para enfrentarte a problemas complejos, como los lentes y la óptica en general, veamos para qué sirven."
 header:
-  overlay_image:
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_1400/v1692557683/james-bold--PcZLgzmoIY-unsplash_iyikgh.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_400/v1692557683/james-bold--PcZLgzmoIY-unsplash_iyikgh.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Gran parte de nuestro trabajo consiste en transformar datos, almacenarlos y procesarlos. Las estructuras de datos y muchos algoritmos están pensados específicamente para eso. La programación funcional es una forma excelente de procesar datos, y en este artículo veremos una de sus herramientas más poderosas: **los lentes**.
+Gran parte de nuestro trabajo consiste en transformar datos, almacenarlos y procesarlos. Las estructuras de datos y muchos algoritmos están pensados específicamente para eso, para hacer eficiente y conveniente esta transformación.
 
-Los lentes, funciones que ayudan a extraer y a transformar datos de manera **inmutable**, te ayudarán a tratar con los datos de una forma concisa, elegante y a sentirte como un mago de la programación como un bonus. Pero antes hablemos un poco de la categoría a la que pertenecen los lentes: la óptica.
+La programación funcional tiene herramientas excelentes de procesar datos, y en este artículo veremos algunas muy poderosas: **los lentes**.
 
-## ¿Qué es la óptica en la programación?
+Los lentes son funciones que ayudan a extraer y a transformar datos de manera **inmutable** y te ayudarán a tratar con los datos de una forma concisa, elegante y segura. Antes de empezar a hablar de los lentes hablemos un poco de la categoría a la que pertenecen: **la óptica**.
 
-La óptica es todo un campo de estudio que combina el estilo funcional, los combinadores, la teoría de categorías, etc. También se les llama "ópticas" a un conjunto de elementos que tienen la propiedad de poder combinarse, o **componerse** en el sentido matemático de la palabra, para crear elementos más complejos, tal como los elementos ópticos de la vida real.
+## ¿Qué es la óptica en la programación funcional?
+
+La óptica es todo un campo de estudio que combina el estilo funcional, los combinadores, la teoría de categorías y otras cosas interesantes. También se les llama "ópticas" a un conjunto de elementos que tienen la propiedad de poder combinarse, o **componerse** en el sentido matemático de la palabra, para crear elementos más complejos, tal como los elementos ópticos de la vida real.
 
 ## Ejemplos en Haskell
 
-Haskell tiene un paquete llamado `lens` que contiene un montónde funciones que son lentes y combinadores:
+Haskell tiene un paquete llamado `lens` que contiene un montón de funciones que son lentes y combinadores:
 
 ## Ejemplos en Python
 
@@ -37,8 +39,6 @@ Aquí además hay unas charlas que puedes ver si quieres entender un poco más:
 
 Si quieres profundizar todavía más el libro [Category Theory for Programmers](https://github.com/hmemcpy/milewski-ctfp-pdf)
 
-
 ## Conclusión
 
 Puede que esto no lo vayas a ocupar inmediatamente o todos los días y a todas horas, pero conocerlo sin duda abrirá tus horizontes y te hará un mejor programador, con más herramientas y estilos de los cuáles tomar inspiración cuando las cosas se pongan difíciles.
-
