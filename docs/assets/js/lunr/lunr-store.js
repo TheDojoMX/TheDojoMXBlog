@@ -766,4 +766,10 @@ var store = [{
         "tags": ["ciencias-de-la-computación","cs","computer-science"],
         "url": "/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1691472017/max-duzij-qAjJk-un3BI-unsplash_nw7bwf.jpg"
+      },{
+        "title": "¿Qué es la filosofía de la computación?",
+        "excerpt":"La filosofía es una de las ramas más importantes del saber humano y, para mi, es la fundación de todas las demás ramas del conocimiento y de las ciencias. En este artículo hablaremos de la filosofía de la computación y cómo esta te puede ayudar como programador o desarrollador de...","categories": [],
+        "tags": ["computación","filosofía","filosofía-de-la-computación"],
+        "url": "/2023/08/19/que-es-la-filosofia-de-la-computacion.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1692327344/iain-kennedy-X_uSAnhTO2M-unsplash_mdvosz.jpg"
       }]

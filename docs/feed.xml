@@ -1,4 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-08-12T23:12:36-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Por qué debes aprender ciencias de la computación?</title><link href="https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html" rel="alternate" type="text/html" title="¿Por qué debes aprender ciencias de la computación?" /><published>2023-08-12T00:00:00-06:00</published><updated>2023-08-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html"><![CDATA[<p>Las ciencias de la computación a veces parecen algo mítico para los desarrolladores, algo que sólo aquellos que trabajan en <em>Big Tech</em> o en la <em>NASA</em> pueden entender. Pero si programas, es algo <em><strong>ya que usas a diario</strong></em>, por lo que te conviene comprenderlo mejor.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-08-19T23:41:49-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es la filosofía de la computación?</title><link href="https://blog.thedojo.mx/2023/08/19/que-es-la-filosofia-de-la-computacion.html" rel="alternate" type="text/html" title="¿Qué es la filosofía de la computación?" /><published>2023-08-19T00:00:00-06:00</published><updated>2023-08-19T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/08/19/que-es-la-filosofia-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/08/19/que-es-la-filosofia-de-la-computacion.html"><![CDATA[<p>La filosofía es una de las ramas más importantes del saber humano y, para mi, es la fundación de todas las demás ramas del conocimiento y de las ciencias. En este artículo hablaremos de la filosofía de la computación y cómo esta te puede ayudar como programador o desarrollador de software.</p>
+
+<p>Empecemos primero hablando de qué es la filosofía y luego combinándola con la computación.</p>
+
+<h2 id="qué-es-la-filosofía">¿Qué es la filosofía?</h2>
+
+<p>La filosofía busca <strong>responder las preguntas fundamentales de la existencia humana</strong>. Casi ninguna de las preguntas importantes se ha podido responder de manera definitiva, pero lo interesante que nos puede ofrecer la filosofía es una análisis profundo de las posibles respuestas y de las implicaciones de cada una de ellas. Así, se ha generado mucho conocimiento que nos ayuda a entender mejor el mundo y a nosotros mismos.</p>
+
+<p>Además, la filosofía ha desarrollado métodos que nos pueden ayudar a examinar temas difíciles de manera efectiva.</p>
+
+<p>Pongamos un ejemplo. Una de las grandes preguntas que muchos filósofos han intentado responder es “¿Cuál es la mejor forma de vivir?”. No hay una respuesta definitiva, pero en la exploración se han encontrado y propuesto muchas prácticas que mejoran la vida humana y que sirven en diferentes situaciones.</p>
+
+<p>Además han surgido modelos de pensamiento que consisten en una serie de ideas y prácticas que pueden darle sentido a una vida bien practicadas: Estoicismo, Epicureismo, etc. Combinadas pueden servirte para mucho para analizar una situación en la vida o para encontrar una forma de actuar.</p>
+
+<p>En resumen: la filosofía te ayudará a <em>pensar mejor</em> sobre cuestiones importantes en la vida y en las diferentes áreas de importancia. <strong>¿Cómo se puede relacionar esto con la computación?</strong></p>
+
+<h2 id="qué-es-la-filosofía-de-la-computación">¿Qué es la filosofía de la computación?</h2>
+
+<p>La filosofía de la computación es lo que acabamos de describir pero aplicado a las preguntas que le conciernen a la computación. Preguntas fundamentales para todos los que tenemos tratos profundos con las computadoras:</p>
+
+<ul>
+  <li>¿Qué es la computación?</li>
+  <li>¿Qué es una computadora?</li>
+  <li>¿Qué es un programa?</li>
+  <li>¿Qué es computable?</li>
+  <li>¿Qué es programar?</li>
+  <li>¿Qué es un lenguaje de programación?</li>
+  <li>¿Cómo puedo crear programas útiles?</li>
+</ul>
+
+<p>Estas preguntas parecen tener un respuesta concreta pero hay algunos casos en los que podemos dudar de los casos en los que se cumple. Pero la filosofía no se queda allí, tiene por lo menos las siguientes áreas:</p>
+
+<ul>
+  <li><strong>La ontología</strong>. En la que se preguntan cosas como las que acabamos de ver, que tienen que ver con la existencia y la definición de las cosas</li>
+  <li><strong>La semántica</strong>. El significado de los términos que usamos</li>
+  <li><strong>La axiología</strong>. Analiza los valores que fundamentan la computación y los eventos relacionados con estos.</li>
+  <li><strong>La epistemología</strong>. Es el análisis del conocimiento y las formas de obtenerlo: ¿cómo podemos conocer más acerca de la computación?</li>
+  <li><strong>La metodología</strong>. Qué métodos podemos seguir para practicar la computación y la obtención de conocimiento de esta de la mejor manera.</li>
+  <li><strong>La estética</strong>. Analiza la percepción que tenemos de los artefactos computacionales y los conceptos relacionados con encontrar agradable o de valor esa percepción: orden, belleza, significado, etc.</li>
+  <li><strong>La ética</strong>. Está basada en la axiología, es decir, en la definición de lo que consideramos de valor y qué acciones o prácticas nos acercan o alejan de lo que consideramos que puede ser “bueno” como resultado de la computación.</li>
+</ul>
+
+<p>Como puedes ver, es amplia, pero cada una de las áreas te puede ayudar en temas específicos en tu práctica diaria.</p>
+
+<p>A diferencia de la filosofía común, la filosofía de la computación tiene mucho menos de existencia y a penas hay unos cuántos escritos y personas que la han practicado en los últimos años, así que si te introduces estarás en un campo en que tendrás que aplicar las técnicas filosóficas a esta área específica, y es probable que te lleves muchas sorpresas.</p>
+
+<h2 id="por-qué-es-importante-la-filosofía-de-la-computación">¿Por qué es importante la filosofía de la computación?</h2>
+
+<p>La filosofía de la computación o de ciencias de la computación te puede ayudar dándote los fundamentos que necesitas sobre todo para enfrentarte a las cuestiones difíciles de tu trabajo.</p>
+
+<p>Tener fundamentos para definir lo que quieres lograr, dónde están los límites de tu trabajo y qué es posible, te puede hacer mucho más disfrutable tu día a día.</p>
+
+<p>No es algo sin lo que puedas trabajar, pero mientras más sepas de esta área, sin duda más disfrutarás de tu trabajo.</p>
+
+<p>Pero esto va mucho más allá: todas las ideas importantes del <em>desarrollo de software</em>
+tienen un camino en la filosofía de la computación, así que si quieres desarrollar mejor software, sin duda es un área fundamental.</p>
+
+<h2 id="cómo-aprender-filosofía-de-la-computación">¿Cómo aprender filosofía de la computación?</h2>
+
+<p>Recomiendo mucho empezar por lo básico y para esto me ha servido el canal de <a href="https://camilochs.github.io/web/">Camilo Chacón Sartori</a> en <a href="https://www.youtube.com/@camilo_chacon_s">YouTube</a>, en el que tiene una serie en la que te <a href="https://www.youtube.com/watch?v=eVxR8io5xTg&amp;list=PLbA-PGKWV-JhWcaZ0HzHFIFbnVakY9t1o">introduce a las partes de la filosofía de la computación</a>.</p>
+
+<p>Pero también tiene un video que se llama <a href="https://www.youtube.com/watch?v=97InfGEK3Zw">¿Qué es la filosofía de computación?</a>, en el que te da una introducción básica.</p>
+
+<p>Después, puedes empezar a leer sobre los autores que han escrito de esto por años. Yo recomiendo a William J. Rapaport con su escrito <a href="https://cse.buffalo.edu/~rapaport/Papers/philcs-complete.pdf">A Philosophy of Computer Science</a>.</p>
+
+<p>Y finalmente, para profundizar todavía más, tenemos el libro del mismo autor, publicado en 2023: <a href="https://www.wiley.com/en-us/Philosophy+of+Computer+Science%3A+An+Introduction+to+the+Issues+and+the+Literature-p-9781119891901">Philosophy of Computer Science: An Introduction to the Issues and the Literature</a>.</p>
+
+<p>Si le echas un ojo a esto y te parece intimidante, puedes entrar por algo que tiene una menor barrera y que también incluiría en el área de la filosofía de la computación: la filosofía de la información. Para esto recomiendo mucho el libro <a href="https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/">Data and Reality</a> de William Kent. En el canal tenemos un <a href="https://youtu.be/i4lADcMZsZo">resumen de este libro</a>.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Aprender filosofía de la computación es una muy buena idea para tu carrera. Te ayudará a plantearte y a <em>intentar</em> resolver las preguntas importantes. Este intento de contestar las preguntas importantes relacionadas con la computación y el desarrollo de software te dará más armas para enfrentarte a los problemas del día a día y a disfrutarlos más.</p>
+
+<p>Finalmente, las herramientas que desarrollas en el estudio de estos problemas te puede ayudar mucho más allá de la filosofía: <strong>te ayudará a resolver problemas de manera más efectiva.</strong></p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="computación" /><category term="filosofía" /><category term="filosofía-de-la-computación" /><summary type="html"><![CDATA[Veamos qué es y cómo te puede ayudar la filosofía de la computación en tu carrera como desarrollador de software.]]></summary></entry><entry><title type="html">¿Por qué debes aprender ciencias de la computación?</title><link href="https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html" rel="alternate" type="text/html" title="¿Por qué debes aprender ciencias de la computación?" /><published>2023-08-12T00:00:00-06:00</published><updated>2023-08-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html"><![CDATA[<p>Las ciencias de la computación a veces parecen algo mítico para los desarrolladores, algo que sólo aquellos que trabajan en <em>Big Tech</em> o en la <em>NASA</em> pueden entender. Pero si programas, es algo <em><strong>ya que usas a diario</strong></em>, por lo que te conviene comprenderlo mejor.</p>
 
 <p>Empecemos por el principio definiendo qué son y cómo te pueden ayudar.</p>
 
@@ -956,107 +1029,4 @@ en Google, uno de los más grandes creadores de software de la historia. El libr
 
 <p>No incluyo deliberadamente el más famoso de todos por lo menos entre los desarrolladores latinoamericanos: Clean Code. ¿Por qué? Aunque dice cosas útiles, muchas son obvias, explicadas mejor en otros libros y además el tono de superioridad que tiene el autor es muy molesto. Quienes lo han interiorizado se creen mejores simplemente por conocer esos consejos, que (<em>aquí viene lo peor</em>) a veces son contraproducentes.</p>
 
-<p>Si tienes alguna recomendación extra, puedes dejarla en los comentarios.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="desarrollo-de-software" /><summary type="html"><![CDATA[Hablemos ahora de los libros relacionados con desarrollo de software que te ayudarán a mejorar tu carrera y a tener mejores proyectos.]]></summary></entry><entry><title type="html">Libros que todo desarrollador de software debería leer: ciencias de la computación</title><link href="https://blog.thedojo.mx/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs.html" rel="alternate" type="text/html" title="Libros que todo desarrollador de software debería leer: ciencias de la computación" /><published>2023-05-13T00:00:00-06:00</published><updated>2023-05-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs</id><content type="html" xml:base="https://blog.thedojo.mx/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs.html"><![CDATA[<p>Hablemos de algunos libros que te pueden ayudar a avanzar en tu carrera como desarrollador de software, por diferentes razones, por ejemplo te ayudarán a fortalecer tus bases, o te darán ideas para hacer mejor software, mejores arquitecturas o a mejorar como profesional en general.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
-
-<p>Empecemos por los fundamentos mismos de lo que hacemos. Los siguientes libros te ayudarán a entender mejor cómo  funciona la computación desde sus raíces.</p>
-
-<p>Aunque esta sección está en primer lugar, no significa que debas leerlos antes que todo. Por ejemplo, cuando aprendiste español no aprendiste primero teoría de lenguajes, semántica, semiótica y todas las cosas que soportan el lenguaje. Aprendiste a hablar y a escribir, y luego, para profundizar aprendiste los soportes teóricos, por gusto o por necesidad. Lo mismo pasa con la computación.</p>
-
-<p>Lamentablemente, la mayoría de los libros de este artículo están en inglés. Pero aquí viene otro consejo que hemos aprendido con los golpes de los años: <strong>la gran mayoría de la información en ciencias de la computación está en inglés, y es un idioma indispensable para un desarrollador de software.</strong></p>
-
-<p>Empecemos con la lista de libros.</p>
-
-<h2 id="computational-thinking---peter-j-denning-y-matti-tedre">Computational Thinking - Peter J. Denning y Matti Tedre</h2>
-
-<p><a href="https://mitpress.mit.edu/9780262536561/computational-thinking/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683954800/content_ylyx0g.png" alt="Portada de Computational Thinking" class="align-center" /></a></p>
-
-<p>Este libro me parece una lectura fundamental para todos los estudiantes de ciencias de la computación pero también para desarrolladores de software con más experiencia práctica.</p>
-
-<p>Está escrito por <strong>Matti Tedre</strong> y <strong>Peter J. Denning</strong>, y es una lectura muy amena y fácil de entender. Pero no por eso es superficial, trata profundamente una pregunta: ¿qué es el pensamiento computacional? Explora el tema por varios aspectos:</p>
-
-<ul>
-  <li>Las máquinas y el nacimiento de la computación como disciplina</li>
-  <li>La ingeniería y el diseño de software</li>
-  <li>La educación de las ciencias de la computación</li>
-  <li>La relación de la ciencia tradicional con la computación</li>
-</ul>
-
-<p>Los dos autores son parte del grupo que se encarga de la recomendación de los temarios de ciencias de la computación de la ACM. Por lo que tienen una visión muy amplia de lo que es la computación y cómo se enseña. Este libro te dejará claro de lo que hablamos con “computación” y el tipo de pensamiento que se requiere para hacerla. También aclarará si todos necesitan estudiarla y algunos mitos alrededor de ella.</p>
-
-<p>Puedes comprarlo aquí: <a href="https://amzn.to/3M3Tg2l" target="_blank" rel="noopener">https://amzn.to/3LJf95S</a></p>
-
-<h2 id="computer-science-distilled---wladston-ferreira-filho">Computer Science Distilled - Wladston Ferreira Filho</h2>
-
-<p><a href="https://code.energy/computer-science-distilled/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683955925/book_ipakcs.jpg" alt="Portada de Computer Science Distilled" class="align-center" /></a></p>
-
-<p>Para muchos esto parecerá una mala elección, sin embargo, para mi este libro tiene todo lo que se necesita para ser una buena introducción a los temas principales de la ciencias de la computación, de manera práctica y sencilla. Es cierto que por su extensión no puede tratar ninguno a profundidad, pero te da una visión amplia de todos los temas que tienes que conoces.</p>
-
-<p>Explica de manera sencilla los pilares principales de las ciencias de la computación y lo mejor es que te da referencias para que puedas profundizar en cada uno de los temas. Te servirá más si eres un principiante, pero aún si eres un desarrollador experimentado te puede servir para reforzar algunos temas que no tengas claro o para tener una referencia rápida de algunos temas.</p>
-
-<p>Este es un libro que creo que <strong>sí debes leer lo más temprano posible en tu carrera</strong>.</p>
-
-<p>Puedes comprarlo en <a href="https://amzn.to/3nZVHKb" target="_blank" rel="noopener">Amazon</a> o en su <a href="https://code.energy/computer-science-distilled/" target="_blank" rel="noopener">página oficial</a>.</p>
-
-<h3 id="the-elements-of-computing-systems-building-a-modern-computer-from-first-principles---noam-nisan-y-shimon-schocken">The Elements of Computing Systems: building a modern computer from first principles - Noam Nisan y Shimon Schocken</h3>
-
-<p><a href="https://www.nand2tetris.org/book" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683954809/Screen_Shot_2023-05-12_at_8.38.27_nzachg.png" alt="Portada de The Elements of Computing Systems" class="align-center" /></a></p>
-
-<p>En este libro encontrarás un entendimiento básico del funcionamiento de una computadora digital, pero desde el mismísimo fondo. Es un libro MUY profundo, en el que contruirás una computadora digital desde cero, tanto el hardware como el software.</p>
-
-<p>No es un libro que recomiende leer al principio de la carrera ni mucho menos como un prerrequisito para empezar a trabajar, es más bien, algo que ir consumiendo con los años, para entender cada vez mejor cómo funciona fundamentalmente el aparato que usas a diario.</p>
-
-<p>El principio más fundamental de este libro es “aprender haciendo”, por que lo que mejor se aprende es <strong>mediante la práctica</strong>.</p>
-
-<p>Lo puedes comprar aquí: <a href="https://amzn.to/3nXJvJR" target="_blank" rel="noopener">The Elements of Computing Systems</a></p>
-
-<h2 id="the-great-principles-of-computing---peter-j-denning">The Great Principles of Computing - Peter J. Denning</h2>
-
-<p><a href="https://amzn.to/3O8gk1u" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1684031325/great_principles_i5btll.jpg" alt="Portada de The Great Principles of Computing" class="align-center" /></a></p>
-
-<p>En este libro, Peter J. Denning y Craig H. Martell explican los principios que le dan forma e influyen en el campo de la coputación. Estos principios están divididos en 6 categorías:</p>
-
-<ul>
-  <li>Cálculos</li>
-  <li>Comunicación</li>
-  <li>Coordinación</li>
-  <li>Recolección</li>
-  <li>Diseño</li>
-  <li>Evaluación</li>
-</ul>
-
-<p>Cada uno de estos principios limitan y le dan formas a las tecnologías que usamos, por lo que entenderlos profundamente sin duda te ayudará a ser mejor usando las computadoras y más específicamente, a ser un mejor desarrollador de software.</p>
-
-<p>No creo que este libro se tenga que leer antes de cualquier otra cosa, pero sí siento que mientras más temprano lo hagas en tu carrera, mejor.</p>
-
-<p>Lo puedes comprar aquí: <a href="https://amzn.to/3O8gk1u" target="_blank" rel="noopener">The Great Principles of Computing</a></p>
-<h3 id="the-algorithm-design-manual---steven-s-skiena">The Algorithm Design Manual - Steven S. Skiena</h3>
-
-<p><a href="https://amzn.to/42GGAnv" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_350/v1683777664/Screen_Shot_2023-05-10_at_21.48.04_cwmr6v.png" alt="Portada de The Algorithm Design Manual" class="align-center" /></a></p>
-
-<p>Este es uno de los mejores libros para aprender sobre algoritmos y estructuras de datos, es una lectura que te ayudará mucho.</p>
-
-<p>Está escrito por <strong>Steven S. Skiena</strong> y va en su 3ra edición. Y es una lectura que puede ayudarte de manera <em>no tan compleja</em> a aprender sobre algoritmos y estructuras de datos. Es un libro bastante extenso y que va avanzando poco a poco en los temas relacionados con algoritmos y estructuras de datos, bellamente ilustrado, sin demasiada carga matemática.</p>
-
-<p>Tampoco es un libro que te tengas que leer de principio a fin, o muy temprano en la carrera. Puedes empezar con los primeros capítulos lo más pronto posible e irlo estudiando con el tiempo, o dejando los temas más avanzados para cuando los necesites puntualmente.</p>
-
-<p>Puedes comprarlo aquí: <a href="https://amzn.to/42GGAnv" target="_blank" rel="noopener">The Algorithm Design Manual</a></p>
-
-<p>También puedes leer de manera gratuita la segunda edición en <a href="https://mimoza.marmara.edu.tr/~msakalli/cse706_12/SkienaTheAlgorithmDesignManual.pdf">este link</a></p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Estas son mis recomendaciones en este apartado importante de nuestra área del conocimiento. Si tienes alguna recomendación, no dudes en ponerte en contacto conmigo para que la agregue.</p>
-
-<p>Personalmente, siento que los libros son los mejores maestros que puedes tener. Un libro serio, bien escrito y bien editado es un maestro que acumula la experiencia de muchas personas, principalmente del autor, pero también de los editores, correctores y otras personas que participan en su creación.</p>
-
-<p>Un libro acumula muchos años de experiencia, y es la forma más directa de “parte en hombros de gigantes”. Es cierto, leerlos cuesta trabajo, pero es algo que te va a devolver mucho más de lo que inviertes en ellos.</p>
-
-<p>En los próximos artículos hablaremos de libros de otras áreas relacionadas con el desarrollo de software, como la ingeniería de software, la arquitectura y otros temas variados.</p>
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>Algunos de los links son links de afiliado de Amazon, por lo que puede que me lleve una pequeña comisión si compras el libro a través de ellos. Esto no afecta el precio que pagas por el libro además de que no afecta para NADA mi recomendación. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="desarrollo-de-software" /><category term="cs" /><category term="ciencias-computacion" /><summary type="html"><![CDATA[En este artículo hablaremos de los libros de ciencias de la computación fundamentales avanzar en tu carrera y cada vez hacer mejor tu trabajo.]]></summary></entry></feed>
+<p>Si tienes alguna recomendación extra, puedes dejarla en los comentarios.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="desarrollo-de-software" /><summary type="html"><![CDATA[Hablemos ahora de los libros relacionados con desarrollo de software que te ayudarán a mejorar tu carrera y a tener mejores proyectos.]]></summary></entry></feed>
