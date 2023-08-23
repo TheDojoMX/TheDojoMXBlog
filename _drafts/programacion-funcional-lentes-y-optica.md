@@ -31,7 +31,7 @@ Haskell tiene un paquete llamado `lens` que contiene un montón de funciones que
 
 El principal recurso que usé para crear este artículo fue el libro [Optics by Example](https://leanpub.com/optics-by-example) de Chris Penner.
 
-Aquí además hay unas charlas que puedes ver si quieres entender un poco más:
+Aquí además hay unas charlas y artículos que puedes ver si quieres entender un poco más:
 
 1. [John Wiegley: Putting Lenses to Work](https://www.youtube.com/watch?v=QZy4Yml3LTY)
 2. [Lenses: Compositional Data Access and Manipulation](https://www.youtube.com/watch?v=k-QwBL9Dia0)
@@ -42,4 +42,4 @@ Si quieres profundizar todavía más el libro [Category Theory for Programmers](
 
 ## Conclusión
 
-Puede que esto no lo vayas a ocupar inmediatamente o todos los días y a todas horas, pero conocerlo sin duda abrirá tus horizontes y te hará un mejor programador, con más herramientas y estilos de los cuáles tomar inspiración cuando las cosas se pongan difíciles.
+Conocer sobre lentes funcionales sin duda abrirá tus horizontes y te hará un mejor programador, con más herramientas y estilos de los cuáles tomar inspiración cuando las cosas se pongan difíciles. Además puede ayudarte en situaciones específicas en las que tengas que extraer datos de manera inmutable.
