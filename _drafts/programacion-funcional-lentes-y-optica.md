@@ -24,6 +24,10 @@ La óptica es todo un campo de estudio que mezcla **el estilo funcional**, los c
 ## Ejemplos en Haskell
 
 Haskell tiene un paquete llamado `lens` que contiene un montón de funciones que son lentes y combinadores:
+  
+  ```haskell
+
+```
 
 ## Ejemplos en JavaScript
 
