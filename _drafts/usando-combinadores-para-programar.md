@@ -11,8 +11,25 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-
-
 ## ¿Qué es un combinador?
 
-Un combinador es una función que no tiene variables libres, es decir, que no depende de variables externas a ella. Esto quiere decir que siempre que se le pase el mismo conjunto de argumentos, siempre regresará el mismo resultado.
+Vayamos por partes: un combinador es simplemente una función con características especiales. En el _cálculo lambda_, un combinador es una función que no tiene variables libres, es decir, que no depende de ningún valor externo a ella misma. Además, un combinador sólo puede estar formado por otros combinadores. 
+
+Prácticamente unn combinador es una función que:
+
+- No tiene efectos secundarios
+- No depende de ningún estado externo
+
+Basado en estas características definidas, se han definido una serie de combinadores útiles que permite crear código funcional de manera más sencilla y elegante. Veamos algunos de ellos.
+
+
+## Algunos Cobinadores
+
+Los combinadores conocidos tienen nombres de letras.
+### `I` o Identidad
+
+El combinador más sencillo es el llamado Iden
+## Ejemplos de uso
+
+
+##
