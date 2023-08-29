@@ -775,7 +775,7 @@ var store = [{
       },{
         "title": "Las tres garantías de seguridad de un hash",
         "excerpt":"En este artículo profundizaremos sobre las garantías de seguridad mínimas que una función hash debe cumplir para ser criptográficamente segura. En un artículo anterior: ¿Qué es un hash? ya hablamos más detalladamente de la definición y de los algoritmos que puedes usar aún hoy de manera segura. Empecemos por una...","categories": [],
-        "tags": [],
+        "tags": ["hash","criptografía","md5","sha-256"],
         "url": "/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg"
       }]

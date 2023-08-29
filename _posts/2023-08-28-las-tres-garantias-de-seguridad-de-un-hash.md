@@ -2,9 +2,9 @@
 title: "Las tres garantías de seguridad de un hash"
 date: 2023-08-28
 author: Héctor Patricio
-tags:
+tags: hash criptografía md5 sha-256
 comments: true
-excerpt: ""
+excerpt: "Veamos más profundamente las garantías de seguridad que debe cumplir un hash para ser considerado seguro. Por fin entenderemos lo que es una colisión y qué significa para nosotros."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_1400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg
