@@ -5,11 +5,11 @@ author: Héctor Patricio
 tags: hash criptografía md5 sha-256
 comments: true
 excerpt: "Veamos más profundamente las garantías de seguridad que debe cumplir un hash para ser considerado seguro. Por fin entenderemos lo que es una colisión y qué significa para nosotros."
-usemathjax: true
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_1400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
+usemathjax: true
 ---
 
 En este artículo profundizaremos sobre las garantías de seguridad mínimas que una función hash debe cumplir para ser criptográficamente segura. En un artículo anterior: [¿Qué es un hash?](/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html) ya hablamos más detalladamente de la definición y de los algoritmos que puedes usar aún hoy de manera segura.
