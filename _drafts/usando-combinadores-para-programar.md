@@ -25,10 +25,18 @@ Basado en estas características definidas, se han definido una serie de combina
 
 ## Algunos Cobinadores
 
-Los combinadores conocidos tienen nombres de letras.
+Los combinadores conocidos tienen nombres de letras. En esta sección los explicaremos uno a uno. Y daremos algunos ejemplos de cómo usarlos.
 ### `I` o Identidad
 
-El combinador más sencillo es el llamado Iden
+El combinador más sencillo es el llamado Identidad, y no hace más que devolver el valor que recibe. Es el equivalente al operador neutro de la suma, el `0`, o el de la multiplicación, el `1`.
+
+```js
+const I = x => x
+```
+
+En un libro llamado **"To Mock a Mockingbird"** de _Raymond Smullyan_, se les pone nombres de aves a cada combinador, ya que el usa una analogía basada en aves para explicarlos.
+### `K` o Constante
+
 ## Ejemplos de uso
 
 
