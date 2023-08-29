@@ -1,0 +1,856 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Las tres garantías de seguridad de un hash - The Dojo MX Blog</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Las tres garantías de seguridad de un hash">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html">
+
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_1400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-08-28T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html",
+      "name": "Las tres garantías de seguridad de un hash",
+      "headline": "Las tres garantías de seguridad de un hash",
+      "keywords": "",
+      "description": "",
+      "articleBody": "En este artículo profundizaremos sobre las garantías de seguridad mínimas que una función hash debe cumplir para ser criptográficamente segura. En un artículo anterior: ¿Qué es un hash? ya hablamos más detalladamente de la definición y de los algoritmos que puedes usar aún hoy de manera segura.\n\nEmpecemos por una pequeña definición de lo que es una función hash en la criptografía.\n\n¿Qué es un hash?\n\nUn hash es una función que te devuelve un valor de tamaño fijo independientemente del tamaño de la entrada, esto implica una compresión de datos. Las funciones hash que son usadas en criptografía, tienen la característica de entregar valores completamente impredecibles, tanto para un humano como para una computadora. Es decir que no hay manera de saber qué valor va a entregar una función hash para un valor dado si no le has pasado ese valor antes.\n\nLo anterior no quiere decir que las funciones hash devuelvan algo diferente cada vez que las ejecutas, sino que para un valor dado, siempre devuelven el mismo resultado, y aquí es donde radica su utilidad.\n\nUn hash perfecto se comportaría como un generador de valores aleatorios, pero debido a lo que hemos dicho anteriormente, deben ser deterministas al mismo tiempo que impredecibles.\n\nPara medir la seguridad de una función hash, se usan tres pruebas, que se conocen como las garantía de seguridad de un hash.\n\nEstas garantías son:\n\n\n  Resistencia a la primera preimagen\n  Resistencia a la segunda preimagen\n  Resistencia a la colisión\n\n\nCada una de estas garantías se refiere a un tipo de ataque que se puede hacer a una función hash. Vamos a explicarlas pero antes aclaremos algunos términos.\n\nImagen y preimagen\n\nEn matemáticas, una función es una relación entre dos conjuntos de valores, uno de entrada y uno de salida. En la mayoría la de las funciones matemáticas comunes, cada valor de entrada tiene un único valor de salida.\n\nTomemos como ejemplo: $f(x) = x + 1$, esta función toma un valor $x$ y le suma $1$, por lo que cada valor de $x$ tiene un único valor de salida, porque sabemos que un número cualquiera tiene solamente un sucesor.\n\nPero no todas las funciones se comportan así, por ejemplo: $f(x) = x^2$. En esta función el valor 4 puede ser generado por dos valores de entrada diferentes: $2$ y $-2$.\n\nCuando vemos una función así no es común que nos definan el conjunto de entrada, así que asumimos que el conjunto de entrada o dominio es el conjunto de los números reales, y el conjunto de salida o codominio es el conjunto de los números reales.\n\nPensemos en el dominio y codominio como conjuntos amplios en los que los valores de entrada y salida podrían estar. La imagen de una función es el conjunto de valores que están en el codominio, es decir, los valores que la función puede devuelve. La preimagen es el conjunto de valores que pueden ser entrada de la función.\n\nEn términos prácticos para nosotros los programadores, la imagen es casi equivalente al codominio, y la preimagen es el dominio.\n\nEsta imagen sacada de Wikipedia lo ilustra un poco mejor:\n\n\n\nLa imagen es el área amarilla, mientras que Y es el codominio, y X es el dominio. Lo último que nos hace falta saber es que aunque imagen y preimagen son los conjuntos de entradas y salidas del algoritmo, también nos podemos referir así a un valor individual de este conjunto.\n\nApliquemos los aprendido al ejemplo de la función $f(x) = x^2$. El dominio es el conjunto de los números reales, y el codominio también es el conjunto de los números reales. La imagen es el conjunto de los números reales positivos que tengan una raíz cuadrada, y la preimagen es el conjunto de los números reales. Un ejemplo concreto: para el valor 4 considerado como resultado de la función o imagen, tendría dos preimágenes: $2$ y $-2$.\n\nAhora sí, hablemos de la primera garantía de seguridad de un hash.\n\nResistencia a la primera preimagen\n\nAquí debes poner atención a los valores que se dan para hacer la prueba de seguridad. Presta atención a cuando se dice “dado un valor”, estos son la valores que suponemos que ya se conocen.\n\nEn la primera garantía es: Dada una imagen es computacionalmente inviable encontrar una preimagen que la genere.\n\nEn palabras de programadores: Dado un hash, es computacionalmente inviable encontrar un valor que al ser pasado a la función hash, genere ese hash.\n\n¿Por qué decimos un valor que genere ese hash y no el valor que genere ese hash? Porque para un valor de salida, puede haber más de un valor de entrada que lo genere. Especialmente para los hashes, su conjunto de valores posibles es infinito: todas las combinaciones de bits posibles de cualquier tamaño.\n\n¿Cuál es el tamaño del conjunto de posibles salida? Eso depende del hash usado y su número de bits. Por ejemplo, el SHA-256 genera hashes de 256 bits, por lo que su conjunto de posibles valores es $2^{256}$, que es un número muy grande, pero no infinito, por lo que es posible que dos valores generen el mismo hash. Cada uno de esos valores sería una preimagen de un hash dado.\n\nEntonces ya tenemos todo el escenario: nos han dado un hash y tenemos que encontrar uno de los infinitos valores que pueden producir ese hash, una preimagen.\n\nPues bien, para un hash criptográficamente seguro esta operación debe de ser imposible de realizar de manera más eficiente que usando fuerza bruta, es decir, probando todos los valores posibles hasta encontrar uno que genere el hash dado.\n\nPara que un hash sea considerado seguro, hallar una preimagen por fuerza bruta debería tomar $2^{n}$ operaciones, donde $n$ es el número de bits del hash. Por ejemplo, para el SHA-256, que tiene 256 bits, toma $2^{256}$ operaciones, que es un número muy grande, computacionalmente inviable.\n\nPor ejemplo, imagina que puedes hacer 1 millón de operaciones por segundo, aproximadamente $2^{19}$. Encontrar una primera preimagen para el SHA-256 te tomaría $2^{256} / 2^{19}$, es decir $2^247$ segundos, mientras que lo que se calcula que ha durado el universo son $2^{38}$ segundos.\n\nPongamos un ejemplo en Python. Supongamos que la función hash es un hash seguro, y que la función mensaje_aleatorio devuelve un mensaje diferente cada vez. Pon atención en lo que recibe la función primera_preimagen:\n\ndef primera_preimagen(h):\n    m = mensaje_aleatorio()\n    while hash(m) != h:\n        m = mensaje_aleatorio()\n    return m\n\n\nEste debería ser el mejor ataque que se pueda hacer sobre un hash seguro.\n\nResistencia a la segunda preimagen\n\nEsta garantía de seguridad es muy parecida a la primera, pero lo que se recibe aquí es una preimagen y se debe encontrar otra preimagen que genere el mismo hash.\n\nLa garantía de seguridad debería ser la misma: encontrar una segunda preimagen debería ser computacionalmente inviable, es decir, que tomaría $2^{n}$ operaciones, donde $n$ es el número de bits del hash.\n\nPongamos un ejemplo en Python. Observa que usamos la función primera_preimagen que definimos antes:\n\ndef segunda_preimagen(m):\n    h = hash(m)\n    m2 = primera_preimagen(h)\n    return m2\n\n\nEste ataque no implica más que hashear el mensaje y encontrar una primera preimagen de ese hash. Si el hash es resistente a la primera preimagen, entonces también lo será a la segunda.\n\nParece que esta garantía no tiene mucho sentido, pero vayamos a la tercera y la más conocida.\n\nResistencia a colisiones\n\nUna colisión es cuando dos valores diferentes generan el mismo hash. Ya mencionamos que, al tener un conjunto infinito de valores de entrada y tener un conjunto muy grande (pero limitado) de valores de salida, es inevitable que suceda esto, de hecho, en este caso, un conjunto infinito de valores de entrada generan el mismo hash.\n\nPero hagamos un caso concreto. Imagina que tu hash recibirá cadenas de bits de 512 bits, y generará un hash de 256 bits. Esto significa que el conjunto de posibles valores de entrada es $2^{512}$ y el de posibles valores de salida es $2^{256}$. A cada valor de salida le corresponden $2^{512}/2^{256} = 2^{512-256}$ valores de entrada, es decir, que para cada valor de salida hay $2^{256}$ valores de entrada que generan el mismo hash.\n\nBueno, pues la tercera garantía de seguridad indica que debe ser computacionalmente inviable encontrar una colisión. En este caso no se nos da nada, ni una imagen (hash), ni una preimagen (valor de entrada). Se puede escoger cualquier valor de entrada para encontrar una colisión.\n\nAquí entra la segunda garantía de seguridad, si la función hash es resistente a la segunda preimagen, es resistente a colisiones. En Python, el mejor algoritmo para encontrar una colisión debería ser el siguiente para un hash seguro:\n\ndef encontrar_colision():\n    m = mensaje_aleatorio()\n    return encontrar_segunda_preimagen(m)\n\n\nLa garantía de seguridad que debe de cumplir un hash seguro es que encontrar una colisión debería tomar $2^{n/2}$ operaciones, donde $n$ es el número de bits del hash. Por ejemplo, para el SHA-256, que tiene 256 bits, tomaría $2^{128}$ operaciones, que sigue siendo un número muy grande, computacionalmente inviable.\n\n¿Por qué $2^{n/2}$? Porque es más fácil encontrar un par de valores que generen el mismo hash sin tener restricciones, que encontrar un valor que genere un hash dado.\n\nSi haces $N$ hashes, puedes tener ~$N^2$ oportunidades para encontrar una colisión por que puedes comparar cada hash con todos los demás. Esto es lo que se conoce como la paradoja del cumpleaños.\n\nCómo se vuelve inseguro un hash\n\nUn hash seguro se comporta de manera completamente impredecible con respecto a su valor de entrada. Los hashes inseguros empiezan a dar muestras de regularidad en sus salidas o tienen salidas demasiado pequeñas.\n\nDe esta manera, es posible encontrar métodos estadísticos para analizar las salidas y así encontrar patrones que permitan encontrar colisiones o preimágenes más fácilmente.\n\nConclusión\n\nEn este artículo vimos las tres garantías de seguridad que debe cumplir una función hash para ser criptográficamente segura. Te sirven para entender claramente de lo que se habla cuando se han encontrado colisiones en un hash, y poder evaluar la gravedad de la situación.\n",
+      "datePublished": "2023-08-28 00:00:00 -0600",
+      "dateModified": "2023-08-28 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_1400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_1400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Las tres garantías de seguridad de un hash
+
+        
+      </h1>
+      
+        <p class="page__lead">
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1668 palabras | 13 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Las tres garantías de seguridad de un hash">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2023-08-28T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>En este artículo profundizaremos sobre las garantías de seguridad mínimas que una función hash debe cumplir para ser criptográficamente segura. En un artículo anterior: <a href="/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">¿Qué es un hash?</a> ya hablamos más detalladamente de la definición y de los algoritmos que puedes usar aún hoy de manera segura.</p>
+
+<p>Empecemos por una pequeña definición de lo que es una función hash en la criptografía.</p>
+
+<h2 id="qué-es-un-hash">¿Qué es un hash?</h2>
+
+<p>Un hash es una función que te devuelve un valor de tamaño fijo independientemente del tamaño de la entrada, esto implica una compresión de datos. Las funciones hash que son usadas en criptografía, tienen la característica de entregar valores completamente <em>impredecibles</em>, tanto para un humano como para una computadora. Es decir que no hay manera de saber qué valor va a entregar una función hash para un valor dado si no le has pasado ese valor antes.</p>
+
+<p>Lo anterior no quiere decir que las funciones hash devuelvan algo diferente cada vez que las ejecutas, sino que para un valor dado, siempre devuelven el mismo resultado, y aquí es donde radica su utilidad.</p>
+
+<p>Un hash perfecto se comportaría como un generador de valores aleatorios, pero debido a lo que hemos dicho anteriormente, deben ser <strong>deterministas</strong> al mismo tiempo que <strong>impredecibles</strong>.</p>
+
+<p>Para medir la seguridad de una función hash, se usan tres pruebas, que se conocen como las garantía de seguridad de un hash.</p>
+
+<p>Estas garantías son:</p>
+
+<ol>
+  <li>Resistencia a la primera preimagen</li>
+  <li>Resistencia a la segunda preimagen</li>
+  <li>Resistencia a la colisión</li>
+</ol>
+
+<p>Cada una de estas garantías se refiere a un tipo de ataque que se puede hacer a una función hash. Vamos a explicarlas pero antes aclaremos algunos términos.</p>
+
+<h2 id="imagen-y-preimagen">Imagen y preimagen</h2>
+
+<p>En matemáticas, una función es una relación entre dos conjuntos de valores, uno de entrada y uno de salida. En la mayoría la de las funciones matemáticas comunes, cada valor de entrada tiene un único valor de salida.</p>
+
+<p>Tomemos como ejemplo: $f(x) = x + 1$, esta función toma un valor $x$ y le suma $1$, por lo que cada valor de $x$ tiene un único valor de salida, porque sabemos que un número cualquiera tiene solamente un sucesor.</p>
+
+<p>Pero no todas las funciones se comportan así, por ejemplo: $f(x) = x^2$. En esta función el valor 4 puede ser generado por dos valores de entrada diferentes: $2$ y $-2$.</p>
+
+<p>Cuando vemos una función así no es común que nos definan el conjunto de entrada, así que asumimos que el conjunto de entrada o <strong>dominio</strong> es el conjunto de los números reales, y el conjunto de salida o <strong>codominio</strong> es el conjunto de los números reales.</p>
+
+<p>Pensemos en el dominio y codominio como conjuntos amplios en los que los valores de entrada y salida <em>podrían estar</em>. La <strong>imagen</strong> de una función es el conjunto de valores que <em>están</em> en el codominio, es decir, los valores que la función <em>puede</em> devuelve. La <strong>preimagen</strong> es el conjunto de valores que <em>pueden</em> ser entrada de la función.</p>
+
+<p>En términos prácticos para nosotros los programadores, la imagen es casi equivalente al codominio, y la preimagen es el dominio.</p>
+
+<p>Esta imagen sacada de Wikipedia lo ilustra un poco mejor:</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_600/v1693144037/Codomain2_kzda4n.svg" alt="Imagen vs Codomino" class="align-center"></p>
+
+<p>La imagen es el área amarilla, mientras que Y es el codominio, y X es el dominio. Lo último que nos hace falta saber es que aunque imagen y preimagen son los conjuntos de entradas y salidas del algoritmo, también nos podemos referir así a un valor individual de este conjunto.</p>
+
+<p>Apliquemos los aprendido al ejemplo de la función $f(x) = x^2$. El dominio es el conjunto de los números reales, y el codominio también es el conjunto de los números reales. La imagen es el conjunto de los <strong>números reales positivos que tengan una raíz cuadrada</strong>, y la preimagen es el conjunto de los números reales. Un ejemplo concreto: para el valor <code class="language-plaintext highlighter-rouge">4</code> considerado como resultado de la función o <strong>imagen</strong>, tendría <em>dos</em> preimágenes: $2$ y $-2$.</p>
+
+<p>Ahora sí, hablemos de la primera garantía de seguridad de un hash.</p>
+
+<h2 id="resistencia-a-la-primera-preimagen">Resistencia a la primera preimagen</h2>
+
+<p>Aquí debes poner atención a los valores <em>que se dan</em> para hacer la prueba de seguridad. Presta atención a cuando se dice “dado un valor”, estos son la valores que suponemos que ya se conocen.</p>
+
+<p>En la primera garantía es: <strong>Dada</strong> una <em>imagen</em> es computacionalmente inviable encontrar una <em>preimagen</em> que la genere.</p>
+
+<p>En palabras de programadores: Dado un hash, es computacionalmente inviable encontrar un valor que al ser pasado a la función hash, genere ese hash.</p>
+
+<p>¿Por qué decimos <strong>un</strong> valor que genere ese hash y no <strong>el</strong> valor que genere ese hash? Porque para un valor de salida, puede haber más de un valor de entrada que lo genere. Especialmente para los hashes, su conjunto de valores posibles es infinito: todas las combinaciones de bits posibles de cualquier tamaño.</p>
+
+<p>¿Cuál es el tamaño del conjunto de posibles salida? Eso depende del hash usado y su número de bits. Por ejemplo, el SHA-256 genera hashes de 256 bits, por lo que su conjunto de posibles valores es $2^{256}$, que es un número muy grande, pero no infinito, por lo que es posible que dos valores generen el mismo hash. Cada uno de esos valores sería <em>una preimagen</em> de un hash dado.</p>
+
+<p>Entonces ya tenemos todo el escenario: nos han dado un hash y tenemos que encontrar uno de los infinitos valores que pueden producir ese hash, una preimagen.</p>
+
+<p>Pues bien, para un hash criptográficamente seguro esta operación debe de ser imposible de realizar de manera más eficiente que usando fuerza bruta, es decir, probando todos los valores posibles hasta encontrar uno que genere el hash dado.</p>
+
+<p>Para que un hash sea considerado seguro, hallar una preimagen por fuerza bruta debería tomar $2^{n}$ operaciones, donde $n$ es el número de bits del hash. Por ejemplo, para el SHA-256, que tiene 256 bits, toma $2^{256}$ operaciones, que es un número muy grande, computacionalmente inviable.</p>
+
+<p>Por ejemplo, imagina que puedes hacer 1 millón de operaciones por segundo, aproximadamente $2^{19}$. Encontrar una primera preimagen para el SHA-256 te tomaría $2^{256} / 2^{19}$, es decir $2^247$ segundos, mientras que lo que se calcula que ha durado el universo son $2^{38}$ segundos.</p>
+
+<p>Pongamos un ejemplo en Python. Supongamos que la función <code class="language-plaintext highlighter-rouge">hash</code> es un hash seguro, y que la función <code class="language-plaintext highlighter-rouge">mensaje_aleatorio</code> devuelve un mensaje diferente cada vez. Pon atención en lo que recibe la función <code class="language-plaintext highlighter-rouge">primera_preimagen</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">primera_preimagen</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nf">mensaje_aleatorio</span><span class="p">()</span>
+    <span class="k">while</span> <span class="nf">hash</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">!=</span> <span class="n">h</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nf">mensaje_aleatorio</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">m</span>
+</code></pre></div></div>
+
+<p>Este debería ser el mejor ataque que se pueda hacer sobre un hash seguro.</p>
+
+<h2 id="resistencia-a-la-segunda-preimagen">Resistencia a la segunda preimagen</h2>
+
+<p>Esta garantía de seguridad es muy parecida a la primera, pero lo que se recibe aquí es una <em>preimagen</em> y se debe encontrar otra preimagen que genere el mismo hash.</p>
+
+<p>La garantía de seguridad debería ser la misma: encontrar una segunda preimagen debería ser computacionalmente inviable, es decir, que tomaría $2^{n}$ operaciones, donde $n$ es el número de bits del hash.</p>
+
+<p>Pongamos un ejemplo en Python. Observa que usamos la función <code class="language-plaintext highlighter-rouge">primera_preimagen</code> que definimos antes:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">segunda_preimagen</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="nf">hash</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">m2</span> <span class="o">=</span> <span class="nf">primera_preimagen</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">m2</span>
+</code></pre></div></div>
+
+<p>Este ataque no implica más que hashear el mensaje y encontrar una primera preimagen de ese hash. Si el hash es resistente a la primera preimagen, entonces también lo será a la segunda.</p>
+
+<p>Parece que esta garantía no tiene mucho sentido, pero vayamos a la tercera y la más conocida.</p>
+
+<h2 id="resistencia-a-colisiones">Resistencia a colisiones</h2>
+
+<p>Una colisión es cuando dos valores diferentes generan el mismo hash. Ya mencionamos que, al tener un conjunto infinito de valores de entrada y tener un conjunto muy grande (<em>pero limitado</em>) de valores de salida, es inevitable que suceda esto, de hecho, en este caso, un conjunto infinito de valores de entrada generan el mismo hash.</p>
+
+<p>Pero hagamos un caso concreto. Imagina que tu hash recibirá cadenas de bits de 512 bits, y generará un hash de 256 bits. Esto significa que el conjunto de posibles valores de entrada es $2^{512}$ y el de posibles valores de salida es $2^{256}$. A cada valor de salida le corresponden $2^{512}/2^{256} = 2^{512-256}$ valores de entrada, es decir, que para cada valor de salida hay $2^{256}$ valores de entrada que generan el mismo hash.</p>
+
+<p>Bueno, pues la tercera garantía de seguridad indica que <strong>debe ser computacionalmente inviable encontrar una colisión</strong>. En este caso no se nos da nada, ni una imagen (hash), ni una preimagen (valor de entrada). Se puede escoger cualquier valor de entrada para encontrar una colisión.</p>
+
+<p>Aquí entra la segunda garantía de seguridad, si la función hash es resistente a la segunda preimagen, es resistente a colisiones. En Python, el mejor algoritmo para encontrar una colisión debería ser el siguiente para un hash seguro:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">encontrar_colision</span><span class="p">():</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nf">mensaje_aleatorio</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nf">encontrar_segunda_preimagen</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>La garantía de seguridad que debe de cumplir un hash seguro es que encontrar una colisión debería tomar $2^{n/2}$ operaciones, donde $n$ es el número de bits del hash. Por ejemplo, para el SHA-256, que tiene 256 bits, tomaría $2^{128}$ operaciones, que sigue siendo un número muy grande, computacionalmente inviable.</p>
+
+<p>¿Por qué $2^{n/2}$? Porque es más fácil encontrar <em>un par</em> de valores que generen el mismo hash sin tener restricciones, que encontrar <em>un valor</em> que genere un hash dado.</p>
+
+<p>Si haces $N$ hashes, puedes tener ~$N^2$ oportunidades para encontrar una colisión por que puedes comparar cada hash con todos los demás. Esto es lo que se conoce como la paradoja del cumpleaños.</p>
+
+<h2 id="cómo-se-vuelve-inseguro-un-hash">Cómo se vuelve inseguro un hash</h2>
+
+<p>Un hash seguro se comporta de manera completamente impredecible con respecto a su valor de entrada. Los hashes inseguros empiezan a dar muestras de regularidad en sus salidas o tienen salidas demasiado pequeñas.</p>
+
+<p>De esta manera, es posible encontrar métodos estadísticos para analizar las salidas y así encontrar patrones que permitan encontrar colisiones o preimágenes más fácilmente.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>En este artículo vimos las tres garantías de seguridad que debe cumplir una función hash para ser criptográficamente segura. Te sirven para entender claramente de lo que se habla cuando se han encontrado colisiones en un hash, y poder evaluar la gravedad de la situación.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-08-28T00:00:00-06:00">August 28, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Las+tres+garant%C3%ADas+de+seguridad+de+un+hash%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F08%2F28%2Flas-tres-garantias-de-seguridad-de-un-hash.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F08%2F28%2Flas-tres-garantias-de-seguridad-de-un-hash.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F08%2F28%2Flas-tres-garantias-de-seguridad-de-un-hash.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/08/19/que-es-la-filosofia-de-la-computacion.html" class="pagination--pager" title="¿Qué es la filosofía de la computación?
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1692327344/iain-kennedy-X_uSAnhTO2M-unsplash_mdvosz.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/08/19/que-es-la-filosofia-de-la-computacion.html" rel="permalink">¿Qué es la filosofía de la computación?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+8 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 19-08-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Veamos qué es y cómo te puede ayudar la filosofía de la computación en tu carrera como desarrollador de software.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1691472017/max-duzij-qAjJk-un3BI-unsplash_nw7bwf.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html" rel="permalink">¿Por qué debes aprender ciencias de la computación?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 12-08-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Las ciencias de la computación te ayudarán a ser mejor desarrollador, independientemente de la rama de la programación a la que te dediques. Veamos como.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1685716433/nathan-watson-Qerg85B7JDI-unsplash_sez9u3.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/06/29/la-matriz-del-conocimiento-para-devs.html" rel="permalink">La matriz del conocimiento para devs
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+8 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 29-06-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">La principal trae de un desarrollador es representar el conocimiento en procesos computacionales. Veamos una herramienta que te puede ayudar a administrar me...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685716414/lekoarts-fwVo1x7CktY-unsplash_stnjdh.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/06/27/sigue-el-ciclo-de-la-creatividad.html" rel="permalink">Sigue el ciclo de la creatividad
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 27-06-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">La programación es una profesión muy creativa y por eso es importante que aprendamos a manejarla, hablemos de las etapas para resolver un problema de forma c...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#4b0082',
+      iconColor: '#fff'
+    }).init();
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
