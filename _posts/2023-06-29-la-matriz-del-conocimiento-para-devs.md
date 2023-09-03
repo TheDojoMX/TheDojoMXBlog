@@ -13,8 +13,7 @@ header:
 
 La epistemología es la rama de la filosofía que estudia la naturaleza del conocimiento. Una de sus principales tareas es la de estudiar cómo se adquiere el conocimiento y cómo se representa.
 
-La **matriz de Rumsfeld** es una herramienta que nos ayuda a representar el conocimiento y a identificar qué conocimiento nos falta para tomar decisiones.
-
+La **matriz de Rumsfeld** es una herramienta que nos ayuda a representar el conocimiento y a identificar qué conocimiento nos falta para tomar decisiones. En este artículo vamos a ver cómo funciona y cómo nos puede ayudar.
 
 ## La matriz de Rumsfeld
 
