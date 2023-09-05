@@ -40,6 +40,9 @@ Pero quiero que te quedes con la idea de una frase que escuché en una serie lla
 
 ![Escena de Dark](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1688017245/5557d4f59b6ee4332ffae7f2a68513b7_n0ci5o.png)
 
+
+::https://hbr.org/2017/10/simple-ways-to-spot-unknown-unknowns[]
+
 ## Ejemplos
 
 Pongamos algunos ejemplos de cada categoría para entenderlos mejor.
@@ -54,11 +57,11 @@ También podríamos incluir el conocimiento académico, cosas que hayamos estudi
 
 Siguiendo el ejemplo de los lenguajes de programación, normalmente sabemos uno o dos, pero estamos conscientes de que no conocemos su funcionamiento interno, o que no conocemos otros lenguajes, por ejemplo Ocaml, Haskell, etc. O sabemos que no podemos montar una infraestructura de Kubernetes, pero sabemos que existe y que hay gente que lo sabe hacer, así que podríamos investigarlo. También hay cosas que son imposibles de conocer y lo sabemos, por ejemplo, cuando va a salir exactamente la próxima versión de Python.
 
-## Categoria 3: Lo que no sabemos que sabemos
+## Categoría 3: Lo que no sabemos que sabemos
 
-Aquí se empiezan a  poner difíciles las cosas, ¿cómo que hay cosas que no sabemos que sabemos? Este es el conocimiento tácito, cosas que hemos adquirido indirectamente o que ya están tan interiorizadas que no nos damos cuenta que sabemos. Por ejemplo cuando eres programador no te das cuenta que _estás haciendo matemáticas_ con el siemple hecho de programar. Entonces sabes matemáticas (por lo menos una rama de ellas), pero no te das cuenta. Otro ejemplo es con nuestro lenguaje natural, sabemos conjugar en todas las formas de subjuntivo, pero no sabíamos ni cómo se llama eso.
+Aquí se empiezan a  poner difíciles las cosas, ¿cómo que hay cosas que no sabemos que sabemos? Este es el conocimiento tácito, cosas que hemos adquirido indirectamente o que ya están tan interiorizadas que no nos damos cuenta que sabemos. Por ejemplo cuando eres programador no te das cuenta que _estás haciendo matemáticas_ con el simple hecho de programar. Entonces sabes matemáticas (por lo menos una rama de ellas), pero no te das cuenta. Otro ejemplo es con nuestro lenguaje natural, sabemos conjugar en todas las formas de subjuntivo, pero no sabíamos ni cómo se llama eso.
 
-Una subcategoría este tipo de conocimiento es el que tenemos pero no nos damos cuenta que es relevante para el problema en cuestión que estamos tratando.
+Una sub-categoría este tipo de conocimiento es el que tenemos pero no nos damos cuenta que es relevante para el problema en cuestión que estamos tratando.
 
 ## Categoría 4: Lo que no sabemos que no sabemos
 
