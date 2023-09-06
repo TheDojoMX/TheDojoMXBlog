@@ -40,7 +40,6 @@ Pero quiero que te quedes con la idea de una frase que escuché en una serie lla
 
 ![Escena de Dark](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1688017245/5557d4f59b6ee4332ffae7f2a68513b7_n0ci5o.png)
 
-
 ::https://hbr.org/2017/10/simple-ways-to-spot-unknown-unknowns[]
 
 ## Ejemplos
