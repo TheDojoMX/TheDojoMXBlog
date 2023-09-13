@@ -1,18 +1,23 @@
-# Cómo evaluar mejor los riesgos de un proyecto de software
+= Cómo evaluar mejor los riesgos de un proyecto de software
 
 Si estás avanzando en tu carrera como desarrollador, es probable que se requiera que tomes decisiones sobre el proyecto.
 
-Estas decisiones pueden ser sobre la arquitectura, el diseño, la tecnología, la metodología, etc.
+Estas decisiones pueden ser sobre la _arquitectura_, el _diseño funcional_, la tecnología, la metodología, etc.
 
 En este video te voy a hablar de una herramienta que te puede servir mucho.
-En otros videos le hemos llamado la matriz del conocimiento o la matriz epistemológica.
 
-El nombre por el que se le conoce realmente es **"la matriz de Rumsfeld"**.
+En otros videos le hemos llamado **la matriz del conocimiento** o la _matriz epistemológica_.
+
+El nombre por el que se le conoce más ampliamente es **"la matriz de Rumsfeld"**.
+
+Con esta herramienta podrás evaluar mejor los riesgos de un proyecto de software. Quédate conmigo para aprender cómo funciona.
+
+-- Intro
 
 ## Quién es Rumsfeld
 
 image::https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Defense.gov_News_Photo_020221-D-9880W-080.jpg/2880px-Defense.gov_News_Photo_020221-D-9880W-080.jpg[width=400,align="center"]
-Donald Rumsfeld fue un político estadounidense que fue secretario de defensa de los Estados Unidos durante el gobierno de George W. Bush.
+Donald Rumsfeld fue un político estadounidense que fue secretario de defensa de los Estados Unidos durante el gobierno de **George W. Bush**.
 
 En una conferencia de prensa en el 2002, Rumsfeld dijo lo siguiente:
 
@@ -31,7 +36,6 @@ Según nuestro grado de conocimiento y la consciencia que tenemos de él, podemo
 4. Lo que **no** sabemos que **no** sabemos
 
 La representación tradicional es la siguiente:
-
 
 image::https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1688048267/Ilustracio%CC%81n_sin_ti%CC%81tulo_5_lpvjyv.png[]
 
