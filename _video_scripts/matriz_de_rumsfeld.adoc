@@ -1,6 +1,6 @@
 = Cómo evaluar mejor los riesgos de un proyecto de software
 
-Si estás avanzando en tu carrera como desarrollador, es probable que se requiera que tomes decisiones sobre el proyecto.
+Si estás avanzando en tu carrera como desarrollador, es posible que se requiera que tomes decisiones *importantes* sobre los proyectos en los que participas.
 
 Estas decisiones pueden ser sobre la _arquitectura_, el _diseño funcional_, la tecnología, la metodología, etc.
 
@@ -9,6 +9,7 @@ En este video te voy a hablar de una herramienta que te puede servir mucho.
 En otros videos le hemos llamado **la matriz del conocimiento** o la _matriz epistemológica_.
 
 El nombre por el que se le conoce más ampliamente es **"la matriz de Rumsfeld"**.
+
 
 Con esta herramienta podrás evaluar mejor los riesgos de un proyecto de software. Quédate conmigo para aprender cómo funciona.
 
@@ -53,15 +54,16 @@ Pero quiero que te quedes con la idea de una frase que escuché en una serie lla
 image::https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1688017245/5557d4f59b6ee4332ffae7f2a68513b7_n0ci5o.png[]
 
 
-## Ejemplos
+## Ejemplo de la matriz de Rumsfeld
 
 Pongamos algunos ejemplos de cada categoría para entenderlos mejor.
 
-### Categoría 1: Lo que sabemos que sabemos
 
-En este área están todas las cosas que nuestra consciencia puede encontrar y a veces incluso explicar. Por ejemplo si eres programador sabes que sabes algún lenguaje de programación, como Python, Go, Scala. Hablando del futuro sabemos que es muy probable que todos estos lenguajes tengan nuevas versiones, o que se encuentren vulnerabilidades en ellos y que se tengan que actualizar.
+### Primera categoría: Lo que sabemos que sabemos
 
-También podríamos incluir el conocimiento académico, cosas que hayamos estudiado recientemente y cosas similares.
+En esta área están todas las cosas que nuestra consciencia puede encontrar y a veces incluso explicar. Por ejemplo si eres programador sabes que sabes algún lenguaje de programación, como Python, Go, Scala. Hablando del futuro sabemos que es muy probable que todos estos lenguajes tengan nuevas versiones, o que se encuentren vulnerabilidades en sus runtimes y que se tengan que actualizar.
+
+También podríamos incluir el conocimiento académico, cosas que hayamos estudiado recientemente y hayamos entendido bien.
 
 ## Categoría 2: Lo que sabemos que no sabemos
 
