@@ -1,22 +1,29 @@
-# Cómo evaluar mejor los riesgos de un proyecto de software
+= Cómo evaluar mejor los riesgos de un proyecto de software
 
-Si estás avanzando en tu carrera como desarrollador, es probable que se requiera que tomes decisiones sobre el proyecto.
+Si estás avanzando en tu carrera como desarrollador, es posible que se requiera que tomes decisiones *importantes* sobre los proyectos en los que participas.
 
-Estas decisiones pueden ser sobre la arquitectura, el diseño, la tecnología, la metodología, etc.
+Estas decisiones pueden ser sobre la _arquitectura_, el _diseño funcional_, la tecnología, la metodología, etc.
 
 En este video te voy a hablar de una herramienta que te puede servir mucho.
-En otros videos le hemos llamado la matriz del conocimiento o la matriz epistemológica.
 
-El nombre por el que se le conoce realmente es **"la matriz de Rumsfeld"**.
+En otros videos le hemos llamado **la matriz del conocimiento** o la _matriz epistemológica_.
+
+El nombre por el que se le conoce más ampliamente es **"la matriz de Rumsfeld"**.
+
+
+Con esta herramienta podrás evaluar mejor los riesgos de un proyecto de software. Quédate conmigo para aprender cómo funciona.
+
+-- Intro
 
 ## Quién es Rumsfeld
 
 image::https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Defense.gov_News_Photo_020221-D-9880W-080.jpg/2880px-Defense.gov_News_Photo_020221-D-9880W-080.jpg[width=400,align="center"]
-Donald Rumsfeld fue un político estadounidense que fue secretario de defensa de los Estados Unidos durante el gobierno de George W. Bush.
+
+Donald Rumsfeld fue el secretario de defensa de los Estados Unidos durante el gobierno de **George W. Bush**.
 
 En una conferencia de prensa en el 2002, Rumsfeld dijo lo siguiente:
 
-> "There are known knowns; there are things we know we know. We also know there are known unknowns; that is to say we know there are some things we do not know. But there are also unknown unknowns—the ones we don't know we don't know."
+> Hay cosas que sabemos que sabemos. También sabemos que hay cosas que sabemos que no sabemos. Pero también hay cosas que no sabemos que no sabemos.
 
 
 La **matriz de Rumsfeld** es una herramienta que nos ayuda a representar el conocimiento y a identificar qué conocimiento nos falta para tomar decisiones. En este artículo vamos a ver cómo funciona y cómo nos puede ayudar.
@@ -32,7 +39,6 @@ Según nuestro grado de conocimiento y la consciencia que tenemos de él, podemo
 
 La representación tradicional es la siguiente:
 
-
 image::https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1688048267/Ilustracio%CC%81n_sin_ti%CC%81tulo_5_lpvjyv.png[]
 
 Pero no me gusta porque pone las cuatro categorías como del mismo tamaño. Mi representación personal, que me parece que guarda mejor las proporciones es esta:
@@ -47,15 +53,17 @@ Pero quiero que te quedes con la idea de una frase que escuché en una serie lla
 
 image::https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1688017245/5557d4f59b6ee4332ffae7f2a68513b7_n0ci5o.png[]
 
-## Ejemplos
+
+## Ejemplo de la matriz de Rumsfeld
 
 Pongamos algunos ejemplos de cada categoría para entenderlos mejor.
 
-### Categoría 1: Lo que sabemos que sabemos
 
-En este área están todas las cosas que nuestra consciencia puede encontrar y a veces incluso explicar. Por ejemplo si eres programador sabes que sabes algún lenguaje de programación, como Python, Go, Scala. Hablando del futuro sabemos que es muy probable que todos estos lenguajes tengan nuevas versiones, o que se encuentren vulnerabilidades en ellos y que se tengan que actualizar.
+### Primera categoría: Lo que sabemos que sabemos
 
-También podríamos incluir el conocimiento académico, cosas que hayamos estudiado recientemente y cosas similares.
+En esta área están todas las cosas que nuestra consciencia puede encontrar y a veces incluso explicar. Por ejemplo si eres programador sabes que sabes algún lenguaje de programación, como Python, Go, Scala. Hablando del futuro sabemos que es muy probable que todos estos lenguajes tengan nuevas versiones, o que se encuentren vulnerabilidades en sus runtimes y que se tengan que actualizar.
+
+También podríamos incluir el conocimiento académico, cosas que hayamos estudiado recientemente y hayamos entendido bien.
 
 ## Categoría 2: Lo que sabemos que no sabemos
 
