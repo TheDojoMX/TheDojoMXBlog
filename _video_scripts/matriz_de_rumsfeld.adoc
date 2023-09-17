@@ -65,17 +65,18 @@ En esta área están todas las cosas que nuestra consciencia puede encontrar y a
 
 También podríamos incluir el conocimiento académico, cosas que hayamos estudiado recientemente y hayamos entendido bien.
 
-## Categoría 2: Lo que sabemos que no sabemos
+## Segunda Categoría: Lo que sabemos que no sabemos
 
 Siguiendo el ejemplo de los lenguajes de programación, normalmente sabemos uno o dos, pero estamos conscientes de que no conocemos su funcionamiento interno, o que no conocemos otros lenguajes, por ejemplo Ocaml, Haskell, etc. O sabemos que no podemos montar una infraestructura de Kubernetes, pero sabemos que existe y que hay gente que lo sabe hacer, así que podríamos investigarlo. También hay cosas que son imposibles de conocer y lo sabemos, por ejemplo, cuando va a salir exactamente la próxima versión de Python.
 
-## Categoría 3: Lo que no sabemos que sabemos
+## Tercera categoría: Lo que no sabemos que sabemos
 
 Aquí se empiezan a  poner difíciles las cosas, ¿cómo que hay cosas que no sabemos que sabemos? Este es el conocimiento tácito, cosas que hemos adquirido indirectamente o que ya están tan interiorizadas que no nos damos cuenta que sabemos. Por ejemplo cuando eres programador no te das cuenta que _estás haciendo matemáticas_ con el simple hecho de programar. Entonces sabes matemáticas (por lo menos una rama de ellas), pero no te das cuenta. Otro ejemplo es con nuestro lenguaje natural, sabemos conjugar en todas las formas de subjuntivo, pero no sabíamos ni cómo se llama eso.
 
-Una subcategoría este tipo de conocimiento es el que tenemos pero no nos damos cuenta que es relevante para el problema en cuestión que estamos tratando.
+Una categoría interna de este tipo de conocimiento es el que tenemos pero no nos damos cuenta que es relevante para el problema en cuestión que estamos tratando.
 
-## Categoría 4: Lo que no sabemos que no sabemos
+
+## Cuarta categoría: Lo que no sabemos que no sabemos
 
 Esta es la más difícil de entender, en inglés le llaman los "unknown unknowns"  y son todas aquellas cosas que no sabíamos siquiera que teníamos que preguntar. En el caso de los lenguajes de programación, por ejemplo está el caso de los lenguajes que ni siquiera hemos escuchado su nombre, o de todos aquellos conceptos que no sabemos que existen. Por ejemplo, si no sabemos que existe la programación funcional, no sabemos que no sabemos programación funcional.
 
