@@ -16,5 +16,3 @@ A veces, los programadores usamos muy libremente los conceptos. Uno de ellos es 
 ## ¿Qué es Real Time?
 
 Un sistema que provee garantías de Tiempo Real o Real Time es aquel que garantiza que una tarea se va a ejecutar en un tiempo determinado. Esto es muy importante en sistemas críticos, como los que se usan en la industria automotriz, aeroespacial, médica, etc.
-
-
