@@ -1,13 +1,13 @@
 ---
-title: "¿Qué es Real Time en sistemas computacionales?"
+title: "¿Qué es Real Time en sistemas de software?"
 date: 2023-09-18
 author: Héctor Patricio
 tags:
 comments: true
-excerpt: "En este artículo hablaremos de lo que significa Real Time y qué niveles hay, sobre todo en sistemas críticos."
+excerpt: "Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea."
 header:
-  overlay_image: 
-  teaser: 
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -19,4 +19,11 @@ Un sistema que provee garantías de Tiempo Real o Real Time es aquel que **garan
 
 Pero también hay sistemas en los que es _deseable_ que una tarea se ejecute antes de cierto tiempo, por ejemplo, cuando estamos transmitiendo información en forma de audio o video de algo que es importante que se comunique rápidamente. Así, podemos hacer llamadas o videollamadas que son útiles.
 
+## Cómo puedes lograr un sistema Real Time
 
+Lo primero que debes pensar es...
+
+
+## Conclusión
+
+Conocer los diferentes niveles de servicio que un sistema puede garantizar.
