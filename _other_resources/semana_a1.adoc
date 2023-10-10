@@ -1,0 +1,33 @@
+= Lecturas Semana 1 - Ciencias Computacionales Código Facilito
+
+Las siguientes lecturas te ayudarán a completar lo que vimos en la clase.
+
+== Máquinas de Turing y Autómatas Finitos
+
+"La Mente nueva del emperador" de Roger Penrose es un gran libro para entender el funcionamiento de la computación en general, desde las bases físicas que la soporta, pero su final no es ese, sino analizar la posibilidad de que exista la inteligencia artificial fuerte, aquella que supere a los humanos.
+
+Agrego el libro en formato PDF, por si lo quieres leer, pero si está en México, lo puedes encontrar en menos de $300 MXN: https://amzn.to/3PPUX3Z
+
+También agrego un corte específico de la sección que más nos concierne: "Máquinas de Turing" en la que se explica cómo se construyen e incluso da un ejemplo en binario. El archivo se llama "La Máquina de Turing y el Cálculo Lambda.pdf".
+
+Otra lectura en la que puedes profundizar sobre lo que es un Autómata Finito es la que se encuentra en el archivo "a_finito.pdf". En esta se da una definición matemática formal de lo que es un Autómata Finito.
+
+
+== Otras lecturas
+
+Hablando sobre los modelos de computación y la computación cuántica, en el blog de *The Dojo MX*, se publicó un artículo sobre la criptografía y la computación cuántica, en el que se explica cómo la computación cuántica puede romper la criptografía actual. Puedes leerlo en: https://blog.thedojo.mx/2021/12/11/criptografia-vs-computacion-cuantica.html
+
+Y también, profundizando en la palabra "abstracción", tenemos un artículo en el que se habla de ello a fondo: https://blog.thedojo.mx/2023/03/13/que-es-la-abstraccion.html
+
+== Videos
+
+Hay algunos videos que te pueden servir si tienes curiosidad sobre computación cuántica:
+
+1. Cómo el cómputo cuántico rompe el internet, desde ahora: https://youtu.be/xymGpIeNc88?si=3YPnTQoC8OLsJFhS
+2. Las Computadoras Superpoderosas que nunca te contaron: https://youtu.be/PQeS7sfMxR4?si=RJs18dF3wm-TiAsO
+3. El Futuro de las Computadoras Será Radicalmente Diferente: https://youtu.be/qNtxODk_Lmk?si=UlQHX_iqXxXmEbBl
+4. ¿Qué es y cómo funciona la computación Cuántica?: https://youtu.be/YpYuBEzfRlM?si=K5B7mIMJTRk9kYb_
+
+== Ejercicio
+
+No te olvides de poner por escrito, en un video o en cualquier otro lado el ejemplo de un modelo de computación que no hayamos visto en la clase.

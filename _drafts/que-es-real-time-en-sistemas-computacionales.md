@@ -2,7 +2,7 @@
 title: "¿Qué es Real Time en sistemas de software?"
 date: 2023-09-18
 author: Héctor Patricio
-tags:
+tags: real-time tiempo-real sistemas-críticos
 comments: true
 excerpt: "Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea."
 header:
@@ -12,6 +12,7 @@ header:
 ---
 
 A veces, los programadores usamos muy libremente los conceptos. Uno de ellos es el de Real Time. En este artículo vamos a hablar de lo que significa realmente el término, lo vamos a definir claramente y sobre todo aprenderemos a diferenciar los distintos niveles o garantías que debe ofrecer un sistema en tiempo real.
+
 
 ## ¿Qué es Real Time?
 
