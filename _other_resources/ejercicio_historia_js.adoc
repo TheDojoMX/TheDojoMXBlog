@@ -35,3 +35,11 @@ Ejecuta un archivo, puede ser un simple "HelloWorld" y examina la API que expone
 
 Explora cómo puedes usarlo. Reto extra: agrégalo en un proyecto de otro lenguaje.
 
+
+== Ejercicio sobre JIT
+
+Contesta las siguientes preguntas:
+
+- ¿Qué puedes hacer que tu código se aproveche mejor de las optimizaciones del JIT?
+- ¿Qué engines tienen JIT y cuáles no?
+- ¿Por qué simplemente no compilamos directamente JS?
