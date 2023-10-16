@@ -43,3 +43,11 @@ Contesta las siguientes preguntas:
 - ¿Qué puedes hacer que tu código se aproveche mejor de las optimizaciones del JIT?
 - ¿Qué engines tienen JIT y cuáles no?
 - ¿Por qué simplemente no compilamos directamente JS?
+
+
+== Lecturas complementarias
+
+- ¿Qué es un engine de JS?: https://blog.thedojo.mx/2020/05/17/que-es-un-engine-de-javascript.html
+- Qué es la compilación Just in Time: https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es.html
+- ¿Qué es el bytecode? https://blog.thedojo.mx/2023/01/22/entendiendo-el-bytecode.html
+- Is it possible to improve JavaScript “JIT” with an “AOT” pre-step? - En este artículo puedes aprender las arquitecturas de varios JS engines, y verás cómo optimizar tu JS antes de que el JIT o para facilitarle el trabajo. https://itnext.io/is-it-possible-to-improve-javascript-jit-with-an-aot-pre-step-8e25ecb3590f
