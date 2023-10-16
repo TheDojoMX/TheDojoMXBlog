@@ -22,6 +22,7 @@ Pero también hay sistemas en los que es _deseable_ que una tarea se ejecute ant
 ## Cómo puedes lograr un sistema Real Time
 
 Lo primero en que debemos pensar es qué tipo de realtime necesitamos.
+
 ## Conclusión
 
 Conocer los diferentes niveles de servicio que un sistema puede garantizar.
