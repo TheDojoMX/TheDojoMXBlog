@@ -6,7 +6,8 @@ Ejercicio: Contesta las siguientes preguntas:
 
 - ¿Qué partes contiene la especificación?
 - ¿Qué es un agente?
-- ¿Qué funciones y propiedades tiene el prototipo de "Date" que no hayas usado y puedas usar.
+- ¿Qué funciones y propiedades tiene el prototipo de "Date" que no hayas usado y puedas usar?
+
 
 Aquí se puede ver la lista de compatibilidad con Node (V8) desde ES2015 (ES6): https://node.green/
 
@@ -45,7 +46,7 @@ Contesta las siguientes preguntas:
 - ¿Por qué simplemente no compilamos directamente JS?
 
 
-== Lecturas complementarias
+== Lecturas y recursos complementarias
 
 - ¿Qué es un engine de JS?: https://blog.thedojo.mx/2020/05/17/que-es-un-engine-de-javascript.html
 - Qué es la compilación Just in Time: https://blog.thedojo.mx/2023/01/18/compilacion-just-in-time-que-es.html
