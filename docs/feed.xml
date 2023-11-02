@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-09-04T23:37:09-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Las tres garantías de seguridad de un hash</title><link href="https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html" rel="alternate" type="text/html" title="Las tres garantías de seguridad de un hash" /><published>2023-08-28T00:00:00-06:00</published><updated>2023-08-28T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash</id><content type="html" xml:base="https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html"><![CDATA[<p>En este artículo profundizaremos sobre las garantías de seguridad mínimas que una función hash debe cumplir para ser criptográficamente segura. En un artículo anterior: <a href="/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">¿Qué es un hash?</a> ya hablamos más detalladamente de la definición y de los algoritmos que puedes usar aún hoy de manera segura.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-11-02T09:03:52-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Las tres garantías de seguridad de un hash</title><link href="https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html" rel="alternate" type="text/html" title="Las tres garantías de seguridad de un hash" /><published>2023-08-28T00:00:00-06:00</published><updated>2023-08-28T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash</id><content type="html" xml:base="https://blog.thedojo.mx/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html"><![CDATA[<p>En este artículo profundizaremos sobre las garantías de seguridad mínimas que una función hash debe cumplir para ser criptográficamente segura. En un artículo anterior: <a href="/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html">¿Qué es un hash?</a> ya hablamos más detalladamente de la definición y de los algoritmos que puedes usar aún hoy de manera segura.</p>
 
 <p>Empecemos por una pequeña definición de lo que es una función hash en la criptografía.</p>
 
@@ -156,16 +156,18 @@
   <li>¿Cómo puedo crear programas útiles?</li>
 </ul>
 
-<p>Estas preguntas parecen tener un respuesta concreta pero hay algunos casos en los que podemos dudar de los casos en los que se cumple. Pero la filosofía no se queda allí, tiene por lo menos las siguientes áreas:</p>
+<p>Estas preguntas parecen tener un respuesta concreta pero hay algunas situaciones en los que podemos dudar de qué tan útil o real es lo que sabemos.</p>
+
+<p>La filosofía no se queda allí, tiene por lo menos las siguientes áreas:</p>
 
 <ul>
   <li><strong>La ontología</strong>. En la que se preguntan cosas como las que acabamos de ver, que tienen que ver con la existencia y la definición de las cosas</li>
   <li><strong>La semántica</strong>. El significado de los términos que usamos</li>
-  <li><strong>La axiología</strong>. Analiza los valores que fundamentan la computación y los eventos relacionados con estos.</li>
-  <li><strong>La epistemología</strong>. Es el análisis del conocimiento y las formas de obtenerlo: ¿cómo podemos conocer más acerca de la computación?</li>
-  <li><strong>La metodología</strong>. Qué métodos podemos seguir para practicar la computación y la obtención de conocimiento de esta de la mejor manera.</li>
+  <li><strong>La axiología</strong>. Analiza los valores que fundamentan la computación y los eventos relacionados con estos</li>
+  <li><strong>La epistemología</strong>. Es el análisis del conocimiento y las formas de obtenerlo: ¿cómo podemos conocer más acerca de la computación? ¿Cómo podemos saber si lo que sabemos es correcto? ¿Cómo <em>sabemos</em> que <em>sabemos</em>?</li>
+  <li><strong>La metodología</strong>. Qué métodos podemos seguir para practicar la computación y la obtención de conocimiento de esta de la mejor manera</li>
   <li><strong>La estética</strong>. Analiza la percepción que tenemos de los artefactos computacionales y los conceptos relacionados con encontrar agradable o de valor esa percepción: orden, belleza, significado, etc.</li>
-  <li><strong>La ética</strong>. Está basada en la axiología, es decir, en la definición de lo que consideramos de valor y qué acciones o prácticas nos acercan o alejan de lo que consideramos que puede ser “bueno” como resultado de la computación.</li>
+  <li><strong>La ética</strong>. Está basada en la axiología, es decir, en la definición de lo que consideramos de valor y qué acciones o prácticas nos acercan o alejan de lo que consideramos que puede ser “bueno” como resultado de la computación</li>
 </ul>
 
 <p>Como puedes ver, es amplia, pero cada una de las áreas te puede ayudar en temas específicos en tu práctica diaria.</p>
@@ -292,8 +294,6 @@ tienen un camino en la filosofía de la computación, así que si quieres desarr
 <p>Pero quiero que te quedes con la idea de una frase que escuché en una serie llamada Dark: “Lo que sabemos que sabemos es una gota, lo que no sabemos es un océano.”</p>
 
 <p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1688017245/5557d4f59b6ee4332ffae7f2a68513b7_n0ci5o.png" alt="Escena de Dark" /></p>
-
-<p>::https://hbr.org/2017/10/simple-ways-to-spot-unknown-unknowns[]</p>
 
 <h2 id="ejemplos">Ejemplos</h2>
 
