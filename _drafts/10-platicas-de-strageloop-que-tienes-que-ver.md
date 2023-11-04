@@ -16,6 +16,24 @@ StrangeLoop es una de las mejores conferencias de tecnología del mundo porque e
 
 Si quieres ponerte a pensar cosas profundas sobre estos temas y a veces romperte la cabeza, te recomiendo ver las pláticas y si puedes, asistir presencialmente a la conferencia.
 
-En este artículo te recomendaré diez de las mejores pláticas que se han dado aquí y que puedes ver en línea.
+En este artículo te recomendaré diez de las mejores pláticas que se han dado aquí y que puedes ver en línea. Desafortunadamente todas están en inglés, aunque parece que puedes poner traducción automática en YouTube.
 
-## 1. [The Future of Programming](https://www.youtube.com/watch?v=ecIWPzGEbFc)
+## Deja de escribir programas muertos - Jack Rusher
+
+En esta plática se habla de cómo muchas de las cosas a las que ya estamos acostumbrados como programadores en realidad son cosas que hemos heredado de las limitaciones que teníamos en el pasado.
+
+Gran parte de lo que hacemos y creemos muy normal son fósiles de que nos tienen atados al pasado, pero ahora tenemos la capacidad de hacer muchas cosas más dinámicas e interesantes.
+
+Esta plática te puede abrir la mente respecto a nuevas formas de programar y te presenta entornos modernos, dinámicos y no convencionales que pueden cambiar la forma en la que trabajamos.
+
+La puedes ver aquí: [Stop Writing dead programs](https://youtu.be/8Ab3ArE8W3s?si=7MprB-mKxO0M4-A0)
+
+## Desarrollo de juegos en 8 bits - Kevin Zurawel
+
+["Game Development in Eight Bits" by Kevin Zurawel](https://youtu.be/TPbroUDHG0s?si=clvg5je8GDoC4dMS)
+
+
+[The Future of Programming](https://www.youtube.com/watch?v=ecIWPzGEbFc)
+
+## 2. [The Birth & Death of JavaScript](https://www.youtube.com/watch?v=0mp1rujxzdw)
+
