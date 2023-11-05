@@ -32,8 +32,8 @@ La puedes ver aquí: [Stop Writing dead programs](https://youtu.be/8Ab3ArE8W3s?s
 
 ["Game Development in Eight Bits" by Kevin Zurawel](https://youtu.be/TPbroUDHG0s?si=clvg5je8GDoC4dMS)
 
+## 
+
 
 [The Future of Programming](https://www.youtube.com/watch?v=ecIWPzGEbFc)
-
-## 2. [The Birth & Death of JavaScript](https://www.youtube.com/watch?v=0mp1rujxzdw)
 
