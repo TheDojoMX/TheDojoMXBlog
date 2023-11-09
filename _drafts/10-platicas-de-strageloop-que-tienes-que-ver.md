@@ -35,5 +35,4 @@ La puedes ver aquí: [Stop Writing dead programs](https://youtu.be/8Ab3ArE8W3s?s
 ## La historia de la programación - Felienne Hermans
 
 
-
 ## 
