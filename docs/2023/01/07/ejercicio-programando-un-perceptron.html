@@ -474,7 +474,7 @@ Este es una alternativa a Iris y se conoce como el <a href="https://github.com/a
 
 <p>Podemos empezar combinando las dos variables que elegimos de la siguiente manera:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="n">w1</span> <span class="o">*</span> <span class="n">penguins</span><span class="p">[</span><span class="s">'bill_depth_mm'</span><span class="p">]</span> <span class="o">+</span> <span class="n">w2</span> <span class="o">*</span> <span class="n">penguins</span><span class="p">[</span><span class="s">'flipper_length_mm'</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="n">w1</span> <span class="o">*</span> <span class="n">penguins</span><span class="p">[</span><span class="sh">'</span><span class="s">bill_depth_mm</span><span class="sh">'</span><span class="p">]</span> <span class="o">+</span> <span class="n">w2</span> <span class="o">*</span> <span class="n">penguins</span><span class="p">[</span><span class="sh">'</span><span class="s">flipper_length_mm</span><span class="sh">'</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span>
 </code></pre></div></div>
 
 <p><strong>Nota</strong>: En este ejemplo no usaremos <code class="language-plaintext highlighter-rouge">numpy</code> o <code class="language-plaintext highlighter-rouge">pandas</code>, para hacer la programación lo más tradicional posible. Más adelante nos empezaremos a meter en <code class="language-plaintext highlighter-rouge">numpy</code>, <code class="language-plaintext highlighter-rouge">pandas</code> y esas cosas que parecen magia negra.</p>
@@ -491,8 +491,8 @@ Este es una alternativa a Iris y se conoce como el <a href="https://github.com/a
 <p>Ahora podemos usar esta función para convertir la salida de la función lineal en un 1 o un 0:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="s">"""Recibe una fila de datos y devuelve 1 si es Gentoo y 0 si no lo es"""</span>
-    <span class="k">return</span> <span class="n">paso</span><span class="p">(</span><span class="n">w1</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span> <span class="o">+</span> <span class="n">w2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+    <span class="sh">"""</span><span class="s">Recibe una fila de datos y devuelve 1 si es Gentoo y 0 si no lo es</span><span class="sh">"""</span>
+    <span class="k">return</span> <span class="nf">paso</span><span class="p">(</span><span class="n">w1</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">bill_depth_mm</span><span class="sh">"</span><span class="p">]</span> <span class="o">+</span> <span class="n">w2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">flipper_length_mm</span><span class="sh">"</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Nuestra función de clasificación ya está lista. Pero el trabajo del perceptrón es encontrar los valores de <strong>los parámetros</strong>: <code class="language-plaintext highlighter-rouge">w1</code>, <code class="language-plaintext highlighter-rouge">w2</code>, y <code class="language-plaintext highlighter-rouge">b</code>. Creemos el algoritmo que define estos valores, que llamaremos <code class="language-plaintext highlighter-rouge">entrenar</code>. Esta función aprende a base de prueba y error. Para aprender hace lo siguiente:</p>
@@ -520,50 +520,50 @@ Este es una alternativa a Iris y se conoce como el <a href="https://github.com/a
     <span class="k">while</span> <span class="n">iteraciones</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">iteraciones</span> <span class="o">-=</span> <span class="mi">1</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">datos</span><span class="p">:</span>
-            <span class="n">etiqueta_real</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Gentoo"</span><span class="p">)</span>
-            <span class="n">clase</span> <span class="o">=</span> <span class="n">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+            <span class="n">etiqueta_real</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">species</span><span class="sh">"</span><span class="p">]</span> <span class="o">==</span> <span class="sh">"</span><span class="s">Gentoo</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">clase</span> <span class="o">=</span> <span class="nf">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">etiqueta_real</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">clase</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="c1"># Aquí tenemos un Gentoo mal clasificado, tenemos que
 </span>                <span class="c1"># aumentar w1 y w2 para que la función lineal se acerque
 </span>                <span class="c1"># a la etiqueta real
-</span>                <span class="n">w1</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span>
-                <span class="n">w2</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span>
+</span>                <span class="n">w1</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">bill_depth_mm</span><span class="sh">"</span><span class="p">]</span>
+                <span class="n">w2</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">flipper_length_mm</span><span class="sh">"</span><span class="p">]</span>
                 <span class="n">b</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Valor escogido arbitrariamente
 </span>            <span class="k">elif</span> <span class="n">etiqueta_real</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">clase</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="c1"># Aquí tenemos un NO Gentoo mal clasificado, tenemos que
 </span>                <span class="c1"># disminuir w1 y w2 para que la función lineal se acerque
 </span>                <span class="c1"># a la etiqueta real
-</span>                <span class="n">w1</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span>
-                <span class="n">w2</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span>
+</span>                <span class="n">w1</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">bill_depth_mm</span><span class="sh">"</span><span class="p">]</span>
+                <span class="n">w2</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">flipper_length_mm</span><span class="sh">"</span><span class="p">]</span>
                 <span class="n">b</span> <span class="o">-=</span> <span class="mi">1</span>  <span class="c1"># valor escogido arbitrariamente
-</span>        <span class="k">print</span><span class="p">(</span><span class="s">"Iteración"</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">,</span> <span class="s">"w1:"</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="s">"w2:"</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="s">"b:"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span>        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Iteración</span><span class="sh">"</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">,</span> <span class="sh">"</span><span class="s">w1:</span><span class="sh">"</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="sh">"</span><span class="s">w2:</span><span class="sh">"</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="sh">"</span><span class="s">b:</span><span class="sh">"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span>
 </code></pre></div></div>
 
 <p>Podríamos decir que esto es básicamente todo el algoritmo del perceptrón. Ahora podemos entrenar nuestro perceptrón con los datos de entrenamiento. Antes le hacemos unas cuantas modificaciones para que sea más fácil de usar:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cargar el archivo CSV con los datos de entrenamiento como diccionario, el archivo está en la carpeta data, un nivel arriba
-</span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"../data/penguins.csv"</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv</span><span class="p">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">))</span>
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">../data/penguins.csv</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">csv</span><span class="p">.</span><span class="nc">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">))</span>
 
 <span class="c1"># Limpiando los los datos, eliminando los que no tienen bill_depth_mm o flipper_length_mm
 </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">row</span>
     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span>
-    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span> <span class="o">!=</span> <span class="s">"NA"</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span> <span class="o">!=</span> <span class="s">"NA"</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">bill_depth_mm</span><span class="sh">"</span><span class="p">]</span> <span class="o">!=</span> <span class="sh">"</span><span class="s">NA</span><span class="sh">"</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">flipper_length_mm</span><span class="sh">"</span><span class="p">]</span> <span class="o">!=</span> <span class="sh">"</span><span class="s">NA</span><span class="sh">"</span>
 <span class="p">]</span>
 
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="n">row</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">])</span>
-    <span class="n">row</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">])</span>
+    <span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">bill_depth_mm</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">bill_depth_mm</span><span class="sh">"</span><span class="p">])</span>
+    <span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">flipper_length_mm</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="sh">"</span><span class="s">flipper_length_mm</span><span class="sh">"</span><span class="p">])</span>
 
 </code></pre></div></div>
 
 <p>Estos datos ya está listos para para ser usados. Ahora podemos entrenar el perceptrón:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Escogemos las iteraciones arbitrariamente
-</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">entrenar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nf">entrenar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Lo podemos probar con los mismos datos de entrenamiento:</p>
@@ -572,18 +572,18 @@ Este es una alternativa a Iris y se conoce como el <a href="https://github.com/a
     <span class="n">correctos</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">incorrectos</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="n">clase</span> <span class="o">=</span> <span class="n">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-        <span class="n">etiqueta_real</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Gentoo"</span><span class="p">)</span>
+        <span class="n">clase</span> <span class="o">=</span> <span class="nf">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        <span class="n">etiqueta_real</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">species</span><span class="sh">"</span><span class="p">]</span> <span class="o">==</span> <span class="sh">"</span><span class="s">Gentoo</span><span class="sh">"</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">clase</span> <span class="o">==</span> <span class="n">etiqueta_real</span><span class="p">:</span>
             <span class="n">correctos</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">incorrectos</span> <span class="o">+=</span> <span class="mi">1</span>
 
-      <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n</span><span class="s">Resultados:"</span><span class="p">)</span>
-      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Correctos: </span><span class="si">{</span><span class="n">correctos</span><span class="si">}</span><span class="s"> - </span><span class="si">{</span><span class="p">(</span><span class="n">correctos</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="si">}</span><span class="s">%"</span><span class="p">)</span>
-      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Incorrectos: </span><span class="si">{</span><span class="n">incorrectos</span><span class="si">}</span><span class="s"> - </span><span class="si">{</span><span class="p">(</span><span class="n">incorrectos</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="si">}</span><span class="s">%"</span><span class="p">)</span>
-<span class="n">probar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n\n</span><span class="s">Resultados:</span><span class="sh">"</span><span class="p">)</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Correctos: </span><span class="si">{</span><span class="n">correctos</span><span class="si">}</span><span class="s"> - </span><span class="si">{</span><span class="p">(</span><span class="n">correctos</span> <span class="o">/</span> <span class="nf">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="si">}</span><span class="s">%</span><span class="sh">"</span><span class="p">)</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Incorrectos: </span><span class="si">{</span><span class="n">incorrectos</span><span class="si">}</span><span class="s"> - </span><span class="si">{</span><span class="p">(</span><span class="n">incorrectos</span> <span class="o">/</span> <span class="nf">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="si">}</span><span class="s">%</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">probar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Y el resultado es:</p>
@@ -595,8 +595,8 @@ Incorrectos: 123 - 35.96491228070175%
 
 <p>Parece que nuestro perceptrón no logró ni siquiera aprender bien con los datos de entrenamiento. ¿Qué pasa si aumentamos las iteraciones, digamos a 1000?</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">entrenar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="n">probar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nf">entrenar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="nf">probar</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>El resultado es:</p>
@@ -611,13 +611,13 @@ Incorrectos: 0 - 0.0%
 <p>Para evitarlo, necesitamos probarlo con datos que no ha visto antes. Para esto vamos a dividir los datos en dos grupos, uno para entrenamiento y otro para pruebas:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Dividir los datos en dos grupos, uno para entrenamiento y otro para pruebas
-</span><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">entrenamiento</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)]</span>
-<span class="n">pruebas</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">):]</span>
+</span><span class="kn">import</span> <span class="n">random</span>
+<span class="n">random</span><span class="p">.</span><span class="nf">shuffle</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">entrenamiento</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="nf">int</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)]</span>
+<span class="n">pruebas</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="nf">int</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">):]</span>
 
-<span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">entrenar</span><span class="p">(</span><span class="n">entrenamiento</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="n">probar</span><span class="p">(</span><span class="n">pruebas</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nf">entrenar</span><span class="p">(</span><span class="n">entrenamiento</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="nf">probar</span><span class="p">(</span><span class="n">pruebas</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -639,32 +639,32 @@ Incorrectos: 0 - 0.0%
     <span class="k">while</span> <span class="n">iteraciones</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">iteraciones</span> <span class="o">-=</span> <span class="mi">1</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">datos</span><span class="p">:</span>
-            <span class="n">etiqueta_real</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Gentoo"</span><span class="p">)</span>
-            <span class="n">clase</span> <span class="o">=</span> <span class="n">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+            <span class="n">etiqueta_real</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">species</span><span class="sh">"</span><span class="p">]</span> <span class="o">==</span> <span class="sh">"</span><span class="s">Gentoo</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">clase</span> <span class="o">=</span> <span class="nf">clasificar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
             <span class="c1">## Esta es la revisión de "la verdad", más adelante la explicamos en la sección "función de pérdida"
 </span>            <span class="k">if</span> <span class="n">etiqueta_real</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">clase</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="c1"># Aquí tenemos un Gentoo mal clasificado, tenemos que
 </span>                <span class="c1"># aumentar w1 y w2 para que la función lineal se acerque
 </span>                <span class="c1"># a la etiqueta real
-</span>                <span class="n">w1</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
-                <span class="n">w2</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
+</span>                <span class="n">w1</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">bill_depth_mm</span><span class="sh">"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
+                <span class="n">w2</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">flipper_length_mm</span><span class="sh">"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
                 <span class="n">b</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">lr</span>  <span class="c1"># Valor escogido arbitrariamente
 </span>            <span class="k">elif</span> <span class="n">etiqueta_real</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">clase</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="c1"># Aquí tenemos un NO Gentoo mal clasificado, tenemos que
 </span>                <span class="c1"># disminuir w1 y w2 para que la función lineal se acerque
 </span>                <span class="c1"># a la etiqueta real
-</span>                <span class="n">w1</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="s">"bill_depth_mm"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
-                <span class="n">w2</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="s">"flipper_length_mm"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
+</span>                <span class="n">w1</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">bill_depth_mm</span><span class="sh">"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
+                <span class="n">w2</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="sh">"</span><span class="s">flipper_length_mm</span><span class="sh">"</span><span class="p">]</span> <span class="o">*</span> <span class="n">lr</span>
                 <span class="n">b</span> <span class="o">-=</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">lr</span>  <span class="c1"># valor escogido arbitrariamente
-</span>        <span class="k">print</span><span class="p">(</span><span class="s">"Iteración"</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">,</span> <span class="s">"w1:"</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="s">"w2:"</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="s">"b:"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span>        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Iteración</span><span class="sh">"</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">,</span> <span class="sh">"</span><span class="s">w1:</span><span class="sh">"</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="sh">"</span><span class="s">w2:</span><span class="sh">"</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="sh">"</span><span class="s">b:</span><span class="sh">"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span>
 </code></pre></div></div>
 
 <p>Y ahora vamos a probarlo de nuevo con 100 iteraciones y el lr default:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">entrenar</span><span class="p">(</span><span class="n">entrenamiento</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">probar</span><span class="p">(</span><span class="n">pruebas</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nf">entrenar</span><span class="p">(</span><span class="n">entrenamiento</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nf">probar</span><span class="p">(</span><span class="n">pruebas</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>En esta versión podemos ver que con muchas menos iteraciones el perceptrón logra clasificar correctamente los datos de prueba. El resultado es:</p>
@@ -995,24 +995,6 @@ Incorrectos: 0 - 0.0%
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-  <script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-127437335-2']);
-  
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-
 
 
 

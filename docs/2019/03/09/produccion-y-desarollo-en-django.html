@@ -430,8 +430,8 @@ Para hacer la prueba se ejecuta:</p>
 <p>y agregándola a mis apps en el archivo <code class="language-plaintext highlighter-rouge">settings.py</code></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">...</span>
-    <span class="s">'django_extensions'</span><span class="p">,</span>
+    <span class="bp">...</span>
+    <span class="sh">'</span><span class="s">django_extensions</span><span class="sh">'</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div></div>
 
@@ -448,17 +448,17 @@ Para hacer la prueba se ejecuta:</p>
 
 <p>Vámos como queda el archivo <code class="language-plaintext highlighter-rouge">settings.py</code></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sys</span>
 <span class="p">.</span>
 <span class="p">.</span>
 <span class="p">.</span>
-<span class="n">DEBUG_COMMAND</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s">'shell_plus'</span><span class="p">,</span> <span class="s">'shell'</span><span class="p">,</span> <span class="s">'runserver'</span><span class="p">)</span>
+<span class="n">DEBUG_COMMAND</span> <span class="o">=</span> <span class="nf">set</span><span class="p">(</span><span class="sh">'</span><span class="s">shell_plus</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">shell</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">runserver</span><span class="sh">'</span><span class="p">)</span>
 
-<span class="n">DJANGO_RUN_ARGS</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">)</span>
+<span class="n">DJANGO_RUN_ARGS</span> <span class="o">=</span> <span class="nf">set</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">DJANGO_RUN_ARGS</span><span class="p">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">DEBUG_COMMAND</span><span class="p">))</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">DJANGO_RUN_ARGS</span><span class="p">.</span><span class="nf">intersection</span><span class="p">(</span><span class="n">DEBUG_COMMAND</span><span class="p">))</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
     <span class="c1"># Code executed in develop time
-</span>    <span class="n">INSTALLED_APPS</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'django_extensions'</span><span class="p">)</span>
+</span>    <span class="n">INSTALLED_APPS</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sh">'</span><span class="s">django_extensions</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>En <code class="language-plaintext highlighter-rouge">DEBUG_COMMAND</code> se definen los comandos que se ejecutan solo en desarrollo, hay que recordar que <code class="language-plaintext highlighter-rouge">runserver</code> se agrega también en el set dado que NO se debe pasar a producción la ejecución de Django por medio de dicho mecanismo, para producción lo correcto es pasarlo con un WSGI server diseñado para producción como <a href="https://gunicorn.org">guinicorn</a>.</p>
@@ -761,24 +761,6 @@ Para hacer la prueba se ejecuta:</p>
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-  <script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-127437335-2']);
-  
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-
 
 
 

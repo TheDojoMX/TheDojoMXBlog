@@ -423,16 +423,16 @@
 
 <p>Un ejemplo de esto en Python sería:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">time</span>
 
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
 
 <span class="c1"># hacer algo (lo que queremos medir)
 </span>
-<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
 <span class="n">diff</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Esto puede parecer inofensivo, pero tiene una falla que hace a nuestro programa frágil ante eventualidades fuera del sistema. La función <code class="language-plaintext highlighter-rouge">time.time()</code> devuelve un número de segundos desde el 1 de Enero de 1970 (esta fecha conocida como el <strong>Epoch</strong>) como un flotante. Este número siempre será incremental, es decir, no <em>debería</em> devolverte un número menor que una llamada previa. Sin embargo, para calcular ese número de segundos (conocido como el <strong>Tiempo Unix</strong>), Python se basa en la hora del <em>sistema</em> en el que está corriendo el programa.</p>
@@ -449,13 +449,13 @@
 
 <p>La manera de usarlo en Python también es mediante el módulo <code class="language-plaintext highlighter-rouge">time</code>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">time</span>
 
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">monotonic</span><span class="p">()</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">monotonic</span><span class="p">()</span>
 <span class="c1"># hacer algo (lo que queremos medir)
-</span><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">monotonic</span><span class="p">()</span>
+</span><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">monotonic</span><span class="p">()</span>
 <span class="n">diff</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
-<span class="k">print</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -755,24 +755,6 @@
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-  <script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-127437335-2']);
-  
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-
 
 
 

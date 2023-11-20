@@ -430,56 +430,56 @@ B. Las abstracciones no deberían depender de los detalles, los detalles deben d
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="k">class</span> <span class="nc">Database</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sql</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">sql</span><span class="p">):</span>
         <span class="k">pass</span>
 
 <span class="k">class</span> <span class="nc">MySQLDatabase</span><span class="p">(</span><span class="n">Database</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Connecting to MySQL"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Connecting to MySQL</span><span class="sh">"</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Disconnecting from MySQL"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Disconnecting from MySQL</span><span class="sh">"</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sql</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Querying MySQL"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">sql</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Querying MySQL</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">PostgreSQLDatabase</span><span class="p">(</span><span class="n">Database</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Connecting to PostgreSQL"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Connecting to PostgreSQL</span><span class="sh">"</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Disconnecting from PostgreSQL"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Disconnecting from PostgreSQL</span><span class="sh">"</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sql</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Querying PostgreSQL"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">sql</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Querying PostgreSQL</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">DatabaseManager</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">database</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">database</span> <span class="o">=</span> <span class="n">database</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">database</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">database</span> <span class="o">=</span> <span class="n">database</span>
 
-    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">database</span><span class="p">.</span><span class="n">connect</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">database</span><span class="p">.</span><span class="nf">connect</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">database</span><span class="p">.</span><span class="n">disconnect</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">database</span><span class="p">.</span><span class="nf">disconnect</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sql</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">database</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">sql</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">database</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">Model</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">database_manager</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">database_manager</span> <span class="o">=</span> <span class="n">database_manager</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">database_manager</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">database_manager</span> <span class="o">=</span> <span class="n">database_manager</span>
 
-    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">database_manager</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="s">"INSERT INTO ..."</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">database_manager</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="sh">"</span><span class="s">INSERT INTO ...</span><span class="sh">"</span><span class="p">)</span>
 
-<span class="n">my_model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">DatabaseManager</span><span class="p">(</span><span class="n">MySQLDatabase</span><span class="p">()))</span>
+<span class="n">my_model</span> <span class="o">=</span> <span class="nc">Model</span><span class="p">(</span><span class="nc">DatabaseManager</span><span class="p">(</span><span class="nc">MySQLDatabase</span><span class="p">()))</span>
 </code></pre></div></div>
 
 <p>En este ejemplo vemos claramente como la clase <code class="language-plaintext highlighter-rouge">Model</code> no depende directamente de una clase concreta de base de datos, sino que depende de una abstracción, la clase <code class="language-plaintext highlighter-rouge">DatabaseManager</code>. De esta manera el código de “alto nivel”, es decir, el modelo, no depende de un código de “bajo nivel”, la base de datos.</p>
@@ -832,24 +832,6 @@ B. Las abstracciones no deberían depender de los detalles, los detalles deben d
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-  <script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-127437335-2']);
-  
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-
 
 
 
