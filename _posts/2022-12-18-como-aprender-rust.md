@@ -34,6 +34,8 @@ Hay otros recursos que se mencionan en la página oficial de Rust, que no están
 - [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/). Un curso completamente práctico que te enseña las bases.
 - [Rustlings](https://github.com/rust-lang/rustlings/). Un curso práctico que puedes correr en tu propia computadora.
 
+Finalmente, una empresa que se llama **(ferrous systems)[https://ferrous-systems.com/]** ha creado recursos para que aprendas Rust basados en su experiencia de muchos proyectos. Puedes ber estos recursos aquí: (Ferrous Teaching Material)[https://github.com/ferrous-systems/teaching-material].
+
 ### Recursos introductorios en video (de paga)
 
 Encontré dos cursos introductorios en plataformas en español:
