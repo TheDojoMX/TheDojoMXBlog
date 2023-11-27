@@ -6,11 +6,12 @@ tags: talks charlas strangeloop software-engineering
 comments: true
 excerpt: "StrangeLoop es una de las conferencias más importantes de software en el mundo, con pláticas increíbles. Aquí verás 10 pláticas que no te puedes perder."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: 
+  
+  teaser: 
+  
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
-
 
 StrangeLoop es una de las mejores conferencias de tecnología del mundo porque en ella se tratan temas no tan comunes relacionadas con la computación y el desarrollo de software.
 
@@ -32,3 +33,6 @@ La puedes ver aquí: [Stop Writing dead programs](https://youtu.be/8Ab3ArE8W3s?s
 
 ["Game Development in Eight Bits" by Kevin Zurawel](https://youtu.be/TPbroUDHG0s?si=clvg5je8GDoC4dMS)
 
+## The Mess We're In - Joe Armstrong
+
+["The Mess We're In" by Joe Armstrong](https://youtu.be/lKXe3HUG2l4?si=Z3Z6ZQZrQX6Z3Z6ZQZrQX6)
