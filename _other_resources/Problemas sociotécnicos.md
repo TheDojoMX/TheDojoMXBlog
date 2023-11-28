@@ -1,4 +1,4 @@
-# Problemas sociotécnicos
+# Problemas sociotécnicos y la ley de Conway
 
 - Team Topologies - https://teamtopologies.com/
 - Ley de Conway - https://es.wikipedia.org/wiki/Ley_de_Conway

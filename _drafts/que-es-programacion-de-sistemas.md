@@ -4,7 +4,7 @@ date: 2023-11-06
 author: Héctor Patricio
 tags:
 comments: true
-excerpt: ""
+excerpt: "En este artículo vamos a definir la programación de sistemas y qué tipo de conocimiento y habilidades necesitas para trabajar en esta área."
 header:
   overlay_image: 
   teaser: 

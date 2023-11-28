@@ -42,5 +42,6 @@
         "monoespaciada",
         "Serious"
     ],
-    "cSpell.language": "en,es-ES"
+    "cSpell.language": "en,es-ES",
+    "asciidoc.antora.enableAntoraSupport": true
 }
