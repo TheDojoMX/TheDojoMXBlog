@@ -1,7 +1,4 @@
-
-
-
-# Abstracción 
+# Abstracción
 
 En este video vamos a hablar de un concepto que es fundamental en la programación: la abstracción.
 
