@@ -23,4 +23,4 @@ A veces, queremos darle a nuestros usuarios una manera de ejecutar código de ma
 
 Un ejemplo de quién usa engine fuera de un navegador es un proyecto que ha cambiado el mundo del desarrollo web y que es muy popular: NodeJS.
 
-NodeJS es un entorno de ejecución de JavaScript que se basa en el motor V8 de Google.
+NodeJS es un entorno de ejecución de JavaScript que se basa en el motor V8 de Google y que sirve principalmente para crear aplicaciones web.
