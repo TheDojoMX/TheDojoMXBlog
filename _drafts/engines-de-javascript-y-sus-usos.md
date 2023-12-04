@@ -21,6 +21,12 @@ En este artículo vamos a hablar de algunos engines de JavaScript populares y en
 
 A veces, queremos darle a nuestros usuarios una manera de ejecutar código de manera arbitraria o de modificar el sistema mediante instrucciones que ellos mismos metan en nuestras plataformas o programas. En vez de crear todo un lenguaje o de implementar nuestro propio compilador o intérprete, podemos embeber o incluir un motor de un lenguaje conocido y con implementaciones robustas y disponibles para su uso. **Esta es exactamente el caso de uso que los engines de JS que podemos encontrar implementados cumplen**.
 
-Un ejemplo de quién usa engine fuera de un navegador es un proyecto que ha cambiado el mundo del desarrollo web y que es muy popular: NodeJS.
+Un ejemplo de quién usa engine fuera de un navegador es un proyecto que ha cambiado el mundo del desarrollo web y que es muy popular: **NodeJS**, es un entorno de ejecución de JavaScript que se basa en el motor V8 de Google y que sirve principalmente para crear aplicaciones web. Mediante el uso de V8, puedes crear servidores web usando JavaScript, y Node se encarga de envolverlo para que puedas usar todas funcionalidades que te ofrece el sistema operativo en el que se está ejecutando.
 
-NodeJS es un entorno de ejecución de JavaScript que se basa en el motor V8 de Google y que sirve principalmente para crear aplicaciones web.
+Otro ejmplo de uso de un motor de JS fuera de un browser es [MongoDB](https://www.mongodb.com/docs/manual/release-notes/3.2-javascript/), que usa el motor SpiderMonkey de Mozilla para ejecutar código de JavaScript en sus bases de datos.
+
+Si buscas más, puedes encontrar un montón de ejemplos en los que un motor de JavaScript es usado fuera de un navegador.
+
+## Engines de JavaScript
+
+Ahora sí, hablemos de los diferentes motores de JavaScript en orden de popularidad.
