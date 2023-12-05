@@ -30,3 +30,38 @@ Si buscas más, puedes encontrar un montón de ejemplos en los que un motor de J
 ## Engines de JavaScript
 
 Ahora sí, hablemos de los diferentes motores de JavaScript en orden de popularidad.
+
+### V8
+
+Es el motor desarrollado por Google, usado principalmente en Chrome, NodeJS y Deno. Es el más popular y el que más desarrollo tiene. Está escrito en C++ y ha tenido varias iteraciones, mejorando los componentes internos. Además cuenta con un JIT compiler que lo hace eficiente en la mayoría de los casos. Otra ventaja de V8 es que puede ejecutar también [WebAssembly](https://webassembly.org/).
+
+Si quieres desarrollar algo que tenga soporte completo del estándar ECMAScript, sea estable y tenga buen rendimiento, con V8 no te puedes equivocar. La desventaja es que tendrás que usarlo como un biblioteca de C++, o por lo menos customizarlo un poco para que se adapte a tus necesidades y hagas los puentes con tu programa, plataforma o lenguaje de programación, tal como Deno (que está escrito en Rust).
+
+Puedes ver su blog técnico aquí: [https://v8.dev/blog](https://v8.dev/blog). Además, si quieres aprender cómo hacer complejos o quieres contribuir, su código fuente está disponible de manera abierta en GitHub: [V8 Github](https://github.com/v8/v8).
+
+### SpiderMonkey
+
+Este motor de JS está desarrollado por Mozilla y es usado en Firefox, Servo y en MongoDB. Igual que V8, está escrito en C++, pera también incluye partes en [Rust](https://www.rust-lang.org/) e incluso en JavaScript.
+
+### ChakraCore
+
+Este motor está desarrollado por Microsoft
+
+
+### JavaScriptCore
+
+### Rhino
+
+### JerryScript
+
+### Duktape
+
+### QuickJS
+
+### Nashorn
+
+### MuJS
+
+### XS
+
+### Espruino
