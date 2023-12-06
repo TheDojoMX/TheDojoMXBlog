@@ -47,12 +47,17 @@ Este motor de JS está desarrollado por Mozilla y es usado en Firefox, Servo y e
 
 Este motor está desarrollado por Microsoft
 
-
 ### JavaScriptCore
+
+Este es el motor desarrollado por Apple, usado en Safari y en WebKit.
 
 ### Rhino
 
+Desarrollado en Java, es el motor de JS usado en Nashorn, que es el motor de JS que viene incluido en Java desde la versión 8.
+
 ### JerryScript
+
+
 
 ### Duktape
 
