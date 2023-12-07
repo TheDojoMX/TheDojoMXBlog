@@ -11,11 +11,13 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
+
 Ya hemos explicado antes qué es un [engine de JavaScript](/2020/05/17/que-es-un-engine-de-javascript.html). Como resumen, es el programa encargado de correr tus programas de JavaScript: recibe tus archivos o código de JS y ejecuta las acciones en el sistema operativo en el que se está ejecutando.
 
 Estos engines actualmente son programas complejos que no solamente interpretan el código, sino que lo analizan y compilan a código máquina para que sea más eficiente su ejecución.
 
 En este artículo vamos a hablar de algunos engines de JavaScript populares y en dónde puedes encontrar su código o sus ejecutables para que los puedas usar. Pero antes hablemos de la utilidad que puede tener un motor de JS fuera de un navegador.
+
 
 ## Usos de un motor de JS
 
@@ -45,6 +47,7 @@ Este motor de JS está desarrollado por Mozilla y es usado en Firefox, Servo y e
 
 ### ChakraCore
 
+
 Este motor está desarrollado por Microsoft
 
 ### JavaScriptCore
@@ -57,15 +60,18 @@ Desarrollado en Java, es el motor de JS usado en Nashorn, que es el motor de JS 
 
 ### JerryScript
 
-
-
 ### Duktape
+
+Duktape es un motor de JS que está escrito en C y que está diseñado para ser embebido en otros programas. Es usado en [Espruino](https://www.espruino.com/), un sistema operativo para microcontroladores que permite programarlos usando JavaScript. Es ligero y portable, y tiene un buen soporte de ECMAScript 5.1
 
 ### QuickJS
 
+
 ### Nashorn
 
+
 ### MuJS
+
 
 ### XS
 
