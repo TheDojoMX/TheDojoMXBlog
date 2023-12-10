@@ -778,4 +778,10 @@ var store = [{
         "tags": ["hash","criptografía","md5","sha-256"],
         "url": "/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg"
+      },{
+        "title": "¿Qué es Real Time en sistemas de software?",
+        "excerpt":"A veces, los programadores usamos muy libremente los conceptos. Uno de ellos es el de Real Time. En este artículo vamos a hablar de lo que significa realmente el término, lo vamos a definir claramente y sobre todo aprenderemos a diferenciar los distintos niveles o garantías que debe ofrecer un...","categories": [],
+        "tags": ["real-time","tiempo-real","sistemas-críticos"],
+        "url": "/2023/12/09/que-es-real-time-en-sistemas-computacionales.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg"
       }]

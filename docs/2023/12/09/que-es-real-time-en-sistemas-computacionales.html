@@ -1,0 +1,794 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>¿Qué es Real Time en sistemas de software? - The Dojo MX Blog</title>
+<meta name="description" content="Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="¿Qué es Real Time en sistemas de software?">
+<meta property="og:url" content="https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html">
+
+
+  <meta property="og:description" content="Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-12-09T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<script src="/assets/js/sharect.min.js"></script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html",
+      "name": "¿Qué es Real Time en sistemas de software?",
+      "headline": "¿Qué es Real Time en sistemas de software?",
+      "keywords": "real-time,tiempo-real,sistemas-críticos",
+      "description": "Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea.",
+      "articleBody": "A veces, los programadores usamos muy libremente los conceptos. Uno de ellos es el de Real Time. En este artículo vamos a hablar de lo que significa realmente el término, lo vamos a definir claramente y sobre todo aprenderemos a diferenciar los distintos niveles o garantías que debe ofrecer un sistema en tiempo real.\n\n¿Qué es Real Time?\n\nUn sistema que provee garantías de Tiempo Real o Real Time es aquel que garantiza que una tarea se va a ejecutar en un tiempo determinado. Esto es muy importante en sistemas críticos, como los que se usan en la industria automotriz, aeroespacial, médica, en los que ejecutar NO ejecutar una tarea en un tiempo determinado puede tener consecuencias catastróficas.\n\nPero también hay sistemas en los que es deseable que una tarea se ejecute antes de cierto tiempo, por ejemplo, cuando estamos transmitiendo información en forma de audio o video de algo que es importante que se comunique rápidamente. Así, podemos hacer llamadas o videollamadas que son útiles.\n\nLos dos casos anteriores, nos dan la pauta para por lo menos distinguir dos tipos de sistemas Real Time:\n\n\n  \n    Hard Realtime. Son sistemas que deben garantizar con un 100% de certeza que la tarea que quieres que hagan se va a realizar máximo en el tiempo qu especifica el mismo sistema. En estos sistemas no hay margen de error, si el sistema no puede cumplir con el tiempo especificado se considera que falló, por lo que no es seguro operarlo. Este tipo de sistemas se usan en ocasiones en las que es muy muy importante que la tarea en cuestión se ejecute lo más rápido posible, normalmente porque el no hacerlo o tener un retraso podría tener consecuencias mortales o catastróficas.\n  \n  \n    Soft Realtime. Los sistemas de este tipo, garantizan que mínimo cierto porcentaje de las veces que un sistema se ejecute, la tarea se va a ejecutar en el tiempo especificado, normalmente lo más rápido posible. A diferencia de los sistemas de tiempo real fuerte, puede que cierto número de acciones tarden un poco más de lo esperado, pero esto no llevaría a pensar que el sistema falló. Este tipo de sistemas se usa para cosas no tan críticas pero en las que es deseable que la tarea está lista lo más rápido posible, por ejemplo, en juegos, aplicaciones de videoconferencia, sistemas de coordinación de trabajo (Figma, Google Docs, etc).\n  \n\n\nCómo puedes lograr un sistema Real Time\n\nLo primero en que debemos pensar es qué tipo de realtime necesitamos. Como te puedes imaginar, lograr un sistema Hard Realtime es mucho más complicado que lograr un sistema Soft Realtime. Esto es porque en el primero, no hay margen de error, mientras que en el segundo, podemos relajarnos un poco.\n\nAlgunas sugerencias para lograr sistemas realtime son:\n\n\n  \n    Usa un ecosistema que esté pensado para esto. Hay lenguajes de programación y plataformas que mediante diferentes técnicas te ayudan a lograr funcionalidades real time, pero normalmente se queden al nivel de aplicaciones de soft realtime. Algunos ejemplos son lenguajes que aprovechan la concurrencia y controlan efectivamente el tiempo de ejecución de tu programa o te permiten hacerlo de manera sencilla, como: Go, Elixir y NodeJS.\n  \n  \n    Usa un lenguaje de programación que te de control granular sobre el tiempo de ejecución. Con esto principalmente me refiero a una cosa: que no tengan recolector de basura. Recuerda que este proceso puede parar el programa por un tiempo no conocido y de manera no controlada, por lo que si quieres lograr aplicaciones hard realtime, será una tarea extremadamente difícil. Lamento decírtelo, pero si quieres asegurar que tu programa se comporte como deseas, vas a tener que controlar casi cada detalle, en lenguajes como C, C++ o Rust.\n  \n  \n    Asegura la fiabilidad de tu infraestructura. Para que un sistema realtime sea confiable, vas a necesitar que la infraestructura sea resistente a fallas. Esto lo logras eliminando puntos únicos de fallo, es decir, aquellos puntos de tu programa o infraestructura que si fallan hacen que todo el sistema se caiga. Para lograr esto tienes que pensar en arquitecturas distribuidas, redundancia de datos, escalamiento automático, etc.\n  \n\n\nEspero que estos consejos te sirvan y si se me está pasando alguno, por favor, déjame un comentario.\n\nConclusión\n\nConocer los diferentes niveles de servicio que un sistema puede garantizar y comprender las características que presentan, te puede ayudar a tomar en serio la responsabilidad de diseñar un sistema realtime y la dificultad que implica.\n\nPiensa profundamente si realmente se requiere un sistema con estas características (sobre todo si es hard realtime) y si es así, toma en serio la responsabilidad de diseñarlo y construirlo, espero que los consejos que te di en este artículo te sirvan para lograrlo.\n",
+      "datePublished": "2023-12-09 00:00:00 -0600",
+      "dateModified": "2023-12-09 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          ¿Qué es Real Time en sistemas de software?
+
+        
+      </h1>
+      
+        <p class="page__lead">Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        780 palabras | 6 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="¿Qué es Real Time en sistemas de software?">
+    <meta itemprop="description" content="Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea.">
+    <meta itemprop="datePublished" content="2023-12-09T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>A veces, los programadores usamos muy libremente los conceptos. Uno de ellos es el de Real Time. En este artículo vamos a hablar de lo que significa realmente el término, lo vamos a definir claramente y sobre todo aprenderemos a diferenciar los distintos niveles o garantías que debe ofrecer un sistema en tiempo real.</p>
+
+<h2 id="qué-es-real-time">¿Qué es Real Time?</h2>
+
+<p>Un sistema que provee garantías de Tiempo Real o Real Time es aquel que <strong>garantiza</strong> que una tarea se va a ejecutar en un tiempo determinado. Esto es muy importante en sistemas críticos, como los que se usan en la industria automotriz, aeroespacial, médica, en los que ejecutar NO ejecutar una tarea en un tiempo determinado puede tener consecuencias catastróficas.</p>
+
+<p>Pero también hay sistemas en los que es <em>deseable</em> que una tarea se ejecute antes de cierto tiempo, por ejemplo, cuando estamos transmitiendo información en forma de audio o video de algo que es importante que se comunique rápidamente. Así, podemos hacer llamadas o videollamadas que son útiles.</p>
+
+<p>Los dos casos anteriores, nos dan la pauta para por lo menos distinguir dos tipos de sistemas Real Time:</p>
+
+<ol>
+  <li>
+    <p><strong>Hard Realtime</strong>. Son sistemas que deben garantizar con un 100% de certeza que la tarea que quieres que hagan se va a realizar <em>máximo</em> en el tiempo qu especifica el mismo sistema. En estos sistemas no hay margen de error, si el sistema no puede cumplir con el tiempo especificado se considera que falló, por lo que no es seguro operarlo. Este tipo de sistemas se usan en ocasiones en las que es muy muy importante que la tarea en cuestión se ejecute lo más rápido posible, normalmente porque el no hacerlo o tener un retraso podría tener consecuencias mortales o catastróficas.</p>
+  </li>
+  <li>
+    <p><strong>Soft Realtime</strong>. Los sistemas de este tipo, garantizan que <em>mínimo</em> cierto porcentaje de las veces que un sistema se ejecute, la tarea se va a ejecutar en el tiempo especificado, normalmente lo más rápido posible. A diferencia de los sistemas de tiempo real fuerte, puede que cierto número de acciones tarden un poco más de lo esperado, pero esto no llevaría a pensar que el sistema falló. Este tipo de sistemas se usa para cosas no tan críticas pero en las que es deseable que la tarea está lista lo más rápido posible, por ejemplo, en juegos, aplicaciones de videoconferencia, sistemas de coordinación de trabajo (Figma, Google Docs, etc).</p>
+  </li>
+</ol>
+
+<h2 id="cómo-puedes-lograr-un-sistema-real-time">Cómo puedes lograr un sistema Real Time</h2>
+
+<p>Lo primero en que debemos pensar es qué tipo de realtime necesitamos. Como te puedes imaginar, lograr un sistema Hard Realtime es mucho más complicado que lograr un sistema Soft Realtime. Esto es porque en el primero, no hay margen de error, mientras que en el segundo, podemos relajarnos un poco.</p>
+
+<p>Algunas sugerencias para lograr sistemas realtime son:</p>
+
+<ol>
+  <li>
+    <p><strong>Usa un ecosistema que esté pensado para esto</strong>. Hay lenguajes de programación y plataformas que mediante diferentes técnicas te ayudan a lograr funcionalidades real time, pero normalmente se queden al nivel de aplicaciones de soft realtime. Algunos ejemplos son lenguajes que aprovechan la concurrencia y controlan efectivamente el tiempo de ejecución de tu programa o te permiten hacerlo de manera sencilla, como: Go, Elixir y NodeJS.</p>
+  </li>
+  <li>
+    <p><strong>Usa un lenguaje de programación que te de control granular sobre el tiempo de ejecución</strong>. Con esto principalmente me refiero a una cosa: que no tengan recolector de basura. Recuerda que este proceso puede parar el programa por un tiempo no conocido y de manera no controlada, por lo que si quieres lograr aplicaciones hard realtime, será una tarea extremadamente difícil. Lamento decírtelo, pero si quieres asegurar que tu programa se comporte como deseas, vas a tener que controlar casi cada detalle, en lenguajes como C, C++ o Rust.</p>
+  </li>
+  <li>
+    <p><strong>Asegura la fiabilidad de tu infraestructura</strong>. Para que un sistema realtime sea confiable, vas a necesitar que la infraestructura sea resistente a fallas. Esto lo logras eliminando puntos únicos de fallo, es decir, aquellos puntos de tu programa o infraestructura que si fallan hacen que todo el sistema se caiga. Para lograr esto tienes que pensar en arquitecturas distribuidas, redundancia de datos, escalamiento automático, etc.</p>
+  </li>
+</ol>
+
+<p>Espero que estos consejos te sirvan y si se me está pasando alguno, por favor, déjame un comentario.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Conocer los diferentes niveles de servicio que un sistema puede garantizar y comprender las características que presentan, te puede ayudar a tomar en serio la responsabilidad de diseñar un sistema realtime y la dificultad que implica.</p>
+
+<p>Piensa profundamente si realmente se requiere un sistema con estas características (sobre todo si es hard realtime) y si es así, toma en serio la responsabilidad de diseñarlo y construirlo, espero que los consejos que te di en este artículo te sirvan para lograrlo.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#real-time" class="page__taxonomy-item" rel="tag">real-time</a><span class="sep">, </span>
+    
+      <a href="/tags/#sistemas-cr%C3%ADticos" class="page__taxonomy-item" rel="tag">sistemas-críticos</a><span class="sep">, </span>
+    
+      <a href="/tags/#tiempo-real" class="page__taxonomy-item" rel="tag">tiempo-real</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-12-09T00:00:00-06:00">December 9, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%C2%BFQu%C3%A9+es+Real+Time+en+sistemas+de+software%3F%20https%3A%2F%2Fblog.thedojo.mx%2F2023%2F12%2F09%2Fque-es-real-time-en-sistemas-computacionales.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F12%2F09%2Fque-es-real-time-en-sistemas-computacionales.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2023%2F12%2F09%2Fque-es-real-time-en-sistemas-computacionales.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html" class="pagination--pager" title="Las tres garantías de seguridad de un hash
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html" rel="permalink">Las tres garantías de seguridad de un hash
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+14 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 28-08-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Veamos más profundamente las garantías de seguridad que debe cumplir un hash para ser considerado seguro. Por fin entenderemos lo que es una colisión y qué s...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1692327344/iain-kennedy-X_uSAnhTO2M-unsplash_mdvosz.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/08/19/que-es-la-filosofia-de-la-computacion.html" rel="permalink">¿Qué es la filosofía de la computación?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+8 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 19-08-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Veamos qué es y cómo te puede ayudar la filosofía de la computación en tu carrera como desarrollador de software.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1691472017/max-duzij-qAjJk-un3BI-unsplash_nw7bwf.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html" rel="permalink">¿Por qué debes aprender ciencias de la computación?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 12-08-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Las ciencias de la computación te ayudarán a ser mejor desarrollador, independientemente de la rama de la programación a la que te dediques. Veamos como.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1685716433/nathan-watson-Qerg85B7JDI-unsplash_sez9u3.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/06/29/la-matriz-del-conocimiento-para-devs.html" rel="permalink">La matriz del conocimiento para devs
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+8 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 29-06-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">La principal trae de un desarrollador es representar el conocimiento en procesos computacionales. Veamos una herramienta que te puede ayudar a administrar me...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#4b0082',
+      iconColor: '#fff'
+    }).init();
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2023 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2023/12/09/que-es-real-time-en-sistemas-computacionales"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
