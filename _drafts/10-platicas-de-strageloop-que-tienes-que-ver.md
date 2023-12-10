@@ -6,14 +6,12 @@ tags: talks charlas strangeloop software-engineering
 comments: true
 excerpt: "StrangeLoop es una de las conferencias más importantes de software en el mundo, con pláticas increíbles. Aquí verás 10 pláticas que no te puedes perder."
 header:
-  overlay_image: 
-  
-  teaser: 
-  
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1702186032/neom-WLeWJW_WneE-unsplash_rbh7sr.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702186032/neom-WLeWJW_WneE-unsplash_rbh7sr.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-StrangeLoop es una de las mejores conferencias de tecnología del mundo porque en ella se tratan temas no tan comunes relacionadas con la computación y el desarrollo de software.
+*StrangeLoop* fue una de las mejores conferencias de tecnología del mundo porque en ella se tratan temas no tan comunes relacionadas con la computación y el desarrollo de software e incluso el arte.
 
 Si quieres ponerte a pensar cosas profundas sobre estos temas y a veces romperte la cabeza, te recomiendo ver las pláticas y si puedes, asistir presencialmente a la conferencia.
 
