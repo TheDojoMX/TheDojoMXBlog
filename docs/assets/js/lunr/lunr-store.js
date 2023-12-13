@@ -784,4 +784,10 @@ var store = [{
         "tags": ["real-time","tiempo-real","sistemas-críticos"],
         "url": "/2023/12/09/que-es-real-time-en-sistemas-computacionales.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg"
+      },{
+        "title": "Mojo 🔥: un lenguaje prometedor",
+        "excerpt":"Chris Lattner, uno de los creadores de LLVM y Swift, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de Python pero pensado para atacar su punto más débil: la velocidad de ejecución. Este lenguaje se llama Mojo, y está siendo publicitado como un lenguaje para hacer aplicaciones de...","categories": [],
+        "tags": ["mojo","python","machine-learning"],
+        "url": "/2023/12/13/mojo-un-lenguaje-prometedor.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702275251/shubham-dhage-cLhjmsyby3Q-unsplash_ucy8y3.jpg"
       }]

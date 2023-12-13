@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-12-09T23:52:56-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es Real Time en sistemas de software?</title><link href="https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html" rel="alternate" type="text/html" title="¿Qué es Real Time en sistemas de software?" /><published>2023-12-09T00:00:00-06:00</published><updated>2023-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html"><![CDATA[<p>A veces, los programadores usamos muy libremente los conceptos. Uno de ellos es el de Real Time. En este artículo vamos a hablar de lo que significa realmente el término, lo vamos a definir claramente y sobre todo aprenderemos a diferenciar los distintos niveles o garantías que debe ofrecer un sistema en tiempo real.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-12-13T10:31:10-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Mojo 🔥: un lenguaje prometedor</title><link href="https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor.html" rel="alternate" type="text/html" title="Mojo 🔥: un lenguaje prometedor" /><published>2023-12-13T00:00:00-06:00</published><updated>2023-12-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor.html"><![CDATA[<p><a href="https://www.nondot.org/sabre/" target="_blank">Chris Lattner</a>, uno de los creadores de <a href="https://llvm.org">LLVM</a> y <a href="https://www.swift.org/">Swift</a>, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de <strong>Python</strong> pero pensado para atacar su punto más débil: <strong>la velocidad de ejecución</strong>.</p>
+
+<p>Este lenguaje se llama <a href="https://modular.com/mojo">Mojo</a>, y está siendo publicitado como un lenguaje para hacer aplicaciones de <strong>inteligencia artificial</strong>. Como ya dijimos, su enfoque principal está en ser un lenguaje que produzca programar eficientes, por lo que puede ser usado para cualquier aplicación que requiera alto rendimiento o hacer una gran cantidad de cálculos, justo como las aplicaciones de <em>machine learning</em>.</p>
+
+<p>En este artículo veremos el motivo detrás de su nacimiento, sus características y analizaremos si te conviene aprenderlo o deberías buscar alguna otra alternativa. Primero, entendamos la fundación de Mojo.</p>
+
+<h2 id="mlir---representación-intermedia-multi-capa">MLIR - Representación intermedia multi-capa</h2>
+
+<p>LLVM es un proyecto que se define como infraestructura para la construcción de compiladores. Imagínate que es como un framework para construir compiladores. Muchos de los lenguajes actuales están creados usando este proyecto. Por ejemplo <a href="https://rust.org">Rust</a>, Swift y <a href="https://julialang.org">Julia</a> están construidos sobre LLVM.</p>
+
+<p>Una de las partes que hace muy útil a LLVM es su <strong>representación intermedia</strong>. Esta representación intermedia permite que los diferentes lenguajes de programación que funcionan sobre él se aprovechen de las optimizaciones que LLVM hace sobre el código intermedio. El flujo del código es el siguiente:</p>
+
+<ol>
+  <li>El código fuente es compilado a código intermedio (<strong>IR</strong>).</li>
+  <li>El <strong>IR</strong> es optimizado.</li>
+  <li>El <strong>IR</strong> es compilado a código de máquina.</li>
+</ol>
+
+<p>De hecho, se dice que Swift es sólo azúcar sintáctico sobre la representación intermedia de LLVM, es decir, que se parece mucho a esta representación intermedia y aprovecha sus características.</p>
+
+<p>MLIR (Multi-layer Intermediate Representation o Representación intermedia multi-capa) es una representación intermedia de más alto nivel que la representación intermedia tradicional. No en el sentido de que sea más fácil de entender para los humanos, sino que en vez de mapearse directamente con una infraestructura de compilación, representa un modelo más abstracto que puede ser mapeado a diferentes infraestructuras de compilación, de manera especializada para cada una de ellas. Así permite que un mismo código fuente pueda ser compilado para diferentes ejecutores, como GPU’s, TPU’s, CPU’s, etc, sin tener que crear una nueva representación intermedia o crear nuevo código fuente.</p>
+
+<h2 id="entra-mojo-">Entra Mojo 🔥</h2>
+
+<p>Toda esta explicación anterior es para entender que Mojo es para MLIR lo que Swift es para LLVM. Aprovecha gran parte de las características de MLIR para crear un lenguaje de programación que pueda usar ejecutores especializados en cómputo de alto rendimiento como GPU’s y TPU’s, pero presentando una sintaxis más amigable para los humanos, a diferencia de CUDA, o C++, por ejemplo.</p>
+
+<p>Mojo te ayuda aprovechar el paralelismo masivo de los GPU’s sin tener que preocuparte por aprender un nuevo lenguaje o siquiera tener que pensar en dónde finalmente se ejecutará tu programa.</p>
+
+<p>Ya que Python es la lingua franca del mundo de la inteligencia artificial, Mojo inicialmente fue pensado como una extensión de Python (lo que llamaríamos un superconjunto de Python), en el sentido de que todo el código válido en Python es código válido en Mojo, muy parecido a la relación que existe entre la sintaxis de TypeScript y JavaScript.</p>
+
+<h2 id="características-de-mojo">Características de Mojo</h2>
+
+<p>Las pruebas iniciales de Mojo revelan que puede ser hasta <strong>68,000</strong> veces más rápido que Python en ciertas tareas (sí, leíste bien <strong>sesenta y ocho mil</strong>), mientras que C++ llega a ser <strong><em>sólo</em> 5,000</strong> veces más rápido. Claro, esto no habla muy bien de Python, pero debes pensar en que su objetivo no es ser un lenguaje de alto rendimiento, sino un lenguaje de alto nivel y fácil de usar.</p>
+
+<p>Mojo quiere aprovechar la facilidad de uso de Python junto con su ecosistema de bibliotecas y desarrollos para hacer un ecosistema de desarrollo de inteligencia artificial más rápido y fácil de usar. Una de las primeras diferencias con Python es que es un lenguaje <strong>compilado</strong>.</p>
+
+<p>Hablemos de algunas de las cosas que Mojo le aumenta a Python:</p>
+
+<ol>
+  <li>
+    <p><strong>Sistema de tipos progresivos</strong>. Te permite usar el sistema de tipos tanto como lo necesites (por eso es progresivo). Pero debes tener en cuenta que los tipos te sirven tanto para verificar que el programa es correcto como <strong>para optimizar el código que se genera</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Abstracciones sin costo</strong>. Muy parecido a Rust, Mojo te da acceso a usar abstracciones de alto nivel que no incrementan el costo de ejecución.</p>
+  </li>
+  <li>
+    <p><strong>Seguridad de memoria</strong>. Tiene un sistema de seguridad de memoria parecido al de Rust, mediante la pertenencia y el préstamo de referencias (ownership + borrow checker).</p>
+  </li>
+  <li>
+    <p><strong>Metaprogramación</strong>. Te permite crear código parametrizado que se transforma en tiempo de compilación.</p>
+  </li>
+</ol>
+
+<p>Como puedes ver, Mojo es un lenguaje muy interesante que aprovecha las características que hemos aprendido en lenguajes modernos que han sido útiles para crear mejores sistemas. El uso de MLIR es la base de su rendimiento, que permite que los programas que generas se puedan optimizar para ejecutores de diferentes tipos, incluidos algunos masivamente paralelos.</p>
+
+<h2 id="deberías-aprenderlo">¿Deberías aprenderlo?</h2>
+
+<p>Mojo es un lenguaje que servirá tanto para hacer aplicaciones de IA como herramientas de bajo nivel para sistemas operativos, por lo que yo lo pensaría como un <strong>lenguaje de programación de sistemas de última generación</strong> que permitirá hacer cosas muy interesantes en el futuro.</p>
+
+<p>Ahora mismo (Diciembre de 2023), es un lenguaje de código cerrado, es decir, su desarrollo está llevado por una empresa privada y el código fuente no está disponible para que otros lo vean o contribuyan. Según Lattner, esto permite inicialmente que se se avance de manera más efectiva, en lo que personalmente estoy de acuerdo. Se espera que Mojo sea de código abierto cuando alcance el nivel de madurez necesario.</p>
+
+<p>Además, está en una etapa muy temprana de su desarrollo en la que ni siquiera cumple con todas las características de Python, por lo que todo lo que aprendas ahora sólo será un vistazo que te puede ayudar a definir si lo quieres usar cuando salga su versión lista para producción.</p>
+
+<p>Personalmente, creo que es un buena inversión del tiempo si estás metido en crear aplicaciones de alto rendimiento, programación de sistema o quieres crear sistemas que usen inteligencia artificial como una de sus características principales. Por el contrario, para desarrollo web creo que tomará un poco más de tiempo en serte útil.</p>
+
+<p>Otro caso para el que puede serte útil es para aprender las características de los lenguajes modernos, como los tipos progresivos o la seguridad de memoria mediante el préstamos de referencias.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Mojo es un lenguaje interesante, muy prometedor y que está en la raya de la innovación en creación de lenguajes y características modernas. Si eres curioso y te gustan en general los lenguajes de programación, creo que es una gran opción para empezar a aprender y tal vez en el futuro recoger los beneficios si cumple con sus promesas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mojo" /><category term="python" /><category term="machine-learning" /><summary type="html"><![CDATA[El ecosistema de desarrollo está cambiando y se están diseñando nuevos lenguajes de programación y entornos de ejecución más adecuados para los problemas actuales. Hablemos de Mojo.]]></summary></entry><entry><title type="html">¿Qué es Real Time en sistemas de software?</title><link href="https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html" rel="alternate" type="text/html" title="¿Qué es Real Time en sistemas de software?" /><published>2023-12-09T00:00:00-06:00</published><updated>2023-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html"><![CDATA[<p>A veces, los programadores usamos muy libremente los conceptos. Uno de ellos es el de Real Time. En este artículo vamos a hablar de lo que significa realmente el término, lo vamos a definir claramente y sobre todo aprenderemos a diferenciar los distintos niveles o garantías que debe ofrecer un sistema en tiempo real.</p>
 
 <h2 id="qué-es-real-time">¿Qué es Real Time?</h2>
 
@@ -843,107 +912,4 @@ tienen un camino en la filosofía de la computación, así que si quieres desarr
 
 <p>Para avanzar en tu carrera no basta con aprender sólo habilidades técnicas, también hacen falta algunas meta-habilidades, habilidades paralelas y conocimiento de la historia de tu profesión.</p>
 
-<p>Tener estos conocimientos te puede hacer destacar de los demás profesionales, y son especialmente útiles si quieres lograr un puesto de liderazgo. Así que sigue preparándote, recuerda que un libro bien editado es de las mejores inversiones que puedes hacer.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="desarrollo-de-carrera" /><category term="career" /><category term="historia" /><summary type="html"><![CDATA[Hablemos de los libros que te pueden ayudar a desarrollar tu carrera como desarrollador de software, escritos por personas con experiencia en el tema.]]></summary></entry><entry><title type="html">Libros que todo desarrollador de software debería leer: arquitectura</title><link href="https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html" rel="alternate" type="text/html" title="Libros que todo desarrollador de software debería leer: arquitectura" /><published>2023-06-08T00:00:00-06:00</published><updated>2023-06-08T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deberia-leer-arquitectura.html"><![CDATA[<p>Hablemos sobre los libros de arquitectura de software que te enseñarán a tomar en cuenta los aspectos importantes de este campo y te pueden hacer mejor desarrollador. Como muchos desarrolladores con experiencia mencionan, la arquitectura es un rol, no un puesto de trabajo. Como rol, lo puedes ejercer parcialmente, y todos los desarrolladores deberíamos hacer arquitectura de software a diferentes escalas. El arquitecto que sólo hace diseños no debería existir.</p>
-
-<p>En ninguno de estos libros vas a encontrar la sugerencia de que el arquitecto es un puesto de trabajo que sólo se dedica a hacer “planos”, sino que lo verás como una habilidad más que los desarrolladores de software debemos de tener. Empecemos con las recomendaciones, y como siempre, si quieres contribuir con alguna recomendación, puedes hacerlo en los comentarios.</p>
-
-<h3 id="designing-data-intensive-applications--martin-kleppmann">Designing Data-Intensive Applications | Martin Kleppmann</h3>
-
-<p><a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685729621/Screen_Shot_2023-06-02_at_12.13.03_ws9bgp.png" alt="Portada de Designing Data Intensive Applications" class="align-center" /></a></p>
-
-<p>Aceptémoslo: 90% de las aplicaciones útiles necesitan procesar grandes cantidades de datos para funcionar. A veces sólo a eso se dedican.</p>
-
-<p>Es por eso que un libro como este, que habla del funcionamiento interno de diferentes sistemas que procesan grandes cantidades de datos, su arquitectura y las técnicas que los hacen funcionar, es un libro esencial para los desarrolladores de software modernos.</p>
-
-<p>Algunos temas que vas a poder aprender son:</p>
-
-<ul>
-  <li>Las características de un buen sistema que procesa información</li>
-  <li>Las estructuras de datos que le dan el poder sistemas como las bases de datos</li>
-  <li>Modelos de datos y lenguajes de consulta</li>
-  <li>Replicación</li>
-</ul>
-
-<p>Todos estos temas son esenciales para ser un buen desarrollador de software.</p>
-
-<p>Puedes comprarlo aquí: <a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/" target="_blank">Designing Data-Intensive Applications</a> o en <a href="https://www.amazon.com.mx/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321" target="_blank">Amazon</a></p>
-
-<h3 id="sofware-architecture-for-developers-y-the-c4-model--simon-brown">Sofware Architecture for Developers y The C4 Model | Simon Brown</h3>
-
-<p><a href="https://softwarearchitecturefordevelopers.com/" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1685744265/s_hero2x_h5emvj.png" alt="Portada de Software Architecture for Developers" class="align-center" /></a></p>
-
-<p><a href="https://simonbrown.je/">Simon Brown</a> es un desarrollador y arquitecto que enseña a otros desarrolladores a practicar lo mejor posible la arquitectura de software.</p>
-
-<p>Simon explica en <strong>Software Architecture for Developers</strong> lo que es la arquitectura de software, desde su comparación con la arquitectura de edificios, las cosas en las que se parece y diferencia, junto las responsabilidades y el conocimiento que es necesario para esta actividad.</p>
-
-<p>En el <strong>“The C4 Model”</strong> explica una forma específica de comunicar la información que el diseño de un sistema contiene, incluyendo cuatro diagramas a diferentes niveles de abstracción, con el objetivo de que quienes lo analicen se lleven una buena idea de cómo funciona el sistema.</p>
-
-<p>Puedes comprarlos aquí: <a href="https://leanpub.com/b/software-architecture" target="_blank">Software Architecture for Developers</a>, también puedes comprarlos por separado, pero te llevas un mejor valor si los compras juntos.</p>
-
-<h3 id="fundamentals-of-software-architecture--mark-richards--neal-ford">Fundamentals of Software Architecture | Mark Richards &amp; Neal Ford</h3>
-
-<p><a href="https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686180937/91HMsnYFsKL._AC_UF1000_1000_QL80__pyue4w.jpg" alt="Portada de Fundamentals of Software Architecture" class="align-center" /></a></p>
-
-<p>¿Quieres obtener el conocimiento más básico de arquitectura de software? En este libro, los autores te lo enseñarán.</p>
-
-<p>Empieza desde lo esencial y avanza hasta las mejores prácticas para analizar las características que necesitas implementar. El libro pasa (a grandes rasgos) por los siguientes temas:</p>
-
-<ol>
-  <li>¿Qué es la arquitectura de software?</li>
-  <li>Cómo adquirir la forma de pensar de un arquitecto</li>
-  <li>Estilos arquitectónicos</li>
-  <li><strong>Softskills</strong> para arquitectos</li>
-</ol>
-
-<p>Es un gran libro con muy buenas temas para empezar a practicar directamente, además escrito por expertos en el tema.</p>
-
-<p>Puedes comprarlo aquí: <a href="https://amzn.to/3MZqT4L" target="_blank">Fundamentals of Software Architecture</a></p>
-<h3 id="software-architecture-the-hard-parts--neal-ford-mark-richards-pramod-sadalage--zhamak-dehghani">Software Architecture the Hard Parts | Neal Ford, Mark Richards, Pramod Sadalage &amp; Zhamak Dehghani</h3>
-
-<p><a href="https://www.oreilly.com/library/view/software-architecture-the/9781492086888/" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686178147/811EFOBsU7L._AC_UF1000_1000_QL80__prpedd.jpg" alt="Portada de Software Architecture the Hard Parts" class="align-center" /></a></p>
-
-<p>Los sistemas distribuidos son lo que más se desarrolla hoy en día, debido a las necesidades de la industria. Saber crear arquitecturas distribuidas es algo que un desarrollador avanzado debe dominar.</p>
-
-<p>En este libro se habla de tres cosas principales:</p>
-
-<ol>
-  <li>Buenas ideas para empezar a hacer y documentar arquitecturas</li>
-  <li>Separación: diseñar los componentes, los módulos, separación de datos, etc.</li>
-  <li>Juntar todo de nuevo: contratos, service meshes, transacciones distribuidas, flujos de trabajo, etc.</li>
-</ol>
-
-<p>Es un libro que maneja temas avanzados y temas sobre los que tienes que saber bastante antes de empezar a leer el libro, así que te recomiendo empezar con los libros anteriores, además de obtener nociones de sistemas distribuidos.</p>
-
-<p>Puedes comprarlo aquí: <a href="https://amzn.to/3MWLtTe" target="_blank">Software Architecture the Hard Parts</a></p>
-
-<h3 id="domain-driven-design--eric-evans">Domain Driven Design | Eric Evans</h3>
-
-<p><a href="https://www.amazon.com.mx/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686285460/61aFldsgAmL._AC_UF1000_1000_QL80__telho9.jpg" alt="Portada de Domain Driven Design" class="align-center" /></a></p>
-
-<p>Este libro es la Biblia del diseño dirigido por el dominio, un estilo que se enfoca en crear un modelo de software que refleje el negocio (o el <em>dominio</em>) de la mejor manera posible.</p>
-
-<p>La principal idea de esta técnica es que los desarrolladores de software se entiendan y puedan hablar como un experto más en el dominio. Esto se logra creando un lenguaje común entre los desarrolladores y los expertos en el dominio, soportado por el modelo de software que se crea.</p>
-
-<p>Creo que aunque no siempre es aplicable, es bueno conocerlo y tener listas las técnicas para la aplicación completa o parcial de este estilo de diseño.</p>
-
-<p>Puedes comprarlo aquí: <a href="https://amzn.to/3CgwaQx" target="_blank">Domain Driven Design</a>.</p>
-
-<p>Un libro alternativo a este, más moderno y ligero es: <a href="https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/" target="_blank">Learnig Domain Driven Design</a>.</p>
-
-<h3 id="system-design-interview-1-y-2--alex-xu">System Design Interview 1 y 2 | Alex Xu</h3>
-
-<p><a href="https://www.youtube.com/channel/UCZgt6AzoyjslHTC9dz0UoTw" target="_blank"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686286291/51xUZItrHJL._AC_UF1000_1000_QL80__kzvtkb.jpg" alt="Portada de System Design Interview 1" class="align-center" /></a></p>
-
-<p>Estos libros te enseña de manera concisa las bases del diseño de sistemas de software, desde los principios de diseño, hasta las diferentes partes que componen un sistema complejo que necesita soportar muchos usuarios.</p>
-
-<p><strong>Alex Xu</strong> es un buen creador de contenido de muy buena calidad y en estos libros explica lo necesario de forma lo suficientemente sencilla. Te lo recomiendo si quieres aprender sobre una gran cantidad de temas relacionados con el diseño de sistemas y la arquitectura de software.</p>
-
-<p>Puedes ver la página en la que publica más información acerca de lo que hace en: <a href="https://bytebytego.com">ByteByteGo</a> {:target=”_blank”}, además de que puedes suscribirte para aprender más sobre el diseño de sistemas y prepararte para entrevistas de trabajo.</p>
-
-<p>Lo puedes comprar aquí: <a href="https://amzn.to/3qARtK1" target="_blank">System Design Interview 1</a> y <a href="https://amzn.to/3J43CgP" target="_blank">System Design Interview 2</a></p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Hay una buena colección de libros que te pueden ayudar a ser un <strong>mejor desarrollador</strong> de software mejor preparado, fortaleciendo una parte que todos los desarrolladores tenemos que ejercer: la arquitectura de software.</p>
-
-<p>Empieza con estos libros uno a uno, o <strong>úsalos como referencia</strong> para cuando tengas que resolver un problema específico.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="arquitectura" /><category term="libros" /><summary type="html"><![CDATA[Hablemos ahora de los libros de arquitectura de software que te pueden ayudar a destacar en tu carrera como desarrollador de software.]]></summary></entry></feed>
+<p>Tener estos conocimientos te puede hacer destacar de los demás profesionales, y son especialmente útiles si quieres lograr un puesto de liderazgo. Así que sigue preparándote, recuerda que un libro bien editado es de las mejores inversiones que puedes hacer.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="desarrollo-de-carrera" /><category term="career" /><category term="historia" /><summary type="html"><![CDATA[Hablemos de los libros que te pueden ayudar a desarrollar tu carrera como desarrollador de software, escritos por personas con experiencia en el tema.]]></summary></entry></feed>
