@@ -23,7 +23,7 @@ Prácticamente unn combinador es una función que:
 Basado en estas características definidas, se han definido una serie de combinadores útiles que permite crear código funcional de manera más sencilla y elegante. Veamos algunos de ellos.
 
 
-## Algunos Cobinadores
+## Algunos Combinadores
 
 Los combinadores conocidos tienen nombres de letras o combinaciones de letras. En esta sección los explicaremos uno a uno. Y daremos algunos ejemplos de cómo usarlos.
 
