@@ -1,6 +1,6 @@
 ---
 title: "Engines de JavaScript y sus usos"
-date: 2023-10-14
+date: 2023-12-14
 author: Héctor Patricio
 tags: javascript-engine v8 chakra
 comments: true
