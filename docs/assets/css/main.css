@@ -39,8 +39,6 @@
    ========================================================================== */
 /* Mixins and functions */
 /* Magnific Popup CSS */
-@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Merriweather:400,800&display=swap");
 .mfp-counter {
   font-family: Georgia, Times, serif;
 }
@@ -5054,65 +5052,6 @@ body {
   .adsbygoogle {
     display: none !important;
     height: 1px !important;
-  }
-}
-a {
-  text-decoration: none !important;
-  font-weight: 400 !important;
-}
-
-article.page {
-  font-family: "Atkinson Hyperlegible", sans-serif !important;
-  font-weight: 300 !important;
-}
-
-.caption-audio {
-  font-family: "Atkinson Hyperlegible", sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 1em !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-h2 > a {
-  font-family: "Merriweather", sans-serif !important;
-  font-weight: 800 !important;
-}
-
-.custom-grid {
-  max-width: 100% !important;
-}
-.custom-grid .grid__item {
-  min-width: 290px !important;
-  max-width: 400px !important;
-  margin-top: 15px !important;
-}
-
-@media (max-width: 640px) {
-  a {
-    text-decoration: none !important;
-    font-weight: 400 !important;
-  }
-  .grid__item .archive__item-excerpt {
-    display: block !important;
-  }
-  .archive__item-teaser {
-    max-height: 267px !important;
-  }
-  .grid__item {
-    margin-top: 10px !important;
-  }
-  .grid__item .archive__item-title {
-    font-size: 1.3em !important;
-  }
-  article.page {
-    font-family: "Atkinson Hyperlegible", serif !important;
-    font-weight: 300 !important;
-    font-size: 1.3em !important;
   }
 }
 

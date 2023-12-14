@@ -13,4 +13,3 @@ header:
 
 Ocaml es un lenguaje de programación funcional que está ganando popularidad en los últimos años, sobre todo en el mundo de la programación de sistemas financieros.
 
-
