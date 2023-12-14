@@ -790,4 +790,10 @@ var store = [{
         "tags": ["mojo","python","machine-learning"],
         "url": "/2023/12/13/mojo-un-lenguaje-prometedor.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702275251/shubham-dhage-cLhjmsyby3Q-unsplash_ucy8y3.jpg"
+      },{
+        "title": "Engines de JavaScript y sus usos",
+        "excerpt":"Ya hemos explicado antes qué es un engine de JavaScript. Como resumen, es el programa encargado de correr tus programas de JavaScript: recibe tus archivos o código de JS y ejecuta las acciones en el sistema operativo en el que se está ejecutando. Estos engines actualmente son programas complejos que...","categories": [],
+        "tags": ["javascript-engine","v8","chakra"],
+        "url": "/2023/12/14/engines-de-javascript-y-sus-usos.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1701323922/garett-mizunaka-xFjti9rYILo-unsplash_mh0wys.jpg"
       }]

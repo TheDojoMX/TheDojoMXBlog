@@ -1,4 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-12-13T10:31:10-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Mojo 🔥: un lenguaje prometedor</title><link href="https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor.html" rel="alternate" type="text/html" title="Mojo 🔥: un lenguaje prometedor" /><published>2023-12-13T00:00:00-06:00</published><updated>2023-12-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor.html"><![CDATA[<p><a href="https://www.nondot.org/sabre/" target="_blank">Chris Lattner</a>, uno de los creadores de <a href="https://llvm.org">LLVM</a> y <a href="https://www.swift.org/">Swift</a>, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de <strong>Python</strong> pero pensado para atacar su punto más débil: <strong>la velocidad de ejecución</strong>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2023-12-14T10:19:13-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Engines de JavaScript y sus usos</title><link href="https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos.html" rel="alternate" type="text/html" title="Engines de JavaScript y sus usos" /><published>2023-12-14T00:00:00-06:00</published><updated>2023-12-14T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos.html"><![CDATA[<p>Ya hemos explicado antes qué es un <a href="/2020/05/17/que-es-un-engine-de-javascript.html">engine de JavaScript</a>. Como resumen, es el programa encargado de correr tus programas de JavaScript: recibe tus archivos o código de JS y ejecuta las acciones en el sistema operativo en el que se está ejecutando.</p>
+
+<p>Estos engines actualmente son programas complejos que no solamente interpretan el código, sino que lo analizan y compilan a código máquina para que sea más eficiente su ejecución.</p>
+
+<p>En este artículo vamos a hablar de algunos engines de JavaScript populares y en dónde puedes encontrar su código o sus ejecutables para que los puedas usar. Pero antes hablemos de la utilidad que puede tener un motor de JS fuera de un navegador.</p>
+
+<h2 id="usos-de-un-motor-de-js">Usos de un motor de JS</h2>
+
+<p>A veces, queremos darle a nuestros usuarios una manera de ejecutar código de manera arbitraria o de modificar el sistema mediante instrucciones que ellos mismos metan en nuestras plataformas o programas. En vez de crear todo un lenguaje o de implementar nuestro propio compilador o intérprete, podemos embeber o incluir un motor de un lenguaje conocido y con implementaciones robustas y disponibles para su uso. <strong>Esta es exactamente el caso de uso que los engines de JS que podemos encontrar implementados cumplen</strong>.</p>
+
+<p>Un ejemplo de quién usa engine fuera de un navegador es un proyecto que ha cambiado el mundo del desarrollo web y que es muy popular: <strong>NodeJS</strong>, es un entorno de ejecución de JavaScript que se basa en el motor V8 de Google y que sirve principalmente para crear aplicaciones web. Mediante el uso de V8, puedes crear servidores web usando JavaScript, y Node se encarga de envolverlo para que puedas usar todas funcionalidades que te ofrece el sistema operativo en el que se está ejecutando.</p>
+
+<p>Otro ejemplo de uso de un motor de JS fuera de un browser es <a href="https://www.mongodb.com/docs/manual/release-notes/3.2-javascript/">MongoDB</a>, que usa el motor SpiderMonkey de Mozilla para ejecutar código de JavaScript en sus bases de datos.</p>
+
+<p>Si buscas más, puedes encontrar un montón de ejemplos en los que un motor de JavaScript es usado fuera de un navegador.</p>
+
+<h2 id="engines-de-javascript">Engines de JavaScript</h2>
+
+<p>Ahora sí, hablemos de los diferentes motores de JavaScript en orden de popularidad.</p>
+
+<h3 id="v8">V8</h3>
+
+<p>Es el motor desarrollado por Google, usado principalmente en Chrome, NodeJS y Deno. Actualmente también está detrás de Microsoft Edge. Es el más popular y el que más desarrollo tiene. Está escrito en C++ y ha tenido varias iteraciones, mejorando los componentes internos. Además cuenta con un JIT compiler que lo hace eficiente en la mayoría de los casos. Otra ventaja de V8 es que puede ejecutar también <a href="https://webassembly.org/">WebAssembly</a>.</p>
+
+<p>Si quieres desarrollar algo que tenga soporte completo del estándar ECMAScript, sea estable y tenga buen rendimiento, con V8 no te puedes equivocar. La desventaja es que tendrás que usarlo como un biblioteca de C++, o por lo menos customizarlo un poco para que se adapte a tus necesidades y hagas los puentes con tu programa, plataforma o lenguaje de programación, tal como Deno (que está escrito en Rust).</p>
+
+<p>Puedes ver su blog técnico aquí: <a href="https://v8.dev/blog">https://v8.dev/blog</a>. Además, si quieres aprender cómo hacer complejos o quieres contribuir, su código fuente está disponible de manera abierta en GitHub: <a href="https://github.com/v8/v8">V8 Github</a>.</p>
+
+<h3 id="spidermonkey">SpiderMonkey</h3>
+
+<p>Este motor de JS está desarrollado por Mozilla y es usado en Firefox, Servo y en MongoDB. Igual que V8, está escrito en C++, pera también incluye partes en <a href="https://www.rust-lang.org/">Rust</a> e incluso en JavaScript. A parte de ejecutar JS, también puede ejecutar WebAssembly.</p>
+
+<p>Si tienes un proyecto en Rust o C++, SpiderMonkey puede ser una gran opción. La principal diferencia con V8 es la velocidad de desarrollo, puedes esperar menos cambios que puedan romper tu código, pero también menos mejoras y actualizaciones, que con V8.</p>
+
+<p>Puedes ver su documentación aquí: <a href="https://firefox-source-docs.mozilla.org/js/index.html">SpiderMonkey</a>.</p>
+
+<h3 id="chakracore">ChakraCore</h3>
+
+<p>Este motor fue desarrollado por Microsoft y es usado en Chakra (que es un <em>runtime</em> de JS incluye otras cosas más como API’s para poder darle más funcionalidad al engine), que a su vez era usado en Edge y Windows (Edge ahora usa Chromium).</p>
+
+<p>ChakraCore está escrito en C++ y C, y presenta una API en C para usarlo en proyectos compatibles con esto. Puede ser compilado para cualquier sistema operativo de 64 bits, pero solamente para Windows para procesadores ARM y de 32 bits. Ya que Microsoft lo dejó de usar, se piensa ahora completamente como un proyecto a cargo de la comunidad.</p>
+
+<p>En las pruebas que yo hice, fue el más fácil de compilar y usar, pero si te fijas en su repositorio, no tiene un desarrollo tan activo.</p>
+
+<p>Puedes ver su documentación aquí: <a href="https://github.com/chakra-core/ChakraCore">ChakraCore</a>. Nota como no está bajo el nombre de chakra-core y no en el repositorio de Microsoft.</p>
+
+<h3 id="javascriptcore">JavaScriptCore</h3>
+
+<p>Este es el motor desarrollado por Apple, usado en Safari principalmente. Al igual que los otros, está escrito en C y C++, pero tiene bindings para Objective-C, Swift y C. Así, se puede usar para darle la capacidad a aplicaciones de iOS y macOS de ejecutar código de JS, pero si tienes algo más en C en que puedas envolverlo, sin ningún problemas puedes usarlo en cualquier proyecto.</p>
+
+<p>Puedes ver su documentación aquí: <a href="https://developer.apple.com/documentation/javascriptcore">JavaScriptCore</a>.</p>
+
+<h3 id="rhino">Rhino</h3>
+
+<p>También es desarrollado por Mozilla, pero esta vez escrito en Java. Rhino viene incluido en algunas distribuciones de Java. Así que si tienes un proyecto en Java, Rhino es una gran opción, pero debes estar atento a las características que soporta, porque parece que su desarrollo no está tan activo.</p>
+
+<p>Puedes ver su documentación aquí: <a href="https://github.com/mozilla/rhino">Rhino</a>.</p>
+
+<h2 id="engines-ligeros">Engines ligeros</h2>
+
+<p>Existen una gran variedad de engines de JS más ligeros, no con todas las características de los que acabamos de ver, con la idea de que los puedas embeber en proyectos que dispongan de pocos recursos, tal como sistemas embebidos o proyectos de IoT. Otro buen caso de uso para estos es cuando no requieras las funcionalidades completas de JS sino simplemente soporte básico en tu programa.</p>
+
+<p>Aquí una lista de los más populares:</p>
+
+<ul>
+  <li><a href="https://bellard.org/quickjs/">QuickJS</a>: Desarrollado por Fabrice Bellard, quien también creó <a href="https://www.ffmpeg.org/">FFmpeg</a>. QuickJS sólo pesa 210Kb en su forma más sencilla.</li>
+  <li><a href="https://duktape.org/">Duktape</a>: También es muy pequeño, promete funcionar en sistemas con 160Kb de memoria y 64Kb de RAM. Está escrito en C y soporta la ES2015 o ES6.</li>
+  <li><a href="https://github.com/espruino/Espruino">Espruino</a>. Corre en sistemas con 128Kb de memoria y 8Kb de RAM. Está escrito también en C y está pensado para darle soporte a sus propias tarjetas de microncontroladores de bajo consumo, programadas en JS. Pero aún así, lo puedes usar en cualquier proyecto que sea compatible con su API de C o correrlo directamente.</li>
+</ul>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Espero que esta lista de motores de JavaScript te sea útil para conocer más del ecosistema del que muchos sólo somos usuarios y para entender que JS te puede servir para darles superpoderes a tus sistemas y plataformas. Ya hay muchos proyectos que te permiten hacerlo reduciendo el trabajo al mínimo.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="javascript-engine" /><category term="v8" /><category term="chakra" /><summary type="html"><![CDATA[En este artículo hablaremos de los diferente engines de JavaScript que existen, dónde los puedes encontrar y para qué los puedes usar.]]></summary></entry><entry><title type="html">Mojo 🔥: un lenguaje prometedor</title><link href="https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor.html" rel="alternate" type="text/html" title="Mojo 🔥: un lenguaje prometedor" /><published>2023-12-13T00:00:00-06:00</published><updated>2023-12-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor.html"><![CDATA[<p><a href="https://www.nondot.org/sabre/" target="_blank">Chris Lattner</a>, uno de los creadores de <a href="https://llvm.org">LLVM</a> y <a href="https://www.swift.org/">Swift</a>, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de <strong>Python</strong> pero pensado para atacar su punto más débil: <strong>la velocidad de ejecución</strong>.</p>
 
 <p>Este lenguaje se llama <a href="https://modular.com/mojo">Mojo</a>, y está siendo publicitado como un lenguaje para hacer aplicaciones de <strong>inteligencia artificial</strong>. Como ya dijimos, su enfoque principal está en ser un lenguaje que produzca programar eficientes, por lo que puede ser usado para cualquier aplicación que requiera alto rendimiento o hacer una gran cantidad de cálculos, justo como las aplicaciones de <em>machine learning</em>.</p>
 
@@ -677,239 +749,4 @@ tienen un camino en la filosofía de la computación, así que si quieres desarr
   <li>DIP: <a href="/2023/04/22/el-principio-de-inversion-de-dependencias.html">El Principio de Inversión de Dependencias</a></li>
 </ul>
 
-<p>Espero que estos artículos te sirvan para analizar más profundamente lo que todos enseñan como dogmas que se deben de seguir al pie de la letra, bajo la amenaza de no ser un buen programador o programadora que se irá al infierno de los desarrolladores si no lo sigue.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="principios" /><summary type="html"><![CDATA[Los principios SOLID son algo que se considera como 'axiomas' de las buenas prácticas del software. Pero, ¿son realmente útiles?]]></summary></entry><entry><title type="html">Libros que todo desarrollador de software debería leer: desarrollo de carrera</title><link href="https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera.html" rel="alternate" type="text/html" title="Libros que todo desarrollador de software debería leer: desarrollo de carrera" /><published>2023-06-15T00:00:00-06:00</published><updated>2023-06-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/15/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo-de-carrera.html"><![CDATA[<p>En este artículo vamos a hablar de los libros que te pueden ayudar a avanzar en tu carrera como desarrollador de software, que desde mi punto de vista, son esenciales.</p>
-
-<p>Algunos desarrolladores piensan que basta simplemente con aprender a programar o diseñar software bien, pero lo cierto es que también hay que tener otras habilidades y conocimientos para que tu carrera avance a buen ritmo, y llegues a puestos de liderazgo si así lo deseas.</p>
-
-<p>En este post hablaremos de tres tipos de libros:</p>
-
-<ul>
-  <li>Consejos de carrera para desarrolladores y habilidades blandas</li>
-  <li>Libros de historia de la computación</li>
-  <li>Temas que te pueden ayudar a desarrollar habilidades de soporte</li>
-</ul>
-
-<p>Como siempre, si tienes alguna recomendación, puedes dejarla en los comentarios. Empecemos.</p>
-
-<h2 id="desarrollo-de-carrera">Desarrollo de carrera</h2>
-
-<p>En estos libros verás consejos específicos de desarrolladores experimentados sobre la carrera de programador, qué habilidades y actitudes te conviene desarrollar.</p>
-
-<h3 id="the-pragmatic-programmer--david-thomas--andrew-hunt">The Pragmatic Programmer | David Thomas &amp; Andrew Hunt</h3>
-
-<p><a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686286553/71f743sOPoL._AC_UF1000_1000_QL80__vibioc.jpg" alt="Portada de The Pragmatic Programmer" class="align-center" /></a></p>
-
-<p>Este es uno de los mejores libros sobre la carrera como programador, que te da consejos de dos programadores <strong>muy muy experimentados</strong>. Su tema principal es el <strong>pragmatismo</strong>, que es una filosofía que te dice que no hay una sola forma de hacer las cosas, sino que debes adaptarte a las circunstancias y hacer lo que sea necesario para lograr tus objetivos. Otra forma de ver el pragmatismo es que hay que ser práctico, y no darle tantas vueltas a las cosas.</p>
-
-<p>A grandes rasgos trata estos temas:</p>
-
-<ol>
-  <li>Introducción a la filosofía pragmática</li>
-  <li>Cómo ser pragmático al desarrollar software (nota que no es al <em>programar</em>, sino al crear programas)</li>
-  <li>Herramientas que te pueden servir para desarrollar buen software</li>
-  <li>Cómo llevar un proyecto pragmáticamente</li>
-</ol>
-
-<p>Estaba en la duda de clasificarlo entre los libros de desarrollo de software o desarrollo de carrera, porque aunque habla sobre técnicas específicas y temas técnicos, su espíritu es una meta-habilidad o una actitud hacia el desarrollo y hacia la vida: el pragmatismo.</p>
-
-<p>Puedes comprarlo aquí: <a href="https://amzn.to/3oXvmNk" target="_blank" rel="noopener">The Pragmatic Programmer</a>.</p>
-
-<h3 id="the-practice-of-programming--brian-w-kernighan--rob-pike">The Practice of Programming | Brian W. Kernighan &amp; Rob Pike</h3>
-
-<p><a href="https://www.goodreads.com/book/show/1032758.The_Practice_of_Programming" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686488400/71a9H3K9cgL._AC_UF1000_1000_QL80__af2e79.jpg" alt="Portada de The Practice of Programming" class="align-center" /></a></p>
-
-<p>Brian W. Kernighan es un desarrollador de software, programador y científico de la computación de las grandes ligas. ¿Has escuchado sobre <code class="language-plaintext highlighter-rouge">AWK</code>? Es un programa y lenguaje programación legendario, y se llama así por sus creadores: Alfred Aho, Peter Weinberger y <strong>Brian Kernighan</strong>.</p>
-
-<p><strong>Rob Pike</strong> es uno de los co-creadores del lenguaje de programación Go, y también es un desarrollador de software con mucha experiencia. Ha co-creado otros lenguajes de programación, como Oberon.</p>
-
-<p>En <strong>“The Practice of Programming”</strong> explican todas las prácticas que un desarrollador de software debe tener o aprender para desarrollar software exitosamente. Este libro se guía por los siguientes principios:</p>
-
-<ol>
-  <li>Simplicidad</li>
-  <li>Claridad</li>
-  <li>Generalidad</li>
-  <li>Automatización</li>
-</ol>
-
-<p>Estos principios son aplicados a cosas como el estilo, la documentación, las pruebas, etc. Al igual que el libro anterior, estaba dudando en clasificarlo como libro de desarrollo de software, pero creo que el enfoque general, aunque muy técnico, va más enfocado en el desarrollo de una mentalidad conveniente.</p>
-
-<p>Puedes comprarlo aquí: <a href="https://amzn.to/42zssMz" target="_blank" rel="noopener">The Practice of Programming</a>.</p>
-
-<h3 id="code-ahead--yegor-bugayenko">Code Ahead | Yegor Bugayenko</h3>
-
-<p><a href="https://www.yegor256.com/code-ahead.html" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686348326/yegor_code_kislix.png" alt="Portada de Code Ahead" class="align-center" /></a></p>
-
-<p><strong>Yegor Bugayenko</strong> es un autor poco conocido de este lado del mundo, pero en Rusia es más famoso. Ha escrito varios libros sobre programación como <strong>“Elegant Objects”</strong> (1 y 2). Pero también escribió este libro sobre la carrera de programador, que es muy bueno.</p>
-
-<p>Yo lo describiría como una <em>visión cínica de la carrera de programación</em>, con algunas recomendaciones sobre actitudes, formas de trabajo y <strong>tácticas para progresar en tu carrera</strong>. No creo que se deba tomar como una guía, sino más bien como un contrapeso a las opiniones de carrera más tradicionales, para ampliar tu visión. Además sí creo que dice algunas verdades incómodas que no a todos les gustará escuchar.</p>
-
-<p>El punto débil de libro es su formato (que para mi falló completamente), en el que trató de hacer un historia de ficción (supongo que al estilo de The Phoenix Project), pero que en realidad sólo consiste en una serie de explicaciones del protagonista.</p>
-
-<p>A pesar de lo mencionado anteriormente, creo que es un libro que vale mucho la pena leer y que te puede ayudar a ver las cosas desde otra perspectiva.</p>
-
-<p>Puedes comprarlo en Amazon: <a href="https://amzn.to/43Dm0FK" target="_blank" rel="noopener">Code Ahead</a></p>
-
-<h3 id="the-phoenix-project--gene-kim-kevin-behr--george-spafford">The Phoenix Project | Gene Kim, Kevin Behr &amp; George Spafford</h3>
-
-<p><a href="https://itrevolution.com/product/the-phoenix-project/" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686458596/TPP_3rd_cover_border-664x998.jpg_ohgr0o.webp" alt="Portada de The Phoenix Project" class="align-center" /></a></p>
-
-<p>Este libro, a diferencia del anterior es una novela que sí salió bien, en la que describe la progresión de alguien del área de IT que obligadamente se convierte en líder del área. Describe como es que las áreas de IT se convierten de cuellos de botella en partes que agregan valor a la empresa.</p>
-
-<p>El libro da los fundamentos de DevOps, y cuáles son los principios que todos los equipos de desarrollo de software deberían seguir para producir software más efectivamente.</p>
-
-<p>Aunque está enfocado en la operación y la entrega del software, a final de cuentas, es donde todos queremos que nuestro software llegue, así que todos los desarrolladores de software se pueden beneficiar de los principios que presenta.</p>
-
-<p>Se ha convertido en un clásico, y con justa razón. Lo puedes comprar aquí: <a href="https://amzn.to/3WWWMQ1" target="_blank" rel="noopener">The Phoenix Project</a>.</p>
-
-<h2 id="libros-de-historia-de-la-informática">Libros de historia de la informática</h2>
-
-<p>En esta sección recomendaremos algunos libros que creemos que te pueden ayudar a conocer más la historia de tu campo y que por lo tanto te ayudarán a <em>aprender de lo que ya se ha hecho</em>. Esto te ayudará a no cometer los mismos errores y más mejor, <strong>“pararte en hombros de gigantes”</strong> para poder ver más lejos.</p>
-
-<p>Afortunadamente, de estos tenemos tanto libros en inglés como en español.</p>
-
-<h3 id="historia-de-los-lenguajes-de-programación-años-1940-1959--manuel-rubio">Historia de los lenguajes de programación: Años 1940-1959 | Manuel Rubio</h3>
-
-<p><a href="https://altenwald.com/book/histlangprog" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686489306/Screen_Shot_2023-06-11_at_7.14.50_g1d4lh.png" alt="Portada de Historia de los lenguajes de programación" class="align-center" /></a></p>
-
-<p>Aquí, <a href="https://altenwald.com/">Manuel Rubio</a> explica el nacimiento de las lenguajes de programación y cómo esto va de la mano con la historia de la computación. Me gusta mucho de este libro que te da una visión más amplia que la centra en US que normalmente nos dan en la escuela y en la mayoría de los libros de computación.</p>
-
-<p>Manuel hizo una investigación muy amplia, cuestiona algunas cosas implícitamente (<em>¿de verdad fue Ada Lovelace la primera programadora?</em>) y te da una visión más amplia de lo que significa la computación.</p>
-
-<p>Me gusta mucho que resalta algunas cosas que nos siguen sucediendo hoy:</p>
-
-<ul>
-  <li>Nos cuesta naturalmente despegarnos del trabajo</li>
-  <li>El campo siempre se ha resistido a las innovaciones</li>
-  <li>Siempre creemos que lo que viene después de lo que ya sabemos tiene menos valor</li>
-</ul>
-
-<p>En el blog hicimos ya un <a href="/2022/06/11/resumen-historia-de-los-lenguajes-de-programacion.html" target="_blank" rel="noopener">resumen de este libro</a> y también hicimos un <a href="https://youtu.be/JDDEOi1jwDA">resumen en video</a> pero sinceramente te recomiendo leerlo completo.</p>
-
-<p>Lo puedes comprar aquí: <a href="https://altenwald.com/book/histlangprog" target="_blank" rel="noopener">Historia de los lenguajes de programación</a>. Si <em>necesitas</em> un descuento para comprarlo, no dudes en contactarme o contactar a Manuel, que es muy accesible y una gran persona.</p>
-
-<h3 id="mentes-geniales--camilo-chacón-sartori">Mentes Geniales | Camilo Chacón Sartori</h3>
-
-<p><a href="https://www.amazon.com.mx/Mentes-geniales-ingenier%C3%ADa-software-ingenieros/dp/6077074797" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686488396/978607538877_xfcfmk.jpg" alt="Portada de Mentes Geniales" class="align-center" /></a></p>
-
-<p><a href="https://camilochs.github.io/web/">Camilo Chacón Sartori</a> es un gran desarrollador de software, pronto Doctor en Ciencias de la computación y escritor. Ha escrito varios libros de programación o temas relacionados y en realidad es un escritor (y lector, ¿se puede ser buen escritor sin leer mucho?) muy prolífico.</p>
-
-<p>En este libro, habla de 12 personas que han contribuido de diferentes formas al desarrollo de la computación y se les ha reconocido con el <strong>Premio Turing</strong>. Aunque no es un libro histórico en todo el sentido de la palabra, además de que no sigue una cronología, sí habla de importantes eventos históricos de la computación y desarrollo.</p>
-
-<p>Lo recomiendo porque no sólamente te habla de los logros de las personas que menciona, analiza su entorno, te cuenta sobre su personalidad y extrae lecciones. Además, te deja las fuentes y referencias por si quieres leer más de ellos.</p>
-
-<p>Algunos de los personajes que a mi me impactaron:</p>
-
-<ul>
-  <li><strong>Manuel Blum</strong> - El creador de CAPTCHA</li>
-  <li><strong>Michael Stonebraker</strong> - El creador de PostgreSQL</li>
-  <li><strong>Barbara Liskov</strong> - Una gran proponente de los tipos abstractos de datos</li>
-  <li><strong>Leslie Lamport</strong> - Un gran matemático que ha contribuido a la computación con cosas como el algoritmo de Paxos y TLA+</li>
-  <li><strong>Richard Manning Karp</strong> - Un matemático que ha contribuido a la computación con cosas como el algoritmo de Karp-Rabin y el análisis de complejidad de algoritmos</li>
-</ul>
-
-<p>Sin duda te llevarás muchas buenas lecciones y aprendizajes sobre el desarrollo de la computación de este libro. Lo puedes comprar aquí: <a href="https://amzn.to/43J2jfG" target="_blank" rel="noopener">Mentes Geniales</a>.</p>
-
-<h3 id="dealers-of-lightning-xerox-parc-and-the-dawn-of-the-computer-ag--michael-a-hiltzik">Dealers of Lightning: Xerox PARC and the Dawn of the Computer Ag | Michael A. Hiltzik</h3>
-
-<p><a href="https://www.goodreads.com/book/show/1101290.Dealers_of_Lightning" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686549204/61pJVqUUoJL._AC_UF1000_1000_QL80__gevadr.jpg" alt="Portada de Dealers of Lightning" class="align-center" /></a></p>
-
-<p>En los años 70 y 80’s, la compañía <strong>Xerox</strong> (sí, la de las impresoras), consiguió un equipo de personas muy hábiles con la tecnología. Eran conocidos como el <strong>PARC</strong> (Palo Alto Research Center) y fueron los creadores de muchas de las tecnologías que hoy usamos, como:</p>
-
-<ul>
-  <li>La primera computadora personal</li>
-  <li>La interfaz gráfica</li>
-  <li>La impresora láser</li>
-</ul>
-
-<p>Todas estas tecnologías cambiaron el mundo, ayudando a crear la tecnología que hoy en día nos da trabajo y ha moldeado todas las industrias y la vida en general.</p>
-
-<p>Este libro está basado en entrevistas con las personas que vieron de cerca estas creaciones y que muestran cómo es que Xerox nunca vio el potencial de las creaciones de este equipo de ingenieros. Si quieres aprender sobre la historia de la tecnología que tenemos hoy, ver cómo se forman equipos de altísimo rendimiento y aumentar tus posibilidades de crear algo que sea digno de mención, este libro es un gran recurso.</p>
-
-<p>Puedes comprarlo aquí: <a href="https://amzn.to/3Cs5QTm" target="_blank" rel="noopener">Dealers of Lightning</a>.</p>
-
-<h3 id="la-catedral-de-turing--george-dyson">La Catedral de Turing | George Dyson</h3>
-
-<p><a href="https://books.google.com.mx/books/about/La_catedral_de_Turing.html?id=QvjeBQAAQBAJ&amp;redir_esc=y" target="_blank" rel="noopener"><img src="" alt="Portada de La Catedral de Turing" class="align-center" /></a></p>
-
-<p>En este libro se narra el comienzo de la computación después de la segunda guerra mundial y de todos los actores que tuvieron un impacto en el desarrollo de la computación moderna.</p>
-
-<p>Es una crónica muy completa, junto con la explicación de muchos conceptos de la computación. El autor, hijo del físico <a href="https://www.profisica.cl/index.php/component/content/article/115-biografias/216-freeman-dyson?Itemid=542">Freeman Dyson</a>, tuvo acceso a muchos de los actores de la historia y a sus documentos, lo que le permitió hacer una libro que revela muchos detalles.</p>
-
-<p>Sin duda es algo que muchos dedicados a esta área del conocimiento queremos leer. Lo puedes comprar aquí: <a href="https://amzn.to/3NoQKV6" target="_blank" rel="noopener">La Catedral de Turing</a>.</p>
-
-<h2 id="otros-temas-relacionados">Otros temas relacionados</h2>
-
-<p>Finalmente, como última parte de este artículo y de la serie de libros recomendados. Quiero poner algunas recomendaciones sobre temas y habilidades alternas a la programación que te ayudarán tanto como programador como a desarrollar tu carrera.</p>
-
-<p>Algunos de estos temas o libros pensarás que no tienen nada que ver, pero te puedo asegurar que son habilidades y temas de soporte necesarios que te van a ayudar a resaltar.</p>
-
-<h3 id="how-to-solve-it--george-polya">How to solve it | George Polya</h3>
-
-<p><a href="https://math.hawaii.edu/home/pdf/putnam/PolyaHowToSolveIt.pdf" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686666135/71GFUNCh7hL._AC_UF1000_1000_QL80__q5xtrk.jpg" alt="Portada de How to solve it" class="align-center" /></a></p>
-
-<p>George Polya fue un matemático del Siglo XX que contribuyó en el área de heurística y resolución de problemas. Fue un gran profesor al mismo tiempo que un gran investigador. Este libro es una combinación de ambas facetas de él: le preocupaba que las matemáticas se enseñaran bien al mismo tiempo que él era muy bueno haciendo matemáticas.</p>
-
-<p>En este escrito, Polya establece los pasos a seguir para resolver problemas matemáticos, pero que por extensión también nos sirve a los desarrolladores para aprender a establecer un método para resolver los problemas que encontramos día a día en nuestro trabajo.</p>
-
-<p>Los cuatro pasos que propone son:</p>
-
-<ul>
-  <li>Plantear y entender correctamente el problema</li>
-  <li>Idear un plan para resolverlo (aquí da algunas técnicas comunes)</li>
-  <li>Ejecutar el plan</li>
-  <li>Revisar el resultado, el proceso y los aprendizajes</li>
-</ul>
-
-<p>Cuando lo leí, noté inmediatamente que era un libro que se debería dar en todas las escuelas relacionadas con la ingeniería o la computación, ya que nos da claridad, o por lo menos una idea de cómo empezar a resolver algo.</p>
-
-<p>Lo puedes comprar aquí: <a href="https://amzn.to/43YlSQC" target="_blank" rel="noopener">How to solve it</a>, pero también lo puedes leer gratis: <a href="https://cienciaymatematicas.files.wordpress.com/2012/09/como-resolver.pdf">Cómo plantear y resolver problemas</a>.</p>
-
-<h3 id="enfócate--cal-newport">Enfócate | Cal Newport</h3>
-
-<p><a href="https://www.amazon.com.mx/Enf%C3%B3cate-estrategias-eficacia-trabajo-creativo/dp/607527998X" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686669189/71p-QmjVoWL._AC_UF1000_1000_QL80__ymtjyl.jpg" alt="Portada de Enfócate" class="align-center" /></a></p>
-
-<p>La atención es uno de los bienes más preciados que tenemos los seres humanos, ya que a nuestra mente consciente sólo entra aquello a lo que la dirigimos o <em>enfocamos</em>. Pero cuando más beneficios da es cuando la enfocamos en una sola cosa por un periodo prolongado. Es como si nuestra mente fuera acelerando y tomando impulso para resolver un problema.</p>
-
-<p>Esa es la tesis principal de “Enfócate”, un profesor de ciencias de la computación, muy interesado en temas como el logro académico, la productividad intelectual y el rendimiento a pesar de los obstáculos modernos.</p>
-
-<p>En este libro, presenta un caso muy sólido para convencerte de apartar tiempo ininterrumpido para lograr tus tareas más difíciles. Además, relata cómo él lo logra y te da algunos consejos para que tú lo puedas hacer.</p>
-
-<p>Creo que este libro es especialmente relevante para los desarrolladores de software por el entorno en el que trabajamos y porque muchos de los problemas que enfrentamos rebasan nuestra capacidad o conocimiento actual, por lo que necesitamos toda la ayuda posible para poder resolverlos.</p>
-
-<p>Puedes comprarlo aquí: <a href="https://amzn.to/45YWNqJ" target="_blank" rel="noopener">Enfócate</a>.</p>
-
-<h3 id="accelerate--nicole-forsgren">Accelerate | Nicole Forsgren</h3>
-
-<p><a href="https://www.oreilly.com/library/view/accelerate/9781457191435/9" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686808509/41OoXs3W3nL._AC_UF1000_1000_QL80__knm3bn.jpg" alt="Portada de Accelerate" class="align-center" /></a></p>
-
-<p><strong>¿Qué es lo que distingue a un equipo de alto rendimiento en la entrega de software de uno de bajo rendimiento?</strong> La medida más básica es el tiempo que toma un cambio en ser liberado o en llegar a producción. En este libro se habla de 1) cómo medir esto y 2) los factores que llevan a un equipo a mejorar esas métricas.</p>
-
-<p>En realidad el libro es el resultado de un estudio de muchos equipos de desarrollo de software, en el que descubrieron varias cosas acerca de los equipos de alto rendimiento, entre ellas:</p>
-
-<ul>
-  <li>Las prácticas técnicas que tienen</li>
-  <li>El tipo de liderazgo que los guía</li>
-  <li>Qué tipo de arquitecturas siguen</li>
-  <li>Qué prácticas de administración de recursos humanos siguen</li>
-  <li>Cómo hacen todo el trabajo sostenible</li>
-</ul>
-
-<p>Además el libro habla de la forma en la que se realizó el estudio. Sin duda, es un libro muy valioso para los desarrolladores de software que quieren mejorar su rendimiento y el de sus equipos. Puedes comprarlo aquí: <a href="https://amzn.to/3JaPTEP" target="_blank" rel="noopener">Accelerate</a>.</p>
-
-<h3 id="data-and-reality--william-kent">Data and Reality | William Kent</h3>
-
-<p><a href="https://www.bkent.net/Doc/darxrp.htm" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1686837219/41351CTT93L._AC_UF1000_1000_QL80__qgzcwb.jpg" alt="Portada de Data and Reality" class="align-center" /></a></p>
-
-<p>Creo que como programadores, gran cantidad del tiempo lo dedicamos a procesar datos, o a crear representaciones datos de procesos externos a la computación. Esto es el <strong>modelado de datos</strong>, y es de lo que este libro habla, pero de manera bastante especial.</p>
-
-<p><strong>William Kent</strong> hace un análisis profundo de las cosas a las que estamos acostumbrados: modelos, datos, registros, relaciones, atributos, entidades. Primero, <em>intenta</em> definirlas y después aplicarlas al modelado de datos, explorando las implicaciones de definición. Es un libro que te va a hacer pensar bastante, relacionado con la epistemología, la ontología y en nuestra percepción de la realidad.</p>
-
-<p>Aunque el libro te deja con más dudas que respuestas, deja algo totalmente claro: no existe una forma <em>correcta</em> de modelar el mundo, sólo <strong>representaciones más convenientes</strong> para un caso u otro, ya que todas son arbitrarias.</p>
-
-<p>Yo leí la <a href="https://amzn.to/42FOOMs">tercera edición</a>, que es la que única que está en producción actualmente. Esta tiene comentarios de otro modelador de datos muy experimentado, pero que según <a href="https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/">Hillel Wayne</a> cambió completamente el libro.Hillel recomienda leer la segunda edición, que aunque ya no está en impresión, lo puedes encontrar en <a href="https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/" target="_blank" rel="noopener">PDF</a>. Yo tengo pendiente leer la segunda edición, pero tengo altas expectativas ya que incluso la tercera me dejó grandes enseñanzas.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Para avanzar en tu carrera no basta con aprender sólo habilidades técnicas, también hacen falta algunas meta-habilidades, habilidades paralelas y conocimiento de la historia de tu profesión.</p>
-
-<p>Tener estos conocimientos te puede hacer destacar de los demás profesionales, y son especialmente útiles si quieres lograr un puesto de liderazgo. Así que sigue preparándote, recuerda que un libro bien editado es de las mejores inversiones que puedes hacer.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="desarrollo-de-carrera" /><category term="career" /><category term="historia" /><summary type="html"><![CDATA[Hablemos de los libros que te pueden ayudar a desarrollar tu carrera como desarrollador de software, escritos por personas con experiencia en el tema.]]></summary></entry></feed>
+<p>Espero que estos artículos te sirvan para analizar más profundamente lo que todos enseñan como dogmas que se deben de seguir al pie de la letra, bajo la amenaza de no ser un buen programador o programadora que se irá al infierno de los desarrolladores si no lo sigue.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="principios" /><summary type="html"><![CDATA[Los principios SOLID son algo que se considera como 'axiomas' de las buenas prácticas del software. Pero, ¿son realmente útiles?]]></summary></entry></feed>
