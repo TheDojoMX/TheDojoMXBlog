@@ -27,3 +27,5 @@ let c = 0
 c = a + b
 console.log("c vale ", c)
 ```
+
+En este código, primero se declaran las variables `a`, `b` y `c`, después se asigna el valor de `a + b` a `c` y finalmente se imprime el valor de `c`.
