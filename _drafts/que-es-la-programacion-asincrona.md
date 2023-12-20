@@ -15,7 +15,7 @@ Cuando empiezas a programar, uno de los temas que se presentan pronto, es el de 
 
 ## ¿Qué es la programación asíncrona?
 
-Para entenderla primero tenemos que entender la programación tradicional o síncrona.
+Para entenderla primero tenemos que entender la programación tradicional o síncrona (creo que la palabra correcta en español es _sincrónica_).
 
 En la programación las cosas siempre suceden en un orden estricto, una instrucción empieza y hasta que no se termina, no se ejecuta la siguiente. Observa el siguiente código:
 
@@ -28,4 +28,18 @@ c = a + b
 console.log("c vale ", c)
 ```
 
-En este código, primero se declaran las variables `a`, `b` y `c`, después se asigna el valor de `a + b` a `c` y finalmente se imprime el valor de `c`.
+En este código, primero se declaran las variables `a`, `b` y `c`, después se asigna el valor de `a + b` a `c` y finalmente se imprime el valor de `c`. Todo esto sucede en un orden estricto como la mayoría de los programadores esperamos.
+
+Pero ahora observa este código:
+
+```js
+const a = 1
+const b = 2
+let c = 0
+setImmediate(() => {
+  c = a + b
+})
+console.log("c vale ", c)
+```
+
+El único cambio que hicimos aquí es el uso de la función `setImmediate`, que es una función que recibe otra función como parámetro y la ejecuta en el siguiente ciclo de ejecución del _event loop_ de **Node.js** o el ejecutor en el que esté.
