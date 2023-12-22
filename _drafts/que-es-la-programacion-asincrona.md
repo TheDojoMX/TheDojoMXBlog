@@ -43,3 +43,16 @@ console.log("c vale ", c)
 ```
 
 El único cambio que hicimos aquí es el uso de la función `setImmediate`, que es una función que recibe otra función como parámetro y la ejecuta en el siguiente ciclo de ejecución del _event loop_ de **Node.js** o el ejecutor en el que esté.
+
+Un código equivalente pero usando async/await sería:
+
+```js
+const a = 1
+const b = 2
+let c = 0
+async function sum() {
+  c = a + b
+}
+sum()
+console.log("c vale ", c)
+```
