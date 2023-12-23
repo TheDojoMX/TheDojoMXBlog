@@ -56,3 +56,5 @@ async function sum() {
 sum()
 console.log("c vale ", c)
 ```
+
+Aquí la verdad es que los resultados pueden variar, a veces te saldrá que `c` vale `0` y otras veces que vale `3`, esto es porque la función `sum` se ejecuta en un ciclo de ejecución diferente al del `console.log`, y sucede en orden aleatorio. La forma de asegurarnos de que...
