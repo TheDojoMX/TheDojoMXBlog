@@ -51,10 +51,18 @@ const a = 1
 const b = 2
 let c = 0
 async function sum() {
+  for (let i = 0; i < 1000000000; i++) {
+    
+  }
   c = a + b
 }
-sum()
-console.log("c vale ", c)
+
+
+(async ()=> {
+  sum()
+  console.log("c vale ", c)
+  })()
 ```
 
-Aquí la verdad es que los resultados pueden variar, a veces te saldrá que `c` vale `0` y otras veces que vale `3`, esto es porque la función `sum` se ejecuta en un ciclo de ejecución diferente al del `console.log`, y sucede en orden aleatorio. La forma de asegurarnos de que...
+Aquí la verdad es que los resultados pueden variar, a veces te saldrá que `c` vale `0` y otras veces que vale `3`, esto es porque la función `sum` se ejecuta en un ciclo de ejecución diferente al del `console.log`, y sucede en orden aleatorio. La forma de asegurarnos de que
+
