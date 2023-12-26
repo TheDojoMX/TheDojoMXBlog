@@ -6,14 +6,11 @@ let c = 0
 
 async function sum() {
     c += a + b
-    console.log("terminando c vale ", c)
 }
 
 async function main() {
-    sum()
-    sum()
-    sum()
-    console.log("c vale ", c)
+    await sum()
+    await sum()
 }
 
 main()
