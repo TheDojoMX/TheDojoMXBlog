@@ -47,19 +47,21 @@ El único cambio que hicimos aquí es el uso de la función `setImmediate`, que 
 Un código equivalente pero usando async/await sería:
 
 ```js
+
 const a = 1
 const b = 2
 let c = 0
+
 async function sum() {
-  for (let i = 0; i < 1000000000; i++) {
-    
-  }
   c = a + b
 }
 
+async function main() {
+  await sum()
+}
+main()
+console.log("c vale ", c)
 
-(async ()=> {
-  sum()
-  console.log("c vale ", c)
-  })()
 ```
+
+En este caso, tenemos que hacer dos cosas para que funcione de manera asíncrona, la primera es declarar la función `sum` como `async` y la segunda es usar la palabra reservada `await` para esperar a que la función `sum` termine de ejecutarse.
