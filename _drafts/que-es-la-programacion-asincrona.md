@@ -44,7 +44,7 @@ console.log("c vale ", c)
 
 El único cambio que hicimos aquí es el uso de la función `setImmediate`, que es una función que recibe otra función como parámetro y la ejecuta en el siguiente ciclo de ejecución del _event loop_ de **Node.js** o el ejecutor en el que esté.
 
-Un código equivalente pero usando async/await sería:
+Un código que puede ser similar pero usando async/await sería:
 
 ```js
 
@@ -53,15 +53,19 @@ const b = 2
 let c = 0
 
 async function sum() {
-  c = a + b
+  c += a + b
 }
 
 async function main() {
   await sum()
+  await sum()
 }
 main()
-console.log("c vale ", c)
+console.log("c vale ", c)  # c vale 3
 
 ```
 
 En este caso, tenemos que hacer dos cosas para que funcione de manera asíncrona, la primera es declarar la función `sum` como `async` y la segunda es usar la palabra reservada `await` para esperar a que la función `sum` termine de ejecutarse.
+
+## ¿Por qué usar programación asíncrona?
+
