@@ -65,7 +65,8 @@ console.log("c vale ", c)  # c vale 3
 
 ```
 
-En este caso, tenemos que hacer dos cosas para que funcione de manera asíncrona, la primera es declarar la función `sum` como `async` y la segunda es usar la palabra reservada `await` para esperar a que la función `sum` termine de ejecutarse.
+Esto es específico de JS, pero como son palabras en inglés debería ser sencillo de entender. Tenemos que hacer dos cosas para que funcione de manera asíncrona, la primera es declarar la función `sum` como `async` y la segunda es usar la palabra reservada `await` para esperar a que la función `sum` termine de ejecutarse, además de declarar la función `main` como `async` también, ya que no podemos usar `await` en una función que no sea `async` o fuera de un módulo de JavaScript.
 
-## ¿Por qué usar programación asíncrona?
+Pero aquí vemos claramente le efecto: nos dice que 3 es el valor de `c`, cuando en realidad esperaríamos que fuera 6, ya que `sum` se ejecuta dos veces.
 
+La explicación a esto está en que con la programación asíncrona podemos modificar cuándo se ejecutan las cosas.
