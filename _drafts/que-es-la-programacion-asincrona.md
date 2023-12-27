@@ -69,4 +69,11 @@ Esto es específico de JS, pero como son palabras en inglés debería ser sencil
 
 Pero aquí vemos claramente le efecto: nos dice que 3 es el valor de `c`, cuando en realidad esperaríamos que fuera 6, ya que `sum` se ejecuta dos veces.
 
-La explicación a esto está en que con la programación asíncrona podemos modificar cuándo se ejecutan las cosas.
+La explicación a esto está en que con la programación asíncrona podemos modificar cuándo se ejecutan las cosas. Pero otra visión es que se pueden ejecutar cosas en diferentes "lados" (múltiples hilos de ejecución) y tú elegir cómo usas los resultados de la ejecución.
+
+## Definición
+
+La programación asíncrona es un paradigma de programación en el que las cosas no suceden en un orden estricto, sino que se pueden ejecutar en diferentes momentos y en diferentes hilos de ejecución.
+
+
+
