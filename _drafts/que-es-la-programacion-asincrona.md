@@ -76,4 +76,6 @@ La explicación a esto está en que con la programación asíncrona podemos modi
 La programación asíncrona es un paradigma de programación en el que las cosas no suceden en un orden estricto, sino que se pueden ejecutar en diferentes momentos y en diferentes hilos de ejecución.
 
 
-
+https://www.youtube.com/watch?v=Ra1Dmz-5HjU
+https://x.com/alejandrozepe/status/1739797862555189277?s=20
+https://x.com/imgyf/status/1739330185638629423?s=20
