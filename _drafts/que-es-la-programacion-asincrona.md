@@ -75,4 +75,14 @@ La explicación a esto está en que con la programación asíncrona podemos modi
 
 La programación asíncrona es un forma de ejecutar las acciones de tu programa en la que no se espera siempre que una acción o instrucción termine para continuar con el progrma.
 
-Como vimos en el primer ejemplo, en la programación síncrona (también llamada _bloqueante_), ninguna acción comienza hasta que le previa haya terminado. En la programación asíncrona, con técnicas o palabras reservadas específicas le indicamos al motor de ejecución que no es necesario a que una acción termine para continuar con la siguiente, pero también le podemos decir qué hacer cuando la acción termine.
+Como vimos en el primer ejemplo, en la programación síncrona (también llamada _bloqueante_ [blocking]), ninguna acción comienza hasta que le previa haya terminado. En la programación asíncrona, con técnicas o palabras reservadas específicas le indicamos al motor de ejecución que no es necesario a que una acción termine para continuar con la siguiente, pero también le podemos decir qué hacer cuando la acción termine. Por esto mismo, la programación asíncrona también se conoce como _no bloqueante_ (non-blocking).
+
+
+## Para qué sirve la programación asíncrona
+
+Cuando estás construyendo un programa, la ejecución puede depender de dos cosas:
+
+- De los cálculos que estás haciendo
+- De la información que estás obteniendo o guardando en algún lugar
+
+En el primer caso, llamamos a la ejecución **CPU bound** y en el segundo **I/O bound**.
