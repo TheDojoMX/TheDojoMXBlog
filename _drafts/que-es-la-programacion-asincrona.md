@@ -69,8 +69,10 @@ Esto es específico de JS, pero como son palabras en inglés debería ser sencil
 
 Pero aquí vemos claramente le efecto: nos dice que 3 es el valor de `c`, cuando en realidad esperaríamos que fuera 6, ya que `sum` se ejecuta dos veces.
 
-La explicación a esto está en que con la programación asíncrona podemos modificar cuándo se ejecutan las cosas. Pero otra visión es que se pueden ejecutar cosas en diferentes "lados" (múltiples hilos de ejecución) y tú elegir cómo usas los resultados de la ejecución.
+La explicación a esto está en que con la programación asíncrona podemos modificar **cuándo se ejecutan las cosas**. Pero otra visión es que se pueden ejecutar cosas en diferentes "lados" o "momentos" y tú elegir **cuándo** usas los resultados de la ejecución.
 
 ## Definición
 
-La programación asíncrona es una forma de programar...
+La programación asíncrona es un forma de ejecutar las acciones de tu programa en la que no se espera siempre que una acción o instrucción termine para continuar con el progrma.
+
+Como vimos en el primer ejemplo, en la programación síncrona (también llamada _bloqueante_), ninguna acción comienza hasta que le previa haya terminado. En la programación asíncrona, con técnicas o palabras reservadas específicas le indicamos al motor de ejecución que no es necesario a que una acción termine para continuar con la siguiente, pero también le podemos decir qué hacer cuando la acción termine.
