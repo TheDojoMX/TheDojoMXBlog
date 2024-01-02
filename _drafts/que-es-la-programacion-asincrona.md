@@ -89,3 +89,24 @@ En el primer caso, llamamos a la ejecución **CPU bound** y en el segundo **I/O 
 ### CPU bound
 
 Cuando tu programa es pesado en los cálculos que tiene que hacer, como cuando tienes que procesar multimedia, hacer multiplicación de matrices o cosas similares, puedes decir que tu programa es **CPU bound**, o que está limitado por el poder de procesamiento.
+
+En este caso, la programación asíncrona te puede ayudar si tienes múltiples **ejecutores** en los que puedas distribuir el cómputo. Por ejemplo:
+
+- Si tienes un procesador con múltiples cores o múltiples hilos de ejecución
+- Si tienes múltiples computadoras que pueden hacer el cómputo
+
+En el primer caso, necesitas una plataforma que te ayude a utilizar el poder de procesamiento de los múltiples cores, sea implícitamente o explícitamente. Por ejemplo plataformas como la máquina virtual de Erlang, automáticamente distribuyen la carga en los múltiples cores disponibles. En otros lenguajes como en Python, tienes que hacerlo explícitamente.
+
+### I/O bound
+
+Cuando un programa consume o produce mucha información normalmente tiene que ponerla en algún lugar. Estos lugares pueden ser:
+
+- La memoria RAM
+- El disco duro
+- La red (mandarla o pedirla a un servidor)
+
+En estos casos, se dice que el programa está limitado por la velocidad de entrada y salida de datos, o **I/O bound**.
+
+La programación asíncrona te puede ayudar de manera más sencilla, sobre todo en el caso de las peticiones de red. ¿Cómo? Si hacemos que la
+
+
