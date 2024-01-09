@@ -109,4 +109,4 @@ En estos casos, se dice que el programa está limitado por la velocidad de entra
 
 La programación asíncrona te puede ayudar de manera más sencilla, sobre todo en el caso de las peticiones de red. ¿Cómo? Si hacemos que la
 
-
+## Cómo funciona la programación asíncrona
