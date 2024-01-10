@@ -79,7 +79,7 @@ Como vimos en el primer ejemplo, en la programación síncrona (también llamada
 
 ## Para qué sirve la programación asíncrona
 
-Cuando estás construyendo un programa, la ejecución puede depender de dos cosas:
+Antes de explicar directamente cómo podemos usar la programación asíncrona para mejorar nuestros programas, veamos las restricciones que tenemos. Cuando estás construyendo un programa, la velocidad ejecución puede depender o verse limitada por dos cosas:
 
 - De los cálculos que estás haciendo
 - De la información que estás obteniendo o guardando en algún lugar
@@ -109,4 +109,3 @@ En estos casos, se dice que el programa está limitado por la velocidad de entra
 
 La programación asíncrona te puede ayudar de manera más sencilla, sobre todo en el caso de las peticiones de red. ¿Cómo? Si hacemos que la
 
-## Cómo funciona la programación asíncrona
