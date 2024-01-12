@@ -99,16 +99,16 @@ En el primer caso, necesitas una plataforma que te ayude a utilizar el poder de 
 
 ### I/O bound
 
-Cuando un programa consume o produce mucha información normalmente tiene que ponerla en algún lugar. Estos lugares pueden ser:
+Cuando un programa consume o produce mucha información normalmente tiene que ponerla en algún lugar. Este lugar puede ser:
 
 - La memoria RAM
-- El disco duro
+- El disco duro (o sistema de archivos)
 - La red (mandarla o pedirla a un servidor)
 
-En estos casos, se dice que el programa está limitado por la velocidad de entrada y salida de datos, o **I/O bound**.
+Cuando tu programa hace mucho esto, se dice que el programa está limitado por la velocidad de entrada y salida de datos, o **I/O bound**.
 
 La programación asíncrona te puede ayudar de manera más sencilla, sobre todo en el caso de las peticiones de red. ¿Cómo? Si hacemos que la
 
 ## Conclusión
 
-...
+Entender la programación asíncrona es esencial en la programación moderna, muchos lenguajes y sobre todo _entornos de ejecución_ lo implementan. Entenderla y usarla te ayudará a crear programas más eficientes y que cumplan con el rendimiento que tus usuario esperan.
