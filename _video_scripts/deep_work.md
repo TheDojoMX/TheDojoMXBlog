@@ -1,4 +1,15 @@
 # Enfócate
+Versión corta, para shorts:
+
+¿Cómo puedes terminar finalmente aquel proyecto que siempre te ha llamado la atención y que no te ha dado tiempo de terminar? O cómo puedes encontrar la solución a aquel problema que no has podido resolver para avanzar en tu trabajo diario. Lo cierto es que necesitas encontrar espacio para pensar profundamene.
+
+Una de las habilidades más importantes que puedes tener como desarrollador de software es la capacidad de trabajar por periodos de tiempo inineterrumpidos de manera concentrada. Este tipo de trabajo cada vez es más raro y por lo tanto más valios. Las personas más productivas del mundo acostumbran trabajar de esta manera y lo mejor es que es una habilidad que puedes aprender y desarrollar. En el libro Deep Worl o Enfócate (en español) de Cal Newport encontrarás consejos para lograrlo. Este libro es una obra maestra de la no ficción y te lo recomiendo si quieres aprender a trabajar de manera concentrada.
+
+No te pierdas el video completo en nuestro canal de YouTube.
+
+
+
+
 Trabajar de manera concentrada es una de las cosas más importantes que puedes
 aprender a hacer en la actualidad. Como desarrolladores de software necesitamos aprender a dejar las distracciones de lado para poder crear software en tiempo razonable y sin tener que estar atrasando las fechas de entrega o a nuestos equipos.
 
