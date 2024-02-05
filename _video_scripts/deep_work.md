@@ -10,8 +10,8 @@ No te pierdas el video completo en nuestro canal de YouTube.
 
 
 
-Trabajar de manera concentrada es una de las cosas más importantes que puedes
-aprender a hacer en la actualidad. Como desarrolladores de software necesitamos aprender a dejar las distracciones de lado para poder crear software en tiempo razonable y sin tener que estar atrasando las fechas de entrega o a nuestos equipos.
+**Trabajar de manera concentrada** es una de las cosas _más importantes_ que puedes
+aprender a hacer en la actualidad sobre todo como desarrollador o desarrolladora de software. Como desarrolladores de software necesitamos aprender a dejar las distracciones de lado para poder crear software en tiempo razonable y sin tener que estar atrasando las fechas de entrega o a nuestos equipos. Además el tiempo concentrados nos permite entrar en lo que Mihaly Csikszentmihalyi llama "el flujo", un estado mental en el que te encuentras completamente absorto en la actividad que estás realizando, y podemos resolver problemas que de ninguna otra forma podríamos resolver en torso aspectos.
 
 
 ¿Qué puede ayudarte a ser más efectivo en este aspecto? En este video te doy algunos consejos para que puedas enfocarte en tu trabajo y ser más productivo.
