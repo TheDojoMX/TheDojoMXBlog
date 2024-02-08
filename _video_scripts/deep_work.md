@@ -10,6 +10,11 @@ No te pierdas el video completo en nuestro canal de YouTube.
 
 
 
+## Versión completa para YouTube
+
+¿Sientes que cada vez te cuesta más trabajo concentrarte? ¿Te cuesta cumplir con tu trabajo diario porque sientes que no tienes tiempo para pensar?
+
+
 **Trabajar de manera concentrada** es una de las cosas _más importantes_ que puedes
 aprender a hacer en la actualidad sobre todo como desarrollador o desarrolladora de software. Como desarrolladores de software necesitamos aprender a dejar las distracciones de lado para poder crear software en tiempo razonable y sin tener que estar atrasando las fechas de entrega o a nuestos equipos. Además el tiempo concentrados nos permite entrar en lo que Mihaly Csikszentmihalyi llama "el flujo", un estado mental en el que te encuentras completamente absorto en la actividad que estás realizando, y podemos resolver problemas que de ninguna otra forma podríamos resolver en torso aspectos.
 
@@ -29,7 +34,7 @@ En el primer capítulo define lo que es el trabajo profundo y cómo puede genera
 
 En la segunda parte del libro que se llama "Las reglas", el autor nos da algunos consejos para lograr hacer trabajo profundo. Tiene cuatro capítulos, todos enfocados en darte consejos sobre cómo lograr trabajar de manera profunda.
 
-En el primer capítulo de esta parte, se propone una serie de estilos o filosofías adaptados a diferentes estilos de vida para lograr trabajar de manera concnetrada, por ejemplo al estilo de un monje o de un hombre de negocios. Tú puedes pensar en qué forma tiene tu vida y qué filosofía puedes aplicar.
+En el primer capítulo de esta parte, se propone una serie de estilos o filosofías adaptados a diferentes estilos de vida para lograr trabajar de manera concnetrada, por ejemplo al estilo de un monje o de un hombre de negocios. Tú puedes pensar en qué forma tiene tu vida y qué filosofía puedes aplicar, por ejemplo el libro por lo menos de dos tipos de 
 
 El segundo capítulo se llama "Abre las puertas al aburrimiento" y habla acerca de la importancia de tener momentos predeterminados tanto para la concentración como la distracción y te da varios consejos para lograr hacer esto. En el  argumento que te da para hacer esto es que si no lo hacemos y no logramos que nuestro cerebro se acostumbre a entrar y mantenerse en modo concentrado, lo único que pasará es que aunque quisiéramos dedicarle tiempo al trabajo serio no lo lograremos. 
 
@@ -40,7 +45,7 @@ El último capítulo del libro se llama "Elimina lo superficial" y habla de la i
 Los programadores o desarrolladores de software, por la naturaleza de nuestro trabajo, necesitamos aprender a trabajar de manera concentrada, porque es la única manera de poder crear software en tiempo razonable y sin tener que estar atrasando las fechas de entrega o a nuestos equipos.
 
 
-Además, estamos en ambientes en que las distracciones son muy fáciles de acceder, por lo que creo que este libro es obligatorio para todos aquellos que le quieran sacar mayor provecho a su tiempo en la computadora.o
+Además, estamos en ambientes en que las distracciones son muy fáciles de acceder, por lo que creo que este libro es obligatorio para todos aquellos que le quieran sacar mayor provecho a su tiempo en la computadora.
 
 Como parte extra, se me hace una obra maestra de la no ficción en cuanto a la forma de exponer y profundizar en un tema de manera ordana y con argumentos convicentes.
 
