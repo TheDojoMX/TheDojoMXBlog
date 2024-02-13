@@ -412,11 +412,11 @@
 <p>A primera luz, un código que puede fácilmente satisfacer es:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">message</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Dios bendiga a los héroes que nos dieron el internet.</span><span class="sh">"</span>
-<span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">lower</span><span class="p">()</span>
-<span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">á</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">é</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">e</span><span class="sh">"</span><span class="p">)</span> \
-    <span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">í</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">i</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">ó</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">o</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">ú</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">u</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s">"Dios bendiga a los héroes que nos dieron el internet."</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"á"</span><span class="p">,</span><span class="s">"a"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"é"</span><span class="p">,</span><span class="s">"e"</span><span class="p">)</span> \
+    <span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"í"</span><span class="p">,</span><span class="s">"i"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"ó"</span><span class="p">,</span><span class="s">"o"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"ú"</span><span class="p">,</span><span class="s">"u"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 <span class="c1"># dios bendiga a los heroes que nos dieron el internet.
 </span></code></pre></div></div>
 <p>Funcionó, se cumplió el objetivo.</p>
@@ -436,23 +436,23 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
 
 <p>Siguiendo con el problema original, el código propuesto es el siguiente <a href="https://www.tutorialspoint.com/design_pattern/chain_of_responsibility_pattern.htm">(aquí uno en Java)</a>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">to_lower</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="sh">""</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Message is not a string</span><span class="sh">"</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">message</span><span class="p">.</span><span class="nf">strip</span><span class="p">().</span><span class="nf">lower</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">to_lower</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s">""</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Message is not a string"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">message</span><span class="p">.</span><span class="n">strip</span><span class="p">().</span><span class="n">lower</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">to_ascii</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Message is not a string</span><span class="sh">"</span><span class="p">)</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">á</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">é</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">e</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">í</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">i</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">ó</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">o</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">ú</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">u</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Message is not a string"</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"á"</span><span class="p">,</span><span class="s">"a"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"é"</span><span class="p">,</span><span class="s">"e"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"í"</span><span class="p">,</span><span class="s">"i"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"ó"</span><span class="p">,</span><span class="s">"o"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"ú"</span><span class="p">,</span><span class="s">"u"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">message</span>
 
 <span class="k">def</span> <span class="nf">to_disk</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
-    <span class="n">FILENAME</span> <span class="o">=</span> <span class="sh">"</span><span class="s">historial.log</span><span class="sh">"</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Message is not a string</span><span class="sh">"</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">FILENAME</span><span class="p">,</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="sh">"</span><span class="s">UTF-8</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-        <span class="n">fp</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">FILENAME</span> <span class="o">=</span> <span class="s">"historial.log"</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Message is not a string"</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">FILENAME</span><span class="p">,</span><span class="s">"a"</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="n">fp</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">message</span>
 
 <span class="k">def</span> <span class="nf">remove_all_punctuation</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
@@ -460,25 +460,25 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
 </span>    <span class="k">return</span> <span class="n">message</span>
 
 <span class="k">class</span> <span class="nc">Pipe</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">message</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">_message</span> <span class="o">=</span> <span class="n">message</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">processors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">message</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_message</span> <span class="o">=</span> <span class="n">message</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">processors</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">def</span> <span class="nf">add_process</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">process_function</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">processors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">process_function</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">add_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">process_function</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">processors</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">process_function</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">process</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">processors</span><span class="p">:</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">_message</span> <span class="o">=</span> <span class="nf">process</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">_message</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">_message</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">process</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">processors</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">_message</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_message</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_message</span>
 
-<span class="n">pipe</span><span class="o">=</span><span class="nc">Pipe</span><span class="p">(</span><span class="sh">"</span><span class="s">Dios bendiga a los héroes que nos dieron el internet.</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">pipe</span><span class="p">.</span><span class="nf">add_process</span><span class="p">(</span><span class="n">to_disk</span><span class="p">)</span>
-<span class="n">pipe</span><span class="p">.</span><span class="nf">add_process</span><span class="p">(</span><span class="n">to_lower</span><span class="p">)</span>
-<span class="n">pipe</span><span class="p">.</span><span class="nf">add_process</span><span class="p">(</span><span class="n">to_ascii</span><span class="p">)</span>
-<span class="n">pipe</span><span class="p">.</span><span class="nf">add_process</span><span class="p">(</span><span class="n">remove_all_punctuation</span><span class="p">)</span>
-<span class="n">new_message</span><span class="o">=</span><span class="n">pipe</span><span class="p">.</span><span class="nf">run</span><span class="p">()</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">new_message</span><span class="p">)</span>
+<span class="n">pipe</span><span class="o">=</span><span class="n">Pipe</span><span class="p">(</span><span class="s">"Dios bendiga a los héroes que nos dieron el internet."</span><span class="p">)</span>
+<span class="n">pipe</span><span class="p">.</span><span class="n">add_process</span><span class="p">(</span><span class="n">to_disk</span><span class="p">)</span>
+<span class="n">pipe</span><span class="p">.</span><span class="n">add_process</span><span class="p">(</span><span class="n">to_lower</span><span class="p">)</span>
+<span class="n">pipe</span><span class="p">.</span><span class="n">add_process</span><span class="p">(</span><span class="n">to_ascii</span><span class="p">)</span>
+<span class="n">pipe</span><span class="p">.</span><span class="n">add_process</span><span class="p">(</span><span class="n">remove_all_punctuation</span><span class="p">)</span>
+<span class="n">new_message</span><span class="o">=</span><span class="n">pipe</span><span class="p">.</span><span class="n">run</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">new_message</span><span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -784,24 +784,6 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-  <script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-127437335-2']);
-  
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-
 
 
 
