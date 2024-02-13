@@ -44,7 +44,7 @@ La siguiente imagen es una gráfica de dos variables: la anchura del pico (**bil
 
 ![Gráfica de dos variables](https://res.cloudinary.com/hectorip/image/upload/v1673111878/a1f1d1b7-d87c-478d-b67a-c344c802f4d6_spefvh.png){: .align-center}
 
-**Nota**: para el entrenamiento de una rede neuronal se hace una exploración mucho más profunda de los datos, pero para este ejemplo no es necesario.
+**Nota**: para el entrenamiento de una red neuronal se hace una exploración mucho más profunda de los datos, pero para este ejemplo no es necesario.
 
 ## Repaso del funcionamiento básico
 

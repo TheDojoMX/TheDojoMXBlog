@@ -35,6 +35,8 @@ La puedes ver aquí: [Stop Writing dead programs](https://youtu.be/8Ab3ArE8W3s?s
 
 ["The Mess We're In" by Joe Armstrong](https://youtu.be/lKXe3HUG2l4?si=Z3Z6ZQZrQX6Z3Z6ZQZrQX6)
 
+Esta plática fue sugerida por Copilot, y parece que está bien:...
+
 ## The Future of Programming - Bret Victor
 
 ["The Future of Programming" by Bret Victor](https://youtu.be/8pTEmbeENF4?si=Z3Z6ZQZrQX6Z3Z6ZQZrQX6)
