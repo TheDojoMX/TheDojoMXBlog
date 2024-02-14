@@ -121,6 +121,8 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
 
 <script src="/assets/js/sharect.min.js"></script>
 <!-- Fathom - beautiful, simple website analytics -->
@@ -495,9 +497,9 @@
 
 <p>En Python, las fechas y horas se representan con objetos de la clase <code class="language-plaintext highlighter-rouge">datetime</code>. Esta clase tiene dos subclases: <code class="language-plaintext highlighter-rouge">datetime.datetime</code> y <code class="language-plaintext highlighter-rouge">datetime.date</code>. Cuando la usas así, directamente sin especificar una zona horaria, estás usando una fecha ingenua. Por ejemplo:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
-<span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span> <span class="c1"># Esta fecha no incluye ninguna información sobre la zona horaria
+<span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span> <span class="c1"># Esta fecha no incluye ninguna información sobre la zona horaria
 </span>
 </code></pre></div></div>
 
@@ -505,19 +507,19 @@
 
 <p>La forma de usar una fecha consciente de la zona horaria en Python es:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
 
 
-<span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="n">timezone</span><span class="p">.</span><span class="n">utc</span><span class="p">)</span> <span class="c1"># Esta fecha incluye información sobre la zona horaria, en este caso UTC
+<span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="n">timezone</span><span class="p">.</span><span class="n">utc</span><span class="p">)</span> <span class="c1"># Esta fecha incluye información sobre la zona horaria, en este caso UTC
 </span>
 </code></pre></div></div>
 
 <p>De esta manera nos protegemos para no dar por sentado en qué zona horaria se creo cierto dato o a que zona horaria se refiere cierta fecha. A partir de Python 3.9 tenemos disponible un paquete que se llama <code class="language-plaintext highlighter-rouge">zoneinfo</code> que nos permite trabajar con zonas horarias sin tener que instalar nada extra (excepto en Windows donde es probable que necesites los datos de <a href="https://pypi.org/project/tzdata/">tzdata</a>). Si estás usando Python 3.8 o anterior, puedes instalar el paquete <code class="language-plaintext highlighter-rouge">pytz</code> para poder usar zonas horarias o importar desde <code class="language-plaintext highlighter-rouge">backports.zoneinfo</code> (también se tiene que instalar). Aquí hay un ejemplo:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">from</span> <span class="nn">zoneinfo</span> <span class="kn">import</span> <span class="n">ZoneInfo</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="n">zoneinfo</span> <span class="kn">import</span> <span class="n">ZoneInfo</span>
 
-<span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="n">ZoneInfo</span><span class="p">(</span><span class="s">"America/Mexico_City"</span><span class="p">))</span> <span class="c1"># Esta fecha incluye información sobre la zona horaria, en este caso la de México
+<span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="nc">ZoneInfo</span><span class="p">(</span><span class="sh">"</span><span class="s">America/Mexico_City</span><span class="sh">"</span><span class="p">))</span> <span class="c1"># Esta fecha incluye información sobre la zona horaria, en este caso la de México
 # datetime.datetime(2022, 12, 24, 20, 2, 21, 887237, tzinfo=zoneinfo.ZoneInfo(key='America/Mexico_City'))
 </span>
 </code></pre></div></div>
@@ -826,6 +828,24 @@
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
 
 
 

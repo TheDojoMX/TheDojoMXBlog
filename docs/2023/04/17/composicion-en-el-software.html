@@ -121,6 +121,8 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
 
 <script src="/assets/js/sharect.min.js"></script>
 <!-- Fathom - beautiful, simple website analytics -->
@@ -459,52 +461,52 @@ directamente de nuestra habilidad para combinar soluciones. - <strong>John Hughe
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="k">def</span> <span class="nf">min_length</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">min_length</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">min_length</span>
+    <span class="k">return</span> <span class="nf">len</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">min_length</span>
 
 <span class="k">def</span> <span class="nf">has_number</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">char</span><span class="p">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">password</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">any</span><span class="p">(</span><span class="n">char</span><span class="p">.</span><span class="nf">isdigit</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">password</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">has_special_char</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">char</span> <span class="ow">in</span> <span class="s">"!@#$%^&amp;*()_+"</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">password</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">any</span><span class="p">(</span><span class="n">char</span> <span class="ow">in</span> <span class="sh">"</span><span class="s">!@#$%^&amp;*()_+</span><span class="sh">"</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">password</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">not_in_blacklist</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">blacklist</span><span class="o">=</span><span class="p">[]):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">blacklist</span><span class="p">:</span>
-      <span class="n">blacklist</span> <span class="o">=</span> <span class="p">[</span><span class="s">'password'</span><span class="p">,</span> <span class="s">'12345678'</span><span class="p">]</span>
-    <span class="k">return</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">word</span> <span class="ow">in</span> <span class="n">password</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">)</span>
+      <span class="n">blacklist</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">password</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">12345678</span><span class="sh">'</span><span class="p">]</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="nf">any</span><span class="p">(</span><span class="n">word</span> <span class="ow">in</span> <span class="n">password</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">validate_password</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">min_length</span><span class="p">,</span> <span class="n">blacklist</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">min_length</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">min_length</span><span class="p">)</span> <span class="ow">and</span> \
-           <span class="n">has_number</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="ow">and</span> \
-           <span class="n">has_special_char</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="ow">and</span> \
-           <span class="n">not_in_blacklist</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">blacklist</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">min_length</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">min_length</span><span class="p">)</span> <span class="ow">and</span> \
+           <span class="nf">has_number</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="ow">and</span> \
+           <span class="nf">has_special_char</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="ow">and</span> \
+           <span class="nf">not_in_blacklist</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">blacklist</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Quiero que te fijes especialmente en la última función, <code class="language-plaintext highlighter-rouge">validate_password</code>. Aunque funciona, es un poco rígida. La composición puede ayudarnos a hacerla más flexible.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">validate_password</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">blacklist</span><span class="o">=</span><span class="p">[</span><span class="s">'b1'</span><span class="p">,</span> <span class="s">'b2'</span><span class="p">]):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">validate_password</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">blacklist</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">b1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b2</span><span class="sh">'</span><span class="p">]):</span>
     <span class="n">validators</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="k">lambda</span> <span class="n">password</span><span class="p">:</span> <span class="n">min_length</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+        <span class="k">lambda</span> <span class="n">password</span><span class="p">:</span> <span class="nf">min_length</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
         <span class="n">has_number</span><span class="p">,</span>
         <span class="n">has_special_char</span><span class="p">,</span>
-        <span class="k">lambda</span> <span class="n">password</span><span class="p">:</span> <span class="n">not_in_blacklist</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="p">[</span><span class="s">'palabra_uno'</span><span class="p">,</span> <span class="s">'palabra_dos'</span><span class="p">])</span>
+        <span class="k">lambda</span> <span class="n">password</span><span class="p">:</span> <span class="nf">not_in_blacklist</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="p">[</span><span class="sh">'</span><span class="s">palabra_uno</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">palabra_dos</span><span class="sh">'</span><span class="p">])</span>
     <span class="p">]</span>
-    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">validator</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="k">for</span> <span class="n">validator</span> <span class="ow">in</span> <span class="n">validators</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">all</span><span class="p">(</span><span class="nf">validator</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="k">for</span> <span class="n">validator</span> <span class="ow">in</span> <span class="n">validators</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Esta función es más flexible, pudiendo agregar o quitar validadores sin tener que modificar más código, simplemente modificando la lista de validadores, pero todavía no es como la queremos. ¿Qué pasas si queremos agregar el conjunto de errores por los que falla una validación? Tenemos que ir <strong>acumulando</strong>:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">def</span> <span class="nf">validate_password</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">blacklist</span><span class="o">=</span><span class="p">[</span><span class="s">'b1'</span><span class="p">,</span> <span class="s">'b2'</span><span class="p">]):</span>
-    <span class="s">"""Devuelve la lista de errores de la contraseña, si está vacía, la contraseña es válida"""</span>
+<span class="k">def</span> <span class="nf">validate_password</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">blacklist</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">b1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">b2</span><span class="sh">'</span><span class="p">]):</span>
+    <span class="sh">"""</span><span class="s">Devuelve la lista de errores de la contraseña, si está vacía, la contraseña es válida</span><span class="sh">"""</span>
     <span class="n">validators</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">{</span><span class="s">"validator"</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">password</span><span class="p">:</span> <span class="n">min_length</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="s">"mesage"</span><span class="p">:</span> <span class="s">"La contraseña es muy corta"</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">"validator"</span><span class="p">:</span> <span class="n">has_number</span><span class="p">,</span> <span class="s">"message"</span><span class="p">:</span> <span class="s">"La contraseña no tiene un número"</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">"validator"</span><span class="p">:</span> <span class="n">has_special_char</span><span class="p">,</span> <span class="s">"message"</span><span class="p">:</span> <span class="s">"La contraseña no tiene un carácter especial"</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">"validator"</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">password</span><span class="p">:</span> <span class="n">not_in_blacklist</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="p">[</span><span class="s">'palabra_uno'</span><span class="p">,</span> <span class="s">'palabra_dos'</span><span class="p">]),</span> <span class="s">"message"</span><span class="p">:</span> <span class="s">"La contraseña tiene palabras prohibidas"</span><span class="p">}</span>
+        <span class="p">{</span><span class="sh">"</span><span class="s">validator</span><span class="sh">"</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">password</span><span class="p">:</span> <span class="nf">min_length</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="sh">"</span><span class="s">mesage</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">La contraseña es muy corta</span><span class="sh">"</span><span class="p">},</span>
+        <span class="p">{</span><span class="sh">"</span><span class="s">validator</span><span class="sh">"</span><span class="p">:</span> <span class="n">has_number</span><span class="p">,</span> <span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">La contraseña no tiene un número</span><span class="sh">"</span><span class="p">},</span>
+        <span class="p">{</span><span class="sh">"</span><span class="s">validator</span><span class="sh">"</span><span class="p">:</span> <span class="n">has_special_char</span><span class="p">,</span> <span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">La contraseña no tiene un carácter especial</span><span class="sh">"</span><span class="p">},</span>
+        <span class="p">{</span><span class="sh">"</span><span class="s">validator</span><span class="sh">"</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">password</span><span class="p">:</span> <span class="nf">not_in_blacklist</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="p">[</span><span class="sh">'</span><span class="s">palabra_uno</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">palabra_dos</span><span class="sh">'</span><span class="p">]),</span> <span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">La contraseña tiene palabras prohibidas</span><span class="sh">"</span><span class="p">}</span>
     <span class="p">]</span>
     <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">errors</span><span class="p">,</span> <span class="n">validator</span><span class="p">:</span> <span class="n">errors</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">validator</span><span class="p">[</span><span class="s">"message"</span><span class="p">])</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">validator</span><span class="p">[</span><span class="s">"validator"</span><span class="p">](</span><span class="n">password</span><span class="p">)</span> <span class="k">else</span> <span class="n">errors</span><span class="p">,</span> <span class="n">validators</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+    <span class="nf">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">errors</span><span class="p">,</span> <span class="n">validator</span><span class="p">:</span> <span class="n">errors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">validator</span><span class="p">[</span><span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">])</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">validator</span><span class="p">[</span><span class="sh">"</span><span class="s">validator</span><span class="sh">"</span><span class="p">](</span><span class="n">password</span><span class="p">)</span> <span class="k">else</span> <span class="n">errors</span><span class="p">,</span> <span class="n">validators</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">errors</span>
 
@@ -521,26 +523,26 @@ directamente de nuestra habilidad para combinar soluciones. - <strong>John Hughe
 
 <p>Este tipo de composición fue un poco más empírica, simplemente juntando funciones. A veces, cuando oigas de composición, se van a referir a la composición de funciones en sentido matemático. Veamos un ejemplo en Python:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">ascii_letters</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">string</span> <span class="kn">import</span> <span class="n">ascii_letters</span>
 
-<span class="n">LETTERS</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">ascii_letters</span><span class="p">)</span>
+<span class="n">LETTERS</span> <span class="o">=</span> <span class="nf">set</span><span class="p">(</span><span class="n">ascii_letters</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">quitar_no_ascii</span><span class="p">(</span><span class="n">texto</span><span class="p">):</span>
-    <span class="k">return</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">([</span><span class="n">char</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">texto</span> <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">LETTERS</span><span class="p">])</span>
+    <span class="k">return</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="n">char</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">texto</span> <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">LETTERS</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">reemplazar_acentos</span><span class="p">(</span><span class="n">texto</span><span class="p">):</span>
     <span class="n">accents</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s">'á'</span><span class="p">:</span> <span class="s">'a'</span><span class="p">,</span>
-        <span class="s">'é'</span><span class="p">:</span> <span class="s">'e'</span><span class="p">,</span>
-        <span class="s">'í'</span><span class="p">:</span> <span class="s">'i'</span><span class="p">,</span>
-        <span class="s">'ó'</span><span class="p">:</span> <span class="s">'o'</span><span class="p">,</span>
-        <span class="s">'ú'</span><span class="p">:</span> <span class="s">'u'</span><span class="p">,</span>
-        <span class="s">'ñ'</span><span class="p">:</span> <span class="s">'n'</span>
+        <span class="sh">'</span><span class="s">á</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">é</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">e</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">í</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">i</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">ó</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">o</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">ú</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">u</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">ñ</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">n</span><span class="sh">'</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">([</span><span class="n">accents</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">texto</span><span class="p">])</span>
+    <span class="k">return</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="n">accents</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">texto</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">limpiar_cadena</span><span class="p">(</span><span class="n">texto</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">quitar_no_ascii</span><span class="p">(</span><span class="n">reemplazar_acentos</span><span class="p">(</span><span class="n">texto</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nf">quitar_no_ascii</span><span class="p">(</span><span class="nf">reemplazar_acentos</span><span class="p">(</span><span class="n">texto</span><span class="p">))</span>
 
 </code></pre></div></div>
 
@@ -560,16 +562,16 @@ directamente de nuestra habilidad para combinar soluciones. - <strong>John Hughe
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="k">class</span> <span class="nc">Usuario</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">apellido</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">apellido</span> <span class="o">=</span> <span class="n">apellido</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">apellido</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">apellido</span> <span class="o">=</span> <span class="n">apellido</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
 
 <span class="k">class</span> <span class="nc">Empleado</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">usuario</span><span class="p">,</span> <span class="n">puesto</span><span class="p">,</span> <span class="n">salario</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">info_usuario</span> <span class="o">=</span> <span class="n">usuario</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">puesto</span> <span class="o">=</span> <span class="n">puesto</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">salario</span> <span class="o">=</span> <span class="n">salario</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">usuario</span><span class="p">,</span> <span class="n">puesto</span><span class="p">,</span> <span class="n">salario</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">info_usuario</span> <span class="o">=</span> <span class="n">usuario</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">puesto</span> <span class="o">=</span> <span class="n">puesto</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">salario</span> <span class="o">=</span> <span class="n">salario</span>
 </code></pre></div></div>
 
 <p>Esta implementación está menos acoplada o es menos dependiente que la implementación basada en herencia. Por ejemplo, si queremos evolucionar la clase <code class="language-plaintext highlighter-rouge">Usuario</code>, no tenemos que hacer que nada de esto afecte directamente a la clase <code class="language-plaintext highlighter-rouge">Empleado</code>.</p>
@@ -868,6 +870,24 @@ directamente de nuestra habilidad para combinar soluciones. - <strong>John Hughe
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
 
 
 

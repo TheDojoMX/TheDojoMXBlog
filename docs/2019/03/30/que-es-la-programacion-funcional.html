@@ -121,6 +121,8 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
 
 <script src="/assets/js/sharect.min.js"></script>
 <!-- Fathom - beautiful, simple website analytics -->
@@ -438,12 +440,12 @@ Los ejemplos esta vez los pondremos en JavaScript, ya que es el lenguaje más co
 <span class="cm">/*
 Función impura
 */</span>
-<span class="kd">function</span> <span class="nx">calcularIVA</span><span class="p">(</span><span class="nx">subtotal</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">calcularIVA</span><span class="p">(</span><span class="nx">subtotal</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">subtotal</span> <span class="o">*</span> <span class="nx">tasaIVA</span><span class="p">;</span> <span class="c1">// tasaIVA está definido fuera del ámbito de esta función</span>
 <span class="p">}</span>
 
 <span class="cm">/* Esta función es pura */</span>
-<span class="kd">function</span> <span class="nx">calcularIVAPura</span><span class="p">(</span><span class="nx">subtotal</span><span class="p">,</span> <span class="nx">tasa</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">calcularIVAPura</span><span class="p">(</span><span class="nx">subtotal</span><span class="p">,</span> <span class="nx">tasa</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">subtotal</span> <span class="o">*</span> <span class="nx">tasa</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -572,15 +574,15 @@ van necisitar nunca, sino que los van generando uno a uno. Esto permite crear co
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="c1">// Devuelve una función que recibe un parámetro y multiplica por el número provisto</span>
-<span class="kd">function</span> <span class="nx">producir_multiplicador</span><span class="p">(</span><span class="nx">por_cuanto</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">((</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">por_cuanto</span><span class="p">)</span>
+<span class="kd">function</span> <span class="nf">producir_multiplicador</span><span class="p">(</span><span class="nx">por_cuanto</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return </span><span class="p">((</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">por_cuanto</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="nx">doblar</span> <span class="o">=</span> <span class="nx">producir_multiplicador</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nx">triplicar</span> <span class="o">=</span> <span class="nx">producir_multiplicador</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nx">doblar</span> <span class="o">=</span> <span class="nf">producir_multiplicador</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">triplicar</span> <span class="o">=</span> <span class="nf">producir_multiplicador</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="nx">doblar</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">// 10</span>
-<span class="nx">triplicar</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">// 15</span>
+<span class="nf">doblar</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">// 10</span>
+<span class="nf">triplicar</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">// 15</span>
 
 </code></pre></div></div>
 
@@ -884,6 +886,24 @@ van necisitar nunca, sino que los van generando uno a uno. Esto permite crear co
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
 
 
 

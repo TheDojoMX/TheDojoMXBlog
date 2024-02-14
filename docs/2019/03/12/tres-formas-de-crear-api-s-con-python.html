@@ -121,6 +121,8 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
 
 <script src="/assets/js/sharect.min.js"></script>
 <!-- Fathom - beautiful, simple website analytics -->
@@ -428,11 +430,11 @@ en permitirte crear API’s en el más amplio sentido de la palabra: una intefaz
 
 <p>Con hug, puedes hacer algo tan sencillo como lo siguiente:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">hug</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">hug</span>
 
-<span class="o">@</span><span class="n">hug</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
+<span class="nd">@hug.get</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">hola_apis</span><span class="p">():</span>
-  <span class="k">return</span> <span class="p">{</span><span class="s">"mensaje"</span><span class="p">:</span> <span class="s">"Hola API's"</span><span class="p">}</span>
+  <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">mensaje</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Hola API</span><span class="sh">'</span><span class="s">s</span><span class="sh">"</span><span class="p">}</span>
 </code></pre></div></div>
 
 <p>¡Y listo! Lo anterior es una API lista para ser consumida, no necesitas crear ni configuración ni caberceras ni nada más (aunque claro que las puedes poner).</p>
@@ -474,11 +476,11 @@ en permitirte crear API’s en el más amplio sentido de la palabra: una intefaz
 
 <p>Aquí un pequeño ejemplo de cómo se empiza con Flask (sacado de su documentación en su mayoría)</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">jsonify</span>
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">"</span><span class="s">/</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"Hello World!"</span><span class="p">})</span>
+    <span class="k">return</span> <span class="nf">jsonify</span><span class="p">({</span><span class="sh">"</span><span class="s">message</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Hello World!</span><span class="sh">"</span><span class="p">})</span>
 </code></pre></div></div>
 
 <p>Así es: puedes empezar con un solo archivo, Flask hizo todo por ti.</p>
@@ -839,6 +841,24 @@ en permitirte crear API’s en el más amplio sentido de la palabra: una intefaz
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
 
 
 

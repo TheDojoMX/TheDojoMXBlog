@@ -121,6 +121,8 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
 
 <script src="/assets/js/sharect.min.js"></script>
 <!-- Fathom - beautiful, simple website analytics -->
@@ -458,25 +460,25 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># Creando un agente con LangChain
 </span>
-<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span>
-<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span>
-<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">AgentType</span>
-<span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span>
+<span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span>
+<span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">AgentType</span>
+<span class="kn">from</span> <span class="n">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
-<span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="nc">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">tools</span> <span class="o">=</span> <span class="n">load_tools</span><span class="p">([</span><span class="s">"serpapi"</span><span class="p">,</span> <span class="s">"llm-math"</span><span class="p">],</span> <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">)</span>
+<span class="n">tools</span> <span class="o">=</span> <span class="nf">load_tools</span><span class="p">([</span><span class="sh">"</span><span class="s">serpapi</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">llm-math</span><span class="sh">"</span><span class="p">],</span> <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">)</span>
 
-<span class="n">agent</span> <span class="o">=</span> <span class="n">initialize_agent</span><span class="p">(</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="nf">initialize_agent</span><span class="p">(</span>
     <span class="n">tools</span><span class="p">,</span> <span class="n">llm</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="n">AgentType</span><span class="p">.</span><span class="n">ZERO_SHOT_REACT_DESCRIPTION</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span>
 <span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"Este agente puede buscar en Google y hacer aritmética básica."</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Este agente puede buscar en Google y hacer aritmética básica.</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">query</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Pregunta algo: "</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Pregunta algo: </span><span class="sh">"</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">query</span><span class="p">:</span>
         <span class="k">break</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">agent</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">agent</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
 
 </code></pre></div></div>
 
@@ -484,26 +486,26 @@
 
 <p>Como siempre, la primera parte es importar las funciones y tipos necesarios:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span> <span class="c1"># Es una función que te ayuda a cargar las herramientas que los agentes serán capaces de usar
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span> <span class="c1"># Es una función que te ayuda a cargar las herramientas que los agentes serán capaces de usar
 </span>
-<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span> <span class="c1"># Es una función que te ayuda a crear un agente de manera sencilla
+<span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span> <span class="c1"># Es una función que te ayuda a crear un agente de manera sencilla
 </span>
-<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">AgentType</span> <span class="c1"># Es un tipo que te ayuda a especificar el tipo de agente que quieres crear, contiene todos los tipos de agentes que LangChain provee
+<span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">AgentType</span> <span class="c1"># Es un tipo que te ayuda a especificar el tipo de agente que quieres crear, contiene todos los tipos de agentes que LangChain provee
 </span>
-<span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span> <span class="c1"># Es la clase que abstrae la conexión con el LLM que usaremos: GPT, creado por OpenAI
+<span class="kn">from</span> <span class="n">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span> <span class="c1"># Es la clase que abstrae la conexión con el LLM que usaremos: GPT, creado por OpenAI
 </span>
 </code></pre></div></div>
 
 <p>Después, creamos una instancia de conexión con el LLM:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">llm</span> <span class="o">=</span> <span class="nc">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>El que le digamos que queremos cero de temperatura significa que la respuesta será menos aleatoria, por lo que podemos pensar que será menos “creativa” o arriesgada. Esto es buena idea cuando quieres crear planes, usar herramientas con una interfaz formal, como una API. Para poder usarlo, tienes que poner en el entorno de ejecución la variable de entorno <code class="language-plaintext highlighter-rouge">OPENAI_API_KEY</code> con tu API key de OpenAI.</p>
 
 <p>Seguido de esto, cargamos las herramientas que queremos que el agente pueda usar, indicando el modelo de lenguaje que usará para interactuar con ellas:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tools</span> <span class="o">=</span> <span class="n">load_tools</span><span class="p">([</span><span class="s">"serpapi"</span><span class="p">,</span> <span class="s">"llm-math"</span><span class="p">],</span> <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tools</span> <span class="o">=</span> <span class="nf">load_tools</span><span class="p">([</span><span class="sh">"</span><span class="s">serpapi</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">llm-math</span><span class="sh">"</span><span class="p">],</span> <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>La primera es una herramienta para buscar en Google, se llama <a href="https://serpapi.com/">SerpApi</a>, y permite usar la búsqueda que nosotros hacemos en Google mediante una interfaz más amigable para programas. La versión gratuita te da 100 búsquedas mensuales.</p>
@@ -601,7 +603,7 @@ Pregunta: {Pregunta}
 
 <p>Después de eso inicializamos un agente, al que le pasamos las herramientas que usará, el modelo de lenguaje y el tipo de agente que queremos crear. Además, le decimos que escriba en la salida estándar todo su proceso con la opción <code class="language-plaintext highlighter-rouge">verbose=True</code>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="o">=</span> <span class="n">initialize_agent</span><span class="p">(</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="o">=</span> <span class="nf">initialize_agent</span><span class="p">(</span>
     <span class="n">tools</span><span class="p">,</span>
     <span class="n">llm</span><span class="p">,</span>
     <span class="n">agent</span><span class="o">=</span><span class="n">AgentType</span><span class="p">.</span><span class="n">ZERO_SHOT_REACT_DESCRIPTION</span><span class="p">,</span>
@@ -611,15 +613,15 @@ Pregunta: {Pregunta}
 
 <p>De este modo LangChain hará todo lo necesario para inicializar un agente que use actúe de manera autónoma. Ahora le podemos preguntar cosas:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Este agente puede buscar en Google y hacer aritmética básica."</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Este agente puede buscar en Google y hacer aritmética básica.</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># Creamos un loop para que
 </span>
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">query</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Pregunta algo: "</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Pregunta algo: </span><span class="sh">"</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">query</span><span class="p">:</span>
         <span class="k">break</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">agent</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">agent</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>Recuerda que esto puede contestar preguntas que se puedan encontrar en internet y hacer aritmética.</p>
@@ -916,6 +918,24 @@ Pregunta: {Pregunta}
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
 
 
 
