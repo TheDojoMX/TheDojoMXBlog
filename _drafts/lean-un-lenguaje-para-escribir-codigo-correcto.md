@@ -16,3 +16,7 @@ La verificación de sistemas es muy importante para lograr aplicaciones que cump
 ## ¿Qué es Lean?
 
 Lean es un lenguaje de programación pensado para crear código correcto. Es un lenguaje funcional, al igual que Elixir desarrollado en Brasil.
+
+
+
+
