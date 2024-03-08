@@ -17,7 +17,6 @@ Si te gusta reflexionar sobre temas profundos de la computación, te recomiendo 
 
 En este artículo te recomendaré cinco de las mejores pláticas, a mi parecer, de la conferencia. Todas están en inglés, aunque parece que puedes poner traducción automática en YouTube.
 
-
 ## The Mess We're In - Joe Armstrong
 
 Para mi, esta es la plática más icónica de todas las ediciones de StrangeLoop. Joe Armstrong fue el creador del lenguaje Erlang y una gran figura en la industria del desarrollo de software.
@@ -36,7 +35,7 @@ Aquí un resumen de los problemas que pone:
 
 ![https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1709865988/Screenshot_2024-03-07_at_20.40.20_vsidm5.png](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1709865988/Screenshot_2024-03-07_at_20.40.20_vsidm5.png){: .align-center}
 
-
+Puedes ver la charla aquí: [The Mess We're In]()
 
 ## Deja de escribir programas muertos - Jack Rusher
 
