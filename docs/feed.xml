@@ -1,4 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-02-14T17:50:52-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Engines de JavaScript y sus usos</title><link href="https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos.html" rel="alternate" type="text/html" title="Engines de JavaScript y sus usos" /><published>2023-12-14T00:00:00-06:00</published><updated>2023-12-14T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos.html"><![CDATA[<p>Ya hemos explicado antes qué es un <a href="/2020/05/17/que-es-un-engine-de-javascript.html">engine de JavaScript</a>. Como resumen, es el programa encargado de correr tus programas de JavaScript: recibe tus archivos o código de JS y ejecuta las acciones en el sistema operativo en el que se está ejecutando.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-03-09T22:42:31-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué producimos los desarrolladores de software?</title><link href="https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html" rel="alternate" type="text/html" title="¿Qué producimos los desarrolladores de software?" /><published>2024-03-09T00:00:00-06:00</published><updated>2024-03-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html"><![CDATA[<p>Para algunos, la respuesta a la pregunta del título es simplemente “<em>software</em>”, porque parece tan obvia que el mismo nombre lo dice. Y aunque el <strong>software</strong> tiene una definición concreta, en este artículo vamos a desmunazar los productos de un proceso de desarrollo de software. Lo que quiero que veas es que el desarrollo de software no sólamente es crear programas que fucncionen, ya que para que el software sea efectivo tiene que <strong>evolucionar</strong>, y aquí entra el punto importante.</p>
+
+<h2 id="qué-es-un-sistema-de-software">¿Qué es un sistema de software?</h2>
+<p>Un sistema de software incluye varias cosas, algunas obvias, otras no tanto. Vamos a analizar de la más a la menos visible.</p>
+
+<h3 id="el-software-corriendo">El software corriendo.</h3>
+
+<p>Esta es la parte más visible y en la que muchos se quedarían. El software en 
+ejecución significa una computadora ejecutando instrucciones que cumplan con 
+el propósito del software. Si pudiéramos hacer que la computadora ejecutara lo 
+que necesitamos de mnanera mágica, sin tener que darle instrucciones a sus 
+diferentes partes, esta parte seguiría existiendo.</p>
+
+<p>Ejemplos del software en ejecución son:</p>
+
+<ul>
+  <li>Una página web mostrando la infomación que un cliente necesita</li>
+  <li>Word recibiendo las instrucciones de tu teclado y mostrando lo que escribes en la pantalla</li>
+  <li><em>grep</em> buscando la expresión regular que quieres encontrar en un conjunto de documentos</li>
+</ul>
+
+<p>A veces, dependiendo del proceso pactado, no entregamos el software corriendo, sino entregamos
+<em>artefactos</em> que tienen que ser ejecutados para poner el software corriendo.</p>
+
+<h3 id="ejecutables">Ejecutables</h3>
+<p>Los ejecutables son los <em>artefactos</em> que hacen que sea posible realizar las tareas que 
+pensamos para nuestro software. Estos artefactos pueden tomar muchas formas,
+por ejemplo, pueden ser archivos compilados .exe, empaquetados .dmg (de MacOS),
+o incluso compilados que contienen instrucciones para una arquitectura de procesador
+específica.</p>
+
+<p>En el caso de lenguajes y plataformas interpretadas, los ejecutables son a veces
+directamente el código fuente que además requiere que el usuario final tenga
+cierto entorno preparado en su computadora para poder correr.</p>
+
+<h3 id="código-fuente">Código fuente</h3>
+<p>El código fuente, para mi, es la parte medular de los resultados de un proceso de desarrollo
+de software. Tiene la información necesaria para realizar las tareas que el software
+tiene que hacer y tras pasar por un proceso (compilación, empaquetamiento, despliegue, etc),
+se pueden producir los ejecutables que darán vida al software ejecutándose.</p>
+
+<p>El entregar el código fuente al usuario final dependerá del acuerdo comercial al que se 
+llegue al inciar el proyecto (por ejemplo, le podemos entregar el puro ejecutable como hace
+la mayoría del software comercial o de fuente cerrada), pero también podríamos entregar 
+el código fuente entero para que la persona que lo recibe pueda hacer cosas importantes:</p>
+
+<ul>
+  <li>Revisarlo: con el fin de que el software cumpla exactamente con lo que se desea y no tenga
+funciones ocultas no deseadas</li>
+  <li>Extenderlo: crear nuevas funciones o mejorar las existentes</li>
+  <li>Repararlo: si se encuentra alguna falla, eliminarla</li>
+  <li>Mantenerlo: A veces, las dependencias del software van quedando desactulizadas y hay que hacer
+modificaciones en este para que siga funcionando</li>
+  <li>Actualizarlo: llevarlo a nuevas versiones de su lenguaje o hacer que compile o produzca ejecutable
+para nuevas plataformas</li>
+</ul>
+
+<p>Como puedes ver, si quieres que tu software evolucione y se adapte a nuevas necesidades o incluso
+simplemente para que se mantenga funcional a través del tiempo, lo ideal es que tengas
+el código fuente a tu disposición. Es aceptado que el código funete debe incluir un conjunto de pruebas
+automáticas que permitan verificar su funcionamiento más eficientemente. Estas prubas pueden incluir:</p>
+
+<ul>
+  <li>Pruebas unitarias: las que prueban las unidades más básicas del código, como funciones o métodos</li>
+  <li>Pruebas de integración: corren el sistema como si fueran un usuario y permiten verifcar que funcione correctamente</li>
+</ul>
+
+<p>Pero el código fuente no basta para que el mantenimiento a través del tiempo sea óptimo.</p>
+
+<h3 id="documentación">Documentación</h3>
+<p>Esta palabra tan temida por los desarrolladores de software en realidad es uno de nuestos
+productos y a la vez insumos más importantes. La documentación es información sobre el 
+software puesta en un lugar persistente.</p>
+
+<p>Esta documentación debe incluir por lo menos:</p>
+
+<ol>
+  <li>Explicación de lo que el sistema hace. Es lo que le llamaríamos “los requerimientos”.</li>
+  <li>Diseño del sistema: Se habla de cómo está construido el sistema, por qué se pensó de esta forma y cómo
+eso cumple con lo que se requería. Incluye la arquitectura a diferentes niveles y el registro de las decisiones
+junto con su justificación.</li>
+  <li>Documentación técnica. En esta parte se habla de la tecnología usada: los lenguajes usados, las plataformas
+sobre las que corre, las bases de datos, los sistemas operativos etc. Además una buena idea es incluir
+las bases sobre las que se escogieron estos elementos.</li>
+  <li>Documentación para desarrolladores. Esta es la documentación que habla de lo que un desarrollador
+tiene que hacer para seguir desarrollando el proyecto o para hacer que el software se ejecute, sea 
+desplegarlo en un sistema de usuario final o producir los ejecutables. Esta documentaión incluye la 
+documentación del código en el que se describe su funcionamiento interno y el diseño que tiene.</li>
+  <li>Manual de usuario. Opcional, pero dependiendo de la complejidad de las fucniones que el softwae haga
+y de su intefaz, puede convertise en un elemento absolutamente necesario. En este se describen
+a detalle las cosas que el usuaio puede hacer y las consecuencias de estas acciones.</li>
+</ol>
+
+<p>Hasta aquí se quedarían algunos, ¿pero podemos ir más allá? Sobre todo pensemos en que, para que el software
+sea exitoso, necesita evolucionar. ¿Quién crea nuevo código?</p>
+
+<h3 id="un-equipo-funcional">Un equipo funcional</h3>
+<p>En teoría, con todo lo anterior cualquier desarrollador de software podría tomar un proyecto y seguirlo evolucionando,
+pero esta teoría se queda lejos de la práctica por varias razones. La primera es que necesariamente
+todos los artefactos anteriores van a tener defectos o estar incompletos, por lo que para que un nuevo
+equipo o desarrllador tome el proyecto requerirá hacer lo que llamamos <strong>“arqueología de software”</strong>, intentando completar
+y entender las decisiones no documentadas y todas las demás partes de información faltantes.</p>
+
+<p>Aún si los artefactos producidos estuvieran completos, el que un nuevo equipo tome el proyecto requiere tiempo y
+esfuerzo para estudiarlos y empezar a producir nuevas funciones o a corregir errores. Si queremos que 
+el proceso de desarrollo continue rápidamente, lo mejor es que el equipo que lo desarrolló lo siga evolucionando.</p>
+
+<p>Los mejores proyectos de software incluyen a un grupo de personas  que conocen la forma de desarrollo más 
+eficiente, las partes delicadas del proyecto, los fallos pendientes por componer, y las cosas que le faltan.</p>
+
+<p>Además, este grupo de personas tienen una forma de trabajar y de coordinación eficiente que puede ayudarlos
+a ser más productivos.</p>
+
+<p>Con esto podemos concluir que el resultado del proceso de desarrollo de software no es solo una serie de artefactos,
+sino que también puede inlcuir a un equipo de personas que sereian los más adecuados para seguirlo desarrollando.</p>
+
+<p>Pero hablemos de un elemento no tangible.</p>
+
+<h3 id="nuevo-conocimiento">Nuevo conocimiento</h3>
+
+<p>Siempre que alguien escribe software, su mente se modifica de tal manera que volver a su estado
+anterior es imposible. Este nuevo estado en el que la mente del programador se encuentra
+contine información sobre el problema que acaba de resolever, de tal manera que si 
+desapareciera todo el código fuente y toda la documentación junto con los ejecutables, para 
+este desarrollador no sería tan desastroso porque volver a producrilos le tomaría una 
+fracción del tiempo que ya gastó en hacerlos.</p>
+
+<p>Esta modificación en la mente de las personas es un elemento no visible pero sin duda valioso,
+que permite crear cada vez software más complejo y con mayores capacidades.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+<p>El proceso de desarrollo de software no sólamente produce software corriendo o ejecutables.
+Nuestro trabajo produce otras cosas de valor de las que deberíamos ser conscientes y buscar 
+optimizar, evitando la simpleza de pensar que lo único que vale es el software corriendo, que cómo puedes ver en este
+artíulo, es una parte mínima de todo el valor que puedes producir, eso sin contar el valor que 
+tu software produce al ser ejecutado por las personas que le pueden sacar provecho.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="software" /><category term="ingenieria-de-software" /><category term="arquitectura" /><summary type="html"><![CDATA[Tu proceso de desarrollo de software produce muchas más cosas que sólamente software corriendo. En este artículo hablaremos de otros resultados de trabajo]]></summary></entry><entry><title type="html">Engines de JavaScript y sus usos</title><link href="https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos.html" rel="alternate" type="text/html" title="Engines de JavaScript y sus usos" /><published>2023-12-14T00:00:00-06:00</published><updated>2023-12-14T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos.html"><![CDATA[<p>Ya hemos explicado antes qué es un <a href="/2020/05/17/que-es-un-engine-de-javascript.html">engine de JavaScript</a>. Como resumen, es el programa encargado de correr tus programas de JavaScript: recibe tus archivos o código de JS y ejecuta las acciones en el sistema operativo en el que se está ejecutando.</p>
 
 <p>Estos engines actualmente son programas complejos que no solamente interpretan el código, sino que lo analizan y compilan a código máquina para que sea más eficiente su ejecución.</p>
 
@@ -709,44 +844,4 @@ tienen un camino en la filosofía de la computación, así que si quieres desarr
 
 <p>Los modelos mentales son herramientas para organizar la información que son muy útiles para personas que trabajan principalmente pensando y analizando el mundo real. Los desarrolladores de software pertenecemos a ese grupo, así que aprender a modelar la realidad de forma más efectiva puede darnos una gran ventaja para resolver problemas y así avanzar más rápido en nuestra carrera.</p>
 
-<p>Seguiremos creando más artículos hablando de esto, para  darte herramientas que te permitan ser un mejor desarrollador de software y mejor profesional.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="modelos-mentales" /><category term="desarrollo-de-software" /><summary type="html"><![CDATA[Los modelos mentales te permitirán resolver problems más rápido y con mejores resultados, hablemos de algunos de ellos que nos aplican directamente como desarrolladores.]]></summary></entry><entry><title type="html">¿Son aplicables y prácticos los principios SOLID?</title><link href="https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid.html" rel="alternate" type="text/html" title="¿Son aplicables y prácticos los principios SOLID?" /><published>2023-06-17T00:00:00-06:00</published><updated>2023-06-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/17/son-aplicables-y-practicos-los-principios-solid.html"><![CDATA[<p>Los <strong>principios SOLID</strong>, se enseñan como verdades incuestionables sobre el buen desarrollo de software. Aunque, justo por la educación, antes era completamente partidario de estos, con el tiempo me fui dando cuenta de varias de las fallas que presentan.</p>
-
-<p>En este artículo te voy a hablar de las fallas generales como conjunto, pero también es un índice para una serie de artículos que escribí sobre cada uno de ellos, analizándolo a profundidad.</p>
-
-<h2 id="ambigüedad">Ambigüedad</h2>
-
-<p>Cuando buscas la explicación sobre cómo aplicar alguno de estos principios, normalmente encuentras muchas explicaciones diferentes. Algunas de estas explicaciones se contraponen, siguen siendo ambiguas, o de plano no se entienden.</p>
-
-<p>Con el principio que más pasa es con el “Single Responsibility” (SRP), en el cuál diferentes personas no nos ponemos de acuerdo respecto a lo que una “Responsabilidad” significa. Pero también pasa con la aplicación de los demás principios a diferentes entornos de programación.</p>
-
-<h2 id="complican-exageradamente-el-código">Complican exageradamente el código</h2>
-
-<p>La aplicación sin razonamiento profundo de estos principios puede complicar el código de manera exagerada, sobre todo en lenguajes inflexibles o con sistemas de tipos complicados (sí, te estoy viendo a ti, <strong>Java</strong>), que justo es donde más se aplica.</p>
-
-<p>El ejemplo más claro de esto es el “Dependency Inversion Principle”, que te lleva a hacer cosas bastante raras en el código para lograrlo, como ya dije, sobre todo cuando el sistema de tipos te lo complica.</p>
-
-<p>Y aunque es cierto que a veces es necesario y bastante útil hacer lo que este principio propone, para mi el 80% del software no lo necesita y sólo estás haciendo una sobre-ingeniería que no se justifica.</p>
-
-<h2 id="se-usan-como-un-código-moral">Se usan como un código moral</h2>
-
-<p>Los principios SOLID, entre otras cosas, normalmente se usan para avergonzar a las personas que no los conocen o no los aplican. Normalmente hablan de tu valía como desarrollador@ de software basado en el supuesto conocimiento de cosas como estas, y otros principio o reglas (completamente) arbitrarias, sobre todo basadas en el libro Clean Code.</p>
-
-<p>Esta revoltura de principios morales y conveniencia técnica es un <strong>gran error para la comunidad de software</strong>, ya que lleva a la sobre-ingeniería, a la aplicación ciega de principios y técnicas que no tienen sentido en tu caso particular e incluso al desprecio del trabajo de otros programadores.</p>
-
-<p>Para mi, este es el punto más grave, tal vez no directamente de los principios SOLID, sino de la forma en la que se enseñan.</p>
-
-<h2 id="análisis-más-profundo">Análisis más profundo</h2>
-
-<p>En este blog hemos escrito 5 artículos analizando cada uno de los principios que lo componen, viendo si conviene aplicarlos y describiendo alternativas. En la mayoría de los casos incluso hablamos de principios más profundos (lo que nos hace ver que los “principios SOLID” debería ser algo como “reglas SOLID”).</p>
-
-<p>Aquí los puedes ver:</p>
-
-<ul>
-  <li>SRP: <a href="/2022/12/01/analisis-de-los-principios-solid-principio-de-responsabilidad-unica.html">Análisis de los Principios SOLID: Principio de Responsabilidad Única</a></li>
-  <li>OCP: <a href="/2022/12/03/el-principio-abierto-cerrado-open-closed.html">El Principio Abierto/Cerrado</a></li>
-  <li>LSP: <a href="/2023/03/06/el-principio-de-substitucion-de-liskov.html">El Principio de Sustitución de Liskov</a></li>
-  <li>ISP: <a href="/2023/04/01/el-principio-de-segregacion-de-interfaces.html">El Principio de Segregación de Interfaces</a></li>
-  <li>DIP: <a href="/2023/04/22/el-principio-de-inversion-de-dependencias.html">El Principio de Inversión de Dependencias</a></li>
-</ul>
-
-<p>Espero que estos artículos te sirvan para analizar más profundamente lo que todos enseñan como dogmas que se deben de seguir al pie de la letra, bajo la amenaza de no ser un buen programador o programadora que se irá al infierno de los desarrolladores si no lo sigue.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="solid" /><category term="principios" /><summary type="html"><![CDATA[Los principios SOLID son algo que se considera como 'axiomas' de las buenas prácticas del software. Pero, ¿son realmente útiles?]]></summary></entry></feed>
+<p>Seguiremos creando más artículos hablando de esto, para  darte herramientas que te permitan ser un mejor desarrollador de software y mejor profesional.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="modelos-mentales" /><category term="desarrollo-de-software" /><summary type="html"><![CDATA[Los modelos mentales te permitirán resolver problems más rápido y con mejores resultados, hablemos de algunos de ellos que nos aplican directamente como desarrolladores.]]></summary></entry></feed>

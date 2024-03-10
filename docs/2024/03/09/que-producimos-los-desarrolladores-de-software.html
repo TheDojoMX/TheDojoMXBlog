@@ -1,0 +1,891 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>¿Qué producimos los desarrolladores de software? - The Dojo MX Blog</title>
+<meta name="description" content="Tu proceso de desarrollo de software produce muchas más cosas que sólamente software corriendo. En este artículo hablaremos de otros resultados de trabajo">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="¿Qué producimos los desarrolladores de software?">
+<meta property="og:url" content="https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html">
+
+
+  <meta property="og:description" content="Tu proceso de desarrollo de software produce muchas más cosas que sólamente software corriendo. En este artículo hablaremos de otros resultados de trabajo">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1702186060/hunter-reilly-O7NHbnjrz94-unsplash_dntxcb.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-03-09T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
+
+<script src="/assets/js/sharect.min.js"></script>
+<!-- Fathom - beautiful, simple website analytics -->
+   <script src="https://cdn.usefathom.com/script.js" data-site="NGGHUUZH" defer></script>
+<!-- / Fathom -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html",
+      "name": "¿Qué producimos los desarrolladores de software?",
+      "headline": "¿Qué producimos los desarrolladores de software?",
+      "keywords": "software,ingenieria-de-software,arquitectura",
+      "description": "Tu proceso de desarrollo de software produce muchas más cosas que sólamente software corriendo. En este artículo hablaremos de otros resultados de trabajo",
+      "articleBody": "Para algunos, la respuesta a la pregunta del título es simplemente “software”, porque parece tan obvia que el mismo nombre lo dice. Y aunque el software tiene una definición concreta, en este artículo vamos a desmunazar los productos de un proceso de desarrollo de software. Lo que quiero que veas es que el desarrollo de software no sólamente es crear programas que fucncionen, ya que para que el software sea efectivo tiene que evolucionar, y aquí entra el punto importante.\n\n¿Qué es un sistema de software?\nUn sistema de software incluye varias cosas, algunas obvias, otras no tanto. Vamos a analizar de la más a la menos visible.\n\nEl software corriendo.\n\nEsta es la parte más visible y en la que muchos se quedarían. El software en \nejecución significa una computadora ejecutando instrucciones que cumplan con \nel propósito del software. Si pudiéramos hacer que la computadora ejecutara lo \nque necesitamos de mnanera mágica, sin tener que darle instrucciones a sus \ndiferentes partes, esta parte seguiría existiendo.\n\nEjemplos del software en ejecución son:\n\n\n  Una página web mostrando la infomación que un cliente necesita\n  Word recibiendo las instrucciones de tu teclado y mostrando lo que escribes en la pantalla\n  grep buscando la expresión regular que quieres encontrar en un conjunto de documentos\n\n\nA veces, dependiendo del proceso pactado, no entregamos el software corriendo, sino entregamos\nartefactos que tienen que ser ejecutados para poner el software corriendo.\n\nEjecutables\nLos ejecutables son los artefactos que hacen que sea posible realizar las tareas que \npensamos para nuestro software. Estos artefactos pueden tomar muchas formas,\npor ejemplo, pueden ser archivos compilados .exe, empaquetados .dmg (de MacOS),\no incluso compilados que contienen instrucciones para una arquitectura de procesador\nespecífica.\n\nEn el caso de lenguajes y plataformas interpretadas, los ejecutables son a veces\ndirectamente el código fuente que además requiere que el usuario final tenga\ncierto entorno preparado en su computadora para poder correr.\n\nCódigo fuente\nEl código fuente, para mi, es la parte medular de los resultados de un proceso de desarrollo\nde software. Tiene la información necesaria para realizar las tareas que el software\ntiene que hacer y tras pasar por un proceso (compilación, empaquetamiento, despliegue, etc),\nse pueden producir los ejecutables que darán vida al software ejecutándose.\n\nEl entregar el código fuente al usuario final dependerá del acuerdo comercial al que se \nllegue al inciar el proyecto (por ejemplo, le podemos entregar el puro ejecutable como hace\nla mayoría del software comercial o de fuente cerrada), pero también podríamos entregar \nel código fuente entero para que la persona que lo recibe pueda hacer cosas importantes:\n\n\n  Revisarlo: con el fin de que el software cumpla exactamente con lo que se desea y no tenga\nfunciones ocultas no deseadas\n  Extenderlo: crear nuevas funciones o mejorar las existentes\n  Repararlo: si se encuentra alguna falla, eliminarla\n  Mantenerlo: A veces, las dependencias del software van quedando desactulizadas y hay que hacer\nmodificaciones en este para que siga funcionando\n  Actualizarlo: llevarlo a nuevas versiones de su lenguaje o hacer que compile o produzca ejecutable\npara nuevas plataformas\n\n\nComo puedes ver, si quieres que tu software evolucione y se adapte a nuevas necesidades o incluso\nsimplemente para que se mantenga funcional a través del tiempo, lo ideal es que tengas\nel código fuente a tu disposición. Es aceptado que el código funete debe incluir un conjunto de pruebas\nautomáticas que permitan verificar su funcionamiento más eficientemente. Estas prubas pueden incluir:\n\n\n  Pruebas unitarias: las que prueban las unidades más básicas del código, como funciones o métodos\n  Pruebas de integración: corren el sistema como si fueran un usuario y permiten verifcar que funcione correctamente\n\n\nPero el código fuente no basta para que el mantenimiento a través del tiempo sea óptimo.\n\nDocumentación\nEsta palabra tan temida por los desarrolladores de software en realidad es uno de nuestos\nproductos y a la vez insumos más importantes. La documentación es información sobre el \nsoftware puesta en un lugar persistente.\n\nEsta documentación debe incluir por lo menos:\n\n\n  Explicación de lo que el sistema hace. Es lo que le llamaríamos “los requerimientos”.\n  Diseño del sistema: Se habla de cómo está construido el sistema, por qué se pensó de esta forma y cómo\neso cumple con lo que se requería. Incluye la arquitectura a diferentes niveles y el registro de las decisiones\njunto con su justificación.\n  Documentación técnica. En esta parte se habla de la tecnología usada: los lenguajes usados, las plataformas\nsobre las que corre, las bases de datos, los sistemas operativos etc. Además una buena idea es incluir\nlas bases sobre las que se escogieron estos elementos.\n  Documentación para desarrolladores. Esta es la documentación que habla de lo que un desarrollador\ntiene que hacer para seguir desarrollando el proyecto o para hacer que el software se ejecute, sea \ndesplegarlo en un sistema de usuario final o producir los ejecutables. Esta documentaión incluye la \ndocumentación del código en el que se describe su funcionamiento interno y el diseño que tiene.\n  Manual de usuario. Opcional, pero dependiendo de la complejidad de las fucniones que el softwae haga\ny de su intefaz, puede convertise en un elemento absolutamente necesario. En este se describen\na detalle las cosas que el usuaio puede hacer y las consecuencias de estas acciones.\n\n\nHasta aquí se quedarían algunos, ¿pero podemos ir más allá? Sobre todo pensemos en que, para que el software\nsea exitoso, necesita evolucionar. ¿Quién crea nuevo código?\n\nUn equipo funcional\nEn teoría, con todo lo anterior cualquier desarrollador de software podría tomar un proyecto y seguirlo evolucionando,\npero esta teoría se queda lejos de la práctica por varias razones. La primera es que necesariamente\ntodos los artefactos anteriores van a tener defectos o estar incompletos, por lo que para que un nuevo\nequipo o desarrllador tome el proyecto requerirá hacer lo que llamamos “arqueología de software”, intentando completar\ny entender las decisiones no documentadas y todas las demás partes de información faltantes.\n\nAún si los artefactos producidos estuvieran completos, el que un nuevo equipo tome el proyecto requiere tiempo y\nesfuerzo para estudiarlos y empezar a producir nuevas funciones o a corregir errores. Si queremos que \nel proceso de desarrollo continue rápidamente, lo mejor es que el equipo que lo desarrolló lo siga evolucionando.\n\nLos mejores proyectos de software incluyen a un grupo de personas  que conocen la forma de desarrollo más \neficiente, las partes delicadas del proyecto, los fallos pendientes por componer, y las cosas que le faltan.\n\nAdemás, este grupo de personas tienen una forma de trabajar y de coordinación eficiente que puede ayudarlos\na ser más productivos.\n\nCon esto podemos concluir que el resultado del proceso de desarrollo de software no es solo una serie de artefactos,\nsino que también puede inlcuir a un equipo de personas que sereian los más adecuados para seguirlo desarrollando.\n\nPero hablemos de un elemento no tangible.\n\nNuevo conocimiento\n\nSiempre que alguien escribe software, su mente se modifica de tal manera que volver a su estado\nanterior es imposible. Este nuevo estado en el que la mente del programador se encuentra\ncontine información sobre el problema que acaba de resolever, de tal manera que si \ndesapareciera todo el código fuente y toda la documentación junto con los ejecutables, para \neste desarrollador no sería tan desastroso porque volver a producrilos le tomaría una \nfracción del tiempo que ya gastó en hacerlos.\n\nEsta modificación en la mente de las personas es un elemento no visible pero sin duda valioso,\nque permite crear cada vez software más complejo y con mayores capacidades.\n\nConclusión\nEl proceso de desarrollo de software no sólamente produce software corriendo o ejecutables.\nNuestro trabajo produce otras cosas de valor de las que deberíamos ser conscientes y buscar \noptimizar, evitando la simpleza de pensar que lo único que vale es el software corriendo, que cómo puedes ver en este\nartíulo, es una parte mínima de todo el valor que puedes producir, eso sin contar el valor que \ntu software produce al ser ejecutado por las personas que le pueden sacar provecho.\n",
+      "datePublished": "2024-03-09 00:00:00 -0600",
+      "dateModified": "2024-03-09 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1702186060/hunter-reilly-O7NHbnjrz94-unsplash_dntxcb.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1702186060/hunter-reilly-O7NHbnjrz94-unsplash_dntxcb.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          ¿Qué producimos los desarrolladores de software?
+
+        
+      </h1>
+      
+        <p class="page__lead">Tu proceso de desarrollo de software produce muchas más cosas que sólamente software corriendo. En este artículo hablaremos de otros resultados de trabajo
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1326 palabras | 11 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="¿Qué producimos los desarrolladores de software?">
+    <meta itemprop="description" content="Tu proceso de desarrollo de software produce muchas más cosas que sólamente software corriendo. En este artículo hablaremos de otros resultados de trabajo">
+    <meta itemprop="datePublished" content="2024-03-09T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>Para algunos, la respuesta a la pregunta del título es simplemente “<em>software</em>”, porque parece tan obvia que el mismo nombre lo dice. Y aunque el <strong>software</strong> tiene una definición concreta, en este artículo vamos a desmunazar los productos de un proceso de desarrollo de software. Lo que quiero que veas es que el desarrollo de software no sólamente es crear programas que fucncionen, ya que para que el software sea efectivo tiene que <strong>evolucionar</strong>, y aquí entra el punto importante.</p>
+
+<h2 id="qué-es-un-sistema-de-software">¿Qué es un sistema de software?</h2>
+<p>Un sistema de software incluye varias cosas, algunas obvias, otras no tanto. Vamos a analizar de la más a la menos visible.</p>
+
+<h3 id="el-software-corriendo">El software corriendo.</h3>
+
+<p>Esta es la parte más visible y en la que muchos se quedarían. El software en 
+ejecución significa una computadora ejecutando instrucciones que cumplan con 
+el propósito del software. Si pudiéramos hacer que la computadora ejecutara lo 
+que necesitamos de mnanera mágica, sin tener que darle instrucciones a sus 
+diferentes partes, esta parte seguiría existiendo.</p>
+
+<p>Ejemplos del software en ejecución son:</p>
+
+<ul>
+  <li>Una página web mostrando la infomación que un cliente necesita</li>
+  <li>Word recibiendo las instrucciones de tu teclado y mostrando lo que escribes en la pantalla</li>
+  <li>
+<em>grep</em> buscando la expresión regular que quieres encontrar en un conjunto de documentos</li>
+</ul>
+
+<p>A veces, dependiendo del proceso pactado, no entregamos el software corriendo, sino entregamos
+<em>artefactos</em> que tienen que ser ejecutados para poner el software corriendo.</p>
+
+<h3 id="ejecutables">Ejecutables</h3>
+<p>Los ejecutables son los <em>artefactos</em> que hacen que sea posible realizar las tareas que 
+pensamos para nuestro software. Estos artefactos pueden tomar muchas formas,
+por ejemplo, pueden ser archivos compilados .exe, empaquetados .dmg (de MacOS),
+o incluso compilados que contienen instrucciones para una arquitectura de procesador
+específica.</p>
+
+<p>En el caso de lenguajes y plataformas interpretadas, los ejecutables son a veces
+directamente el código fuente que además requiere que el usuario final tenga
+cierto entorno preparado en su computadora para poder correr.</p>
+
+<h3 id="código-fuente">Código fuente</h3>
+<p>El código fuente, para mi, es la parte medular de los resultados de un proceso de desarrollo
+de software. Tiene la información necesaria para realizar las tareas que el software
+tiene que hacer y tras pasar por un proceso (compilación, empaquetamiento, despliegue, etc),
+se pueden producir los ejecutables que darán vida al software ejecutándose.</p>
+
+<p>El entregar el código fuente al usuario final dependerá del acuerdo comercial al que se 
+llegue al inciar el proyecto (por ejemplo, le podemos entregar el puro ejecutable como hace
+la mayoría del software comercial o de fuente cerrada), pero también podríamos entregar 
+el código fuente entero para que la persona que lo recibe pueda hacer cosas importantes:</p>
+
+<ul>
+  <li>Revisarlo: con el fin de que el software cumpla exactamente con lo que se desea y no tenga
+funciones ocultas no deseadas</li>
+  <li>Extenderlo: crear nuevas funciones o mejorar las existentes</li>
+  <li>Repararlo: si se encuentra alguna falla, eliminarla</li>
+  <li>Mantenerlo: A veces, las dependencias del software van quedando desactulizadas y hay que hacer
+modificaciones en este para que siga funcionando</li>
+  <li>Actualizarlo: llevarlo a nuevas versiones de su lenguaje o hacer que compile o produzca ejecutable
+para nuevas plataformas</li>
+</ul>
+
+<p>Como puedes ver, si quieres que tu software evolucione y se adapte a nuevas necesidades o incluso
+simplemente para que se mantenga funcional a través del tiempo, lo ideal es que tengas
+el código fuente a tu disposición. Es aceptado que el código funete debe incluir un conjunto de pruebas
+automáticas que permitan verificar su funcionamiento más eficientemente. Estas prubas pueden incluir:</p>
+
+<ul>
+  <li>Pruebas unitarias: las que prueban las unidades más básicas del código, como funciones o métodos</li>
+  <li>Pruebas de integración: corren el sistema como si fueran un usuario y permiten verifcar que funcione correctamente</li>
+</ul>
+
+<p>Pero el código fuente no basta para que el mantenimiento a través del tiempo sea óptimo.</p>
+
+<h3 id="documentación">Documentación</h3>
+<p>Esta palabra tan temida por los desarrolladores de software en realidad es uno de nuestos
+productos y a la vez insumos más importantes. La documentación es información sobre el 
+software puesta en un lugar persistente.</p>
+
+<p>Esta documentación debe incluir por lo menos:</p>
+
+<ol>
+  <li>Explicación de lo que el sistema hace. Es lo que le llamaríamos “los requerimientos”.</li>
+  <li>Diseño del sistema: Se habla de cómo está construido el sistema, por qué se pensó de esta forma y cómo
+eso cumple con lo que se requería. Incluye la arquitectura a diferentes niveles y el registro de las decisiones
+junto con su justificación.</li>
+  <li>Documentación técnica. En esta parte se habla de la tecnología usada: los lenguajes usados, las plataformas
+sobre las que corre, las bases de datos, los sistemas operativos etc. Además una buena idea es incluir
+las bases sobre las que se escogieron estos elementos.</li>
+  <li>Documentación para desarrolladores. Esta es la documentación que habla de lo que un desarrollador
+tiene que hacer para seguir desarrollando el proyecto o para hacer que el software se ejecute, sea 
+desplegarlo en un sistema de usuario final o producir los ejecutables. Esta documentaión incluye la 
+documentación del código en el que se describe su funcionamiento interno y el diseño que tiene.</li>
+  <li>Manual de usuario. Opcional, pero dependiendo de la complejidad de las fucniones que el softwae haga
+y de su intefaz, puede convertise en un elemento absolutamente necesario. En este se describen
+a detalle las cosas que el usuaio puede hacer y las consecuencias de estas acciones.</li>
+</ol>
+
+<p>Hasta aquí se quedarían algunos, ¿pero podemos ir más allá? Sobre todo pensemos en que, para que el software
+sea exitoso, necesita evolucionar. ¿Quién crea nuevo código?</p>
+
+<h3 id="un-equipo-funcional">Un equipo funcional</h3>
+<p>En teoría, con todo lo anterior cualquier desarrollador de software podría tomar un proyecto y seguirlo evolucionando,
+pero esta teoría se queda lejos de la práctica por varias razones. La primera es que necesariamente
+todos los artefactos anteriores van a tener defectos o estar incompletos, por lo que para que un nuevo
+equipo o desarrllador tome el proyecto requerirá hacer lo que llamamos <strong>“arqueología de software”</strong>, intentando completar
+y entender las decisiones no documentadas y todas las demás partes de información faltantes.</p>
+
+<p>Aún si los artefactos producidos estuvieran completos, el que un nuevo equipo tome el proyecto requiere tiempo y
+esfuerzo para estudiarlos y empezar a producir nuevas funciones o a corregir errores. Si queremos que 
+el proceso de desarrollo continue rápidamente, lo mejor es que el equipo que lo desarrolló lo siga evolucionando.</p>
+
+<p>Los mejores proyectos de software incluyen a un grupo de personas  que conocen la forma de desarrollo más 
+eficiente, las partes delicadas del proyecto, los fallos pendientes por componer, y las cosas que le faltan.</p>
+
+<p>Además, este grupo de personas tienen una forma de trabajar y de coordinación eficiente que puede ayudarlos
+a ser más productivos.</p>
+
+<p>Con esto podemos concluir que el resultado del proceso de desarrollo de software no es solo una serie de artefactos,
+sino que también puede inlcuir a un equipo de personas que sereian los más adecuados para seguirlo desarrollando.</p>
+
+<p>Pero hablemos de un elemento no tangible.</p>
+
+<h3 id="nuevo-conocimiento">Nuevo conocimiento</h3>
+
+<p>Siempre que alguien escribe software, su mente se modifica de tal manera que volver a su estado
+anterior es imposible. Este nuevo estado en el que la mente del programador se encuentra
+contine información sobre el problema que acaba de resolever, de tal manera que si 
+desapareciera todo el código fuente y toda la documentación junto con los ejecutables, para 
+este desarrollador no sería tan desastroso porque volver a producrilos le tomaría una 
+fracción del tiempo que ya gastó en hacerlos.</p>
+
+<p>Esta modificación en la mente de las personas es un elemento no visible pero sin duda valioso,
+que permite crear cada vez software más complejo y con mayores capacidades.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+<p>El proceso de desarrollo de software no sólamente produce software corriendo o ejecutables.
+Nuestro trabajo produce otras cosas de valor de las que deberíamos ser conscientes y buscar 
+optimizar, evitando la simpleza de pensar que lo único que vale es el software corriendo, que cómo puedes ver en este
+artíulo, es una parte mínima de todo el valor que puedes producir, eso sin contar el valor que 
+tu software produce al ser ejecutado por las personas que le pueden sacar provecho.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#arquitectura" class="page__taxonomy-item" rel="tag">arquitectura</a><span class="sep">, </span>
+    
+      <a href="/tags/#ingenieria-de-software" class="page__taxonomy-item" rel="tag">ingenieria-de-software</a><span class="sep">, </span>
+    
+      <a href="/tags/#software" class="page__taxonomy-item" rel="tag">software</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2024-03-09T00:00:00-06:00">March 9, 2024</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%C2%BFQu%C3%A9+producimos+los+desarrolladores+de+software%3F%20https%3A%2F%2Fblog.thedojo.mx%2F2024%2F03%2F09%2Fque-producimos-los-desarrolladores-de-software.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F03%2F09%2Fque-producimos-los-desarrolladores-de-software.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F03%2F09%2Fque-producimos-los-desarrolladores-de-software.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/12/14/engines-de-javascript-y-sus-usos.html" class="pagination--pager" title="Engines de JavaScript y sus usos
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1701323922/garett-mizunaka-xFjti9rYILo-unsplash_mh0wys.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/12/14/engines-de-javascript-y-sus-usos.html" rel="permalink">Engines de JavaScript y sus usos
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 14-12-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">En este artículo hablaremos de los diferente engines de JavaScript que existen, dónde los puedes encontrar y para qué los puedes usar.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702275251/shubham-dhage-cLhjmsyby3Q-unsplash_ucy8y3.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/12/13/mojo-un-lenguaje-prometedor.html" rel="permalink">Mojo 🔥: un lenguaje prometedor
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 13-12-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">El ecosistema de desarrollo está cambiando y se están diseñando nuevos lenguajes de programación y entornos de ejecución más adecuados para los problemas act...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/12/09/que-es-real-time-en-sistemas-computacionales.html" rel="permalink">¿Qué es Real Time en sistemas de software?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 09-12-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html" rel="permalink">Las tres garantías de seguridad de un hash
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+14 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 28-08-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Veamos más profundamente las garantías de seguridad que debe cumplir un hash para ser considerado seguro. Por fin entenderemos lo que es una colisión y qué s...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#4b0082',
+      iconColor: '#fff'
+    }).init();
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2024 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2024/03/09/que-producimos-los-desarrolladores-de-software"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

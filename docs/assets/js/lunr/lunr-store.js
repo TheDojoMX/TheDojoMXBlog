@@ -796,4 +796,10 @@ var store = [{
         "tags": ["javascript-engine","v8","chakra"],
         "url": "/2023/12/14/engines-de-javascript-y-sus-usos.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1701323922/garett-mizunaka-xFjti9rYILo-unsplash_mh0wys.jpg"
+      },{
+        "title": "¿Qué producimos los desarrolladores de software?",
+        "excerpt":"Para algunos, la respuesta a la pregunta del título es simplemente “software”, porque parece tan obvia que el mismo nombre lo dice. Y aunque el software tiene una definición concreta, en este artículo vamos a desmunazar los productos de un proceso de desarrollo de software. Lo que quiero que veas...","categories": [],
+        "tags": ["software","ingenieria-de-software","arquitectura"],
+        "url": "/2024/03/09/que-producimos-los-desarrolladores-de-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702186060/hunter-reilly-O7NHbnjrz94-unsplash_dntxcb.jpg"
       }]
