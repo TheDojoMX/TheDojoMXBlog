@@ -11,24 +11,32 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Para algunos, la respuesta a la pregunta del título es simplemente "_software_", porque parece tan obvia que el mismo nombre lo dice. Y aunque el **software** tiene una definición concreta, en este artículo vamos a desmunazar los productos de un proceso de desarrollo de software. Lo que quiero que veas es que el desarrollo de software no sólamente es crear programas que fucncionen, ya que para que el software sea efectivo tiene que **evolucionar**, y aquí entra el punto importante. 
-
+Para algunos, la respuesta a la pregunta del título es simplemente "_software_",
+porque parece tan obvia que el mismo nombre lo dice. Y aunque el **software**
+tiene una definición concreta, en este artículo vamos a desmunazar los productos
+de un proceso de desarrollo de software. Lo que quiero que veas es que el
+desarrollo de software no sólamente es crear programas que fucncionen, ya
+que para que el software sea efectivo tiene que **evolucionar**, y aquí
+entra el punto importante.
 
 ## ¿Qué es un sistema de software?
-Un sistema de software incluye varias cosas, algunas obvias, otras no tanto. Vamos a analizar de la más a la menos visible.
 
-### El software corriendo.
+Un sistema de software incluye varias cosas, algunas obvias, otras no tanto.
+Vamos a analizar de la más a la menos visible.
 
-Esta es la parte más visible y en la que muchos se quedarían. El software en 
-ejecución significa una computadora ejecutando instrucciones que cumplan con 
-el propósito del software. Si pudiéramos hacer que la computadora ejecutara lo 
-que necesitamos de mnanera mágica, sin tener que darle instrucciones a sus 
+### El software corriendo
+
+Esta es la parte más visible y en la que muchos se quedarían. El software en
+ejecución significa una computadora ejecutando instrucciones que cumplan con
+el propósito del software. Si pudiéramos hacer que la computadora ejecutara lo
+que necesitamos de mnanera mágica, sin tener que darle instrucciones a sus
 diferentes partes, esta parte seguiría existiendo.
 
 Ejemplos del software en ejecución son:
 
 - Una página web mostrando la infomación que un cliente necesita
-- Word recibiendo las instrucciones de tu teclado y mostrando lo que escribes en la pantalla
+- Word recibiendo las instrucciones de tu teclado y mostrando lo que escribes
+en la pantalla
 - _grep_ buscando la expresión regular que quieres encontrar en un conjunto de documentos
 
 A veces, dependiendo del proceso pactado, no entregamos el software corriendo, sino entregamos
