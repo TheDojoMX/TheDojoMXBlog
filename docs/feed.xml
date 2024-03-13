@@ -1,22 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-03-09T22:42:31-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué producimos los desarrolladores de software?</title><link href="https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html" rel="alternate" type="text/html" title="¿Qué producimos los desarrolladores de software?" /><published>2024-03-09T00:00:00-06:00</published><updated>2024-03-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html"><![CDATA[<p>Para algunos, la respuesta a la pregunta del título es simplemente “<em>software</em>”, porque parece tan obvia que el mismo nombre lo dice. Y aunque el <strong>software</strong> tiene una definición concreta, en este artículo vamos a desmunazar los productos de un proceso de desarrollo de software. Lo que quiero que veas es que el desarrollo de software no sólamente es crear programas que fucncionen, ya que para que el software sea efectivo tiene que <strong>evolucionar</strong>, y aquí entra el punto importante.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-03-13T00:24:56-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué producimos los desarrolladores de software?</title><link href="https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html" rel="alternate" type="text/html" title="¿Qué producimos los desarrolladores de software?" /><published>2024-03-09T00:00:00-06:00</published><updated>2024-03-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html"><![CDATA[<p>Para algunos, la respuesta a la pregunta del título es simplemente “<em>software</em>”,
+porque parece tan obvia que el mismo nombre lo dice. Y aunque el <strong>software</strong>
+tiene una definición concreta, en este artículo vamos a desmunazar los productos
+de un proceso de desarrollo de software. Lo que quiero que veas es que el
+desarrollo de software no sólamente es crear programas que fucncionen, ya
+que para que el software sea efectivo tiene que <strong>evolucionar</strong>, y aquí
+entra el punto importante.</p>
 
 <h2 id="qué-es-un-sistema-de-software">¿Qué es un sistema de software?</h2>
-<p>Un sistema de software incluye varias cosas, algunas obvias, otras no tanto. Vamos a analizar de la más a la menos visible.</p>
 
-<h3 id="el-software-corriendo">El software corriendo.</h3>
+<p>Un sistema de software incluye varias cosas, algunas obvias, otras no tanto.
+Vamos a analizar de la más a la menos visible.</p>
 
-<p>Esta es la parte más visible y en la que muchos se quedarían. El software en 
-ejecución significa una computadora ejecutando instrucciones que cumplan con 
-el propósito del software. Si pudiéramos hacer que la computadora ejecutara lo 
-que necesitamos de mnanera mágica, sin tener que darle instrucciones a sus 
+<h3 id="el-software-corriendo">El software corriendo</h3>
+
+<p>Esta es la parte más visible y en la que muchos se quedarían. El software en
+ejecución significa una computadora ejecutando instrucciones que cumplan con
+el propósito del software. Si pudiéramos hacer que la computadora ejecutara lo
+que necesitamos de mnanera mágica, sin tener que darle instrucciones a sus
 diferentes partes, esta parte seguiría existiendo.</p>
 
 <p>Ejemplos del software en ejecución son:</p>
 
 <ul>
-  <li>Una página web mostrando la infomación que un cliente necesita</li>
-  <li>Word recibiendo las instrucciones de tu teclado y mostrando lo que escribes en la pantalla</li>
-  <li><em>grep</em> buscando la expresión regular que quieres encontrar en un conjunto de documentos</li>
+  <li>Una <strong>página web</strong> mostrando la infomación que un cliente necesita</li>
+  <li><strong>Word</strong> recibiendo las instrucciones de tu teclado y mostrando lo que escribes
+en la pantalla</li>
+  <li><strong>grep</strong> buscando la expresión regular que quieres encontrar en un conjunto de documentos</li>
 </ul>
 
 <p>A veces, dependiendo del proceso pactado, no entregamos el software corriendo, sino entregamos
@@ -29,12 +38,12 @@ por ejemplo, pueden ser archivos compilados .exe, empaquetados .dmg (de MacOS),
 o incluso compilados que contienen instrucciones para una arquitectura de procesador
 específica.</p>
 
-<p>En el caso de lenguajes y plataformas interpretadas, los ejecutables son a veces
-directamente el código fuente que además requiere que el usuario final tenga
-cierto entorno preparado en su computadora para poder correr.</p>
+<p>En el caso de lenguajes y plataformas interpretadas los ejecutables son
+directamente el código fuente, que además requieren que el usuario final tenga
+un entorno preparado en su computadora para poder correrlo.</p>
 
 <h3 id="código-fuente">Código fuente</h3>
-<p>El código fuente, para mi, es la parte medular de los resultados de un proceso de desarrollo
+<p>El código fuente, <em>para mi</em>, es la parte medular de los resultados de un proceso de desarrollo
 de software. Tiene la información necesaria para realizar las tareas que el software
 tiene que hacer y tras pasar por un proceso (compilación, empaquetamiento, despliegue, etc),
 se pueden producir los ejecutables que darán vida al software ejecutándose.</p>

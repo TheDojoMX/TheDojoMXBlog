@@ -34,10 +34,10 @@ diferentes partes, esta parte seguiría existiendo.
 
 Ejemplos del software en ejecución son:
 
-- Una página web mostrando la infomación que un cliente necesita
-- Word recibiendo las instrucciones de tu teclado y mostrando lo que escribes
+- Una **página web** mostrando la infomación que un cliente necesita
+- **Word** recibiendo las instrucciones de tu teclado y mostrando lo que escribes
 en la pantalla
-- _grep_ buscando la expresión regular que quieres encontrar en un conjunto de documentos
+- **grep** buscando la expresión regular que quieres encontrar en un conjunto de documentos
 
 A veces, dependiendo del proceso pactado, no entregamos el software corriendo, sino entregamos
 _artefactos_ que tienen que ser ejecutados para poner el software corriendo.
@@ -49,12 +49,12 @@ por ejemplo, pueden ser archivos compilados .exe, empaquetados .dmg (de MacOS),
 o incluso compilados que contienen instrucciones para una arquitectura de procesador
 específica.
 
-En el caso de lenguajes y plataformas interpretadas, los ejecutables son a veces
-directamente el código fuente que además requiere que el usuario final tenga
-cierto entorno preparado en su computadora para poder correr.
+En el caso de lenguajes y plataformas interpretadas los ejecutables son
+directamente el código fuente, que además requieren que el usuario final tenga
+un entorno preparado en su computadora para poder correrlo.
 
 ### Código fuente
-El código fuente, para mi, es la parte medular de los resultados de un proceso de desarrollo
+El código fuente, _para mi_, es la parte medular de los resultados de un proceso de desarrollo
 de software. Tiene la información necesaria para realizar las tareas que el software
 tiene que hacer y tras pasar por un proceso (compilación, empaquetamiento, despliegue, etc),
 se pueden producir los ejecutables que darán vida al software ejecutándose.
