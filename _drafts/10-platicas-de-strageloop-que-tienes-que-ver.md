@@ -11,31 +11,41 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-*StrangeLoop* fue una de las mejores conferencias de tecnología del mundo porque en ella se tratan temas poco comunes relacionados con la computación, el desarrollo de software e incluso el arte.
+*StrangeLoop* fue una de las mejores conferencias de tecnología del mundo
+porque en ella se tratan temas poco comunes relacionados con la
+computación, el desarrollo de software e incluso el arte.
 
-Si te gusta reflexionar sobre temas profundos de la computación, te recomiendo muchoque le eches un ojo a las pláticas de esta conferencia.
+Si te gusta reflexionar sobre temas profundos de la computación,
+te recomiendo muchoque le eches un ojo a las pláticas de esta conferencia.
 
-En este artículo te recomendaré cinco de las mejores pláticas, a mi parecer, de la conferencia. Todas están en inglés, aunque parece que puedes poner traducción automática en YouTube.
+En este artículo te recomendaré cinco de las mejores pláticas, a mi parecer,
+de la conferencia. Todas están en inglés, aunque parece que puedes poner
+traducción automática en YouTube.
 
 ## The Mess We're In - Joe Armstrong
 
-Para mi, esta es la plática más icónica de todas las ediciones de StrangeLoop. Joe Armstrong fue el creador del lenguaje Erlang y una gran figura en la industria del desarrollo de software.
+Esta es la plática más representativa de todas las ediciones de StrangeLoop.
+Joe Armstrong fue el creador del lenguaje Erlang y una gran figura en la
+industria del desarrollo de software, co-creador del Erlang y de su máquina
+virtual, que aún hoy siguen esando adelantados a su tiempo.
 
-Joe habla de lo complejo que es el ambiente en el que los desarrolladores trabajamos y cómo es un milagro que existan sistemas funcionales.
 
-Armstrong explora varios problemas, incluído el problema medioambiental que las computadoras pueden generar con su consumo de energía.
+Joe habla de lo complejo que es el ambiente en el que los desarrolladores
+trabajamos y cómo es un milagro que existan sistemas funcionales.
+
+Armstrong explora varios problemas, incluído el problema medioambiental
+que las computadoras pueden generar con su consumo de energía.
 
 Aquí un resumen de los problemas que pone:
 
+Armstrong explora varios problemas, incluído el problema medioambiental que
+las computadoras pueden generar con su consumo de energía.
 
-
-Armstrong explora varios problemas, incluído el problema medioambiental que las computadoras pueden generar con su consumo de energía.
-
-Aquí un resumen de los problemas que pone:
+Aquí un resumen de los problemas que menciona:
 
 ![https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1709865988/Screenshot_2024-03-07_at_20.40.20_vsidm5.png](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1709865988/Screenshot_2024-03-07_at_20.40.20_vsidm5.png){: .align-center}
 
-Puedes ver la charla aquí: [The Mess We're In]()
+Puedes ver la charla aquí: [The Mess We're In](https://www.youtube.com/watch?v=lKXe3HUG2l4)
 
 ## Deja de escribir programas muertos - Jack Rusher
 
@@ -56,7 +66,7 @@ La puedes ver aquí: [Stop Writing dead programs](https://youtu.be/8Ab3ArE8W3s?s
 ["The Mess We're In" by Joe Armstrong](https://youtu.be/lKXe3HUG2l4?si=Z3Z6ZQZrQX6Z3Z6ZQZrQX6)
 
 Esta plática fue sugerida por Copilot, y parece que está bien:...
-
+o
 ## The Future of Programming - Bret Victor
 
 ["The Future of Programming" by Bret Victor](https://youtu.be/8pTEmbeENF4?si=Z3Z6ZQZrQX6Z3Z6ZQZrQX6)
