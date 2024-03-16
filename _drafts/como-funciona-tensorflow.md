@@ -12,9 +12,17 @@ header:
 ---
 
 TensorFlow es una de las herramientas más populares e influyentes
-en el mundo de la inteligencia artificial. En este artículo vamos a ver
+en el mundo de la inteligencia artificial. En este artículo vamos a ver 
 qué es exactamente y cómo funciona.
 
 ## ¿Qué es Tensoflow?
 
-Par hacer 
+Para crear modelos de inteligencia artificial, hay que hacer muchos cálculos  
+matemáticos, la mayoría de ellos son operaciones de multiplicación de matrices.
+Estos cálculos son muy pesados para un procesador tradicional y por eso se
+requiere de toda la ayuda posible para hacer estos cálculos más eficientes.
+
+Es aquí donde entra TensorFlow, una biblioteca que permite _representar_ estos
+cálculos mediante grafos de operaciones y después ejecutarlos en procesadores
+especializados como en tarjetas gráficas.
+
