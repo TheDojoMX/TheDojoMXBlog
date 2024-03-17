@@ -17,12 +17,16 @@ computación actual: C y C++. Lenguajes como Rust y Go quieren reemplazarlos,
 pero tenemos a otro competidor que apunta directamente hacia C y parece
 que se está acercando aunque no tiene todavía una cersión completamente estable.
 
-
 En este artículo vamos a hablar de las características de Zig y cómo es que
 planea reemplazar a C.
 
-
 ## Las características de Zig
 
-[Zig]()
+[Zig](https://ziglang.org/) es actualemente desarrollado por la Zig Software
+Foundation, una organización sin fines de lucro que básicamente fue creada para
+seguir desarrollando el lenguaje. Pero **Andrew Kelley**, lo empezó en 2015 con
+la idea de retar la forma en la que hacemos software.
+
+Kelley es  
+
 
