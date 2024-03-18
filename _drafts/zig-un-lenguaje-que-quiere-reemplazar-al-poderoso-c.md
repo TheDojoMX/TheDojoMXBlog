@@ -27,6 +27,15 @@ Foundation, una organización sin fines de lucro que básicamente fue creada par
 seguir desarrollando el lenguaje. Pero **Andrew Kelley**, lo empezó en 2015 con
 la idea de retar la forma en la que hacemos software.
 
-Kelley es  
+Kelley es un programador con experiencia en C principalmente y mientras trabajaba en su
+proyecto "Genesis Digital Audio Workstation" se decidió para crear Zig.
+En sus propias palabras: _"mi meta es crear un leanguaje más pragmático  que C."_
+
+Algunas de las características que presenta en el artículo en el que
+habla por primera vez de Zig son:
+
+1. **Pragmatismo**. Ser pragmático es lo mismo que ~~~~ 
+2. **Seguridad en memoria**
+3. ** -- **
 
 
