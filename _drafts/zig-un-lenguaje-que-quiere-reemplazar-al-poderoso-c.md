@@ -37,5 +37,6 @@ habla por primera vez de Zig son:
 1. **Pragmatismo**. Ser pragmático es lo mismo que ~~~~ 
 2. **Seguridad en memoria**
 3. ** -- **
+4. ** -- **
 
 
