@@ -24,5 +24,10 @@ requiere de toda la ayuda posible para hacer estos cálculos más eficientes.
 
 Es aquí donde entra TensorFlow, una biblioteca que permite _representar_ estos
 cálculos mediante grafos de operaciones y después ejecutarlos en procesadores
-especializados como en tarjetas gráficas.
+especializados como tarjetas gráficas y otros procesadores especializados en
+operaciones matemáticas pesadas.
+
+Esta representación que TensorFlow crea, también se puede compilar para ejecutarse
+en otros dispisitivos de cómputo.
+
 
