@@ -28,6 +28,30 @@ especializados como tarjetas gráficas y otros procesadores especializados en
 operaciones matemáticas pesadas.
 
 Esta representación que TensorFlow crea, también se puede compilar para ejecutarse
-en otros dispisitivos de cómputo.
+en otros dispisitivos de cómputo, por ejemplo cosas menos poderosas como
+dispositivos móviles o computadoras de bajo consumo, pero también en dispositivos
+de alto rendimiento com TPUs (Tensor Processing Units) de Google.
+
+Y es aquí donde entra lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
+llegamos a él y cómo lo ejecutamos después?
 
 
+## Grafos de cómputo de TensorFlow
+
+Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su representación
+en **TensorFlow**. La operación es la siguiente:
+
+```python
+Y = W * X + b
+```
+Esta es la ecuación que un perceptrón simple. Vemos cómo la representa TensorFlow.
+Para que esto sea útil, cada una de las operaciones se hace sobre tensores, es decir,
+sobre un conjunto de datos numéricos de varias dimensiones.
+
+¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que representa esa
+operación:
+
+![Grafo de cómputo de TensorFlow](/assets/images/tensorflow-graph.png)
+
+
+Puedes pensar en este grafo es 
