@@ -54,4 +54,7 @@ operación:
 ![Grafo de cómputo de TensorFlow](/assets/images/tensorflow-graph.png)
 
 
-Puedes pensar en este grafo es 
+Puedes pensar en este grafo como una serie de nodos que representan cada uno una operación
+sobre TENSORES.
+
+
