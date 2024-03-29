@@ -104,7 +104,7 @@ Para mi, este es uno de los modelos mentales más útiles, debido a que estamos 
 Los siguientes libros y blogs(todos en inglés) te pueden enseñar mucho más de
 modelos mentales y su aplicación:
 
-1. Farnam Street: [Blog](https://fs.blog/) y sus libros sobre modelos mentales](https://fs.blog/tgmm/).
+1. Farnam Street: [Blog](https://fs.blog/) y sus [libros sobre modelos mentales](https://fs.blog/tgmm/).
 2. [Super Thinking: The Big Book of Mental Models](https://www.goodreads.com/book/show/41181911-super-thinking)
 3. The Model Thinker: [What You Need to Know to Make Data Work for You](https://www.goodreads.com/book/show/39354814-the-model-thinker)
 4. Un medio más reciente es el canal de Vicky Zhao en [YouTube](https://www.youtube.com/@VickyZhaoBEEAMP) que además de hablar de modelos mentales,
