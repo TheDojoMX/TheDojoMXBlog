@@ -19,8 +19,8 @@ En este artículo hablaremos de formas de encontrarlos, definirlos, documentarlo
 
 ## Cómo definir las funciones de un sistemas
 
-La primera tarea como arquitecto de software tiene que ver con la de entender completamente lo que el software tiene que
-HACER. Y como el software tiene unas pocas funciones principales, pero muchas tareas secundarias o terciarias 
-que las soportan, esto no es tarea tan sencilla.
+La primera tarea como arquitecto de software tiene que ver con la de **entender completamente** lo que el software tiene que
+HACER. El software normalmente tiene unas pocas funciones principales, pero muchas tareas secundarias o terciarias 
+que las soportan, y es por eso que descubrirlas y describirlas todas no es una tarea sencilla.
 
 
