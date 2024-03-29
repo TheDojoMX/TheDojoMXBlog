@@ -83,7 +83,7 @@ Así es: hay muchas cosas en la naturaleza que mientras más tienes de ellas, ca
 
 - Salir al sol está bien, es bueno para nuestra salud si lo haces a la hora correcta y cuidas la cantidad de sol a la que te expones. Pero si te expones demasiado, te vas a quemar y vas a tener problemas de salud.
 
-- Finalmente, el dinero: tener dinero es bueno hasta cierto punto, pero hay una cantidad que a mi parecer depende de el lugar en el que vivas, que tener dinero extra 1) no te va a hacer más feliz, 2) incrementar más tu riqueza te meterá en problemas que no tendrías antes. La siguiente gráfica muestra la relación entre el dinero y la felicidad:
+- El dinero: tener dinero es bueno hasta cierto punto, pero a partir de cierta cantidad (que a mi parecer depende de el lugar en el que vivas), que si la superas 1) no te va a hacer más feliz, 2) te meterá en problemas que no tenías antes. La siguiente gráfica muestra la relación entre estos bienes y la felicidad:
 
 ![Gráfica de rendimientos decrecientes](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_500/v1687450180/Ilustracio%CC%81n_sin_ti%CC%81tulo_4_qhinhf.png){: .align-center}
 
@@ -98,6 +98,17 @@ En estos ejemplos hablamos de cosas buenas que primero te van dando cada vez men
 - **Pruebas unitarias**: Las pruebas unitarias son una gran herramienta tanto para asegurar la calidad del software como para ayudar en su diseño. Sin embargo, hay una tendencia a querer buscar que todo tu código esté cubierto por pruebas unitarias: **tener 100% de cobertura**. Este es un caso muy característico de rendimientos decrecientes: mientras más pruebas unitarias tengas, cada prueba unitaria que agregues va a darte menos beneficios que la anterior, pero se pone peor. Intentar tener 100% de pruebas te lleva a hacer código que mucho más complejo y difícil de mantener.
 
 Para mi, este es uno de los modelos mentales más útiles, debido a que estamos en un mundo en el que ser eficiente en recursos te puede dar una gran ventaja competitiva.
+
+## Recursos para seguir aprendiendo sobre modelos mentales
+
+Los siguientes libros y blogs(todos en inglés) te pueden enseñar mucho más de
+modelos mentales y su aplicación:
+
+1. Farnam Street: [Blog](https://fs.blog/) y sus libros sobre modelos mentales](https://fs.blog/tgmm/).
+2. [Super Thinking: The Big Book of Mental Models](https://www.goodreads.com/book/show/41181911-super-thinking)
+3. The Model Thinker: [What You Need to Know to Make Data Work for You](https://www.goodreads.com/book/show/39354814-the-model-thinker)
+4. Un medio más reciente es el canal de Vicky Zhao en [YouTube](https://www.youtube.com/@VickyZhaoBEEAMP) que además de hablar de modelos mentales,
+también habla de cómo usarlos para comunicarte claramente.
 
 ## Conclusión
 
