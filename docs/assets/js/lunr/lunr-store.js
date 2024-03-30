@@ -802,4 +802,10 @@ var store = [{
         "tags": ["software","ingenieria-de-software","arquitectura"],
         "url": "/2024/03/09/que-producimos-los-desarrolladores-de-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702186060/hunter-reilly-O7NHbnjrz94-unsplash_dntxcb.jpg"
+      },{
+        "title": "5 pláticas de StrageLoop que tienes que ver",
+        "excerpt":"StrangeLoop fue una de las mejores conferencias de tecnología del mundo porque en ella se tratan temas poco comunes relacionados con la computación, el desarrollo de software e incluso el arte, y lo mejor: la combinación entre entras cosas. Si te gusta reflexionar sobre temas profundos de la computación, te...","categories": [],
+        "tags": ["talks","charlas","strangeloop","software-engineering"],
+        "url": "/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702186032/neom-WLeWJW_WneE-unsplash_rbh7sr.jpg"
       }]
