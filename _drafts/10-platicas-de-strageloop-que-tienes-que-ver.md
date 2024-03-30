@@ -13,60 +13,76 @@ header:
 
 *StrangeLoop* fue una de las mejores conferencias de tecnología del mundo
 porque en ella se tratan temas poco comunes relacionados con la
-computación, el desarrollo de software e incluso el arte.
+computación, el desarrollo de software e incluso el arte, y lo mejor: la
+combinación entre entras cosas.
 
 Si te gusta reflexionar sobre temas profundos de la computación,
-te recomiendo muchoque le eches un ojo a las pláticas de esta conferencia.
+te recomiendo mucho que le eches un ojo a las pláticas de esta conferencia,
+la mayoría están disponibles en su canal de
+[YouTube](https://youtube.com/@StrangeLoopConf).
 
-En este artículo te recomendaré cinco de las mejores pláticas, a mi parecer,
-de la conferencia. Todas están en inglés, aunque parece que puedes poner
-traducción automática en YouTube.
+En este artículo te recomendaré cinco de las que me han parecido las mejores
+pláticas de la conferencia. Todas están en inglés, aunque parece que puedes poner
+traducción automática en YouTube. Empecemos.
 
-## The Mess We're In - Joe Armstrong
+## El desastre en el que estamos metidos - Joe Armstrong
 
 Esta es la plática más representativa de todas las ediciones de StrangeLoop.
-Joe Armstrong fue el creador del lenguaje Erlang y una gran figura en la
-industria del desarrollo de software, co-creador del Erlang y de su máquina
+Su título original es **"The Mess We're In"**.
+**Joe Armstrong** fue el creador del lenguaje Erlang y una gran figura en la
+industria del desarrollo de software, co-creador del lenguaje Erlang y de su máquina
 virtual, que aún hoy siguen esando adelantados a su tiempo.
 
-
 Joe habla de lo complejo que es el ambiente en el que los desarrolladores
-trabajamos y cómo es un milagro que existan sistemas funcionales.
+trabajamos, recordándonos la complejidad de las computadoras.
+La plática nos hace ver por qué es un milagro que existan sistemas funcionales
+y lo frágiles que son.
 
 Armstrong explora varios problemas, incluído el problema medioambiental
 que las computadoras pueden generar con su consumo de energía.
 
-Aquí un resumen de los problemas que pone:
+Esta imagen tiene un resumen de los problemas que menciona:
 
-Armstrong explora varios problemas, incluído el problema medioambiental que
-las computadoras pueden generar con su consumo de energía.
+![Resumen de la charla de Joe Armostrong](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1709865988/Screenshot_2024-03-07_at_20.40.20_vsidm5.png){: .align-center}
 
-Aquí un resumen de los problemas que menciona:
-
-![https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1709865988/Screenshot_2024-03-07_at_20.40.20_vsidm5.png](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1709865988/Screenshot_2024-03-07_at_20.40.20_vsidm5.png){: .align-center}
-
-Puedes ver la charla aquí: [The Mess We're In](https://www.youtube.com/watch?v=lKXe3HUG2l4)
+Si quieres cobrar conciencia o recordar la complejidad a la que nos 
+enfrentamos, pero sobre todo entender  puedes ver la charla aquí: [The Mess We're In](https://www.youtube.com/watch?v=lKXe3HUG2l4)
 
 ## Deja de escribir programas muertos - Jack Rusher
 
-Jack Rusher nos habla de cómo muchas de las cosas a las que ya estamos acostumbrados como programadores en realidad son cosas que hemos heredado de las limitaciones que teníamos en el pasado, y que no hemos hecho el esfuerzo por cambiar.
+**Jack Rusher** nos habla de cómo muchas de las cosas a las que ya estamos
+acostumbrados como programadores en realidad son cosas que hemos heredado de las
+limitaciones que teníamos en el pasado, y que no hemos hecho el esfuerzo por cambiar.
 
-Gran parte de lo que hacemos y creemos muy normal son fósiles de que nos tienen atados al pasado, pero ahora tenemos la capacidad de hacer muchas cosas más dinámicas e interesantes.
+Gran parte de lo que hacemos y creemos muy normal son fósiles de que nos tienen
+atados al pasado, pero ahora tenemos la capacidad de hacer muchas cosas más
+dinámicas e interesantes.
 
-Esta plática te puede abrir la mente respecto a nuevas formas de programar y te presenta entornos modernos, dinámicos y no convencionales que pueden cambiar la forma en la que trabajamos.
+Esta plática te puede abrir la mente respecto a nuevas formas de programar y
+te presenta entornos modernos, dinámicos y no convencionales que pueden cambiar
+la forma en la que trabajamos.
 
 La puedes ver aquí: [Stop Writing dead programs](https://youtu.be/8Ab3ArE8W3s?si=7MprB-mKxO0M4-A0)
 
 ## Desarrollo de juegos en 8 bits - Kevin Zurawel
 
-["Game Development in Eight Bits" by Kevin Zurawel](https://youtu.be/TPbroUDHG0s?si=clvg5je8GDoC4dMS)
+El desarrollo de software siempre ha estado limitado por el hardware en el
+que se va a ejecutar, pero como la mayoría de veces las computatadoras
+son mucho más poderosas de lo que necesitamos, no nos damos cuenta la mayoría
+de los desarrolladores de software.
 
-## The Mess We're In - Joe Armstrong
+El desarrollo de juegos para plataformas antiguas (claro, modernas en su tiempo)
+presentaba retos muy interesantes para los desarrolladores, de los cuáles
+podemos aprender sobre todo para tener idea de los compromisos que se
+tienen que hacer para lograr cosas increíbles para la época.
 
-["The Mess We're In" by Joe Armstrong](https://youtu.be/lKXe3HUG2l4?si=Z3Z6ZQZrQX6Z3Z6ZQZrQX6)
+Kevin Zurawel es un experto en desarrollo de juegos y actualmente tiene una
+página dedicada al desarrollo de juegos retro llamada [Famicom.party](https://famicom.party/).
 
-Esta plática fue sugerida por Copilot, y parece que está bien:...
-o
-## The Future of Programming - Bret Victor
+Si quieres aprender más sobre el desarrollo de software en condiciones
+extremadamente limitadas puedes verla aquí:
+[Game Development in Eight Bits](https://youtu.be/TPbroUDHG0s?si=clvg5je8GDoC4dMS)
 
-["The Future of Programming" by Bret Victor](https://youtu.be/8pTEmbeENF4?si=Z3Z6ZQZrQX6Z3Z6ZQZrQX6)
+## Haciendo fáciles las cosas difíciles - Julia Evans
+Puedes ver la plática en YouTube aquí: ["The Future of Programming" by Bret Victor](https://youtu.be/8pTEmbeENF4?si=Z3Z6ZQZrQX6Z3Z6ZQZrQX6)
+
