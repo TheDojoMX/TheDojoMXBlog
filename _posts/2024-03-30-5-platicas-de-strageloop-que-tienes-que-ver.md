@@ -1,6 +1,6 @@
 ---
 title: "5 pláticas de StrageLoop que tienes que ver"
-date: 2023-11-02
+date: 2024-03-30
 author: Héctor Patricio
 tags: talks charlas strangeloop software-engineering
 comments: true
@@ -84,5 +84,53 @@ extremadamente limitadas puedes verla aquí:
 [Game Development in Eight Bits](https://youtu.be/TPbroUDHG0s?si=clvg5je8GDoC4dMS)
 
 ## Haciendo fáciles las cosas difíciles - Julia Evans
-Puedes ver la plática en YouTube aquí: ["The Future of Programming" by Bret Victor](https://youtu.be/8pTEmbeENF4?si=Z3Z6ZQZrQX6Z3Z6ZQZrQX6)
+
+Saber explicar cosas complejas es una de las habilidades más importantes que
+se pueden tener como miembro de un equipo de desarrollo. [Julia Evans](https://jvns.ca/)
+es una de las mejores personas en el mundo en hacer esto.
+
+**"Algunas veces me tardo 10 años en aprender cosas básicas"**, dice Julia en
+esta conferencia, y creo que es algo con lo que todos nos podemos
+idenfificar, porque todos nos enfrentamos con este ripo de situaciones.
+
+Durante la plática, Julia analiza el comportamiento de herramientas
+que usamos continuamente, nos hace ver cómo tinen un comportamiento
+no esperado y cómo podemos mejorar nuestro **entendimiento**.
+
+También nos habla de la importancia de usar herramientas que reduzcan
+la carga cognitiva mediante permitirte la inspección detallada de lo que
+está pasando.
+
+Julia Evans es una gran contribuidora a la comunidad de desarrollo de
+software con sus explicaciones y herramientas esclarecedoras sobre
+temas comunes pero a la vez complejos del desarrollo de software.
+
+Si quieres aprender más sobre cómo simplificarte las cosas complejas 
+del desarrollo de software, puedes ver la charla aquí:
+[Making hard things easy](https://youtu.be/30YWsGDr8mA?si=8j32cj6MKGXRQRoX)
+
+
+## Una probadita de tipos dependientes - David Christiansen
+
+Los sistemas de tipos siempre han sido algo que causa fuertes reacciones
+en los programadores, sea en contra o a favor. Mi teoría es que la mayoría
+de las personas que los odian es porque no han (o hemos) trabajado con un buen
+sistema de tipos.
+
+Hay lenguajes con sistemas de tipos muy avanzados que te permiten de verdad
+hacer cosas útiles, y los más avanzados son los que tienen **sistemas de
+tipos dependientes**. Estos sistemas de tipos te permiten crear diseños con
+tus programas de tal manera que el compilador puede comprobar muchas cosas
+por adelantado.
+
+Si nunca has escuchado de ellos, esta plática es una muy buena introducción
+junto con una colección de lenguajes que los tienen.Puedes verla aquí:
+[A Little Taste of Dependent Types](https://youtu.be/VxINoKFm-S4?si=rG-zQi0P3Sl6fMSb).
+
+## Conclusión
+
+Aprender de los grandes presentadores y pensadores que han presentado en StrangeLoop
+es una gran idea que no tiene ningún costo. No te pierdas la oportunidad de dejar que
+te hagan pensar en cosas profundas de tu profesión, y que te lleven por lugares
+que tal vez ni siquiere habías pensado que existían.
 
