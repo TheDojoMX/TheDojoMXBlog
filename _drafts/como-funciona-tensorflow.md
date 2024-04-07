@@ -44,6 +44,7 @@ en **TensorFlow**. La operación es la siguiente:
 ```python
 Y = W * X + b
 ```
+
 Esta es la ecuación que un perceptrón simple. Vemos cómo la representa TensorFlow.
 Para que esto sea útil, cada una de las operaciones se hace sobre tensores, es decir,
 sobre un conjunto de datos numéricos de varias dimensiones.
@@ -56,5 +57,4 @@ operación:
 
 Puedes pensar en este grafo como una serie de nodos que representan cada uno una operación
 sobre TENSORES.
-
 
