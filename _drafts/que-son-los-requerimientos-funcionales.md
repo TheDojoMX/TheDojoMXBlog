@@ -25,3 +25,6 @@ La primera tarea como arquitecto de software tiene que ver con la de
 normalmente tiene unas pocas funciones principales, pero muchas tareas
 secundarias o terciarias que las soportan, y es por eso que descubrirlas
 y describirlas todas no es una tarea sencilla.
+
+
+## Cómo 
