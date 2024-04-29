@@ -35,7 +35,6 @@ de alto rendimiento com TPUs (Tensor Processing Units) de Google.
 Y es aquí donde entra lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
 llegamos a él y cómo lo ejecutamos después?
 
-
 ## Grafos de cómputo de TensorFlow
 
 Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su representación
@@ -52,9 +51,9 @@ sobre un conjunto de datos numéricos de varias dimensiones.
 ¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que representa esa
 operación:
 
-![Grafo de cómputo de TensorFlow](/assets/images/tensorflow-graph.png)
+![Grafo de cómputo de TensorFlow]()
 
+Puedes pensar en este grafo como una serie de nodos que representan cada uno
+una operación sobre TENSORES.
 
-Puedes pensar en este grafo como una serie de nodos que representan cada uno una operación
-sobre TENSORES.
-
+# TODO: Continuar con información más certera
