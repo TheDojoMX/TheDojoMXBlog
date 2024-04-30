@@ -51,9 +51,7 @@ sobre un conjunto de datos numéricos de varias dimensiones.
 ¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que representa esa
 operación:
 
-![Grafo de cómputo de TensorFlow]()
 
 Puedes pensar en este grafo como una serie de nodos que representan cada uno
-una operación sobre TENSORES.
+una operación sobre TENSORES, es decir, conjuntos de datos numéricos de más de dos dimensiones,
 
-# TODO: Continuar con información más certera
