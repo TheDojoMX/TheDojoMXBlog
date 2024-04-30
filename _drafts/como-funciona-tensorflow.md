@@ -4,7 +4,7 @@ date: 2024-03-08
 author: Héctor Patricio
 tags:
 comments: true
-excerpt: "Escribe aquí un buen resumen de tu artículo"
+excerpt: ""
 header:
   overlay_image: #image
   teaser: #image
