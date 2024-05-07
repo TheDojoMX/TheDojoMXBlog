@@ -69,3 +69,10 @@ Es la extensión más adecuada para soportar Elixir para Visual Studio Code.
 te ayuda a formatear tu código con la herramienta oficial de Elixir
 (`mix format`).
 
+Esto es básicamente todo lo que necesitas para empezar a trabajar en Elixir.
+Ahora sí empecemos con su sintaxis y características básicas.
+
+
+## Sintaxis y conceptos básicos
+
+Probablemente para este 
