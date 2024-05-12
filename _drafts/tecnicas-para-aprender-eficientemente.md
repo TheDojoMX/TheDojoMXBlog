@@ -18,3 +18,6 @@ hacer, pero es particularmente relevante para los desarrolladores de software.
 Es por eso que mientras más eficiente seas aprendiendo, tu carrera avanzará más
 rápido y serás más efectivo en el trabajo en general.
 
+En este artículo vamos a hablar de algunas técnicas que te van a ayudar a adquirir
+conocimiento de mnaera más eficiente.
+
