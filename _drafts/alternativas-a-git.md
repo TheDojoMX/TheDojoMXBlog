@@ -25,6 +25,10 @@ Hablemos de por qué es así y después veamos algunas alternativas interesantes
 
 Al igual que otros sistemas de control de versiones, Git nació como soporte al
 desarrollo de una de los proyectos de software más importantes: el kernel de
-Linux en 2005. Fue creado por **Linus Torvalds** y su objetivo era ser un sistema de apoyo para Linux...
+Linux en 2005. Fue creado por **Linus Torvalds**, al igual que Linux.
 
+Su objetivo no era ser una herramienta de uso masivo y fácil de usar, sino
+trabajar sin las limitantes de las herramientas que existían en ese momento.
+
+Aún así, por ser una herramienta bastante útil, ahora tenemos...
 
