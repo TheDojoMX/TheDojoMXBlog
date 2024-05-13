@@ -19,5 +19,11 @@ Es por eso que mientras más eficiente seas aprendiendo, tu carrera avanzará m�
 rápido y serás más efectivo en el trabajo en general.
 
 En este artículo vamos a hablar de algunas técnicas que te van a ayudar a adquirir
-conocimiento de mnaera más eficiente.
+conocimiento de manera más eficiente. Nos vamos a basar en varias ideas de expertos
+en educación y aprendizaje que aplican a muchas áreas de la vida, pero que para
+nosotros, los desarrolladores de software son particularmente útiles.
+
+Algunas ideas están sacadas de este artículo: 
+
+
 
