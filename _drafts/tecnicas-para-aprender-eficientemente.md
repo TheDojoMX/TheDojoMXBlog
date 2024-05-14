@@ -23,7 +23,10 @@ conocimiento de manera más eficiente. Nos vamos a basar en varias ideas de expe
 en educación y aprendizaje que aplican a muchas áreas de la vida, pero que para
 nosotros, los desarrolladores de software son particularmente útiles.
 
-Algunas ideas están sacadas de este artículo: 
+Algunas ideas están sacadas de este artículo de investigación de la ACM:[10 Things Software Developers Should Learn about Learning
+](https://dl.acm.org/doi/10.1145/3584859){:target="_blank"}.
 
+## Lo más básico: aprender es recordar
 
+## Aprender es entender
 
