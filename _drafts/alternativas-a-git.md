@@ -34,7 +34,10 @@ trabajar sin las limitantes de las herramientas que existían en ese momento.
 Aún así, por ser una herramienta bastante útil, ahora la tenemos como el
 estándar en versionmiento de código.
 
-## Fossil 
+## Fossil
+
+Fossil fue creado por el autor de SQLite, **Richard Hipp**.
+
 ## Pijul
 
 ## Conclusión
