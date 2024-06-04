@@ -36,7 +36,9 @@ estándar en versionmiento de código.
 
 ## Fossil
 
-Fossil fue creado por el autor de SQLite, **Richard Hipp**.
+Fossil fue creado por el autor de SQLite, **Richard Hipp**, y al igual que Git, está
+pensado para atender las necesidades de un proyecto de software libre, justamente
+SQLite.
 
 ## Pijul
 
