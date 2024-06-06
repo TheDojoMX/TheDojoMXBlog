@@ -56,7 +56,7 @@ del otro lado:
 
 Hagamos la primera prueba con Elixir: escribe cualquier operación matamática
 que harías con el lenguaje que conoces y presiona Enter. Cuando quieras terminar
-presciona `Ctrl + C` dos veces, esto te sacará del **iex**.
+presciona `Ctrl + C` dos veces, esto te sacará de **iex**.
 
 ### Editor de código
 
@@ -74,4 +74,7 @@ Ahora sí empecemos con su sintaxis y características básicas.
 
 ## Sintaxis y conceptos básicos
 
-Probablemente para este
+En este tutorial no vamos a explicar ningún concepto básico de programación
+que no sea específico de Elixir o de lenguajes funcionales. Tampoco es el
+objetivo que esto sea una referencia del lenguaje, sino subirte lo más pronto
+posible a crear programas que funcionen.
