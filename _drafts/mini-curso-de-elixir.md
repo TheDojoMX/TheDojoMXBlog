@@ -28,7 +28,7 @@ Ahora sí, empecemos.
 La instalación, como siempre, varía dependiendo de tu sistema operativo, puedes
 encontrar las instrucciones detalladas en la [página oficial](https://elixir-lang.org/install.html){:target="_blank"}.
 
-Pero antes de que te vayas, si estás en MacOs, puedes usar Homebrew con el
+Pero antes de que te vayas, si estás en Mac, puedes usar Homebrew con el
 siguiente comando:
 
 ```bash
@@ -42,20 +42,20 @@ sudo apt install erlang-dev elixir
 ```
 
 Para comprobar que lo tienes instalado, vamos usar una de las herramientas
-con las que más te vas a faliarizar en Elixir, **iex**. Escribe en tu terminal:
+con las que más te vas a familiarizar en Elixir, **iex**. Escribe en tu terminal:
 
 ```bash
 iex
 ```
 
-**iex** es el un REPL (Read-Eval-Print Loop) que te permite ejecutar código
+**iex** es un REPL (Read-Eval-Print Loop) que te permite ejecutar código
 en Elixir de manera interactiva. Si ves algo parecido a esto, ya estamos
 del otro lado:
 
 ![iex](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1714951708/Screenshot_2024-05-05_at_17.27.40_rtaz8c.png){: .align-center}
 
 Hagamos la primera prueba con Elixir: escribe cualquier operación matamática
-que harías con el lenguaje que conoces y escribe Enter. Cuando quieras terminar
+que harías con el lenguaje que conoces y presiona Enter. Cuando quieras terminar
 presciona `Ctrl + C` dos veces, esto te sacará del **iex**.
 
 ### Editor de código
@@ -72,7 +72,6 @@ te ayuda a formatear tu código con la herramienta oficial de Elixir
 Esto es básicamente todo lo que necesitas para empezar a trabajar en Elixir.
 Ahora sí empecemos con su sintaxis y características básicas.
 
-
 ## Sintaxis y conceptos básicos
 
-Probablemente para este 
+Probablemente para este
