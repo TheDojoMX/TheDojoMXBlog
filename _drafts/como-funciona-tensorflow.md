@@ -1,18 +1,19 @@
 ---
-title: "¿Cómo funciona TensorFlow?"
-date: 2024-03-08
+title: ¿Cómo funciona TensorFlow?
+date: 2024-03-08T00:00:00.000Z
 author: Héctor Patricio
-tags:
+tags: null
 comments: true
-excerpt: ""
+excerpt: >-
+  TensorFlow permite crear modelos de aprendizaje automático sin que te tengas
+  que plear con los cáluculos, hablemos de cómo lo logra.
 header:
-  overlay_image: #image
-  teaser: #image
-  overlay_filter: rgba(0, 0, 0, 0.5)
+  overlay_image: null
+  teaser: null
+  overlay_filter: 'rgba(0, 0, 0, 0.5)'
 ---
-
 TensorFlow es una de las herramientas más populares e influyentes
-en el mundo de la inteligencia artificial. En este artículo vamos a ver 
+en el mundo de la inteligencia artificial. En este artículo vamos a ver
 qué es exactamente y cómo funciona.
 
 ## ¿Qué es Tensoflow?
@@ -50,7 +51,6 @@ sobre un conjunto de datos numéricos de varias dimensiones.
 
 ¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que representa esa
 operación:
-
 
 Puedes pensar en este grafo como una serie de nodos que representan cada uno
 una operación sobre TENSORES, es decir, conjuntos de datos numéricos de más de dos dimensiones,
