@@ -49,7 +49,7 @@ Pijul es un sistema de control de versiones basado en la troría de parches (pat
 y que está pensado para ser matemáticamente correcto. Además, a diferencia de Git, sí
 está pensado para ser lo más fácil de usar sin cometer errores catastróficos.
 
-Puedes encontrarlo en [pijul.org](https://pijul.org/).
+Puedes encontrarlo en [pijul.org](https://pijul.org/), te recomiendo que si quieres probar algo fundamentalmente diferente a Git, pero con las mismas funciones externas, le des una oportunidad.
 
 ## Conclusión
 
