@@ -1,19 +1,20 @@
 ---
-title: "Mini-curso de Elixir"
-date: 2024-05-05
+title: Mini-curso de Elixir
+date: 2024-05-05T00:00:00.000Z
 author: Héctor Patricio
 tags: elixir curso beam
 comments: true
-excerpt: "En este curso aprenderás lo básico de Elixir para empezar a hacer programas útiles."
+excerpt: >-
+  En este curso aprenderás lo básico de Elixir para empezar a hacer programas
+  útiles.
 header:
-  overlay_image: #image
-  teaser: #image
-  overlay_filter: rgba(0, 0, 0, 0.5)
+  overlay_image: null
+  teaser: null
+  overlay_filter: 'rgba(0, 0, 0, 0.5)'
 ---
-
-En este artículo vamos aprender Elixir desde cero. Asumimos que ya
-sabes programar en algún otro lenguaje de programación, sobre todo
-algún orientado a objetos, ya que ocuparamos conceptos de estos
+En este artículo vamos aprender el lenguaje Elixir desde cero. Asumimos que ya
+sabes programar, sobre todo
+algún lenguaje orientado a objetos, ya que ocuparamos conceptos de estos
 para hacer compraciones y explicar algunas cosas.
 
 Si quieres saber por qué te conviene aprender Elixir, tenemos
@@ -21,7 +22,7 @@ Si quieres saber por qué te conviene aprender Elixir, tenemos
 Además, si necesitas recursos más extensos, este
 artículo te puede dar algunos: [Aprendiendo Elixir](https://hectorip.com/2018/12/27/aprendiendo-elixir.html){:target="_blank"}.
 
-Ahora sí, empecemos.
+Como resumen, Elixir es un lenguaje moderno que combina productivdad con rendimiento. Ahora sí, empecemos.
 
 ## Instalación y preparación del entorno
 
@@ -78,3 +79,4 @@ En este tutorial no vamos a explicar ningún concepto básico de programación
 que no sea específico de Elixir o de lenguajes funcionales. Tampoco es el
 objetivo que esto sea una referencia del lenguaje, sino subirte lo más pronto
 posible a crear programas que funcionen.
+

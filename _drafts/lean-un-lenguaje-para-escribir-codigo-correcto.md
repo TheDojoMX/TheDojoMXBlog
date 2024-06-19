@@ -18,6 +18,6 @@ La verificación de sistemas es muy importante para lograr aplicaciones que cump
 
 ## ¿Qué es Lean?
 
-Lean es un lenguaje de programación para crear sistemas verificados. También se les conoce como
-probadores de teoremas asistidos por computadora. Estos sistemas son capaces de verificar propiedades de un programa.
+**Lean** es un lenguaje de programación para crear sistemas verificados. También se les conoce como
+probadores de teoremas, porque una de sus funciones es ayudarte a verificar las propiedades de un programa de manera certera. Fue creado por Leonardo de Moura y Soonho Kong en Microsoft Research.
 
