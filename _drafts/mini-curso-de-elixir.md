@@ -22,7 +22,7 @@ Si quieres saber por qué te conviene aprender Elixir, tenemos
 Además, si necesitas recursos más extensos, este
 artículo te puede dar algunos: [Aprendiendo Elixir](https://hectorip.com/2018/12/27/aprendiendo-elixir.html){:target="_blank"}.
 
-Como resumen, Elixir es un lenguaje moderno que combina productivdad con rendimiento. Ahora sí, empecemos.
+Elixir es un lenguaje moderno que combina productivdad con rendimiento. Ahora sí, empecemos.
 
 ## Instalación y preparación del entorno
 
@@ -76,7 +76,7 @@ Ahora sí empecemos con su sintaxis y características básicas.
 ## Sintaxis y conceptos básicos
 
 En este tutorial no vamos a explicar ningún concepto básico de programación
-que no sea específico de Elixir o de lenguajes funcionales. Tampoco es el
+que no sea específico de Elixir o de lenguajes funcionales (en realidad creo que no existe ningún concepto exclusivo completamente de Elixir). Tampoco es el
 objetivo que esto sea una referencia del lenguaje, sino subirte lo más pronto
 posible a crear programas que funcionen.
 
