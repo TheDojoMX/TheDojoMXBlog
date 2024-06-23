@@ -14,11 +14,11 @@ En este blog hablamos de los siguientes temas:
 
 Intentamos mejjorar el ecosistema de desarrollo en español.
 
-### ¿A quiénes está dirigido este blog?
+## ¿A quiénes está dirigido este blog?
 
 Personas interesadas en el desarrollo de software en general, pero sobre todo que quieran desarrollar sus habilidades en los temas mencionados arriba.
 
-### Publicaciones
+## Publicaciones
 
 Este es un blog open source. Si quieres participar con un artículo manda un PR. Serán considerados los artículos con las siguientes características:
 

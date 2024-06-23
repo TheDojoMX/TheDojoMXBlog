@@ -552,7 +552,7 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_200,w_512/v1670303988/DALL_E_2022-12-05_13.19.43_-_rust_on_a_gold_wall_digital_art_illustration_cinematic_m5cplm.png"
       },{
         "title": "¿Cómo aprender Rust? Recursos para empezar",
-        "excerpt":"En el artículo pasado hablamos de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo. Ahora hablemos de cómo empezar. Empecemos con los recursos en español y sigamos con recursos en inglés. Guía oficial En la página oficial de Rust puedes encontrar una página que te da...","categories": [],
+        "excerpt":"En el artículo pasado hablamos de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo. Ahora hablemos de cómo empezar, primero veamos los recursos en español y sigamos con recursos en inglés. Guía oficial En la página oficial de Rust puedes encontrar una página que te da...","categories": [],
         "tags": ["rust","aprendizaje","cursos"],
         "url": "/2022/12/18/como-aprender-rust.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1024/v1671168726/DALL_E_2022-12-06_16.53.33_-_mandelbrot_set_fractal_made_of_rust_on_a_gold_wall_digital_art_illustration_cinematic_t5cz0h.png"
