@@ -34,4 +34,7 @@ bytecode que puede ser ejecutado por la JVM. Si no sabes que es el bytecode, hab
 
 ## Las etapas de un intérprete
 
+Como un intérprete trata directamente con el código fuente así que
+es leerlo para transformalo en un formato ejecutable. Entonces,
+
 
