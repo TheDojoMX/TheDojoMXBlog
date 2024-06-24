@@ -54,8 +54,8 @@ Puedes encontrarlo en [pijul.org](https://pijul.org/), te recomiendo que si quie
 ## Conclusión
 
 No vamos a reemplazar a Git en el corto plazo y probablmente nunca lo hagamos
-por lo extendido que está su uso, pero es bueno saber que existen alternativas
-si tienes la opción de elegir otras herramientas. Además estas alternativas
-nos enseñan cosas interesantes sobre el desarrollo de software, como que casi
+por lo extendido que está su uso (piensa en el efecto Lindsey), pero es bueno
+saber que existen alternativas. Estas herramientas
+nos enseñan cosas interesantes sobre el desarrollo de software, por ejemplo, que casi
 siempre hay más de una forma de lograr lo que queremos.
 
