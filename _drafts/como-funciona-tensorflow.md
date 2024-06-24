@@ -13,15 +13,15 @@ header:
   overlay_filter: 'rgba(0, 0, 0, 0.5)'
 ---
 TensorFlow es una de las herramientas más populares e influyentes
-en el mundo de la inteligencia artificial. En este artículo vamos a ver
+en el campo de la inteligencia artificial. En este artículo vamos a ver
 qué es exactamente y cómo funciona.
 
 ## ¿Qué es Tensoflow?
 
 Para crear modelos de inteligencia artificial, hay que hacer muchos cálculos  
 matemáticos, la mayoría de ellos son operaciones de multiplicación de matrices.
-Estos cálculos son muy pesados para un procesador tradicional y por eso se
-requiere de toda la ayuda posible para hacer estos cálculos más eficientes.
+Estos cálculos son no son eficientes en un procesador tradicional y por eso se
+requiere de toda la ayuda posible para hacer estos cálculos menos costosos.
 
 Es aquí donde entra TensorFlow, una biblioteca que permite _representar_ estos
 cálculos mediante grafos de operaciones y después ejecutarlos en procesadores
@@ -54,4 +54,25 @@ operación:
 
 Puedes pensar en este grafo como una serie de nodos que representan cada uno
 una operación sobre TENSORES, es decir, conjuntos de datos numéricos de más de dos dimensiones,
+
+## Cómo se ejecuta un grafo de cómputo
+
+## TensorFlow y Keras
+
+## TensorFlow vs PyTorch
+
+## Tensoflow y MLIR
+
+MLIR es una herramienta para crear compiladores creada por el mismo equipo
+que hizo LLVM, la infraestructura para compiladores que está detrás de
+la mayoría de los compiladores modernos.
+
+La especialidad de MLIR es hacer traducciones
+
+## Tensorflow y su relación con el hardware
+
+## Conclusión
+
+Espero que lo que hablamos sobre TensorFlow en este artículo te haya ayudado
+a entenderlo un poco más. En otro artículo hablaremos de su competidor más directo: PyTorch.
 
