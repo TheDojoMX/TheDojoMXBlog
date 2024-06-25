@@ -59,7 +59,11 @@ una operación sobre TENSORES, es decir, conjuntos de datos numéricos de más d
 
 ## TensorFlow y Keras
 
+Keras te ayuda declarar redes neuronales de manera sencilla.
+
 ## TensorFlow vs PyTorch
+
+Pytorch es una alternativa a TensoFlow con un modelos de programación más
 
 ## Tensoflow y MLIR
 
@@ -67,12 +71,17 @@ MLIR es una herramienta para crear compiladores creada por el mismo equipo
 que hizo LLVM, la infraestructura para compiladores que está detrás de
 la mayoría de los compiladores modernos.
 
-La especialidad de MLIR es hacer traducciones
+La especialidad de MLIR es hacer traducciones para arquitecturas de hardware no
+traciionales,usando un lenguaje intermedio multicapa (al que le puedes agregar)
+más plugins para diferentes arquitecturas.
 
 ## Tensorflow y su relación con el hardware
+
+Después de la sección anterior, es muy probable que la relación de TF con el hardware quede muy clara: TensorFlow ayuda a que se pueda compilar de mejor manera el código con los cálculos
+para poder ejecutarlo en el hardware especializado.
 
 ## Conclusión
 
 Espero que lo que hablamos sobre TensorFlow en este artículo te haya ayudado
-a entenderlo un poco más. En otro artículo hablaremos de su competidor más directo: PyTorch.
+a entenderlo un poco más. En otro artículo hablaremos de su competidor más directo: **PyTorch**.
 
