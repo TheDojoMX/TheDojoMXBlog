@@ -32,4 +32,14 @@ bases de datos analíticas. Ya te imaginarás lo mucho que eso puede
 ayudarte para empezar a hacer análisis de datos pesados en tus aplicaciones
 o aplicaciones de análisis de datos puros con poco esfuerzo.
 
+DuckDB fue iniciado por...
+
+## ¿Cómo funciona DuckDB?
+
+## Empezando con DuckDB
+
+## Ejercicio: 100M row challenge
+
+o
+
 
