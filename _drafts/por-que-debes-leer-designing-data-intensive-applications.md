@@ -11,4 +11,15 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-El libro que traducir
+Uno de los libros más recomendados para todos los desarrolladores modernos
+es "Designing Data-intensive Applications" de Martin Kleppmann. En este artículo corto
+vamos a hablar de por qué es un libro que vale la pena.
+
+## ¿Quién es Martin Kleppmann?
+
+[Martin](https://martin.kleppmann.com/) es un desarrollador, investigador, escritor y profesor de ciencias de la computación bastante prolífico.
+Actualemnte trabaja en la Universidad de Cambridge y ha trabajado en empresas como LinkedIn y Rapportive.
+
+Es también al autor de [Secret Colors](https://roundrobin.pub/). Un libro de criptografía de llave pública y llave privada para niños.
+
+## ¿De qué trata Designing Data-intensive Applications?
