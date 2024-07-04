@@ -23,3 +23,10 @@ Actualemnte trabaja en la Universidad de Cambridge y ha trabajado en empresas co
 Es también al autor de [Secret Colors](https://roundrobin.pub/). Un libro de criptografía de llave pública y llave privada para niños.
 
 ## ¿De qué trata Designing Data-intensive Applications?
+
+El libro tiene dos partes:
+
+1. Primero habla de los principios fundamentales de los sistemas que hacen
+uso intensivo de datos.
+
+## Conclusión
