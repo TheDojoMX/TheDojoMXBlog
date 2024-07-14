@@ -34,10 +34,28 @@ bytecode que puede ser ejecutado por la JVM. Si no sabes que es el bytecode, hab
 
 ## Las etapas de un intérprete
 
+Para ejecutar el código de un programa, podemos dividir el tracajo en varios pasos
+
 ### Parsing
+
+Esta etapa se encarga de leer el código fuente y convertirlo en una estructura
+de datos que pueda ser ejecutada más fácilmente. La primera etapa consiste en
+pasar el texto a una secuencia de valores que representan un tipo de palabra
+en el lenguaje, llamados comunmente "tokens", de ahí que a este proceso le
+llamemos **"tokenización"**.
+
+Después, este conjunto de _tokens_ es convertido en una estructura de datos
+llamada el **Árbol de Sintaxis Abstracta** o **AST** (Abstract Syntax Tree).
 
 ### Construcción del AST
 
 ### Ejecución
 
 ### Opcional: optimización
+
+#### JIT
+
+Una forma de optimización usada por los intérpretes y máquinas virtuales es lo
+que se conoce como **Just In Time Compilation**
+
+## Conclusión
