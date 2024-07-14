@@ -49,6 +49,14 @@ llamada el **Árbol de Sintaxis Abstracta** o **AST** (Abstract Syntax Tree).
 
 ### Construcción del AST
 
+Ya con los tokens que representan el programa, tenemos que construir la
+estructura de datos que representa las operaciones que vamos a ejecutar, **el
+AST**.
+
+Esta estructura se parece a un árbol, con cada nodo repreentando una operación
+que a su vez puede estar compuesta de más operaciones, es decir, siendo una
+estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo...
+
 ### Ejecución
 
 ### Opcional: optimización
