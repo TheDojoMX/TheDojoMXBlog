@@ -14,13 +14,14 @@ header:
     https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg
   overlay_filter: 'rgba(0, 0, 0, 0.5)'
 ---
+
 Git es una herramienta que se considera *obligatoria* para los desarrolladores
 modernos por ser el programa usado para versionamiento de código usado por
 la mayoría de los proyectos.
 
 Pero no es ningún secreto que Git es una herramienta difícil de comprender y
-que el 90% de los desarrolladores le dan el uso más básico temiendo romper algo
-y tener que usar comandos más avanzados.
+que el 90% de los desarrolladores le dan **el uso más básico**, temiendo romper algo
+y por eso tener que usar comandos más avanzados.
 
 Hablemos de por qué es así y después veamos algunas alternativas interesantes.
 
@@ -28,11 +29,15 @@ Hablemos de por qué es así y después veamos algunas alternativas interesantes
 
 Al igual que otros sistemas de control de versiones, Git nació como soporte al
 desarrollo de uno de los proyectos de software más importantes de todos los
-tiempos: el kernel de
-Linux en 2005. Fue creado por **Linus Torvalds**, al igual que Linux.
+tiempos: el kernel de Linux. Fue creado por **Linus Torvalds**.
 
 Su objetivo no era ser una herramienta de uso masivo y fácil de usar, sino
 trabajar sin las limitantes de las herramientas que existían en ese momento.
+Y claramente, Linus lo creó a su manera. Algo interesante es que se llama
+"Git" porque en inglés británico es una palabra despectiva que se usa para
+llamar a alguien tonto o desagradable. Linus nombra sus proyectos como a sí
+mismo, y como cualquiera lo podría llamar así a él, decidió ponerle ese nombre
+a su sistema de manejo de versiones.
 
 Aún así, por ser una herramienta bastante útil, ahora la tenemos como el
 estándar en versionmiento de código.
@@ -58,4 +63,3 @@ por lo extendido que está su uso (piensa en el efecto Lindsey), pero es bueno
 saber que existen alternativas. Estas herramientas
 nos enseñan cosas interesantes sobre el desarrollo de software, por ejemplo, que casi
 siempre hay más de una forma de lograr lo que queremos.
-
