@@ -39,12 +39,16 @@ llamar a alguien tonto o desagradable. Linus nombra sus proyectos como a sí
 mismo, y como cualquiera lo podría llamar así a él, decidió ponerle ese nombre
 a su sistema de manejo de versiones.
 
-Aún así, por ser una herramienta bastante útil, ahora la tenemos como el
+**Git** empezó a ser usado por la comunidad de Linux en 2005 y después por otros
+proyectos Open Source, pero su éxito se disparó cuando en 2008 surgió GitHub
+que facilitó su uso. Por ser una herramienta tan útil, ahora la tenemos como el
 estándar en versionmiento de código.
+
+Pero no es el único sistema de control de versiones moderno, hablemos de dos alternativas.
 
 ## Fossil
 
-Fossil fue creado por el autor de SQLite, **Richard Hipp**, y al igual que Git, está
+Fossil fue creado por el autor de SQLite, [**Richard Hipp**](https://www.hwaci.com/drh/), y al igual que Git, está
 pensado para atender las necesidades de un proyecto de software libre, justamente
 SQLite.
 
