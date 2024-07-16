@@ -48,10 +48,14 @@ Pero no es el único sistema de control de versiones moderno, hablemos de dos al
 
 ## Fossil
 
-Fossil fue creado por el autor de SQLite, [**Richard Hipp**](https://www.hwaci.com/drh/), y al igual que Git, está
-pensado para atender las necesidades de un proyecto de software libre, justamente
-SQLite.
+Fossil fue creado por el autor de SQLite, [**Richard Hipp**](https://www.hwaci.com/drh/), y al igual que Git, está pensado para soportar a este proyecto de software libre, el principal de su Hipp.
 
+Al buscar un sistema de control de versiones moderno, Richard no encontró nada que lo convenciera
+al cien por ciento, por lo que decidió crear Fossil, con las siguientes características:
+
+1. **Integración de Wiki y Tickets**: Fossil tiene incluye estas herramientas a las que Hipp y
+su equipo estaban acostumbrados.
+  
 ## Pijul
 
 Pijul es un sistema de control de versiones basado en la troría de parches (patch theory)
