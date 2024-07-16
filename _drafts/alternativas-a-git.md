@@ -55,7 +55,10 @@ al cien por ciento, por lo que decidió crear Fossil, con las siguientes caracte
 
 1. **Integración de Wiki y Tickets**: Fossil tiene incluye estas herramientas a las que Hipp y
 su equipo estaban acostumbrados.
-  
+2.
+
+Puedes encontrar más información en [fossil-scm.org](https://fossil-scm.org/).
+
 ## Pijul
 
 Pijul es un sistema de control de versiones basado en la troría de parches (patch theory)
