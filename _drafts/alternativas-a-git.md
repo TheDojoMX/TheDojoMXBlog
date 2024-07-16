@@ -44,20 +44,26 @@ proyectos Open Source, pero su éxito se disparó cuando en 2008 surgió GitHub
 que facilitó su uso. Por ser una herramienta tan útil, ahora la tenemos como el
 estándar en versionmiento de código.
 
-Pero no es el único sistema de control de versiones moderno, hablemos de dos alternativas.
+Pero no es el único sistema de control de versiones moderno, hablemos de
+dos alternativas.
 
 ## Fossil
 
-Fossil fue creado por el autor de SQLite, [**Richard Hipp**](https://www.hwaci.com/drh/), y al igual que Git, está pensado para soportar a este proyecto de software libre, el principal de su Hipp.
+Fossil fue creado por el autor de SQLite, [**Richard Hipp**](https://www.hwaci.com/drh/), y al igual que Git,nació
+para soportar a este proyecto de software libre, el principal de su Hipp.
 
 Al buscar un sistema de control de versiones moderno, Richard no encontró nada que lo convenciera
 al cien por ciento, por lo que decidió crear Fossil, con las siguientes características:
 
 1. **Integración de Wiki y Tickets**: Fossil tiene incluye estas herramientas a las que Hipp y
 su equipo estaban acostumbrados.
-2.
+2. **Foro y chat**: Fossil está pensado para también ser el centro de conversación del proyecto.
+3. **Autosync**: permite que los cambios se sincronicen automáticamente sin tener que andar haciendo
+magia con las ramas y los commits.
 
-Puedes encontrar más información en [fossil-scm.org](https://fossil-scm.org/).
+Puedes encontrar más información en [fossil-scm.org](https://fossil-scm.org/), para instalarlo
+por tu cuenta. Pero también existe una versión hosteada en la que de manera gratuita podrás
+tener el servicio de Fossil, equivalente a GitHub: [Chisel](https://chiselapp.com/).
 
 ## Pijul
 
@@ -74,3 +80,4 @@ por lo extendido que está su uso (piensa en el efecto Lindsey), pero es bueno
 saber que existen alternativas. Estas herramientas
 nos enseñan cosas interesantes sobre el desarrollo de software, por ejemplo, que casi
 siempre hay más de una forma de lograr lo que queremos.
+ojalá que en el futuro, Git tome algunas de las ideas de estos proyectos y
