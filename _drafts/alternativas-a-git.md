@@ -61,9 +61,15 @@ su equipo estaban acostumbrados.
 3. **Autosync**: permite que los cambios se sincronicen automáticamente sin tener que andar haciendo
 magia con las ramas y los commits.
 
-Puedes encontrar más información en [fossil-scm.org](https://fossil-scm.org/), para instalarlo
-por tu cuenta. Pero también existe una versión hosteada en la que de manera gratuita podrás
-tener el servicio de Fossil, equivalente a GitHub: [Chisel](https://chiselapp.com/).
+Personalmente, me gusta mucho la idea de tener todo integrado en un mismo
+sistema, y pienso que el que sistemas como Jira y Confluence se integren directamente
+con GitHub, Bitbucket y cosas similares, es una señal de que esta integración
+es un muy buena idea que ayuda a que el proceso de software sea más fluido.
+
+Puedes encontrar más información en [fossil-scm.org](https://fossil-scm.org/),
+para instalarlo por tu cuenta. Pero también existe una versión hosteada en la
+que de manera gratuita podrás tener el servicio de Fossil, equivalente a
+GitHub: [Chisel](https://chiselapp.com/).
 
 ## Pijul
 
