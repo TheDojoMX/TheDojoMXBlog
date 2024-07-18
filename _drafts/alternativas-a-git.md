@@ -73,9 +73,10 @@ GitHub: [Chisel](https://chiselapp.com/).
 
 ## Pijul
 
-Pijul es un sistema de control de versiones basado en la troría de parches (patch theory)
-y que está pensado para ser matemáticamente correcto. Además, a diferencia de Git, sí
-está pensado para ser lo más fácil de usar sin cometer errores catastróficos.
+Pijul es un sistema de control de versiones pensado para ser lo más fácil de usar.
+Tiene un fundamento matemático: la teoría de parches (patch theory), lo cuál te da
+garantías interesantes, como la facilidad de uso y la reducción de errores
+catastróficos.
 
 Puedes encontrarlo en [pijul.org](https://pijul.org/), te recomiendo que si quieres probar algo fundamentalmente diferente a Git, pero con las mismas funciones externas, le des una oportunidad.
 
