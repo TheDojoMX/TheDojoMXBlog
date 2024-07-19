@@ -87,4 +87,5 @@ por lo extendido que está su uso (piensa en el efecto Lindsey), pero es bueno
 saber que existen alternativas. Estas herramientas
 nos enseñan cosas interesantes sobre el desarrollo de software, por ejemplo, que casi
 siempre hay más de una forma de lograr lo que queremos.
-ojalá que en el futuro, Git tome algunas de las ideas de estos proyectos y
+ojalá que en el futuro, Git tome algunas de las ideas de estos proyectos y mejore su
+experiencia de usuario.
