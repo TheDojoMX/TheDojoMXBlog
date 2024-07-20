@@ -1,4 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-06-22T22:35:09-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">5 pláticas de StrageLoop que tienes que ver</title><link href="https://blog.thedojo.mx/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html" rel="alternate" type="text/html" title="5 pláticas de StrageLoop que tienes que ver" /><published>2024-03-30T00:00:00-06:00</published><updated>2024-03-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver</id><content type="html" xml:base="https://blog.thedojo.mx/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html"><![CDATA[<p><em>StrangeLoop</em> fue una de las mejores conferencias de tecnología del mundo
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-07-19T23:19:06-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Alternativas a Git</title><link href="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html" rel="alternate" type="text/html" title="Alternativas a Git" /><published>2024-07-18T18:00:00-06:00</published><updated>2024-07-18T18:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/07/18/alternativas-a-git</id><content type="html" xml:base="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html"><![CDATA[<p>Git es una herramienta que se considera <em>obligatoria</em> para los desarrolladores
+modernos por ser el programa usado para versionamiento de código usado por
+la mayoría de los proyectos.</p>
+
+<p>Pero no es ningún secreto que Git es una herramienta difícil de comprender y
+que el 90% de los desarrolladores le dan <strong>el uso más básico</strong>, temiendo romper algo
+y por eso tener que usar comandos más avanzados.</p>
+
+<p>Hablemos de por qué es así y después veamos algunas alternativas interesantes.</p>
+
+<h2 id="los-orígenes-de-git">Los orígenes de Git</h2>
+
+<p>Al igual que otros sistemas de control de versiones, Git nació como soporte al
+desarrollo de uno de los proyectos de software más importantes de todos los
+tiempos: el kernel de Linux. Fue creado por <strong>Linus Torvalds</strong>.</p>
+
+<p>Su objetivo no era ser una herramienta de uso masivo y fácil de usar, sino
+trabajar sin las limitantes de las herramientas que existían en ese momento.
+Y claramente, Linus lo creó a su manera. Algo interesante es que se llama
+“Git” porque en inglés británico es una palabra despectiva que se usa para
+llamar a alguien tonto o desagradable. Linus nombra sus proyectos como a sí
+mismo, y como cualquiera lo podría llamar así a él, decidió ponerle ese nombre
+a su sistema de manejo de versiones.</p>
+
+<p><strong>Git</strong> empezó a ser usado por la comunidad de Linux en 2005 y después por otros
+proyectos Open Source, pero su éxito se disparó cuando en 2008 surgió GitHub
+que facilitó su uso. Por ser una herramienta tan útil, ahora la tenemos como el
+estándar en versionmiento de código.</p>
+
+<p>Pero no es el único sistema de control de versiones moderno, hablemos de
+dos alternativas.</p>
+
+<h2 id="fossil">Fossil</h2>
+
+<p>Fossil fue creado por el autor de SQLite, <a href="https://www.hwaci.com/drh/"><strong>Richard Hipp</strong></a>, y al igual que Git,nació
+para soportar a este proyecto de software libre, el principal de su Hipp.</p>
+
+<p>Al buscar un sistema de control de versiones moderno, Richard no encontró nada que lo convenciera
+al cien por ciento, por lo que decidió crear Fossil, con las siguientes características:</p>
+
+<ol>
+  <li><strong>Integración de Wiki y Tickets</strong>: Fossil tiene incluye estas herramientas a las que Hipp y
+su equipo estaban acostumbrados.</li>
+  <li><strong>Foro y chat</strong>: Fossil está pensado para también ser el centro de conversación del proyecto.</li>
+  <li><strong>Autosync</strong>: permite que los cambios se sincronicen automáticamente sin tener que andar haciendo
+magia con las ramas y los commits.</li>
+</ol>
+
+<p>Personalmente, me gusta mucho la idea de tener todo integrado en un mismo
+sistema, y pienso que el que sistemas como Jira y Confluence se integren directamente
+con GitHub, Bitbucket y cosas similares, es una señal de que esta integración
+es un muy buena idea que ayuda a que el proceso de software sea más fluido.</p>
+
+<p>Puedes encontrar más información en <a href="https://fossil-scm.org/">fossil-scm.org</a>,
+para instalarlo por tu cuenta. Pero también existe una versión hosteada en la
+que de manera gratuita podrás tener el servicio de Fossil, equivalente a
+GitHub: <a href="https://chiselapp.com/">Chisel</a>.</p>
+
+<h2 id="pijul">Pijul</h2>
+
+<p>Pijul es un sistema de control de versiones pensado para ser lo más fácil de usar.
+Tiene un fundamento matemático: la teoría de parches (patch theory), lo cuál te da
+garantías interesantes, como la facilidad de uso y la reducción de errores
+catastróficos. Combina las dos formas principales en las que se han creado sistemas
+control de versiones: los sistemas basados en spapshots (como la mayoría de los
+sistemas de control de versiones más conocidos, incluido Git) y los sistemas
+basados en parches (como <a href="https://darcs.net/">Darcs</a>, un SVC poco conocido pero
+más fácil de usar).</p>
+
+<p>Los sistemas basados en snapshots son más rápidos pero más frágiles y difíciles de
+usar y los basado en parches son lentos. Es por eso que Pijul cobina lo mejor de ambos
+tipos de sistemas y mientras se mantiene lo suficientemente rápido sigue siendo fácil
+de usar incluso en situaciones en las que Git se vuelve complejo, como en merges,
+conflictos y cherry-picks. En un post posterior hablaremos ge Pijul.</p>
+
+<p>Puedes encontrarlo en <a href="https://pijul.org/">pijul.org</a>, te recomiendo
+que si quieres probar algo fundamentalmente diferente a Git, pero con las mismas
+funciones externas, le des una oportunidad.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>No vamos a reemplazar a Git en el corto plazo y probablmente nunca lo hagamos
+por lo extendido que está su uso (piensa en el efecto Lindsey), pero es bueno
+saber que existen alternativas. Estas herramientas
+nos enseñan cosas interesantes sobre el desarrollo de software, como que casi
+siempre hay más de una forma de lograr lo que queremos.
+Ojalá que en el futuro, Git tome algunas de las ideas de estos proyectos y mejore su
+experiencia de usuario.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="git" /><category term="version-control" /><category term="fossil" /><category term="pijul" /><summary type="html"><![CDATA[Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.]]></summary></entry><entry><title type="html">5 pláticas de StrageLoop que tienes que ver</title><link href="https://blog.thedojo.mx/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html" rel="alternate" type="text/html" title="5 pláticas de StrageLoop que tienes que ver" /><published>2024-03-30T00:00:00-06:00</published><updated>2024-03-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver</id><content type="html" xml:base="https://blog.thedojo.mx/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html"><![CDATA[<p><em>StrangeLoop</em> fue una de las mejores conferencias de tecnología del mundo
 porque en ella se tratan temas poco comunes relacionados con la
 computación, el desarrollo de software e incluso el arte, y lo mejor: la
 combinación entre entras cosas.</p>
@@ -787,81 +874,4 @@ tienen un camino en la filosofía de la computación, así que si quieres desarr
 
 <h2 id="conclusión">Conclusión</h2>
 
-<p>La matriz del conocimiento nos ayuda a poner los pies en la tierra respecto a los riesgos y lo que de verdad podemos considerar que sabemos. Úsala para planear tus proyectos, escoger tu tecnología y proteger tus sistemas contra cosas que pueden ser catastróficas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="conocimiento" /><category term="epistemología" /><summary type="html"><![CDATA[La principal trae de un desarrollador es representar el conocimiento en procesos computacionales. Veamos una herramienta que te puede ayudar a administrar mejor ese conocimiento.]]></summary></entry><entry><title type="html">Sigue el ciclo de la creatividad</title><link href="https://blog.thedojo.mx/2023/06/27/sigue-el-ciclo-de-la-creatividad.html" rel="alternate" type="text/html" title="Sigue el ciclo de la creatividad" /><published>2023-06-27T00:00:00-06:00</published><updated>2023-06-27T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/27/sigue-el-ciclo-de-la-creatividad</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/27/sigue-el-ciclo-de-la-creatividad.html"><![CDATA[<p>Hay algunas personas que creen que el desarrollo de software sólo trata de resolver problemas analíticamente, pero lo cierto es que para encontrar soluciones siempre se requiere de creatividad.</p>
-
-<p>Sin embargo, muchas veces pensamos que la creatividad como desarrolladores de software no es nuestro fuerte, pero no hay nada más lejos de la realidad. Si te has dedicado exitosamente a esto por un tiempo, has demostrado que eres creativo o creativa, sólo que no de la manera que se considera tradicionalmente, eso que tiene que ver con el arte, la belleza y otras cosas.</p>
-
-<p>Tu creatividad generalmente se demuestra en la aplicación y mezcla de ideas para resolver problemas en nuevas situaciones.</p>
-
-<p>En el libro <a href="https://kadavy.medium.com/mind-management-not-time-management-25ebd3a58dc6"><strong>“Mind Management, Not Time Management”</strong> de David Kadavy</a>, se habla de un ciclo de creatividad y en este artículo lo quiero aplicar a nuestro trabajo de desarrollo de software.</p>
-
-<h2 id="el-ciclo-de-la-creatividad">El ciclo de la creatividad</h2>
-
-<p>Creo que esto no te va enseñar nada nuevo, porque probablemente lo <em>has vivido</em> muchas veces. Pero vamos a ponerle estructura y nombres a los diferentes pasos para que podamos replicarlo de manera más consciente.</p>
-
-<p>El ciclo de la creatividad está compuesto por cuatro fases:</p>
-
-<ul>
-  <li><strong>Preparación</strong>: Tienes que obtener la mayor cantidad información, estudiar el problema y se <strong>analizar</strong> las posibles soluciones. En nuestro caso incluso puede que tengamos que hacer algunas pruebas de concepto. Es muy importante entender que en esta etapa <strong>no vas resolver el problema</strong>, si encuentras algún tipo de bloqueo debes dejarlo pasar y seguir explorando.</li>
-  <li><strong>Incubación</strong>: En esta fase tienes que de pensar en el problema, se hace otra cosa, se descansa, se duerme, se hace ejercicio. Tu mente procesará lo que acabas de leer, de manera inconsciente.</li>
-  <li><strong>Iluminación</strong>: Esta parte no la puedes forzar, a veces incluso tienes que repetir las dos fases de manera cíclica hasta que llega la respuesta. Aquí es donde todo parece que hace click y la solución aparece “de la nada” (ya sabes que no es así porque has hecho mucho trabajo previo.)</li>
-  <li><strong>Verificación</strong>: Ahora que tienes una idea, falta comprobarla y más importante aún: llevarla a cabo. En esta tienes que asegurarte que la solución que encontraste es correcta, <em>o tienes que hacer lo suficiente para empezar a probarla</em>. Puede que te equivoques y tengas que volver a empezar el ciclo, pero con nuevos conocimientos.</li>
-</ul>
-
-<p>Este ciclo me pareció muy interesante porque se me hace equivalente en pasos a los pasos que <strong>George Polya</strong> propone. En su libro <strong>“How to Solve It”</strong> habla de cuatro pasos para resolver problemas:</p>
-
-<ol>
-  <li>Entender el problema == Preparación e Incubación</li>
-  <li>Idear un plan == Incubación e Iluminación (La parte <strong><em>más difícil</em></strong>, Polya dice que si tienes un plan, ya casi resolviste el problema)</li>
-  <li>Llevar a cabo el plan == Verificación</li>
-  <li>Revisar el plan == Verificación</li>
-</ol>
-
-<h2 id="ejemplo">Ejemplo</h2>
-
-<p>El ejemplo más clásico en el que usamos el ciclo de la creatividad naturalmente es cuando estamos resolviendo un bug difícil. Veamos los pasos:</p>
-
-<ol>
-  <li>
-    <p>Preparación: Intentamos entender el bug, y el comportamiento esperado, consultamos la documentación o el código que lo está produciendo. Si es lo suficientemente difícil, este bug se va con nosotros a dormir.</p>
-  </li>
-  <li>
-    <p>Incubación: Después de sentirte derrotado por el bug, te alejas, ya sea porque terminó el día de trabajo, porque te vas a hacer otras cosas o porque simplemente te quieres despejar.</p>
-  </li>
-  <li>
-    <p><strong>Iluminación</strong>: Durante alguna otra actividad, como bañándote, caminando, haciendo ejercicio o también cuando regreses al código, ves la solución, como si siempre hubiera estado ahí, de manera obvia.</p>
-  </li>
-  <li>
-    <p>Verificación: Implementas la solución y pruebas que todo esté funcionando como debería.</p>
-  </li>
-</ol>
-
-<p><strong>¿Ves cómo sí te ha pasado?</strong> Ese es el ciclo de la creatividad, que nosotros usamos resolviendo problemas. Veamos algunas formas de extenderlo y aprovecharlo mejor.</p>
-
-<h2 id="aplicación-el-poder-de-la-preparación">Aplicación: el poder de la preparación</h2>
-
-<p>Ahora que ya tienes un nombre para esto que te pasa muy constantemente, puedes aprovecharlo para desencadenarlo intencionalmente.</p>
-
-<p>Antes, pensemos un poco. ¿Cuál es la parte del ciclo que nos interesa aprovechar? Para mi es el poder de <strong>incubación</strong>, que es lo que produce la iluminación, o sea, lo que hace que te lleguen las ideas para resolver tu problema de manera creativa.</p>
-
-<p>Pero, ¿cómo vas a incubar si no tienes nada que hacer crecer? Es aquí donde entra el valor de la preparación. Si quieres resolver un problema difícil, inclusive uno que sientes que ahora mismo está un poco por encima de tus capacidades, la mejor manera de hacerlo es aprovechando este ciclo. Primero te preparas lo mejo que puedas, estudiando el problema, analizando los posibles caminos que puedes seguir e incluso haciendo algunas pruebas de concepto. Seguro que esto ya lo haces.</p>
-
-<p>Después y esto es la parte más importante de este artículo (y la que te puede estar fallando), tienes que <strong>alejarte del problema</strong>. Así es, olvídate de él, cambia de problema, ve a dormir, sal a pasear, date un baño. Tienes que hacer algo que ocupe tu mente.</p>
-
-<p>David Kadavy dice en su libro que esto te permite olvidarte de las ideas que no funcionan y fortalecer las que sí, y me parece una buena propuesta. Si lo comparas con un algoritmo, buscar una solución a un problema es como hacer una búsqueda en un árbol, sólo que este árbol tiene más ramas de las que puedes seguir, así que tienes que podarlas. La incubación es la poda, que además fortalece las ramas que es más probable que te lleven a la solución.</p>
-
-<p>Esto también se puede aplicar de manera más sencilla.Por ejemplo, ¿tienes que diseñar una pieza de software y sientes que no tienes ni idea de por dónde empezar? Combinando las enseñanzas de Polya con el ciclo de la creatividad, lo primero es definir completamente el problema. Una vez que sientas que lo has entendido (muchas veces ayuda ponerlo por escrito e incluso pedir que alguien más lo revise).</p>
-
-<p>Después de esto, <em>sobre todo si no tienes una solución clara</em>, o propuestas que hacer, <strong>busca alejarte lo más posible</strong>. Es por eso que muchos profesionales veteranos y exitosos tienen actividades alternas, alejadas de la programación e incluso de la computadora. Cuando regreses a trabajar sobre el problema, es mucho más probable que tengas una solución.</p>
-
-<p>Se que esto suena mágico, pero nada te puede convencer más que la propia que ya tienes resolviendo problemas de otro estilo. Si esto no funciona, recuerda que puedes repetir el ciclo tantas veces como sea necesario.</p>
-
-<p>Claro, esto no asegura que la solución te llegará mágicamente siempre, pero con esto aumentamos las probabilidades de que tu naturaleza creativa trabaje por ti.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Siempre que puedas, frente a problemas difíciles, aplica este ciclo: prepárate lo mejor que puedas, explorando soluciones, asegurándote de entender todas la variables del problema, escribiendo la definición del problema. Después <strong>aléjate de problema</strong>, así permitirás que se <strong>incube</strong>.</p>
-
-<p>Finalmente, regresa y trata de resolverlo de nuevo. Claro que después de esto tienes que ejecutar y verificar tu solución.</p>
-
-<p>Espero que esta información te sea útil y que la puedas aplicar en tu día a día.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="creatividad" /><category term="resolución-de-problemas" /><summary type="html"><![CDATA[La programación es una profesión muy creativa y por eso es importante que aprendamos a manejarla, hablemos de las etapas para resolver un problema de forma creativa y cómo puedes aprovecharlas.]]></summary></entry></feed>
+<p>La matriz del conocimiento nos ayuda a poner los pies en la tierra respecto a los riesgos y lo que de verdad podemos considerar que sabemos. Úsala para planear tus proyectos, escoger tu tecnología y proteger tus sistemas contra cosas que pueden ser catastróficas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="conocimiento" /><category term="epistemología" /><summary type="html"><![CDATA[La principal trae de un desarrollador es representar el conocimiento en procesos computacionales. Veamos una herramienta que te puede ayudar a administrar mejor ese conocimiento.]]></summary></entry></feed>

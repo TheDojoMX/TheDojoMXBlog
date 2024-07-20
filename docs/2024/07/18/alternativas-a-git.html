@@ -1,0 +1,830 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Alternativas a Git - The Dojo MX Blog</title>
+<meta name="description" content="Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Alternativas a Git">
+<meta property="og:url" content="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html">
+
+
+  <meta property="og:description" content="Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-07-18T18:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
+
+<script src="/assets/js/sharect.min.js"></script>
+<!-- Fathom - beautiful, simple website analytics -->
+   <script src="https://cdn.usefathom.com/script.js" data-site="NGGHUUZH" defer></script>
+<!-- / Fathom -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html",
+      "name": "Alternativas a Git",
+      "headline": "Alternativas a Git",
+      "keywords": "git,version-control,fossil,pijul",
+      "description": "Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.",
+      "articleBody": "Git es una herramienta que se considera obligatoria para los desarrolladores\nmodernos por ser el programa usado para versionamiento de código usado por\nla mayoría de los proyectos.\n\nPero no es ningún secreto que Git es una herramienta difícil de comprender y\nque el 90% de los desarrolladores le dan el uso más básico, temiendo romper algo\ny por eso tener que usar comandos más avanzados.\n\nHablemos de por qué es así y después veamos algunas alternativas interesantes.\n\nLos orígenes de Git\n\nAl igual que otros sistemas de control de versiones, Git nació como soporte al\ndesarrollo de uno de los proyectos de software más importantes de todos los\ntiempos: el kernel de Linux. Fue creado por Linus Torvalds.\n\nSu objetivo no era ser una herramienta de uso masivo y fácil de usar, sino\ntrabajar sin las limitantes de las herramientas que existían en ese momento.\nY claramente, Linus lo creó a su manera. Algo interesante es que se llama\n“Git” porque en inglés británico es una palabra despectiva que se usa para\nllamar a alguien tonto o desagradable. Linus nombra sus proyectos como a sí\nmismo, y como cualquiera lo podría llamar así a él, decidió ponerle ese nombre\na su sistema de manejo de versiones.\n\nGit empezó a ser usado por la comunidad de Linux en 2005 y después por otros\nproyectos Open Source, pero su éxito se disparó cuando en 2008 surgió GitHub\nque facilitó su uso. Por ser una herramienta tan útil, ahora la tenemos como el\nestándar en versionmiento de código.\n\nPero no es el único sistema de control de versiones moderno, hablemos de\ndos alternativas.\n\nFossil\n\nFossil fue creado por el autor de SQLite, Richard Hipp, y al igual que Git,nació\npara soportar a este proyecto de software libre, el principal de su Hipp.\n\nAl buscar un sistema de control de versiones moderno, Richard no encontró nada que lo convenciera\nal cien por ciento, por lo que decidió crear Fossil, con las siguientes características:\n\n\n  Integración de Wiki y Tickets: Fossil tiene incluye estas herramientas a las que Hipp y\nsu equipo estaban acostumbrados.\n  Foro y chat: Fossil está pensado para también ser el centro de conversación del proyecto.\n  Autosync: permite que los cambios se sincronicen automáticamente sin tener que andar haciendo\nmagia con las ramas y los commits.\n\n\nPersonalmente, me gusta mucho la idea de tener todo integrado en un mismo\nsistema, y pienso que el que sistemas como Jira y Confluence se integren directamente\ncon GitHub, Bitbucket y cosas similares, es una señal de que esta integración\nes un muy buena idea que ayuda a que el proceso de software sea más fluido.\n\nPuedes encontrar más información en fossil-scm.org,\npara instalarlo por tu cuenta. Pero también existe una versión hosteada en la\nque de manera gratuita podrás tener el servicio de Fossil, equivalente a\nGitHub: Chisel.\n\nPijul\n\nPijul es un sistema de control de versiones pensado para ser lo más fácil de usar.\nTiene un fundamento matemático: la teoría de parches (patch theory), lo cuál te da\ngarantías interesantes, como la facilidad de uso y la reducción de errores\ncatastróficos. Combina las dos formas principales en las que se han creado sistemas\ncontrol de versiones: los sistemas basados en spapshots (como la mayoría de los\nsistemas de control de versiones más conocidos, incluido Git) y los sistemas\nbasados en parches (como Darcs, un SVC poco conocido pero\nmás fácil de usar).\n\nLos sistemas basados en snapshots son más rápidos pero más frágiles y difíciles de\nusar y los basado en parches son lentos. Es por eso que Pijul cobina lo mejor de ambos\ntipos de sistemas y mientras se mantiene lo suficientemente rápido sigue siendo fácil\nde usar incluso en situaciones en las que Git se vuelve complejo, como en merges,\nconflictos y cherry-picks. En un post posterior hablaremos ge Pijul.\n\nPuedes encontrarlo en pijul.org, te recomiendo\nque si quieres probar algo fundamentalmente diferente a Git, pero con las mismas\nfunciones externas, le des una oportunidad.\n\nConclusión\n\nNo vamos a reemplazar a Git en el corto plazo y probablmente nunca lo hagamos\npor lo extendido que está su uso (piensa en el efecto Lindsey), pero es bueno\nsaber que existen alternativas. Estas herramientas\nnos enseñan cosas interesantes sobre el desarrollo de software, como que casi\nsiempre hay más de una forma de lograr lo que queremos.\nOjalá que en el futuro, Git tome algunas de las ideas de estos proyectos y mejore su\nexperiencia de usuario.\n",
+      "datePublished": "2024-07-18 18:00:00 -0600",
+      "dateModified": "2024-07-18 18:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Alternativas a Git
+
+        
+      </h1>
+      
+        <p class="page__lead">Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        743 palabras | 6 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Alternativas a Git">
+    <meta itemprop="description" content="Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.">
+    <meta itemprop="datePublished" content="2024-07-18T18:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>Git es una herramienta que se considera <em>obligatoria</em> para los desarrolladores
+modernos por ser el programa usado para versionamiento de código usado por
+la mayoría de los proyectos.</p>
+
+<p>Pero no es ningún secreto que Git es una herramienta difícil de comprender y
+que el 90% de los desarrolladores le dan <strong>el uso más básico</strong>, temiendo romper algo
+y por eso tener que usar comandos más avanzados.</p>
+
+<p>Hablemos de por qué es así y después veamos algunas alternativas interesantes.</p>
+
+<h2 id="los-orígenes-de-git">Los orígenes de Git</h2>
+
+<p>Al igual que otros sistemas de control de versiones, Git nació como soporte al
+desarrollo de uno de los proyectos de software más importantes de todos los
+tiempos: el kernel de Linux. Fue creado por <strong>Linus Torvalds</strong>.</p>
+
+<p>Su objetivo no era ser una herramienta de uso masivo y fácil de usar, sino
+trabajar sin las limitantes de las herramientas que existían en ese momento.
+Y claramente, Linus lo creó a su manera. Algo interesante es que se llama
+“Git” porque en inglés británico es una palabra despectiva que se usa para
+llamar a alguien tonto o desagradable. Linus nombra sus proyectos como a sí
+mismo, y como cualquiera lo podría llamar así a él, decidió ponerle ese nombre
+a su sistema de manejo de versiones.</p>
+
+<p><strong>Git</strong> empezó a ser usado por la comunidad de Linux en 2005 y después por otros
+proyectos Open Source, pero su éxito se disparó cuando en 2008 surgió GitHub
+que facilitó su uso. Por ser una herramienta tan útil, ahora la tenemos como el
+estándar en versionmiento de código.</p>
+
+<p>Pero no es el único sistema de control de versiones moderno, hablemos de
+dos alternativas.</p>
+
+<h2 id="fossil">Fossil</h2>
+
+<p>Fossil fue creado por el autor de SQLite, <a href="https://www.hwaci.com/drh/"><strong>Richard Hipp</strong></a>, y al igual que Git,nació
+para soportar a este proyecto de software libre, el principal de su Hipp.</p>
+
+<p>Al buscar un sistema de control de versiones moderno, Richard no encontró nada que lo convenciera
+al cien por ciento, por lo que decidió crear Fossil, con las siguientes características:</p>
+
+<ol>
+  <li>
+<strong>Integración de Wiki y Tickets</strong>: Fossil tiene incluye estas herramientas a las que Hipp y
+su equipo estaban acostumbrados.</li>
+  <li>
+<strong>Foro y chat</strong>: Fossil está pensado para también ser el centro de conversación del proyecto.</li>
+  <li>
+<strong>Autosync</strong>: permite que los cambios se sincronicen automáticamente sin tener que andar haciendo
+magia con las ramas y los commits.</li>
+</ol>
+
+<p>Personalmente, me gusta mucho la idea de tener todo integrado en un mismo
+sistema, y pienso que el que sistemas como Jira y Confluence se integren directamente
+con GitHub, Bitbucket y cosas similares, es una señal de que esta integración
+es un muy buena idea que ayuda a que el proceso de software sea más fluido.</p>
+
+<p>Puedes encontrar más información en <a href="https://fossil-scm.org/">fossil-scm.org</a>,
+para instalarlo por tu cuenta. Pero también existe una versión hosteada en la
+que de manera gratuita podrás tener el servicio de Fossil, equivalente a
+GitHub: <a href="https://chiselapp.com/">Chisel</a>.</p>
+
+<h2 id="pijul">Pijul</h2>
+
+<p>Pijul es un sistema de control de versiones pensado para ser lo más fácil de usar.
+Tiene un fundamento matemático: la teoría de parches (patch theory), lo cuál te da
+garantías interesantes, como la facilidad de uso y la reducción de errores
+catastróficos. Combina las dos formas principales en las que se han creado sistemas
+control de versiones: los sistemas basados en spapshots (como la mayoría de los
+sistemas de control de versiones más conocidos, incluido Git) y los sistemas
+basados en parches (como <a href="https://darcs.net/">Darcs</a>, un SVC poco conocido pero
+más fácil de usar).</p>
+
+<p>Los sistemas basados en snapshots son más rápidos pero más frágiles y difíciles de
+usar y los basado en parches son lentos. Es por eso que Pijul cobina lo mejor de ambos
+tipos de sistemas y mientras se mantiene lo suficientemente rápido sigue siendo fácil
+de usar incluso en situaciones en las que Git se vuelve complejo, como en merges,
+conflictos y cherry-picks. En un post posterior hablaremos ge Pijul.</p>
+
+<p>Puedes encontrarlo en <a href="https://pijul.org/">pijul.org</a>, te recomiendo
+que si quieres probar algo fundamentalmente diferente a Git, pero con las mismas
+funciones externas, le des una oportunidad.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>No vamos a reemplazar a Git en el corto plazo y probablmente nunca lo hagamos
+por lo extendido que está su uso (piensa en el efecto Lindsey), pero es bueno
+saber que existen alternativas. Estas herramientas
+nos enseñan cosas interesantes sobre el desarrollo de software, como que casi
+siempre hay más de una forma de lograr lo que queremos.
+Ojalá que en el futuro, Git tome algunas de las ideas de estos proyectos y mejore su
+experiencia de usuario.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#fossil" class="page__taxonomy-item" rel="tag">fossil</a><span class="sep">, </span>
+    
+      <a href="/tags/#git" class="page__taxonomy-item" rel="tag">git</a><span class="sep">, </span>
+    
+      <a href="/tags/#pijul" class="page__taxonomy-item" rel="tag">pijul</a><span class="sep">, </span>
+    
+      <a href="/tags/#version-control" class="page__taxonomy-item" rel="tag">version-control</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2024-07-18T18:00:00-06:00">July 18, 2024</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Alternativas+a+Git%20https%3A%2F%2Fblog.thedojo.mx%2F2024%2F07%2F18%2Falternativas-a-git.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F07%2F18%2Falternativas-a-git.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F07%2F18%2Falternativas-a-git.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html" class="pagination--pager" title="5 pláticas de StrageLoop que tienes que ver
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702186032/neom-WLeWJW_WneE-unsplash_rbh7sr.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html" rel="permalink">5 pláticas de StrageLoop que tienes que ver
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-03-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">StrangeLoop es una de las conferencias más importantes de software en el mundo, con pláticas increíbles. Aquí verás 5 pláticas que no te puedes perder.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702186060/hunter-reilly-O7NHbnjrz94-unsplash_dntxcb.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/03/09/que-producimos-los-desarrolladores-de-software.html" rel="permalink">¿Qué producimos los desarrolladores de software?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+11 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 09-03-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Tu proceso de desarrollo de software produce muchas más cosas que sólamente software corriendo. En este artículo hablaremos de otros resultados de trabajo
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1701323922/garett-mizunaka-xFjti9rYILo-unsplash_mh0wys.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/12/14/engines-de-javascript-y-sus-usos.html" rel="permalink">Engines de JavaScript y sus usos
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 14-12-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">En este artículo hablaremos de los diferente engines de JavaScript que existen, dónde los puedes encontrar y para qué los puedes usar.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702275251/shubham-dhage-cLhjmsyby3Q-unsplash_ucy8y3.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2023/12/13/mojo-un-lenguaje-prometedor.html" rel="permalink">Mojo 🔥: un lenguaje prometedor
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 13-12-2023
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">El ecosistema de desarrollo está cambiando y se están diseñando nuevos lenguajes de programación y entornos de ejecución más adecuados para los problemas act...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#4b0082',
+      iconColor: '#fff'
+    }).init();
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2024 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2024/07/18/alternativas-a-git"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

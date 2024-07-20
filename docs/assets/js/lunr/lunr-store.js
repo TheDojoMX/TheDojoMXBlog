@@ -808,4 +808,10 @@ var store = [{
         "tags": ["talks","charlas","strangeloop","software-engineering"],
         "url": "/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702186032/neom-WLeWJW_WneE-unsplash_rbh7sr.jpg"
+      },{
+        "title": "Alternativas a Git",
+        "excerpt":"Git es una herramienta que se considera obligatoria para los desarrolladores modernos por ser el programa usado para versionamiento de código usado por la mayoría de los proyectos. Pero no es ningún secreto que Git es una herramienta difícil de comprender y que el 90% de los desarrolladores le dan...","categories": [],
+        "tags": ["git","version-control","fossil","pijul"],
+        "url": "/2024/07/18/alternativas-a-git.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg"
       }]
