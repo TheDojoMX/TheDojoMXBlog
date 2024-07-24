@@ -4,7 +4,7 @@ date: 2024-06-20T00:00:00.000Z
 author: Héctor Patricio
 tags: null
 comments: true
-excerpt: Escribe aquí un buen resumen de tu artículo
+excerpt: "Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete."
 header:
   overlay_image: null
   teaser: null
@@ -53,9 +53,10 @@ Ya con los tokens que representan el programa, tenemos que construir la
 estructura de datos que representa las operaciones que vamos a ejecutar, **el
 AST**.
 
-Esta estructura se parece a un árbol, con cada nodo repreentando una operación
-que a su vez puede estar compuesta de más operaciones, es decir, siendo una
-estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo...
+Esta estructura se parece a un árbol, con cada nodo representando una operación
+que a su vez puede estar compuesta de más operaciones, es decir, es una
+estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
+`a = 1 + 2`, el AST podría verse así:
 
 ### Ejecución
 
