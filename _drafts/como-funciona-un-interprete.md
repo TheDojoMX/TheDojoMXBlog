@@ -33,7 +33,16 @@ no compila al lenguaje de una arquitectura de procesador específica, sino a
 bytecode que puede ser ejecutado por la JVM. Si no sabes que es el bytecode,
 hablamos de él [en este artículo](/2023/01/22/entendiendo-el-bytecode.html).
 
+Un intérprete también recibe el código fuente, pero en lugar de devolver la
+traducción en otro lenguaje, **ejecuta** el código fuente directamente. A veces
+este proceso tiene como producto secundario la traducción del código fuente
+en un lenguaje intermedio, pero su objetivo principal es **la ejecución**.
+
+Ahora sí hablemos de las etapas de un intérplrete.
+
 ## Las etapas de un intérprete
+
+El siguiente diagrama muestra las etapas comunes de un intérprete:
 
 Para ejecutar el código de un programa, podemos dividir el tracajo en varios pasos
 
