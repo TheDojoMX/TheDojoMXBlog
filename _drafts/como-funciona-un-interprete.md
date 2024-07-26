@@ -42,9 +42,10 @@ Ahora sí hablemos de las etapas de un intérplrete.
 
 ## Las etapas de un intérprete
 
-El siguiente diagrama muestra las etapas comunes de un intérprete:
+Para ejecutar el código de un programa, podemos dividir el tracajo en varios
+pasos. El siguiente diagrama muestra las etapas comunes de un intérprete:
 
-Para ejecutar el código de un programa, podemos dividir el tracajo en varios pasos
+Empecemos por la primera etapa que completa la podemos dividir en dos partes.
 
 ### Parsing
 
@@ -70,6 +71,9 @@ estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
 
 ### Ejecución
 
+Lo que sigue es lo más sencillo de enetender, la ejecución del programa. El 
+intérprete debe tener la capacidad de actuar sobre el sistema operativo para
+ejecutar las operaciones representadas en el AST.
 ### Opcional: optimización
 
 #### JIT
