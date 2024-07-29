@@ -71,9 +71,10 @@ estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
 
 ### Ejecución
 
-Lo que sigue es lo más sencillo de enetender, la ejecución del programa. El 
+Lo que sigue es lo más sencillo de enetender, la ejecución del programa. El
 intérprete debe tener la capacidad de actuar sobre el sistema operativo para
 ejecutar las operaciones representadas en el AST.
+
 ### Opcional: optimización
 
 #### JIT
