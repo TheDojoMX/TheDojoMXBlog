@@ -6,7 +6,7 @@ tags: null
 comments: true
 excerpt: >-
   TensorFlow permite crear modelos de aprendizaje automático sin que te tengas
-  que plear con los cáluculos, hablemos de cómo lo logra.
+  que plear con los cáluculos, hablemos de cómo lo hace.
 header:
   overlay_image: null
   teaser: null
@@ -39,7 +39,7 @@ llegamos a él y cómo lo ejecutamos después?
 ## Grafos de cómputo de TensorFlow
 
 Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su representación
-en **TensorFlow**. La operación es la siguiente:
+en **TensorFlow**:
 
 ```python
 Y = W * X + b
@@ -84,4 +84,3 @@ para poder ejecutarlo en el hardware especializado.
 
 Espero que lo que hablamos sobre TensorFlow en este artículo te haya ayudado
 a entenderlo un poco más. En otro artículo hablaremos de su competidor más directo: **PyTorch**.
-
