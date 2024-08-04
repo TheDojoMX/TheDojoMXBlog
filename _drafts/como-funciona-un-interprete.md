@@ -45,7 +45,7 @@ Ahora sí hablemos de las etapas de un intérplrete.
 Para ejecutar el código de un programa, podemos dividir el tracajo en varios
 pasos. El siguiente diagrama muestra las etapas comunes de un intérprete:
 
-Empecemos por la primera etapa que completa la podemos dividir en dos partes.
+Empecemos por la primera etapa que podemos dividir en dos partes.
 
 ### Parsing
 
@@ -69,7 +69,8 @@ que a su vez puede estar compuesta de más operaciones, es decir, es una
 estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
 `a = 1 + 2`, el AST podría verse así:
 
-### Ejecución
+### Ejecució> [!NOTE]
+>
 
 Lo que sigue es lo más sencillo de enetender, la ejecución del programa. El
 intérprete debe tener la capacidad de actuar sobre el sistema operativo para
@@ -77,7 +78,7 @@ ejecutar las operaciones representadas en el AST.
 
 ### Opcional: optimización
 
-#### JIT
+#### JIT Compilation
 
 Una forma de optimización usada por los intérpretes y máquinas virtuales es lo
 que se conoce como **Just In Time Compilation**
