@@ -69,8 +69,7 @@ que a su vez puede estar compuesta de más operaciones, es decir, es una
 estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
 `a = 1 + 2`, el AST podría verse así:
 
-### Ejecució> [!NOTE]
->
+### Ejecución
 
 Lo que sigue es lo más sencillo de enetender, la ejecución del programa. El
 intérprete debe tener la capacidad de actuar sobre el sistema operativo para

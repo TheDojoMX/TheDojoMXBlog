@@ -4,7 +4,7 @@ date: 2024-04-24
 author: Héctor Patricio
 tags: aprendizaje lectura estudio
 comments: true
-excerpt: ""
+excerpt: "Cómo aprender las cosas importantes del desarrollo de software de manera eficiente."
 header:
   overlay_image: #image
   teaser: #image
@@ -29,4 +29,3 @@ Algunas ideas están sacadas de este artículo de investigación de la ACM:[10 T
 ## Lo más básico: aprender es recordar
 
 ## Aprender es entender
-
