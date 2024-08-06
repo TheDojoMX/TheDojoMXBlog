@@ -7,7 +7,7 @@ comments: true
 excerpt: "Cómo aprender las cosas importantes del desarrollo de software de manera eficiente."
 header:
   overlay_image: #image
-  teaser: #image
+  teaser: 
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -29,3 +29,7 @@ Algunas ideas están sacadas de este artículo de investigación de la ACM:[10 T
 ## Lo más básico: aprender es recordar
 
 ## Aprender es entender
+
+## Aprender es hacer
+
+## Conclusión

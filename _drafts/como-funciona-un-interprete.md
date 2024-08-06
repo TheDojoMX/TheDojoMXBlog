@@ -64,6 +64,7 @@ Ya con los tokens que representan el programa, tenemos que construir la
 estructura de datos que representa las operaciones que vamos a ejecutar, **el
 AST**.
 
+
 Esta estructura se parece a un árbol, con cada nodo representando una operación
 que a su vez puede estar compuesta de más operaciones, es decir, es una
 estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
