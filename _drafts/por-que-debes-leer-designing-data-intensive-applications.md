@@ -11,7 +11,7 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Uno de los libros más recomendados para todos los desarrolladores modernos
+Uno de los libros más recomendados para todos los desarrolladores
 es "Designing Data-intensive Applications" de Martin Kleppmann. En este artículo corto
 vamos a hablar de por qué es un libro que vale la pena.
 
