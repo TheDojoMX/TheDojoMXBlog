@@ -57,6 +57,9 @@ una operación sobre TENSORES, es decir, conjuntos de datos numéricos de más d
 
 ## Cómo se ejecuta un grafo de cómputo
 
+Después de representar el cálculo en un grafo, abrstrayendo el orden y las operaciones que se deben eejecutar,
+viene la parte de ahora sí hacer los cálculos.
+
 ## TensorFlow y Keras
 
 Keras te ayuda declarar redes neuronales de manera sencilla.
