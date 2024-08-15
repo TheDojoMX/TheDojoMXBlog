@@ -62,7 +62,9 @@ viene la parte de ahora sí hacer los cálculos.
 
 ## TensorFlow y Keras
 
-Keras te ayuda declarar redes neuronales de manera sencilla.
+Keras es un framework que te permite crear modelos de aprendizaje profundo de manera sencilla.
+¿Cómo se relaciona con TensorFlow? Con Keras declaras tus modelos y TensorFlow se encarga de
+transformarlos en un grafo de cómputo que se puede ejecutar en el hardware que tengas disponible.
 
 ## TensorFlow vs PyTorch
 
