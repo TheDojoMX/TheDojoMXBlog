@@ -68,7 +68,7 @@ transformarlos en un grafo de cómputo que se puede ejecutar en el hardware que 
 
 ## TensorFlow vs PyTorch
 
-Pytorch es una alternativa a TensoFlow con un modelos de programación más
+Pytorch es una alternativa a TensoFlow con un modelos de programación más dinámicos
 
 ## Tensoflow y MLIR
 
