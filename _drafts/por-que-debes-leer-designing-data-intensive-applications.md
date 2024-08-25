@@ -17,8 +17,8 @@ En este artículo corto vamos a hablar de por qué vale la pena leerlo.
 
 ## ¿Quién es Martin Kleppmann?
 
-[Martin](https://martin.kleppmann.com/) es un desarrollador, investigador, escritor y profesor de ciencias de la computación bastante prolífico.
-Actualemnte trabaja en la Universidad de Cambridge y ha trabajado en empresas como LinkedIn y Rapportive.
+Martin es un desarrollador, investigador, escritor y profesor de ciencias de la computación bastante prolífico.
+Actualmente trabaja en la Universidad de Cambridge y ha trabajado en empresas como LinkedIn y Rapportive.
 
 Es también al autor de [Secret Colors](https://roundrobin.pub/). Un libro de criptografía de llave pública y llave privada para niños.
 
