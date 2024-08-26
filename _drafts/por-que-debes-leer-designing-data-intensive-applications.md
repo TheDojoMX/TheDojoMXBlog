@@ -6,35 +6,48 @@ tags: Matin-Kleppmann dato bases-de-datos
 comments: true
 excerpt: "Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas."
 header:
-  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg 
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Uno de los libros más recomendados para todos los desarrolladores
+Uno de los libros más recomendados para todos los desarrolladores modernos
 es "Designing Data-intensive Applications" de [Martin Kleppmann](https://martin.kleppmann.com/).
 En este artículo corto vamos a hablar de por qué vale la pena leerlo.
 
 ## ¿Quién es Martin Kleppmann?
 
-Martin es un desarrollador, investigador, escritor y profesor de ciencias de la computación bastante prolífico.
-Actualmente trabaja en la Universidad de Cambridge y ha trabajado en empresas como LinkedIn y Rapportive.
+Martin es un desarrollador, investigador, escritor y profesor de ciencias
+de la computación bastante prolífico. Actualmente trabaja en la [Universidad
+de Cambridge](https://www.cst.cam.ac.uk/) y ha trabajado en empresas como
+[Rapportive](https://www.crunchbase.com/organization/rapportive)(que él fundó
+y fue comprada por LinkedIn, y también trabajó ahí).
 
-Es también al autor de [Secret Colors](https://roundrobin.pub/). Un libro de criptografía de llave pública y llave privada para niños.
+Es también al autor de [Secret Colors](https://roundrobin.pub/). Un libro de
+criptografía de llave pública y llave privada para niños.
 
-Kleppmann es un experto en todo lo que tiene que ver con estructuras de datos y manejo de datos
-en genral. En el presente (2024), su interés está en la coordinación de datos entre sistemas d
+**Kleppmann** es un experto en todo lo que tiene que ver con estructuras
+y manejo de datos. En el presente (2024), su interés está en la
+coordinación de datos entre sistemas locales, es decir, el software que su
+funcionamiento principal sucede en un dispositivo que puede estar o no
+conectado a una red.
+
+Pero su trabajo más notable hasta el momento es **Designing Data-intensive
+Applications** (_DDiA_ a partir de ahora). Veamos por qué.
 
 ## ¿De qué trata Designing Data-intensive Applications?
 
-El libro tiene dos partes:
+Podemos resumir _DDiA_ como un libro de diseño de software enfocado en los
+datos y sus interacciones. Es un libro de diseño en el sentido amplio:
+abarca desde la arquitectura de software, hasta la elección de algoritmos
+para lograr las características arquitectónicas deseadas.
+
+El libro tiene dos grandes partes con:
 
 1. En la primera habla de los principios fundamentales de los sistemas que hacen
 
 uso intensivo de datos.
 
-2. Des
-
 ## Qué beneficios obtendrás al leerlo
 
-## Conclusión
+## Conclusiones
