@@ -29,7 +29,7 @@ criptografía de llave pública y llave privada para niños.
 **Kleppmann** es un experto en todo lo que tiene que ver con estructuras
 y manejo de datos. En el presente (2024), su interés está en la
 coordinación de datos entre sistemas locales, es decir, el software que su
-funcionamiento principal sucede en un dispositivo que puede estar o no
+funcionamiento principal sucede en un dispositivo que puede estar o n
 conectado a una red.
 
 Pero su trabajo más notable hasta el momento es **Designing Data-intensive
@@ -42,10 +42,9 @@ datos y sus interacciones. Es un libro de diseño en el sentido amplio:
 abarca desde la arquitectura de software, hasta la elección de algoritmos
 para lograr las características arquitectónicas deseadas.
 
-El libro tiene dos grandes partes con:
+El libro tiene dos grandes partes:
 
 1. En la primera habla de los principios fundamentales de los sistemas que hacen
-
 uso intensivo de datos.
 
 ## Qué beneficios obtendrás al leerlo
