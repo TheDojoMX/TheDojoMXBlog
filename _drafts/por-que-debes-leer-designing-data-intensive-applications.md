@@ -44,13 +44,26 @@ datos y sus interacciones. Es un libro de diseño en el sentido amplio:
 abarca desde la arquitectura de software, hasta la elección de algoritmos
 para lograr las características arquitectónicas deseadas.
 
-El libro tiene dos grandes partes:
+El libro tiene tres grandes partes:
 
 1. En la primera habla de los principios fundamentales de los sistemas que hacen
 uso intensivo de datos. Habla de las características arquitectónicas
 que los sistemas intensivos es datos deben tener para ser usables. También
 se sientan las formas básicas de almacenar y representar datos a diferentes
 niveles.
+
+2. En la segunda parte, se habla de sistemas distribuidos y sus implicaciones
+y las dificultades que conllevan. Aquí se tratan temas como replicación,
+particiones y transacciones. También se tratan los temas fundamentales para
+tener datos confiables: consistencia y consenso.
+
+3. Aquí se habla de sistemas que derivan datos de otros datos, como índices,
+cachés y cosas similares, como puedes notar, elementos que son fundamentales
+en cualquier sistema de software serio moderno.
+
+Como puedes ver, se habla de todo lo necesario para aprender el manejo
+de grandes cantidades de datos, desde las formas de modelarlos y almacenarlos,
+hasta distribuirlos y procesarlos para crear subproductos útiles.
 
 ## Qué beneficios obtendrás al leerlo
 
