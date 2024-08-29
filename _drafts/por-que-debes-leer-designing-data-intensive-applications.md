@@ -17,20 +17,22 @@ En este artículo corto vamos a hablar de por qué vale la pena leerlo.
 
 ## ¿Quién es Martin Kleppmann?
 
-Martin es un desarrollador, investigador, escritor y profesor de ciencias
+**Martin** es un desarrollador, investigador, escritor y profesor de ciencias
 de la computación bastante prolífico. Actualmente trabaja en la [Universidad
 de Cambridge](https://www.cst.cam.ac.uk/) y ha trabajado en empresas como
 [Rapportive](https://www.crunchbase.com/organization/rapportive)(que él fundó
 y fue comprada por LinkedIn, y también trabajó ahí).
 
 Es también al autor de [Secret Colors](https://roundrobin.pub/). Un libro de
-criptografía de llave pública y llave privada para niños.
+criptografía de llave pública y llave privada para niños, de la editorial
+Round Robin.
 
 **Kleppmann** es un experto en todo lo que tiene que ver con estructuras
 y manejo de datos. En el presente (2024), su interés está en la
-coordinación de datos entre sistemas locales, es decir, el software que su
-funcionamiento principal sucede en un dispositivo que puede estar o n
-conectado a una red.
+coordinación de datos entre sistemas locales, es decir, el software
+funciona principalmente en un dispositivo que puede estar o no
+conectado a una red y después puede sincronizarse con otros sistemas
+remotos, para adquirir más funciones como respaldos o sincronización.
 
 Pero su trabajo más notable hasta el momento es **Designing Data-intensive
 Applications** (_DDiA_ a partir de ahora). Veamos por qué.
@@ -45,7 +47,10 @@ para lograr las características arquitectónicas deseadas.
 El libro tiene dos grandes partes:
 
 1. En la primera habla de los principios fundamentales de los sistemas que hacen
-uso intensivo de datos.
+uso intensivo de datos. Habla de las características arquitectónicas
+que los sistemas intensivos es datos deben tener para ser usables. También
+se sientan las formas básicas de almacenar y representar datos a diferentes
+niveles.
 
 ## Qué beneficios obtendrás al leerlo
 
