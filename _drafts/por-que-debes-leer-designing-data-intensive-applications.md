@@ -67,4 +67,18 @@ hasta distribuirlos y procesarlos para crear subproductos útiles.
 
 ## Qué beneficios obtendrás al leerlo
 
+Si eres un desarrollador de software con experiencia, especialmente en el
+backend, podrás profundizar tu experiencia en el entendimiento de la forma
+en la que se tratan los datos para crear sistemas confiables, escalables y
+mantenibles. Toma en cuenta que este libro, como su nombre lo dice
+está enfocado en el **diseño**. Este libro te dará ideas prácticas para
+aplicarlas a tus proyectos.
+
+Si estás en cualquier otra área del desarrollo de software, este libro te
+te dará... bueno, la misma cosa. La forma en la que se tratan los datos
+es fundamental para cualquier sistema de software moderno.
+
 ## Conclusiones
+
+Si quieres leer un libro sobre diseño de software, no puedes fallar con
+**Designing Data-intensive Applications**.
