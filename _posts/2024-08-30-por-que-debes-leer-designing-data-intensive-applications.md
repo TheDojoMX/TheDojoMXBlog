@@ -1,6 +1,6 @@
 ---
 title: "Por qué debes leer Designing Data-intensive Applications"
-date: 2024-06-29
+date: 2024-08-30
 author: Héctor Patricio
 tags: Matin-Kleppmann dato bases-de-datos
 comments: true
@@ -58,12 +58,23 @@ particiones y transacciones. También se tratan los temas fundamentales para
 tener datos confiables: consistencia y consenso.
 
 3. Aquí se habla de sistemas que derivan datos de otros datos, como índices,
-cachés y cosas similares, como puedes notar, elementos que son fundamentales
+caches y cosas similares, como puedes notar, elementos que son fundamentales
 en cualquier sistema de software serio moderno.
 
-Como puedes ver, se habla de todo lo necesario para aprender el manejo
+Se habla de todo lo necesario para aprender el manejo
 de grandes cantidades de datos, desde las formas de modelarlos y almacenarlos,
 hasta distribuirlos y procesarlos para crear subproductos útiles.
+
+## El estilo del libro
+
+DDiA tiene un estilo bastante relajado, nada acercado a la academia, más bien,
+es amigable y fácil de leer. Además tiene un poco de humor sutil que hará el libro
+todavía más disfrutable.
+
+Para complementar, el libro tiene imágenes, algunas dibujadas a mano que
+te ayudan a ubicarte en el gran esquema de todas las ideas que trata.
+
+Así que si te preocupa que sea un libro denso, para nada lo es.
 
 ## Qué beneficios obtendrás al leerlo
 
@@ -75,10 +86,15 @@ está enfocado en el **diseño**. Este libro te dará ideas prácticas para
 aplicarlas a tus proyectos.
 
 Si estás en cualquier otra área del desarrollo de software, este libro te
-te dará... bueno, la misma cosa. La forma en la que se tratan los datos
-es fundamental para cualquier sistema de software moderno.
+ayudará a entender mejor cómo funciona la capa de almacenamiento de datos
+en cualquier sistema y puede ayudarte a hacerlo mejor en tu área, porque
+en todas las capas y áreas del desarrollo necesitamos tratar con datos,
+a veces poco, a veces mucho.
 
 ## Conclusiones
 
 Si quieres leer un libro sobre diseño de software, no puedes fallar con
-**Designing Data-intensive Applications**.
+**Designing Data-intensive Applications**. Vale mucho más la pena que otros
+libros de diseño de software por su profundidad y practicidad, además de
+que te va a dar de qué platicar con otros desarrolladores de software
+que pueden estar en el mismo camino de desarrollo profesional que tú.
