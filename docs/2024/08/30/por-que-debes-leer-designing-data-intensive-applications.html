@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Alternativas a Git - The Dojo MX Blog</title>
-<meta name="description" content="Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.">
+<!-- begin _includes/seo.html --><title>Por qué debes leer Designing Data-intensive Applications - The Dojo MX Blog</title>
+<meta name="description" content="Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.">
 
 
   <meta name="author" content="Héctor Patricio">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="es">
 <meta property="og:site_name" content="The Dojo MX Blog">
-<meta property="og:title" content="Alternativas a Git">
-<meta property="og:url" content="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html">
+<meta property="og:title" content="Por qué debes leer Designing Data-intensive Applications">
+<meta property="og:url" content="https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html">
 
 
-  <meta property="og:description" content="Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.">
-
-
-
-  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg">
+  <meta property="og:description" content="Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.">
 
 
 
-
-
-  <meta property="article:published_time" content="2024-07-18T18:00:00-06:00">
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg">
 
 
 
 
 
+  <meta property="article:published_time" content="2024-08-30T00:00:00-06:00">
 
-<link rel="canonical" href="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html">
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html">
 
 
 
@@ -132,14 +132,14 @@
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "url": "https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html",
-      "name": "Alternativas a Git",
-      "headline": "Alternativas a Git",
-      "keywords": "git,version-control,fossil,pijul",
-      "description": "Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.",
-      "articleBody": "Git es una herramienta que se considera obligatoria para los desarrolladores\nmodernos por ser el programa usado para versionamiento de código usado por\nla mayoría de los proyectos.\n\nPero no es ningún secreto que Git es una herramienta difícil de comprender y\nque el 90% de los desarrolladores le dan el uso más básico, temiendo romper algo\ny por eso tener que usar comandos más avanzados.\n\nHablemos de por qué es así y después veamos algunas alternativas interesantes.\n\nLos orígenes de Git\n\nAl igual que otros sistemas de control de versiones, Git nació como soporte al\ndesarrollo de uno de los proyectos de software más importantes de todos los\ntiempos: el kernel de Linux. Fue creado por Linus Torvalds.\n\nSu objetivo no era ser una herramienta de uso masivo y fácil de usar, sino\ntrabajar sin las limitantes de las herramientas que existían en ese momento.\nY claramente, Linus lo creó a su manera. Algo interesante es que se llama\n“Git” porque en inglés británico es una palabra despectiva que se usa para\nllamar a alguien tonto o desagradable. Linus nombra sus proyectos como a sí\nmismo, y como cualquiera lo podría llamar así a él, decidió ponerle ese nombre\na su sistema de manejo de versiones.\n\nGit empezó a ser usado por la comunidad de Linux en 2005 y después por otros\nproyectos Open Source, pero su éxito se disparó cuando en 2008 surgió GitHub\nque facilitó su uso. Por ser una herramienta tan útil, ahora la tenemos como el\nestándar en versionmiento de código.\n\nPero no es el único sistema de control de versiones moderno, hablemos de\ndos alternativas.\n\nFossil\n\nFossil fue creado por el autor de SQLite, Richard Hipp, y al igual que Git,nació\npara soportar a este proyecto de software libre, el principal de su Hipp.\n\nAl buscar un sistema de control de versiones moderno, Richard no encontró nada que lo convenciera\nal cien por ciento, por lo que decidió crear Fossil, con las siguientes características:\n\n\n  Integración de Wiki y Tickets: Fossil tiene incluye estas herramientas a las que Hipp y\nsu equipo estaban acostumbrados.\n  Foro y chat: Fossil está pensado para también ser el centro de conversación del proyecto.\n  Autosync: permite que los cambios se sincronicen automáticamente sin tener que andar haciendo\nmagia con las ramas y los commits.\n\n\nPersonalmente, me gusta mucho la idea de tener todo integrado en un mismo\nsistema, y pienso que el que sistemas como Jira y Confluence se integren directamente\ncon GitHub, Bitbucket y cosas similares, es una señal de que esta integración\nes un muy buena idea que ayuda a que el proceso de software sea más fluido.\n\nPuedes encontrar más información en fossil-scm.org,\npara instalarlo por tu cuenta. Pero también existe una versión hosteada en la\nque de manera gratuita podrás tener el servicio de Fossil, equivalente a\nGitHub: Chisel.\n\nPijul\n\nPijul es un sistema de control de versiones pensado para ser lo más fácil de usar.\nTiene un fundamento matemático: la teoría de parches (patch theory), lo cuál te da\ngarantías interesantes, como la facilidad de uso y la reducción de errores\ncatastróficos. Combina las dos formas principales en las que se han creado sistemas\ncontrol de versiones: los sistemas basados en spapshots (como la mayoría de los\nsistemas de control de versiones más conocidos, incluido Git) y los sistemas\nbasados en parches (como Darcs, un SVC poco conocido pero\nmás fácil de usar).\n\nLos sistemas basados en snapshots son más rápidos pero más frágiles y difíciles de\nusar y los basado en parches son lentos. Es por eso que Pijul cobina lo mejor de ambos\ntipos de sistemas y mientras se mantiene lo suficientemente rápido sigue siendo fácil\nde usar incluso en situaciones en las que Git se vuelve complejo, como en merges,\nconflictos y cherry-picks. En un post posterior hablaremos ge Pijul.\n\nPuedes encontrarlo en pijul.org, te recomiendo\nque si quieres probar algo fundamentalmente diferente a Git, pero con las mismas\nfunciones externas, le des una oportunidad.\n\nConclusión\n\nNo vamos a reemplazar a Git en el corto plazo y probablmente nunca lo hagamos\npor lo extendido que está su uso (piensa en el efecto Lindsey), pero es bueno\nsaber que existen alternativas. Estas herramientas\nnos enseñan cosas interesantes sobre el desarrollo de software, como que casi\nsiempre hay más de una forma de lograr lo que queremos.\nOjalá que en el futuro, Git tome algunas de las ideas de estos proyectos y mejore su\nexperiencia de usuario.\n",
-      "datePublished": "2024-07-18 18:00:00 -0600",
-      "dateModified": "2024-07-18 18:00:00 -0600",
+      "url": "https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html",
+      "name": "Por qué debes leer Designing Data-intensive Applications",
+      "headline": "Por qué debes leer Designing Data-intensive Applications",
+      "keywords": "Matin-Kleppmann,dato,bases-de-datos",
+      "description": "Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.",
+      "articleBody": "Uno de los libros más recomendados para todos los desarrolladores modernos\nes “Designing Data-intensive Applications” de Martin Kleppmann.\nEn este artículo corto vamos a hablar de por qué vale la pena leerlo.\n\n¿Quién es Martin Kleppmann?\n\nMartin es un desarrollador, investigador, escritor y profesor de ciencias\nde la computación bastante prolífico. Actualmente trabaja en la Universidad\nde Cambridge y ha trabajado en empresas como\nRapportive(que él fundó\ny fue comprada por LinkedIn, y también trabajó ahí).\n\nEs también al autor de Secret Colors. Un libro de\ncriptografía de llave pública y llave privada para niños, de la editorial\nRound Robin.\n\nKleppmann es un experto en todo lo que tiene que ver con estructuras\ny manejo de datos. En el presente (2024), su interés está en la\ncoordinación de datos entre sistemas locales, es decir, el software\nfunciona principalmente en un dispositivo que puede estar o no\nconectado a una red y después puede sincronizarse con otros sistemas\nremotos, para adquirir más funciones como respaldos o sincronización.\n\nPero su trabajo más notable hasta el momento es Designing Data-intensive\nApplications (DDiA a partir de ahora). Veamos por qué.\n\n¿De qué trata Designing Data-intensive Applications?\n\nPodemos resumir DDiA como un libro de diseño de software enfocado en los\ndatos y sus interacciones. Es un libro de diseño en el sentido amplio:\nabarca desde la arquitectura de software, hasta la elección de algoritmos\npara lograr las características arquitectónicas deseadas.\n\nEl libro tiene tres grandes partes:\n\n\n  \n    En la primera habla de los principios fundamentales de los sistemas que hacen\nuso intensivo de datos. Habla de las características arquitectónicas\nque los sistemas intensivos es datos deben tener para ser usables. También\nse sientan las formas básicas de almacenar y representar datos a diferentes\nniveles.\n  \n  \n    En la segunda parte, se habla de sistemas distribuidos y sus implicaciones\ny las dificultades que conllevan. Aquí se tratan temas como replicación,\nparticiones y transacciones. También se tratan los temas fundamentales para\ntener datos confiables: consistencia y consenso.\n  \n  \n    Aquí se habla de sistemas que derivan datos de otros datos, como índices,\ncaches y cosas similares, como puedes notar, elementos que son fundamentales\nen cualquier sistema de software serio moderno.\n  \n\n\nSe habla de todo lo necesario para aprender el manejo\nde grandes cantidades de datos, desde las formas de modelarlos y almacenarlos,\nhasta distribuirlos y procesarlos para crear subproductos útiles.\n\nEl estilo del libro\n\nDDiA tiene un estilo bastante relajado, nada acercado a la academia, más bien,\nes amigable y fácil de leer. Además tiene un poco de humor sutil que hará el libro\ntodavía más disfrutable.\n\nPara complementar, el libro tiene imágenes, algunas dibujadas a mano que\nte ayudan a ubicarte en el gran esquema de todas las ideas que trata.\n\nAsí que si te preocupa que sea un libro denso, para nada lo es.\n\nQué beneficios obtendrás al leerlo\n\nSi eres un desarrollador de software con experiencia, especialmente en el\nbackend, podrás profundizar tu experiencia en el entendimiento de la forma\nen la que se tratan los datos para crear sistemas confiables, escalables y\nmantenibles. Toma en cuenta que este libro, como su nombre lo dice\nestá enfocado en el diseño. Este libro te dará ideas prácticas para\naplicarlas a tus proyectos.\n\nSi estás en cualquier otra área del desarrollo de software, este libro te\nayudará a entender mejor cómo funciona la capa de almacenamiento de datos\nen cualquier sistema y puede ayudarte a hacerlo mejor en tu área, porque\nen todas las capas y áreas del desarrollo necesitamos tratar con datos,\na veces poco, a veces mucho.\n\nConclusiones\n\nSi quieres leer un libro sobre diseño de software, no puedes fallar con\nDesigning Data-intensive Applications. Vale mucho más la pena que otros\nlibros de diseño de software por su profundidad y practicidad, además de\nque te va a dar de qué platicar con otros desarrolladores de software\nque pueden estar en el mismo camino de desarrollo profesional que tú.\n",
+      "datePublished": "2024-08-30 00:00:00 -0600",
+      "dateModified": "2024-08-30 00:00:00 -0600",
       "author": {
         "@type": "Person",
         "name": "Héctor Patricio",
@@ -159,13 +159,13 @@
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html"
+        "@id": "https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html"
       },
       "image": {
         "@type": "ImageObject",
         "width": 1200,
         "height": 400,
-        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg"
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg"
       }
     }
 </script>
@@ -238,17 +238,17 @@
 
 
 
-<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg');">
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg');">
   
     <div class="wrapper">
       <h1 id="page-title" class="page__title" itemprop="headline">
         
-          Alternativas a Git
+          Por qué debes leer Designing Data-intensive Applications
 
         
       </h1>
       
-        <p class="page__lead">Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.
+        <p class="page__lead">Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.
 </p>
       
       
@@ -265,7 +265,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-        743 palabras | 6 minutos de lectura
+        649 palabras | 5 minutos de lectura
         
       </span>
     
@@ -403,9 +403,9 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Alternativas a Git">
-    <meta itemprop="description" content="Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.">
-    <meta itemprop="datePublished" content="2024-07-18T18:00:00-06:00">
+    <meta itemprop="headline" content="Por qué debes leer Designing Data-intensive Applications">
+    <meta itemprop="description" content="Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.">
+    <meta itemprop="datePublished" content="2024-08-30T00:00:00-06:00">
     
 
     <div class="page__inner-wrap">
@@ -417,97 +417,99 @@
           Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
 
         </div>
-        <p>Git es una herramienta que se considera <em>obligatoria</em> para los desarrolladores
-modernos por ser el programa usado para versionamiento de código usado por
-la mayoría de los proyectos.</p>
+        <p>Uno de los libros más recomendados para todos los desarrolladores modernos
+es “Designing Data-intensive Applications” de <a href="https://martin.kleppmann.com/">Martin Kleppmann</a>.
+En este artículo corto vamos a hablar de por qué vale la pena leerlo.</p>
 
-<p>Pero no es ningún secreto que Git es una herramienta difícil de comprender y
-que el 90% de los desarrolladores le dan <strong>el uso más básico</strong>, temiendo romper algo
-y por eso tener que usar comandos más avanzados.</p>
+<h2 id="quién-es-martin-kleppmann">¿Quién es Martin Kleppmann?</h2>
 
-<p>Hablemos de por qué es así y después veamos algunas alternativas interesantes.</p>
+<p><strong>Martin</strong> es un desarrollador, investigador, escritor y profesor de ciencias
+de la computación bastante prolífico. Actualmente trabaja en la <a href="https://www.cst.cam.ac.uk/">Universidad
+de Cambridge</a> y ha trabajado en empresas como
+<a href="https://www.crunchbase.com/organization/rapportive">Rapportive</a>(que él fundó
+y fue comprada por LinkedIn, y también trabajó ahí).</p>
 
-<h2 id="los-orígenes-de-git">Los orígenes de Git</h2>
+<p>Es también al autor de <a href="https://roundrobin.pub/">Secret Colors</a>. Un libro de
+criptografía de llave pública y llave privada para niños, de la editorial
+Round Robin.</p>
 
-<p>Al igual que otros sistemas de control de versiones, Git nació como soporte al
-desarrollo de uno de los proyectos de software más importantes de todos los
-tiempos: el kernel de Linux. Fue creado por <strong>Linus Torvalds</strong>.</p>
+<p><strong>Kleppmann</strong> es un experto en todo lo que tiene que ver con estructuras
+y manejo de datos. En el presente (2024), su interés está en la
+coordinación de datos entre sistemas locales, es decir, el software
+funciona principalmente en un dispositivo que puede estar o no
+conectado a una red y después puede sincronizarse con otros sistemas
+remotos, para adquirir más funciones como respaldos o sincronización.</p>
 
-<p>Su objetivo no era ser una herramienta de uso masivo y fácil de usar, sino
-trabajar sin las limitantes de las herramientas que existían en ese momento.
-Y claramente, Linus lo creó a su manera. Algo interesante es que se llama
-“Git” porque en inglés británico es una palabra despectiva que se usa para
-llamar a alguien tonto o desagradable. Linus nombra sus proyectos como a sí
-mismo, y como cualquiera lo podría llamar así a él, decidió ponerle ese nombre
-a su sistema de manejo de versiones.</p>
+<p>Pero su trabajo más notable hasta el momento es <strong>Designing Data-intensive
+Applications</strong> (<em>DDiA</em> a partir de ahora). Veamos por qué.</p>
 
-<p><strong>Git</strong> empezó a ser usado por la comunidad de Linux en 2005 y después por otros
-proyectos Open Source, pero su éxito se disparó cuando en 2008 surgió GitHub
-que facilitó su uso. Por ser una herramienta tan útil, ahora la tenemos como el
-estándar en versionmiento de código.</p>
+<h2 id="de-qué-trata-designing-data-intensive-applications">¿De qué trata Designing Data-intensive Applications?</h2>
 
-<p>Pero no es el único sistema de control de versiones moderno, hablemos de
-dos alternativas.</p>
+<p>Podemos resumir <em>DDiA</em> como un libro de diseño de software enfocado en los
+datos y sus interacciones. Es un libro de diseño en el sentido amplio:
+abarca desde la arquitectura de software, hasta la elección de algoritmos
+para lograr las características arquitectónicas deseadas.</p>
 
-<h2 id="fossil">Fossil</h2>
-
-<p>Fossil fue creado por el autor de SQLite, <a href="https://www.hwaci.com/drh/"><strong>Richard Hipp</strong></a>, y al igual que Git,nació
-para soportar a este proyecto de software libre, el principal de su Hipp.</p>
-
-<p>Al buscar un sistema de control de versiones moderno, Richard no encontró nada que lo convenciera
-al cien por ciento, por lo que decidió crear Fossil, con las siguientes características:</p>
+<p>El libro tiene tres grandes partes:</p>
 
 <ol>
   <li>
-<strong>Integración de Wiki y Tickets</strong>: Fossil tiene incluye estas herramientas a las que Hipp y
-su equipo estaban acostumbrados.</li>
+    <p>En la primera habla de los principios fundamentales de los sistemas que hacen
+uso intensivo de datos. Habla de las características arquitectónicas
+que los sistemas intensivos es datos deben tener para ser usables. También
+se sientan las formas básicas de almacenar y representar datos a diferentes
+niveles.</p>
+  </li>
   <li>
-<strong>Foro y chat</strong>: Fossil está pensado para también ser el centro de conversación del proyecto.</li>
+    <p>En la segunda parte, se habla de sistemas distribuidos y sus implicaciones
+y las dificultades que conllevan. Aquí se tratan temas como replicación,
+particiones y transacciones. También se tratan los temas fundamentales para
+tener datos confiables: consistencia y consenso.</p>
+  </li>
   <li>
-<strong>Autosync</strong>: permite que los cambios se sincronicen automáticamente sin tener que andar haciendo
-magia con las ramas y los commits.</li>
+    <p>Aquí se habla de sistemas que derivan datos de otros datos, como índices,
+caches y cosas similares, como puedes notar, elementos que son fundamentales
+en cualquier sistema de software serio moderno.</p>
+  </li>
 </ol>
 
-<p>Personalmente, me gusta mucho la idea de tener todo integrado en un mismo
-sistema, y pienso que el que sistemas como Jira y Confluence se integren directamente
-con GitHub, Bitbucket y cosas similares, es una señal de que esta integración
-es un muy buena idea que ayuda a que el proceso de software sea más fluido.</p>
+<p>Se habla de todo lo necesario para aprender el manejo
+de grandes cantidades de datos, desde las formas de modelarlos y almacenarlos,
+hasta distribuirlos y procesarlos para crear subproductos útiles.</p>
 
-<p>Puedes encontrar más información en <a href="https://fossil-scm.org/">fossil-scm.org</a>,
-para instalarlo por tu cuenta. Pero también existe una versión hosteada en la
-que de manera gratuita podrás tener el servicio de Fossil, equivalente a
-GitHub: <a href="https://chiselapp.com/">Chisel</a>.</p>
+<h2 id="el-estilo-del-libro">El estilo del libro</h2>
 
-<h2 id="pijul">Pijul</h2>
+<p>DDiA tiene un estilo bastante relajado, nada acercado a la academia, más bien,
+es amigable y fácil de leer. Además tiene un poco de humor sutil que hará el libro
+todavía más disfrutable.</p>
 
-<p>Pijul es un sistema de control de versiones pensado para ser lo más fácil de usar.
-Tiene un fundamento matemático: la teoría de parches (patch theory), lo cuál te da
-garantías interesantes, como la facilidad de uso y la reducción de errores
-catastróficos. Combina las dos formas principales en las que se han creado sistemas
-control de versiones: los sistemas basados en spapshots (como la mayoría de los
-sistemas de control de versiones más conocidos, incluido Git) y los sistemas
-basados en parches (como <a href="https://darcs.net/">Darcs</a>, un SVC poco conocido pero
-más fácil de usar).</p>
+<p>Para complementar, el libro tiene imágenes, algunas dibujadas a mano que
+te ayudan a ubicarte en el gran esquema de todas las ideas que trata.</p>
 
-<p>Los sistemas basados en snapshots son más rápidos pero más frágiles y difíciles de
-usar y los basado en parches son lentos. Es por eso que Pijul cobina lo mejor de ambos
-tipos de sistemas y mientras se mantiene lo suficientemente rápido sigue siendo fácil
-de usar incluso en situaciones en las que Git se vuelve complejo, como en merges,
-conflictos y cherry-picks. En un post posterior hablaremos ge Pijul.</p>
+<p>Así que si te preocupa que sea un libro denso, para nada lo es.</p>
 
-<p>Puedes encontrarlo en <a href="https://pijul.org/">pijul.org</a>, te recomiendo
-que si quieres probar algo fundamentalmente diferente a Git, pero con las mismas
-funciones externas, le des una oportunidad.</p>
+<h2 id="qué-beneficios-obtendrás-al-leerlo">Qué beneficios obtendrás al leerlo</h2>
 
-<h2 id="conclusión">Conclusión</h2>
+<p>Si eres un desarrollador de software con experiencia, especialmente en el
+backend, podrás profundizar tu experiencia en el entendimiento de la forma
+en la que se tratan los datos para crear sistemas confiables, escalables y
+mantenibles. Toma en cuenta que este libro, como su nombre lo dice
+está enfocado en el <strong>diseño</strong>. Este libro te dará ideas prácticas para
+aplicarlas a tus proyectos.</p>
 
-<p>No vamos a reemplazar a Git en el corto plazo y probablmente nunca lo hagamos
-por lo extendido que está su uso (piensa en el efecto Lindsey), pero es bueno
-saber que existen alternativas. Estas herramientas
-nos enseñan cosas interesantes sobre el desarrollo de software, como que casi
-siempre hay más de una forma de lograr lo que queremos.
-Ojalá que en el futuro, Git tome algunas de las ideas de estos proyectos y mejore su
-experiencia de usuario.</p>
+<p>Si estás en cualquier otra área del desarrollo de software, este libro te
+ayudará a entender mejor cómo funciona la capa de almacenamiento de datos
+en cualquier sistema y puede ayudarte a hacerlo mejor en tu área, porque
+en todas las capas y áreas del desarrollo necesitamos tratar con datos,
+a veces poco, a veces mucho.</p>
+
+<h2 id="conclusiones">Conclusiones</h2>
+
+<p>Si quieres leer un libro sobre diseño de software, no puedes fallar con
+<strong>Designing Data-intensive Applications</strong>. Vale mucho más la pena que otros
+libros de diseño de software por su profundidad y practicidad, además de
+que te va a dar de qué platicar con otros desarrolladores de software
+que pueden estar en el mismo camino de desarrollo profesional que tú.</p>
 
        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
           Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
@@ -528,13 +530,11 @@ experiencia de usuario.</p>
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#fossil" class="page__taxonomy-item" rel="tag">fossil</a><span class="sep">, </span>
+      <a href="/tags/#bases-de-datos" class="page__taxonomy-item" rel="tag">bases-de-datos</a><span class="sep">, </span>
     
-      <a href="/tags/#git" class="page__taxonomy-item" rel="tag">git</a><span class="sep">, </span>
+      <a href="/tags/#dato" class="page__taxonomy-item" rel="tag">dato</a><span class="sep">, </span>
     
-      <a href="/tags/#pijul" class="page__taxonomy-item" rel="tag">pijul</a><span class="sep">, </span>
-    
-      <a href="/tags/#version-control" class="page__taxonomy-item" rel="tag">version-control</a>
+      <a href="/tags/#matin-kleppmann" class="page__taxonomy-item" rel="tag">Matin-Kleppmann</a>
     
     </span>
   </p>
@@ -544,7 +544,7 @@ experiencia de usuario.</p>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2024-07-18T18:00:00-06:00">July 18, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2024-08-30T00:00:00-06:00">August 30, 2024</time></p>
 
 
       </footer>
@@ -554,23 +554,22 @@ experiencia de usuario.</p>
     <h4 class="page__share-title">Compartir</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Alternativas+a+Git%20https%3A%2F%2Fblog.thedojo.mx%2F2024%2F07%2F18%2Falternativas-a-git.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Por+qu%C3%A9+debes+leer+Designing+Data-intensive+Applications%20https%3A%2F%2Fblog.thedojo.mx%2F2024%2F08%2F30%2Fpor-que-debes-leer-designing-data-intensive-applications.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F07%2F18%2Falternativas-a-git.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F08%2F30%2Fpor-que-debes-leer-designing-data-intensive-applications.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F07%2F18%2Falternativas-a-git.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F08%2F30%2Fpor-que-debes-leer-designing-data-intensive-applications.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html" class="pagination--pager" title="5 pláticas de StrageLoop que tienes que ver
+      <a href="/2024/07/18/alternativas-a-git.html" class="pagination--pager" title="Alternativas a Git
 ">Anterior</a>
     
     
-      <a href="/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html" class="pagination--pager" title="Por qué debes leer Designing Data-intensive Applications
-">Siguiente</a>
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
     
   </nav>
 
@@ -602,12 +601,12 @@ experiencia de usuario.</p>
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg" alt="">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg" alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html" rel="permalink">Por qué debes leer Designing Data-intensive Applications
+        <a href="/2024/07/18/alternativas-a-git.html" rel="permalink">Alternativas a Git
 </a>
       
     </h2>
@@ -617,14 +616,14 @@ experiencia de usuario.</p>
 
 
 
-5 minutos de lectura
+6 minutos de lectura
 
 
 
-| <i class="far fa-calendar" aria-hidden="true"></i> 30-08-2024
+| <i class="far fa-calendar" aria-hidden="true"></i> 18-07-2024
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.
+    <p class="archive__item-excerpt" itemprop="description">Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.
 </p>
   </article>
 </div>
@@ -808,8 +807,8 @@ experiencia de usuario.</p>
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/2024/07/18/alternativas-a-git"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2024/08/30/por-que-debes-leer-designing-data-intensive-applications"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

@@ -814,4 +814,10 @@ var store = [{
         "tags": ["git","version-control","fossil","pijul"],
         "url": "/2024/07/18/alternativas-a-git.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg"
+      },{
+        "title": "Por qué debes leer Designing Data-intensive Applications",
+        "excerpt":"Uno de los libros más recomendados para todos los desarrolladores modernos es “Designing Data-intensive Applications” de Martin Kleppmann. En este artículo corto vamos a hablar de por qué vale la pena leerlo. ¿Quién es Martin Kleppmann? Martin es un desarrollador, investigador, escritor y profesor de ciencias de la computación bastante...","categories": [],
+        "tags": ["Matin-Kleppmann","dato","bases-de-datos"],
+        "url": "/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg"
       }]

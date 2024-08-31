@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-07-19T23:19:06-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Alternativas a Git</title><link href="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html" rel="alternate" type="text/html" title="Alternativas a Git" /><published>2024-07-18T18:00:00-06:00</published><updated>2024-07-18T18:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/07/18/alternativas-a-git</id><content type="html" xml:base="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html"><![CDATA[<p>Git es una herramienta que se considera <em>obligatoria</em> para los desarrolladores
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-08-30T23:31:31-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Por qué debes leer Designing Data-intensive Applications</title><link href="https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html" rel="alternate" type="text/html" title="Por qué debes leer Designing Data-intensive Applications" /><published>2024-08-30T00:00:00-06:00</published><updated>2024-08-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications</id><content type="html" xml:base="https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html"><![CDATA[<p>Uno de los libros más recomendados para todos los desarrolladores modernos
+es “Designing Data-intensive Applications” de <a href="https://martin.kleppmann.com/">Martin Kleppmann</a>.
+En este artículo corto vamos a hablar de por qué vale la pena leerlo.</p>
+
+<h2 id="quién-es-martin-kleppmann">¿Quién es Martin Kleppmann?</h2>
+
+<p><strong>Martin</strong> es un desarrollador, investigador, escritor y profesor de ciencias
+de la computación bastante prolífico. Actualmente trabaja en la <a href="https://www.cst.cam.ac.uk/">Universidad
+de Cambridge</a> y ha trabajado en empresas como
+<a href="https://www.crunchbase.com/organization/rapportive">Rapportive</a>(que él fundó
+y fue comprada por LinkedIn, y también trabajó ahí).</p>
+
+<p>Es también al autor de <a href="https://roundrobin.pub/">Secret Colors</a>. Un libro de
+criptografía de llave pública y llave privada para niños, de la editorial
+Round Robin.</p>
+
+<p><strong>Kleppmann</strong> es un experto en todo lo que tiene que ver con estructuras
+y manejo de datos. En el presente (2024), su interés está en la
+coordinación de datos entre sistemas locales, es decir, el software
+funciona principalmente en un dispositivo que puede estar o no
+conectado a una red y después puede sincronizarse con otros sistemas
+remotos, para adquirir más funciones como respaldos o sincronización.</p>
+
+<p>Pero su trabajo más notable hasta el momento es <strong>Designing Data-intensive
+Applications</strong> (<em>DDiA</em> a partir de ahora). Veamos por qué.</p>
+
+<h2 id="de-qué-trata-designing-data-intensive-applications">¿De qué trata Designing Data-intensive Applications?</h2>
+
+<p>Podemos resumir <em>DDiA</em> como un libro de diseño de software enfocado en los
+datos y sus interacciones. Es un libro de diseño en el sentido amplio:
+abarca desde la arquitectura de software, hasta la elección de algoritmos
+para lograr las características arquitectónicas deseadas.</p>
+
+<p>El libro tiene tres grandes partes:</p>
+
+<ol>
+  <li>
+    <p>En la primera habla de los principios fundamentales de los sistemas que hacen
+uso intensivo de datos. Habla de las características arquitectónicas
+que los sistemas intensivos es datos deben tener para ser usables. También
+se sientan las formas básicas de almacenar y representar datos a diferentes
+niveles.</p>
+  </li>
+  <li>
+    <p>En la segunda parte, se habla de sistemas distribuidos y sus implicaciones
+y las dificultades que conllevan. Aquí se tratan temas como replicación,
+particiones y transacciones. También se tratan los temas fundamentales para
+tener datos confiables: consistencia y consenso.</p>
+  </li>
+  <li>
+    <p>Aquí se habla de sistemas que derivan datos de otros datos, como índices,
+caches y cosas similares, como puedes notar, elementos que son fundamentales
+en cualquier sistema de software serio moderno.</p>
+  </li>
+</ol>
+
+<p>Se habla de todo lo necesario para aprender el manejo
+de grandes cantidades de datos, desde las formas de modelarlos y almacenarlos,
+hasta distribuirlos y procesarlos para crear subproductos útiles.</p>
+
+<h2 id="el-estilo-del-libro">El estilo del libro</h2>
+
+<p>DDiA tiene un estilo bastante relajado, nada acercado a la academia, más bien,
+es amigable y fácil de leer. Además tiene un poco de humor sutil que hará el libro
+todavía más disfrutable.</p>
+
+<p>Para complementar, el libro tiene imágenes, algunas dibujadas a mano que
+te ayudan a ubicarte en el gran esquema de todas las ideas que trata.</p>
+
+<p>Así que si te preocupa que sea un libro denso, para nada lo es.</p>
+
+<h2 id="qué-beneficios-obtendrás-al-leerlo">Qué beneficios obtendrás al leerlo</h2>
+
+<p>Si eres un desarrollador de software con experiencia, especialmente en el
+backend, podrás profundizar tu experiencia en el entendimiento de la forma
+en la que se tratan los datos para crear sistemas confiables, escalables y
+mantenibles. Toma en cuenta que este libro, como su nombre lo dice
+está enfocado en el <strong>diseño</strong>. Este libro te dará ideas prácticas para
+aplicarlas a tus proyectos.</p>
+
+<p>Si estás en cualquier otra área del desarrollo de software, este libro te
+ayudará a entender mejor cómo funciona la capa de almacenamiento de datos
+en cualquier sistema y puede ayudarte a hacerlo mejor en tu área, porque
+en todas las capas y áreas del desarrollo necesitamos tratar con datos,
+a veces poco, a veces mucho.</p>
+
+<h2 id="conclusiones">Conclusiones</h2>
+
+<p>Si quieres leer un libro sobre diseño de software, no puedes fallar con
+<strong>Designing Data-intensive Applications</strong>. Vale mucho más la pena que otros
+libros de diseño de software por su profundidad y practicidad, además de
+que te va a dar de qué platicar con otros desarrolladores de software
+que pueden estar en el mismo camino de desarrollo profesional que tú.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Matin-Kleppmann" /><category term="dato" /><category term="bases-de-datos" /><summary type="html"><![CDATA[Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.]]></summary></entry><entry><title type="html">Alternativas a Git</title><link href="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html" rel="alternate" type="text/html" title="Alternativas a Git" /><published>2024-07-18T18:00:00-06:00</published><updated>2024-07-18T18:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/07/18/alternativas-a-git</id><content type="html" xml:base="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html"><![CDATA[<p>Git es una herramienta que se considera <em>obligatoria</em> para los desarrolladores
 modernos por ser el programa usado para versionamiento de código usado por
 la mayoría de los proyectos.</p>
 
@@ -799,79 +891,4 @@ tienen un camino en la filosofía de la computación, así que si quieres desarr
 
 <p>Aprender ciencias de la computación es una buena idea para tu carrera, independientemente de la etapa en la que te encuentres o de la rama de la programación a la que te dediques. Te ayudará a evitar la frustración de no saber por qué algo no funciona, o peor aún, que funcione y no saber por qué.</p>
 
-<p>Consulta los recursos que recomendamos en este artículo y empieza a aprender hoy mismo. Además en este blog encontrarás muchos artículos relacionados con las ciencias de la computación, así que no dudes en explorarlos.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="ciencias-de-la-computación" /><category term="cs" /><category term="computer-science" /><summary type="html"><![CDATA[Las ciencias de la computación te ayudarán a ser mejor desarrollador, independientemente de la rama de la programación a la que te dediques. Veamos como.]]></summary></entry><entry><title type="html">La matriz del conocimiento para devs</title><link href="https://blog.thedojo.mx/2023/06/29/la-matriz-del-conocimiento-para-devs.html" rel="alternate" type="text/html" title="La matriz del conocimiento para devs" /><published>2023-06-29T00:00:00-06:00</published><updated>2023-06-29T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/06/29/la-matriz-del-conocimiento-para-devs</id><content type="html" xml:base="https://blog.thedojo.mx/2023/06/29/la-matriz-del-conocimiento-para-devs.html"><![CDATA[<p>La epistemología es la rama de la filosofía que estudia la naturaleza del conocimiento. Una de sus principales tareas es la de estudiar cómo se adquiere el conocimiento y cómo se representa.</p>
-
-<p>La <strong>matriz de Rumsfeld</strong> es una herramienta que nos ayuda a representar el conocimiento y a identificar qué conocimiento nos falta para tomar decisiones. En este artículo vamos a ver cómo funciona y cómo nos puede ayudar.</p>
-
-<h2 id="la-matriz-de-rumsfeld">La matriz de Rumsfeld</h2>
-
-<p>Según nuestro grado de conocimiento y la consciencia que tenemos de él, podemos clasificarlo en 4 categorías:</p>
-
-<ol>
-  <li>Lo que sabemos que sabemos</li>
-  <li>Lo que sabemos que <strong>no</strong> sabemos</li>
-  <li>Lo que <strong>no</strong> sabemos que sabemos</li>
-  <li>Lo que <strong>no</strong> sabemos que <strong>no</strong> sabemos</li>
-</ol>
-
-<p>La representación tradicional es la siguiente:</p>
-
-<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1688048267/Ilustracio%CC%81n_sin_ti%CC%81tulo_5_lpvjyv.png" alt="Matriz de Rumsfeld" class="align-center" /></p>
-
-<p>Pero no me gusta porque pone las cuatro categorías como del mismo tamaño. Mi representación personal, que me parece que guarda mejor las proporciones es esta:</p>
-
-<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1688048203/Ilustracio%CC%81n_sin_ti%CC%81tulo_6_lonjhl.png" alt="Matriz de Rumsfeld" class="align-center" /></p>
-
-<p>Bueno, haciéndola un poco más legible (y rompiendo las proporciones) quedaría así:</p>
-
-<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1688048200/Ilustracio%CC%81n_sin_ti%CC%81tulo_8_rg17f0.png" alt="Matriz de Rumsfeld" class="align-center" /></p>
-
-<p>Pero quiero que te quedes con la idea de una frase que escuché en una serie llamada Dark: “Lo que sabemos que sabemos es una gota, lo que no sabemos es un océano.”</p>
-
-<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1688017245/5557d4f59b6ee4332ffae7f2a68513b7_n0ci5o.png" alt="Escena de Dark" /></p>
-
-<h2 id="ejemplos">Ejemplos</h2>
-
-<p>Pongamos algunos ejemplos de cada categoría para entenderlos mejor.</p>
-
-<h3 id="categoría-1-lo-que-sabemos-que-sabemos">Categoría 1: Lo que sabemos que sabemos</h3>
-
-<p>En este área están todas las cosas que nuestra consciencia puede encontrar y a veces incluso explicar. Por ejemplo si eres programador sabes que sabes algún lenguaje de programación, como Python, Go, Scala. Hablando del futuro sabemos que es muy probable que todos estos lenguajes tengan nuevas versiones, o que se encuentren vulnerabilidades en ellos y que se tengan que actualizar.</p>
-
-<p>También podríamos incluir el conocimiento académico, cosas que hayamos estudiado recientemente y cosas similares.</p>
-
-<h2 id="categoría-2-lo-que-sabemos-que-no-sabemos">Categoría 2: Lo que sabemos que no sabemos</h2>
-
-<p>Siguiendo el ejemplo de los lenguajes de programación, normalmente sabemos uno o dos, pero estamos conscientes de que no conocemos su funcionamiento interno, o que no conocemos otros lenguajes, por ejemplo Ocaml, Haskell, etc. O sabemos que no podemos montar una infraestructura de Kubernetes, pero sabemos que existe y que hay gente que lo sabe hacer, así que podríamos investigarlo. También hay cosas que son imposibles de conocer y lo sabemos, por ejemplo, cuando va a salir exactamente la próxima versión de Python.</p>
-
-<h2 id="categoría-3-lo-que-no-sabemos-que-sabemos">Categoría 3: Lo que no sabemos que sabemos</h2>
-
-<p>Aquí se empiezan a  poner difíciles las cosas, ¿cómo que hay cosas que no sabemos que sabemos? Este es el conocimiento tácito, cosas que hemos adquirido indirectamente o que ya están tan interiorizadas que no nos damos cuenta que sabemos. Por ejemplo cuando eres programador no te das cuenta que <em>estás haciendo matemáticas</em> con el simple hecho de programar. Entonces sabes matemáticas (por lo menos una rama de ellas), pero no te das cuenta. Otro ejemplo es con nuestro lenguaje natural, sabemos conjugar en todas las formas de subjuntivo, pero no sabíamos ni cómo se llama eso.</p>
-
-<p>Una sub-categoría este tipo de conocimiento es el que tenemos pero no nos damos cuenta que es relevante para el problema en cuestión que estamos tratando.</p>
-
-<h2 id="categoría-4-lo-que-no-sabemos-que-no-sabemos">Categoría 4: Lo que no sabemos que no sabemos</h2>
-
-<p>Esta es la más difícil de entender, en inglés le llaman los “unknown unknowns”  y son todas aquellas cosas que no sabíamos siquiera que teníamos que preguntar. En el caso de los lenguajes de programación, por ejemplo está el caso de los lenguajes que ni siquiera hemos escuchado su nombre, o de todos aquellos conceptos que no sabemos que existen. Por ejemplo, si no sabemos que existe la programación funcional, no sabemos que no sabemos programación funcional.</p>
-
-<p>Respecto al futuro, este conocimiento son aquellas cosas que no podemos prever que pasarán, por ejemplo, que un proyecto dejará de mantenerse de manera súbita, que su autor principal morirá, etc.</p>
-
-<p>Cuando eres completamente nuevo en un campo, esta parte es tan abrumadora y se come completamente a la categoría 2, las de las cosas que sabemos que no sabemos, que es muy fácil pensar que sabes todo lo que hay que saber, pero no es así. Cuando vas conociendo más el área o el tema, vas sacando cosas de esta categoría y las vas poniendo en la categoría 2, las cosas que sabes que no sabes, y ahí es cuando empiezas a <em>de verdad</em> conocer algo.</p>
-
-<p>Lo más peligroso (y también la mayores oportunidades) para los proyectos y para nosotros están en esta categoría.</p>
-
-<h2 id="cómo-nos-ayuda-esta-clasificación">¿Cómo nos ayuda esta clasificación?</h2>
-
-<p>Esta matriz nos da consciencia de la cantidad de conocimiento <strong>que nos hace falta</strong> y nos hace pensar además que hay cosas que ni siquiera nos imaginamos que no sabemos.</p>
-
-<p>La matriz de Rumsfeld, está principalmente considerada como una herramienta para la toma de decisiones y el <strong>análisis de riesgos</strong>. Las principales formas de aplicarla son:</p>
-
-<ol>
-  <li><strong>Al planear de proyectos</strong>, en donde podemos analizar las cuatro categorías para encontrar los riesgos de que un proyecto sea factible y salga en el tiempo y presupuesto planeados.</li>
-  <li><strong>Al escoger tu stack tecnológico</strong>. Recuerda que cuando empiezas a conocer algo puedes sentir que lo sabes todo y tener una confianza excesiva al tener pocas preguntas sobre el tema, pero esto sólo es una señal de que la categoría 4, los desconocidos desconocidos, es demasiado grande. Eso es exactamente lo que pasa con las tecnologías demasiado nuevas o que estás empezando a conocer, lo que puede hacer que un proyecto se vuelva inviable. Por eso, guiarte por esta matriz para escoger la tecnología que vas a usar te puede proteger de tomar decisiones demasiado arriesgadas.</li>
-  <li><strong>Desarrollo de software resiliente</strong>. Al evaluar contra qué te deberías proteger, vale tener en cuenta que hay cosas que son imposibles de predecir o imposibles de saber. Esto te llevará a fortalecer las áreas del sistema críticas para recuperarse de cualquier problema, conocido o desconocido, que puedan afectar su funcionamiento general.</li>
-</ol>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>La matriz del conocimiento nos ayuda a poner los pies en la tierra respecto a los riesgos y lo que de verdad podemos considerar que sabemos. Úsala para planear tus proyectos, escoger tu tecnología y proteger tus sistemas contra cosas que pueden ser catastróficas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="conocimiento" /><category term="epistemología" /><summary type="html"><![CDATA[La principal trae de un desarrollador es representar el conocimiento en procesos computacionales. Veamos una herramienta que te puede ayudar a administrar mejor ese conocimiento.]]></summary></entry></feed>
+<p>Consulta los recursos que recomendamos en este artículo y empieza a aprender hoy mismo. Además en este blog encontrarás muchos artículos relacionados con las ciencias de la computación, así que no dudes en explorarlos.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="ciencias-de-la-computación" /><category term="cs" /><category term="computer-science" /><summary type="html"><![CDATA[Las ciencias de la computación te ayudarán a ser mejor desarrollador, independientemente de la rama de la programación a la que te dediques. Veamos como.]]></summary></entry></feed>
