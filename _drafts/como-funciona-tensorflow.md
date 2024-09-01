@@ -1,24 +1,26 @@
 ---
 title: ¿Cómo funciona TensorFlow?
-date: 2024-03-08T00:00:00.000Z
+date: 2024-08-31
 author: Héctor Patricio
 tags: null
 comments: true
 excerpt: >-
   TensorFlow permite crear modelos de aprendizaje automático sin que te tengas
-  que plear con la forma en la que se hacen los cálculos en los ejecutores.
+  que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablemos
+  más de cómo funciona.
 header:
-  overlay_image: null
-  teaser: null
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg
   overlay_filter: 'rgba(0, 0, 0, 0.5)'
 ---
-TensorFlow es una de las herramientas más populares e influyentes
+
+**TensorFlow** es una de las herramientas más populares e influyentes
 en el campo de la inteligencia artificial. En este artículo vamos a ver
 qué es exactamente y cómo funciona.
 
-## ¿Qué es Tensoflow?
+## ¿Qué es TensorFlow?
 
-Para crear modelos de inteligencia artificial, hay que hacer muchos cálculos  
+Para crear modelos de inteligencia artificial, hay que hacer muchos cálculos
 matemáticos, la mayoría de ellos son operaciones de multiplicación de matrices.
 Estos cálculos son no son eficientes en un procesador tradicional y por eso se
 requiere de toda la ayuda posible para hacer estos cálculos menos costosos.
