@@ -20,10 +20,11 @@ qué es exactamente y cómo funciona.
 
 ## ¿Qué es TensorFlow?
 
-Para crear modelos de inteligencia artificial, hay que hacer muchos cálculos
+Para crear modelos de aprendizaje automático, hay que hacer muchos cálculos
 matemáticos, la mayoría de ellos son operaciones de multiplicación de matrices.
 Estos cálculos son no son eficientes en un procesador tradicional y por eso se
-requiere de toda la ayuda posible para hacer estos cálculos menos costosos.
+requiere de toda la ayuda posible para hacer estos cálculos lo más rápido
+posible y gastando menos energía.
 
 Es aquí donde entra TensorFlow, una biblioteca que permite _representar_ estos
 cálculos mediante grafos de operaciones y después ejecutarlos en procesadores
@@ -40,20 +41,7 @@ llegamos a él y cómo lo ejecutamos después?
 
 ## Grafos de cómputo de TensorFlow
 
-Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su representaciónoooo
-
-ooo
-
-oooo
-
-2. second
-3. third
-
-2. second
-3. third
-
-2. second
-3. third
+Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su representación
 
 ```python
 Y = W * X + b
