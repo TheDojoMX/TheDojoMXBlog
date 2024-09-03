@@ -20,8 +20,8 @@ qué es exactamente y cómo funciona.
 
 ## ¿Qué es TensorFlow?
 
-Para crear modelos de aprendizaje automático, hay que hacer muchos cálculos
-matemáticos, la mayoría de ellos son operaciones de multiplicación de matrices.
+Para crear modelos de aprendizaje automático, tenemos que hacer muchos cálculos
+matemáticos,y la gran mayoría son operaciones de multiplicación de matrices.
 Estos cálculos son no son eficientes en un procesador tradicional y por eso se
 requiere de toda la ayuda posible para hacer estos cálculos lo más rápido
 posible y gastando menos energía.
@@ -36,8 +36,8 @@ en otros dispisitivos de cómputo, por ejemplo cosas menos poderosas como
 dispositivos móviles o computadoras de bajo consumo, pero también en dispositivos
 de alto rendimiento com TPUs (Tensor Processing Units) de Google.
 
-Y es aquí donde entra lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
-llegamos a él y cómo lo ejecutamos después?
+Y es aquí donde empieza lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
+llegamos a él y para qué nos sirve después?
 
 ## Grafos de cómputo de TensorFlow
 
