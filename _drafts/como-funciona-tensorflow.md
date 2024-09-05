@@ -15,15 +15,15 @@ header:
 ---
 
 **TensorFlow** es una de las herramientas más populares e influyentes
-en el campo de la inteligencia artificial. En este artículo vamos a ver
+en el campo de la del aprendizaje automático. En este artículo vamos a ver
 qué es exactamente y cómo funciona.
 
 ## ¿Qué es TensorFlow?
 
 Para crear modelos de aprendizaje automático, tenemos que hacer muchos cálculos
 matemáticos,y la gran mayoría son operaciones de multiplicación de matrices.
-Estos cálculos son no son eficientes en un procesador tradicional y por eso se
-requiere de toda la ayuda posible para hacer estos cálculos lo más rápido
+Estos cálculos no son eficientes en un procesador tradicional y por eso se
+requiere de toda la ayuda posible para hacerlos lo más rápido
 posible y gastando menos energía.
 
 Es aquí donde entra TensorFlow, una biblioteca que permite _representar_ estos
@@ -32,7 +32,7 @@ especializados como tarjetas gráficas y otros procesadores especializados en
 operaciones matemáticas pesadas.
 
 Esta representación que TensorFlow crea, también se puede compilar para ejecutarse
-en otros dispisitivos de cómputo, por ejemplo cosas menos poderosas como
+en otros dispositivos de cómputo, por ejemplo cosas menos poderosas como
 dispositivos móviles o computadoras de bajo consumo, pero también en dispositivos
 de alto rendimiento com TPUs (Tensor Processing Units) de Google.
 
