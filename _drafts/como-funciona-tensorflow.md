@@ -28,16 +28,13 @@ posible y gastando menos energía.
 
 Es aquí donde entra TensorFlow, una biblioteca que permite _representar_ estos
 cálculos mediante grafos de operaciones y después ejecutarlos en procesadores
-especializados como tarjetas gráficas y otros procesadores especializados en
-operaciones matemáticas pesadas.
-
-Esta representación que TensorFlow crea, también se puede compilar para ejecutarse
-en otros dispositivos de cómputo, por ejemplo cosas menos poderosas como
-dispositivos móviles o computadoras de bajo consumo, pero también en dispositivos
-de alto rendimiento com TPUs (Tensor Processing Units) de Google.
+especializados como tarjetas gráficas y otros procesadores eficientes en
+operaciones matemáticas pesadas.Además, TensorFlow abstrae al usuario final (tú),
+de los deatalles de implementación de muchas funciones y operaciones matemáticas
+que se usan mucho en el aprendizaje automático.
 
 Y es aquí donde empieza lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
-llegamos a él y para qué nos sirve después?
+llegamos a él y para qué nos sirve?
 
 ## Grafos de cómputo de TensorFlow
 
@@ -47,13 +44,14 @@ Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su representac
 Y = W * X + b
 ```
 
-Esta es la ecuación que un perceptrón simple. Vemos cómo la representa TensorFlow.
+Esta es la ecuación que un perceptrón simple. Veamos cómo la representa TensorFlow.
 Para que esto sea útil, cada una de las operaciones se hace sobre tensores, es decir,
 sobre un conjunto de datos numéricos de varias dimensiones.
 
 ¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que representa esa
 operación:
 
+![Imagen de un grafo de cómputo de TensorFlow]
 Puedes pensar en este grafo como una serie de nodos que representan cada uno
 una operación sobre TENSORES, es decir, conjuntos de datos numéricos de más de dos dimensiones,
 
@@ -65,6 +63,7 @@ viene la parte de ahora sí hacer los cálculos.
 ## TensorFlow y Keras
 
 Keras es un framework que te permite crear modelos de aprendizaje profundo de manera sencilla.
+
 ¿Cómo se relaciona con TensorFlow? Con Keras declaras tus modelos y TensorFlow se encarga de
 transformarlos en un grafo de cómputo que se puede ejecutar en el hardware que tengas disponible.
 
