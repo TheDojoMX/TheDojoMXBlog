@@ -20,17 +20,21 @@ qué es exactamente y cómo funciona.
 
 ## ¿Qué es TensorFlow?
 
+Siempre que hablamos de TensorFlow se dice que es una "biblioteca (o librería,
+o framework) para hacer aprendizaje automático, pero este definición no es muy
+explícita y por eso vamos a ver cómo nos permite crear modelos de aprendizaje.
+
 Para crear modelos de aprendizaje automático, tenemos que hacer muchos cálculos
-matemáticos,y la gran mayoría son operaciones de multiplicación de matrices.
+matemáticos, la gran mayoría son operaciones de multiplicación de matrices.
 Estos cálculos no son eficientes en un procesador tradicional y por eso se
-requiere de toda la ayuda posible para hacerlos lo más rápido
+requiere de toda la ayuda que se pueda conseguir para hacerlos lo más rápido
 posible y gastando menos energía.
 
 Es aquí donde entra TensorFlow, una biblioteca que permite _representar_ estos
 cálculos mediante grafos de operaciones y después ejecutarlos en procesadores
 especializados como tarjetas gráficas y otros procesadores eficientes en
-operaciones matemáticas pesadas.Además, TensorFlow abstrae al usuario final (tú),
-de los deatalles de implementación de muchas funciones y operaciones matemáticas
+operaciones matemáticas pesadas. Además, TensorFlow abstrae al usuario final (tú),
+de los detalles de implementación de muchas funciones y operaciones matemáticas
 que se usan mucho en el aprendizaje automático.
 
 Y es aquí donde empieza lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
@@ -38,22 +42,25 @@ llegamos a él y para qué nos sirve?
 
 ## Grafos de cómputo de TensorFlow
 
-Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su representación
+Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su
+representación
 
 ```python
 Y = W * X + b
 ```
 
-Esta es la ecuación que un perceptrón simple. Veamos cómo la representa TensorFlow.
+Esta es la ecuación que un perceptrón. Veamos cómo la representa TensorFlow.
 Para que esto sea útil, cada una de las operaciones se hace sobre tensores, es decir,
 sobre un conjunto de datos numéricos de varias dimensiones.
 
 ¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que representa esa
 operación:
 
-![Imagen de un grafo de cómputo de TensorFlow]
+![Imagen de un grafo de cómputo de TensorFlow]()
+
 Puedes pensar en este grafo como una serie de nodos que representan cada uno
-una operación sobre TENSORES, es decir, conjuntos de datos numéricos de más de dos dimensiones,
+una operación sobre TENSORES, es decir, conjuntos de datos numéricos de más de
+dos dimensiones,
 
 ## Cómo se ejecuta un grafo de cómputo
 
