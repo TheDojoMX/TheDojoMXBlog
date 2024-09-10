@@ -2,7 +2,7 @@
 title: ¿Cómo funciona TensorFlow?
 date: 2024-08-31
 author: Héctor Patricio
-tags: null
+tags: tensorflow machine-learning ai deep-learning
 comments: true
 excerpt: >-
   TensorFlow permite crear modelos de aprendizaje automático sin que te tengas
@@ -11,7 +11,7 @@ excerpt: >-
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg
-  overlay_filter: 'rgba(0, 0, 0, 0.5)'
+  overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
 **TensorFlow** es una de las herramientas más populares e influyentes
@@ -35,10 +35,12 @@ cálculos mediante grafos de cómputo y después ejecutarlos en procesadores
 especializados como tarjetas gráficas y otros procesadores eficientes en
 operaciones matemáticas pesadas. Además, TensorFlow abstrae al usuario final (tú),
 de los detalles de implementación de muchas funciones y operaciones matemáticas
-que se usan mucho en el aprendizaje automático.
+que se usan mucho en el aprendizaje automático. Y finalmente, con su API de alto
+nivel, **Keras**, te permite crear diferentes tipos de redes neuronales sin
+que tengas que pelearte con los detalles de implementación.
 
 Y es aquí donde empieza lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
-llegamos a él y para qué nos sirve?
+llegamos a él y para qué nos sirve? Veamos.
 
 ## Grafos de cómputo de TensorFlow
 
@@ -49,9 +51,8 @@ representación
 Y = W * X + b
 ```
 
-Esta es la ecuación que un perceptrón. Veamos cómo la representa TensorFlow.
-
-¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que representa esa
+Esta es la ecuación que un perceptrón. ¿Cómo representa TensorFlow esto? Este
+es el grafo de cómputo que representa esa
 operación:
 
 ![Imagen de un grafo de cómputo de TensorFlow]()
