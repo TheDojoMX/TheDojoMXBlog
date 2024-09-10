@@ -51,10 +51,6 @@ Y = W * X + b
 
 Esta es la ecuación que un perceptrón. Veamos cómo la representa TensorFlow.
 
-Para que esto sea útil, cada una de las operaciones se hace sobre tensores, es decir,
-sobre un conjunto de datos numéricos de varias dimensiones (esto es una
-simplificación, el concepto matemático de tensor es mucho más complejo).
-
 ¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que representa esa
 operación:
 
