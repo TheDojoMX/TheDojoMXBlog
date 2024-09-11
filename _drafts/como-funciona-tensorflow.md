@@ -63,7 +63,7 @@ dos dimensiones,
 
 ## Cómo se ejecuta un grafo de cómputo
 
-Después de representar el cálculo en un grafo, abrstrayendo el orden y las operaciones que se deben eejecutar,
+Después de representar el cálculo en un grafo, abstrayendo el orden y las operaciones que se deben ejecutar,
 viene la parte de ahora sí hacer los cálculos.
 
 ## TensorFlow y Keras
@@ -75,19 +75,19 @@ transformarlos en un grafo de cómputo que se puede ejecutar en el hardware que 
 
 ## TensorFlow vs PyTorch
 
-Pytorch es una alternativa a TensoFlow con un modelos de programación más dinámicos
+PyTorch es una alternativa a TensorFlow con un modelos de programación más dinámicos
 
-## Tensoflow y MLIR
+## TensorFlow y MLIR
 
 MLIR es una herramienta para crear compiladores creada por el mismo equipo
 que hizo LLVM, la infraestructura para compiladores que está detrás de
 la mayoría de los compiladores modernos.
 
 La especialidad de MLIR es hacer traducciones para arquitecturas de hardware no
-traciionales,usando un lenguaje intermedio multicapa (al que le puedes agregar)
+tradicionales,usando un lenguaje intermedio multi-capa (al que le puedes agregar)
 más plugins para diferentes arquitecturas.
 
-## Tensorflow y su relación con el hardware
+## TensorFlow y su relación con el hardware
 
 Después de la sección anterior, es muy probable que la relación de TF con el hardware quede muy clara: TensorFlow ayuda a que se pueda compilar de mejor manera el código con los cálculos
 para poder ejecutarlo en el hardware especializado.
