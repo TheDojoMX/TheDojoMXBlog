@@ -65,6 +65,11 @@ De ahí viene el nombre de la biblioteca: **TensorFlow**.
 
 ## Ejecución de un grafo de cómputo
 
+Todo esto de los grafos de cómputo tiene un objetivo específico: poder ejecutar
+las operaciones de manera eficiente en diferentes tipos de hardware, desde
+procesadores comunes hasta hardware especializado en cómputo de alto
+rendimiento.
+
 ## TensorFlow y Keras
 
 Keras es un framework que te permite crear modelos de aprendizaje profundo de manera sencilla.
