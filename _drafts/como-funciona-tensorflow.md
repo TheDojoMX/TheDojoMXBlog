@@ -35,7 +35,7 @@ cálculos mediante grafos de cómputo y después ejecutarlos en procesadores
 especializados como tarjetas gráficas y otros procesadores eficientes en
 operaciones matemáticas pesadas. Además, TensorFlow abstrae al usuario final (tú),
 de los detalles de implementación de muchas funciones y operaciones matemáticas
-que se usan mucho en el aprendizaje automático. Y finalmente, con su API de alto
+que se usan mucho en el aprendizaje automático. Y finalmente, con su _API_ de alto
 nivel, **Keras**, te permite crear diferentes tipos de redes neuronales sin
 que tengas que pelearte con los detalles de implementación.
 
@@ -52,19 +52,18 @@ Y = W * X + b
 ```
 
 Esta es la ecuación que un perceptrón. ¿Cómo representa TensorFlow esto? Este
-es el grafo de cómputo que representa esa
-operación:
+es el grafo de cómputo que escribir este código nos da:
 
 ![Imagen de un grafo de cómputo de TensorFlow]()
 
 Puedes pensar en este grafo como una serie de nodos que representan cada uno
-una operación sobre TENSORES, es decir, conjuntos de datos numéricos de más de
-dos dimensiones,
+una operación sobre conjuntos de datos numéricos llamados tensores. Cuando
+ejecutamos este grafo, los tensores _fluyen_ por estos nodos, transformándose
+en cada uno, hasta que obtenemos el resultado final de la operación.
 
-## Cómo se ejecuta un grafo de cómputo
+De ahí viene el nombre de la biblioteca: **TensorFlow**.
 
-Después de representar el cálculo en un grafo, abstrayendo el orden y las operaciones que se deben ejecutar,
-viene la parte de ahora sí hacer los cálculos.
+## Ejecución de un grafo de cómputo
 
 ## TensorFlow y Keras
 
