@@ -72,7 +72,7 @@ rendimiento.
 
 ## TensorFlow y Keras
 
-Keras es un framework que te permite crear modelos de aprendizaje profundo de manera sencilla.
+Keras era otra biblioteca que se creó por separado, para hacer más fácil de usar la versión 1.0 de TensfoFlow, que era bastante verbosa de programar. que te permite crear modelos de aprendizaje profundo de manera sencilla.
 
 ¿Cómo se relaciona con TensorFlow? Con Keras declaras tus modelos y TensorFlow se encarga de
 transformarlos en un grafo de cómputo que se puede ejecutar en el hardware que tengas disponible.
