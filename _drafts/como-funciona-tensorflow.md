@@ -45,16 +45,12 @@ llegamos a él y para qué nos sirve? Veamos.
 ## Grafos de cómputo de TensorFlow
 
 Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su
-representación
+representación, por ejemplo, sumemos dos números.
 
-```python
-Y = W * X + b
-```
+¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que podemos ver con
+una herramienta de análisis de TensorFlow llamada TensorBoard:
 
-Esta es la ecuación que un perceptrón. ¿Cómo representa TensorFlow esto? Este
-es el grafo de cómputo que escribir este código nos da:
-
-![Imagen de un grafo de cómputo de TensorFlow]()
+![Imagen de un grafo de cómputo de TensorFlow](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_250/v1726379906/Screenshot_2024-09-14_at_23.53.34_1_izykn5.png)
 
 Puedes pensar en este grafo como una serie de nodos que representan cada uno
 una operación sobre conjuntos de datos numéricos llamados tensores. Cuando
@@ -72,12 +68,12 @@ rendimiento.
 
 ## TensorFlow y Keras
 
-Keras era otra biblioteca que se creó por separado, para hacer más fácil de usar la versión 1.0 de TensfoFlow, que era bastante verbosa de programar. que te permite crear modelos de aprendizaje profundo de manera sencilla.
+Keras era otra biblioteca que se creó por separado, para hacer más fácil de usar la versión 1.0 de TensfoFlow, que era bastante verbosa de programar.que te permite crear modelos de aprendizaje profundo de manera sencilla.
 
 ¿Cómo se relaciona con TensorFlow? Con Keras declaras tus modelos y TensorFlow se encarga de
 transformarlos en un grafo de cómputo que se puede ejecutar en el hardware que tengas disponible.
 
-## TensorFlow vs PyTorch
+## TensorFlow VS PyTorch
 
 PyTorch es una alternativa a TensorFlow con un modelos de programación más dinámicos
 
