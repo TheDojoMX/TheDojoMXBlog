@@ -20,9 +20,10 @@ qué es exactamente y cómo funciona.
 
 ## ¿Qué es TensorFlow?
 
-Siempre que hablamos de TensorFlow se dice que es una "biblioteca (o librería,
-o framework) para hacer aprendizaje automático, pero este definición no es muy
-explícita y por eso vamos a ver cómo nos permite crear modelos de aprendizaje.
+Siempre que hablamos de TensorFlow se dice que es una "biblioteca (o librería)
+para hacer aprendizaje automático, pero este definición no es muy
+explícita y por eso vamos a ver _cómo nos permite_ crear modelos de
+aprendizaje.
 
 Para crear modelos de aprendizaje automático, tenemos que hacer muchos cálculos
 matemáticos, la gran mayoría son operaciones de multiplicación de matrices.
@@ -50,7 +51,7 @@ representación, por ejemplo, sumemos dos números.
 ¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que podemos ver con
 una herramienta de análisis de TensorFlow llamada TensorBoard:
 
-![Imagen de un grafo de cómputo de TensorFlow](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_250/v1726379906/Screenshot_2024-09-14_at_23.53.34_1_izykn5.png)
+![Imagen de un grafo de cómputo de TensorFlow](https://res.cloudinary.com/hectorip/image/upload/c_scale,w_250/v1726379906/Screenshot_2024-09-14_at_23.53.34_1_izykn5.png){: .align-center}
 
 Puedes pensar en este grafo como una serie de nodos que representan cada uno
 una operación sobre conjuntos de datos numéricos llamados tensores. Cuando
