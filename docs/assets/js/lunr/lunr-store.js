@@ -820,4 +820,10 @@ var store = [{
         "tags": ["Matin-Kleppmann","dato","bases-de-datos"],
         "url": "/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg"
+      },{
+        "title": "¿Cómo funciona TensorFlow?",
+        "excerpt":"TensorFlow es una de las herramientas más populares e influyentes en el campo de la del aprendizaje automático. En este artículo vamos a ver qué es exactamente y cómo funciona. ¿Qué es TensorFlow? Siempre que hablamos de TensorFlow se dice que es una “biblioteca (o librería) para hacer aprendizaje automático,...","categories": [],
+        "tags": ["tensorflow","machine-learning","ai","deep-learning"],
+        "url": "/2024/09/16/como-funciona-tensorflow.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg"
       }]

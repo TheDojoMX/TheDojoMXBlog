@@ -1,4 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-08-30T23:31:31-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Por qué debes leer Designing Data-intensive Applications</title><link href="https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html" rel="alternate" type="text/html" title="Por qué debes leer Designing Data-intensive Applications" /><published>2024-08-30T00:00:00-06:00</published><updated>2024-08-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications</id><content type="html" xml:base="https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html"><![CDATA[<p>Uno de los libros más recomendados para todos los desarrolladores modernos
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-09-16T23:28:15-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Cómo funciona TensorFlow?</title><link href="https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html" rel="alternate" type="text/html" title="¿Cómo funciona TensorFlow?" /><published>2024-09-16T00:00:00-06:00</published><updated>2024-09-16T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow</id><content type="html" xml:base="https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html"><![CDATA[<p><strong>TensorFlow</strong> es una de las herramientas más populares e influyentes
+en el campo de la del aprendizaje automático. En este artículo vamos a ver
+qué es exactamente y cómo funciona.</p>
+
+<h2 id="qué-es-tensorflow">¿Qué es TensorFlow?</h2>
+
+<p>Siempre que hablamos de TensorFlow se dice que es una “biblioteca (o librería)
+para hacer aprendizaje automático, pero este definición no es muy
+explícita y por eso vamos a ver <em>cómo nos permite</em> crear modelos de
+aprendizaje.</p>
+
+<p>Para crear modelos de aprendizaje automático, tenemos que hacer muchos cálculos
+matemáticos, la gran mayoría son operaciones de multiplicación de matrices.
+Estos cálculos no son eficientes en un procesador tradicional y por eso se
+requiere de toda la ayuda que se pueda conseguir para hacerlos lo más rápido
+posible y gastando menos energía.</p>
+
+<p>Es aquí donde entra <strong>TensorFlow</strong>, una biblioteca que permite <em>representar</em> estos
+cálculos mediante grafos de cómputo y después ejecutarlos en procesadores
+especializados como tarjetas gráficas y otros procesadores eficientes en
+operaciones matemáticas pesadas. Además, TensorFlow abstrae al usuario final (tú),
+de los detalles de implementación de muchas funciones y operaciones matemáticas
+que se usan mucho en el aprendizaje automático. Y finalmente, con su <em>API</em> de alto
+nivel, <strong>Keras</strong>, te permite crear diferentes tipos de redes neuronales sin
+que tengas que pelearte con los detalles de implementación.</p>
+
+<p>Y es aquí donde empieza lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
+llegamos a él y para qué nos sirve? Veamos.</p>
+
+<h2 id="grafos-de-cómputo-de-tensorflow">Grafos de cómputo de TensorFlow</h2>
+
+<p>Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su
+representación, por ejemplo, sumemos dos números, que llamaremos X y Y.</p>
+
+<p>¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que podemos ver con
+una herramienta de análisis de TensorFlow llamada TensorBoard:</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_250/v1726379906/Screenshot_2024-09-14_at_23.53.34_1_izykn5.png" alt="Imagen de un grafo de cómputo de TensorFlow" class="align-center" /></p>
+
+<p>Puedes pensar en este grafo como una serie de nodos que representan cada uno
+una operación sobre conjuntos de datos numéricos llamados tensores. Cuando
+ejecutamos este grafo, los tensores <em>fluyen</em> por estos nodos, transformándose
+en cada uno, hasta que obtenemos el resultado final de la operación. (Los nodos
+que dicen <code class="language-plaintext highlighter-rouge">Identity</code> son operaciones de copia o lectura de valores, útiles para
+el funcionamiento interno de  TensorFlow).</p>
+
+<p>La otra cosa que podemos notar hasta abajo de la gráfica son los dos nodos que
+representan nuestros números simples: X scalar y Y scalar, ya que los definimos
+como números simples, que también pueden pensarse como tensores de una dimensión.</p>
+
+<p>Formalmente, TensorFlow te da una serie de estructuras de datos, que puedes
+ir construyendo poco a poco para definir todas las operaciones que necesites hacer.</p>
+
+<p>En una red neuronal, estos grafos son mucho más complicados, pero justo ese es
+el trabajo de TensorFlow: ayudarte a definirlos y a ejecutarlos en el hardware
+más conveniente para tu proyecto.</p>
+
+<p>Usar los grafos de cómputo de TF te permite varias cosas más:</p>
+
+<ul>
+  <li><strong>Optimización de las operaciones</strong>: TensorFlow tiene todo un sistema de optimización
+llamado <code class="language-plaintext highlighter-rouge">Grappler</code>, que se encarga varias optimizaciones.</li>
+  <li><strong>Paralelización</strong>. Con las operaciones divididas, TensorFlow puede verificar
+qué operaciones son independientes y puede ejecutarlas en otros procesadores
+si están disponibles.</li>
+  <li><strong>Exportación</strong>. Una vez teniendo las operaciones definidas en un grafo, no necesitamos
+de Python para ejecutarlas, así que TensorFlow puede ejecutarlas en otros dispositivos
+y usando otros lenguajes.</li>
+</ul>
+
+<p>Esta definición de grafos de cómputo no es la única forma de trabajar con TensorFlow,
+ya que desde su versión 2.0, también permite trabajar con un modo más imperativo,
+que se siente más integrado con Python y más dinámico: la ejecución adelantada (en
+inglés: <em>eager execution</em>). Con esta forma de ejecución, las operaciones se van
+ejecutando inmediatamente después de definirlas. Esto es más fácil de programar y
+de leer, pero deja poco espacio para la optimización. Es justamente como la comparación
+entre un lenguaje compilado y uno interpretado.</p>
+
+<h2 id="tensorflow-y-keras">TensorFlow y Keras</h2>
+
+<p>Keras era otra biblioteca que se creó por separado, para hacer más fácil de usar
+la versión 1.0 de TensorFlow, que era bastante más verbosa de programar (por sólo
+soportar grafos de cómputo estáticos).Sin embargo, en la versión 2.0 de TensorFlow,
+Keras se volvió parte del paquete.</p>
+
+<p>Keras te permite crear modelos de aprendizaje profundo de manera sencilla. Es la
+manera fácil de usar TensorFlow, pero también te permite complicarte tanto como quieras
+o necesites (esperamos que sea esto último). Keras usa el principio de “revelación
+progresiva de la complejidad”, lo que significa que puedes empezar de manera muy
+sencilla e ir aprendiendo cosas conforme vayas avanzando en hacer cosas más complejas.</p>
+
+<p>Así que la forma más común de usar TensorFlow para crear tus modelos de machine
+learning es mediante la interfaz de Keras, que además de todo te provee de
+utilidades que son de uso muy común en las redes neuronales. Por ejemplo, provee
+regularizadores, inicializadores, funciones de activación, optimizadores, y muchas
+utilidades más. Es por eso que ya casi no se concibe el uso de TensorFlow para
+casos comunes sin usar Keras.</p>
+
+<h2 id="tensorflow-y-mlir">TensorFlow y MLIR</h2>
+
+<p>MLIR es una herramienta para crear compiladores hecha por parte del mismo
+equipo que hizo LLVM, la infraestructura para compiladores que está detrás
+de la mayoría de los compiladores modernos.</p>
+
+<p>La especialidad de MLIR es hacer traducciones para arquitecturas de hardware no
+tradicionales,usando un lenguaje intermedio multi-capa al que le puedes agregar
+más plugins para diferentes arquitecturas de ejecutores. MLIR es muy usado
+para computación de alto rendimiento, justamente la que necesitamos para
+crear modelo de aprendizaje automático complejos en tiempos y con costos
+razonables.</p>
+
+<p>Así que TensorFlow, aprovechando este sistema, usa MLIR para compilar los
+grafos de cómputo y los modelos para hardware específico, para que se pueda
+obtener el mejor rendimiento posible.</p>
+
+<h2 id="tensorflow-y-su-relación-con-el-hardware">TensorFlow y su relación con el hardware</h2>
+
+<p>Después de la sección anterior, es muy probable que la relación de TF con
+el hardware quede muy clara: TensorFlow ayuda a que se pueda compilar
+de mejor manera el código con los cálculos para poder ejecutarlo
+en el hardware especializado.</p>
+
+<p><strong>IF</strong> soporta gran variedad de tipos de hardware y es por eso que hasta el
+momento es la biblioteca de machine learning con mejor soporte para
+distribuir tus modelos en diferentes dispositivos, desde procesadores
+especializados hasta que corran directamente en tu teléfono o navegador.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Si quieres hacer machine learning, lo más probable es que tengas que
+aprender TensorFlow, una herramienta muy útil para hacer los modelos usados
+hoy.</p>
+
+<p>Espero que lo que hablamos sobre TensorFlow en este artículo te haya ayudado
+a entenderlo un poco más. En otro artículo hablaremos de su competidor
+más directo: <strong>PyTorch</strong>.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="tensorflow" /><category term="machine-learning" /><category term="ai" /><category term="deep-learning" /><summary type="html"><![CDATA[TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablemos más de cómo funciona.]]></summary></entry><entry><title type="html">Por qué debes leer Designing Data-intensive Applications</title><link href="https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html" rel="alternate" type="text/html" title="Por qué debes leer Designing Data-intensive Applications" /><published>2024-08-30T00:00:00-06:00</published><updated>2024-08-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications</id><content type="html" xml:base="https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html"><![CDATA[<p>Uno de los libros más recomendados para todos los desarrolladores modernos
 es “Designing Data-intensive Applications” de <a href="https://martin.kleppmann.com/">Martin Kleppmann</a>.
 En este artículo corto vamos a hablar de por qué vale la pena leerlo.</p>
 
@@ -828,67 +963,4 @@ tienen un camino en la filosofía de la computación, así que si quieres desarr
 
 <p>Aprender filosofía de la computación es una muy buena idea para tu carrera. Te ayudará a plantearte y a <em>intentar</em> resolver las preguntas importantes. Este intento de contestar las preguntas importantes relacionadas con la computación y el desarrollo de software te dará más armas para enfrentarte a los problemas del día a día y a disfrutarlos más.</p>
 
-<p>Finalmente, las herramientas que desarrollas en el estudio de estos problemas te puede ayudar mucho más allá de la filosofía: <strong>te ayudará a resolver problemas de manera más efectiva.</strong></p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="computación" /><category term="filosofía" /><category term="filosofía-de-la-computación" /><summary type="html"><![CDATA[Veamos qué es y cómo te puede ayudar la filosofía de la computación en tu carrera como desarrollador de software.]]></summary></entry><entry><title type="html">¿Por qué debes aprender ciencias de la computación?</title><link href="https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html" rel="alternate" type="text/html" title="¿Por qué debes aprender ciencias de la computación?" /><published>2023-08-12T00:00:00-06:00</published><updated>2023-08-12T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/08/12/por-que-debes-aprender-ciencias-de-la-computacion.html"><![CDATA[<p>Las ciencias de la computación a veces parecen algo mítico para los desarrolladores, algo que sólo aquellos que trabajan en <em>Big Tech</em> o en la <em>NASA</em> pueden entender. Pero si programas, es algo <em><strong>ya que usas a diario</strong></em>, por lo que te conviene comprenderlo mejor.</p>
-
-<p>Empecemos por el principio definiendo qué son y cómo te pueden ayudar.</p>
-
-<h2 id="qué-son-las-ciencias-de-la-computación">¿Qué son las ciencias de la computación?</h2>
-
-<p>Las <strong>ciencias de la computación</strong> son un campo de estudio que busca entender los principios que rigen el <strong>fenómeno de la computación</strong> en general. Podemos definir la computación como el proceso de transformar información en algo útil, normalmente de manera dirigida.</p>
-
-<p>Las ciencias de la computación abarcan desde la definición y estudio conceptual de los principios que rigen la computación, hasta la implementación de algoritmos y estructuras de datos, junto con su <strong>ejecución en medios físicos</strong>. Esta última parte es la que más nos concierne como desarrolladores.</p>
-
-<p>Como podrás ver, es un campo muy amplio, pero muy interesante y que puede darte una visión más amplia de lo que haces día a día, pero que además te puede ayudar a comprender los componentes principales del entorno en el que tus programas corren y cómo funcionan.</p>
-
-<p>Algunos de los principios temas que trata son:</p>
-
-<ul>
-  <li>Lo que es posible calcular y lo que no</li>
-  <li>En qué medios se puede ejecutar un programa</li>
-  <li>Cuáles son formas eficientes y confiables de almacenar información</li>
-  <li>Cómo se puede representar la información</li>
-  <li>Cómo se puede transmitir la información sin que se corrompa</li>
-  <li>Cómo se puede transformar la información de manera eficiente</li>
-  <li>Cómo proteger la información</li>
-  <li>Cómo coordinar varias computadoras</li>
-</ul>
-
-<p>Cómo podrás ver, son problemas a los que nos enfrentamos día a día en nuestro trabajo de manera continua.</p>
-
-<h2 id="por-qué-son-importantes">¿Por qué son importantes?</h2>
-
-<p>La mayoría de los problemas que resolvemos en nuestro trabajo diario ya han sido resueltos en el pasado, por personas usando conocimientos que podemos considerar como ciencias de la computación y puestos en práctica en forma de algoritmos y estructuras de datos, implementados en los lenguajes de programación que usamos. También los frameworks y librerías que usamos son implementaciones de estos principios.</p>
-
-<p>Pero, ¿qué pasa cuando quieres hacer algo que va más allá de lo que tu lenguaje o tu plataforma te ofrece por default? Aquí es donde entra el conocimiento de cómo funciona la computación de manera más profunda, los principios que rigen la computación, y las técnicas para resolver problemas.</p>
-
-<p>Si quieres hacer cosas que vayan más allá de lo común, las ciencias de la computación te pueden proporcionar las herramientas y habilidades para lograrlo de manera sostenible.</p>
-
-<p>Saber ciencias de la computación puede hacer la diferencia entre primero, que seas capaz de crear eficazmente lo que te estás imaginando y segundo que sea exitoso y pueda seguir creciendo.</p>
-
-<h2 id="cómo-aprender-ciencias-de-la-computación">¿Cómo aprender ciencias de la computación?</h2>
-
-<p>La parte más importante de este artículo es cómo aprender ciencias de la computación. Si cursaste la universidad en una carrera relacionada con la computación, es probable que ya tengas las bases, o por lo menos la idea de los temas principales que puedes estudiar.</p>
-
-<p>Pero lo triste es que casi siempre se enseña de manera segregada (se tratan los temas por separado sin ver la relación entre ellos) y desactualizada (se presenta la visión de los años 70s o 80s).</p>
-
-<p>Por eso, independientemente de tu formación, te recomiendo que leas los siguientes libros:</p>
-
-<ul>
-  <li><a href="https://mitpress.mit.edu/books/computational-thinking">Computational Thinking</a>. En este libro tendrás una introducción a los temas principales del pensamiento computacional, algo completamente necesario para entender las ciencias de la computación.</li>
-  <li><a href="https://mitpress.mit.edu/9780262527125/great-principles-of-computing/">Great Principles of Computing</a>. Para mi este libro presenta la visión más moderna de las ciencias de la computación. En el artículo <a href="/2023/05/13/libros-que-todo-desarrollador-de-software-deberia-leer-cs.html">“Libros que todo desarrollador debería leer: ciencias de la computación”</a>, encontrarás más recomendaciones.</li>
-</ul>
-
-<p>Si no sabes nada de ciencias de la computación puede empezar con algo más ligero como:</p>
-
-<ul>
-  <li><a href="https://www.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020">Computer Science Distilled</a></li>
-  <li><a href="https://pll.harvard.edu/course/cs50-introduction-computer-science">CS50</a></li>
-</ul>
-
-<p>Si tienes alguna otra recomendación, no dudes en ponerla en los comentarios.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Aprender ciencias de la computación es una buena idea para tu carrera, independientemente de la etapa en la que te encuentres o de la rama de la programación a la que te dediques. Te ayudará a evitar la frustración de no saber por qué algo no funciona, o peor aún, que funcione y no saber por qué.</p>
-
-<p>Consulta los recursos que recomendamos en este artículo y empieza a aprender hoy mismo. Además en este blog encontrarás muchos artículos relacionados con las ciencias de la computación, así que no dudes en explorarlos.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="ciencias-de-la-computación" /><category term="cs" /><category term="computer-science" /><summary type="html"><![CDATA[Las ciencias de la computación te ayudarán a ser mejor desarrollador, independientemente de la rama de la programación a la que te dediques. Veamos como.]]></summary></entry></feed>
+<p>Finalmente, las herramientas que desarrollas en el estudio de estos problemas te puede ayudar mucho más allá de la filosofía: <strong>te ayudará a resolver problemas de manera más efectiva.</strong></p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="computación" /><category term="filosofía" /><category term="filosofía-de-la-computación" /><summary type="html"><![CDATA[Veamos qué es y cómo te puede ayudar la filosofía de la computación en tu carrera como desarrollador de software.]]></summary></entry></feed>
