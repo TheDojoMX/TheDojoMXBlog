@@ -16,16 +16,16 @@ ejecutarlo. En este artículo vamos a hablar de sus etapas y las principales
 tareas que realiza, para darte la idea de cómo funciona y si lo deseas, puedas
 hacer uno, aunque sea muy sencillo.
 
-Emepecemos por hablar de la diferencia con un compilador.
+Empecemos por hablar de la diferencia con un compilador.
 
 ## Intérprete vs compilador
 
 Cuando alguien comienza en las ciencias de la computación, una de las primeras
-cosas que escucha es acerca de lenguajes compilados y su diferencia con los
-interpretados. Ambos tipos de progrmas tienen la característica de recibir
-código fuente, pero la diferencia está en lo que devuelven.
+cosas que escucha es acerca de lenguajes compilados y sus diferencias con los
+interpretados. Ambos tipos de programas tienen la característica de recibir
+código fuente, pero difieren en lo que devuelven.
 
-Un **compilador traduce** el código fuente a otro lenguaje, normalmente a un
+**Un compilador traduce** el código fuente a otro lenguaje, normalmente a un
 lenguaje máquina que puede ser ejecutado por un procesador de una arquitectura
 específica. Pero esto no es necesariamente así, ya que la principal tarea del  
 compilador es **traducir**. Un ejemplo es el compilador de Java:
@@ -33,12 +33,19 @@ no compila al lenguaje de una arquitectura de procesador específica, sino a
 bytecode que puede ser ejecutado por la JVM. Si no sabes que es el bytecode,
 hablamos de él [en este artículo](/2023/01/22/entendiendo-el-bytecode.html).
 
+Los compiladores tradicionales compilan el código fuente a código máquina,
+es decir, a las instrucciones que un procesador puede ejecutar directamente. Así,
+si quieres ejecutar un programa de C o de C++ en un procesador con arquitectura
+x86, necesitas un compilador traduzca para las instrucciones de esta arquitectura.
+Si después requieres ese mismo programa para ARM, necesitas compilar de nuevo.
+
 Un intérprete también recibe el código fuente, pero en lugar de devolver la
 traducción en otro lenguaje, **ejecuta** el código fuente directamente. A veces
 este proceso tiene como producto secundario la traducción del código fuente
 en un lenguaje intermedio, pero su objetivo principal es **la ejecución**.
 
-Ahora sí hablemos de las etapas de un intérplrete.
+
+Ahora sí hablemos de las etapas de un intérprete.
 
 ## Las etapas de un intérprete
 
@@ -52,7 +59,7 @@ Empecemos por la primera etapa que podemos dividir en dos partes.
 Esta etapa se encarga de leer el código fuente y convertirlo en una estructura
 de datos que pueda ser ejecutada más fácilmente. La primera etapa consiste en
 pasar el texto a una secuencia de valores que representan un tipo de palabra
-en el lenguaje, llamados comunmente "tokens", de ahí que a este proceso le
+en el lenguaje, llamados comúnmente "tokens", de ahí que a este proceso le
 llamemos **"tokenización"**.
 
 Después, este conjunto de _tokens_ es convertido en una estructura de datos
