@@ -44,14 +44,14 @@ traducción en otro lenguaje, **ejecuta** el código fuente directamente. A vece
 este proceso tiene como producto secundario la traducción del código fuente
 en un lenguaje intermedio, pero su objetivo principal es **la ejecución**.
 
-
 Ahora sí hablemos de las etapas de un intérprete.
 
 ## Las etapas de un intérprete
 
-Para ejecutar el código de un programa, podemos dividir el tracajo en varios
+Para ejecutar el código de un programa, podemos dividir el trabajo en varios
 pasos. El siguiente diagrama muestra las etapas comunes de un intérprete:
 
+![Diagrama de las etapas de un intérprete](https://res.cloudinary.com/hectorip/image/upload/v1721879663/diagrama-etapas-interprete_z3z55d.png)
 Empecemos por la primera etapa que podemos dividir en dos partes.
 
 ### Parsing
@@ -71,7 +71,6 @@ Ya con los tokens que representan el programa, tenemos que construir la
 estructura de datos que representa las operaciones que vamos a ejecutar, **el
 AST**.
 
-
 Esta estructura se parece a un árbol, con cada nodo representando una operación
 que a su vez puede estar compuesta de más operaciones, es decir, es una
 estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
@@ -79,7 +78,7 @@ estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
 
 ### Ejecución
 
-Lo que sigue es lo más sencillo de enetender, la ejecución del programa. El
+Lo que sigue es lo más sencillo de entender, la ejecución del programa. El
 intérprete debe tener la capacidad de actuar sobre el sistema operativo para
 ejecutar las operaciones representadas en el AST.
 
@@ -91,3 +90,10 @@ Una forma de optimización usada por los intérpretes y máquinas virtuales es l
 que se conoce como **Just In Time Compilation**
 
 ## Conclusión
+
+Ahora entiendes mejor cómo funcionan los intérpretes de manera general. Este
+conocimiento te puede ayudar cuando trabajes con ellos y probablemente tengas
+algún problema directamente relacionado con su funcionamiento interno.
+
+También tienes el conocimiento básico para avanzar a aprender cómo hacer el tuyo
+en caso de que lo necesites.
