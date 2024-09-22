@@ -1,6 +1,6 @@
 ---
 title: ¿Cómo funciona un intérprete?
-date: 2024-06-20T00:00:00.000Z
+date: 2024-06-20
 author: Héctor Patricio
 tags: compiladores intérprete
 comments: true
@@ -14,16 +14,15 @@ header:
 Un intérprete es un programa que lee código fuente y se encarga de
 ejecutarlo. En este artículo vamos a hablar de sus etapas y las principales
 tareas que realiza, para darte la idea de cómo funciona y si lo deseas, puedas
-hacer uno, aunque sea muy sencillo.
+tener idea de cómo hacerlo tu mismo.
 
 Empecemos por hablar de la diferencia con un compilador.
 
 ## Intérprete vs compilador
 
-Cuando alguien comienza en las ciencias de la computación, una de las primeras
-cosas que escucha es acerca de lenguajes compilados y sus diferencias con los
-interpretados. Ambos tipos de programas tienen la característica de recibir
-código fuente, pero difieren en lo que devuelven.
+Ambos tipos de programas tienen la característica de recibir
+código fuente, pero la diferencia está en lo que devuelven, y por lo tanto
+en las etapas que les permiten lograrlo.
 
 **Un compilador traduce** el código fuente a otro lenguaje, normalmente a un
 lenguaje máquina que puede ser ejecutado por un procesador de una arquitectura
@@ -49,10 +48,15 @@ Ahora sí hablemos de las etapas de un intérprete.
 ## Las etapas de un intérprete
 
 Para ejecutar el código de un programa, podemos dividir el trabajo en varios
-pasos. El siguiente diagrama muestra las etapas comunes de un intérprete:
+pasos. Para entenderlo pongamos un ejemplo. Supongamos que alguien te pide
+que hagas una tarea, por ejemplo, un trabajo escolar. Si tú fueras el intérprete,
+tendrías que hacer más o menos los siguientes pasos:
 
-![Diagrama de las etapas de un intérprete](https://res.cloudinary.com/hectorip/image/upload/v1721879663/diagrama-etapas-interprete_z3z55d.png)
-Empecemos por la primera etapa que podemos dividir en dos partes.
+1. Leer las instrucciones de la tarea.
+2. Entender claramente y sin ambigüedades lo que se te pide.
+3. Crear un plan para ejecutar la tarea.
+4. Ejecutar uno a uno los pasos del plan.
+
 
 ### Parsing
 
@@ -83,6 +87,7 @@ intérprete debe tener la capacidad de actuar sobre el sistema operativo para
 ejecutar las operaciones representadas en el AST.
 
 ### Opcional: optimización
+
 
 #### JIT Compilation
 
