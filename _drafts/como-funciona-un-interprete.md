@@ -57,17 +57,36 @@ tendrías que hacer más o menos los siguientes pasos:
 3. Crear un plan para ejecutar la tarea.
 4. Ejecutar uno a uno los pasos del plan.
 
+Esos son los pasos que un intérprete hace para ejecutar un programa.
+
+1. **Tokenización**: Leer el código en fuente y transformarlo en una forma
+que pueda entender.
+2. **Parsing**: Convertir el código fuente en una estructura de datos que pueda
+ser ejecutada. En nuestro plan esto serían los pasos 2 y 3.
+3. **Ejecución**: Ejecutar uno a uno los pasos del plan.
 
 ### Parsing
 
-Esta etapa se encarga de leer el código fuente y convertirlo en una estructura
-de datos que pueda ser ejecutada más fácilmente. La primera etapa consiste en
-pasar el texto a una secuencia de valores que representan un tipo de palabra
-en el lenguaje, llamados comúnmente "tokens", de ahí que a este proceso le
-llamemos **"tokenización"**.
+A veces a la etapa completa de leer el código fuente y convertirlo en una
+estructura de datos que pueda ser ejecutada se le llama **Parsing**.
+
+¿Cómo puede un programa informático leer un programa y entenderlo? Lo hace de forma
+limitada, claro, pero lo suficiente para poder ejecutar el código. Un lenguaje
+de programación es un lenguaje creado a partir de un alfabeto (un conjunto de símbolos),
+que a su vez forman palabras y estas palabras forman sentencias. Un **programa**, por
+lo tanto, es una secuencia de sentencias.
+
+Para que un intérprete "entienda" un programa, la primera etapa consiste en
+convertir el código fuente (un conjunto de símbolos), en una secuencia de
+palabras conocidas por el intérprete. Esto es un tipo de clasificación de
+las palabras. A la representación interna de estas palabras en el intérprete
+se le llama **tokens**. Debido a que en un lenguaje es muy importante el orden
+de las palabras, esta clasificación debe mantener el orden de las palabras. Como te
+imaginarás, este proceso es al que se le llama **tokenización**.
 
 Después, este conjunto de _tokens_ es convertido en una estructura de datos
-llamada el **Árbol de Sintaxis Abstracta** o **AST** (Abstract Syntax Tree).
+llamada el **Árbol de Sintaxis Abstracta** o **AST** (Abstract Syntax Tree). Este
+proceso se llama **parsing**, que en inglés significa "analizar".
 
 ### Construcción del AST
 
