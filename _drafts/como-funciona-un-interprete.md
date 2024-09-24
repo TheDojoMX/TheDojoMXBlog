@@ -2,7 +2,7 @@
 title: ¿Cómo funciona un intérprete?
 date: 2024-06-20
 author: Héctor Patricio
-tags: compiladores intérprete
+tags: compiladores intérprete lenguajes-de-programación
 comments: true
 excerpt: "Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete."
 header:
@@ -63,7 +63,7 @@ Esos son los pasos que un intérprete hace para ejecutar un programa.
 que pueda entender.
 2. **Parsing**: Convertir el código fuente en una estructura de datos que pueda
 ser ejecutada. En nuestro plan esto serían los pasos 2 y 3.
-3. **Ejecución**: Ejecutar uno a uno los pasos del plan.
+3. **Ejecución**: Ejecutar uno a uno los pasos del plan para lograr el resultado.
 
 ### Parsing
 
@@ -84,13 +84,16 @@ se le llama **tokens**. Debido a que en un lenguaje es muy importante el orden
 de las palabras, esta clasificación debe mantener el orden de las palabras. Como te
 imaginarás, este proceso es al que se le llama **tokenización**.
 
+Después de tener la lista de palabras conocidas, necesitamos "entenderlas". Como un
+lenguaje tiene una estructura, esta estructura.
+
 Después, este conjunto de _tokens_ es convertido en una estructura de datos
 llamada el **Árbol de Sintaxis Abstracta** o **AST** (Abstract Syntax Tree). Este
 proceso se llama **parsing**, que en inglés significa "analizar".
 
 ### Construcción del AST
 
-Ya con los tokens que representan el programa, tenemos que construir la
+Ya con la lista ordenada de tokens que representan el programa, tenemos que construir la
 estructura de datos que representa las operaciones que vamos a ejecutar, **el
 AST**.
 
@@ -107,6 +110,7 @@ ejecutar las operaciones representadas en el AST.
 
 ### Opcional: optimización
 
+Los intérpretes modernos tienen que se usan en entornos de producción se
 
 #### JIT Compilation
 
