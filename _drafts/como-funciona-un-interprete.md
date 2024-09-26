@@ -65,7 +65,7 @@ que pueda entender.
 ser ejecutada. En nuestro plan esto serían los pasos 2 y 3.
 3. **Ejecución**: Ejecutar uno a uno los pasos del plan para lograr el resultado.
 
-### Parsing
+### Parsing o Parseo - Análisis 
 
 A veces a la etapa completa de leer el código fuente y convertirlo en una
 estructura de datos que pueda ser ejecutada se le llama **Parsing**.
