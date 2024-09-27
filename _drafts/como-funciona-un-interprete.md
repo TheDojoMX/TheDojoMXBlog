@@ -106,9 +106,12 @@ estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
 
 ### Ejecución
 
-Lo que sigue es lo más sencillo de entender, la ejecución del programa. El
-intérprete debe tener la capacidad de actuar sobre el sistema operativo para
-ejecutar las operaciones representadas en el AST.
+Lo que sigue es lo más sencillo de entender (pero tal vez no de _implementar_): la ejecución
+del programa. El intérprete debe tener la capacidad de actuar sobre el sistema operativo para
+ejecutar las operaciones representadas en el AST. Si el intérprete corre 
+en alguna otra cosa que no sea directamente el sistema operativo, por ejemplo
+en una máquina virtual, u otro programa, las acciones son diferentes, pero la
+idea es la misma: debe tener la capacidad de actuar sobre el programa en el que corra.
 
 ### Opcional: optimización
 
