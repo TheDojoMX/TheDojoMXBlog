@@ -65,7 +65,7 @@ que pueda entender.
 ser ejecutada. En nuestro plan esto serían los pasos 2 y 3.
 3. **Ejecución**: Ejecutar uno a uno los pasos del plan para lograr el resultado.
 
-### Parsing o Parseo - Análisis 
+### Parsing o Parseo - Análisis léxico y sintáctico
 
 A veces a la etapa completa de leer el código fuente y convertirlo en una
 estructura de datos que pueda ser ejecutada se le llama **Parsing**.
@@ -98,9 +98,11 @@ estructura de datos que representa las operaciones que vamos a ejecutar, **el
 AST**.
 
 Esta estructura se parece a un árbol, con cada nodo representando una operación
-que a su vez puede estar compuesta de más operaciones, es decir, es una
+que a su vez puede estar compuesta de más operaciones, es una
 estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
 `a = 1 + 2`, el AST podría verse así:
+
+![AST de a = 1 + 2](https://res.cloudinary.com/hectorip/image/upload/c_scale,q_69,w_600/v1727416535/Screenshot_2024-09-26_at_23.54.41_spehcz.png)
 
 ### Ejecución
 
