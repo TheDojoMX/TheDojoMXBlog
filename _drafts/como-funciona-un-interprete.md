@@ -102,25 +102,53 @@ que a su vez puede estar compuesta de más operaciones, es una
 estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
 `a = 1 + 2`, el AST podría verse así:
 
-![AST de a = 1 + 2](https://res.cloudinary.com/hectorip/image/upload/c_scale,q_69,w_600/v1727416535/Screenshot_2024-09-26_at_23.54.41_spehcz.png)
+![AST de a = 1 + 2](https://res.cloudinary.com/hectorip/image/upload/c_scale,q_69,w_600/v1727416535/Screenshot_2024-09-26_at_23.54.41_spehcz.png){: .align-center}
+
+En el esquema anterior puedes ver lo que más o menos es un árbol de sintaxis abstracta:
+una estructura que nos va ayudar a ejecutar el programa. Para mi, este es el centro
+tanto de un compilador como de un intérprete, si tienes bien definido este árbol (y por
+lo tanto todas las operaciones que son posibles de representar en él), tienes hecho
+la mitad del trabajo, tanto para compilar a otro lenguaje como para ejecutar
+directamente el trabajo.
+
+Pasemos a la siguiente etapa.
 
 ### Ejecución
 
 Lo que sigue es lo más sencillo de entender (pero tal vez no de _implementar_): la ejecución
 del programa. El intérprete debe tener la capacidad de actuar sobre el sistema operativo para
-ejecutar las operaciones representadas en el AST. Si el intérprete corre 
+ejecutar las operaciones representadas en el AST. Si el intérprete corre
 en alguna otra cosa que no sea directamente el sistema operativo, por ejemplo
 en una máquina virtual, u otro programa, las acciones son diferentes, pero la
 idea es la misma: debe tener la capacidad de actuar sobre el programa en el que corra.
 
 ### Opcional: optimización
 
-Los intérpretes modernos tienen que se usan en entornos de producción se
+Varios de los intérpretes modernos tienen que se usan en entornos de producción, tienen
+una etapa que no es absolutamente necesaria, pero que da una ventaja significativa en el
+rendimiento y uso común: la **optimización del la ejecución**.
 
-#### JIT Compilation
+Estas optimizaciones pueden darse desde mejoras en el AST hasta la generación de código
+específico para la arquitectura del procesador en el que se ejecute el programa y ejecutarlo
+inmediatamente. Hablamos de esta última técnica.
+
+#### Compilación Just In Time (JIT)
 
 Una forma de optimización usada por los intérpretes y máquinas virtuales es lo
-que se conoce como **Just In Time Compilation**
+que se conoce como **Just In Time Compilation**. La idea es sencilla:
+
+1. Se ejecuta el código fuente original mientras se observa el comportamiento de 
+este programa con un perfilador (o profiler).
+2. Una vez que el perfilador detecta cosas que se pueden optimizar, un compilador
+especializado en la arquitectura del procesador en el que el intérprete está
+corriendo genera código máquina específico para es arquitectura de las partes
+que se pueden optimizar.
+3. El código máquina optimizado se ejecuta mientras se sigue observando el
+comportamiento del programa.
+4. Si el programa no se comporta de la forma esperada, esta parte de la ejecución
+se cancela y se vuelve a ejecutar el código fuente original.
+
+Tenemos un artículo completo sobre JIT [en este enlace](2023/01/18/compilacion-just-in-time-que-es.html).
 
 ## Conclusión
 
@@ -129,4 +157,5 @@ conocimiento te puede ayudar cuando trabajes con ellos y probablemente tengas
 algún problema directamente relacionado con su funcionamiento interno.
 
 También tienes el conocimiento básico para avanzar a aprender cómo hacer el tuyo
-en caso de que lo necesites.
+en caso de que lo necesites. En un artículo futuro hablaré sobre cómo hacer un intérprete
+de un lenguaje de programación sencillo, para entender todavía mejor el funcionamiento.
