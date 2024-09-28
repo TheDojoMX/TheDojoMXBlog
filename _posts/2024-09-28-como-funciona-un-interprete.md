@@ -1,6 +1,6 @@
 ---
 title: ¿Cómo funciona un intérprete?
-date: 2024-06-20
+date: 2024-09-28
 author: Héctor Patricio
 tags: compiladores intérprete lenguajes-de-programación
 comments: true

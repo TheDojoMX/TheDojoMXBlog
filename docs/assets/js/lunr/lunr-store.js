@@ -826,4 +826,10 @@ var store = [{
         "tags": ["tensorflow","machine-learning","ai","deep-learning"],
         "url": "/2024/09/16/como-funciona-tensorflow.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg"
+      },{
+        "title": "¿Cómo funciona un intérprete?",
+        "excerpt":"Un intérprete es un programa que lee código fuente y se encarga de ejecutarlo. En este artículo vamos a hablar de sus etapas y las principales tareas que realiza, para darte la idea de cómo funciona y si lo deseas, puedas tener idea de cómo hacerlo tu mismo. Empecemos por...","categories": [],
+        "tags": ["compiladores","intérprete","lenguajes-de-programación"],
+        "url": "/2024/09/28/como-funciona-un-interprete.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1721878999/daniele-levis-pelusi-FLEZ4rYjP0w-unsplash_auzjkk.jpg"
       }]

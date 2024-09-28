@@ -1,0 +1,912 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>¿Cómo funciona un intérprete? - The Dojo MX Blog</title>
+<meta name="description" content="Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="¿Cómo funciona un intérprete?">
+<meta property="og:url" content="https://blog.thedojo.mx/2024/09/28/como-funciona-un-interprete.html">
+
+
+  <meta property="og:description" content="Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1721878999/daniele-levis-pelusi-FLEZ4rYjP0w-unsplash_auzjkk.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-09-28T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2024/09/28/como-funciona-un-interprete.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
+
+<script src="/assets/js/sharect.min.js"></script>
+<!-- Fathom - beautiful, simple website analytics -->
+   <script src="https://cdn.usefathom.com/script.js" data-site="NGGHUUZH" defer></script>
+<!-- / Fathom -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2024/09/28/como-funciona-un-interprete.html",
+      "name": "¿Cómo funciona un intérprete?",
+      "headline": "¿Cómo funciona un intérprete?",
+      "keywords": "compiladores,intérprete,lenguajes-de-programación",
+      "description": "Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete.",
+      "articleBody": "Un intérprete es un programa que lee código fuente y se encarga de\nejecutarlo. En este artículo vamos a hablar de sus etapas y las principales\ntareas que realiza, para darte la idea de cómo funciona y si lo deseas, puedas\ntener idea de cómo hacerlo tu mismo.\n\nEmpecemos por hablar de la diferencia con un compilador.\n\nIntérprete vs compilador\n\nAmbos tipos de programas tienen la característica de recibir\ncódigo fuente, pero la diferencia está en lo que devuelven, y por lo tanto\nen las etapas que les permiten lograrlo.\n\nUn compilador traduce el código fuente a otro lenguaje, normalmente a un\nlenguaje máquina que puede ser ejecutado por un procesador de una arquitectura\nespecífica. Pero esto no es necesariamente así, ya que la principal tarea del\ncompilador es traducir. Un ejemplo es el compilador de Java:\nno compila al lenguaje de una arquitectura de procesador específica, sino a\nbytecode que puede ser ejecutado por la JVM. Si no sabes que es el bytecode,\nhablamos de él en este artículo.\n\nLos compiladores tradicionales compilan el código fuente a código máquina,\nes decir, a las instrucciones que un procesador puede ejecutar directamente. Así,\nsi quieres ejecutar un programa de C o de C++ en un procesador con arquitectura\nx86, necesitas un compilador traduzca para las instrucciones de esta arquitectura.\nSi después requieres ese mismo programa para ARM, necesitas compilar de nuevo.\n\nUn intérprete también recibe el código fuente, pero en lugar de devolver la\ntraducción en otro lenguaje, ejecuta el código fuente directamente. A veces\neste proceso tiene como producto secundario la traducción del código fuente\nen un lenguaje intermedio, pero su objetivo principal es la ejecución.\n\nAhora sí hablemos de las etapas de un intérprete.\n\nLas etapas de un intérprete\n\nPara ejecutar el código de un programa, podemos dividir el trabajo en varios\npasos. Para entenderlo pongamos un ejemplo. Supongamos que alguien te pide\nque hagas una tarea, por ejemplo, un trabajo escolar. Si tú fueras el intérprete,\ntendrías que hacer más o menos los siguientes pasos:\n\n\n  Leer las instrucciones de la tarea.\n  Entender claramente y sin ambigüedades lo que se te pide.\n  Crear un plan para ejecutar la tarea.\n  Ejecutar uno a uno los pasos del plan.\n\n\nEsos son los pasos que un intérprete hace para ejecutar un programa.\n\n\n  Tokenización: Leer el código en fuente y transformarlo en una forma\nque pueda entender.\n  Parsing: Convertir el código fuente en una estructura de datos que pueda\nser ejecutada. En nuestro plan esto serían los pasos 2 y 3.\n  Ejecución: Ejecutar uno a uno los pasos del plan para lograr el resultado.\n\n\nParsing o Parseo - Análisis léxico y sintáctico\n\nA veces a la etapa completa de leer el código fuente y convertirlo en una\nestructura de datos que pueda ser ejecutada se le llama Parsing.\n\n¿Cómo puede un programa informático leer un programa y entenderlo? Lo hace de forma\nlimitada, claro, pero lo suficiente para poder ejecutar el código. Un lenguaje\nde programación es un lenguaje creado a partir de un alfabeto (un conjunto de símbolos),\nque a su vez forman palabras y estas palabras forman sentencias. Un programa, por\nlo tanto, es una secuencia de sentencias.\n\nPara que un intérprete “entienda” un programa, la primera etapa consiste en\nconvertir el código fuente (un conjunto de símbolos), en una secuencia de\npalabras conocidas por el intérprete. Esto es un tipo de clasificación de\nlas palabras. A la representación interna de estas palabras en el intérprete\nse le llama tokens. Debido a que en un lenguaje es muy importante el orden\nde las palabras, esta clasificación debe mantener el orden de las palabras. Como te\nimaginarás, este proceso es al que se le llama tokenización.\n\nDespués de tener la lista de palabras conocidas, necesitamos “entenderlas”. Como un\nlenguaje tiene una estructura, esta estructura.\n\nDespués, este conjunto de tokens es convertido en una estructura de datos\nllamada el Árbol de Sintaxis Abstracta o AST (Abstract Syntax Tree). Este\nproceso se llama parsing, que en inglés significa “analizar”.\n\nConstrucción del AST\n\nYa con la lista ordenada de tokens que representan el programa, tenemos que construir la\nestructura de datos que representa las operaciones que vamos a ejecutar, el\nAST.\n\nEsta estructura se parece a un árbol, con cada nodo representando una operación\nque a su vez puede estar compuesta de más operaciones, es una\nestructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como\na = 1 + 2, el AST podría verse así:\n\n\n\nEn el esquema anterior puedes ver lo que más o menos es un árbol de sintaxis abstracta:\nuna estructura que nos va ayudar a ejecutar el programa. Para mi, este es el centro\ntanto de un compilador como de un intérprete, si tienes bien definido este árbol (y por\nlo tanto todas las operaciones que son posibles de representar en él), tienes hecho\nla mitad del trabajo, tanto para compilar a otro lenguaje como para ejecutar\ndirectamente el trabajo.\n\nPasemos a la siguiente etapa.\n\nEjecución\n\nLo que sigue es lo más sencillo de entender (pero tal vez no de implementar): la ejecución\ndel programa. El intérprete debe tener la capacidad de actuar sobre el sistema operativo para\nejecutar las operaciones representadas en el AST. Si el intérprete corre\nen alguna otra cosa que no sea directamente el sistema operativo, por ejemplo\nen una máquina virtual, u otro programa, las acciones son diferentes, pero la\nidea es la misma: debe tener la capacidad de actuar sobre el programa en el que corra.\n\nOpcional: optimización\n\nVarios de los intérpretes modernos tienen que se usan en entornos de producción, tienen\nuna etapa que no es absolutamente necesaria, pero que da una ventaja significativa en el\nrendimiento y uso común: la optimización del la ejecución.\n\nEstas optimizaciones pueden darse desde mejoras en el AST hasta la generación de código\nespecífico para la arquitectura del procesador en el que se ejecute el programa y ejecutarlo\ninmediatamente. Hablamos de esta última técnica.\n\nCompilación Just In Time (JIT)\n\nUna forma de optimización usada por los intérpretes y máquinas virtuales es lo\nque se conoce como Just In Time Compilation. La idea es sencilla:\n\n\n  Se ejecuta el código fuente original mientras se observa el comportamiento de \neste programa con un perfilador (o profiler).\n  Una vez que el perfilador detecta cosas que se pueden optimizar, un compilador\nespecializado en la arquitectura del procesador en el que el intérprete está\ncorriendo genera código máquina específico para es arquitectura de las partes\nque se pueden optimizar.\n  El código máquina optimizado se ejecuta mientras se sigue observando el\ncomportamiento del programa.\n  Si el programa no se comporta de la forma esperada, esta parte de la ejecución\nse cancela y se vuelve a ejecutar el código fuente original.\n\n\nTenemos un artículo completo sobre JIT en este enlace.\n\nConclusión\n\nAhora entiendes mejor cómo funcionan los intérpretes de manera general. Este\nconocimiento te puede ayudar cuando trabajes con ellos y probablemente tengas\nalgún problema directamente relacionado con su funcionamiento interno.\n\nTambién tienes el conocimiento básico para avanzar a aprender cómo hacer el tuyo\nen caso de que lo necesites. En un artículo futuro hablaré sobre cómo hacer un intérprete\nde un lenguaje de programación sencillo, para entender todavía mejor el funcionamiento.\n",
+      "datePublished": "2024-09-28 00:00:00 -0600",
+      "dateModified": "2024-09-28 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2024/09/28/como-funciona-un-interprete.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1721878999/daniele-levis-pelusi-FLEZ4rYjP0w-unsplash_auzjkk.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1721878999/daniele-levis-pelusi-FLEZ4rYjP0w-unsplash_auzjkk.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          ¿Cómo funciona un intérprete?
+
+        
+      </h1>
+      
+        <p class="page__lead">Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1198 palabras | 9 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="¿Cómo funciona un intérprete?">
+    <meta itemprop="description" content="Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete.">
+    <meta itemprop="datePublished" content="2024-09-28T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>Un intérprete es un programa que lee código fuente y se encarga de
+ejecutarlo. En este artículo vamos a hablar de sus etapas y las principales
+tareas que realiza, para darte la idea de cómo funciona y si lo deseas, puedas
+tener idea de cómo hacerlo tu mismo.</p>
+
+<p>Empecemos por hablar de la diferencia con un compilador.</p>
+
+<h2 id="intérprete-vs-compilador">Intérprete vs compilador</h2>
+
+<p>Ambos tipos de programas tienen la característica de recibir
+código fuente, pero la diferencia está en lo que devuelven, y por lo tanto
+en las etapas que les permiten lograrlo.</p>
+
+<p><strong>Un compilador traduce</strong> el código fuente a otro lenguaje, normalmente a un
+lenguaje máquina que puede ser ejecutado por un procesador de una arquitectura
+específica. Pero esto no es necesariamente así, ya que la principal tarea del<br>
+compilador es <strong>traducir</strong>. Un ejemplo es el compilador de Java:
+no compila al lenguaje de una arquitectura de procesador específica, sino a
+bytecode que puede ser ejecutado por la JVM. Si no sabes que es el bytecode,
+hablamos de él <a href="/2023/01/22/entendiendo-el-bytecode.html">en este artículo</a>.</p>
+
+<p>Los compiladores tradicionales compilan el código fuente a código máquina,
+es decir, a las instrucciones que un procesador puede ejecutar directamente. Así,
+si quieres ejecutar un programa de C o de C++ en un procesador con arquitectura
+x86, necesitas un compilador traduzca para las instrucciones de esta arquitectura.
+Si después requieres ese mismo programa para ARM, necesitas compilar de nuevo.</p>
+
+<p>Un intérprete también recibe el código fuente, pero en lugar de devolver la
+traducción en otro lenguaje, <strong>ejecuta</strong> el código fuente directamente. A veces
+este proceso tiene como producto secundario la traducción del código fuente
+en un lenguaje intermedio, pero su objetivo principal es <strong>la ejecución</strong>.</p>
+
+<p>Ahora sí hablemos de las etapas de un intérprete.</p>
+
+<h2 id="las-etapas-de-un-intérprete">Las etapas de un intérprete</h2>
+
+<p>Para ejecutar el código de un programa, podemos dividir el trabajo en varios
+pasos. Para entenderlo pongamos un ejemplo. Supongamos que alguien te pide
+que hagas una tarea, por ejemplo, un trabajo escolar. Si tú fueras el intérprete,
+tendrías que hacer más o menos los siguientes pasos:</p>
+
+<ol>
+  <li>Leer las instrucciones de la tarea.</li>
+  <li>Entender claramente y sin ambigüedades lo que se te pide.</li>
+  <li>Crear un plan para ejecutar la tarea.</li>
+  <li>Ejecutar uno a uno los pasos del plan.</li>
+</ol>
+
+<p>Esos son los pasos que un intérprete hace para ejecutar un programa.</p>
+
+<ol>
+  <li>
+<strong>Tokenización</strong>: Leer el código en fuente y transformarlo en una forma
+que pueda entender.</li>
+  <li>
+<strong>Parsing</strong>: Convertir el código fuente en una estructura de datos que pueda
+ser ejecutada. En nuestro plan esto serían los pasos 2 y 3.</li>
+  <li>
+<strong>Ejecución</strong>: Ejecutar uno a uno los pasos del plan para lograr el resultado.</li>
+</ol>
+
+<h3 id="parsing-o-parseo---análisis-léxico-y-sintáctico">Parsing o Parseo - Análisis léxico y sintáctico</h3>
+
+<p>A veces a la etapa completa de leer el código fuente y convertirlo en una
+estructura de datos que pueda ser ejecutada se le llama <strong>Parsing</strong>.</p>
+
+<p>¿Cómo puede un programa informático leer un programa y entenderlo? Lo hace de forma
+limitada, claro, pero lo suficiente para poder ejecutar el código. Un lenguaje
+de programación es un lenguaje creado a partir de un alfabeto (un conjunto de símbolos),
+que a su vez forman palabras y estas palabras forman sentencias. Un <strong>programa</strong>, por
+lo tanto, es una secuencia de sentencias.</p>
+
+<p>Para que un intérprete “entienda” un programa, la primera etapa consiste en
+convertir el código fuente (un conjunto de símbolos), en una secuencia de
+palabras conocidas por el intérprete. Esto es un tipo de clasificación de
+las palabras. A la representación interna de estas palabras en el intérprete
+se le llama <strong>tokens</strong>. Debido a que en un lenguaje es muy importante el orden
+de las palabras, esta clasificación debe mantener el orden de las palabras. Como te
+imaginarás, este proceso es al que se le llama <strong>tokenización</strong>.</p>
+
+<p>Después de tener la lista de palabras conocidas, necesitamos “entenderlas”. Como un
+lenguaje tiene una estructura, esta estructura.</p>
+
+<p>Después, este conjunto de <em>tokens</em> es convertido en una estructura de datos
+llamada el <strong>Árbol de Sintaxis Abstracta</strong> o <strong>AST</strong> (Abstract Syntax Tree). Este
+proceso se llama <strong>parsing</strong>, que en inglés significa “analizar”.</p>
+
+<h3 id="construcción-del-ast">Construcción del AST</h3>
+
+<p>Ya con la lista ordenada de tokens que representan el programa, tenemos que construir la
+estructura de datos que representa las operaciones que vamos a ejecutar, <strong>el
+AST</strong>.</p>
+
+<p>Esta estructura se parece a un árbol, con cada nodo representando una operación
+que a su vez puede estar compuesta de más operaciones, es una
+estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
+<code class="language-plaintext highlighter-rouge">a = 1 + 2</code>, el AST podría verse así:</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,q_69,w_600/v1727416535/Screenshot_2024-09-26_at_23.54.41_spehcz.png" alt="AST de a = 1 + 2" class="align-center"></p>
+
+<p>En el esquema anterior puedes ver lo que más o menos es un árbol de sintaxis abstracta:
+una estructura que nos va ayudar a ejecutar el programa. Para mi, este es el centro
+tanto de un compilador como de un intérprete, si tienes bien definido este árbol (y por
+lo tanto todas las operaciones que son posibles de representar en él), tienes hecho
+la mitad del trabajo, tanto para compilar a otro lenguaje como para ejecutar
+directamente el trabajo.</p>
+
+<p>Pasemos a la siguiente etapa.</p>
+
+<h3 id="ejecución">Ejecución</h3>
+
+<p>Lo que sigue es lo más sencillo de entender (pero tal vez no de <em>implementar</em>): la ejecución
+del programa. El intérprete debe tener la capacidad de actuar sobre el sistema operativo para
+ejecutar las operaciones representadas en el AST. Si el intérprete corre
+en alguna otra cosa que no sea directamente el sistema operativo, por ejemplo
+en una máquina virtual, u otro programa, las acciones son diferentes, pero la
+idea es la misma: debe tener la capacidad de actuar sobre el programa en el que corra.</p>
+
+<h3 id="opcional-optimización">Opcional: optimización</h3>
+
+<p>Varios de los intérpretes modernos tienen que se usan en entornos de producción, tienen
+una etapa que no es absolutamente necesaria, pero que da una ventaja significativa en el
+rendimiento y uso común: la <strong>optimización del la ejecución</strong>.</p>
+
+<p>Estas optimizaciones pueden darse desde mejoras en el AST hasta la generación de código
+específico para la arquitectura del procesador en el que se ejecute el programa y ejecutarlo
+inmediatamente. Hablamos de esta última técnica.</p>
+
+<h4 id="compilación-just-in-time-jit">Compilación Just In Time (JIT)</h4>
+
+<p>Una forma de optimización usada por los intérpretes y máquinas virtuales es lo
+que se conoce como <strong>Just In Time Compilation</strong>. La idea es sencilla:</p>
+
+<ol>
+  <li>Se ejecuta el código fuente original mientras se observa el comportamiento de 
+este programa con un perfilador (o profiler).</li>
+  <li>Una vez que el perfilador detecta cosas que se pueden optimizar, un compilador
+especializado en la arquitectura del procesador en el que el intérprete está
+corriendo genera código máquina específico para es arquitectura de las partes
+que se pueden optimizar.</li>
+  <li>El código máquina optimizado se ejecuta mientras se sigue observando el
+comportamiento del programa.</li>
+  <li>Si el programa no se comporta de la forma esperada, esta parte de la ejecución
+se cancela y se vuelve a ejecutar el código fuente original.</li>
+</ol>
+
+<p>Tenemos un artículo completo sobre JIT <a href="2023/01/18/compilacion-just-in-time-que-es.html">en este enlace</a>.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Ahora entiendes mejor cómo funcionan los intérpretes de manera general. Este
+conocimiento te puede ayudar cuando trabajes con ellos y probablemente tengas
+algún problema directamente relacionado con su funcionamiento interno.</p>
+
+<p>También tienes el conocimiento básico para avanzar a aprender cómo hacer el tuyo
+en caso de que lo necesites. En un artículo futuro hablaré sobre cómo hacer un intérprete
+de un lenguaje de programación sencillo, para entender todavía mejor el funcionamiento.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#compiladores" class="page__taxonomy-item" rel="tag">compiladores</a><span class="sep">, </span>
+    
+      <a href="/tags/#int%C3%A9rprete" class="page__taxonomy-item" rel="tag">intérprete</a><span class="sep">, </span>
+    
+      <a href="/tags/#lenguajes-de-programaci%C3%B3n" class="page__taxonomy-item" rel="tag">lenguajes-de-programación</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2024-09-28T00:00:00-06:00">September 28, 2024</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%C2%BFC%C3%B3mo+funciona+un+int%C3%A9rprete%3F%20https%3A%2F%2Fblog.thedojo.mx%2F2024%2F09%2F28%2Fcomo-funciona-un-interprete.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F09%2F28%2Fcomo-funciona-un-interprete.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F09%2F28%2Fcomo-funciona-un-interprete.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024/09/16/como-funciona-tensorflow.html" class="pagination--pager" title="¿Cómo funciona TensorFlow?
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/09/16/como-funciona-tensorflow.html" rel="permalink">¿Cómo funciona TensorFlow?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+8 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 16-09-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablem...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html" rel="permalink">Por qué debes leer Designing Data-intensive Applications
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+5 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-08-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/07/18/alternativas-a-git.html" rel="permalink">Alternativas a Git
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 18-07-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702186032/neom-WLeWJW_WneE-unsplash_rbh7sr.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html" rel="permalink">5 pláticas de StrageLoop que tienes que ver
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+7 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-03-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">StrangeLoop es una de las conferencias más importantes de software en el mundo, con pláticas increíbles. Aquí verás 5 pláticas que no te puedes perder.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#4b0082',
+      iconColor: '#fff'
+    }).init();
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2024 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-127437335-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2024/09/28/como-funciona-un-interprete.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2024/09/28/como-funciona-un-interprete"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

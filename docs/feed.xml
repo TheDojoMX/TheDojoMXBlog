@@ -1,4 +1,157 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-09-16T23:28:15-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Cómo funciona TensorFlow?</title><link href="https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html" rel="alternate" type="text/html" title="¿Cómo funciona TensorFlow?" /><published>2024-09-16T00:00:00-06:00</published><updated>2024-09-16T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow</id><content type="html" xml:base="https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html"><![CDATA[<p><strong>TensorFlow</strong> es una de las herramientas más populares e influyentes
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-09-28T00:33:48-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Cómo funciona un intérprete?</title><link href="https://blog.thedojo.mx/2024/09/28/como-funciona-un-interprete.html" rel="alternate" type="text/html" title="¿Cómo funciona un intérprete?" /><published>2024-09-28T00:00:00-06:00</published><updated>2024-09-28T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/09/28/como-funciona-un-interprete</id><content type="html" xml:base="https://blog.thedojo.mx/2024/09/28/como-funciona-un-interprete.html"><![CDATA[<p>Un intérprete es un programa que lee código fuente y se encarga de
+ejecutarlo. En este artículo vamos a hablar de sus etapas y las principales
+tareas que realiza, para darte la idea de cómo funciona y si lo deseas, puedas
+tener idea de cómo hacerlo tu mismo.</p>
+
+<p>Empecemos por hablar de la diferencia con un compilador.</p>
+
+<h2 id="intérprete-vs-compilador">Intérprete vs compilador</h2>
+
+<p>Ambos tipos de programas tienen la característica de recibir
+código fuente, pero la diferencia está en lo que devuelven, y por lo tanto
+en las etapas que les permiten lograrlo.</p>
+
+<p><strong>Un compilador traduce</strong> el código fuente a otro lenguaje, normalmente a un
+lenguaje máquina que puede ser ejecutado por un procesador de una arquitectura
+específica. Pero esto no es necesariamente así, ya que la principal tarea del<br />
+compilador es <strong>traducir</strong>. Un ejemplo es el compilador de Java:
+no compila al lenguaje de una arquitectura de procesador específica, sino a
+bytecode que puede ser ejecutado por la JVM. Si no sabes que es el bytecode,
+hablamos de él <a href="/2023/01/22/entendiendo-el-bytecode.html">en este artículo</a>.</p>
+
+<p>Los compiladores tradicionales compilan el código fuente a código máquina,
+es decir, a las instrucciones que un procesador puede ejecutar directamente. Así,
+si quieres ejecutar un programa de C o de C++ en un procesador con arquitectura
+x86, necesitas un compilador traduzca para las instrucciones de esta arquitectura.
+Si después requieres ese mismo programa para ARM, necesitas compilar de nuevo.</p>
+
+<p>Un intérprete también recibe el código fuente, pero en lugar de devolver la
+traducción en otro lenguaje, <strong>ejecuta</strong> el código fuente directamente. A veces
+este proceso tiene como producto secundario la traducción del código fuente
+en un lenguaje intermedio, pero su objetivo principal es <strong>la ejecución</strong>.</p>
+
+<p>Ahora sí hablemos de las etapas de un intérprete.</p>
+
+<h2 id="las-etapas-de-un-intérprete">Las etapas de un intérprete</h2>
+
+<p>Para ejecutar el código de un programa, podemos dividir el trabajo en varios
+pasos. Para entenderlo pongamos un ejemplo. Supongamos que alguien te pide
+que hagas una tarea, por ejemplo, un trabajo escolar. Si tú fueras el intérprete,
+tendrías que hacer más o menos los siguientes pasos:</p>
+
+<ol>
+  <li>Leer las instrucciones de la tarea.</li>
+  <li>Entender claramente y sin ambigüedades lo que se te pide.</li>
+  <li>Crear un plan para ejecutar la tarea.</li>
+  <li>Ejecutar uno a uno los pasos del plan.</li>
+</ol>
+
+<p>Esos son los pasos que un intérprete hace para ejecutar un programa.</p>
+
+<ol>
+  <li><strong>Tokenización</strong>: Leer el código en fuente y transformarlo en una forma
+que pueda entender.</li>
+  <li><strong>Parsing</strong>: Convertir el código fuente en una estructura de datos que pueda
+ser ejecutada. En nuestro plan esto serían los pasos 2 y 3.</li>
+  <li><strong>Ejecución</strong>: Ejecutar uno a uno los pasos del plan para lograr el resultado.</li>
+</ol>
+
+<h3 id="parsing-o-parseo---análisis-léxico-y-sintáctico">Parsing o Parseo - Análisis léxico y sintáctico</h3>
+
+<p>A veces a la etapa completa de leer el código fuente y convertirlo en una
+estructura de datos que pueda ser ejecutada se le llama <strong>Parsing</strong>.</p>
+
+<p>¿Cómo puede un programa informático leer un programa y entenderlo? Lo hace de forma
+limitada, claro, pero lo suficiente para poder ejecutar el código. Un lenguaje
+de programación es un lenguaje creado a partir de un alfabeto (un conjunto de símbolos),
+que a su vez forman palabras y estas palabras forman sentencias. Un <strong>programa</strong>, por
+lo tanto, es una secuencia de sentencias.</p>
+
+<p>Para que un intérprete “entienda” un programa, la primera etapa consiste en
+convertir el código fuente (un conjunto de símbolos), en una secuencia de
+palabras conocidas por el intérprete. Esto es un tipo de clasificación de
+las palabras. A la representación interna de estas palabras en el intérprete
+se le llama <strong>tokens</strong>. Debido a que en un lenguaje es muy importante el orden
+de las palabras, esta clasificación debe mantener el orden de las palabras. Como te
+imaginarás, este proceso es al que se le llama <strong>tokenización</strong>.</p>
+
+<p>Después de tener la lista de palabras conocidas, necesitamos “entenderlas”. Como un
+lenguaje tiene una estructura, esta estructura.</p>
+
+<p>Después, este conjunto de <em>tokens</em> es convertido en una estructura de datos
+llamada el <strong>Árbol de Sintaxis Abstracta</strong> o <strong>AST</strong> (Abstract Syntax Tree). Este
+proceso se llama <strong>parsing</strong>, que en inglés significa “analizar”.</p>
+
+<h3 id="construcción-del-ast">Construcción del AST</h3>
+
+<p>Ya con la lista ordenada de tokens que representan el programa, tenemos que construir la
+estructura de datos que representa las operaciones que vamos a ejecutar, <strong>el
+AST</strong>.</p>
+
+<p>Esta estructura se parece a un árbol, con cada nodo representando una operación
+que a su vez puede estar compuesta de más operaciones, es una
+estructura recursiva. Por ejemplo, si tenemos un programa muy sencillo como
+<code class="language-plaintext highlighter-rouge">a = 1 + 2</code>, el AST podría verse así:</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,q_69,w_600/v1727416535/Screenshot_2024-09-26_at_23.54.41_spehcz.png" alt="AST de a = 1 + 2" class="align-center" /></p>
+
+<p>En el esquema anterior puedes ver lo que más o menos es un árbol de sintaxis abstracta:
+una estructura que nos va ayudar a ejecutar el programa. Para mi, este es el centro
+tanto de un compilador como de un intérprete, si tienes bien definido este árbol (y por
+lo tanto todas las operaciones que son posibles de representar en él), tienes hecho
+la mitad del trabajo, tanto para compilar a otro lenguaje como para ejecutar
+directamente el trabajo.</p>
+
+<p>Pasemos a la siguiente etapa.</p>
+
+<h3 id="ejecución">Ejecución</h3>
+
+<p>Lo que sigue es lo más sencillo de entender (pero tal vez no de <em>implementar</em>): la ejecución
+del programa. El intérprete debe tener la capacidad de actuar sobre el sistema operativo para
+ejecutar las operaciones representadas en el AST. Si el intérprete corre
+en alguna otra cosa que no sea directamente el sistema operativo, por ejemplo
+en una máquina virtual, u otro programa, las acciones son diferentes, pero la
+idea es la misma: debe tener la capacidad de actuar sobre el programa en el que corra.</p>
+
+<h3 id="opcional-optimización">Opcional: optimización</h3>
+
+<p>Varios de los intérpretes modernos tienen que se usan en entornos de producción, tienen
+una etapa que no es absolutamente necesaria, pero que da una ventaja significativa en el
+rendimiento y uso común: la <strong>optimización del la ejecución</strong>.</p>
+
+<p>Estas optimizaciones pueden darse desde mejoras en el AST hasta la generación de código
+específico para la arquitectura del procesador en el que se ejecute el programa y ejecutarlo
+inmediatamente. Hablamos de esta última técnica.</p>
+
+<h4 id="compilación-just-in-time-jit">Compilación Just In Time (JIT)</h4>
+
+<p>Una forma de optimización usada por los intérpretes y máquinas virtuales es lo
+que se conoce como <strong>Just In Time Compilation</strong>. La idea es sencilla:</p>
+
+<ol>
+  <li>Se ejecuta el código fuente original mientras se observa el comportamiento de 
+este programa con un perfilador (o profiler).</li>
+  <li>Una vez que el perfilador detecta cosas que se pueden optimizar, un compilador
+especializado en la arquitectura del procesador en el que el intérprete está
+corriendo genera código máquina específico para es arquitectura de las partes
+que se pueden optimizar.</li>
+  <li>El código máquina optimizado se ejecuta mientras se sigue observando el
+comportamiento del programa.</li>
+  <li>Si el programa no se comporta de la forma esperada, esta parte de la ejecución
+se cancela y se vuelve a ejecutar el código fuente original.</li>
+</ol>
+
+<p>Tenemos un artículo completo sobre JIT <a href="2023/01/18/compilacion-just-in-time-que-es.html">en este enlace</a>.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Ahora entiendes mejor cómo funcionan los intérpretes de manera general. Este
+conocimiento te puede ayudar cuando trabajes con ellos y probablemente tengas
+algún problema directamente relacionado con su funcionamiento interno.</p>
+
+<p>También tienes el conocimiento básico para avanzar a aprender cómo hacer el tuyo
+en caso de que lo necesites. En un artículo futuro hablaré sobre cómo hacer un intérprete
+de un lenguaje de programación sencillo, para entender todavía mejor el funcionamiento.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="compiladores" /><category term="intérprete" /><category term="lenguajes-de-programación" /><summary type="html"><![CDATA[Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete.]]></summary></entry><entry><title type="html">¿Cómo funciona TensorFlow?</title><link href="https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html" rel="alternate" type="text/html" title="¿Cómo funciona TensorFlow?" /><published>2024-09-16T00:00:00-06:00</published><updated>2024-09-16T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow</id><content type="html" xml:base="https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html"><![CDATA[<p><strong>TensorFlow</strong> es una de las herramientas más populares e influyentes
 en el campo de la del aprendizaje automático. En este artículo vamos a ver
 qué es exactamente y cómo funciona.</p>
 
@@ -888,79 +1041,4 @@ tu software produce al ser ejecutado por las personas que le pueden sacar provec
 
 <h2 id="conclusión">Conclusión</h2>
 
-<p>En este artículo vimos las tres garantías de seguridad que debe cumplir una función hash para ser criptográficamente segura. Te sirven para entender claramente de lo que se habla cuando se han encontrado colisiones en un hash, y poder evaluar la gravedad de la situación.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="hash" /><category term="criptografía" /><category term="md5" /><category term="sha-256" /><summary type="html"><![CDATA[Veamos más profundamente las garantías de seguridad que debe cumplir un hash para ser considerado seguro. Por fin entenderemos lo que es una colisión y qué significa para nosotros.]]></summary></entry><entry><title type="html">¿Qué es la filosofía de la computación?</title><link href="https://blog.thedojo.mx/2023/08/19/que-es-la-filosofia-de-la-computacion.html" rel="alternate" type="text/html" title="¿Qué es la filosofía de la computación?" /><published>2023-08-19T00:00:00-06:00</published><updated>2023-08-19T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/08/19/que-es-la-filosofia-de-la-computacion</id><content type="html" xml:base="https://blog.thedojo.mx/2023/08/19/que-es-la-filosofia-de-la-computacion.html"><![CDATA[<p>La filosofía es una de las ramas más importantes del saber humano y, para mi, es la fundación de todas las demás ramas del conocimiento y de las ciencias. En este artículo hablaremos de la filosofía de la computación y cómo esta te puede ayudar como programador o desarrollador de software.</p>
-
-<p>Empecemos primero hablando de qué es la filosofía y luego combinándola con la computación.</p>
-
-<h2 id="qué-es-la-filosofía">¿Qué es la filosofía?</h2>
-
-<p>La filosofía busca <strong>responder las preguntas fundamentales de la existencia humana</strong>. Casi ninguna de las preguntas importantes se ha podido responder de manera definitiva, pero lo interesante que nos puede ofrecer la filosofía es una análisis profundo de las posibles respuestas y de las implicaciones de cada una de ellas. Así, se ha generado mucho conocimiento que nos ayuda a entender mejor el mundo y a nosotros mismos.</p>
-
-<p>Además, la filosofía ha desarrollado métodos que nos pueden ayudar a examinar temas difíciles de manera efectiva.</p>
-
-<p>Pongamos un ejemplo. Una de las grandes preguntas que muchos filósofos han intentado responder es “¿Cuál es la mejor forma de vivir?”. No hay una respuesta definitiva, pero en la exploración se han encontrado y propuesto muchas prácticas que mejoran la vida humana y que sirven en diferentes situaciones.</p>
-
-<p>Además han surgido modelos de pensamiento que consisten en una serie de ideas y prácticas que pueden darle sentido a una vida bien practicadas: Estoicismo, Epicureismo, etc. Combinadas pueden servirte para mucho para analizar una situación en la vida o para encontrar una forma de actuar.</p>
-
-<p>En resumen: la filosofía te ayudará a <em>pensar mejor</em> sobre cuestiones importantes en la vida y en las diferentes áreas de importancia. <strong>¿Cómo se puede relacionar esto con la computación?</strong></p>
-
-<h2 id="qué-es-la-filosofía-de-la-computación">¿Qué es la filosofía de la computación?</h2>
-
-<p>La filosofía de la computación es lo que acabamos de describir pero aplicado a las preguntas que le conciernen a la computación. Preguntas fundamentales para todos los que tenemos tratos profundos con las computadoras:</p>
-
-<ul>
-  <li>¿Qué es la computación?</li>
-  <li>¿Qué es una computadora?</li>
-  <li>¿Qué es un programa?</li>
-  <li>¿Qué es computable?</li>
-  <li>¿Qué es programar?</li>
-  <li>¿Qué es un lenguaje de programación?</li>
-  <li>¿Cómo puedo crear programas útiles?</li>
-</ul>
-
-<p>Estas preguntas parecen tener un respuesta concreta pero hay algunas situaciones en los que podemos dudar de qué tan útil o real es lo que sabemos.</p>
-
-<p>La filosofía no se queda allí, tiene por lo menos las siguientes áreas:</p>
-
-<ul>
-  <li><strong>La ontología</strong>. En la que se preguntan cosas como las que acabamos de ver, que tienen que ver con la existencia y la definición de las cosas</li>
-  <li><strong>La semántica</strong>. El significado de los términos que usamos</li>
-  <li><strong>La axiología</strong>. Analiza los valores que fundamentan la computación y los eventos relacionados con estos</li>
-  <li><strong>La epistemología</strong>. Es el análisis del conocimiento y las formas de obtenerlo: ¿cómo podemos conocer más acerca de la computación? ¿Cómo podemos saber si lo que sabemos es correcto? ¿Cómo <em>sabemos</em> que <em>sabemos</em>?</li>
-  <li><strong>La metodología</strong>. Qué métodos podemos seguir para practicar la computación y la obtención de conocimiento de esta de la mejor manera</li>
-  <li><strong>La estética</strong>. Analiza la percepción que tenemos de los artefactos computacionales y los conceptos relacionados con encontrar agradable o de valor esa percepción: orden, belleza, significado, etc.</li>
-  <li><strong>La ética</strong>. Está basada en la axiología, es decir, en la definición de lo que consideramos de valor y qué acciones o prácticas nos acercan o alejan de lo que consideramos que puede ser “bueno” como resultado de la computación</li>
-</ul>
-
-<p>Como puedes ver, es amplia, pero cada una de las áreas te puede ayudar en temas específicos en tu práctica diaria.</p>
-
-<p>A diferencia de la filosofía común, la filosofía de la computación tiene mucho menos de existencia y a penas hay unos cuántos escritos y personas que la han practicado en los últimos años, así que si te introduces estarás en un campo en que tendrás que aplicar las técnicas filosóficas a esta área específica, y es probable que te lleves muchas sorpresas.</p>
-
-<h2 id="por-qué-es-importante-la-filosofía-de-la-computación">¿Por qué es importante la filosofía de la computación?</h2>
-
-<p>La filosofía de la computación o de ciencias de la computación te puede ayudar dándote los fundamentos que necesitas sobre todo para enfrentarte a las cuestiones difíciles de tu trabajo.</p>
-
-<p>Tener fundamentos para definir lo que quieres lograr, dónde están los límites de tu trabajo y qué es posible, te puede hacer mucho más disfrutable tu día a día.</p>
-
-<p>No es algo sin lo que puedas trabajar, pero mientras más sepas de esta área, sin duda más disfrutarás de tu trabajo.</p>
-
-<p>Pero esto va mucho más allá: todas las ideas importantes del <em>desarrollo de software</em>
-tienen un camino en la filosofía de la computación, así que si quieres desarrollar mejor software, sin duda es un área fundamental.</p>
-
-<h2 id="cómo-aprender-filosofía-de-la-computación">¿Cómo aprender filosofía de la computación?</h2>
-
-<p>Recomiendo mucho empezar por lo básico y para esto me ha servido el canal de <a href="https://camilochs.github.io/web/">Camilo Chacón Sartori</a> en <a href="https://www.youtube.com/@camilo_chacon_s">YouTube</a>, en el que tiene una serie en la que te <a href="https://www.youtube.com/watch?v=eVxR8io5xTg&amp;list=PLbA-PGKWV-JhWcaZ0HzHFIFbnVakY9t1o">introduce a las partes de la filosofía de la computación</a>.</p>
-
-<p>Pero también tiene un video que se llama <a href="https://www.youtube.com/watch?v=97InfGEK3Zw">¿Qué es la filosofía de computación?</a>, en el que te da una introducción básica.</p>
-
-<p>Después, puedes empezar a leer sobre los autores que han escrito de esto por años. Yo recomiendo a William J. Rapaport con su escrito <a href="https://cse.buffalo.edu/~rapaport/Papers/philcs-complete.pdf">A Philosophy of Computer Science</a>.</p>
-
-<p>Y finalmente, para profundizar todavía más, tenemos el libro del mismo autor, publicado en 2023: <a href="https://www.wiley.com/en-us/Philosophy+of+Computer+Science%3A+An+Introduction+to+the+Issues+and+the+Literature-p-9781119891901">Philosophy of Computer Science: An Introduction to the Issues and the Literature</a>.</p>
-
-<p>Si le echas un ojo a esto y te parece intimidante, puedes entrar por algo que tiene una menor barrera y que también incluiría en el área de la filosofía de la computación: la filosofía de la información. Para esto recomiendo mucho el libro <a href="https://buttondown.email/hillelwayne/archive/data-and-reality-2nd-edition/">Data and Reality</a> de William Kent. En el canal tenemos un <a href="https://youtu.be/i4lADcMZsZo">resumen de este libro</a>.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Aprender filosofía de la computación es una muy buena idea para tu carrera. Te ayudará a plantearte y a <em>intentar</em> resolver las preguntas importantes. Este intento de contestar las preguntas importantes relacionadas con la computación y el desarrollo de software te dará más armas para enfrentarte a los problemas del día a día y a disfrutarlos más.</p>
-
-<p>Finalmente, las herramientas que desarrollas en el estudio de estos problemas te puede ayudar mucho más allá de la filosofía: <strong>te ayudará a resolver problemas de manera más efectiva.</strong></p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="computación" /><category term="filosofía" /><category term="filosofía-de-la-computación" /><summary type="html"><![CDATA[Veamos qué es y cómo te puede ayudar la filosofía de la computación en tu carrera como desarrollador de software.]]></summary></entry></feed>
+<p>En este artículo vimos las tres garantías de seguridad que debe cumplir una función hash para ser criptográficamente segura. Te sirven para entender claramente de lo que se habla cuando se han encontrado colisiones en un hash, y poder evaluar la gravedad de la situación.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="hash" /><category term="criptografía" /><category term="md5" /><category term="sha-256" /><summary type="html"><![CDATA[Veamos más profundamente las garantías de seguridad que debe cumplir un hash para ser considerado seguro. Por fin entenderemos lo que es una colisión y qué significa para nosotros.]]></summary></entry></feed>
