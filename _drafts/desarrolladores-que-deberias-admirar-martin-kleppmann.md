@@ -33,17 +33,26 @@ También ha participado en proyectos de código abierto, por ejemplo:
 
 1. [**Automerge**](https://automerge.org/): una biblioteca para crear software local-first, que es principalmente 
 un CRDT (Conflict-free Replicated Data Type), es decir, una estructura de datos que sirve para sincronizar
-información entre varios procesos que compartan esta misma estructura, de manera automática. Está disponible para
-JavaScript, Swift y Rust.
-2. [**Apache Avro**](https://avro.apache.org/docs/): un formato de serialización de datos que es muy usado en Hadoop,
+información entre varios procesos que compartan esta misma estructura, de manera automática. Está disponible
+para JavaScript, Swift y Rust.
+2. [**Apache Avro**](https://avro.apache.org/docs/): un formato de serialización de datos que compite con
+protocol buffers y JSON, usado principalmente en el campo de ciencia e ingeniería de datos.
 3. [**Apache Samza**](https://samza.apache.org/): un framework para procesar datos en tiempo real.
 
-Finalmente, también es un gran contribuidor a la comunidad tanto con pláticas y artículos, como con
-## Sus ideas
+Finalmente, también es un gran contribuidor a la comunidad tanto con pláticas, artículos, como con
 
-Martin
+## Ideas interesantes
+
+Martin es un gran proponente de los sistemas distribuidos en todas sus formas.
 
 ## Curiosidades
 
-I have composed several musical works, including “Die Türme des Februar” (in German), a musical-dramatic adaptation of the book by Tonke Dragt, which premiered in 2007 with a cast of 150 people.
+Muchas personas buenas en el campo de la computación son buenas en otras cosas o tienen múltiples
+intereses.
+
+Martin es un gran músico, compuso una ópera llamada "Die Türme des Februar" (en alemán), una adaptación
+musical de la novela "Los Juegos del Hambre" por Tonke Dragt, que se estrenó en 2007 con un elenco de
+150 personas.
+
+## Referencias
 
