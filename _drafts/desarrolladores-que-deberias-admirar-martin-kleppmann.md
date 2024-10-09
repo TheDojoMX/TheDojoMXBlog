@@ -2,7 +2,7 @@
 title: "Desarrolladores que deberías admirar: Martin Kleppmann"
 date: 2024-09-29
 author: Héctor Patricio
-tags:
+tags: Martin-Kleppmann bases-de-datos sistemas-distribuidos software-local-first
 comments: true
 excerpt: "Hablemos de Martin Kleppmann, uno de los desarrolladores e investigadores de software más influyentes
 en el panorama actual de las bases de datos y sistemas que usan datos."
@@ -39,7 +39,8 @@ para JavaScript, Swift y Rust.
 protocol buffers y JSON, usado principalmente en el campo de ciencia e ingeniería de datos.
 3. [**Apache Samza**](https://samza.apache.org/): un framework para procesar datos en tiempo real.
 
-Finalmente, también es un gran contribuidor a la comunidad tanto con pláticas, artículos, como con
+Martin también es un gran contribuidor a la comunidad tanto con pláticas y artículos como con un libro que
+es por lo que más se le conoce: [Designing Data-Intensive Applications](https://dataintensive.net/).
 
 ## Ideas interesantes
 
@@ -56,3 +57,7 @@ musical de la novela "Los Juegos del Hambre" por Tonke Dragt, que se estrenó en
 
 ## Referencias
 
+- [Martin Kleppmann's homepage](https://martin.kleppmann.com/)
+- [Designing Data-Intensive Applications](https://dataintensive.net/)
+- [Martin Kleppmann's Twitter](https://twitter.com/martinkl)
+- [Martin Kleppmann's GitHub](https://github.com/mrkleppmann)
