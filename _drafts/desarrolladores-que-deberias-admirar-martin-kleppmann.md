@@ -44,7 +44,8 @@ es por lo que más se le conoce: [Designing Data-Intensive Applications](https:/
 
 ## Ideas interesantes
 
-Martin es un gran proponente de los sistemas distribuidos en todas sus formas.
+Martin es un gran proponente de los sistemas distribuidos en todas sus formas. Actualmente está trabajando
+con _local-first_ software, que es aquel funciona principlamente en un entorno local.
 
 ## Curiosidades
 
