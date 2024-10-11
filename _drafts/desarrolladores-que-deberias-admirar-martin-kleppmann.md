@@ -42,10 +42,10 @@ protocol buffers y JSON, usado principalmente en el campo de ciencia e ingenier�
 Martin también es un gran contribuidor a la comunidad tanto con pláticas y artículos como con un libro que
 es por lo que más se le conoce: [Designing Data-Intensive Applications](https://dataintensive.net/).
 
-## Ideas interesantes
 
 Martin es un gran proponente de los sistemas distribuidos en todas sus formas. Actualmente está trabajando
-con _local-first_ software, que es aquel funciona principlamente en un entorno local.
+con _local-first_ software, que es aquel funciona principalmente en un entorno local.
+
 
 ## Curiosidades
 
