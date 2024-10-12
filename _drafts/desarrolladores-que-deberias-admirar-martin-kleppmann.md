@@ -37,15 +37,18 @@ información entre varios procesos que compartan esta misma estructura, de maner
 para JavaScript, Swift y Rust.
 2. [**Apache Avro**](https://avro.apache.org/docs/): un formato de serialización de datos que compite con
 protocol buffers y JSON, usado principalmente en el campo de ciencia e ingeniería de datos.
-3. [**Apache Samza**](https://samza.apache.org/): un framework para procesar datos en tiempo real.
+3. [**Apache Samza**](https://samza.apache.org/): es un framework para procesar flujos de datos 
+de manera distribuida en tiempo real, que puede cooperar con Kafka.
 
-Martin también es un gran contribuidor a la comunidad tanto con pláticas y artículos como con un libro que
+Kleppmann también es un gran contribuidor a la comunidad tanto con pláticas y artículos como con un libro que
 es por lo que más se le conoce: [Designing Data-Intensive Applications](https://dataintensive.net/).
 
+## Ideas sobre el desarrollo de software
 
 Martin es un gran proponente de los sistemas distribuidos en todas sus formas. Actualmente está trabajando
-con _local-first_ software, que es aquel funciona principalmente en un entorno local.
-
+con _local-first_ software, que es aquel funciona principalmente en un entorno local, pero que puede 
+aprovechar las ventajas de tener una conexión a una red para hacer diferentes operaciones,
+como sincronizar datos o colaborar en tiempo real.
 
 ## Curiosidades
 
