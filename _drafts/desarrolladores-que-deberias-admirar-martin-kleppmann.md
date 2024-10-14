@@ -38,7 +38,7 @@ para JavaScript, Swift y Rust.
 2. [**Apache Avro**](https://avro.apache.org/docs/): un formato de serialización de datos que compite con
 protocol buffers y JSON, usado principalmente en el campo de ciencia e ingeniería de datos.
 3. [**Apache Samza**](https://samza.apache.org/): es un framework para procesar flujos de datos 
-de manera distribuida en tiempo real, que puede cooperar con Kafka.
+de manera distribuida en tiempo real, que puede cooperar con Kafka y otros sistemas de procesamiento de datos.
 
 Kleppmann también es un gran contribuidor a la comunidad tanto con pláticas y artículos como con un libro que
 es por lo que más se le conoce: [Designing Data-Intensive Applications](https://dataintensive.net/).
