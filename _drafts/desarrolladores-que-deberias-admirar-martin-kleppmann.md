@@ -40,7 +40,6 @@ protocol buffers y JSON, usado principalmente en el campo de ciencia e ingenier�
 3. [**Apache Samza**](https://samza.apache.org/): es un framework para procesar flujos de datos 
 de manera distribuida en tiempo real, que puede cooperar con Kafka y otros sistemas de procesamiento de datos.
 
-
 Kleppmann también es un gran contribuidor a la comunidad tanto con pláticas y artículos como con un libro que
 es por lo que más se le conoce: [Designing Data-Intensive Applications](https://dataintensive.net/).
 
@@ -50,6 +49,10 @@ Martin es un gran proponente de los sistemas distribuidos en todas sus formas. A
 con _local-first_ software, que es aquel funciona principalmente en un entorno local, pero que puede 
 aprovechar las ventajas de tener una conexión a una red para hacer diferentes operaciones,
 como sincronizar datos o colaborar en tiempo real.
+
+En su libro [Designing Data-Intensive Applications](https://dataintensive.net/) analiza las características
+de software que manejan grandes cantidades de datos, y que cumple con tres características arquitectónicas
+la disponiblidad, la escalabilidad, la mantenibilidad
 
 ## Curiosidades
 
