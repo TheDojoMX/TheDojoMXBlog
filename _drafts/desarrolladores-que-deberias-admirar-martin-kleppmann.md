@@ -55,6 +55,7 @@ de software que manejan grandes cantidades de datos, y que cumple con tres carac
 
 Aunque no es tan conocido, Martin es un gran contribuidor al conocimiento de la comunidad con este libro
 que 
+
 ## Curiosidades
 
 Muchas personas buenas en el campo de la computación son buenas en otras cosas o tienen múltiples
