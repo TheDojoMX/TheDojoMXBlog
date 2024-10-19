@@ -1,13 +1,13 @@
 ---
 title: "Los diferentes grados de diseño de software"
-date: 2024-10-18
+date: 2024-10-19
 author: Héctor Patricio
 tags: diseño-de-software arquitectura-de-software
 comments: true
-excerpt: "Escribe aquí un buen resumen de tu artículo"
+excerpt: "Hablemos de los diferente niveles de diseño de software y cómo puedes aprender cada uno de ellos."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_1400/v1725143065/natalia-y-DIewyzpUbRc-unsplash_npwcd3.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_400/v1725143065/natalia-y-DIewyzpUbRc-unsplash_npwcd3.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -18,7 +18,7 @@ meternos en ese nivel.
 Es por eso que en este artículo vamos a proponer una taxonomía para los diferentes grados de diseño
 de software. Pero antes hablemos de por qué te conviene hacer una distinción clara.
 
-Finalmente, presentaremos una serie de recursos que puedes usar más para aprender de cada uno de
+También presentaremos una serie de recursos que puedes usar más para aprender de cada uno de
 estos niveles de abstracción en el diseño de software.
 
 ## Por qué te conviene distinguir los grados de diseño de software
@@ -37,7 +37,8 @@ en diseño: conocer el nivel que necesitamos nos ayudará a empezar en el lugar 
 
 ## Los grados de abstracción en diseño de software
 
-Empecemos por el nivel más alto de abstracción la **arquitectura del negocio o de la solución**.
+Hablemos de cada uno de los grados de abstracción en diseño de software, qué es lo que se espera
+y cómo contribuya a la solución final.
 
 ### Arquitectura de soluciones
 
@@ -67,6 +68,19 @@ que el entorno va a sufrir. Este es un rol más amplio que profundo.
 Un arquitecto de soluciones debe ser el traductor entre lo que el negocio necesita, tomando en cuenta
 el contexto amplio de este, y el tipo de software que se puede construir o adquirir.
 
+#### Recursos para aprender arquitectura de soluciones
+
+En esta sección te presento algunos recursos que te pueden ayudar a aprender sobre este nivel de
+abstracción en el diseño de software, pero recuerda que nada sustituye la experiencia práctica:
+
+- [Solution Architecture Foundations](https://www.oreilly.com/library/view/solution-architecture-foundations/9781780175676/). Este libro es una excelente introducción a la arquitectura de soluciones y tiene
+un enfoque práctico.
+
+- [An Elegant Puzzle: Systems of Engineering Management](https://press.stripe.com/an-elegant-puzzle). Está escrito
+por un ingeniero de software y líder de ingeniería en grandes empresas de software. Este libre es un conjunto de
+ensayos sobre la administración de equipos de ingeniería, pero también incluye valiosas lecciones sobre
+cómo guiar a una organización en la que su principal activo es el software.
+
 ### Arquitectura de software
 
 El siguiente nivel de abstracción es la arquitectura de software. Esta actividad es una de las
@@ -94,6 +108,24 @@ comunes del software, pero también debe tener experiencia tratando con las nece
 
 Un arquitecto es el principal traductor entre lo que el negocio necesita y _cómo_ se puede
 **construir** o **armar** un sistema que cumpla con esas necesidades.
+
+#### Recursos para aprender arquitectura de software
+
+En este apartado hay muchos recursos, los que yo te recomiendo son:
+
+- [Software Architecture in Practice, 4th Edition](https://www.oreilly.com/library/view/software-architecture-in/9780136885979/). Si
+tuviera la necesidad de elegir un solo libro para aprender arquitectura de software,
+este sería el que recomendaría. Analiza todos los aspectos fundamentales para construir
+una arquitectura de software sin centrarse en el conocimiento trivial del que muchos creen que se trata
+la arquitectura.
+
+- [Fundamentals of Software Architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781098175504/).
+En este libro encontrarás todas las ideas fundamentales clásicas sobre arquitectura de software, y los
+términos que se usan para habla sobre estos temas.
+
+- [Just Enough Software Architecture: A Risk-Driven Approach](https://www.georgefairbanks.com/book/). Aquí
+encontrarás un enfoque diferente para la arquitectura de software: el enfocado en los riesgos. Este libro te
+ayudará a encontrar el equilibrio al tomar decisiones en tu arquitectura.
 
 ### Diseño de sistemas
 
@@ -127,6 +159,36 @@ y mientras más experiencia real tenga, mejor.
 Un diseñador de software lleva la visión arquitectónica dibujada en papel a su forma final, lista
 para ser implementada.
 
+#### Recursos para aprender diseño de sistemas
+
+El área de diseño de sistemas es muy amplia y recomiendo mucho estudiarla por partes. Primero,
+puedes empezar por los problemas clásicos, usando uno de los libros que te prepara para entrevistas
+como referencia, pero después tienes que profundizar:
+
+- [Acing the System Design Interview](https://www.oreilly.com/library/view/acing-the-system/9781633439108/).
+Este libro te prepara para las entrevistas de trabajo, tocando todos los temas fundamentales de diseño de
+sistemas.
+
+- [System Design Interview – An Insider’s Guide](https://www.oreilly.com/library/view/acing-the-system/9781633439108/). Otro 
+libro que te prepara para la entrevista de diseño, pero es un poco más informal que
+el anterior. Tiene una segunda parte que puedes encotrar aquí: [System Design Interview - An Insider's Guide: Volume 2](https://amzn.to/3Ysb0ux).
+
+Ahora sí, podemos empezar a profundizar:
+
+- [Designing Data-Intensive Applications](https://dataintensive.net/). Este trata sobre el diseño de sistemas
+de alta disponibilidad, escalabilidad y mantenibilidad y que tratan con muchos datos. Analiza cómo se usan
+los sistemas que manejan datos para lograrlos y se va a un poco más abajo para que veas cómo están construidos,
+así que también te prepara para el nivel de abajo.
+
+- [Building Microservices](https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/). Una
+de las formas más comunes de diseñar sistemas a grana escala es usando microservicios. Aunque no siempre los
+vayas a usar, entender los patrones fundamentales y los problemas que resuelven te ayudará a implementar esos
+principios en otros contextos.
+
+- [Foundations of Scalable Systems](https://www.oreilly.com/library/view/foundations-of-scalable/9781098106058/).
+La escalabilidad es un tema clave en el diseño de sistemas, entender los medios para lograrla te ayudará
+a ser un mejor diseñador.
+
 ### Diseño de código
 
 Para mi, el siguiente nivel tiene que ver con la **implementación de los diseños**. La pregunta en este
@@ -150,6 +212,26 @@ La pregunta de las otras secciones no aplica aquí, este nivel es el más técni
 está poniendo en práctica todo lo que sabemos de construcción de software.
 
 Un programador, usa el diseño para lograr que cada pieza de software cumpla con lo que se espera de ella.
+
+#### Recursos para aprender diseño de código
+
+En este nivel vamos a encontrar muchos recursos, pero muchos de ellos se contradicen entre sí, por lo que
+creo que es fundamental escoger una escuela de pensamiento y seguirla, pero también echarle un vistazo 
+a las otras y contrastar los puntos de vista, para que generes tu propio estilo.
+
+A continuación recomiendo mis libros favoritos en este nivel:
+
+- [A Philosophy of Software Design](https://milkov.tech/assets/psd.pdf). Este es mi libro favorito respecto
+a diseño de código porque creo que viene de alguien con experiencia y errores reales. Contradice muchos consejos
+encontrados en "Clean Code", que es el libro más admirado en este aspecto, pero que creo que ha envejecido muy
+mal.
+
+- [Modern Software Engineering](https://www.patkua.com/blog/book-review-modern-software-engineering/). Te presenta
+las prácticas más modernas para desarrollar software, igual, escrito por un ingeniero de software con mucha experiencia.
+
+En [este artículo](https://blog.thedojo.mx/2023/05/25/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo.html) te
+recomiendo otros libros que te pueden ayudar a mejorar tu diseño de código.
+
 
 ## Conclusión
 
