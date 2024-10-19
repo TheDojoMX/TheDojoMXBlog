@@ -134,4 +134,37 @@ nivel es: ¿Cómo cumplo con las características y funcione que se esperan de e
 
 Ya dijimos que el software siempre tiene que ver con decisiones, de hecho podríamos decir que una
 base de código es un conjunto de decisiones registradas en un lenguaje de programación. Un programador
-que quiere cumplir con las funciones y 
+que quiere cumplir con las funciones y características que se esperan de sus programas hace bien
+en tomar decisiones por adelantado y en adoptar un conjunto de prácticas que le ayuden a cumplir
+con lo que casi siempre se espera de esos sistemas de software.
+
+En esta parte es donde se aplican los patrones de diseño, los principios de división modular y de
+separación modular, donde se eligen nombres y donde se escoge el mejor algoritmo para resolver un problema
+específico. El comportamiento alto nivel de los sistemas depende completamente de las decisiones que
+se tomen a esta nivel y que se cumpla con lo que se espera de cada uno de los componentes.
+
+Aquí es donde se elige si se usa un bubble sort, un merge sort o un quicksort para ordenar una lista,
+si se usa la cierto módulo de terceros para una funcionalidad o si mejor lo implementamos.
+
+La pregunta de las otras secciones no aplica aquí, este nivel es el más técnico y en el que se
+está poniendo en práctica todo lo que sabemos de construcción de software.
+
+Un programador, usa el diseño para lograr que cada pieza de software cumpla con lo que se espera de ella.
+
+## Conclusión
+
+En cada nivel de diseño requerimos diferentes tipos de conocimiento y habilidades. Estas cuatro niveles
+no son necesariamente niveles secuenciales de desarrollo de carrera. Es decir, un muy buen programador
+no tiene por qué aprender a diseñar a nivel de sistemas, por ejemplo, podría dedicarse a cada vez
+diseñar mejor componentes individuales o incluso algoritmos específicos. Por ejemplo, los desarrolladores
+de drivers o contribuidores individuales en equipos gigantes que se dedican una parte del sistema.
+
+También, si estás implementando software con un objetivo ya definido, es poco probable que necesites aprender
+sobre arquitectura de soluciones o arquitectura de software a muy alto nivel, ese aprendizaje sólo
+te distraerá del conocimiento que realmente necesitas para resolver el problema.
+
+Y también funciona en la otra dirección. Conocer los detalles de implementación de cierto algoritmo
+no te hará un mejor arquitecto de software o de soluciones.
+
+Así que ya sabes, ningún conocimiento es mejor que otro aunque puede que algunos piensen que así sea,
+cada uno tiene su lugar y su propósito.
