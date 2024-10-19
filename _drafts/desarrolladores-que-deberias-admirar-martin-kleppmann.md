@@ -54,7 +54,7 @@ En su libro [Designing Data-Intensive Applications](https://dataintensive.net/) 
 de software que manejan grandes cantidades de datos, y que cumple con tres características arquitectónicas: disponibilidad, escalabilidad y mantenibilidad.
 
 Aunque no es tan conocido, Martin es un gran contribuidor al conocimiento de la comunidad con este libro
-que 
+que...
 
 ## Curiosidades
 
