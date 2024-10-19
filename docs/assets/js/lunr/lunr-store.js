@@ -832,4 +832,10 @@ var store = [{
         "tags": ["compiladores","intérprete","lenguajes-de-programación"],
         "url": "/2024/09/28/como-funciona-un-interprete.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1721878999/daniele-levis-pelusi-FLEZ4rYjP0w-unsplash_auzjkk.jpg"
+      },{
+        "title": "Los diferentes grados de diseño de software",
+        "excerpt":"Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza a hablar de patrones de diseño, infraestructura, y otras cosas con las que no nos conviene meternos en ese nivel. Es por eso que en este artículo vamos a proponer una taxonomía para los...","categories": [],
+        "tags": ["diseño-de-software","arquitectura-de-software"],
+        "url": "/2024/10/19/los-diferentes-grados-de-diseno-de-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_400/v1725143065/natalia-y-DIewyzpUbRc-unsplash_npwcd3.jpg"
       }]

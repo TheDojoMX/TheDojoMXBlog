@@ -1,0 +1,1000 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Los diferentes grados de diseño de software - The Dojo MX Blog</title>
+<meta name="description" content="Hablemos de los diferente niveles de diseño de software y cómo puedes aprender cada uno de ellos.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="Los diferentes grados de diseño de software">
+<meta property="og:url" content="https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html">
+
+
+  <meta property="og:description" content="Hablemos de los diferente niveles de diseño de software y cómo puedes aprender cada uno de ellos.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_1400/v1725143065/natalia-y-DIewyzpUbRc-unsplash_npwcd3.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-10-19T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
+
+<script src="/assets/js/sharect.min.js"></script>
+<!-- Fathom - beautiful, simple website analytics -->
+   <script src="https://cdn.usefathom.com/script.js" data-site="NGGHUUZH" defer></script>
+<!-- / Fathom -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html",
+      "name": "Los diferentes grados de diseño de software",
+      "headline": "Los diferentes grados de diseño de software",
+      "keywords": "diseño-de-software,arquitectura-de-software",
+      "description": "Hablemos de los diferente niveles de diseño de software y cómo puedes aprender cada uno de ellos.",
+      "articleBody": "Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza\na hablar de patrones de diseño, infraestructura, y otras cosas con las que no nos conviene\nmeternos en ese nivel.\n\nEs por eso que en este artículo vamos a proponer una taxonomía para los diferentes grados de diseño\nde software. Pero antes hablemos de por qué te conviene hacer una distinción clara.\n\nTambién presentaremos una serie de recursos que puedes usar más para aprender de cada uno de\nestos niveles de abstracción en el diseño de software.\n\nPor qué te conviene distinguir los grados de diseño de software\n\nLo primero que debemos entender es que hacer software implica diseñar software. Las raíces\nde la palabra diseñar son las mismas que las de la palabra designar: las dos cosas tienen que ver\ncon decisiones. Cuando diseñamos entendemos que estamos tomando decisiones y documentándolas\npor adelantado. Pero aunque ni las tomemos por adelantado, ni las documentemos, esas decisiones\nestán ahí y por lo tanto el diseño existe.\n\nTeniendo esto presente, nos conviene ponerle atención al diseño desde el principio, para crear\nsoftware que cumpla tanto con las funciones como con las características que se esperan de él.\n\n¿Ahora bien, por dónde empezamos a diseñar? Es aquí en donde entran los grados de abstracción\nen diseño: conocer el nivel que necesitamos nos ayudará a empezar en el lugar adecuado.\n\nLos grados de abstracción en diseño de software\n\nHablemos de cada uno de los grados de abstracción en diseño de software, qué es lo que se espera\ny cómo contribuya a la solución final.\n\nArquitectura de soluciones\n\nEl propósito del software o de cualquier sistema es resolver problemas para un usuario. Estos\nsistemas están dentro de un contexto completo que le da sentido a su existencia. Es en este nivel\nen donde se define la arquitectura de la solución.\n\nTomando en cuenta el contexto completo de dónde va a funcionar el software, la organización\no los individuos que lo van a usar, el contexto social, económico e incluso político, se define\nla arquitectura de la solución, es decir, se toman en cuenta los componentes principales que van\ninfluir en que el software pueda cumplir con su propósito.\n\nEste nivel de diseño es el más alto relacionado con el software y requiere capacidad técnica, pero\ntambién amplias capacidades a nivel de negocio, administración y otros campos relacionados con\nel funcionamiento de las organizaciones.\n\nLo anterior implica que este nivel es poco específico en cuanto los detalles de la solución,\npero tiene gran impacto tanto en el que software cumpla con lo que se espera de él, como con\nconseguir los recursos necesarios para su desarrollo. Además las decisiones que se toman aquí\ntienen un gran impacto en los negocios que solicitan el software.\n\n¿Qué tanto debe saber sobre construcción de software un arquitecto de soluciones? Como dijimos,\neste nivel requiere poca especificidad técnica, pero gran capacidad para combinar conocimientos\nde lo que es posible construir con el software, el contexto del negocio y proyección de los cambios\nque el entorno va a sufrir. Este es un rol más amplio que profundo.\n\nUn arquitecto de soluciones debe ser el traductor entre lo que el negocio necesita, tomando en cuenta\nel contexto amplio de este, y el tipo de software que se puede construir o adquirir.\n\nRecursos para aprender arquitectura de soluciones\n\nEn esta sección te presento algunos recursos que te pueden ayudar a aprender sobre este nivel de\nabstracción en el diseño de software, pero recuerda que nada sustituye la experiencia práctica:\n\n\n  \n    Solution Architecture Foundations. Este libro es una excelente introducción a la arquitectura de soluciones y tiene\nun enfoque práctico.\n  \n  \n    An Elegant Puzzle: Systems of Engineering Management. Está escrito\npor un ingeniero de software y líder de ingeniería en grandes empresas de software. Este libre es un conjunto de\nensayos sobre la administración de equipos de ingeniería, pero también incluye valiosas lecciones sobre\ncómo guiar a una organización en la que su principal activo es el software.\n  \n\n\nArquitectura de software\n\nEl siguiente nivel de abstracción es la arquitectura de software. Esta actividad es una de las\nmás mal entendidas y por lo tanto mal ejecutadas a mi parecer. La arquitectura tiene que ver\ncon las características que una pieza de software demuestra a nivel estructural, es decir,\ncualidades que surgen de la interacción de sus componentes.\n\nUn error muy común al intentar practicar la arquitectura de software es irse demasiado rápido\na los detalles de implementación (si vamos a usar tal o cuál patrón de diseño, etc). Mi propuesta\nes que la arquitectura de software se practique en un nivel de abstracción más alto, es decir,\nmás cerca de las necesidades del negocio.\n\nPor lo tanto, la principal actividad en este nivel es transformar las necesidades del negocio en\ncaracterísticas de software. A estas características las llamamos atributos de estructurales o\nde calidad. Pero la arquitectura de software también se encarga de lograr que el software haga\nlas cosas que el negocio necesita.\n\nTambién toma en cuenta la estructura de la organización y su composición para definir la forma\nen que el software se va a desarrollar.\n\n¿Qué tanto debe saber sobre construcción de software un arquitecto de software? Un arquitecto de\nsoftware, según la tradición medieval, es el constructor principal. Por lo tanto, debe tener \nuna muy amplia experiencia técnica, conocer cómo funcionan la mayoría de los componentes principales\ncomunes del software, pero también debe tener experiencia tratando con las necesidades del negocio.\n\nUn arquitecto es el principal traductor entre lo que el negocio necesita y cómo se puede\nconstruir o armar un sistema que cumpla con esas necesidades.\n\nRecursos para aprender arquitectura de software\n\nEn este apartado hay muchos recursos, los que yo te recomiendo son:\n\n\n  \n    Software Architecture in Practice, 4th Edition. Si\ntuviera la necesidad de elegir un solo libro para aprender arquitectura de software,\neste sería el que recomendaría. Analiza todos los aspectos fundamentales para construir\nuna arquitectura de software sin centrarse en el conocimiento trivial del que muchos creen que se trata\nla arquitectura.\n  \n  \n    Fundamentals of Software Architecture.\nEn este libro encontrarás todas las ideas fundamentales clásicas sobre arquitectura de software, y los\ntérminos que se usan para habla sobre estos temas.\n  \n  \n    Just Enough Software Architecture: A Risk-Driven Approach. Aquí\nencontrarás un enfoque diferente para la arquitectura de software: el enfocado en los riesgos. Este libro te\nayudará a encontrar el equilibrio al tomar decisiones en tu arquitectura.\n  \n\n\nDiseño de sistemas\n\nUna vez que sabemos qué características y funciones debe tener el software y cómo las vamos a lograr\ndebemos de ponerle nombre y detalles a cada pieza de software. De esto se encarga el diseño de sistemas.\n\nEste, para mi, es el nivel más clásico y conocido en el diseño de software y el que más le emociona\na la mayoría de los desarrolladores. Es aquí donde dices que vas usar tal o cuál base de datos específica,\nsi vas a usar réplicas de lectura, cómo vas a manejar a un millón de usuarios concurrentes, e incluso\ndetalles de bajo nivel como el almacenamiento de datos y el tipo de infraestructura que vas a usar.\n\nTambién es aquí donde muchas de las entrevistas de trabajo se centran cuando se quiere poner a prueba\nla capacidad técnica de un desarrollador puro, ya que es un paso intermedio entre la arquitectura, que\ntiene que ver mucho con el negocio, y la programación, que es todo lo que haría un desarrollador que a\npenas está empezando.\n\nDemostrar habilidad en este nivel es un proxy para entender qué tanto has desarrollado software, pero\ntristemente, al igual que todas las medidas que se convierten en el objetivo, ha perdido gran parte\nde su capacidad evaluadora ya que se puede simular fácilmente (estudiando los problemas clásicos de\nentrevistas).\n\n¿Vale la pena estudiarlo aisladamente? Sí, pero es no es suficiente. Este nivel no se trata de seguir\nrecetas de diseño de sistemas, aunque se pueda entender así, sino de conocer cómo se implementan las\nsoluciones arquitectónicas ahora con los detalles de implementación. Así que su verdadero valor viene\nde la experiencia desarrollando software.\n\nCreo que esta pregunta ya es obvia, pero demos una respuesta explícita al igual que en las otras\nsecciones: ¿Qué tanto debe saber sobre construcción de software un diseñador de sistemas? Mucho,\ny mientras más experiencia real tenga, mejor.\n\nUn diseñador de software lleva la visión arquitectónica dibujada en papel a su forma final, lista\npara ser implementada.\n\nRecursos para aprender diseño de sistemas\n\nEl área de diseño de sistemas es muy amplia y recomiendo mucho estudiarla por partes. Primero,\npuedes empezar por los problemas clásicos, usando uno de los libros que te prepara para entrevistas\ncomo referencia, pero después tienes que profundizar:\n\n\n  \n    Acing the System Design Interview.\nEste libro te prepara para las entrevistas de trabajo, tocando todos los temas fundamentales de diseño de\nsistemas.\n  \n  \n    System Design Interview – An Insider’s Guide. Otro \nlibro que te prepara para la entrevista de diseño, pero es un poco más informal que\nel anterior. Tiene una segunda parte que puedes encotrar aquí: System Design Interview - An Insider’s Guide: Volume 2.\n  \n\n\nAhora sí, podemos empezar a profundizar:\n\n\n  \n    Designing Data-Intensive Applications. Este trata sobre el diseño de sistemas\nde alta disponibilidad, escalabilidad y mantenibilidad y que tratan con muchos datos. Analiza cómo se usan\nlos sistemas que manejan datos para lograrlos y se va a un poco más abajo para que veas cómo están construidos,\nasí que también te prepara para el nivel de abajo.\n  \n  \n    Building Microservices. Una\nde las formas más comunes de diseñar sistemas a grana escala es usando microservicios. Aunque no siempre los\nvayas a usar, entender los patrones fundamentales y los problemas que resuelven te ayudará a implementar esos\nprincipios en otros contextos.\n  \n  \n    Foundations of Scalable Systems.\nLa escalabilidad es un tema clave en el diseño de sistemas, entender los medios para lograrla te ayudará\na ser un mejor diseñador.\n  \n\n\nDiseño de código\n\nPara mi, el siguiente nivel tiene que ver con la implementación de los diseños. La pregunta en este\nnivel es: ¿Cómo cumplo con las características y funcione que se esperan de esta pieza de software?\n\nYa dijimos que el software siempre tiene que ver con decisiones, de hecho podríamos decir que una\nbase de código es un conjunto de decisiones registradas en un lenguaje de programación. Un programador\nque quiere cumplir con las funciones y características que se esperan de sus programas hace bien\nen tomar decisiones por adelantado y en adoptar un conjunto de prácticas que le ayuden a cumplir\ncon lo que casi siempre se espera de esos sistemas de software.\n\nEn esta parte es donde se aplican los patrones de diseño, los principios de división modular y de\nseparación modular, donde se eligen nombres y donde se escoge el mejor algoritmo para resolver un problema\nespecífico. El comportamiento alto nivel de los sistemas depende completamente de las decisiones que\nse tomen a esta nivel y que se cumpla con lo que se espera de cada uno de los componentes.\n\nAquí es donde se elige si se usa un bubble sort, un merge sort o un quicksort para ordenar una lista,\nsi se usa la cierto módulo de terceros para una funcionalidad o si mejor lo implementamos.\n\nLa pregunta de las otras secciones no aplica aquí, este nivel es el más técnico y en el que se\nestá poniendo en práctica todo lo que sabemos de construcción de software.\n\nUn programador, usa el diseño para lograr que cada pieza de software cumpla con lo que se espera de ella.\n\nRecursos para aprender diseño de código\n\nEn este nivel vamos a encontrar muchos recursos, pero muchos de ellos se contradicen entre sí, por lo que\ncreo que es fundamental escoger una escuela de pensamiento y seguirla, pero también echarle un vistazo \na las otras y contrastar los puntos de vista, para que generes tu propio estilo.\n\nA continuación recomiendo mis libros favoritos en este nivel:\n\n\n  \n    A Philosophy of Software Design. Este es mi libro favorito respecto\na diseño de código porque creo que viene de alguien con experiencia y errores reales. Contradice muchos consejos\nencontrados en “Clean Code”, que es el libro más admirado en este aspecto, pero que creo que ha envejecido muy\nmal.\n  \n  \n    Modern Software Engineering. Te presenta\nlas prácticas más modernas para desarrollar software, igual, escrito por un ingeniero de software con mucha experiencia.\n  \n\n\nEn este artículo te\nrecomiendo otros libros que te pueden ayudar a mejorar tu diseño de código.\n\nConclusión\n\nEn cada nivel de diseño requerimos diferentes tipos de conocimiento y habilidades. Estas cuatro niveles\nno son necesariamente niveles secuenciales de desarrollo de carrera. Es decir, un muy buen programador\nno tiene por qué aprender a diseñar a nivel de sistemas, por ejemplo, podría dedicarse a cada vez\ndiseñar mejor componentes individuales o incluso algoritmos específicos. Por ejemplo, los desarrolladores\nde drivers o contribuidores individuales en equipos gigantes que se dedican una parte del sistema.\n\nTambién, si estás implementando software con un objetivo ya definido, es poco probable que necesites aprender\nsobre arquitectura de soluciones o arquitectura de software a muy alto nivel, ese aprendizaje sólo\nte distraerá del conocimiento que realmente necesitas para resolver el problema.\n\nY también funciona en la otra dirección. Conocer los detalles de implementación de cierto algoritmo\nno te hará un mejor arquitecto de software o de soluciones.\n\nAsí que ya sabes, ningún conocimiento es mejor que otro aunque puede que algunos piensen que así sea,\ncada uno tiene su lugar y su propósito.\n",
+      "datePublished": "2024-10-19 00:00:00 -0600",
+      "dateModified": "2024-10-19 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_1400/v1725143065/natalia-y-DIewyzpUbRc-unsplash_npwcd3.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_1400/v1725143065/natalia-y-DIewyzpUbRc-unsplash_npwcd3.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Los diferentes grados de diseño de software
+
+        
+      </h1>
+      
+        <p class="page__lead">Hablemos de los diferente niveles de diseño de software y cómo puedes aprender cada uno de ellos.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        2252 palabras | 18 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Los diferentes grados de diseño de software">
+    <meta itemprop="description" content="Hablemos de los diferente niveles de diseño de software y cómo puedes aprender cada uno de ellos.">
+    <meta itemprop="datePublished" content="2024-10-19T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza
+a hablar de patrones de diseño, infraestructura, y otras cosas con las que no nos conviene
+meternos en ese nivel.</p>
+
+<p>Es por eso que en este artículo vamos a proponer una taxonomía para los diferentes grados de diseño
+de software. Pero antes hablemos de por qué te conviene hacer una distinción clara.</p>
+
+<p>También presentaremos una serie de recursos que puedes usar más para aprender de cada uno de
+estos niveles de abstracción en el diseño de software.</p>
+
+<h2 id="por-qué-te-conviene-distinguir-los-grados-de-diseño-de-software">Por qué te conviene distinguir los grados de diseño de software</h2>
+
+<p>Lo primero que debemos entender es que hacer software <strong>implica</strong> diseñar software. Las raíces
+de la palabra diseñar son las mismas que las de la palabra designar: las dos cosas tienen que ver
+con <strong>decisiones</strong>. Cuando <em>diseñamos</em> entendemos que estamos tomando decisiones y documentándolas
+por adelantado. Pero aunque ni las tomemos por adelantado, ni las documentemos, esas decisiones
+están ahí y por lo tanto el diseño existe.</p>
+
+<p>Teniendo esto presente, nos conviene ponerle atención al diseño desde el principio, para crear
+software que <strong>cumpla tanto con las funciones como con las características que se esperan de él</strong>.</p>
+
+<p>¿Ahora bien, por dónde empezamos a diseñar? Es aquí en donde entran los grados de abstracción
+en diseño: conocer el nivel que necesitamos nos ayudará a empezar en el lugar adecuado.</p>
+
+<h2 id="los-grados-de-abstracción-en-diseño-de-software">Los grados de abstracción en diseño de software</h2>
+
+<p>Hablemos de cada uno de los grados de abstracción en diseño de software, qué es lo que se espera
+y cómo contribuya a la solución final.</p>
+
+<h3 id="arquitectura-de-soluciones">Arquitectura de soluciones</h3>
+
+<p>El propósito del software o de cualquier sistema es resolver problemas para un usuario. Estos
+sistemas están dentro de un contexto completo que le da sentido a su existencia. Es en este nivel
+en donde se define la arquitectura de la solución.</p>
+
+<p>Tomando en cuenta el contexto completo de dónde va a funcionar el software, la organización
+o los individuos que lo van a usar, el contexto social, económico e incluso político, se define
+la arquitectura de la solución, es decir, se toman en cuenta los componentes principales que van
+influir en que el software pueda cumplir con su propósito.</p>
+
+<p>Este nivel de diseño es el más alto relacionado con el software y requiere capacidad técnica, pero
+también amplias capacidades a nivel de negocio, administración y otros campos relacionados con
+el funcionamiento de las organizaciones.</p>
+
+<p>Lo anterior implica que este nivel es poco específico en cuanto los detalles de la solución,
+pero tiene gran impacto tanto en el que software cumpla con lo que se espera de él, como con
+conseguir los recursos necesarios para su desarrollo. Además las decisiones que se toman aquí
+tienen un gran impacto en los negocios que solicitan el software.</p>
+
+<p>¿Qué tanto debe saber sobre <em>construcción de software</em> un arquitecto de soluciones? Como dijimos,
+este nivel requiere poca especificidad técnica, pero gran capacidad para combinar conocimientos
+de lo que es posible construir con el software, el contexto del negocio y proyección de los cambios
+que el entorno va a sufrir. Este es un rol más amplio que profundo.</p>
+
+<p>Un arquitecto de soluciones debe ser el traductor entre lo que el negocio necesita, tomando en cuenta
+el contexto amplio de este, y el tipo de software que se puede construir o adquirir.</p>
+
+<h4 id="recursos-para-aprender-arquitectura-de-soluciones">Recursos para aprender arquitectura de soluciones</h4>
+
+<p>En esta sección te presento algunos recursos que te pueden ayudar a aprender sobre este nivel de
+abstracción en el diseño de software, pero recuerda que nada sustituye la experiencia práctica:</p>
+
+<ul>
+  <li>
+    <p><a href="https://www.oreilly.com/library/view/solution-architecture-foundations/9781780175676/">Solution Architecture Foundations</a>. Este libro es una excelente introducción a la arquitectura de soluciones y tiene
+un enfoque práctico.</p>
+  </li>
+  <li>
+    <p><a href="https://press.stripe.com/an-elegant-puzzle">An Elegant Puzzle: Systems of Engineering Management</a>. Está escrito
+por un ingeniero de software y líder de ingeniería en grandes empresas de software. Este libre es un conjunto de
+ensayos sobre la administración de equipos de ingeniería, pero también incluye valiosas lecciones sobre
+cómo guiar a una organización en la que su principal activo es el software.</p>
+  </li>
+</ul>
+
+<h3 id="arquitectura-de-software">Arquitectura de software</h3>
+
+<p>El siguiente nivel de abstracción es la arquitectura de software. Esta actividad es una de las
+más mal entendidas y por lo tanto mal ejecutadas a mi parecer. La arquitectura tiene que ver
+con las características que una pieza de software demuestra a nivel estructural, es decir,
+cualidades que surgen de la interacción de sus componentes.</p>
+
+<p>Un error muy común al intentar practicar la arquitectura de software es irse demasiado rápido
+a los detalles de implementación (si vamos a usar tal o cuál patrón de diseño, etc). Mi propuesta
+es que la arquitectura de software se practique en un nivel de abstracción más alto, es decir,
+más cerca de las necesidades del negocio.</p>
+
+<p>Por lo tanto, la principal actividad en este nivel es transformar las necesidades del negocio en
+características de software. A estas características las llamamos <strong>atributos de estructurales o
+de calidad</strong>. Pero la arquitectura de software también se encarga de lograr que el software haga
+las cosas que el negocio necesita.</p>
+
+<p>También toma en cuenta la estructura de la organización y su composición para definir <em>la forma</em>
+en que el software se va a desarrollar.</p>
+
+<p>¿Qué tanto debe saber sobre <em>construcción de software</em> un arquitecto de software? Un arquitecto de
+software, según la tradición medieval, es <em>el constructor principal</em>. Por lo tanto, debe tener 
+una muy amplia experiencia técnica, conocer cómo funcionan la mayoría de los componentes principales
+comunes del software, pero también debe tener experiencia tratando con las necesidades del negocio.</p>
+
+<p>Un arquitecto es el principal traductor entre lo que el negocio necesita y <em>cómo</em> se puede
+<strong>construir</strong> o <strong>armar</strong> un sistema que cumpla con esas necesidades.</p>
+
+<h4 id="recursos-para-aprender-arquitectura-de-software">Recursos para aprender arquitectura de software</h4>
+
+<p>En este apartado hay muchos recursos, los que yo te recomiendo son:</p>
+
+<ul>
+  <li>
+    <p><a href="https://www.oreilly.com/library/view/software-architecture-in/9780136885979/">Software Architecture in Practice, 4th Edition</a>. Si
+tuviera la necesidad de elegir un solo libro para aprender arquitectura de software,
+este sería el que recomendaría. Analiza todos los aspectos fundamentales para construir
+una arquitectura de software sin centrarse en el conocimiento trivial del que muchos creen que se trata
+la arquitectura.</p>
+  </li>
+  <li>
+    <p><a href="https://www.oreilly.com/library/view/fundamentals-of-software/9781098175504/">Fundamentals of Software Architecture</a>.
+En este libro encontrarás todas las ideas fundamentales clásicas sobre arquitectura de software, y los
+términos que se usan para habla sobre estos temas.</p>
+  </li>
+  <li>
+    <p><a href="https://www.georgefairbanks.com/book/">Just Enough Software Architecture: A Risk-Driven Approach</a>. Aquí
+encontrarás un enfoque diferente para la arquitectura de software: el enfocado en los riesgos. Este libro te
+ayudará a encontrar el equilibrio al tomar decisiones en tu arquitectura.</p>
+  </li>
+</ul>
+
+<h3 id="diseño-de-sistemas">Diseño de sistemas</h3>
+
+<p>Una vez que sabemos qué características y funciones debe tener el software y cómo las vamos a lograr
+debemos de ponerle nombre y detalles a cada pieza de software. De esto se encarga el diseño de sistemas.</p>
+
+<p>Este, para mi, es el nivel más clásico y conocido en el diseño de software y el que más le emociona
+a la mayoría de los desarrolladores. Es aquí donde dices que vas usar tal o cuál base de datos específica,
+si vas a usar réplicas de lectura, cómo vas a manejar a un millón de usuarios concurrentes, e incluso
+detalles de bajo nivel como el almacenamiento de datos y el tipo de infraestructura que vas a usar.</p>
+
+<p>También es aquí donde muchas de las entrevistas de trabajo se centran cuando se quiere poner a prueba
+la capacidad técnica de un desarrollador puro, ya que es un paso intermedio entre la arquitectura, que
+tiene que ver mucho con el negocio, y la programación, que es todo lo que haría un desarrollador que a
+penas está empezando.</p>
+
+<p>Demostrar habilidad en este nivel es un proxy para entender qué tanto has desarrollado software, pero
+tristemente, al igual que todas las medidas que se convierten en el objetivo, ha perdido gran parte
+de su capacidad evaluadora ya que se puede simular fácilmente (estudiando los problemas clásicos de
+entrevistas).</p>
+
+<p>¿Vale la pena estudiarlo aisladamente? Sí, pero es no es suficiente. Este nivel no se trata de seguir
+recetas de diseño de sistemas, aunque se pueda entender así, sino de conocer cómo se implementan las
+soluciones arquitectónicas ahora con los detalles de implementación. Así que su verdadero valor viene
+de la <strong>experiencia</strong> desarrollando software.</p>
+
+<p>Creo que esta pregunta ya es obvia, pero demos una respuesta explícita al igual que en las otras
+secciones: ¿Qué tanto debe saber sobre <em>construcción de software</em> un diseñador de sistemas? Mucho,
+y mientras más experiencia real tenga, mejor.</p>
+
+<p>Un diseñador de software lleva la visión arquitectónica dibujada en papel a su forma final, lista
+para ser implementada.</p>
+
+<h4 id="recursos-para-aprender-diseño-de-sistemas">Recursos para aprender diseño de sistemas</h4>
+
+<p>El área de diseño de sistemas es muy amplia y recomiendo mucho estudiarla por partes. Primero,
+puedes empezar por los problemas clásicos, usando uno de los libros que te prepara para entrevistas
+como referencia, pero después tienes que profundizar:</p>
+
+<ul>
+  <li>
+    <p><a href="https://www.oreilly.com/library/view/acing-the-system/9781633439108/">Acing the System Design Interview</a>.
+Este libro te prepara para las entrevistas de trabajo, tocando todos los temas fundamentales de diseño de
+sistemas.</p>
+  </li>
+  <li>
+    <p><a href="https://www.oreilly.com/library/view/acing-the-system/9781633439108/">System Design Interview – An Insider’s Guide</a>. Otro 
+libro que te prepara para la entrevista de diseño, pero es un poco más informal que
+el anterior. Tiene una segunda parte que puedes encotrar aquí: <a href="https://amzn.to/3Ysb0ux">System Design Interview - An Insider’s Guide: Volume 2</a>.</p>
+  </li>
+</ul>
+
+<p>Ahora sí, podemos empezar a profundizar:</p>
+
+<ul>
+  <li>
+    <p><a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>. Este trata sobre el diseño de sistemas
+de alta disponibilidad, escalabilidad y mantenibilidad y que tratan con muchos datos. Analiza cómo se usan
+los sistemas que manejan datos para lograrlos y se va a un poco más abajo para que veas cómo están construidos,
+así que también te prepara para el nivel de abajo.</p>
+  </li>
+  <li>
+    <p><a href="https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/">Building Microservices</a>. Una
+de las formas más comunes de diseñar sistemas a grana escala es usando microservicios. Aunque no siempre los
+vayas a usar, entender los patrones fundamentales y los problemas que resuelven te ayudará a implementar esos
+principios en otros contextos.</p>
+  </li>
+  <li>
+    <p><a href="https://www.oreilly.com/library/view/foundations-of-scalable/9781098106058/">Foundations of Scalable Systems</a>.
+La escalabilidad es un tema clave en el diseño de sistemas, entender los medios para lograrla te ayudará
+a ser un mejor diseñador.</p>
+  </li>
+</ul>
+
+<h3 id="diseño-de-código">Diseño de código</h3>
+
+<p>Para mi, el siguiente nivel tiene que ver con la <strong>implementación de los diseños</strong>. La pregunta en este
+nivel es: ¿Cómo cumplo con las características y funcione que se esperan de esta pieza de software?</p>
+
+<p>Ya dijimos que el software siempre tiene que ver con decisiones, de hecho podríamos decir que una
+base de código es un conjunto de decisiones registradas en un lenguaje de programación. Un programador
+que quiere cumplir con las funciones y características que se esperan de sus programas hace bien
+en tomar decisiones por adelantado y en adoptar un conjunto de prácticas que le ayuden a cumplir
+con lo que casi siempre se espera de esos sistemas de software.</p>
+
+<p>En esta parte es donde se aplican los patrones de diseño, los principios de división modular y de
+separación modular, donde se eligen nombres y donde se escoge el mejor algoritmo para resolver un problema
+específico. El comportamiento alto nivel de los sistemas depende completamente de las decisiones que
+se tomen a esta nivel y que se cumpla con lo que se espera de cada uno de los componentes.</p>
+
+<p>Aquí es donde se elige si se usa un bubble sort, un merge sort o un quicksort para ordenar una lista,
+si se usa la cierto módulo de terceros para una funcionalidad o si mejor lo implementamos.</p>
+
+<p>La pregunta de las otras secciones no aplica aquí, este nivel es el más técnico y en el que se
+está poniendo en práctica todo lo que sabemos de construcción de software.</p>
+
+<p>Un programador, usa el diseño para lograr que cada pieza de software cumpla con lo que se espera de ella.</p>
+
+<h4 id="recursos-para-aprender-diseño-de-código">Recursos para aprender diseño de código</h4>
+
+<p>En este nivel vamos a encontrar muchos recursos, pero muchos de ellos se contradicen entre sí, por lo que
+creo que es fundamental escoger una escuela de pensamiento y seguirla, pero también echarle un vistazo 
+a las otras y contrastar los puntos de vista, para que generes tu propio estilo.</p>
+
+<p>A continuación recomiendo mis libros favoritos en este nivel:</p>
+
+<ul>
+  <li>
+    <p><a href="https://milkov.tech/assets/psd.pdf">A Philosophy of Software Design</a>. Este es mi libro favorito respecto
+a diseño de código porque creo que viene de alguien con experiencia y errores reales. Contradice muchos consejos
+encontrados en “Clean Code”, que es el libro más admirado en este aspecto, pero que creo que ha envejecido muy
+mal.</p>
+  </li>
+  <li>
+    <p><a href="https://www.patkua.com/blog/book-review-modern-software-engineering/">Modern Software Engineering</a>. Te presenta
+las prácticas más modernas para desarrollar software, igual, escrito por un ingeniero de software con mucha experiencia.</p>
+  </li>
+</ul>
+
+<p>En <a href="https://blog.thedojo.mx/2023/05/25/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo.html">este artículo</a> te
+recomiendo otros libros que te pueden ayudar a mejorar tu diseño de código.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>En cada nivel de diseño requerimos diferentes tipos de conocimiento y habilidades. Estas cuatro niveles
+no son necesariamente niveles secuenciales de desarrollo de carrera. Es decir, un muy buen programador
+no tiene por qué aprender a diseñar a nivel de sistemas, por ejemplo, podría dedicarse a cada vez
+diseñar mejor componentes individuales o incluso algoritmos específicos. Por ejemplo, los desarrolladores
+de drivers o contribuidores individuales en equipos gigantes que se dedican una parte del sistema.</p>
+
+<p>También, si estás implementando software con un objetivo ya definido, es poco probable que necesites aprender
+sobre arquitectura de soluciones o arquitectura de software a muy alto nivel, ese aprendizaje sólo
+te distraerá del conocimiento que realmente necesitas para resolver el problema.</p>
+
+<p>Y también funciona en la otra dirección. Conocer los detalles de implementación de cierto algoritmo
+no te hará un mejor arquitecto de software o de soluciones.</p>
+
+<p>Así que ya sabes, ningún conocimiento es mejor que otro aunque puede que algunos piensen que así sea,
+cada uno tiene su lugar y su propósito.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#arquitectura-de-software" class="page__taxonomy-item" rel="tag">arquitectura-de-software</a><span class="sep">, </span>
+    
+      <a href="/tags/#dise%C3%B1o-de-software" class="page__taxonomy-item" rel="tag">diseño-de-software</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2024-10-19T00:00:00-06:00">October 19, 2024</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Los+diferentes+grados+de+dise%C3%B1o+de+software%20https%3A%2F%2Fblog.thedojo.mx%2F2024%2F10%2F19%2Flos-diferentes-grados-de-diseno-de-software.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F10%2F19%2Flos-diferentes-grados-de-diseno-de-software.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F10%2F19%2Flos-diferentes-grados-de-diseno-de-software.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024/09/28/como-funciona-un-interprete.html" class="pagination--pager" title="¿Cómo funciona un intérprete?
+">Anterior</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1721878999/daniele-levis-pelusi-FLEZ4rYjP0w-unsplash_auzjkk.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/09/28/como-funciona-un-interprete.html" rel="permalink">¿Cómo funciona un intérprete?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+9 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 28-09-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/09/16/como-funciona-tensorflow.html" rel="permalink">¿Cómo funciona TensorFlow?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+8 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 16-09-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablem...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html" rel="permalink">Por qué debes leer Designing Data-intensive Applications
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+5 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-08-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/07/18/alternativas-a-git.html" rel="permalink">Alternativas a Git
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 18-07-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#4b0082',
+      iconColor: '#fff'
+    }).init();
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2024 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2024/10/19/los-diferentes-grados-de-diseno-de-software"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
