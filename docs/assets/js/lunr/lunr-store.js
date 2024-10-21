@@ -838,4 +838,10 @@ var store = [{
         "tags": ["diseño-de-software","arquitectura-de-software"],
         "url": "/2024/10/19/los-diferentes-grados-de-diseno-de-software.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_400/v1725143065/natalia-y-DIewyzpUbRc-unsplash_npwcd3.jpg"
+      },{
+        "title": "Desarrolladores que deberías admirar: Martin Kleppmann",
+        "excerpt":"Martin Kleppmann es un desarrollador de software, investigador y profesor muy prolífico. Hablemos de su trabajo, ideas y de por qué es alguien que podrías admirar. Su carrera Martin ha desarrollado su carrera e investigación alrededor del software deTambién trabaja en seguridad de sistemas distribuidos, un tema relacionado al anterior,...","categories": [],
+        "tags": ["Martin-Kleppmann","bases-de-datos","sistemas-distribuidos","software-local-first"],
+        "url": "/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_1400/v1727612113/xavier-coiffic-us2QhEKqPlM-unsplash_cnoliq.jpg"
       }]

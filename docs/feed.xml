@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-10-19T01:16:39-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Los diferentes grados de diseño de software</title><link href="https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html" rel="alternate" type="text/html" title="Los diferentes grados de diseño de software" /><published>2024-10-19T00:00:00-06:00</published><updated>2024-10-19T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html"><![CDATA[<p>Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-10-20T21:24:05-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Desarrolladores que deberías admirar: Martin Kleppmann</title><link href="https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html" rel="alternate" type="text/html" title="Desarrolladores que deberías admirar: Martin Kleppmann" /><published>2024-10-20T00:00:00-06:00</published><updated>2024-10-20T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html"><![CDATA[<p><strong>Martin Kleppmann</strong> es un desarrollador de software, investigador y profesor muy prolífico.
+Hablemos de su trabajo, ideas y de por qué es alguien que podrías admirar.</p>
+
+<h2 id="su-carrera">Su carrera</h2>
+
+<p>Martin ha desarrollado su carrera e investigación alrededor del software deTambién trabaja en seguridad de sistemas distribuidos, un tema relacionado al anterior,
+pero digamos que para temas de mayor escala.</p>
+
+<p>Es profesor en la <strong>Universidad de Cambridge</strong>, pero parece que nunca se ha separado de la industria,
+por ejemplo, como emprendedor, fundó Rapportive: una empresa que creó un plug-in que te permitía
+ver los detalles de tus contactos directamente en tu bandeja de entrada de email. Rapportive fue
+adquirida por LinkedIn por nada más y nada menos que por 15 millones de dólares.</p>
+
+<p>También ha participado en proyectos de código abierto, con los siguientes proyectos:</p>
+
+<ol>
+  <li><a href="https://automerge.org/"><strong>Automerge</strong></a>: una biblioteca para crear software local-first, que es principalmente 
+un CRDT (Conflict-free Replicated Data Type), es decir, una estructura de datos que sirve para sincronizar
+información entre varios procesos que compartan esta misma estructura, de manera automática. Está disponible
+para JavaScript, Swift y Rust.</li>
+  <li><a href="https://avro.apache.org/docs/"><strong>Apache Avro</strong></a>: un formato de serialización de datos que compite con
+protocol buffers y JSON, usado principalmente en el campo de ciencia e ingeniería de datos.</li>
+  <li><a href="https://samza.apache.org/"><strong>Apache Samza</strong></a>: es un framework para procesar flujos de datos
+de manera distribuida en tiempo real, que puede cooperar con Kafka y otros sistemas de procesamiento de datos.</li>
+</ol>
+
+<p>Kleppmann también es un gran contribuidor a la comunidad tanto con pláticas y artículos como con un libro que
+es por lo que más se le conoce: <a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>.</p>
+
+<h2 id="ideas-sobre-el-desarrollo-de-software">Ideas sobre el desarrollo de software</h2>
+
+<p>Martin es un gran proponente de los sistemas distribuidos en todas sus formas y de todos los aspectos realacionados
+con estos, desde los temas conceptuales hasta la implementación y la seguridad. Actualmente está trabajando
+con <em>local-first</em> software, que es aquel funciona principalmente en un entorno local, pero que puede
+aprovechar las ventajas de tener una conexión a una red para hacer diferentes operaciones,
+como sincronizar datos o colaborar en tiempo real.</p>
+
+<p>En su libro <a href="https://dataintensive.net/">Designing Data-Intensive Applications</a> analiza las características
+de software que manejan grandes cantidades de datos, y que cumple con tres características arquitectónicas: disponibilidad, escalabilidad y mantenibilidad. Este libro ha sido muy influyente en la industria, sobre todo
+para aquellos que quieren mejorar sus habilidades de diseño de software relacionadas con sistemas de backend
+distribuidos y bases de datos.</p>
+
+<p>Si quieres aprender más acerca de todos los temas que hemos mencionado, que giran alrededor de sistemas
+distribuidos, manejo de grandes cantidades de datos, diseño de software y software local-first, te recomiendo
+ver la <a href="https://www.youtube.com/playlist?list=PLeKd45zvjcDHJxge6VtYUAbYnvd_VNQCx">lista de reproducción de videos</a>.</p>
+
+<h2 id="curiosidades">Curiosidades</h2>
+
+<p>Muchas personas buenas en el campo de la computación son buenas en otras cosas o tienen múltiples intereses.
+Martin es un gran músico, compuso una ópera llamada “Die Türme des Februar”, que se estrenó en 2007.</p>
+
+<h2 id="referencias">Referencias</h2>
+
+<ul>
+  <li><a href="https://martin.kleppmann.com/">Página personal de Martin Kleppmann</a></li>
+  <li><a href="https://dataintensive.net/">Designing Data-Intensive Applications</a></li>
+  <li><a href="https://twitter.com/martinkl">Twitter de Martin Kleppmann</a></li>
+  <li><a href="https://github.com/mrkleppmann">GitHub de Martin Kleppmann</a></li>
+</ul>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Martin-Kleppmann" /><category term="bases-de-datos" /><category term="sistemas-distribuidos" /><category term="software-local-first" /><summary type="html"><![CDATA[Hablemos de Martin Kleppmann, uno de los desarrolladores e investigadores de software más influyentes en el panorama actual de las bases de datos y sistemas que usan datos.]]></summary></entry><entry><title type="html">Los diferentes grados de diseño de software</title><link href="https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html" rel="alternate" type="text/html" title="Los diferentes grados de diseño de software" /><published>2024-10-19T00:00:00-06:00</published><updated>2024-10-19T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html"><![CDATA[<p>Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza
 a hablar de patrones de diseño, infraestructura, y otras cosas con las que no nos conviene
 meternos en ese nivel.</p>
 
@@ -1134,47 +1192,4 @@ tu software produce al ser ejecutado por las personas que le pueden sacar provec
 
 <h2 id="conclusión">Conclusión</h2>
 
-<p>Mojo es un lenguaje interesante, muy prometedor y que está en la raya de la innovación en creación de lenguajes y características modernas. Si eres curioso y te gustan en general los lenguajes de programación, creo que es una gran opción para empezar a aprender y tal vez en el futuro recoger los beneficios si cumple con sus promesas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mojo" /><category term="python" /><category term="machine-learning" /><summary type="html"><![CDATA[El ecosistema de desarrollo está cambiando y se están diseñando nuevos lenguajes de programación y entornos de ejecución más adecuados para los problemas actuales. Hablemos de Mojo.]]></summary></entry><entry><title type="html">¿Qué es Real Time en sistemas de software?</title><link href="https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html" rel="alternate" type="text/html" title="¿Qué es Real Time en sistemas de software?" /><published>2023-12-09T00:00:00-06:00</published><updated>2023-12-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/09/que-es-real-time-en-sistemas-computacionales.html"><![CDATA[<p>A veces, los programadores usamos muy libremente los conceptos. Uno de ellos es el de Real Time. En este artículo vamos a hablar de lo que significa realmente el término, lo vamos a definir claramente y sobre todo aprenderemos a diferenciar los distintos niveles o garantías que debe ofrecer un sistema en tiempo real.</p>
-
-<h2 id="qué-es-real-time">¿Qué es Real Time?</h2>
-
-<p>Un sistema que provee garantías de Tiempo Real o Real Time es aquel que <strong>garantiza</strong> que una tarea se va a ejecutar en un tiempo determinado. Esto es muy importante en sistemas críticos, como los que se usan en la industria automotriz, aeroespacial, médica, en los que ejecutar NO ejecutar una tarea en un tiempo determinado puede tener consecuencias catastróficas.</p>
-
-<p>Pero también hay sistemas en los que es <em>deseable</em> que una tarea se ejecute antes de cierto tiempo, por ejemplo, cuando estamos transmitiendo información en forma de audio o video de algo que es importante que se comunique rápidamente. Así, podemos hacer llamadas o videollamadas que son útiles.</p>
-
-<p>Los dos casos anteriores, nos dan la pauta para por lo menos distinguir dos tipos de sistemas Real Time:</p>
-
-<ol>
-  <li>
-    <p><strong>Hard Realtime</strong>. Son sistemas que deben garantizar con un 100% de certeza que la tarea que quieres que hagan se va a realizar <em>máximo</em> en el tiempo qu especifica el mismo sistema. En estos sistemas no hay margen de error, si el sistema no puede cumplir con el tiempo especificado se considera que falló, por lo que no es seguro operarlo. Este tipo de sistemas se usan en ocasiones en las que es muy muy importante que la tarea en cuestión se ejecute lo más rápido posible, normalmente porque el no hacerlo o tener un retraso podría tener consecuencias mortales o catastróficas.</p>
-  </li>
-  <li>
-    <p><strong>Soft Realtime</strong>. Los sistemas de este tipo, garantizan que <em>mínimo</em> cierto porcentaje de las veces que un sistema se ejecute, la tarea se va a ejecutar en el tiempo especificado, normalmente lo más rápido posible. A diferencia de los sistemas de tiempo real fuerte, puede que cierto número de acciones tarden un poco más de lo esperado, pero esto no llevaría a pensar que el sistema falló. Este tipo de sistemas se usa para cosas no tan críticas pero en las que es deseable que la tarea está lista lo más rápido posible, por ejemplo, en juegos, aplicaciones de videoconferencia, sistemas de coordinación de trabajo (Figma, Google Docs, etc).</p>
-  </li>
-</ol>
-
-<h2 id="cómo-puedes-lograr-un-sistema-real-time">Cómo puedes lograr un sistema Real Time</h2>
-
-<p>Lo primero en que debemos pensar es qué tipo de realtime necesitamos. Como te puedes imaginar, lograr un sistema Hard Realtime es mucho más complicado que lograr un sistema Soft Realtime. Esto es porque en el primero, no hay margen de error, mientras que en el segundo, podemos relajarnos un poco.</p>
-
-<p>Algunas sugerencias para lograr sistemas realtime son:</p>
-
-<ol>
-  <li>
-    <p><strong>Usa un ecosistema que esté pensado para esto</strong>. Hay lenguajes de programación y plataformas que mediante diferentes técnicas te ayudan a lograr funcionalidades real time, pero normalmente se queden al nivel de aplicaciones de soft realtime. Algunos ejemplos son lenguajes que aprovechan la concurrencia y controlan efectivamente el tiempo de ejecución de tu programa o te permiten hacerlo de manera sencilla, como: Go, Elixir y NodeJS.</p>
-  </li>
-  <li>
-    <p><strong>Usa un lenguaje de programación que te de control granular sobre el tiempo de ejecución</strong>. Con esto principalmente me refiero a una cosa: que no tengan recolector de basura. Recuerda que este proceso puede parar el programa por un tiempo no conocido y de manera no controlada, por lo que si quieres lograr aplicaciones hard realtime, será una tarea extremadamente difícil. Lamento decírtelo, pero si quieres asegurar que tu programa se comporte como deseas, vas a tener que controlar casi cada detalle, en lenguajes como C, C++ o Rust.</p>
-  </li>
-  <li>
-    <p><strong>Asegura la fiabilidad de tu infraestructura</strong>. Para que un sistema realtime sea confiable, vas a necesitar que la infraestructura sea resistente a fallas. Esto lo logras eliminando puntos únicos de fallo, es decir, aquellos puntos de tu programa o infraestructura que si fallan hacen que todo el sistema se caiga. Para lograr esto tienes que pensar en arquitecturas distribuidas, redundancia de datos, escalamiento automático, etc.</p>
-  </li>
-</ol>
-
-<p>Espero que estos consejos te sirvan y si se me está pasando alguno, por favor, déjame un comentario.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Conocer los diferentes niveles de servicio que un sistema puede garantizar y comprender las características que presentan, te puede ayudar a tomar en serio la responsabilidad de diseñar un sistema realtime y la dificultad que implica.</p>
-
-<p>Piensa profundamente si realmente se requiere un sistema con estas características (sobre todo si es hard realtime) y si es así, toma en serio la responsabilidad de diseñarlo y construirlo, espero que los consejos que te di en este artículo te sirvan para lograrlo.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="real-time" /><category term="tiempo-real" /><category term="sistemas-críticos" /><summary type="html"><![CDATA[Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea.]]></summary></entry></feed>
+<p>Mojo es un lenguaje interesante, muy prometedor y que está en la raya de la innovación en creación de lenguajes y características modernas. Si eres curioso y te gustan en general los lenguajes de programación, creo que es una gran opción para empezar a aprender y tal vez en el futuro recoger los beneficios si cumple con sus promesas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mojo" /><category term="python" /><category term="machine-learning" /><summary type="html"><![CDATA[El ecosistema de desarrollo está cambiando y se están diseñando nuevos lenguajes de programación y entornos de ejecución más adecuados para los problemas actuales. Hablemos de Mojo.]]></summary></entry></feed>

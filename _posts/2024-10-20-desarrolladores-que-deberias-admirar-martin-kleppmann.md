@@ -1,6 +1,6 @@
 ---
 title: "Desarrolladores que deberías admirar: Martin Kleppmann"
-date: 2024-09-29
+date: 2024-10-20
 author: Héctor Patricio
 tags: Martin-Kleppmann bases-de-datos sistemas-distribuidos software-local-first
 comments: true
