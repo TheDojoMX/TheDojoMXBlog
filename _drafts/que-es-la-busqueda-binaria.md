@@ -12,13 +12,32 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Uno de los algoritmos más fáciles de entender, que incluso sin preparación aplicamos en la vida real y que se enseña
-en las primeras clases de programación es la **búsqueda binaria**. Vamos a hablar de este algoritmo y su reclación
+Uno de los algoritmos más fáciles de entender, que incluso sin preparación
+aplicamos en la vida real y que se enseña en las primeras clases de programación
+es la **búsqueda binaria**. Vamos a hablar de este algoritmo y su relación
 profunda con las ciencias de la computación y la información en general.
 
+## Búsqueda binaria en la vida real
 
-## Búsqueda binaria
+¿Alguna ves has jugado "Adivina Quién"? Es un juego de mesa en el que cada
+jugador tiene un tablero con un conjunto de personajes con características
+físicas distintas, como el color de pelo, diferentes accesorios, y otros rasgos
+distintivos. Cada jugador escoge secretamente un personaje y el otro lo tiene que
+adivinar, haciendo preguntas que le permitan ir eliminando a los personajes que
+el otro jugador no ha elegido. ¿Cuál es la mejor estrategia para adivinar con la 
+menor cantidad de preguntas? Podrías pensar que es por cosas muy distintivas, por
+ejemplo, si hay dos personajes con sombrero, y preguntas si tiene sombrero,
+puede parecer una buena estrategia, pero no lo es.
 
-El algoritmo de búsqueda binaria se aplica para encontrar un valor en una colección _ordenada_ de elementos. Pongámoslo en términos de la vida real. Si tienes que adivinar un número del 1 al 100 con el menor número de intentos posible, ¿por dónde te conviene empezar?
+En este caso, soponiendo que tenemos 40 personajes y solo dos tienen sombrero y
+suponiendo que...
 
-La mejor forma es empezar desde la mitad, es decir desde el 50. De esta manera, eliminas con una sola pregunta la mitad del espacio de búsqueda. Por ejemplo si preguntas si es 50 y te dicen que no, que es mayor, ya no tienes que procuparte por los números del 1 al 50.
+El algoritmo de búsqueda binaria se aplica para encontrar un valor en una
+colección _ordenada_ de elementos. Piénsalo en términos de la vida real. Si
+tienes que adivinar un número del 1 al 100 con el menor número de intentos posible,
+¿por dónde te conviene empezar?
+
+La mejor forma es empezar desde la mitad, es decir desde el 50. De esta manera,
+eliminas con una sola pregunta la mitad del espacio de búsqueda. Por ejemplo si
+preguntas si es 50 y te dicen que no, que es mayor, ya no tienes que preocuparte
+por los números del 1 al 50.
