@@ -29,8 +29,13 @@ menor cantidad de preguntas? Podrías pensar que es por cosas muy distintivas, p
 ejemplo, si hay dos personajes con sombrero, y preguntas si tiene sombrero,
 puede parecer una buena estrategia, pero no lo es.
 
-En este caso, soponiendo que tenemos 40 personajes y solo dos tienen sombrero y
-suponiendo que...
+En este caso, suponiendo que tenemos 40 personajes y solo dos tienen sombrero y
+suponiendo que tienes 40 personajes, sólo 5% de las veces te ayudará reducir
+significativamente el número de personajes, por lo que la mayoría de las veces
+será una pregunta extra si la haces inicialmente. Lo mejor es empezar por las
+características que dividan el conjunto de personajes en dos grupos más o menos
+iguales. Por ejemplo, si hay 40 personajes y 20 tienen el pelo largo y 20 el corto,
+la pregunta si el personaje tiene el pelo largo, te dejará con 20 personajes.
 
 El algoritmo de búsqueda binaria se aplica para encontrar un valor en una
 colección _ordenada_ de elementos. Piénsalo en términos de la vida real. Si
