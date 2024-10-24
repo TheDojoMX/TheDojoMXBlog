@@ -19,15 +19,16 @@ profunda con las ciencias de la computación y la información en general.
 
 ## Búsqueda binaria en la vida real
 
-¿Alguna ves has jugado "Adivina Quién"? Es un juego de mesa en el que cada
-jugador tiene un tablero con un conjunto de personajes con características
-físicas distintas, como el color de pelo, diferentes accesorios, y otros rasgos
-distintivos. Cada jugador escoge secretamente un personaje y el otro lo tiene que
-adivinar, haciendo preguntas que le permitan ir eliminando a los personajes que
-el otro jugador no ha elegido. ¿Cuál es la mejor estrategia para adivinar con la 
-menor cantidad de preguntas? Podrías pensar que es por cosas muy distintivas, por
-ejemplo, si hay dos personajes con sombrero, y preguntas si tiene sombrero,
-puede parecer una buena estrategia, pero no lo es.
+¿Alguna ves has jugado "Adivina Quién"? Es un juego de mesa en el
+que cada jugador tiene un tablero con un conjunto de personajes con
+características físicas distintas, como el color de pelo, diferentes
+accesorios, y otros rasgos distintivos. Cada jugador escoge secretamente
+un personaje y el otro lo tiene que adivinar, haciendo preguntas que
+le permitan ir eliminando a los personajes que el otro jugador no ha elegido.
+¿Cuál es la mejor estrategia para adivinar con la menor cantidad de
+preguntas? Podrías pensar que es por cosas muy distintivas, por ejemplo,
+si hay dos personajes con sombrero, y preguntas si tiene sombrero, puede
+parecer una buena estrategia, pero no lo es.
 
 En este caso, suponiendo que tenemos 40 personajes y solo dos tienen sombrero y
 suponiendo que tienes 40 personajes, sólo 5% de las veces te ayudará reducir
@@ -36,13 +37,16 @@ será una pregunta extra si la haces inicialmente. Lo mejor es empezar por las
 características que dividan el conjunto de personajes en dos grupos más o menos
 iguales. Por ejemplo, si hay 40 personajes y 20 tienen el pelo largo y 20 el corto,
 la pregunta si el personaje tiene el pelo largo, te dejará con 20 personajes.
+La siguiente pregunta debería ser algo similar.
+
+Esto es exactamente lo que hace la búsqueda binaria, ir partiendo el conjunto
+de elementos en dos grupos más o menos iguales e ir eliminando la mitad en cada
+paso.
+
+## Búsqueda binaria en la computación
 
 El algoritmo de búsqueda binaria se aplica para encontrar un valor en una
-colección _ordenada_ de elementos. Piénsalo en términos de la vida real. Si
-tienes que adivinar un número del 1 al 100 con el menor número de intentos posible,
-¿por dónde te conviene empezar?
+colección _ordenada_ de elementos. Esto es para tener una forma sencilla de
+eliminar la mitad del espacio de búsqueda en cada paso.
 
-La mejor forma es empezar desde la mitad, es decir desde el 50. De esta manera,
-eliminas con una sola pregunta la mitad del espacio de búsqueda. Por ejemplo si
-preguntas si es 50 y te dicen que no, que es mayor, ya no tienes que preocuparte
-por los números del 1 al 50.
+## Implementación en Python
