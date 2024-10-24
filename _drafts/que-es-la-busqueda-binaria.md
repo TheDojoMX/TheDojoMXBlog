@@ -49,4 +49,17 @@ El algoritmo de búsqueda binaria se aplica para encontrar un valor en una
 colección _ordenada_ de elementos. Esto es para tener una forma sencilla de
 eliminar la mitad del espacio de búsqueda en cada paso.
 
-## Implementación en Python
+## Implementación en pseudocódigo
+
+Aquí puedes ver una implementación de la búsqueda binaria en pseudocódigo:
+
+```
+busqueda_binaria(lista, elemento_buscado):
+    centro_de_la_lista = len(lista) // 2
+    if lista[centro_de_la_lista] == elemento_buscado:
+        return centro_de_la_lista
+    elif lista[centro_de_la_lista] < elemento_buscado:
+        return busqueda_binaria(lista[centro_de_la_lista + 1:], elemento_buscado)
+    else:
+        return busqueda_binaria(lista[:centro_de_la_lista], elemento_buscado)
+```
