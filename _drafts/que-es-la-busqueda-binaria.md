@@ -139,7 +139,20 @@ Operaciones totales: 50
 
 Observa cómo es que el número de operaciones no creció al mismo ritmo que el número de
 elementos. El número de operaciones creció sumó sólo 5 operaciones cada que duplicamos
-el número de elementos. Aquí es donde estra el logaritmo, como estamos duplicando o 
+el número de elementos. Aquí es donde está el logaritmo, como estamos duplicando o
 multiplicando por dos, la base de nuestro logaritmo es el 2. ¿Cuánto "pasos" vamos a
 tener que hacer? Cuantas veces tengamos que duplicar el número de elementos para llegar
-al número total de elementos del arreglo en el peor de los casos.
+al número total de elementos del arreglo en el peor de los casos. Esto es el logaritmo
+base 2.
+
+Así que la complejidad de la búsqueda binaria es \(O(\log n)\).
+
+## Implementaciones
+
+Vamos a ver dos implementaciones en Python, una iterativa y otra recursiva, a mi me gusta
+la recursiva porque es más natural y fácil de entender.
+
+Empezamos con la iterativa:
+
+```python
+```
