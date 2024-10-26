@@ -47,7 +47,9 @@ paso.
 
 El algoritmo de búsqueda binaria se aplica para encontrar un valor en una
 colección _ordenada_ de elementos. Esto es para tener una forma sencilla de
-eliminar la mitad del espacio de búsqueda en cada paso.
+eliminar la mitad del espacio de búsqueda en cada paso. Y puedes pensar justamente
+que la necesidad de tener que ordenar los elementos es precisamente una de sus
+des
 
 ## Implementación en pseudocódigo
 
@@ -103,7 +105,7 @@ binaria, el número que queremos "obtener" (en verdad, es recorrer) es el númer
 de elementos en el arreglo que vamos a buscar.
 
 Suponiendo que en cada paso hacemos más o menos 5 operaciones, por ejemplo,
-para buscar en un arreglo de 1000 elementos y tomando en cuenta lo que hemos 
+para buscar en un arreglo de 1000 elementos y tomando en cuenta lo que hemos
 visto de cómo se va reduciendo el espacio de búsqueda, tendríamos la siguiente
 sucesión:
 
@@ -155,4 +157,38 @@ la recursiva porque es más natural y fácil de entender.
 Empezamos con la iterativa:
 
 ```python
+def binary_search(arreglo, elemento_buscado):
+    inicio = 0
+    fin = len(arreglo) - 1
+    while inicio <= fin:
+        medio = (inicio + fin) // 2
+        if arreglo[medio] == elemento_buscado:
+            return medio
+        elif arreglo[medio] < elemento_buscado:
+            inicio = medio + 1
+        else:
+            fin = medio - 1
+    return -1
+
 ```
+
+Y la versión recursiva:
+
+```python
+
+def binary_search(arreglo, elemento_buscado, inicio=0, fin=None):
+    if fin is None:
+        fin = len(arreglo) - 1
+    if inicio > fin:
+        return -1
+    medio = (inicio + fin) // 2
+    if arreglo[medio] == elemento_buscado:
+        return medio
+    elif arreglo[medio] < elemento_buscado:
+        return binary_search(arreglo, elemento_buscado, medio + 1, fin)
+    else:
+        return binary_search(arreglo, elemento_buscado, inicio, medio - 1)
+```
+
+Debido a la sintaxis de Python, la versión recursiva es un poco más verbosa,
+pero veámosla en un lenguaje más aducuado para estas soluciones como Lisp:
