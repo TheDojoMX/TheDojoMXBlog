@@ -844,4 +844,10 @@ var store = [{
         "tags": ["Martin-Kleppmann","bases-de-datos","sistemas-distribuidos","software-local-first"],
         "url": "/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_1400/v1727612113/xavier-coiffic-us2QhEKqPlM-unsplash_cnoliq.jpg"
+      },{
+        "title": "¿Qué es la búsqueda binaria?",
+        "excerpt":"Uno de los algoritmos más fáciles de entender, que incluso sin preparación aplicamos en la vida real y que se enseña en las primeras clases de programación es la búsqueda binaria. Vamos a hablar de este algoritmo y su relación profunda con las ciencias de la computación y la información...","categories": [],
+        "tags": ["algoritmos","búsqueda"],
+        "url": "/2024/10/26/que-es-la-busqueda-binaria.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1729489258/nastya-kvokka-Ifk3WssHNRw-unsplash_m2u7vh.jpg"
       }]

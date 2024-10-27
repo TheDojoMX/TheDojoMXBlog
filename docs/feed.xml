@@ -1,4 +1,212 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-10-20T21:24:05-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Desarrolladores que deberías admirar: Martin Kleppmann</title><link href="https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html" rel="alternate" type="text/html" title="Desarrolladores que deberías admirar: Martin Kleppmann" /><published>2024-10-20T00:00:00-06:00</published><updated>2024-10-20T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html"><![CDATA[<p><strong>Martin Kleppmann</strong> es un desarrollador de software, investigador y profesor muy prolífico.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-10-26T23:22:24-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es la búsqueda binaria?</title><link href="https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria.html" rel="alternate" type="text/html" title="¿Qué es la búsqueda binaria?" /><published>2024-10-26T00:00:00-06:00</published><updated>2024-10-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria.html"><![CDATA[<p>Uno de los algoritmos más fáciles de entender, que incluso sin preparación
+aplicamos en la vida real y que se enseña en las primeras clases de programación
+es la <strong>búsqueda binaria</strong>. Vamos a hablar de este algoritmo y su relación
+profunda con las ciencias de la computación y la información en general.</p>
+
+<h2 id="búsqueda-binaria-en-la-vida-real">Búsqueda binaria en la vida real</h2>
+
+<p>¿Alguna ves has jugado “Adivina Quién”? Es un juego de mesa en el
+que cada jugador tiene un tablero con un conjunto de personajes con
+características físicas distintas, como el color de pelo, diferentes
+accesorios, y otros rasgos distintivos. Cada jugador escoge secretamente
+un personaje y el otro lo tiene que adivinar, haciendo preguntas que
+le permitan ir eliminando a los personajes que el otro jugador no ha elegido.
+¿Cuál es la mejor estrategia para adivinar con la menor cantidad de
+preguntas? Podrías pensar que es por cosas muy distintivas, por ejemplo,
+si hay dos personajes con sombrero, y preguntas si tiene sombrero, puede
+parecer una buena estrategia, pero no lo es.</p>
+
+<p>En este caso, suponiendo que tenemos 40 personajes y solo dos tienen sombrero y
+suponiendo que tienes 40 personajes, sólo 5% de las veces te ayudará reducir
+significativamente el número de personajes, por lo que la mayoría de las veces
+será una pregunta extra si la haces inicialmente. Lo mejor es empezar por las
+características que dividan el conjunto de personajes en dos grupos más o menos
+iguales. Por ejemplo, si hay 40 personajes y 20 tienen el pelo largo y 20 el corto,
+la pregunta si el personaje tiene el pelo largo, te dejará con 20 personajes.
+La siguiente pregunta debería ser algo similar.</p>
+
+<p>Esto es exactamente lo que hace la búsqueda binaria, ir partiendo el conjunto
+de elementos en dos grupos más o menos iguales e ir eliminando la mitad en cada
+paso.</p>
+
+<h2 id="búsqueda-binaria-en-la-computación">Búsqueda binaria en la computación</h2>
+
+<p>El algoritmo de búsqueda binaria se aplica para encontrar un valor en una
+colección <em>ordenada</em> de elementos. Esto es para tener una forma sencilla de
+eliminar la mitad del espacio de búsqueda en cada paso. Y puedes pensar justamente
+que la necesidad de tener que ordenar los elementos es precisamente una de sus
+des</p>
+
+<h2 id="implementación-en-pseudocódigo">Implementación en pseudocódigo</h2>
+
+<p>Aquí puedes ver una implementación de la búsqueda binaria en pseudocódigo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>búsqueda_binaria(arreglo, elemento_buscado):
+    inicio = 0
+    fin = longitud(arreglo) - 1
+    mientras inicio &lt;= fin:
+        medio = (inicio + fin) // 2  # división entera
+
+        si arreglo[medio] == elemento_buscado:
+            retornar medio
+        sino si arreglo[medio] &lt; elemento_buscado:
+            inicio = medio + 1
+        sino:
+            fin = medio - 1
+    retornar -1  # Elemento no encontrado
+</code></pre></div></div>
+
+<p>En pocas palabras, nombramos dos índices, <code class="language-plaintext highlighter-rouge">inicio</code> y <code class="language-plaintext highlighter-rouge">fin</code>, que van a ser
+los que nos dicen en qué parte vamos a buscar. Después, calculamos el centro
+de la lista, sumando el inicio y el fin y dividiendo entre dos. Otra forma de
+calcularlo sería restando el inicio y el fin, dividiendo entre dos y sumándole
+el inicio. Estas dos formas son equivalentes.</p>
+
+<p>Ahora, comparamos el elemento buscado con el elemento en el centro. Si es igual,
+hemos encontrado el elemento y terminamos. Si es menor, tenemos que agarrar 
+la parte de la lista que está a la derecha, es decir, los elementos mayores.
+Para esto, el inicio es un elemento a la derecha del medio (<code class="language-plaintext highlighter-rouge">inicio = medio + 1</code>)
+y el fin se queda igual. Si el elemento buscado es mayor, tenemos que agarrar
+la parte de lista que está a la izquierda, y ahora el que cambia es el fin.</p>
+
+<p>De esta manera, en cada paso nuestro espacio de búsqueda se reduce a la mitad.</p>
+
+<p>Si llegamos a un punto en el que el inicio es mayor que el fin, entonces no
+encontramos el elemento y retornamos -1 (el -1 es una forma de que el
+programa nos diga que no encontramos el elemento, muy usada en programación).</p>
+
+<h2 id="complejidad">Complejidad</h2>
+
+<p>Con un arreglo pequeño pensarás que la búsqueda binaria es más lenta una búsqueda
+aleatoria o secuencial y así es, pero recuerda que los algoritmos eficientes
+se notan cuando el tamaño de los datos crece.</p>
+
+<p>Al ir cortando sucesivamente a la mitad el espacio de búsqueda, la complejidad
+de la búsqueda binaria crece en forma logarítmica.</p>
+
+<p>Expliquemos un poco eso. Un logaritmo es la función que nos ayuda a encontrar
+el exponente al que hay que elevar un número para obtener otro. En la búsqueda
+binaria, el número que queremos “obtener” (en verdad, es recorrer) es el número
+de elementos en el arreglo que vamos a buscar.</p>
+
+<p>Suponiendo que en cada paso hacemos más o menos 5 operaciones, por ejemplo,
+para buscar en un arreglo de 1000 elementos y tomando en cuenta lo que hemos
+visto de cómo se va reduciendo el espacio de búsqueda, tendríamos la siguiente
+sucesión:</p>
+
+<p>Elementos por buscar: 1000
+Operaciones totales: 5</p>
+
+<p>Elementos por buscar: 500
+Operaciones totales: 10</p>
+
+<p>Elementos por buscar: 250
+Operaciones totales: 15</p>
+
+<p>Elementos por buscar: 125
+Operaciones totales: 20</p>
+
+<p>Elementos por buscar: 62
+Operaciones totales: 25</p>
+
+<p>Elementos por buscar: 31
+Operaciones totales: 30</p>
+
+<p>Elementos por buscar: 15
+Operaciones totales: 35</p>
+
+<p>Elementos por buscar: 7
+Operaciones totales: 40</p>
+
+<p>Elementos por buscar: 3
+Operaciones totales: 45</p>
+
+<p>Elementos por buscar: 1
+Operaciones totales: 50</p>
+
+<p>Observa cómo es que el número de operaciones no creció al mismo ritmo que el número de
+elementos. El número de operaciones creció sumó sólo 5 operaciones cada que duplicamos
+el número de elementos. Aquí es donde está el logaritmo, como estamos duplicando o
+multiplicando por dos, la base de nuestro logaritmo es el 2. ¿Cuánto “pasos” vamos a
+tener que hacer? Cuantas veces tengamos que duplicar el número de elementos para llegar
+al número total de elementos del arreglo en el peor de los casos. Esto es el logaritmo
+base 2.</p>
+
+<p>Así que la complejidad de la búsqueda binaria es (O(\log n)).</p>
+
+<h2 id="implementaciones">Implementaciones</h2>
+
+<p>Vamos a ver dos implementaciones en Python, una iterativa y otra recursiva.</p>
+
+<p>Empezamos con la iterativa:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">arreglo</span><span class="p">,</span> <span class="n">elemento_buscado</span><span class="p">):</span>
+    <span class="n">inicio</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">fin</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">arreglo</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">inicio</span> <span class="o">&lt;=</span> <span class="n">fin</span><span class="p">:</span>
+        <span class="n">medio</span> <span class="o">=</span> <span class="p">(</span><span class="n">inicio</span> <span class="o">+</span> <span class="n">fin</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">arreglo</span><span class="p">[</span><span class="n">medio</span><span class="p">]</span> <span class="o">==</span> <span class="n">elemento_buscado</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">medio</span>
+        <span class="k">elif</span> <span class="n">arreglo</span><span class="p">[</span><span class="n">medio</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">elemento_buscado</span><span class="p">:</span>
+            <span class="n">inicio</span> <span class="o">=</span> <span class="n">medio</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fin</span> <span class="o">=</span> <span class="n">medio</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+</code></pre></div></div>
+
+<p>Y la versión recursiva:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">arreglo</span><span class="p">,</span> <span class="n">elemento_buscado</span><span class="p">,</span> <span class="n">inicio</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fin</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">fin</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">fin</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">arreglo</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">inicio</span> <span class="o">&gt;</span> <span class="n">fin</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">medio</span> <span class="o">=</span> <span class="p">(</span><span class="n">inicio</span> <span class="o">+</span> <span class="n">fin</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">arreglo</span><span class="p">[</span><span class="n">medio</span><span class="p">]</span> <span class="o">==</span> <span class="n">elemento_buscado</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">medio</span>
+    <span class="k">elif</span> <span class="n">arreglo</span><span class="p">[</span><span class="n">medio</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">elemento_buscado</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">arreglo</span><span class="p">,</span> <span class="n">elemento_buscado</span><span class="p">,</span> <span class="n">medio</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fin</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">arreglo</span><span class="p">,</span> <span class="n">elemento_buscado</span><span class="p">,</span> <span class="n">inicio</span><span class="p">,</span> <span class="n">medio</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Debido a la sintaxis de Python, la versión recursiva es un poco más verbosa,
+por el manejo que tienes que hacer de los parámetros por defecto, pero si no
+fuera por eso, en general me gusta más la versión recursiva.</p>
+
+<p>Finalmente, si quieres hacer un programa que funcione con esta forma de búsqueda,
+tienes que asegurarte de que las inserciones en el arreglo sean ordenadas, una forma
+sencilla es usar un algoritmo parecido para encontrar el lugar adecuado para insertarlo.</p>
+
+<h2 id="uso-en-el-mundo-real">Uso en el mundo real</h2>
+
+<p>Lo que vimos en la sección anterior es para que entiendas cómo funciona, pero
+lenguajes como Python, Ruby y otros, probablemente ya tengan implementaciones de
+este algoritmo muy común. Por ejemplo, en Python tenemos el módulo <code class="language-plaintext highlighter-rouge">bisect</code> que 
+permite hacer lo mismo con muchas menos líneas. Ejemplo:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">bisect</span>
+
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">elemento</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">indice</span> <span class="o">=</span> <span class="n">bisect</span><span class="p">.</span><span class="nf">bisect_left</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">elemento</span><span class="p">)</span> <span class="c1"># en realidad nos dice el valor más pequeño que es mayor o igual al elemento buscado
+</span>
+<span class="c1"># si el índice es más grande que el número de elementos, no está en la lista
+</span><span class="k">if</span> <span class="n">indice</span> <span class="o">!=</span> <span class="nf">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span> <span class="ow">and</span> <span class="n">lista</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span> <span class="o">==</span> <span class="n">elemento</span><span class="p">:</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">El elemento </span><span class="si">{</span><span class="n">elemento</span><span class="si">}</span><span class="s"> está en el índice </span><span class="si">{</span><span class="n">indice</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">El elemento </span><span class="si">{</span><span class="n">elemento</span><span class="si">}</span><span class="s"> no está en la lista</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Puedes ver más detalles del módulo <code class="language-plaintext highlighter-rouge">bisect</code> en la <a href="https://docs.python.org/3/library/bisect.html">documentación oficial</a>.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>La búsqueda binaria es uno de los algoritmos que todos los desarrolladores deberíamos conocer.
+Espero que este artículo te haya ayudado a entender cómo funciona y su importancia.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="algoritmos" /><category term="búsqueda" /><summary type="html"><![CDATA[Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es muy importante en el mundo de la computación.]]></summary></entry><entry><title type="html">Desarrolladores que deberías admirar: Martin Kleppmann</title><link href="https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html" rel="alternate" type="text/html" title="Desarrolladores que deberías admirar: Martin Kleppmann" /><published>2024-10-20T00:00:00-06:00</published><updated>2024-10-20T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html"><![CDATA[<p><strong>Martin Kleppmann</strong> es un desarrollador de software, investigador y profesor muy prolífico.
 Hablemos de su trabajo, ideas y de por qué es alguien que podrías admirar.</p>
 
 <h2 id="su-carrera">Su carrera</h2>
@@ -1123,73 +1331,4 @@ tu software produce al ser ejecutado por las personas que le pueden sacar provec
 
 <h2 id="conclusión">Conclusión</h2>
 
-<p>Espero que esta lista de motores de JavaScript te sea útil para conocer más del ecosistema del que muchos sólo somos usuarios y para entender que JS te puede servir para darles superpoderes a tus sistemas y plataformas. Ya hay muchos proyectos que te permiten hacerlo reduciendo el trabajo al mínimo.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="javascript-engine" /><category term="v8" /><category term="chakra" /><summary type="html"><![CDATA[En este artículo hablaremos de los diferente engines de JavaScript que existen, dónde los puedes encontrar y para qué los puedes usar.]]></summary></entry><entry><title type="html">Mojo 🔥: un lenguaje prometedor</title><link href="https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor.html" rel="alternate" type="text/html" title="Mojo 🔥: un lenguaje prometedor" /><published>2023-12-13T00:00:00-06:00</published><updated>2023-12-13T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor.html"><![CDATA[<p><a href="https://www.nondot.org/sabre/" target="_blank">Chris Lattner</a>, uno de los creadores de <a href="https://llvm.org">LLVM</a> y <a href="https://www.swift.org/">Swift</a>, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de <strong>Python</strong> pero pensado para atacar su punto más débil: <strong>la velocidad de ejecución</strong>.</p>
-
-<p>Este lenguaje se llama <a href="https://modular.com/mojo">Mojo</a>, y está siendo publicitado como un lenguaje para hacer aplicaciones de <strong>inteligencia artificial</strong>. Como ya dijimos, su enfoque principal está en ser un lenguaje que produzca programar eficientes, por lo que puede ser usado para cualquier aplicación que requiera alto rendimiento o hacer una gran cantidad de cálculos, justo como las aplicaciones de <em>machine learning</em>.</p>
-
-<p>En este artículo veremos el motivo detrás de su nacimiento, sus características y analizaremos si te conviene aprenderlo o deberías buscar alguna otra alternativa. Primero, entendamos la fundación de Mojo.</p>
-
-<h2 id="mlir---representación-intermedia-multi-capa">MLIR - Representación intermedia multi-capa</h2>
-
-<p>LLVM es un proyecto que se define como infraestructura para la construcción de compiladores. Imagínate que es como un framework para construir compiladores. Muchos de los lenguajes actuales están creados usando este proyecto. Por ejemplo <a href="https://rust.org">Rust</a>, Swift y <a href="https://julialang.org">Julia</a> están construidos sobre LLVM.</p>
-
-<p>Una de las partes que hace muy útil a LLVM es su <strong>representación intermedia</strong>. Esta representación intermedia permite que los diferentes lenguajes de programación que funcionan sobre él se aprovechen de las optimizaciones que LLVM hace sobre el código intermedio. El flujo del código es el siguiente:</p>
-
-<ol>
-  <li>El código fuente es compilado a código intermedio (<strong>IR</strong>).</li>
-  <li>El <strong>IR</strong> es optimizado.</li>
-  <li>El <strong>IR</strong> es compilado a código de máquina.</li>
-</ol>
-
-<p>De hecho, se dice que Swift es sólo azúcar sintáctico sobre la representación intermedia de LLVM, es decir, que se parece mucho a esta representación intermedia y aprovecha sus características.</p>
-
-<p>MLIR (Multi-layer Intermediate Representation o Representación intermedia multi-capa) es una representación intermedia de más alto nivel que la representación intermedia tradicional. No en el sentido de que sea más fácil de entender para los humanos, sino que en vez de mapearse directamente con una infraestructura de compilación, representa un modelo más abstracto que puede ser mapeado a diferentes infraestructuras de compilación, de manera especializada para cada una de ellas. Así permite que un mismo código fuente pueda ser compilado para diferentes ejecutores, como GPU’s, TPU’s, CPU’s, etc, sin tener que crear una nueva representación intermedia o crear nuevo código fuente.</p>
-
-<h2 id="entra-mojo-">Entra Mojo 🔥</h2>
-
-<p>Toda esta explicación anterior es para entender que Mojo es para MLIR lo que Swift es para LLVM. Aprovecha gran parte de las características de MLIR para crear un lenguaje de programación que pueda usar ejecutores especializados en cómputo de alto rendimiento como GPU’s y TPU’s, pero presentando una sintaxis más amigable para los humanos, a diferencia de CUDA, o C++, por ejemplo.</p>
-
-<p>Mojo te ayuda aprovechar el paralelismo masivo de los GPU’s sin tener que preocuparte por aprender un nuevo lenguaje o siquiera tener que pensar en dónde finalmente se ejecutará tu programa.</p>
-
-<p>Ya que Python es la lingua franca del mundo de la inteligencia artificial, Mojo inicialmente fue pensado como una extensión de Python (lo que llamaríamos un superconjunto de Python), en el sentido de que todo el código válido en Python es código válido en Mojo, muy parecido a la relación que existe entre la sintaxis de TypeScript y JavaScript.</p>
-
-<h2 id="características-de-mojo">Características de Mojo</h2>
-
-<p>Las pruebas iniciales de Mojo revelan que puede ser hasta <strong>68,000</strong> veces más rápido que Python en ciertas tareas (sí, leíste bien <strong>sesenta y ocho mil</strong>), mientras que C++ llega a ser <strong><em>sólo</em> 5,000</strong> veces más rápido. Claro, esto no habla muy bien de Python, pero debes pensar en que su objetivo no es ser un lenguaje de alto rendimiento, sino un lenguaje de alto nivel y fácil de usar.</p>
-
-<p>Mojo quiere aprovechar la facilidad de uso de Python junto con su ecosistema de bibliotecas y desarrollos para hacer un ecosistema de desarrollo de inteligencia artificial más rápido y fácil de usar. Una de las primeras diferencias con Python es que es un lenguaje <strong>compilado</strong>.</p>
-
-<p>Hablemos de algunas de las cosas que Mojo le aumenta a Python:</p>
-
-<ol>
-  <li>
-    <p><strong>Sistema de tipos progresivos</strong>. Te permite usar el sistema de tipos tanto como lo necesites (por eso es progresivo). Pero debes tener en cuenta que los tipos te sirven tanto para verificar que el programa es correcto como <strong>para optimizar el código que se genera</strong>.</p>
-  </li>
-  <li>
-    <p><strong>Abstracciones sin costo</strong>. Muy parecido a Rust, Mojo te da acceso a usar abstracciones de alto nivel que no incrementan el costo de ejecución.</p>
-  </li>
-  <li>
-    <p><strong>Seguridad de memoria</strong>. Tiene un sistema de seguridad de memoria parecido al de Rust, mediante la pertenencia y el préstamo de referencias (ownership + borrow checker).</p>
-  </li>
-  <li>
-    <p><strong>Metaprogramación</strong>. Te permite crear código parametrizado que se transforma en tiempo de compilación.</p>
-  </li>
-</ol>
-
-<p>Como puedes ver, Mojo es un lenguaje muy interesante que aprovecha las características que hemos aprendido en lenguajes modernos que han sido útiles para crear mejores sistemas. El uso de MLIR es la base de su rendimiento, que permite que los programas que generas se puedan optimizar para ejecutores de diferentes tipos, incluidos algunos masivamente paralelos.</p>
-
-<h2 id="deberías-aprenderlo">¿Deberías aprenderlo?</h2>
-
-<p>Mojo es un lenguaje que servirá tanto para hacer aplicaciones de IA como herramientas de bajo nivel para sistemas operativos, por lo que yo lo pensaría como un <strong>lenguaje de programación de sistemas de última generación</strong> que permitirá hacer cosas muy interesantes en el futuro.</p>
-
-<p>Ahora mismo (Diciembre de 2023), es un lenguaje de código cerrado, es decir, su desarrollo está llevado por una empresa privada y el código fuente no está disponible para que otros lo vean o contribuyan. Según Lattner, esto permite inicialmente que se se avance de manera más efectiva, en lo que personalmente estoy de acuerdo. Se espera que Mojo sea de código abierto cuando alcance el nivel de madurez necesario.</p>
-
-<p>Además, está en una etapa muy temprana de su desarrollo en la que ni siquiera cumple con todas las características de Python, por lo que todo lo que aprendas ahora sólo será un vistazo que te puede ayudar a definir si lo quieres usar cuando salga su versión lista para producción.</p>
-
-<p>Personalmente, creo que es un buena inversión del tiempo si estás metido en crear aplicaciones de alto rendimiento, programación de sistema o quieres crear sistemas que usen inteligencia artificial como una de sus características principales. Por el contrario, para desarrollo web creo que tomará un poco más de tiempo en serte útil.</p>
-
-<p>Otro caso para el que puede serte útil es para aprender las características de los lenguajes modernos, como los tipos progresivos o la seguridad de memoria mediante el préstamos de referencias.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Mojo es un lenguaje interesante, muy prometedor y que está en la raya de la innovación en creación de lenguajes y características modernas. Si eres curioso y te gustan en general los lenguajes de programación, creo que es una gran opción para empezar a aprender y tal vez en el futuro recoger los beneficios si cumple con sus promesas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="mojo" /><category term="python" /><category term="machine-learning" /><summary type="html"><![CDATA[El ecosistema de desarrollo está cambiando y se están diseñando nuevos lenguajes de programación y entornos de ejecución más adecuados para los problemas actuales. Hablemos de Mojo.]]></summary></entry></feed>
+<p>Espero que esta lista de motores de JavaScript te sea útil para conocer más del ecosistema del que muchos sólo somos usuarios y para entender que JS te puede servir para darles superpoderes a tus sistemas y plataformas. Ya hay muchos proyectos que te permiten hacerlo reduciendo el trabajo al mínimo.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="javascript-engine" /><category term="v8" /><category term="chakra" /><summary type="html"><![CDATA[En este artículo hablaremos de los diferente engines de JavaScript que existen, dónde los puedes encontrar y para qué los puedes usar.]]></summary></entry></feed>
