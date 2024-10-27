@@ -1,6 +1,6 @@
 ---
 title: "¿Qué es la búsqueda binaria?"
-date: 2023-11-01
+date: 2024-10-26
 author: Héctor Patricio
 tags: algoritmos búsqueda
 comments: true
@@ -151,8 +151,7 @@ Así que la complejidad de la búsqueda binaria es \(O(\log n)\).
 
 ## Implementaciones
 
-Vamos a ver dos implementaciones en Python, una iterativa y otra recursiva, a mi me gusta
-la recursiva porque es más natural y fácil de entender.
+Vamos a ver dos implementaciones en Python, una iterativa y otra recursiva.
 
 Empezamos con la iterativa:
 
@@ -191,4 +190,38 @@ def binary_search(arreglo, elemento_buscado, inicio=0, fin=None):
 ```
 
 Debido a la sintaxis de Python, la versión recursiva es un poco más verbosa,
-pero veámosla en un lenguaje más aducuado para estas soluciones como Lisp:
+por el manejo que tienes que hacer de los parámetros por defecto, pero si no
+fuera por eso, en general me gusta más la versión recursiva.
+
+Finalmente, si quieres hacer un programa que funcione con esta forma de búsqueda,
+tienes que asegurarte de que las inserciones en el arreglo sean ordenadas, una forma
+sencilla es usar un algoritmo parecido para encontrar el lugar adecuado para insertarlo.
+
+## Uso en el mundo real
+
+Lo que vimos en la sección anterior es para que entiendas cómo funciona, pero
+lenguajes como Python, Ruby y otros, probablemente ya tengan implementaciones de
+este algoritmo muy común. Por ejemplo, en Python tenemos el módulo `bisect` que 
+permite hacer lo mismo con muchas menos líneas. Ejemplo:
+
+```python
+import bisect
+
+lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+elemento = 5
+
+indice = bisect.bisect_left(lista, elemento) # en realidad nos dice el valor más pequeño que es mayor o igual al elemento buscado
+
+# si el índice es más grande que el número de elementos, no está en la lista
+if indice != len(lista) and lista[indice] == elemento: 
+    print(f"El elemento {elemento} está en el índice {indice}")
+else:
+    print(f"El elemento {elemento} no está en la lista")
+```
+
+Puedes ver más detalles del módulo `bisect` en la [documentación oficial](https://docs.python.org/3/library/bisect.html).
+
+## Conclusión
+
+La búsqueda binaria es uno de los algoritmos que todos los desarrolladores deberíamos conocer.
+Espero que este artículo te haya ayudado a entender cómo funciona y su importancia.

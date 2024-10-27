@@ -2,7 +2,7 @@
 title: 'DuckDB: procesa datos eficientemente con Python'
 date: 2024-06-25T00:00:00.000Z
 author: Héctor Patricio
-tags: null
+tags: DuckDB Python
 comments: true
 excerpt: Escribe aquí un buen resumen de tu artículo
 header:
