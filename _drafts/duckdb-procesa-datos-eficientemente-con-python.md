@@ -10,7 +10,7 @@ header:
   teaser: null
   overlay_filter: 'rgba(0, 0, 0, 0.5)'
 ---
-El proceamiento de datos para obtener valor de ellos es una de las tareas que toda plataforma o aplicación
+El procesamiento de datos para obtener valor de ellos es una de las tareas que toda plataforma o aplicación
 moderna tiene. Existen bases de datos especializadas en este tipo de trabajos, llamados OLAP (Online Analytical Processing: Procesamiento Analítico en Línea), por ejemplo BigQueru, SnowFlake o RedShift.
 Estas bases de datos funcionan como servicios separados y tienes que mantenerlos y darles servicio (o pagar
 por servicios administrados, como en los ejemplos de arriba) para poder seguir

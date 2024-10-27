@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-10-26T23:22:24-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es la búsqueda binaria?</title><link href="https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria.html" rel="alternate" type="text/html" title="¿Qué es la búsqueda binaria?" /><published>2024-10-26T00:00:00-06:00</published><updated>2024-10-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria.html"><![CDATA[<p>Uno de los algoritmos más fáciles de entender, que incluso sin preparación
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-10-26T23:47:35-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es la búsqueda binaria?</title><link href="https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria.html" rel="alternate" type="text/html" title="¿Qué es la búsqueda binaria?" /><published>2024-10-26T00:00:00-06:00</published><updated>2024-10-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria.html"><![CDATA[<p>Uno de los algoritmos más fáciles de entender, que incluso sin preparación
 aplicamos en la vida real y que se enseña en las primeras clases de programación
 es la <strong>búsqueda binaria</strong>. Vamos a hablar de este algoritmo y su relación
 profunda con las ciencias de la computación y la información en general.</p>
@@ -94,35 +94,65 @@ para buscar en un arreglo de 1000 elementos y tomando en cuenta lo que hemos
 visto de cómo se va reduciendo el espacio de búsqueda, tendríamos la siguiente
 sucesión:</p>
 
-<p>Elementos por buscar: 1000
-Operaciones totales: 5</p>
+<p>Elementos por buscar: 1000</p>
 
-<p>Elementos por buscar: 500
-Operaciones totales: 10</p>
+<p>Operaciones totales: 5</p>
 
-<p>Elementos por buscar: 250
-Operaciones totales: 15</p>
+<hr />
 
-<p>Elementos por buscar: 125
-Operaciones totales: 20</p>
+<p>Elementos por buscar: 500</p>
 
-<p>Elementos por buscar: 62
-Operaciones totales: 25</p>
+<p>Operaciones totales: 10</p>
 
-<p>Elementos por buscar: 31
-Operaciones totales: 30</p>
+<hr />
 
-<p>Elementos por buscar: 15
-Operaciones totales: 35</p>
+<p>Elementos por buscar: 250</p>
 
-<p>Elementos por buscar: 7
-Operaciones totales: 40</p>
+<p>Operaciones totales: 15</p>
 
-<p>Elementos por buscar: 3
-Operaciones totales: 45</p>
+<hr />
 
-<p>Elementos por buscar: 1
-Operaciones totales: 50</p>
+<p>Elementos por buscar: 125</p>
+
+<p>Operaciones totales: 20</p>
+
+<hr />
+
+<p>Elementos por buscar: 62</p>
+
+<p>Operaciones totales: 25</p>
+
+<hr />
+
+<p>Elementos por buscar: 31</p>
+
+<p>Operaciones totales: 30</p>
+
+<hr />
+
+<p>Elementos por buscar: 15</p>
+
+<p>Operaciones totales: 35</p>
+
+<hr />
+
+<p>Elementos por buscar: 7</p>
+
+<p>Operaciones totales: 40</p>
+
+<hr />
+
+<p>Elementos por buscar: 3</p>
+
+<p>Operaciones totales: 45</p>
+
+<hr />
+
+<p>Elementos por buscar: 1</p>
+
+<p>Operaciones totales: 50</p>
+
+<hr />
 
 <p>Observa cómo es que el número de operaciones no creció al mismo ritmo que el número de
 elementos. El número de operaciones creció sumó sólo 5 operaciones cada que duplicamos
@@ -132,7 +162,8 @@ tener que hacer? Cuantas veces tengamos que duplicar el número de elementos par
 al número total de elementos del arreglo en el peor de los casos. Esto es el logaritmo
 base 2.</p>
 
-<p>Así que la complejidad de la búsqueda binaria es (O(\log n)).</p>
+<p>Así que la complejidad de la búsqueda binaria es \(O(\log n)\). Donde \(n\) es el
+número de elementos en el arreglo.</p>
 
 <h2 id="implementaciones">Implementaciones</h2>
 

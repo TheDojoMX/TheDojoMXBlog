@@ -6,6 +6,7 @@ tags: algoritmos búsqueda
 comments: true
 excerpt: "Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es
 muy importante en el mundo de la computación."
+usemathjax: true
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1729489258/nastya-kvokka-Ifk3WssHNRw-unsplash_m2u7vh.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1729489258/nastya-kvokka-Ifk3WssHNRw-unsplash_m2u7vh.jpg
@@ -110,34 +111,64 @@ visto de cómo se va reduciendo el espacio de búsqueda, tendríamos la siguient
 sucesión:
 
 Elementos por buscar: 1000
+
 Operaciones totales: 5
 
+---
+
 Elementos por buscar: 500
+
 Operaciones totales: 10
 
+---
+
 Elementos por buscar: 250
+
 Operaciones totales: 15
 
+---
+
 Elementos por buscar: 125
+
 Operaciones totales: 20
 
+---
+
 Elementos por buscar: 62
+
 Operaciones totales: 25
 
+---
+
 Elementos por buscar: 31
+
 Operaciones totales: 30
 
+---
+
 Elementos por buscar: 15
+
 Operaciones totales: 35
 
+---
+
 Elementos por buscar: 7
+
 Operaciones totales: 40
 
+---
+
 Elementos por buscar: 3
+
 Operaciones totales: 45
 
+---
+
 Elementos por buscar: 1
+
 Operaciones totales: 50
+
+---
 
 Observa cómo es que el número de operaciones no creció al mismo ritmo que el número de
 elementos. El número de operaciones creció sumó sólo 5 operaciones cada que duplicamos
@@ -147,7 +178,8 @@ tener que hacer? Cuantas veces tengamos que duplicar el número de elementos par
 al número total de elementos del arreglo en el peor de los casos. Esto es el logaritmo
 base 2.
 
-Así que la complejidad de la búsqueda binaria es \(O(\log n)\).
+Así que la complejidad de la búsqueda binaria es $$O(\log n)$$. Donde $$n$$ es el
+número de elementos en el arreglo.
 
 ## Implementaciones
 
