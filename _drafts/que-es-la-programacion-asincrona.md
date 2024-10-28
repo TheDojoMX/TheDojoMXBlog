@@ -93,19 +93,34 @@ reservada `await` para esperar a que la función `sum` termine de ejecutarse, ad
 de declarar la función `main` como `async` también, ya que no podemos usar `await`
 en una función que no sea `async` o fuera de un módulo de JavaScript.
 
-Pero aquí vemos claramente le efecto: nos dice que 3 es el valor de `c`, cuando en realidad esperaríamos que fuera 6, ya que `sum` se ejecuta dos veces.
+Pero aquí vemos claramente le efecto: nos dice que 3 es el valor de `c`, cuando en
+realidad esperaríamos que fuera 6, ya que `sum` se ejecuta dos veces.
 
-La explicación a esto está en que con la programación asíncrona podemos modificar **cuándo se ejecutan las cosas**. Pero otra visión es que se pueden ejecutar cosas en diferentes "lados" o "momentos" y tú elegir **cuándo** usas los resultados de la ejecución.
+La explicación a esto está en que con la programación asíncrona podemos modificar
+**cuándo se ejecutan las cosas**. Pero otra visión es que se pueden ejecutar cosas
+en diferentes "lados" o "momentos" y tú elegir **cuándo** usas los resultados de
+la ejecución.
 
 ## Definición
 
-La programación asíncrona es un forma de ejecutar las acciones de tu programa en la que no se espera siempre que una acción o instrucción termine para continuar con el progrma.
+La programación asíncrona es un forma de ejecutar las acciones de tu programa en
+la que no se espera siempre que una acción o instrucción termine para continuar
+con el programa.
 
-Como vimos en el primer ejemplo, en la programación síncrona (también llamada _bloqueante_ [blocking]), ninguna acción comienza hasta que le previa haya terminado. En la programación asíncrona, con técnicas o palabras reservadas específicas le indicamos al motor de ejecución que no es necesario a que una acción termine para continuar con la siguiente, pero también le podemos decir qué hacer cuando la acción termine. Por esto mismo, la programación asíncrona también se conoce como _no bloqueante_ (non-blocking).
+Como vimos en el primer ejemplo, en la programación síncrona (también llamada
+_bloqueante_ [blocking]), ninguna acción comienza hasta que le previa haya terminado.
+En la programación asíncrona, con técnicas o palabras reservadas específicas le
+indicamos al motor de ejecución que no es necesario a que una acción termine para
+continuar con la siguiente, pero también le podemos decir qué hacer cuando la
+acción termine. Por esto mismo, la programación asíncrona también se conoce como
+_no bloqueante_ (non-blocking).
 
 ## Para qué sirve la programación asíncrona
 
-Antes de explicar directamente cómo podemos usar la programación asíncrona para mejorar nuestros programas, veamos las restricciones que tenemos. Cuando estás construyendo un programa, la velocidad ejecución puede depender o verse limitada por dos cosas:
+Antes de explicar directamente cómo podemos usar la programación asíncrona para
+mejorar nuestros programas, veamos las restricciones que tenemos. Cuando estás
+construyendo un programa, la velocidad de ejecución puede depender o verse
+limitada por dos cosas:
 
 - De los cálculos que estás haciendo
 - De la información que estás obteniendo o guardando en algún lugar
@@ -114,27 +129,41 @@ En el primer caso, llamamos a la ejecución **CPU bound** y en el segundo **I/O 
 
 ### CPU bound
 
-Cuando tu programa es pesado en los cálculos que tiene que hacer, como cuando tienes que procesar multimedia, hacer multiplicación de matrices o cosas similares, puedes decir que tu programa es **CPU bound**, o que está limitado por el poder de procesamiento.
+Cuando tu programa es pesado en los cálculos que tiene que hacer, como cuando
+tienes que procesar multimedia, hacer multiplicación de matrices o cosas
+similares, puedes decir que tu programa es **CPU bound**, o que está limitado por
+el poder de procesamiento.
 
-En este caso, la programación asíncrona te puede ayudar si tienes múltiples **ejecutores** en los que puedas distribuir el cómputo. Por ejemplo:
+En este caso, la programación asíncrona te puede ayudar si tienes múltiples
+**ejecutores** en los que puedas distribuir el cómputo. Por ejemplo:
 
 - Si tienes un procesador con múltiples cores o múltiples hilos de ejecución
 - Si tienes múltiples computadoras que pueden hacer el cómputo
 
-En el primer caso, necesitas una plataforma que te ayude a utilizar el poder de procesamiento de los múltiples cores, sea implícitamente o explícitamente. Por ejemplo plataformas como la máquina virtual de Erlang, automáticamente distribuyen la carga en los múltiples cores disponibles. En otros lenguajes como en Python, tienes que hacerlo explícitamente.
+En el primer caso, necesitas una plataforma que te ayude a utilizar el poder
+de procesamiento de los múltiples cores, sea implícitamente o explícitamente. Por
+ejemplo plataformas como la máquina virtual de Erlang, automáticamente distribuyen
+la carga en los múltiples cores disponibles. En otros lenguajes como en Python,
+tienes que hacerlo explícitamente.
 
 ### I/O bound
 
-Cuando un programa consume o produce mucha información normalmente tiene que ponerla en algún lugar. Este lugar puede ser:
+Cuando un programa consume o produce mucha información normalmente tiene que
+ponerla en algún lugar. Este lugar puede ser:
 
 - La memoria RAM
 - El disco duro (o sistema de archivos)
 - La red (mandarla o pedirla a un servidor)
 
-Cuando tu programa hace mucho esto, se dice que el programa está limitado por la velocidad de entrada y salida de datos, o **I/O bound**.
+Cuando tu programa hace mucho esto, se dice que el programa está limitado por la
+velocidad de entrada y salida de datos, o **I/O bound**.
 
-La programación asíncrona te puede ayudar de manera más sencilla, sobre todo en el caso de las peticiones de red. ¿Cómo? Si hacemos que la
+La programación asíncrona te puede ayudar de manera más sencilla, sobre todo en
+el caso de las peticiones de red. ¿Cómo? Si hacemos que la
 
 ## Conclusión
 
-Entender la programación asíncrona es esencial en la programación moderna, muchos lenguajes y sobre todo _entornos de ejecución_ lo implementan. Entenderla y usarla te ayudará a crear programas más eficientes y que cumplan con el rendimiento que tus usuario esperan.
+Entender la programación asíncrona es esencial en la programación moderna, muchos
+lenguajes y sobre todo _entornos de ejecución_ lo implementan. Entenderla y usarla
+te ayudará a crear programas más eficientes y que cumplan con el rendimiento que
+tus usuario esperan.
