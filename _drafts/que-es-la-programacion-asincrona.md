@@ -1,10 +1,11 @@
 ---
 title: "¿Qué es la programación asíncrona?"
-date: 2023-12-16
+date: 2024-10-28
 author: Héctor Patricio
 tags: async/await concurrencia javascript
 comments: true
-excerpt: "Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de qué es y cómo dominarla."
+excerpt: "Entender la programación asíncrona es un requisito si eres un desarrollador de
+software que quiere sacar el mejor rendimiento de una computadora, hablemos de qué es y cómo dominarla."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg
