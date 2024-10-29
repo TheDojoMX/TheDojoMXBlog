@@ -23,8 +23,14 @@ con seguridad.
 ## ¿Por qué existe? - El caso de la programación asíncrona
 
 Imagínate un proceso de la vida real en el que tengas una conjunto de recursos
-limitados, que sean completamente necesarios para terminar el trabajo.
+limitados, que sean completamente necesarios para terminar el trabajo. Por ejemplo,
+imagina que quieres hacer una comida especial, en la que necesitas usar un horno.
+En el horno puedes poner un platillo a la vez, ya que requiere un tiempo y temperatura
+específica. Pero este platillo especial tal vez va acompañado de una sopa que puedes
+hacer mientras el platillo principal está en el horno.
 
+En términos computacionales, estas dos tareas están sucediendo concurrentemente,
+aunque tú literalmente no estés haciendo ambas cosas al mismo tiempo.
 
 ## ¿Qué es la programación asíncrona?
 

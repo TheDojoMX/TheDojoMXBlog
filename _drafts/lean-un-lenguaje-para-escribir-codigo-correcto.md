@@ -1,5 +1,5 @@
 ---
-title: 'Lean4: un lenguaje para escribir código correcto'
+title: 'Lean: un lenguaje para escribir código correcto'
 date: 2023-11-01T00:00:00.000Z
 author: Héctor Patricio
 tags: lean programación-funcional verificación formal
@@ -18,6 +18,7 @@ La verificación de sistemas es muy importante para lograr aplicaciones que cump
 
 ## ¿Qué es Lean?
 
-**Lean** es un lenguaje de programación para crear sistemas verificados. También se les conoce como
-probadores de teoremas, porque una de sus funciones es ayudarte a verificar las propiedades de un programa de manera certera. Fue creado por Leonardo de Moura y Soonho Kong en Microsoft Research.
-§
+**Lean** es un lenguaje de programación para crear sistemas verificados.
+También se les conoce como probadores de teoremas, porque una de sus funciones
+es ayudarte a verificar las propiedades de un programa de manera certera. Fue
+creado por Leonardo de Moura y Soonho Kong en Microsoft Research.
