@@ -47,69 +47,15 @@ síncrona (creo que la palabra correcta en español es _sincrónica_).
 
 En la programación tradicional, las cosas siempre suceden en un orden estricto:
 una instrucción empieza y hasta que no se termina, no se ejecuta la siguiente.
-Observa el siguiente código:
+Observa el siguiente código, en Python, para a abrir un arhivo:
 
-```js
-
-consta a = 1
-const b = 2
-let c = 0
-
-c = a + b
-console.log("c vale ", c)
+```python
+with open("archivo.txt", "r") as file:
+    data = file.read()
+    print(data)
 ```
+En este código todo sucede de manera perfectamente secuencial.
 
-En este código, primero se declaran las variables `a`, `b` y `c`, después se
-asigna el valor de `a + b` a `c` y finalmente se imprime el valor de `c`. Todo
-esto sucede en un orden estricto como la mayoría de los programadores esperamos.
-
-Pero ahora observa este código:
-
-```js
-const a = 1
-const b = 2
-let c = 0
-setImmediate(() => {
-  c = a + b
-})
-console.log("c vale ", c)
-```
-
-El único cambio que hicimos aquí es el uso de la función `setImmediate`, que es
-una función que recibe otra función como parámetro y la ejecuta en el siguiente
-ciclo de ejecución del _event loop_ de **Node.js** o el ejecutor en el que esté.
-
-Un código que puede ser similar pero usando async/await sería:
-
-```js
-
-const a = 1
-const b = 2
-let c = 0
-
-async function sum() {
-  c += a + b
-}
-
-async function main() {
-  await sum()
-  await sum()
-}
-main()
-console.log("c vale ", c)  // c vale 3
-
-```
-
-Esto es específico de JS, pero como son palabras en inglés debería ser sencillo de
-
-entender. Tenemos que hacer dos cosas para que funcione de manera asíncrona, la
-primera es declarar la función `sum` como `async` y la segunda es usar la palabra
-reservada `await` para esperar a que la función `sum` termine de ejecutarse, además
-de declarar la función `main` como `async` también, ya que no podemos usar `await`
-en una función que no sea `async` o fuera de un módulo de JavaScript.
-
-Pero aquí vemos claramente le efecto: nos dice que 3 es el valor de `c`, cuando en
-realidad esperaríamos que fuera 6, ya que `sum` se ejecuta dos veces.
 
 La explicación a esto está en que con la programación asíncrona podemos modificar
 **cuándo se ejecutan las cosas**. Pero otra visión es que se pueden ejecutar cosas
