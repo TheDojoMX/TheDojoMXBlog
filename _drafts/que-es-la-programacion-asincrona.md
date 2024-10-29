@@ -17,7 +17,7 @@ al programar, especialmente si desarrollas aplicaciones web. Esto es aún más
 común si haces **JavaScript**, que es un lenguaje que se usa en entornos de
 ejecución asíncronos.
 
-En este artículo la explicaremos para que puedas prgramar de manera asíncrona
+En este artículo la explicaremos para que puedas programar de manera asíncrona
 con seguridad.
 
 ## ¿Por qué existe? - El caso de la programación asíncrona
@@ -29,8 +29,16 @@ En el horno puedes poner un platillo a la vez, ya que requiere un tiempo y tempe
 específica. Pero este platillo especial tal vez va acompañado de una sopa que puedes
 hacer mientras el platillo principal está en el horno.
 
-En términos computacionales, estas dos tareas están sucediendo concurrentemente,
-aunque tú literalmente no estés haciendo ambas cosas al mismo tiempo.
+En términos computacionales, estas dos tareas están sucediendo de manera concurrente,
+aunque tú literalmente no estés haciendo ambas cosas al mismo tiempo. No vale la pena que
+te sientes a esperar a que el lomo del horno esté listo para empezar a hacer la sopa.
+Puedes hacer la sopa mientras esperas, ya que no ocupan los mismos recursos.
+
+Exactamente pasa lo mismo en los programas de computadora, se tienen que ejecutar tareas
+que usan recursos compartidos o lentos, como por ejemplo el sistema de archivos o la red.
+En la programación web también se da que el programa está esperando la respuesta de el
+usuario y mientras tanto puede seguir haciendo otras cosas. Aquí es donde entra la programación
+asíncrona.
 
 ## ¿Qué es la programación asíncrona?
 
