@@ -56,6 +56,30 @@ with open("archivo.txt", "r") as file:
 ```
 En este código todo sucede de manera perfectamente secuencial.
 
+Pero en lenguajes con programación asíncrona, esta operación que es tardada
+en términos computacionales se puede hacer de manera asíncrona, es decir
+fuera de orden.
+
+
+```js
+const fs = require("fs");
+
+fs.readFile("archivo.txt", "utf8", (err, data) => {
+    console.log("Archivo leído");
+});
+
+console.log("Esperando a que se lea el archivo");
+```
+
+El resultado de este código es:
+
+```
+Esperando a que se lea el archivo
+Archivo leído
+```
+
+Observa cómo en esta versión, el código que está ANTES: `console.log("Archivo leído")`,
+se ejecuta DESPUÉS. Esto es una demostración de código asíncrono.
 
 La explicación a esto está en que con la programación asíncrona podemos modificar
 **cuándo se ejecutan las cosas**. Pero otra visión es que se pueden ejecutar cosas
@@ -77,6 +101,7 @@ acción termine. Por esto mismo, la programación asíncrona también se conoce 
 _no bloqueante_ (non-blocking).
 
 ## Para qué sirve la programación asíncrona
+
 
 Antes de explicar directamente cómo podemos usar la programación asíncrona para
 mejorar nuestros programas, veamos las restricciones que tenemos. Cuando estás
