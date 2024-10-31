@@ -94,9 +94,10 @@ La explicación a esto está en que con la programación asíncrona podemos modi
 en diferentes "lados" o "momentos" y tú elegir **cuándo** usas los resultados de
 la ejecución.
 
-## Definición
+Usamos este ejemplo de abrir un archivo porque por su naturaleza es lento (comparado)
+con cálculos u operaciones comunes.
 
-La programación asíncrona es un forma de ejecutar las acciones de tu programa en
+La **programación asíncrona** es un forma de ejecutar las acciones de tu programa en
 la que no se espera siempre que una acción o instrucción termine para continuar
 con el programa.
 
@@ -110,8 +111,7 @@ _no bloqueante_ (non-blocking).
 
 ## Para qué sirve la programación asíncrona
 
-
-Antes de explicar directamente cómo podemos usar la programación asíncrona para
+Antes de dar más ejemplos directamente cómo podemos usar la programación asíncrona para
 mejorar nuestros programas, veamos las restricciones que tenemos. Cuando estás
 construyendo un programa, la velocidad de ejecución puede depender o verse
 limitada por dos cosas:
@@ -120,6 +120,8 @@ limitada por dos cosas:
 - De la información que estás obteniendo o guardando en algún lugar
 
 En el primer caso, llamamos a la ejecución **CPU bound** y en el segundo **I/O bound**.
+En español me gusta llamarle **limitado por el procesador** y **limitado por la entrada
+y salida de datos**.
 
 ### CPU bound
 
