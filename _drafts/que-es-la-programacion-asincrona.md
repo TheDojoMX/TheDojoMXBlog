@@ -52,14 +52,22 @@ Observa el siguiente código, en Python, para a abrir un arhivo:
 ```python
 with open("archivo.txt", "r") as file:
     data = file.read()
-    print(data)
+    print("Archivo leído")
+print("Log final")
 ```
+
+El resultado de este código es:
+
+```
+Archivo leído
+Log final
+```
+
 En este código todo sucede de manera perfectamente secuencial.
 
 Pero en lenguajes con programación asíncrona, esta operación que es tardada
 en términos computacionales se puede hacer de manera asíncrona, es decir
 fuera de orden.
-
 
 ```js
 const fs = require("fs");
