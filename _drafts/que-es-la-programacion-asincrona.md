@@ -58,7 +58,7 @@ print("Log final")
 
 El resultado de este código es:
 
-```
+```log
 Archivo leído
 Log final
 ```
@@ -81,7 +81,7 @@ console.log("Esperando a que se lea el archivo");
 
 El resultado de este código es:
 
-```
+```log
 Esperando a que se lea el archivo
 Archivo leído
 ```
@@ -111,10 +111,9 @@ _no bloqueante_ (non-blocking).
 
 ## Para qué sirve la programación asíncrona
 
-Antes de dar más ejemplos directamente cómo podemos usar la programación asíncrona para
-mejorar nuestros programas, veamos las restricciones que tenemos. Cuando estás
-construyendo un programa, la velocidad de ejecución puede depender o verse
-limitada por dos cosas:
+Veamos las restricciones que tenemos, para entender por qué es útil. Cuando
+creas un sistema, la velocidad de ejecución puede verse limitada por dos
+categorías de cosas:
 
 - De los cálculos que estás haciendo
 - De la información que estás obteniendo o guardando en algún lugar
@@ -123,39 +122,45 @@ En el primer caso, llamamos a la ejecución **CPU bound** y en el segundo **I/O 
 En español me gusta llamarle **limitado por el procesador** y **limitado por la entrada
 y salida de datos**.
 
-### CPU bound
+### CPU bound - limitado por la cantidad de cálculos que puedes hacer
 
 Cuando tu programa es pesado en los cálculos que tiene que hacer, como cuando
 tienes que procesar multimedia, hacer multiplicación de matrices o cosas
 similares, puedes decir que tu programa es **CPU bound**, o que está limitado por
-el poder de procesamiento.
+el poder de procesamiento. Es decir, mientras más poderoso sea el procesador,
+más rápido será tu programa. Esto también es cierto si tienes múltiples
+procesadores _y puedes distribuir el cómputo entre ellos_, por ejemplo:
 
-En este caso, la programación asíncrona te puede ayudar si tienes múltiples
-**ejecutores** en los que puedas distribuir el cómputo. Por ejemplo:
-
-- Si tienes un procesador con múltiples cores o múltiples hilos de ejecución
-- Si tienes múltiples computadoras que pueden hacer el cómputo
+- Si tienes un procesador con múltiples cores o múltiples hilos de ejecución físicos
+- Si tienes múltiples computadoras en una red
 
 En el primer caso, necesitas una plataforma que te ayude a utilizar el poder
 de procesamiento de los múltiples cores, sea implícitamente o explícitamente. Por
-ejemplo plataformas como la máquina virtual de Erlang, automáticamente distribuyen
+ejemplo plataformas como la **máquina virtual de Erlang** (llamada BEAM), automáticamente distribuyen
 la carga en los múltiples cores disponibles. En otros lenguajes como en Python,
-tienes que hacerlo explícitamente.
+tienes que hacerlo explícitamente, pero incluso eso tiene limitaciones. Pero
+esto que te estoy diciendo es **programación concurrente**.
 
-### I/O bound
+La programación asíncrona se puede ver como una herramienta para manejar la
+programación concurrente y hacerla más sencilla. Piénsala como en una capa de
+abstracción sobre la programación concurrente, que te permite **expresar de forma
+explícita** que otras partes del programa _pueden_ estarse ejecutando en otro
+tiempo o en otro _espacio_ (proceso o hilo).
 
-Cuando un programa consume o produce mucha información normalmente tiene que
+### I/O bound - limitado por la velocidad de entrada y salida de datos
+
+Cuando un programa consume o produce mucha información tiene que
 ponerla en algún lugar. Este lugar puede ser:
 
 - La memoria RAM
 - El disco duro (o sistema de archivos)
-- La red (mandarla o pedirla a un servidor)
+- La red (mandarla o pedirla a otra computadora)
 
 Cuando tu programa hace mucho esto, se dice que el programa está limitado por la
 velocidad de entrada y salida de datos, o **I/O bound**.
 
 La programación asíncrona te puede ayudar de manera más sencilla, sobre todo en
-el caso de las peticiones de red. ¿Cómo? Si hacemos que la
+el caso de las peticiones de red. ¿Cómo? Justo en el ejemplo de 
 
 ## Conclusión
 
