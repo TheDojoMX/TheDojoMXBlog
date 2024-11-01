@@ -850,4 +850,10 @@ var store = [{
         "tags": ["algoritmos","búsqueda"],
         "url": "/2024/10/26/que-es-la-busqueda-binaria.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1729489258/nastya-kvokka-Ifk3WssHNRw-unsplash_m2u7vh.jpg"
+      },{
+        "title": "¿Qué es la programación asíncrona?",
+        "excerpt":"La programación asíncrona es uno de los primeros temas avanzados que encontrarás al programar, especialmente si desarrollas aplicaciones web. Esto es aún más común si haces JavaScript, que es un lenguaje que se usa en entornos de ejecución asíncronos. En este artículo la explicaremos para que puedas programar de manera...","categories": [],
+        "tags": ["async/await","concurrencia","javascript"],
+        "url": "/2024/10/31/que-es-la-programacion-asincrona.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg"
       }]

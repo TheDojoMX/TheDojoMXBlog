@@ -1,4 +1,173 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-10-31T23:31:17-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es la búsqueda binaria?</title><link href="https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria.html" rel="alternate" type="text/html" title="¿Qué es la búsqueda binaria?" /><published>2024-10-26T00:00:00-06:00</published><updated>2024-10-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria.html"><![CDATA[<p>Uno de los algoritmos más fáciles de entender, que incluso sin preparación
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-10-31T23:32:30-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es la programación asíncrona?</title><link href="https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html" rel="alternate" type="text/html" title="¿Qué es la programación asíncrona?" /><published>2024-10-31T00:00:00-06:00</published><updated>2024-10-31T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html"><![CDATA[<p>La programación asíncrona es uno de los primeros temas avanzados que encontrarás
+al programar, especialmente si desarrollas aplicaciones web. Esto es aún más
+común si haces <strong>JavaScript</strong>, que es un lenguaje que se usa en entornos de
+ejecución asíncronos.</p>
+
+<p>En este artículo la explicaremos para que puedas programar de manera asíncrona
+con seguridad.</p>
+
+<h2 id="por-qué-existe---el-caso-de-la-programación-asíncrona">¿Por qué existe? - El caso de la programación asíncrona</h2>
+
+<p>Imagínate un proceso de la vida real en el que tengas una conjunto de recursos
+limitados, que sean completamente necesarios para terminar el trabajo. Por ejemplo,
+imagina que quieres hacer una comida especial, en la que necesitas usar un horno.
+En el horno puedes poner un platillo a la vez, ya que requiere un tiempo y temperatura
+específica. Pero este platillo especial tal vez va acompañado de una sopa que puedes
+hacer mientras el platillo principal está en el horno.</p>
+
+<p>En términos computacionales, estas dos tareas están sucediendo de manera concurrente,
+aunque tú literalmente no estés haciendo ambas cosas al mismo tiempo. No vale la pena que
+te sientes a esperar a que el lomo del horno esté listo para empezar a hacer la sopa.
+Puedes hacer la sopa mientras esperas, ya que no ocupan los mismos recursos.</p>
+
+<p>Exactamente pasa lo mismo en los programas de computadora, se tienen que ejecutar tareas
+que usan recursos compartidos o lentos, como por ejemplo el sistema de archivos o la red.
+En la programación web también se da que el programa está esperando la respuesta de el
+usuario y mientras tanto puede seguir haciendo otras cosas. Aquí es donde entra la programación
+asíncrona.</p>
+
+<h2 id="qué-es-la-programación-asíncrona">¿Qué es la programación asíncrona?</h2>
+
+<p>Para entenderla primero tenemos que entender la programación tradicional o
+síncrona (creo que la palabra correcta en español es <em>sincrónica</em>).</p>
+
+<p>En la programación tradicional, las cosas siempre suceden en un orden estricto:
+una instrucción empieza y hasta que no se termina, no se ejecuta la siguiente.
+Observa el siguiente código, en Python, para a abrir un arhivo:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">archivo.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Archivo leído</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Log final</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>El resultado de este código es:</p>
+
+<pre><code class="language-log">Archivo leído
+Log final
+</code></pre>
+
+<p>En este código todo sucede de manera perfectamente secuencial.</p>
+
+<p>Pero en lenguajes con programación asíncrona, esta operación que es tardada
+en términos computacionales se puede hacer de manera asíncrona, es decir
+fuera de orden.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">fs</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">fs</span><span class="p">.</span><span class="nf">readFile</span><span class="p">(</span><span class="dl">"</span><span class="s2">archivo.txt</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utf8</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Archivo leído</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Esperando a que se lea el archivo</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>El resultado de este código es:</p>
+
+<pre><code class="language-log">Esperando a que se lea el archivo
+Archivo leído
+</code></pre>
+
+<p>Observa cómo en esta versión, el código que está ANTES: <code class="language-plaintext highlighter-rouge">console.log("Archivo leído")</code>,
+se ejecuta DESPUÉS. Esto es una demostración de código asíncrono.</p>
+
+<p>La explicación a esto está en que con la programación asíncrona podemos modificar
+<strong>cuándo se ejecutan las cosas</strong>. Pero otra visión es que se pueden ejecutar cosas
+en diferentes “lados” o “momentos” y tú elegir <strong>cuándo</strong> usas los resultados de
+la ejecución.</p>
+
+<p>Usamos este ejemplo de abrir un archivo porque por su naturaleza es lento (comparado)
+con cálculos u operaciones comunes.</p>
+
+<p>La <strong>programación asíncrona</strong> es un forma de ejecutar las acciones de tu programa en
+la que no se espera siempre que una acción o instrucción termine para continuar
+con el programa.</p>
+
+<p>Como vimos en el primer ejemplo, en la programación síncrona (también llamada
+<em>bloqueante</em> [blocking]), ninguna acción comienza hasta que le previa haya terminado.
+En la programación asíncrona, con técnicas o palabras reservadas específicas le
+indicamos al motor de ejecución que no es necesario a que una acción termine para
+continuar con la siguiente, pero también le podemos decir qué hacer cuando la
+acción termine. Por esto mismo, la programación asíncrona también se conoce como
+<em>no bloqueante</em> (non-blocking).</p>
+
+<h2 id="para-qué-sirve-la-programación-asíncrona">Para qué sirve la programación asíncrona</h2>
+
+<p>Veamos las restricciones que tenemos, para entender por qué es útil. Cuando
+creas un sistema, la velocidad de ejecución puede verse limitada por dos
+categorías de cosas:</p>
+
+<ul>
+  <li>De los cálculos que estás haciendo</li>
+  <li>De la información que estás obteniendo o guardando en algún lugar</li>
+</ul>
+
+<p>En el primer caso, llamamos a la ejecución <strong>CPU bound</strong> y en el segundo <strong>I/O bound</strong>.
+En español me gusta llamarle <strong>limitado por el procesador</strong> y <strong>limitado por la entrada
+y salida de datos</strong>.</p>
+
+<h3 id="cpu-bound---limitado-por-la-cantidad-de-cálculos-que-puedes-hacer">CPU bound - limitado por la cantidad de cálculos que puedes hacer</h3>
+
+<p>Cuando tu programa es pesado en los cálculos que tiene que hacer, como cuando
+tienes que procesar multimedia, hacer multiplicación de matrices o cosas
+similares, puedes decir que tu programa es <strong>CPU bound</strong>, o que está limitado por
+el poder de procesamiento. Es decir, mientras más poderoso sea el procesador,
+más rápido será tu programa. Esto también es cierto si tienes múltiples
+procesadores <em>y puedes distribuir el cómputo entre ellos</em>, por ejemplo:</p>
+
+<ul>
+  <li>Si tienes un procesador con múltiples cores o múltiples hilos de ejecución físicos</li>
+  <li>Si tienes múltiples computadoras en una red</li>
+</ul>
+
+<p>En el primer caso, necesitas una plataforma que te ayude a utilizar el poder
+de procesamiento de los múltiples cores, sea implícitamente o explícitamente. Por
+ejemplo plataformas como la <strong>máquina virtual de Erlang</strong> (llamada BEAM), automáticamente distribuyen
+la carga en los múltiples cores disponibles. En otros lenguajes como en Python,
+tienes que hacerlo explícitamente, pero incluso eso tiene limitaciones. Pero
+esto que te estoy diciendo es <strong>programación concurrente</strong>.</p>
+
+<p>La programación asíncrona se puede ver como una herramienta para manejar la
+programación concurrente y hacerla más sencilla. Piénsala como en una capa de
+abstracción sobre la programación concurrente, que te permite <strong>expresar de forma
+explícita</strong> que otras partes del programa <em>pueden</em> estarse ejecutando en otro
+tiempo o en otro <em>espacio</em> (proceso o hilo).</p>
+
+<h3 id="io-bound---limitado-por-la-velocidad-de-entrada-y-salida-de-datos">I/O bound - limitado por la velocidad de entrada y salida de datos</h3>
+
+<p>Cuando un programa consume o produce mucha información tiene que
+ponerla en algún lugar. Este lugar puede ser:</p>
+
+<ul>
+  <li>La memoria RAM</li>
+  <li>El disco duro (o sistema de archivos)</li>
+  <li>La red (mandarla o pedirla a otra computadora)</li>
+</ul>
+
+<p>Cuando tu programa hace mucho esto, se dice que el programa está limitado por la
+velocidad de entrada y salida de datos, o <strong>I/O bound</strong>.</p>
+
+<p>La programación asíncrona te puede ayudar de manera más sencilla, sobre todo en
+el caso de las peticiones de red. ¿Cómo? Justo en el ejemplo que vimos antes de abrir
+un archivo: mientras esperas a que el disco duro lea el archivo y lo mande por el bus
+de datos y se cargue en la memoria RAM (que son AÑOS computacionalmente hablando),
+podemos seguir haciendo otras cosas. Igual que en el caso anterior, estos procesos
+son concurrentes, y una de las maneras más sencillas de expresarlo es con la programación
+asíncrona, en el que simplemente decimos que en algún momento <em>podemos</em> usar el resultado
+de la lectura del archivo.</p>
+
+<p>Exactamente pasa lo mismo en el caso de las peticiones de red (que son EONES comparadas con
+la lectura de archivos o cálculos comunes). De hecho, el manejo de esas peticiones y de
+todo lo relacionado con entrada y salida de datos es uno de los secretos de por qué
+Node.js es tan bueno para manejar peticiones HTTP.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Entender la programación asíncrona es esencial en la programación moderna, muchos
+lenguajes y sobre todo <em>entornos de ejecución</em> lo implementan. Entenderla y usarla
+te ayudará a crear programas más eficientes y que cumplan con el rendimiento que
+tus usuario esperan. En un artículo futuro veremos una comparación entre programación
+asíncrona y programación concurrente manejada de otras maneras.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="async/await" /><category term="concurrencia" /><category term="javascript" /><summary type="html"><![CDATA[Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de qué es y cómo dominarla.]]></summary></entry><entry><title type="html">¿Qué es la búsqueda binaria?</title><link href="https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria.html" rel="alternate" type="text/html" title="¿Qué es la búsqueda binaria?" /><published>2024-10-26T00:00:00-06:00</published><updated>2024-10-26T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/26/que-es-la-busqueda-binaria.html"><![CDATA[<p>Uno de los algoritmos más fáciles de entender, que incluso sin preparación
 aplicamos en la vida real y que se enseña en las primeras clases de programación
 es la <strong>búsqueda binaria</strong>. Vamos a hablar de este algoritmo y su relación
 profunda con las ciencias de la computación y la información en general.</p>
@@ -1290,76 +1459,4 @@ que permite crear cada vez software más complejo y con mayores capacidades.</p>
 Nuestro trabajo produce otras cosas de valor de las que deberíamos ser conscientes y buscar 
 optimizar, evitando la simpleza de pensar que lo único que vale es el software corriendo, que cómo puedes ver en este
 artíulo, es una parte mínima de todo el valor que puedes producir, eso sin contar el valor que 
-tu software produce al ser ejecutado por las personas que le pueden sacar provecho.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="software" /><category term="ingenieria-de-software" /><category term="arquitectura" /><summary type="html"><![CDATA[Tu proceso de desarrollo de software produce muchas más cosas que sólamente software corriendo. En este artículo hablaremos de otros resultados de trabajo]]></summary></entry><entry><title type="html">Engines de JavaScript y sus usos</title><link href="https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos.html" rel="alternate" type="text/html" title="Engines de JavaScript y sus usos" /><published>2023-12-14T00:00:00-06:00</published><updated>2023-12-14T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos</id><content type="html" xml:base="https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos.html"><![CDATA[<p>Ya hemos explicado antes qué es un <a href="/2020/05/17/que-es-un-engine-de-javascript.html">engine de JavaScript</a>. Como resumen, es el programa encargado de correr tus programas de JavaScript: recibe tus archivos o código de JS y ejecuta las acciones en el sistema operativo en el que se está ejecutando.</p>
-
-<p>Estos engines actualmente son programas complejos que no solamente interpretan el código, sino que lo analizan y compilan a código máquina para que sea más eficiente su ejecución.</p>
-
-<p>En este artículo vamos a hablar de algunos engines de JavaScript populares y en dónde puedes encontrar su código o sus ejecutables para que los puedas usar. Pero antes hablemos de la utilidad que puede tener un motor de JS fuera de un navegador.</p>
-
-<h2 id="usos-de-un-motor-de-js">Usos de un motor de JS</h2>
-
-<p>A veces, queremos darle a nuestros usuarios una manera de ejecutar código de manera arbitraria o de modificar el sistema mediante instrucciones que ellos mismos metan en nuestras plataformas o programas. En vez de crear todo un lenguaje o de implementar nuestro propio compilador o intérprete, podemos embeber o incluir un motor de un lenguaje conocido y con implementaciones robustas y disponibles para su uso. <strong>Esta es exactamente el caso de uso que los engines de JS que podemos encontrar implementados cumplen</strong>.</p>
-
-<p>Un ejemplo de quién usa engine fuera de un navegador es un proyecto que ha cambiado el mundo del desarrollo web y que es muy popular: <strong>NodeJS</strong>, es un entorno de ejecución de JavaScript que se basa en el motor V8 de Google y que sirve principalmente para crear aplicaciones web. Mediante el uso de V8, puedes crear servidores web usando JavaScript, y Node se encarga de envolverlo para que puedas usar todas funcionalidades que te ofrece el sistema operativo en el que se está ejecutando.</p>
-
-<p>Otro ejemplo de uso de un motor de JS fuera de un browser es <a href="https://www.mongodb.com/docs/manual/release-notes/3.2-javascript/">MongoDB</a>, que usa el motor SpiderMonkey de Mozilla para ejecutar código de JavaScript en sus bases de datos.</p>
-
-<p>Si buscas más, puedes encontrar un montón de ejemplos en los que un motor de JavaScript es usado fuera de un navegador.</p>
-
-<h2 id="engines-de-javascript">Engines de JavaScript</h2>
-
-<p>Ahora sí, hablemos de los diferentes motores de JavaScript en orden de popularidad.</p>
-
-<h3 id="v8">V8</h3>
-
-<p>Es el motor desarrollado por Google, usado principalmente en Chrome, NodeJS y Deno. Actualmente también está detrás de Microsoft Edge. Es el más popular y el que más desarrollo tiene. Está escrito en C++ y ha tenido varias iteraciones, mejorando los componentes internos. Además cuenta con un JIT compiler que lo hace eficiente en la mayoría de los casos. Otra ventaja de V8 es que puede ejecutar también <a href="https://webassembly.org/">WebAssembly</a>.</p>
-
-<p>Si quieres desarrollar algo que tenga soporte completo del estándar ECMAScript, sea estable y tenga buen rendimiento, con V8 no te puedes equivocar. La desventaja es que tendrás que usarlo como un biblioteca de C++, o por lo menos customizarlo un poco para que se adapte a tus necesidades y hagas los puentes con tu programa, plataforma o lenguaje de programación, tal como Deno (que está escrito en Rust).</p>
-
-<p>Puedes ver su blog técnico aquí: <a href="https://v8.dev/blog">https://v8.dev/blog</a>. Además, si quieres aprender cómo hacer complejos o quieres contribuir, su código fuente está disponible de manera abierta en GitHub: <a href="https://github.com/v8/v8">V8 Github</a>.</p>
-
-<h3 id="spidermonkey">SpiderMonkey</h3>
-
-<p>Este motor de JS está desarrollado por Mozilla y es usado en Firefox, Servo y en MongoDB. Igual que V8, está escrito en C++, pera también incluye partes en <a href="https://www.rust-lang.org/">Rust</a> e incluso en JavaScript. A parte de ejecutar JS, también puede ejecutar WebAssembly.</p>
-
-<p>Si tienes un proyecto en Rust o C++, SpiderMonkey puede ser una gran opción. La principal diferencia con V8 es la velocidad de desarrollo, puedes esperar menos cambios que puedan romper tu código, pero también menos mejoras y actualizaciones, que con V8.</p>
-
-<p>Puedes ver su documentación aquí: <a href="https://firefox-source-docs.mozilla.org/js/index.html">SpiderMonkey</a>.</p>
-
-<h3 id="chakracore">ChakraCore</h3>
-
-<p>Este motor fue desarrollado por Microsoft y es usado en Chakra (que es un <em>runtime</em> de JS incluye otras cosas más como API’s para poder darle más funcionalidad al engine), que a su vez era usado en Edge y Windows (Edge ahora usa Chromium).</p>
-
-<p>ChakraCore está escrito en C++ y C, y presenta una API en C para usarlo en proyectos compatibles con esto. Puede ser compilado para cualquier sistema operativo de 64 bits, pero solamente para Windows para procesadores ARM y de 32 bits. Ya que Microsoft lo dejó de usar, se piensa ahora completamente como un proyecto a cargo de la comunidad.</p>
-
-<p>En las pruebas que yo hice, fue el más fácil de compilar y usar, pero si te fijas en su repositorio, no tiene un desarrollo tan activo.</p>
-
-<p>Puedes ver su documentación aquí: <a href="https://github.com/chakra-core/ChakraCore">ChakraCore</a>. Nota como no está bajo el nombre de chakra-core y no en el repositorio de Microsoft.</p>
-
-<h3 id="javascriptcore">JavaScriptCore</h3>
-
-<p>Este es el motor desarrollado por Apple, usado en Safari principalmente. Al igual que los otros, está escrito en C y C++, pero tiene bindings para Objective-C, Swift y C. Así, se puede usar para darle la capacidad a aplicaciones de iOS y macOS de ejecutar código de JS, pero si tienes algo más en C en que puedas envolverlo, sin ningún problemas puedes usarlo en cualquier proyecto.</p>
-
-<p>Puedes ver su documentación aquí: <a href="https://developer.apple.com/documentation/javascriptcore">JavaScriptCore</a>.</p>
-
-<h3 id="rhino">Rhino</h3>
-
-<p>También es desarrollado por Mozilla, pero esta vez escrito en Java. Rhino viene incluido en algunas distribuciones de Java. Así que si tienes un proyecto en Java, Rhino es una gran opción, pero debes estar atento a las características que soporta, porque parece que su desarrollo no está tan activo.</p>
-
-<p>Puedes ver su documentación aquí: <a href="https://github.com/mozilla/rhino">Rhino</a>.</p>
-
-<h2 id="engines-ligeros">Engines ligeros</h2>
-
-<p>Existen una gran variedad de engines de JS más ligeros, no con todas las características de los que acabamos de ver, con la idea de que los puedas embeber en proyectos que dispongan de pocos recursos, tal como sistemas embebidos o proyectos de IoT. Otro buen caso de uso para estos es cuando no requieras las funcionalidades completas de JS sino simplemente soporte básico en tu programa.</p>
-
-<p>Aquí una lista de los más populares:</p>
-
-<ul>
-  <li><a href="https://bellard.org/quickjs/">QuickJS</a>: Desarrollado por Fabrice Bellard, quien también creó <a href="https://www.ffmpeg.org/">FFmpeg</a>. QuickJS sólo pesa 210Kb en su forma más sencilla.</li>
-  <li><a href="https://duktape.org/">Duktape</a>: También es muy pequeño, promete funcionar en sistemas con 160Kb de memoria y 64Kb de RAM. Está escrito en C y soporta la ES2015 o ES6.</li>
-  <li><a href="https://github.com/espruino/Espruino">Espruino</a>. Corre en sistemas con 128Kb de memoria y 8Kb de RAM. Está escrito también en C y está pensado para darle soporte a sus propias tarjetas de microncontroladores de bajo consumo, programadas en JS. Pero aún así, lo puedes usar en cualquier proyecto que sea compatible con su API de C o correrlo directamente.</li>
-</ul>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Espero que esta lista de motores de JavaScript te sea útil para conocer más del ecosistema del que muchos sólo somos usuarios y para entender que JS te puede servir para darles superpoderes a tus sistemas y plataformas. Ya hay muchos proyectos que te permiten hacerlo reduciendo el trabajo al mínimo.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="javascript-engine" /><category term="v8" /><category term="chakra" /><summary type="html"><![CDATA[En este artículo hablaremos de los diferente engines de JavaScript que existen, dónde los puedes encontrar y para qué los puedes usar.]]></summary></entry></feed>
+tu software produce al ser ejecutado por las personas que le pueden sacar provecho.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="software" /><category term="ingenieria-de-software" /><category term="arquitectura" /><summary type="html"><![CDATA[Tu proceso de desarrollo de software produce muchas más cosas que sólamente software corriendo. En este artículo hablaremos de otros resultados de trabajo]]></summary></entry></feed>

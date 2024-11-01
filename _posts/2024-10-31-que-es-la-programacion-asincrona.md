@@ -1,6 +1,6 @@
 ---
 title: "¿Qué es la programación asíncrona?"
-date: 2024-10-28
+date: 2024-10-31
 author: Héctor Patricio
 tags: async/await concurrencia javascript
 comments: true
