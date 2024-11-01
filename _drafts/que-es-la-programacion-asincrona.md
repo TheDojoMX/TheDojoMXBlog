@@ -160,11 +160,23 @@ Cuando tu programa hace mucho esto, se dice que el programa está limitado por l
 velocidad de entrada y salida de datos, o **I/O bound**.
 
 La programación asíncrona te puede ayudar de manera más sencilla, sobre todo en
-el caso de las peticiones de red. ¿Cómo? Justo en el ejemplo de 
+el caso de las peticiones de red. ¿Cómo? Justo en el ejemplo que vimos antes de abrir
+un archivo: mientras esperas a que el disco duro lea el archivo y lo mande por el bus
+de datos y se cargue en la memoria RAM (que son AÑOS computacionalmente hablando),
+podemos seguir haciendo otras cosas. Igual que en el caso anterior, estos procesos
+son concurrentes, y una de las maneras más sencillas de expresarlo es con la programación
+asíncrona, en el que simplemente decimos que en algún momento _podemos_ usar el resultado
+de la lectura del archivo.
+
+Exactamente pasa lo mismo en el caso de las peticiones de red (que son EONES comparadas con
+la lectura de archivos o cálculos comunes). De hecho, el manejo de esas peticiones y de
+todo lo relacionado con entrada y salida de datos es uno de los secretos de por qué
+Node.js es tan bueno para manejar peticiones HTTP.
 
 ## Conclusión
 
 Entender la programación asíncrona es esencial en la programación moderna, muchos
 lenguajes y sobre todo _entornos de ejecución_ lo implementan. Entenderla y usarla
 te ayudará a crear programas más eficientes y que cumplan con el rendimiento que
-tus usuario esperan.
+tus usuario esperan. En un artículo futuro veremos una comparación entre programación
+asíncrona y programación concurrente manejada de otras maneras.
