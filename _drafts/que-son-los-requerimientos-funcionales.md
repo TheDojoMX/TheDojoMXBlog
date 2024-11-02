@@ -4,9 +4,10 @@ date: 2024-03-09
 author: Héctor Patricio
 tags:  arquitectura 
 comments: true
-excerpt: ""
+excerpt: "El análisis de requerimientos es una parte fundamental del desarrollo de software y es importantísima
+para crear sistemas existosos."
 header:
-  overlay_image: 
+  overlay_image: #image 
   teaser: #image
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
@@ -27,4 +28,4 @@ secundarias o terciarias que las soportan, y es por eso que descubrirlas
 y describirlas todas no es una tarea sencilla.
 
 
-## Cómo 
+## Cómo encontrarlos

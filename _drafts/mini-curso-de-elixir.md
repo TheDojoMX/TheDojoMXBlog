@@ -14,8 +14,8 @@ header:
 ---
 En este artículo vamos aprender el lenguaje Elixir desde cero. Asumimos que ya
 sabes programar, sobre todo
-algún lenguaje orientado a objetos, ya que ocuparamos conceptos de estos
-para hacer compraciones y explicar algunas cosas.
+algún lenguaje orientado a objetos, ya que ocuparemos conceptos de estos
+para hacer comparaciones y explicar algunas cosas.
 
 Si quieres saber por qué te conviene aprender Elixir, tenemos
 [otro artículo que habla de eso](/2019/06/02/por-que-deberias-aprender-elixir.html){:target="_blank"}.
@@ -76,7 +76,7 @@ Ahora sí empecemos con su sintaxis y características básicas.
 ## Sintaxis y conceptos básicos
 
 En este tutorial no vamos a explicar ningún concepto básico de programación
-que no sea específico de Elixir o de lenguajes funcionales (en realidad creo que no existe ningún concepto exclusivo completamente de Elixir). Tampoco es el
+que no sea específico de Elixir o de lenguajes funcionales (en realidad creo que no
+existe ningún concepto exclusivo completamente de Elixir). Tampoco es el
 objetivo que esto sea una referencia del lenguaje, sino subirte lo más pronto
 posible a crear programas que funcionen.
-
