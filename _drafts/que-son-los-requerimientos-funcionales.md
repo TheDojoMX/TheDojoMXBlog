@@ -5,15 +5,15 @@ author: Héctor Patricio
 tags:  arquitectura 
 comments: true
 excerpt: "El análisis de requerimientos es una parte fundamental del desarrollo de software y es importantísima
-para crear sistemas existosos."
+para crear sistemas exitosos."
 header:
   overlay_image: #image 
   teaser: #image
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-**"Requermientos funcionales"** es una expresión muy rebuscada para un concepto
-muy sencillo relacionado con el deiseño de los sistemas de software: **las
+**"Requerimientos funcionales"** es una expresión muy rebuscada para un concepto
+muy sencillo relacionado con el diseño de los sistemas de software: **las
 cosas que tu sistema HACE**.
 
 En este artículo hablaremos de formas de encontrarlos, definirlos, documentarlos
