@@ -29,3 +29,7 @@ y describirlas todas no es una tarea sencilla.
 
 
 ## Cómo encontrarlos
+
+La forma más eficiente de encontrar los requerimientos funcionales o funciones
+que debe tener tu sistema es descubriéndolos tú mismo mediante la operación y observación
+directamente del proceso o problema.
