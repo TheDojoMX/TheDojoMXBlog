@@ -39,3 +39,36 @@ Pero esto no siempre es posible, sobre todo cuando construyes software como
 profesión, porque no siempre puedes dedicar tiempo y recursos suficientes para
 tú realizar la operación de lo que quieres resolver, o simplemente no es práctico.
 Así que la segunda mejor opción que tenemos es **platicar con los usuarios**.
+
+## Cómo documentarlos
+
+
+
+## Cómo mantenerlos actualizados
+
+Los requerimientos funcionales deben mantenerse actualizados conforme el sistema evoluciona. Algunas buenas prácticas para lograrlo son:
+
+1. **Revisiones periódicas**: Programar revisiones regulares (por ejemplo, trimestrales) de los requerimientos con los usuarios principales y el equipo de desarrollo.
+
+2. **Control de versiones**: Mantener los documentos de requerimientos bajo control de versiones, igual que el código. Cada cambio debe estar documentado con:
+   - Fecha del cambio
+   - Razón del cambio
+   - Persona responsable
+   - Impacto en el sistema
+
+3. **Trazabilidad**: Mantener una matriz de trazabilidad que conecte los requerimientos con:
+   - El código que los implementa
+   - Las pruebas que los verifican
+   - La documentación relacionada
+
+4. **Proceso de cambios**: Establecer un proceso formal para solicitar y aprobar cambios en los requerimientos, que incluya:
+   - Evaluación del impacto
+   - Aprobación de stakeholders
+   - Actualización de documentación relacionada
+
+5. **Comunicación efectiva**: Asegurar que todos los cambios en los requerimientos sean comunicados a:
+   - Equipo de desarrollo
+   - Usuarios clave
+   - Stakeholders relevantes
+
+Mantener los requerimientos actualizados es crucial para el éxito continuo del proyecto y para asegurar que el sistema siga cumpliendo las necesidades de los usuarios.
