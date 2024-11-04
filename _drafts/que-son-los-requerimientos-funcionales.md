@@ -27,9 +27,15 @@ normalmente tiene unas pocas funciones principales, pero muchas tareas
 secundarias o terciarias que las soportan, y es por eso que descubrirlas
 y describirlas todas no es una tarea sencilla.
 
-
 ## Cómo encontrarlos
 
 La forma más eficiente de encontrar los requerimientos funcionales o funciones
-que debe tener tu sistema es descubriéndolos tú mismo mediante la operación y observación
-directamente del proceso o problema.
+que debe tener tu sistema es viviendo el proceso o problema que tu sistema va a
+resolver. Es por esto que algunos de los mejors sistemas son creados por gente
+que "se rasca su propia comezón" (_"scratch their own itch"_). Es decir, que 
+resuelven un problema que ellos mismos viven o han vivido.
+
+Pero esto no siempre es posible, sobre todo cuando construyes software como
+profesión, porque no siempre puedes dedicar tiempo y recursos suficientes para
+tú realizar la operación de lo que quieres resolver, o simplemente no es práctico.
+Así que la segunda mejor opción que tenemos es **platicar con los usuarios**.
