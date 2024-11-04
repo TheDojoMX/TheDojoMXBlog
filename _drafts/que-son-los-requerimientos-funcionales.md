@@ -31,7 +31,7 @@ y describirlas todas no es una tarea sencilla.
 
 La forma más eficiente de encontrar los requerimientos funcionales o funciones
 que debe tener tu sistema es viviendo el proceso o problema que tu sistema va a
-resolver. Es por esto que algunos de los mejors sistemas son creados por gente
+resolver. Es por esto que algunos de los mejores sistemas son creados por gente
 que "se rasca su propia comezón" (_"scratch their own itch"_). Es decir, que 
 resuelven un problema que ellos mismos viven o han vivido.
 
@@ -42,7 +42,49 @@ Así que la segunda mejor opción que tenemos es **platicar con los usuarios**.
 
 ## Cómo documentarlos
 
+Los requerimientos funcionales se pueden documentar de varias formas, pero aquí te presentamos las más comunes y efectivas:
 
+### Historias de Usuario
+
+Las historias de usuario son una forma ágil y centrada en el usuario de documentar requerimientos. Siguen el formato:
+
+- "Como [rol de usuario]
+- Quiero [acción/función]
+- Para [beneficio/valor]"
+
+### Casos de Uso
+
+Documentación más formal y detallada que incluye:
+
+- Actores involucrados
+- Flujo principal
+- Flujos alternativos
+- Precondiciones y postcondiciones
+
+### Especificaciones Funcionales
+
+Documentos técnicos detallados que incluyen:
+- Descripción detallada de la función
+- Entradas y salidas esperadas
+- Reglas de negocio aplicables
+- Restricciones técnicas
+
+### Diagramas y Modelos
+
+Representaciones visuales como:
+- Diagramas de flujo
+- Modelos de datos
+- Diagramas de secuencia
+- Prototipos de interfaz
+
+### Matrices de Requerimientos
+
+Tablas estructuradas que contienen:
+- ID del requerimiento
+- Descripción
+- Prioridad
+- Estado
+- Dependencias
 
 ## Cómo mantenerlos actualizados
 

@@ -22,7 +22,7 @@ Si quieres saber por qué te conviene aprender Elixir, tenemos
 Además, si necesitas recursos más extensos, este
 artículo te puede dar algunos: [Aprendiendo Elixir](https://hectorip.com/2018/12/27/aprendiendo-elixir.html){:target="_blank"}.
 
-Elixir es un lenguaje moderno que combina productivdad con rendimiento. Ahora sí, empecemos.
+Elixir es un lenguaje moderno que combina productividad con rendimiento. Ahora sí, empecemos.
 
 ## Instalación y preparación del entorno
 
