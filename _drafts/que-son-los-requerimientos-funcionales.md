@@ -114,3 +114,15 @@ Los requerimientos funcionales deben mantenerse actualizados conforme el sistema
    - Stakeholders relevantes
 
 Mantener los requerimientos actualizados es crucial para el éxito continuo del proyecto y para asegurar que el sistema siga cumpliendo las necesidades de los usuarios.
+
+## Conclusión
+
+Los requerimientos funcionales son la base fundamental de cualquier proyecto de software exitoso. Son la guía que define qué debe hacer el sistema y cómo debe comportarse para satisfacer las necesidades de los usuarios. Una buena documentación y gestión de estos requerimientos:
+
+- Reduce malentendidos y errores de interpretación
+- Facilita la estimación de recursos y tiempos
+- Permite un desarrollo más eficiente y enfocado
+- Simplifica la validación y verificación del sistema
+- Mejora la comunicación entre todas las partes involucradas
+
+Es fundamental dedicar el tiempo y esfuerzo necesarios para documentarlos adecuadamente y mantenerlos actualizados durante todo el ciclo de vida del proyecto. Un sistema bien diseñado comienza con requerimientos funcionales bien definidos y gestionados.
