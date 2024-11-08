@@ -42,7 +42,9 @@ Así que la segunda mejor opción que tenemos es **platicar con los usuarios**.
 
 ## Cómo documentarlos
 
-Los requerimientos funcionales se pueden documentar de varias formas, pero aquí te presentamos las más comunes y efectivas:
+No existe una forma aceptada por todos para documentar nada en el software,
+dependiendo de la cultura del equipo y de la empresa en general. Veamos algunas
+de las formas más comunes.
 
 ### Historias de Usuario
 
