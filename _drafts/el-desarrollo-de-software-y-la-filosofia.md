@@ -4,7 +4,7 @@ date: 2024-11-06
 author: Héctor Patricio
 tags:
 comments: true
-excerpt: "Escribe aquí un buen resumen de tu artículo"
+excerpt: "La filosofía es la base de casi todo el conocimiento humano, hablemos de ella y de las relaciones directas que tiene con el desarrollo de software."
 header:
   overlay_image: #image
   teaser: #image
