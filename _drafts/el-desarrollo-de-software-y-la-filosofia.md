@@ -10,3 +10,7 @@ header:
   teaser: #image
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
+
+A veces se piensa que la filosofía es para gente que no tiene qué hacer o 
+no tiene nada mejor en qué gastar su tiempo que en analizar cosas que no
+tienen aplicaciones prácticas en la vida real
