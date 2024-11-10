@@ -32,13 +32,20 @@ y describirlas todas no es una tarea sencilla.
 La forma más eficiente de encontrar los requerimientos funcionales o funciones
 que debe tener tu sistema es viviendo el proceso o problema que tu sistema va a
 resolver. Es por esto que algunos de los mejores sistemas son creados por gente
-que "se rasca su propia comezón" (_"scratch their own itch"_). Es decir, que 
-resuelven un problema que ellos mismos viven o han vivido.
+que "se rasca su propia comezón" (_"scratch their own itch"_). Es decir, que
+resuelven un problema que ellos mismos viven o han vivido, y que por eso
+mismo **entienden a fondo**.
+
+Una de las ventajas de atender un problema que tú vives, es que tienes
+retroalimentación inmediata sobre si el sistema resuelve el problema o no.
 
 Pero esto no siempre es posible, sobre todo cuando construyes software como
 profesión, porque no siempre puedes dedicar tiempo y recursos suficientes para
 tú realizar la operación de lo que quieres resolver, o simplemente no es práctico.
 Así que la segunda mejor opción que tenemos es **platicar con los usuarios**.
+
+Aquí es donde entran un montón de habilidades "blandas". Un mejor nombre para estas
+habilidades es "habilidades personales e interpersonales".
 
 ## Cómo documentarlos
 
