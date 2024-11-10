@@ -10,3 +10,13 @@ header:
   teaser: #image
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
+
+## ¿Qué es el modelar?
+
+## ¿Cómo podemos crear un buen modelo de datos?
+
+## Conceptos fundamentales
+
+## Consejos para modelar
+
+## Conclusión
