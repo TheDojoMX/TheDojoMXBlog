@@ -7,8 +7,8 @@ comments: true
 excerpt: "El análisis de requerimientos es una parte fundamental del desarrollo de software y es importantísima
 para crear sistemas exitosos."
 header:
-  overlay_image: #image 
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1731216878/isabelle-mannino-USOSteP8hOw-unsplash_cbxmst.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1731216878/isabelle-mannino-USOSteP8hOw-unsplash_cbxmst.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
