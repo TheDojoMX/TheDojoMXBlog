@@ -45,7 +45,9 @@ tú realizar la operación de lo que quieres resolver, o simplemente no es prác
 Así que la segunda mejor opción que tenemos es **platicar con los usuarios**.
 
 Aquí es donde entran un montón de habilidades "blandas". Un mejor nombre para estas
-habilidades es "habilidades personales e interpersonales".
+habilidades es _"habilidades personales e interpersonales"_. O habilidades básicas
+humanas. Así que, a menos que tengas a alguien en tu equipo que lo haga por ti,
+(y que siempre vaya a estar contigo), te conviene desarrollarlas.
 
 ## Cómo documentarlos
 
@@ -55,11 +57,13 @@ de las formas más comunes.
 
 ### Historias de Usuario
 
-Las historias de usuario son una forma ágil y centrada en el usuario de documentar requerimientos. Siguen el formato:
+En este estilo de documentación, describes las funciones del sistema desde la
+perspectiva del usuario.
 
-- "Como [rol de usuario]
+Siguen el formato:
+- Como [rol de usuario]
 - Quiero [acción/función]
-- Para [beneficio/valor]"
+- Para [beneficio/valor]
 
 ### Casos de Uso
 
