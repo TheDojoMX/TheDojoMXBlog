@@ -61,9 +61,13 @@ En este estilo de documentación, describes las funciones del sistema desde la
 perspectiva del usuario.
 
 Siguen el formato:
+
 - Como [rol de usuario]
 - Quiero [acción/función]
 - Para [beneficio/valor]
+
+Como puedes ver, antes de empezar a crear historias de usuario, debes por lo menos
+tener un idea de las personas que van a usar el sistema y lo roles que desempeñan.
 
 ### Casos de Uso
 
