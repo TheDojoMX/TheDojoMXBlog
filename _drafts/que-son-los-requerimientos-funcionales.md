@@ -58,7 +58,8 @@ de las formas más comunes.
 ### Historias de Usuario
 
 En este estilo de documentación, describes las funciones del sistema desde la
-perspectiva del usuario.
+perspectiva del usuario. Se lleva muy bien con procesos modernos de desarrollo de
+productos digitales, relacionados con el desarrollo ágil de software.
 
 Siguen el formato:
 
