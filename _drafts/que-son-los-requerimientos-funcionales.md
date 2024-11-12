@@ -53,7 +53,8 @@ humanas. Así que, a menos que tengas a alguien en tu equipo que lo haga por ti,
 
 No existe una forma aceptada por todos para documentar nada en el software,
 dependiendo de la cultura del equipo y de la empresa en general. Veamos algunas
-de las formas más comunes.
+de las formas más comunes. Cabe mencionar que estas formas no son excluyentes,
+se pueden combinar para ver diferentes aspectos de una misma función.
 
 ### Historias de Usuario
 
@@ -61,7 +62,7 @@ En este estilo de documentación, describes las funciones del sistema desde la
 perspectiva del usuario. Se lleva muy bien con procesos modernos de desarrollo de
 productos digitales, relacionados con el desarrollo ágil de software.
 
-Siguen el formato:
+Tienen el siguiente formato:
 
 - Como [rol de usuario]
 - Quiero [acción/función]
@@ -69,6 +70,13 @@ Siguen el formato:
 
 Como puedes ver, antes de empezar a crear historias de usuario, debes por lo menos
 tener un idea de las personas que van a usar el sistema y lo roles que desempeñan.
+Después, describes la función que va a realizar, desde su punto de vista, pero
+también intentando mostrar cómo funcionará internamente el sistema para cumplir
+con esa función.
+
+Y finalmente, la razón de existencia de esta función: cómo es que beneficia al usuario
+o la empresa que crea el software. Esta última parte es muy importante, ya que nos
+hace pensar en si realmente es necesario tener esta función o no.
 
 ### Casos de Uso
 
