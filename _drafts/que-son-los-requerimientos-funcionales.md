@@ -80,12 +80,16 @@ hace pensar en si realmente es necesario tener esta función o no.
 
 ### Casos de Uso
 
-Documentación más formal y detallada que incluye:
+Este tipo de documentación viene de la época en la que se prefería el desarrollo en cascada,
+pero a mi me sigue pareciendo muy útil. Es más formal y detallada, incluye:
 
-- Actores involucrados
-- Flujo principal
-- Flujos alternativos
-- Precondiciones y postcondiciones
+- Actores (usuarios o sistemas externos) involucrados
+- Flujo principal: el caso en el que todo sale bien
+- Flujos alternativos: los casos en los que algo sale mal o se manejan de otra manera
+- Precondiciones y postcondiciones: cómo está el sistema antes y después de la ejecución
+
+Los recomiendo mucho en el caso de sistemas o funciones críticas, en donde es
+necesario pensar más a profundidad antes de empezar a desarrollar.
 
 ### Especificaciones Funcionales
 
