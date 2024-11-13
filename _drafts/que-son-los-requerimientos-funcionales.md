@@ -88,8 +88,13 @@ pero a mi me sigue pareciendo muy útil. Es más formal y detallada, incluye:
 - Flujos alternativos: los casos en los que algo sale mal o se manejan de otra manera
 - Precondiciones y postcondiciones: cómo está el sistema antes y después de la ejecución
 
+En muchos sistemas de documentación, los casos de uso requieren un identificador para
+referirse a ellos en etapas posteriores, como cuando se hacen pruebas o se crean
+tareas específicas para el equipo de desarrollo.
+
 Los recomiendo mucho en el caso de sistemas o funciones críticas, en donde es
 necesario pensar más a profundidad antes de empezar a desarrollar.
+Puedes encontrar un ejemplo y una plantilla aquí: []
 
 ### Especificaciones Funcionales
 
