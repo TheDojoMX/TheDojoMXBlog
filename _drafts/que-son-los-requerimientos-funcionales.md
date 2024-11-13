@@ -96,22 +96,6 @@ Los recomiendo mucho en el caso de sistemas o funciones críticas, en donde es
 necesario pensar más a profundidad antes de empezar a desarrollar.
 Puedes encontrar un ejemplo y una plantilla aquí: []
 
-### Especificaciones Funcionales
-
-Documentos técnicos detallados que incluyen:
-- Descripción detallada de la función
-- Entradas y salidas esperadas
-- Reglas de negocio aplicables
-- Restricciones técnicas
-
-### Diagramas y Modelos
-
-Representaciones visuales como:
-- Diagramas de flujo
-- Modelos de datos
-- Diagramas de secuencia
-- Prototipos de interfaz
-
 ### Matrices de Requerimientos
 
 Tablas estructuradas que contienen:
