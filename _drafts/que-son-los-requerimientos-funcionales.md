@@ -94,19 +94,12 @@ tareas específicas para el equipo de desarrollo.
 
 Los recomiendo mucho en el caso de sistemas o funciones críticas, en donde es
 necesario pensar más a profundidad antes de empezar a desarrollar.
-Puedes encontrar un ejemplo y una plantilla aquí: []
-
-### Matrices de Requerimientos
-
-Tablas estructuradas que contienen:
-- ID del requerimiento
-- Descripción
-- Prioridad
-- Estado
-- Dependencias
+Puedes encontrar un ejemplo y una plantilla aquí: [Casos de uso](https://lsi2.ugr.es/~mvega/docis/casos%20de%20uso.pdf).
 
 ## Cómo mantenerlos actualizados
 
+
+Ya tenemos cómo sacar los requerimientos inicialmente y ce
 Los requerimientos funcionales deben mantenerse actualizados conforme el sistema evoluciona. Algunas buenas prácticas para lograrlo son:
 
 1. **Revisiones periódicas**: Programar revisiones regulares (por ejemplo, trimestrales) de los requerimientos con los usuarios principales y el equipo de desarrollo.
@@ -145,3 +138,4 @@ Los requerimientos funcionales son la base fundamental de cualquier proyecto de 
 - Mejora la comunicación entre todas las partes involucradas
 
 Es fundamental dedicar el tiempo y esfuerzo necesarios para documentarlos adecuadamente y mantenerlos actualizados durante todo el ciclo de vida del proyecto. Un sistema bien diseñado comienza con requerimientos funcionales bien definidos y gestionados.
+
