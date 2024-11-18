@@ -98,9 +98,11 @@ Puedes encontrar un ejemplo y una plantilla aquí: [Casos de uso](https://lsi2.u
 
 ## Cómo mantenerlos actualizados
 
+El software es dinámico, y no basta con definir o documentar cómo funciona una
+sola vez, más bien debemos mantener actualizadas las funciones DOCUMENTADAS del
+sistema o agregar nuevas conforme vayan apareciendo.
 
-Ya tenemos cómo sacar los requerimientos inicialmente y ce
-Los requerimientos funcionales deben mantenerse actualizados conforme el sistema evoluciona. Algunas buenas prácticas para lograrlo son:
+Aquí tienes algunas sugerencias para mantener actualizados los requerimientos:
 
 1. **Revisiones periódicas**: Programar revisiones regulares (por ejemplo, trimestrales) de los requerimientos con los usuarios principales y el equipo de desarrollo.
 
