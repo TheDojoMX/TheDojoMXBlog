@@ -94,7 +94,8 @@ tareas específicas para el equipo de desarrollo.
 
 Los recomiendo mucho en el caso de sistemas o funciones críticas, en donde es
 necesario pensar más a profundidad antes de empezar a desarrollar.
-Puedes encontrar un ejemplo y una plantilla aquí: [Casos de uso](https://lsi2.ugr.es/~mvega/docis/casos%20de%20uso.pdf).
+Puedes encontrar un ejemplo y una plantilla aquí:
+[Casos de uso](https://lsi2.ugr.es/~mvega/docis/casos%20de%20uso.pdf).
 
 ## Cómo mantenerlos actualizados
 
