@@ -856,4 +856,10 @@ var store = [{
         "tags": ["async/await","concurrencia","javascript"],
         "url": "/2024/10/31/que-es-la-programacion-asincrona.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg"
+      },{
+        "title": "¿Qué son los requerimientos funcionales?",
+        "excerpt":"“Requerimientos funcionales” es una expresión muy rebuscada para un concepto muy sencillo relacionado con el diseño de los sistemas de software: las cosas que tu sistema HACE. En este artículo hablaremos de formas de encontrarlos, definirlos, documentarlos y tenerlos listos para la siguiente etapa del desarrollo de software. Cómo definir...","categories": [],
+        "tags": ["arquitectura"],
+        "url": "/2024/11/23/que-son-los-requerimientos-funcionales.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1731216878/isabelle-mannino-USOSteP8hOw-unsplash_cbxmst.jpg"
       }]

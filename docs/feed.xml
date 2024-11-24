@@ -1,4 +1,178 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-10-31T23:32:30-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué es la programación asíncrona?</title><link href="https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html" rel="alternate" type="text/html" title="¿Qué es la programación asíncrona?" /><published>2024-10-31T00:00:00-06:00</published><updated>2024-10-31T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html"><![CDATA[<p>La programación asíncrona es uno de los primeros temas avanzados que encontrarás
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-11-23T23:55:38-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué son los requerimientos funcionales?</title><link href="https://blog.thedojo.mx/2024/11/23/que-son-los-requerimientos-funcionales.html" rel="alternate" type="text/html" title="¿Qué son los requerimientos funcionales?" /><published>2024-11-23T00:00:00-06:00</published><updated>2024-11-23T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/11/23/que-son-los-requerimientos-funcionales</id><content type="html" xml:base="https://blog.thedojo.mx/2024/11/23/que-son-los-requerimientos-funcionales.html"><![CDATA[<p><strong>“Requerimientos funcionales”</strong> es una expresión muy rebuscada para un concepto
+muy sencillo relacionado con el diseño de los sistemas de software: <strong>las
+cosas que tu sistema HACE</strong>.</p>
+
+<p>En este artículo hablaremos de formas de encontrarlos, definirlos, documentarlos
+y tenerlos listos para la siguiente etapa del desarrollo de software.</p>
+
+<h2 id="cómo-definir-las-funciones-de-un-sistemas">Cómo definir las funciones de un sistemas</h2>
+
+<p>La primera tarea como arquitecto de software tiene que ver con la de
+<strong>entender completamente</strong> lo que el software tiene que HACER. El software
+normalmente tiene unas pocas funciones principales, pero muchas tareas
+secundarias o terciarias que las soportan, y es por eso que descubrirlas
+y describirlas todas no es una tarea sencilla.</p>
+
+<h2 id="cómo-encontrarlos">Cómo encontrarlos</h2>
+
+<p>La forma más eficiente de encontrar los requerimientos funcionales o funciones
+que debe tener tu sistema es viviendo el proceso o problema que tu sistema va a
+resolver. Es por esto que algunos de los mejores sistemas son creados por gente
+que “se rasca su propia comezón” (<em>“scratch their own itch”</em>). Es decir, que
+resuelven un problema que ellos mismos viven o han vivido, y que por eso
+mismo <strong>entienden a fondo</strong>.</p>
+
+<p>Una de las ventajas de atender un problema que tú vives, es que tienes
+retroalimentación inmediata sobre si el sistema resuelve el problema o no.</p>
+
+<p>Pero esto no siempre es posible, sobre todo cuando construyes software como
+profesión, porque no siempre puedes dedicar tiempo y recursos suficientes para
+tú realizar la operación de lo que quieres resolver, o simplemente no es práctico.
+Así que la segunda mejor opción que tenemos es <strong>platicar con los usuarios</strong>.</p>
+
+<p>Aquí es donde entran un montón de habilidades “blandas”. Un mejor nombre para estas
+habilidades es <em>“habilidades personales e interpersonales”</em>. O habilidades básicas
+humanas. Así que, a menos que tengas a alguien en tu equipo que lo haga por ti,
+(y que siempre vaya a estar contigo), te conviene desarrollarlas.</p>
+
+<h2 id="cómo-documentarlos">Cómo documentarlos</h2>
+
+<p>No existe una forma aceptada por todos para documentar nada en el software,
+dependiendo de la cultura del equipo y de la empresa en general. Veamos algunas
+de las formas más comunes. Cabe mencionar que estas formas no son excluyentes,
+se pueden combinar para ver diferentes aspectos de una misma función.</p>
+
+<h3 id="historias-de-usuario">Historias de Usuario</h3>
+
+<p>En este estilo de documentación, describes las funciones del sistema desde la
+perspectiva del usuario. Se lleva muy bien con procesos modernos de desarrollo de
+productos digitales, relacionados con el desarrollo ágil de software.</p>
+
+<p>Tienen el siguiente formato:</p>
+
+<ul>
+  <li>Como [rol de usuario]</li>
+  <li>Quiero [acción/función]</li>
+  <li>Para [beneficio/valor]</li>
+</ul>
+
+<p>Como puedes ver, antes de empezar a crear historias de usuario, debes por lo menos
+tener un idea de las personas que van a usar el sistema y lo roles que desempeñan.
+Después, describes la función que va a realizar, desde su punto de vista, pero
+también intentando mostrar cómo funcionará internamente el sistema para cumplir
+con esa función.</p>
+
+<p>Y finalmente, la razón de existencia de esta función: cómo es que beneficia al usuario
+o la empresa que crea el software. Esta última parte es muy importante, ya que nos
+hace pensar en si realmente es necesario tener esta función o no.</p>
+
+<h3 id="casos-de-uso">Casos de Uso</h3>
+
+<p>Este tipo de documentación viene de la época en la que se prefería el desarrollo en cascada,
+pero a mi me sigue pareciendo muy útil. Es más formal y detallada, incluye:</p>
+
+<ul>
+  <li>Actores (usuarios o sistemas externos) involucrados</li>
+  <li>Flujo principal: el caso en el que todo sale bien</li>
+  <li>Flujos alternativos: los casos en los que algo sale mal o se manejan de otra manera</li>
+  <li>Precondiciones y postcondiciones: cómo está el sistema antes y después de la ejecución</li>
+</ul>
+
+<p>En muchos sistemas de documentación, los casos de uso requieren un identificador para
+referirse a ellos en etapas posteriores, como cuando se hacen pruebas o se crean
+tareas específicas para el equipo de desarrollo.</p>
+
+<p>Los recomiendo mucho en el caso de sistemas o funciones críticas, en donde es
+necesario pensar más a profundidad antes de empezar a desarrollar.
+Puedes encontrar un ejemplo y una plantilla aquí:
+<a href="https://lsi2.ugr.es/~mvega/docis/casos%20de%20uso.pdf">Casos de uso</a>.</p>
+
+<h2 id="cómo-mantenerlos-actualizados">Cómo mantenerlos actualizados</h2>
+
+<p>El software es dinámico, y no basta con definir o documentar cómo funciona una
+sola vez, tenemos que mantener actualizadas las funciones documentadas del
+sistema o agregar nuevas conforme vayan apareciendo.</p>
+
+<p>Aquí tienes algunas sugerencias para mantener actualizados los requerimientos:</p>
+
+<h3 id="revisar-y-actualizar">Revisar y actualizar</h3>
+
+<p>Si tienes suficiente personal, siempre debería haber un owner de la documentación
+y esta persona debería revisar y asegurarse que los diferentes miembros del equipo
+mantengan actualizadas las funciones documentadas y documenten las nuevas.</p>
+
+<h3 id="control-de-versiones">Control de versiones</h3>
+
+<p>Es buena idea mantener los documentos de requerimientos bajo control de versiones,
+igual que el código. De hecho, una de las mejores formas de hacer documentación es
+tratarla exactamente como código, como se sugiere en <a href="https://www.writethedocs.org/guide/docs-as-code/">Docs as Code</a>.</p>
+
+<p>Cada cambio debería ir acompañado de:</p>
+
+<ul>
+  <li>Fecha del cambio</li>
+  <li>Razón del cambio</li>
+  <li>Persona responsable</li>
+  <li>Impacto en el sistema</li>
+</ul>
+
+<h3 id="trazabilidad">Trazabilidad</h3>
+
+<p>Puedes mantener una matriz de trazabilidad que conecte los requerimientos con:</p>
+
+<ul>
+  <li>El código que los implementa</li>
+  <li>Las pruebas que los verifican</li>
+  <li>Otra documentación relacionada</li>
+</ul>
+
+<p>Para que esta matriz sea útil, se debe de incluir su actualización en el proceso
+de desarrollo y considerarse dentro de la definición de “terminado” de una tarea (<em>definition of done</em>).
+Esto es buena idea sólo si tienes un equipo grande y un proyecto complejo, ya que requiere
+bastante trabajo en sí mismo.</p>
+
+<h3 id="comunicación-efectiva">Comunicación efectiva</h3>
+
+<p>Esto es esencial para todos los procesos de desarrollo de software, pero debes asegurarte
+que mientras más avance tu proyecto y más gente se involucre, más se haga:</p>
+
+<ul>
+  <li>Que todos los cambios en los requerimientos sean comunicados a equipo de desarrollo y puestos en un documento que los describa</li>
+  <li>Que las personas involucradas en el proyecto sepan de los cambios y sientan que su voz es escuchada, también registrando sus comentarios y sugerencias</li>
+</ul>
+
+<p>Es importante dejar la registro de la comunicación y las decisiones tomadas para que el
+conocimiento del software sea accesible para todos.</p>
+
+<h3 id="una-alternativa-design-documents">Una alternativa: Design Documents</h3>
+
+<p>Los Design Documents son documentos que se usan en algunas big techs para documentar cómo se
+va implementar una función. Como es natural, estos documentos son bastante técnicos y
+algo tardados, pero incluyen por lo menos una descripción de la función que se quiere
+implementar y <em>cómo se va a implementar</em>.</p>
+
+<p>Están pensados para obtener consenso sobre la forma en la que se va a hacer algo y
+son una buena idea si tienes un equipo de desarrollo maduro que puede llegar rápido
+a compromisos para lograr implementar algo.</p>
+
+<p>Un conjunto histórico de estos documentos, puede ser una buena alternativa para
+documentar los requerimientos funcionales de un sistema.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Entender lo que necesitamos que haga nuestro software es el primer paso para crear
+software útil. Los requisitos funcionales o funciones y su documentación son una herramienta
+para mantener un registro histórico y asegurarnos de que entendemos lo que se requiere.
+Esto también puede servir para obtener aprobación de las personas interesadas en que
+el software se realice y evitar malentendidos en el futuro.</p>
+
+<p>También facilitan la estimación de recursos y tiempos, y permiten un desarrollo más eficiente
+y enfocado. Finalmente, mejoran la comunicación entre todas las partes involucradas.</p>
+
+<p>Es importante dedicar el tiempo y esfuerzo necesarios para documentarlos adecuadamente
+(en mi opinión más como una herramienta de entendimiento que como una obligación) y mantenerlos
+actualizados durante la vida del proyecto. Un sistema bien diseñado comienza con funciones
+bien definidas, entendidas y gestionadas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="arquitectura" /><summary type="html"><![CDATA[El análisis de requerimientos es una parte fundamental del desarrollo de software y es importantísima para crear sistemas exitosos.]]></summary></entry><entry><title type="html">¿Qué es la programación asíncrona?</title><link href="https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html" rel="alternate" type="text/html" title="¿Qué es la programación asíncrona?" /><published>2024-10-31T00:00:00-06:00</published><updated>2024-10-31T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html"><![CDATA[<p>La programación asíncrona es uno de los primeros temas avanzados que encontrarás
 al programar, especialmente si desarrollas aplicaciones web. Esto es aún más
 común si haces <strong>JavaScript</strong>, que es un lenguaje que se usa en entornos de
 ejecución asíncronos.</p>
@@ -1315,148 +1489,4 @@ junto con una colección de lenguajes que los tienen.Puedes verla aquí:
 <p>Aprender de los grandes presentadores y pensadores que han presentado en StrangeLoop
 es una gran idea que no tiene ningún costo. No te pierdas la oportunidad de dejar que
 te hagan pensar en cosas profundas de tu profesión, y que te lleven por lugares
-que tal vez ni siquiere habías pensado que existían.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="talks" /><category term="charlas" /><category term="strangeloop" /><category term="software-engineering" /><summary type="html"><![CDATA[StrangeLoop es una de las conferencias más importantes de software en el mundo, con pláticas increíbles. Aquí verás 5 pláticas que no te puedes perder.]]></summary></entry><entry><title type="html">¿Qué producimos los desarrolladores de software?</title><link href="https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html" rel="alternate" type="text/html" title="¿Qué producimos los desarrolladores de software?" /><published>2024-03-09T00:00:00-06:00</published><updated>2024-03-09T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2024/03/09/que-producimos-los-desarrolladores-de-software.html"><![CDATA[<p>Para algunos, la respuesta a la pregunta del título es simplemente “<em>software</em>”,
-porque parece tan obvia que el mismo nombre lo dice. Y aunque el <strong>software</strong>
-tiene una definición concreta, en este artículo vamos a desmunazar los productos
-de un proceso de desarrollo de software. Lo que quiero que veas es que el
-desarrollo de software no sólamente es crear programas que fucncionen, ya
-que para que el software sea efectivo tiene que <strong>evolucionar</strong>, y aquí
-entra el punto importante.</p>
-
-<h2 id="qué-es-un-sistema-de-software">¿Qué es un sistema de software?</h2>
-
-<p>Un sistema de software incluye varias cosas, algunas obvias, otras no tanto.
-Vamos a analizar de la más a la menos visible.</p>
-
-<h3 id="el-software-corriendo">El software corriendo</h3>
-
-<p>Esta es la parte más visible y en la que muchos se quedarían. El software en
-ejecución significa una computadora ejecutando instrucciones que cumplan con
-el propósito del software. Si pudiéramos hacer que la computadora ejecutara lo
-que necesitamos de mnanera mágica, sin tener que darle instrucciones a sus
-diferentes partes, esta parte seguiría existiendo.</p>
-
-<p>Ejemplos del software en ejecución son:</p>
-
-<ul>
-  <li>Una <strong>página web</strong> mostrando la infomación que un cliente necesita</li>
-  <li><strong>Word</strong> recibiendo las instrucciones de tu teclado y mostrando lo que escribes
-en la pantalla</li>
-  <li><strong>grep</strong> buscando la expresión regular que quieres encontrar en un conjunto de documentos</li>
-</ul>
-
-<p>A veces, dependiendo del proceso pactado, no entregamos el software corriendo, sino entregamos
-<em>artefactos</em> que tienen que ser ejecutados para poner el software corriendo.</p>
-
-<h3 id="ejecutables">Ejecutables</h3>
-<p>Los ejecutables son los <em>artefactos</em> que hacen que sea posible realizar las tareas que 
-pensamos para nuestro software. Estos artefactos pueden tomar muchas formas,
-por ejemplo, pueden ser archivos compilados .exe, empaquetados .dmg (de MacOS),
-o incluso compilados que contienen instrucciones para una arquitectura de procesador
-específica.</p>
-
-<p>En el caso de lenguajes y plataformas interpretadas los ejecutables son
-directamente el código fuente, que además requieren que el usuario final tenga
-un entorno preparado en su computadora para poder correrlo.</p>
-
-<h3 id="código-fuente">Código fuente</h3>
-<p>El código fuente, <em>para mi</em>, es la parte medular de los resultados de un proceso de desarrollo
-de software. Tiene la información necesaria para realizar las tareas que el software
-tiene que hacer y tras pasar por un proceso (compilación, empaquetamiento, despliegue, etc),
-se pueden producir los ejecutables que darán vida al software ejecutándose.</p>
-
-<p>El entregar el código fuente al usuario final dependerá del acuerdo comercial al que se 
-llegue al inciar el proyecto (por ejemplo, le podemos entregar el puro ejecutable como hace
-la mayoría del software comercial o de fuente cerrada), pero también podríamos entregar 
-el código fuente entero para que la persona que lo recibe pueda hacer cosas importantes:</p>
-
-<ul>
-  <li>Revisarlo: con el fin de que el software cumpla exactamente con lo que se desea y no tenga
-funciones ocultas no deseadas</li>
-  <li>Extenderlo: crear nuevas funciones o mejorar las existentes</li>
-  <li>Repararlo: si se encuentra alguna falla, eliminarla</li>
-  <li>Mantenerlo: A veces, las dependencias del software van quedando desactulizadas y hay que hacer
-modificaciones en este para que siga funcionando</li>
-  <li>Actualizarlo: llevarlo a nuevas versiones de su lenguaje o hacer que compile o produzca ejecutable
-para nuevas plataformas</li>
-</ul>
-
-<p>Como puedes ver, si quieres que tu software evolucione y se adapte a nuevas necesidades o incluso
-simplemente para que se mantenga funcional a través del tiempo, lo ideal es que tengas
-el código fuente a tu disposición. Es aceptado que el código funete debe incluir un conjunto de pruebas
-automáticas que permitan verificar su funcionamiento más eficientemente. Estas prubas pueden incluir:</p>
-
-<ul>
-  <li>Pruebas unitarias: las que prueban las unidades más básicas del código, como funciones o métodos</li>
-  <li>Pruebas de integración: corren el sistema como si fueran un usuario y permiten verifcar que funcione correctamente</li>
-</ul>
-
-<p>Pero el código fuente no basta para que el mantenimiento a través del tiempo sea óptimo.</p>
-
-<h3 id="documentación">Documentación</h3>
-<p>Esta palabra tan temida por los desarrolladores de software en realidad es uno de nuestos
-productos y a la vez insumos más importantes. La documentación es información sobre el 
-software puesta en un lugar persistente.</p>
-
-<p>Esta documentación debe incluir por lo menos:</p>
-
-<ol>
-  <li>Explicación de lo que el sistema hace. Es lo que le llamaríamos “los requerimientos”.</li>
-  <li>Diseño del sistema: Se habla de cómo está construido el sistema, por qué se pensó de esta forma y cómo
-eso cumple con lo que se requería. Incluye la arquitectura a diferentes niveles y el registro de las decisiones
-junto con su justificación.</li>
-  <li>Documentación técnica. En esta parte se habla de la tecnología usada: los lenguajes usados, las plataformas
-sobre las que corre, las bases de datos, los sistemas operativos etc. Además una buena idea es incluir
-las bases sobre las que se escogieron estos elementos.</li>
-  <li>Documentación para desarrolladores. Esta es la documentación que habla de lo que un desarrollador
-tiene que hacer para seguir desarrollando el proyecto o para hacer que el software se ejecute, sea 
-desplegarlo en un sistema de usuario final o producir los ejecutables. Esta documentaión incluye la 
-documentación del código en el que se describe su funcionamiento interno y el diseño que tiene.</li>
-  <li>Manual de usuario. Opcional, pero dependiendo de la complejidad de las fucniones que el softwae haga
-y de su intefaz, puede convertise en un elemento absolutamente necesario. En este se describen
-a detalle las cosas que el usuaio puede hacer y las consecuencias de estas acciones.</li>
-</ol>
-
-<p>Hasta aquí se quedarían algunos, ¿pero podemos ir más allá? Sobre todo pensemos en que, para que el software
-sea exitoso, necesita evolucionar. ¿Quién crea nuevo código?</p>
-
-<h3 id="un-equipo-funcional">Un equipo funcional</h3>
-<p>En teoría, con todo lo anterior cualquier desarrollador de software podría tomar un proyecto y seguirlo evolucionando,
-pero esta teoría se queda lejos de la práctica por varias razones. La primera es que necesariamente
-todos los artefactos anteriores van a tener defectos o estar incompletos, por lo que para que un nuevo
-equipo o desarrllador tome el proyecto requerirá hacer lo que llamamos <strong>“arqueología de software”</strong>, intentando completar
-y entender las decisiones no documentadas y todas las demás partes de información faltantes.</p>
-
-<p>Aún si los artefactos producidos estuvieran completos, el que un nuevo equipo tome el proyecto requiere tiempo y
-esfuerzo para estudiarlos y empezar a producir nuevas funciones o a corregir errores. Si queremos que 
-el proceso de desarrollo continue rápidamente, lo mejor es que el equipo que lo desarrolló lo siga evolucionando.</p>
-
-<p>Los mejores proyectos de software incluyen a un grupo de personas  que conocen la forma de desarrollo más 
-eficiente, las partes delicadas del proyecto, los fallos pendientes por componer, y las cosas que le faltan.</p>
-
-<p>Además, este grupo de personas tienen una forma de trabajar y de coordinación eficiente que puede ayudarlos
-a ser más productivos.</p>
-
-<p>Con esto podemos concluir que el resultado del proceso de desarrollo de software no es solo una serie de artefactos,
-sino que también puede inlcuir a un equipo de personas que sereian los más adecuados para seguirlo desarrollando.</p>
-
-<p>Pero hablemos de un elemento no tangible.</p>
-
-<h3 id="nuevo-conocimiento">Nuevo conocimiento</h3>
-
-<p>Siempre que alguien escribe software, su mente se modifica de tal manera que volver a su estado
-anterior es imposible. Este nuevo estado en el que la mente del programador se encuentra
-contine información sobre el problema que acaba de resolever, de tal manera que si 
-desapareciera todo el código fuente y toda la documentación junto con los ejecutables, para 
-este desarrollador no sería tan desastroso porque volver a producrilos le tomaría una 
-fracción del tiempo que ya gastó en hacerlos.</p>
-
-<p>Esta modificación en la mente de las personas es un elemento no visible pero sin duda valioso,
-que permite crear cada vez software más complejo y con mayores capacidades.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-<p>El proceso de desarrollo de software no sólamente produce software corriendo o ejecutables.
-Nuestro trabajo produce otras cosas de valor de las que deberíamos ser conscientes y buscar 
-optimizar, evitando la simpleza de pensar que lo único que vale es el software corriendo, que cómo puedes ver en este
-artíulo, es una parte mínima de todo el valor que puedes producir, eso sin contar el valor que 
-tu software produce al ser ejecutado por las personas que le pueden sacar provecho.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="software" /><category term="ingenieria-de-software" /><category term="arquitectura" /><summary type="html"><![CDATA[Tu proceso de desarrollo de software produce muchas más cosas que sólamente software corriendo. En este artículo hablaremos de otros resultados de trabajo]]></summary></entry></feed>
+que tal vez ni siquiere habías pensado que existían.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="talks" /><category term="charlas" /><category term="strangeloop" /><category term="software-engineering" /><summary type="html"><![CDATA[StrangeLoop es una de las conferencias más importantes de software en el mundo, con pláticas increíbles. Aquí verás 5 pláticas que no te puedes perder.]]></summary></entry></feed>

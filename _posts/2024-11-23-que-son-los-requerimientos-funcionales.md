@@ -1,6 +1,6 @@
 ---
 title: "¿Qué son los requerimientos funcionales?"
-date: 2024-03-09
+date: 2024-11-23
 author: Héctor Patricio
 tags:  arquitectura 
 comments: true
