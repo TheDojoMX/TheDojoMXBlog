@@ -24,3 +24,9 @@ de la filosofía.
 
 En este artículo voy a hablar sobre como se relacionan los problemas que los
 filósofos tratan con los que tenemos en el desarrollo de software.
+
+## ¿Qué es la filosofía?
+
+## ¿Cómo se relaciona la filosofía con el desarrollo de software?
+
+## Conclusión
