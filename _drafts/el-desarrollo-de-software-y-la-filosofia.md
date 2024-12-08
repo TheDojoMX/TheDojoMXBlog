@@ -30,3 +30,5 @@ filósofos tratan con los que tenemos en el desarrollo de software.
 ## ¿Cómo se relaciona la filosofía con el desarrollo de software?
 
 ## Conclusión
+
+Saber filosofía es saber cómo pensar.
