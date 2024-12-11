@@ -27,13 +27,16 @@ en diferentes contextos, buffer se podría traducir como:
 - Almacén temporal
 - Regulador
 
+Esta última palabra te puede empezar a sonar, ya que en el desarrollo de software usamos
+los buffers para _regular_ el flujo de datos entre diferentes sistemas o componentes.
 
-En el contexto de los sistemas de archivos, un buffer es una región de memoria que se usa para
-almacenar datos que se van a escribir en un archivo.
+## Buffers en acción
 
-En el contexto de la programación, un buffer es una región de memoria que se usa para.
+Ahora veamos algunos ejemplos de este concepto que seguro conoces o has visto aplicados.
 
-## ¿Para qué se usan los buffers?
+### Escritura en archivos
+
+
 
 ## ¿Cómo pueden ayudarte a diseñar mejor software?
 
