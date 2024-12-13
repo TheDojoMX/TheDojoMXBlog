@@ -36,7 +36,6 @@ Ahora veamos algunos ejemplos de este concepto que seguro conoces o has visto ap
 software. Recuerda que lo que estamos buscando entender es el concepto, por lo que vamos a
 explicar cómo el ejemplo es un buffer, pero no vamos a entrar en detalles de la implementación.
 
-
 ### Escritura en archivos
 
 Cuando escribimos en un archivo, los sistemas operativos usan buffers para guardar los datos
