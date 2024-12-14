@@ -19,6 +19,7 @@ lo mejor posible y cómo te pueden ayudar.
 ## ¿Qué es un agente?
 
 La definición sencilla de un agente es:
+
 > Un programa que tiene un **objetivo** y para lograrlo puede tomar decisiones **autónomas**. Estas decisiones
 pueden ser tomadas basadas en su **percepción** del entorno. Además, pueden **actuar** para modificar su 
 contexto.
