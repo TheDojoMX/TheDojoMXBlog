@@ -21,5 +21,15 @@ lo mejor posible y cómo te pueden ayudar.
 La definición sencilla de un agente es:
 
 > Un programa que tiene un **objetivo** y para lograrlo puede tomar decisiones **autónomas**. Estas decisiones
-pueden ser tomadas basadas en su **percepción** del entorno. Además, pueden **actuar** para modificar su 
+pueden ser tomadas basadas en su **percepción** del entorno. Además, pueden **actuar** para modificar su
 contexto.
+
+En esta definición sencilla, encontramos varias partes clave que debe tener un programa para ser considerado un agente:
+
+- **Objetivo**: El agente debe tener un objetivo claro que quiere lograr.
+- **Autonomía**: El agente debe ser capaz de tomar decisiones sin la necesidad de ser programado para cada caso
+o de que otra entidad lo controle.
+- **Percepción**: Aunque no es completamente necesario, muchos agentes tienen la capacidad de leer su entorno para
+tomar mejores decisiones. En algunos casos es completamente necesario.
+- **Actuación**: Los agentes pueden ser capaces de modificar su entorno.
+
