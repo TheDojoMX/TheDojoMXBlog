@@ -32,4 +32,3 @@ o de que otra entidad lo controle.
 - **Percepción**: Aunque no es completamente necesario, muchos agentes tienen la capacidad de leer su entorno para
 tomar mejores decisiones. En algunos casos es completamente necesario.
 - **Actuación**: Los agentes pueden ser capaces de modificar su entorno.
-
