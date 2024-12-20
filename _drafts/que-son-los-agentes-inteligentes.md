@@ -35,6 +35,9 @@ tomar mejores decisiones. En algunos casos es completamente necesario.
 
 ## ¿Cómo programar un agente?
 
-La forma más sencilla de programar un agente es crear un ciclo
+La forma más sencilla de programar un agente es crear un programa autocontenido que cumpla con las
+caractrísticas que mencionamos antriormente de las siguiente forma:
+
+- **Objetivo**: Tu agente debe estar especializado en un tipo de tareas.
 
 ## Conclusión
