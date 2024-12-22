@@ -33,6 +33,9 @@ o de que otra entidad lo controle.
 tomar mejores decisiones. En algunos casos es completamente necesario.
 - **Actuación**: Los agentes pueden ser capaces de modificar su entorno.
 
+¿En qué se diferencia un agente de un programa normal? La principal diferencia es que puede tomar decisiones
+que no están explícitamente programadas, en todo lo demás son muy similares.
+
 ## ¿Cómo programar un agente?
 
 La forma más sencilla de programar un agente es crear un programa o módulo independiente
