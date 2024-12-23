@@ -40,9 +40,12 @@ explicar cómo el ejemplo es un buffer, pero no vamos a entrar en detalles de la
 
 Cuando escribimos en un archivo, los sistemas operativos usan buffers para guardar los datos
 en memoria antes de escribirlos en su destino final, ya que si escribiera directamente en el disco
-byte por byte, será muy lento.
+byte por byte, sería muy lento.
 
 ## ¿Cómo pueden ayudarte a diseñar mejor software?
+
+Aunque los buffers complican el código y las pruebas de software, son indispensables para 
+el buen rendimiento y la estabilidad de los sistemas. Incluso algunos...
 
 ## Conclusión
 
