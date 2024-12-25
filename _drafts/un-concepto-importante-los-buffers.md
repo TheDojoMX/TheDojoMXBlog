@@ -45,11 +45,15 @@ programa mande a escribir causaría problemas de estabilidad y rendimiento.
 
 ### Uso de servicios remotos
 
-Una buena técnica para evitar hacer que se usen mal los servicios y un...
+Usar un servicio o una función a través de la red (un servicio remoto) es costoso en tiempo
+y recursos en comparación con cualquier cálculo local que se haga. Por eso es buena idea
+usar buffers para guardar información antes de hacer una llamada a un servicio remoto.
+Por ejemplo, en desarrollo web, cuando se hace una búsqueda de autocompletado, se guarda
+o espera a que el campo tenga...
 
 ## ¿Cómo pueden ayudarte a diseñar mejor software?
 
-Aunque los buffers complican el código y las pruebas de software, son indispensables para 
+Aunque los buffers complican el código y las pruebas de software, son indispensables para
 el buen rendimiento y la estabilidad de los sistemas. Incluso algunos...
 
 ## Conclusión
