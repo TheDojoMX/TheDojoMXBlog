@@ -58,4 +58,8 @@ el buen rendimiento y la estabilidad de los sistemas. Incluso algunos...
 
 ## Conclusión
 
-Los buffers son una herramienta poderosa que puedes usar para resolver problemas.
+Los buffers son interesantes. Son una herramienta poderosa que puedes usar para resolver
+problemas con mejor calidad y que te permiten crear características arquitectónicas
+deseables, a costa de hacer el código un poco más complejo. Sin embargo, si los ocultas
+correctamente detrás de interfaces efectivas, los documentas bien y los pruebas,
+te ayudarán mucho.
