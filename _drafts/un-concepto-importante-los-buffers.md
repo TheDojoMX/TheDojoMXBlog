@@ -11,20 +11,23 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-El concepto de buffer es usado por todos lados en el desarrollo de software, sin embargo siento
-que es un concepto poco entendido. En este artículo vamos a hablar de qué son, para qué se usan
-y cómo pueden ayudarte a resolver problemas.
+El concepto de buffer es usado por todos lados en el desarrollo de software, pero siento
+que es un concepto poco entendido. En este artículo vamos a hablar de qué son los buffers,
+para qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor software.
 
 ## ¿Qué es un buffer?
 
 Primero hablemos de dónde viene la idea de los buffers. Un buffer es un concepto general en
-los sistemas que sirve para guardar algo temporalmente, pero que sin falta llega a su
-destino final normalmente a diferente velocidad o ritmo con el que se generó. No traduzco la
-palabra, ya que no hay una traducción que capture de manera completa el concepto. Sin embargo,
-en diferentes contextos, buffer se podría traducir como:
+teoría de sistemas. Estos sirven para guardar algo temporalmente, pero que sin falta llega a su
+destino final, normalmente a diferente velocidad o ritmo con el que se generó en su origen.
+Traducir la palabra _"buffer"_ es difícil, porque no hay un concepto en español que abarque
+todos los usos que se le dan en el desarrollo de software.
+
+Algunos ejemplos de uso de buffers en el desarrollo de software son:
 
 - Amortiguador
 - Almacén temporal
+- Memoria intermedia
 - Regulador
 
 Esta última palabra te puede empezar a sonar, ya que en el desarrollo de software usamos
