@@ -32,10 +32,11 @@ Algunos ejemplos de uso de buffers en el desarrollo de software son:
 
 Esta última palabra te puede empezar a sonar, ya que en el desarrollo de software usamos
 los buffers para _regular_ el flujo de datos entre diferentes sistemas o componentes.
+Empecemos a hablar de cómo se usan en el desarrollo de software.
 
 ## Buffers en acción
 
-Ahora veamos algunos ejemplos de este concepto que seguro conoces o has visto aplicados en
+Estos son algunos ejemplos de este concepto que seguro conoces o has visto aplicados en
 software. Recuerda que lo que estamos buscando entender es el concepto, por lo que vamos a
 explicar cómo el ejemplo es un buffer, pero no vamos a entrar en detalles de la implementación.
 
@@ -44,16 +45,19 @@ explicar cómo el ejemplo es un buffer, pero no vamos a entrar en detalles de la
 Cuando escribimos en un archivo, los sistemas operativos usan buffers para guardar los datos
 en memoria antes de escribirlos en su destino final, ya que si escribiera directamente en el disco
 byte por byte, sería muy lento. Además, escribir directamente en el disco por cada byte que un
-programa mande a escribir causaría problemas de estabilidad y rendimiento.
+programa mande a escribir causaría problemas de estabilidad y rendimiento. Aquí no tenemos que
+explicar mucho por qué sun buffer, ya que es el ejemplo más común. Incluso en varios lenguajes
+de programación los objetos que se usan para escribir en los archivos tienen "Buffer" o "Buffered"
+en su nombre.
 
 ### Uso de servicios remotos
 
 Usar un servicio o una función a través de la red (un servicio remoto) es costoso en tiempo
 y recursos en comparación con cualquier cálculo local que se haga. Por eso es buena idea
 usar buffers para guardar información antes de hacer una llamada a un servicio remoto.
-Por ejemplo, en desarrollo web, cuando se hace una búsqueda de auto-completado, se guarda
-o espera a que el campo tenga un número de caracteres para hacer una llamada al servicio
-de búsqueda que pueda tener sentido.
+Por ejemplo, en desarrollo web, cuando se hace un auto-completado o búsqueda mientras se sigue
+escribiendo, el programa espera a que el campo tenga un número de caracteres para hacer
+una llamada al servicio de búsqueda que pueda tener sentido.
 
 ### Caching
 
