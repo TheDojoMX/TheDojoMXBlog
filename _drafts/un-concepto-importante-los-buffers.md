@@ -48,8 +48,21 @@ programa mande a escribir causaría problemas de estabilidad y rendimiento.
 Usar un servicio o una función a través de la red (un servicio remoto) es costoso en tiempo
 y recursos en comparación con cualquier cálculo local que se haga. Por eso es buena idea
 usar buffers para guardar información antes de hacer una llamada a un servicio remoto.
-Por ejemplo, en desarrollo web, cuando se hace una búsqueda de autocompletado, se guarda
-o espera a que el campo tenga...
+Por ejemplo, en desarrollo web, cuando se hace una búsqueda de auto-completado, se guarda
+o espera a que el campo tenga un número de caracteres para hacer una llamada al servicio
+de búsqueda que pueda tener sentido.
+
+### Caching
+
+Este no podía faltar. El caché es un tipo de buffer que guarda información _temporalmente_
+con varios objetivos:
+
+1. Ahorrar cómputo
+2. Acelerar el acceso a la información
+3. Evitar la sobrecarga de los recursos
+
+Como sabemos, lo más difícil del cachee es decidir primero qué guardar y luego cómo
+refrescarlo para que se no sea obsoleto.
 
 ## ¿Cómo pueden ayudarte a diseñar mejor software?
 
