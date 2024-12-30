@@ -61,7 +61,7 @@ una llamada al servicio de búsqueda que pueda tener sentido.
 
 ### Caching
 
-Este no podía faltar. El caché es un tipo de buffer que guarda información _temporalmente_
+Este ejemplo no podía faltar. El caché es un tipo de buffer que guarda información _temporalmente_
 con varios objetivos:
 
 1. Ahorrar cómputo
