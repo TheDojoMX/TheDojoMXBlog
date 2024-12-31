@@ -1,6 +1,6 @@
 ---
 title: "Un concepto importante: los buffers"
-date: 2024-12-08
+date: 2024-12-30
 author: Héctor Patricio
 tags: software-development programming técnicas-de-programación buffer
 comments: true
