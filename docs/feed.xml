@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-11-23T23:55:38-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué son los requerimientos funcionales?</title><link href="https://blog.thedojo.mx/2024/11/23/que-son-los-requerimientos-funcionales.html" rel="alternate" type="text/html" title="¿Qué son los requerimientos funcionales?" /><published>2024-11-23T00:00:00-06:00</published><updated>2024-11-23T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/11/23/que-son-los-requerimientos-funcionales</id><content type="html" xml:base="https://blog.thedojo.mx/2024/11/23/que-son-los-requerimientos-funcionales.html"><![CDATA[<p><strong>“Requerimientos funcionales”</strong> es una expresión muy rebuscada para un concepto
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2024-12-30T23:42:58-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Un concepto importante: los buffers</title><link href="https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers.html" rel="alternate" type="text/html" title="Un concepto importante: los buffers" /><published>2024-12-30T00:00:00-06:00</published><updated>2024-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers</id><content type="html" xml:base="https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers.html"><![CDATA[<p>El concepto de buffer es usado por todos lados en el desarrollo de software, pero siento
+que es un concepto poco entendido. En este artículo vamos a hablar de qué son los buffers,
+para qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor software.</p>
+
+<h2 id="qué-es-un-buffer">¿Qué es un buffer?</h2>
+
+<p>Primero hablemos de dónde viene la idea de los buffers. Un buffer es un concepto general en
+teoría de sistemas. Estos sirven para guardar algo temporalmente, pero que sin falta llega a su
+destino final, normalmente a diferente velocidad o ritmo con el que se generó en su origen.
+Traducir la palabra <em>“buffer”</em> es difícil, porque no hay un concepto en español que abarque
+todos los usos que se le dan en el desarrollo de software.</p>
+
+<p>Algunos ejemplos de uso de buffers en el desarrollo de software son:</p>
+
+<ul>
+  <li>Amortiguador</li>
+  <li>Almacén temporal</li>
+  <li>Memoria intermedia</li>
+  <li>Regulador</li>
+</ul>
+
+<p>Esta última palabra te puede empezar a sonar, ya que en el desarrollo de software usamos
+los buffers para <em>regular</em> el flujo de datos entre diferentes sistemas o componentes.
+Empecemos a hablar de cómo se usan en el desarrollo de software.</p>
+
+<h2 id="buffers-en-acción">Buffers en acción</h2>
+
+<p>Estos son algunos ejemplos de este concepto que seguro conoces o has visto aplicados en
+software. Recuerda que lo que estamos buscando entender es el concepto, por lo que vamos a
+explicar cómo el ejemplo es un buffer, pero no vamos a entrar en detalles de la implementación.</p>
+
+<h3 id="escritura-en-archivos">Escritura en archivos</h3>
+
+<p>Cuando escribimos en un archivo, los sistemas operativos usan buffers para guardar los datos
+en memoria antes de escribirlos en su destino final, ya que si escribiera directamente en el disco
+byte por byte, sería muy lento. Además, escribir directamente en el disco por cada byte que un
+programa mande a escribir causaría problemas de estabilidad y rendimiento. Aquí no tenemos que
+explicar mucho por qué sun buffer, ya que es el ejemplo más común. Incluso en varios lenguajes
+de programación los objetos que se usan para escribir en los archivos tienen “Buffer” o “Buffered”
+en su nombre.</p>
+
+<h3 id="uso-de-servicios-remotos">Uso de servicios remotos</h3>
+
+<p>Usar un servicio o una función a través de la red (un servicio remoto) es costoso en tiempo
+y recursos en comparación con cualquier cálculo local que se haga. Por eso es buena idea
+usar buffers para guardar información antes de hacer una llamada a un servicio remoto.
+Por ejemplo, en desarrollo web, cuando se hace un auto-completado o búsqueda mientras se sigue
+escribiendo, el programa espera a que el campo tenga un número de caracteres para hacer
+una llamada al servicio de búsqueda que pueda tener sentido.</p>
+
+<h3 id="caching">Caching</h3>
+
+<p>Este ejemplo no podía faltar. El caché es un tipo de buffer que guarda información <em>temporalmente</em>
+con varios objetivos:</p>
+
+<ol>
+  <li>Ahorrar cómputo</li>
+  <li>Acelerar el acceso a la información</li>
+  <li>Evitar la sobrecarga de los recursos</li>
+</ol>
+
+<p>Como sabemos, lo más difícil del cachee es decidir primero qué guardar y luego cómo
+refrescarlo para que se no sea obsoleto.</p>
+
+<h3 id="buffering-de-contenido-multimedia">Buffering de contenido multimedia</h3>
+
+<p>Debido a que el contenido multimedia es muy pesado, un buen reproductor o sistema de streaming
+casi siempre incluye un buffer que va descargando el contenido a mayo velocidad y un poco
+adelantado para tener un reproducción fluida. Si no lo incluimos, estamos a merced de la velocidad
+y las intermitencias de la red.</p>
+
+<h2 id="cómo-pueden-ayudarte-a-diseñar-mejor-software">¿Cómo pueden ayudarte a diseñar mejor software?</h2>
+
+<p>Escribir software usando buffers es más complejo que hacerlo sin ellos, ya que son una pieza más
+que puede causar problemas y que en algún momento vas a tener que depurar. Pero los buffers complican
+el código y las pruebas de software, son indispensables para el buen rendimiento y la estabilidad de los
+sistemas. Incluso algunos lenguajes de programación como Java, tienen buffers incorporados en su
+librería estándar.</p>
+
+<p>Recuerda, usar buffers te va a ayudar a escribir software:</p>
+
+<ul>
+  <li>Más estable</li>
+  <li>Con mejor rendimiento</li>
+  <li>Más resiliente</li>
+  <li>Más eficiente</li>
+</ul>
+
+<p>Así que te conviene buscar oportunidades para usarlos lo mejor posible.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Los buffers son interesantes. Son una herramienta poderosa que puedes usar para resolver
+problemas con mejor calidad y que te permiten crear características arquitectónicas
+deseables, a costa de hacer el código un poco más complejo. Sin embargo, si los ocultas
+correctamente detrás de interfaces efectivas, los documentas bien y los pruebas,
+te ayudarán mucho.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="software-development" /><category term="programming" /><category term="técnicas-de-programación" /><category term="buffer" /><summary type="html"><![CDATA[Los buffers son una herramienta poderosa que puedes usar para resolver problemas.]]></summary></entry><entry><title type="html">¿Qué son los requerimientos funcionales?</title><link href="https://blog.thedojo.mx/2024/11/23/que-son-los-requerimientos-funcionales.html" rel="alternate" type="text/html" title="¿Qué son los requerimientos funcionales?" /><published>2024-11-23T00:00:00-06:00</published><updated>2024-11-23T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/11/23/que-son-los-requerimientos-funcionales</id><content type="html" xml:base="https://blog.thedojo.mx/2024/11/23/que-son-los-requerimientos-funcionales.html"><![CDATA[<p><strong>“Requerimientos funcionales”</strong> es una expresión muy rebuscada para un concepto
 muy sencillo relacionado con el diseño de los sistemas de software: <strong>las
 cosas que tu sistema HACE</strong>.</p>
 
@@ -1369,124 +1465,4 @@ saber que existen alternativas. Estas herramientas
 nos enseñan cosas interesantes sobre el desarrollo de software, como que casi
 siempre hay más de una forma de lograr lo que queremos.
 Ojalá que en el futuro, Git tome algunas de las ideas de estos proyectos y mejore su
-experiencia de usuario.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="git" /><category term="version-control" /><category term="fossil" /><category term="pijul" /><summary type="html"><![CDATA[Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.]]></summary></entry><entry><title type="html">5 pláticas de StrageLoop que tienes que ver</title><link href="https://blog.thedojo.mx/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html" rel="alternate" type="text/html" title="5 pláticas de StrageLoop que tienes que ver" /><published>2024-03-30T00:00:00-06:00</published><updated>2024-03-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver</id><content type="html" xml:base="https://blog.thedojo.mx/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html"><![CDATA[<p><em>StrangeLoop</em> fue una de las mejores conferencias de tecnología del mundo
-porque en ella se tratan temas poco comunes relacionados con la
-computación, el desarrollo de software e incluso el arte, y lo mejor: la
-combinación entre entras cosas.</p>
-
-<p>Si te gusta reflexionar sobre temas profundos de la computación,
-te recomiendo mucho que le eches un ojo a las pláticas de esta conferencia,
-la mayoría están disponibles en su canal de
-<a href="https://youtube.com/@StrangeLoopConf">YouTube</a>.</p>
-
-<p>En este artículo te recomendaré cinco de las que me han parecido las mejores
-pláticas de la conferencia. Todas están en inglés, aunque parece que puedes poner
-traducción automática en YouTube. Empecemos.</p>
-
-<h2 id="el-desastre-en-el-que-estamos-metidos---joe-armstrong">El desastre en el que estamos metidos - Joe Armstrong</h2>
-
-<p>Esta es la plática más representativa de todas las ediciones de StrangeLoop.
-Su título original es <strong>“The Mess We’re In”</strong>.
-<strong>Joe Armstrong</strong> fue el creador del lenguaje Erlang y una gran figura en la
-industria del desarrollo de software, co-creador del lenguaje Erlang y de su máquina
-virtual, que aún hoy siguen esando adelantados a su tiempo.</p>
-
-<p>Joe habla de lo complejo que es el ambiente en el que los desarrolladores
-trabajamos, recordándonos la complejidad de las computadoras.
-La plática nos hace ver por qué es un milagro que existan sistemas funcionales
-y lo frágiles que son.</p>
-
-<p>Armstrong explora varios problemas, incluído el problema medioambiental
-que las computadoras pueden generar con su consumo de energía.</p>
-
-<p>Esta imagen tiene un resumen de los problemas que menciona:</p>
-
-<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1200/v1709865988/Screenshot_2024-03-07_at_20.40.20_vsidm5.png" alt="Resumen de la charla de Joe Armostrong" class="align-center" /></p>
-
-<p>Si quieres cobrar conciencia o recordar la complejidad a la que nos 
-enfrentamos, pero sobre todo entender  puedes ver la charla aquí: <a href="https://www.youtube.com/watch?v=lKXe3HUG2l4">The Mess We’re In</a></p>
-
-<h2 id="deja-de-escribir-programas-muertos---jack-rusher">Deja de escribir programas muertos - Jack Rusher</h2>
-
-<p><strong>Jack Rusher</strong> nos habla de cómo muchas de las cosas a las que ya estamos
-acostumbrados como programadores en realidad son cosas que hemos heredado de las
-limitaciones que teníamos en el pasado, y que no hemos hecho el esfuerzo por cambiar.</p>
-
-<p>Gran parte de lo que hacemos y creemos muy normal son fósiles de que nos tienen
-atados al pasado, pero ahora tenemos la capacidad de hacer muchas cosas más
-dinámicas e interesantes.</p>
-
-<p>Esta plática te puede abrir la mente respecto a nuevas formas de programar y
-te presenta entornos modernos, dinámicos y no convencionales que pueden cambiar
-la forma en la que trabajamos.</p>
-
-<p>La puedes ver aquí: <a href="https://youtu.be/8Ab3ArE8W3s?si=7MprB-mKxO0M4-A0">Stop Writing dead programs</a></p>
-
-<h2 id="desarrollo-de-juegos-en-8-bits---kevin-zurawel">Desarrollo de juegos en 8 bits - Kevin Zurawel</h2>
-
-<p>El desarrollo de software siempre ha estado limitado por el hardware en el
-que se va a ejecutar, pero como la mayoría de veces las computatadoras
-son mucho más poderosas de lo que necesitamos, no nos damos cuenta la mayoría
-de los desarrolladores de software.</p>
-
-<p>El desarrollo de juegos para plataformas antiguas (claro, modernas en su tiempo)
-presentaba retos muy interesantes para los desarrolladores, de los cuáles
-podemos aprender sobre todo para tener idea de los compromisos que se
-tienen que hacer para lograr cosas increíbles para la época.</p>
-
-<p>Kevin Zurawel es un experto en desarrollo de juegos y actualmente tiene una
-página dedicada al desarrollo de juegos retro llamada <a href="https://famicom.party/">Famicom.party</a>.</p>
-
-<p>Si quieres aprender más sobre el desarrollo de software en condiciones
-extremadamente limitadas puedes verla aquí:
-<a href="https://youtu.be/TPbroUDHG0s?si=clvg5je8GDoC4dMS">Game Development in Eight Bits</a></p>
-
-<h2 id="haciendo-fáciles-las-cosas-difíciles---julia-evans">Haciendo fáciles las cosas difíciles - Julia Evans</h2>
-
-<p>Saber explicar cosas complejas es una de las habilidades más importantes que
-se pueden tener como miembro de un equipo de desarrollo. <a href="https://jvns.ca/">Julia Evans</a>
-es una de las mejores personas en el mundo en hacer esto.</p>
-
-<p><strong>“Algunas veces me tardo 10 años en aprender cosas básicas”</strong>, dice Julia en
-esta conferencia, y creo que es algo con lo que todos nos podemos
-idenfificar, porque todos nos enfrentamos con este ripo de situaciones.</p>
-
-<p>Durante la plática, Julia analiza el comportamiento de herramientas
-que usamos continuamente, nos hace ver cómo tinen un comportamiento
-no esperado y cómo podemos mejorar nuestro <strong>entendimiento</strong>.</p>
-
-<p>También nos habla de la importancia de usar herramientas que reduzcan
-la carga cognitiva mediante permitirte la inspección detallada de lo que
-está pasando.</p>
-
-<p>Julia Evans es una gran contribuidora a la comunidad de desarrollo de
-software con sus explicaciones y herramientas esclarecedoras sobre
-temas comunes pero a la vez complejos del desarrollo de software.</p>
-
-<p>Si quieres aprender más sobre cómo simplificarte las cosas complejas 
-del desarrollo de software, puedes ver la charla aquí:
-<a href="https://youtu.be/30YWsGDr8mA?si=8j32cj6MKGXRQRoX">Making hard things easy</a></p>
-
-<h2 id="una-probadita-de-tipos-dependientes---david-christiansen">Una probadita de tipos dependientes - David Christiansen</h2>
-
-<p>Los sistemas de tipos siempre han sido algo que causa fuertes reacciones
-en los programadores, sea en contra o a favor. Mi teoría es que la mayoría
-de las personas que los odian es porque no han (o hemos) trabajado con un buen
-sistema de tipos.</p>
-
-<p>Hay lenguajes con sistemas de tipos muy avanzados que te permiten de verdad
-hacer cosas útiles, y los más avanzados son los que tienen <strong>sistemas de
-tipos dependientes</strong>. Estos sistemas de tipos te permiten crear diseños con
-tus programas de tal manera que el compilador puede comprobar muchas cosas
-por adelantado.</p>
-
-<p>Si nunca has escuchado de ellos, esta plática es una muy buena introducción
-junto con una colección de lenguajes que los tienen.Puedes verla aquí:
-<a href="https://youtu.be/VxINoKFm-S4?si=rG-zQi0P3Sl6fMSb">A Little Taste of Dependent Types</a>.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Aprender de los grandes presentadores y pensadores que han presentado en StrangeLoop
-es una gran idea que no tiene ningún costo. No te pierdas la oportunidad de dejar que
-te hagan pensar en cosas profundas de tu profesión, y que te lleven por lugares
-que tal vez ni siquiere habías pensado que existían.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="talks" /><category term="charlas" /><category term="strangeloop" /><category term="software-engineering" /><summary type="html"><![CDATA[StrangeLoop es una de las conferencias más importantes de software en el mundo, con pláticas increíbles. Aquí verás 5 pláticas que no te puedes perder.]]></summary></entry></feed>
+experiencia de usuario.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="git" /><category term="version-control" /><category term="fossil" /><category term="pijul" /><summary type="html"><![CDATA[Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.]]></summary></entry></feed>

@@ -862,4 +862,10 @@ var store = [{
         "tags": ["arquitectura"],
         "url": "/2024/11/23/que-son-los-requerimientos-funcionales.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1731216878/isabelle-mannino-USOSteP8hOw-unsplash_cbxmst.jpg"
+      },{
+        "title": "Un concepto importante: los buffers",
+        "excerpt":"El concepto de buffer es usado por todos lados en el desarrollo de software, pero siento que es un concepto poco entendido. En este artículo vamos a hablar de qué son los buffers, para qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor software. ¿Qué es...","categories": [],
+        "tags": ["software-development","programming","técnicas-de-programación","buffer"],
+        "url": "/2024/12/30/un-concepto-importante-los-buffers.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1733894437/philip-oroni-0Nh06vUjbLw-unsplash_q3mcrp.jpg"
       }]
