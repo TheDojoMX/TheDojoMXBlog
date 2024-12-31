@@ -71,10 +71,29 @@ con varios objetivos:
 Como sabemos, lo más difícil del cachee es decidir primero qué guardar y luego cómo
 refrescarlo para que se no sea obsoleto.
 
+### Buffering de contenido multimedia
+
+Debido a que el contenido multimedia es muy pesado, un buen reproductor o sistema de streaming
+casi siempre incluye un buffer que va descargando el contenido a mayo velocidad y un poco
+adelantado para tener un reproducción fluida. Si no lo incluimos, estamos a merced de la velocidad
+y las intermitencias de la red.
+
 ## ¿Cómo pueden ayudarte a diseñar mejor software?
 
-Aunque los buffers complican el código y las pruebas de software, son indispensables para
-el buen rendimiento y la estabilidad de los sistemas. Incluso algunos...
+Escribir software usando buffers es más complejo que hacerlo sin ellos, ya que son una pieza más
+que puede causar problemas y que en algún momento vas a tener que depurar. Pero los buffers complican
+el código y las pruebas de software, son indispensables para el buen rendimiento y la estabilidad de los
+sistemas. Incluso algunos lenguajes de programación como Java, tienen buffers incorporados en su
+librería estándar.
+
+Recuerda, usar buffers te va a ayudar a escribir software:
+
+- Más estable
+- Con mejor rendimiento
+- Más resiliente
+- Más eficiente
+
+Así que te conviene buscar oportunidades para usarlos lo mejor posible.
 
 ## Conclusión
 
