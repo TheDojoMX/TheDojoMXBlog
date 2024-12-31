@@ -4,7 +4,7 @@ date: 2024-12-30
 author: Héctor Patricio
 tags: software-development programming técnicas-de-programación buffer
 comments: true
-excerpt: "Los buffers son una herramienta poderosa que puedes usar para resolver problemas."
+excerpt: "Los buffers son una herramienta poderosa que puedes usar para resolver problemas. Hablemos de algunos ejemplos y cómo te pueden ayudar a diseñar mejor software."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1733894437/philip-oroni-0Nh06vUjbLw-unsplash_q3mcrp.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1733894437/philip-oroni-0Nh06vUjbLw-unsplash_q3mcrp.jpg

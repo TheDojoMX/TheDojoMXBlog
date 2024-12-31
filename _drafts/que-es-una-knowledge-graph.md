@@ -14,8 +14,8 @@ header:
 Muchas cosas en el mundo real se pueden representar como una serie de
 relaciones entre diferentes entidades. Por ejemplo, una red social se puede
 representar como un conjunto de personas y sus relaciones. En este post vamos
-a usar esta misma idea para representar **la estructura del conocimiento**,
-es decir, cómo están relacionadas las diferentes ideas que podemos tener sobre
+a usar esta misma idea para representar **la estructura del conocimiento**: 
+cómo están relacionadas las diferentes ideas que podemos tener sobre
 un tema.
 
 Antes, profundicemos un poco en las herramientas teóricas que nos van a ayudar
@@ -34,6 +34,8 @@ el concepto es el mismo. En un grafo lo más importante no son las característi
 de los nodos, sino las relaciones que existen entre ellos.
 
 ## ¿Qué es una Knowledge Graph?
+
+
 
 
 ## Implementando una Knowledge Graph
