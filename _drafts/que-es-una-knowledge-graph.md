@@ -35,8 +35,13 @@ de los nodos, sino las relaciones que existen entre ellos.
 
 ## ¿Qué es una Knowledge Graph?
 
+Un Knowledge Graph o Grafo de Conocimiento es un grafo que representa la estructura
+de la información que tenemos sobre un tema. Su función principal es ayudar a
+encontrar conexiones entre conceptos y así poder entender mejor el tema.
 
-
+Esto a algunos les puede parecer una idea rara, pero todas las búsquedas 
+semánticas útiles, como las de Google usan un grafo de conocimiento por debajo
+para entender mejor lo que estamos buscando.
 
 ## Implementando una Knowledge Graph
 
