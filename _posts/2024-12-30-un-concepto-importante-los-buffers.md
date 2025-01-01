@@ -17,13 +17,13 @@ para qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor 
 
 ## ¿Qué es un buffer?
 
-Primero hablemos de dónde viene la idea de los buffers. Un buffer es un concepto general en
-teoría de sistemas. Estos sirven para guardar algo temporalmente, pero que sin falta llega a su
-destino final, normalmente a diferente velocidad o ritmo con el que se generó en su origen.
-Traducir la palabra _"buffer"_ es difícil, porque no hay un concepto en español que abarque
-todos los usos que se le dan en el desarrollo de software.
+Primero hablemos de dónde viene la idea de los buffers. Un buffer es un concepto importante en
+teoría de sistemas. Los buffers se utilizan para almacenar temporalmente datos, asegurando que
+eventualmente lleguen a su destino final. Esto ocurre a una velocidad o ritmo diferente al
+que fueron generados originalmente.
 
-Algunos ejemplos de uso de buffers en el desarrollo de software son:
+Traducir la palabra _"buffer"_ es difícil, porque no hay un concepto en español que abarque
+todos los usos que se le dan en el desarrollo de software.Algunos ejemplos de uso de buffers en el desarrollo de software son:
 
 - Amortiguador
 - Almacén temporal
@@ -32,6 +32,8 @@ Algunos ejemplos de uso de buffers en el desarrollo de software son:
 
 Esta última palabra te puede empezar a sonar, ya que en el desarrollo de software usamos
 los buffers para _regular_ el flujo de datos entre diferentes sistemas o componentes.
+Los buffers causan retrasos intencionales en el flujo de datos.
+
 Empecemos a hablar de cómo se usan en el desarrollo de software.
 
 ## Buffers en acción
@@ -46,7 +48,7 @@ Cuando escribimos en un archivo, los sistemas operativos usan buffers para guard
 en memoria antes de escribirlos en su destino final, ya que si escribiera directamente en el disco
 byte por byte, sería muy lento. Además, escribir directamente en el disco por cada byte que un
 programa mande a escribir causaría problemas de estabilidad y rendimiento. Aquí no tenemos que
-explicar mucho por qué sun buffer, ya que es el ejemplo más común. Incluso en varios lenguajes
+explicar mucho por qué un buffer, ya que es el ejemplo más común. Incluso en varios lenguajes
 de programación los objetos que se usan para escribir en los archivos tienen "Buffer" o "Buffered"
 en su nombre.
 

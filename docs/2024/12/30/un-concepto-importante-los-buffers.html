@@ -137,7 +137,7 @@
       "headline": "Un concepto importante: los buffers",
       "keywords": "software-development,programming,técnicas-de-programación,buffer",
       "description": "Los buffers son una herramienta poderosa que puedes usar para resolver problemas. Hablemos de algunos ejemplos y cómo te pueden ayudar a diseñar mejor software.",
-      "articleBody": "El concepto de buffer es usado por todos lados en el desarrollo de software, pero siento\nque es un concepto poco entendido. En este artículo vamos a hablar de qué son los buffers,\npara qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor software.\n\n¿Qué es un buffer?\n\nPrimero hablemos de dónde viene la idea de los buffers. Un buffer es un concepto general en\nteoría de sistemas. Estos sirven para guardar algo temporalmente, pero que sin falta llega a su\ndestino final, normalmente a diferente velocidad o ritmo con el que se generó en su origen.\nTraducir la palabra “buffer” es difícil, porque no hay un concepto en español que abarque\ntodos los usos que se le dan en el desarrollo de software.\n\nAlgunos ejemplos de uso de buffers en el desarrollo de software son:\n\n\n  Amortiguador\n  Almacén temporal\n  Memoria intermedia\n  Regulador\n\n\nEsta última palabra te puede empezar a sonar, ya que en el desarrollo de software usamos\nlos buffers para regular el flujo de datos entre diferentes sistemas o componentes.\nEmpecemos a hablar de cómo se usan en el desarrollo de software.\n\nBuffers en acción\n\nEstos son algunos ejemplos de este concepto que seguro conoces o has visto aplicados en\nsoftware. Recuerda que lo que estamos buscando entender es el concepto, por lo que vamos a\nexplicar cómo el ejemplo es un buffer, pero no vamos a entrar en detalles de la implementación.\n\nEscritura en archivos\n\nCuando escribimos en un archivo, los sistemas operativos usan buffers para guardar los datos\nen memoria antes de escribirlos en su destino final, ya que si escribiera directamente en el disco\nbyte por byte, sería muy lento. Además, escribir directamente en el disco por cada byte que un\nprograma mande a escribir causaría problemas de estabilidad y rendimiento. Aquí no tenemos que\nexplicar mucho por qué sun buffer, ya que es el ejemplo más común. Incluso en varios lenguajes\nde programación los objetos que se usan para escribir en los archivos tienen “Buffer” o “Buffered”\nen su nombre.\n\nUso de servicios remotos\n\nUsar un servicio o una función a través de la red (un servicio remoto) es costoso en tiempo\ny recursos en comparación con cualquier cálculo local que se haga. Por eso es buena idea\nusar buffers para guardar información antes de hacer una llamada a un servicio remoto.\nPor ejemplo, en desarrollo web, cuando se hace un auto-completado o búsqueda mientras se sigue\nescribiendo, el programa espera a que el campo tenga un número de caracteres para hacer\nuna llamada al servicio de búsqueda que pueda tener sentido.\n\nCaching\n\nEste ejemplo no podía faltar. El caché es un tipo de buffer que guarda información temporalmente\ncon varios objetivos:\n\n\n  Ahorrar cómputo\n  Acelerar el acceso a la información\n  Evitar la sobrecarga de los recursos\n\n\nComo sabemos, lo más difícil del cachee es decidir primero qué guardar y luego cómo\nrefrescarlo para que se no sea obsoleto.\n\nBuffering de contenido multimedia\n\nDebido a que el contenido multimedia es muy pesado, un buen reproductor o sistema de streaming\ncasi siempre incluye un buffer que va descargando el contenido a mayo velocidad y un poco\nadelantado para tener un reproducción fluida. Si no lo incluimos, estamos a merced de la velocidad\ny las intermitencias de la red.\n\n¿Cómo pueden ayudarte a diseñar mejor software?\n\nEscribir software usando buffers es más complejo que hacerlo sin ellos, ya que son una pieza más\nque puede causar problemas y que en algún momento vas a tener que depurar. Pero los buffers complican\nel código y las pruebas de software, son indispensables para el buen rendimiento y la estabilidad de los\nsistemas. Incluso algunos lenguajes de programación como Java, tienen buffers incorporados en su\nlibrería estándar.\n\nRecuerda, usar buffers te va a ayudar a escribir software:\n\n\n  Más estable\n  Con mejor rendimiento\n  Más resiliente\n  Más eficiente\n\n\nAsí que te conviene buscar oportunidades para usarlos lo mejor posible.\n\nConclusión\n\nLos buffers son interesantes. Son una herramienta poderosa que puedes usar para resolver\nproblemas con mejor calidad y que te permiten crear características arquitectónicas\ndeseables, a costa de hacer el código un poco más complejo. Sin embargo, si los ocultas\ncorrectamente detrás de interfaces efectivas, los documentas bien y los pruebas,\nte ayudarán mucho.\n",
+      "articleBody": "El concepto de buffer es usado por todos lados en el desarrollo de software, pero siento\nque es un concepto poco entendido. En este artículo vamos a hablar de qué son los buffers,\npara qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor software.\n\n¿Qué es un buffer?\n\nPrimero hablemos de dónde viene la idea de los buffers. Un buffer es un concepto importante en\nteoría de sistemas. Los buffers se utilizan para almacenar temporalmente datos, asegurando que\neventualmente lleguen a su destino final. Esto ocurre a una velocidad o ritmo diferente al\nque fueron generados originalmente.\n\nTraducir la palabra “buffer” es difícil, porque no hay un concepto en español que abarque\ntodos los usos que se le dan en el desarrollo de software.Algunos ejemplos de uso de buffers en el desarrollo de software son:\n\n\n  Amortiguador\n  Almacén temporal\n  Memoria intermedia\n  Regulador\n\n\nEsta última palabra te puede empezar a sonar, ya que en el desarrollo de software usamos\nlos buffers para regular el flujo de datos entre diferentes sistemas o componentes.\nLos buffers causan retrasos intencionales en el flujo de datos.\n\nEmpecemos a hablar de cómo se usan en el desarrollo de software.\n\nBuffers en acción\n\nEstos son algunos ejemplos de este concepto que seguro conoces o has visto aplicados en\nsoftware. Recuerda que lo que estamos buscando entender es el concepto, por lo que vamos a\nexplicar cómo el ejemplo es un buffer, pero no vamos a entrar en detalles de la implementación.\n\nEscritura en archivos\n\nCuando escribimos en un archivo, los sistemas operativos usan buffers para guardar los datos\nen memoria antes de escribirlos en su destino final, ya que si escribiera directamente en el disco\nbyte por byte, sería muy lento. Además, escribir directamente en el disco por cada byte que un\nprograma mande a escribir causaría problemas de estabilidad y rendimiento. Aquí no tenemos que\nexplicar mucho por qué un buffer, ya que es el ejemplo más común. Incluso en varios lenguajes\nde programación los objetos que se usan para escribir en los archivos tienen “Buffer” o “Buffered”\nen su nombre.\n\nUso de servicios remotos\n\nUsar un servicio o una función a través de la red (un servicio remoto) es costoso en tiempo\ny recursos en comparación con cualquier cálculo local que se haga. Por eso es buena idea\nusar buffers para guardar información antes de hacer una llamada a un servicio remoto.\nPor ejemplo, en desarrollo web, cuando se hace un auto-completado o búsqueda mientras se sigue\nescribiendo, el programa espera a que el campo tenga un número de caracteres para hacer\nuna llamada al servicio de búsqueda que pueda tener sentido.\n\nCaching\n\nEste ejemplo no podía faltar. El caché es un tipo de buffer que guarda información temporalmente\ncon varios objetivos:\n\n\n  Ahorrar cómputo\n  Acelerar el acceso a la información\n  Evitar la sobrecarga de los recursos\n\n\nComo sabemos, lo más difícil del cachee es decidir primero qué guardar y luego cómo\nrefrescarlo para que se no sea obsoleto.\n\nBuffering de contenido multimedia\n\nDebido a que el contenido multimedia es muy pesado, un buen reproductor o sistema de streaming\ncasi siempre incluye un buffer que va descargando el contenido a mayo velocidad y un poco\nadelantado para tener un reproducción fluida. Si no lo incluimos, estamos a merced de la velocidad\ny las intermitencias de la red.\n\n¿Cómo pueden ayudarte a diseñar mejor software?\n\nEscribir software usando buffers es más complejo que hacerlo sin ellos, ya que son una pieza más\nque puede causar problemas y que en algún momento vas a tener que depurar. Pero los buffers complican\nel código y las pruebas de software, son indispensables para el buen rendimiento y la estabilidad de los\nsistemas. Incluso algunos lenguajes de programación como Java, tienen buffers incorporados en su\nlibrería estándar.\n\nRecuerda, usar buffers te va a ayudar a escribir software:\n\n\n  Más estable\n  Con mejor rendimiento\n  Más resiliente\n  Más eficiente\n\n\nAsí que te conviene buscar oportunidades para usarlos lo mejor posible.\n\nConclusión\n\nLos buffers son interesantes. Son una herramienta poderosa que puedes usar para resolver\nproblemas con mejor calidad y que te permiten crear características arquitectónicas\ndeseables, a costa de hacer el código un poco más complejo. Sin embargo, si los ocultas\ncorrectamente detrás de interfaces efectivas, los documentas bien y los pruebas,\nte ayudarán mucho.\n",
       "datePublished": "2024-12-30 00:00:00 -0600",
       "dateModified": "2024-12-30 00:00:00 -0600",
       "author": {
@@ -265,7 +265,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-        705 palabras | 5 minutos de lectura
+        714 palabras | 5 minutos de lectura
         
       </span>
     
@@ -423,13 +423,13 @@ para qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor 
 
 <h2 id="qué-es-un-buffer">¿Qué es un buffer?</h2>
 
-<p>Primero hablemos de dónde viene la idea de los buffers. Un buffer es un concepto general en
-teoría de sistemas. Estos sirven para guardar algo temporalmente, pero que sin falta llega a su
-destino final, normalmente a diferente velocidad o ritmo con el que se generó en su origen.
-Traducir la palabra <em>“buffer”</em> es difícil, porque no hay un concepto en español que abarque
-todos los usos que se le dan en el desarrollo de software.</p>
+<p>Primero hablemos de dónde viene la idea de los buffers. Un buffer es un concepto importante en
+teoría de sistemas. Los buffers se utilizan para almacenar temporalmente datos, asegurando que
+eventualmente lleguen a su destino final. Esto ocurre a una velocidad o ritmo diferente al
+que fueron generados originalmente.</p>
 
-<p>Algunos ejemplos de uso de buffers en el desarrollo de software son:</p>
+<p>Traducir la palabra <em>“buffer”</em> es difícil, porque no hay un concepto en español que abarque
+todos los usos que se le dan en el desarrollo de software.Algunos ejemplos de uso de buffers en el desarrollo de software son:</p>
 
 <ul>
   <li>Amortiguador</li>
@@ -440,7 +440,9 @@ todos los usos que se le dan en el desarrollo de software.</p>
 
 <p>Esta última palabra te puede empezar a sonar, ya que en el desarrollo de software usamos
 los buffers para <em>regular</em> el flujo de datos entre diferentes sistemas o componentes.
-Empecemos a hablar de cómo se usan en el desarrollo de software.</p>
+Los buffers causan retrasos intencionales en el flujo de datos.</p>
+
+<p>Empecemos a hablar de cómo se usan en el desarrollo de software.</p>
 
 <h2 id="buffers-en-acción">Buffers en acción</h2>
 
@@ -454,7 +456,7 @@ explicar cómo el ejemplo es un buffer, pero no vamos a entrar en detalles de la
 en memoria antes de escribirlos en su destino final, ya que si escribiera directamente en el disco
 byte por byte, sería muy lento. Además, escribir directamente en el disco por cada byte que un
 programa mande a escribir causaría problemas de estabilidad y rendimiento. Aquí no tenemos que
-explicar mucho por qué sun buffer, ya que es el ejemplo más común. Incluso en varios lenguajes
+explicar mucho por qué un buffer, ya que es el ejemplo más común. Incluso en varios lenguajes
 de programación los objetos que se usan para escribir en los archivos tienen “Buffer” o “Buffered”
 en su nombre.</p>
 
@@ -790,7 +792,7 @@ te ayudarán mucho.</p>
   </ul>
 </div>
 
-<div class="page__footer-copyright">© 2024 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">© 2025 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
