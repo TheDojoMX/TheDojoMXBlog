@@ -21,9 +21,13 @@ Además, veremos que tienen de especial las bases de datos para series de tiempo
 
 ## ¿Por qué no usar una base de datos relacional?
 
+Una base de datos relacional pensada en transacciones (OLTP) es muy flexible y sin duda
+puedes almacenar pares de valores de tiempo y el valor medido sin ninguna difucultad.
+
+El problema viene cuando quiers hacer consultas sobre grandes cantidades de datos.
+
 ## ¿Qué hace una base de datos de series de tiempo?
 
 ## Ejemplos de bases de datos para series temporales
 
 ## Conclusión
-
