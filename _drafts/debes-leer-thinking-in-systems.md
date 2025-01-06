@@ -10,3 +10,10 @@ header:
   teaser: #image
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
+
+El libro "Thinking in Systems" de Donella Meadows es un libro muy importante
+para cualquier desarrollador de software.
+
+## De qué trata
+
+##
