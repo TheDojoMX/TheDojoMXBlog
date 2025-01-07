@@ -22,5 +22,3 @@ para cualquier desarrollador de software.
 
 Si eres desarrollador de software y quieres mejorar tu habilidad para crear
 sistemas complejos que sirvan en el mundo real, mientras antes leas este libro, mejor.
-
-
