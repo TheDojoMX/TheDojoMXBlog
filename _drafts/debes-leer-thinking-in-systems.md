@@ -16,6 +16,9 @@ para cualquier desarrollador de software.
 
 ## De qué trata
 
+**Thinking in systems** es lo que sse consideraría un libro un poco antiguo
+
+
 ## Qué podemos aprender los desarrolladores de software
 
 ## Conclusión
