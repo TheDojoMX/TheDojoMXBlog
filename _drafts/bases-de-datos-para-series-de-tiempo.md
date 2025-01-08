@@ -6,7 +6,7 @@ tags:
 comments: true
 excerpt: "Escribe aquí un buen resumen de tu artículo"
 header:
-  overlay_image: #image
+  overlay_image: 
   teaser: #image
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
@@ -27,6 +27,8 @@ puedes almacenar pares de valores de tiempo y el valor medido sin ninguna difucu
 El problema viene cuando quiers hacer consultas sobre grandes cantidades de datos.
 
 ## ¿Qué hace una base de datos de series de tiempo?
+
+Las bases de datos de series de tiempo:
 
 ## Ejemplos de bases de datos para series temporales
 
