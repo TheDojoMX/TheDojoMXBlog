@@ -2,12 +2,12 @@
 title: "Bases de datos para series de tiempo"
 date: 2024-12-07
 author: Héctor Patricio
-tags:
+tags: series-de-tiempo bases-de-datos bd data-science
 comments: true
-excerpt: "Escribe aquí un buen resumen de tu artículo"
+excerpt: "¿Qué bases de datos puedes usar para guardar datos generados de manera periódica? Hablemos de por qué es importante escoger la herramienta correcta."
 header:
-  overlay_image: 
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1736399971/veri-ivanova-p3Pj7jOYvnM-unsplash_cf1uue.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1736399971/veri-ivanova-p3Pj7jOYvnM-unsplash_cf1uue.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -33,3 +33,5 @@ Las bases de datos de series de tiempo:
 ## Ejemplos de bases de datos para series temporales
 
 ## Conclusión
+
+La conclusión es sencilla:
