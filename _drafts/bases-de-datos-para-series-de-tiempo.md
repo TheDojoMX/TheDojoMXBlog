@@ -34,4 +34,7 @@ Las bases de datos de series de tiempo:
 
 ## Conclusión
 
-La conclusión es sencilla:
+La conclusión es sencilla: usa la herrrammienta adecuada para los datos que tienes que
+almacenar y procesar. Por algo existen herramietnas especializadas en tipos de datos
+específicos. Personas con más experiencia se han dado cuetna de la necesidad de
+especializarlas
