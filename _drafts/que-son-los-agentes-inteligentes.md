@@ -2,13 +2,13 @@
 title: "¿Qué son los agentes inteligentes?"
 date: 2024-12-12
 author: Héctor Patricio
-tags:
+tags: agente IA inteligencia-artificial
 comments: true
 excerpt: "La palabra 'agente' ands por todos lados desde la salida de los LLM's. Hablemos de lo que son y cómo
 te pueden ayudar a desarrollar sistemas."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1440/v1739597131/ryan-klaus-Xa0BLOXVxrQ-unsplash_necdjp.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1739597131/ryan-klaus-Xa0BLOXVxrQ-unsplash_necdjp.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
