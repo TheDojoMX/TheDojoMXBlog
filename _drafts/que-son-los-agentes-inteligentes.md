@@ -41,11 +41,12 @@ que no están explícitamente programadas, en todo lo demás son muy similares.
 La forma más sencilla de programar un agente es crear un programa o módulo independiente
 que cumpla con las características que mencionamos anteriormente de las siguiente forma:
 
-- **Objetivo**: Tu agente debe estar especializado en un tipo de tareas.
+- **Objetivo**: Tu agente debe estar especializado en un tipo específico de tareas.
+- **Autonomía**: 
 
 ## Conclusión
 
 Los agentes son herramientas poderosas para crear sistemas que hagan cosas complejas, normalmente
 con poca programación pero mucho control de nuestro lado. Viene una época en la que
-cada vez se usarán más, por lo que te conviene conocerlos y aprender a usar esta 
+cada vez se usarán más, por lo que te conviene conocerlos y aprender a usar esta
 técnica de desarrollo.
