@@ -13,8 +13,8 @@ header:
 ---
 
 Con la llegada de los LLM's, los agentes empezaron a ganar más popularidad y
-los oímos por todos lados. En este artículo vamos a hablar de qué son, que los entiendas
-lo mejor posible y cómo te pueden ayudar.
+los oímos por todos lados. En este artículo vamos a hablar de qué son, para entenderlos
+lo mejor posible y no dejarnos llevar por el hype.
 
 ## ¿Qué es un agente?
 
