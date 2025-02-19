@@ -15,7 +15,6 @@ La series de tiempo tienen características especiales. Normalmente, los puntos 
 consisten un par de valores: un identificador (el momento en el que sucedió) y un valor
 (el valor que se observó).
 
-
 Estas características hacen que trabajar con ellas sea diferente, porque además
 se producen muchos de estos puntos de datos. Hablemos de cómo nos conviene almacenarlos.
 Además, veremos que tienen de especial las bases de datos para series de tiempo.
@@ -23,7 +22,7 @@ Además, veremos que tienen de especial las bases de datos para series de tiempo
 ## ¿Por qué no usar una base de datos relacional?
 
 Una base de datos relacional pensada en transacciones (OLTP) es muy flexible y sin duda
-puedes almacenar pares de valores de tiempo y el valor medido sin ninguna difucultad.
+puedes almacenar pares de valores de tiempo y el valor medido sin ninguna dificultad.
 
 El problema viene cuando quieres hacer consultas sobre grandes cantidades de datos.
 
