@@ -11,13 +11,15 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-El libro "Thinking in Systems" de Donella Meadows es un libro muy importante
-para cualquier desarrollador de software.
+El libro "Thinking in Systems" de Donella H. Meadows es un libro muy importante
+para cualquier desarrollador de software. ¿Por qué? Los desarrolladores nos dedicamos
+a hacer _sistemas_, y este es justo el tema principal del libro.
+
+Veamos por qué puede ser una buena lectura para ti.
 
 ## De qué trata
 
-**Thinking in systems** es lo que sse consideraría un libro un poco antiguo
-
+**Thinking in systems** es un libro un poco antiguo, publicado hace casi 25 años, en 1999.
 
 ## Qué podemos aprender los desarrolladores de software
 
