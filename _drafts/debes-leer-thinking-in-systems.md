@@ -23,7 +23,6 @@ Veamos por qué puede ser una buena lectura para ti.
 
 ## Qué podemos aprender los desarrolladores de software
 
-
 ## Conclusión
 
 Si eres desarrollador de software y quieres mejorar tu habilidad para crear
