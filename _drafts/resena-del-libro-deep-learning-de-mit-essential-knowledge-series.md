@@ -27,6 +27,10 @@ el **Deep Learning**.
 En este libro empezarás desde la introducción a lo que llamamos inteligencia artificial,
 machine learning y finalmente deep learning y los efectos que ha tenido en el mundo.
 
+Me gusta mucho que el libro te explica en términos simples la base matemática que sustenta
+todo lo que hacemos con los modelos y te aclara los términos que se escuchan por todos lados
+sin ser tan difícil de entender.
+
 ## Conclusión
 
 Si te quieres entender de manera un poco más profunda cómo funcionan las redes
@@ -34,7 +38,7 @@ neuronales en general y los detalles de las redes neuronales profundas, este
 libro es una excelente introducción, porque incluso te da un viaje por las matemáticas
 detrás del entrenamiento de los modelos que usamos diariamente.
 
-Como se escribió en 2017, no te habla de LLMs o cosas similares, pero sí de las 
+Como se escribió en 2017, no te habla de LLMs o cosas similares, pero sí de las
 bases que les permitieron nacer: el transformador. Incluso menciona cosas no tan
 famosas, como la computación neuromórfica, de la que no dudo que pueda
 tener relevancia en el futuro, o impactar en nuevas tecnologías y nuevas formas
