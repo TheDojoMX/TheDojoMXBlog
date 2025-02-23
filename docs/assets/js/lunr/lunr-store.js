@@ -868,4 +868,10 @@ var store = [{
         "tags": ["software-development","programming","técnicas-de-programación","buffer"],
         "url": "/2024/12/30/un-concepto-importante-los-buffers.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1733894437/philip-oroni-0Nh06vUjbLw-unsplash_q3mcrp.jpg"
+      },{
+        "title": "Reseña del libro 'Deep Learning' de MIT Press Essential Knowledge Series",
+        "excerpt":"La serie The MIT Press Essential Knowledge Series es una serie de libros de introducción a diferentes temas interesantes y actuales, sobre todo de ciencia y tecnología. Me gustan mucho porque son lo suficientemente introductorios para que cualquiera sin conocimiento previo del tema específico pueda introducirse, pero lo suficientemente completos...","categories": [],
+        "tags": ["libros","deep-learning","machine-learning","matemáticas"],
+        "url": "/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1740316729/daniele-levis-pelusi-1UT5e8z0x-s-unsplash_o9pag2.jpg"
       }]

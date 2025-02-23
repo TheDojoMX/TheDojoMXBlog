@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2025-01-01T14:47:54-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Un concepto importante: los buffers</title><link href="https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers.html" rel="alternate" type="text/html" title="Un concepto importante: los buffers" /><published>2024-12-30T00:00:00-06:00</published><updated>2024-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers</id><content type="html" xml:base="https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers.html"><![CDATA[<p>El concepto de buffer es usado por todos lados en el desarrollo de software, pero siento
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2025-02-23T07:51:28-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series</title><link href="https://blog.thedojo.mx/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html" rel="alternate" type="text/html" title="Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series" /><published>2025-02-23T00:00:00-06:00</published><updated>2025-02-23T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series</id><content type="html" xml:base="https://blog.thedojo.mx/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html"><![CDATA[<p>La serie <strong>The MIT Press Essential Knowledge Series</strong> es una serie de libros de introducción
+a diferentes temas interesantes y actuales, sobre todo de ciencia y tecnología.</p>
+
+<p>Me gustan mucho porque son lo suficientemente introductorios para que cualquiera
+sin conocimiento previo del tema específico pueda introducirse, pero lo suficientemente
+completos para salir con una buena visión general de ese tema específico.</p>
+
+<p>El libro del que quiero hablar es de un tema que se ha vuelto cada vez más importante,
+el <strong>Deep Learning</strong>.</p>
+
+<h2 id="reseña-del-deep-learning-de-john-d-kelleher">Reseña del Deep Learning de John D. Kelleher</h2>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/v1740318616/Deep_learning_csd5gy.jpg" alt="Portada del libro Deep Learning de John D. Kelleher" class="align-center" /></p>
+
+<p>En este libro empezarás desde la introducción a lo que llamamos inteligencia artificial,
+machine learning y finalmente deep learning, junto con los efectos que ha tenido en el mundo.</p>
+
+<p>Me gusta mucho que el libro te explica en términos simples la base matemática que sustenta
+todo lo que hacemos con los modelos y te aclara los términos que se escuchan por todos lados
+sin ser tan difícil de entender. Por ejemplo:</p>
+
+<ul>
+  <li>Te aclara que un <strong>modelo</strong> es una función en el sentido matemático y te explica cuál es el
+trabajo del entrenamiento para llegar a ese modelo</li>
+  <li>Explica lo que es el <strong>aprendizaje</strong> y la <strong>experiencia</strong></li>
+  <li>Aclara qué es un <strong>parámetro</strong></li>
+  <li>Deja muy claros los pasos de <strong>entrenamiento</strong> e <strong>inferencia</strong></li>
+</ul>
+
+<p>Después de poner las cartas sobre la mesa respecto términos y definiciones, se pasa a hablar
+de la historia de la inteligencia artificial y cómo es que llegamos <em>casi</em> hasta donde estamos
+ahora, porque este libro se escribió antes del boom de los LLMs, pero viéndolo desde nuestra
+perspectiva te puedes dar cuenta de lo mucho que sabe el autor del tema porque ya menciona
+a los transformadores (la base de los LLMs modernos) como un tipo de modelo de Deep Learning importante.</p>
+
+<p>Después de esto, pasa a explicar cómo se entrena a un perceptrón, o un modelo de una neurona,
+para que puedas entender el procedimiento básico y después pasar a los modelos que son
+el centro del libro: los modelos profundos.</p>
+
+<p>En este libro aprenderás que el deep learning es simplemente una forma de entrenar modelos
+que están compuestos por varias capas de neuronas, y que es un campo en sí mismo porque
+estos modelos no son tan fáciles de entrenar e incluso requieren matemáticas específicas y
+técnicas que han ido surgiendo con la prueba y el error.</p>
+
+<p>El libro te explica dos algoritmos esenciales en el deep learning:</p>
+
+<ul>
+  <li>El descenso de gradiente (gradient descent)</li>
+  <li>El algoritmo de retropropagación (backpropagation)</li>
+</ul>
+
+<p>Esta es la parte más pesada del libro respecto a matemáticas, incluso dice que te la puedes
+leer por encima si te cuestan mucho trabajo, pero que también puedes comprobar por ti
+mismo las matemáticas que te explica. Aquí es justo donde digo que esta serie profundiza
+lo suficiente para no sentirse como un libro sin profundidad que es la pura introducción.</p>
+
+<p>El libro finaliza con un análisis de lo que el autor considera lo que sigue para el deep learning
+y la inteligencia artificial en general, como la explicabilidad, la eficiencia, el cómputo
+especializado en imitar el cerebro, los transformadores (BERT), etc.</p>
+
+<p>Espero que este resumen te de una idea de lo que trata el libro.</p>
+
+<h2 id="conclusión-y-opinión">Conclusión y opinión</h2>
+
+<p>Si te quieres entender de manera un poco más profunda cómo funcionan las redes
+neuronales en general y los detalles de las redes neuronales profundas, este
+libro es una excelente introducción, porque incluso te da un viaje por las matemáticas
+detrás del entrenamiento de los modelos que usamos diariamente.</p>
+
+<p>Como se escribió en 2019, no te habla de LLMs o cosas similares, pero sí de las
+bases que les permitieron nacer: el transformador. Incluso menciona cosas no tan
+famosas, como la computación neuromórfica, de la que no dudo que pueda
+tener relevancia en el futuro, o impactar en nuevas tecnologías y nuevas formas
+de crear inteligencia artificial.</p>
+
+<p>Por su extensión, además, es un libro que vale la pena. Es cierto que se podría
+mejorar un poco en la forma de escribirlo, pero no es algo que te vaya a impedir
+extraer la información relevante.</p>
+
+<p>Si tienes bases de matemáticas de nivel preparatoria, en la que entiendes el
+álgebra y un poco de cálculo, estás del otro lado para entender este libro.
+Si no, puedes saltarte los capítulos matemáticos y leer todo lo demás para
+para darte una idea superficial del tema de Deep Learning y cómo puedes
+empezar a aprender la parte más técnica e incluirlo en tus desarrollos.</p>
+
+<p>Eso sí, este libro no tiene ni una línea de código, es un libro completamente
+conceptual para entender la bases antes de aventarnos de cabeza a la programación.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="libros" /><category term="deep-learning" /><category term="machine-learning" /><category term="matemáticas" /><summary type="html"><![CDATA[Hablemos del libro 'Deep Learning' de MIT Essential Knowledge Series, una introducción suficiente al tema.]]></summary></entry><entry><title type="html">Un concepto importante: los buffers</title><link href="https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers.html" rel="alternate" type="text/html" title="Un concepto importante: los buffers" /><published>2024-12-30T00:00:00-06:00</published><updated>2024-12-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers</id><content type="html" xml:base="https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers.html"><![CDATA[<p>El concepto de buffer es usado por todos lados en el desarrollo de software, pero siento
 que es un concepto poco entendido. En este artículo vamos a hablar de qué son los buffers,
 para qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor software.</p>
 
@@ -1380,91 +1466,4 @@ a veces poco, a veces mucho.</p>
 <strong>Designing Data-intensive Applications</strong>. Vale mucho más la pena que otros
 libros de diseño de software por su profundidad y practicidad, además de
 que te va a dar de qué platicar con otros desarrolladores de software
-que pueden estar en el mismo camino de desarrollo profesional que tú.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Matin-Kleppmann" /><category term="dato" /><category term="bases-de-datos" /><summary type="html"><![CDATA[Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.]]></summary></entry><entry><title type="html">Alternativas a Git</title><link href="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html" rel="alternate" type="text/html" title="Alternativas a Git" /><published>2024-07-18T18:00:00-06:00</published><updated>2024-07-18T18:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/07/18/alternativas-a-git</id><content type="html" xml:base="https://blog.thedojo.mx/2024/07/18/alternativas-a-git.html"><![CDATA[<p>Git es una herramienta que se considera <em>obligatoria</em> para los desarrolladores
-modernos por ser el programa usado para versionamiento de código usado por
-la mayoría de los proyectos.</p>
-
-<p>Pero no es ningún secreto que Git es una herramienta difícil de comprender y
-que el 90% de los desarrolladores le dan <strong>el uso más básico</strong>, temiendo romper algo
-y por eso tener que usar comandos más avanzados.</p>
-
-<p>Hablemos de por qué es así y después veamos algunas alternativas interesantes.</p>
-
-<h2 id="los-orígenes-de-git">Los orígenes de Git</h2>
-
-<p>Al igual que otros sistemas de control de versiones, Git nació como soporte al
-desarrollo de uno de los proyectos de software más importantes de todos los
-tiempos: el kernel de Linux. Fue creado por <strong>Linus Torvalds</strong>.</p>
-
-<p>Su objetivo no era ser una herramienta de uso masivo y fácil de usar, sino
-trabajar sin las limitantes de las herramientas que existían en ese momento.
-Y claramente, Linus lo creó a su manera. Algo interesante es que se llama
-“Git” porque en inglés británico es una palabra despectiva que se usa para
-llamar a alguien tonto o desagradable. Linus nombra sus proyectos como a sí
-mismo, y como cualquiera lo podría llamar así a él, decidió ponerle ese nombre
-a su sistema de manejo de versiones.</p>
-
-<p><strong>Git</strong> empezó a ser usado por la comunidad de Linux en 2005 y después por otros
-proyectos Open Source, pero su éxito se disparó cuando en 2008 surgió GitHub
-que facilitó su uso. Por ser una herramienta tan útil, ahora la tenemos como el
-estándar en versionmiento de código.</p>
-
-<p>Pero no es el único sistema de control de versiones moderno, hablemos de
-dos alternativas.</p>
-
-<h2 id="fossil">Fossil</h2>
-
-<p>Fossil fue creado por el autor de SQLite, <a href="https://www.hwaci.com/drh/"><strong>Richard Hipp</strong></a>, y al igual que Git,nació
-para soportar a este proyecto de software libre, el principal de su Hipp.</p>
-
-<p>Al buscar un sistema de control de versiones moderno, Richard no encontró nada que lo convenciera
-al cien por ciento, por lo que decidió crear Fossil, con las siguientes características:</p>
-
-<ol>
-  <li><strong>Integración de Wiki y Tickets</strong>: Fossil tiene incluye estas herramientas a las que Hipp y
-su equipo estaban acostumbrados.</li>
-  <li><strong>Foro y chat</strong>: Fossil está pensado para también ser el centro de conversación del proyecto.</li>
-  <li><strong>Autosync</strong>: permite que los cambios se sincronicen automáticamente sin tener que andar haciendo
-magia con las ramas y los commits.</li>
-</ol>
-
-<p>Personalmente, me gusta mucho la idea de tener todo integrado en un mismo
-sistema, y pienso que el que sistemas como Jira y Confluence se integren directamente
-con GitHub, Bitbucket y cosas similares, es una señal de que esta integración
-es un muy buena idea que ayuda a que el proceso de software sea más fluido.</p>
-
-<p>Puedes encontrar más información en <a href="https://fossil-scm.org/">fossil-scm.org</a>,
-para instalarlo por tu cuenta. Pero también existe una versión hosteada en la
-que de manera gratuita podrás tener el servicio de Fossil, equivalente a
-GitHub: <a href="https://chiselapp.com/">Chisel</a>.</p>
-
-<h2 id="pijul">Pijul</h2>
-
-<p>Pijul es un sistema de control de versiones pensado para ser lo más fácil de usar.
-Tiene un fundamento matemático: la teoría de parches (patch theory), lo cuál te da
-garantías interesantes, como la facilidad de uso y la reducción de errores
-catastróficos. Combina las dos formas principales en las que se han creado sistemas
-control de versiones: los sistemas basados en spapshots (como la mayoría de los
-sistemas de control de versiones más conocidos, incluido Git) y los sistemas
-basados en parches (como <a href="https://darcs.net/">Darcs</a>, un SVC poco conocido pero
-más fácil de usar).</p>
-
-<p>Los sistemas basados en snapshots son más rápidos pero más frágiles y difíciles de
-usar y los basado en parches son lentos. Es por eso que Pijul cobina lo mejor de ambos
-tipos de sistemas y mientras se mantiene lo suficientemente rápido sigue siendo fácil
-de usar incluso en situaciones en las que Git se vuelve complejo, como en merges,
-conflictos y cherry-picks. En un post posterior hablaremos ge Pijul.</p>
-
-<p>Puedes encontrarlo en <a href="https://pijul.org/">pijul.org</a>, te recomiendo
-que si quieres probar algo fundamentalmente diferente a Git, pero con las mismas
-funciones externas, le des una oportunidad.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>No vamos a reemplazar a Git en el corto plazo y probablmente nunca lo hagamos
-por lo extendido que está su uso (piensa en el efecto Lindsey), pero es bueno
-saber que existen alternativas. Estas herramientas
-nos enseñan cosas interesantes sobre el desarrollo de software, como que casi
-siempre hay más de una forma de lograr lo que queremos.
-Ojalá que en el futuro, Git tome algunas de las ideas de estos proyectos y mejore su
-experiencia de usuario.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="git" /><category term="version-control" /><category term="fossil" /><category term="pijul" /><summary type="html"><![CDATA[Git es una herramienta compleja, ya que no fue pensada desde el principio para tener buena experiencia de usuario, veamos algunas alternativas.]]></summary></entry></feed>
+que pueden estar en el mismo camino de desarrollo profesional que tú.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Matin-Kleppmann" /><category term="dato" /><category term="bases-de-datos" /><summary type="html"><![CDATA[Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.]]></summary></entry></feed>
