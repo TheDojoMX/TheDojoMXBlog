@@ -11,5 +11,7 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
-Ocaml es un lenguaje de programación funcional que está ganando popularidad en los últimos años, sobre todo en el mundo de la programación de sistemas financieros.
+Ocaml es un lenguaje de programación funcional que está ganando popularidad en los últimos años,
+sobre todo en el mundo de la programación de sistemas financieros.
 
+## ¿Por qué está ganando popularidad?

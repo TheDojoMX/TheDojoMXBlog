@@ -1,18 +1,50 @@
 ---
-title: "Lean: un lenguaje para escribir código correcto"
-date: 2023-11-01
+title: 'Lean: un lenguaje para escribir código correcto'
+date: 2023-11-01T00:00:00.000Z
 author: Héctor Patricio
-tags: lean programación-funcional
+tags: lean programación-funcional verificación formal
 comments: true
-excerpt: "Cada vez es más importante crear sistemas que estén bien verificados y que provean garantías sobre su funcionamiento. Lean te puede ayudar a lograrlo."
+excerpt: >-
+  Cada vez es más importante crear sistemas que estén bien verificados y que
+  provean garantías sobre su funcionamiento. Lean te puede ayudar a lograrlo.
 header:
-  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1702275274/shubham-dhage-ONtKHht3aOE-unsplash_sgwtqx.jpg
-  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702275274/shubham-dhage-ONtKHht3aOE-unsplash_sgwtqx.jpg
-  overlay_filter: rgba(0, 0, 0, 0.5)
+  overlay_image: >-
+    https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1702275274/shubham-dhage-ONtKHht3aOE-unsplash_sgwtqx.jpg
+  teaser: >-
+    https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702275274/shubham-dhage-ONtKHht3aOE-unsplash_sgwtqx.jpg
+  overlay_filter: 'rgba(0, 0, 0, 0.5)'
 ---
 
-La verificación de sistemas es muy importante para lograr aplicaciones que cumplan misiones críticas.
+La verificación de sistemas es muy importante para lograr aplicaciones que se
+encarguen de tareas importantes, en las que no se puede permitir que el software
+falle durante su ejecución en manos de los usuarios. Por ejemplo, sistemas que
+manejan una gran cantidad de dinero, maquinaria industrial, los programas
+que controlan naves espaciales, aviones o vehículos. A este software se le
+llama de **misión crítica**, ya que vidas o grandes cantidades de recursos
+dependen de él.
+
+La verificación de sistemas se encarga de asegurarnos que no tenemos ningún
+hoyo lógico en nuestro programa, es decir, que no hay ningún error en la
+parte de la lógica que vaya a hacer fallar el software mientras se ejecute.
+Sabemos que una falla lógica (una división por cero, un ciclo infinito, un cálculo erróneo,
+un tipo de dato no esperado y muchas otras cosas) puede causar cualquiera de las
+siguientes consecuencias:
+
+- El software entrega una respuesta incorrecta
+- El software se cuelga y no responde
+- El sistema colapsa y se reinicia
+- El sistema toma acciones incorrectas
+
+Para asegurarnos de crear software más confiable, existen lenguajes que nos permiten
+probar que nuestros sistemas hacen lo que queremos que hagan. Uno de ellos es
+[Lean](https://leanprover.github.io/), del que hablaremos en este artículo.
 
 ## ¿Qué es Lean?
 
-Lean es un lenguaje de programación pensado para crear código correcto. Es un lenguaje funcional, al igual que Elixir desarrollado en Brasil.
+**Lean** es un lenguaje de programación para crear sistemas verificados.
+Lean también es un probador de teoremas interactivo, así que es una gran herramienta
+para científicos y matemáticos que quieren verificar sus ideas.
+Fue creado por Leonardo de Moura mientras trabajaba en Microsoft Research. Lean 4 
+es la última versión al momento de escribir este artículo.
+
+# Introducción a Lean

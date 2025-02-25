@@ -4,7 +4,7 @@ date: 2021-12-05
 author: Héctor Patricio
 tags: Cohesión acoplamiento software
 comments: true
-excerpt: "En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código"
+excerpt: "En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acoplamiento y cómo afectan al diseño de tu software y el código"
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1120/v1638804031/adrian-trinkaus-7UCmXtyg1CQ-unsplash_zhc1uk.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_320/v1638804031/adrian-trinkaus-7UCmXtyg1CQ-unsplash_zhc1uk.jpg
@@ -17,7 +17,7 @@ En este artículo vamos a definir cada uno de esos términos de manera sencilla,
 
 ## Un poco de historia
 
-Estos dos conceptos y otros relacionados fueron desarrollados por [Larry Constantine](https://history.computer.org/pioneers/constantine.html) en la década de los 60's y publicados en los años siguientes, junto con el nacimiento del [diseño estructurado de sistemas](https://www.win.tue.nl/~wstomv/quotes/structured-design.html). Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Lo que se ha descubierto es que efectivamente, las dependencias infinitas (alto acoplamiento y baja cohesión) crean problemas que son casi imposobles de resolver en las bases de código y es cuando terminamos diciendo: _"Es más fácil hacerlo de nuevo."_
+Estos dos conceptos y otros relacionados fueron desarrollados por [Larry Constantine](https://history.computer.org/pioneers/constantine.html) en la década de los 60's y publicados en los años siguientes, junto con el nacimiento del [diseño estructurado de sistemas](https://www.win.tue.nl/~wstomv/quotes/structured-design.html). Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Lo que se ha descubierto es que efectivamente, las dependencias infinitas (alto acoplamiento y baja cohesión) crean problemas que son casi imposibles de resolver en las bases de código y es cuando terminamos diciendo: _"Es más fácil hacerlo de nuevo."_
 
 Ahora sí, hablemos de lo que quisiéramos lograr con nuestro software, para no terminar queriéndolo rehacer de nuevo en poco tiempo.
 
@@ -62,7 +62,7 @@ Constantine menciona que mientras más cohesión tengan los módulos, menos acop
 
 > "A mayor cohesión de los módulos individuales en el sistema, menor será el acoplamiento" - [Structured Design by Yourdon and Constantine](https://www.win.tue.nl/~wstomv/quotes/structured-design.htm)
 
-Como podrás ver, no son medidas independientes, sino correlacionadas en la práctica.
+Como podrás ver, no son medidas independientes; están relacionadas en la práctica.
 
 ## Cómo lograr alta cohesión y bajo acoplamiento
 

@@ -552,7 +552,7 @@ var store = [{
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_200,w_512/v1670303988/DALL_E_2022-12-05_13.19.43_-_rust_on_a_gold_wall_digital_art_illustration_cinematic_m5cplm.png"
       },{
         "title": "¿Cómo aprender Rust? Recursos para empezar",
-        "excerpt":"En el artículo pasado hablamos de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo. Ahora hablemos de cómo empezar. Empecemos con los recursos en español y sigamos con recursos en inglés. Guía oficial En la página oficial de Rust puedes encontrar una página que te da...","categories": [],
+        "excerpt":"En el artículo pasado hablamos de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo. Ahora hablemos de cómo empezar, primero veamos los recursos en español y sigamos con recursos en inglés. Guía oficial En la página oficial de Rust puedes encontrar una página que te da...","categories": [],
         "tags": ["rust","aprendizaje","cursos"],
         "url": "/2022/12/18/como-aprender-rust.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_crop,h_400,w_1024/v1671168726/DALL_E_2022-12-06_16.53.33_-_mandelbrot_set_fractal_made_of_rust_on_a_gold_wall_digital_art_illustration_cinematic_t5cz0h.png"
@@ -796,4 +796,82 @@ var store = [{
         "tags": ["javascript-engine","v8","chakra"],
         "url": "/2023/12/14/engines-de-javascript-y-sus-usos.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1701323922/garett-mizunaka-xFjti9rYILo-unsplash_mh0wys.jpg"
+      },{
+        "title": "¿Qué producimos los desarrolladores de software?",
+        "excerpt":"Para algunos, la respuesta a la pregunta del título es simplemente “software”, porque parece tan obvia que el mismo nombre lo dice. Y aunque el software tiene una definición concreta, en este artículo vamos a desmunazar los productos de un proceso de desarrollo de software. Lo que quiero que veas...","categories": [],
+        "tags": ["software","ingenieria-de-software","arquitectura"],
+        "url": "/2024/03/09/que-producimos-los-desarrolladores-de-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702186060/hunter-reilly-O7NHbnjrz94-unsplash_dntxcb.jpg"
+      },{
+        "title": "5 pláticas de StrageLoop que tienes que ver",
+        "excerpt":"StrangeLoop fue una de las mejores conferencias de tecnología del mundo porque en ella se tratan temas poco comunes relacionados con la computación, el desarrollo de software e incluso el arte, y lo mejor: la combinación entre entras cosas. Si te gusta reflexionar sobre temas profundos de la computación, te...","categories": [],
+        "tags": ["talks","charlas","strangeloop","software-engineering"],
+        "url": "/2024/03/30/5-platicas-de-strageloop-que-tienes-que-ver.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702186032/neom-WLeWJW_WneE-unsplash_rbh7sr.jpg"
+      },{
+        "title": "Alternativas a Git",
+        "excerpt":"Git es una herramienta que se considera obligatoria para los desarrolladores modernos por ser el programa usado para versionamiento de código usado por la mayoría de los proyectos. Pero no es ningún secreto que Git es una herramienta difícil de comprender y que el 90% de los desarrolladores le dan...","categories": [],
+        "tags": ["git","version-control","fossil","pijul"],
+        "url": "/2024/07/18/alternativas-a-git.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1714573988/osman-rana-yM3T1vYh8Oc-unsplash_gwkcc2.jpg"
+      },{
+        "title": "Por qué debes leer Designing Data-intensive Applications",
+        "excerpt":"Uno de los libros más recomendados para todos los desarrolladores modernos es “Designing Data-intensive Applications” de Martin Kleppmann. En este artículo corto vamos a hablar de por qué vale la pena leerlo. ¿Quién es Martin Kleppmann? Martin es un desarrollador, investigador, escritor y profesor de ciencias de la computación bastante...","categories": [],
+        "tags": ["Matin-Kleppmann","dato","bases-de-datos"],
+        "url": "/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1723787325/julien-tromeur-EOSHmMbjT8g-unsplash_t1d4qt.jpg"
+      },{
+        "title": "¿Cómo funciona TensorFlow?",
+        "excerpt":"TensorFlow es una de las herramientas más populares e influyentes en el campo de la del aprendizaje automático. En este artículo vamos a ver qué es exactamente y cómo funciona. ¿Qué es TensorFlow? Siempre que hablamos de TensorFlow se dice que es una “biblioteca (o librería) para hacer aprendizaje automático,...","categories": [],
+        "tags": ["tensorflow","machine-learning","ai","deep-learning"],
+        "url": "/2024/09/16/como-funciona-tensorflow.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg"
+      },{
+        "title": "¿Cómo funciona un intérprete?",
+        "excerpt":"Un intérprete es un programa que lee código fuente y se encarga de ejecutarlo. En este artículo vamos a hablar de sus etapas y las principales tareas que realiza, para darte la idea de cómo funciona y si lo deseas, puedas tener idea de cómo hacerlo tu mismo. Empecemos por...","categories": [],
+        "tags": ["compiladores","intérprete","lenguajes-de-programación"],
+        "url": "/2024/09/28/como-funciona-un-interprete.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1721878999/daniele-levis-pelusi-FLEZ4rYjP0w-unsplash_auzjkk.jpg"
+      },{
+        "title": "Los diferentes grados de diseño de software",
+        "excerpt":"Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza a hablar de patrones de diseño, infraestructura, y otras cosas con las que no nos conviene meternos en ese nivel. Es por eso que en este artículo vamos a proponer una taxonomía para los...","categories": [],
+        "tags": ["diseño-de-software","arquitectura-de-software"],
+        "url": "/2024/10/19/los-diferentes-grados-de-diseno-de-software.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_400/v1725143065/natalia-y-DIewyzpUbRc-unsplash_npwcd3.jpg"
+      },{
+        "title": "Desarrolladores que deberías admirar: Martin Kleppmann",
+        "excerpt":"Martin Kleppmann es un desarrollador de software, investigador y profesor muy prolífico. Hablemos de su trabajo, ideas y de por qué es alguien que podrías admirar. Su carrera Martin ha desarrollado su carrera e investigación alrededor del software deTambién trabaja en seguridad de sistemas distribuidos, un tema relacionado al anterior,...","categories": [],
+        "tags": ["Martin-Kleppmann","bases-de-datos","sistemas-distribuidos","software-local-first"],
+        "url": "/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:30,w_1400/v1727612113/xavier-coiffic-us2QhEKqPlM-unsplash_cnoliq.jpg"
+      },{
+        "title": "¿Qué es la búsqueda binaria?",
+        "excerpt":"Uno de los algoritmos más fáciles de entender, que incluso sin preparación aplicamos en la vida real y que se enseña en las primeras clases de programación es la búsqueda binaria. Vamos a hablar de este algoritmo y su relación profunda con las ciencias de la computación y la información...","categories": [],
+        "tags": ["algoritmos","búsqueda"],
+        "url": "/2024/10/26/que-es-la-busqueda-binaria.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1729489258/nastya-kvokka-Ifk3WssHNRw-unsplash_m2u7vh.jpg"
+      },{
+        "title": "¿Qué es la programación asíncrona?",
+        "excerpt":"La programación asíncrona es uno de los primeros temas avanzados que encontrarás al programar, especialmente si desarrollas aplicaciones web. Esto es aún más común si haces JavaScript, que es un lenguaje que se usa en entornos de ejecución asíncronos. En este artículo la explicaremos para que puedas programar de manera...","categories": [],
+        "tags": ["async/await","concurrencia","javascript"],
+        "url": "/2024/10/31/que-es-la-programacion-asincrona.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg"
+      },{
+        "title": "¿Qué son los requerimientos funcionales?",
+        "excerpt":"“Requerimientos funcionales” es una expresión muy rebuscada para un concepto muy sencillo relacionado con el diseño de los sistemas de software: las cosas que tu sistema HACE. En este artículo hablaremos de formas de encontrarlos, definirlos, documentarlos y tenerlos listos para la siguiente etapa del desarrollo de software. Cómo definir...","categories": [],
+        "tags": ["arquitectura"],
+        "url": "/2024/11/23/que-son-los-requerimientos-funcionales.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1731216878/isabelle-mannino-USOSteP8hOw-unsplash_cbxmst.jpg"
+      },{
+        "title": "Un concepto importante: los buffers",
+        "excerpt":"El concepto de buffer es usado por todos lados en el desarrollo de software, pero siento que es un concepto poco entendido. En este artículo vamos a hablar de qué son los buffers, para qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor software. ¿Qué es...","categories": [],
+        "tags": ["software-development","programming","técnicas-de-programación","buffer"],
+        "url": "/2024/12/30/un-concepto-importante-los-buffers.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1733894437/philip-oroni-0Nh06vUjbLw-unsplash_q3mcrp.jpg"
+      },{
+        "title": "Reseña del libro 'Deep Learning' de MIT Press Essential Knowledge Series",
+        "excerpt":"La serie The MIT Press Essential Knowledge Series es una serie de libros de introducción a diferentes temas interesantes y actuales, sobre todo de ciencia y tecnología. Me gustan mucho porque son lo suficientemente introductorios para que cualquiera sin conocimiento previo del tema específico pueda introducirse, pero lo suficientemente completos...","categories": [],
+        "tags": ["libros","deep-learning","machine-learning","matemáticas"],
+        "url": "/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1740316729/daniele-levis-pelusi-1UT5e8z0x-s-unsplash_o9pag2.jpg"
       }]

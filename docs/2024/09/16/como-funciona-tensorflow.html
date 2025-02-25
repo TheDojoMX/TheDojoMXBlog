@@ -1,0 +1,878 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>¿Cómo funciona TensorFlow? - The Dojo MX Blog</title>
+<meta name="description" content="TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablemos más de cómo funciona.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="¿Cómo funciona TensorFlow?">
+<meta property="og:url" content="https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html">
+
+
+  <meta property="og:description" content="TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablemos más de cómo funciona.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-09-16T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
+
+<script src="/assets/js/sharect.min.js"></script>
+<!-- Fathom - beautiful, simple website analytics -->
+   <script src="https://cdn.usefathom.com/script.js" data-site="NGGHUUZH" defer></script>
+<!-- / Fathom -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html",
+      "name": "¿Cómo funciona TensorFlow?",
+      "headline": "¿Cómo funciona TensorFlow?",
+      "keywords": "tensorflow,machine-learning,ai,deep-learning",
+      "description": "TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablemos más de cómo funciona.",
+      "articleBody": "TensorFlow es una de las herramientas más populares e influyentes\nen el campo de la del aprendizaje automático. En este artículo vamos a ver\nqué es exactamente y cómo funciona.\n\n¿Qué es TensorFlow?\n\nSiempre que hablamos de TensorFlow se dice que es una “biblioteca (o librería)\npara hacer aprendizaje automático, pero este definición no es muy\nexplícita y por eso vamos a ver cómo nos permite crear modelos de\naprendizaje.\n\nPara crear modelos de aprendizaje automático, tenemos que hacer muchos cálculos\nmatemáticos, la gran mayoría son operaciones de multiplicación de matrices.\nEstos cálculos no son eficientes en un procesador tradicional y por eso se\nrequiere de toda la ayuda que se pueda conseguir para hacerlos lo más rápido\nposible y gastando menos energía.\n\nEs aquí donde entra TensorFlow, una biblioteca que permite representar estos\ncálculos mediante grafos de cómputo y después ejecutarlos en procesadores\nespecializados como tarjetas gráficas y otros procesadores eficientes en\noperaciones matemáticas pesadas. Además, TensorFlow abstrae al usuario final (tú),\nde los detalles de implementación de muchas funciones y operaciones matemáticas\nque se usan mucho en el aprendizaje automático. Y finalmente, con su API de alto\nnivel, Keras, te permite crear diferentes tipos de redes neuronales sin\nque tengas que pelearte con los detalles de implementación.\n\nY es aquí donde empieza lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo\nllegamos a él y para qué nos sirve? Veamos.\n\nGrafos de cómputo de TensorFlow\n\nPara entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su\nrepresentación, por ejemplo, sumemos dos números, que llamaremos X y Y.\n\n¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que podemos ver con\nuna herramienta de análisis de TensorFlow llamada TensorBoard:\n\n\n\nPuedes pensar en este grafo como una serie de nodos que representan cada uno\nuna operación sobre conjuntos de datos numéricos llamados tensores. Cuando\nejecutamos este grafo, los tensores fluyen por estos nodos, transformándose\nen cada uno, hasta que obtenemos el resultado final de la operación. (Los nodos\nque dicen Identity son operaciones de copia o lectura de valores, útiles para\nel funcionamiento interno de  TensorFlow).\n\nLa otra cosa que podemos notar hasta abajo de la gráfica son los dos nodos que\nrepresentan nuestros números simples: X scalar y Y scalar, ya que los definimos\ncomo números simples, que también pueden pensarse como tensores de una dimensión.\n\nFormalmente, TensorFlow te da una serie de estructuras de datos, que puedes\nir construyendo poco a poco para definir todas las operaciones que necesites hacer.\n\nEn una red neuronal, estos grafos son mucho más complicados, pero justo ese es\nel trabajo de TensorFlow: ayudarte a definirlos y a ejecutarlos en el hardware\nmás conveniente para tu proyecto.\n\nUsar los grafos de cómputo de TF te permite varias cosas más:\n\n\n  Optimización de las operaciones: TensorFlow tiene todo un sistema de optimización\nllamado Grappler, que se encarga varias optimizaciones.\n  Paralelización. Con las operaciones divididas, TensorFlow puede verificar\nqué operaciones son independientes y puede ejecutarlas en otros procesadores\nsi están disponibles.\n  Exportación. Una vez teniendo las operaciones definidas en un grafo, no necesitamos\nde Python para ejecutarlas, así que TensorFlow puede ejecutarlas en otros dispositivos\ny usando otros lenguajes.\n\n\nEsta definición de grafos de cómputo no es la única forma de trabajar con TensorFlow,\nya que desde su versión 2.0, también permite trabajar con un modo más imperativo,\nque se siente más integrado con Python y más dinámico: la ejecución adelantada (en\ninglés: eager execution). Con esta forma de ejecución, las operaciones se van\nejecutando inmediatamente después de definirlas. Esto es más fácil de programar y\nde leer, pero deja poco espacio para la optimización. Es justamente como la comparación\nentre un lenguaje compilado y uno interpretado.\n\nTensorFlow y Keras\n\nKeras era otra biblioteca que se creó por separado, para hacer más fácil de usar\nla versión 1.0 de TensorFlow, que era bastante más verbosa de programar (por sólo\nsoportar grafos de cómputo estáticos).Sin embargo, en la versión 2.0 de TensorFlow,\nKeras se volvió parte del paquete.\n\nKeras te permite crear modelos de aprendizaje profundo de manera sencilla. Es la\nmanera fácil de usar TensorFlow, pero también te permite complicarte tanto como quieras\no necesites (esperamos que sea esto último). Keras usa el principio de “revelación\nprogresiva de la complejidad”, lo que significa que puedes empezar de manera muy\nsencilla e ir aprendiendo cosas conforme vayas avanzando en hacer cosas más complejas.\n\nAsí que la forma más común de usar TensorFlow para crear tus modelos de machine\nlearning es mediante la interfaz de Keras, que además de todo te provee de\nutilidades que son de uso muy común en las redes neuronales. Por ejemplo, provee\nregularizadores, inicializadores, funciones de activación, optimizadores, y muchas\nutilidades más. Es por eso que ya casi no se concibe el uso de TensorFlow para\ncasos comunes sin usar Keras.\n\nTensorFlow y MLIR\n\nMLIR es una herramienta para crear compiladores hecha por parte del mismo\nequipo que hizo LLVM, la infraestructura para compiladores que está detrás\nde la mayoría de los compiladores modernos.\n\nLa especialidad de MLIR es hacer traducciones para arquitecturas de hardware no\ntradicionales,usando un lenguaje intermedio multi-capa al que le puedes agregar\nmás plugins para diferentes arquitecturas de ejecutores. MLIR es muy usado\npara computación de alto rendimiento, justamente la que necesitamos para\ncrear modelo de aprendizaje automático complejos en tiempos y con costos\nrazonables.\n\nAsí que TensorFlow, aprovechando este sistema, usa MLIR para compilar los\ngrafos de cómputo y los modelos para hardware específico, para que se pueda\nobtener el mejor rendimiento posible.\n\nTensorFlow y su relación con el hardware\n\nDespués de la sección anterior, es muy probable que la relación de TF con\nel hardware quede muy clara: TensorFlow ayuda a que se pueda compilar\nde mejor manera el código con los cálculos para poder ejecutarlo\nen el hardware especializado.\n\nIF soporta gran variedad de tipos de hardware y es por eso que hasta el\nmomento es la biblioteca de machine learning con mejor soporte para\ndistribuir tus modelos en diferentes dispositivos, desde procesadores\nespecializados hasta que corran directamente en tu teléfono o navegador.\n\nConclusión\n\nSi quieres hacer machine learning, lo más probable es que tengas que\naprender TensorFlow, una herramienta muy útil para hacer los modelos usados\nhoy.\n\nEspero que lo que hablamos sobre TensorFlow en este artículo te haya ayudado\na entenderlo un poco más. En otro artículo hablaremos de su competidor\nmás directo: PyTorch.\n",
+      "datePublished": "2024-09-16 00:00:00 -0600",
+      "dateModified": "2024-09-16 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1450/v1725143057/gabriel-izgi-cfQEO_1S0Rs-unsplash_ihiase.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          ¿Cómo funciona TensorFlow?
+
+        
+      </h1>
+      
+        <p class="page__lead">TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablemos más de cómo funciona.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1063 palabras | 8 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="¿Cómo funciona TensorFlow?">
+    <meta itemprop="description" content="TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablemos más de cómo funciona.">
+    <meta itemprop="datePublished" content="2024-09-16T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p><strong>TensorFlow</strong> es una de las herramientas más populares e influyentes
+en el campo de la del aprendizaje automático. En este artículo vamos a ver
+qué es exactamente y cómo funciona.</p>
+
+<h2 id="qué-es-tensorflow">¿Qué es TensorFlow?</h2>
+
+<p>Siempre que hablamos de TensorFlow se dice que es una “biblioteca (o librería)
+para hacer aprendizaje automático, pero este definición no es muy
+explícita y por eso vamos a ver <em>cómo nos permite</em> crear modelos de
+aprendizaje.</p>
+
+<p>Para crear modelos de aprendizaje automático, tenemos que hacer muchos cálculos
+matemáticos, la gran mayoría son operaciones de multiplicación de matrices.
+Estos cálculos no son eficientes en un procesador tradicional y por eso se
+requiere de toda la ayuda que se pueda conseguir para hacerlos lo más rápido
+posible y gastando menos energía.</p>
+
+<p>Es aquí donde entra <strong>TensorFlow</strong>, una biblioteca que permite <em>representar</em> estos
+cálculos mediante grafos de cómputo y después ejecutarlos en procesadores
+especializados como tarjetas gráficas y otros procesadores eficientes en
+operaciones matemáticas pesadas. Además, TensorFlow abstrae al usuario final (tú),
+de los detalles de implementación de muchas funciones y operaciones matemáticas
+que se usan mucho en el aprendizaje automático. Y finalmente, con su <em>API</em> de alto
+nivel, <strong>Keras</strong>, te permite crear diferentes tipos de redes neuronales sin
+que tengas que pelearte con los detalles de implementación.</p>
+
+<p>Y es aquí donde empieza lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
+llegamos a él y para qué nos sirve? Veamos.</p>
+
+<h2 id="grafos-de-cómputo-de-tensorflow">Grafos de cómputo de TensorFlow</h2>
+
+<p>Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su
+representación, por ejemplo, sumemos dos números, que llamaremos X y Y.</p>
+
+<p>¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que podemos ver con
+una herramienta de análisis de TensorFlow llamada TensorBoard:</p>
+
+<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_250/v1726379906/Screenshot_2024-09-14_at_23.53.34_1_izykn5.png" alt="Imagen de un grafo de cómputo de TensorFlow" class="align-center"></p>
+
+<p>Puedes pensar en este grafo como una serie de nodos que representan cada uno
+una operación sobre conjuntos de datos numéricos llamados tensores. Cuando
+ejecutamos este grafo, los tensores <em>fluyen</em> por estos nodos, transformándose
+en cada uno, hasta que obtenemos el resultado final de la operación. (Los nodos
+que dicen <code class="language-plaintext highlighter-rouge">Identity</code> son operaciones de copia o lectura de valores, útiles para
+el funcionamiento interno de  TensorFlow).</p>
+
+<p>La otra cosa que podemos notar hasta abajo de la gráfica son los dos nodos que
+representan nuestros números simples: X scalar y Y scalar, ya que los definimos
+como números simples, que también pueden pensarse como tensores de una dimensión.</p>
+
+<p>Formalmente, TensorFlow te da una serie de estructuras de datos, que puedes
+ir construyendo poco a poco para definir todas las operaciones que necesites hacer.</p>
+
+<p>En una red neuronal, estos grafos son mucho más complicados, pero justo ese es
+el trabajo de TensorFlow: ayudarte a definirlos y a ejecutarlos en el hardware
+más conveniente para tu proyecto.</p>
+
+<p>Usar los grafos de cómputo de TF te permite varias cosas más:</p>
+
+<ul>
+  <li>
+<strong>Optimización de las operaciones</strong>: TensorFlow tiene todo un sistema de optimización
+llamado <code class="language-plaintext highlighter-rouge">Grappler</code>, que se encarga varias optimizaciones.</li>
+  <li>
+<strong>Paralelización</strong>. Con las operaciones divididas, TensorFlow puede verificar
+qué operaciones son independientes y puede ejecutarlas en otros procesadores
+si están disponibles.</li>
+  <li>
+<strong>Exportación</strong>. Una vez teniendo las operaciones definidas en un grafo, no necesitamos
+de Python para ejecutarlas, así que TensorFlow puede ejecutarlas en otros dispositivos
+y usando otros lenguajes.</li>
+</ul>
+
+<p>Esta definición de grafos de cómputo no es la única forma de trabajar con TensorFlow,
+ya que desde su versión 2.0, también permite trabajar con un modo más imperativo,
+que se siente más integrado con Python y más dinámico: la ejecución adelantada (en
+inglés: <em>eager execution</em>). Con esta forma de ejecución, las operaciones se van
+ejecutando inmediatamente después de definirlas. Esto es más fácil de programar y
+de leer, pero deja poco espacio para la optimización. Es justamente como la comparación
+entre un lenguaje compilado y uno interpretado.</p>
+
+<h2 id="tensorflow-y-keras">TensorFlow y Keras</h2>
+
+<p>Keras era otra biblioteca que se creó por separado, para hacer más fácil de usar
+la versión 1.0 de TensorFlow, que era bastante más verbosa de programar (por sólo
+soportar grafos de cómputo estáticos).Sin embargo, en la versión 2.0 de TensorFlow,
+Keras se volvió parte del paquete.</p>
+
+<p>Keras te permite crear modelos de aprendizaje profundo de manera sencilla. Es la
+manera fácil de usar TensorFlow, pero también te permite complicarte tanto como quieras
+o necesites (esperamos que sea esto último). Keras usa el principio de “revelación
+progresiva de la complejidad”, lo que significa que puedes empezar de manera muy
+sencilla e ir aprendiendo cosas conforme vayas avanzando en hacer cosas más complejas.</p>
+
+<p>Así que la forma más común de usar TensorFlow para crear tus modelos de machine
+learning es mediante la interfaz de Keras, que además de todo te provee de
+utilidades que son de uso muy común en las redes neuronales. Por ejemplo, provee
+regularizadores, inicializadores, funciones de activación, optimizadores, y muchas
+utilidades más. Es por eso que ya casi no se concibe el uso de TensorFlow para
+casos comunes sin usar Keras.</p>
+
+<h2 id="tensorflow-y-mlir">TensorFlow y MLIR</h2>
+
+<p>MLIR es una herramienta para crear compiladores hecha por parte del mismo
+equipo que hizo LLVM, la infraestructura para compiladores que está detrás
+de la mayoría de los compiladores modernos.</p>
+
+<p>La especialidad de MLIR es hacer traducciones para arquitecturas de hardware no
+tradicionales,usando un lenguaje intermedio multi-capa al que le puedes agregar
+más plugins para diferentes arquitecturas de ejecutores. MLIR es muy usado
+para computación de alto rendimiento, justamente la que necesitamos para
+crear modelo de aprendizaje automático complejos en tiempos y con costos
+razonables.</p>
+
+<p>Así que TensorFlow, aprovechando este sistema, usa MLIR para compilar los
+grafos de cómputo y los modelos para hardware específico, para que se pueda
+obtener el mejor rendimiento posible.</p>
+
+<h2 id="tensorflow-y-su-relación-con-el-hardware">TensorFlow y su relación con el hardware</h2>
+
+<p>Después de la sección anterior, es muy probable que la relación de TF con
+el hardware quede muy clara: TensorFlow ayuda a que se pueda compilar
+de mejor manera el código con los cálculos para poder ejecutarlo
+en el hardware especializado.</p>
+
+<p><strong>IF</strong> soporta gran variedad de tipos de hardware y es por eso que hasta el
+momento es la biblioteca de machine learning con mejor soporte para
+distribuir tus modelos en diferentes dispositivos, desde procesadores
+especializados hasta que corran directamente en tu teléfono o navegador.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Si quieres hacer machine learning, lo más probable es que tengas que
+aprender TensorFlow, una herramienta muy útil para hacer los modelos usados
+hoy.</p>
+
+<p>Espero que lo que hablamos sobre TensorFlow en este artículo te haya ayudado
+a entenderlo un poco más. En otro artículo hablaremos de su competidor
+más directo: <strong>PyTorch</strong>.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ai" class="page__taxonomy-item" rel="tag">ai</a><span class="sep">, </span>
+    
+      <a href="/tags/#deep-learning" class="page__taxonomy-item" rel="tag">deep-learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine-learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#tensorflow" class="page__taxonomy-item" rel="tag">tensorflow</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2024-09-16T00:00:00-06:00">September 16, 2024</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%C2%BFC%C3%B3mo+funciona+TensorFlow%3F%20https%3A%2F%2Fblog.thedojo.mx%2F2024%2F09%2F16%2Fcomo-funciona-tensorflow.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F09%2F16%2Fcomo-funciona-tensorflow.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F09%2F16%2Fcomo-funciona-tensorflow.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html" class="pagination--pager" title="Por qué debes leer Designing Data-intensive Applications
+">Anterior</a>
+    
+    
+      <a href="/2024/09/28/como-funciona-un-interprete.html" class="pagination--pager" title="¿Cómo funciona un intérprete?
+">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1740316729/daniele-levis-pelusi-1UT5e8z0x-s-unsplash_o9pag2.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html" rel="permalink">Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 23-02-2025
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos del libro ‘Deep Learning’ de MIT Essential Knowledge Series, una introducción suficiente al tema.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1733894437/philip-oroni-0Nh06vUjbLw-unsplash_q3mcrp.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/12/30/un-concepto-importante-los-buffers.html" rel="permalink">Un concepto importante: los buffers
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-12-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Los buffers son una herramienta poderosa que puedes usar para resolver problemas. Hablemos de algunos ejemplos y cómo te pueden ayudar a diseñar mejor softwa...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1731216878/isabelle-mannino-USOSteP8hOw-unsplash_cbxmst.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/11/23/que-son-los-requerimientos-funcionales.html" rel="permalink">¿Qué son los requerimientos funcionales?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 23-11-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">El análisis de requerimientos es una parte fundamental del desarrollo de software y es importantísima para crear sistemas exitosos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/10/31/que-es-la-programacion-asincrona.html" rel="permalink">¿Qué es la programación asíncrona?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 31-10-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#4b0082',
+      iconColor: '#fff'
+    }).init();
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2025 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2024/09/16/como-funciona-tensorflow"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

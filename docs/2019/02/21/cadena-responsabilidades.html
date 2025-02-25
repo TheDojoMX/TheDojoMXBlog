@@ -121,6 +121,8 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
 
 <script src="/assets/js/sharect.min.js"></script>
 <!-- Fathom - beautiful, simple website analytics -->
@@ -412,11 +414,11 @@
 <p>A primera luz, un código que puede fácilmente satisfacer es:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">message</span> <span class="o">=</span> <span class="s">"Dios bendiga a los héroes que nos dieron el internet."</span>
-<span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"á"</span><span class="p">,</span><span class="s">"a"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"é"</span><span class="p">,</span><span class="s">"e"</span><span class="p">)</span> \
-    <span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"í"</span><span class="p">,</span><span class="s">"i"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"ó"</span><span class="p">,</span><span class="s">"o"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"ú"</span><span class="p">,</span><span class="s">"u"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Dios bendiga a los héroes que nos dieron el internet.</span><span class="sh">"</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">lower</span><span class="p">()</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">á</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">é</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">e</span><span class="sh">"</span><span class="p">)</span> \
+    <span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">í</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">i</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">ó</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">o</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">ú</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">u</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 <span class="c1"># dios bendiga a los heroes que nos dieron el internet.
 </span></code></pre></div></div>
 <p>Funcionó, se cumplió el objetivo.</p>
@@ -436,23 +438,23 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
 
 <p>Siguiendo con el problema original, el código propuesto es el siguiente <a href="https://www.tutorialspoint.com/design_pattern/chain_of_responsibility_pattern.htm">(aquí uno en Java)</a>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">to_lower</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s">""</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Message is not a string"</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">message</span><span class="p">.</span><span class="n">strip</span><span class="p">().</span><span class="n">lower</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">to_lower</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="sh">""</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Message is not a string</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">message</span><span class="p">.</span><span class="nf">strip</span><span class="p">().</span><span class="nf">lower</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">to_ascii</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Message is not a string"</span><span class="p">)</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"á"</span><span class="p">,</span><span class="s">"a"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"é"</span><span class="p">,</span><span class="s">"e"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"í"</span><span class="p">,</span><span class="s">"i"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"ó"</span><span class="p">,</span><span class="s">"o"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"ú"</span><span class="p">,</span><span class="s">"u"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Message is not a string</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">á</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">é</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">e</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">í</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">i</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">ó</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">o</span><span class="sh">"</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">ú</span><span class="sh">"</span><span class="p">,</span><span class="sh">"</span><span class="s">u</span><span class="sh">"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">message</span>
 
 <span class="k">def</span> <span class="nf">to_disk</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
-    <span class="n">FILENAME</span> <span class="o">=</span> <span class="s">"historial.log"</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Message is not a string"</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">FILENAME</span><span class="p">,</span><span class="s">"a"</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-        <span class="n">fp</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+    <span class="n">FILENAME</span> <span class="o">=</span> <span class="sh">"</span><span class="s">historial.log</span><span class="sh">"</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Message is not a string</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">FILENAME</span><span class="p">,</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="sh">"</span><span class="s">UTF-8</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="n">fp</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">message</span>
 
 <span class="k">def</span> <span class="nf">remove_all_punctuation</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
@@ -460,25 +462,25 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
 </span>    <span class="k">return</span> <span class="n">message</span>
 
 <span class="k">class</span> <span class="nc">Pipe</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">message</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">_message</span> <span class="o">=</span> <span class="n">message</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">processors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">message</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">_message</span> <span class="o">=</span> <span class="n">message</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">processors</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">def</span> <span class="nf">add_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">process_function</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">processors</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">process_function</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">add_process</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">process_function</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">processors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">process_function</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">process</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">processors</span><span class="p">:</span>
-            <span class="bp">self</span><span class="p">.</span><span class="n">_message</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_message</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_message</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">process</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">processors</span><span class="p">:</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">_message</span> <span class="o">=</span> <span class="nf">process</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">_message</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">_message</span>
 
-<span class="n">pipe</span><span class="o">=</span><span class="n">Pipe</span><span class="p">(</span><span class="s">"Dios bendiga a los héroes que nos dieron el internet."</span><span class="p">)</span>
-<span class="n">pipe</span><span class="p">.</span><span class="n">add_process</span><span class="p">(</span><span class="n">to_disk</span><span class="p">)</span>
-<span class="n">pipe</span><span class="p">.</span><span class="n">add_process</span><span class="p">(</span><span class="n">to_lower</span><span class="p">)</span>
-<span class="n">pipe</span><span class="p">.</span><span class="n">add_process</span><span class="p">(</span><span class="n">to_ascii</span><span class="p">)</span>
-<span class="n">pipe</span><span class="p">.</span><span class="n">add_process</span><span class="p">(</span><span class="n">remove_all_punctuation</span><span class="p">)</span>
-<span class="n">new_message</span><span class="o">=</span><span class="n">pipe</span><span class="p">.</span><span class="n">run</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">new_message</span><span class="p">)</span>
+<span class="n">pipe</span><span class="o">=</span><span class="nc">Pipe</span><span class="p">(</span><span class="sh">"</span><span class="s">Dios bendiga a los héroes que nos dieron el internet.</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">pipe</span><span class="p">.</span><span class="nf">add_process</span><span class="p">(</span><span class="n">to_disk</span><span class="p">)</span>
+<span class="n">pipe</span><span class="p">.</span><span class="nf">add_process</span><span class="p">(</span><span class="n">to_lower</span><span class="p">)</span>
+<span class="n">pipe</span><span class="p">.</span><span class="nf">add_process</span><span class="p">(</span><span class="n">to_ascii</span><span class="p">)</span>
+<span class="n">pipe</span><span class="p">.</span><span class="nf">add_process</span><span class="p">(</span><span class="n">remove_all_punctuation</span><span class="p">)</span>
+<span class="n">new_message</span><span class="o">=</span><span class="n">pipe</span><span class="p">.</span><span class="nf">run</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">new_message</span><span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -587,83 +589,12 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1701323922/garett-mizunaka-xFjti9rYILo-unsplash_mh0wys.jpg" alt="">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1740316729/daniele-levis-pelusi-1UT5e8z0x-s-unsplash_o9pag2.jpg" alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/2023/12/14/engines-de-javascript-y-sus-usos.html" rel="permalink">Engines de JavaScript y sus usos
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-9 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 14-12-2023
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">En este artículo hablaremos de los diferente engines de JavaScript que existen, dónde los puedes encontrar y para qué los puedes usar.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702275251/shubham-dhage-cLhjmsyby3Q-unsplash_ucy8y3.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2023/12/13/mojo-un-lenguaje-prometedor.html" rel="permalink">Mojo 🔥: un lenguaje prometedor
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-9 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 13-12-2023
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">El ecosistema de desarrollo está cambiando y se están diseñando nuevos lenguajes de programación y entornos de ejecución más adecuados para los problemas act...</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2023/12/09/que-es-real-time-en-sistemas-computacionales.html" rel="permalink">¿Qué es Real Time en sistemas de software?
+        <a href="/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html" rel="permalink">Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series
 </a>
       
     </h2>
@@ -677,10 +608,10 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
 
 
 
-| <i class="far fa-calendar" aria-hidden="true"></i> 09-12-2023
+| <i class="far fa-calendar" aria-hidden="true"></i> 23-02-2025
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea.
+    <p class="archive__item-excerpt" itemprop="description">Hablemos del libro ‘Deep Learning’ de MIT Essential Knowledge Series, una introducción suficiente al tema.
 </p>
   </article>
 </div>
@@ -694,12 +625,12 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg" alt="">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1733894437/philip-oroni-0Nh06vUjbLw-unsplash_q3mcrp.jpg" alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html" rel="permalink">Las tres garantías de seguridad de un hash
+        <a href="/2024/12/30/un-concepto-importante-los-buffers.html" rel="permalink">Un concepto importante: los buffers
 </a>
       
     </h2>
@@ -709,14 +640,85 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
 
 
 
-14 minutos de lectura
+6 minutos de lectura
 
 
 
-| <i class="far fa-calendar" aria-hidden="true"></i> 28-08-2023
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-12-2024
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Veamos más profundamente las garantías de seguridad que debe cumplir un hash para ser considerado seguro. Por fin entenderemos lo que es una colisión y qué s...</p>
+    <p class="archive__item-excerpt" itemprop="description">Los buffers son una herramienta poderosa que puedes usar para resolver problemas. Hablemos de algunos ejemplos y cómo te pueden ayudar a diseñar mejor softwa...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1731216878/isabelle-mannino-USOSteP8hOw-unsplash_cbxmst.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/11/23/que-son-los-requerimientos-funcionales.html" rel="permalink">¿Qué son los requerimientos funcionales?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 23-11-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">El análisis de requerimientos es una parte fundamental del desarrollo de software y es importantísima para crear sistemas exitosos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/10/31/que-es-la-programacion-asincrona.html" rel="permalink">¿Qué es la programación asíncrona?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 31-10-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de...</p>
   </article>
 </div>
 
@@ -770,7 +772,7 @@ Poco a poco se fue agregando y agregando código para tareas como eliminar emoji
   </ul>
 </div>
 
-<div class="page__footer-copyright">© 2024 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">© 2025 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

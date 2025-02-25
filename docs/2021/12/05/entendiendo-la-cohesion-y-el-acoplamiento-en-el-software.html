@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Entendiendo la cohesión y el acoplamiento en el software - The Dojo MX Blog</title>
-<meta name="description" content="En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código">
+<meta name="description" content="En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acoplamiento y cómo afectan al diseño de tu software y el código">
 
 
   <meta name="author" content="Héctor Patricio">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesion-y-el-acoplamiento-en-el-software.html">
 
 
-  <meta property="og:description" content="En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código">
+  <meta property="og:description" content="En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acoplamiento y cómo afectan al diseño de tu software y el código">
 
 
 
@@ -121,6 +121,8 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
 
 <script src="/assets/js/sharect.min.js"></script>
 <!-- Fathom - beautiful, simple website analytics -->
@@ -134,8 +136,8 @@
       "name": "Entendiendo la cohesión y el acoplamiento en el software",
       "headline": "Entendiendo la cohesión y el acoplamiento en el software",
       "keywords": "Cohesión,acoplamiento,software",
-      "description": "En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código",
-      "articleBody": "Siempre se dice que una buena base de código tiene alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica?\n\nEn este artículo vamos a definir cada uno de esos términos de manera sencilla, y con ejemplos de cómo llegar a la aplicación real de estos términos.\n\nUn poco de historia\n\nEstos dos conceptos y otros relacionados fueron desarrollados por Larry Constantine en la década de los 60’s y publicados en los años siguientes, junto con el nacimiento del diseño estructurado de sistemas. Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Lo que se ha descubierto es que efectivamente, las dependencias infinitas (alto acoplamiento y baja cohesión) crean problemas que son casi imposobles de resolver en las bases de código y es cuando terminamos diciendo: “Es más fácil hacerlo de nuevo.”\n\nAhora sí, hablemos de lo que quisiéramos lograr con nuestro software, para no terminar queriéndolo rehacer de nuevo en poco tiempo.\n\nCohesión\n\nLa cohesión de los módulos se refiere al grado en que los componentes de cierto módulo se relacionan entre sí. Es decir, un módulo tiene alta cohesión si todos, o la mayoría de sus componentes trabajan para un mismo objetivo y no para cosas dispares o no relacionadas.\n\nUna buena cohesión permitirá que el componente utilice menos otros módulos externos, ya que la mayoría de lo que requiere para realizar su trabajo está en el mismo módulo.\n\nPara lograr esto, normalmente tienes que reducir las tareas de las que el módulo es responsable al menor grado posible, tratando de seguir el principio de responsabilidad única.\n\nPongamos un ejemplo: imagina que estás creando un chatbot, un programa que, usando las API’s de los aplicaciones de comunicación te permite interactuar con tus usuarios en forma de chat, en lugares como WhatsApp, Messenger o Slack. El sistema tiene como requerimiento que la lógica de conversación sea fácil de reemplazar y mantener y que funcione independientemente del canal.\n\nPara implementar este sistema los rompemos por lo menos en tres módulos: el manejo de usuarios, la lógica de conversación y la conexión son los canales de comunicación.\n\nUna buena cohesión se refiere a que, por ejemplo, la lógica de conversación y todo lo necesario para decidir cómo conversar con un usuario exista dentro de este mismo módulo. Así, cuando tengas que actualizarla no tienes que tocar todo el sistema o muchas partes del código. Esto mismo aplicaría para los otros módulos, imagínate que tienes que agregar un canal nuevo, por ejemplo, Telegram. Tu módulo de conexión a canales debería tener todo lo necesario para que no tengas que modificar ni el módulo de usuarios, ni el de la lógica de conversación.\n\nUna forma efectiva de crear módulos cohesivos es mediante agrupar todas las partes que tienen que ver con el mismo tema abstracción o decisión en el mismo módulo1 o clase. Esto casi nunca se puede lograr perfectamente, pero es una buena meta que te ahorrará dolores de cabeza.\n\nAcoplamiento\n\nEl acoplamiento consiste en el grado de dependencia de las diferentes partes de un sistema entre ellas. La pregunta clave para entender el acoplamiento es: ¿Cuánto se necesita saber de un módulo para entender otro módulo?\n\nMientras más necesites saber de A para entender B, más A relacionados, o acoplados están.\n\nPor ejemplo, imagina una aplicación de e-commerce, que consiste de un catálogo, un carrito de compras y la parte del pago. Estos tres elementos pueden estar muy acoplados entre sí, en el sentido de que cualquier cambio en el catálogo afecta al carrito de compras y al pago, o al revés. Si puedes cambiar cualquiera de los tres módulos sin tener que tocar los otros, hay un bajo acoplamiento.\n\nEl acoplamiento ideal sería cero, pero como te imaginarás esto es imposible.\n\nLos módulos pueden depender entre ellos de diferentes formas, tanto conceptualmente como en implementación. Constantine menciona que los siguientes cuatro factores pueden afectar el grado de acoplamiento de los módulos:\n\n\n  Tipo de conexión entre los módulos. ¿Escriben a las mismas variables globales? ¿Uno usa al otro? ¿Uno es la especialización de otro?\n  Complejidad de la interfaz: ¿Qué tan intrincada es la conexión entre los módulos?\n  Tipo de información que pasa entre la conexión: ¿se pasan grandes estructuras de datos que procesan de manera secuencial? O, ¿un módulo modifica la forma de trabajar de otro?\n  Tiempo en el que sucede la conexión: ¿depende uno de que el otro corra para poder ejecutarse?\n\n\nTener en cuenta estos factores puede ayudar a reducir el acoplamiento de los módulos.\n\nRelación entre cohesión y acoplamiento\n\nConstantine menciona que mientras más cohesión tengan los módulos, menos acoplamiento tendrán entre ellos. Esto suena lógico porque mientras más “autocontenido” sea un módulo (más cohesión) menos va a necesitar de otros para poder funcionar.\n\n\n  “A mayor cohesión de los módulos individuales en el sistema, menor será el acoplamiento” - Structured Design by Yourdon and Constantine\n\n\nComo podrás ver, no son medidas independientes, sino correlacionadas en la práctica.\n\nCómo lograr alta cohesión y bajo acoplamiento\n\nLa principal forma de lograr esta buena estructura es dedicando tiempo al diseño del software,prestando especial atención a la forma en la que se modulariza el sistema, es decir, la forma en la que se divide el problemas en otros más pequeños.\n\nConstantine y Yourdon afirman que la única forma de lograr esto es con práctica, práctica y más práctica.\n\nConclusiones\n\nEl principio de “Alta cohesión y bajo acoplamiento” sin duda es útil para que nuestro software sea más claro, más fácil de mantener y de cambiar. No hay manera de aprender cómo dividir el sistema en módulos si no es mediante la práctica de diseño e implementación de sistemas reales. Así que, ya sabes, manos a la obra.\n\n\n  \n    \n      Cuando decimos “módulo” estamos hablando de la forma de tu lenguaje de agrupar funcionalidades, puede ser literalmente un módulo, un paquete, una aplicación etc. &#8617;\n    \n  \n\n",
+      "description": "En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acoplamiento y cómo afectan al diseño de tu software y el código",
+      "articleBody": "Siempre se dice que una buena base de código tiene alta cohesión, pero bajo acoplamiento. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica?\n\nEn este artículo vamos a definir cada uno de esos términos de manera sencilla, y con ejemplos de cómo llegar a la aplicación real de estos términos.\n\nUn poco de historia\n\nEstos dos conceptos y otros relacionados fueron desarrollados por Larry Constantine en la década de los 60’s y publicados en los años siguientes, junto con el nacimiento del diseño estructurado de sistemas. Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Lo que se ha descubierto es que efectivamente, las dependencias infinitas (alto acoplamiento y baja cohesión) crean problemas que son casi imposibles de resolver en las bases de código y es cuando terminamos diciendo: “Es más fácil hacerlo de nuevo.”\n\nAhora sí, hablemos de lo que quisiéramos lograr con nuestro software, para no terminar queriéndolo rehacer de nuevo en poco tiempo.\n\nCohesión\n\nLa cohesión de los módulos se refiere al grado en que los componentes de cierto módulo se relacionan entre sí. Es decir, un módulo tiene alta cohesión si todos, o la mayoría de sus componentes trabajan para un mismo objetivo y no para cosas dispares o no relacionadas.\n\nUna buena cohesión permitirá que el componente utilice menos otros módulos externos, ya que la mayoría de lo que requiere para realizar su trabajo está en el mismo módulo.\n\nPara lograr esto, normalmente tienes que reducir las tareas de las que el módulo es responsable al menor grado posible, tratando de seguir el principio de responsabilidad única.\n\nPongamos un ejemplo: imagina que estás creando un chatbot, un programa que, usando las API’s de los aplicaciones de comunicación te permite interactuar con tus usuarios en forma de chat, en lugares como WhatsApp, Messenger o Slack. El sistema tiene como requerimiento que la lógica de conversación sea fácil de reemplazar y mantener y que funcione independientemente del canal.\n\nPara implementar este sistema los rompemos por lo menos en tres módulos: el manejo de usuarios, la lógica de conversación y la conexión son los canales de comunicación.\n\nUna buena cohesión se refiere a que, por ejemplo, la lógica de conversación y todo lo necesario para decidir cómo conversar con un usuario exista dentro de este mismo módulo. Así, cuando tengas que actualizarla no tienes que tocar todo el sistema o muchas partes del código. Esto mismo aplicaría para los otros módulos, imagínate que tienes que agregar un canal nuevo, por ejemplo, Telegram. Tu módulo de conexión a canales debería tener todo lo necesario para que no tengas que modificar ni el módulo de usuarios, ni el de la lógica de conversación.\n\nUna forma efectiva de crear módulos cohesivos es mediante agrupar todas las partes que tienen que ver con el mismo tema abstracción o decisión en el mismo módulo1 o clase. Esto casi nunca se puede lograr perfectamente, pero es una buena meta que te ahorrará dolores de cabeza.\n\nAcoplamiento\n\nEl acoplamiento consiste en el grado de dependencia de las diferentes partes de un sistema entre ellas. La pregunta clave para entender el acoplamiento es: ¿Cuánto se necesita saber de un módulo para entender otro módulo?\n\nMientras más necesites saber de A para entender B, más A relacionados, o acoplados están.\n\nPor ejemplo, imagina una aplicación de e-commerce, que consiste de un catálogo, un carrito de compras y la parte del pago. Estos tres elementos pueden estar muy acoplados entre sí, en el sentido de que cualquier cambio en el catálogo afecta al carrito de compras y al pago, o al revés. Si puedes cambiar cualquiera de los tres módulos sin tener que tocar los otros, hay un bajo acoplamiento.\n\nEl acoplamiento ideal sería cero, pero como te imaginarás esto es imposible.\n\nLos módulos pueden depender entre ellos de diferentes formas, tanto conceptualmente como en implementación. Constantine menciona que los siguientes cuatro factores pueden afectar el grado de acoplamiento de los módulos:\n\n\n  Tipo de conexión entre los módulos. ¿Escriben a las mismas variables globales? ¿Uno usa al otro? ¿Uno es la especialización de otro?\n  Complejidad de la interfaz: ¿Qué tan intrincada es la conexión entre los módulos?\n  Tipo de información que pasa entre la conexión: ¿se pasan grandes estructuras de datos que procesan de manera secuencial? O, ¿un módulo modifica la forma de trabajar de otro?\n  Tiempo en el que sucede la conexión: ¿depende uno de que el otro corra para poder ejecutarse?\n\n\nTener en cuenta estos factores puede ayudar a reducir el acoplamiento de los módulos.\n\nRelación entre cohesión y acoplamiento\n\nConstantine menciona que mientras más cohesión tengan los módulos, menos acoplamiento tendrán entre ellos. Esto suena lógico porque mientras más “autocontenido” sea un módulo (más cohesión) menos va a necesitar de otros para poder funcionar.\n\n\n  “A mayor cohesión de los módulos individuales en el sistema, menor será el acoplamiento” - Structured Design by Yourdon and Constantine\n\n\nComo podrás ver, no son medidas independientes; están relacionadas en la práctica.\n\nCómo lograr alta cohesión y bajo acoplamiento\n\nLa principal forma de lograr esta buena estructura es dedicando tiempo al diseño del software,prestando especial atención a la forma en la que se modulariza el sistema, es decir, la forma en la que se divide el problemas en otros más pequeños.\n\nConstantine y Yourdon afirman que la única forma de lograr esto es con práctica, práctica y más práctica.\n\nConclusiones\n\nEl principio de “Alta cohesión y bajo acoplamiento” sin duda es útil para que nuestro software sea más claro, más fácil de mantener y de cambiar. No hay manera de aprender cómo dividir el sistema en módulos si no es mediante la práctica de diseño e implementación de sistemas reales. Así que, ya sabes, manos a la obra.\n\n\n  \n    \n      Cuando decimos “módulo” estamos hablando de la forma de tu lenguaje de agrupar funcionalidades, puede ser literalmente un módulo, un paquete, una aplicación etc. &#8617;\n    \n  \n\n",
       "datePublished": "2021-12-05 00:00:00 -0600",
       "dateModified": "2021-12-05 00:00:00 -0600",
       "author": {
@@ -246,7 +248,7 @@
         
       </h1>
       
-        <p class="page__lead">En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código
+        <p class="page__lead">En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acoplamiento y cómo afectan al diseño de tu software y el código
 </p>
       
       
@@ -402,7 +404,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Entendiendo la cohesión y el acoplamiento en el software">
-    <meta itemprop="description" content="En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acomplamiento y cómo afectan al diseño de tu software y el código">
+    <meta itemprop="description" content="En este artículo intentamos establecer de manera sencilla qué son la cohesión, el acoplamiento y cómo afectan al diseño de tu software y el código">
     <meta itemprop="datePublished" content="2021-12-05T00:00:00-06:00">
     
 
@@ -421,7 +423,7 @@
 
 <h2 id="un-poco-de-historia">Un poco de historia</h2>
 
-<p>Estos dos conceptos y otros relacionados fueron desarrollados por <a href="https://history.computer.org/pioneers/constantine.html">Larry Constantine</a> en la década de los 60’s y publicados en los años siguientes, junto con el nacimiento del <a href="https://www.win.tue.nl/~wstomv/quotes/structured-design.html">diseño estructurado de sistemas</a>. Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Lo que se ha descubierto es que efectivamente, las dependencias infinitas (alto acoplamiento y baja cohesión) crean problemas que son casi imposobles de resolver en las bases de código y es cuando terminamos diciendo: <em>“Es más fácil hacerlo de nuevo.”</em></p>
+<p>Estos dos conceptos y otros relacionados fueron desarrollados por <a href="https://history.computer.org/pioneers/constantine.html">Larry Constantine</a> en la década de los 60’s y publicados en los años siguientes, junto con el nacimiento del <a href="https://www.win.tue.nl/~wstomv/quotes/structured-design.html">diseño estructurado de sistemas</a>. Estos conceptos han sido aceptados y han sido objeto de muchos estudios sobre cómo afectan a la calidad del software realmente. Lo que se ha descubierto es que efectivamente, las dependencias infinitas (alto acoplamiento y baja cohesión) crean problemas que son casi imposibles de resolver en las bases de código y es cuando terminamos diciendo: <em>“Es más fácil hacerlo de nuevo.”</em></p>
 
 <p>Ahora sí, hablemos de lo que quisiéramos lograr con nuestro software, para no terminar queriéndolo rehacer de nuevo en poco tiempo.</p>
 
@@ -470,7 +472,7 @@
   <p>“A mayor cohesión de los módulos individuales en el sistema, menor será el acoplamiento” - <a href="https://www.win.tue.nl/~wstomv/quotes/structured-design.htm">Structured Design by Yourdon and Constantine</a></p>
 </blockquote>
 
-<p>Como podrás ver, no son medidas independientes, sino correlacionadas en la práctica.</p>
+<p>Como podrás ver, no son medidas independientes; están relacionadas en la práctica.</p>
 
 <h2 id="cómo-lograr-alta-cohesión-y-bajo-acoplamiento">Cómo lograr alta cohesión y bajo acoplamiento</h2>
 
@@ -581,83 +583,12 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1701323922/garett-mizunaka-xFjti9rYILo-unsplash_mh0wys.jpg" alt="">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1740316729/daniele-levis-pelusi-1UT5e8z0x-s-unsplash_o9pag2.jpg" alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/2023/12/14/engines-de-javascript-y-sus-usos.html" rel="permalink">Engines de JavaScript y sus usos
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-9 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 14-12-2023
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">En este artículo hablaremos de los diferente engines de JavaScript que existen, dónde los puedes encontrar y para qué los puedes usar.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702275251/shubham-dhage-cLhjmsyby3Q-unsplash_ucy8y3.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2023/12/13/mojo-un-lenguaje-prometedor.html" rel="permalink">Mojo 🔥: un lenguaje prometedor
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-9 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 13-12-2023
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">El ecosistema de desarrollo está cambiando y se están diseñando nuevos lenguajes de programación y entornos de ejecución más adecuados para los problemas act...</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2023/12/09/que-es-real-time-en-sistemas-computacionales.html" rel="permalink">¿Qué es Real Time en sistemas de software?
+        <a href="/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html" rel="permalink">Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series
 </a>
       
     </h2>
@@ -671,10 +602,10 @@
 
 
 
-| <i class="far fa-calendar" aria-hidden="true"></i> 09-12-2023
+| <i class="far fa-calendar" aria-hidden="true"></i> 23-02-2025
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea.
+    <p class="archive__item-excerpt" itemprop="description">Hablemos del libro ‘Deep Learning’ de MIT Essential Knowledge Series, una introducción suficiente al tema.
 </p>
   </article>
 </div>
@@ -688,12 +619,12 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg" alt="">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1733894437/philip-oroni-0Nh06vUjbLw-unsplash_q3mcrp.jpg" alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html" rel="permalink">Las tres garantías de seguridad de un hash
+        <a href="/2024/12/30/un-concepto-importante-los-buffers.html" rel="permalink">Un concepto importante: los buffers
 </a>
       
     </h2>
@@ -703,14 +634,85 @@
 
 
 
-14 minutos de lectura
+6 minutos de lectura
 
 
 
-| <i class="far fa-calendar" aria-hidden="true"></i> 28-08-2023
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-12-2024
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Veamos más profundamente las garantías de seguridad que debe cumplir un hash para ser considerado seguro. Por fin entenderemos lo que es una colisión y qué s...</p>
+    <p class="archive__item-excerpt" itemprop="description">Los buffers son una herramienta poderosa que puedes usar para resolver problemas. Hablemos de algunos ejemplos y cómo te pueden ayudar a diseñar mejor softwa...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1731216878/isabelle-mannino-USOSteP8hOw-unsplash_cbxmst.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/11/23/que-son-los-requerimientos-funcionales.html" rel="permalink">¿Qué son los requerimientos funcionales?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 23-11-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">El análisis de requerimientos es una parte fundamental del desarrollo de software y es importantísima para crear sistemas exitosos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/10/31/que-es-la-programacion-asincrona.html" rel="permalink">¿Qué es la programación asíncrona?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 31-10-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de...</p>
   </article>
 </div>
 
@@ -764,7 +766,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">© 2024 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">© 2025 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

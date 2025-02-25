@@ -1,0 +1,908 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>¿Qué es la programación asíncrona? - The Dojo MX Blog</title>
+<meta name="description" content="Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de qué es y cómo dominarla.">
+
+
+  <meta name="author" content="Héctor Patricio">
+  
+  <meta property="article:author" content="Héctor Patricio">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es">
+<meta property="og:site_name" content="The Dojo MX Blog">
+<meta property="og:title" content="¿Qué es la programación asíncrona?">
+<meta property="og:url" content="https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html">
+
+
+  <meta property="og:description" content="Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de qué es y cómo dominarla.">
+
+
+
+  <meta property="og:image" content="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-10-31T00:00:00-06:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://blog.thedojo.mx/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="The Dojo MX Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicon -->
+<!-- for mathjax support -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNSYMJDY5S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNSYMJDY5S');
+</script>
+
+<!-- Hotjar Tracking Code for blog.thedojo.mx -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1217463,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
+
+<script src="/assets/js/sharect.min.js"></script>
+<!-- Fathom - beautiful, simple website analytics -->
+   <script src="https://cdn.usefathom.com/script.js" data-site="NGGHUUZH" defer></script>
+<!-- / Fathom -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "url": "https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html",
+      "name": "¿Qué es la programación asíncrona?",
+      "headline": "¿Qué es la programación asíncrona?",
+      "keywords": "async/await,concurrencia,javascript",
+      "description": "Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de qué es y cómo dominarla.",
+      "articleBody": "La programación asíncrona es uno de los primeros temas avanzados que encontrarás\nal programar, especialmente si desarrollas aplicaciones web. Esto es aún más\ncomún si haces JavaScript, que es un lenguaje que se usa en entornos de\nejecución asíncronos.\n\nEn este artículo la explicaremos para que puedas programar de manera asíncrona\ncon seguridad.\n\n¿Por qué existe? - El caso de la programación asíncrona\n\nImagínate un proceso de la vida real en el que tengas una conjunto de recursos\nlimitados, que sean completamente necesarios para terminar el trabajo. Por ejemplo,\nimagina que quieres hacer una comida especial, en la que necesitas usar un horno.\nEn el horno puedes poner un platillo a la vez, ya que requiere un tiempo y temperatura\nespecífica. Pero este platillo especial tal vez va acompañado de una sopa que puedes\nhacer mientras el platillo principal está en el horno.\n\nEn términos computacionales, estas dos tareas están sucediendo de manera concurrente,\naunque tú literalmente no estés haciendo ambas cosas al mismo tiempo. No vale la pena que\nte sientes a esperar a que el lomo del horno esté listo para empezar a hacer la sopa.\nPuedes hacer la sopa mientras esperas, ya que no ocupan los mismos recursos.\n\nExactamente pasa lo mismo en los programas de computadora, se tienen que ejecutar tareas\nque usan recursos compartidos o lentos, como por ejemplo el sistema de archivos o la red.\nEn la programación web también se da que el programa está esperando la respuesta de el\nusuario y mientras tanto puede seguir haciendo otras cosas. Aquí es donde entra la programación\nasíncrona.\n\n¿Qué es la programación asíncrona?\n\nPara entenderla primero tenemos que entender la programación tradicional o\nsíncrona (creo que la palabra correcta en español es sincrónica).\n\nEn la programación tradicional, las cosas siempre suceden en un orden estricto:\nuna instrucción empieza y hasta que no se termina, no se ejecuta la siguiente.\nObserva el siguiente código, en Python, para a abrir un arhivo:\n\nwith open(\"archivo.txt\", \"r\") as file:\n    data = file.read()\n    print(\"Archivo leído\")\nprint(\"Log final\")\n\n\nEl resultado de este código es:\n\nArchivo leído\nLog final\n\n\nEn este código todo sucede de manera perfectamente secuencial.\n\nPero en lenguajes con programación asíncrona, esta operación que es tardada\nen términos computacionales se puede hacer de manera asíncrona, es decir\nfuera de orden.\n\nconst fs = require(\"fs\");\n\nfs.readFile(\"archivo.txt\", \"utf8\", (err, data) =&gt; {\n    console.log(\"Archivo leído\");\n});\n\nconsole.log(\"Esperando a que se lea el archivo\");\n\n\nEl resultado de este código es:\n\nEsperando a que se lea el archivo\nArchivo leído\n\n\nObserva cómo en esta versión, el código que está ANTES: console.log(\"Archivo leído\"),\nse ejecuta DESPUÉS. Esto es una demostración de código asíncrono.\n\nLa explicación a esto está en que con la programación asíncrona podemos modificar\ncuándo se ejecutan las cosas. Pero otra visión es que se pueden ejecutar cosas\nen diferentes “lados” o “momentos” y tú elegir cuándo usas los resultados de\nla ejecución.\n\nUsamos este ejemplo de abrir un archivo porque por su naturaleza es lento (comparado)\ncon cálculos u operaciones comunes.\n\nLa programación asíncrona es un forma de ejecutar las acciones de tu programa en\nla que no se espera siempre que una acción o instrucción termine para continuar\ncon el programa.\n\nComo vimos en el primer ejemplo, en la programación síncrona (también llamada\nbloqueante [blocking]), ninguna acción comienza hasta que le previa haya terminado.\nEn la programación asíncrona, con técnicas o palabras reservadas específicas le\nindicamos al motor de ejecución que no es necesario a que una acción termine para\ncontinuar con la siguiente, pero también le podemos decir qué hacer cuando la\nacción termine. Por esto mismo, la programación asíncrona también se conoce como\nno bloqueante (non-blocking).\n\nPara qué sirve la programación asíncrona\n\nVeamos las restricciones que tenemos, para entender por qué es útil. Cuando\ncreas un sistema, la velocidad de ejecución puede verse limitada por dos\ncategorías de cosas:\n\n\n  De los cálculos que estás haciendo\n  De la información que estás obteniendo o guardando en algún lugar\n\n\nEn el primer caso, llamamos a la ejecución CPU bound y en el segundo I/O bound.\nEn español me gusta llamarle limitado por el procesador y limitado por la entrada\ny salida de datos.\n\nCPU bound - limitado por la cantidad de cálculos que puedes hacer\n\nCuando tu programa es pesado en los cálculos que tiene que hacer, como cuando\ntienes que procesar multimedia, hacer multiplicación de matrices o cosas\nsimilares, puedes decir que tu programa es CPU bound, o que está limitado por\nel poder de procesamiento. Es decir, mientras más poderoso sea el procesador,\nmás rápido será tu programa. Esto también es cierto si tienes múltiples\nprocesadores y puedes distribuir el cómputo entre ellos, por ejemplo:\n\n\n  Si tienes un procesador con múltiples cores o múltiples hilos de ejecución físicos\n  Si tienes múltiples computadoras en una red\n\n\nEn el primer caso, necesitas una plataforma que te ayude a utilizar el poder\nde procesamiento de los múltiples cores, sea implícitamente o explícitamente. Por\nejemplo plataformas como la máquina virtual de Erlang (llamada BEAM), automáticamente distribuyen\nla carga en los múltiples cores disponibles. En otros lenguajes como en Python,\ntienes que hacerlo explícitamente, pero incluso eso tiene limitaciones. Pero\nesto que te estoy diciendo es programación concurrente.\n\nLa programación asíncrona se puede ver como una herramienta para manejar la\nprogramación concurrente y hacerla más sencilla. Piénsala como en una capa de\nabstracción sobre la programación concurrente, que te permite expresar de forma\nexplícita que otras partes del programa pueden estarse ejecutando en otro\ntiempo o en otro espacio (proceso o hilo).\n\nI/O bound - limitado por la velocidad de entrada y salida de datos\n\nCuando un programa consume o produce mucha información tiene que\nponerla en algún lugar. Este lugar puede ser:\n\n\n  La memoria RAM\n  El disco duro (o sistema de archivos)\n  La red (mandarla o pedirla a otra computadora)\n\n\nCuando tu programa hace mucho esto, se dice que el programa está limitado por la\nvelocidad de entrada y salida de datos, o I/O bound.\n\nLa programación asíncrona te puede ayudar de manera más sencilla, sobre todo en\nel caso de las peticiones de red. ¿Cómo? Justo en el ejemplo que vimos antes de abrir\nun archivo: mientras esperas a que el disco duro lea el archivo y lo mande por el bus\nde datos y se cargue en la memoria RAM (que son AÑOS computacionalmente hablando),\npodemos seguir haciendo otras cosas. Igual que en el caso anterior, estos procesos\nson concurrentes, y una de las maneras más sencillas de expresarlo es con la programación\nasíncrona, en el que simplemente decimos que en algún momento podemos usar el resultado\nde la lectura del archivo.\n\nExactamente pasa lo mismo en el caso de las peticiones de red (que son EONES comparadas con\nla lectura de archivos o cálculos comunes). De hecho, el manejo de esas peticiones y de\ntodo lo relacionado con entrada y salida de datos es uno de los secretos de por qué\nNode.js es tan bueno para manejar peticiones HTTP.\n\nConclusión\n\nEntender la programación asíncrona es esencial en la programación moderna, muchos\nlenguajes y sobre todo entornos de ejecución lo implementan. Entenderla y usarla\nte ayudará a crear programas más eficientes y que cumplan con el rendimiento que\ntus usuario esperan. En un artículo futuro veremos una comparación entre programación\nasíncrona y programación concurrente manejada de otras maneras.\n",
+      "datePublished": "2024-10-31 00:00:00 -0600",
+      "dateModified": "2024-10-31 00:00:00 -0600",
+      "author": {
+        "@type": "Person",
+        "name": "Héctor Patricio",
+        "givenName": "Héctor Patricio",
+        "email": null
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Dojo MX Blog",
+        "url": "https://blog.thedojo.mx",
+        "logo": {
+          "@type": "ImageObject",
+          "width": 32,
+          "height": 32,
+          "url": "https://blog.thedojo.mx/icon/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "width": 1200,
+        "height": 400,
+        "url": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg"
+      }
+    }
+</script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="https://res.cloudinary.com/hectorip/image/upload/v1554098427/TheDojo/the-dojo-transparent.png" alt="The Dojo MX Blog"></a>
+        
+        <a class="site-title" href="/">
+          The Dojo MX Blog
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/latest">Todos los posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about">Acerca de</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="https://thedojo.mx">Cursos</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg');">
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          ¿Qué es la programación asíncrona?
+
+        
+      </h1>
+      
+        <p class="page__lead">Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de qué es y cómo dominarla.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+        1216 palabras | 10 minutos de lectura
+        
+      </span>
+    
+  </p>
+
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/me.jpg" alt="Héctor Patricio" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Héctor Patricio</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Tech Leader en Automata</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Seguir</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/hectorip" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Sitio web</span>
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:hectorivanpatriciomoreno@gmail.com">
+            <meta itemprop="email" content="hectorivanpatriciomoreno@gmail.com">
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/hectorip" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="¿Qué es la programación asíncrona?">
+    <meta itemprop="description" content="Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de qué es y cómo dominarla.">
+    <meta itemprop="datePublished" content="2024-10-31T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+
+        </div>
+        <p>La programación asíncrona es uno de los primeros temas avanzados que encontrarás
+al programar, especialmente si desarrollas aplicaciones web. Esto es aún más
+común si haces <strong>JavaScript</strong>, que es un lenguaje que se usa en entornos de
+ejecución asíncronos.</p>
+
+<p>En este artículo la explicaremos para que puedas programar de manera asíncrona
+con seguridad.</p>
+
+<h2 id="por-qué-existe---el-caso-de-la-programación-asíncrona">¿Por qué existe? - El caso de la programación asíncrona</h2>
+
+<p>Imagínate un proceso de la vida real en el que tengas una conjunto de recursos
+limitados, que sean completamente necesarios para terminar el trabajo. Por ejemplo,
+imagina que quieres hacer una comida especial, en la que necesitas usar un horno.
+En el horno puedes poner un platillo a la vez, ya que requiere un tiempo y temperatura
+específica. Pero este platillo especial tal vez va acompañado de una sopa que puedes
+hacer mientras el platillo principal está en el horno.</p>
+
+<p>En términos computacionales, estas dos tareas están sucediendo de manera concurrente,
+aunque tú literalmente no estés haciendo ambas cosas al mismo tiempo. No vale la pena que
+te sientes a esperar a que el lomo del horno esté listo para empezar a hacer la sopa.
+Puedes hacer la sopa mientras esperas, ya que no ocupan los mismos recursos.</p>
+
+<p>Exactamente pasa lo mismo en los programas de computadora, se tienen que ejecutar tareas
+que usan recursos compartidos o lentos, como por ejemplo el sistema de archivos o la red.
+En la programación web también se da que el programa está esperando la respuesta de el
+usuario y mientras tanto puede seguir haciendo otras cosas. Aquí es donde entra la programación
+asíncrona.</p>
+
+<h2 id="qué-es-la-programación-asíncrona">¿Qué es la programación asíncrona?</h2>
+
+<p>Para entenderla primero tenemos que entender la programación tradicional o
+síncrona (creo que la palabra correcta en español es <em>sincrónica</em>).</p>
+
+<p>En la programación tradicional, las cosas siempre suceden en un orden estricto:
+una instrucción empieza y hasta que no se termina, no se ejecuta la siguiente.
+Observa el siguiente código, en Python, para a abrir un arhivo:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">archivo.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Archivo leído</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Log final</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>El resultado de este código es:</p>
+
+<pre><code class="language-log">Archivo leído
+Log final
+</code></pre>
+
+<p>En este código todo sucede de manera perfectamente secuencial.</p>
+
+<p>Pero en lenguajes con programación asíncrona, esta operación que es tardada
+en términos computacionales se puede hacer de manera asíncrona, es decir
+fuera de orden.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">fs</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">fs</span><span class="p">.</span><span class="nf">readFile</span><span class="p">(</span><span class="dl">"</span><span class="s2">archivo.txt</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utf8</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Archivo leído</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Esperando a que se lea el archivo</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>El resultado de este código es:</p>
+
+<pre><code class="language-log">Esperando a que se lea el archivo
+Archivo leído
+</code></pre>
+
+<p>Observa cómo en esta versión, el código que está ANTES: <code class="language-plaintext highlighter-rouge">console.log("Archivo leído")</code>,
+se ejecuta DESPUÉS. Esto es una demostración de código asíncrono.</p>
+
+<p>La explicación a esto está en que con la programación asíncrona podemos modificar
+<strong>cuándo se ejecutan las cosas</strong>. Pero otra visión es que se pueden ejecutar cosas
+en diferentes “lados” o “momentos” y tú elegir <strong>cuándo</strong> usas los resultados de
+la ejecución.</p>
+
+<p>Usamos este ejemplo de abrir un archivo porque por su naturaleza es lento (comparado)
+con cálculos u operaciones comunes.</p>
+
+<p>La <strong>programación asíncrona</strong> es un forma de ejecutar las acciones de tu programa en
+la que no se espera siempre que una acción o instrucción termine para continuar
+con el programa.</p>
+
+<p>Como vimos en el primer ejemplo, en la programación síncrona (también llamada
+<em>bloqueante</em> [blocking]), ninguna acción comienza hasta que le previa haya terminado.
+En la programación asíncrona, con técnicas o palabras reservadas específicas le
+indicamos al motor de ejecución que no es necesario a que una acción termine para
+continuar con la siguiente, pero también le podemos decir qué hacer cuando la
+acción termine. Por esto mismo, la programación asíncrona también se conoce como
+<em>no bloqueante</em> (non-blocking).</p>
+
+<h2 id="para-qué-sirve-la-programación-asíncrona">Para qué sirve la programación asíncrona</h2>
+
+<p>Veamos las restricciones que tenemos, para entender por qué es útil. Cuando
+creas un sistema, la velocidad de ejecución puede verse limitada por dos
+categorías de cosas:</p>
+
+<ul>
+  <li>De los cálculos que estás haciendo</li>
+  <li>De la información que estás obteniendo o guardando en algún lugar</li>
+</ul>
+
+<p>En el primer caso, llamamos a la ejecución <strong>CPU bound</strong> y en el segundo <strong>I/O bound</strong>.
+En español me gusta llamarle <strong>limitado por el procesador</strong> y <strong>limitado por la entrada
+y salida de datos</strong>.</p>
+
+<h3 id="cpu-bound---limitado-por-la-cantidad-de-cálculos-que-puedes-hacer">CPU bound - limitado por la cantidad de cálculos que puedes hacer</h3>
+
+<p>Cuando tu programa es pesado en los cálculos que tiene que hacer, como cuando
+tienes que procesar multimedia, hacer multiplicación de matrices o cosas
+similares, puedes decir que tu programa es <strong>CPU bound</strong>, o que está limitado por
+el poder de procesamiento. Es decir, mientras más poderoso sea el procesador,
+más rápido será tu programa. Esto también es cierto si tienes múltiples
+procesadores <em>y puedes distribuir el cómputo entre ellos</em>, por ejemplo:</p>
+
+<ul>
+  <li>Si tienes un procesador con múltiples cores o múltiples hilos de ejecución físicos</li>
+  <li>Si tienes múltiples computadoras en una red</li>
+</ul>
+
+<p>En el primer caso, necesitas una plataforma que te ayude a utilizar el poder
+de procesamiento de los múltiples cores, sea implícitamente o explícitamente. Por
+ejemplo plataformas como la <strong>máquina virtual de Erlang</strong> (llamada BEAM), automáticamente distribuyen
+la carga en los múltiples cores disponibles. En otros lenguajes como en Python,
+tienes que hacerlo explícitamente, pero incluso eso tiene limitaciones. Pero
+esto que te estoy diciendo es <strong>programación concurrente</strong>.</p>
+
+<p>La programación asíncrona se puede ver como una herramienta para manejar la
+programación concurrente y hacerla más sencilla. Piénsala como en una capa de
+abstracción sobre la programación concurrente, que te permite <strong>expresar de forma
+explícita</strong> que otras partes del programa <em>pueden</em> estarse ejecutando en otro
+tiempo o en otro <em>espacio</em> (proceso o hilo).</p>
+
+<h3 id="io-bound---limitado-por-la-velocidad-de-entrada-y-salida-de-datos">I/O bound - limitado por la velocidad de entrada y salida de datos</h3>
+
+<p>Cuando un programa consume o produce mucha información tiene que
+ponerla en algún lugar. Este lugar puede ser:</p>
+
+<ul>
+  <li>La memoria RAM</li>
+  <li>El disco duro (o sistema de archivos)</li>
+  <li>La red (mandarla o pedirla a otra computadora)</li>
+</ul>
+
+<p>Cuando tu programa hace mucho esto, se dice que el programa está limitado por la
+velocidad de entrada y salida de datos, o <strong>I/O bound</strong>.</p>
+
+<p>La programación asíncrona te puede ayudar de manera más sencilla, sobre todo en
+el caso de las peticiones de red. ¿Cómo? Justo en el ejemplo que vimos antes de abrir
+un archivo: mientras esperas a que el disco duro lea el archivo y lo mande por el bus
+de datos y se cargue en la memoria RAM (que son AÑOS computacionalmente hablando),
+podemos seguir haciendo otras cosas. Igual que en el caso anterior, estos procesos
+son concurrentes, y una de las maneras más sencillas de expresarlo es con la programación
+asíncrona, en el que simplemente decimos que en algún momento <em>podemos</em> usar el resultado
+de la lectura del archivo.</p>
+
+<p>Exactamente pasa lo mismo en el caso de las peticiones de red (que son EONES comparadas con
+la lectura de archivos o cálculos comunes). De hecho, el manejo de esas peticiones y de
+todo lo relacionado con entrada y salida de datos es uno de los secretos de por qué
+Node.js es tan bueno para manejar peticiones HTTP.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Entender la programación asíncrona es esencial en la programación moderna, muchos
+lenguajes y sobre todo <em>entornos de ejecución</em> lo implementan. Entenderla y usarla
+te ayudará a crear programas más eficientes y que cumplan con el rendimiento que
+tus usuario esperan. En un artículo futuro veremos una comparación entre programación
+asíncrona y programación concurrente manejada de otras maneras.</p>
+
+       <div style="border: 1px solid gray; border-radius: 4px; margin: 20px; padding: 5px;">
+          Visita nuestro canal de YouTube para encontrar temas similares en video:<a href="https://youtube.com/thedojomx"> The Dojo MX en YouTube </a>
+        </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Etiquetas: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#async-await" class="page__taxonomy-item" rel="tag">async/await</a><span class="sep">, </span>
+    
+      <a href="/tags/#concurrencia" class="page__taxonomy-item" rel="tag">concurrencia</a><span class="sep">, </span>
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item" rel="tag">javascript</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2024-10-31T00:00:00-06:00">October 31, 2024</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Compartir</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%C2%BFQu%C3%A9+es+la+programaci%C3%B3n+as%C3%ADncrona%3F%20https%3A%2F%2Fblog.thedojo.mx%2F2024%2F10%2F31%2Fque-es-la-programacion-asincrona.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F10%2F31%2Fque-es-la-programacion-asincrona.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.thedojo.mx%2F2024%2F10%2F31%2Fque-es-la-programacion-asincrona.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024/10/26/que-es-la-busqueda-binaria.html" class="pagination--pager" title="¿Qué es la búsqueda binaria?
+">Anterior</a>
+    
+    
+      <a href="/2024/11/23/que-son-los-requerimientos-funcionales.html" class="pagination--pager" title="¿Qué son los requerimientos funcionales?
+">Siguiente</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comentar</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">Podrías ver también</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1740316729/daniele-levis-pelusi-1UT5e8z0x-s-unsplash_o9pag2.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html" rel="permalink">Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 23-02-2025
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos del libro ‘Deep Learning’ de MIT Essential Knowledge Series, una introducción suficiente al tema.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1733894437/philip-oroni-0Nh06vUjbLw-unsplash_q3mcrp.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/12/30/un-concepto-importante-los-buffers.html" rel="permalink">Un concepto importante: los buffers
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+6 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-12-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Los buffers son una herramienta poderosa que puedes usar para resolver problemas. Hablemos de algunos ejemplos y cómo te pueden ayudar a diseñar mejor softwa...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1731216878/isabelle-mannino-USOSteP8hOw-unsplash_cbxmst.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/11/23/que-son-los-requerimientos-funcionales.html" rel="permalink">¿Qué son los requerimientos funcionales?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 23-11-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">El análisis de requerimientos es una parte fundamental del desarrollo de software y es importantísima para crear sistemas exitosos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1729489258/nastya-kvokka-Ifk3WssHNRw-unsplash_m2u7vh.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/10/26/que-es-la-busqueda-binaria.html" rel="permalink">¿Qué es la búsqueda binaria?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+11 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 26-10-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es muy importante en el mundo de la computación.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda...">
+  </form>
+  <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        
+<script>
+    var sharect = new Sharect();
+    sharect.config({
+      twitter: true,
+      twitterUsername: '@thedojomx',
+      backgroundColor: '#4b0082',
+      iconColor: '#fff'
+    }).init();
+</script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2025 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.thedojo.mx/2024/10/31/que-es-la-programacion-asincrona.html";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2024/10/31/que-es-la-programacion-asincrona"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-dojo-mx-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -121,6 +121,8 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860440966400421"
+     crossorigin="anonymous"></script>
 
 <script src="/assets/js/sharect.min.js"></script>
 <!-- Fathom - beautiful, simple website analytics -->
@@ -458,25 +460,25 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># Creando un agente con LangChain
 </span>
-<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span>
-<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span>
-<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">AgentType</span>
-<span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span>
+<span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span>
+<span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">AgentType</span>
+<span class="kn">from</span> <span class="n">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
-<span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="nc">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">tools</span> <span class="o">=</span> <span class="n">load_tools</span><span class="p">([</span><span class="s">"serpapi"</span><span class="p">,</span> <span class="s">"llm-math"</span><span class="p">],</span> <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">)</span>
+<span class="n">tools</span> <span class="o">=</span> <span class="nf">load_tools</span><span class="p">([</span><span class="sh">"</span><span class="s">serpapi</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">llm-math</span><span class="sh">"</span><span class="p">],</span> <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">)</span>
 
-<span class="n">agent</span> <span class="o">=</span> <span class="n">initialize_agent</span><span class="p">(</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="nf">initialize_agent</span><span class="p">(</span>
     <span class="n">tools</span><span class="p">,</span> <span class="n">llm</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="n">AgentType</span><span class="p">.</span><span class="n">ZERO_SHOT_REACT_DESCRIPTION</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span>
 <span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"Este agente puede buscar en Google y hacer aritmética básica."</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Este agente puede buscar en Google y hacer aritmética básica.</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">query</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Pregunta algo: "</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Pregunta algo: </span><span class="sh">"</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">query</span><span class="p">:</span>
         <span class="k">break</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">agent</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">agent</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
 
 </code></pre></div></div>
 
@@ -484,26 +486,26 @@
 
 <p>Como siempre, la primera parte es importar las funciones y tipos necesarios:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span> <span class="c1"># Es una función que te ayuda a cargar las herramientas que los agentes serán capaces de usar
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span> <span class="c1"># Es una función que te ayuda a cargar las herramientas que los agentes serán capaces de usar
 </span>
-<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span> <span class="c1"># Es una función que te ayuda a crear un agente de manera sencilla
+<span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span> <span class="c1"># Es una función que te ayuda a crear un agente de manera sencilla
 </span>
-<span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">AgentType</span> <span class="c1"># Es un tipo que te ayuda a especificar el tipo de agente que quieres crear, contiene todos los tipos de agentes que LangChain provee
+<span class="kn">from</span> <span class="n">langchain.agents</span> <span class="kn">import</span> <span class="n">AgentType</span> <span class="c1"># Es un tipo que te ayuda a especificar el tipo de agente que quieres crear, contiene todos los tipos de agentes que LangChain provee
 </span>
-<span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span> <span class="c1"># Es la clase que abstrae la conexión con el LLM que usaremos: GPT, creado por OpenAI
+<span class="kn">from</span> <span class="n">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span> <span class="c1"># Es la clase que abstrae la conexión con el LLM que usaremos: GPT, creado por OpenAI
 </span>
 </code></pre></div></div>
 
 <p>Después, creamos una instancia de conexión con el LLM:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">llm</span> <span class="o">=</span> <span class="nc">OpenAI</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>El que le digamos que queremos cero de temperatura significa que la respuesta será menos aleatoria, por lo que podemos pensar que será menos “creativa” o arriesgada. Esto es buena idea cuando quieres crear planes, usar herramientas con una interfaz formal, como una API. Para poder usarlo, tienes que poner en el entorno de ejecución la variable de entorno <code class="language-plaintext highlighter-rouge">OPENAI_API_KEY</code> con tu API key de OpenAI.</p>
 
 <p>Seguido de esto, cargamos las herramientas que queremos que el agente pueda usar, indicando el modelo de lenguaje que usará para interactuar con ellas:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tools</span> <span class="o">=</span> <span class="n">load_tools</span><span class="p">([</span><span class="s">"serpapi"</span><span class="p">,</span> <span class="s">"llm-math"</span><span class="p">],</span> <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tools</span> <span class="o">=</span> <span class="nf">load_tools</span><span class="p">([</span><span class="sh">"</span><span class="s">serpapi</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">llm-math</span><span class="sh">"</span><span class="p">],</span> <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>La primera es una herramienta para buscar en Google, se llama <a href="https://serpapi.com/">SerpApi</a>, y permite usar la búsqueda que nosotros hacemos en Google mediante una interfaz más amigable para programas. La versión gratuita te da 100 búsquedas mensuales.</p>
@@ -601,7 +603,7 @@ Pregunta: {Pregunta}
 
 <p>Después de eso inicializamos un agente, al que le pasamos las herramientas que usará, el modelo de lenguaje y el tipo de agente que queremos crear. Además, le decimos que escriba en la salida estándar todo su proceso con la opción <code class="language-plaintext highlighter-rouge">verbose=True</code>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="o">=</span> <span class="n">initialize_agent</span><span class="p">(</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">agent</span> <span class="o">=</span> <span class="nf">initialize_agent</span><span class="p">(</span>
     <span class="n">tools</span><span class="p">,</span>
     <span class="n">llm</span><span class="p">,</span>
     <span class="n">agent</span><span class="o">=</span><span class="n">AgentType</span><span class="p">.</span><span class="n">ZERO_SHOT_REACT_DESCRIPTION</span><span class="p">,</span>
@@ -611,15 +613,15 @@ Pregunta: {Pregunta}
 
 <p>De este modo LangChain hará todo lo necesario para inicializar un agente que use actúe de manera autónoma. Ahora le podemos preguntar cosas:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Este agente puede buscar en Google y hacer aritmética básica."</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Este agente puede buscar en Google y hacer aritmética básica.</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="c1"># Creamos un loop para que
 </span>
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">query</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Pregunta algo: "</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Pregunta algo: </span><span class="sh">"</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">query</span><span class="p">:</span>
         <span class="k">break</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">agent</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">agent</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>Recuerda que esto puede contestar preguntas que se puedan encontrar en internet y hacer aritmética.</p>
@@ -719,83 +721,12 @@ Pregunta: {Pregunta}
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1701323922/garett-mizunaka-xFjti9rYILo-unsplash_mh0wys.jpg" alt="">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1740316729/daniele-levis-pelusi-1UT5e8z0x-s-unsplash_o9pag2.jpg" alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/2023/12/14/engines-de-javascript-y-sus-usos.html" rel="permalink">Engines de JavaScript y sus usos
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-9 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 14-12-2023
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">En este artículo hablaremos de los diferente engines de JavaScript que existen, dónde los puedes encontrar y para qué los puedes usar.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702275251/shubham-dhage-cLhjmsyby3Q-unsplash_ucy8y3.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2023/12/13/mojo-un-lenguaje-prometedor.html" rel="permalink">Mojo 🔥: un lenguaje prometedor
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-9 minutos de lectura
-
-
-
-| <i class="far fa-calendar" aria-hidden="true"></i> 13-12-2023
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">El ecosistema de desarrollo está cambiando y se están diseñando nuevos lenguajes de programación y entornos de ejecución más adecuados para los problemas act...</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_450/v1696829214/nathan-dumlao-LPRrEJU2GbQ-unsplash_cmhwgx.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/2023/12/09/que-es-real-time-en-sistemas-computacionales.html" rel="permalink">¿Qué es Real Time en sistemas de software?
+        <a href="/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html" rel="permalink">Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series
 </a>
       
     </h2>
@@ -809,10 +740,10 @@ Pregunta: {Pregunta}
 
 
 
-| <i class="far fa-calendar" aria-hidden="true"></i> 09-12-2023
+| <i class="far fa-calendar" aria-hidden="true"></i> 23-02-2025
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Hablemos que significa que los sistemas sean Real Time y qué principios puedes seguir para lograr que tu sistema lo sea.
+    <p class="archive__item-excerpt" itemprop="description">Hablemos del libro ‘Deep Learning’ de MIT Essential Knowledge Series, una introducción suficiente al tema.
 </p>
   </article>
 </div>
@@ -826,12 +757,12 @@ Pregunta: {Pregunta}
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,e_oil_paint:11,w_400/v1692582347/neom-bhKqZNZeAR0-unsplash_refcre.jpg" alt="">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1733894437/philip-oroni-0Nh06vUjbLw-unsplash_q3mcrp.jpg" alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/2023/08/28/las-tres-garantias-de-seguridad-de-un-hash.html" rel="permalink">Las tres garantías de seguridad de un hash
+        <a href="/2024/12/30/un-concepto-importante-los-buffers.html" rel="permalink">Un concepto importante: los buffers
 </a>
       
     </h2>
@@ -841,14 +772,85 @@ Pregunta: {Pregunta}
 
 
 
-14 minutos de lectura
+6 minutos de lectura
 
 
 
-| <i class="far fa-calendar" aria-hidden="true"></i> 28-08-2023
+| <i class="far fa-calendar" aria-hidden="true"></i> 30-12-2024
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Veamos más profundamente las garantías de seguridad que debe cumplir un hash para ser considerado seguro. Por fin entenderemos lo que es una colisión y qué s...</p>
+    <p class="archive__item-excerpt" itemprop="description">Los buffers son una herramienta poderosa que puedes usar para resolver problemas. Hablemos de algunos ejemplos y cómo te pueden ayudar a diseñar mejor softwa...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1731216878/isabelle-mannino-USOSteP8hOw-unsplash_cbxmst.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/11/23/que-son-los-requerimientos-funcionales.html" rel="permalink">¿Qué son los requerimientos funcionales?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 23-11-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">El análisis de requerimientos es una parte fundamental del desarrollo de software y es importantísima para crear sistemas exitosos.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1702917369/artisanalphoto-MJcb7ZhNeUA-unsplash_s6toxn.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/2024/10/31/que-es-la-programacion-asincrona.html" rel="permalink">¿Qué es la programación asíncrona?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+10 minutos de lectura
+
+
+
+| <i class="far fa-calendar" aria-hidden="true"></i> 31-10-2024
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Entender la programación asíncrona es un requisito si eres un desarrollador de software que quiere sacar el mejor rendimiento de una computadora, hablemos de...</p>
   </article>
 </div>
 
@@ -902,7 +904,7 @@ Pregunta: {Pregunta}
   </ul>
 </div>
 
-<div class="page__footer-copyright">© 2024 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">© 2025 The Dojo MX Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
