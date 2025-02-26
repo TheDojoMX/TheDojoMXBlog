@@ -1,6 +1,6 @@
 ---
 title: 'Lean: un lenguaje para escribir código correcto'
-date: 2023-11-01T00:00:00.000Z
+date: 2025-03-01
 author: Héctor Patricio
 tags: lean programación-funcional verificación formal
 comments: true
@@ -44,7 +44,22 @@ probar que nuestros sistemas hacen lo que queremos que hagan. Uno de ellos es
 **Lean** es un lenguaje de programación para crear sistemas verificados.
 Lean también es un probador de teoremas interactivo, así que es una gran herramienta
 para científicos y matemáticos que quieren verificar sus ideas.
-Fue creado por Leonardo de Moura mientras trabajaba en Microsoft Research. Lean 4 
+Fue creado por **Leonardo de Moura** mientras trabajaba en **Microsoft Research**. Lean 4
 es la última versión al momento de escribir este artículo.
 
-# Introducción a Lean
+## Introducción a Lean
+
+Para empezar a usar Lean puedes seguir las instrucciones de la
+[documentación oficial](https://leanprover.github.io/lean4/getting_started.html).
+
+## Tu primer programa en Lean
+
+Creemos un programa en Lean para verificar algo sencillo:
+
+```lean
+def add (a b : ℕ) : ℕ := a + b
+
+
+```
+
+## Conclusión
