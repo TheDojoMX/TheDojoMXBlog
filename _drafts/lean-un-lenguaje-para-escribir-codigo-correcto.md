@@ -56,10 +56,5 @@ Para empezar a usar Lean puedes seguir las instrucciones de la
 
 Creemos un programa en Lean para verificar algo sencillo:
 
-```lean
-def add (a b : ℕ) : ℕ := a + b
-
-
-```
 
 ## Conclusión
