@@ -56,5 +56,7 @@ Para empezar a usar Lean puedes seguir las instrucciones de la
 
 Creemos un programa en Lean para verificar algo sencillo:
 
-
 ## Conclusión
+
+La verificación de sistemas es algo de lo que no te podrás escapar si quieres
+hacer software confiable que cumpla misiones importantes.
