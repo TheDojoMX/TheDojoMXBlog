@@ -54,7 +54,15 @@ Para empezar a usar Lean puedes seguir las instrucciones de la
 
 ## Tu primer programa en Lean
 
-Creemos un programa en Lean para verificar algo sencillo:
+Creemos un programa en Lean para verificar algo sencillo: el algoritmo de Luhn. Este
+algoritmo se usa para validar los números de las tarjetas de crédito.
+
+```lean
+def luhn_check (n : ℕ) : bool :=
+begin
+  sorry
+end
+```
 
 ## Conclusión
 
