@@ -66,4 +66,6 @@ end
 ## Conclusión
 
 La verificación de sistemas es algo de lo que no te podrás escapar si quieres
-hacer software confiable que cumpla misiones importantes.
+hacer software confiable que cumpla misiones importantes. Lean es un lenguaje
+que te permite verificar tu código fácilmente, así que no lo pienses más y
+empieza a usarlo.
