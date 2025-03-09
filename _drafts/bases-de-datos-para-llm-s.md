@@ -24,3 +24,17 @@ En este artícul vamos a hablar de eso, pero empecemos entendiendo por qué
 se necesitan bases de datos con capacidades diferentes.
 
 ## ¿Por qué se necesitan bases de datos con capacidades especiales?
+
+Pensemos en algunos de los casos que los LLMs pueden ser útiles para resolver:
+
+- Chatbots más sofisticados que los basados en reglas
+- Sistemas de creación de contenido en general
+- Agentes autónomos más inteligentes
+- Asistentes personales que analizan el contexto
+
+Para que un LLM sea realmente útil en cualquiera de estos contextos
+necesitamos que tenga acceso a información actualizada y relevante, por ejemplo,
+para hacer un chatbot que pueda responder preguntas sobre cualquier tema
+no podemos confiar en lo que el modelo tiene codificado en sus parámetros, primero
+porque puede estar desactualizado y segundo porque es propenso a errores factuales,
+lo que se conoce como _alucinación_.
