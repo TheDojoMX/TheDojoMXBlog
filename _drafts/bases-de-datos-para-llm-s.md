@@ -40,11 +40,23 @@ porque puede estar desactualizado y segundo porque es propenso a errores,
 lo que se conoce como _alucinación_.
 
 Dependiendo del caso se requieren algunas características que se esperan del software
-en genral pero que los LLM's no son especialmente buenos para cumplir, por ejemplo:
+en general pero que los LLM's no son especialmente buenos para cumplir, por ejemplo:
 
 1. **Velocidad**:
 2. **Exactitud**:
 3. **Frescura en la información**:
 4. **Capacidad de atender a muchos usuarios**:
+
 ## Bases de datos para proyectos con LLM's
 
+## Conclusiones
+
+Las bases de datos vectoriales y de grafos son herramientas poderosas que
+te pueden ayudar a cumplir con las expectativas y necesidades de los proyectos
+que son típicos de desarrollar con LLM's.
+
+Cuando estamos desarrollando software siempre aplica el dicho de usar la herramienta
+correcta para el problema y este es un ejemplo claro de la aplicación de este principio.
+Pero siempre hay que equilibrarlo con la simplicidad y recordando que cada pieza de
+software o hardware que agreguemos al proyecto aumenta la complejidad y el costo
+de correr y mantener el proyecto.
