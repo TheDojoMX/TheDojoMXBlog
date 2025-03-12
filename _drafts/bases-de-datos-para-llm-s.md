@@ -2,12 +2,12 @@
 title: "Bases de datos para LLM's"
 date: 2025-03-07
 author: Héctor Patricio
-tags:
+tags: llms bases-de-datos
 comments: true
-excerpt: "Escribe aquí un buen resumen de tu artículo"
+excerpt: "¿Qué tipo de datos se requieren para crear proyectos útiles usando LLM's?"
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: 
+  teaser: 
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -27,7 +27,7 @@ se necesitan bases de datos con capacidades diferentes.
 
 Pensemos en algunos de los casos que los LLMs pueden ser útiles para resolver:
 
-- Chatbots más sofisticados que los basados en reglas
+- Chatbots más sofisticados que los basados en reglas, con mayor flexibilidad
 - Sistemas de creación de contenido en general
 - Agentes autónomos más inteligentes
 - Asistentes personales que analizan el contexto
@@ -42,7 +42,8 @@ lo que se conoce como _alucinación_.
 Dependiendo del caso se requieren algunas características que se esperan del software
 en general pero que los LLM's no son especialmente buenos para cumplir, por ejemplo:
 
-1. **Velocidad**:
+1. **Velocidad**: Casi todos los programas que encaran al usuario final requieren responder lo
+más rápido posible.
 2. **Exactitud**:
 3. **Frescura en la información**:
 4. **Capacidad de atender a muchos usuarios**:
@@ -53,7 +54,8 @@ en general pero que los LLM's no son especialmente buenos para cumplir, por ejem
 
 Las bases de datos vectoriales y de grafos son herramientas poderosas que
 te pueden ayudar a cumplir con las expectativas y necesidades de los proyectos
-que son típicos de desarrollar con LLM's.
+que son típicos de desarrollar con LLM's. Para usarlas correctamente hay que
+comprederlas lo suficiente, pero no es necesario que te vayas a cada detalle.
 
 Cuando estamos desarrollando software siempre aplica el dicho de usar la herramienta
 correcta para el problema y este es un ejemplo claro de la aplicación de este principio.
