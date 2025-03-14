@@ -50,6 +50,10 @@ más rápido posible.
 
 ## Bases de datos para proyectos con LLM's
 
+Debido a las características que requerimos del software y las cosas que los LLM's
+nos quitan "naturalmente", debemos complementarlos con otras tecnologías que nos
+ayuden a tener un sistema que cumpla con las expectativas.
+
 
 
 ## Conclusiones
