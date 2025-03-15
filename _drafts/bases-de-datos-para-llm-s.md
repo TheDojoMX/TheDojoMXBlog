@@ -54,14 +54,13 @@ Debido a las características que requerimos del software y las cosas que los LL
 nos quitan "naturalmente", debemos complementarlos con otras tecnologías que nos
 ayuden a tener un sistema que cumpla con las expectativas.
 
-
-
 ## Conclusiones
 
 Las bases de datos vectoriales y de grafos son herramientas poderosas que
 te pueden ayudar a cumplir con las expectativas y necesidades de los proyectos
 que son típicos de desarrollar con LLM's. Para usarlas correctamente hay que
-comprederlas lo suficiente, pero no es necesario que te vayas a cada detalle.
+comprender su funcionamiento lo suficiente, pero no es necesario que te
+vayas a cada detalle.
 
 Cuando estamos desarrollando software siempre aplica el dicho de usar la herramienta
 correcta para el problema y este es un ejemplo claro de la aplicación de este principio.
