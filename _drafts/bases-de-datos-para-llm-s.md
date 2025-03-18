@@ -54,6 +54,10 @@ Debido a las características que requerimos del software y las cosas que los LL
 nos quitan "naturalmente", debemos complementarlos con otras tecnologías que nos
 ayuden a tener un sistema que cumpla con las expectativas.
 
+### Bases de datos vectoriales
+
+### Bases de datos de grafos
+
 ## Conclusiones
 
 Las bases de datos vectoriales y de grafos son herramientas poderosas que
