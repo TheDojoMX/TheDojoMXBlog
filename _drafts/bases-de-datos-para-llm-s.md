@@ -56,6 +56,8 @@ ayuden a tener un sistema que cumpla con las expectativas.
 
 ### Bases de datos vectoriales
 
+Los modelos de lenguaje pueden generar texto, pero también pueden generar vectores.
+
 ### Bases de datos de grafos
 
 ## Conclusiones
