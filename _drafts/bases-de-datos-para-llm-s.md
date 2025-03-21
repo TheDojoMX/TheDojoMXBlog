@@ -60,6 +60,9 @@ Los modelos de lenguaje pueden generar texto, pero también pueden generar vecto
 
 ### Bases de datos de grafos
 
+Las bases de datos de grafos sirven muy bien para representar principalmente
+relaciones entre entidades.
+
 ## Conclusiones
 
 Las bases de datos vectoriales y de grafos son herramientas poderosas que
