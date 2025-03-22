@@ -68,7 +68,16 @@ de mucha ayuda.
 ### Bases de datos de grafos
 
 Las bases de datos de grafos sirven muy bien para representar principalmente
-relaciones entre entidades.
+relaciones entre entidades. Este tipo de representación es muy útil para modelar
+sistemas de información, y por lo tanto para crear búsquedas semánticas y 
+recomendaciones por similitud.
+
+Aunque este tipo de bases de datos tienen menos relevancia en los proyectos para LLM's,
+te pueden ayudar para crear mejores sistemas que contesten mejor a las peticiones de los
+usuarios y que abaraten el costo de las respuestas por el uso de tokens.
+
+Específicamente, a los sistemas que usan una base de datos de grafos para enriquecer
+las respuestas les llaman _GraphRAG_ (Graph-based Retrieval Augmented Generation).
 
 ## Conclusiones
 
