@@ -89,21 +89,32 @@ Y aunque esto lo podríamos programar manualmente, una programa especializado en
 de mucha ayuda. Además, los vectores que te dan los modelos de lenguaje tienen una dimensión
 muy grande, por lo que no es fácil de manejarlos con técnicas tradicionales.
 
-
-Faiss: Biblioteca open-source creada por Facebook AI Research, muy eficiente en búsqueda y clustering de vectores densos​
-. Se usa comúnmente embebida en aplicaciones Python/C++ para implementar búsquedas vectoriales locales (por ejemplo, en proyectos de investigación o servicios personalizados).
-Milvus: Base de datos vectorial de código abierto, diseñada para escalabilidad horizontal y manejo de billones de vectores​
-. Ofrece un servicio completo (con clustering, replicación) ideal para APIs de búsqueda semántica en producción. Integraciones con Kubernetes facilitan su despliegue en la nube.
-Pinecone: Plataforma SaaS especializada en vectores (Vector DB as a Service). Es gestionada completamente en la nube, altamente escalable y de baja latencia, con SDKs en múltiples lenguajes​
-. Pinecone simplifica la implementación de RAG en entornos empresariales: uno envía los embeddings de sus documentos, y la plataforma se encarga del almacenamiento indexado y búsquedas “serverless”. Ha ganado tracción por su facilidad de uso e integración nativa con frameworks como LangChain​
-ChromaDB: Base de datos de incrustaciones open-source. Ha ganado popularidad por su sencillez para desarrolladores de LLM apps – desde un notebook local hasta un cluster escalable usan la misma API​
-. Chroma se integra con herramientas como LangChain o LlamaIndex​
-, permitiendo gestionar colecciones de documentos, generar embeddings y consultarlos por similitud de manera muy sencilla durante el desarrollo de chatbots, asistentes y sistemas de pregunta-respuesta.
-Weaviate: Base vectorial open-source orientada a objetos con soporte de módulos de vectorización. Permite almacenar no solo el vector sino también objetos con campos adicionales (metadatos) y ofrece filtrado híbrido (por metadatos + vector). Es capaz de buscar en millones de vectores en pocos milisegundos, con características de seguridad, replicación y escalabilidad pensadas para entorno empresarial​
-Qdrant: Otro motor open-source que opera vía API (también disponible en servicio gestionado). Optimizado para similarity search de alta dimensión, se puede integrar para casos de recomendaciones, deduplicación, etc., a partir de embeddings​
-. Destaca por su diseño cloud-native (pensado para Kubernetes), facilitando escalar a conjuntos de datos masivos​
-.
-Extensiones vectoriales en bases existentes: Cabe mencionar que bases de datos tradicionales también han incorporado soporte para vectores. Por ejemplo, PostgreSQL cuenta con la extensión PGVector para almacenar y comparar embeddings en columnas de una tabla, y motores de búsqueda como Elasticsearch/OpenSearch soportan consultas k-NN sobre campos vectoriales. Incluso Redis ha añadido un módulo para búsquedas vectoriales en su almacenamiento en memoria. Estas opciones híbridas pueden ser útiles si se quieren evitar nuevos sistemas y reutilizar la infraestructura existente, aunque suelen carecer de las optimizaciones profundas que ofrecen las bases diseñadas específicamente para vectores.
+- **Faiss**: Biblioteca open-source creada por Facebook AI Research, muy eficiente en búsqueda
+y clustering de vectores densos​. Se usa comúnmente embebida en aplicaciones Python/C++ para
+implementar búsquedas vectoriales locales (por ejemplo, en proyectos de investigación o servicios personalizados).
+- **Milvus**: Base de datos vectorial de código abierto, diseñada para escalabilidad horizontal
+y manejo de billones de vectores​. Ofrece un servicio completo (con clustering, replicación) ideal
+para APIs de búsqueda semántica en producción. Integraciones con Kubernetes facilitan su despliegue en la nube.
+- **Pinecone**: Plataforma SaaS especializada en vectores (Vector DB as a Service). Es gestionada completamente
+en la nube, altamente escalable y de baja latencia, con SDKs en múltiples lenguajes​. Pinecone simplifica la implementación de RAG en entornos empresariales: uno envía los embeddings de sus documentos, y la plataforma se encarga del almacenamiento indexado y búsquedas “serverless”. Ha ganado tracción por su facilidad de uso e integración nativa con frameworks como LangChain​
+- **ChromaDB**: Base de datos de incrustaciones open-source. Ha ganado popularidad por su sencillez
+para desarrolladores de LLM apps – desde un notebook local hasta un cluster escalable usan la misma
+API​ Chroma se integra con herramientas como LangChain o LlamaIndex​, permitiendo gestionar colecciones
+de documentos, generar embeddings y consultarlos por similitud de manera muy sencilla durante el desarrollo de chatbots, asistentes y sistemas de pregunta-respuesta.
+- **Weaviate**: Base vectorial open-source orientada a objetos con soporte de módulos de
+vectorización. Permite almacenar no solo el vector sino también objetos con campos adicionales (metadatos)
+y ofrece filtrado híbrido (por metadatos + vector). Es capaz de buscar en millones de vectores en pocos milisegundos, con características de seguridad, replicación y escalabilidad pensadas para entorno empresarial​
+- **Qdrant**: Otro motor open-source que opera vía API (también disponible en servicio gestionado).
+Optimizado para similarity search de alta dimensión, se puede integrar para casos de recomendaciones,
+deduplicación, etc., a partir de embeddings​.Destaca por su diseño cloud-native (pensado para Kubernetes),
+facilitando escalar a conjuntos de datos masivos​. Extensiones vectoriales en bases existentes:
+Cabe mencionar que bases de datos tradicionales también han incorporado soporte para vectores. Por ejemplo,
+- **PostgreSQL** cuenta con la extensión PGVector para almacenar y comparar embeddings en columnas de una tabla,
+y motores de búsqueda como Elasticsearch/OpenSearch soportan consultas k-NN sobre campos vectoriales.
+Incluso Redis ha añadido un módulo para búsquedas vectoriales en su almacenamiento en memoria. Estas
+opciones híbridas pueden ser útiles si se quieren evitar nuevos sistemas y reutilizar la infraestructura
+existente, aunque suelen carecer de las optimizaciones profundas que ofrecen las bases diseñadas
+específicamente para vectores.
 
 ### Bases de datos de grafos
 
