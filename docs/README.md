@@ -1,6 +1,7 @@
 # Blog The Dojo MX
 
-En este blog hablamos de los siguientes temas:
+Repositorio con el código y el texto para el blog de
+The Dojo MX.
 
 - Desarrollo de software en general
 - Lenguajes de programación

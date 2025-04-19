@@ -1,4 +1,268 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2025-02-23T07:51:28-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series</title><link href="https://blog.thedojo.mx/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html" rel="alternate" type="text/html" title="Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series" /><published>2025-02-23T00:00:00-06:00</published><updated>2025-02-23T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series</id><content type="html" xml:base="https://blog.thedojo.mx/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html"><![CDATA[<p>La serie <strong>The MIT Press Essential Knowledge Series</strong> es una serie de libros de introducción
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2025-04-18T23:38:03-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">El arte genérico: una historia de la metaprogramación en C++</title><link href="https://blog.thedojo.mx/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++.html" rel="alternate" type="text/html" title="El arte genérico: una historia de la metaprogramación en C++" /><published>2025-04-17T00:00:00-06:00</published><updated>2025-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++</id><content type="html" xml:base="https://blog.thedojo.mx/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++.html"><![CDATA[<p>Hablar de metaprogramación en C++ suele generar cierto rechazo, y no sin razón: dominar el lenguaje ya representa un reto considerable, y sumarle la complejidad de los teamplates puede parecer excesivo. A diferencia de otros lenguajes con mecanismos más flexibles o integrados, C++ exige un conocimiento profundo no solo del lenguaje, sino también del compilador y su comportamiento. Comprender cómo interactúan las plantillas, como se resuelven los tipos, como se gestionan las sobrecargas o se aplican las optimizaciones es esencial para escribir código genérico eficaz, lo que convierte esta práctica en un desafío tanto técnico como mental.</p>
+
+<p>Pero el desafío que implica la Metaprogramación no es exclusivo de C++; otros lenguajes también han buscado formas de extender sus propias capacidades, enfrentándose a problemas similares desde enfoques muy distintos.</p>
+
+<p>A lo largo de la historia de la informática, diversos lenguajes han explorado la metaprogramación desde ángulos muy distintos. LISP fue pionero absoluto en este campo, abordando el código como si fuera datos y utilizando macros para modificar y extender el propio lenguaje desde dentro. Esa fusión entre programa y datos sentó las bases de lo que hoy conocemos como metaprogramación.</p>
+
+<p>Por otro lado, Ada introdujo desde etapas tempranas mecanismos más estructurados, como los generics, que ofrecían una forma de reutilización de código orientada a la seguridad y el tipado fuerte. Por ejemplo, al definir un paquete genérico para pilas:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">generic</span>
+   <span class="n">type</span> <span class="n">Elemento</span> <span class="n">is</span> <span class="k">private</span><span class="p">;</span>
+<span class="n">package</span> <span class="n">Pilas</span> <span class="n">is</span>
+   <span class="n">procedure</span> <span class="n">Push</span> <span class="p">(</span><span class="n">P</span> <span class="o">:</span> <span class="n">in</span> <span class="n">out</span> <span class="n">Pilas</span><span class="p">;</span> <span class="n">E</span> <span class="o">:</span> <span class="n">in</span> <span class="n">Elemento</span><span class="p">);</span>
+   <span class="n">function</span> <span class="n">Pop</span> <span class="p">(</span><span class="n">P</span> <span class="o">:</span> <span class="n">in</span> <span class="n">out</span> <span class="n">Pilas</span><span class="p">)</span> <span class="k">return</span> <span class="n">Elemento</span><span class="p">;</span>
+<span class="k">private</span>
+   <span class="n">type</span> <span class="n">Pilas</span> <span class="n">is</span> <span class="n">array</span> <span class="p">(</span><span class="n">Natural</span> <span class="n">range</span> <span class="o">&lt;&gt;</span><span class="p">)</span> <span class="n">of</span> <span class="n">Elemento</span><span class="p">;</span>
+<span class="n">end</span> <span class="n">Pilas</span><span class="p">;</span>
+<span class="n">package</span> <span class="n">Pilas_Enteros</span> <span class="n">is</span> <span class="k">new</span> <span class="nf">Pilas</span> <span class="p">(</span><span class="n">Elemento</span> <span class="o">=&gt;</span> <span class="n">Integer</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>Mientras Ada se centra en la metaprogramación estática, otros lenguajes exploraron la reflexión y los meta‑objetos para ganar flexibilidad en tiempo de ejecución. Java, por ejemplo, utiliza Annotation Processors para generar código antes de compilar, C# aprovecha Roslyn para inspeccionar y modificar su árbol de sintaxis, D ofrece CTFE y mixins, y Rust incorpora procedural macros que derivan implementaciones de rasgos automáticamente.</p>
+
+<p>Uno de los primeros antecedentes directos de la metaprogramación en C++ lo encontramos en C, particularmente en el uso creativo de su preprocesador. Más allá de las clásicas macros con funciones, surgieron técnicas como los X-macros, que permitían generar múltiples fragmentos de código reutilizando una lista común de componentes. Esta técnica consistía en definir un conjunto de macros en un archivo de cabecera que podía incluirse varias veces, redefiniendo la macro principal en cada inclusión para producir diferentes versiones del código.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// xmacro.h</span>
+<span class="cp">#define COMPONENTS \
+    X(int, age)     \
+    X(char*, name)  \
+    X(double, salary)
+</span></code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">"mac.h"</span><span class="cp">
+</span>
+<span class="c1">// 1. Definir la estructura usando las X-macros</span>
+<span class="cp">#define X(type, name) type name;
+</span><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">COMPONENTS</span>
+<span class="p">}</span> <span class="n">Employee</span><span class="p">;</span>
+<span class="cp">#undef X
+</span>
+<span class="c1">// 2. Declarar funciones específicas para imprimir cada campo</span>
+<span class="kt">void</span> <span class="nf">print_age</span><span class="p">(</span><span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"age: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">print_name</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"name: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">print_salary</span><span class="p">(</span><span class="kt">double</span> <span class="n">salary</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"salary: %.2f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">salary</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 3. Usar X-macros para llamar automáticamente a las funciones de impresión</span>
+<span class="cp">#define X(type, name) print_##name(e.name);
+</span><span class="kt">void</span> <span class="nf">print_employee</span><span class="p">(</span><span class="n">Employee</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">COMPONENTS</span>
+<span class="p">}</span>
+<span class="cp">#undef X
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Employee</span> <span class="n">emp</span> <span class="o">=</span> <span class="p">{</span><span class="mi">30</span><span class="p">,</span> <span class="s">"John Doe"</span><span class="p">,</span> <span class="mi">55000</span><span class="p">.</span><span class="mi">5</span><span class="p">};</span>
+    <span class="n">print_employee</span><span class="p">(</span><span class="n">emp</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Aunque limitada y propensa a errores, esta estrategia fue una solución creativa a la falta de mecanismos más robustos, y se ha usado en tareas como la serialización de estructuras o la generación repetitiva de código.</p>
+
+<p>La evolución hacia C++ introdujo un enfoque más robusto y expresivo para la generación de código: en lugar de depender de las macros del preprocesador — propensas a errores y difíciles de depurar — , el lenguaje apostó por mecanismos estáticos como los templates. Esta decisión, formalizada en el estándar C++98, marcó un hito importante en la historia del lenguaje. Originalmente concebidos por Bjarne Stroustrup a principios de los años 90, los templates surgieron como una extensión natural de la idea de reutilización de código sin sacrificar eficiencia. Esta elección estaba alineada con la filosofía de C++: ofrecer un control fino sobre el rendimiento y el uso eficiente de los recursos.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span>
+<span class="c1">// Definición de la clase Persona</span>
+<span class="k">struct</span> <span class="nc">Persona</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">nombre</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">edad</span><span class="p">;</span>
+
+    <span class="c1">// Sobrecarga del operador &gt;</span>
+    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Persona</span><span class="o">&amp;</span> <span class="n">otra</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">edad</span> <span class="o">&gt;</span> <span class="n">otra</span><span class="p">.</span><span class="n">edad</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Plantilla max para comparar dos objetos de cualquier tipo</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">&gt;</span>
+<span class="n">T</span> <span class="nf">max</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">?</span> <span class="n">a</span> <span class="o">:</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// Comparar enteros</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max</span><span class="p">(</span><span class="mf">5.5</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// Comparar flotantes</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max</span><span class="p">(</span><span class="sc">'a'</span><span class="p">,</span> <span class="sc">'b'</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// Comparar caracteres</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max</span><span class="p">(</span><span class="s">"Hola"</span><span class="p">,</span> <span class="s">"Mundo"</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// Comparar cadenas de caracteres</span>
+
+    <span class="c1">// Crear objetos Persona</span>
+    <span class="n">Persona</span> <span class="n">p1</span><span class="p">{</span><span class="s">"Ana"</span><span class="p">,</span> <span class="mi">30</span><span class="p">};</span>
+    <span class="n">Persona</span> <span class="n">p2</span><span class="p">{</span><span class="s">"Luis"</span><span class="p">,</span> <span class="mi">25</span><span class="p">};</span>
+
+    <span class="c1">// Usar la plantilla max con objetos Persona</span>
+    <span class="n">Persona</span> <span class="n">mayor</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"La persona mayor es: "</span> <span class="o">&lt;&lt;</span> <span class="n">mayor</span><span class="p">.</span><span class="n">nombre</span> <span class="o">&lt;&lt;</span> <span class="s">" con "</span> <span class="o">&lt;&lt;</span> <span class="n">mayor</span><span class="p">.</span><span class="n">edad</span> <span class="o">&lt;&lt;</span> <span class="s">" años."</span><span class="p">;</span>
+
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>Un ejemplo sobresaliente del poder de la metaprogramación en C++ es la Standard Template Library (STL). Diseñada hace más de dos décadas, esta biblioteca demostró que es posible construir algoritmos y estructuras de datos altamente reutilizables, seguros y eficientes sin sacrificar rendimiento. Su arquitectura, basada completamente en templates, permite que muchas decisiones se tomen en tiempo de compilación, lo que facilita optimizaciones que en otros lenguajes se delegan al tiempo de ejecución. Gracias a este enfoque, los programadores pueden trabajar con listas, vectores, mapas y muchos otros contenedores de forma abstracta, sin comprometer el control sobre el rendimiento.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp">
+</span>
+<span class="c1">// Clase personalizada</span>
+<span class="k">struct</span> <span class="nc">Persona</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">nombre</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">edad</span><span class="p">;</span>
+
+    <span class="c1">// Sobrecarga del operador &gt; (requisito para usar con maximo&lt;T&gt;)</span>
+    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Persona</span><span class="o">&amp;</span> <span class="n">otra</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">edad</span> <span class="o">&gt;</span> <span class="n">otra</span><span class="p">.</span><span class="n">edad</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Para usar en búsquedas</span>
+    <span class="kt">bool</span> <span class="n">esMayorDeEdad</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Template genérico como ejemplo de metaprogramación</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">&gt;</span>
+<span class="n">T</span> <span class="nf">maximo</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">?</span> <span class="n">a</span> <span class="o">:</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Función para imprimir un vector genérico (puede usarse con cualquier tipo imprimible)</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">&gt;</span>
+<span class="kt">void</span> <span class="nf">imprimirVector</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">vec</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">titulo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">titulo</span> <span class="o">&lt;&lt;</span> <span class="s">":</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">elem</span> <span class="o">:</span> <span class="n">vec</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"- "</span> <span class="o">&lt;&lt;</span> <span class="n">elem</span><span class="p">.</span><span class="n">nombre</span> <span class="o">&lt;&lt;</span> <span class="s">" ("</span> <span class="o">&lt;&lt;</span> <span class="n">elem</span><span class="p">.</span><span class="n">edad</span> <span class="o">&lt;&lt;</span> <span class="s">" años)</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Persona</span> <span class="n">p1</span><span class="p">{</span><span class="s">"Ana"</span><span class="p">,</span> <span class="mi">30</span><span class="p">};</span>
+    <span class="n">Persona</span> <span class="n">p2</span><span class="p">{</span><span class="s">"Luis"</span><span class="p">,</span> <span class="mi">25</span><span class="p">};</span>
+    <span class="n">Persona</span> <span class="n">p3</span><span class="p">{</span><span class="s">"Carlos"</span><span class="p">,</span> <span class="mi">40</span><span class="p">};</span>
+    <span class="n">Persona</span> <span class="n">p4</span><span class="p">{</span><span class="s">"Elena"</span><span class="p">,</span> <span class="mi">35</span><span class="p">};</span>
+
+    <span class="c1">// Uso del template maximo</span>
+    <span class="n">Persona</span> <span class="n">mayor</span> <span class="o">=</span> <span class="n">maximo</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Entre "</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span><span class="p">.</span><span class="n">nombre</span> <span class="o">&lt;&lt;</span> <span class="s">" y "</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">nombre</span>
+              <span class="o">&lt;&lt;</span> <span class="s">", el mayor es: "</span> <span class="o">&lt;&lt;</span> <span class="n">mayor</span><span class="p">.</span><span class="n">nombre</span> <span class="o">&lt;&lt;</span> <span class="s">" con "</span> <span class="o">&lt;&lt;</span> <span class="n">mayor</span><span class="p">.</span><span class="n">edad</span> <span class="o">&lt;&lt;</span> <span class="s">" años.</span><span class="se">\n\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="c1">// STL: vector y sort con lambda</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span> <span class="n">personas</span> <span class="o">=</span> <span class="p">{</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">personas</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">personas</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Persona</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Persona</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">edad</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">edad</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="n">imprimirVector</span><span class="p">(</span><span class="n">personas</span><span class="p">,</span> <span class="s">"Personas ordenadas por edad"</span><span class="p">);</span>
+
+    <span class="c1">// Uso de std::find_if para buscar al primer mayor de edad</span>
+    <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">personas</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">personas</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="k">const</span> <span class="n">Persona</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="n">esMayorDeEdad</span><span class="p">();</span>
+    <span class="p">});</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">personas</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">Primera persona mayor de edad: "</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">nombre</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Uso de std::map con string -&gt; Persona</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">Persona</span><span class="o">&gt;</span> <span class="n">directorio</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">persona</span> <span class="o">:</span> <span class="n">personas</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">directorio</span><span class="p">[</span><span class="n">persona</span><span class="p">.</span><span class="n">nombre</span><span class="p">]</span> <span class="o">=</span> <span class="n">persona</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">Directorio (map de nombre -&gt; edad):</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="p">[</span><span class="n">nombre</span><span class="p">,</span> <span class="n">persona</span><span class="p">]</span> <span class="o">:</span> <span class="n">directorio</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">nombre</span> <span class="o">&lt;&lt;</span> <span class="s">" tiene "</span> <span class="o">&lt;&lt;</span> <span class="n">persona</span><span class="p">.</span><span class="n">edad</span> <span class="o">&lt;&lt;</span> <span class="s">" años</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>La STL no solo consolidó el papel de la metaprogramación en el ecosistema de C++, sino que también mostró cómo podía usarse para diseñar software genérico, modular y de alto rendimiento.</p>
+
+<p>Durante mucho tiempo, trabajar con metaprogramación en C++ fue una tarea ardua: los mensajes de error crípticos, la dificultad de depuración y la complejidad sintáctica desalentaban incluso a programadores experimentados. A pesar de la gran utilidad de los templates, las actualizaciones significativas fueron pausadas durante un largo periodo, desde el estándar de 1998 hasta la llegada de C++11 en 2011.</p>
+
+<p>Sin embargo, el lenguaje comenzó a evolucionar de manera más progresiva, incorporando características como auto, decltype, constexpr y variadic templates, que facilitaban la escritura de código genérico más expresivo. Posteriormente, C++14 y C++17 siguieron refinando estas ideas, mientras que C++20 marcó un punto de inflexión con la inclusión de concepts, que aportaron una forma formal y clara de expresar los requisitos de los tipos en las plantillas.</p>
+
+<p>La introducción de concepts en C++20 representó un paso crucial en esta evolución. Inspirados en gran medida por las ideas de Alexander Stepanov, cocreador de la STL, los concepts permiten especificar de forma clara y expresiva qué requisitos debe cumplir un tipo para ser utilizado en una plantilla. Esta abstracción permite escribir código genérico más legible y seguro, con validaciones en tiempo de compilación que antes requerían técnicas mucho más complejas o indirectas. Gracias a herramientas como concepts, la metaprogramación en C++ ha dejado de ser un arte oscuro para convertirse en una práctica más accesible, robusta y expresiva.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;concepts&gt;</span><span class="cp">
+</span>
+<span class="c1">// Concepto que exige un método miembro `area()` que devuelva un número (real o entero)</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">&gt;</span>
+<span class="k">concept</span> <span class="n">TieneArea</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">{</span> <span class="n">a</span><span class="p">.</span><span class="n">area</span><span class="p">()</span> <span class="p">}</span> <span class="o">-&gt;</span> <span class="n">std</span><span class="o">::</span><span class="n">convertible_to</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Función que suma el área de todas las figuras que cumplen con el concepto TieneArea</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="n">TieneArea</span> <span class="n">T</span><span class="p">&gt;</span>
+<span class="kt">double</span> <span class="nf">area_total</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">figuras</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">figura</span> <span class="o">:</span> <span class="n">figuras</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">figura</span><span class="p">.</span><span class="n">area</span><span class="p">();</span>  <span class="c1">// Se garantiza que existe</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">total</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Clases que implementan el método `area()`</span>
+<span class="k">struct</span> <span class="nc">Rectangulo</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">ancho</span><span class="p">,</span> <span class="n">alto</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">area</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ancho</span> <span class="o">*</span> <span class="n">alto</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="nc">Circulo</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">radio</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">area</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="n">radio</span> <span class="o">*</span> <span class="n">radio</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Clase que NO implementa `area()` y no cumple el concepto</span>
+<span class="k">struct</span> <span class="nc">Punto</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Rectangulo</span><span class="o">&gt;</span> <span class="n">rectangulos</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">},</span> <span class="p">{</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Circulo</span><span class="o">&gt;</span> <span class="n">circulos</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span><span class="mf">1.0</span><span class="p">},</span> <span class="p">{</span><span class="mf">2.5</span><span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Área total de rectángulos: "</span> <span class="o">&lt;&lt;</span> <span class="n">area_total</span><span class="p">(</span><span class="n">rectangulos</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Área total de círculos: "</span> <span class="o">&lt;&lt;</span> <span class="n">area_total</span><span class="p">(</span><span class="n">circulos</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="c1">// std::vector&lt;Punto&gt; puntos = { {1.0, 2.0}, {3.0, 4.0} };</span>
+    <span class="c1">// area_total(puntos);  // Error de compilación: Punto no tiene `area()`</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>Además, de cara a C++26, se contempla la incorporación de mecanismos de reflexión estática, una capacidad largamente esperada que permitiría inspeccionar y manipular tipos y estructuras del programa durante la compilación. Esta funcionalidad ampliaría aún más el poder de la metaprogramación en C++, facilitando tareas como la generación automática de código, la serialización de objetos o la validación estructural sin recurrir a macros o técnicas intrusivas.</p>
+
+<p>La metaprogramación en C++ ha evolucionado de forma notable: desde los ingeniosos — aunque limitados — usos del preprocesador, hasta un presente donde los templates, concepts y la futura incorporación de reflexión estática conforman un ecosistema cada vez más potente, seguro y expresivo. Lejos de ser una técnica reservada a expertos, hoy se consolida como una herramienta estratégica para escribir código genérico, reutilizable y eficiente. Comprender esta evolución no solo permite valorar mejor el diseño del lenguaje, sino también adoptar una perspectiva más madura sobre cómo abstraemos y optimizamos nuestros programas. En última instancia, Metaprogramación en C++ es ampliar los límites de lo que podemos construir con precisión, elegancia y control.</p>]]></content><author><name>Francisco Zavala</name></author><category term="c++" /><category term="metaprogramación" /><summary type="html"><![CDATA[La metaprogramación en C++ ha recorrido un camino tan complejo como fascinante, hasta convertirse en una herramienta clave para el desarrollo de software genérico y de alto rendimiento]]></summary></entry><entry><title type="html">Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series</title><link href="https://blog.thedojo.mx/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html" rel="alternate" type="text/html" title="Reseña del libro ‘Deep Learning’ de MIT Press Essential Knowledge Series" /><published>2025-02-23T00:00:00-06:00</published><updated>2025-02-23T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series</id><content type="html" xml:base="https://blog.thedojo.mx/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html"><![CDATA[<p>La serie <strong>The MIT Press Essential Knowledge Series</strong> es una serie de libros de introducción
 a diferentes temas interesantes y actuales, sobre todo de ciencia y tecnología.</p>
 
 <p>Me gustan mucho porque son lo suficientemente introductorios para que cualquiera
@@ -1374,96 +1638,4 @@ hoy.</p>
 
 <p>Espero que lo que hablamos sobre TensorFlow en este artículo te haya ayudado
 a entenderlo un poco más. En otro artículo hablaremos de su competidor
-más directo: <strong>PyTorch</strong>.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="tensorflow" /><category term="machine-learning" /><category term="ai" /><category term="deep-learning" /><summary type="html"><![CDATA[TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablemos más de cómo funciona.]]></summary></entry><entry><title type="html">Por qué debes leer Designing Data-intensive Applications</title><link href="https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html" rel="alternate" type="text/html" title="Por qué debes leer Designing Data-intensive Applications" /><published>2024-08-30T00:00:00-06:00</published><updated>2024-08-30T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications</id><content type="html" xml:base="https://blog.thedojo.mx/2024/08/30/por-que-debes-leer-designing-data-intensive-applications.html"><![CDATA[<p>Uno de los libros más recomendados para todos los desarrolladores modernos
-es “Designing Data-intensive Applications” de <a href="https://martin.kleppmann.com/">Martin Kleppmann</a>.
-En este artículo corto vamos a hablar de por qué vale la pena leerlo.</p>
-
-<h2 id="quién-es-martin-kleppmann">¿Quién es Martin Kleppmann?</h2>
-
-<p><strong>Martin</strong> es un desarrollador, investigador, escritor y profesor de ciencias
-de la computación bastante prolífico. Actualmente trabaja en la <a href="https://www.cst.cam.ac.uk/">Universidad
-de Cambridge</a> y ha trabajado en empresas como
-<a href="https://www.crunchbase.com/organization/rapportive">Rapportive</a>(que él fundó
-y fue comprada por LinkedIn, y también trabajó ahí).</p>
-
-<p>Es también al autor de <a href="https://roundrobin.pub/">Secret Colors</a>. Un libro de
-criptografía de llave pública y llave privada para niños, de la editorial
-Round Robin.</p>
-
-<p><strong>Kleppmann</strong> es un experto en todo lo que tiene que ver con estructuras
-y manejo de datos. En el presente (2024), su interés está en la
-coordinación de datos entre sistemas locales, es decir, el software
-funciona principalmente en un dispositivo que puede estar o no
-conectado a una red y después puede sincronizarse con otros sistemas
-remotos, para adquirir más funciones como respaldos o sincronización.</p>
-
-<p>Pero su trabajo más notable hasta el momento es <strong>Designing Data-intensive
-Applications</strong> (<em>DDiA</em> a partir de ahora). Veamos por qué.</p>
-
-<h2 id="de-qué-trata-designing-data-intensive-applications">¿De qué trata Designing Data-intensive Applications?</h2>
-
-<p>Podemos resumir <em>DDiA</em> como un libro de diseño de software enfocado en los
-datos y sus interacciones. Es un libro de diseño en el sentido amplio:
-abarca desde la arquitectura de software, hasta la elección de algoritmos
-para lograr las características arquitectónicas deseadas.</p>
-
-<p>El libro tiene tres grandes partes:</p>
-
-<ol>
-  <li>
-    <p>En la primera habla de los principios fundamentales de los sistemas que hacen
-uso intensivo de datos. Habla de las características arquitectónicas
-que los sistemas intensivos es datos deben tener para ser usables. También
-se sientan las formas básicas de almacenar y representar datos a diferentes
-niveles.</p>
-  </li>
-  <li>
-    <p>En la segunda parte, se habla de sistemas distribuidos y sus implicaciones
-y las dificultades que conllevan. Aquí se tratan temas como replicación,
-particiones y transacciones. También se tratan los temas fundamentales para
-tener datos confiables: consistencia y consenso.</p>
-  </li>
-  <li>
-    <p>Aquí se habla de sistemas que derivan datos de otros datos, como índices,
-caches y cosas similares, como puedes notar, elementos que son fundamentales
-en cualquier sistema de software serio moderno.</p>
-  </li>
-</ol>
-
-<p>Se habla de todo lo necesario para aprender el manejo
-de grandes cantidades de datos, desde las formas de modelarlos y almacenarlos,
-hasta distribuirlos y procesarlos para crear subproductos útiles.</p>
-
-<h2 id="el-estilo-del-libro">El estilo del libro</h2>
-
-<p>DDiA tiene un estilo bastante relajado, nada acercado a la academia, más bien,
-es amigable y fácil de leer. Además tiene un poco de humor sutil que hará el libro
-todavía más disfrutable.</p>
-
-<p>Para complementar, el libro tiene imágenes, algunas dibujadas a mano que
-te ayudan a ubicarte en el gran esquema de todas las ideas que trata.</p>
-
-<p>Así que si te preocupa que sea un libro denso, para nada lo es.</p>
-
-<h2 id="qué-beneficios-obtendrás-al-leerlo">Qué beneficios obtendrás al leerlo</h2>
-
-<p>Si eres un desarrollador de software con experiencia, especialmente en el
-backend, podrás profundizar tu experiencia en el entendimiento de la forma
-en la que se tratan los datos para crear sistemas confiables, escalables y
-mantenibles. Toma en cuenta que este libro, como su nombre lo dice
-está enfocado en el <strong>diseño</strong>. Este libro te dará ideas prácticas para
-aplicarlas a tus proyectos.</p>
-
-<p>Si estás en cualquier otra área del desarrollo de software, este libro te
-ayudará a entender mejor cómo funciona la capa de almacenamiento de datos
-en cualquier sistema y puede ayudarte a hacerlo mejor en tu área, porque
-en todas las capas y áreas del desarrollo necesitamos tratar con datos,
-a veces poco, a veces mucho.</p>
-
-<h2 id="conclusiones">Conclusiones</h2>
-
-<p>Si quieres leer un libro sobre diseño de software, no puedes fallar con
-<strong>Designing Data-intensive Applications</strong>. Vale mucho más la pena que otros
-libros de diseño de software por su profundidad y practicidad, además de
-que te va a dar de qué platicar con otros desarrolladores de software
-que pueden estar en el mismo camino de desarrollo profesional que tú.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Matin-Kleppmann" /><category term="dato" /><category term="bases-de-datos" /><summary type="html"><![CDATA[Platiquemos de uno de esos libros que todo desarrollador sabe que debe leer, que puede ayudarte a entender las aplicaciones modernas.]]></summary></entry></feed>
+más directo: <strong>PyTorch</strong>.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="tensorflow" /><category term="machine-learning" /><category term="ai" /><category term="deep-learning" /><summary type="html"><![CDATA[TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablemos más de cómo funciona.]]></summary></entry></feed>

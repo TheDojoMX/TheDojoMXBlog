@@ -1,13 +1,14 @@
 ---
 title: "El arte genérico: una historia de la metaprogramación en C++"
-date: 2025-4-17
+date: 2025-04-17
 author: Francisco Zavala
-tags:  
+tags: c++ metaprogramación
 comments: true
 excerpt: "La metaprogramación en C++ ha recorrido un camino tan complejo como fascinante, hasta convertirse en una herramienta clave para el desarrollo de software genérico y de alto rendimiento"
-
-<img src="/assets/images/mitchell-luo-KM9rx_KSmWk-unsplash.jpg" alt="Código mutante" width="400"/>
-
+header:
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1440/v1745040911/mitchell-luo-KM9rx_KSmWk-unsplash_lgmdht.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1745040911/mitchell-luo-KM9rx_KSmWk-unsplash_lgmdht.jpg
+  overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
 Hablar de metaprogramación en C++ suele generar cierto rechazo, y no sin razón: dominar el lenguaje ya representa un reto considerable, y sumarle la complejidad de los teamplates puede parecer excesivo. A diferencia de otros lenguajes con mecanismos más flexibles o integrados, C++ exige un conocimiento profundo no solo del lenguaje, sino también del compilador y su comportamiento. Comprender cómo interactúan las plantillas, como se resuelven los tipos, como se gestionan las sobrecargas o se aplican las optimizaciones es esencial para escribir código genérico eficaz, lo que convierte esta práctica en un desafío tanto técnico como mental.

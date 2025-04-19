@@ -874,4 +874,10 @@ var store = [{
         "tags": ["libros","deep-learning","machine-learning","matemáticas"],
         "url": "/2025/02/23/resena-del-libro-deep-learning-de-mit-essential-knowledge-series.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1740316729/daniele-levis-pelusi-1UT5e8z0x-s-unsplash_o9pag2.jpg"
+      },{
+        "title": "El arte genérico: una historia de la metaprogramación en C++",
+        "excerpt":"Hablar de metaprogramación en C++ suele generar cierto rechazo, y no sin razón: dominar el lenguaje ya representa un reto considerable, y sumarle la complejidad de los teamplates puede parecer excesivo. A diferencia de otros lenguajes con mecanismos más flexibles o integrados, C++ exige un conocimiento profundo no solo del...","categories": [],
+        "tags": ["c++","metaprogramación"],
+        "url": "/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1745040911/mitchell-luo-KM9rx_KSmWk-unsplash_lgmdht.jpg"
       }]

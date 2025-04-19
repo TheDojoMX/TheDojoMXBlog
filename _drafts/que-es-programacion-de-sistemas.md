@@ -18,5 +18,5 @@ Al crear estos programas tenemos que preocuparnos por cosas como el manejo de me
 Hablemos un poco más de qué es la programación de sistemas y qué conocimientos
 y habilidades necesitas para ser un programador de esta área.
 
+## 
 
-##  
