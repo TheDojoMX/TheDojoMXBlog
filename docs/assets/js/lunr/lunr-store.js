@@ -5,6 +5,12 @@ var store = [{
         "url": "/authors/alexs.html",
         "teaser": null
       },{
+        "title": "Fzavala",
+        "excerpt":"Posts             El arte genérico: una historia de la metaprogramación en C++     ","categories": [],
+        "tags": [],
+        "url": "/authors/fzavala.html",
+        "teaser": null
+      },{
         "title": "Makko",
         "excerpt":"Posts             Instrumentando microservicios en Go con Gin y AWS X-Ray     ","categories": [],
         "tags": [],
