@@ -2,7 +2,7 @@
 title: "Bases de datos para LLM's"
 date: 2025-03-07
 author: Héctor Patricio
-tags: llms bases-de-datos
+tags: llms bases-de-datos vectores grafos embeddings
 comments: true
 excerpt: "¿Qué tipo de datos se requieren para crear proyectos útiles usando LLM's? En este artículo lo veremos."
 header:
@@ -90,13 +90,14 @@ de mucha ayuda. Además, los vectores que te dan los modelos de lenguaje tienen 
 muy grande, por lo que no es fácil de manejarlos con técnicas tradicionales.
 
 - **Faiss**: Biblioteca open-source creada por Facebook AI Research, muy eficiente en búsqueda
-y clustering de vectores densos​. Se usa comúnmente embebida en aplicaciones Python/C++ para
+y clustering de vectores densos Se usa comúnmente embebida en aplicaciones Python/C++ para
 implementar búsquedas vectoriales locales (por ejemplo, en proyectos de investigación o servicios personalizados).
 - **Milvus**: Base de datos vectorial de código abierto, diseñada para escalabilidad horizontal
-y manejo de billones de vectores​. Ofrece un servicio completo (con clustering, replicación) ideal
+y manejo de billones de vectores. Ofrece un servicio completo (con clustering, replicación) ideal
 para APIs de búsqueda semántica en producción. Integraciones con Kubernetes facilitan su despliegue en la nube.
 - **Pinecone**: Plataforma SaaS especializada en vectores (Vector DB as a Service). Es gestionada completamente
-en la nube, altamente escalable y de baja latencia, con SDKs en múltiples lenguajes​. Pinecone simplifica la implementación de RAG en entornos empresariales: uno envía los embeddings de sus documentos, y la plataforma se encarga del almacenamiento indexado y búsquedas “serverless”. Ha ganado tracción por su facilidad de uso e integración nativa con frameworks como LangChain​
+en la nube, altamente escalable y de baja latencia, con SDKs en múltiples lenguajes.
+Pinecone simplifica la implementación de RAG en entornos empresariales: uno envía los embeddings de sus documentos, y la plataforma se encarga del almacenamiento indexado y búsquedas “serverless”. Ha ganado tracción por su facilidad de uso e integración nativa con frameworks como LangChain​
 - **ChromaDB**: Base de datos de incrustaciones open-source. Ha ganado popularidad por su sencillez
 para desarrolladores de LLM apps – desde un notebook local hasta un cluster escalable usan la misma
 API​ Chroma se integra con herramientas como LangChain o LlamaIndex​, permitiendo gestionar colecciones
