@@ -83,7 +83,7 @@ Los modelos de lenguaje pueden generar texto, pero también pueden generar vecto
 representan el significado de los textos en un espacio vectorial. En inglés se les conoce como
 _embeddings_ y en español casi no se usa la traducción pero les podemos llamar _incorporaciones_.
 
-El punto es que al transformar el texto en un vector que representa su significado podemos
+El punto es que al transformar el texto en un vector que representa _su significado_ podemos
 hacer operaciones con los vectores para encontrar textos que sean similares o relacionados.
 Y aunque esto lo podríamos programar manualmente, una programa especializado en eso nos sería
 de mucha ayuda. Además, los vectores que te dan los modelos de lenguaje tienen una dimensión
