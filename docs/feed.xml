@@ -1,4 +1,177 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2025-04-21T20:18:04-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">El arte genérico: una historia de la metaprogramación en C++</title><link href="https://blog.thedojo.mx/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++.html" rel="alternate" type="text/html" title="El arte genérico: una historia de la metaprogramación en C++" /><published>2025-04-17T00:00:00-06:00</published><updated>2025-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++</id><content type="html" xml:base="https://blog.thedojo.mx/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++.html"><![CDATA[<p>Hablar de metaprogramación en C++ suele generar cierto rechazo, y no sin razón: dominar el lenguaje ya representa un reto considerable, y sumarle la complejidad de los teamplates puede parecer excesivo. A diferencia de otros lenguajes con mecanismos más flexibles o integrados, C++ exige un conocimiento profundo no solo del lenguaje, sino también del compilador y su comportamiento. Comprender cómo interactúan las plantillas, como se resuelven los tipos, como se gestionan las sobrecargas o se aplican las optimizaciones es esencial para escribir código genérico eficaz, lo que convierte esta práctica en un desafío tanto técnico como mental.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2025-05-10T12:58:59-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Bases de datos para LLM’s</title><link href="https://blog.thedojo.mx/2025/05/10/bases-de-datos-para-llm-s.html" rel="alternate" type="text/html" title="Bases de datos para LLM’s" /><published>2025-05-10T00:00:00-06:00</published><updated>2025-05-10T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/05/10/bases-de-datos-para-llm-s</id><content type="html" xml:base="https://blog.thedojo.mx/2025/05/10/bases-de-datos-para-llm-s.html"><![CDATA[<p>Los LLM’s llegaron para cambiar la forma en la que usamos la computadora.
+Pero sus limitaciones y casos de uso que nos abren, requieren que los
+utilicemos en conjunto con otras tecnologías y nuevas arquitecturas, para
+hacer software confiable, útil y que cumpla con lo que el usuario necesita.</p>
+
+<p>Una parte importante es la fuente de información, ya que no podemos confiar en
+ellos como fuentes de información exactas. ¿En qué tipos de bases de
+datos podemos guardar información para crear programas en combinación con
+los modelos generativos que sirvan lo mejor posible?</p>
+
+<p>En este artículo vamos a hablar de eso, pero empecemos entendiendo por qué
+se necesitan bases de datos con capacidades especiales.</p>
+
+<h2 id="por-qué-se-necesitan-bases-de-datos-con-capacidades-especiales">¿Por qué se necesitan bases de datos con capacidades especiales?</h2>
+
+<p>Pensemos en algunos de los casos que los LLMs pueden ser útiles para resolver:</p>
+
+<ul>
+  <li><strong>Chatbots</strong> más sofisticados que los basados en reglas, con mayor capacidad de respuesta y flexibilidad en
+en el tipo de respuestas que puede dar.</li>
+  <li>Sistemas de <strong>creación de contenido</strong> en general, que nos dan mejores ideas
+o resultados finales de alta calidad.</li>
+  <li><strong>Agentes autónomos</strong> más inteligentes que pueden tomar decisiones y realizar
+tareas más complejas.</li>
+  <li><strong>Asistentes personales</strong> que analizan el contexto, juntan información y la
+usan para poder darnos ayuda en diferentes áreas.</li>
+</ul>
+
+<p>Para que un LLM sea realmente útil en cualquiera de estos contextos
+necesitamos que tenga acceso a información <strong>actualizada</strong> y <strong>relevante</strong>.
+Para hacer un chatbot que pueda responder preguntas sobre cualquier tema
+no podemos confiar en lo que el modelo tiene codificado en sus parámetros, primero
+porque puede estar desactualizado y segundo porque es propenso a cometer errores,
+lo que se conoce como <em>alucinaciones</em>. Ni los modelos más avanzados se
+escapan de eso, y de hecho algunos investigadores piensan que mientras
+más “capaz” sea el modelo, más propenso a cometer alucinaciones. En mi experiencia,
+pasa exactamente eso, un LLM muy avanzado puede hacer invenciones cada vez más
+convincentes, pero que siguen sin estar apegadas a la realidad.</p>
+
+<h3 id="lo-que-esperamos-del-software">Lo que esperamos del software</h3>
+
+<p>Dependiendo del caso se requieren algunas características que se esperan del software
+en general pero que los LLM’s no son especialmente buenos para cumplir, por ejemplo:</p>
+
+<ol>
+  <li><strong>Velocidad</strong>: Casi todos los programas que encaran al usuario final requieren responder lo
+más rápido posible.</li>
+  <li><strong>Exactitud</strong>: En la mayoría de los casos necesitamos que la información que nos proporciona
+el LLM sea lo más exacta posible, muchas veces no necesitamos una precisión absoluta, pero por lo
+menos esperamos que no sea completamente errónea la respuesta.</li>
+  <li><strong>Frescura en la información</strong>: La información que usamos en el día a día cambia y si tenemos
+un sistema que la usa, debe tener acceso a lo más actualizado.</li>
+  <li><strong>Capacidad de atender a muchos usuarios</strong>: A veces el mismo sistema debe poder atender
+a muchos usuarios. Esto nos enfrenta con dos problemas principalmente: la capacidad de cómputo
+requerida para manejar todas las peticiones y el costo de correr los modelos.</li>
+</ol>
+
+<p>Es por eso que los proyectos basados en LLM’s utilizan técnicas para lograr dos cosas principalmente:</p>
+
+<ol>
+  <li><strong>Darle información correcta, actualizada y sucinta al LLM</strong>: Esto ataca los problemas de velocidad,
+exactitud y frescura de la información.</li>
+  <li><strong>Reducir la cantidad de tokens que consume el LLM</strong>: Esto también nos puede ayudar con casi
+todos los puntos de arriba, pero principalmente con el costo.</li>
+</ol>
+
+<p>La técnica principal se llama en inglés <em>Retrieval Augmented Generation</em> (<strong>RAG</strong>). Hablemos brevemente de ella.</p>
+
+<h2 id="qué-es-rag">¿Qué es RAG?</h2>
+
+<p>La técnica o arquitectura RAG consiste básicamente en usar una base de datos para almacenar
+la información relevante que le vamos a inyectar al LLM dependiendo de la tarea que
+tenga que realizar. La parte difícil está compuesta por dos etapas, que podemos resumir en dos preguntas:</p>
+
+<ol>
+  <li>¿Cómo preparo la información para que el LLM pueda usarla?</li>
+  <li>¿Cómo hago que cuando el LLM necesite información, pueda acceder a ella de manera rápida y eficiente?</li>
+</ol>
+
+<p>No vamos a profundizar mucho en la implementación de RAG, pero uno de los puntos
+más importantes para tener un sistema exitoso es la base de datos que usamos para
+almacenar la información, que tiene que ver más con la segunda pregunta.</p>
+
+<h2 id="bases-de-datos-para-proyectos-con-llms">Bases de datos para proyectos con LLM’s</h2>
+
+<p>Hablemos de dos tipos diferentes de bases de datos que pueden ayudar a tu sistema a cumplir con
+lo que se espera de un sistema de software, mientras aprovechamos las capacidades de los LLM’s.</p>
+
+<h3 id="bases-de-datos-vectoriales">Bases de datos vectoriales</h3>
+
+<p>Los modelos de lenguaje pueden generar texto, pero también pueden generar vectores. Estos vectores
+representan el significado de los textos en un espacio vectorial. En inglés se les conoce como
+<em>embeddings</em> y en español casi no se usa la traducción pero les podemos llamar <em>incorporaciones</em>.</p>
+
+<p>El punto es que al transformar el texto en un vector que representa <em>su significado</em> podemos
+hacer operaciones con los vectores para encontrar textos que sean similares o relacionados.
+Y aunque esto lo podríamos programar manualmente, una programa especializado en eso nos sería
+de mucha ayuda. Además, los vectores que te dan los modelos de lenguaje tienen una dimensión
+muy grande, por lo que no es fácil de manejarlos con técnicas tradicionales.</p>
+
+<p>Para que tu LLM tenga acceso a información relevante, una técnica transformar toda la información
+que quieres que el LLM pueda usar en <em>embeddings</em> y guardarlos en una base de datos vectorial.
+Las bases de datos vectoriales pueden ayudarte a <em>traer</em> (<strong>R</strong>etrieval) la información más
+relevante cuando la necesites, de manera rápida y eficiente.</p>
+
+<p>Aquí te presento algunos ejemplos de bases de datos vectoriales que puedes usar:</p>
+
+<ul>
+  <li><strong><a href="https://github.com/facebookresearch/faiss">Faiss</a></strong>: No es propiamente una base de datos, sino una
+biblioteca open-source creada por Facebook AI Research, muy eficiente en búsqueda
+y clustering de vectores densos. Se usa comúnmente embebida en aplicaciones Python/C++ para
+implementar búsquedas vectoriales locales. También puede ser usado para crear tu propia base
+de datos vectorial.</li>
+  <li><strong><a href="https://milvus.io/">Milvus</a></strong>: Es de código abierto, diseñada para escalabilidad horizontal
+y manejo de miles de millones de vectores. Ofrece un servicio completo (con clustering, replicación) ideal
+para APIs de búsqueda semántica. También tienen una versión gestionada llamada Zilliz Cloud.</li>
+  <li><strong><a href="https://www.pinecone.io/">Pinecone</a></strong>: Plataforma SaaS especializada en vectores. Es una de las formas
+más sencillas de empezar y ofrecen una capa gratuita para pequeños proyectos.</li>
+  <li><strong><a href="https://www.chromadb.dev/">ChromaDB</a></strong>: Otro proyecto open-source, que ha evolucionado a no solamente
+ser una base de datos de vectores sino también de documentos, con funciones como búsqueda de texto completo,
+filtrado de metadatos y almacenamiento multi-modal. También es una de las formas más sencillas de empezar
+porque puedes embeberla en tu proyecto de forma sencilla.</li>
+  <li><strong><a href="https://weaviate.io/">Weaviate</a></strong>: Es un proyecto open source hecho en Go. Su enfoque es completamente
+ser una base de datos pensada para servir a aplicaciones de inteligencia artificial, sobre todo a
+aquellas basadas en texto. Te puede ayudar desde convertir tus documentos en vectores y almacenarlos,
+hasta hacer búsquedas de diferentes tipos.</li>
+  <li><strong><a href="https://qdrant.tech/">Qdrant</a></strong>: Otro motor open-source con características a los anteriores, desarrollado
+en Rust, pero que ofrece características enterprise, tiene versiones gestionadas y parece que es
+usado en proyectos grandes.</li>
+  <li><strong>PostgreSQL</strong> tiene la extensión PGVector para almacenar y comparar embeddings en columnas de una tabla, por
+lo que si ya tienes una aplicación y no quieres agregar una nueva pieza de tecnología que mantener,
+el viejo confiable PostgreSQL puede ser una buena opción.</li>
+</ul>
+
+<h3 id="bases-de-datos-de-grafos">Bases de datos de grafos</h3>
+
+<p>Las bases de datos de grafos sirven muy bien para representar relaciones entre entidades.
+Este tipo de representación es muy útil para modelar sistemas de información, y por lo tanto
+para crear búsquedas semánticas y recomendaciones por similitud o temas relacionados.</p>
+
+<p>Aunque este tipo de bases de datos tienen menos relevancia en los proyectos para LLM’s,
+te pueden ayudar para crear mejores sistemas que contesten mejor a las peticiones de los
+usuarios y que abaraten el costo de las respuestas por el uso de tokens.</p>
+
+<p>A los sistemas que usan una base de datos de grafos para enriquecer las respuestas les llaman
+<em>GraphRAG</em> (Graph-based Retrieval Augmented Generation). Aquí puedes usar las clásicas bases de datos
+de grafos de toda la vida:</p>
+
+<ul>
+  <li><strong><a href="https://neo4j.com/">Neo4j</a></strong>: Igual un desarrollo de código abierto, con versiones gestionadas y
+enterprise. Si quieres irte por el camino fácil, esta es una de las mejores opciones, por su
+confiabilidad y soporte.</li>
+  <li><strong><a href="https://www.arangodb.com/">ArangoDB</a></strong>: Es una base datos híbrida, pensada tanto para grafos
+como para vectores, promete cubrir los dos lados de los que hablamos en este artículo: la flexibilidad
+de los vectores con la capacidad de grafos. No es open-source, pero tienen una versión de comunidad
+para que puedas probarla.</li>
+  <li><strong><a href="https://dgraph.io/">Dgraph</a></strong>: Es una base de datos de grafos open-source, recientemente adquirida
+por una empresa llamada Hypermode, enfocada en desarrollo de software con LLM’s. Promete procesar
+terabytes de datos y responder en tiempo real.</li>
+</ul>
+
+<h2 id="conclusiones">Conclusiones</h2>
+
+<p>Las bases de datos vectoriales y de grafos son herramientas poderosas que
+te pueden ayudar a cumplir con las expectativas y necesidades de los proyectos
+que son típicos de desarrollar con LLM’s. Para usarlas correctamente hay que
+comprender su funcionamiento lo suficiente, pero no es necesario que te
+vayas a cada detalle.</p>
+
+<p>Cuando estamos desarrollando software siempre aplica el dicho de usar la herramienta
+correcta para el problema y este es un ejemplo claro de la aplicación de este principio.
+Pero siempre hay que equilibrarlo con la simplicidad y recordando que cada pieza de
+software o hardware que agreguemos al proyecto aumenta la complejidad y el costo
+de correr y mantener el proyecto.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="llms" /><category term="bases-de-datos" /><category term="vectores" /><category term="grafos" /><category term="embeddings" /><summary type="html"><![CDATA[¿Qué tipo de datos se requieren para crear proyectos útiles usando LLM's? En este artículo lo veremos.]]></summary></entry><entry><title type="html">El arte genérico: una historia de la metaprogramación en C++</title><link href="https://blog.thedojo.mx/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++.html" rel="alternate" type="text/html" title="El arte genérico: una historia de la metaprogramación en C++" /><published>2025-04-17T00:00:00-06:00</published><updated>2025-04-17T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++</id><content type="html" xml:base="https://blog.thedojo.mx/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++.html"><![CDATA[<p>Hablar de metaprogramación en C++ suele generar cierto rechazo, y no sin razón: dominar el lenguaje ya representa un reto considerable, y sumarle la complejidad de los teamplates puede parecer excesivo. A diferencia de otros lenguajes con mecanismos más flexibles o integrados, C++ exige un conocimiento profundo no solo del lenguaje, sino también del compilador y su comportamiento. Comprender cómo interactúan las plantillas, como se resuelven los tipos, como se gestionan las sobrecargas o se aplican las optimizaciones es esencial para escribir código genérico eficaz, lo que convierte esta práctica en un desafío tanto técnico como mental.</p>
 
 <p>Pero el desafío que implica la Metaprogramación no es exclusivo de C++; otros lenguajes también han buscado formas de extender sus propias capacidades, enfrentándose a problemas similares desde enfoques muy distintos.</p>
 
@@ -1503,139 +1676,4 @@ algún problema directamente relacionado con su funcionamiento interno.</p>
 
 <p>También tienes el conocimiento básico para avanzar a aprender cómo hacer el tuyo
 en caso de que lo necesites. En un artículo futuro hablaré sobre cómo hacer un intérprete
-de un lenguaje de programación sencillo, para entender todavía mejor el funcionamiento.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="compiladores" /><category term="intérprete" /><category term="lenguajes-de-programación" /><summary type="html"><![CDATA[Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete.]]></summary></entry><entry><title type="html">¿Cómo funciona TensorFlow?</title><link href="https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html" rel="alternate" type="text/html" title="¿Cómo funciona TensorFlow?" /><published>2024-09-16T00:00:00-06:00</published><updated>2024-09-16T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow</id><content type="html" xml:base="https://blog.thedojo.mx/2024/09/16/como-funciona-tensorflow.html"><![CDATA[<p><strong>TensorFlow</strong> es una de las herramientas más populares e influyentes
-en el campo de la del aprendizaje automático. En este artículo vamos a ver
-qué es exactamente y cómo funciona.</p>
-
-<h2 id="qué-es-tensorflow">¿Qué es TensorFlow?</h2>
-
-<p>Siempre que hablamos de TensorFlow se dice que es una “biblioteca (o librería)
-para hacer aprendizaje automático, pero este definición no es muy
-explícita y por eso vamos a ver <em>cómo nos permite</em> crear modelos de
-aprendizaje.</p>
-
-<p>Para crear modelos de aprendizaje automático, tenemos que hacer muchos cálculos
-matemáticos, la gran mayoría son operaciones de multiplicación de matrices.
-Estos cálculos no son eficientes en un procesador tradicional y por eso se
-requiere de toda la ayuda que se pueda conseguir para hacerlos lo más rápido
-posible y gastando menos energía.</p>
-
-<p>Es aquí donde entra <strong>TensorFlow</strong>, una biblioteca que permite <em>representar</em> estos
-cálculos mediante grafos de cómputo y después ejecutarlos en procesadores
-especializados como tarjetas gráficas y otros procesadores eficientes en
-operaciones matemáticas pesadas. Además, TensorFlow abstrae al usuario final (tú),
-de los detalles de implementación de muchas funciones y operaciones matemáticas
-que se usan mucho en el aprendizaje automático. Y finalmente, con su <em>API</em> de alto
-nivel, <strong>Keras</strong>, te permite crear diferentes tipos de redes neuronales sin
-que tengas que pelearte con los detalles de implementación.</p>
-
-<p>Y es aquí donde empieza lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
-llegamos a él y para qué nos sirve? Veamos.</p>
-
-<h2 id="grafos-de-cómputo-de-tensorflow">Grafos de cómputo de TensorFlow</h2>
-
-<p>Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su
-representación, por ejemplo, sumemos dos números, que llamaremos X y Y.</p>
-
-<p>¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que podemos ver con
-una herramienta de análisis de TensorFlow llamada TensorBoard:</p>
-
-<p><img src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_250/v1726379906/Screenshot_2024-09-14_at_23.53.34_1_izykn5.png" alt="Imagen de un grafo de cómputo de TensorFlow" class="align-center" /></p>
-
-<p>Puedes pensar en este grafo como una serie de nodos que representan cada uno
-una operación sobre conjuntos de datos numéricos llamados tensores. Cuando
-ejecutamos este grafo, los tensores <em>fluyen</em> por estos nodos, transformándose
-en cada uno, hasta que obtenemos el resultado final de la operación. (Los nodos
-que dicen <code class="language-plaintext highlighter-rouge">Identity</code> son operaciones de copia o lectura de valores, útiles para
-el funcionamiento interno de  TensorFlow).</p>
-
-<p>La otra cosa que podemos notar hasta abajo de la gráfica son los dos nodos que
-representan nuestros números simples: X scalar y Y scalar, ya que los definimos
-como números simples, que también pueden pensarse como tensores de una dimensión.</p>
-
-<p>Formalmente, TensorFlow te da una serie de estructuras de datos, que puedes
-ir construyendo poco a poco para definir todas las operaciones que necesites hacer.</p>
-
-<p>En una red neuronal, estos grafos son mucho más complicados, pero justo ese es
-el trabajo de TensorFlow: ayudarte a definirlos y a ejecutarlos en el hardware
-más conveniente para tu proyecto.</p>
-
-<p>Usar los grafos de cómputo de TF te permite varias cosas más:</p>
-
-<ul>
-  <li><strong>Optimización de las operaciones</strong>: TensorFlow tiene todo un sistema de optimización
-llamado <code class="language-plaintext highlighter-rouge">Grappler</code>, que se encarga varias optimizaciones.</li>
-  <li><strong>Paralelización</strong>. Con las operaciones divididas, TensorFlow puede verificar
-qué operaciones son independientes y puede ejecutarlas en otros procesadores
-si están disponibles.</li>
-  <li><strong>Exportación</strong>. Una vez teniendo las operaciones definidas en un grafo, no necesitamos
-de Python para ejecutarlas, así que TensorFlow puede ejecutarlas en otros dispositivos
-y usando otros lenguajes.</li>
-</ul>
-
-<p>Esta definición de grafos de cómputo no es la única forma de trabajar con TensorFlow,
-ya que desde su versión 2.0, también permite trabajar con un modo más imperativo,
-que se siente más integrado con Python y más dinámico: la ejecución adelantada (en
-inglés: <em>eager execution</em>). Con esta forma de ejecución, las operaciones se van
-ejecutando inmediatamente después de definirlas. Esto es más fácil de programar y
-de leer, pero deja poco espacio para la optimización. Es justamente como la comparación
-entre un lenguaje compilado y uno interpretado.</p>
-
-<h2 id="tensorflow-y-keras">TensorFlow y Keras</h2>
-
-<p>Keras era otra biblioteca que se creó por separado, para hacer más fácil de usar
-la versión 1.0 de TensorFlow, que era bastante más verbosa de programar (por sólo
-soportar grafos de cómputo estáticos).Sin embargo, en la versión 2.0 de TensorFlow,
-Keras se volvió parte del paquete.</p>
-
-<p>Keras te permite crear modelos de aprendizaje profundo de manera sencilla. Es la
-manera fácil de usar TensorFlow, pero también te permite complicarte tanto como quieras
-o necesites (esperamos que sea esto último). Keras usa el principio de “revelación
-progresiva de la complejidad”, lo que significa que puedes empezar de manera muy
-sencilla e ir aprendiendo cosas conforme vayas avanzando en hacer cosas más complejas.</p>
-
-<p>Así que la forma más común de usar TensorFlow para crear tus modelos de machine
-learning es mediante la interfaz de Keras, que además de todo te provee de
-utilidades que son de uso muy común en las redes neuronales. Por ejemplo, provee
-regularizadores, inicializadores, funciones de activación, optimizadores, y muchas
-utilidades más. Es por eso que ya casi no se concibe el uso de TensorFlow para
-casos comunes sin usar Keras.</p>
-
-<h2 id="tensorflow-y-mlir">TensorFlow y MLIR</h2>
-
-<p>MLIR es una herramienta para crear compiladores hecha por parte del mismo
-equipo que hizo LLVM, la infraestructura para compiladores que está detrás
-de la mayoría de los compiladores modernos.</p>
-
-<p>La especialidad de MLIR es hacer traducciones para arquitecturas de hardware no
-tradicionales,usando un lenguaje intermedio multi-capa al que le puedes agregar
-más plugins para diferentes arquitecturas de ejecutores. MLIR es muy usado
-para computación de alto rendimiento, justamente la que necesitamos para
-crear modelo de aprendizaje automático complejos en tiempos y con costos
-razonables.</p>
-
-<p>Así que TensorFlow, aprovechando este sistema, usa MLIR para compilar los
-grafos de cómputo y los modelos para hardware específico, para que se pueda
-obtener el mejor rendimiento posible.</p>
-
-<h2 id="tensorflow-y-su-relación-con-el-hardware">TensorFlow y su relación con el hardware</h2>
-
-<p>Después de la sección anterior, es muy probable que la relación de TF con
-el hardware quede muy clara: TensorFlow ayuda a que se pueda compilar
-de mejor manera el código con los cálculos para poder ejecutarlo
-en el hardware especializado.</p>
-
-<p><strong>IF</strong> soporta gran variedad de tipos de hardware y es por eso que hasta el
-momento es la biblioteca de machine learning con mejor soporte para
-distribuir tus modelos en diferentes dispositivos, desde procesadores
-especializados hasta que corran directamente en tu teléfono o navegador.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>Si quieres hacer machine learning, lo más probable es que tengas que
-aprender TensorFlow, una herramienta muy útil para hacer los modelos usados
-hoy.</p>
-
-<p>Espero que lo que hablamos sobre TensorFlow en este artículo te haya ayudado
-a entenderlo un poco más. En otro artículo hablaremos de su competidor
-más directo: <strong>PyTorch</strong>.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="tensorflow" /><category term="machine-learning" /><category term="ai" /><category term="deep-learning" /><summary type="html"><![CDATA[TensorFlow permite crear modelos de aprendizaje automático sin que te tengas que plear con la forma en la que se hacen los cálculos en los ejecutores. Hablemos más de cómo funciona.]]></summary></entry></feed>
+de un lenguaje de programación sencillo, para entender todavía mejor el funcionamiento.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="compiladores" /><category term="intérprete" /><category term="lenguajes-de-programación" /><summary type="html"><![CDATA[Hablemos brevemente de las etapas de una de las formas de correr tu código: un intérprete.]]></summary></entry></feed>

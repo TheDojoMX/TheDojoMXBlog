@@ -886,4 +886,10 @@ var store = [{
         "tags": ["c++","metaprogramación"],
         "url": "/2025/04/17/el-arte-generico-una-historia-de-la-metaprogramacion-en-C++.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1745040911/mitchell-luo-KM9rx_KSmWk-unsplash_lgmdht.jpg"
+      },{
+        "title": "Bases de datos para LLM's",
+        "excerpt":"Los LLM’s llegaron para cambiar la forma en la que usamos la computadora. Pero sus limitaciones y casos de uso que nos abren, requieren que los utilicemos en conjunto con otras tecnologías y nuevas arquitecturas, para hacer software confiable, útil y que cumpla con lo que el usuario necesita. Una...","categories": [],
+        "tags": ["llms","bases-de-datos","vectores","grafos","embeddings"],
+        "url": "/2025/05/10/bases-de-datos-para-llm-s.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1742691554/chen-zy-ccr9dAWi0hw-unsplash_omykun.jpg"
       }]
