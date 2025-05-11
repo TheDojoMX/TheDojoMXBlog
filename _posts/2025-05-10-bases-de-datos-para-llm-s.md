@@ -4,7 +4,7 @@ date: 2025-05-10
 author: Héctor Patricio
 tags: llms bases-de-datos vectores grafos embeddings
 comments: true
-excerpt: "¿Qué tipo de datos se requieren para crear proyectos útiles usando LLM's? En este artículo lo veremos."
+excerpt: "Los LLM's nos permiten crear softeware que no creíamos posible hasta hacer poco. Pero necesitan que les demos información de manera especial. ¿Qué tipo de bases datos se requieren para crear proyectos útiles? En este artículo lo veremos."
 header:
   overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1742691554/chen-zy-ccr9dAWi0hw-unsplash_omykun.jpg
   teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1742691554/chen-zy-ccr9dAWi0hw-unsplash_omykun.jpg
