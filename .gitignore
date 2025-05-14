@@ -43,3 +43,4 @@ Temporary Items
 generative_tools/.env
 generative_tools/descriptions_*.json
 generative_tools/*.log
+generative_tools/description_results/*
