@@ -1,6 +1,6 @@
 ---
 title: "Debes leer 'Thinking in Systems'"
-date: 2024-12-31
+date: 2025-05-15
 author: Héctor Patricio
 tags: libros sistemas complejidad
 comments: true
@@ -23,7 +23,6 @@ Veamos por qué puede ser una buena lectura para ti y por que te recomiendo leer
 fallecimiento de su autora. Pero el primer borrador de libro ya estaba circulando en **1993**.
 Esto te lo estoy diciendo como un recordatorio más de que muchas de las ideas que vale la pena leer tienen
 mucho tiempo de haber sido escritas, sobre todo en comparadas con las ideas a las que les hacemos
-
 caso en el mundo del software.
 
 ## De qué trata Thinking in Systems
@@ -78,12 +77,51 @@ En esta parte podrás aprender a identificar varios patrones más.
 
 ## Cómo controlar y cambiar un sistema
 
+Una de las lecciones más importantes de "Thinking in Systems" es que los sistemas son muy sensibles
+a los cambios y que no es fácil comprender su efectos. Por lo tanto, un sistema es **difícil de controlar**
+o cambiar y no nos queda más que hacer experimentos para entender cómo cambiarlo.
+
+El libro da una lista de 12 cosas que podemos hacer para cambiar un sistema, pero deja claro que ninguna
+de esas cosas es infalible. Esto es importante porque los desarrolladores de software somos muy propensos
+a sentir que entendemos un sistema más de lo que realmente lo entendemos y segundo a pensar que lo podemos
+cambiar con facilidad haciendo intervenciones sencillas. Esto normalmente lleva al desastre.
+
+### Reglas para vivir en un mundo de sistemas complejos
+
+Finalmente, Donella da una lista de 15 reglas o principios para comportarnos mejor en un mundo en
+el que los sistemas son engañosos, que se me hacen esenciales para cualquier persona que trabaje en el área del conocimiento,
+y son especialmente importantes para los desarrolladores de software. Cuando los leas verás que tienen mucho
+que ver con las "buenas prácticas" que se fomentan en diferentes metodologías de desarrollo de software.
+
+La mayoría tienen que ver con la idea de manejar correctamente la información que tenemos, clarificarla,
+registrarla y compartirla.
+
 ## Qué podemos aprender los desarrolladores de software
 
-Ya hemos repetido hasta el cansancio que los desarrolladores de software debemos ser expertos en modelar
-sistemas. ¿Pero por qué? Recuerda que tu trabajo es representar el mundo real en un lenguaje de programación,
+Ya hemos repetido hasta el cansancio que los desarrolladores de software _debemos ser expertos en modelar
+sistemas_. ¿Pero por qué? Recuerda que tu trabajo es representar el mundo real en un lenguaje de programación,
+conectar diferentes piezas de software para que la información fluya, y mantener esos sistemas funcionando,
+al mismo tiempo que cuidas de los recursos que consumen y te aseguras de que evolucionen para que sigan siendo
+precisos y útiles.
+
+Todo lo anterior implica **primero** entender el sistema del mundo real y **después** representarlo en nuestras
+computadoras. Así que creo que es obvio por qué este libro es tan buena lectura para cualquier desarrollador de
+software que quiera avanzar en su carrera: te ayudará a ser mejor en tu trabajo.
+
+Pero el libro tiene una lección que me parece de suma importancia: los sistemas del mundo real son más complejos
+de lo que podemos representar en cualquier medio de representación humano, por lo que debemos ser explícitos
+sobre lo que estamos modelando y sus límite, siempre manteniendo una actitud de curiosidad, aprendizaje y
+humildad intelectual. Este punto específicamente es lo que los desarrolladores de software se beneficiarán
+de aprender a hacer, y es una de las razones por las que este libro es tan importante.
 
 ## Conclusión
 
 Si eres desarrollador de software y quieres mejorar tu habilidad para crear
-sistemas complejos que sirvan en el mundo real, mientras antes leas este libro, mejor.
+sistemas complejos que sirvan en el mundo real, mientras antes leas este libro, mejor. No solo lo leas,
+**estudia** Thinking in Systems, _toma notas_, y pon en práctica lo que aprendas en los nuevos sistemas que
+diseñes y construyas.
+
+El mensaje de fondo de Meadows es que aquellos que nos dedicamos a entender y modelar el mundo podemos
+tener un gran impacto en la forma en la que funcionan las cosas, pero ese impacto no es fácil de lograr y
+mucho menos inmediato. A final de cuentas, ¿no quieres que tu trabajo sea importante? Si es así, seguir
+los consejos de este libro te ayudará a que eso suceda.
