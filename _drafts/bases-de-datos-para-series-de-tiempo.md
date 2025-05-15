@@ -26,6 +26,7 @@ puedes almacenar pares de valores de tiempo y el valor medido sin ninguna dificu
 
 El problema viene cuando quieres hacer consultas sobre grandes cantidades de datos.
 
+
 ## ¿Qué hace una base de datos de series de tiempo?
 
 Las bases de datos de series de tiempo:

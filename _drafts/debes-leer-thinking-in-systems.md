@@ -30,7 +30,11 @@ caso en el mundo del software.
 Pero, ¿de qué trata **Thinking in Systems**? Este libro te da una introducción a los conceptos básicos
 del modelado de sistemas, empezando por ejemplos muy sencillos y avanzando un poco en complejidad, sin
 presentarte nada realmente complejo. Te ayuda a comprender cómo empezar a modelar un sistema usando
-ejemplos y diagramas
+ejemplos y diagramas sencillos.
+
+Lo más interesante de este libro es el análisis de los comportamientos de los sistemas, y cómo es que
+aunque un sistema esté compuestos de partes completamente entendidas, el comportamiento del sistema
+no es obvio o fácil de predecir.
 
 ## Qué podemos aprender los desarrolladores de software
 
