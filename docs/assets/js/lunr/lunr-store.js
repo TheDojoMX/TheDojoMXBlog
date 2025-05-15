@@ -892,4 +892,10 @@ var store = [{
         "tags": ["llms","bases-de-datos","vectores","grafos","embeddings"],
         "url": "/2025/05/10/bases-de-datos-para-llm-s.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1742691554/chen-zy-ccr9dAWi0hw-unsplash_omykun.jpg"
+      },{
+        "title": "Debes leer 'Thinking in Systems'",
+        "excerpt":"El libro “Thinking in Systems” de Donella Hager Meadows es un libro muy importante para cualquier desarrollador de software. ¿Por qué? Los desarrolladores nos dedicamos a hacer sistemas, y este es justo el tema principal del libro, escrito por una experta en sistemas complejos. Veamos por qué puede ser una...","categories": [],
+        "tags": ["libros","sistemas","complejidad"],
+        "url": "/2025/05/15/debes-leer-thinking-in-systems.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1740059354/ricardo-frantz-nEd9E9V8Qx0-unsplash_wnklhe.jpg"
       }]
