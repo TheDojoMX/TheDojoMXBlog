@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2025-05-15T13:50:12-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Debes leer ‘Thinking in Systems’</title><link href="https://blog.thedojo.mx/2025/05/15/debes-leer-thinking-in-systems.html" rel="alternate" type="text/html" title="Debes leer ‘Thinking in Systems’" /><published>2025-05-15T00:00:00-06:00</published><updated>2025-05-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/05/15/debes-leer-thinking-in-systems</id><content type="html" xml:base="https://blog.thedojo.mx/2025/05/15/debes-leer-thinking-in-systems.html"><![CDATA[<p>El libro “Thinking in Systems” de <a href="https://en.wikipedia.org/wiki/Donella_H._Meadows">Donella Hager Meadows</a>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2025-05-16T00:47:00-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué son los agentes inteligentes?</title><link href="https://blog.thedojo.mx/2025/05/16/que-son-los-agentes-inteligentes.html" rel="alternate" type="text/html" title="¿Qué son los agentes inteligentes?" /><published>2025-05-16T00:00:00-06:00</published><updated>2025-05-16T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/05/16/que-son-los-agentes-inteligentes</id><content type="html" xml:base="https://blog.thedojo.mx/2025/05/16/que-son-los-agentes-inteligentes.html"><![CDATA[<p>Con la llegada de los LLM’s, el término “agente” empezó a ganar más popularidad y
+lo oímos por todos lados. En este artículo vamos a hablar de qué son, para entenderlo
+lo mejor posible y no dejarnos llevar por el hype.</p>
+
+<h2 id="qué-es-un-agente">¿Qué es un agente?</h2>
+
+<p>Este es un concepto que ha sido muy difícil de definir y por muchaos lados encuentras definiciones diferentes.
+En ester artículo vamos a dar una definicón sencilla y que nos parece práctica y que captura la idea principal
+de toda esta ola de crear programas que puedan comportarse como agentes.</p>
+
+<p>Primeo vamos a la etimología de la palabra: viene del latín “agere” que significa “hacer”, “actuar”, “mover”, entre
+otros significados. En pocas palabras, un agente es cualquier entidad que puede tomar decisiones y actuar.
+Esta definición confiere bastante flexibilidad, pero conlleva en el fondo un idea que para mi es
+la característica principal: la <strong>autonomía</strong>.</p>
+
+<p>En el caso de sistemas de software, vamos a definir a un agente como un <strong>programa</strong> que tiene un <strong>objetivo</strong> y para
+lograrlo puede tomar decisiones <strong>autónomas</strong>. Estas decisiones pueden ser tomadas basadas en su <strong>percepción</strong>
+del entorno, en su estado interno (incluida la memoria) o en una combinación de estas cosas. Finalmente un agente
+puede <strong>actuar</strong> para modificar su contexto y lograr su objetivo. Una característica que no siempre se cumple
+pero que a veces está implícita es que el agente está funcionando de manera <em>constante</em>, o sea que no es
+un programa que prendas y apagues, sino que está corriendo todo el tiempo.</p>
+
+<p>En esta definición sencilla, encontramos varias partes clave que debe tener un programa para ser considerado un agente:</p>
+
+<ul>
+  <li><strong>Objetivo</strong>: El agente debe tener un objetivo claro que quiere lograr y por lo tanto una manera de medir su éxito.</li>
+  <li><strong>Autonomía</strong>: El agente debe ser capaz de tomar decisiones para los diferentes casos que se le presenten.</li>
+  <li><strong>Percepción</strong>: Aunque no es completamente necesario, muchos agentes tienen la capacidad de leer su entorno para
+tomar mejores decisiones.</li>
+  <li><strong>Actuación</strong>: Los agentes pueden ser capaces de modificar su entorno, de hecho, esta, junto con el objetivo
+es lo que le da sentido al concepto de agente.</li>
+  <li><strong>Estado interno</strong>: Debido a que las tareas que realizan los agentes pueden ser complejas, muchas veces es 
+necesario mantener un estado interno que les permita ejecutar un plan de múltiples pasos, y para eso necesitan un
+registro interno. Este estado interno puede incluir diferentes tipos de memorias: a corto plazo, a largo plazo, cachés, etc.</li>
+</ul>
+
+<p>¿En qué se diferencia un agente de un programa normal? Para mi la principal diferencia es la capacidad de tomar
+algún tipo de decisión autónoma y ejecutarla.</p>
+
+<h2 id="por-qué-tanto-alboroto-con-los-agentes">¿Por qué tanto alboroto con los agentes?</h2>
+
+<p>Como podrás notar, lo que acabamos de describir se puede lograr con cualquier programa desde hace mucho tiempo,
+de hecho, tenemos ejemplos de programas que llamamos agentes desde hace década, justo porque cumplen con algunas 
+de las características que describimos.</p>
+
+<p>Por ejemplo:</p>
+
+<ul>
+  <li>Los programas que monitorean el estado de un servidor y mandan las estadísticas a un concentrador para tomar decisiones.</li>
+  <li>Los agentes encargado de actualizar automáticamente tus sistemas operativos, como el Windows Update Agent.</li>
+  <li>Programas encargados de negociar entre protocolos de comunicación, como en el caso de DHCP o DNS, o SMTP.</li>
+</ul>
+
+<p>Todos estos programas cumplen con la capacidad de tomar decisiones autónomas, cooperar con su entorno y ejecutar acciones
+para lograr su objetivo. Pero, ¿entonces por qué el boom actual?</p>
+
+<p>Una da las partes más difíciles de construir un programa que se pueda considerar un agentes es la de la
+toma de decisiones. Los algoritmos internos capaces de adaptarse a muchas situaciones y tomar decisiones
+sin que fueran explícitamente programados para eso son muy muy difíciles de construir. ¿Pero qué pasa si
+podemos usar las nuevas tecnologías como el <em>corazón</em> de un agente?</p>
+
+<p>Justamente, los LLM’s cons su capacidad limitada de razonamiento, toma de decisiones, adaptación, conocimiento
+general y capacidad de generar texto bien formado (para usarlo en protocolos de comunicación), son una tecnología
+perfecta para servir como los motores de decisión de un agente, todas las demás partes: la memoria, la observación
+del contexto o el entorno, el estado interno y la capacidad de actuar son temas que ya teníamos más o menos resueltos.</p>
+
+<p>Es por esto que los LLM’s y los nuevos sistemas capaces de adaptarse a una cantidad inimaginable de entradas
+de información y adaptar su respuesta y comportamiento a ellas, así como la capacidad de ser modificados
+para comportarse mejor para casos específicos, han creado una ola de software basado en la idea de los agentes.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Ahora ya sabes lo que es un agente de software, por qué decimos en esta última ola que los modernos son <em>inteligentes</em>
+y qué está impulsando toda la emoción que se ve por todos lados.Los agentes son herramientas poderosas
+para crear sistemas que hagan cosas complejas, normalmente con poca programación pero mucho
+control de nuestro lado. Viene una época en la que cada vez se usarán más, por lo que te conviene
+conocerlos y aprender a usar esta técnica de desarrollo. En un artículo futuro vamos a ver cómo crear
+diferentes tipos de agentes con capacidades cada vez más complejas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="agente" /><category term="IA" /><category term="inteligencia-artificial" /><category term="agents" /><summary type="html"><![CDATA[La palabra 'agente' anda por todos lados desde la salida de los LLM's. Hablemos de lo que son y cómo te pueden ayudar a desarrollar sistemas más complejos.]]></summary></entry><entry><title type="html">Debes leer ‘Thinking in Systems’</title><link href="https://blog.thedojo.mx/2025/05/15/debes-leer-thinking-in-systems.html" rel="alternate" type="text/html" title="Debes leer ‘Thinking in Systems’" /><published>2025-05-15T00:00:00-06:00</published><updated>2025-05-15T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/05/15/debes-leer-thinking-in-systems</id><content type="html" xml:base="https://blog.thedojo.mx/2025/05/15/debes-leer-thinking-in-systems.html"><![CDATA[<p>El libro “Thinking in Systems” de <a href="https://en.wikipedia.org/wiki/Donella_H._Meadows">Donella Hager Meadows</a>
 es un libro muy importante para cualquier desarrollador de software. ¿Por qué? Los desarrolladores nos dedicamos
 a hacer <em>sistemas</em>, y este es justo el tema principal del libro, escrito por una experta en sistemas complejos.</p>
 
@@ -1381,268 +1458,4 @@ Martin es un gran músico, compuso una ópera llamada “Die Türme des Februar�
   <li><a href="https://dataintensive.net/">Designing Data-Intensive Applications</a></li>
   <li><a href="https://twitter.com/martinkl">Twitter de Martin Kleppmann</a></li>
   <li><a href="https://github.com/mrkleppmann">GitHub de Martin Kleppmann</a></li>
-</ul>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Martin-Kleppmann" /><category term="bases-de-datos" /><category term="sistemas-distribuidos" /><category term="software-local-first" /><summary type="html"><![CDATA[Hablemos de Martin Kleppmann, uno de los desarrolladores e investigadores de software más influyentes en el panorama actual de las bases de datos y sistemas que usan datos.]]></summary></entry><entry><title type="html">Los diferentes grados de diseño de software</title><link href="https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html" rel="alternate" type="text/html" title="Los diferentes grados de diseño de software" /><published>2024-10-19T00:00:00-06:00</published><updated>2024-10-19T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-diseno-de-software.html"><![CDATA[<p>Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza
-a hablar de patrones de diseño, infraestructura, y otras cosas con las que no nos conviene
-meternos en ese nivel.</p>
-
-<p>Es por eso que en este artículo vamos a proponer una taxonomía para los diferentes grados de diseño
-de software. Pero antes hablemos de por qué te conviene hacer una distinción clara.</p>
-
-<p>También presentaremos una serie de recursos que puedes usar más para aprender de cada uno de
-estos niveles de abstracción en el diseño de software.</p>
-
-<h2 id="por-qué-te-conviene-distinguir-los-grados-de-diseño-de-software">Por qué te conviene distinguir los grados de diseño de software</h2>
-
-<p>Lo primero que debemos entender es que hacer software <strong>implica</strong> diseñar software. Las raíces
-de la palabra diseñar son las mismas que las de la palabra designar: las dos cosas tienen que ver
-con <strong>decisiones</strong>. Cuando <em>diseñamos</em> entendemos que estamos tomando decisiones y documentándolas
-por adelantado. Pero aunque ni las tomemos por adelantado, ni las documentemos, esas decisiones
-están ahí y por lo tanto el diseño existe.</p>
-
-<p>Teniendo esto presente, nos conviene ponerle atención al diseño desde el principio, para crear
-software que <strong>cumpla tanto con las funciones como con las características que se esperan de él</strong>.</p>
-
-<p>¿Ahora bien, por dónde empezamos a diseñar? Es aquí en donde entran los grados de abstracción
-en diseño: conocer el nivel que necesitamos nos ayudará a empezar en el lugar adecuado.</p>
-
-<h2 id="los-grados-de-abstracción-en-diseño-de-software">Los grados de abstracción en diseño de software</h2>
-
-<p>Hablemos de cada uno de los grados de abstracción en diseño de software, qué es lo que se espera
-y cómo contribuya a la solución final.</p>
-
-<h3 id="arquitectura-de-soluciones">Arquitectura de soluciones</h3>
-
-<p>El propósito del software o de cualquier sistema es resolver problemas para un usuario. Estos
-sistemas están dentro de un contexto completo que le da sentido a su existencia. Es en este nivel
-en donde se define la arquitectura de la solución.</p>
-
-<p>Tomando en cuenta el contexto completo de dónde va a funcionar el software, la organización
-o los individuos que lo van a usar, el contexto social, económico e incluso político, se define
-la arquitectura de la solución, es decir, se toman en cuenta los componentes principales que van
-influir en que el software pueda cumplir con su propósito.</p>
-
-<p>Este nivel de diseño es el más alto relacionado con el software y requiere capacidad técnica, pero
-también amplias capacidades a nivel de negocio, administración y otros campos relacionados con
-el funcionamiento de las organizaciones.</p>
-
-<p>Lo anterior implica que este nivel es poco específico en cuanto los detalles de la solución,
-pero tiene gran impacto tanto en el que software cumpla con lo que se espera de él, como con
-conseguir los recursos necesarios para su desarrollo. Además las decisiones que se toman aquí
-tienen un gran impacto en los negocios que solicitan el software.</p>
-
-<p>¿Qué tanto debe saber sobre <em>construcción de software</em> un arquitecto de soluciones? Como dijimos,
-este nivel requiere poca especificidad técnica, pero gran capacidad para combinar conocimientos
-de lo que es posible construir con el software, el contexto del negocio y proyección de los cambios
-que el entorno va a sufrir. Este es un rol más amplio que profundo.</p>
-
-<p>Un arquitecto de soluciones debe ser el traductor entre lo que el negocio necesita, tomando en cuenta
-el contexto amplio de este, y el tipo de software que se puede construir o adquirir.</p>
-
-<h4 id="recursos-para-aprender-arquitectura-de-soluciones">Recursos para aprender arquitectura de soluciones</h4>
-
-<p>En esta sección te presento algunos recursos que te pueden ayudar a aprender sobre este nivel de
-abstracción en el diseño de software, pero recuerda que nada sustituye la experiencia práctica:</p>
-
-<ul>
-  <li>
-    <p><a href="https://www.oreilly.com/library/view/solution-architecture-foundations/9781780175676/">Solution Architecture Foundations</a>. Este libro es una excelente introducción a la arquitectura de soluciones y tiene
-un enfoque práctico.</p>
-  </li>
-  <li>
-    <p><a href="https://press.stripe.com/an-elegant-puzzle">An Elegant Puzzle: Systems of Engineering Management</a>. Está escrito
-por un ingeniero de software y líder de ingeniería en grandes empresas de software. Este libre es un conjunto de
-ensayos sobre la administración de equipos de ingeniería, pero también incluye valiosas lecciones sobre
-cómo guiar a una organización en la que su principal activo es el software.</p>
-  </li>
-</ul>
-
-<h3 id="arquitectura-de-software">Arquitectura de software</h3>
-
-<p>El siguiente nivel de abstracción es la arquitectura de software. Esta actividad es una de las
-más mal entendidas y por lo tanto mal ejecutadas a mi parecer. La arquitectura tiene que ver
-con las características que una pieza de software demuestra a nivel estructural, es decir,
-cualidades que surgen de la interacción de sus componentes.</p>
-
-<p>Un error muy común al intentar practicar la arquitectura de software es irse demasiado rápido
-a los detalles de implementación (si vamos a usar tal o cuál patrón de diseño, etc). Mi propuesta
-es que la arquitectura de software se practique en un nivel de abstracción más alto, es decir,
-más cerca de las necesidades del negocio.</p>
-
-<p>Por lo tanto, la principal actividad en este nivel es transformar las necesidades del negocio en
-características de software. A estas características las llamamos <strong>atributos de estructurales o
-de calidad</strong>. Pero la arquitectura de software también se encarga de lograr que el software haga
-las cosas que el negocio necesita.</p>
-
-<p>También toma en cuenta la estructura de la organización y su composición para definir <em>la forma</em>
-en que el software se va a desarrollar.</p>
-
-<p>¿Qué tanto debe saber sobre <em>construcción de software</em> un arquitecto de software? Un arquitecto de
-software, según la tradición medieval, es <em>el constructor principal</em>. Por lo tanto, debe tener 
-una muy amplia experiencia técnica, conocer cómo funcionan la mayoría de los componentes principales
-comunes del software, pero también debe tener experiencia tratando con las necesidades del negocio.</p>
-
-<p>Un arquitecto es el principal traductor entre lo que el negocio necesita y <em>cómo</em> se puede
-<strong>construir</strong> o <strong>armar</strong> un sistema que cumpla con esas necesidades.</p>
-
-<h4 id="recursos-para-aprender-arquitectura-de-software">Recursos para aprender arquitectura de software</h4>
-
-<p>En este apartado hay muchos recursos, los que yo te recomiendo son:</p>
-
-<ul>
-  <li>
-    <p><a href="https://www.oreilly.com/library/view/software-architecture-in/9780136885979/">Software Architecture in Practice, 4th Edition</a>. Si
-tuviera la necesidad de elegir un solo libro para aprender arquitectura de software,
-este sería el que recomendaría. Analiza todos los aspectos fundamentales para construir
-una arquitectura de software sin centrarse en el conocimiento trivial del que muchos creen que se trata
-la arquitectura.</p>
-  </li>
-  <li>
-    <p><a href="https://www.oreilly.com/library/view/fundamentals-of-software/9781098175504/">Fundamentals of Software Architecture</a>.
-En este libro encontrarás todas las ideas fundamentales clásicas sobre arquitectura de software, y los
-términos que se usan para habla sobre estos temas.</p>
-  </li>
-  <li>
-    <p><a href="https://www.georgefairbanks.com/book/">Just Enough Software Architecture: A Risk-Driven Approach</a>. Aquí
-encontrarás un enfoque diferente para la arquitectura de software: el enfocado en los riesgos. Este libro te
-ayudará a encontrar el equilibrio al tomar decisiones en tu arquitectura.</p>
-  </li>
-</ul>
-
-<h3 id="diseño-de-sistemas">Diseño de sistemas</h3>
-
-<p>Una vez que sabemos qué características y funciones debe tener el software y cómo las vamos a lograr
-debemos de ponerle nombre y detalles a cada pieza de software. De esto se encarga el diseño de sistemas.</p>
-
-<p>Este, para mi, es el nivel más clásico y conocido en el diseño de software y el que más le emociona
-a la mayoría de los desarrolladores. Es aquí donde dices que vas usar tal o cuál base de datos específica,
-si vas a usar réplicas de lectura, cómo vas a manejar a un millón de usuarios concurrentes, e incluso
-detalles de bajo nivel como el almacenamiento de datos y el tipo de infraestructura que vas a usar.</p>
-
-<p>También es aquí donde muchas de las entrevistas de trabajo se centran cuando se quiere poner a prueba
-la capacidad técnica de un desarrollador puro, ya que es un paso intermedio entre la arquitectura, que
-tiene que ver mucho con el negocio, y la programación, que es todo lo que haría un desarrollador que a
-penas está empezando.</p>
-
-<p>Demostrar habilidad en este nivel es un proxy para entender qué tanto has desarrollado software, pero
-tristemente, al igual que todas las medidas que se convierten en el objetivo, ha perdido gran parte
-de su capacidad evaluadora ya que se puede simular fácilmente (estudiando los problemas clásicos de
-entrevistas).</p>
-
-<p>¿Vale la pena estudiarlo aisladamente? Sí, pero es no es suficiente. Este nivel no se trata de seguir
-recetas de diseño de sistemas, aunque se pueda entender así, sino de conocer cómo se implementan las
-soluciones arquitectónicas ahora con los detalles de implementación. Así que su verdadero valor viene
-de la <strong>experiencia</strong> desarrollando software.</p>
-
-<p>Creo que esta pregunta ya es obvia, pero demos una respuesta explícita al igual que en las otras
-secciones: ¿Qué tanto debe saber sobre <em>construcción de software</em> un diseñador de sistemas? Mucho,
-y mientras más experiencia real tenga, mejor.</p>
-
-<p>Un diseñador de software lleva la visión arquitectónica dibujada en papel a su forma final, lista
-para ser implementada.</p>
-
-<h4 id="recursos-para-aprender-diseño-de-sistemas">Recursos para aprender diseño de sistemas</h4>
-
-<p>El área de diseño de sistemas es muy amplia y recomiendo mucho estudiarla por partes. Primero,
-puedes empezar por los problemas clásicos, usando uno de los libros que te prepara para entrevistas
-como referencia, pero después tienes que profundizar:</p>
-
-<ul>
-  <li>
-    <p><a href="https://www.oreilly.com/library/view/acing-the-system/9781633439108/">Acing the System Design Interview</a>.
-Este libro te prepara para las entrevistas de trabajo, tocando todos los temas fundamentales de diseño de
-sistemas.</p>
-  </li>
-  <li>
-    <p><a href="https://www.oreilly.com/library/view/acing-the-system/9781633439108/">System Design Interview – An Insider’s Guide</a>. Otro 
-libro que te prepara para la entrevista de diseño, pero es un poco más informal que
-el anterior. Tiene una segunda parte que puedes encotrar aquí: <a href="https://amzn.to/3Ysb0ux">System Design Interview - An Insider’s Guide: Volume 2</a>.</p>
-  </li>
-</ul>
-
-<p>Ahora sí, podemos empezar a profundizar:</p>
-
-<ul>
-  <li>
-    <p><a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>. Este trata sobre el diseño de sistemas
-de alta disponibilidad, escalabilidad y mantenibilidad y que tratan con muchos datos. Analiza cómo se usan
-los sistemas que manejan datos para lograrlos y se va a un poco más abajo para que veas cómo están construidos,
-así que también te prepara para el nivel de abajo.</p>
-  </li>
-  <li>
-    <p><a href="https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/">Building Microservices</a>. Una
-de las formas más comunes de diseñar sistemas a grana escala es usando microservicios. Aunque no siempre los
-vayas a usar, entender los patrones fundamentales y los problemas que resuelven te ayudará a implementar esos
-principios en otros contextos.</p>
-  </li>
-  <li>
-    <p><a href="https://www.oreilly.com/library/view/foundations-of-scalable/9781098106058/">Foundations of Scalable Systems</a>.
-La escalabilidad es un tema clave en el diseño de sistemas, entender los medios para lograrla te ayudará
-a ser un mejor diseñador.</p>
-  </li>
-</ul>
-
-<h3 id="diseño-de-código">Diseño de código</h3>
-
-<p>Para mi, el siguiente nivel tiene que ver con la <strong>implementación de los diseños</strong>. La pregunta en este
-nivel es: ¿Cómo cumplo con las características y funcione que se esperan de esta pieza de software?</p>
-
-<p>Ya dijimos que el software siempre tiene que ver con decisiones, de hecho podríamos decir que una
-base de código es un conjunto de decisiones registradas en un lenguaje de programación. Un programador
-que quiere cumplir con las funciones y características que se esperan de sus programas hace bien
-en tomar decisiones por adelantado y en adoptar un conjunto de prácticas que le ayuden a cumplir
-con lo que casi siempre se espera de esos sistemas de software.</p>
-
-<p>En esta parte es donde se aplican los patrones de diseño, los principios de división modular y de
-separación modular, donde se eligen nombres y donde se escoge el mejor algoritmo para resolver un problema
-específico. El comportamiento alto nivel de los sistemas depende completamente de las decisiones que
-se tomen a esta nivel y que se cumpla con lo que se espera de cada uno de los componentes.</p>
-
-<p>Aquí es donde se elige si se usa un bubble sort, un merge sort o un quicksort para ordenar una lista,
-si se usa la cierto módulo de terceros para una funcionalidad o si mejor lo implementamos.</p>
-
-<p>La pregunta de las otras secciones no aplica aquí, este nivel es el más técnico y en el que se
-está poniendo en práctica todo lo que sabemos de construcción de software.</p>
-
-<p>Un programador, usa el diseño para lograr que cada pieza de software cumpla con lo que se espera de ella.</p>
-
-<h4 id="recursos-para-aprender-diseño-de-código">Recursos para aprender diseño de código</h4>
-
-<p>En este nivel vamos a encontrar muchos recursos, pero muchos de ellos se contradicen entre sí, por lo que
-creo que es fundamental escoger una escuela de pensamiento y seguirla, pero también echarle un vistazo 
-a las otras y contrastar los puntos de vista, para que generes tu propio estilo.</p>
-
-<p>A continuación recomiendo mis libros favoritos en este nivel:</p>
-
-<ul>
-  <li>
-    <p><a href="https://milkov.tech/assets/psd.pdf">A Philosophy of Software Design</a>. Este es mi libro favorito respecto
-a diseño de código porque creo que viene de alguien con experiencia y errores reales. Contradice muchos consejos
-encontrados en “Clean Code”, que es el libro más admirado en este aspecto, pero que creo que ha envejecido muy
-mal.</p>
-  </li>
-  <li>
-    <p><a href="https://www.patkua.com/blog/book-review-modern-software-engineering/">Modern Software Engineering</a>. Te presenta
-las prácticas más modernas para desarrollar software, igual, escrito por un ingeniero de software con mucha experiencia.</p>
-  </li>
-</ul>
-
-<p>En <a href="https://blog.thedojo.mx/2023/05/25/libros-que-todo-desarrollador-de-software-deberia-leer-desarrollo.html">este artículo</a> te
-recomiendo otros libros que te pueden ayudar a mejorar tu diseño de código.</p>
-
-<h2 id="conclusión">Conclusión</h2>
-
-<p>En cada nivel de diseño requerimos diferentes tipos de conocimiento y habilidades. Estas cuatro niveles
-no son necesariamente niveles secuenciales de desarrollo de carrera. Es decir, un muy buen programador
-no tiene por qué aprender a diseñar a nivel de sistemas, por ejemplo, podría dedicarse a cada vez
-diseñar mejor componentes individuales o incluso algoritmos específicos. Por ejemplo, los desarrolladores
-de drivers o contribuidores individuales en equipos gigantes que se dedican una parte del sistema.</p>
-
-<p>También, si estás implementando software con un objetivo ya definido, es poco probable que necesites aprender
-sobre arquitectura de soluciones o arquitectura de software a muy alto nivel, ese aprendizaje sólo
-te distraerá del conocimiento que realmente necesitas para resolver el problema.</p>
-
-<p>Y también funciona en la otra dirección. Conocer los detalles de implementación de cierto algoritmo
-no te hará un mejor arquitecto de software o de soluciones.</p>
-
-<p>Así que ya sabes, ningún conocimiento es mejor que otro aunque puede que algunos piensen que así sea,
-cada uno tiene su lugar y su propósito.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="diseño-de-software" /><category term="arquitectura-de-software" /><summary type="html"><![CDATA[Hablemos de los diferente niveles de diseño de software y cómo puedes aprender cada uno de ellos.]]></summary></entry></feed>
+</ul>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Martin-Kleppmann" /><category term="bases-de-datos" /><category term="sistemas-distribuidos" /><category term="software-local-first" /><summary type="html"><![CDATA[Hablemos de Martin Kleppmann, uno de los desarrolladores e investigadores de software más influyentes en el panorama actual de las bases de datos y sistemas que usan datos.]]></summary></entry></feed>

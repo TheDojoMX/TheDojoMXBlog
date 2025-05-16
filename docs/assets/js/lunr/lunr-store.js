@@ -898,4 +898,10 @@ var store = [{
         "tags": ["libros","sistemas","complejidad"],
         "url": "/2025/05/15/debes-leer-thinking-in-systems.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1740059354/ricardo-frantz-nEd9E9V8Qx0-unsplash_wnklhe.jpg"
+      },{
+        "title": "¿Qué son los agentes inteligentes?",
+        "excerpt":"Con la llegada de los LLM’s, el término “agente” empezó a ganar más popularidad y lo oímos por todos lados. En este artículo vamos a hablar de qué son, para entenderlo lo mejor posible y no dejarnos llevar por el hype. ¿Qué es un agente? Este es un concepto que...","categories": [],
+        "tags": ["agente","IA","inteligencia-artificial","agents"],
+        "url": "/2025/05/16/que-son-los-agentes-inteligentes.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1739597131/ryan-klaus-Xa0BLOXVxrQ-unsplash_necdjp.jpg"
       }]
