@@ -11,6 +11,7 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
+
 La series de tiempo tienen características especiales. Normalmente, los puntos de datos
 consisten un par de valores: un identificador (el momento en el que sucedió) y un valor
 (el valor que se observó).
@@ -25,7 +26,6 @@ Una base de datos relacional pensada en transacciones (OLTP) es muy flexible y s
 puedes almacenar pares de valores de tiempo y el valor medido sin ninguna dificultad.
 
 El problema viene cuando quieres hacer consultas sobre grandes cantidades de datos.
-
 
 ## ¿Qué hace una base de datos de series de tiempo?
 
