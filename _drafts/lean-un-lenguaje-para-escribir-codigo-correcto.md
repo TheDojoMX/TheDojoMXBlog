@@ -59,8 +59,18 @@ algoritmo se usa para validar los números de las tarjetas de crédito.
 
 ```lean
 def luhn_check (n : ℕ) : bool :=
-begin
-end
+  let digits := n.digits in
+  let doubled := digits.enum.map (fun ⟨i, d⟩ => 
+    if i % 2 = 1 then
+      let doubled := d * 2
+      if doubled > 9 then doubled - 9 else doubled
+    else d) in
+  let sum := doubled.sum in
+  sum % 10 = 0
+
+-- Ejemplo de uso
+#eval luhn_check 4532015112830366  -- true
+#eval luhn_check 4532015112830367  -- false
 ```
 
 ## Conclusión

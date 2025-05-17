@@ -24,6 +24,7 @@ artículo te puede dar algunos: [Aprendiendo Elixir](https://hectorip.com/2018/1
 
 Elixir es un lenguaje moderno que combina productividad con rendimiento. Ahora sí, empecemos.
 
+
 ## Instalación y preparación del entorno
 
 La instalación, como siempre, varía dependiendo de tu sistema operativo, puedes
