@@ -6,8 +6,8 @@ tags: filosofía software-engineering
 comments: true
 excerpt: "La filosofía es la base de casi todo el conocimiento humano, hablemos de ella y de las relaciones directas que tiene con el desarrollo de software."
 header:
-  overlay_image: 
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1747718313/mariola-grobelska-EJBwRJZMOCQ-unsplash_rugsm8.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1747718313/mariola-grobelska-EJBwRJZMOCQ-unsplash_rugsm8.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -28,7 +28,7 @@ filósofos tratan con los que tenemos en el desarrollo de software.
 ## ¿Qué es la filosofía?
 
 La filosofía es el estudio de las ideas y el conocimiento en general. No es
-una ciencia propiamente dicha, porque nació mucho antes de que 
+una ciencia propiamente dicha, porque nació mucho antes de que
 
 ## ¿Cómo se relaciona la filosofía con el desarrollo de software?
 
