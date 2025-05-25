@@ -45,10 +45,11 @@ de la filosofía.
 El pensamiento es el proceso de pensar. Es decir, es el proceso de
 formular preguntas y buscar respuestas.
 
-
 ## Conclusión
 
 Saber filosofía es saber cómo utilizar lo mejor posible el pensamiento para plantear
 y (a veces) contestar preguntas. ¿Y a qué nos dedicamos en el desarrollo de software?
 Pues precisamente a construir soluciones mediante el pensamiento.
 
+Así que si quieres ser un desarrollador de software más efectivo, la filosofía es 
+uno de los pilares más influyentes en tu formación.
