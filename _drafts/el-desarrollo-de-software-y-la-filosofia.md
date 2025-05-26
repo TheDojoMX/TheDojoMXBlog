@@ -40,11 +40,6 @@ El desarrollo de software es una _aplicación_ de la computación, que a su vez,
 su estado más puro, es una rama de las matemáticas. Y las matemáticas nacieron
 de la filosofía.
 
-## ¿Qué es el pensamiento?
-
-El pensamiento es el proceso de pensar. Es decir, es el proceso de
-formular preguntas y buscar respuestas.
-
 ## Conclusión
 
 Saber filosofía es saber cómo utilizar lo mejor posible el pensamiento para plantear
