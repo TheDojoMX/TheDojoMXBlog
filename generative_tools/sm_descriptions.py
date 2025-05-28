@@ -36,6 +36,7 @@ def save_as_markdown(data: dict, output_file: str):
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(f"# Descripción para TikTok\n\n")
         f.write(f"**Tema:** {data['topic']}\n\n")
+        f.write(f"**Fuente:** {data.get('source_file', 'texto directo')}\n\n")
         f.write(f"**Texto Original:**\n\n{data['original_text']}\n\n")
         f.write(f"**Generado el:** {data['timestamp']}\n\n")
 
@@ -47,16 +48,47 @@ def save_as_markdown(data: dict, output_file: str):
 
 
 @begin.start
-def generate_descriptions(topic, text, output_file=None, markdown=False):
+def generate_descriptions(
+    topic, text=None, input_file=None, output_file=None, markdown=False
+):
     """
     Genera descripciones para redes sociales usando múltiples modelos de IA.
 
     Args:
         topic: El tema central a destacar
-        text: El fragmento de texto a convertir
+        text: El fragmento de texto a convertir (opcional si se proporciona input_file)
+        input_file: Archivo de texto del cual extraer la transcripción (opcional si se proporciona text)
         output_file: Archivo donde guardar los resultados (opcional)
         markdown: Si es True, guarda en formato Markdown en lugar de YAML
     """
+    # Validar que se proporcione texto o archivo, pero no ambos
+    if not text and not input_file:
+        print("❌ Error: Debes proporcionar 'text' o 'input_file'")
+        return
+
+    if text and input_file:
+        print(
+            "❌ Error: No puedes proporcionar tanto 'text' como 'input_file' al mismo tiempo"
+        )
+        return
+
+    # Si se proporciona un archivo, leer su contenido
+    if input_file:
+        try:
+            with open(input_file, "r", encoding="utf-8") as f:
+                text = f.read().strip()
+            print(f"📄 Leyendo transcripción desde: {input_file}")
+        except FileNotFoundError:
+            print(f"❌ Error: No se encontró el archivo {input_file}")
+            return
+        except Exception as e:
+            print(f"❌ Error al leer el archivo: {str(e)}")
+            return
+
+    if not text:
+        print("❌ Error: El texto está vacío")
+        return
+
     prompt = f"""Convierte el siguiente fragmento en una **descripción educativa para TikTok** (máx. 1000 caracteres).
 Pautas:
 - Usa un tono serio pero relajado, sin emojis.
@@ -119,7 +151,7 @@ Pautas:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     if output_file is None:
         extension = ".md" if markdown else ".yaml"
-        output_file = f"descriptions_{slugify(topic)}_{timestamp}{extension}"
+        output_file = f"{slugify(topic)}_{timestamp}{extension}"
 
     # Asegurar que el archivo se guarde en la carpeta de resultados
     output_path = RESULTS_DIR / output_file
@@ -127,6 +159,7 @@ Pautas:
     output_data = {
         "topic": topic,
         "original_text": text,
+        "source_file": input_file if input_file else "texto directo",
         "timestamp": timestamp,
         "results": results,
     }
