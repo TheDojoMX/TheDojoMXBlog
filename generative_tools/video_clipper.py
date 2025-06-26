@@ -136,17 +136,15 @@ class VideoClipper:
                 print(
                     f"⚠️ Archivo muy grande ({audio_size / (1024*1024):.2f} MB > 25 MB)"
                 )
-                print("🔄 Usando sistema de transcripción por segmentos...")
-                # Usar el sistema anterior que maneja archivos grandes
-                return transcribe_video(
-                    video_path=str(self.video_path),
-                    language_code="es-MX",
-                    use_whisper=True,
+                print(
+                    "🔄 Usando sistema de transcripción por segmentos con timestamps..."
                 )
+                # Usar sistema de segmentos pero intentar obtener timestamps
+                return self._transcribe_large_file_with_timestamps(audio_path)
 
-            # Intentar transcripción con timestamps primero
+            # Estrategia 1: Intentar con timestamps por palabra Y segmento
             try:
-                print("🎙️ Transcribiendo con Whisper para obtener timestamps...")
+                print("🎙️ Estrategia 1: Transcribiendo con timestamps por palabra...")
                 print(
                     "⏳ Esto puede tomar unos minutos dependiendo del tamaño del archivo..."
                 )
@@ -156,8 +154,11 @@ class VideoClipper:
                         model="whisper-1",
                         file=audio_file,
                         language="es",
-                        response_format="verbose_json",  # Esto nos da timestamps
-                        timestamp_granularities=["word"],  # Timestamps por palabra
+                        response_format="verbose_json",
+                        timestamp_granularities=[
+                            "word",
+                            "segment",
+                        ],  # Solicitar ambos tipos
                     )
 
                 print("✅ Transcripción con timestamps completada")
@@ -170,105 +171,313 @@ class VideoClipper:
                     "text": response.text,
                     "language": response.language,
                     "duration": response.duration,
-                    "words": response.words if hasattr(response, "words") else [],
-                    "segments": response.segments
-                    if hasattr(response, "segments")
-                    else [],
+                    "words": [
+                        {
+                            "word": word.word,
+                            "start": word.start,
+                            "end": word.end,
+                        }
+                        for word in (
+                            response.words if hasattr(response, "words") else []
+                        )
+                    ],
+                    "segments": [
+                        {
+                            "id": segment.id,
+                            "start": segment.start,
+                            "end": segment.end,
+                            "text": segment.text,
+                            "avg_logprob": segment.avg_logprob,
+                            "compression_ratio": segment.compression_ratio,
+                            "no_speech_prob": segment.no_speech_prob,
+                            "temperature": segment.temperature,
+                        }
+                        for segment in (
+                            response.segments if hasattr(response, "segments") else []
+                        )
+                    ],
                 }
 
-                print(
-                    f"✅ Timestamps obtenidos: {len(self.transcript_with_timestamps.get('words', []))} palabras"
+                # Verificar si obtuvimos datos detallados
+                words_count = len(self.transcript_with_timestamps.get("words", []))
+                segments_count = len(
+                    self.transcript_with_timestamps.get("segments", [])
                 )
 
+                print(
+                    f"✅ Timestamps obtenidos: {words_count} palabras, {segments_count} segmentos"
+                )
+
+                if words_count > 0 or segments_count > 0:
+                    return self._save_and_return_transcript(text_transcript, audio_path)
+                else:
+                    print(
+                        "⚠️ No se obtuvieron timestamps detallados, intentando estrategia 2..."
+                    )
+                    raise Exception("No timestamps obtenidos")
+
             except Exception as timestamp_error:
-                print(f"⚠️ Error obteniendo timestamps: {str(timestamp_error)}")
-                print("📝 Intentando transcripción básica sin timestamps...")
+                print(f"⚠️ Error en estrategia 1: {str(timestamp_error)}")
+                print(
+                    "📝 Estrategia 2: Transcripción con solo timestamps de segmento..."
+                )
 
                 try:
-                    # Fallback: transcripción sin timestamps
+                    # Estrategia 2: Solo timestamps de segmento
                     with open(audio_path, "rb") as audio_file:
                         response = self.openai_client.audio.transcriptions.create(
                             model="whisper-1",
                             file=audio_file,
                             language="es",
-                            response_format="verbose_json",  # Sin timestamp_granularities
+                            response_format="verbose_json",
+                            timestamp_granularities=["segment"],  # Solo segmentos
                         )
 
                     text_transcript = response.text
 
-                    # Almacenar transcripción básica
+                    # Almacenar transcripción con timestamps de segmento
                     self.transcript_with_timestamps = {
                         "text": response.text,
                         "language": response.language,
                         "duration": response.duration,
                         "words": [],  # Sin palabras con timestamps
-                        "segments": response.segments
-                        if hasattr(response, "segments")
-                        else [],
+                        "segments": [
+                            {
+                                "id": segment.id,
+                                "start": segment.start,
+                                "end": segment.end,
+                                "text": segment.text,
+                                "avg_logprob": segment.avg_logprob,
+                                "compression_ratio": segment.compression_ratio,
+                                "no_speech_prob": segment.no_speech_prob,
+                                "temperature": segment.temperature,
+                            }
+                            for segment in (
+                                response.segments
+                                if hasattr(response, "segments")
+                                else []
+                            )
+                        ],
                     }
 
-                    print(
-                        "⚠️ Transcripción sin timestamps por palabra - usando segmentos si están disponibles"
+                    segments_count = len(
+                        self.transcript_with_timestamps.get("segments", [])
                     )
+                    print(
+                        f"✅ Timestamps de segmento obtenidos: {segments_count} segmentos"
+                    )
+
+                    if segments_count > 0:
+                        return self._save_and_return_transcript(
+                            text_transcript, audio_path
+                        )
+                    else:
+                        print(
+                            "⚠️ No se obtuvieron timestamps de segmento, intentando estrategia 3..."
+                        )
+                        raise Exception("No segment timestamps obtenidos")
 
                 except Exception as fallback_error:
-                    print(
-                        f"❌ Error en transcripción de fallback: {str(fallback_error)}"
-                    )
-                    print("🔄 Usando sistema de transcripción por segmentos...")
-                    # Limpiar archivo temporal antes del fallback final
-                    if os.path.exists(audio_path):
-                        os.remove(audio_path)
+                    print(f"⚠️ Error en estrategia 2: {str(fallback_error)}")
+                    print("📝 Estrategia 3: Transcripción básica con verbose_json...")
 
-                    # Fallback final al sistema anterior
-                    return transcribe_video(
-                        video_path=str(self.video_path),
-                        language_code="es-MX",
-                        use_whisper=True,
-                    )
+                    try:
+                        # Estrategia 3: Transcripción básica con verbose_json (puede dar segmentos automáticamente)
+                        with open(audio_path, "rb") as audio_file:
+                            response = self.openai_client.audio.transcriptions.create(
+                                model="whisper-1",
+                                file=audio_file,
+                                language="es",
+                                response_format="verbose_json",  # Sin timestamp_granularities
+                            )
 
-            # Guardar transcripción de texto simple
-            with open(self.transcript_file, "w", encoding="utf-8") as f:
-                f.write(text_transcript)
+                        text_transcript = response.text
 
-            # Guardar transcripción con timestamps
+                        # Almacenar transcripción básica pero verificar si hay segments
+                        self.transcript_with_timestamps = {
+                            "text": response.text,
+                            "language": response.language,
+                            "duration": response.duration,
+                            "words": [],  # Sin palabras con timestamps
+                            "segments": [
+                                {
+                                    "id": segment.id,
+                                    "start": segment.start,
+                                    "end": segment.end,
+                                    "text": segment.text,
+                                    "avg_logprob": segment.avg_logprob,
+                                    "compression_ratio": segment.compression_ratio,
+                                    "no_speech_prob": segment.no_speech_prob,
+                                    "temperature": segment.temperature,
+                                }
+                                for segment in (
+                                    response.segments
+                                    if hasattr(response, "segments")
+                                    else []
+                                )
+                            ],
+                        }
+
+                        segments_count = len(
+                            self.transcript_with_timestamps.get("segments", [])
+                        )
+                        print(
+                            f"✅ Transcripción básica completada: {segments_count} segmentos automáticos"
+                        )
+
+                        return self._save_and_return_transcript(
+                            text_transcript, audio_path
+                        )
+
+                    except Exception as final_fallback_error:
+                        print(f"❌ Error en estrategia 3: {str(final_fallback_error)}")
+                        print(
+                            "🔄 Usando sistema de transcripción por segmentos como último recurso..."
+                        )
+                        # Limpiar archivo temporal antes del fallback final
+                        if os.path.exists(audio_path):
+                            os.remove(audio_path)
+
+                        # Fallback final al sistema anterior
+                        transcript = transcribe_video(
+                            video_path=str(self.video_path),
+                            output_file=str(self.transcript_file),
+                            language_code="es-MX",
+                            use_whisper=True,
+                        )
+
+                        # Crear datos básicos de transcripción sin timestamps
+                        self.transcript_with_timestamps = {
+                            "text": transcript,
+                            "language": "es",
+                            "duration": self.get_video_duration(),
+                            "words": [],  # Sin palabras con timestamps
+                            "segments": [],  # Sin segmentos con timestamps
+                        }
+
+                        # Guardar transcripción con timestamps (aunque sin timestamps reales)
+                        with open(
+                            self.transcript_json_file, "w", encoding="utf-8"
+                        ) as f:
+                            json.dump(
+                                self.transcript_with_timestamps,
+                                f,
+                                indent=2,
+                                ensure_ascii=False,
+                            )
+
+                        print(f"✅ Transcripción guardada: {self.transcript_file}")
+                        print(
+                            f"✅ Datos de transcripción guardados: {self.transcript_json_file}"
+                        )
+                        print(
+                            "⚠️ Sin timestamps disponibles - se usará método proporcional"
+                        )
+
+                        return transcript
+
+        except Exception as e:
+            print(f"❌ Error en transcripción con timestamps: {str(e)}")
+            print("🔄 Usando sistema de transcripción como fallback final...")
+            # Fallback a transcripción simple
+            transcript = transcribe_video(
+                video_path=str(self.video_path),
+                output_file=str(self.transcript_file),
+                language_code="es-MX",
+                use_whisper=True,
+            )
+
+            # Crear datos básicos de transcripción sin timestamps
+            self.transcript_with_timestamps = {
+                "text": transcript,
+                "language": "es",
+                "duration": self.get_video_duration(),
+                "words": [],  # Sin palabras con timestamps
+                "segments": [],  # Sin segmentos con timestamps
+            }
+
+            # Guardar transcripción con timestamps (aunque sin timestamps reales)
             with open(self.transcript_json_file, "w", encoding="utf-8") as f:
                 json.dump(
                     self.transcript_with_timestamps, f, indent=2, ensure_ascii=False
                 )
 
-            # Limpiar archivo de audio temporal
-            if os.path.exists(audio_path):
-                os.remove(audio_path)
-
             print(f"✅ Transcripción guardada: {self.transcript_file}")
             print(f"✅ Datos de transcripción guardados: {self.transcript_json_file}")
+            print("⚠️ Sin timestamps disponibles - se usará método proporcional")
 
-            # Mostrar información sobre timestamps disponibles
-            if self.transcript_with_timestamps and self.transcript_with_timestamps.get(
-                "words"
-            ):
-                print(
-                    f"🕐 Timestamps por palabra disponibles: {len(self.transcript_with_timestamps['words'])} palabras"
-                )
-            elif (
-                self.transcript_with_timestamps
-                and self.transcript_with_timestamps.get("segments")
-            ):
-                print(
-                    f"🕐 Timestamps por segmento disponibles: {len(self.transcript_with_timestamps['segments'])} segmentos"
-                )
-            else:
-                print("⚠️ Sin timestamps disponibles - se usará método proporcional")
+            return transcript
 
-            return text_transcript
+    def _transcribe_large_file_with_timestamps(self, audio_path: str) -> str:
+        """Transcribe archivos grandes dividiendo en segmentos e intentando obtener timestamps."""
+        print("🔄 Transcribiendo archivo grande en segmentos con timestamps...")
 
-        except Exception as e:
-            print(f"❌ Error en transcripción con timestamps: {str(e)}")
-            # Fallback a transcripción simple
-            return transcribe_video(
-                video_path=str(self.video_path), language_code="es-MX", use_whisper=True
+        # Para archivos grandes, usar el sistema anterior pero intentar mejorar
+        transcript = transcribe_video(
+            video_path=str(self.video_path),
+            output_file=str(self.transcript_file),
+            language_code="es-MX",
+            use_whisper=True,
+        )
+
+        # TODO: Implementar división en chunks y transcripción con timestamps
+        # Por ahora, crear estructura básica
+        self.transcript_with_timestamps = {
+            "text": transcript,
+            "language": "es",
+            "duration": self.get_video_duration(),
+            "words": [],
+            "segments": [],
+        }
+
+        # Guardar transcripción
+        with open(self.transcript_json_file, "w", encoding="utf-8") as f:
+            json.dump(self.transcript_with_timestamps, f, indent=2, ensure_ascii=False)
+
+        print(f"✅ Transcripción de archivo grande guardada: {self.transcript_file}")
+        print(f"✅ Datos guardados: {self.transcript_json_file}")
+        print("⚠️ Archivo grande - sin timestamps detallados disponibles")
+
+        # Limpiar archivo temporal
+        if os.path.exists(audio_path):
+            os.remove(audio_path)
+
+        return transcript
+
+    def _save_and_return_transcript(self, text_transcript: str, audio_path: str) -> str:
+        """Guarda la transcripción y datos de timestamps, luego limpia archivos temporales."""
+        # Guardar transcripción de texto simple
+        with open(self.transcript_file, "w", encoding="utf-8") as f:
+            f.write(text_transcript)
+
+        # Guardar transcripción con timestamps
+        with open(self.transcript_json_file, "w", encoding="utf-8") as f:
+            json.dump(self.transcript_with_timestamps, f, indent=2, ensure_ascii=False)
+
+        # Limpiar archivo de audio temporal
+        if os.path.exists(audio_path):
+            os.remove(audio_path)
+
+        print(f"✅ Transcripción guardada: {self.transcript_file}")
+        print(f"✅ Datos de transcripción guardados: {self.transcript_json_file}")
+
+        # Mostrar información sobre timestamps disponibles
+        if self.transcript_with_timestamps and self.transcript_with_timestamps.get(
+            "words"
+        ):
+            print(
+                f"🕐 Timestamps por palabra disponibles: {len(self.transcript_with_timestamps['words'])} palabras"
             )
+        elif self.transcript_with_timestamps and self.transcript_with_timestamps.get(
+            "segments"
+        ):
+            print(
+                f"🕐 Timestamps por segmento disponibles: {len(self.transcript_with_timestamps['segments'])} segmentos"
+            )
+        else:
+            print("⚠️ Sin timestamps disponibles - se usará método proporcional")
+
+        return text_transcript
 
     def extract_transcript_segment_with_timestamps(
         self, start_time: float, duration: float
@@ -412,7 +621,7 @@ Los tiempos deben distribuirse proporcionalmente a lo largo del video de {video_
             response = self.openai_client.chat.completions.create(
                 model="o3-2025-04-16",  # no cambiar
                 messages=[{"role": "user", "content": prompt}],
-                temperature=0.3,
+                # temperature=0.3,
             )
 
             # Intentar parsear JSON
