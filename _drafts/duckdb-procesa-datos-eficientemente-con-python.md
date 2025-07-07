@@ -41,4 +41,4 @@ DuckDB es una base de datos analítica que se ejecuta en memoria. Puede cargar d
 ## Ejercicio: 100M row challenge
 
 Veamos qué tan rápido es tanto en desarrollo como en ejecución hacer cosas con DuckDB.
-Hace tiempo surgió en la comunidad de Java...
+Hace tiempo surgió en la comunidad de Java
