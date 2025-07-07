@@ -48,3 +48,6 @@ generative_tools/description_results/*
 *.mp4
 *.pyc
 CLAUDE.md
+.env
+voice_papers/projects/*
+!voice_papers/projects/.keep
