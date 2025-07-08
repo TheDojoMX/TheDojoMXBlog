@@ -1,0 +1,3 @@
+[console_scripts]
+create-video = create_video:main
+voice-papers = voice_papers.cli:main
