@@ -85,6 +85,14 @@ class ImprovedWebArticleExtractor:
         Raises:
             Exception: If content extraction fails
         """
+        # Handle common URL issues
+        url = url.strip()
+        if url.startswith("http://") and not url.startswith("https://"):
+            # Some sites require HTTPS
+            https_url = url.replace("http://", "https://", 1)
+            print(f"🔒 Upgrading to HTTPS: {https_url}")
+            url = https_url
+            
         if not self._is_valid_url(url):
             raise ValueError(f"Invalid URL: {url}")
 
@@ -95,6 +103,8 @@ class ImprovedWebArticleExtractor:
             return self._extract_with_markdown_preservation(url)
         except Exception as e:
             print(f"Advanced extraction failed: {e}")
+            import traceback
+            traceback.print_exc()
 
         # Fallback to newspaper3k with markdown conversion
         try:
@@ -102,9 +112,15 @@ class ImprovedWebArticleExtractor:
         except Exception as e:
             print(f"Newspaper3k failed: {e}")
 
-        # Final fallback to basic extraction
+        # Fallback to basic extraction
         try:
             return self._extract_basic_with_structure(url)
+        except Exception as e:
+            print(f"Basic extraction failed: {e}")
+            
+        # Final fallback - use html2text directly
+        try:
+            return self._extract_with_html2text_direct(url)
         except Exception as e:
             raise Exception(f"All extraction methods failed. Last error: {e}")
 
@@ -115,9 +131,14 @@ class ImprovedWebArticleExtractor:
         # Add delay
         time.sleep(random.uniform(1.0, 3.0))
         
-        # Get the page
+        # Get the page with redirect handling
         response = self.session.get(url, timeout=30, allow_redirects=True)
         response.raise_for_status()
+        
+        # Handle redirects - use final URL for better extraction
+        if response.history:
+            print(f"🔄 Redirected to: {response.url}")
+            url = response.url
         
         soup = BeautifulSoup(response.content, "lxml")
         
@@ -128,7 +149,11 @@ class ImprovedWebArticleExtractor:
         main_content = self._find_main_content_area(soup)
         
         if not main_content:
-            raise Exception("Could not identify main content area")
+            # Try a more aggressive fallback - use the whole body
+            print("⚠️  Could not identify specific content area, using full body")
+            main_content = soup.body
+            if not main_content:
+                raise Exception("Could not find any content in the page")
         
         # Clean the content area
         self._clean_content_area(main_content)
@@ -196,8 +221,13 @@ class ImprovedWebArticleExtractor:
         title = self._extract_best_title(soup, url)
         
         # Remove unwanted elements
-        for element in soup(["script", "style", "nav", "header", "footer", "aside", "form", "iframe"]):
+        for element in soup(["script", "style", "nav", "footer", "aside", "form", "iframe"]):
             element.decompose()
+            
+        # For Substack, be careful with header removal as it might contain the title
+        if 'substack.com' not in url:
+            for element in soup(["header"]):
+                element.decompose()
         
         # Find all content with structure
         content_parts = []
@@ -259,6 +289,16 @@ class ImprovedWebArticleExtractor:
         """Find the main content area of the page."""
         # Try various selectors for main content
         content_selectors = [
+            # Substack specific
+            '.available-content',
+            '.body.markup',
+            'div.post-content',
+            'div.body.markup',
+            '.post .available-content',
+            # Medium specific
+            '.section-content',
+            '.postArticle-content',
+            # General selectors
             "article",
             '[role="main"]',
             '.article-content',
@@ -276,21 +316,45 @@ class ImprovedWebArticleExtractor:
             'main .content',
             '#main-content',
             '#content',
+            '.content',
             '.main-content',
             '.primary-content',
+            '.container article',
+            '.container .content',
+            'div.content',
+            'div.post',
+            'div.entry',
+            'div.page-content',
+            '.page-content',
+            '.site-content',
+            '#primary',
+            '.hentry',
         ]
         
+        # First pass: Try selectors with content check
         for selector in content_selectors:
             elements = soup.select(selector)
             if elements:
                 # Check if element has substantial content
                 element = elements[0]
                 text_length = len(element.get_text().strip())
-                if text_length > 500:
+                # Lower threshold for first pass
+                if text_length > 300:
+                    print(f"✅ Found content area with selector: {selector} ({text_length} chars)")
                     return element
         
-        # Fallback: Look for the element with the most paragraph tags
-        potential_containers = soup.find_all(['div', 'section', 'main', 'article'])
+        # Second pass: Try selectors with even lower threshold
+        for selector in content_selectors:
+            elements = soup.select(selector)
+            if elements:
+                element = elements[0]
+                text_length = len(element.get_text().strip())
+                if text_length > 100:
+                    print(f"✅ Found content area with selector: {selector} ({text_length} chars)")
+                    return element
+        
+        # Fallback 1: Look for the element with the most paragraph tags
+        potential_containers = soup.find_all(['div', 'section', 'main', 'article', 'body'])
         best_container = None
         max_paragraphs = 0
         
@@ -300,7 +364,24 @@ class ImprovedWebArticleExtractor:
                 max_paragraphs = len(paragraphs)
                 best_container = container
         
-        return best_container
+        if best_container and max_paragraphs > 2:
+            print(f"✅ Found content area by paragraph count: {max_paragraphs} paragraphs")
+            return best_container
+        
+        # Fallback 2: Look for any div with substantial text
+        all_divs = soup.find_all('div')
+        for div in all_divs:
+            # Skip if it has too many nested divs (likely a container)
+            nested_divs = div.find_all('div')
+            if len(nested_divs) > 20:
+                continue
+                
+            text_length = len(div.get_text().strip())
+            if text_length > 500:
+                print(f"✅ Found content area by text length in div: {text_length} chars")
+                return div
+        
+        return None
 
     def _clean_content_area(self, content: Tag) -> None:
         """Clean the content area by removing unwanted elements."""
@@ -308,12 +389,29 @@ class ImprovedWebArticleExtractor:
         for tag in content(['script', 'style', 'noscript', 'iframe']):
             tag.decompose()
         
+        # Remove navigation and header/footer elements when using full body
+        if content.name == 'body':
+            for tag in content(['nav', 'header', 'footer']):
+                # Be careful with header - it might contain the title
+                if tag.name == 'header':
+                    # Check if it has substantial content
+                    header_text = tag.get_text().strip()
+                    if len(header_text) < 200:  # Likely just navigation
+                        tag.decompose()
+                else:
+                    tag.decompose()
+        
         # Remove common UI elements
         for selector in [
             '.social-share', '.share-buttons', '.newsletter-signup',
             '.related-posts', '.advertisement', '.ads', '.sidebar',
             '.comments', '.comment-form', '[class*="subscribe"]',
-            '[class*="newsletter"]', '[class*="popup"]', '[class*="modal"]'
+            '[class*="newsletter"]', '[class*="popup"]', '[class*="modal"]',
+            '.cookie-notice', '.gdpr-notice', '[class*="cookie"]',
+            '.footer', '.site-footer', '#footer',
+            '.navigation', '.site-navigation', 
+            '[class*="share"]', '[class*="social"]',
+            '.author-bio', '.author-box',  # Keep author info in article context
         ]:
             for element in content.select(selector):
                 element.decompose()
@@ -322,6 +420,12 @@ class ImprovedWebArticleExtractor:
         """Convert HTML content to markdown while preserving all structure."""
         # Start with the title
         markdown_parts = [f"# {title}\n"]
+        
+        # For Substack, check if there's a subtitle
+        subtitle = content.find('h3', class_='subtitle')
+        if subtitle:
+            markdown_parts.append(f"\n*{subtitle.get_text().strip()}*\n")
+            subtitle.decompose()  # Remove it so it's not processed again
         
         # Process content recursively
         def process_element(element, depth=0):
@@ -540,6 +644,40 @@ class ImprovedWebArticleExtractor:
             content = re.sub(pattern, '', content, flags=re.IGNORECASE | re.MULTILINE | re.DOTALL)
         
         return content.strip()
+    
+    def _extract_with_html2text_direct(self, url: str) -> Tuple[str, str]:
+        """Direct extraction using html2text as final fallback."""
+        print("🔧 Using direct html2text extraction...")
+        
+        time.sleep(random.uniform(1.0, 2.0))
+        
+        response = self.session.get(url, timeout=30, allow_redirects=True)
+        response.raise_for_status()
+        
+        # Handle redirects
+        if response.history:
+            print(f"🔄 Redirected to: {response.url}")
+            url = response.url
+        
+        # Parse with BeautifulSoup first to get title
+        soup = BeautifulSoup(response.content, "lxml")
+        title = self._extract_best_title(soup, url)
+        
+        # Use html2text directly on the HTML
+        markdown_content = self.h2t.handle(response.text)
+        
+        # Clean up the markdown
+        markdown_content = self._clean_markdown_content(markdown_content)
+        
+        # Ensure we have content
+        if len(markdown_content.strip()) < 100:
+            raise Exception("Insufficient content extracted with html2text")
+        
+        # Prepend title if not already in content
+        if title and title not in markdown_content[:200]:
+            markdown_content = f"# {title}\n\n{markdown_content}"
+        
+        return title, markdown_content
 
     def _extract_title_from_url(self, url: str) -> str:
         """Extract a title from URL path."""

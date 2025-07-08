@@ -597,6 +597,8 @@ def main(
                 click.echo("🌐 Extracting content from web article...")
                 title, raw_content = extract_text_from_url(input_source)
                 paper_title = title
+                # Set paper_content to the raw content for web articles
+                paper_content = raw_content
 
                 # For web content, preserve markdown formatting
                 click.echo("📝 Preserving article structure...")

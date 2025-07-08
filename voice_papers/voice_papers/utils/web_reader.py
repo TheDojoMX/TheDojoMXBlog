@@ -137,6 +137,11 @@ class WebArticleExtractor:
         try:
             response = session.get(url, timeout=30, allow_redirects=True)
             response.raise_for_status()
+            
+            # Handle redirects
+            if response.history:
+                print(f"🔄 Redirected to: {response.url}")
+                
         except requests.exceptions.HTTPError as e:
             if e.response.status_code == 403:
                 print("🚫 403 Forbidden - trying alternative approach...")
