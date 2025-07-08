@@ -1,5 +1,6 @@
 """Crew management and orchestration."""
 
+import os
 import json
 from pathlib import Path
 from typing import List, Optional, Dict, Any
@@ -40,27 +41,246 @@ class CrewManager:
             self.project_dir = PROJECTS_DIR / project_name
 
         self.discussion_dir = self.project_dir / "discussion"
+        self.synthesis_dir = self.project_dir / "synthesis"
 
         # Create project directories
         self.project_dir.mkdir(parents=True, exist_ok=True)
         self.discussion_dir.mkdir(parents=True, exist_ok=True)
+        self.synthesis_dir.mkdir(parents=True, exist_ok=True)
 
         # Use o3-mini with custom LLM wrapper that handles parameter restrictions
         self.llm = O3LLM(api_key=OPENAI_API_KEY, model="o3-mini")
 
-    def create_crew_for_paper(self, paper_content: str, paper_title: str) -> Crew:
-        """Create a crew dynamically based on paper content."""
+    def create_crew_for_paper(self, paper_content: str, paper_title: str, use_synthesis: bool = True) -> Crew:
+        """Create a crew dynamically based on paper content.
+        
+        Args:
+            paper_content: The original paper content
+            paper_title: The paper title
+            use_synthesis: Whether to create and use synthesis first (default: True)
+        """
+        import click
+        
+        # Create synthesis first if requested (default behavior)
+        if use_synthesis:
+            click.echo("🔬 Creating comprehensive synthesis first (new default workflow)...")
+            synthesis_content = self.create_synthesis(paper_content, paper_title)
+            # Use synthesis for crew discussion instead of raw content
+            content_for_discussion = synthesis_content
+        else:
+            # Use raw content (old behavior, kept for compatibility)
+            content_for_discussion = paper_content
+        
         # Simple topic detection based on title and content
-        topic = self._detect_topic(paper_title + " " + paper_content[:1000])
+        topic = self._detect_topic(paper_title + " " + content_for_discussion[:1000])
         agents = get_roles_for_topic(topic, self.llm, self.tone)
 
         # Choose task creation method based on conversation mode
         if self.conversation_mode == "enhanced":
-            tasks = self._create_tasks(paper_content, paper_title, agents)
+            tasks = self._create_tasks(content_for_discussion, paper_title, agents)
         else:
-            tasks = self._create_original_tasks(paper_content, paper_title, agents)
+            tasks = self._create_original_tasks(content_for_discussion, paper_title, agents)
 
         return Crew(agents=agents, tasks=tasks, verbose=True)
+
+    def create_synthesis(self, paper_content: str, paper_title: str) -> str:
+        """Create a comprehensive synthesis of the paper content using chunking.
+        This is extracted from run_summary_workflow to be reusable."""
+        from ..utils.document_chunker import DocumentChunker
+        from ..utils.improved_chunker import ImprovedDocumentChunker, ContentType
+        from .improved_synthesis import ImprovedSynthesisManager
+        import click
+        
+        # Check if we should use improved synthesis
+        use_improved = os.getenv("USE_IMPROVED_SYNTHESIS", "true").lower() == "true"
+        
+        # Check if synthesis already exists
+        synthesis_path = self.synthesis_dir / "synthesis_output.txt"
+        if synthesis_path.exists():
+            click.echo("📊 Using existing synthesis...")
+            with open(synthesis_path, "r", encoding="utf-8") as f:
+                return f.read()
+        
+        if use_improved:
+            click.echo("✨ Using improved synthesis (content-aware)")
+            # Use improved synthesis
+            improved_manager = ImprovedSynthesisManager(self.llm)
+            improved_chunker = ImprovedDocumentChunker(chunk_size=10000, overlap=500)
+            
+            # Detect content type
+            content_type = improved_chunker.detect_content_type(paper_content, paper_title)
+            click.echo(f"📝 Content type detected: {content_type.value}")
+            
+            # Chunk with improved method
+            chunks = improved_chunker.chunk_document(paper_content, paper_title, content_type)
+            
+            click.echo(f"📊 Document chunked into {len(chunks)} sections...")
+            
+            # Show contexts
+            unique_contexts = list(set(chunk.context_type for chunk in chunks))
+            click.echo("📑 Content structure:")
+            for context in unique_contexts:
+                count = sum(1 for c in chunks if c.context_type == context)
+                click.echo(f"   • {context.replace('_', ' ').title()}: {count} section(s)")
+            
+            # Run improved synthesis
+            result = improved_manager.run_synthesis(chunks, paper_title, content_type)
+            synthesis_result = result["synthesis"]
+            
+            # Save synthesis
+            with open(synthesis_path, "w", encoding="utf-8") as f:
+                f.write(synthesis_result)
+            
+            # Save additional metadata
+            synthesis_data = {
+                "project": self.project_name,
+                "document_title": paper_title,
+                "content_type": content_type.value,
+                "document_chunks": len(chunks),
+                "chunk_contexts": [chunk.context_type for chunk in chunks],
+                "synthesis_length": len(synthesis_result),
+                "improved_synthesis": True
+            }
+            
+            # Save metadata
+            with open(
+                self.synthesis_dir / "synthesis_metadata.json", "w", encoding="utf-8"
+            ) as f:
+                json.dump(synthesis_data, f, indent=2, ensure_ascii=False)
+            
+            click.echo("✅ Improved synthesis completed and saved")
+            return synthesis_result
+            
+        else:
+            # Original synthesis
+            click.echo("📑 Using original synthesis method")
+            chunker = DocumentChunker(chunk_size=10000, overlap=200)
+            chunks = chunker.chunk_document(paper_content, paper_title)
+            
+            click.echo(f"📊 Document chunked into {len(chunks)} sections for deep analysis...")
+        
+            # Show section titles
+            unique_sections = []
+            for chunk in chunks:
+                base_section = chunk.section_title.split(" (Part")[0]
+                if base_section not in unique_sections:
+                    unique_sections.append(base_section)
+            
+            if len(unique_sections) <= 10:
+                click.echo("📑 Sections found:")
+                for section in unique_sections:
+                    click.echo(f"   • {section}")
+        
+        # For original synthesis, create agents
+        chunk_analyzer = Agent(
+            role="Deep Document Analyzer",
+            goal="Extract comprehensive insights from each section of the document",
+            backstory="""You are a meticulous researcher who never misses important details.
+            You have the ability to understand complex arguments, identify key evidence,
+            and recognize the significance of findings. You preserve depth and nuance.""",
+            llm=self.llm,
+            verbose=True,
+        )
+        
+        synthesizer = Agent(
+            role="Master Synthesizer",
+            goal="Combine all section analyses into a comprehensive, coherent understanding",
+            backstory="""You are brilliant at seeing the big picture while retaining important
+            details. You can identify patterns across sections, understand how arguments build,
+            and create a unified narrative that captures both breadth and depth.""",
+            llm=self.llm,
+            verbose=True,
+        )
+        
+        # Create tasks for chunk analysis
+        chunk_tasks = []
+        for i, chunk in enumerate(chunks):
+            chunk_task = Task(
+                description=chunker.create_chunk_summary_prompt(chunk, paper_title),
+                agent=chunk_analyzer,
+                expected_output=f"Comprehensive analysis of {chunk.section_title}",
+            )
+            chunk_tasks.append(chunk_task)
+        
+        # Create synthesis task
+        synthesis_task = Task(
+            description=f"""
+            You have received detailed analyses of all {len(chunks)} sections of the paper "{paper_title}".
+            
+            Now synthesize them into a comprehensive understanding that:
+            
+            1. **Preserves Depth**: Keep important technical details, evidence, and nuanced arguments
+            2. **Shows Connections**: How do different sections relate and build on each other?
+            3. **Identifies Key Themes**: What are the main threads running through the paper?
+            4. **Highlights Insights**: What are the most important findings and breakthroughs?
+            5. **Captures Debates**: What controversies or open questions does the paper raise?
+            6. **Explains Significance**: Why does this research matter? What are the implications?
+            7. **Maintains Structure**: Show how the argument develops from introduction to conclusion
+            
+            CRITICAL REQUIREMENT - START WITH A TLDR:
+            Begin your synthesis with a "TLDR:" section (3-5 bullet points) that captures:
+            - The main argument or discovery in one sentence
+            - 2-3 key findings or insights
+            - The primary implication or takeaway
+            
+            After the TLDR, provide the rich, detailed synthesis that someone could use to deeply understand this paper.
+            This is not a simple summary - it's a comprehensive analysis that preserves the intellectual
+            depth while organizing it coherently.
+            
+            Remember: You're creating the foundation that will be used by all subsequent analyses,
+            so capture everything important.
+            """,
+            agent=synthesizer,
+            expected_output="A comprehensive synthesis starting with TLDR, followed by deep analysis",
+        )
+        
+        # Build task list: all chunk tasks + synthesis
+        all_tasks = chunk_tasks + [synthesis_task]
+        
+        # Create crew with synthesis agents
+        synthesis_crew = Crew(
+            agents=[chunk_analyzer, synthesizer],
+            tasks=all_tasks,
+            verbose=True,
+            embedder={"provider": "openai", "config": {"api_key": OPENAI_API_KEY}},
+        )
+        
+        # Run the synthesis crew
+        click.echo("🔬 Running deep document analysis and synthesis...")
+        result = synthesis_crew.kickoff()
+        
+        # Save synthesis data
+        synthesis_data = {
+            "project": self.project_name,
+            "paper_title": paper_title,
+            "document_chunks": len(chunks),
+            "chunk_sections": [chunk.section_title for chunk in chunks],
+            "synthesis_length": len(str(result)),
+        }
+        
+        # Save synthesis metadata
+        with open(
+            self.synthesis_dir / "synthesis_metadata.json", "w", encoding="utf-8"
+        ) as f:
+            json.dump(synthesis_data, f, indent=2, ensure_ascii=False)
+        
+        # Save chunk analyses for debugging
+        for i, task in enumerate(chunk_tasks):
+            with open(
+                self.synthesis_dir / f"chunk_{i+1}_analysis.txt", "w", encoding="utf-8"
+            ) as f:
+                f.write(f"Section: {chunks[i].section_title}\n")
+                f.write(f"Characters: {chunks[i].end_char - chunks[i].start_char}\n")
+                f.write("=" * 50 + "\n")
+                f.write(str(task.output))
+        
+        # Save synthesis output
+        synthesis_result = str(synthesis_task.output)
+        with open(synthesis_path, "w", encoding="utf-8") as f:
+            f.write(synthesis_result)
+        
+        click.echo("✅ Synthesis completed and saved")
+        return synthesis_result
 
     def _detect_topic(self, text: str) -> str:
         """Advanced topic detection based on keywords and content analysis."""
@@ -254,9 +474,9 @@ class CrewManager:
         tasks.append(
             Task(
                 description=f"""
-            Analyze the paper titled "{paper_title}" and provide your perspective.
+            Analyze the synthesis of the paper titled "{paper_title}" and provide your perspective.
             
-            Paper content:
+            Paper synthesis:
             {paper_content}
             
             CRITICAL: ONLY CONVERSATION AGENTS participate in this analysis:
@@ -326,7 +546,7 @@ class CrewManager:
         tasks.append(
             Task(
                 description=f"""
-            Based on the initial analysis, conduct a DYNAMIC Q&A session where technical conversation agents ask each other specific questions.
+            Based on the initial analysis, conduct a DYNAMIC Q&A session where technical conversation agents ask each other specific questions about the paper synthesis.
             
             PARTICIPATING AGENTS (technical conversation only):
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker) 
@@ -545,6 +765,8 @@ class CrewManager:
             
             Transform ALL the rich content into a comprehensive educational lecture text.
             
+            DOCUMENT TITLE: {paper_title}
+            
             You are receiving the complete output, which includes:
             - Initial analysis from all conversation agents
             - Specialized domain expert deep dive
@@ -558,30 +780,35 @@ class CrewManager:
             
             The script should be in the style of popular science educators like 3Blue1Brown:
             1. Written as a SINGLE EDUCATOR speaking directly to the listener (use "tú"/"usted")
-            2. Use analogies and accessible explanations
-            3. Include ALL key insights from the multiple conversations and specialist exchanges
-            4. Be engaging and educational, not just informative
-            5. Flow naturally from concept to concept with smooth transitions
-            6. Include moments of wonder and intellectual curiosity
-            7. Break down complex ideas into digestible parts
-            8. Use a teaching tone that makes the listener feel they're learning something fascinating
-            9. Write as continuous text ready to be read by a voice actor
-            10. NO section headers, NO subheaders, NO formatting marks
-            11. Don't address the public with greetings or goodbyes, but make questions
-            12. Always end up with questions for the reader and practical implications
-            13. Write as plain text that flows naturally for voice reading
-            14. NO [PAUSES], NO [MUSIC], NO stage directions - just the educational content
-            15. CRITICAL: Address the listener directly - "puedes imaginar", "si consideras", "te darás cuenta"
-            16. DO NOT write as if summarizing a discussion - write as if YOU are the teacher
-            17. Avoid phrases like "los expertos discutieron" or "el equipo concluyó"
-            18. Incorporate the depth and nuance that emerged from ALL agent conversations
+            2. CRITICAL INTRODUCTION STRUCTURE:
+               a) START with a HOOK - a question, surprising fact, or intriguing statement (NOT "En resumen...")
+               b) THEN naturally introduce the topic: "{paper_title}" after engaging the listener
+               c) Examples of good hooks: "¿Alguna vez te has preguntado...?", "Imagina por un momento...", "Hay algo sorprendente sobre..."
+               d) NEVER start with: "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
+            3. Use analogies and accessible explanations
+            4. Include ALL key insights from the multiple conversations and specialist exchanges
+            5. Be engaging and educational, not just informative
+            6. Flow naturally from concept to concept with smooth transitions
+            7. Include moments of wonder and intellectual curiosity
+            8. Break down complex ideas into digestible parts
+            9. Use a teaching tone that makes the listener feel they're learning something fascinating
+            10. Write as continuous text ready to be read by a voice actor
+            11. NO section headers, NO subheaders, NO formatting marks
+            12. Don't address the public with greetings or goodbyes, but make questions
+            13. Always end up with questions for the reader and practical implications
+            14. Write as plain text that flows naturally for voice reading
+            15. NO [PAUSES], NO [MUSIC], NO stage directions - just the educational content
+            16. CRITICAL: Address the listener directly - "puedes imaginar", "si consideras", "te darás cuenta"
+            17. DO NOT write as if summarizing a discussion - write as if YOU are the teacher
+            18. Avoid phrases like "los expertos discutieron" or "el equipo concluyó"
+            19. Incorporate the depth and nuance that emerged from ALL agent conversations
             
             CRITICAL DIDACTIC TECHNIQUES - MANDATORY:
-            19. INTRODUCTION must include a compelling preview/roadmap: Start with an engaging hook and then preview what the listener will learn - "En los próximos minutos vas a descubrir...", "Te voy a mostrar tres ideas que cambiarán tu forma de pensar sobre...", etc.
-            20. CONCLUSION must include a clear summary: End with a recap of the main points covered - "Hemos visto que...", "En resumen, tres puntos clave...", "Para cerrar, recordemos que...", etc.
-            21. AVOID TYPICAL LLM WORDS: Never use overused AI-generated words like "fundamental", "crucial", "clave" (as adjective), "esencial", "revelador", "fascinante", "delve into", "explore", "unpack", "dive deep", "robust", "compelling", etc.
-            22. USE NATURAL LANGUAGE: Instead of LLM words, use conversational alternatives like "importante", "interesante", "sorprendente", "nos ayuda a entender", "vamos a ver", "resulta que", "descubrimos que", etc.
-            23. SOUND HUMAN: Write as if explaining to a friend over coffee, not as if generating academic content
+            20. INTRODUCTION must include a compelling preview/roadmap: After the hook and title mention, preview what the listener will learn - "En los próximos minutos vas a descubrir...", "Te voy a mostrar tres ideas que cambiarán tu forma de pensar sobre...", etc.
+            21. CONCLUSION must include a clear summary: End with a recap of the main points covered - "Hemos visto que...", "Los tres puntos clave que exploramos fueron...", "Para cerrar, recordemos que...", etc. ("En resumen" is ONLY acceptable here in conclusions)
+            22. AVOID TYPICAL LLM WORDS: Never use overused AI-generated words like "fundamental", "crucial", "clave" (as adjective), "esencial", "revelador", "fascinante", "delve into", "explore", "unpack", "dive deep", "robust", "compelling", etc.
+            23. USE NATURAL LANGUAGE: Instead of LLM words, use conversational alternatives like "importante", "interesante", "sorprendente", "nos ayuda a entender", "vamos a ver", "resulta que", "descubrimos que", etc.
+            24. SOUND HUMAN: Write as if explaining to a friend over coffee, not as if generating academic content
             
             CRITICAL - MULTI-SPECIALIST INTEGRATION:
             19. Weave in insights that could ONLY come from having multiple specialist perspectives
@@ -660,16 +887,21 @@ class CrewManager:
             20. Optimize for voice actor performance and listener engagement
             21. This should sound like ONE VOICE teaching, not a summary of multiple voices
             22. Avoid words that could make this sound like written by an LLM, like not often used words: "fascinante", "delve", "revelador"
-            23. Introduction should be a catchy hook that makes the listener want to listen to the entire video, something like a question or a statement that makes the listener want to know more
+            23. CRITICAL INTRODUCTION VERIFICATION:
+                a) MUST start with a catchy hook (question, surprising fact, intriguing statement)
+                b) NEVER start with "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
+                c) The title/topic should be mentioned AFTER the hook, integrated naturally
+                d) If the script starts with "En resumen" or similar, REWRITE the entire introduction
             24. DO NOT add new content - only optimize existing content for voice delivery
             25. DO NOT change the educational message - only improve its delivery
             
             CRITICAL DIDACTIC STRUCTURE VERIFICATION:
-            26. VERIFY INTRODUCTION includes preview/roadmap: Ensure there's a clear "what you'll learn" section early in the script
-            27. VERIFY CONCLUSION includes summary: Ensure there's a clear recap of main points at the end
+            26. VERIFY INTRODUCTION includes preview/roadmap: Ensure there's a clear "what you'll learn" section early in the script (AFTER the hook and title mention)
+            27. VERIFY CONCLUSION includes summary: Ensure there's a clear recap of main points at the end ("En resumen" is ONLY acceptable in conclusions)
             28. REMOVE LLM WORDS: Replace any remaining "fundamental", "crucial", "clave" (adjective), "esencial", "revelador", "fascinante", "compelling", "robust", etc. with natural alternatives
             29. HUMAN CONVERSATION: Ensure the entire script sounds like a knowledgeable person explaining something interesting, not AI-generated content
             30. NATURAL FLOW: Check that didactic elements (preview, summary) flow naturally within the content, not as forced additions
+            31. HOOK QUALITY CHECK: The opening sentence should immediately grab attention - if it doesn't, rewrite it
             {"26. Preserve the humor elements but ensure they flow naturally in speech" if has_humor_agent else ""}
 
             {language_instructions}
@@ -719,9 +951,9 @@ class CrewManager:
         tasks.append(
             Task(
                 description=f"""
-            Analyze the paper titled "{paper_title}" and provide your perspective.
+            Analyze the synthesis of the paper titled "{paper_title}" and provide your perspective.
             
-            Paper content:
+            Paper synthesis:
             {paper_content}
             
             PARTICIPATING AGENTS (technical conversation only):
@@ -751,7 +983,7 @@ class CrewManager:
         tasks.append(
             Task(
                 description=f"""
-            Based on the initial analysis, conduct a thorough technical discussion of the paper involving conversation agents.
+            Based on the initial analysis, conduct a thorough technical discussion of the paper synthesis involving conversation agents.
             
             PARTICIPATING AGENTS (technical conversation only):
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
@@ -945,16 +1177,21 @@ class CrewManager:
             20. Optimize for voice actor performance and listener engagement
             21. This should sound like ONE VOICE teaching, not a summary of multiple voices
             22. Avoid words that could make this sound like written by an LLM, like not often used words: "fascinante", "delve", "revelador"
-            23. Introduction should be a catchy hook that makes the listener want to listen to the entire video, something like a question or a statement that makes the listener want to know more
+            23. CRITICAL INTRODUCTION VERIFICATION:
+                a) MUST start with a catchy hook (question, surprising fact, intriguing statement)
+                b) NEVER start with "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
+                c) The title/topic should be mentioned AFTER the hook, integrated naturally
+                d) If the script starts with "En resumen" or similar, REWRITE the entire introduction
             24. DO NOT add new content - only optimize existing content for voice delivery
             25. DO NOT change the educational message - only improve its delivery
             
             CRITICAL DIDACTIC STRUCTURE VERIFICATION:
-            26. VERIFY INTRODUCTION includes preview/roadmap: Ensure there's a clear "what you'll learn" section early in the script
-            27. VERIFY CONCLUSION includes summary: Ensure there's a clear recap of main points at the end
+            26. VERIFY INTRODUCTION includes preview/roadmap: Ensure there's a clear "what you'll learn" section early in the script (AFTER the hook and title mention)
+            27. VERIFY CONCLUSION includes summary: Ensure there's a clear recap of main points at the end ("En resumen" is ONLY acceptable in conclusions)
             28. REMOVE LLM WORDS: Replace any remaining "fundamental", "crucial", "clave" (adjective), "esencial", "revelador", "fascinante", "compelling", "robust", etc. with natural alternatives
             29. HUMAN CONVERSATION: Ensure the entire script sounds like a knowledgeable person explaining something interesting, not AI-generated content
             30. NATURAL FLOW: Check that didactic elements (preview, summary) flow naturally within the content, not as forced additions
+            31. HOOK QUALITY CHECK: The opening sentence should immediately grab attention - if it doesn't, rewrite it
             {"31. Preserve the humor elements but ensure they flow naturally in speech" if has_humor_agent else ""}
 
             {language_instructions}
@@ -1211,28 +1448,38 @@ class CrewManager:
         )
         from ..utils.document_chunker import DocumentChunker
 
+        # Import click for consistent output
+        import click
+
+        # Check if synthesis already exists
+        synthesis_path = self.synthesis_dir / "synthesis_output.txt"
+        existing_synthesis = None
+        
+        if synthesis_path.exists():
+            click.echo("📊 Found existing synthesis, reusing it...")
+            with open(synthesis_path, "r", encoding="utf-8") as f:
+                existing_synthesis = f.read()
+
         # Chunk the document
         chunker = DocumentChunker(chunk_size=10000, overlap=200)
         chunks = chunker.chunk_document(paper_content, paper_title)
 
-        # Import click for consistent output
-        import click
+        if not existing_synthesis:
+            click.echo(
+                f"📊 Document chunked into {len(chunks)} sections for deep analysis..."
+            )
 
-        click.echo(
-            f"📊 Document chunked into {len(chunks)} sections for deep analysis..."
-        )
+            # Show section titles
+            unique_sections = []
+            for chunk in chunks:
+                base_section = chunk.section_title.split(" (Part")[0]
+                if base_section not in unique_sections:
+                    unique_sections.append(base_section)
 
-        # Show section titles
-        unique_sections = []
-        for chunk in chunks:
-            base_section = chunk.section_title.split(" (Part")[0]
-            if base_section not in unique_sections:
-                unique_sections.append(base_section)
-
-        if len(unique_sections) <= 10:
-            click.echo("📑 Sections found:")
-            for section in unique_sections:
-                click.echo(f"   • {section}")
+            if len(unique_sections) <= 10:
+                click.echo("📑 Sections found:")
+                for section in unique_sections:
+                    click.echo(f"   • {section}")
 
         # Create agents
         chunk_analyzer = Agent(
@@ -1257,73 +1504,125 @@ class CrewManager:
 
         educational_writer = get_improved_educational_writer(self.llm)
 
-        # Create tasks for chunk analysis
-        chunk_tasks = []
-        for i, chunk in enumerate(chunks):
-            chunk_task = Task(
-                description=chunker.create_chunk_summary_prompt(chunk, paper_title),
-                agent=chunk_analyzer,
-                expected_output=f"Comprehensive analysis of {chunk.section_title}",
+        # Check if we need to create synthesis or use existing
+        if existing_synthesis:
+            # Skip chunk analysis and synthesis tasks, go directly to educational
+            click.echo("📝 Creating educational script from existing synthesis...")
+            
+            # Get the enhanced task description with synthesis
+            task_description = create_enhanced_educational_task(
+                educational_writer,
+                self.language,
+                self.duration_minutes,
+                self.technical_level,
+                self.tone,
             )
-            chunk_tasks.append(chunk_task)
-
-        # Create synthesis task
-        synthesis_task = Task(
-            description=f"""
-            You have received detailed analyses of all {len(chunks)} sections of the paper "{paper_title}".
             
-            Now synthesize them into a comprehensive understanding that:
+            # Prepend the synthesis to the task
+            full_task_description = f"""
+            Transform this comprehensive synthesis into an engaging educational script.
             
-            1. **Preserves Depth**: Keep important technical details, evidence, and nuanced arguments
-            2. **Shows Connections**: How do different sections relate and build on each other?
-            3. **Identifies Key Themes**: What are the main threads running through the paper?
-            4. **Highlights Insights**: What are the most important findings and breakthroughs?
-            5. **Captures Debates**: What controversies or open questions does the paper raise?
-            6. **Explains Significance**: Why does this research matter? What are the implications?
-            7. **Maintains Structure**: Show how the argument develops from introduction to conclusion
+            Title: {paper_title}
             
-            Create a rich, detailed synthesis that someone could use to deeply understand this paper.
-            This is not a simple summary - it's a comprehensive analysis that preserves the intellectual
-            depth while organizing it coherently.
+            Synthesis to transform:
+            {existing_synthesis}
             
-            Remember: You're creating the foundation for an educational script, so identify:
-            - The most fascinating aspects that will engage listeners
-            - The "aha!" moments and surprising insights  
-            - The practical implications
-            - The bigger picture and future directions
-            """,
-            agent=synthesizer,
-            expected_output="A comprehensive, deep synthesis of the entire paper",
-        )
+            ---
+            
+            {task_description}
+            """
 
-        # Get the enhanced task description
-        task_description = create_enhanced_educational_task(
-            educational_writer,
-            self.language,
-            self.duration_minutes,
-            self.technical_level,
-            self.tone,
-        )
+            educational_task = Task(
+                description=full_task_description,
+                agent=educational_writer,
+                expected_output=f"A natural, engaging {self.duration_minutes}-minute educational script in {self.language}",
+            )
 
-        educational_task = Task(
-            description=task_description,
-            agent=educational_writer,
-            expected_output=f"A natural, engaging {self.duration_minutes}-minute educational script in {self.language}",
-        )
+            # Create crew with only educational writer
+            crew = Crew(
+                agents=[educational_writer],
+                tasks=[educational_task],
+                verbose=True,
+            )
 
-        # Build task list: all chunk tasks + synthesis + educational
-        all_tasks = chunk_tasks + [synthesis_task, educational_task]
+            # Run the crew
+            result = crew.kickoff()
+            
+        else:
+            # Original workflow: create synthesis first
+            # Create tasks for chunk analysis
+            chunk_tasks = []
+            for i, chunk in enumerate(chunks):
+                chunk_task = Task(
+                    description=chunker.create_chunk_summary_prompt(chunk, paper_title),
+                    agent=chunk_analyzer,
+                    expected_output=f"Comprehensive analysis of {chunk.section_title}",
+                )
+                chunk_tasks.append(chunk_task)
 
-        # Create crew with all agents
-        crew = Crew(
-            agents=[chunk_analyzer, synthesizer, educational_writer],
-            tasks=all_tasks,
-            verbose=True,
-            embedder={"provider": "openai", "config": {"api_key": OPENAI_API_KEY}},
-        )
+            # Create synthesis task
+            synthesis_task = Task(
+                description=f"""
+                You have received detailed analyses of all {len(chunks)} sections of the paper "{paper_title}".
+                
+                Now synthesize them into a comprehensive understanding that:
+                
+                1. **Preserves Depth**: Keep important technical details, evidence, and nuanced arguments
+                2. **Shows Connections**: How do different sections relate and build on each other?
+                3. **Identifies Key Themes**: What are the main threads running through the paper?
+                4. **Highlights Insights**: What are the most important findings and breakthroughs?
+                5. **Captures Debates**: What controversies or open questions does the paper raise?
+                6. **Explains Significance**: Why does this research matter? What are the implications?
+                7. **Maintains Structure**: Show how the argument develops from introduction to conclusion
+                
+                CRITICAL REQUIREMENT - START WITH A TLDR:
+                Begin your synthesis with a "TLDR:" section (3-5 bullet points) that captures:
+                - The main argument or discovery in one sentence
+                - 2-3 key findings or insights
+                - The primary implication or takeaway
+                
+                After the TLDR, provide the rich, detailed synthesis that someone could use to deeply understand this paper.
+                This is not a simple summary - it's a comprehensive analysis that preserves the intellectual
+                depth while organizing it coherently.
+                
+                Remember: You're creating the foundation for an educational script, so identify:
+                - The most fascinating aspects that will engage listeners
+                - The "aha!" moments and surprising insights  
+                - The practical implications
+                - The bigger picture and future directions
+                """,
+                agent=synthesizer,
+                expected_output="A comprehensive synthesis starting with TLDR, followed by deep analysis",
+            )
 
-        # Run the crew
-        result = crew.kickoff()
+            # Get the enhanced task description
+            task_description = create_enhanced_educational_task(
+                educational_writer,
+                self.language,
+                self.duration_minutes,
+                self.technical_level,
+                self.tone,
+            )
+
+            educational_task = Task(
+                description=task_description,
+                agent=educational_writer,
+                expected_output=f"A natural, engaging {self.duration_minutes}-minute educational script in {self.language}",
+            )
+
+            # Build task list: all chunk tasks + synthesis + educational
+            all_tasks = chunk_tasks + [synthesis_task, educational_task]
+
+            # Create crew with all agents
+            crew = Crew(
+                agents=[chunk_analyzer, synthesizer, educational_writer],
+                tasks=all_tasks,
+                verbose=True,
+                embedder={"provider": "openai", "config": {"api_key": OPENAI_API_KEY}},
+            )
+
+            # Run the crew
+            result = crew.kickoff()
 
         # Save the summary workflow data
         crew_data = {
@@ -1364,21 +1663,49 @@ class CrewManager:
         ) as f:
             f.write(str(result))
 
-        # Save chunk analyses for debugging
-        for i, task in enumerate(chunk_tasks):
-            with open(
-                self.discussion_dir / f"chunk_{i+1}_analysis.txt", "w", encoding="utf-8"
-            ) as f:
-                f.write(f"Section: {chunks[i].section_title}\n")
-                f.write(f"Characters: {chunks[i].end_char - chunks[i].start_char}\n")
-                f.write("=" * 50 + "\n")
-                f.write(str(task.output))
+        # Only save chunk analyses and synthesis if we created them
+        if not existing_synthesis:
+            # Save chunk analyses for debugging
+            for i, task in enumerate(chunk_tasks):
+                with open(
+                    self.discussion_dir / f"chunk_{i+1}_analysis.txt", "w", encoding="utf-8"
+                ) as f:
+                    f.write(f"Section: {chunks[i].section_title}\n")
+                    f.write(f"Characters: {chunks[i].end_char - chunks[i].start_char}\n")
+                    f.write("=" * 50 + "\n")
+                    f.write(str(task.output))
 
-        # Save synthesis output
-        with open(
-            self.discussion_dir / "synthesis_output.txt", "w", encoding="utf-8"
-        ) as f:
-            f.write(str(synthesis_task.output))
+            # Save synthesis output to both locations for compatibility
+            synthesis_content = str(synthesis_task.output)
+            
+            # Save to discussion directory (for backward compatibility)
+            with open(
+                self.discussion_dir / "synthesis_output.txt", "w", encoding="utf-8"
+            ) as f:
+                f.write(synthesis_content)
+            
+            # Also save to synthesis directory (consistent with create_synthesis method)
+            with open(
+                self.synthesis_dir / "synthesis_output.txt", "w", encoding="utf-8"
+            ) as f:
+                f.write(synthesis_content)
+            
+            # Save synthesis metadata
+            synthesis_data = {
+                "project": self.project_name,
+                "paper_title": paper_title,
+                "document_chunks": len(chunks),
+                "chunk_sections": [chunk.section_title for chunk in chunks],
+                "synthesis_length": len(synthesis_content),
+                "workflow": "summary",
+            }
+            
+            with open(
+                self.synthesis_dir / "synthesis_metadata.json", "w", encoding="utf-8"
+            ) as f:
+                json.dump(synthesis_data, f, indent=2, ensure_ascii=False)
+        else:
+            click.echo("✅ Reused existing synthesis from synthesis directory")
 
         return str(result)
 

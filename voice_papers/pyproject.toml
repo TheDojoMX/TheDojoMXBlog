@@ -25,6 +25,8 @@ dependencies = [
     "lxml>=4.9.0",
     "newspaper3k>=0.2.8",
     "lxml-html-clean>=0.4.2",
+    "pydub>=0.25.1",
+    "html2text>=2020.1.16",
 ]
 
 [tool.setuptools.packages.find]

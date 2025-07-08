@@ -57,6 +57,14 @@ def get_natural_language_guidelines() -> Dict[str, List[str]]:
             "Join me as we",
             "Together we'll discover",
         ],
+        "avoid_at_start": [
+            "En resumen",
+            "Hoy vamos a hablar de",
+            "Este es un resumen de",
+            "En este episodio",
+            "Hoy exploramos",
+            "Vamos a analizar",
+        ],
     }
 
 
@@ -75,7 +83,9 @@ YOUR MISSION: Create a script that sounds like a passionate teacher having a one
 CRITICAL REQUIREMENTS:
 
 1. **INTRODUCTION (First 45-60 seconds)**:
-   - Start with something that creates immediate curiosity or relatability
+   - START with a HOOK - question, surprising fact, or intriguing statement
+   - NEVER start with "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
+   - After the hook, naturally introduce the topic/title
    - Include a clear, exciting roadmap using natural language
    - Make it feel like you can't wait to share this knowledge
 

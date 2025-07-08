@@ -3,11 +3,12 @@
 import os
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Tuple, Dict
 import requests
 from elevenlabs import ElevenLabs
 import time
 from ..config import ELEVENLABS_API_KEY, CARTESIA_API_KEY
+from .elevenlabs_improved import ElevenLabsImprovedSynthesizer
 
 
 class VoiceSynthesizer(ABC):
@@ -42,11 +43,12 @@ class ElevenLabsSynthesizer(VoiceSynthesizer):
     }
 
     # Character limits per model (with safety buffer)
+    # For improved synthesizer, these are overridden with duration-based limits
     CHARACTER_LIMITS = {
-        "eleven_flash_v2_5": 39500,  # 40,000 with buffer
-        "eleven_flash_v2": 29500,  # 30,000 with buffer
-        "eleven_turbo_v2_5": 39500,  # 40,000 with buffer
-        "eleven_turbo_v2": 29500,  # 30,000 with buffer
+        "eleven_flash_v2_5": 39500,  # 40,000 with buffer (original)
+        "eleven_flash_v2": 29500,  # 30,000 with buffer (original)
+        "eleven_turbo_v2_5": 39500,  # 40,000 with buffer (original)
+        "eleven_turbo_v2": 29500,  # 30,000 with buffer (original)
         "eleven_multilingual_v2": 9500,  # 10,000 with buffer
         "eleven_multilingual_v1": 9500,  # 10,000 with buffer
         "eleven_v3": 9500,  # 10,000 with buffer
@@ -54,6 +56,9 @@ class ElevenLabsSynthesizer(VoiceSynthesizer):
         # Add fallback for any unknown models
         "default": 9500,
     }
+    
+    # Option to use improved synthesizer with duration-based chunking
+    USE_IMPROVED_SYNTHESIZER = os.getenv("ELEVENLABS_USE_IMPROVED", "true").lower() == "true"
 
     # Voice mapping from short names to ElevenLabs voice IDs
     VOICE_MAP = {
@@ -88,6 +93,25 @@ class ElevenLabsSynthesizer(VoiceSynthesizer):
         use_speaker_boost: Optional[bool] = None,
     ) -> bool:
         """Synthesize text using ElevenLabs with configurable model, voice, and quality settings."""
+        # Use improved synthesizer if enabled (default)
+        if self.USE_IMPROVED_SYNTHESIZER:
+            print("🚀 Using improved ElevenLabs synthesizer with duration-based chunking")
+            improved_synth = ElevenLabsImprovedSynthesizer(ELEVENLABS_API_KEY)
+            success, stats = improved_synth.synthesize_with_state(
+                text=text,
+                output_path=output_path,
+                voice_id=voice_id,
+                model=model,
+                voice_name=voice_name,
+                stability=stability,
+                similarity_boost=similarity_boost,
+                style=style,
+                use_speaker_boost=use_speaker_boost,
+                resume=True
+            )
+            return success
+        
+        # Original implementation
         try:
             # Determine voice to use: voice_name (mapped) > voice_id (direct) > default
             if voice_name:

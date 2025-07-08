@@ -399,6 +399,17 @@ def extract_text_from_url(url: str) -> Tuple[str, str]:
     Returns:
         Tuple of (title, content)
     """
+    # Try improved extractor first for better markdown preservation
+    try:
+        from .web_reader_improved import extract_text_from_url_improved
+        return extract_text_from_url_improved(url)
+    except ImportError:
+        # Fallback to basic extractor if improved version not available
+        pass
+    except Exception as e:
+        print(f"Improved extraction failed, falling back to basic: {e}")
+    
+    # Fallback to original extractor
     extractor = WebArticleExtractor()
     return extractor.extract_article_from_url(url)
 

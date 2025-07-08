@@ -1,5 +1,6 @@
 """Command line interface for Voice Papers."""
 
+import os
 import click
 from pathlib import Path
 import re
@@ -148,6 +149,16 @@ from .config import ELEVENLABS_VOICE_ID
     is_flag=True,
     help="Reuse existing discussion from previous run and only regenerate final script and TTS version",
 )
+@click.option(
+    "--skip-synthesis",
+    is_flag=True,
+    help="Skip the synthesis step and use raw content directly (legacy behavior)",
+)
+@click.option(
+    "--use-legacy-tts",
+    is_flag=True,
+    help="Use legacy TTS without duration-based chunking (not recommended for long scripts)",
+)
 def main(
     input_source: str,
     language: str,
@@ -174,6 +185,8 @@ def main(
     text_file: Path,
     tts_optimize: bool,
     reuse_discussion: bool,
+    skip_synthesis: bool,
+    use_legacy_tts: bool,
 ):
     """Generate an educational audio lecture from an academic paper or web article.
 
@@ -181,9 +194,10 @@ def main(
     For --direct mode, use "-" to read from stdin.
 
     Workflow modes:
-    - Default: Full multi-agent discussion and educational transformation
-    - --summary: Document → Summary → Educational Writer (faster)
+    - Default: Document → Synthesis → Multi-agent discussion → Educational transformation (NEW: includes synthesis step)
+    - --summary: Document → Synthesis → Educational Writer (faster, skips multi-agent discussion)
     - --direct: Text → Educational Writer only (fastest, for pre-processed content)
+    - --skip-synthesis: Use legacy behavior without synthesis step
 
     Use --extract-only to only extract and clean text from PDF/URL sources,
     skipping the generation process. Text files are skipped since no extraction is needed.
@@ -203,6 +217,12 @@ def main(
     - --similarity-boost: Higher values (0.8-1.0) for better voice matching, lower for more variation
     - --style: Keep at 0.0 for stability, increase (0.1-0.3) for more character expression
     - --speaker-boost: Enable for clearer voice reproduction (recommended)
+    
+    Audio Generation (NEW):
+    - Duration-based chunking: Audio is automatically split into 5-6 minute chunks
+    - State management: Generation progress is saved and can be resumed if interrupted
+    - Cost tracking: API usage and costs are logged in .state directories
+    - --use-legacy-tts: Use original TTS without improvements (not recommended for long scripts)
     """
 
     # Handle audio generation from existing script
@@ -216,6 +236,14 @@ def main(
         # Determine output directory (same as script location)
         output_dir = audio_from_script.parent
 
+        # Set environment variable for legacy TTS if requested
+        if use_legacy_tts:
+            os.environ["ELEVENLABS_USE_IMPROVED"] = "false"
+            click.echo("⚠️  Using legacy TTS (may fail on long scripts)")
+        else:
+            os.environ["ELEVENLABS_USE_IMPROVED"] = "true"
+            click.echo("✨ Using improved TTS with duration-based chunking")
+        
         # Generate audio
         synthesizer = get_synthesizer(voice_provider)
 
@@ -350,6 +378,11 @@ def main(
         # Generate audio if not script-only
         if not script_only:
             click.echo("🎙️  Generating audio...")
+            # Apply TTS mode setting
+            if use_legacy_tts:
+                os.environ["ELEVENLABS_USE_IMPROVED"] = "false"
+            else:
+                os.environ["ELEVENLABS_USE_IMPROVED"] = "true"
             synthesizer = get_synthesizer(voice_provider)
 
             if not voice_id and voice_provider == "elevenlabs":
@@ -484,12 +517,17 @@ def main(
                 click.echo("🌐 Extracting content from web article...")
                 title, raw_content = extract_text_from_url(input_source)
 
-                # Clean the extracted text
-                click.echo("🧹 Cleaning article text...")
-                paper_content = clean_paper_text(raw_content)
-
-                # Save with title for future reference
-                full_content = f"Title: {title}\n{paper_content}"
+                # For web content, preserve markdown formatting
+                click.echo("📝 Preserving article structure...")
+                # Save with title and markdown content
+                full_content = f"Title: {title}\n\n{raw_content}"
+                
+                # Save as markdown file for better preservation
+                markdown_path = cache_dir / cache_filename.replace('.txt', '.md')
+                with open(markdown_path, "w", encoding="utf-8") as f:
+                    f.write(full_content)
+                    
+                # Also save as txt for compatibility
                 with open(extracted_text_path, "w", encoding="utf-8") as f:
                     f.write(full_content)
                 click.echo(
@@ -545,11 +583,13 @@ def main(
                 click.echo(f"🌐 Using cached web content: {extracted_text_path.name}")
                 with open(extracted_text_path, "r", encoding="utf-8") as f:
                     paper_content = f.read()
-                # Extract title from cached content (first line)
-                title_line = paper_content.split("\n")[0]
+                # Extract title from cached content
+                lines = paper_content.split("\n")
+                title_line = lines[0] if lines else ""
                 if title_line.startswith("Title: "):
                     paper_title = title_line.replace("Title: ", "")
-                    paper_content = "\n".join(paper_content.split("\n")[1:])
+                    # Skip title line and empty line after it
+                    paper_content = "\n".join(lines[2:] if len(lines) > 2 else lines[1:])
                 else:
                     paper_title = project_name.replace("_", " ").title()
             else:
@@ -558,12 +598,17 @@ def main(
                 title, raw_content = extract_text_from_url(input_source)
                 paper_title = title
 
-                # Clean the extracted text
-                click.echo("🧹 Cleaning article text...")
-                paper_content = clean_paper_text(raw_content)
-
-                # Save with title for future reference
-                full_content = f"Title: {title}\n{paper_content}"
+                # For web content, preserve markdown formatting
+                click.echo("📝 Preserving article structure...")
+                # Save with title and markdown content
+                full_content = f"Title: {title}\n\n{raw_content}"
+                
+                # Save as markdown file for better preservation
+                markdown_path = cache_dir / cache_filename.replace('.txt', '.md')
+                with open(markdown_path, "w", encoding="utf-8") as f:
+                    f.write(full_content)
+                    
+                # Also save as txt for compatibility
                 with open(extracted_text_path, "w", encoding="utf-8") as f:
                     f.write(full_content)
                 click.echo(f"🌐 Web content cached to: {extracted_text_path}")
@@ -686,6 +731,11 @@ def main(
                 if not script_only:
                     # Synthesize voice
                     click.echo("🎙️  Generating audio...")
+                    # Apply TTS mode setting
+                    if use_legacy_tts:
+                        os.environ["ELEVENLABS_USE_IMPROVED"] = "false"
+                    else:
+                        os.environ["ELEVENLABS_USE_IMPROVED"] = "true"
                     synthesizer = get_synthesizer(voice_provider)
 
                     # Use provided voice_id or default
@@ -743,13 +793,13 @@ def main(
 
         # Check if using summary mode
         if summary:
-            click.echo("📄 Using enhanced summary workflow with document chunking...")
+            click.echo("📄 Using enhanced summary workflow (synthesis + direct to educational writer)...")
             click.echo(f"📊 Document length: {len(paper_content):,} characters")
             click.echo("🔍 This workflow will:")
             click.echo("   1. Chunk the document into manageable sections")
             click.echo("   2. Deeply analyze each section to preserve details")
             click.echo("   3. Synthesize all analyses into comprehensive understanding")
-            click.echo("   4. Transform into engaging educational script")
+            click.echo("   4. Transform directly into educational script (skipping multi-agent discussion)")
             click.echo(
                 "🤖 Setting up AI crew (Enhanced Summary mode - 3 specialized agents)..."
             )
@@ -803,7 +853,14 @@ def main(
                 f"👥 Using {agent_count} agents: 5 base + {specialist_info}{humor_bonus}"
             )
 
-            crew = crew_manager.create_crew_for_paper(paper_content, paper_title)
+            # Default behavior now includes synthesis unless explicitly skipped
+            use_synthesis = not skip_synthesis
+            if use_synthesis:
+                click.echo("🔬 NEW DEFAULT: Creating comprehensive synthesis before discussion...")
+            else:
+                click.echo("⚠️  Using legacy mode: Skipping synthesis step")
+            
+            crew = crew_manager.create_crew_for_paper(paper_content, paper_title, use_synthesis=use_synthesis)
 
             click.echo("🗣️  Running discussion (this may take several minutes)...")
             final_script = crew_manager.run_crew_and_save_discussion(crew, paper_title)
@@ -836,6 +893,11 @@ def main(
         if not script_only:
             # Synthesize voice
             click.echo("🎙️  Generating audio...")
+            # Apply TTS mode setting  
+            if use_legacy_tts:
+                os.environ["ELEVENLABS_USE_IMPROVED"] = "false"
+            else:
+                os.environ["ELEVENLABS_USE_IMPROVED"] = "true"
             synthesizer = get_synthesizer(voice_provider)
 
             # Use provided voice_id or default
