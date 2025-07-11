@@ -83,7 +83,7 @@ YOUR MISSION: Create a script that sounds like a passionate teacher having a one
 CRITICAL REQUIREMENTS:
 
 1. **INTRODUCTION (First 45-60 seconds)**:
-   - START with a HOOK - question, surprising fact, or intriguing statement
+   - START with a HOOK - question, surprising fact, or intriguing statement, or a quote from the source
    - NEVER start with "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
    - After the hook, naturally introduce the topic/title
    - Include a clear, exciting roadmap using natural language
@@ -103,7 +103,7 @@ CRITICAL REQUIREMENTS:
    - Leave them feeling inspired, not lectured
 
 4. **LANGUAGE RULES**:
-   NEVER USE these AI-sounding words: {', '.join(guidelines['avoid_words'])}
+   NEVER USE these AI-sounding words: {", ".join(guidelines["avoid_words"])}
    
 5. **VOICE AND TONE**:
    - Write like you're excitedly explaining to a smart friend over coffee

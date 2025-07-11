@@ -582,16 +582,16 @@ def main(
             if extracted_text_path.exists():
                 click.echo(f"🌐 Using cached web content: {extracted_text_path.name}")
                 with open(extracted_text_path, "r", encoding="utf-8") as f:
-                    paper_content = f.read()
-                # Extract title from cached content
-                lines = paper_content.split("\n")
+                    cached_content = f.read()
+                # Extract title from cached content but keep full content
+                lines = cached_content.split("\n")
                 title_line = lines[0] if lines else ""
                 if title_line.startswith("Title: "):
                     paper_title = title_line.replace("Title: ", "")
-                    # Skip title line and empty line after it
-                    paper_content = "\n".join(lines[2:] if len(lines) > 2 else lines[1:])
                 else:
                     paper_title = project_name.replace("_", " ").title()
+                # Use the complete cached content without modifications
+                paper_content = cached_content
             else:
                 # Extract from web
                 click.echo("🌐 Extracting content from web article...")
