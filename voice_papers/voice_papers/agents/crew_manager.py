@@ -26,6 +26,8 @@ class CrewManager:
         conversation_mode: str = "enhanced",
         tone: str = "academic",
         focus: str = "explanatory",
+        synthesis_method: str = "concatenation",
+        generate_knowledge_graph: bool = True,
     ):
         self.language = language
         self.project_name = project_name
@@ -34,6 +36,8 @@ class CrewManager:
         self.conversation_mode = conversation_mode
         self.tone = tone
         self.focus = focus
+        self.synthesis_method = synthesis_method
+        self.generate_knowledge_graph = generate_knowledge_graph
 
         # If pdf_path is provided, create project in same directory as PDF
         if pdf_path:
@@ -106,19 +110,6 @@ class CrewManager:
             )
         )
 
-        # Voice Director - optimizes for voice delivery
-        agents.append(
-            Agent(
-                role="Voice Director",
-                goal="Transform content into perfect voice-ready script",
-                backstory="""You are a master voice coach and script editor who specializes in creating 
-            flawless, publication-ready scripts that voice actors can read naturally. You ensure 
-            every word flows perfectly when spoken aloud, maintaining all the content while optimizing 
-            the delivery. You preserve the focus mode's specific style and approach.""",
-                llm=self.llm,
-                verbose=True,
-            )
-        )
 
         # Comedy Communicator - only for humorous/playful tones
         if self.tone in ["humorous", "playful"]:
@@ -185,7 +176,7 @@ class CrewManager:
 
         return Crew(agents=agents, tasks=tasks, verbose=True)
 
-    def create_synthesis(self, paper_content: str, paper_title: str) -> str:
+    def create_synthesis(self, paper_content: str, paper_title: str, synthesis_method: str = None, generate_knowledge_graph: bool = None) -> str:
         """Create a comprehensive synthesis of the paper content using chunking.
         This is extracted from run_summary_workflow to be reusable."""
         from ..utils.document_chunker import DocumentChunker
@@ -193,17 +184,26 @@ class CrewManager:
         from .improved_synthesis import ImprovedSynthesisManager
         import click
 
+        # Use instance defaults if not specified
+        if synthesis_method is None:
+            synthesis_method = self.synthesis_method
+        if generate_knowledge_graph is None:
+            generate_knowledge_graph = self.generate_knowledge_graph
+            
         # Check if we should use improved synthesis
-        use_improved = os.getenv("USE_IMPROVED_SYNTHESIS", "true").lower() == "true"
-
+        use_improved = os.getenv("USE_IMPROVED_SYNTHESIS", "true").lower() == "true" and synthesis_method != "original"
+        
+        # Check for existing synthesis with the specific method
+        synthesis_filename = f"synthesis_{synthesis_method}.txt" if synthesis_method != "original" else "synthesis_output.txt"
+        
         # Check if synthesis already exists
-        synthesis_path = self.synthesis_dir / "synthesis_output.txt"
+        synthesis_path = self.synthesis_dir / synthesis_filename
         if synthesis_path.exists():
             click.echo("📊 Using existing synthesis...")
             with open(synthesis_path, "r", encoding="utf-8") as f:
                 return f.read()
 
-        if use_improved:
+        if use_improved and synthesis_method in ["concatenation", "knowledge_graph"]:
             click.echo("✨ Using improved synthesis (content-aware)")
             # Use improved synthesis
             improved_manager = ImprovedSynthesisManager(self.llm)
@@ -232,12 +232,23 @@ class CrewManager:
                 )
 
             # Run improved synthesis
-            result = improved_manager.run_synthesis(chunks, paper_title, content_type)
+            result = improved_manager.run_synthesis(
+                chunks, paper_title, content_type, 
+                method=synthesis_method, 
+                generate_knowledge_graph=generate_knowledge_graph
+            )
             synthesis_result = result["synthesis"]
 
             # Save synthesis
             with open(synthesis_path, "w", encoding="utf-8") as f:
                 f.write(synthesis_result)
+            
+            # Save knowledge graph if available
+            if "knowledge_graph" in result:
+                with open(
+                    self.synthesis_dir / "knowledge_graph.json", "w", encoding="utf-8"
+                ) as f:
+                    f.write(result["knowledge_graph"])
 
             # Save additional metadata
             synthesis_data = {
@@ -248,6 +259,8 @@ class CrewManager:
                 "chunk_contexts": [chunk.context_type for chunk in chunks],
                 "synthesis_length": len(synthesis_result),
                 "improved_synthesis": True,
+                "synthesis_method": result.get("method", synthesis_method),
+                "includes_knowledge_graph": "knowledge_graph" in result,
             }
 
             # Save metadata
@@ -256,7 +269,8 @@ class CrewManager:
             ) as f:
                 json.dump(synthesis_data, f, indent=2, ensure_ascii=False)
 
-            click.echo("✅ Improved synthesis completed and saved")
+            method_display = f"{synthesis_method} + knowledge graph" if synthesis_method == "concatenation" and generate_knowledge_graph else synthesis_method
+            click.echo(f"✅ Improved synthesis ({method_display}) completed and saved")
             return synthesis_result
 
         else:
@@ -603,13 +617,13 @@ class CrewManager:
             agent
             for agent in agents
             if agent.role
-            not in ["Educational Writer", "Voice Director", "Comedy Communicator"]
+            not in ["Educational Writer", "Comedy Communicator"]
         ]
         post_production_agents = [
             agent
             for agent in agents
             if agent.role
-            in ["Educational Writer", "Voice Director", "Comedy Communicator"]
+            in ["Educational Writer", "Comedy Communicator"]
         ]
 
         # Initial analysis task - CONVERSATION AGENTS ONLY (NO HUMOR)
@@ -625,7 +639,7 @@ class CrewManager:
             - Base agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - Specialized domain agents
             
-            EXCLUDED FROM ANALYSIS: Educational Writer, Voice Director, and Comedy Communicator (all work in post-production)
+            EXCLUDED FROM ANALYSIS: Educational Writer and Comedy Communicator (work in post-production)
             
             Each participating agent should:
             1. Read and understand the paper from your specific role's perspective
@@ -651,7 +665,7 @@ class CrewManager:
                 agent
                 for agent in specialized_agents
                 if agent.role
-                not in ["Educational Writer", "Voice Director", "Comedy Communicator"]
+                not in ["Educational Writer", "Comedy Communicator"]
             ]
             if conversation_specialists:
                 lead_specialist = conversation_specialists[0]
@@ -694,7 +708,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker) 
             - ALL specialized domain agents
             
-            EXCLUDED FROM CONVERSATION: Educational Writer, Voice Director, and Comedy Communicator (all work in post-production)
+            EXCLUDED FROM CONVERSATION: Educational Writer and Comedy Communicator (work in post-production)
             
             Instructions for multi-agent technical conversation:
             1. ALL TECHNICAL CONVERSATION AGENTS should ask pointed questions to other agents
@@ -735,7 +749,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - ALL specialized domain agents  
             
-            EXCLUDED FROM DEBATE: Educational Writer, Voice Director, and Comedy Communicator (all work in post-production)
+            EXCLUDED FROM DEBATE: Educational Writer and Comedy Communicator (work in post-production)
             
             Technical debate structure:
             1. Present the main controversial points or interpretations from the paper
@@ -774,7 +788,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - ALL specialized domain agents
             
-            EXCLUDED FROM SYNTHESIS: Educational Writer, Voice Director, and Comedy Communicator (all work in post-production)
+            EXCLUDED FROM SYNTHESIS: Educational Writer and Comedy Communicator (work in post-production)
             
             Technical collaborative process:
             1. ALL TECHNICAL CONVERSATION AGENTS contribute their key insights from the discussions
@@ -815,7 +829,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - ALL specialized domain agents
             
-            EXCLUDED: Educational Writer, Voice Director, and Comedy Communicator (they will process this output in post-production)
+            EXCLUDED: Educational Writer and Comedy Communicator (they will process this output in post-production)
             
             The final technical discussion should:
             1. Synthesize insights from the Q&A, specialist deep dive, debate, and collaborative sessions
@@ -999,105 +1013,11 @@ class CrewManager:
             Language: {self.language}
             """,
                 agent=educational_writer,
-                expected_output="Comprehensive educational script incorporating ALL conversation insights"
+                expected_output="FINAL publication-ready educational script incorporating ALL conversation insights"
                 + (" and humor" if has_humor_agent else ""),
             )
         )
 
-        # POST-PRODUCTION PHASE 3: Voice Director final optimization
-        voice_director = next(
-            agent for agent in agents if agent.role == "Voice Director"
-        )
-        duration_check = f"CRITICAL: Verify the content meets the {self.duration_minutes}-minute target ({self._get_word_count_target()} words). If it's too short, EXPAND it significantly."
-
-        # Determine technical level messaging
-        if self.technical_level == "technical":
-            tech_msg = "include deep technical analysis"
-        elif self.technical_level == "accessible":
-            tech_msg = "keep accessible but thorough"
-        else:  # simple
-            tech_msg = "keep extremely simple and conversational"
-
-        technical_check = (
-            f"CRITICAL: Ensure technical level is {self.technical_level} - {tech_msg}."
-        )
-
-        tasks.append(
-            Task(
-                description=f"""
-            POST-PRODUCTION PHASE 3: FINAL VOICE OPTIMIZATION
-            
-            Transform the Educational Writer's script into a PERFECT voice-ready script.
-            
-            You are receiving the educational script that has been carefully crafted from all conversation insights
-            {"and enhanced with appropriate humor" if has_humor_agent else ""}.
-            Your job is PURELY technical optimization for voice delivery.
-            
-            {duration_check}
-            {technical_check}
-            
-            VOICE OPTIMIZATION WITH STYLE GUIDE COMPLIANCE:
-            
-            1. RHYTHM AND FLOW (from style guide):
-               - Vary sentence lengths: short for impact, medium for flow, long for depth
-               - Natural speech patterns with strategic pauses
-               - Smooth transitions using style guide connectors
-               - Perfect pacing for ~150 words per minute
-            
-            2. EMPHASIS AND DELIVERY (style guide formatting):
-               - Use *italics* for soft emphasis or foreign terms
-               - Use **bold** for key concepts or strong emphasis
-               - Natural pronunciation flow for technical terms
-               - Conversational markers placed strategically
-            
-            3. TECHNICAL REQUIREMENTS:
-               - Single continuous text (no headers, bullets, or lists)
-               - Convert all structured content to flowing sentences
-               - Remove formatting marks except bold/italic
-               - Eliminate repetitive content from discussions
-               - Maintain ONE educator voice throughout
-            
-            4. STYLE GUIDE VERIFICATION:
-               - Hook quality: Does it grab attention immediately?
-               - Transitions: Are they natural and varied?
-               - Questions: Are rhetorical questions well-placed?
-               - Analogies: Do they flow naturally in speech?
-               - Pacing: Does it maintain engagement throughout?
-               - Ending: Strong conclusion with practical takeaway?
-            
-            5. FINAL POLISH:
-               - Remove any LLM artifacts (fascinante, delve, revelador)
-               - Ensure it sounds like a knowledgeable friend explaining
-               - Optimize for voice actor performance
-               - Maintain technical accuracy with conversational flow
-            6. CRITICAL STYLE GUIDE COMPLIANCE CHECK:
-               - Opening: MUST use one of the 4 hook types from style guide
-               - Never start with "En resumen", "Hoy vamos a hablar de", etc.
-               - Title mentioned naturally AFTER engaging hook
-               - All style guide elements preserved and enhanced
-               - DO NOT add new content - only optimize for delivery
-               - DO NOT change the message - only perfect the flow
-            
-            CRITICAL DIDACTIC STRUCTURE VERIFICATION:
-            26. VERIFY INTRODUCTION includes preview/roadmap: Ensure there's a clear "what you'll learn" section early in the script (AFTER the hook and title mention)
-            27. VERIFY CONCLUSION includes summary: Ensure there's a clear recap of main points at the end ("En resumen" is ONLY acceptable in conclusions)
-            28. REMOVE LLM WORDS: Replace any remaining "fundamental", "crucial", "clave" (adjective), "esencial", "revelador", "fascinante", "compelling", "robust", etc. with natural alternatives
-            29. HUMAN CONVERSATION: Ensure the entire script sounds like a knowledgeable person explaining something interesting, not AI-generated content
-            30. NATURAL FLOW: Check that didactic elements (preview, summary) flow naturally within the content, not as forced additions
-            31. HOOK QUALITY CHECK: The opening sentence should immediately grab attention - if it doesn't, rewrite it
-            {"26. Preserve the humor elements but ensure they flow naturally in speech" if has_humor_agent else ""}
-
-            {language_instructions}
-            
-            CRITICAL: This is the FINAL version that will be published. Make it PERFECT for voice delivery.
-            
-            Language: {self.language}
-            """,
-                agent=voice_director,
-                expected_output=f"FINAL publication-ready voice script optimized for delivery ({self._get_word_count_target()} words)"
-                + (" with humor" if has_humor_agent else ""),
-            )
-        )
 
         return tasks
 
@@ -1121,13 +1041,13 @@ class CrewManager:
             agent
             for agent in agents
             if agent.role
-            not in ["Educational Writer", "Voice Director", "Comedy Communicator"]
+            not in ["Educational Writer", "Comedy Communicator"]
         ]
         post_production_agents = [
             agent
             for agent in agents
             if agent.role
-            in ["Educational Writer", "Voice Director", "Comedy Communicator"]
+            in ["Educational Writer", "Comedy Communicator"]
         ]
 
         # Original Initial analysis task - CONVERSATION AGENTS ONLY (NO HUMOR)
@@ -1143,7 +1063,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - ALL specialized domain agents
             
-            EXCLUDED FROM ANALYSIS: Educational Writer, Voice Director, and Comedy Communicator (all work in post-production)
+            EXCLUDED FROM ANALYSIS: Educational Writer and Comedy Communicator (work in post-production)
             
             Each participating conversation agent should:
             1. Read and understand the paper from your specific role's perspective
@@ -1172,7 +1092,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - ALL specialized domain agents
             
-            EXCLUDED FROM DISCUSSION: Educational Writer, Voice Director, and Comedy Communicator (they process the output in post-production)
+            EXCLUDED FROM DISCUSSION: Educational Writer and Comedy Communicator (they process the output in post-production)
             
             The technical discussion should:
             1. Cover all major points of the paper
@@ -1315,105 +1235,11 @@ class CrewManager:
             Language: {self.language}
             """,
                 agent=educational_writer,
-                expected_output="Educational script incorporating insights from all conversation agents"
+                expected_output="FINAL publication-ready educational script incorporating insights from all conversation agents"
                 + (" and humor" if has_humor_agent else ""),
             )
         )
 
-        # POST-PRODUCTION PHASE 3: Voice Director optimizes for delivery
-        voice_director = next(
-            agent for agent in agents if agent.role == "Voice Director"
-        )
-        duration_check = f"CRITICAL: Verify the content meets the {self.duration_minutes}-minute target ({self._get_word_count_target()} words). If it's too short, EXPAND it significantly."
-
-        # Determine technical level messaging
-        if self.technical_level == "technical":
-            tech_msg = "include deep technical analysis"
-        elif self.technical_level == "accessible":
-            tech_msg = "keep accessible but thorough"
-        else:  # simple
-            tech_msg = "keep extremely simple and conversational"
-
-        technical_check = (
-            f"CRITICAL: Ensure technical level is {self.technical_level} - {tech_msg}."
-        )
-
-        tasks.append(
-            Task(
-                description=f"""
-            POST-PRODUCTION PHASE 3: FINAL VOICE OPTIMIZATION
-            
-            Transform the Educational Writer's script into a PERFECT voice-ready script.
-            
-            You are receiving the educational script that has been crafted from all conversation insights
-            {"and enhanced with appropriate humor" if has_humor_agent else ""}.
-            Your job is PURELY technical optimization for voice delivery.
-            
-            {duration_check}
-            {technical_check}
-            
-            VOICE OPTIMIZATION WITH STYLE GUIDE COMPLIANCE:
-            
-            1. RHYTHM AND FLOW (from style guide):
-               - Vary sentence lengths: short for impact, medium for flow, long for depth
-               - Natural speech patterns with strategic pauses
-               - Smooth transitions using style guide connectors
-               - Perfect pacing for ~150 words per minute
-            
-            2. EMPHASIS AND DELIVERY (style guide formatting):
-               - Use *italics* for soft emphasis or foreign terms
-               - Use **bold** for key concepts or strong emphasis
-               - Natural pronunciation flow for technical terms
-               - Conversational markers placed strategically
-            
-            3. TECHNICAL REQUIREMENTS:
-               - Single continuous text (no headers, bullets, or lists)
-               - Convert all structured content to flowing sentences
-               - Remove formatting marks except bold/italic
-               - Eliminate repetitive content from discussions
-               - Maintain ONE educator voice throughout
-            
-            4. STYLE GUIDE VERIFICATION:
-               - Hook quality: Does it grab attention immediately?
-               - Transitions: Are they natural and varied?
-               - Questions: Are rhetorical questions well-placed?
-               - Analogies: Do they flow naturally in speech?
-               - Pacing: Does it maintain engagement throughout?
-               - Ending: Strong conclusion with practical takeaway?
-            
-            5. FINAL POLISH:
-               - Remove any LLM artifacts (fascinante, delve, revelador)
-               - Ensure it sounds like a knowledgeable friend explaining
-               - Optimize for voice actor performance
-               - Maintain technical accuracy with conversational flow
-            6. CRITICAL STYLE GUIDE COMPLIANCE CHECK:
-               - Opening: MUST use one of the 4 hook types from style guide
-               - Never start with "En resumen", "Hoy vamos a hablar de", etc.
-               - Title mentioned naturally AFTER engaging hook
-               - All style guide elements preserved and enhanced
-               - DO NOT add new content - only optimize for delivery
-               - DO NOT change the message - only perfect the flow
-            
-            CRITICAL DIDACTIC STRUCTURE VERIFICATION:
-            26. VERIFY INTRODUCTION includes preview/roadmap: Ensure there's a clear "what you'll learn" section early in the script (AFTER the hook and title mention)
-            27. VERIFY CONCLUSION includes summary: Ensure there's a clear recap of main points at the end ("En resumen" is ONLY acceptable in conclusions)
-            28. REMOVE LLM WORDS: Replace any remaining "fundamental", "crucial", "clave" (adjective), "esencial", "revelador", "fascinante", "compelling", "robust", etc. with natural alternatives
-            29. HUMAN CONVERSATION: Ensure the entire script sounds like a knowledgeable person explaining something interesting, not AI-generated content
-            30. NATURAL FLOW: Check that didactic elements (preview, summary) flow naturally within the content, not as forced additions
-            31. HOOK QUALITY CHECK: The opening sentence should immediately grab attention - if it doesn't, rewrite it
-            {"31. Preserve the humor elements but ensure they flow naturally in speech" if has_humor_agent else ""}
-
-            {language_instructions}
-            
-            CRITICAL: This is the FINAL version that will be published. Make it PERFECT for voice delivery.
-            
-            Language: {self.language}
-            """,
-                agent=voice_director,
-                expected_output=f"FINAL publication-ready voice script optimized for delivery ({self._get_word_count_target()} words)"
-                + (" with humor" if has_humor_agent else ""),
-            )
-        )
 
         return tasks
 

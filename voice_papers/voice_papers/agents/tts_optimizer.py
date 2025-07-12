@@ -8,7 +8,7 @@ def get_tts_optimizer_agent(llm: LLM) -> Agent:
     """Create a specialized TTS Optimizer agent for voice synthesis."""
     return Agent(
         role="ElevenLabs TTS Optimization Specialist",
-        goal="Transform educational scripts into perfectly optimized versions for ElevenLabs TTS using proper XML controls and phonetic techniques",
+        goal="Optimize educational scripts for ElevenLabs TTS by adding proper XML controls and phonetic techniques WITHOUT changing the content",
         backstory="""You are a specialized Text-to-Speech engineer with deep expertise in ElevenLabs' voice synthesis platform.
         You understand that ElevenLabs DOES NOT process markdown formatting and requires specific techniques:
         
@@ -24,7 +24,11 @@ def get_tts_optimizer_agent(llm: LLM) -> Agent:
         - Natural speech patterns and punctuation
         
         Your optimizations create scripts that sound natural, engaging, and professional when processed
-        by ElevenLabs, avoiding all markdown and using only techniques that ElevenLabs actually supports.""",
+        by ElevenLabs, avoiding all markdown and using only techniques that ElevenLabs actually supports.
+        
+        CRITICAL: You NEVER change the content, message, or meaning of the script. You ONLY add TTS
+        markup, adjust formatting for better speech synthesis, and optimize technical pronunciation.
+        The educational content and narrative must remain EXACTLY the same.""",
         llm=llm,
         verbose=True,
         max_iter=2,
@@ -79,14 +83,26 @@ def create_tts_optimization_task(
     guidelines = get_tts_optimization_guidelines()
 
     return f"""
-TRANSFORM the following educational script into a TTS-optimized version for {voice_provider} synthesis in {language}.
+OPTIMIZE the following educational script for {voice_provider} synthesis in {language} by adding TTS markup and formatting ONLY.
 
 ORIGINAL SCRIPT:
 {educational_script}
 
-YOUR MISSION: Create a version specifically optimized for Text-to-Speech that will sound natural, engaging, and professional when converted to audio.
+YOUR MISSION: Add TTS optimization markup to make the script sound natural and professional when converted to audio.
+
+CRITICAL RULE: DO NOT change the content, message, or educational narrative. ONLY add TTS markup and formatting.
 
 CRITICAL TTS OPTIMIZATION REQUIREMENTS:
+
+⚠️  **CONTENT PRESERVATION RULES (MANDATORY)** ⚠️ :
+   - NEVER change any words, phrases, or explanations
+   - NEVER add new educational content or examples
+   - NEVER remove any educational information
+   - NEVER change the order or structure of explanations
+   - NEVER modify analogies, metaphors, or examples
+   - ONLY add TTS markup: <break/>, CAPITALS, <phoneme/>
+   - ONLY adjust paragraph spacing for speech flow
+   - The educational message must remain IDENTICAL
 
 1. **EMPHASIS TECHNIQUES (NO MARKDOWN)**:
    - Use CAPITAL LETTERS for strong emphasis: "La INTELIGENCIA ARTIFICIAL"
@@ -116,10 +132,12 @@ CRITICAL TTS OPTIMIZATION REQUIREMENTS:
    - Use short, impactful sentences for key points
    - Separate complex ideas into digestible chunks
 
-5. **CONVERSATIONAL CONNECTORS**:
-   - Add natural speech patterns: "Y resulta que...", "Pero esto es solo el comienzo...", "Aquí viene lo interesante..."
-   - Use transition phrases that sound natural in speech
-   - Include rhetorical questions for engagement: "¿Te has preguntado alguna vez...?"
+5. **SPEECH FLOW OPTIMIZATION** (NO CONTENT CHANGES):
+   - ONLY add TTS breaks between existing sentences/paragraphs
+   - NEVER add new transitional phrases or content
+   - NEVER add rhetorical questions that weren't already there
+   - ONLY capitalize existing technical terms for emphasis
+   - Work with the existing narrative flow, don't change it
 
 6. **TECHNICAL TERM HANDLING**:
    - For models with phoneme support: <phoneme alphabet="cmu-arpabet" ph="D IY1 P L ER2 N IH0 NG">deep learning</phoneme>
@@ -141,16 +159,20 @@ CRITICAL TTS OPTIMIZATION REQUIREMENTS:
    - Let voice model infer emotion from content
    - Speed settings: 0.7-1.2 (slower for important parts)
 
-9. **SECTION TRANSITIONS**:
-   - Mark major transitions with longer breaks: <break time="1.5s"/>
-   - Use bridge phrases: "Y ahora, algo aún más fascinante..."
-   - Signal topic changes clearly for listener orientation
+9. **SECTION TRANSITIONS** (MARKUP ONLY):
+   - Mark existing transitions with break tags: <break time="1.5s"/>
+   - NEVER add new bridge phrases or content
+   - ONLY use breaks to emphasize existing topic changes
+   - Work with the existing structure, don't modify it
 
-10. **FINAL STRUCTURE**:
-    - Keep the same content and message
-    - Maintain the educational flow
-    - Optimize ONLY for TTS rendering
-    - Test readability by reading aloud mentally
+10. **CONTENT PRESERVATION (MANDATORY)**:
+    - NEVER change the content, message, or educational narrative
+    - NEVER add, remove, or modify any educational information
+    - NEVER change the structure or flow of explanations
+    - NEVER replace examples or analogies
+    - ONLY add TTS markup: breaks, emphasis, phonemes
+    - ONLY adjust paragraph spacing for better speech rendering
+    - The meaning and educational value must remain IDENTICAL
 
 VOICE PROVIDER SPECIFIC OPTIMIZATION for {voice_provider}:
 {get_provider_specific_guidelines(voice_provider)}
@@ -159,11 +181,12 @@ LANGUAGE SPECIFIC CONSIDERATIONS for {language}:
 {get_language_specific_guidelines(language)}
 
 OUTPUT FORMAT:
-- Return ONLY the optimized script text
-- Include all TTS markup and formatting
-- Maintain the original content structure
+- Return ONLY the script with TTS markup added
+- Include TTS markup: breaks, emphasis caps, phoneme tags
+- Maintain EXACTLY the same content and educational message
+- Do NOT add, remove, or modify any educational content
 - Do NOT add explanatory text or comments about the changes
-- The output should be ready to send directly to the TTS system
+- The output should have the same educational value with better TTS rendering
 
 QUALITY CHECK:
 - Every paragraph should have natural speech rhythm
@@ -237,8 +260,8 @@ def optimize_script_for_tts(
     script: str, language: str = "Spanish", voice_provider: str = "elevenlabs"
 ) -> str:
     """
-    Standalone function to optimize a script for TTS without using the full agent system.
-    Useful for quick optimizations or batch processing.
+    Standalone function to add TTS markup to a script without changing content.
+    ONLY adds break tags and emphasis markup - NEVER modifies the educational content.
     """
     # Basic TTS optimization rules
     optimized_lines = []
@@ -267,12 +290,12 @@ def optimize_script_for_tts(
             ):
                 sentence += "."
 
-            # Add emphasis to key technical terms (simple heuristic)
+            # Add emphasis markup to existing technical terms (NO content changes)
             sentence = add_basic_emphasis(sentence)
 
-            # Add breaks for natural rhythm
+            # Add breaks for natural rhythm (MARKUP ONLY)
             if j == 0 and i > 0:  # First sentence of new paragraph
-                sentence = f'<break time="1s"/>{sentence}'
+                sentence = f'<break time="1s"/> {sentence}'
 
             processed_sentences.append(sentence)
 
@@ -289,8 +312,8 @@ def optimize_script_for_tts(
 
 
 def add_basic_emphasis(sentence: str) -> str:
-    """Add basic emphasis to technical terms and key concepts using ElevenLabs-compatible techniques."""
-    # Map of terms to their emphasized versions (phonetic or capitals)
+    """Add basic emphasis to technical terms using ElevenLabs-compatible techniques WITHOUT changing content."""
+    # Map of terms to their emphasized versions (only capitalization for TTS)
     emphasis_map = {
         "inteligencia artificial": "INTELIGENCIA ARTIFICIAL",
         "machine learning": "MACHINE LEARNING",
@@ -307,6 +330,8 @@ def add_basic_emphasis(sentence: str) -> str:
         "análisis": "ANÁLISIS",
         "metodología": "METODOLOGÍA",
     }
+    
+    # ONLY emphasize existing terms - never add new content
 
     sentence_lower = sentence.lower()
     for term, emphasized in emphasis_map.items():

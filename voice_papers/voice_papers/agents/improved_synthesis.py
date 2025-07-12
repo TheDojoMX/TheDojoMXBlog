@@ -1,47 +1,45 @@
 """Improved synthesis agents that preserve content spirit."""
 
 from typing import List, Dict, Any
+import json
 from crewai import Agent, Task, Crew
 from ..utils.improved_chunker import ContentType, ImprovedChunk
 
 
 def create_content_analyzer_agent(llm) -> Agent:
-    """Create an agent that analyzes content while preserving its essence."""
+    """Create an agent that extracts actual content from sections."""
     return Agent(
-        role="Content Essence Extractor",
-        goal="Extract and preserve the true spirit, insights, and unique perspective of each content section",
-        backstory="""You are a master at understanding not just WHAT content says, but HOW it says it 
-        and WHY it matters. You can distinguish between different types of content - academic research,
-        blog posts, news articles, technical docs - and adapt your analysis accordingly.
+        role="Content Extractor",
+        goal="Extract the actual ideas, concepts, arguments and findings from each content section",
+        backstory="""You are an expert at extracting the substance from content. You focus on:
+        - The actual ideas being presented
+        - Specific concepts and how they work
+        - Arguments and the evidence supporting them
+        - Concrete findings and results
+        - Real examples and applications
         
-        You never impose a generic "paper" or "document" frame on content. Instead, you treat each
-        piece as what it actually is: a research study, a personal reflection, a news report, 
-        a technical guide, or whatever form it takes.
-        
-        You preserve the author's voice, whether it's formal, conversational, technical, or narrative.
-        You understand that HOW something is communicated is often as important as WHAT is communicated.""",
+        You NEVER talk about how content is presented or written. You extract WHAT is said,
+        not HOW it's said. You present ideas directly as if explaining them yourself.""",
         llm=llm,
         verbose=True
     )
 
 
 def create_synthesis_architect_agent(llm) -> Agent:
-    """Create an agent that builds comprehensive synthesis while maintaining authenticity."""
+    """Create an agent that builds comprehensive content synthesis."""
     return Agent(
-        role="Synthesis Architect",
-        goal="Create a rich, multi-dimensional synthesis that captures both content and character",
-        backstory="""You are brilliant at seeing how different pieces fit together to form a complete
-        picture. But unlike typical summarizers, you don't flatten everything into bland academic prose.
+        role="Content Synthesizer",
+        goal="Create a comprehensive synthesis that directly presents the ideas, concepts and findings",
+        backstory="""You are excellent at synthesizing complex content into clear, direct explanations.
+        You focus exclusively on:
+        - Presenting the main ideas and concepts
+        - Explaining how things work
+        - Listing findings and conclusions
+        - Providing supporting arguments and evidence
+        - Including relevant examples
         
-        You understand that:
-        - A blog post's conversational asides might be as important as its main points
-        - A research paper's methodology reveals as much as its conclusions  
-        - A news article's framing shapes its message
-        - Technical documentation's examples illuminate its concepts
-        
-        You build syntheses that preserve not just information, but insight, not just facts, but
-        perspective, not just content, but character. You know that the best synthesis makes someone
-        feel like they've truly understood the original, not just read about it.""",
+        You NEVER describe writing style, tone, or presentation. You present content AS IF YOU
+        ARE THE EXPERT explaining these ideas directly. No meta-commentary.""",
         llm=llm,
         verbose=True
     )
@@ -70,49 +68,49 @@ def create_improved_synthesis_task(
     
     content_description = content_type_descriptions.get(content_type, "content")
     
-    # Synthesis approach based on content type
+    # Content extraction approach based on type
     synthesis_approaches = {
         ContentType.ACADEMIC_PAPER: """
-        - Thread together the research journey from problem to solution
-        - Highlight methodological choices and their implications
-        - Connect findings to broader scientific context
-        - Preserve the logical flow of argumentation
-        - Note limitations and future directions""",
+        - State the research problem and hypotheses
+        - Explain the methodology used
+        - List all findings with specific data
+        - Present the conclusions
+        - Mention limitations and future work""",
         
         ContentType.BLOG_POST: """
-        - Maintain the conversational flow and personal voice
-        - Preserve anecdotes, examples, and stylistic flourishes
-        - Keep the narrative arc intact
-        - Highlight practical takeaways and personal insights
-        - Retain the author's personality and perspective""",
+        - Extract the main message or thesis
+        - List key insights and lessons
+        - Include specific examples mentioned
+        - Note practical applications
+        - Capture any unique perspectives""",
         
         ContentType.NEWS_ARTICLE: """
-        - Preserve the journalistic structure (lead, body, context)
-        - Maintain the factual progression and timeline
-        - Keep quotes and attributions in context
-        - Note any bias or framing in the reporting
-        - Highlight the broader implications of the news""",
+        - State what happened (who, what, when, where, why)
+        - List key facts and figures
+        - Include important quotes
+        - Note context and background
+        - Mention implications""",
         
         ContentType.TECHNICAL_DOCUMENTATION: """
-        - Organize concepts from basic to advanced
-        - Preserve all technical specifications and parameters
-        - Keep code examples and their explanations connected
-        - Maintain the logical flow of instructions
-        - Highlight dependencies and prerequisites""",
+        - List concepts being explained
+        - Include technical specifications
+        - Present code examples as given
+        - State step-by-step procedures
+        - Note requirements and dependencies""",
         
         ContentType.BOOK_CHAPTER: """
-        - Preserve the chapter's role in the larger narrative
-        - Maintain thematic development and callbacks
-        - Keep character or concept evolution clear
-        - Note literary devices and stylistic choices
-        - Connect to overarching book themes""",
+        - Summarize key events or concepts
+        - List main ideas presented
+        - Note important developments
+        - Include key examples
+        - State conclusions reached""",
         
         ContentType.GENERAL_TEXT: """
-        - Identify and preserve the core narrative structure
-        - Maintain the author's unique perspective
-        - Keep key examples and illustrations
-        - Preserve the emotional or intellectual journey
-        - Note what makes this piece distinctive"""
+        - Extract main ideas and arguments
+        - List supporting evidence
+        - Include examples provided
+        - Note key insights
+        - State conclusions"""
     }
     
     approach = synthesis_approaches.get(content_type, synthesis_approaches[ContentType.GENERAL_TEXT])
@@ -131,52 +129,54 @@ Content Overview:
 
 YOUR SYNTHESIS MISSION:
 
-1. **Preserve the Content's True Nature**
-   - This is a {content_description} - refer to it as such
-   - Don't impose academic framing on non-academic content
-   - Keep the original work's character and voice alive
+1. **Extract Actual Content**
+   - Present ideas, concepts, and findings directly
+   - NO meta-analysis about writing style or presentation
+   - State facts and arguments as if you're the expert
 
 2. **START WITH A TLDR (CRITICAL REQUIREMENT)**
-   Begin your synthesis with "TLDR:" followed by 3-5 bullet points:
-   - The main argument, discovery, or message in one clear sentence
-   - 2-3 key insights, findings, or takeaways
-   - The primary implication or "so what?" factor
+   Begin with "TLDR:" followed by 3-5 bullet points:
+   - The main finding, concept, or thesis
+   - 2-3 key supporting points or discoveries
+   - The primary conclusion or application
    
-   Make the TLDR punchy and memorable - it should make someone want to read more.
+   Be direct and factual - state what the content says.
 
-3. **Build Multi-Dimensional Understanding** (After the TLDR)
-   - WHAT: The core ideas, facts, and information
-   - HOW: The way ideas are presented and developed
-   - WHY: The purpose, motivation, and significance
-   - WHO: The voice, perspective, and intended audience
+3. **Main Content Sections** (After TLDR, max 5 sentences per section)
+   
+   **Brief Description** (2-3 sentences max):
+   - What this content is about
+   - Its main purpose or goal
+   
+   **Key Concepts Explained**:
+   - Define and explain main concepts
+   - How these concepts work or relate
+   
+   **Main Ideas and Arguments**:
+   - List the primary claims or findings
+   - Include supporting evidence for each
+   - Use specific data, examples, or reasoning provided
+   
+   **Conclusions**:
+   - Final conclusions or recommendations
+   - Practical applications or implications
 
-4. **Synthesis Approach for {content_description}**:
+4. **Content Extraction for {content_description}**:
    {approach}
 
-5. **Create Natural Connections**
-   - Show how different sections build on each other
-   - Identify recurring themes and evolving ideas
-   - Note contrasts, tensions, or contradictions
-   - Highlight unique insights that emerge from the whole
+5. **Critical Rules**:
+   - NEVER say "the author discusses" or "the paper presents"
+   - NEVER describe tone, style, or writing quality
+   - NEVER give opinions about the content
+   - ALWAYS present ideas directly: "X is Y" not "The author argues X is Y"
+   - ALWAYS use specific examples and data from the content
 
-6. **Preserve Original Spirit**
-   - If it's conversational, keep that warmth
-   - If it's technical, maintain that precision
-   - If it's narrative, preserve that flow
-   - If it's analytical, retain that rigor
+REMEMBER: You're extracting and presenting the actual content, not describing it.
 
-7. **Write for Understanding**
-   - Someone reading your synthesis should feel like they've engaged with the original
-   - Include specific examples, quotes, or details that capture essence
-   - Don't just report what was said - convey how and why it matters
+WRONG: "The paper discusses three approaches to machine learning"
+RIGHT: "The three approaches to machine learning are: 1) Supervised learning uses labeled data... 2) Unsupervised learning finds patterns... 3) Reinforcement learning optimizes rewards..."
 
-REMEMBER: You're not writing a book report. You're creating a rich, faithful representation
-of {content_description} that preserves both its intellectual content and its essential character.
-
-Write your synthesis as if you're sharing the fascinating insights from this {content_description}
-with someone who wants to truly understand it, not just know about it.
-
-Focus on making the IDEAS and INSIGHTS come alive, not on documenting that you read something.
+Present the content AS THE CONTENT, not as a description of content.
 """
     
     return Task(
@@ -270,18 +270,31 @@ Extract and preserve these elements from this {content_desc}:
 {goals}
 
 CRITICAL INSTRUCTIONS:
-1. Write about the IDEAS, not about "the document" or "the author"
-2. If this is a {chunk.tone} {content_desc}, maintain that {chunk.tone} character
-3. Include specific details that make this section unique and valuable
-4. Note HOW things are communicated, not just what
-5. Preserve any distinctive voice, style, or perspective
+1. Extract and present the actual IDEAS, concepts, and findings
+2. NEVER mention "the document", "the author", or how things are written
+3. Include specific data, examples, and evidence from this section
+4. Present information directly as facts, not as "the author's claims"
+5. Focus ONLY on WHAT is said, never on HOW it's communicated
 
 Content:
 {chunk.content}
 
-Provide a rich extraction that captures both the information AND the spirit of this section.
-Write as if you're sharing fascinating insights, not filing a report.
+Extract the key information from this section. Present it directly and factually.
+Do not describe or analyze the writing - just extract the content itself.
 """
+
+
+def create_knowledge_graph_extractor_agent(llm) -> Agent:
+    """Create an agent that extracts knowledge graph from content."""
+    return Agent(
+        role="Knowledge Graph Builder",
+        goal="Extract entities, concepts, and relationships to build a knowledge graph",
+        backstory="""You are an expert at identifying key concepts, entities, and their relationships
+        in content. You build structured knowledge representations that capture the essence of
+        complex information in a graph format.""",
+        llm=llm,
+        verbose=True
+    )
 
 
 class ImprovedSynthesisManager:
@@ -291,45 +304,220 @@ class ImprovedSynthesisManager:
         self.llm = llm
         self.content_analyzer = create_content_analyzer_agent(llm)
         self.synthesis_architect = create_synthesis_architect_agent(llm)
+        self.knowledge_graph_extractor = create_knowledge_graph_extractor_agent(llm)
     
-    def run_synthesis(
+    def run_concatenation_synthesis(
         self,
         chunks: List[ImprovedChunk],
         document_title: str,
         content_type: ContentType
     ) -> Dict[str, Any]:
-        """Run the improved synthesis process."""
+        """Run synthesis by concatenating chunk extractions without compression."""
         
-        # Create chunk analysis tasks
-        chunk_tasks = []
-        for chunk in chunks:
+        # Create chunk extraction tasks
+        chunk_results = []
+        for i, chunk in enumerate(chunks):
             task = Task(
                 description=create_chunk_analysis_prompt_improved(
                     chunk, document_title, content_type
                 ),
                 agent=self.content_analyzer,
-                expected_output=f"Rich analysis of {chunk.context_type} section preserving its essence"
+                expected_output=f"Direct extraction of content from {chunk.context_type} section"
             )
-            chunk_tasks.append(task)
+            
+            # Create a mini crew for each chunk
+            chunk_crew = Crew(
+                agents=[self.content_analyzer],
+                tasks=[task],
+                verbose=False
+            )
+            
+            result = chunk_crew.kickoff()
+            # ImprovedChunk doesn't have section_title, use context_type instead
+            section_name = getattr(chunk, 'section_title', None) or f"{chunk.context_type.title()} (Part {i+1})"
+            chunk_results.append({
+                "section": section_name,
+                "type": chunk.context_type,
+                "content": str(result)
+            })
         
-        # Create synthesis task
-        synthesis_task = create_improved_synthesis_task(
-            chunks, document_title, content_type, self.synthesis_architect
+        # Create final formatting task
+        formatting_prompt = f"""
+        You have extracted content from {len(chunks)} sections. Now organize them into a coherent summary.
+        
+        DO NOT COMPRESS OR SYNTHESIZE FURTHER. Simply organize the extracted content logically.
+        
+        Start with a TLDR section, then present all the extracted content organized by theme or topic.
+        
+        Sections to organize:
+        {json.dumps(chunk_results, indent=2)}
+        
+        Format as:
+        
+        TLDR:
+        • [Main finding/concept]
+        • [Key supporting points]
+        • [Primary conclusion]
+        
+        Then organize all content by logical grouping (methodology, findings, examples, etc.)
+        """
+        
+        formatting_task = Task(
+            description=formatting_prompt,
+            agent=self.synthesis_architect,
+            expected_output="Organized presentation of all extracted content"
         )
         
-        # Build crew
-        crew = Crew(
-            agents=[self.content_analyzer, self.synthesis_architect],
-            tasks=chunk_tasks + [synthesis_task],
+        final_crew = Crew(
+            agents=[self.synthesis_architect],
+            tasks=[formatting_task],
             verbose=True
         )
         
-        # Run synthesis
-        result = crew.kickoff()
+        final_result = final_crew.kickoff()
         
         return {
-            "synthesis": str(result),
+            "synthesis": str(final_result),
             "content_type": content_type.value,
             "chunks_analyzed": len(chunks),
-            "document_title": document_title
+            "document_title": document_title,
+            "method": "concatenation"
         }
+    
+    def run_knowledge_graph_synthesis(
+        self,
+        chunks: List[ImprovedChunk],
+        document_title: str,
+        content_type: ContentType
+    ) -> Dict[str, Any]:
+        """Run synthesis by first extracting a knowledge graph."""
+        
+        # First pass: Extract knowledge graph
+        kg_prompt = f"""
+        Analyze this {content_type.value} titled "{document_title}" and extract a knowledge graph.
+        
+        Create a JSON structure with:
+        {{
+            "main_concepts": [
+                {{
+                    "name": "concept name",
+                    "definition": "what it is",
+                    "properties": ["key properties"],
+                    "examples": ["specific examples"]
+                }}
+            ],
+            "relationships": [
+                {{
+                    "from": "concept1",
+                    "to": "concept2",
+                    "type": "relationship type",
+                    "description": "how they relate"
+                }}
+            ],
+            "findings": [
+                {{
+                    "statement": "the finding",
+                    "evidence": "supporting data",
+                    "implications": "what it means"
+                }}
+            ],
+            "methodology": {{
+                "approach": "method used",
+                "steps": ["step1", "step2"],
+                "tools": ["tools/techniques used"]
+            }},
+            "applications": [
+                {{
+                    "use_case": "application",
+                    "benefit": "why it's useful",
+                    "example": "specific instance"
+                }}
+            ]
+        }}
+        
+        Content chunks:
+        {[chunk.content for chunk in chunks]}
+        """
+        
+        kg_task = Task(
+            description=kg_prompt,
+            agent=self.knowledge_graph_extractor,
+            expected_output="Knowledge graph in JSON format"
+        )
+        
+        kg_crew = Crew(
+            agents=[self.knowledge_graph_extractor],
+            tasks=[kg_task],
+            verbose=True
+        )
+        
+        kg_result = kg_crew.kickoff()
+        
+        # Second pass: Convert knowledge graph to natural synthesis
+        synthesis_prompt = f"""
+        Convert this knowledge graph into a natural, readable synthesis.
+        
+        Knowledge Graph:
+        {kg_result}
+        
+        Create a synthesis that:
+        1. Starts with TLDR (3-5 bullet points)
+        2. Explains main concepts clearly
+        3. Presents findings with evidence
+        4. Includes methodology if relevant
+        5. Lists applications and examples
+        
+        CRITICAL: Present the actual content, not descriptions of it.
+        Write as if you're teaching these concepts directly.
+        """
+        
+        synthesis_task = Task(
+            description=synthesis_prompt,
+            agent=self.synthesis_architect,
+            expected_output="Natural synthesis from knowledge graph"
+        )
+        
+        final_crew = Crew(
+            agents=[self.synthesis_architect],
+            tasks=[synthesis_task],
+            verbose=True
+        )
+        
+        final_result = final_crew.kickoff()
+        
+        return {
+            "synthesis": str(final_result),
+            "knowledge_graph": str(kg_result),
+            "content_type": content_type.value,
+            "chunks_analyzed": len(chunks),
+            "document_title": document_title,
+            "method": "knowledge_graph"
+        }
+    
+    def run_synthesis(
+        self,
+        chunks: List[ImprovedChunk],
+        document_title: str,
+        content_type: ContentType,
+        method: str = "concatenation",
+        generate_knowledge_graph: bool = True
+    ) -> Dict[str, Any]:
+        """Run synthesis using the specified method."""
+        if method == "knowledge_graph":
+            return self.run_knowledge_graph_synthesis(chunks, document_title, content_type)
+        elif method == "concatenation" and generate_knowledge_graph:
+            # Generate both concatenation and knowledge graph
+            concat_result = self.run_concatenation_synthesis(chunks, document_title, content_type)
+            kg_result = self.run_knowledge_graph_synthesis(chunks, document_title, content_type)
+            
+            # Combine results
+            return {
+                "synthesis": concat_result["synthesis"],
+                "knowledge_graph": kg_result["knowledge_graph"],
+                "content_type": content_type.value,
+                "chunks_analyzed": len(chunks),
+                "document_title": document_title,
+                "method": "concatenation_with_kg"
+            }
+        else:
+            return self.run_concatenation_synthesis(chunks, document_title, content_type)

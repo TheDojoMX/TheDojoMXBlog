@@ -47,13 +47,6 @@ def get_base_roles(llm: LLM) -> List[Agent]:
             llm=llm,
             verbose=True,
         ),
-        Agent(
-            role="Voice Director",
-            goal="Transform content into perfect voice-ready script for publication",
-            backstory="You are a master voice coach and script editor who specializes in creating flawless, publication-ready scripts that voice actors can read naturally. You ensure every word flows perfectly when spoken aloud.",
-            llm=llm,
-            verbose=True,
-        ),
     ]
 
 

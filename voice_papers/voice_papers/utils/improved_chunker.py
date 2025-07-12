@@ -29,6 +29,11 @@ class ImprovedChunk:
     tone: str = "neutral"  # e.g., "technical", "conversational", "narrative"
     
     @property
+    def section_title(self) -> str:
+        """Generate a section title for compatibility."""
+        return f"{self.context_type.replace('_', ' ').title()}"
+    
+    @property
     def is_first(self) -> bool:
         return self.chunk_index == 0
     
