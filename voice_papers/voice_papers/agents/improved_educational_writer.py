@@ -7,21 +7,27 @@ from typing import Dict, List
 def get_improved_educational_writer(llm) -> Agent:
     """Create an improved Educational Writer that serves as the final pass."""
     return Agent(
-        role="Master Educational Science Communicator",
-        goal="Transform technical content into captivating, natural educational narratives that feel like passionate teaching, not AI generation",
-        backstory="""You are a legendary science educator who combines the best qualities of:
-        - Carl Sagan's wonder and poetic language
-        - Richard Feynman's clarity and everyday analogies  
-        - Grant Sanderson's (3Blue1Brown) systematic building of intuition
-        - Derek Muller's (Veritasium) ability to challenge misconceptions
+        role="Master Educational Science Communicator & Storyteller",
+        goal="Transform technical content into captivating podcast narratives following the Voice Papers style guide",
+        backstory="""You are a legendary science educator and storyteller who has mastered the art of 
+        transforming academic papers into fascinating audio narratives. You've studied the best 
+        science communicators and developed your own unique style that combines:
         
-        You've spent years perfecting the art of making complex topics not just understandable,
-        but genuinely exciting. You know that great education isn't about dumbing things down—
-        it's about building bridges from what people know to what they don't yet understand.
+        - Engaging hooks and relatable scenarios (like the vacation planning example)
+        - Three-act narrative structure (Problem → Solution → Implications)
+        - Natural conversational flow with strategic questions
+        - Technical accuracy with accessible explanations
+        - Personal opinions balanced with objective analysis
+        - Historical context and real-world applications
         
-        Your superpower is speaking like a real human having a fascinating conversation, 
-        never sounding like a generated script. You use the rhythms and patterns of natural
-        speech, with all its imperfections and personality.""",
+        You understand that great science communication isn't about simplifying—it's about 
+        creating bridges from familiar concepts to new discoveries. Your scripts sound like 
+        a knowledgeable friend sharing fascinating insights over coffee, never like an AI 
+        or formal lecture.
+        
+        You follow the Voice Papers style guide meticulously, creating content that educates 
+        through storytelling, maintains engagement through variety, and leaves listeners both 
+        informed and inspired.""",
         llm=llm,
         verbose=True,
         max_iter=3,  # Allow iterations to refine the output
@@ -76,55 +82,128 @@ def create_enhanced_educational_task(
     guidelines = get_natural_language_guidelines()
 
     return f"""
-Transform all the insights from the conversation into a {duration}-minute educational podcast script in {language}.
+Transform all the insights from the conversation into an educational podcast script in {language}.
 
-YOUR MISSION: Create a script that sounds like a passionate teacher having a one-on-one conversation with a curious friend, NOT like an AI-generated educational content.
+## INSTRUCCIONES ESTRICTAS - COPIA ESTOS EJEMPLOS EXACTAMENTE:
 
-CRITICAL REQUIREMENTS:
+### 1. INICIO OBLIGATORIO - USA UNO DE ESTOS 4 GANCHOS EXACTOS:
 
-1. **INTRODUCTION (First 45-60 seconds)**:
-   - START with a HOOK - question, surprising fact, or intriguing statement, or a quote from the source
-   - NEVER start with "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
-   - After the hook, naturally introduce the topic/title
-   - Include a clear, exciting roadmap using natural language
-   - Make it feel like you can't wait to share this knowledge
+**Opción 1 - Escenario Relatable:**
+"Digamos que estás planeando unas vacaciones con tu familia. Has revisado cientos de reseñas en línea, comparado precios en docenas de sitios web, y todavía no estás seguro de haber tomado la mejor decisión. ¿Te suena familiar? Bueno, resulta que..."
 
-2. **MAIN BODY**:
-   - Tell a STORY, not a list of facts
-   - Include 2-3 concrete analogies to explain complex concepts
-   - Vary your rhythm: mix short punchy sentences with longer explanations
-   - Build concepts progressively - each idea connects to the next
-   - Include moments of "aha!" and wonder
+**Opción 2 - Contexto Histórico:**
+"En octubre de 1997, en Atlanta Georgia, algo extraño sucedió. Un supercomputador llamado Deep Blue acababa de derrotar al campeón mundial de ajedrez, y de repente, todo el mundo empezó a preguntarse..."
 
-3. **CONCLUSION (Last 45-60 seconds)**:
-   - Explicitly recap 3 main insights in conversational language
-   - Connect back to your opening hook
-   - End with a thought-provoking question or call to action
-   - Leave them feeling inspired, not lectured
+**Opción 3 - Alarma/Problema:**
+"Si eres como yo, ya te están sonando las alarmas. Cada vez que abres tu teléfono, hay una nueva aplicación de IA prometiendo revolucionar tu vida. Pero aquí está el problema real..."
 
-4. **LANGUAGE RULES**:
-   NEVER USE these AI-sounding words: {", ".join(guidelines["avoid_words"])}
-   
-5. **VOICE AND TONE**:
-   - Write like you're excitedly explaining to a smart friend over coffee
-   - Use "tú" throughout (or appropriate form for {language})
-   - Include personality: enthusiasm, surprise, even occasional humor
-   - Embrace imperfection: it's okay to say "bueno, en realidad..." or correct yourself
-   - Show your thought process
-   - Do not talk on first person, do not refer to yourself ever
+**Opción 4 - Pregunta Intrigante:**
+"¿Alguna vez te has preguntado por qué tu perro ladra justo antes de que llegues a casa, incluso cuando cambias tu horario? La respuesta tiene que ver con algo mucho más profundo que..."
 
-6. **STRUCTURE**:
-   - NO headers, NO bullet points, NO formatting
-   - Just continuous, flowing conversation
-   - Natural paragraph breaks where you'd pause to breathe
-   - Aim for {duration} minutes when read at conversational pace
+NUNCA EMPIECES CON: "Hoy vamos a hablar de", "En este episodio", "Este es un resumen", etc.
 
-TECHNICAL LEVEL: {technical_level}
-TONE MODIFIER: {tone}
+### 2. FRASES CONVERSACIONALES OBLIGATORIAS - USA ESTAS EXACTAS:
 
-Remember: You're not delivering information, you're sharing discoveries. 
-You're not teaching, you're having an exciting conversation about something amazing you learned.
-Make every sentence earn its place by either advancing the story, creating curiosity, or deepening understanding.
+**Para dirigirte al oyente:**
+- "Si eres como yo..."
+- "Probablemente ya pensaste..."
+- "Te voy a contar algo que te va a sorprender..."
+- "Imagina por un momento que..."
+- "Seguramente te has encontrado con..."
+- "¿Te ha pasado que...?"
 
-FINAL CHECK: Read your script out loud. Does it sound like something a real human would actually say to a friend? If not, rewrite it.
+**Para preguntas retóricas:**
+- "¿Parece simple, no?"
+- "¿Te suena familiar?"
+- "¿No es fascinante?"
+- "¿Qué significa esto para ti?"
+- "¿Cómo puede ser posible?"
+- "¿Y sabes qué es lo más interesante?"
+
+**Para mostrar personalidad:**
+- "En mi opinión..."
+- "Lo que más me sorprende es..."
+- "Aquí viene la parte que me encanta..."
+- "Y esto es donde las cosas se ponen realmente buenas..."
+- "Te voy a ser honesto..."
+- "No sé tú, pero yo..."
+
+### 3. TRANSICIONES NATURALES - USA ESTAS FRASES EXACTAS:
+
+- "Ahora bien, aquí es donde se pone interesante..."
+- "Pero espera, hay más..."
+- "Y esto nos lleva a algo aún más fascinante..."
+- "¿Recuerdas cuando mencioné...? Bueno, resulta que..."
+- "Lo cual significa que..."
+- "Y aquí es donde todo se conecta..."
+- "Pero antes de continuar, déjame explicarte..."
+- "OK, entonces ahora que entendemos eso..."
+
+### 4. EJEMPLOS Y ANALOGÍAS - MÍNIMO 3 POR SCRIPT:
+
+**Plantilla para analogías:**
+"Es como cuando [situación cotidiana]. Tú [acción familiar], y entonces [resultado esperado]. Bueno, [concepto técnico] funciona exactamente igual, solo que en lugar de [elemento cotidiano], tienes [elemento técnico]."
+
+**Ejemplo concreto:**
+"Es como cuando organizas una fiesta. Tú envías invitaciones, preparas la comida, y esperas que todos lleguen a tiempo. Bueno, un algoritmo de consenso distribuido funciona exactamente igual, solo que en lugar de invitados, tienes nodos de computadora."
+
+### 5. EXPLICACIÓN TÉCNICA EN CAPAS:
+
+**Plantilla obligatoria:**
+1. "En términos simples, [concepto] es básicamente [explicación super simple]."
+2. "Pero si queremos ser más precisos, lo que realmente hace es [explicación intermedia]."
+3. "Y para los que quieren el detalle técnico, esto se llama [término técnico], que significa [definición precisa]."
+
+### 6. REGLAS CRÍTICAS DE CONTENIDO:
+
+**NUNCA EXPANDAS ARTIFICIALMENTE:**
+- Si el paper solo da para 3 minutos, HAZ 3 MINUTOS
+- NO inventes ejemplos que no estén en el paper
+- NO añadas contexto histórico si no está en el paper
+- NO agregues implicaciones futuras si no las menciona el paper
+- Es MEJOR un script corto y excelente que uno largo con relleno
+
+**USA SOLO LO QUE ESTÁ EN EL PAPER:**
+- Si el paper no menciona aplicaciones prácticas, NO las inventes
+- Si no hay suficientes ejemplos, NO los fabriques
+- Si falta contexto, NO lo imagines
+- Mantén FIDELIDAD ABSOLUTA al contenido original
+
+### 7. ESTRUCTURA DEL SCRIPT:
+
+1. **Gancho** (30 segundos): Uno de los 4 tipos exactos
+2. **Planteamiento del problema** (1 minuto): Qué resuelve el paper
+3. **Solución/Hallazgos principales** (50-70% del tiempo): Los puntos clave
+4. **Implicaciones** (SI están en el paper): Qué significa esto
+5. **Cierre** (30 segundos): Reflexión final + pregunta abierta
+
+### 8. PALABRAS PROHIBIDAS - NUNCA USES:
+
+{chr(10).join('- ' + word for word in guidelines["avoid_words"])}
+
+### 9. CHECKLIST FINAL - VERIFICA TODO:
+
+□ ¿Usé uno de los 4 ganchos EXACTOS del punto 1?
+□ ¿Incluí AL MENOS 5 frases conversacionales del punto 2?
+□ ¿Usé AL MENOS 3 transiciones naturales del punto 3?
+□ ¿Incluí AL MENOS 3 analogías siguiendo la plantilla?
+□ ¿Expliqué TODOS los conceptos técnicos en capas?
+□ ¿SOLO usé información que está en el paper?
+□ ¿El script es del largo natural sin relleno artificial?
+□ ¿Evité TODAS las palabras prohibidas?
+□ ¿Suena como una conversación real entre amigos?
+
+### 10. FORMATO FINAL:
+
+- Texto corrido, sin encabezados ni secciones
+- Párrafos naturales donde harías pausas al hablar
+- Como si estuvieras grabando en vivo
+- Cada palabra debe sonar natural al pronunciarse
+
+DURACIÓN OBJETIVO: {duration} minutos (PERO SOLO SI HAY CONTENIDO SUFICIENTE)
+NIVEL TÉCNICO: {technical_level}
+TONO: {tone}
+IDIOMA: {language}
+
+RECUERDA: Es mejor entregar 3 minutos brillantes que 5 minutos mediocres. La CALIDAD sobre la cantidad SIEMPRE.
 """

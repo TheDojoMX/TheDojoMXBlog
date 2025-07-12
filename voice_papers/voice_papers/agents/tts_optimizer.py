@@ -7,23 +7,24 @@ from typing import Dict, List
 def get_tts_optimizer_agent(llm: LLM) -> Agent:
     """Create a specialized TTS Optimizer agent for voice synthesis."""
     return Agent(
-        role="TTS Optimizer",
-        goal="Transform educational scripts into TTS-optimized versions with perfect rhythm, emphasis, and natural speech patterns",
-        backstory="""You are a specialized Text-to-Speech engineer and voice production expert who understands 
-        the nuances of how TTS systems interpret text. You have extensive experience with:
+        role="ElevenLabs TTS Optimization Specialist",
+        goal="Transform educational scripts into perfectly optimized versions for ElevenLabs TTS using proper XML controls and phonetic techniques",
+        backstory="""You are a specialized Text-to-Speech engineer with deep expertise in ElevenLabs' voice synthesis platform.
+        You understand that ElevenLabs DOES NOT process markdown formatting and requires specific techniques:
         
-        - SSML (Speech Synthesis Markup Language) tags for controlling speech rhythm
-        - Markdown formatting for emphasis that TTS systems understand
-        - Optimal paragraph and sentence length for natural speech flow
-        - Strategic use of pauses, breaks, and emphasis for engaging audio content
-        - Natural rhythm patterns that make synthetic speech sound conversational
+        - XML break tags for pauses: <break time="1.5s" /> (max 3 seconds, use sparingly)
+        - Phoneme tags for pronunciation: <phoneme alphabet="cmu-arpabet" ph="...">word</phoneme>
+        - Lexeme/alias tags for models without phoneme support
+        - Phonetic spelling and strategic capitalization for emphasis (NOT markdown)
+        - Natural speech patterns through context and narrative flow
         
-        Your expertise comes from years of working with voice actors, podcast producers, and TTS platforms
-        like ElevenLabs, Google Cloud Speech, Amazon Polly, and others. You know exactly how to structure
-        text so that when it's converted to speech, it sounds natural, engaging, and professional.
+        You know that excessive break tags cause instability, and that emphasis must be achieved through:
+        - Using CAPITALS for strong emphasis
+        - Context and narrative cues for emotional delivery
+        - Natural speech patterns and punctuation
         
-        You understand that TTS systems need clear guidance through formatting and markup to produce
-        high-quality audio that keeps listeners engaged throughout the entire educational content.""",
+        Your optimizations create scripts that sound natural, engaging, and professional when processed
+        by ElevenLabs, avoiding all markdown and using only techniques that ElevenLabs actually supports.""",
         llm=llm,
         verbose=True,
         max_iter=2,
@@ -34,25 +35,35 @@ def get_tts_optimization_guidelines() -> Dict[str, List[str]]:
     """Get comprehensive guidelines for TTS optimization."""
     return {
         "break_tags": [
-            '<break time="0.5s"/>',  # Short pause
-            '<break time="1s"/>',  # Medium pause
-            '<break time="1.5s"/>',  # Long pause
-            '<break time="2s"/>',  # Extra long pause
+            '<break time="0.5s" />',  # Short pause
+            '<break time="1.0s" />',  # Medium pause
+            '<break time="1.5s" />',  # Long pause
+            '<break time="2.0s" />',  # Dramatic pause
+            '<break time="3.0s" />',  # Maximum allowed
         ],
-        "emphasis_patterns": [
-            "**palabra_clave**",  # Strong emphasis
-            "*concepto_importante*",  # Mild emphasis
-            "***punto_crucial***",  # Maximum emphasis
+        "emphasis_techniques": [
+            "PALABRA CLAVE",  # Capital letters for strong emphasis
+            "IMPORTANTE",  # Full capitals for maximum emphasis
+            "FASCINANTE",  # Natural emphasis through capitals
+            "DESCUBRIMIENTO",  # Key terms in capitals
+        ],
+        "phoneme_examples": [
+            '<phoneme alphabet="cmu-arpabet" ph="T EH1 K N AH0 L OW0 JH IY0">technology</phoneme>',
+            '<phoneme alphabet="cmu-arpabet" ph="AY1 EH2 L">AI</phoneme>',
+        ],
+        "lexeme_examples": [
+            '<lexeme><grapheme>AI</grapheme><alias>inteligencia artificial</alias></lexeme>',
+            '<lexeme><grapheme>ML</grapheme><alias>machine learning</alias></lexeme>',
         ],
         "rhythm_elements": [
-            "...",  # Natural pause
-            "... y es que...",  # Conversational connector
-            "... pero aquí está el detalle...",  # Transition with suspense
+            "Y resulta que",  # Natural connector
+            "Pero aquí está lo interesante",  # Suspense builder
+            "Ahora bien",  # Topic transition
         ],
         "paragraph_structure": [
-            "max_sentences_per_paragraph: 3",
-            "max_words_per_sentence: 25",
-            "use_short_impactful_sentences",
+            "max_sentences_per_paragraph: 3-4",
+            "max_words_per_sentence: 15-25",
+            "clear_paragraph_separation",
         ],
     }
 
@@ -77,24 +88,27 @@ YOUR MISSION: Create a version specifically optimized for Text-to-Speech that wi
 
 CRITICAL TTS OPTIMIZATION REQUIREMENTS:
 
-1. **EMPHASIS FORMATTING**:
-   - Use **bold markdown** for key concepts that need vocal emphasis
-   - Use *italic markdown* for secondary emphasis and technical terms
-   - Use ***triple emphasis*** for the most important points (use sparingly)
-   - Example: "La **inteligencia artificial** utiliza *redes neuronales* para ***transformar completamente*** nuestro entendimiento"
+1. **EMPHASIS TECHNIQUES (NO MARKDOWN)**:
+   - Use CAPITAL LETTERS for strong emphasis: "La INTELIGENCIA ARTIFICIAL"
+   - Use full CAPITALS for important words: "Esto es IMPORTANTE"
+   - Use phoneme tags for precise control when needed: <phoneme alphabet="cmu-arpabet" ph="...">word</phoneme>
+   - NEVER use markdown (**bold** or *italic*) - ElevenLabs doesn't process it
 
-2. **STRATEGIC PAUSES**:
-   - Add <break time="0.5s"/> after important statements for emphasis
-   - Add <break time="1s"/> between major concept transitions
-   - Add <break time="1.5s"/> before revealing key insights or conclusions
-   - Add <break time="2s"/> for dramatic effect before major revelations
-   - Example: "Este descubrimiento cambió todo. <break time="1.5s"/> Porque por primera vez..."
+2. **STRATEGIC PAUSES (USE SPARINGLY)**:
+   - Add <break time="0.5s" /> for brief emphasis
+   - Add <break time="1.0s" /> between major concepts
+   - Add <break time="1.5s" /> before key revelations
+   - Add <break time="2.0s" /> for dramatic effect (rare)
+   - Maximum: <break time="3.0s" /> (absolute limit)
+   - WARNING: Excessive breaks cause audio instability
+   - Example: "Este descubrimiento cambió todo. <break time="1.5s" /> Porque por primera vez..."
 
-3. **NATURAL RHYTHM**:
-   - Use "..." for natural conversational pauses
-   - Add "... y es que..." for smooth transitions
-   - Use "... pero aquí está el detalle..." for building suspense
-   - Example: "Los resultados fueron sorprendentes... y es que nadie esperaba..."
+3. **NATURAL RHYTHM (CONTEXT-BASED)**:
+   - Use narrative context to guide pacing
+   - Add conversational connectors: "Y resulta que", "Ahora bien"
+   - Build suspense through word choice: "Pero aquí está lo FASCINANTE"
+   - Let ElevenLabs infer pauses from punctuation and context
+   - Example: "Los resultados fueron sorprendentes. Y resulta que nadie esperaba..."
 
 4. **PARAGRAPH STRUCTURE**:
    - Maximum 3 sentences per paragraph
@@ -108,9 +122,11 @@ CRITICAL TTS OPTIMIZATION REQUIREMENTS:
    - Include rhetorical questions for engagement: "¿Te has preguntado alguna vez...?"
 
 6. **TECHNICAL TERM HANDLING**:
-   - Mark technical terms with *italics* for slight emphasis
-   - Add brief phonetic guides for difficult terms in comments <!-- like this -->
-   - Break down complex compound words with subtle pauses
+   - For models with phoneme support: <phoneme alphabet="cmu-arpabet" ph="D IY1 P L ER2 N IH0 NG">deep learning</phoneme>
+   - For other models: <lexeme><grapheme>deep learning</grapheme><alias>dip lerning</alias></lexeme>
+   - Or use simple CAPITALS: "ALGORITMO", "NEURAL"
+   - Keep technical terms natural and clear
+   - NEVER use markdown italics for terms
 
 7. **PACING CONTROL**:
    - Vary sentence length for natural rhythm
@@ -119,10 +135,11 @@ CRITICAL TTS OPTIMIZATION REQUIREMENTS:
    - Longer sentences for detailed context (but never over 25 words)
 
 8. **EMOTIONAL TONE MARKERS**:
-   - Use **bold** for excitement and importance
-   - Use *italics* for curiosity and wonder
-   - Use pauses for reflection and emphasis
-   - Add "..." for thoughtful moments
+   - Use CAPITALS for excitement: "Esto es INCREÍBLE"
+   - Use natural emphasis: "FASCINANTE", "SORPRENDENTE"
+   - Use narrative context for emotional guidance
+   - Let voice model infer emotion from content
+   - Speed settings: 0.7-1.2 (slower for important parts)
 
 9. **SECTION TRANSITIONS**:
    - Mark major transitions with longer breaks: <break time="1.5s"/>
@@ -162,10 +179,12 @@ def get_provider_specific_guidelines(provider: str) -> str:
     if provider.lower() == "elevenlabs":
         return """
         ELEVENLABS SPECIFIC:
-        - Use moderate emphasis as ElevenLabs handles bold/italic well
-        - Longer pauses work better than shorter ones
-        - Natural speech patterns are well-rendered
-        - Technical terms benefit from italic formatting
+        - NO MARKDOWN - use CAPITALS for emphasis
+        - Break tags: use sparingly, max 3 seconds
+        - Phoneme tags supported for Flash v2, Turbo v2, English v1
+        - Lexeme/alias tags for other models
+        - Natural speech patterns through context
+        - Speed control: 0.7-1.2 range
         """
     elif provider.lower() == "cartesia":
         return """
@@ -270,29 +289,31 @@ def optimize_script_for_tts(
 
 
 def add_basic_emphasis(sentence: str) -> str:
-    """Add basic emphasis to technical terms and key concepts."""
-    # Simple patterns for emphasis (can be expanded)
-    technical_terms = [
-        "inteligencia artificial",
-        "machine learning",
-        "deep learning",
-        "redes neuronales",
-        "algoritmo",
-        "algoritmos",
-        "datos",
-        "investigación",
-        "estudio",
-        "experimento",
-        "resultado",
-        "descubrimiento",
-        "análisis",
-        "metodología",
-    ]
+    """Add basic emphasis to technical terms and key concepts using ElevenLabs-compatible techniques."""
+    # Map of terms to their emphasized versions (phonetic or capitals)
+    emphasis_map = {
+        "inteligencia artificial": "INTELIGENCIA ARTIFICIAL",
+        "machine learning": "MACHINE LEARNING",
+        "deep learning": "DEEP LEARNING",
+        "redes neuronales": "REDES NEURONALES",
+        "algoritmo": "ALGORITMO",
+        "algoritmos": "ALGORITMOS",
+        "datos": "DATOS",
+        "investigación": "INVESTIGACIÓN",
+        "estudio": "ESTUDIO",
+        "experimento": "EXPERIMENTO",
+        "resultado": "RESULTADO",
+        "descubrimiento": "DESCUBRIMIENTO",
+        "análisis": "ANÁLISIS",
+        "metodología": "METODOLOGÍA",
+    }
 
-    for term in technical_terms:
-        if term in sentence.lower():
-            # Add emphasis but avoid double emphasis
-            if f"**{term}**" not in sentence and f"*{term}*" not in sentence:
-                sentence = sentence.replace(term, f"**{term}**")
+    sentence_lower = sentence.lower()
+    for term, emphasized in emphasis_map.items():
+        if term in sentence_lower:
+            # Case-insensitive replacement while preserving original case where possible
+            import re
+            pattern = re.compile(re.escape(term), re.IGNORECASE)
+            sentence = pattern.sub(emphasized, sentence)
 
     return sentence

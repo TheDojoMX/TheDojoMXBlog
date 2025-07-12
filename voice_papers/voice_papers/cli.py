@@ -11,6 +11,7 @@ from .utils.text_cleaner import clean_paper_text, extract_title_from_text
 from .agents.crew_manager import CrewManager
 from .voice.synthesizer import get_synthesizer
 from .config import ELEVENLABS_VOICE_ID
+from .utils.file_backup import backup_existing_file, get_filename_with_focus
 
 
 @click.command()
@@ -159,6 +160,28 @@ from .config import ELEVENLABS_VOICE_ID
     is_flag=True,
     help="Use legacy TTS without duration-based chunking (not recommended for long scripts)",
 )
+@click.option(
+    "--tts-only",
+    type=click.Path(exists=True, path_type=Path),
+    help="Reprocess only TTS optimization from existing educational script",
+)
+@click.option(
+    "--focus",
+    default="explanatory",
+    type=click.Choice(
+        [
+            "explanatory",
+            "innovation",
+            "practical",
+            "historical",
+            "tutorial",
+            "critical",
+            "story",
+            "all",
+        ]
+    ),
+    help="Analysis focus mode: explanatory (default), innovation, practical, historical, tutorial, critical, story, or all",
+)
 def main(
     input_source: str,
     language: str,
@@ -187,6 +210,8 @@ def main(
     reuse_discussion: bool,
     skip_synthesis: bool,
     use_legacy_tts: bool,
+    tts_only: Path,
+    focus: str,
 ):
     """Generate an educational audio lecture from an academic paper or web article.
 
@@ -217,13 +242,114 @@ def main(
     - --similarity-boost: Higher values (0.8-1.0) for better voice matching, lower for more variation
     - --style: Keep at 0.0 for stability, increase (0.1-0.3) for more character expression
     - --speaker-boost: Enable for clearer voice reproduction (recommended)
-    
+
     Audio Generation (NEW):
     - Duration-based chunking: Audio is automatically split into 5-6 minute chunks
     - State management: Generation progress is saved and can be resumed if interrupted
     - Cost tracking: API usage and costs are logged in .state directories
     - --use-legacy-tts: Use original TTS without improvements (not recommended for long scripts)
     """
+
+    # Handle TTS-only reprocessing
+    if tts_only:
+        click.echo(f"🎯 Reprocessing TTS optimization from: {tts_only.name}")
+
+        # Read the educational script
+        with open(tts_only, "r", encoding="utf-8") as f:
+            educational_script = f.read()
+
+        # Determine project directory
+        output_dir = tts_only.parent
+        project_name = tts_only.stem.replace("_educational_script", "")
+
+        # Initialize crew manager for TTS optimization
+        crew_manager = CrewManager(
+            language=language,
+            project_name=project_name,
+            technical_level=technical_level,
+            duration_minutes=duration,
+            conversation_mode=conversation_mode,
+            tone=tone,
+            focus=focus,
+        )
+
+        click.echo("🎯 Generating TTS-optimized version...")
+        tts_script = crew_manager.run_tts_optimization_workflow(
+            educational_script, language, voice_provider
+        )
+
+        # Save TTS-optimized script with focus mode
+        tts_filename = get_filename_with_focus(f"{project_name}_tts_optimized", focus)
+        tts_script_path = output_dir / tts_filename
+
+        # Backup existing file if it exists
+        backup_existing_file(tts_script_path)
+
+        with open(tts_script_path, "w", encoding="utf-8") as f:
+            f.write(tts_script)
+
+        click.echo(f"🎙️  TTS-optimized script saved to: {tts_script_path}")
+
+        # Generate audio if not script-only mode
+        if not script_only:
+            # Resolve voice settings
+            if not voice_id:
+                voice_id = ELEVENLABS_VOICE_ID if voice == "hectorip" else None
+
+            # Apply TTS mode setting
+            if use_legacy_tts:
+                os.environ["ELEVENLABS_USE_IMPROVED"] = "false"
+                click.echo("⚠️  Using legacy TTS (may fail on long scripts)")
+            else:
+                os.environ["ELEVENLABS_USE_IMPROVED"] = "true"
+                click.echo("✨ Using improved TTS with duration-based chunking")
+
+            synthesizer = get_synthesizer(voice_provider)
+
+            click.echo("🎵 Generating audio from TTS-optimized script...")
+            if voice_provider == "elevenlabs":
+                click.echo("🎛️  Voice Quality Settings:")
+                click.echo(
+                    f"   Stability: {stability if stability is not None else 'Default (0.65)'}"
+                )
+                click.echo(
+                    f"   Similarity Boost: {similarity_boost if similarity_boost is not None else 'Default (0.8)'}"
+                )
+                click.echo(
+                    f"   Style: {voice_style if voice_style is not None else 'Default (0.0)'}"
+                )
+                click.echo(
+                    f"   Speaker Boost: {speaker_boost if speaker_boost is not None else 'Default (True)'}"
+                )
+
+            audio_filename = get_filename_with_focus(
+                f"{project_name}_educational_lecture", focus, ".mp3"
+            )
+            audio_path = output_dir / audio_filename
+            success = synthesizer.synthesize(
+                tts_script,
+                audio_path,
+                voice_id,
+                model=model,
+                voice_name=voice,
+                stability=stability,
+                similarity_boost=similarity_boost,
+                style=voice_style,
+                use_speaker_boost=speaker_boost,
+            )
+
+            if success:
+                click.echo(f"🎧 Audio saved to: {audio_path}")
+                click.echo(
+                    "📻 Audio generated using TTS-optimized script for better voice quality"
+                )
+            else:
+                click.echo("❌ Audio synthesis failed")
+        else:
+            click.echo("⏭️  Skipping audio generation (script-only mode)")
+
+        click.echo("✅ TTS reprocessing completed!")
+        return
 
     # Handle audio generation from existing script
     if audio_from_script:
@@ -243,7 +369,7 @@ def main(
         else:
             os.environ["ELEVENLABS_USE_IMPROVED"] = "true"
             click.echo("✨ Using improved TTS with duration-based chunking")
-        
+
         # Generate audio
         synthesizer = get_synthesizer(voice_provider)
 
@@ -267,7 +393,8 @@ def main(
                 f"   Speaker Boost: {speaker_boost if speaker_boost is not None else 'Default (True)'}"
             )
 
-        audio_path = output_dir / f"educational_lecture.mp3"
+        # For audio-from-script, don't add focus to filename
+        audio_path = output_dir / "educational_lecture.mp3"
         success = synthesizer.synthesize(
             script_content,
             audio_path,
@@ -349,14 +476,20 @@ def main(
             duration_minutes=duration,
             conversation_mode=conversation_mode,
             tone=tone,
+            focus=focus,
         )
 
         # Run direct workflow
         click.echo("🤖 Running direct educational transformation...")
         final_script = crew_manager.run_direct_educational_workflow(text_content, title)
 
-        # Save the script
-        script_path = crew_manager.project_dir / "educational_script.txt"
+        # Save the script with focus mode in filename
+        script_filename = get_filename_with_focus("educational_script", focus)
+        script_path = crew_manager.project_dir / script_filename
+
+        # Backup existing file if it exists
+        backup_existing_file(script_path)
+
         with open(script_path, "w", encoding="utf-8") as f:
             f.write(final_script)
 
@@ -369,7 +502,12 @@ def main(
                 final_script, language, voice_provider
             )
 
-            tts_script_path = crew_manager.project_dir / "educational_script_tts.txt"
+            tts_filename = get_filename_with_focus("educational_script_tts", focus)
+            tts_script_path = crew_manager.project_dir / tts_filename
+
+            # Backup existing file if it exists
+            backup_existing_file(tts_script_path)
+
             with open(tts_script_path, "w", encoding="utf-8") as f:
                 f.write(tts_script)
 
@@ -406,7 +544,10 @@ def main(
 
             # Use TTS-optimized script if available, otherwise use regular script
             script_for_audio = tts_script if tts_optimize else final_script
-            audio_path = crew_manager.project_dir / "educational_lecture.mp3"
+            audio_filename = get_filename_with_focus(
+                "educational_lecture", focus, ".mp3"
+            )
+            audio_path = crew_manager.project_dir / audio_filename
             success = synthesizer.synthesize(
                 script_for_audio,
                 audio_path,
@@ -482,6 +623,7 @@ def main(
     click.echo(f"Model: {model}")
     click.echo(f"Conversation mode: {conversation_mode}")
     click.echo(f"Conversation tone: {tone}")
+    click.echo(f"Focus mode: {focus}")
 
     # Show voice quality settings
     if voice_provider == "elevenlabs":
@@ -521,12 +663,12 @@ def main(
                 click.echo("📝 Preserving article structure...")
                 # Save with title and markdown content
                 full_content = f"Title: {title}\n\n{raw_content}"
-                
+
                 # Save as markdown file for better preservation
-                markdown_path = cache_dir / cache_filename.replace('.txt', '.md')
+                markdown_path = cache_dir / cache_filename.replace(".txt", ".md")
                 with open(markdown_path, "w", encoding="utf-8") as f:
                     f.write(full_content)
-                    
+
                 # Also save as txt for compatibility
                 with open(extracted_text_path, "w", encoding="utf-8") as f:
                     f.write(full_content)
@@ -604,12 +746,12 @@ def main(
                 click.echo("📝 Preserving article structure...")
                 # Save with title and markdown content
                 full_content = f"Title: {title}\n\n{raw_content}"
-                
+
                 # Save as markdown file for better preservation
-                markdown_path = cache_dir / cache_filename.replace('.txt', '.md')
+                markdown_path = cache_dir / cache_filename.replace(".txt", ".md")
                 with open(markdown_path, "w", encoding="utf-8") as f:
                     f.write(full_content)
-                    
+
                 # Also save as txt for compatibility
                 with open(extracted_text_path, "w", encoding="utf-8") as f:
                     f.write(full_content)
@@ -668,7 +810,7 @@ def main(
                 paper_title = extracted_title
                 click.echo(f"📋 Título extraído del documento: {paper_title}")
                 if debug_title:
-                    click.echo(f"✅ Debug: Title extraction successful!")
+                    click.echo("✅ Debug: Title extraction successful!")
             else:
                 paper_title = (
                     source_path.stem.replace("_", " ").replace("-", " ").title()
@@ -683,6 +825,113 @@ def main(
                         f"💡 Consejo: Si el título no es correcto, usa --debug-title para diagnosticar"
                     )
 
+        # Handle "all" mode - generate all focus types
+        if focus == "all":
+            click.echo("🔄 Generating ALL focus modes...")
+            focus_modes = [
+                "explanatory",
+                "innovation",
+                "practical",
+                "historical",
+                "tutorial",
+                "critical",
+                "story",
+            ]
+
+            for current_focus in focus_modes:
+                click.echo(f"\n{'=' * 60}")
+                click.echo(f"🎯 Processing focus mode: {current_focus.upper()}")
+                click.echo(f"{'=' * 60}\n")
+
+                # Create crew manager for this focus
+                focus_crew_manager = CrewManager(
+                    language=language,
+                    project_name=project_name,
+                    pdf_path=source_path,
+                    technical_level=technical_level,
+                    duration_minutes=duration,
+                    conversation_mode=conversation_mode,
+                    tone=tone,
+                    focus=current_focus,
+                )
+
+                # Run the appropriate workflow for this focus
+                if summary:
+                    final_script = focus_crew_manager.run_summary_workflow(
+                        paper_content, paper_title, skip_synthesis=skip_synthesis
+                    )
+                else:
+                    final_script = focus_crew_manager.run_workflow(
+                        paper_content, paper_title, use_synthesis=not skip_synthesis
+                    )
+
+                # Save the script with focus mode
+                script_filename = get_filename_with_focus(
+                    "educational_script", current_focus
+                )
+                script_path = focus_crew_manager.project_dir / script_filename
+                backup_existing_file(script_path)
+                with open(script_path, "w", encoding="utf-8") as f:
+                    f.write(final_script)
+                click.echo(
+                    f"📝 {current_focus.capitalize()} script saved to: {script_path}"
+                )
+
+                # Generate TTS if requested
+                if tts_optimize:
+                    tts_script = focus_crew_manager.run_tts_optimization_workflow(
+                        final_script, language, voice_provider
+                    )
+                    tts_filename = get_filename_with_focus(
+                        "educational_script_tts", current_focus
+                    )
+                    tts_script_path = focus_crew_manager.project_dir / tts_filename
+                    backup_existing_file(tts_script_path)
+                    with open(tts_script_path, "w", encoding="utf-8") as f:
+                        f.write(tts_script)
+                    click.echo(
+                        f"🎙️  {current_focus.capitalize()} TTS script saved to: {tts_script_path}"
+                    )
+
+                # Generate audio if not script-only
+                if not script_only:
+                    if not voice_id:
+                        voice_id = ELEVENLABS_VOICE_ID if voice == "hectorip" else None
+
+                    synthesizer = get_synthesizer(voice_provider)
+                    script_for_audio = tts_script if tts_optimize else final_script
+                    audio_filename = get_filename_with_focus(
+                        "educational_lecture", current_focus, ".mp3"
+                    )
+                    audio_path = focus_crew_manager.project_dir / audio_filename
+
+                    success = synthesizer.synthesize(
+                        script_for_audio,
+                        audio_path,
+                        voice_id,
+                        model=model,
+                        voice_name=voice,
+                        stability=stability,
+                        similarity_boost=similarity_boost,
+                        style=voice_style,
+                        use_speaker_boost=speaker_boost,
+                    )
+
+                    if success:
+                        click.echo(
+                            f"🎧 {current_focus.capitalize()} audio saved to: {audio_path}"
+                        )
+                    else:
+                        click.echo(
+                            f"❌ Audio synthesis failed for {current_focus} mode"
+                        )
+
+            click.echo(f"\n{'=' * 60}")
+            click.echo("✅ All focus modes completed!")
+            click.echo(f"Check your results in: {crew_manager.project_dir}")
+            return
+
+        # Regular single focus mode processing
         # Create crew manager
         crew_manager = CrewManager(
             language=language,
@@ -692,6 +941,7 @@ def main(
             duration_minutes=duration,
             conversation_mode=conversation_mode,
             tone=tone,
+            focus=focus,
         )
 
         # Check if reusing existing discussion
@@ -703,8 +953,13 @@ def main(
                 )
                 final_script = crew_manager.run_reuse_discussion_workflow(paper_title)
 
-                # Save the final script
-                script_path = crew_manager.project_dir / "educational_script.txt"
+                # Save the final script with focus mode
+                script_filename = get_filename_with_focus("educational_script", focus)
+                script_path = crew_manager.project_dir / script_filename
+
+                # Backup existing file if it exists
+                backup_existing_file(script_path)
+
                 with open(script_path, "w", encoding="utf-8") as f:
                     f.write(final_script)
 
@@ -717,9 +972,14 @@ def main(
                         final_script, language, voice_provider
                     )
 
-                    tts_script_path = (
-                        crew_manager.project_dir / "educational_script_tts.txt"
+                    tts_filename = get_filename_with_focus(
+                        "educational_script_tts.txt", focus
                     )
+                    tts_script_path = crew_manager.project_dir / tts_filename
+
+                    # Backup existing file if it exists
+                    backup_existing_file(tts_script_path)
+
                     with open(tts_script_path, "w", encoding="utf-8") as f:
                         f.write(tts_script)
 
@@ -762,7 +1022,13 @@ def main(
 
                     # Use TTS-optimized script if available, otherwise use regular script
                     script_for_audio = tts_script if tts_optimize else final_script
-                    audio_path = crew_manager.project_dir / f"educational_lecture.mp3"
+                    audio_filename = get_filename_with_focus(
+                        "educational_lecture.mp3", focus
+                    )
+                    audio_path = crew_manager.project_dir / audio_filename
+
+                    # Backup existing audio file if it exists
+                    backup_existing_file(audio_path)
                     success = synthesizer.synthesize(
                         script_for_audio,
                         audio_path,
@@ -795,13 +1061,17 @@ def main(
 
         # Check if using summary mode
         if summary:
-            click.echo("📄 Using enhanced summary workflow (synthesis + direct to educational writer)...")
+            click.echo(
+                "📄 Using enhanced summary workflow (synthesis + direct to educational writer)..."
+            )
             click.echo(f"📊 Document length: {len(paper_content):,} characters")
             click.echo("🔍 This workflow will:")
             click.echo("   1. Chunk the document into manageable sections")
             click.echo("   2. Deeply analyze each section to preserve details")
             click.echo("   3. Synthesize all analyses into comprehensive understanding")
-            click.echo("   4. Transform directly into educational script (skipping multi-agent discussion)")
+            click.echo(
+                "   4. Transform directly into educational script (skipping multi-agent discussion)"
+            )
             click.echo(
                 "🤖 Setting up AI crew (Enhanced Summary mode - 3 specialized agents)..."
             )
@@ -858,17 +1128,26 @@ def main(
             # Default behavior now includes synthesis unless explicitly skipped
             use_synthesis = not skip_synthesis
             if use_synthesis:
-                click.echo("🔬 NEW DEFAULT: Creating comprehensive synthesis before discussion...")
+                click.echo(
+                    "🔬 NEW DEFAULT: Creating comprehensive synthesis before discussion..."
+                )
             else:
                 click.echo("⚠️  Using legacy mode: Skipping synthesis step")
-            
-            crew = crew_manager.create_crew_for_paper(paper_content, paper_title, use_synthesis=use_synthesis)
+
+            crew = crew_manager.create_crew_for_paper(
+                paper_content, paper_title, use_synthesis=use_synthesis
+            )
 
             click.echo("🗣️  Running discussion (this may take several minutes)...")
             final_script = crew_manager.run_crew_and_save_discussion(crew, paper_title)
 
         # Save the final script
-        script_path = crew_manager.project_dir / "educational_script.txt"
+        script_filename = get_filename_with_focus("educational_script.txt", focus)
+        script_path = crew_manager.project_dir / script_filename
+
+        # Backup existing file if it exists
+        backup_existing_file(script_path)
+
         with open(script_path, "w", encoding="utf-8") as f:
             f.write(final_script)
 
@@ -881,7 +1160,12 @@ def main(
                 final_script, language, voice_provider
             )
 
-            tts_script_path = crew_manager.project_dir / "educational_script_tts.txt"
+            tts_filename = get_filename_with_focus("educational_script_tts", focus)
+            tts_script_path = crew_manager.project_dir / tts_filename
+
+            # Backup existing file if it exists
+            backup_existing_file(tts_script_path)
+
             with open(tts_script_path, "w", encoding="utf-8") as f:
                 f.write(tts_script)
 
@@ -895,7 +1179,7 @@ def main(
         if not script_only:
             # Synthesize voice
             click.echo("🎙️  Generating audio...")
-            # Apply TTS mode setting  
+            # Apply TTS mode setting
             if use_legacy_tts:
                 os.environ["ELEVENLABS_USE_IMPROVED"] = "false"
             else:
@@ -924,7 +1208,11 @@ def main(
 
             # Use TTS-optimized script if available, otherwise use regular script
             script_for_audio = tts_script if tts_optimize else final_script
-            audio_path = crew_manager.project_dir / f"educational_lecture.mp3"
+            audio_filename = get_filename_with_focus("educational_lecture.mp3", focus)
+            audio_path = crew_manager.project_dir / audio_filename
+
+            # Backup existing audio file if it exists
+            backup_existing_file(audio_path)
             success = synthesizer.synthesize(
                 script_for_audio,
                 audio_path,

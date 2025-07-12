@@ -10,6 +10,7 @@ from ..config import OPENAI_API_KEY, MODEL_NAME, PROJECTS_DIR
 from .roles import get_roles_for_topic
 from .o3_llm import O3LLM
 from .tts_optimizer import get_tts_optimizer_agent, create_tts_optimization_task
+from .focus_agents import get_focus_agents, get_focus_specific_prompts
 
 
 class CrewManager:
@@ -24,6 +25,7 @@ class CrewManager:
         duration_minutes: int = 5,
         conversation_mode: str = "enhanced",
         tone: str = "academic",
+        focus: str = "explanatory",
     ):
         self.language = language
         self.project_name = project_name
@@ -31,6 +33,7 @@ class CrewManager:
         self.duration_minutes = duration_minutes
         self.conversation_mode = conversation_mode
         self.tone = tone
+        self.focus = focus
 
         # If pdf_path is provided, create project in same directory as PDF
         if pdf_path:
@@ -51,35 +54,134 @@ class CrewManager:
         # Use o3-mini with custom LLM wrapper that handles parameter restrictions
         self.llm = O3LLM(api_key=OPENAI_API_KEY, model="o3-mini")
 
-    def create_crew_for_paper(self, paper_content: str, paper_title: str, use_synthesis: bool = True) -> Crew:
+    def _get_base_agents_for_focus(self) -> List[Agent]:
+        """Get base agents for non-critical focus modes."""
+        agents = []
+
+        # Coordinator for all modes
+        agents.append(
+            Agent(
+                role="Research Coordinator",
+                goal="Facilitate productive discussion about the paper's content",
+                backstory="""You are an experienced research coordinator who ensures discussions 
+            stay focused on the paper's content. You help organize thoughts and ensure all 
+            important points from the paper are covered. You ONLY discuss what's in the paper.""",
+                llm=self.llm,
+                verbose=True,
+            )
+        )
+
+        # Scientific Reviewer for explanatory modes
+        if self.focus != "story":  # Story mode doesn't need scientific review
+            agents.append(
+                Agent(
+                    role="Methodology Explainer",
+                    goal="Explain the research methodology and approach as described in the paper",
+                    backstory="""You are skilled at understanding and explaining research methodologies. 
+                You help audiences understand how the research was conducted, what methods were used, 
+                and why. You ONLY explain methods actually described in the paper.""",
+                    llm=self.llm,
+                    verbose=True,
+                )
+            )
+
+        # CRITICAL: Always include post-production agents
+        # Educational Writer - transforms technical content into educational narrative
+        agents.append(
+            Agent(
+                role="Educational Writer",
+                goal="Create engaging educational content following the Voice Papers style guide",
+                backstory="""You are a skilled science communicator who transforms technical discussions 
+            into accessible, engaging educational content following the Voice Papers style guide.
+            
+            You meticulously follow the narrative structure, conversational elements, and storytelling
+            techniques specified in the style guide. You use engaging hooks, natural transitions,
+            multiple analogies, and maintain the perfect rhythm for audio narration.
+            
+            You take insights from all the agents and weave them into a cohesive narrative that 
+            teaches and inspires. You work ONLY with information discussed about the paper, 
+            never adding external content.""",
+                llm=self.llm,
+                verbose=True,
+            )
+        )
+
+        # Voice Director - optimizes for voice delivery
+        agents.append(
+            Agent(
+                role="Voice Director",
+                goal="Transform content into perfect voice-ready script",
+                backstory="""You are a master voice coach and script editor who specializes in creating 
+            flawless, publication-ready scripts that voice actors can read naturally. You ensure 
+            every word flows perfectly when spoken aloud, maintaining all the content while optimizing 
+            the delivery. You preserve the focus mode's specific style and approach.""",
+                llm=self.llm,
+                verbose=True,
+            )
+        )
+
+        # Comedy Communicator - only for humorous/playful tones
+        if self.tone in ["humorous", "playful"]:
+            agents.append(
+                Agent(
+                    role="Comedy Communicator",
+                    goal="Add appropriate humor while maintaining educational value",
+                    backstory="""You are a science comedy writer who knows how to make learning fun 
+                without sacrificing accuracy. You add wit, clever observations, and playful elements 
+                that enhance understanding. You work only with the paper's content, finding the 
+                inherent humor in the research itself.""",
+                    llm=self.llm,
+                    verbose=True,
+                )
+            )
+
+        return agents
+
+    def create_crew_for_paper(
+        self, paper_content: str, paper_title: str, use_synthesis: bool = True
+    ) -> Crew:
         """Create a crew dynamically based on paper content.
-        
+
         Args:
             paper_content: The original paper content
             paper_title: The paper title
             use_synthesis: Whether to create and use synthesis first (default: True)
         """
         import click
-        
+
         # Create synthesis first if requested (default behavior)
         if use_synthesis:
-            click.echo("🔬 Creating comprehensive synthesis first (new default workflow)...")
+            click.echo(
+                "🔬 Creating comprehensive synthesis first (new default workflow)..."
+            )
             synthesis_content = self.create_synthesis(paper_content, paper_title)
             # Use synthesis for crew discussion instead of raw content
             content_for_discussion = synthesis_content
         else:
             # Use raw content (old behavior, kept for compatibility)
             content_for_discussion = paper_content
-        
+
         # Simple topic detection based on title and content
         topic = self._detect_topic(paper_title + " " + content_for_discussion[:1000])
-        agents = get_roles_for_topic(topic, self.llm, self.tone)
+
+        # Get agents based on focus mode
+        if self.focus == "critical":
+            # Use existing critical agents
+            agents = get_roles_for_topic(topic, self.llm, self.tone)
+        else:
+            # Use focus-specific agents
+            focus_agents = get_focus_agents(self.focus, self.llm)
+            # Add base agents (Coordinator and Scientific Reviewer) for non-critical modes
+            base_agents = self._get_base_agents_for_focus()
+            agents = base_agents + focus_agents
 
         # Choose task creation method based on conversation mode
         if self.conversation_mode == "enhanced":
             tasks = self._create_tasks(content_for_discussion, paper_title, agents)
         else:
-            tasks = self._create_original_tasks(content_for_discussion, paper_title, agents)
+            tasks = self._create_original_tasks(
+                content_for_discussion, paper_title, agents
+            )
 
         return Crew(agents=agents, tasks=tasks, verbose=True)
 
@@ -90,47 +192,53 @@ class CrewManager:
         from ..utils.improved_chunker import ImprovedDocumentChunker, ContentType
         from .improved_synthesis import ImprovedSynthesisManager
         import click
-        
+
         # Check if we should use improved synthesis
         use_improved = os.getenv("USE_IMPROVED_SYNTHESIS", "true").lower() == "true"
-        
+
         # Check if synthesis already exists
         synthesis_path = self.synthesis_dir / "synthesis_output.txt"
         if synthesis_path.exists():
             click.echo("📊 Using existing synthesis...")
             with open(synthesis_path, "r", encoding="utf-8") as f:
                 return f.read()
-        
+
         if use_improved:
             click.echo("✨ Using improved synthesis (content-aware)")
             # Use improved synthesis
             improved_manager = ImprovedSynthesisManager(self.llm)
             improved_chunker = ImprovedDocumentChunker(chunk_size=10000, overlap=500)
-            
+
             # Detect content type
-            content_type = improved_chunker.detect_content_type(paper_content, paper_title)
+            content_type = improved_chunker.detect_content_type(
+                paper_content, paper_title
+            )
             click.echo(f"📝 Content type detected: {content_type.value}")
-            
+
             # Chunk with improved method
-            chunks = improved_chunker.chunk_document(paper_content, paper_title, content_type)
-            
+            chunks = improved_chunker.chunk_document(
+                paper_content, paper_title, content_type
+            )
+
             click.echo(f"📊 Document chunked into {len(chunks)} sections...")
-            
+
             # Show contexts
             unique_contexts = list(set(chunk.context_type for chunk in chunks))
             click.echo("📑 Content structure:")
             for context in unique_contexts:
                 count = sum(1 for c in chunks if c.context_type == context)
-                click.echo(f"   • {context.replace('_', ' ').title()}: {count} section(s)")
-            
+                click.echo(
+                    f"   • {context.replace('_', ' ').title()}: {count} section(s)"
+                )
+
             # Run improved synthesis
             result = improved_manager.run_synthesis(chunks, paper_title, content_type)
             synthesis_result = result["synthesis"]
-            
+
             # Save synthesis
             with open(synthesis_path, "w", encoding="utf-8") as f:
                 f.write(synthesis_result)
-            
+
             # Save additional metadata
             synthesis_data = {
                 "project": self.project_name,
@@ -139,38 +247,40 @@ class CrewManager:
                 "document_chunks": len(chunks),
                 "chunk_contexts": [chunk.context_type for chunk in chunks],
                 "synthesis_length": len(synthesis_result),
-                "improved_synthesis": True
+                "improved_synthesis": True,
             }
-            
+
             # Save metadata
             with open(
                 self.synthesis_dir / "synthesis_metadata.json", "w", encoding="utf-8"
             ) as f:
                 json.dump(synthesis_data, f, indent=2, ensure_ascii=False)
-            
+
             click.echo("✅ Improved synthesis completed and saved")
             return synthesis_result
-            
+
         else:
             # Original synthesis
             click.echo("📑 Using original synthesis method")
             chunker = DocumentChunker(chunk_size=10000, overlap=200)
             chunks = chunker.chunk_document(paper_content, paper_title)
-            
-            click.echo(f"📊 Document chunked into {len(chunks)} sections for deep analysis...")
-        
+
+            click.echo(
+                f"📊 Document chunked into {len(chunks)} sections for deep analysis..."
+            )
+
             # Show section titles
             unique_sections = []
             for chunk in chunks:
                 base_section = chunk.section_title.split(" (Part")[0]
                 if base_section not in unique_sections:
                     unique_sections.append(base_section)
-            
+
             if len(unique_sections) <= 10:
                 click.echo("📑 Sections found:")
                 for section in unique_sections:
                     click.echo(f"   • {section}")
-        
+
         # For original synthesis, create agents
         chunk_analyzer = Agent(
             role="Deep Document Analyzer",
@@ -181,7 +291,7 @@ class CrewManager:
             llm=self.llm,
             verbose=True,
         )
-        
+
         synthesizer = Agent(
             role="Master Synthesizer",
             goal="Combine all section analyses into a comprehensive, coherent understanding",
@@ -191,7 +301,7 @@ class CrewManager:
             llm=self.llm,
             verbose=True,
         )
-        
+
         # Create tasks for chunk analysis
         chunk_tasks = []
         for i, chunk in enumerate(chunks):
@@ -201,42 +311,72 @@ class CrewManager:
                 expected_output=f"Comprehensive analysis of {chunk.section_title}",
             )
             chunk_tasks.append(chunk_task)
-        
+
         # Create synthesis task
         synthesis_task = Task(
             description=f"""
             You have received detailed analyses of all {len(chunks)} sections of the paper "{paper_title}".
             
-            Now synthesize them into a comprehensive understanding that:
+            Create a comprehensive synthesis that EXTRACTS and PRESENTS the actual content, NOT a meta-analysis about the paper.
             
-            1. **Preserves Depth**: Keep important technical details, evidence, and nuanced arguments
-            2. **Shows Connections**: How do different sections relate and build on each other?
-            3. **Identifies Key Themes**: What are the main threads running through the paper?
-            4. **Highlights Insights**: What are the most important findings and breakthroughs?
-            5. **Captures Debates**: What controversies or open questions does the paper raise?
-            6. **Explains Significance**: Why does this research matter? What are the implications?
-            7. **Maintains Structure**: Show how the argument develops from introduction to conclusion
+            CRITICAL: Present the IDEAS, FINDINGS, and ARGUMENTS themselves, not descriptions of them.
             
-            CRITICAL REQUIREMENT - START WITH A TLDR:
-            Begin your synthesis with a "TLDR:" section (3-5 bullet points) that captures:
-            - The main argument or discovery in one sentence
-            - 2-3 key findings or insights
-            - The primary implication or takeaway
+            WRONG: "The paper discusses three main approaches to..."
+            RIGHT: "The three approaches are: 1) X works by... 2) Y achieves... 3) Z enables..."
             
-            After the TLDR, provide the rich, detailed synthesis that someone could use to deeply understand this paper.
-            This is not a simple summary - it's a comprehensive analysis that preserves the intellectual
-            depth while organizing it coherently.
+            WRONG: "The authors present evidence showing..."
+            RIGHT: "The evidence shows that X increased by 47% when..."
             
-            Remember: You're creating the foundation that will be used by all subsequent analyses,
-            so capture everything important.
+            Structure your synthesis as follows:
+            
+            **TLDR:** (3-5 bullet points)
+            - The core discovery/argument in one clear statement
+            - 2-3 key findings with specific details
+            - The main implication or breakthrough
+            
+            **MAIN THESIS/ARGUMENT:**
+            State the central claim or discovery directly. What IS the finding, not what the paper says about it.
+            
+            **KEY POINTS WITH SUPPORTING EVIDENCE:**
+            1. First major point: [State it directly]
+               - Evidence: [Specific data, results, or reasoning]
+               - Why it matters: [Direct implication]
+            
+            2. Second major point: [State it directly]
+               - Evidence: [Specific data, results, or reasoning]
+               - Why it matters: [Direct implication]
+            
+            [Continue for all major points]
+            
+            **SECONDARY INSIGHTS:**
+            - List additional findings, observations, or contributions
+            - Include specific details, numbers, or mechanisms
+            
+            **EXAMPLES AND APPLICATIONS:**
+            - Concrete examples given in the paper
+            - Real-world applications or use cases
+            - Specific scenarios or case studies
+            
+            **METHODOLOGY HIGHLIGHTS:** (if relevant)
+            - Key approaches or techniques used
+            - Novel methods introduced
+            - Important experimental details
+            
+            **CONCLUSIONS AND IMPLICATIONS:**
+            - What can we now do/know that we couldn't before?
+            - Specific future directions mentioned
+            - Concrete impact on the field
+            
+            Remember: You are extracting and organizing the ACTUAL CONTENT, not describing what the paper contains.
+            Write as if you are teaching the concepts directly, not reviewing a paper.
             """,
             agent=synthesizer,
-            expected_output="A comprehensive synthesis starting with TLDR, followed by deep analysis",
+            expected_output="A content-focused synthesis presenting the actual findings, arguments, and evidence",
         )
-        
+
         # Build task list: all chunk tasks + synthesis
         all_tasks = chunk_tasks + [synthesis_task]
-        
+
         # Create crew with synthesis agents
         synthesis_crew = Crew(
             agents=[chunk_analyzer, synthesizer],
@@ -244,11 +384,11 @@ class CrewManager:
             verbose=True,
             embedder={"provider": "openai", "config": {"api_key": OPENAI_API_KEY}},
         )
-        
+
         # Run the synthesis crew
         click.echo("🔬 Running deep document analysis and synthesis...")
         result = synthesis_crew.kickoff()
-        
+
         # Save synthesis data
         synthesis_data = {
             "project": self.project_name,
@@ -257,28 +397,30 @@ class CrewManager:
             "chunk_sections": [chunk.section_title for chunk in chunks],
             "synthesis_length": len(str(result)),
         }
-        
+
         # Save synthesis metadata
         with open(
             self.synthesis_dir / "synthesis_metadata.json", "w", encoding="utf-8"
         ) as f:
             json.dump(synthesis_data, f, indent=2, ensure_ascii=False)
-        
+
         # Save chunk analyses for debugging
         for i, task in enumerate(chunk_tasks):
             with open(
-                self.synthesis_dir / f"chunk_{i+1}_analysis.txt", "w", encoding="utf-8"
+                self.synthesis_dir / f"chunk_{i + 1}_analysis.txt",
+                "w",
+                encoding="utf-8",
             ) as f:
                 f.write(f"Section: {chunks[i].section_title}\n")
                 f.write(f"Characters: {chunks[i].end_char - chunks[i].start_char}\n")
                 f.write("=" * 50 + "\n")
                 f.write(str(task.output))
-        
+
         # Save synthesis output
         synthesis_result = str(synthesis_task.output)
         with open(synthesis_path, "w", encoding="utf-8") as f:
             f.write(synthesis_result)
-        
+
         click.echo("✅ Synthesis completed and saved")
         return synthesis_result
 
@@ -519,7 +661,7 @@ class CrewManager:
                     SPECIALIZED AGENTS DEEP DIVE: Domain expertise from TECHNICAL conversation agents only.
                     
                     PARTICIPATING SPECIALIZED AGENTS (technical focus):
-                    {', '.join([f"- {agent.role}: {agent.goal}" for agent in conversation_specialists])}
+                    {", ".join([f"- {agent.role}: {agent.goal}" for agent in conversation_specialists])}
                     
                     EXCLUDED: Comedy Communicator (works in post-production phase)
                     
@@ -778,37 +920,67 @@ class CrewManager:
             
             Your job is to distill ALL this rich content into a single educator voice.
             
-            The script should be in the style of popular science educators like 3Blue1Brown:
-            1. Written as a SINGLE EDUCATOR speaking directly to the listener (use "tú"/"usted")
-            2. CRITICAL INTRODUCTION STRUCTURE:
-               a) START with a HOOK - a question, surprising fact, or intriguing statement (NOT "En resumen...")
-               b) THEN naturally introduce the topic: "{paper_title}" after engaging the listener
-               c) Examples of good hooks: "¿Alguna vez te has preguntado...?", "Imagina por un momento...", "Hay algo sorprendente sobre..."
-               d) NEVER start with: "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
-            3. Use analogies and accessible explanations
-            4. Include ALL key insights from the multiple conversations and specialist exchanges
-            5. Be engaging and educational, not just informative
-            6. Flow naturally from concept to concept with smooth transitions
-            7. Include moments of wonder and intellectual curiosity
-            8. Break down complex ideas into digestible parts
-            9. Use a teaching tone that makes the listener feel they're learning something fascinating
-            10. Write as continuous text ready to be read by a voice actor
-            11. NO section headers, NO subheaders, NO formatting marks
-            12. Don't address the public with greetings or goodbyes, but make questions
-            13. Always end up with questions for the reader and practical implications
-            14. Write as plain text that flows naturally for voice reading
-            15. NO [PAUSES], NO [MUSIC], NO stage directions - just the educational content
-            16. CRITICAL: Address the listener directly - "puedes imaginar", "si consideras", "te darás cuenta"
-            17. DO NOT write as if summarizing a discussion - write as if YOU are the teacher
-            18. Avoid phrases like "los expertos discutieron" or "el equipo concluyó"
-            19. Incorporate the depth and nuance that emerged from ALL agent conversations
+            The script MUST follow the Voice Papers style guide structure:
             
-            CRITICAL DIDACTIC TECHNIQUES - MANDATORY:
-            20. INTRODUCTION must include a compelling preview/roadmap: After the hook and title mention, preview what the listener will learn - "En los próximos minutos vas a descubrir...", "Te voy a mostrar tres ideas que cambiarán tu forma de pensar sobre...", etc.
-            21. CONCLUSION must include a clear summary: End with a recap of the main points covered - "Hemos visto que...", "Los tres puntos clave que exploramos fueron...", "Para cerrar, recordemos que...", etc. ("En resumen" is ONLY acceptable here in conclusions)
-            22. AVOID TYPICAL LLM WORDS: Never use overused AI-generated words like "fundamental", "crucial", "clave" (as adjective), "esencial", "revelador", "fascinante", "delve into", "explore", "unpack", "dive deep", "robust", "compelling", etc.
-            23. USE NATURAL LANGUAGE: Instead of LLM words, use conversational alternatives like "importante", "interesante", "sorprendente", "nos ayuda a entender", "vamos a ver", "resulta que", "descubrimos que", etc.
-            24. SOUND HUMAN: Write as if explaining to a friend over coffee, not as if generating academic content
+            1. NARRATIVE STRUCTURE (from style guide):
+               - START with one of these EXACT hook types:
+                 • Escenario relatable: "Digamos que estás planeando unas vacaciones con tu familia..."
+                 • Contexto histórico: "En octubre de 1997, en Atlanta Georgia..."
+                 • Alarma/problema: "Si eres como yo, ya te están sonando las alarmas..."
+                 • Pregunta intrigante: "¿Alguna vez te has preguntado por qué...?"
+               - THEN naturally introduce "{paper_title}" after the hook
+               - Structure as three acts when possible: Problema → Solución → Implicaciones
+               - NEVER start with: "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
+            
+            2. CONVERSATIONAL TONE (Voice Papers style):
+               - Written as a SINGLE EDUCATOR speaking directly (use "tú"/"usted")
+               - Use frequent rhetorical questions: "¿Parece simple, no?", "¿Te suena familiar?"
+               - Show personality: "En mi opinión...", "Lo que más me sorprende es..."
+            3. TECHNICAL EXPLANATIONS (Voice Papers layered approach):
+               - Start with the simplest version of the concept
+               - Add complexity gradually in layers
+               - Define terms naturally in flow: "esto se llama X, que básicamente significa..."
+               - Use MINIMUM 2-3 analogies per script from everyday life
+            
+            4. RHYTHM AND FLOW (style guide requirements):
+               - Mix sentence lengths: short for impact, long for explanation
+               - Natural transitions: "Ahora bien...", "Pero aquí está lo interesante..."
+               - Create expectation: "En un momento veremos algo sorprendente..."
+               - Strategic pauses and emphasis for voice delivery
+            
+            5. STORYTELLING (academic narrative from style guide):
+               - Present research as a journey of discovery
+               - Humanize when possible: "Los investigadores se sorprendieron cuando..."
+               - Create narrative tension before revealing findings
+               - Include meta-commentary about the research process
+            
+            6. CORE REQUIREMENTS:
+               - Include ALL key insights from conversations and specialist exchanges
+               - Flow naturally with smooth transitions between concepts
+               - Write as continuous text for voice actor (no headers/formatting)
+               - Address listener directly: "puedes imaginar", "te darás cuenta"
+               - End with practical implications and thought-provoking questions
+               - Incorporate depth from ALL agent conversations
+            
+            STYLE GUIDE CHECKLIST - ALL ITEMS MANDATORY:
+            ✓ Hook: Used one of the 4 exact types from style guide?
+            ✓ Direct address: Speaking to "tú" throughout?
+            ✓ Rhetorical questions: At least 3-4 per script?
+            ✓ Analogies: Minimum 2-3 from everyday life?
+            ✓ Transitions: Natural connectors between ideas?
+            ✓ Rhythm: Varied sentence lengths for flow?
+            ✓ Storytelling: Research presented as journey?
+            ✓ Meta-commentary: Reflections on the research?
+            
+            CRITICAL DIDACTIC STRUCTURE:
+            - INTRODUCTION: Hook → Title → Preview ("En los próximos minutos descubrirás...")
+            - DEVELOPMENT: Layered explanations with examples
+            - CONCLUSION: Clear recap ("Hemos visto que...", "Para cerrar...")
+            
+            NATURAL LANGUAGE REQUIREMENTS:
+            - AVOID: fundamental, crucial, esencial, revelador, fascinante, delve, robust
+            - USE: importante, interesante, sorprendente, resulta que, descubrimos que
+            - Sound like explaining to a curious friend, not generating content
             
             CRITICAL - MULTI-SPECIALIST INTEGRATION:
             19. Weave in insights that could ONLY come from having multiple specialist perspectives
@@ -864,36 +1036,47 @@ class CrewManager:
             {duration_check}
             {technical_check}
             
-            MANDATORY VOICE OPTIMIZATION REQUIREMENTS:
-            1. Create a SINGLE, CONTINUOUS text ready for a voice actor to read
-            2. Markdown formatting, but NO headers, NO bullet points, NO lists
-            3. Convert ALL content into natural, flowing sentences
-            4. Replace any remaining bullet points with complete sentences
-            5. Ensure PERFECT flow from sentence to sentence
-            6. Remove formatting marks: #, -, •, etc for titles and subtitles, but keep for bold and italic text
-            7. Make sure sentences are not too long or complex for voice delivery
-            8. Write naturally in {self.language} without academic formalities
-            9. Remove any remaining conversational artifacts ("como mencionamos antes", "en nuestra discusión")
-            10. Ensure seamless transitions between concepts
-            11. Maintain the conversational richness but in a single educator voice
-            12. Read the text mentally to ensure it sounds natural when spoken
-            13. Ensure proper pronunciation flow for difficult technical terms
-            14. Remove any repetitive content that may have emerged from multiple discussions
-            15. Maintain the depth gained from agent conversations while ensuring clarity
-            16. Perfect pacing for natural speech rhythm
-            17. Eliminate any phrases that sound like committee work or group consensus
-            18. Make it sound like ONE expert who has deeply understood the topic
-            19. Ensure technical accuracy while maintaining conversational flow
-            20. Optimize for voice actor performance and listener engagement
-            21. This should sound like ONE VOICE teaching, not a summary of multiple voices
-            22. Avoid words that could make this sound like written by an LLM, like not often used words: "fascinante", "delve", "revelador"
-            23. CRITICAL INTRODUCTION VERIFICATION:
-                a) MUST start with a catchy hook (question, surprising fact, intriguing statement)
-                b) NEVER start with "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
-                c) The title/topic should be mentioned AFTER the hook, integrated naturally
-                d) If the script starts with "En resumen" or similar, REWRITE the entire introduction
-            24. DO NOT add new content - only optimize existing content for voice delivery
-            25. DO NOT change the educational message - only improve its delivery
+            VOICE OPTIMIZATION WITH STYLE GUIDE COMPLIANCE:
+            
+            1. RHYTHM AND FLOW (from style guide):
+               - Vary sentence lengths: short for impact, medium for flow, long for depth
+               - Natural speech patterns with strategic pauses
+               - Smooth transitions using style guide connectors
+               - Perfect pacing for ~150 words per minute
+            
+            2. EMPHASIS AND DELIVERY (style guide formatting):
+               - Use *italics* for soft emphasis or foreign terms
+               - Use **bold** for key concepts or strong emphasis
+               - Natural pronunciation flow for technical terms
+               - Conversational markers placed strategically
+            
+            3. TECHNICAL REQUIREMENTS:
+               - Single continuous text (no headers, bullets, or lists)
+               - Convert all structured content to flowing sentences
+               - Remove formatting marks except bold/italic
+               - Eliminate repetitive content from discussions
+               - Maintain ONE educator voice throughout
+            
+            4. STYLE GUIDE VERIFICATION:
+               - Hook quality: Does it grab attention immediately?
+               - Transitions: Are they natural and varied?
+               - Questions: Are rhetorical questions well-placed?
+               - Analogies: Do they flow naturally in speech?
+               - Pacing: Does it maintain engagement throughout?
+               - Ending: Strong conclusion with practical takeaway?
+            
+            5. FINAL POLISH:
+               - Remove any LLM artifacts (fascinante, delve, revelador)
+               - Ensure it sounds like a knowledgeable friend explaining
+               - Optimize for voice actor performance
+               - Maintain technical accuracy with conversational flow
+            6. CRITICAL STYLE GUIDE COMPLIANCE CHECK:
+               - Opening: MUST use one of the 4 hook types from style guide
+               - Never start with "En resumen", "Hoy vamos a hablar de", etc.
+               - Title mentioned naturally AFTER engaging hook
+               - All style guide elements preserved and enhanced
+               - DO NOT add new content - only optimize for delivery
+               - DO NOT change the message - only perfect the flow
             
             CRITICAL DIDACTIC STRUCTURE VERIFICATION:
             26. VERIFY INTRODUCTION includes preview/roadmap: Ensure there's a clear "what you'll learn" section early in the script (AFTER the hook and title mention)
@@ -1078,27 +1261,42 @@ class CrewManager:
             
             Your job is to distill ALL this rich content into a single educator voice.
             
-            The script should be in the style of popular science educators like 3Blue1Brown:
-            1. Written as a SINGLE EDUCATOR speaking directly to the listener (use "tú"/"usted")
-            2. Use analogies and accessible explanations
-            3. Include all key insights from the discussion including specialist perspectives
-            4. Be engaging and educational, not just informative
-            5. Flow naturally from concept to concept with smooth transitions
-            6. Include moments of wonder and intellectual curiosity
-            7. Break down complex ideas into digestible parts
-            8. Use a teaching tone that makes the listener feel they're learning something fascinating
-            9. Write as continuous text ready to be read by a voice actor
-            10. NO section headers, NO subheaders, NO formatting marks
-            11. Don't address the public with greetings or goodbyes, but make questions
-            12. Always end up with questions for the reader and practical implications
-            13. Write as plain text that flows naturally for voice reading
-            14. NO [PAUSES], NO [MUSIC], NO stage directions - just the educational content
-            15. CRITICAL: Address the listener directly - "puedes imaginar", "si consideras", "te darás cuenta"
-            16. DO NOT write as if summarizing a discussion - write as if YOU are the teacher
-            17. Avoid phrases like "los expertos discutieron" or "el equipo concluyó"
-            18. IMPORTANT: Incorporate insights from ALL participating conversation agents, including specialists
-            19. Weave in insights that could ONLY come from having multiple specialist perspectives
-            20. Include cross-disciplinary connections discovered during discussions
+            The script MUST follow the Voice Papers style guide:
+            
+            1. NARRATIVE STRUCTURE (mandatory from style guide):
+               - Hook: Use one of the 4 exact types (escenario, histórico, alarma, pregunta)
+               - Development: Three acts when possible (Problema → Solución → Implicaciones)
+               - Closure: Practical conclusions with future vision
+            
+            2. CONVERSATIONAL ELEMENTS (required):
+               - Single educator voice speaking directly ("tú"/"usted")
+               - Rhetorical questions throughout: "¿No es sorprendente?"
+               - Personal touches: "En mi opinión...", "Me fascina que..."
+               - Direct address: "puedes imaginar", "te darás cuenta"
+            
+            3. TECHNICAL EXPLANATIONS (layered approach):
+               - Start simple, add complexity gradually
+               - Define terms naturally in flow
+               - Minimum 2-3 everyday analogies
+               - Connect abstract to concrete
+            
+            4. ENGAGEMENT TECHNIQUES:
+               - Create expectation and suspense
+               - Guide thinking with questions
+               - Include "aha!" moments
+               - Moments of wonder and curiosity
+            
+            5. INTEGRATION REQUIREMENTS:
+               - Include ALL specialist perspectives
+               - Show cross-disciplinary connections
+               - Weave insights naturally (not "experts said")
+               - Write as YOU teaching, not summarizing
+            
+            6. FORMAT:
+               - Continuous text for voice (no headers/marks)
+               - Natural flow between concepts
+               - End with practical implications and questions
+               - Plain text optimized for speech
             
             CRITICAL DIDACTIC TECHNIQUES - MANDATORY:
             21. INTRODUCTION must include a compelling preview/roadmap: Start with an engaging hook and then preview what the listener will learn - "En los próximos minutos vas a descubrir...", "Te voy a mostrar tres ideas que cambiarán tu forma de pensar sobre...", etc.
@@ -1154,36 +1352,47 @@ class CrewManager:
             {duration_check}
             {technical_check}
             
-            MANDATORY VOICE OPTIMIZATION REQUIREMENTS:
-            1. Create a SINGLE, CONTINUOUS text ready for a voice actor to read
-            2. Markdown formatting, but NO headers, NO bullet points, NO lists
-            3. Convert ALL content into natural, flowing sentences
-            4. Replace any remaining bullet points with complete sentences
-            5. Ensure PERFECT flow from sentence to sentence
-            6. Remove formatting marks: #, -, •, etc for titles and subtitles, but keep for bold and italic text
-            7. Make sure sentences are not too long or complex for voice delivery
-            8. Write naturally in {self.language} without academic formalities
-            9. Remove any remaining conversational artifacts ("como mencionamos antes", "en nuestra discusión")
-            10. Ensure seamless transitions between concepts
-            11. Maintain the conversational richness but in a single educator voice
-            12. Read the text mentally to ensure it sounds natural when spoken
-            13. Ensure proper pronunciation flow for difficult technical terms
-            14. Remove any repetitive content that may have emerged from multiple discussions
-            15. Maintain the depth gained from agent conversations while ensuring clarity
-            16. Perfect pacing for natural speech rhythm
-            17. Eliminate any phrases that sound like committee work or group consensus
-            18. Make it sound like ONE expert who has deeply understood the topic
-            19. Ensure technical accuracy while maintaining conversational flow
-            20. Optimize for voice actor performance and listener engagement
-            21. This should sound like ONE VOICE teaching, not a summary of multiple voices
-            22. Avoid words that could make this sound like written by an LLM, like not often used words: "fascinante", "delve", "revelador"
-            23. CRITICAL INTRODUCTION VERIFICATION:
-                a) MUST start with a catchy hook (question, surprising fact, intriguing statement)
-                b) NEVER start with "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
-                c) The title/topic should be mentioned AFTER the hook, integrated naturally
-                d) If the script starts with "En resumen" or similar, REWRITE the entire introduction
-            24. DO NOT add new content - only optimize existing content for voice delivery
-            25. DO NOT change the educational message - only improve its delivery
+            VOICE OPTIMIZATION WITH STYLE GUIDE COMPLIANCE:
+            
+            1. RHYTHM AND FLOW (from style guide):
+               - Vary sentence lengths: short for impact, medium for flow, long for depth
+               - Natural speech patterns with strategic pauses
+               - Smooth transitions using style guide connectors
+               - Perfect pacing for ~150 words per minute
+            
+            2. EMPHASIS AND DELIVERY (style guide formatting):
+               - Use *italics* for soft emphasis or foreign terms
+               - Use **bold** for key concepts or strong emphasis
+               - Natural pronunciation flow for technical terms
+               - Conversational markers placed strategically
+            
+            3. TECHNICAL REQUIREMENTS:
+               - Single continuous text (no headers, bullets, or lists)
+               - Convert all structured content to flowing sentences
+               - Remove formatting marks except bold/italic
+               - Eliminate repetitive content from discussions
+               - Maintain ONE educator voice throughout
+            
+            4. STYLE GUIDE VERIFICATION:
+               - Hook quality: Does it grab attention immediately?
+               - Transitions: Are they natural and varied?
+               - Questions: Are rhetorical questions well-placed?
+               - Analogies: Do they flow naturally in speech?
+               - Pacing: Does it maintain engagement throughout?
+               - Ending: Strong conclusion with practical takeaway?
+            
+            5. FINAL POLISH:
+               - Remove any LLM artifacts (fascinante, delve, revelador)
+               - Ensure it sounds like a knowledgeable friend explaining
+               - Optimize for voice actor performance
+               - Maintain technical accuracy with conversational flow
+            6. CRITICAL STYLE GUIDE COMPLIANCE CHECK:
+               - Opening: MUST use one of the 4 hook types from style guide
+               - Never start with "En resumen", "Hoy vamos a hablar de", etc.
+               - Title mentioned naturally AFTER engaging hook
+               - All style guide elements preserved and enhanced
+               - DO NOT add new content - only optimize for delivery
+               - DO NOT change the message - only perfect the flow
             
             CRITICAL DIDACTIC STRUCTURE VERIFICATION:
             26. VERIFY INTRODUCTION includes preview/roadmap: Ensure there's a clear "what you'll learn" section early in the script (AFTER the hook and title mention)
@@ -1431,7 +1640,7 @@ class CrewManager:
         for i, task in enumerate(crew.tasks):
             if hasattr(task, "output") and task.output:
                 with open(
-                    self.discussion_dir / f"task_{i+1}_output.txt",
+                    self.discussion_dir / f"task_{i + 1}_output.txt",
                     "w",
                     encoding="utf-8",
                 ) as f:
@@ -1454,7 +1663,7 @@ class CrewManager:
         # Check if synthesis already exists
         synthesis_path = self.synthesis_dir / "synthesis_output.txt"
         existing_synthesis = None
-        
+
         if synthesis_path.exists():
             click.echo("📊 Found existing synthesis, reusing it...")
             with open(synthesis_path, "r", encoding="utf-8") as f:
@@ -1508,7 +1717,7 @@ class CrewManager:
         if existing_synthesis:
             # Skip chunk analysis and synthesis tasks, go directly to educational
             click.echo("📝 Creating educational script from existing synthesis...")
-            
+
             # Get the enhanced task description with synthesis
             task_description = create_enhanced_educational_task(
                 educational_writer,
@@ -1517,7 +1726,7 @@ class CrewManager:
                 self.technical_level,
                 self.tone,
             )
-            
+
             # Prepend the synthesis to the task
             full_task_description = f"""
             Transform this comprehensive synthesis into an engaging educational script.
@@ -1547,7 +1756,7 @@ class CrewManager:
 
             # Run the crew
             result = crew.kickoff()
-            
+
         else:
             # Original workflow: create synthesis first
             # Create tasks for chunk analysis
@@ -1565,34 +1774,67 @@ class CrewManager:
                 description=f"""
                 You have received detailed analyses of all {len(chunks)} sections of the paper "{paper_title}".
                 
-                Now synthesize them into a comprehensive understanding that:
+                Create a comprehensive synthesis that EXTRACTS and PRESENTS the actual content, NOT a meta-analysis about the paper.
                 
-                1. **Preserves Depth**: Keep important technical details, evidence, and nuanced arguments
-                2. **Shows Connections**: How do different sections relate and build on each other?
-                3. **Identifies Key Themes**: What are the main threads running through the paper?
-                4. **Highlights Insights**: What are the most important findings and breakthroughs?
-                5. **Captures Debates**: What controversies or open questions does the paper raise?
-                6. **Explains Significance**: Why does this research matter? What are the implications?
-                7. **Maintains Structure**: Show how the argument develops from introduction to conclusion
+                CRITICAL: Present the IDEAS, FINDINGS, and ARGUMENTS themselves, not descriptions of them.
                 
-                CRITICAL REQUIREMENT - START WITH A TLDR:
-                Begin your synthesis with a "TLDR:" section (3-5 bullet points) that captures:
-                - The main argument or discovery in one sentence
-                - 2-3 key findings or insights
-                - The primary implication or takeaway
+                WRONG: "The paper discusses three main approaches to..."
+                RIGHT: "The three approaches are: 1) X works by... 2) Y achieves... 3) Z enables..."
                 
-                After the TLDR, provide the rich, detailed synthesis that someone could use to deeply understand this paper.
-                This is not a simple summary - it's a comprehensive analysis that preserves the intellectual
-                depth while organizing it coherently.
+                WRONG: "The authors present evidence showing..."
+                RIGHT: "The evidence shows that X increased by 47% when..."
                 
-                Remember: You're creating the foundation for an educational script, so identify:
+                Structure your synthesis as follows:
+                
+                **TLDR:** (3-5 bullet points)
+                - The core discovery/argument in one clear statement
+                - 2-3 key findings with specific details
+                - The main implication or breakthrough
+                
+                **MAIN THESIS/ARGUMENT:**
+                State the central claim or discovery directly. What IS the finding, not what the paper says about it.
+                
+                **KEY POINTS WITH SUPPORTING EVIDENCE:**
+                1. First major point: [State it directly]
+                   - Evidence: [Specific data, results, or reasoning]
+                   - Why it matters: [Direct implication]
+                
+                2. Second major point: [State it directly]
+                   - Evidence: [Specific data, results, or reasoning]
+                   - Why it matters: [Direct implication]
+                
+                [Continue for all major points]
+                
+                **SECONDARY INSIGHTS:**
+                - List additional findings, observations, or contributions
+                - Include specific details, numbers, or mechanisms
+                
+                **EXAMPLES AND APPLICATIONS:**
+                - Concrete examples given in the paper
+                - Real-world applications or use cases
+                - Specific scenarios or case studies
+                
+                **METHODOLOGY HIGHLIGHTS:** (if relevant)
+                - Key approaches or techniques used
+                - Novel methods introduced
+                - Important experimental details
+                
+                **CONCLUSIONS AND IMPLICATIONS:**
+                - What can we now do/know that we couldn't before?
+                - Specific future directions mentioned
+                - Concrete impact on the field
+                
+                Remember: You are extracting and organizing the ACTUAL CONTENT, not describing what the paper contains.
+                Write as if you are teaching the concepts directly, not reviewing a paper.
+                
+                For educational purposes, also note:
                 - The most fascinating aspects that will engage listeners
                 - The "aha!" moments and surprising insights  
                 - The practical implications
                 - The bigger picture and future directions
                 """,
                 agent=synthesizer,
-                expected_output="A comprehensive synthesis starting with TLDR, followed by deep analysis",
+                expected_output="A content-focused synthesis presenting the actual findings, arguments, and evidence",
             )
 
             # Get the enhanced task description
@@ -1668,28 +1910,32 @@ class CrewManager:
             # Save chunk analyses for debugging
             for i, task in enumerate(chunk_tasks):
                 with open(
-                    self.discussion_dir / f"chunk_{i+1}_analysis.txt", "w", encoding="utf-8"
+                    self.discussion_dir / f"chunk_{i + 1}_analysis.txt",
+                    "w",
+                    encoding="utf-8",
                 ) as f:
                     f.write(f"Section: {chunks[i].section_title}\n")
-                    f.write(f"Characters: {chunks[i].end_char - chunks[i].start_char}\n")
+                    f.write(
+                        f"Characters: {chunks[i].end_char - chunks[i].start_char}\n"
+                    )
                     f.write("=" * 50 + "\n")
                     f.write(str(task.output))
 
             # Save synthesis output to both locations for compatibility
             synthesis_content = str(synthesis_task.output)
-            
+
             # Save to discussion directory (for backward compatibility)
             with open(
                 self.discussion_dir / "synthesis_output.txt", "w", encoding="utf-8"
             ) as f:
                 f.write(synthesis_content)
-            
+
             # Also save to synthesis directory (consistent with create_synthesis method)
             with open(
                 self.synthesis_dir / "synthesis_output.txt", "w", encoding="utf-8"
             ) as f:
                 f.write(synthesis_content)
-            
+
             # Save synthesis metadata
             synthesis_data = {
                 "project": self.project_name,
@@ -1699,7 +1945,7 @@ class CrewManager:
                 "synthesis_length": len(synthesis_content),
                 "workflow": "summary",
             }
-            
+
             with open(
                 self.synthesis_dir / "synthesis_metadata.json", "w", encoding="utf-8"
             ) as f:
