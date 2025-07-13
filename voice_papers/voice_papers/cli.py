@@ -188,10 +188,11 @@ from .utils.file_backup import backup_existing_file, get_filename_with_focus
             "tutorial",
             "critical",
             "story",
+            "technical",
             "all",
         ]
     ),
-    help="Analysis focus mode: explanatory (default), innovation, practical, historical, tutorial, critical, story, or all",
+    help="Analysis focus mode: explanatory (default), innovation, practical, historical, tutorial, critical, story, technical (zero interpretation), or all",
 )
 def main(
     input_source: str,

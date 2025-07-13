@@ -84,9 +84,7 @@ def create_enhanced_educational_task(
     return f"""
 Transform all the insights from the conversation into an educational podcast script in {language}.
 
-## INSTRUCCIONES ESTRICTAS - COPIA ESTOS EJEMPLOS EXACTAMENTE:
-
-### 1. INICIO OBLIGATORIO - USA UNO DE ESTOS 4 GANCHOS EXACTOS:
+### 1. INICIO- EJEMPLOS DE GANCHOS (el estilo, no el contenido):
 
 **Opción 1 - Escenario Relatable:**
 "Digamos que estás planeando unas vacaciones con tu familia. Has revisado cientos de reseñas en línea, comparado precios en docenas de sitios web, y todavía no estás seguro de haber tomado la mejor decisión. ¿Te suena familiar? Bueno, resulta que..."
@@ -102,7 +100,7 @@ Transform all the insights from the conversation into an educational podcast scr
 
 NUNCA EMPIECES CON: "Hoy vamos a hablar de", "En este episodio", "Este es un resumen", etc.
 
-### 2. FRASES CONVERSACIONALES OBLIGATORIAS - USA ESTAS EXACTAS:
+### 2. FRASES CONVERSACIONALES de este estilo:
 
 **Para dirigirte al oyente:**
 - "Si eres como yo..."
@@ -115,7 +113,6 @@ NUNCA EMPIECES CON: "Hoy vamos a hablar de", "En este episodio", "Este es un res
 **Para preguntas retóricas:**
 - "¿Parece simple, no?"
 - "¿Te suena familiar?"
-- "¿No es fascinante?"
 - "¿Qué significa esto para ti?"
 - "¿Cómo puede ser posible?"
 - "¿Y sabes qué es lo más interesante?"
@@ -128,7 +125,7 @@ NUNCA EMPIECES CON: "Hoy vamos a hablar de", "En este episodio", "Este es un res
 - "Te voy a ser honesto..."
 - "No sé tú, pero yo..."
 
-### 3. TRANSICIONES NATURALES - USA ESTAS FRASES EXACTAS:
+### 3. TRANSICIONES NATURALES del siguiente estilo:
 
 - "Ahora bien, aquí es donde se pone interesante..."
 - "Pero espera, hay más..."
@@ -139,7 +136,7 @@ NUNCA EMPIECES CON: "Hoy vamos a hablar de", "En este episodio", "Este es un res
 - "Pero antes de continuar, déjame explicarte..."
 - "OK, entonces ahora que entendemos eso..."
 
-### 4. EJEMPLOS Y ANALOGÍAS - MÍNIMO 3 POR SCRIPT:
+### 4. EJEMPLOS Y ANALOGÍAS del siguiente estilo:
 
 **Plantilla para analogías:**
 "Es como cuando [situación cotidiana]. Tú [acción familiar], y entonces [resultado esperado]. Bueno, [concepto técnico] funciona exactamente igual, solo que en lugar de [elemento cotidiano], tienes [elemento técnico]."
@@ -149,7 +146,6 @@ NUNCA EMPIECES CON: "Hoy vamos a hablar de", "En este episodio", "Este es un res
 
 ### 5. EXPLICACIÓN TÉCNICA EN CAPAS:
 
-**Plantilla obligatoria:**
 1. "En términos simples, [concepto] es básicamente [explicación super simple]."
 2. "Pero si queremos ser más precisos, lo que realmente hace es [explicación intermedia]."
 3. "Y para los que quieren el detalle técnico, esto se llama [término técnico], que significa [definición precisa]."
@@ -158,7 +154,6 @@ NUNCA EMPIECES CON: "Hoy vamos a hablar de", "En este episodio", "Este es un res
 
 **NUNCA EXPANDAS ARTIFICIALMENTE:**
 - Si el paper solo da para 3 minutos, HAZ 3 MINUTOS
-- NO inventes ejemplos que no estén en el paper
 - NO añadas contexto histórico si no está en el paper
 - NO agregues implicaciones futuras si no las menciona el paper
 - Es MEJOR un script corto y excelente que uno largo con relleno
@@ -171,29 +166,17 @@ NUNCA EMPIECES CON: "Hoy vamos a hablar de", "En este episodio", "Este es un res
 
 ### 7. ESTRUCTURA DEL SCRIPT:
 
-1. **Gancho** (30 segundos): Uno de los 4 tipos exactos
-2. **Planteamiento del problema** (1 minuto): Qué resuelve el paper
-3. **Solución/Hallazgos principales** (50-70% del tiempo): Los puntos clave
-4. **Implicaciones** (SI están en el paper): Qué significa esto
-5. **Cierre** (30 segundos): Reflexión final + pregunta abierta
+1. **Gancho** (30 segundos):
+2. **Planteamiento del problema** (1 minuto):
+3. **Solución/Hallazgos principales** (50-70% del tiempo):
+4. **Implicaciones** (SI están en el paper):
+5. **Cierre** (30 segundos):
 
 ### 8. PALABRAS PROHIBIDAS - NUNCA USES:
 
-{chr(10).join('- ' + word for word in guidelines["avoid_words"])}
+{chr(10).join("- " + word for word in guidelines["avoid_words"])}
 
-### 9. CHECKLIST FINAL - VERIFICA TODO:
-
-□ ¿Usé uno de los 4 ganchos EXACTOS del punto 1?
-□ ¿Incluí AL MENOS 5 frases conversacionales del punto 2?
-□ ¿Usé AL MENOS 3 transiciones naturales del punto 3?
-□ ¿Incluí AL MENOS 3 analogías siguiendo la plantilla?
-□ ¿Expliqué TODOS los conceptos técnicos en capas?
-□ ¿SOLO usé información que está en el paper?
-□ ¿El script es del largo natural sin relleno artificial?
-□ ¿Evité TODAS las palabras prohibidas?
-□ ¿Suena como una conversación real entre amigos?
-
-### 10. FORMATO FINAL:
+### 8. FORMATO FINAL:
 
 - Texto corrido, sin encabezados ni secciones
 - Párrafos naturales donde harías pausas al hablar

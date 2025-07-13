@@ -11,6 +11,7 @@ from .roles import get_roles_for_topic
 from .o3_llm import O3LLM
 from .tts_optimizer import get_tts_optimizer_agent, create_tts_optimization_task
 from .focus_agents import get_focus_agents, get_focus_specific_prompts
+from .technical_writer import get_technical_writer_agent, create_technical_writing_task
 
 
 class CrewManager:
@@ -90,26 +91,12 @@ class CrewManager:
             )
 
         # CRITICAL: Always include post-production agents
-        # Educational Writer - transforms technical content into educational narrative
-        agents.append(
-            Agent(
-                role="Educational Writer",
-                goal="Create engaging educational content following the Voice Papers style guide",
-                backstory="""You are a skilled science communicator who transforms technical discussions 
-            into accessible, engaging educational content following the Voice Papers style guide.
-            
-            You meticulously follow the narrative structure, conversational elements, and storytelling
-            techniques specified in the style guide. You use engaging hooks, natural transitions,
-            multiple analogies, and maintain the perfect rhythm for audio narration.
-            
-            You take insights from all the agents and weave them into a cohesive narrative that 
-            teaches and inspires. You work ONLY with information discussed about the paper, 
-            never adding external content.""",
-                llm=self.llm,
-                verbose=True,
-            )
-        )
-
+        # Use technical writer for technical focus, otherwise improved educational writer
+        if self.focus == "technical":
+            agents.append(get_technical_writer_agent(self.llm))
+        else:
+            from .improved_educational_writer import get_improved_educational_writer
+            agents.append(get_improved_educational_writer(self.llm))
 
         # Comedy Communicator - only for humorous/playful tones
         if self.tone in ["humorous", "playful"]:
@@ -176,7 +163,13 @@ class CrewManager:
 
         return Crew(agents=agents, tasks=tasks, verbose=True)
 
-    def create_synthesis(self, paper_content: str, paper_title: str, synthesis_method: str = None, generate_knowledge_graph: bool = None) -> str:
+    def create_synthesis(
+        self,
+        paper_content: str,
+        paper_title: str,
+        synthesis_method: str = None,
+        generate_knowledge_graph: bool = None,
+    ) -> str:
         """Create a comprehensive synthesis of the paper content using chunking.
         This is extracted from run_summary_workflow to be reusable."""
         from ..utils.document_chunker import DocumentChunker
@@ -189,13 +182,20 @@ class CrewManager:
             synthesis_method = self.synthesis_method
         if generate_knowledge_graph is None:
             generate_knowledge_graph = self.generate_knowledge_graph
-            
+
         # Check if we should use improved synthesis
-        use_improved = os.getenv("USE_IMPROVED_SYNTHESIS", "true").lower() == "true" and synthesis_method != "original"
-        
+        use_improved = (
+            os.getenv("USE_IMPROVED_SYNTHESIS", "true").lower() == "true"
+            and synthesis_method != "original"
+        )
+
         # Check for existing synthesis with the specific method
-        synthesis_filename = f"synthesis_{synthesis_method}.txt" if synthesis_method != "original" else "synthesis_output.txt"
-        
+        synthesis_filename = (
+            f"synthesis_{synthesis_method}.txt"
+            if synthesis_method != "original"
+            else "synthesis_output.txt"
+        )
+
         # Check if synthesis already exists
         synthesis_path = self.synthesis_dir / synthesis_filename
         if synthesis_path.exists():
@@ -233,16 +233,18 @@ class CrewManager:
 
             # Run improved synthesis
             result = improved_manager.run_synthesis(
-                chunks, paper_title, content_type, 
-                method=synthesis_method, 
-                generate_knowledge_graph=generate_knowledge_graph
+                chunks,
+                paper_title,
+                content_type,
+                method=synthesis_method,
+                generate_knowledge_graph=generate_knowledge_graph,
             )
             synthesis_result = result["synthesis"]
 
             # Save synthesis
             with open(synthesis_path, "w", encoding="utf-8") as f:
                 f.write(synthesis_result)
-            
+
             # Save knowledge graph if available
             if "knowledge_graph" in result:
                 with open(
@@ -269,7 +271,11 @@ class CrewManager:
             ) as f:
                 json.dump(synthesis_data, f, indent=2, ensure_ascii=False)
 
-            method_display = f"{synthesis_method} + knowledge graph" if synthesis_method == "concatenation" and generate_knowledge_graph else synthesis_method
+            method_display = (
+                f"{synthesis_method} + knowledge graph"
+                if synthesis_method == "concatenation" and generate_knowledge_graph
+                else synthesis_method
+            )
             click.echo(f"✅ Improved synthesis ({method_display}) completed and saved")
             return synthesis_result
 
@@ -616,14 +622,12 @@ class CrewManager:
         conversation_agents = [
             agent
             for agent in agents
-            if agent.role
-            not in ["Educational Writer", "Comedy Communicator"]
+            if agent.role not in ["Master Educational Science Communicator & Storyteller", "Comedy Communicator"]
         ]
         post_production_agents = [
             agent
             for agent in agents
-            if agent.role
-            in ["Educational Writer", "Comedy Communicator"]
+            if agent.role in ["Master Educational Science Communicator & Storyteller", "Comedy Communicator"]
         ]
 
         # Initial analysis task - CONVERSATION AGENTS ONLY (NO HUMOR)
@@ -639,7 +643,7 @@ class CrewManager:
             - Base agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - Specialized domain agents
             
-            EXCLUDED FROM ANALYSIS: Educational Writer and Comedy Communicator (work in post-production)
+            EXCLUDED FROM ANALYSIS: Master Educational Science Communicator & Storyteller and Comedy Communicator (work in post-production)
             
             Each participating agent should:
             1. Read and understand the paper from your specific role's perspective
@@ -664,8 +668,7 @@ class CrewManager:
             conversation_specialists = [
                 agent
                 for agent in specialized_agents
-                if agent.role
-                not in ["Educational Writer", "Comedy Communicator"]
+                if agent.role not in ["Master Educational Science Communicator & Storyteller", "Comedy Communicator"]
             ]
             if conversation_specialists:
                 lead_specialist = conversation_specialists[0]
@@ -708,7 +711,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker) 
             - ALL specialized domain agents
             
-            EXCLUDED FROM CONVERSATION: Educational Writer and Comedy Communicator (work in post-production)
+            EXCLUDED FROM CONVERSATION: Master Educational Science Communicator & Storyteller and Comedy Communicator (work in post-production)
             
             Instructions for multi-agent technical conversation:
             1. ALL TECHNICAL CONVERSATION AGENTS should ask pointed questions to other agents
@@ -749,7 +752,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - ALL specialized domain agents  
             
-            EXCLUDED FROM DEBATE: Educational Writer and Comedy Communicator (work in post-production)
+            EXCLUDED FROM DEBATE: Master Educational Science Communicator & Storyteller and Comedy Communicator (work in post-production)
             
             Technical debate structure:
             1. Present the main controversial points or interpretations from the paper
@@ -788,7 +791,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - ALL specialized domain agents
             
-            EXCLUDED FROM SYNTHESIS: Educational Writer and Comedy Communicator (work in post-production)
+            EXCLUDED FROM SYNTHESIS: Master Educational Science Communicator & Storyteller and Comedy Communicator (work in post-production)
             
             Technical collaborative process:
             1. ALL TECHNICAL CONVERSATION AGENTS contribute their key insights from the discussions
@@ -829,7 +832,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - ALL specialized domain agents
             
-            EXCLUDED: Educational Writer and Comedy Communicator (they will process this output in post-production)
+            EXCLUDED: Master Educational Science Communicator & Storyteller and Comedy Communicator (they will process this output in post-production)
             
             The final technical discussion should:
             1. Synthesize insights from the Q&A, specialist deep dive, debate, and collaborative sessions
@@ -906,17 +909,57 @@ class CrewManager:
                 )
             )
 
-        # POST-PRODUCTION PHASE 2: Educational Writer processes ALL content
-        educational_writer = next(
-            agent for agent in agents if agent.role == "Educational Writer"
-        )
+        # POST-PRODUCTION PHASE 2: Educational/Technical Writer processes ALL content
+        if self.focus == "technical":
+            educational_writer = next(
+                agent for agent in agents if agent.role == "Technical Content Specialist"
+            )
+        else:
+            educational_writer = next(
+                agent for agent in agents if agent.role == "Master Educational Science Communicator & Storyteller"
+            )
+        
         technical_instructions = self._get_technical_instructions()
         duration_instructions = self._get_duration_instructions()
         language_instructions = self._get_language_instructions()
 
-        tasks.append(
-            Task(
-                description=f"""
+        if self.focus == "technical":
+            # Technical writing task - zero interpretation
+            # Get the previous task output (final discussion or comedy-enhanced)
+            previous_task_context = tasks[-1] if tasks else None
+            
+            technical_task_desc = f"""
+            Transform the previous task outputs into a technical presentation with ZERO interpretation.
+            
+            DOCUMENT TITLE: {paper_title}
+            
+            You must review ALL previous outputs and create a technical document that:
+            1. Presents ONLY factual information
+            2. Removes ALL interpretive language (revolutionary, groundbreaking, etc.)
+            3. States findings directly without implications
+            4. Uses technical manual style - clear and objective
+            5. Never adds "this suggests", "this implies", etc.
+            
+            {create_technical_writing_task(
+                content="Use the complete discussion from all previous tasks",
+                title=paper_title,
+                target_length="comprehensive",
+                language=self.language
+            )}
+            """
+            
+            technical_task = Task(
+                description=technical_task_desc,
+                agent=educational_writer,
+                expected_output="Technical presentation with zero interpretation - only facts and concepts as stated",
+                context=[previous_task_context] if previous_task_context else []
+            )
+            tasks.append(technical_task)
+        else:
+            # Regular educational writing task
+            tasks.append(
+                Task(
+                    description=f"""
             POST-PRODUCTION PHASE 2: EDUCATIONAL SCRIPT CREATION
             
             Transform ALL the rich content into a comprehensive educational lecture text.
@@ -937,12 +980,12 @@ class CrewManager:
             The script MUST follow the Voice Papers style guide structure:
             
             1. NARRATIVE STRUCTURE (from style guide):
-               - START with one of these EXACT hook types:
+               - START with one of these hook types, not exactly, just use the style guide:
                  • Escenario relatable: "Digamos que estás planeando unas vacaciones con tu familia..."
                  • Contexto histórico: "En octubre de 1997, en Atlanta Georgia..."
                  • Alarma/problema: "Si eres como yo, ya te están sonando las alarmas..."
                  • Pregunta intrigante: "¿Alguna vez te has preguntado por qué...?"
-               - THEN naturally introduce "{paper_title}" after the hook
+               - THEN naturally introduce "{paper_title}" after the hook, if not stated explicitly do not use it
                - Structure as three acts when possible: Problema → Solución → Implicaciones
                - NEVER start with: "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"
             
@@ -963,10 +1006,8 @@ class CrewManager:
                - Strategic pauses and emphasis for voice delivery
             
             5. STORYTELLING (academic narrative from style guide):
-               - Present research as a journey of discovery
                - Humanize when possible: "Los investigadores se sorprendieron cuando..."
                - Create narrative tension before revealing findings
-               - Include meta-commentary about the research process
             
             6. CORE REQUIREMENTS:
                - Include ALL key insights from conversations and specialist exchanges
@@ -979,20 +1020,16 @@ class CrewManager:
             STYLE GUIDE CHECKLIST - ALL ITEMS MANDATORY:
             ✓ Hook: Used one of the 4 exact types from style guide?
             ✓ Direct address: Speaking to "tú" throughout?
-            ✓ Rhetorical questions: At least 3-4 per script?
-            ✓ Analogies: Minimum 2-3 from everyday life?
             ✓ Transitions: Natural connectors between ideas?
             ✓ Rhythm: Varied sentence lengths for flow?
-            ✓ Storytelling: Research presented as journey?
-            ✓ Meta-commentary: Reflections on the research?
             
             CRITICAL DIDACTIC STRUCTURE:
             - INTRODUCTION: Hook → Title → Preview ("En los próximos minutos descubrirás...")
             - DEVELOPMENT: Layered explanations with examples
             - CONCLUSION: Clear recap ("Hemos visto que...", "Para cerrar...")
-            
+            - The script should not be necessarily inspirational, it should be a technical explanation of content
             NATURAL LANGUAGE REQUIREMENTS:
-            - AVOID: fundamental, crucial, esencial, revelador, fascinante, delve, robust
+            - AVOID: fundamental, crucial, esencial, revelador, fascinante, delve, robust <- THIS IS MANDATORY
             - USE: importante, interesante, sorprendente, resulta que, descubrimos que
             - Sound like explaining to a curious friend, not generating content
             
@@ -1000,7 +1037,7 @@ class CrewManager:
             19. Weave in insights that could ONLY come from having multiple specialist perspectives
             20. Include cross-disciplinary connections discovered during discussions
             21. Incorporate domain-specific knowledge from ALL participating specialists
-            22. Show how different expert viewpoints enhance understanding of the topic
+            
             {"23. Naturally integrate the entertaining elements added by the Comedy Communicator" if has_humor_agent else ""}
             {"24. Demonstrate the value of interdisciplinary analysis throughout" if has_humor_agent else "23. Demonstrate the value of interdisciplinary analysis throughout"}
             
@@ -1017,7 +1054,6 @@ class CrewManager:
                 + (" and humor" if has_humor_agent else ""),
             )
         )
-
 
         return tasks
 
@@ -1040,14 +1076,12 @@ class CrewManager:
         conversation_agents = [
             agent
             for agent in agents
-            if agent.role
-            not in ["Educational Writer", "Comedy Communicator"]
+            if agent.role not in ["Master Educational Science Communicator & Storyteller", "Comedy Communicator"]
         ]
         post_production_agents = [
             agent
             for agent in agents
-            if agent.role
-            in ["Educational Writer", "Comedy Communicator"]
+            if agent.role in ["Master Educational Science Communicator & Storyteller", "Comedy Communicator"]
         ]
 
         # Original Initial analysis task - CONVERSATION AGENTS ONLY (NO HUMOR)
@@ -1063,7 +1097,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - ALL specialized domain agents
             
-            EXCLUDED FROM ANALYSIS: Educational Writer and Comedy Communicator (work in post-production)
+            EXCLUDED FROM ANALYSIS: Master Educational Science Communicator & Storyteller and Comedy Communicator (work in post-production)
             
             Each participating conversation agent should:
             1. Read and understand the paper from your specific role's perspective
@@ -1092,7 +1126,7 @@ class CrewManager:
             - Base conversation agents (Coordinator, Scientific Reviewer, Critical Thinker)
             - ALL specialized domain agents
             
-            EXCLUDED FROM DISCUSSION: Educational Writer and Comedy Communicator (they process the output in post-production)
+            EXCLUDED FROM DISCUSSION: Master Educational Science Communicator & Storyteller and Comedy Communicator (they process the output in post-production)
             
             The technical discussion should:
             1. Cover all major points of the paper
@@ -1159,9 +1193,9 @@ class CrewManager:
                 )
             )
 
-        # POST-PRODUCTION PHASE 2: Educational Writer transforms conversations
+        # POST-PRODUCTION PHASE 2: Master Educational Science Communicator & Storyteller transforms conversations
         educational_writer = next(
-            agent for agent in agents if agent.role == "Educational Writer"
+            agent for agent in agents if agent.role == "Master Educational Science Communicator & Storyteller"
         )
         technical_instructions = self._get_technical_instructions()
         duration_instructions = self._get_duration_instructions()
@@ -1239,7 +1273,6 @@ class CrewManager:
                 + (" and humor" if has_humor_agent else ""),
             )
         )
-
 
         return tasks
 
@@ -1516,28 +1549,54 @@ class CrewManager:
                 for section in unique_sections:
                     click.echo(f"   • {section}")
 
-        # Create agents
-        chunk_analyzer = Agent(
-            role="Deep Document Analyzer",
-            goal="Extract comprehensive insights from each section of the document",
-            backstory="""You are a meticulous researcher who never misses important details.
-            You have the ability to understand complex arguments, identify key evidence,
-            and recognize the significance of findings. You preserve depth and nuance.""",
-            llm=self.llm,
-            verbose=True,
-        )
+        # Create agents based on focus mode
+        if self.focus == "technical":
+            # Use technical agents for zero interpretation
+            chunk_analyzer = Agent(
+                role="Technical Document Analyzer",
+                goal="Extract facts, data, and specifications from each section with zero interpretation",
+                backstory="""You are a technical documentation specialist. You extract information
+                exactly as stated without adding any interpretation, implications, or subjective language.
+                You remove interpretive adjectives like 'revolutionary', 'groundbreaking', etc.
+                You present only facts, methods, and results.""",
+                llm=self.llm,
+                verbose=True,
+            )
 
-        synthesizer = Agent(
-            role="Master Synthesizer",
-            goal="Combine all section analyses into a comprehensive, coherent understanding",
-            backstory="""You are brilliant at seeing the big picture while retaining important
-            details. You can identify patterns across sections, understand how arguments build,
-            and create a unified narrative that captures both breadth and depth.""",
-            llm=self.llm,
-            verbose=True,
-        )
+            synthesizer = Agent(
+                role="Technical Synthesizer",
+                goal="Combine section analyses into a factual, objective technical summary",
+                backstory="""You combine technical information without interpretation. You organize
+                facts, data, and methods in a clear structure. You never add implications or suggestions
+                beyond what's explicitly stated. You maintain objectivity and technical accuracy.""",
+                llm=self.llm,
+                verbose=True,
+            )
 
-        educational_writer = get_improved_educational_writer(self.llm)
+            educational_writer = get_technical_writer_agent(self.llm)
+        else:
+            # Use standard agents for other focus modes
+            chunk_analyzer = Agent(
+                role="Deep Document Analyzer",
+                goal="Extract comprehensive insights from each section of the document",
+                backstory="""You are a meticulous researcher who never misses important details.
+                You have the ability to understand complex arguments, identify key evidence,
+                and recognize the significance of findings. You preserve depth and nuance.""",
+                llm=self.llm,
+                verbose=True,
+            )
+
+            synthesizer = Agent(
+                role="Master Synthesizer",
+                goal="Combine all section analyses into a comprehensive, coherent understanding",
+                backstory="""You are brilliant at seeing the big picture while retaining important
+                details. You can identify patterns across sections, understand how arguments build,
+                and create a unified narrative that captures both breadth and depth.""",
+                llm=self.llm,
+                verbose=True,
+            )
+
+            educational_writer = get_improved_educational_writer(self.llm)
 
         # Check if we need to create synthesis or use existing
         if existing_synthesis:
@@ -1588,16 +1647,38 @@ class CrewManager:
             # Create tasks for chunk analysis
             chunk_tasks = []
             for i, chunk in enumerate(chunks):
+                if self.focus == "technical":
+                    # Technical analysis prompt - zero interpretation
+                    chunk_description = f"""
+                    Extract technical information from this section of "{paper_title}".
+                    Section: {chunk.section_title}
+                    
+                    CRITICAL: Present ONLY factual information:
+                    - State data, measurements, and specifications exactly
+                    - List methods and procedures as described
+                    - Remove ALL interpretive language (revolutionary, groundbreaking, etc.)
+                    - No implications or suggestions beyond what's stated
+                    - Use technical manual style - clear and objective
+                    
+                    Content:
+                    {chunk.content}
+                    
+                    Output: Technical facts only, no interpretation.
+                    """
+                    expected = f"Technical extraction of {chunk.section_title} - facts only"
+                else:
+                    chunk_description = chunker.create_chunk_summary_prompt(chunk, paper_title)
+                    expected = f"Comprehensive analysis of {chunk.section_title}"
+                
                 chunk_task = Task(
-                    description=chunker.create_chunk_summary_prompt(chunk, paper_title),
+                    description=chunk_description,
                     agent=chunk_analyzer,
-                    expected_output=f"Comprehensive analysis of {chunk.section_title}",
+                    expected_output=expected,
                 )
                 chunk_tasks.append(chunk_task)
 
             # Create synthesis task
-            synthesis_task = Task(
-                description=f"""
+            synthesis_description = f"""
                 You have received detailed analyses of all {len(chunks)} sections of the paper "{paper_title}".
                 
                 Create a comprehensive synthesis that EXTRACTS and PRESENTS the actual content, NOT a meta-analysis about the paper.
@@ -1658,24 +1739,37 @@ class CrewManager:
                 - The "aha!" moments and surprising insights  
                 - The practical implications
                 - The bigger picture and future directions
-                """,
+                """
+            
+            synthesis_task = Task(
+                description=synthesis_description,
                 agent=synthesizer,
-                expected_output="A content-focused synthesis presenting the actual findings, arguments, and evidence",
+                expected_output="Technical synthesis with facts only - zero interpretation" if self.focus == "technical" else "A content-focused synthesis presenting the actual findings, arguments, and evidence",
             )
 
-            # Get the enhanced task description
-            task_description = create_enhanced_educational_task(
-                educational_writer,
-                self.language,
-                self.duration_minutes,
-                self.technical_level,
-                self.tone,
-            )
+            # Get the task description based on focus
+            if self.focus == "technical":
+                task_description = create_technical_writing_task(
+                    content="Previous synthesis content will be used",
+                    title=paper_title,
+                    target_length="comprehensive",
+                    language=self.language
+                )
+                expected_output = "Technical presentation with zero interpretation - facts only"
+            else:
+                task_description = create_enhanced_educational_task(
+                    educational_writer,
+                    self.language,
+                    self.duration_minutes,
+                    self.technical_level,
+                    self.tone,
+                )
+                expected_output = f"A natural, engaging {self.duration_minutes}-minute educational script in {self.language}"
 
             educational_task = Task(
                 description=task_description,
                 agent=educational_writer,
-                expected_output=f"A natural, engaging {self.duration_minutes}-minute educational script in {self.language}",
+                expected_output=expected_output,
             )
 
             # Build task list: all chunk tasks + synthesis + educational

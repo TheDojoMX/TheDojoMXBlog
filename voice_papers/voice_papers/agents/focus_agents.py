@@ -2,6 +2,7 @@
 
 from crewai import Agent
 from typing import Dict, List
+from .technical_writer import get_technical_writer_agent
 
 
 def get_explanatory_agents(llm) -> List[Agent]:
@@ -223,6 +224,49 @@ def get_tutorial_agents(llm) -> List[Agent]:
     return agents
 
 
+def get_technical_agents(llm) -> List[Agent]:
+    """Get agents for technical focus mode - zero interpretation."""
+    agents = []
+    
+    # Technical Analyst
+    agents.append(Agent(
+        role="Technical Analyst",
+        goal="Extract and present technical specifications, methods, and data with zero interpretation",
+        backstory="""You are a technical documentation specialist who presents information
+        exactly as stated. You extract specifications, algorithms, formulas, and technical
+        details without adding any interpretation or implications. Your analysis is purely
+        factual and objective. You NEVER use words like 'suggests', 'implies', or 'demonstrates'.""",
+        llm=llm,
+        verbose=True,
+    ))
+    
+    # Concept Definer
+    agents.append(Agent(
+        role="Concept Definer",
+        goal="Identify and define all technical concepts and terminology precisely as stated",
+        backstory="""You specialize in creating clear, accurate definitions of technical
+        concepts. You never add interpretation - you only state what each concept is
+        according to the source material. You organize concepts hierarchically and
+        show relationships without inferring unstated connections.""",
+        llm=llm,
+        verbose=True,
+    ))
+    
+    # Method Documentor
+    agents.append(Agent(
+        role="Method Documentor",
+        goal="Document methods, processes, and procedures exactly as described",
+        backstory="""You document technical methods and procedures with precision.
+        You list steps, parameters, and specifications without adding commentary
+        or evaluation. You present processes in clear, structured formats.
+        You ONLY state what the paper explicitly describes.""",
+        llm=llm,
+        verbose=True,
+    ))
+    
+    return agents
+
+
 def get_story_agents(llm) -> List[Agent]:
     """Get agents for story focus mode."""
     agents = []
@@ -277,6 +321,7 @@ def get_focus_agents(focus: str, llm) -> List[Agent]:
         "historical": get_historical_agents,
         "tutorial": get_tutorial_agents,
         "story": get_story_agents,
+        "technical": get_technical_agents,
         # Critical mode will use existing agents from roles.py
     }
     
@@ -334,6 +379,12 @@ def get_focus_specific_prompts(focus: str) -> Dict[str, List[str]]:
             "What challenges or surprises do the authors describe?",
             "How do the authors describe their research journey?",
             "What human elements can be found in the paper?",
+        ],
+        "technical": [
+            "State the technical specifications provided in the paper.",
+            "List all methods and algorithms as described.",
+            "What are the exact results and measurements reported?",
+            "Define each technical concept as stated in the paper.",
         ],
     }
     
