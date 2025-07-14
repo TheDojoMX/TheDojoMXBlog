@@ -2,6 +2,7 @@
 
 from crewai import Agent, LLM
 from typing import Dict, List
+import re
 
 
 def get_tts_optimizer_agent(llm: LLM) -> Agent:
@@ -90,7 +91,10 @@ ORIGINAL SCRIPT:
 
 YOUR MISSION: Add TTS optimization markup to make the script sound natural and professional when converted to audio.
 
-CRITICAL RULE: DO NOT change the content, message, or educational narrative. ONLY add TTS markup and formatting.
+CRITICAL RULES:
+1. DO NOT change the content, message, or educational narrative. ONLY add TTS markup and formatting.
+2. REMOVE all markdown formatting (**, *, #, etc.) as ElevenLabs does NOT support it.
+3. Replace markdown emphasis with CAPITALS or TTS markup only.
 
 CRITICAL TTS OPTIMIZATION REQUIREMENTS:
 
@@ -105,10 +109,12 @@ CRITICAL TTS OPTIMIZATION REQUIREMENTS:
    - The educational message must remain IDENTICAL
 
 1. **EMPHASIS TECHNIQUES (NO MARKDOWN)**:
+   - REMOVE all markdown formatting: **word** → WORD, *word* → word
    - Use CAPITAL LETTERS for strong emphasis: "La INTELIGENCIA ARTIFICIAL"
    - Use full CAPITALS for important words: "Esto es IMPORTANTE"
    - Use phoneme tags for precise control when needed: <phoneme alphabet="cmu-arpabet" ph="...">word</phoneme>
    - NEVER use markdown (**bold** or *italic*) - ElevenLabs doesn't process it
+   - Convert: **algoritmo** → ALGORITMO, *fascinante* → fascinante
 
 2. **STRATEGIC PAUSES (USE SPARINGLY)**:
    - Add <break time="0.5s" /> for brief emphasis
@@ -256,13 +262,57 @@ def get_language_specific_guidelines(language: str) -> str:
         """
 
 
+def remove_markdown_formatting(text: str) -> str:
+    """
+    Remove markdown formatting while preserving the actual content.
+    This ensures ElevenLabs receives clean text without markdown.
+    """
+    # Remove headers while keeping the text
+    text = re.sub(r'^#{1,6}\s*', '', text, flags=re.MULTILINE)
+    
+    # Remove bold formatting while keeping the text
+    text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)
+    text = re.sub(r'__([^_]+)__', r'\1', text)
+    
+    # Remove italic formatting while keeping the text
+    text = re.sub(r'\*([^*]+)\*', r'\1', text)
+    text = re.sub(r'_([^_]+)_', r'\1', text)
+    
+    # Remove code blocks while keeping the content
+    text = re.sub(r'```[^\n]*\n(.*?)```', r'\1', text, flags=re.DOTALL)
+    text = re.sub(r'`([^`]+)`', r'\1', text)
+    
+    # Remove blockquotes
+    text = re.sub(r'^>\s*', '', text, flags=re.MULTILINE)
+    
+    # Remove bullet points but keep the content
+    text = re.sub(r'^[\*\-\+]\s+', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^\d+\.\s+', '', text, flags=re.MULTILINE)
+    
+    # Remove links but keep the text
+    text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
+    
+    # Remove horizontal rules
+    text = re.sub(r'^[\-\*_]{3,}$', '', text, flags=re.MULTILINE)
+    
+    # Clean up extra whitespace
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    text = text.strip()
+    
+    return text
+
+
 def optimize_script_for_tts(
     script: str, language: str = "Spanish", voice_provider: str = "elevenlabs"
 ) -> str:
     """
     Standalone function to add TTS markup to a script without changing content.
     ONLY adds break tags and emphasis markup - NEVER modifies the educational content.
+    Also removes markdown formatting that ElevenLabs doesn't support.
     """
+    # First, remove markdown formatting while preserving content
+    script = remove_markdown_formatting(script)
+    
     # Basic TTS optimization rules
     optimized_lines = []
 
