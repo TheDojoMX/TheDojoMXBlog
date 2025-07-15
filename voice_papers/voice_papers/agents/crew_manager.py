@@ -1650,22 +1650,26 @@ class CrewManager:
                 if self.focus == "technical":
                     # Technical analysis prompt - zero interpretation
                     chunk_description = f"""
-                    Extract technical information from this section of "{paper_title}".
-                    Section: {chunk.section_title}
+                    Extract technical information from this section.
                     
-                    CRITICAL: Present ONLY factual information:
-                    - State data, measurements, and specifications exactly
-                    - List methods and procedures as described
-                    - Remove ALL interpretive language (revolutionary, groundbreaking, etc.)
-                    - No implications or suggestions beyond what's stated
-                    - Use technical manual style - clear and objective
+                    CRITICAL RULES:
+                    1. NEVER use meta-language: "el documento presenta", "se discute", "el análisis aborda"
+                    2. Extract and list THE ACTUAL CONTENT, not that it was discussed
+                    3. If the text says "tres enfoques principales", LIST what those approaches ARE
+                    4. Present data, specifications, and methods directly
                     
-                    Content:
+                    WRONG: "El documento presenta tres enfoques"
+                    RIGHT: "Los tres enfoques son: [list actual approaches if mentioned]"
+                    
+                    WRONG: "Se discute una reducción de costos del 40%"
+                    RIGHT: "Reducción de costos: 40%"
+                    
+                    Content to analyze:
                     {chunk.content}
                     
-                    Output: Technical facts only, no interpretation.
+                    Extract and present the ACTUAL technical information. If specific details aren't provided, state what IS provided.
                     """
-                    expected = f"Technical extraction of {chunk.section_title} - facts only"
+                    expected = f"Direct technical content from {chunk.section_title} - no meta-language"
                 else:
                     chunk_description = chunker.create_chunk_summary_prompt(chunk, paper_title)
                     expected = f"Comprehensive analysis of {chunk.section_title}"
@@ -1678,7 +1682,34 @@ class CrewManager:
                 chunk_tasks.append(chunk_task)
 
             # Create synthesis task
-            synthesis_description = f"""
+            if self.focus == "technical":
+                synthesis_description = f"""
+                You have received technical analyses of all {len(chunks)} sections.
+                
+                Create a TECHNICAL SYNTHESIS that presents ONLY the facts, data, and specifications.
+                
+                CRITICAL RULES:
+                1. NO META-LANGUAGE: Never say "se presenta", "se discute", "se aborda"
+                2. Present THE ACTUAL TECHNICAL CONTENT, not that it was discussed
+                3. List specifications, methods, and results directly
+                4. Remove ALL interpretive language
+                
+                WRONG: "Se abordan las implicaciones del model as a service"
+                RIGHT: "El 'model as a service' implica: 1) X, 2) Y, 3) Z"
+                
+                WRONG: "El análisis presenta tres métodos"
+                RIGHT: "Los tres métodos son: método A [descripción], método B [descripción], método C [descripción]"
+                
+                Structure:
+                - Technical specifications and data
+                - Methods and algorithms (as lists or steps)
+                - Results and measurements (exact numbers)
+                - System components and architecture
+                
+                Present ONLY factual technical information. Zero interpretation.
+                """
+            else:
+                synthesis_description = f"""
                 You have received detailed analyses of all {len(chunks)} sections of the paper "{paper_title}".
                 
                 Create a comprehensive synthesis that EXTRACTS and PRESENTS the actual content, NOT a meta-analysis about the paper.

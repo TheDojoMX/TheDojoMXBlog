@@ -27,9 +27,14 @@ def get_tts_optimizer_agent(llm: LLM) -> Agent:
         Your optimizations create scripts that sound natural, engaging, and professional when processed
         by ElevenLabs, avoiding all markdown and using only techniques that ElevenLabs actually supports.
         
-        CRITICAL: You NEVER change the content, message, or meaning of the script. You ONLY add TTS
-        markup, adjust formatting for better speech synthesis, and optimize technical pronunciation.
-        The educational content and narrative must remain EXACTLY the same.""",
+        CRITICAL CONTENT PRESERVATION:
+        - You NEVER change the content, message, or meaning of the script
+        - You NEVER rewrite sentences for "better flow" or "natural rhythm"
+        - You NEVER add or remove words to "improve" the script
+        - You ONLY add TTS markup (breaks, CAPITALS, phonemes)
+        - You ONLY remove markdown and replace with TTS-compatible formatting
+        - The words must remain IDENTICAL - only the formatting changes
+        - Think of yourself as a formatter, not an editor or writer""",
         llm=llm,
         verbose=True,
         max_iter=2,
@@ -95,6 +100,8 @@ CRITICAL RULES:
 1. DO NOT change the content, message, or educational narrative. ONLY add TTS markup and formatting.
 2. REMOVE all markdown formatting (**, *, #, etc.) as ElevenLabs does NOT support it.
 3. Replace markdown emphasis with CAPITALS or TTS markup only.
+4. NEVER rewrite sentences for "better flow" or "natural rhythm" - preserve EXACT wording.
+5. The output must contain the SAME WORDS in the SAME ORDER, only with TTS markup added.
 
 CRITICAL TTS OPTIMIZATION REQUIREMENTS:
 
@@ -194,12 +201,14 @@ OUTPUT FORMAT:
 - Do NOT add explanatory text or comments about the changes
 - The output should have the same educational value with better TTS rendering
 
-QUALITY CHECK:
-- Every paragraph should have natural speech rhythm
-- Technical terms should be clearly marked for emphasis
-- Transitions should flow smoothly with appropriate pauses
-- The script should sound engaging when read aloud
-- Sentence length should be optimal for TTS processing
+QUALITY CHECK (WITHOUT CHANGING CONTENT):
+- Verify TTS markup is properly added (breaks, capitals, phonemes)
+- Ensure technical terms have emphasis markup (CAPITALS only)
+- Check that break tags are placed appropriately between sections
+- Confirm markdown has been removed and replaced with TTS-compatible markup
+- CRITICAL: The educational content must be EXACTLY the same as the input
+- NEVER rewrite sentences, add transitions, or modify for "better flow"
+- ONLY add markup - the words must remain IDENTICAL
 """
 
 
@@ -310,18 +319,47 @@ def optimize_script_for_tts(
     ONLY adds break tags and emphasis markup - NEVER modifies the educational content.
     Also removes markdown formatting that ElevenLabs doesn't support.
     """
-    # First, remove markdown formatting while preserving content
+    # First, detect and preserve heading structure before removing markdown
+    lines = script.split('\n')
+    heading_info = []
+    
+    for i, line in enumerate(lines):
+        # Detect markdown headings
+        if line.strip().startswith('#'):
+            level = len(line) - len(line.lstrip('#'))
+            heading_text = line.lstrip('#').strip()
+            heading_info.append((i, level, heading_text))
+    
+    # Remove markdown formatting while preserving content
     script = remove_markdown_formatting(script)
     
     # Basic TTS optimization rules
     optimized_lines = []
-
+    
     # Split into paragraphs
     paragraphs = script.split("\n\n")
+    
+    # Track which paragraphs were originally headings
+    heading_indices = set()
+    for h_idx, level, text in heading_info:
+        for p_idx, para in enumerate(paragraphs):
+            if text in para:
+                heading_indices.add(p_idx)
+                break
 
     for i, paragraph in enumerate(paragraphs):
         if not paragraph.strip():
             continue
+
+        # Check if this paragraph was a heading
+        is_heading = i in heading_indices
+        
+        # Get heading level if applicable
+        heading_level = 1
+        for h_idx, level, text in heading_info:
+            if text in paragraph:
+                heading_level = level
+                break
 
         # Split into sentences
         sentences = paragraph.split(". ")
@@ -337,6 +375,7 @@ def optimize_script_for_tts(
                 not sentence.endswith(".")
                 and not sentence.endswith("!")
                 and not sentence.endswith("?")
+                and not sentence.endswith(":")
             ):
                 sentence += "."
 
@@ -345,7 +384,12 @@ def optimize_script_for_tts(
 
             # Add breaks for natural rhythm (MARKUP ONLY)
             if j == 0 and i > 0:  # First sentence of new paragraph
-                sentence = f'<break time="1s"/> {sentence}'
+                if is_heading:
+                    # Longer pause before headings based on level
+                    pause_time = "2.0s" if heading_level == 1 else "1.5s"
+                    sentence = f'<break time="{pause_time}"/> {sentence}'
+                else:
+                    sentence = f'<break time="1s"/> {sentence}'
 
             processed_sentences.append(sentence)
 
