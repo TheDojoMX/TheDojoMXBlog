@@ -126,6 +126,11 @@ from .utils.file_backup import backup_existing_file, get_filename_with_focus
     help="Use simplified workflow: Document → Summary → Educational Writer (skips multi-agent discussion)",
 )
 @click.option(
+    "--light-edit",
+    is_flag=True,
+    help="Apply light editing for readability after summary (fixes grammar, keeps content intact)",
+)
+@click.option(
     "--debug",
     is_flag=True,
     help="Enable detailed debug logging to see workflow progress",
@@ -215,6 +220,7 @@ def main(
     debug_title: bool,
     extract_only: bool,
     summary: bool,
+    light_edit: bool,
     debug: bool,
     direct: bool,
     text_file: Path,
@@ -980,6 +986,12 @@ def main(
                     "✅ Found existing discussion! Generating final script from previous conversation..."
                 )
                 final_script = crew_manager.run_reuse_discussion_workflow(paper_title)
+                
+                # Apply light editing if requested
+                if light_edit:
+                    click.echo(f"✏️  Applying light {language} editing for readability...")
+                    final_script = crew_manager.run_light_edit_flow(final_script, paper_title)
+                    click.echo("✅ Light editing completed")
 
                 # Save the final script with focus mode
                 script_filename = get_filename_with_focus("educational_script", focus)
@@ -1104,6 +1116,12 @@ def main(
                 "🤖 Setting up AI crew (Enhanced Summary mode - 3 specialized agents)..."
             )
             final_script = crew_manager.run_summary_workflow(paper_content, paper_title)
+            
+            # Apply light editing if requested
+            if light_edit:
+                click.echo(f"✏️  Applying light {language} editing for readability...")
+                final_script = crew_manager.run_light_edit_flow(final_script, paper_title)
+                click.echo("✅ Light editing completed")
         else:
             # Original full workflow
             tasks_count = "7 tasks" if conversation_mode == "enhanced" else "4 tasks"

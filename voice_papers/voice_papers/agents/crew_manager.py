@@ -12,6 +12,7 @@ from .o3_llm import O3LLM
 from .tts_optimizer import get_tts_optimizer_agent, create_tts_optimization_task
 from .focus_agents import get_focus_agents, get_focus_specific_prompts
 from .technical_writer import get_technical_writer_agent, create_technical_writing_task
+from .light_editor import get_light_editor_agent, create_light_editing_task
 
 
 class CrewManager:
@@ -2110,4 +2111,88 @@ class CrewManager:
         ) as f:
             f.write(str(result))
 
+        return str(result).strip()
+    
+    def run_light_edit_flow(self, educational_script: str, paper_title: str = "") -> str:
+        """Run light editing flow to improve readability before TTS optimization.
+        
+        This flow:
+        1. Takes the educational script from summary workflow
+        2. Applies minimal editing for grammar and readability
+        3. Preserves all content and technical accuracy
+        4. Returns the lightly edited script
+        
+        Args:
+            educational_script: The script to edit
+            paper_title: Title of the paper
+            
+        Returns:
+            The lightly edited script
+        """
+        print(f"✏️  Applying light {self.language} editing for readability...")
+        
+        # Create light editor agent
+        light_editor = get_light_editor_agent(self.llm, self.language)
+        
+        # Create editing task
+        editing_task_description = create_light_editing_task(
+            content=educational_script,
+            language=self.language,
+            title=paper_title
+        )
+        
+        editing_task = Task(
+            description=editing_task_description,
+            agent=light_editor,
+            expected_output=f"Educational script with minimal grammar corrections for {self.language} readability",
+        )
+        
+        # Create a minimal crew with just the editor
+        editing_crew = Crew(
+            agents=[light_editor],
+            tasks=[editing_task],
+            verbose=True
+        )
+        
+        # Run the crew
+        result = editing_crew.kickoff()
+        
+        # Save editing data
+        editing_data = {
+            "project": self.project_name,
+            "paper_title": paper_title,
+            "language": self.language,
+            "workflow": "light_edit",
+            "original_length": len(educational_script),
+            "edited_length": len(str(result)),
+            "agent": {
+                "role": light_editor.role,
+                "goal": light_editor.goal
+            }
+        }
+        
+        # Save editing workflow data
+        with open(
+            self.discussion_dir / "light_edit_workflow.json",
+            "w",
+            encoding="utf-8"
+        ) as f:
+            json.dump(editing_data, f, indent=2, ensure_ascii=False)
+        
+        # Save both versions for comparison
+        with open(
+            self.discussion_dir / "script_before_edit.txt",
+            "w",
+            encoding="utf-8"
+        ) as f:
+            f.write(educational_script)
+            
+        with open(
+            self.discussion_dir / "script_after_edit.txt",
+            "w",
+            encoding="utf-8"
+        ) as f:
+            f.write(str(result))
+        
+        print("✅ Light editing completed")
         return str(result).strip()
