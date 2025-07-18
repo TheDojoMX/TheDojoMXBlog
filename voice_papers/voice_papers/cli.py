@@ -39,8 +39,8 @@ from .utils.file_backup import backup_existing_file, get_filename_with_focus
     "--model",
     "-m",
     default="flash",
-    type=click.Choice(["flash", "turbo", "multilingual", "english"]),
-    help="ElevenLabs model: flash (fastest), turbo (fast), multilingual (quality), english (best quality)",
+    type=click.Choice(["flash", "turbo", "v3", "multilingual", "english"]),
+    help="ElevenLabs model: flash (fastest), turbo (fast), v3 (newer), multilingual (quality), english (best quality)",
 )
 @click.option(
     "--stability",
@@ -512,6 +512,12 @@ def main(
         # Run direct workflow
         click.echo("🤖 Running direct educational transformation...")
         final_script = crew_manager.run_direct_educational_workflow(text_content, title)
+        
+        # Apply light editing if requested
+        if light_edit:
+            click.echo(f"✏️  Applying light {language} editing for readability...")
+            final_script = crew_manager.run_light_edit_flow(final_script, title)
+            click.echo("✅ Light editing completed")
 
         # Save the script with focus mode in filename
         script_filename = get_filename_with_focus("educational_script", focus)
@@ -1186,6 +1192,12 @@ def main(
 
             click.echo("🗣️  Running discussion (this may take several minutes)...")
             final_script = crew_manager.run_crew_and_save_discussion(crew, paper_title)
+            
+            # Apply light editing if requested
+            if light_edit:
+                click.echo(f"✏️  Applying light {language} editing for readability...")
+                final_script = crew_manager.run_light_edit_flow(final_script, paper_title)
+                click.echo("✅ Light editing completed")
 
         # Save the final script
         script_filename = get_filename_with_focus("educational_script.txt", focus)

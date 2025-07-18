@@ -38,6 +38,7 @@ class ElevenLabsSynthesizer(VoiceSynthesizer):
     MODEL_MAP = {
         "flash": "eleven_flash_v2_5",  # Fastest model
         "turbo": "eleven_turbo_v2_5",  # Fast model
+        "v3": "eleven_v3",  # V3 model
         "multilingual": "eleven_multilingual_v2",  # Multilingual support
         "english": "eleven_monolingual_v1",  # Best quality for English
     }
