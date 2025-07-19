@@ -97,6 +97,7 @@ class CrewManager:
             agents.append(get_technical_writer_agent(self.llm))
         else:
             from .improved_educational_writer import get_improved_educational_writer
+
             agents.append(get_improved_educational_writer(self.llm))
 
         # Comedy Communicator - only for humorous/playful tones
@@ -623,12 +624,20 @@ class CrewManager:
         conversation_agents = [
             agent
             for agent in agents
-            if agent.role not in ["Master Educational Science Communicator & Storyteller", "Comedy Communicator"]
+            if agent.role
+            not in [
+                "Master Educational Science Communicator & Storyteller",
+                "Comedy Communicator",
+            ]
         ]
         post_production_agents = [
             agent
             for agent in agents
-            if agent.role in ["Master Educational Science Communicator & Storyteller", "Comedy Communicator"]
+            if agent.role
+            in [
+                "Master Educational Science Communicator & Storyteller",
+                "Comedy Communicator",
+            ]
         ]
 
         # Initial analysis task - CONVERSATION AGENTS ONLY (NO HUMOR)
@@ -669,7 +678,11 @@ class CrewManager:
             conversation_specialists = [
                 agent
                 for agent in specialized_agents
-                if agent.role not in ["Master Educational Science Communicator & Storyteller", "Comedy Communicator"]
+                if agent.role
+                not in [
+                    "Master Educational Science Communicator & Storyteller",
+                    "Comedy Communicator",
+                ]
             ]
             if conversation_specialists:
                 lead_specialist = conversation_specialists[0]
@@ -913,13 +926,17 @@ class CrewManager:
         # POST-PRODUCTION PHASE 2: Educational/Technical Writer processes ALL content
         if self.focus == "technical":
             educational_writer = next(
-                agent for agent in agents if agent.role == "Technical Content Specialist"
+                agent
+                for agent in agents
+                if agent.role == "Technical Content Specialist"
             )
         else:
             educational_writer = next(
-                agent for agent in agents if agent.role == "Master Educational Science Communicator & Storyteller"
+                agent
+                for agent in agents
+                if agent.role == "Master Educational Science Communicator & Storyteller"
             )
-        
+
         technical_instructions = self._get_technical_instructions()
         duration_instructions = self._get_duration_instructions()
         language_instructions = self._get_language_instructions()
@@ -928,7 +945,7 @@ class CrewManager:
             # Technical writing task - zero interpretation
             # Get the previous task output (final discussion or comedy-enhanced)
             previous_task_context = tasks[-1] if tasks else None
-            
+
             technical_task_desc = f"""
             Transform the previous task outputs into a technical presentation with ZERO interpretation.
             
@@ -941,19 +958,21 @@ class CrewManager:
             4. Uses technical manual style - clear and objective
             5. Never adds "this suggests", "this implies", etc.
             
-            {create_technical_writing_task(
-                content="Use the complete discussion from all previous tasks",
-                title=paper_title,
-                target_length="comprehensive",
-                language=self.language
-            )}
+            {
+                create_technical_writing_task(
+                    content="Use the complete discussion from all previous tasks",
+                    title=paper_title,
+                    target_length="comprehensive",
+                    language=self.language,
+                )
+            }
             """
-            
+
             technical_task = Task(
                 description=technical_task_desc,
                 agent=educational_writer,
                 expected_output="Technical presentation with zero interpretation - only facts and concepts as stated",
-                context=[previous_task_context] if previous_task_context else []
+                context=[previous_task_context] if previous_task_context else [],
             )
             tasks.append(technical_task)
         else:
@@ -1051,11 +1070,11 @@ class CrewManager:
             
             Language: {self.language}
             """,
-                agent=educational_writer,
-                expected_output="FINAL publication-ready educational script incorporating ALL conversation insights"
-                + (" and humor" if has_humor_agent else ""),
+                    agent=educational_writer,
+                    expected_output="FINAL publication-ready educational script incorporating ALL conversation insights"
+                    + (" and humor" if has_humor_agent else ""),
+                )
             )
-        )
 
         return tasks
 
@@ -1078,12 +1097,20 @@ class CrewManager:
         conversation_agents = [
             agent
             for agent in agents
-            if agent.role not in ["Master Educational Science Communicator & Storyteller", "Comedy Communicator"]
+            if agent.role
+            not in [
+                "Master Educational Science Communicator & Storyteller",
+                "Comedy Communicator",
+            ]
         ]
         post_production_agents = [
             agent
             for agent in agents
-            if agent.role in ["Master Educational Science Communicator & Storyteller", "Comedy Communicator"]
+            if agent.role
+            in [
+                "Master Educational Science Communicator & Storyteller",
+                "Comedy Communicator",
+            ]
         ]
 
         # Original Initial analysis task - CONVERSATION AGENTS ONLY (NO HUMOR)
@@ -1197,7 +1224,9 @@ class CrewManager:
 
         # POST-PRODUCTION PHASE 2: Master Educational Science Communicator & Storyteller transforms conversations
         educational_writer = next(
-            agent for agent in agents if agent.role == "Master Educational Science Communicator & Storyteller"
+            agent
+            for agent in agents
+            if agent.role == "Master Educational Science Communicator & Storyteller"
         )
         technical_instructions = self._get_technical_instructions()
         duration_instructions = self._get_duration_instructions()
@@ -1600,6 +1629,9 @@ class CrewManager:
 
             educational_writer = get_improved_educational_writer(self.llm)
 
+        # Initialize chunk_tasks here so it's accessible in all branches
+        chunk_tasks = []
+
         # Check if we need to create synthesis or use existing
         if existing_synthesis:
             # Skip chunk analysis and synthesis tasks, go directly to educational
@@ -1673,9 +1705,11 @@ class CrewManager:
                     """
                     expected = f"Direct technical content from {chunk.section_title} - no meta-language"
                 else:
-                    chunk_description = chunker.create_chunk_summary_prompt(chunk, paper_title)
+                    chunk_description = chunker.create_chunk_summary_prompt(
+                        chunk, paper_title
+                    )
                     expected = f"Comprehensive analysis of {chunk.section_title}"
-                
+
                 chunk_task = Task(
                     description=chunk_description,
                     agent=chunk_analyzer,
@@ -1773,11 +1807,13 @@ class CrewManager:
                 - The practical implications
                 - The bigger picture and future directions
                 """
-            
+
             synthesis_task = Task(
                 description=synthesis_description,
                 agent=synthesizer,
-                expected_output="Technical synthesis with facts only - zero interpretation" if self.focus == "technical" else "A content-focused synthesis presenting the actual findings, arguments, and evidence",
+                expected_output="Technical synthesis with facts only - zero interpretation"
+                if self.focus == "technical"
+                else "A content-focused synthesis presenting the actual findings, arguments, and evidence",
             )
 
             # Get the task description based on focus
@@ -1786,9 +1822,11 @@ class CrewManager:
                     content="Previous synthesis content will be used",
                     title=paper_title,
                     target_length="comprehensive",
-                    language=self.language
+                    language=self.language,
                 )
-                expected_output = "Technical presentation with zero interpretation - facts only"
+                expected_output = (
+                    "Technical presentation with zero interpretation - facts only"
+                )
             else:
                 task_description = create_enhanced_educational_task(
                     educational_writer,
@@ -1836,11 +1874,13 @@ class CrewManager:
             "tasks": [
                 {
                     "description": task.description[:200] + "...",
-                    "type": "chunk_analysis"
-                    if i < len(chunk_tasks)
-                    else "synthesis"
-                    if i == len(chunk_tasks)
-                    else "educational",
+                    "type": (
+                        "chunk_analysis"
+                        if i < len(chunk_tasks)
+                        else "synthesis"
+                        if i == len(chunk_tasks)
+                        else "educational"
+                    ),
                 }
                 for i, task in enumerate(crew.tasks)
             ],
@@ -2113,51 +2153,47 @@ class CrewManager:
             f.write(str(result))
 
         return str(result).strip()
-    
-    def run_light_edit_flow(self, educational_script: str, paper_title: str = "") -> str:
+
+    def run_light_edit_flow(
+        self, educational_script: str, paper_title: str = ""
+    ) -> str:
         """Run light editing flow to improve readability before TTS optimization.
-        
+
         This flow:
         1. Takes the educational script from summary workflow
         2. Applies minimal editing for grammar and readability
         3. Preserves all content and technical accuracy
         4. Returns the lightly edited script
-        
+
         Args:
             educational_script: The script to edit
             paper_title: Title of the paper
-            
+
         Returns:
             The lightly edited script
         """
         print(f"✏️  Applying light {self.language} editing for readability...")
-        
+
         # Create light editor agent
         light_editor = get_light_editor_agent(self.llm, self.language)
-        
+
         # Create editing task
         editing_task_description = create_light_editing_task(
-            content=educational_script,
-            language=self.language,
-            title=paper_title
+            content=educational_script, language=self.language, title=paper_title
         )
-        
+
         editing_task = Task(
             description=editing_task_description,
             agent=light_editor,
             expected_output=f"Educational script with minimal grammar corrections for {self.language} readability",
         )
-        
+
         # Create a minimal crew with just the editor
-        editing_crew = Crew(
-            agents=[light_editor],
-            tasks=[editing_task],
-            verbose=True
-        )
-        
+        editing_crew = Crew(agents=[light_editor], tasks=[editing_task], verbose=True)
+
         # Run the crew
         result = editing_crew.kickoff()
-        
+
         # Save editing data
         editing_data = {
             "project": self.project_name,
@@ -2166,34 +2202,25 @@ class CrewManager:
             "workflow": "light_edit",
             "original_length": len(educational_script),
             "edited_length": len(str(result)),
-            "agent": {
-                "role": light_editor.role,
-                "goal": light_editor.goal
-            }
+            "agent": {"role": light_editor.role, "goal": light_editor.goal},
         }
-        
+
         # Save editing workflow data
         with open(
-            self.discussion_dir / "light_edit_workflow.json",
-            "w",
-            encoding="utf-8"
+            self.discussion_dir / "light_edit_workflow.json", "w", encoding="utf-8"
         ) as f:
             json.dump(editing_data, f, indent=2, ensure_ascii=False)
-        
+
         # Save both versions for comparison
         with open(
-            self.discussion_dir / "script_before_edit.txt",
-            "w",
-            encoding="utf-8"
+            self.discussion_dir / "script_before_edit.txt", "w", encoding="utf-8"
         ) as f:
             f.write(educational_script)
-            
+
         with open(
-            self.discussion_dir / "script_after_edit.txt",
-            "w",
-            encoding="utf-8"
+            self.discussion_dir / "script_after_edit.txt", "w", encoding="utf-8"
         ) as f:
             f.write(str(result))
-        
+
         print("✅ Light editing completed")
         return str(result).strip()
