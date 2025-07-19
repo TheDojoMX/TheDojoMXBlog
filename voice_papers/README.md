@@ -1,11 +1,11 @@
 # Voice Papers
 
-Generate educational audio lectures from academic papers and web articles using AI agents and voice synthesis.
+Generate educational audio lectures from documents (PDF, Markdown, Text) and web articles using AI agents and voice synthesis.
 
 ## Overview
 
-Voice Papers transforms academic papers **and web articles** into engaging educational content by:
-1. **NEW:** Extracting content from both PDF files and web article URLs
+Voice Papers transforms various document formats **and web articles** into engaging educational content by:
+1. **NEW:** Extracting content from PDF files, Markdown documents (.md), Text files (.txt), and web article URLs
 2. Using CrewAI to create dynamic teams of AI agents that analyze content from different perspectives
 3. Generating educational lecture scripts in the style of popular science educators (like 3Blue1Brown)
 4. Converting scripts to audio using ElevenLabs or Cartesia voice synthesis
@@ -13,13 +13,14 @@ Voice Papers transforms academic papers **and web articles** into engaging educa
 
 ## Features
 
-- **Dual Input Support**: Process both PDF files and web article URLs
+- **Multiple Input Formats**: Process PDF files, Markdown documents (.md), Text files (.txt), and web article URLs
 - **Smart Content Caching**: Web articles are cached locally for future reference
+- **Format Preservation**: Markdown formatting is preserved during processing for better structure retention
 - **Dynamic AI Teams**: Automatically creates specialized agents based on content topics (AI researchers, philosophers, critics, etc.)
 - **Multi-language Support**: Generate educational content in any language (Spanish by default)
 - **Multiple Voice Providers**: Choose between ElevenLabs and Cartesia for audio synthesis
 - **Structured Output**: Saves discussion transcripts, crew structures, and final scripts
-- **CLI Interface**: Simple command-line tool for processing both papers and articles
+- **CLI Interface**: Simple command-line tool for processing documents and articles
 - **Educational Style**: Creates content in the engaging style of popular science educators
 
 ## Installation
@@ -52,18 +53,28 @@ CARTESIA_API_KEY=your_cartesia_key
 # Process a PDF file (defaults to Spanish)
 voice-papers paper.pdf
 
+# Process a Markdown file
+voice-papers article.md
+
+# Process a Text file
+voice-papers notes.txt
+
 # Process a web article URL
 voice-papers "https://blog.research.google/2017/08/transformer-novel-neural-network.html"
 
-# With options (works with both PDFs and URLs)
+# With options (works with all file types and URLs)
 voice-papers paper.pdf --language English --voice-provider elevenlabs --project-name my_project
+voice-papers article.md --language Spanish --script-only --duration 10
 voice-papers "https://example.com/article" --language Spanish --script-only --duration 5
 
 # Generate only the script without audio
-voice-papers "https://arxiv.org/abs/1706.03762" --script-only
+voice-papers document.md --script-only
 
 # Generate audio from existing script
 voice-papers --audio-from-script /path/to/script.txt
+
+# Direct mode for pre-processed content
+voice-papers notes.txt --direct  # Skips extraction, directly processes content
 ```
 
 ### Python API
@@ -84,13 +95,13 @@ synthesizer.synthesize(script, "output.mp3", voice_id="your_voice_id")
 
 ## Project Structure
 
-### For PDF Files
-Each processed paper creates a project directory in the same folder as the PDF:
+### For Local Files (PDF, Markdown, Text)
+Each processed document creates a project directory in the same folder as the source file:
 
 ```
-paper_directory/
-├── paper.pdf                     # Original paper
-├── paper_extracted_text.txt      # Cleaned extracted text
+document_directory/
+├── document.pdf/.md/.txt         # Original document
+├── document_extracted_text.txt    # Cleaned extracted text (PDF only)
 └── project_name/
     ├── discussion/
     │   ├── crew_structure.json    # Agent roles and tasks
@@ -118,9 +129,32 @@ projects/
     └── educational_lecture.mp3         # Generated audio
 ```
 
+## Supported Input Formats
+
+### PDF Files (.pdf)
+- Academic papers with complex layouts
+- Books and research documents
+- Automatic title extraction from metadata or content
+
+### Markdown Files (.md, .markdown)
+- Blog posts and articles
+- Documentation and tutorials
+- Preserves formatting and structure
+- Title extraction from H1 headers or frontmatter
+
+### Text Files (.txt)
+- Plain text documents
+- Notes and simple content
+- Title extraction from first lines or explicit "Title:" prefix
+
+### Web Articles (URLs)
+- Blog posts and online articles
+- News and research publications
+- Automatic content extraction and caching
+
 ## Agent Roles
 
-The system dynamically creates agents based on paper topics:
+The system dynamically creates agents based on document topics:
 
 ### Base Roles (Always Present)
 - **Coordinator**: Manages discussion flow

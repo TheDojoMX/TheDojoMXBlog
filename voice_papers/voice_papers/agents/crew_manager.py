@@ -981,11 +981,12 @@ class CrewManager:
             The script MUST follow the Voice Papers style guide structure:
             
             1. NARRATIVE STRUCTURE (from style guide):
-               - START with one of these hook types, not exactly, just use the style guide:
-                 • Escenario relatable: "Digamos que estás planeando unas vacaciones con tu familia..."
-                 • Contexto histórico: "En octubre de 1997, en Atlanta Georgia..."
-                 • Alarma/problema: "Si eres como yo, ya te están sonando las alarmas..."
-                 • Pregunta intrigante: "¿Alguna vez te has preguntado por qué...?"
+               - START with a hook that's SPECIFIC to the paper's topic. Choose from these types:
+                 • Escenario relatable: Create a scenario relevant to the paper's subject
+                 • Contexto histórico: Find a historical moment related to the field
+                 • Alarma/problema: Identify a current challenge in the domain
+                 • Pregunta intrigante: Pose a thought-provoking question about the topic
+               - The hook MUST relate directly to the paper's content, not use generic examples
                - THEN naturally introduce "{paper_title}" after the hook, if not stated explicitly do not use it
                - Structure as three acts when possible: Problema → Solución → Implicaciones
                - NEVER start with: "En resumen", "Hoy vamos a hablar de", "Este es un resumen de"

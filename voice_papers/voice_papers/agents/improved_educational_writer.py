@@ -13,7 +13,7 @@ def get_improved_educational_writer(llm) -> Agent:
         transforming academic papers into fascinating audio narratives. You've studied the best 
         science communicators and developed your own unique style that combines:
         
-        - Engaging hooks and relatable scenarios (like the vacation planning example)
+        - Engaging hooks and relatable scenarios tailored to each topic
         - Three-act narrative structure (Problem → Solution → Implications)
         - Natural conversational flow with strategic questions
         - Technical accuracy with accessible explanations
@@ -84,19 +84,35 @@ def create_enhanced_educational_task(
     return f"""
 Transform all the insights from the conversation into an educational podcast script in {language}.
 
-### 1. INICIO- EJEMPLOS DE GANCHOS (el estilo, no el contenido):
+### 1. INICIO - PRINCIPIOS PARA CREAR GANCHOS:
 
-**Opción 1 - Escenario Relatable:**
-"Digamos que estás planeando unas vacaciones con tu familia. Has revisado cientos de reseñas en línea, comparado precios en docenas de sitios web, y todavía no estás seguro de haber tomado la mejor decisión. ¿Te suena familiar? Bueno, resulta que..."
+**IMPORTANTE: Crea un gancho ESPECÍFICO al tema del paper. NO uses estos ejemplos literalmente, son solo para mostrar el estilo.**
 
-**Opción 2 - Contexto Histórico:**
-"En octubre de 1997, en Atlanta Georgia, algo extraño sucedió. Un supercomputador llamado Deep Blue acababa de derrotar al campeón mundial de ajedrez, y de repente, todo el mundo empezó a preguntarse..."
+**Tipo 1 - Escenario Relatable (adapta al tema):**
+- Para IA/ML: Situaciones con algoritmos de recomendación, filtros de spam, asistentes virtuales
+- Para medicina: Experiencias en hospitales, síntomas comunes, decisiones de salud
+- Para física: Fenómenos cotidianos, desde el café caliente hasta los imanes del refrigerador
+- Para economía: Compras diarias, inversiones, decisiones financieras personales
 
-**Opción 3 - Alarma/Problema:**
-"Si eres como yo, ya te están sonando las alarmas. Cada vez que abres tu teléfono, hay una nueva aplicación de IA prometiendo revolucionar tu vida. Pero aquí está el problema real..."
+**Tipo 2 - Contexto Histórico (busca momentos clave del campo):**
+- Descubrimientos fundamentales en el área
+- Momentos de cambio de paradigma
+- Historias de científicos o investigadores relevantes
+- Eventos que marcaron el campo de estudio
 
-**Opción 4 - Pregunta Intrigante:**
-"¿Alguna vez te has preguntado por qué tu perro ladra justo antes de que llegues a casa, incluso cuando cambias tu horario? La respuesta tiene que ver con algo mucho más profundo que..."
+**Tipo 3 - Problema Actual (identifica tensiones del presente):**
+- Desafíos tecnológicos actuales
+- Dilemas éticos del campo
+- Limitaciones que todos enfrentamos
+- Problemas sin resolver que afectan a la sociedad
+
+**Tipo 4 - Pregunta Provocadora (genera curiosidad genuina):**
+- Paradojas del campo de estudio
+- Preguntas que desafían intuiciones
+- Misterios aún sin resolver
+- Conexiones inesperadas entre conceptos
+
+**REGLA DE ORO: El gancho debe surgir NATURALMENTE del contenido del paper, no forzarse.**
 
 NUNCA EMPIECES CON: "Hoy vamos a hablar de", "En este episodio", "Este es un resumen", etc.
 
@@ -136,13 +152,25 @@ NUNCA EMPIECES CON: "Hoy vamos a hablar de", "En este episodio", "Este es un res
 - "Pero antes de continuar, déjame explicarte..."
 - "OK, entonces ahora que entendemos eso..."
 
-### 4. EJEMPLOS Y ANALOGÍAS del siguiente estilo:
+### 4. EJEMPLOS Y ANALOGÍAS - PRINCIPIOS:
 
-**Plantilla para analogías:**
-"Es como cuando [situación cotidiana]. Tú [acción familiar], y entonces [resultado esperado]. Bueno, [concepto técnico] funciona exactamente igual, solo que en lugar de [elemento cotidiano], tienes [elemento técnico]."
+**CREA ANALOGÍAS ESPECÍFICAS AL TEMA - estos son solo patrones de estructura:**
 
-**Ejemplo concreto:**
-"Es como cuando organizas una fiesta. Tú envías invitaciones, preparas la comida, y esperas que todos lleguen a tiempo. Bueno, un algoritmo de consenso distribuido funciona exactamente igual, solo que en lugar de invitados, tienes nodos de computadora."
+**Estructura básica:**
+"Es como cuando [situación cotidiana RELEVANTE al tema]. Tú [acción familiar], y entonces [resultado esperado]. Bueno, [concepto técnico del paper] funciona de manera similar, solo que en lugar de [elemento cotidiano], tienes [elemento técnico]."
+
+**Principios para buenas analogías:**
+- USA experiencias universales pero RELEVANTES al campo
+- CONECTA con el conocimiento previo del oyente
+- MANTÉN la precisión técnica
+- EVITA analogías gastadas (el cerebro como computadora, ADN como código, etc.)
+
+**Ejemplos por campo (ADAPTA al paper específico):**
+- Algoritmos: procesos cotidianos (cocinar, organizar, clasificar)
+- Redes neuronales: sistemas de decisión humana, aprendizaje
+- Física cuántica: situaciones contraintuitivas de la vida
+- Biología: sistemas y procesos observables
+- Economía: decisiones y intercambios diarios
 
 ### 5. EXPLICACIÓN TÉCNICA EN CAPAS:
 

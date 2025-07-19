@@ -8,6 +8,7 @@ from urllib.parse import urlparse
 from .utils.pdf_reader import extract_text_from_pdf, extract_title_and_text_from_pdf
 from .utils.web_reader import extract_text_from_url, generate_cache_filename
 from .utils.text_cleaner import clean_paper_text, extract_title_from_text
+from .utils.file_reader import read_document_file
 from .agents.crew_manager import CrewManager
 from .voice.synthesizer import get_synthesizer
 from .config import ELEVENLABS_VOICE_ID
@@ -233,9 +234,14 @@ def main(
     no_knowledge_graph: bool,
     focus: str,
 ):
-    """Generate an educational audio lecture from an academic paper or web article.
+    """Generate an educational audio lecture from a document (PDF, MD, TXT) or web article.
 
-    INPUT_SOURCE can be either a PDF file path, a web article URL, or a text file.
+    INPUT_SOURCE can be:
+    - PDF file path (.pdf)
+    - Markdown file path (.md, .markdown)
+    - Text file path (.txt)
+    - Web article URL
+    
     For --direct mode, use "-" to read from stdin.
 
     Workflow modes:
@@ -449,13 +455,8 @@ def main(
         # Get text content
         if text_file:
             click.echo(f"📄 Reading text from: {text_file.name}")
-            with open(text_file, "r", encoding="utf-8") as f:
-                text_content = f.read()
-
-            # Try to extract title from content
-            title = extract_title_from_text(text_content, debug=debug_title)
-            if not title:
-                title = text_file.stem.replace("_", " ").replace("-", " ").title()
+            # Use the file reader to handle both text and markdown
+            title, text_content = read_document_file(text_file, debug=debug_title)
 
             # Set project name
             if not project_name:
@@ -479,17 +480,12 @@ def main(
                     click.echo(f"❌ File not found: {input_source}")
                     raise click.Abort()
 
-                if direct_file.suffix.lower() != ".txt":
-                    click.echo(f"❌ For direct mode, file must be .txt: {input_source}")
+                if direct_file.suffix.lower() not in [".txt", ".md", ".markdown"]:
+                    click.echo(f"❌ For direct mode, file must be .txt, .md, or .markdown: {input_source}")
                     raise click.Abort()
 
-                with open(direct_file, "r", encoding="utf-8") as f:
-                    text_content = f.read()
-
-                # Try to extract title from content
-                title = extract_title_from_text(text_content, debug=debug_title)
-                if not title:
-                    title = direct_file.stem.replace("_", " ").replace("-", " ").title()
+                # Use the file reader to handle both text and markdown
+                title, text_content = read_document_file(direct_file, debug=debug_title)
 
                 # Set project name
                 if not project_name:
@@ -645,10 +641,16 @@ def main(
             project_name = source_path.stem
 
         # Determine file type
-        if source_path.suffix.lower() == ".txt":
+        suffix = source_path.suffix.lower()
+        if suffix == ".txt":
             click.echo(f"📄 Processing text file: {source_path.name}")
-        else:
+        elif suffix in [".md", ".markdown"]:
+            click.echo(f"📝 Processing markdown file: {source_path.name}")
+        elif suffix == ".pdf":
             click.echo(f"📄 Processing PDF: {source_path.name}")
+        else:
+            click.echo(f"❌ Unsupported file type: {suffix}")
+            raise click.Abort()
 
     click.echo(f"Project: {project_name}")
     click.echo(f"Language: {language}")
@@ -714,11 +716,11 @@ def main(
                 return
         else:
             # Handle local file
-            if source_path.suffix.lower() == ".txt":
-                click.echo("⏭️  Input is already a text file, no extraction needed")
-                click.echo(f"📄 Text file: {source_path}")
+            if source_path.suffix.lower() in [".txt", ".md", ".markdown"]:
+                click.echo("⏭️  Input is already a text/markdown file, no extraction needed")
+                click.echo(f"📄 File: {source_path}")
                 return
-            else:
+            elif source_path.suffix.lower() == ".pdf":
                 # Handle PDF extraction
                 extracted_text_path = (
                     source_path.parent / f"{source_path.stem}_extracted_text.txt"
@@ -748,6 +750,9 @@ def main(
                         f"✅ PDF text extracted and saved to: {extracted_text_path}"
                     )
                     return
+            else:
+                click.echo(f"❌ Unsupported file type for extraction: {source_path.suffix}")
+                raise click.Abort()
 
     try:
         if is_web_article:
@@ -793,23 +798,25 @@ def main(
                     f.write(full_content)
                 click.echo(f"🌐 Web content cached to: {extracted_text_path}")
         else:
-            # Handle local file (PDF or text)
-            if source_path.suffix.lower() == ".txt":
-                # Handle text file directly
-                click.echo("📄 Reading text file...")
-                with open(source_path, "r", encoding="utf-8") as f:
-                    raw_text = f.read()
+            # Handle local file (PDF, MD, or TXT)
+            suffix = source_path.suffix.lower()
+            
+            if suffix in [".txt", ".md", ".markdown"]:
+                # Handle text/markdown file directly
+                click.echo(f"📄 Reading {suffix} file...")
+                extracted_title, raw_text = read_document_file(source_path, debug=debug_title)
 
-                # Try to extract title from content
-                extracted_title = extract_title_from_text(raw_text, debug=debug_title)
+                # For markdown files, preserve formatting; for text files, clean them
+                if suffix in [".md", ".markdown"]:
+                    click.echo("📝 Preserving markdown formatting...")
+                    paper_content = raw_text  # Keep markdown as-is
+                else:
+                    click.echo("🧹 Cleaning text content...")
+                    paper_content = clean_paper_text(raw_text)
 
-                # Clean the text content
-                click.echo("🧹 Cleaning text content...")
-                paper_content = clean_paper_text(raw_text)
-
-                # No need to save extracted text for .txt files since source is already text
+                # No need to save extracted text for these files since source is already text
                 extracted_text_path = None
-            else:
+            elif suffix == ".pdf":
                 # Handle PDF file
                 extracted_text_path = (
                     source_path.parent / f"{source_path.stem}_extracted_text.txt"
@@ -840,6 +847,9 @@ def main(
                     with open(extracted_text_path, "w", encoding="utf-8") as f:
                         f.write(paper_content)
                     click.echo(f"📄 Cleaned PDF text saved to: {extracted_text_path}")
+            else:
+                click.echo(f"❌ Unsupported file type: {suffix}")
+                raise click.Abort()
 
             # Use extracted title if available, otherwise fallback to filename
             if extracted_title:
