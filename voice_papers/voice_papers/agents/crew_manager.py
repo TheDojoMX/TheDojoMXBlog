@@ -13,6 +13,10 @@ from .tts_optimizer import get_tts_optimizer_agent, create_tts_optimization_task
 from .focus_agents import get_focus_agents, get_focus_specific_prompts
 from .technical_writer import get_technical_writer_agent, create_technical_writing_task
 from .light_editor import get_light_editor_agent, create_light_editing_task
+from .conversational_enhancer import (
+    get_conversational_enhancer_agent,
+    create_conversational_enhancement_task,
+)
 
 
 class CrewManager:
@@ -351,7 +355,12 @@ class CrewManager:
             
             Structure your synthesis as follows:
             
-            **TLDR:** (3-5 bullet points)
+            **FIRST LINE - TITLE:** Extract and place the actual document title as the very first line
+            - If title is provided: "{paper_title}"
+            - If no title found in content, extract it from the document
+            - Format: Just the title text on its own line, no prefix
+            
+            **TLDR:** (3-5 bullet points) - COMES AFTER THE TITLE
             - The core discovery/argument in one clear statement
             - 2-3 key findings with specific details
             - The main implication or breakthrough
@@ -1045,7 +1054,7 @@ class CrewManager:
             ✓ Rhythm: Varied sentence lengths for flow?
             
             CRITICAL DIDACTIC STRUCTURE:
-            - INTRODUCTION: Hook → Title → Preview ("En los próximos minutos descubrirás...")
+            - INTRODUCTION: Hook → Title → Preview 
             - DEVELOPMENT: Layered explanations with examples
             - CONCLUSION: Clear recap ("Hemos visto que...", "Para cerrar...")
             - The script should not be necessarily inspirational, it should be a technical explanation of content
@@ -1725,10 +1734,14 @@ class CrewManager:
                 Create a TECHNICAL SYNTHESIS that presents ONLY the facts, data, and specifications.
                 
                 CRITICAL RULES:
-                1. NO META-LANGUAGE: Never say "se presenta", "se discute", "se aborda"
-                2. Present THE ACTUAL TECHNICAL CONTENT, not that it was discussed
-                3. List specifications, methods, and results directly
-                4. Remove ALL interpretive language
+                1. FIRST LINE MUST BE THE TITLE: Extract and place the document title as the very first line
+                   - If title is provided: "{paper_title}"
+                   - If no title found, extract from content
+                   - Format: Just the title text, no "Title:" prefix
+                2. NO META-LANGUAGE: Never say "se presenta", "se discute", "se aborda"
+                3. Present THE ACTUAL TECHNICAL CONTENT, not that it was discussed
+                4. List specifications, methods, and results directly
+                5. Remove ALL interpretive language
                 
                 WRONG: "Se abordan las implicaciones del model as a service"
                 RIGHT: "El 'model as a service' implica: 1) X, 2) Y, 3) Z"
@@ -1736,7 +1749,7 @@ class CrewManager:
                 WRONG: "El análisis presenta tres métodos"
                 RIGHT: "Los tres métodos son: método A [descripción], método B [descripción], método C [descripción]"
                 
-                Structure:
+                Structure (AFTER TITLE):
                 - Technical specifications and data
                 - Methods and algorithms (as lists or steps)
                 - Results and measurements (exact numbers)
@@ -2223,4 +2236,81 @@ class CrewManager:
             f.write(str(result))
 
         print("✅ Light editing completed")
+        return str(result).strip()
+
+    def run_conversational_enhancement(
+        self, technical_script: str, paper_title: str = ""
+    ) -> str:
+        """Apply minimal conversational touch to technical content for better readability.
+
+        This is specifically for technical focus mode to create a version that's
+        slightly more natural to read aloud while preserving all technical content.
+
+        Args:
+            technical_script: The technical script to enhance
+            paper_title: Title of the paper
+
+        Returns:
+            The script with minimal conversational enhancements
+        """
+        import click
+
+        click.echo("💬 Adding conversational touch for natural reading...")
+
+        # Create conversational enhancer agent
+        enhancer = get_conversational_enhancer_agent(self.llm)
+
+        # Create enhancement task
+        enhancement_task_description = create_conversational_enhancement_task(
+            content=technical_script, language=self.language, title=paper_title
+        )
+
+        enhancement_task = Task(
+            description=enhancement_task_description,
+            agent=enhancer,
+            expected_output=f"Technical script with minimal conversational enhancements for natural {self.language} reading",
+        )
+
+        # Create a minimal crew
+        enhancement_crew = Crew(
+            agents=[enhancer], tasks=[enhancement_task], verbose=True
+        )
+
+        # Run the crew
+        result = enhancement_crew.kickoff()
+
+        # Save enhancement data
+        enhancement_data = {
+            "project": self.project_name,
+            "paper_title": paper_title,
+            "language": self.language,
+            "workflow": "conversational_enhancement",
+            "focus": self.focus,
+            "original_length": len(technical_script),
+            "enhanced_length": len(str(result)),
+            "agent": {"role": enhancer.role, "goal": enhancer.goal},
+        }
+
+        # Save workflow data
+        with open(
+            self.discussion_dir / "conversational_enhancement_workflow.json",
+            "w",
+            encoding="utf-8",
+        ) as f:
+            json.dump(enhancement_data, f, indent=2, ensure_ascii=False)
+
+        # Save both versions
+        with open(
+            self.discussion_dir / "technical_script_original.txt", "w", encoding="utf-8"
+        ) as f:
+            f.write(technical_script)
+
+        with open(
+            self.discussion_dir / "technical_script_conversational.txt",
+            "w",
+            encoding="utf-8",
+        ) as f:
+            f.write(str(result))
+
+        click.echo("✅ Conversational enhancement completed")
         return str(result).strip()

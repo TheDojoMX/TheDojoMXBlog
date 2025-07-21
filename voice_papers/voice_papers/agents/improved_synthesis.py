@@ -129,20 +129,26 @@ Content Overview:
 
 YOUR SYNTHESIS MISSION:
 
-1. **Extract Actual Content**
+1. **EXTRACT AND PLACE THE TITLE (CRITICAL - FIRST LINE)**
+   - Extract the actual title of the {content_description} from the content
+   - If no explicit title is found, create a descriptive title based on the main topic
+   - Place this as the VERY FIRST LINE of your synthesis
+   - Format: Just the title text, no quotes or "Title:" prefix
+
+2. **Extract Actual Content**
    - Present ideas, concepts, and findings directly
    - NO meta-analysis about writing style or presentation
    - State facts and arguments as if you're the expert
 
-2. **START WITH A TLDR (CRITICAL REQUIREMENT)**
-   Begin with "TLDR:" followed by 3-5 bullet points:
+3. **START WITH A TLDR (CRITICAL REQUIREMENT - AFTER TITLE)**
+   After the title, begin with "TLDR:" followed by 3-5 bullet points:
    - The main finding, concept, or thesis
    - 2-3 key supporting points or discoveries
    - The primary conclusion or application
    
    Be direct and factual - state what the content says.
 
-3. **Main Content Sections** (After TLDR, max 5 sentences per section)
+4. **Main Content Sections** (After TLDR, max 5 sentences per section)
    
    **Brief Description** (2-3 sentences max):
    - What this content is about
@@ -161,10 +167,10 @@ YOUR SYNTHESIS MISSION:
    - Final conclusions or recommendations
    - Practical applications or implications
 
-4. **Content Extraction for {content_description}**:
+5. **Content Extraction for {content_description}**:
    {approach}
 
-5. **Critical Rules**:
+6. **Critical Rules**:
    - NEVER say "the author discusses" or "the paper presents"
    - NEVER describe tone, style, or writing quality
    - NEVER give opinions about the content
@@ -172,6 +178,17 @@ YOUR SYNTHESIS MISSION:
    - ALWAYS use specific examples and data from the content
 
 REMEMBER: You're extracting and presenting the actual content, not describing it.
+
+EXAMPLE SYNTHESIS START:
+Advanced Machine Learning Approaches for Real-Time Data Processing
+
+TLDR:
+- Three novel approaches enable 10x faster real-time processing
+- Hybrid architectures combine supervised and unsupervised methods effectively
+- Applications show 87% accuracy improvement in production systems
+- New framework reduces computational costs by 60%
+
+[Rest of synthesis follows...]
 
 WRONG: "The paper discusses three approaches to machine learning"
 RIGHT: "The three approaches to machine learning are: 1) Supervised learning uses labeled data... 2) Unsupervised learning finds patterns... 3) Reinforcement learning optimizes rewards..."
@@ -347,12 +364,14 @@ class ImprovedSynthesisManager:
         
         DO NOT COMPRESS OR SYNTHESIZE FURTHER. Simply organize the extracted content logically.
         
-        Start with a TLDR section, then present all the extracted content organized by theme or topic.
+        CRITICAL: Start with the document title as the VERY FIRST LINE, then TLDR section, then content.
         
         Sections to organize:
         {json.dumps(chunk_results, indent=2)}
         
         Format as:
+        
+        {document_title}
         
         TLDR:
         • [Main finding/concept]
@@ -461,11 +480,12 @@ class ImprovedSynthesisManager:
         {kg_result}
         
         Create a synthesis that:
-        1. Starts with TLDR (3-5 bullet points)
-        2. Explains main concepts clearly
-        3. Presents findings with evidence
-        4. Includes methodology if relevant
-        5. Lists applications and examples
+        1. FIRST LINE: Place the document title "{document_title}" as the very first line
+        2. Starts with TLDR (3-5 bullet points) - AFTER the title
+        3. Explains main concepts clearly
+        4. Presents findings with evidence
+        5. Includes methodology if relevant
+        6. Lists applications and examples
         
         CRITICAL: Present the actual content, not descriptions of it.
         Write as if you're teaching these concepts directly.

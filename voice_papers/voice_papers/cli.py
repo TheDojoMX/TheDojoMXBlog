@@ -293,6 +293,13 @@ def main(
         # Determine project directory
         output_dir = tts_only.parent
         project_name = tts_only.stem.replace("_educational_script", "")
+        
+        # Extract title from the script content (first line) or use project name
+        lines = educational_script.strip().split('\n')
+        if lines and not lines[0].startswith(('TLDR:', '**', '#', '-')):
+            paper_title = lines[0].strip()
+        else:
+            paper_title = project_name.replace("_", " ").replace("-", " ").title()
 
         # Initialize crew manager for TTS optimization
         crew_manager = CrewManager(
@@ -308,9 +315,30 @@ def main(
         )
 
         click.echo("🎯 Generating TTS-optimized version...")
-        tts_script = crew_manager.run_tts_optimization_workflow(
-            educational_script, language, voice_provider
-        )
+        
+        # For technical focus, add conversational touch before TTS optimization
+        if focus == "technical":
+            click.echo("💬 Adding conversational touch for better readability...")
+            conversational_script = crew_manager.run_conversational_enhancement(
+                educational_script, paper_title=paper_title
+            )
+            
+            # Save conversational version
+            conv_filename = get_filename_with_focus(f"{project_name}_conversational", focus)
+            conv_script_path = output_dir / conv_filename
+            backup_existing_file(conv_script_path)
+            with open(conv_script_path, "w", encoding="utf-8") as f:
+                f.write(conversational_script)
+            click.echo(f"📝 Conversational script saved to: {conv_script_path}")
+            
+            # Use conversational version for TTS
+            tts_script = crew_manager.run_tts_optimization_workflow(
+                conversational_script, language, voice_provider
+            )
+        else:
+            tts_script = crew_manager.run_tts_optimization_workflow(
+                educational_script, language, voice_provider
+            )
 
         # Save TTS-optimized script with focus mode
         tts_filename = get_filename_with_focus(f"{project_name}_tts_optimized", focus)
@@ -530,9 +558,30 @@ def main(
         # Generate TTS-optimized version if requested
         if tts_optimize:
             click.echo("🎯 Generating TTS-optimized version...")
-            tts_script = crew_manager.run_tts_optimization_workflow(
-                final_script, language, voice_provider
-            )
+            
+            # For technical focus, add conversational touch before TTS optimization
+            if focus == "technical":
+                click.echo("💬 Adding conversational touch for better readability...")
+                conversational_script = crew_manager.run_conversational_enhancement(
+                    final_script, paper_title=paper_title
+                )
+                
+                # Save conversational version
+                conv_filename = get_filename_with_focus("educational_script_conversational", focus)
+                conv_script_path = crew_manager.project_dir / conv_filename
+                backup_existing_file(conv_script_path)
+                with open(conv_script_path, "w", encoding="utf-8") as f:
+                    f.write(conversational_script)
+                click.echo(f"📝 Conversational script saved to: {conv_script_path}")
+                
+                # Use conversational version for TTS
+                tts_script = crew_manager.run_tts_optimization_workflow(
+                    conversational_script, language, voice_provider
+                )
+            else:
+                tts_script = crew_manager.run_tts_optimization_workflow(
+                    final_script, language, voice_provider
+                )
 
             tts_filename = get_filename_with_focus("educational_script_tts", focus)
             tts_script_path = crew_manager.project_dir / tts_filename
@@ -927,9 +976,32 @@ def main(
 
                 # Generate TTS if requested
                 if tts_optimize:
-                    tts_script = focus_crew_manager.run_tts_optimization_workflow(
-                        final_script, language, voice_provider
-                    )
+                    # For technical focus, add conversational touch before TTS optimization
+                    if current_focus == "technical":
+                        click.echo("💬 Adding conversational touch for better readability...")
+                        conversational_script = focus_crew_manager.run_conversational_enhancement(
+                            final_script, paper_title=paper_title
+                        )
+                        
+                        # Save conversational version
+                        conv_filename = get_filename_with_focus(
+                            "educational_script_conversational", current_focus
+                        )
+                        conv_script_path = focus_crew_manager.project_dir / conv_filename
+                        backup_existing_file(conv_script_path)
+                        with open(conv_script_path, "w", encoding="utf-8") as f:
+                            f.write(conversational_script)
+                        click.echo(f"📝 Conversational script saved to: {conv_script_path}")
+                        
+                        # Use conversational version for TTS
+                        tts_script = focus_crew_manager.run_tts_optimization_workflow(
+                            conversational_script, language, voice_provider
+                        )
+                    else:
+                        tts_script = focus_crew_manager.run_tts_optimization_workflow(
+                            final_script, language, voice_provider
+                        )
+                    
                     tts_filename = get_filename_with_focus(
                         "educational_script_tts", current_focus
                     )
@@ -1024,9 +1096,30 @@ def main(
                 # Generate TTS-optimized version if requested
                 if tts_optimize:
                     click.echo("🎯 Generating TTS-optimized version...")
-                    tts_script = crew_manager.run_tts_optimization_workflow(
-                        final_script, language, voice_provider
-                    )
+                    
+                    # For technical focus, add conversational touch before TTS optimization
+                    if focus == "technical":
+                        click.echo("💬 Adding conversational touch for better readability...")
+                        conversational_script = crew_manager.run_conversational_enhancement(
+                            final_script, paper_title=title
+                        )
+                        
+                        # Save conversational version
+                        conv_filename = get_filename_with_focus("educational_script_conversational.txt", focus)
+                        conv_script_path = crew_manager.project_dir / conv_filename
+                        backup_existing_file(conv_script_path)
+                        with open(conv_script_path, "w", encoding="utf-8") as f:
+                            f.write(conversational_script)
+                        click.echo(f"📝 Conversational script saved to: {conv_script_path}")
+                        
+                        # Use conversational version for TTS
+                        tts_script = crew_manager.run_tts_optimization_workflow(
+                            conversational_script, language, voice_provider
+                        )
+                    else:
+                        tts_script = crew_manager.run_tts_optimization_workflow(
+                            final_script, language, voice_provider
+                        )
 
                     tts_filename = get_filename_with_focus(
                         "educational_script_tts.txt", focus
@@ -1224,9 +1317,30 @@ def main(
         # Generate TTS-optimized version if requested
         if tts_optimize:
             click.echo("🎯 Generating TTS-optimized version...")
-            tts_script = crew_manager.run_tts_optimization_workflow(
-                final_script, language, voice_provider
-            )
+            
+            # For technical focus, add conversational touch before TTS optimization
+            if focus == "technical":
+                click.echo("💬 Adding conversational touch for better readability...")
+                conversational_script = crew_manager.run_conversational_enhancement(
+                    final_script, paper_title=paper_title
+                )
+                
+                # Save conversational version
+                conv_filename = get_filename_with_focus("educational_script_conversational", focus)
+                conv_script_path = crew_manager.project_dir / conv_filename
+                backup_existing_file(conv_script_path)
+                with open(conv_script_path, "w", encoding="utf-8") as f:
+                    f.write(conversational_script)
+                click.echo(f"📝 Conversational script saved to: {conv_script_path}")
+                
+                # Use conversational version for TTS
+                tts_script = crew_manager.run_tts_optimization_workflow(
+                    conversational_script, language, voice_provider
+                )
+            else:
+                tts_script = crew_manager.run_tts_optimization_workflow(
+                    final_script, language, voice_provider
+                )
 
             tts_filename = get_filename_with_focus("educational_script_tts", focus)
             tts_script_path = crew_manager.project_dir / tts_filename
