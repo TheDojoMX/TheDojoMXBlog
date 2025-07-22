@@ -1591,24 +1591,26 @@ class CrewManager:
 
         # Create agents based on focus mode
         if self.focus == "technical":
-            # Use technical agents for zero interpretation
+            # Use objective knowledge extraction agents for zero interpretation
             chunk_analyzer = Agent(
-                role="Technical Document Analyzer",
-                goal="Extract facts, data, and specifications from each section with zero interpretation",
-                backstory="""You are a technical documentation specialist. You extract information
-                exactly as stated without adding any interpretation, implications, or subjective language.
-                You remove interpretive adjectives like 'revolutionary', 'groundbreaking', etc.
-                You present only facts, methods, and results.""",
+                role="Objective Content Analyzer",
+                goal="Extract ALL factual knowledge from each section with zero interpretation",
+                backstory="""You are an expert at extracting pure knowledge from content. You extract
+                facts, concepts, declarations, examples, and explanations exactly as stated without adding
+                any interpretation, implications, or subjective language. You capture ALL objective information:
+                data points, definitions, claims made, methods described, examples given, and comparisons made.
+                You remove ALL interpretive adjectives and present only what IS stated.""",
                 llm=self.llm,
                 verbose=True,
             )
 
             synthesizer = Agent(
-                role="Technical Synthesizer",
-                goal="Combine section analyses into a factual, objective technical summary",
-                backstory="""You combine technical information without interpretation. You organize
-                facts, data, and methods in a clear structure. You never add implications or suggestions
-                beyond what's explicitly stated. You maintain objectivity and technical accuracy.""",
+                role="Objective Knowledge Synthesizer",
+                goal="Combine section analyses into a comprehensive collection of extracted knowledge",
+                backstory="""You combine all extracted knowledge without interpretation. You organize
+                facts, concepts, definitions, examples, and explanations in a clear structure. You never
+                add implications or suggestions beyond what's explicitly stated. You present the complete
+                picture of what was learned from the content with zero subjectivity.""",
                 llm=self.llm,
                 verbose=True,
             )
@@ -1691,28 +1693,40 @@ class CrewManager:
             chunk_tasks = []
             for i, chunk in enumerate(chunks):
                 if self.focus == "technical":
-                    # Technical analysis prompt - zero interpretation
+                    # Objective knowledge extraction prompt - zero interpretation
                     chunk_description = f"""
-                    Extract technical information from this section.
+                    Extract ALL factual knowledge from this section.
                     
                     CRITICAL RULES:
                     1. NEVER use meta-language: "el documento presenta", "se discute", "el análisis aborda"
-                    2. Extract and list THE ACTUAL CONTENT, not that it was discussed
-                    3. If the text says "tres enfoques principales", LIST what those approaches ARE
-                    4. Present data, specifications, and methods directly
+                    2. Extract THE ACTUAL KNOWLEDGE: facts, concepts, examples, explanations
+                    3. If text mentions "tres enfoques", EXTRACT what those approaches ARE
+                    4. Present ALL objective information: data, definitions, claims, methods
+                    
+                    EXTRACT:
+                    - Facts and data (ALL numbers, dates, measurements)
+                    - Concepts (definitions, what things ARE)
+                    - Statements made (claims, positions, declarations)
+                    - Examples (ALL instances, cases, applications mentioned)
+                    - Explanations (how things work, why things happen)
+                    - Comparisons (X vs Y, differences, similarities)
+                    - Methods/processes (steps, procedures, techniques)
                     
                     WRONG: "El documento presenta tres enfoques"
-                    RIGHT: "Los tres enfoques son: [list actual approaches if mentioned]"
+                    RIGHT: "Los tres enfoques son: [extract actual approaches]"
                     
-                    WRONG: "Se discute una reducción de costos del 40%"
+                    WRONG: "Se discute una innovadora reducción de costos del 40%"
                     RIGHT: "Reducción de costos: 40%"
+                    
+                    WRONG: "El análisis revela fascinantes implicaciones"
+                    RIGHT: "Implicaciones: [list actual implications mentioned]"
                     
                     Content to analyze:
                     {chunk.content}
                     
-                    Extract and present the ACTUAL technical information. If specific details aren't provided, state what IS provided.
+                    Extract ALL knowledge. Present facts, not descriptions of facts.
                     """
-                    expected = f"Direct technical content from {chunk.section_title} - no meta-language"
+                    expected = f"All objective knowledge from {chunk.section_title} - zero interpretation"
                 else:
                     chunk_description = chunker.create_chunk_summary_prompt(
                         chunk, paper_title
@@ -1729,9 +1743,9 @@ class CrewManager:
             # Create synthesis task
             if self.focus == "technical":
                 synthesis_description = f"""
-                You have received technical analyses of all {len(chunks)} sections.
+                You have received objective analyses of all {len(chunks)} sections.
                 
-                Create a TECHNICAL SYNTHESIS that presents ONLY the facts, data, and specifications.
+                Create an OBJECTIVE KNOWLEDGE SYNTHESIS that extracts ALL factual content without interpretation.
                 
                 CRITICAL RULES:
                 1. FIRST LINE MUST BE THE TITLE: Extract and place the document title as the very first line
@@ -1739,23 +1753,35 @@ class CrewManager:
                    - If no title found, extract from content
                    - Format: Just the title text, no "Title:" prefix
                 2. NO META-LANGUAGE: Never say "se presenta", "se discute", "se aborda"
-                3. Present THE ACTUAL TECHNICAL CONTENT, not that it was discussed
-                4. List specifications, methods, and results directly
-                5. Remove ALL interpretive language
+                3. Extract THE ACTUAL KNOWLEDGE: facts, concepts, declarations, examples
+                4. Present ALL objective information: data, definitions, explanations, methods
+                5. Remove ALL interpretive language and subjective adjectives
                 
-                WRONG: "Se abordan las implicaciones del model as a service"
-                RIGHT: "El 'model as a service' implica: 1) X, 2) Y, 3) Z"
+                EXTRACT AND PRESENT:
+                - Facts and data (numbers, statistics, measurements)
+                - Concepts and definitions (what things ARE)
+                - Declarations made (statements, claims, positions)
+                - Examples provided (cases, instances, applications)
+                - Explanations given (how things work)
+                - Methods described (processes, procedures)
+                - Comparisons made
+                - Historical information
                 
-                WRONG: "El análisis presenta tres métodos"
-                RIGHT: "Los tres métodos son: método A [descripción], método B [descripción], método C [descripción]"
+                WRONG: "Se abordan las implicaciones revolucionarias del model as a service"
+                RIGHT: "El 'model as a service': 1) Definición: X, 2) Funciona mediante: Y, 3) Ejemplos: Z"
+                
+                WRONG: "El innovador análisis presenta tres métodos"
+                RIGHT: "Los tres métodos son: método A [qué es y cómo funciona], método B [descripción], método C [proceso]"
                 
                 Structure (AFTER TITLE):
-                - Technical specifications and data
-                - Methods and algorithms (as lists or steps)
-                - Results and measurements (exact numbers)
-                - System components and architecture
+                - Key facts and data points
+                - Concepts and definitions
+                - Statements and claims made
+                - Examples and applications
+                - Methods and processes
+                - Results and findings
                 
-                Present ONLY factual technical information. Zero interpretation.
+                Present ALL extractable knowledge. Zero interpretation. Complete objectivity.
                 """
             else:
                 synthesis_description = f"""
