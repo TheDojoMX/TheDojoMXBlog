@@ -753,11 +753,11 @@ def main(
 
                 # Save as markdown file for better preservation
                 markdown_path = cache_dir / cache_filename.replace(".txt", ".md")
-                with open(markdown_path, "w", encoding="utf-8") as f:
+                with open(markdown_path, "w", encoding="utf-8", errors="replace") as f:
                     f.write(full_content)
 
                 # Also save as txt for compatibility
-                with open(extracted_text_path, "w", encoding="utf-8") as f:
+                with open(extracted_text_path, "w", encoding="utf-8", errors="replace") as f:
                     f.write(full_content)
                 click.echo(
                     f"✅ Web content extracted and saved to: {extracted_text_path}"
@@ -839,11 +839,11 @@ def main(
 
                 # Save as markdown file for better preservation
                 markdown_path = cache_dir / cache_filename.replace(".txt", ".md")
-                with open(markdown_path, "w", encoding="utf-8") as f:
+                with open(markdown_path, "w", encoding="utf-8", errors="replace") as f:
                     f.write(full_content)
 
                 # Also save as txt for compatibility
-                with open(extracted_text_path, "w", encoding="utf-8") as f:
+                with open(extracted_text_path, "w", encoding="utf-8", errors="replace") as f:
                     f.write(full_content)
                 click.echo(f"🌐 Web content cached to: {extracted_text_path}")
         else:

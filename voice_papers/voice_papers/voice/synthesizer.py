@@ -64,7 +64,8 @@ class ElevenLabsSynthesizer(VoiceSynthesizer):
     # Voice mapping from short names to ElevenLabs voice IDs
     VOICE_MAP = {
         "ana": "m7yTemJqdIqrcNleANfX",  # Ana - Spanish female voice
-        "hectorip": "njx36XSgu0GyZ0cOjzj0",  # HectorIP - Custom voice
+        # "hectorip": "njx36XSgu0GyZ0cOjzj0",  # HectorIP - Custom voice (old)
+        "hectorip": "aCSsHgeLIBCZsdlBEwpH",  # HectorIP - Custom voice
         "rachel": "sDh3eviBhiuHKi0MjTNq",  # Rachel - English female voice (default)
     }
 

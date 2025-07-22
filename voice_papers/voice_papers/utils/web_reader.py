@@ -404,7 +404,16 @@ def extract_text_from_url(url: str) -> Tuple[str, str]:
     Returns:
         Tuple of (title, content)
     """
-    # Try improved extractor first for better markdown preservation
+    # Try Trafilatura first - it's the most robust
+    try:
+        from .web_reader_trafilatura import extract_text_from_url_trafilatura
+        return extract_text_from_url_trafilatura(url)
+    except ImportError:
+        print("Trafilatura not available, falling back to improved extractor")
+    except Exception as e:
+        print(f"Trafilatura extraction failed: {e}")
+    
+    # Try improved extractor for better markdown preservation
     try:
         from .web_reader_improved import extract_text_from_url_improved
         return extract_text_from_url_improved(url)

@@ -40,19 +40,29 @@ def get_technical_writer_agent(llm: LLM) -> Agent:
         - Make connections not explicitly made
         - Add emotional color or opinions
         - Talk ABOUT the content: "Se presenta...", "El documento aborda..."
+        - Present opinions as facts without attribution
         
         You ALWAYS:
-        - State knowledge directly: "X is Y" not "The author argues X is Y"
-        - Present THE KNOWLEDGE ITSELF, not that it was discussed
-        - Extract definitions: "Machine learning is defined as..."
-        - List concepts: "The three types are: A, B, and C"
-        - State facts: "The population increased by 23%"
-        - Present examples: "For instance, Company X implemented..."
-        - Describe processes: "The method works by: 1) step one 2) step two"
+        - DISTINGUISH between facts and opinions/claims
+        - ATTRIBUTE opinions and claims to their sources
+        - Use attribution phrases for opinions: "According to X...", "The author claims...", "X argues that..."
+        - Present verifiable facts directly: "The population is 10 million"
+        - Present opinions with attribution: "According to the author, AI will transform society"
+        - Preserve the distinction: "The study reports 95% accuracy" vs "Researchers claim this is revolutionary"
+        - Use clear markers for opinions: "In Smith's view...", "The paper argues...", "The authors believe..."
         
         EXTRACTION EXAMPLES:
         From: "The revolutionary study reveals that meditation reduces stress by 40%"
-        Extract: "Meditation reduces stress by 40%"
+        Extract: "A study found that meditation reduces stress by 40%"
+        
+        From: "AI will revolutionize healthcare in the next decade"
+        Extract: "The author claims AI will revolutionize healthcare in the next decade"
+        
+        From: "This is the most important development in computing"
+        Extract: "According to the author, this is the most important development in computing"
+        
+        From: "Research proves that exercise improves mental health"
+        Extract: "Research indicates that exercise improves mental health"
         
         From: "Se presentan tres enfoques innovadores para el problema"
         Extract: "Los tres enfoques son: [list actual approaches]"
@@ -100,10 +110,10 @@ WHAT TO EXTRACT:
    - Components and structures
    
 3. **DECLARATIONS AND STATEMENTS**:
-   - Direct quotes
-   - Claims made
-   - Positions stated
-   - Opinions expressed (marked as such)
+   - Direct quotes (with attribution)
+   - Claims made (attribute to source: "The author claims...")
+   - Positions stated (attribute: "According to X...")
+   - Opinions expressed (clearly marked: "In the author's opinion...")
    
 4. **EXAMPLES AND CASES**:
    - Specific instances mentioned
@@ -175,12 +185,15 @@ REMOVE INTERPRETIVE WORDS:
 EXAMPLES OF CORRECT STYLE:
 ✅ "The approach uses three components: A, B, and C."
 ✅ "The study found X increased by 47%. Additionally, processing time decreased by 30%."
-✅ "The algorithm consists of four steps: [list steps]. Furthermore, each step operates independently."
+✅ "According to the author, this represents a significant advancement in the field."
 ✅ "The framework defines Y as Z. The system also includes error handling mechanisms."
-✅ "Results show 95% accuracy. The method processes 1000 items per second."
-✅ "El 'model as a service' implica: 1) reducción de costos, 2) escalabilidad automática, 3) mantenimiento simplificado"
-✅ "Los tres enfoques son: enfoque A utiliza X, enfoque B emplea Y, enfoque C implementa Z"
-✅ "La arquitectura consta de cinco capas: capa de entrada, procesamiento, análisis, optimización y salida"
+✅ "Results show 95% accuracy. The researchers claim this outperforms existing methods."
+✅ "Smith argues that AI will replace most programming tasks within 5 years."
+✅ "The paper reports a 40% reduction in processing time."
+✅ "In the author's view, traditional approaches are becoming obsolete."
+✅ "El estudio encontró que el 'model as a service' reduce costos en un 60%."
+✅ "Según los autores, esto representa un cambio fundamental en la industria."
+✅ "Los investigadores afirman que su método supera a los enfoques tradicionales."
 
 CONVERSION EXAMPLES:
 - "Revolutionary deep learning architecture" → "Deep learning architecture"
@@ -193,6 +206,29 @@ CONVERSION EXAMPLES:
 - "Se discuten las ventajas" → "Las ventajas incluyen: 1) X, 2) Y, 3) Z"
 - "La síntesis explora" → [Present the actual content being explored]
 - "Se analizan los resultados" → "Los resultados muestran..."
+
+CRITICAL DISTINCTION - FACTS VS OPINIONS:
+
+FACTS (present directly):
+- "The system processes 1000 requests per second"
+- "The study included 500 participants"
+- "The algorithm has O(n log n) complexity"
+- "Temperature increased by 2.5 degrees"
+
+OPINIONS/CLAIMS (always attribute):
+- "According to the author, this is the future of computing"
+- "The researchers believe this will transform the industry"
+- "Smith argues that current methods are inadequate"
+- "The paper claims this approach is superior"
+
+ATTRIBUTION PHRASES TO USE:
+- "According to [source]..."
+- "The author(s) claim/argue/believe/suggest..."
+- "In [source]'s view/opinion..."
+- "[Source] states/asserts/maintains..."
+- "The paper reports/indicates..."
+- "Research suggests..." (for findings)
+- "The study found..." (for data)
 
 TARGET LENGTH: {target_length}
 LANGUAGE: {language}

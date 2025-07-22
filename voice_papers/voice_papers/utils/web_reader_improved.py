@@ -663,8 +663,30 @@ class ImprovedWebArticleExtractor:
         soup = BeautifulSoup(response.content, "lxml")
         title = self._extract_best_title(soup, url)
         
+        # Detect encoding properly
+        encoding = response.encoding
+        if encoding is None or encoding == 'ISO-8859-1':
+            # Try to detect from content
+            if response.content.startswith(b'\xef\xbb\xbf'):  # UTF-8 BOM
+                encoding = 'utf-8-sig'
+            else:
+                # Try UTF-8 first
+                try:
+                    response.content.decode('utf-8')
+                    encoding = 'utf-8'
+                except UnicodeDecodeError:
+                    # Fall back to response.apparent_encoding or latin-1
+                    encoding = response.apparent_encoding or 'latin-1'
+        
+        # Decode content with proper encoding
+        try:
+            html_content = response.content.decode(encoding)
+        except (UnicodeDecodeError, AttributeError):
+            # If all else fails, try with errors='replace'
+            html_content = response.content.decode('utf-8', errors='replace')
+        
         # Use html2text directly on the HTML
-        markdown_content = self.h2t.handle(response.text)
+        markdown_content = self.h2t.handle(html_content)
         
         # Clean up the markdown
         markdown_content = self._clean_markdown_content(markdown_content)
@@ -713,4 +735,20 @@ def extract_text_from_url_improved(url: str) -> Tuple[str, str]:
         Tuple of (title, markdown_content)
     """
     extractor = ImprovedWebArticleExtractor()
-    return extractor.extract_article_from_url(url)
+    result = extractor.extract_article_from_url(url)
+    
+    # Ensure we always return a tuple
+    if isinstance(result, tuple) and len(result) == 2:
+        return result
+    elif isinstance(result, str):
+        # If only one string returned, use it as content and extract title from it
+        lines = result.split('\n')
+        if lines and lines[0].startswith('# '):
+            title = lines[0][2:].strip()
+            content = '\n'.join(lines[1:])
+            return title, content
+        else:
+            # Fallback title
+            return "Untitled", result
+    else:
+        raise ValueError(f"Unexpected return type from extractor: {type(result)}")
