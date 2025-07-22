@@ -18,6 +18,21 @@ def get_conversational_enhancer_agent(llm) -> Agent:
     )
 
 
+def get_technical_conversational_agent(llm) -> Agent:
+    """Create a specialized agent for technical content that structures knowledge naturally."""
+    return Agent(
+        role="Technical Knowledge Presenter",
+        goal="Present extracted objective knowledge in a natural, flowing structure for spoken delivery",
+        backstory="""You are an expert at taking extracted factual knowledge and presenting it in a 
+        natural, conversational structure while maintaining complete objectivity. You organize facts,
+        concepts, and examples into a flowing narrative without adding any interpretation or new content.
+        You create smooth transitions between topics and group related information logically.
+        Your goal is to make the knowledge easy to follow when read aloud.""",
+        llm=llm,
+        verbose=True,
+    )
+
+
 def create_conversational_enhancement_task(
     content: str,
     language: str = "Spanish",
@@ -86,6 +101,78 @@ That's IT. One connector added. Nothing else.
 CRITICAL: If the text already flows well, ADD NOTHING. Better to add too little than too much.
 
 Your output should be 99% identical to the input, with only 5-10 single-word or two-word connectors added.
+
+Language: {language}
+"""
+
+
+def create_technical_conversational_task(
+    content: str,
+    language: str = "Spanish",
+    title: str = ""
+) -> str:
+    """Create task for presenting technical/objective content in a natural structure."""
+    
+    return f"""
+Transform this extracted objective knowledge into a naturally flowing presentation while preserving ALL content.
+
+DOCUMENT: {title if title else "Objective Knowledge"}
+
+EXTRACTED KNOWLEDGE TO STRUCTURE:
+{content}
+
+YOUR MISSION: Present ALL the extracted knowledge in a natural, conversational flow for spoken delivery.
+
+REQUIREMENTS:
+
+1. **PRESERVE ALL CONTENT**:
+   - Keep EVERY fact, concept, example, and explanation
+   - Don't remove or summarize anything
+   - Maintain all data points and details
+   - Keep technical accuracy
+
+2. **CREATE NATURAL FLOW**:
+   - Group related concepts together
+   - Create smooth transitions between topics
+   - Use a logical progression of ideas
+   - Build from basic to complex when possible
+
+3. **CONVERSATIONAL STRUCTURE**:
+   - Start with an overview of what will be covered
+   - Present definitions before using terms
+   - Group examples with their concepts
+   - Create narrative bridges between sections
+   - End sections with natural transitions
+
+4. **LANGUAGE TECHNIQUES**:
+   - Use phrases like: "Empecemos con...", "Ahora veamos...", "Esto nos lleva a..."
+   - Create connections: "Como vimos...", "Relacionado con esto..."
+   - Signal topic changes: "Pasando a otro aspecto..."
+   - Summarize sections: "En resumen, hemos visto que..."
+
+5. **DO NOT**:
+   - Add new information or examples
+   - Interpret or evaluate
+   - Remove any content
+   - Change facts or data
+   - Add opinions or subjective language
+
+EXAMPLE TRANSFORMATION:
+BEFORE (extracted knowledge):
+"Definición: X es Y.
+Tipos: A, B, C.
+Ejemplo: Empresa Z usa A.
+Resultados: 45% mejora."
+
+AFTER (natural presentation):
+"Empecemos entendiendo qué es X. X se define como Y. 
+
+Existen tres tipos principales: A, B y C. Para ver cómo funciona esto en la práctica, 
+tenemos el ejemplo de la Empresa Z, que implementó el tipo A. 
+
+Los resultados fueron significativos, con una mejora del 45%."
+
+The goal is to make the knowledge flow naturally for listening while keeping ALL objective content intact.
 
 Language: {language}
 """

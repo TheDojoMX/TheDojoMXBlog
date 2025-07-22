@@ -2283,18 +2283,32 @@ class CrewManager:
 
         click.echo("💬 Adding conversational touch for natural reading...")
 
-        # Create conversational enhancer agent
-        enhancer = get_conversational_enhancer_agent(self.llm)
-
-        # Create enhancement task
-        enhancement_task_description = create_conversational_enhancement_task(
-            content=technical_script, language=self.language, title=paper_title
+        # Import the technical conversational functions
+        from .conversational_enhancer import (
+            get_technical_conversational_agent,
+            create_technical_conversational_task
         )
+
+        # Use different agent and task based on focus
+        if self.focus == "technical":
+            # For technical focus, restructure the knowledge naturally
+            enhancer = get_technical_conversational_agent(self.llm)
+            enhancement_task_description = create_technical_conversational_task(
+                content=technical_script, language=self.language, title=paper_title
+            )
+            expected_output = f"Naturally structured presentation of objective knowledge in {self.language}"
+        else:
+            # For other focuses, just add minimal connectors
+            enhancer = get_conversational_enhancer_agent(self.llm)
+            enhancement_task_description = create_conversational_enhancement_task(
+                content=technical_script, language=self.language, title=paper_title
+            )
+            expected_output = f"Technical script with minimal conversational enhancements for natural {self.language} reading"
 
         enhancement_task = Task(
             description=enhancement_task_description,
             agent=enhancer,
-            expected_output=f"Technical script with minimal conversational enhancements for natural {self.language} reading",
+            expected_output=expected_output,
         )
 
         # Create a minimal crew
