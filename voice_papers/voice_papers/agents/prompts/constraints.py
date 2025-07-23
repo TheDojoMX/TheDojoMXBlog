@@ -94,12 +94,12 @@ class Constraints:
     # ============== LANGUAGE-SPECIFIC CONSTRAINTS ==============
     
     SPANISH_CONSTRAINTS = {
-        "avoid_anglicisms": [
-            "machine learning" → "aprendizaje automático",
-            "deep learning" → "aprendizaje profundo",
-            "framework" → "marco de trabajo",
-            "benchmark" → "punto de referencia"
-        ],
+        "avoid_anglicisms": {
+            "machine learning": "aprendizaje automático",
+            "deep learning": "aprendizaje profundo",
+            "framework": "marco de trabajo",
+            "benchmark": "punto de referencia"
+        },
         "natural_expressions": [
             "De hecho", "Es decir", "Por ejemplo",
             "En otras palabras", "Dicho de otro modo"

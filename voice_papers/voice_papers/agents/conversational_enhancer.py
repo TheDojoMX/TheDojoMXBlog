@@ -1,33 +1,45 @@
-"""Conversational enhancer agent for adding light conversational touch to technical content."""
+"""Conversational enhancer agents using centralized prompt management."""
 
 from crewai import Agent, Task
 from typing import Optional
+from .prompts import PromptComposer, TaskPrompts
 
 
 def get_conversational_enhancer_agent(llm) -> Agent:
-    """Create a Conversational Enhancer agent that adds subtle conversational elements."""
+    """Create a Conversational Enhancer agent using centralized prompts."""
+    composer = PromptComposer()
+    
+    backstory = composer.compose_agent_prompt(
+        agent_type="conversational_enhancer",
+        focus="minimal",
+        language="Spanish",
+        tone="neutral"
+    )
+    
     return Agent(
         role="Minimal TTS Enhancer",
         goal="Add ONLY essential connector words to improve text-to-speech flow without changing content",
-        backstory="""You are an expert at making technical content flow better for TTS synthesis.
-        You make EXTREMELY MINIMAL changes - only adding essential connector words where absolutely necessary.
-        You NEVER add explanations, examples, or change the meaning. Your changes are barely noticeable.
-        Think of yourself as adding only the minimum punctuation and connectors needed for natural speech.""",
+        backstory=backstory,
         llm=llm,
         verbose=True,
     )
 
 
 def get_technical_conversational_agent(llm) -> Agent:
-    """Create a specialized agent for technical content that structures knowledge naturally."""
+    """Create a specialized agent for technical content using centralized prompts."""
+    composer = PromptComposer()
+    
+    backstory = composer.compose_agent_prompt(
+        agent_type="technical_conversational",
+        focus="technical",
+        language="Spanish",
+        tone="neutral"
+    )
+    
     return Agent(
         role="Technical Knowledge Presenter",
         goal="Present extracted objective knowledge in a natural, flowing structure for spoken delivery",
-        backstory="""You are an expert at taking extracted factual knowledge and presenting it in a 
-        natural, conversational structure while maintaining complete objectivity. You organize facts,
-        concepts, and examples into a flowing narrative without adding any interpretation or new content.
-        You create smooth transitions between topics and group related information logically.
-        Your goal is to make the knowledge easy to follow when read aloud.""",
+        backstory=backstory,
         llm=llm,
         verbose=True,
     )
@@ -38,72 +50,15 @@ def create_conversational_enhancement_task(
     language: str = "Spanish",
     title: str = ""
 ) -> str:
-    """Create task for adding conversational touch to technical content."""
+    """Create task for adding conversational touch to technical content.
     
-    language_connectors = {
-        "Spanish": {
-            "connectors": ["Ahora bien", "Por otro lado", "Es decir", "En otras palabras", 
-                          "Además", "Sin embargo", "Por ejemplo", "De hecho", "Así que",
-                          "Entonces", "Como resultado", "Por lo tanto"],
-            "softeners": ["podemos ver que", "es interesante notar que", "vale la pena mencionar que",
-                         "como veremos", "esto significa que", "lo que encontramos es que"],
-            "transitions": ["Pasando a", "Si miramos", "Cuando consideramos", "Al examinar"],
-        },
-        "English": {
-            "connectors": ["Now", "On the other hand", "That is", "In other words",
-                          "Additionally", "However", "For instance", "In fact", "So",
-                          "Therefore", "As a result", "Consequently"],
-            "softeners": ["we can see that", "it's interesting to note that", "it's worth mentioning that",
-                         "as we'll see", "this means that", "what we find is that"],
-            "transitions": ["Moving on to", "If we look at", "When we consider", "Examining"],
-        }
-    }
-    
-    lang_data = language_connectors.get(language, language_connectors["Spanish"])
-    
-    return f"""
-Add ONLY the MINIMUM connector words needed for text-to-speech flow. DO NOT modify content.
-
-DOCUMENT: {title if title else "Technical Content"}
-
-CONTENT TO ENHANCE:
-{content}
-
-ULTRA-MINIMAL CHANGES ONLY - YOU MUST:
-
-1. ADD ONLY THESE SPECIFIC CONNECTORS (maximum 5-10 in the entire text):
-   - Between abrupt transitions: "{lang_data['connectors'][0]}", "{lang_data['connectors'][1]}"
-   - For clarification: "{lang_data['connectors'][2]}"
-   - Maximum ONE connector every 3-4 paragraphs
-   
-2. FORBIDDEN CHANGES:
-   - NO adding phrases like "es interesante", "vale la pena", etc.
-   - NO softening statements
-   - NO adding explanations
-   - NO restructuring
-   - NO new sentences
-   - NO tone changes
-   - NO additional content
-
-3. PRESERVE 99% OF THE TEXT:
-   - Keep EXACT same structure
-   - Keep EXACT same content
-   - Keep EXACT same examples
-   - Keep EXACT same technical terms
-   - Only add 1-2 word connectors where ABSOLUTELY necessary
-
-EXAMPLE (notice how minimal the change is):
-BEFORE: "El sistema tiene tres componentes. El primer componente procesa datos."
-AFTER: "El sistema tiene tres componentes. Ahora bien, el primer componente procesa datos."
-
-That's IT. One connector added. Nothing else.
-
-CRITICAL: If the text already flows well, ADD NOTHING. Better to add too little than too much.
-
-Your output should be 99% identical to the input, with only 5-10 single-word or two-word connectors added.
-
-Language: {language}
-"""
+    Now uses centralized TaskPrompts system.
+    """
+    return TaskPrompts.conversational_enhancement_task(
+        content=content,
+        language=language,
+        enhancement_level="light"
+    )
 
 
 def create_technical_conversational_task(
@@ -111,68 +66,31 @@ def create_technical_conversational_task(
     language: str = "Spanish",
     title: str = ""
 ) -> str:
-    """Create task for presenting technical/objective content in a natural structure."""
+    """Create task for presenting technical/objective content in a natural structure.
     
-    return f"""
-Transform this extracted objective knowledge into a naturally flowing presentation while preserving ALL content.
+    Uses centralized prompts but with specific technical conversational requirements.
+    """
+    # Create a custom prompt that combines conversational enhancement with technical requirements
+    composer = PromptComposer()
+    
+    # Get base conversational task and customize for technical content
+    base_prompt = TaskPrompts.conversational_enhancement_task(
+        content=content,
+        language=language,
+        enhancement_level="full"  # Full conversational transformation for technical
+    )
+    
+    # Add technical-specific requirements
+    technical_addon = f"""
+
+SPECIFIC FOR TECHNICAL CONTENT:
+- Present ALL extracted knowledge in natural flow
+- Group related concepts logically
+- Create smooth transitions between topics
+- Build from basic to complex when possible
+- Preserve ALL facts, data, and technical accuracy
 
 DOCUMENT: {title if title else "Objective Knowledge"}
-
-EXTRACTED KNOWLEDGE TO STRUCTURE:
-{content}
-
-YOUR MISSION: Present ALL the extracted knowledge in a natural, conversational flow for spoken delivery.
-
-REQUIREMENTS:
-
-1. **PRESERVE ALL CONTENT**:
-   - Keep EVERY fact, concept, example, and explanation
-   - Don't remove or summarize anything
-   - Maintain all data points and details
-   - Keep technical accuracy
-
-2. **CREATE NATURAL FLOW**:
-   - Group related concepts together
-   - Create smooth transitions between topics
-   - Use a logical progression of ideas
-   - Build from basic to complex when possible
-
-3. **CONVERSATIONAL STRUCTURE**:
-   - Start with an overview of what will be covered
-   - Present definitions before using terms
-   - Group examples with their concepts
-   - Create narrative bridges between sections
-   - End sections with natural transitions
-
-4. **LANGUAGE TECHNIQUES**:
-   - Use phrases like: "Empecemos con...", "Ahora veamos...", "Esto nos lleva a..."
-   - Create connections: "Como vimos...", "Relacionado con esto..."
-   - Signal topic changes: "Pasando a otro aspecto..."
-   - Summarize sections: "En resumen, hemos visto que..."
-
-5. **DO NOT**:
-   - Add new information or examples
-   - Interpret or evaluate
-   - Remove any content
-   - Change facts or data
-   - Add opinions or subjective language
-
-EXAMPLE TRANSFORMATION:
-BEFORE (extracted knowledge):
-"Definición: X es Y.
-Tipos: A, B, C.
-Ejemplo: Empresa Z usa A.
-Resultados: 45% mejora."
-
-AFTER (natural presentation):
-"Empecemos entendiendo qué es X. X se define como Y. 
-
-Existen tres tipos principales: A, B y C. Para ver cómo funciona esto en la práctica, 
-tenemos el ejemplo de la Empresa Z, que implementó el tipo A. 
-
-Los resultados fueron significativos, con una mejora del 45%."
-
-The goal is to make the knowledge flow naturally for listening while keeping ALL objective content intact.
-
-Language: {language}
 """
+    
+    return base_prompt + technical_addon
