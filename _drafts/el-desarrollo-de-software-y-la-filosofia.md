@@ -34,12 +34,14 @@ una ciencia propiamente dicha, porque nació mucho antes de que se
 inventara (¿descubriera? ¿definiera?) el método científico.
 
 ## Ramas de la filosofía relevantes para desarrolladores
+
 - Lógica y razonamiento
 - Epistemología (teoría del conocimiento)
 - Ética aplicada
 - Filosofía del lenguaje
 
 ## Aplicaciones prácticas en el desarrollo
+
 - Casos de uso específicos
 - Ejemplos de código o metodologías
 

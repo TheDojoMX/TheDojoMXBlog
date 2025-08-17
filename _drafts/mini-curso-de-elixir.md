@@ -12,6 +12,7 @@ header:
   teaser: null
   overlay_filter: 'rgba(0, 0, 0, 0.5)'
 ---
+
 En este artículo vamos aprender el lenguaje Elixir desde cero. Asumimos que ya
 sabes programar, sobre todo
 algún lenguaje orientado a objetos, ya que ocuparemos conceptos de estos
