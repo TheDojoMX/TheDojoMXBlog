@@ -42,3 +42,10 @@ habla por primera vez de Zig son:
   dice que va en el asiento del copiloto.
 4. **Legible**. zig debería evitar la sintaxis compleja y tener una forma canónica de hacer las cosas
   dando como resultado un código que sea fácil de leer, aunque te tengas que esforzar un poco para escribirlo.
+
+## Algunas decisiones de diseño
+
+Se dice que los lenguajes de programación están creados por los miedos de sus diseñadores.
+Por ejemplo, si alguien quiere hacer un nuevo lenguaje viniendo de lenguajes que
+tardan mucho en compilar, por ejemplo C++, va a intentar hacer un lenguaje
+que compile rápido, como fue le caso de Go.
