@@ -6,8 +6,8 @@ tags: zig zig-lang c c-lang
 comments: true
 excerpt: "Zig es un lenguaje prometedor que quiere reemplazar a C y competir con Rust por ser el nuevo lenguaje de sistemas. Hablemos de sus promesas y características."
 header:
-  overlay_image: #image
-  teaser: #image
+  overlay_image: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1747718313/mariola-grobelska-EJBwRJZMOCQ-unsplash_rugsm8.jpg
+  teaser: https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1747718313/mariola-grobelska-EJBwRJZMOCQ-unsplash_rugsm8.jpg
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
@@ -70,3 +70,41 @@ sistemas de tipos declaras que pueden contener un valor o no. Así el compilador
 ayudar a no dispararte en el pie dejando como nulo o aceptando un nulo en una variable donde
 siempre debería haber un valor. Además, te puede ayudar a verificar que estás considerando
 todos los casos posibles cuando tienes variables opcionales.
+
+### Manejo de errores
+
+Zig utiliza tipos de datos primitivos para manejar errores. Estos son los Error Sets y
+Error Unions. Con estos dos tipos de datos puedes crear funciones que devuelvan un error
+y manejarlo de forma más elegante.
+
+### Otras características
+
+Zig tiene otras características muy interesantes nacidas directamente del uso que su
+principal creador, Andrew Kelley, hizo de C desde hace mucho tiempo. Por ejemplo tiene
+características para evitar el preprocesador de C, por ejemplo, sintaxis directa para
+compilación condicional.
+
+## Algunos proyectos importantes en Zig
+
+Aunque todavía no tenemos una versión 100% estable de Zig, ya tenemos proyectos que
+están haciendo olas en el mundo de la programación programados en Zig. Hablemos de
+algunos de ellos:
+
+- [Bun](https://bun.sh/): Bun es un nuevo runtime de JavaScript que caracteriza
+por su gran velocidad de ejecución. Aunque no tiene todas las características de
+Node.js todavía, se lo lleva por mucho en rendimiento.
+
+- [TigerBeetle](https://github.com/tigerbeetle/tigerbeetle): TigerBeetle es una
+base de datos financiera distribuida. Como te imaginarás, todo aquello que se quiera
+usar en un entorno financiero serio debe ofrecer características fuertes de rendimiento
+y seguridad.
+
+- [Ghostty](https://github.com/ghostty-org/ghostty): Ghostty es un emulador de terminal
+escrito por el mismo creador de Terraform, Mitchell Hashimoto, que está intentando hacer
+todas las cosas bien.
+
+## Conclusión
+
+Si estás metido en el desarrollo de sistemas, sin duda Zig es un lenguaje que vale la pena
+voltear a ver, pero también si quieres aprender más sobre desarrollo de software a bajo nivel
+con ideas modernas.
