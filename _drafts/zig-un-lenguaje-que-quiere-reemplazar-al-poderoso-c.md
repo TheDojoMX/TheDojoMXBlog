@@ -49,3 +49,24 @@ Se dice que los lenguajes de programación están creados por los miedos de sus 
 Por ejemplo, si alguien quiere hacer un nuevo lenguaje viniendo de lenguajes que
 tardan mucho en compilar, por ejemplo C++, va a intentar hacer un lenguaje
 que compile rápido, como fue le caso de Go.
+
+Veamos algunas decisiones de diseño de Zig.
+
+### Interoperabilidad completa con C
+
+C tiene una dominación histórica en el mundo de la programación de sistemas. Muchos de los
+sistemas importantes están escritos en C. Así es que Zig tiene como una decisón de diseño
+crear programas que puedan ser usados desde C o al revés. Así que Zig es compatible con la
+C ABI.
+
+La **C ABI** (Application Binary Interface) es un conjunto de convenciones y reglas que
+define cómo los programas compilados en C interactúan a nivel de código máquina.
+
+### Uso de tipos opcionales
+
+El manejo de valores vacíos o nulos es uno de los grandes problemas en todo el desarrollo de
+software. Así que Zig ha elegido usar tipos opcionales, es decir, valores que desde el
+sistemas de tipos declaras que pueden contener un valor o no. Así el compilador te puede
+ayudar a no dispararte en el pie dejando como nulo o aceptando un nulo en una variable donde
+siempre debería haber un valor. Además, te puede ayudar a verificar que estás considerando
+todos los casos posibles cuando tienes variables opcionales.
