@@ -1,0 +1,96 @@
+{
+  "project": "ch1_t3",
+  "paper_title": "with Foundation Models",
+  "language": "Spanish",
+  "technical_level": "technical",
+  "duration_minutes": 15,
+  "tone": "academic",
+  "workflow": "summary_with_chunking",
+  "document_chunks": 12,
+  "chunk_sections": [
+    "Section 1",
+    "Section 2",
+    "Section 3",
+    "Section 4",
+    "Section 5",
+    "Section 6",
+    "Section 7",
+    "Section 8",
+    "Section 9",
+    "Section 10",
+    "Section 11",
+    "Section 12"
+  ],
+  "agents": [
+    {
+      "role": "Technical Document Analyzer",
+      "goal": "Extract facts, data, and specifications from each section with zero interpretation"
+    },
+    {
+      "role": "Technical Synthesizer",
+      "goal": "Combine section analyses into a factual, objective technical summary"
+    },
+    {
+      "role": "Technical Content Specialist",
+      "goal": "Present technical content with clarity, minimal transitions, and zero interpretation"
+    }
+  ],
+  "tasks": [
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                You have received technical analyses of all 12 sections.\n                \n                Create a TECHNICAL SYNTHESIS that presents ONLY the facts, data, and specifications.\n        ...",
+      "type": "synthesis"
+    },
+    {
+      "description": "\nCreate a technical presentation of the following content titled \"with Foundation Models\".\n\nCONTENT TO PRESENT:\nPrevious synthesis content will be used\n\nYOUR MISSION: Present THE IDEAS AND CONCEPTS TH...",
+      "type": "educational"
+    }
+  ]
+}

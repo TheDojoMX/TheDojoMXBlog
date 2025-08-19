@@ -1,0 +1,120 @@
+Section: Section 2
+Characters: 6861
+==================================================
+• Code quality consideration: No se requiere que todo el código tenga la misma importancia; es aceptable que parte del código sea mediocre.  
+• Es innecesario invertir el máximo esfuerzo en pruebas unitarias aleatorias; en dicho caso, el líder del equipo debe corregir la situación.  
+• Algunos desarrolladores reconocen que aunque los LLM (modelos de lenguaje a gran escala) puedan “bajar el techo” de calidad, también “elevan el piso” mínimo de lo que se produce.  
+• Gemini (un LLM) tiene un “piso” de calidad superior al del código del autor, aunque su código personal se describe como visualmente “bonito” pero menos exhaustivo.  
+• El código generado por LLM suele ser repetitivo, mientras que el código humano puede incluir “contorsiones” innecesarias al intentar aplicar el principio DRY (no repetirse).  
+• Los LLM poseen un conjunto mayor de “trucos” algorítmicos, incluyendo:  
+  – Radix tries  
+  – Topological sorts  
+  – Graph reductions  
+  – LDPC codes  
+• Se menciona el paquete rsync – por el que existe una apreciación romántica entre humanos –, haciendo referencia al artículo de Andrew Tridgell.  
+• Aunque el código producido por LLMs pueda ser mediocre, esto reduce la cantidad de código mediocre que deben escribir los humanos.  
+• Se comenta que la “hype cycle” de AI/VC afecta a los practicantes inteligentes, pero el funcionamiento de las cosas permanece inalterado, sin importar opiniones de figuras como Jensen Huang.  
+• Se señala que antes se pagaba “buena plata” por bases de datos y que la industria de la tecnología se basa en automatizar puestos de trabajo, lo que conduce a una menor cantidad de trabajadores en roles como:  
+  – Agentes de viajes  
+  – Corredores de bolsa en planta  
+  – Dependientes en tiendas de discos  
+  – Técnicos de laboratorio fotográfico (darkroom tech)  
+• Algunos inversionistas de perfil libertario utilizan términos como “lamplighters”, “creative destruction” y “new kinds of work” en este contexto.  
+• Existe la posibilidad de que los LLMs desplacen a numerosos desarrolladores de software.  
+• La amenaza de la inteligencia artificial también afecta al área de las artes visuales, impactando a artistas que, en términos medianos, producen:  
+  – Ilustraciones e composiciones competentes para portadas de revistas  
+  – Exhibiciones en museos  
+  – Motion graphics  
+  – Activos para videojuegos  
+• Los LLMs son capaces de generar facsímiles “suficientes” del trabajo creativo humano, cumpliendo con los estándares de calidad de la industria.  
+• Se observa que fragmentos de código provenientes de repositorios públicos en GitHub pueden aparecer en salidas generadas, lo que genera preocupación sobre temas de licenciamiento.  
+• Se afirma que, en general, los desarrolladores muestran poco respeto por la propiedad intelectual, considerando ejemplos como:  
+  – La visión del “median dev” de Star Wars y Daft Punk como bienes comunes  
+  – La oposición cultural a cualquier medida que dificulte el funcionamiento de sitios de compartición de medios monetizables  
+  – La existencia y apoyo de redes de piratería a escala global y la burla hacia esfuerzos por preservar ventanas de estreno para series de TV  
+• Se hace mención directa a la dificultad para hacer streaming de “The Expanse” en LibreWolf, implicando discusiones en torno a la IPR (propiedad intelectual).  
+• Se establece que los LLMs procesan y “digieren” el código de manera más profunda que un humano.  
+• Durante el desarrollo de la sección, el autor establece un “level set” para describir el estado del arte de la programación asistida por LLMs, indicando que:  
+  – Las tomas de los LLMs evolucionan rápidamente (comparado con la vida útil de un bluefish filet)  
+  – Los jóvenes no solo usan agentes sino agentes asíncronos que realizan múltiples tareas en paralelo.  
+  – Un ejemplo cuantitativo indica que un usuario puede asignar 13 tareas a su LLM, de las cuales:  
+   • 3 Pull Requests (PRs) son descartadas y re-promptadas  
+   • 5 reciben retroalimentación similar a la que daría un desarrollador junior  
+   • 5 son finalmente integradas (merged)  
+  – Un colaborador comenta que “está tomando rocket fuel”, implicando que quienes no adoptan la IA quedan rezagados.  
+• Los LLMs no tienen acceso a entornos de producción (“prod”) y, en una experiencia, el autor alimentó 40 transcripciones de log a un agente LLM, el cual en segundos detectó problemas de corrupción de metadatos LVM en un host con problemas persistentes.  
+• El autor se identifica políticamente como “statist” y menciona que escribe en Go y Python, descartando actitudes radicales o futuristas.  
+• En el front page de Hacker News se observa una gran cantidad de contenido relacionado con LLMs, incluyendo:  
+  – Actualizaciones incrementales de modelos  
+  – Startups trabajando con LLMs  
+  – Tutoriales de LLMs  
+  – Críticas extensas contra los LLMs  
+• Se compara la atención actual hacia la inteligencia artificial con la que recibieron los smartphones en 2008 y, en menor medida, la que tuvo Internet en sus inicios.  
+• Se utilizan términos críticos como “stochastic parrots” y “vibe coding”, prediciendo que estos enfoques o críticas no resistirán el contacto con la realidad.  
+• Se afirma que, eventualmente, los agentes de codificación serán mucho más efectivos que hoy.  
+
+Con respecto al contexto adicional sobre el uso de LLMs en la programación:  
+• Los ejecutivos tecnológicos están ordenando la adopción de modelos de lenguaje a gran escala.  
+• Algunos programadores y expertos de primera línea afirman que la IA es una moda pasajera, comparable a la “manía” de los NFT.  
+• Personas talentosas realizan tareas que los LLMs ya ejecutan de forma superior, motivadas por impulsos no constructivos.  
+• El progreso en los LLMs es considerado por el autor como la segunda contribución más importante en su carrera, aún si se interrumpe repentinamente.  
+• El análisis se centra en las implicaciones de los LLMs para el desarrollo de software, no para arte, música o escritura.  
+• Datos biográficos del autor:  
+  – Publica software desde mediados de los años 90.  
+  – Inició trabajando con código en C empaquetado y sellado.  
+  – Pasó por una fase de C++ influenciada por Alexandrescu.  
+  – Ha trabajado con Ruby y Python.  
+  – Ha realizado trabajo a nivel de kernel.  
+  – Ha desarrollado en C (servidor), Go y Rust.  
+• Existe la nota temporal “o, Dios no lo quiera, hace 2 años con Copilot”.  
+• Se hace la comparación de que, hace 6 meses, usar un LLM para código sin agentes no es lo mismo que lo que hacen los codificadores serios hoy.  
+• Se describen las funciones de un agente en programación asistida por LLMs:  
+  – Explorar el código de forma autónoma.  
+  – Escribir archivos directamente.  
+  – Ejecutar herramientas y compilar código.  
+  – Ejecutar pruebas y realizar iteraciones basadas en los resultados.  
+  – Incorporar código arbitrario de la estructura de archivos local u otras fuentes en línea en su “ventana de contexto”.  
+  – Utilizar herramientas Unix estándar para navegar por el árbol de archivos y extraer información.  
+  – Interactuar con Git.  
+  – Usar herramientas existentes (linters, formateadores, comprobadores de modelos).  
+  – Realizar llamadas arbitrarias a herramientas configuradas a través de MCP.  
+• El código que ejecuta los agentes para “hacer cosas” se asemeja a un Makefile en cuanto a su dependencia de conceptos básicos de programación.  
+• Es posible escribir un agente de codificación efectivo en un fin de semana.  
+• El rendimiento del agente depende más de la estructura de los procesos de construcción, linting y pruebas, que del nivel de sofisticación de herramientas especializadas.  
+• Usuarios avanzados de LLMs no copian directamente el código sugerido por ChatGPT a un editor sin revisión, ya que éste puede estar roto.  
+• Los LLMs pueden generar gran parte del código tedioso en proyectos típicos, reduciendo la necesidad de búsquedas en Google, ya que realizan búsquedas internamente y no sufren fatiga ni inercia.  
+• Un LLM puede ser instruido para resolver tareas de inicio en proyectos pospuestos, proporcionando un punto de entrada inmediato para comenzar a ajustar el código.  
+• La sensación de mejora inmediata (dopaína) al ver el código funcionando es un incentivo psicológico para programar.  
+• Tareas complejas o “sucias” (como refactorizar pruebas unitarias) requieren trabajo que a menudo se evita; un agente puede realizar esta tarea durante horas y luego generar una solicitud de extracción (PR).  
+• Cada desarrollador es responsable del código integrado en la rama “main”, por lo que debe revisar minuciosamente el código generado por los LLMs en proyectos dependientes de otros.  
+• Los LLMs están comenzando a adaptarse a las idiosincrasias locales, aunque aún no alcanzan un alto grado de personalización.  
+• Se niega que el código generado por un LLM sea inherentemente “probabilístico”; si se mantienen las salvaguardas, el código es legible y comprensible.  
+• Revisar y entender el código ajeno es parte del trabajo del desarrollador.  
+• La traza de pensamiento (“chain of thought log”) generada por un agente puede mostrar errores (“alucinaciones”), por lo que se recomienda no visualizarla.  
+• Ejemplo de herramienta: El modo agente de Zed (https://zed.dev/agentic) muestra una notificación de escritorio al finalizar el trabajo sin requerir supervisión constante.  
+• Los agentes “lint” (analizan) el código, compilan y ejecutan pruebas; si el LLM inventa una firma de función, el error es detectado, se retroalimenta al LLM y este reintenta.  
+• Se compara el costo de un interno a $20/mes con el costo de Cursor.ai.  
+• Uno de los roles de un desarrollador senior es hacer productivos a programadores menos hábiles, sean humanos o “algebraicos”.  
+• Manejar agentes de LLM requiere habilidad y constituye un proyecto de ingeniería basado en la implementación de instrucciones (prompts), índices y en la integración de herramientas.  
+• Se afirma que los LLMs solo generan código de mala calidad si se usan con errores.  
+• Se declara que “100% de todo el código Bash que deberías escribir a partir de ahora” será generado por LLMs.  
+• Los LLMs desempeñan múltiples tareas: tipeo, búsquedas (“Googling”), generación de casos de prueba, y ciclos de edición-compilación-prueba-depuración.  
+• Los desarrolladores serios mantienen la responsabilidad de la curación, el juicio, la orientación y la dirección en sus proyectos.  
+• Las primeras versiones de código creadas por humanos no se consideran necesariamente superiores.  
+• Se hace una alusión humorística a la dificultad de establecer una buena cadena de herramientas (“toolchain”) para el lenguaje Brainfuck.  
+• La crítica que afirma “LLMs no pueden programar” puede referirse específicamente a que “LLMs no pueden escribir Rust”.  
+• Los lenguajes de programación se eligen en parte según la eficacia de los LLMs con ellos, y se sugiere que los desarrolladores de Rust deben trabajar para mejorar esta compatibilidad.  
+• El autor declara trabajar principalmente en Go, destacando que:  
+  – Los diseñadores de Go no se propusieron hacer el lenguaje más legible para LLMs, pero lo consiguieron en cierto grado.  
+  – Go ofrece seguridad en los tipos, una extensa biblioteca estándar y una cultura que valora patrones idiomáticos, aunque a menudo repetitivos.  
+  – Los LLMs muestran un buen rendimiento generando código en Go.  
+• El autor también programa en Rust y considera que es aceptable; si los LLMs no funcionan adecuadamente para un usuario con Rust, se trata de un problema distinto al argumento del autor.  
+• Se utiliza una analogía con la ebanistería japonesa, el uso de herramientas manuales y la técnica de “sashimono joinery”.  
+• El autor dispone de un taller básico de carpintería en su sótano y, aunque podría fabricar muebles, prefiere comprar una mesa para su oficina.  
+• Se plantea que los desarrolladores de software profesionales se dedican a resolver problemas prácticos mediante código y no actúan como artesanos.  
+• Se cita de forma implícita que “Steve Jobs estaba equivocado” sobre la necesidad de perfeccionar detalles estéticos internos (“carve the unseen feet”) en el diseño.  
+• Se afirma que la solidez de un producto de software no depende de la belleza del código.  
+• Dedicar un tiempo excesivo a refinar funciones en expresiones funcionales muy pulidas puede considerarse “yak-shaving” (realizar tareas accesorias en lugar del trabajo principal) y un método para auto tranquilizarse en lugar de construir el producto.  
+• Los LLMs eliminan parte del “trabajo tedioso” (“schlep”) y facilitan que los desarrolladores se centren en tareas que requieren juicio y valores personales.  
+• El autor, con experiencia intermedia a avanzada, valora la mediocridad argumentando que la mayoría del código escrito es mediocre; no todo el código tiene igual importancia, y dedicar un esfuerzo máximo innecesario en partes menos críticas (por ejemplo, en una prueba unitaria arbitraria) es incorrecto.  
+• El líder del equipo debe intervenir para corregir cuando se invierte demasiado esfuerzo en partes del código que no son críticas.

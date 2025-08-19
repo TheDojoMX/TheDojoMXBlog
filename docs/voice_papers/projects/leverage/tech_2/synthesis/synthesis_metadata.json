@@ -1,0 +1,13 @@
+{
+  "project": "tech_2",
+  "paper_title": "Título: \"AI as a Leverage Mechanism\"",
+  "document_chunks": 4,
+  "chunk_sections": [
+    "Section 1",
+    "Section 2",
+    "Section 3",
+    "Section 4"
+  ],
+  "synthesis_length": 6295,
+  "workflow": "summary"
+}

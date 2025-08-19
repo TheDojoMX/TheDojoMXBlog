@@ -1,0 +1,81 @@
+Section: Section 1
+Characters: 9962
+==================================================
+• Título: My AI Skeptic Friends Are All Nuts.
+• Imagen incluida: Una imagen titulada “A psychedelic landscape.” con la URL “/blog/youre-all-nuts/assets/whoah.png”.
+• Crédito de imagen: Annie Ruygt, con enlace a https://annieruygtillustration.com/.
+• Declaración: Se trata de una provocación sincera sobre la programación asistida por IA.
+• Hecho: Ejecutivos tecnológicos están ordenando la adopción de modelos de lenguaje a gran escala (LLMs).
+• Afirmación: Algunos de los programadores y expertos de primera línea creen que la IA es una moda pasajera, comparable a la “manía” de los NFT.
+• Afirmación: Personas talentosas están realizando tareas que los LLMs ya hacen de forma superior, motivadas por deseos no constructivos.
+• Afirmación: Todo el progreso en los LLMs podría detenerse en cualquier momento y, aun así, los LLMs serían la segunda cosa más importante que ha ocurrido en la carrera del autor.
+• Especificación: El análisis se centra exclusivamente en las implicaciones de los LLMs para el desarrollo de software, no para el arte, la música o la escritura.
+• Datos biográficos del autor:
+  – Ha estado publicando software desde mediados de los años 90.
+  – Comenzó trabajando con código en C empaquetado y sellado.
+  – Pasó por una fase de C++ influenciada por Alexandrescu.
+  – Ha trabajado con herramientas en Ruby y Python.
+  – Ha realizado trabajo a nivel de kernel.
+  – Ha desarrollado en C (servidor), Go y Rust.
+• Nota temporal: Se menciona “o, Dios no lo quiera, hace 2 años con Copilot”.
+• Comparación temporal: Se señala que hace 6 meses, intentar usar un LLM para código sin agentes no es lo mismo que lo que hacen los codificadores serios hoy en día.
+• Descripción de agentes en programación asistida por LLMs:
+  – Los agentes exploran el código de forma autónoma.
+  – Los agentes escriben archivos directamente.
+  – Los agentes ejecutan herramientas.
+  – Los agentes compilan código, ejecutan pruebas y realizan iteraciones basadas en los resultados.
+  – Los agentes incorporan código arbitrario de la estructura de archivos local o de otras fuentes en línea, integrándolo en su “ventana de contexto”.
+  – Los agentes utilizan herramientas Unix estándar para navegar por el árbol de archivos y extraer información.
+  – Los agentes interactúan con Git.
+  – Los agentes usan herramientas ya existentes, como linters, formateadores y comprobadores de modelos.
+  – Los agentes pueden realizar llamadas arbitrarias a herramientas configuradas a través de MCP.
+• Declaración técnica: El código que ejecuta los agentes para “hacer cosas” con el código es código de sistemas sencillo, comparable en su dependencia de la verdad básica de la programación a un Makefile.
+• Afirmación: Es posible escribir un agente de codificación efectivo en un fin de semana.
+• Comparación: El rendimiento del agente depende más de cómo se estructuran procesos de construcción, linting y pruebas, que del nivel de sofisticación de herramientas como o3 o Sonnet.
+• Advertencia: Ejecutar solicitudes en una página de ChatGPT y luego copiar el código resultante (posiblemente roto) a un editor no es lo que hacen los usuarios avanzados de LLM.
+• Declaración funcional: Los LLMs pueden escribir una fracción grande del código tedioso en proyectos típicos.
+• Afirmación: La mayoría del código en la mayoría de los proyectos es tedioso.
+• Afirmación: Los LLMs reducen drásticamente la necesidad de buscar soluciones en Google.
+• Hecho: Los LLMs realizan búsquedas internamente.
+• Hecho: Los LLMs no se cansan y no sufren inercia.
+• Ejemplo de uso: Un LLM puede ser instruido para resolver tareas de inicio en proyectos que uno pospone, proporcionando de inmediato un punto de entrada adecuado para comenzar a ajustar código.
+• Declaración psicológica: La sensación de mejora inmediata (dopaína) producida al ver el código funcionar es una razón por la que el autor programa.
+• Descripción de un posible inconveniente: Tareas complejas o “sucias”, como refactorizar pruebas unitarias, requieren trabajo que a veces se evita.
+• Ejemplo de función de un agente: Un agente puede pasar horas en una máquina virtual refactorizando pruebas unitarias y luego generar una solicitud de extracción (PR).
+• Afirmación: Cada desarrollador es responsable del código que integra en la rama “main”.
+• Instrucción: Si se construye algo con un LLM en el que dependen otros, se debe leer y revisar el código.
+• Observación: Los LLMs están empezando a adaptarse a la idiosincrasia local, aunque aún no han alcanzado ese grado de personalización.
+• Aclaración sobre “probabilístico”: Se niega la afirmación de que el código generado por un LLM es inherentemente “probabilístico”; es código legible y comprensible si se mantienen las salvaguardas.
+• Afirmación: Leer y entender el código de otros es parte del trabajo del desarrollador.
+• Nota: La traza de pensamiento (“chain of thought log”) que genera un agente puede mostrar errores (“alucinaciones”), pero se sugiere no visualizarla.
+• Ejemplo de herramienta: El modo agente de Zed (https://zed.dev/agentic) muestra una notificación de escritorio una vez finalizado el trabajo en lugar de requerir supervisión constante.
+• Afirmación técnica: Los agentes “lint” el código, compilan y ejecutan pruebas; si el LLM crea una firma de función inventada, el error es detectado por el agente, se retroalimenta al LLM y este reintenta.
+• Comparación de costos: Se menciona la comparación de costo de un interno – $20/mes – con el costo de Cursor.ai.
+• Declaración sobre la productividad: Uno de los roles del desarrollador senior es hacer que programadores con menor habilidad sean productivos, ya sean humanos o “algebraicos”.
+• Descripción de habilidad: Manejar agentes efectivamente implica habilidad y constituye un proyecto de ingeniería basado en técnicas de instrucciones (prompts), índices y, especialmente, en herramientas.
+• Declaración: Los LLMs solo generan código de mala calidad si se permiten errores en su uso.
+• Notación: Se afirma que “100% de todo el código Bash que deberías escribir a partir de ahora” es generado por LLMs.
+• Descripción de la situación actual: Los LLMs realizan muchas tareas, incluyendo tipeo, búsquedas (“Googling”), generación de casos de prueba y ciclos de edición-compilación-prueba-depuración.
+• Afirmación: Los desarrolladores serios mantienen la responsabilidad de la curación, el juicio, la orientación y la dirección.
+• Comentario sobre cortes iniciales de código: Se sugiere que las primeras versiones de código hechas por humanos no son necesariamente superiores.
+• Ejemplo humorístico: Se menciona la dificultad de establecer una buena cadena de herramientas (“toolchain”) para el lenguaje Brainfuck.
+• Afirmación sobre el escepticismo: Mucha de la crítica hacia los LLMs proviene de proyecciones; por ejemplo, cuando se dice “LLMs no pueden programar” se puede estar refiriendo a “LLMs no pueden escribir Rust”.
+• Observación: Los lenguajes de programación se eligen en parte según qué tan bien funcionan los LLMs con ellos; se sugiere que los desarrolladores de Rust deben mejorar esta compatibilidad.
+• Declaración del autor: Principalmente trabaja en Go.
+• Afirmación sobre Go:
+  – Los diseñadores de Go no pretendieron crear el lenguaje más legible para LLMs, pero lo lograron en cierta medida.
+  – Go ofrece seguridad en los tipos, una biblioteca estándar extensa y una cultura que valora los patrones idiomáticos (a menudo repetitivos).
+  – Los LLMs tienen buen rendimiento generando código en Go.
+• Declaración: El autor también programa en Rust y lo encuentra aceptable.
+• Aclaración: Si los LLMs no funcionan bien con Rust para algún usuario, ese problema no comparte la misma naturaleza del argumento del autor.
+• Comparación: Se utiliza una analogía con la ebanistería japonesa, el uso de herramientas manuales y la técnica de “sashimono joinery”.
+• Detalle personal: El autor dispone de un taller básico de carpintería en su sótano.
+• Elección práctica: Aunque el autor podría fabricar una mesa o un banco de trabajo, si se requiere una mesa para que se sienten personas en su oficina, prefiere comprarla.
+• Declaración sobre el rol profesional: Los desarrolladores de software profesionales resuelven problemas prácticos mediante código y no actúan como artesanos.
+• Cita implícita: Se menciona que “Steve Jobs estaba equivocado” en cuanto a la necesidad de perfeccionar detalles estéticos internos (“carve the unseen feet”) en el diseño.
+• Afirmación sobre la durabilidad: La solidez de un producto de software no depende de la belleza del código.
+• Advertencia: Si se dedica mucho tiempo a refinar funciones en expresiones funcionales muy pulidas, es posible que se esté “yak-shaving” (es decir, realizando tareas accesorias en lugar del trabajo principal) y se esté utilizando el proceso para auto tranquilizarse en lugar de construir el producto.
+• Declaración final sobre la función de los LLMs: Eliminan el trabajo tedioso (“schlep”) y facilitan enfocarse en tareas donde el juicio y los valores personales son decisivos.
+• Declaración del autor maduro: Con experiencia de mediana a avanzada carrera, el autor valora la mediocridad, sugiriendo que la mayoría del código escrito es mediocre.
+• Afirmación: No todo el código tiene la misma importancia; en algunos casos, invertir un esfuerzo máximo en, por ejemplo, una prueba unitaria arbitraria, es incorrecto.
+• Instrucción final: El líder del equipo debe corregir cuando se dedique demasiado esfuerzo innecesario en partes menos críticas del código.

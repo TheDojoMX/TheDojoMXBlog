@@ -1,0 +1,303 @@
+# with Foundation Models
+
+## Model Scale y Requerimientos de Datos
+- Modelos de IA (por ejemplo, ChatGPT, Google’s Gemini, Midjourney) requieren:
+  - Grandes cantidades de electricidad
+  - Vastos volúmenes de datos públicos de internet para entrenamiento
+- Ejemplos de escala de modelos:
+  - GPT (junio de 2018): 117 millones de parámetros
+  - GPT-2 (febrero de 2019): 1,5 mil millones de parámetros
+  - Modelos actuales: miles de millones de parámetros
+
+## Consecuencias del Escalado de Modelos
+- Mayor capacidad:
+  - Mayor poder para realizar una amplia gama de tareas
+  - Incremento en la productividad, valor económico y calidad de vida
+- Requerimientos de recursos limitados:
+  - Entrenamiento exige datos significativos, recursos de cómputo y talento especializado
+  - Uso de modelos como servicio permite construir aplicaciones sin desarrollar un modelo desde cero
+
+## Definiciones y Conceptos Básicos en Modelado de Lenguaje
+- Modelo de lenguaje:
+  - Modelo que codifica información estadística para predecir la probabilidad de aparición de palabras en un contexto dado
+- Token:
+  - Unidad básica en modelado de lenguaje (carácter, palabra o parte de una palabra)
+  - Ejemplo: GPT-4 tokeniza “I can’t wait to build AI applications” en nueve tokens
+- Proceso de tokenización:
+  - Fraccionamiento del texto en tokens
+  - Longitud promedio: aproximadamente ¾ de una palabra (100 tokens ≈ 75 palabras)
+- Vocabulario:
+  - Conjunto de todos los tokens que un modelo puede procesar
+  - Ejemplos:
+    - Mixtral 8x7B: 32,000 tokens
+    - GPT-4: 100,256 tokens
+
+## Razones para Utilizar Tokens en Lugar de Palabras o Caracteres
+1. Permiten dividir palabras en componentes significativos
+2. Menor cantidad de tokens únicos reduce el tamaño del vocabulario
+3. Permiten procesar palabras desconocidas dividiendo en partes conocidas
+
+## Tipos de Modelos de Lenguaje
+- Modelos de lenguaje enmascarados:
+  - Predicen tokens faltantes en cualquier parte de una secuencia utilizando contexto de ambos lados (ejemplo: BERT)
+  - Uso común en tareas no generativas (análisis de sentimiento, clasificación de texto, depuración de código)
+- Modelos de lenguaje autoregresivos:
+  - Predicen el siguiente token basándose en los tokens precedentes
+  - Generan tokens secuencialmente, preferidos para generación de texto
+
+## Generative AI
+- Modelo generativo:
+  - Utiliza su vocabulario finito para construir infinitas salidas posibles (completaciones abiertas)
+  - Completaciones basadas en probabilidades estadísticas
+- Ejemplos de completaciones:
+  - Continuación de “To be or not to be”: “, that is the question.”
+  - Traducción de “How are you in French is …”: “Comment ça va.”
+  - Clasificación: Ejemplo en detección de spam
+
+## Contexto Histórico y Métodos de Entrenamiento
+- Primeros modelos de lenguaje: surgieron en la década de 1950
+- Claude Shannon (1951):
+  - Introdujo conceptos estadísticos (como la entropía) utilizados en el modelado de lenguaje
+- Self-supervision:
+  - Método para escalar modelos a tamaños actuales
+  - Entrenamiento en el que el modelo infiere etiquetas a partir de los datos de entrada
+
+## Detalles de Datos y Proceso de Entrenamiento
+- Ejemplo de muestra de entrenamiento ("I love street food."):
+  1. Entrada: BOS  Salida: BOS, I
+  2. Entrada: BOS, I  Salida: love
+  3. Entrada: BOS, I, love  Salida: street
+  4. Entrada: BOS, I, love, street  Salida: food
+  5. Entrada: BOS, I, love, street, food  Salida: BOS, I, love, street, food, .
+  6. Entrada: BOS, I, love, street, food, .  Salida: EOS
+  - BOS (Beginning Of Sequence) y EOS (End Of Sequence) son tokens especiales
+
+- Parámetros del modelo:
+  - "Model weights" se refiere a todos los parámetros actualizados durante el entrenamiento
+
+## Modelos Multimodales y Foundation Models
+- Extensión de modelos de lenguaje para incorporar otras modalidades (imágenes, video, 3D, estructuras de proteínas)
+- Modelos multimodales:
+  - También denominados LMM (Large Multimodal Models)
+  - Ejemplos: GPT-4V, Claude 3
+- CLIP:
+  - Modelo embedding entrenado con 400 millones de pares (imagen, texto)
+  - Diseñado para generar embeddings conjuntos para textos e imágenes
+
+## Técnicas de Aprendizaje y Enfoques de Entrenamiento
+- Auto-supervisión:
+  - Etiquetas inferidas de los datos de entrada
+- Aprendizaje supervisado:
+  - Uso de ejemplos manualmente etiquetados (ejemplo: AlexNet con ImageNet)
+- Diferencias en técnicas:
+  - Finetuning (ajuste fino): Actualiza pesos de un modelo pre-entrenado utilizando menos datos
+  - Prompt engineering: Proporciona instrucciones y contexto sin actualizar pesos
+
+## Herramientas y Procesos en AI Engineering
+- AI engineering:
+  - Construcción de aplicaciones sobre modelos base
+  - Diferentes del ML tradicional en cuanto a participación en las decisiones de producto
+- Técnicas de adaptación de modelos:
+  1. Prompt engineering:
+     - Adaptación sin actualizar pesos mediante instrucciones detalladas
+  2. Finetuning:
+     - Aumento de calidad, reducción de latencia y costo tras actualización de pesos
+- Responsabilidades del desarrollo de modelos:
+  1. Modelado y entrenamiento:
+     - Diseño, entrenamiento y ajuste fino de arquitecturas
+     - Herramientas: TensorFlow, PyTorch, Hugging Face Transformers
+  2. Ingeniería de conjuntos de datos:
+     - Curación, deduplicación, tokenización y control de calidad de datos no estructurados
+  3. Optimización de inferencia:
+     - Técnicas de cuantización, destilación y paralelismo para reducir latencia
+
+## Comparación entre ML Tradicional y AI Engineering
+- ML tradicional:
+  - Enfocado en entrenamiento desde cero y datos tabulares (feature engineering)
+- AI engineering:
+  - Utiliza modelos pre-entrenados (foundation models)
+  - Incluye etapas de evaluación, prompt engineering y construcción de interfaces de usuario
+  - Requiere manejo de datos no estructurados (deduplicación, tokenización, control de calidad)
+
+## Aplicaciones y Casos de Uso de Foundation Models
+- Casos de uso en diferentes sectores:
+  - AWS: experiencia del cliente, productividad, optimización de procesos
+  - Programación, análisis de datos, atención al cliente, redacción y diseño web
+  - Reducción de costos, eficiencia, crecimiento y aceleración de la innovación en empresas
+- Ejemplos en coding:
+  - GitHub Copilot genera ingresos anuales > $100 millones
+  - Herramientas para extracción de datos, conversión de lenguajes y generación de documentación
+- Ejemplos en marketing:
+  - Generación de imágenes y videos promocionales con Midjourney, Adobe Firefly, Runway
+  - Uso en brainstorming y prueba de variantes de anuncios
+
+## Uso de AI en Otras Áreas
+- Escritura:
+  - Autocorrector, autocompletado y transformación de tono en correos
+  - Aplicaciones para redacción de ensayos, libros y reportes
+  - Integración en herramientas como Google Docs, Notion, Gmail y Grammarly
+- Optimización SEO:
+  - Generación de contenido optimizado y aparición de granjas de contenido
+- Educación:
+  - Resumen de libros de texto, planes de lecciones personalizados y adaptación de materiales
+  - Herramientas en Duolingo, Khan Academy y asignación de ensayos para corrección
+- Bots conversacionales:
+  - Funciones de búsqueda, explicación de conceptos, generación de ideas y respuesta a solicitudes
+  - Implementaciones en chatbots, asistentes de voz (Google Assistant, Siri, Alexa) y interfaces 3D
+
+## Operaciones y Estrategia en AI
+- Impacto en operaciones empresariales:
+  - Mejora en adquisición y retención de usuarios mediante contenido personalizado
+  - Generación de prospectos, apoyo en comunicación interna e investigación de mercado
+- Consideraciones estratégicas:
+  - Riesgo de rezagarse al retrasar inversiones en tecnología AI
+  - Decisión entre desarrollar internamente o externalizar la solución
+
+## Arquitectura y Componentes del Stack de AI Engineering
+- Capas del stack de AI:
+  1. Desarrollo de aplicaciones:
+     - Ingeniería de prompts, evaluación (TTFT, TPOT, latencia, costo por inferencia) y construcción de interfaces (apps web, móviles, de escritorio; extensiones de navegador; chatbots)
+  2. Desarrollo de modelos:
+     - Modelado, entrenamiento, ajuste, ingeniería de conjuntos de datos y optimización de inferencia
+  3. Infraestructura:
+     - Herramientas para servir modelos, gestión de datos, escalamiento de recursos de cómputo y monitoreo de desempeño
+- Ejemplos de plataformas de integración:
+  - VSCode (Copilot), GitHub Copilot, Grammarly, Streamlit, Gradio, Plotly Dash
+- Evolución de frameworks:
+  - Soporte creciente para APIs en JavaScript (LangChain.js, Transformers.js, OpenAI’s Node library, Vercel’s AI SDK)
+
+## Métricas, Evaluación y Planificación de Proyectos de AI
+- Métricas de negocio:
+  - Porcentaje de mensajes automatizados, número de mensajes adicionales, reducción del tiempo de respuesta, ahorro en mano de obra
+- Métricas de utilidad:
+  - Calidad de respuestas, latencia (TTFT, TPOT, latencia total), costo por solicitud de inferencia, interpretabilidad y equidad
+- Planificación de hitos:
+  - Evaluación de modelos off-the-shelf y determinación del trabajo necesario para alcanzar objetivos de automatización
+- Desafíos en la evolución de productos AI:
+  - El “último kilómetro” requiere esfuerzos adicionales tras la creación de demos rápidos
+  - Necesidad de análisis de costo-beneficio y adaptación a cambios regulatorios y de mercado
+
+## Optimización y Desempeño en Inferencia
+- Desafíos en generación autoregresiva:
+  - Generación secuencial de tokens (por ejemplo, 10 ms por token; 100 tokens ≈ 1 segundo)
+  - Técnicas de optimización: cuantización, destilación, paralelismo
+- Importancia de la optimización para alcanzar latencias en el rango de milisegundos
+
+## Responsabilidades en el Desarrollo y Evaluación de Modelos
+- Diferencias entre entrenamiento, pre-entrenamiento, finetuning y post-training:
+  - Entrenamiento: Cambios en los pesos del modelo (incluye cuantización)
+  - Pre-entrenamiento: Entrenamiento desde cero con pesos aleatorios (muy intensivo en recursos)
+  - Finetuning: Continuación del entrenamiento de un modelo pre-entrenado con menor requerimiento de datos
+  - Post-training: Actualizaciones realizadas por desarrolladores para mejorar seguimiento de instrucciones
+
+## Integración y Evaluación de Interfaces de Usuario
+- Construcción de interfaces (AI interface):
+  - Aplicaciones independientes (web, escritorio, móvil)
+  - Extensiones de navegador, chatbots en apps de mensajería y API integradas
+  - Herramientas comunes: Streamlit, Gradio, Plotly Dash
+- Evaluación para mitigar riesgos y descubrir oportunidades:
+  - Benchmarking, evaluación de progreso y detección de fallas en producción
+
+## Datos y Especificaciones Técnicas
+- Ejemplos de vocabularios:
+  - Mixtral 8x7B: 32,000 tokens
+  - GPT-4: 100,256 tokens
+- Proceso de tokenización y uso de tokens especiales (BOS y EOS)
+- Métodos y algoritmos:
+  - Tokenization, masked language modeling (BERT), autoregressive language modeling
+  - Self-supervision, aprendizaje supervisado y técnicas de finetuning y prompt engineering
+- Resultados y mediciones:
+  - Ejemplo de mejora: Gemini Ultra mejoró en MMLU de 83,7% a 90,04% usando CoT@32
+  - Costos de etiquetado de datos y rentabilidad en casos de uso (GitHub Copilot, Midjourney)
+
+## Relevancia de Datos en Aplicaciones y Operaciones
+- Datos de productividad en ingeniería:
+  - Documentación: productividad duplicada
+  - Generación y refactorización de código: mejora del 25% al 50%
+- Exposición en ocupaciones (porcentajes entre 66,7% y 100%)
+- Disposición de recursos y evaluación del modelo (por ejemplo, automatizar tickets de soporte)
+
+## Consideraciones Finales en AI Engineering
+- Diferencias entre trabajo con foundation models y modelos tradicionales de ML:
+  - Enfoque en ajustar (tweaking) models base
+  - Participación intensiva de ingenieros AI en el desarrollo del producto
+- Herramientas emergentes:
+  - ansformers.js, OpenAI’s Node library, Vercel’s AI SDK
+- Evolución del proceso:
+  - De ML tradicional (recopilación de datos y entrenamiento final) a AI engineering (iteración rápida y adaptación durante el desarrollo del producto)
+- El rol de los ingenieros AI:
+  - Muchas proceden de desarrollo web o full-stack, permitiendo iterar rápido y transformar ideas en demos
+
+## Especificaciones Técnicas Adicionales
+- Modelos base: ChatGPT, Google’s Gemini, Midjourney
+- Requerimientos de datos y consumo de energía
+- Herramientas de adaptación y optimización de inferencia:
+  - Técnicas: cuantización, destilación, paralelismo
+  - Enfoque en reducción de latencia durante generación secuencial de tokens
+
+## Flujo de Trabajo y Metodología de AI Engineering
+- Proceso “Crawl-Walk-Run”:
+  1. Crawl: Participación humana obligatoria
+  2. Walk: Interacción directa de AI con empleados internos
+  3. Run: Automatización casi completa, incluyendo interacción directa con usuarios externos
+- Evaluación de modelos existentes y planificación de esfuerzos para alcanzar porcentajes deseados de automatización
+- Consideraciones en costo-beneficio y desafíos regulatorios (por ejemplo, cumplimiento de GDPR)
+
+## Conclusión Técnica
+- Los foundation models constituyen la base para el desarrollo de aplicaciones de AI
+- La ingeniería AI integra:
+  - Adaptación de modelos pre-entrenados mediante prompt engineering y finetuning
+  - Procesos de ingeniería de conjuntos de datos y optimización de inferencia
+  - Desarrollo de interfaces y evaluación sistemática
+- Las aplicaciones abarcan múltiples sectores: codificación, marketing, educación, atención al cliente y operaciones empresariales
+
+# Chapter 1: Introduction to Building AI Applications with Foundation Models
+- Frase inicial: "th the fun!"
+- Los foundation models son el bloque fundamental para posibilitar aplicaciones de AI
+- Integración de modalidades de datos (texto, imágenes, videos, etc.) en un solo modelo
+
+# Especificaciones Técnicas y Datos
+- Modelos de ejemplo: ChatGPT, Google’s Gemini, Midjourney
+- Escalabilidad: desde 117 millones de parámetros hasta miles de millones
+- Requerimientos de datos: grandes cantidades de datos públicos y potencia de cómputo
+- Detalles de tokenización: definición de tokens, tokens especiales (BOS, EOS) y longitudes promedio
+- Ejemplo CLIP:
+  - Entrenado con 400 millones de pares (imagen, texto)
+  - Embedding para textos e imágenes
+
+# Métodos, Algoritmos y Prácticas Experimentales
+- Tokenization: Fraccionamiento del texto en tokens para tratamiento estadístico
+- Modelados:
+  - Masked language modeling (BERT)
+  - Autoregressive language modeling para generación de texto
+- Técnicas de adaptación:
+  - Prompt-based techniques (prompt engineering)
+  - Finetuning para actualizar pesos del modelo
+- Optimización de inferencia:
+  - Cuantización, destilación, paralelismo para reducir latencia
+
+# Resumen de la Infraestructura y el Stack de AI Engineering
+- Capas del stack:
+  1. Desarrollo de aplicaciones (interfaces, evaluación, prompt engineering)
+  2. Desarrollo de modelos (modelado, entrenamiento, ajuste fino, ingeniería de datos)
+  3. Infraestructura (servicio de modelos, gestión de datos, escalabilidad)
+- Prácticas de experimentación:
+  - Variación de prompts, algoritmos de recuperación, variables de muestreo
+  - Feedback loop para correr modelos más rápido y a menor costo
+
+# Datos del Mercado y Estadísticas Relevantes
+- Costos de etiquetado: Ejemplo, 5 centavos por imagen; escalas altas pueden alcanzar decenas de millones
+- Productividad en ingeniería:
+  - Duplicación en la documentación y mejoras del 25% al 50% en generación y refactorización de código
+- Estadísticas de adopción y crecimiento:
+  - Incremento en términos de “Generative AI”, ChatGPT, Prompt Engineering en perfiles profesionales (75% de crecimiento mensual en LinkedIn)
+
+# Rol y Definición de AI Engineering en el Contexto Actual
+- AI Engineering:
+  - Utiliza foundation models para construir aplicaciones de alta capacidad y flexibilidad
+  - Incluye adaptación de modelos, ingeniería de datos, optimización de inferencia e integración de interfaces
+- Diferencias frente a ML tradicional:
+  - De modelo desarrollado desde cero a adaptación de modelos pre-entrenados
+  - Enfoque en la iteración rápida y en involucrar al ingeniero en decisiones de producto
+
+Esta presentación consolida las ideas y conceptos técnicos fundamentales sobre los foundation models, la adaptación de modelos, la optimización de inferencia y la estructura del AI engineering, presentándolos de forma directa, organizada y con claridad técnica.

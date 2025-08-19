@@ -1,0 +1,34 @@
+Section: Section 1
+Characters: 9963
+==================================================
+• Model scale: AI models, such as ChatGPT, Google’s Gemini, and Midjourney, require large amounts of electricity and vast quantities of publicly available internet data for training.
+• Consequence 1 – Increased capability: Large AI models are more powerful and capable of handling a broader range of tasks, enabling increased productivity, economic value, and improved quality of life.
+• Consequence 2 – Limited resource requirements: Training large language models (LLMs) demands significant data, compute resources, and specialized talent, which only a few organizations can afford. As a result, models are offered as a service so others can build applications without developing a model from scratch.
+• AI engineering: Building applications on top of readily available models has become one of the fastest-growing engineering disciplines.
+• Traditional machine learning: Refers to machine learning methods used before the advent of foundation models.
+• Language model definition: A model that encodes statistical information about one or more languages to determine the likelihood of a word appearing in a given context.
+• Token: The basic unit in language modeling; can be a character, a word, or part of a word. For instance, GPT-4 tokenizes the phrase “I can’t wait to build AI applications” into nine tokens.
+• Tokenization process: The process of breaking original text into tokens. For GPT-4, an average token is approximately ¾ the length of a word (100 tokens ≈ 75 words).
+• Vocabulary: The set of all tokens a model can work with. Examples:
+  – Mixtral 8x7B model: Vocabulary size of 32,000 tokens.
+  – GPT-4: Vocabulary size of 100,256 tokens.
+• Reasons for using tokens instead of words or characters:
+  1. Tokens allow breaking words into meaningful components (e.g., “cooking” into “cook” and “ing”).
+  2. Fewer unique tokens than words reduce the size of the model’s vocabulary.
+  3. Tokens help process unknown words by splitting them into known parts.
+• Types of language models:
+  – Masked language models: Trained to predict missing tokens anywhere in a sequence using context from both before and after the missing part (example: BERT). Commonly used for non-generative tasks such as sentiment analysis, text classification, and code debugging.
+  – Autoregressive language models: Trained to predict the next token in a sequence using only preceding tokens. They generate one token after another and are the preferred choice for text generation.
+• Generative AI: A language model that uses its finite vocabulary to construct an infinite number of possible outputs (open-ended completions). Completions are based on statistical probabilities.
+• Example completions:
+  – Completion for “To be or not to be” yields “, that is the question.”
+  – Translation: Given the prompt “How are you in French is …”, the completion might be “Comment ça va.”
+  – Classification: Given the prompt “Question: Is this email likely spam? Here’s the email: [email content] Answer:”, the completion might be “Likely spam.”
+• Historical context:
+  – First language models emerged in the 1950s.
+  – Claude Shannon’s 1951 paper “Prediction and Entropy of Printed English” introduced key statistical concepts (such as entropy) still used in language modeling.
+• Self-supervision: A method that allowed language models to scale up to their current sizes.
+• Vocabulary and token details for non-English languages: For some non-English languages, a single Unicode character may be represented as multiple tokens.
+• Figures referenced:
+  – Figure-1: Example of GPT-4 tokenizing a phrase.
+  – Figure-2: Illustration of the differences between autoregressive language models and masked language models.

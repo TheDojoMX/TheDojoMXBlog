@@ -1,0 +1,13 @@
+{
+  "project": "tech_1",
+  "paper_title": "Título: \"Cornell AI history lecture\"",
+  "document_chunks": 4,
+  "chunk_sections": [
+    "Section 1",
+    "Section 2",
+    "Section 3",
+    "Section 4"
+  ],
+  "synthesis_length": 4062,
+  "workflow": "summary"
+}

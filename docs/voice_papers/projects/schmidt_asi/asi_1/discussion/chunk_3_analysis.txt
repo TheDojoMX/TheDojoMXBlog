@@ -1,0 +1,145 @@
+Section: Section 3
+Characters: 9841
+==================================================
+Below is a comprehensive analysis of Section 3 along with the complete preserved content exactly as provided. This section delves deeply into the ongoing evolution in AI algorithms and training methods, and it raises several significant points about both the technical and geopolitical implications of emerging AI capabilities.
+
+• One of the first arguments made is that the traditional model of using expensive, static foundation models is giving way to a new form referred to as “test time training.” This method, described as continuous updating of models even with lesser power chips, suggests that future AI systems might be maintained and improved in real time rather than relying solely on pre-trained, inflexible models. This not only has implications for cost efficiency but also for the dynamism of model performance over time.
+
+• Another key insight is the discussion of open source versus proprietary approaches. The speaker warns that open source—meaning open weights available for everyone—could lead most countries outside the West (with China mentioned explicitly) to adopt these cheaper solutions. Should this happen, leadership in AI technology may effectively transfer from America to China. This shift raises pressing questions on international competitiveness, especially when combined with ongoing chip restrictions and regulatory policies.
+
+• The section then turns to the economic and strategic challenges inherent in the AI ecosystem. For instance, there is a pointed discussion about how to raise enormous sums (e.g., $50 billion for a data center) when the product is open source. In contrast, the American model relies on closed approaches to preserve intellectual property and to secure the capital required for such massive investments.
+
+• Strong technical details are provided through the example of emerging competitors. The text highlights Deepseek, which recently outperformed Gemini 2.5 Pro on intelligence leaderboards. Deepseek’s edge is attributed to the use of distillation—a technique wherein a large model’s responses (collected over thousands of questions) become the training material for a smaller, distilled model. This example emphasizes not only the rapid pace of technological change but also the risk that U.S. companies could see their proprietary information leaking into open source ecosystems, thereby undermining their competitive advantage.
+
+• A discussion on safety and regulation is also central. The Biden administration’s doctrine—labeling models above a threshold of 10^26 flops as requiring regulation—exemplifies the challenges policymakers face. This idea is complicated by the seemingly inevitable tension between fostering entrepreneurship (which thrives on open source innovation) and the need to prevent dangerous diffusion of potential dual-use information (e.g., nuclear, biological, chemical data). The text notes that U.S. companies are already implementing significant tests to guard against such leaks.
+
+• Perhaps most provocatively, the speaker speculates on a future of mutual assured malfunction, analogizing the race in AI development to nuclear arms races. The concept is that if one nation (say, China) gains a distinct lead in compute capability or access to advanced training data, it might provoke cyber or other forms of “deterrence” attacks from the United States. This idea of designing systems that inherently include the capacity for mutual slowdown is presented as critical to preventing catastrophic escalation in AI competition.
+
+• Finally, underlying all of these points is the concern that the AI revolution may be arriving with a blend of both promise and peril—a transformation that will not only revolutionize fields from enterprise automation to scientific research but also pose severe national security issues if not properly regulated. The emerging technical paradigm, the rapid continuous updates via test time training, and the pressure on hardware (as evidenced by the reliance on chip availability and location tracking) all point to an imminent transformation that policymakers and industry leaders must understand fully before it becomes overwhelmingly disruptive.
+
+Below is the complete preserved content of Section 3 exactly as provided:
+
+“rtantly, as I mentioned, the algorithms are changing. (19:36) And 
+instead of having these expensive foundation models by themselves, you have cont
+inuous updating, which is called test time training. That continuous updating ap
+pears to be capable of being done with lesser power chips. So, so we I there are
+ so many questions that I think we don't know. We don't know the role of open so
+urce because remember open source means open weights, which means everyone can u
+se it. (20:00) A fair reading of this is that every country that's not in the we
+st will end up using open source because they'll perceive it as cheaper which tr
+ans transfers leadership in open source from America to China. That's a big deal
+, right? If that occurs. Um how much longer do the chip bans if you will hold an
+d how long before China can answer? What are the effects of the current uh gover
+nment's policies of getting rid of foreigners and foreign investment? what happe
+ns with the Arab U data centers assuming they work and I'm generally supportive 
+of them um if those things are then misused uh to help train train (20:32) model
+s. The list just goes on and on. We just don't know. Okay. Can I ask you probabl
+y one of the toughest questions? I don't know if you saw Mark Andre uh he went a
+nd talked to the Biden administration past administration and said how are we go
+ing to deal with exactly what you just talked about chemical and biological and 
+radiological and nuclear risks from big foundation models being operated by fore
+ign countries. (20:56) And the Biden answer was you know we're going to keep it 
+into the three or four big companies like Google and we'll just regulate them. A
+nd Mark was like, "That is a surefire way to lose the race with China because al
+l innovation comes from a startup that you didn't anticipate or you know it's ju
+st the American history and you're you're cutting off the entrepreneur from part
+icipating in this. (21:20) " So as of right now with the open source models, the
+ entrepreneurs are in great shape. But if you think about the models getting cra
+zy smart a year from now, how are we going to have the the balance between start
+ups actually being able to work with the best technology but proliferation not p
+ercolating to every country in the world. (21:40) Again, a set of unknown questi
+ons and anybody who knows the answer to these things is not telling the full tru
+th. Um the doctrine in the B administration was called 10 to the 26 flops. It wa
+s a point that was a consensus above which the models were powerful enough to ca
+use some damage. So the theory was that if you stayed below 10 the 26 you didn't
+ need to be regulated. But if you were above that you needed to be regulated. (2
+2:04) And the proposal in the Biden administration was to regulate both the open
+ source and the closed source. Okay that's that's the those are the the summary 
+that of course has been ended by the Trump administration. um they have not yet 
+produced their own thinking in this area. They're very concerned about China and
+ it getting forward. So, they'll come out with something. (22:26) From my perspe
+ctive, the the core questions are the following. Will the Chinese be able to use
+ even with um chip restrictions, will they use architectural changes that will a
+llow them to build models as powerful as ours? And let's assume they're governme
+nt funded. That's the first question. (22:45) The next fun question is how will 
+you raise $50 billion for your data center if your product is open source? Yeah.
+ In the American model, part of the reason these models are closed is that the b
+usiness people and the lawyers correctly are saying I've got to sell this thing 
+because I've got to pay for my capital. These are not free goods. (23:03) And th
+e US government correctly is not giving $50 billion to these companies. So we do
+n't know that. Um the to me the key question to watch is look at Deepseek. So De
+epseek um a week or so ago Gemini 2.5 Pro got to the top of the leaderboards in 
+intelligence. Great achievement for my friends at Gem at Gemini. A week later de
+epseek comes in and is slightly better than Gemini. (23:34) and Deeps of course 
+is trained on the existing hardware that's in China which includes stuff that's 
+been Pilford and some of the Ascend it's called the Ascend Huawei chips and a fe
+w others what happens now the US people say well you know the the deepseek peopl
+e cheated and they cheated by doing a technique called distillation where you ta
+ke a large model and you ask it 10,000 questions you get its answers and then th
+en you use that as your training material yep so the US companies will have to f
+igure out a way to make sure that their proprietary information that they've spe
+nt so much money on does not get (24:05) leaked into these open source things. U
+m I just don't know with respect to uh nuclear, biological, chemical and so fort
+h issues. Um the US companies are doing a really good job of looking for that. T
+here's a great concern, for example, that nuclear information would leak into th
+ese models as they're training without us knowing it. And by the way, that's a v
+iolation of law. (24:30) Oh, really? they work and the whole nuclear information
+ thing is is there's no free speech in that world for good reasons and there's n
+o free use and copyright and all that kind of stuff. It's illegal to do it and s
+o they're doing a really really good job of making sure that that does not happe
+n. (24:48) They also put in very significant tests for biological information an
+d certain kinds of cyber attacks. What happens there? Their incentive is their i
+ncentive to continue especially if it's not if it's not required by law. The gov
+ernment has just gotten rid of the the safety institutes that were in place in B
+iden and are replacing it by a new term which is largely a safety assessment pro
+gram which is a fine answer. (25:08) I think collectively we in the industry jus
+t want the government at the secret and top secret level to have people who are 
+really studying what China and others are doing. You can be sure that China real
+ly has very smart people studying what we're doing. We at the secret and top sec
+ret level should have the same thing. (25:29) Have you read the uh AI27 paper? I
+ have. Uh, and so for those listening who haven't read it, it's a it's a future 
+vision of the AI and US and China racing towards AI and at some point the story 
+splits into a we're going to slow down and work on alignment or we're going full
+ out and uh, you know, spoiler alert and the race to infinity uh, humanity vanis
+hes. (25:56) So the right outcome will ultimately be some form of deterrence and
+ mutually assured destruction. Uh I wrote a paper with two other authors Dan Hen
+dricks and Alex Wang where we named it mutual AI malfunction. And the idea was g
+oes something like this. Um you're the United States, I'm China, you're ahead of
+ me. Um at some point you cross a line. (26:22) You know, you Peter cross a line
+ and I China go this is unacceptable. At some point it becomes in terms of amoun
+t of compute and amount of it's it's something you're doing where it affects my 
+sovereignty. It's not just words and yelling and an occasional shooting down a j
+et. It's it's a real threat to the identity of my my country, my economic what h
+ave you. (26:46) Under this scenario, I would be highly tempted to do a cyber at
+tack to slow you down. Okay? In mutually assured mal malfunction, if you will, w
+e have to engineer it so that you have the ability to then do the same thing to 
+me. And that causes both of us to be careful not to trigger the other. That's wh
+at mutual assured destruction is. That's our best formulation right now. (27:12)
+ We also recommend in our work, and I think it's very strong, that the governmen
+t require that we know where all the chips are. And remember, the chips can tell
+ you where they are because they're computers. Yeah. And it would be easy to add
+ a little crypto thing, which would say, "Yeah, here I am, and this is what I'm 
+doing. (27:31) " So, so knowing where the chips are, knowing where the training 
+runs are, and knowing what these fault lines are are very important. Now, there 
+are a whole bunch of assumptions in this scenario that I described. The first is
+ that there was enough electricity. The second is that there was enough power. T
+he third is the Chinese had enough electricity, which they do, and enough comput
+ing resources, which they may or may not have or may in the future have, and may
+ in the future have. (27:56) And also, I'm asserting that everyone arrives at th
+is eventual state of super intelligence at a roughly the same time. Again, these
+ are debatable points, but the most interesting scenario is we're saying it's 19
+38. the letter has come, you know, from Einstein to the president and we're havi
+ng a conversation and we're saying,"Well, how does this end?" Okay. (28:20) So, 
+if you were so brilliant in 38, what you would have said is this ultimately ends
+ with us having a bomb, the other guys having a bomb, and then we're going to ha
+ve one heck of a negotiation to try to make sure that we don't end up destroying
+ each other. And I think the same conversation needs to get started now, well be
+fore the Chernobyl events, well before the buildups. (28:41) Can I just take tha
+t one more step? And and don't answer if you don't want to, but if it was 1947, 
+1948, so before the Cold War really took off, and you say, well, that's similar 
+to where we are with China right now. We have a competitive lead, but it may or 
+may not be fragile. (29:00) What would you do differently 1947 1940 or what woul
+d Kissinger do different 1947 1948 1949 than what we did do? You know I I wrote 
+two books with Dr. Kissinger and I miss him very much.”
+
+In summary, this section not only details emerging technical methods and architectural shifts in AI (through continuous updating and techniques like distillation) but also weaves in geopolitical, economic, and regulatory debates. It stresses that the coming age of digital superintelligence is intertwined with issues of open source versus proprietary approaches, the need for massive capital investment in data centers, and the critical importance of regulatory oversight to prevent dangerous information leaks and geopolitical escalations. The conversation encapsulates a rich, multidimensional view of a future where AI development could parallel arms races, thereby mandating unprecedented cooperation between technical innovators, governments, and industry stakeholders.

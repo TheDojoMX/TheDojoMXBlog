@@ -1,0 +1,68 @@
+# Descripción para TikTok
+
+**Tema:** fundamentos técnicos para desarrolladores
+
+**Fuente:** /Users/hectorip/Downloads/Fundamentos técnicos esenciales para desarrolladores.mp4
+
+**Texto Original:**
+
+La tercera pregunta es, ¿qué libro técnico considerarías fundamental en tu formación como desarrollador? ¿Hay algún libro que digas que este me puso bases fuertes? Curiosamente estuve leyendo hace poco dos libros, uno de Dijkstra y otro de Nicklaus Wirth. Los dos entraban en temas siempre de la misma forma. Tengo la traducción al español de Nicklaus Wirth. Algoritmo y estructuras de datos. Tanto ese como el libro de Dijkstra que están escritos sobre 1974-1976. Ambos empiezan de la misma forma, queremos explicar programación pero no queremos explicarlo con un lenguaje de programación porque no consideraban que hubiese un lenguaje de programación bueno o que abstrayese lo suficiente como para no ligarse demasiado a una máquina o una arquitectura o a una forma de hacer las cosas. Los enfoques ambos intentan enseñarte algoritmia, enseñarte la base de la programación, enseñarte cómo ir hacia la programación pero intentan no mojarse con un lenguaje de programación. Nicklaus Wirth por ejemplo no lo consigue y al final termina utilizando Pascal. Dijkstra se crea su propio lenguaje de programación. es un mini lenguaje que hace específicamente para el libro, por lo que obviamente tienes que aprenderlo un poquito, aunque bueno, es casi como pseudocódigo, así que al final. No obstante, eso con su conocimiento de Algol, finalmente termina siendo casi como un sucedáneo de Algol. Y recuerdo que eso, yo estuve pensando también hace mucho tiempo, quiero hacer un libro de programación, o quiero hacer un curso de programación, o quiero enseñar programación, pero sin ligarme a ningún lenguaje de programación. Y claro, eso a día de hoy, aparte de que creo que no es práctico per se, porque la gente que quiere programar, quiere hacer algo con el computador y obviamente quieren hacerlo con un lenguaje de programación, no les va a valer eso de que me enseñes con un lenguaje abstracto. Quiero poder hacerlo en Python, en Ruby, en PHP, en cualquier lenguaje, pero que directamente haga cosas en la pantalla. Sin embargo, aquí saco otro libro que seguro que te suena. No, no me suena, no conozco a ese sujeto. El libro este, ya se lo comenté a Camilo, es un libro que me sorprendió muy gratamente porque presenta los principios que tiene que saber todo programador, pero sin atarse específicamente a ningún lenguaje de programación. Por lo que considero que este libro tendría que ser una de las bases que, si quieres hacer programación como tu carrera, debería de estar en tu lista de lectura.
+
+**Generado el:** 20250616_231203
+
+## Resultados
+
+### O1-MINI
+
+Aprender a programar requiere una base técnica sólida. Clásicos como los libros de Edsger Dijkstra y Niklaus Wirth han sido esenciales en la formación de desarrolladores. Estos autores, en los años 70, enseñaron programación desde una perspectiva algorítmica, evitando lenguajes específicos para centrarse en conceptos fundamentales como algoritmos y estructuras de datos. Aunque Wirth utilizó Pascal y Dijkstra creó su propio lenguaje, su enfoque resalta la importancia de entender las bases antes de aplicar cualquier lenguaje de programación.
+
+Actualmente, muchos buscan enseñar programación de manera independiente del lenguaje, pero la realidad es que es necesario aplicar estos conceptos en lenguajes prácticos como Python, Ruby o PHP. Un libro recomendado en este ámbito presenta principios esenciales para programadores sin atarse a un lenguaje específico, convirtiéndolo en una lectura imprescindible para quienes desean hacer de la programación su carrera.
+
+Referencias: Dijkstra (1976), Wirth (1974)
+
+#Programación #DesarrolloDeSoftware #FundamentosDeCódigo #Algoritmos #EstructurasDeDatos #AprenderAProgramar
+
+---
+
+### GEMINI
+
+Aquí una propuesta para tu TikTok:
+
+Se discute la importancia de libros técnicos fundamentales para una sólida formación como desarrollador.
+
+Figuras como Dijkstra y Wirth buscaron enseñar los fundamentos de la programación (algoritmos, estructuras de datos) de forma independiente a un lenguaje concreto. Su objetivo era abstraer los conceptos más allá de la sintaxis específica.
+
+Aunque hoy se prioriza aprender con lenguajes prácticos para resultados inmediatos, la idea de principios universales sigue vigente. Es crucial entender la lógica subyacente.
+
+Se recomienda buscar textos que presenten estos principios esenciales para todo programador, sin atarse a un lenguaje. Son una inversión clave si la programación es tu carrera, pues fortalecen tu capacidad de resolución de problemas.
+
+Fuente: N. Wirth (1976)
+
+#Programacion
+#DesarrolloDeSoftware
+#FundamentosDeProgramacion
+#LibrosTech
+#AprenderAProgramar
+#SoftwareEngineer
+
+---
+
+### CLAUDE
+
+📚 Fundamentos técnicos para desarrolladores: libros esenciales 📖
+
+¿Cuáles son los libros fundamentales para sentar bases sólidas en programación? En este video exploramos algunas obras clásicas que abordan los principios de la algoritmia y las estructuras de datos sin atarse a un lenguaje específico.
+
+Autores como Dijkstra y Niklaus Wirth, en sus libros de los años 70, buscaban explicar la programación de manera abstracta, evitando ligarse a una arquitectura o forma particular de hacer las cosas. Aunque al final terminaban recurriendo a lenguajes como Pascal o creando los suyos propios, su enfoque se centraba en enseñar los fundamentos de la programación.
+
+Si bien hoy en día este enfoque puede parecer poco práctico, ya que quienes desean programar buscan hacerlo en lenguajes concretos como Python o Ruby, existe un libro que logra presentar los principios esenciales para todo programador sin atarse a un lenguaje específico: "Principios de Programación" de Camilo Chacón Sartori. Esta obra debería estar en la lista de lectura de cualquiera que quiera hacer de la programación su carrera.
+
+Referencias:
+- "Algoritmos y estructuras de datos" de Nicklaus Wirth (1976)
+- "A Discipline of Programming" de Edsger W. Dijkstra (1976)
+- "Principios de Programación" de Camilo Chacón Sartori (2023)
+
+#programación #desarrolloweb #libros #fundamentos #algoritmia #estructurasdedatos
+
+---
+

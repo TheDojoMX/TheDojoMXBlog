@@ -1,0 +1,13 @@
+{
+  "project": "ch1_t2",
+  "document_title": "with Foundation Models",
+  "content_type": "book_chapter",
+  "document_chunks": 1,
+  "chunk_contexts": [
+    "introduction"
+  ],
+  "synthesis_length": 97293,
+  "improved_synthesis": true,
+  "synthesis_method": "concatenation_with_kg",
+  "includes_knowledge_graph": true
+}

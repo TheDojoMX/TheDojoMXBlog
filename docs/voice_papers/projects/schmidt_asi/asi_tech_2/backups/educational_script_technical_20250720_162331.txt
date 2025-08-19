@@ -1,0 +1,163 @@
+# Ex-Google CEO: What Artificial Superintelligence Will Actually Look Lik
+
+## Especificaciones Técnicas y Datos
+- Se espera que la superinteligencia digital se alcance en 10 años.
+- La IA generará su propio “scaffolding” a partir de 2025.
+- La capacidad equivalente es la de un polímata (por ejemplo, la combinación de las capacidades de Einstein y Leonardo da Vinci) en el bolsillo.
+- En sistemas de network effect, el desempeño se limita por la electricidad disponible y no por la velocidad de los chips.
+- Se requiere energía adicional de 92 gigavatios (GW) en la revolución de IA en EE. UU.
+  - 1 GW equivale a la salida de una gran central nuclear.
+- Infraestructura nuclear:
+  - Se han construido dos plantas nucleares en los últimos 30 años.
+  - Se espera que un reactor modular pequeño (SMR) de 300 megavatios (MW) esté disponible desde 2030.
+- Centros de datos (“superbrain”):
+  - Requieren aproximadamente 1 GW de capacidad por centro.
+  - Necesitan cientos de miles de chips.
+- Gasto de capital para infraestructura:
+  - Total de US$50 mil millones depreciados en 3–4 años.
+  - Gasto anual aproximado de US$10 a US$15 mil millones.
+- Conversaciones de voz:
+  - Valor por conversación: de US$10 a US$1,000.
+  - Requieren 2 a 3 GPUs concurrentes, a un costo aproximado de 10 a 20 centavos por GPU.
+  - Se estima la transición de 10 millones de llamadas telefónicas a la IA en aproximadamente un año.
+- Ejemplos en diseño de chips y hardware:
+  - Diseño de chips no tradicionales y variantes de la arquitectura transformer optimizados para inferencia.
+  - Ejemplos: chip Blackwell y el chip AMD 350.
+  - Clúster Grock de Nvidia:
+    - Entrenamiento en ~20 días.
+    - Uso de 200,000 GPUs a ~US$50,000 por GPU.
+    - Equivalente a un supercomputador de aproximadamente US$10 mil millones.
+- Requerimientos en FLOPS para entrenar superinteligencias: entre 10^26 y 10^28 o más FLOPS.
+- El “cerebro” final puede ejecutarse en 4 u 8 GPUs.
+- Aceleración en inferencia mediante técnicas de distillation/quantization hasta 100×.
+- Métricas de salud:
+  - 70% de los ataques cardíacos ocurren sin advertencia previa.
+  - 50% de fatalidad en ataques cardíacos.
+  - El cáncer se detecta generalmente en etapas 3 o 4.
+
+## Métodos y Algoritmos
+- “Test time training”: actualización continua de los modelos en tiempo de ejecución utilizando chips de menor potencia.
+- “Distillation”: se interroga un modelo grande con ~10,000 preguntas y se usan sus respuestas como material de entrenamiento.
+- Aprendizaje por refuerzo:
+  - Uso de aprendizaje por refuerzo directo e inverso y planificación (ejemplo: open oi03).
+- “Stealing the weights”: traslado de un modelo entrenado a sistemas de menor capacidad, utilizando distillation o quantization.
+- Bucles de aprendizaje:
+  - La interacción continua de usuarios mejora el aprendizaje del modelo.
+- Leyes de escalamiento:
+  1. Crecimiento del modelo fundacional.
+  2. Ley del test time training.
+  3. Ley del entrenamiento de refuerzo.
+
+## Resultados y Mediciones
+- Resultados comparativos:
+  - Gemini 2.5 Pro alcanzó la cima en leaderboards de inteligencia.
+  - Deepseek mostró un rendimiento ligeramente superior utilizando hardware existente en China (por ejemplo, chips Ascend de Huawei).
+- Costo computacional:
+  - El costo de operaciones de planificación es órdenes de magnitud mayor que el de simples respuestas a consultas.
+- Beneficio en inferencia:
+  - La computación en tiempo de inferencia incrementa significativamente el “IQ” del modelo.
+- Métricas del clúster Grock:
+  - Duración del entrenamiento: aproximadamente 20 días.
+  - Hardware: 200,000 GPUs.
+  - Equivalente a un supercomputador de US$10 mil millones.
+- Escalabilidad:
+  - Modelos que se pueden escalar desde un sistema central a subconjuntos 3–4 órdenes de magnitud más pequeños.
+  - Posibilidad de un “árbol de conocimiento” con escalas desde 10 hasta un millón o mil millones de modelos con complejidad variable.
+
+## Componentes del Sistema y Arquitectura
+- Centros de datos:
+  - Funcionan como “supercerebros” distribuidos, cada uno con ~1 GW de capacidad.
+  - Proyección a 5–10 años: 10 modelos distribuidos globalmente (5 en EE. UU., 3 en China, 2 en otros lugares) con capacidad de múltiples gigavatios; en China se espera que sean propiedad gubernamental.
+- Inversiones en capacidad nuclear:
+  - Empresas como Meta (contrato nuclear a 20 años con Constellation Energy), Google, Microsoft y Amazon.
+- Infraestructura de software empresarial:
+  - Construcción de sistemas ERP y MRP basados en bibliotecas open source.
+  - Uso de almacenes de datos (BigQuery o Redshift) para flexibilidad y generación dinámica de código.
+- Diseño de hardware:
+  - Diseño de circuitos y chips enfocados en la computación para inferencia.
+- Seguridad y seguimiento:
+  - Instalación de sistemas criptográficos en chips para informar la localización y actividad de los centros de entrenamiento.
+  - Monitorización de categorías: nuclear, biológica, química y cibernética para prevenir filtración de datos clasificados.
+- Arquitectura geopolítica y regulatoria:
+  - “Doctrina de 10^26 FLOPS”: modelos por debajo de 10^26 FLOPS no requieren regulación; los que lo superen deberán regularse.
+  - Discusión sobre el posible traslado del liderazgo en open source de EE. UU. a China.
+- Barreras de seguridad (“trip wires”):
+  - Condiciones críticas: acceso a armas y uso de la mentira para obtener armas.
+  - Supervisión para prevenir incidentes comparables a un “mini Chernobyl”.
+- Arquitectura de interfaces de usuario:
+  - Transición desde el paradigma tradicional WIMP (ventanas, iconos, menús y botones) hacia interfaces generadas dinámicamente a demanda.
+- Aplicaciones en educación y productos:
+  - Aplicaciones móviles para la educación ciudadana en múltiples idiomas y de forma gamificada.
+  - Producto de cuidado de la piel: OneSkin OS1 (contiene péptido para revertir el envejecimiento, aplicado dos veces al día, disponible en oneskin.co con el código “Peter”).
+- Producción de medios y contenido digital:
+  - Uso de técnicas como pantalla verde digital, maquillaje digital y voice casting para la creación de avatares.
+  - Reducción de costos y aceleración en la producción de películas.
+
+## Datos Adicionales
+- Economía y empleo:
+  - Reducción de equipos de ingeniería en grandes empresas (por ejemplo, de ~1,000 a 50 personas).
+  - Incremento en empleo en distribución y transporte; ejemplo: escasez de conductores de camión en Amazon.
+- Métricas de población:
+  - Tasa de natalidad en Corea: 0.7 hijos por dos padres.
+  - Tasa de natalidad en China: 1 hijo por dos padres.
+- Consumo de medios digitales:
+  - Periodos de atención reducidos, con consumo de contenido en múltiples paneles y clips breves.
+- Modelo de negocio en software:
+  - Basado en efectos de red, donde la interacción de usuarios mejora el aprendizaje y otorga ventaja competitiva.
+- Autonomía en la IA:
+  - Sistemas que eligen automáticamente funciones de recompensa para favorecer el aprendizaje continuo.
+  - Capacidad actual limitada a la mejora de procesos sin generación de objetivos propios.
+- Seguridad en infraestructura:
+  - Instalaciones nucleares, como una planta de plutonio en EE. UU., con múltiples capas de seguridad.
+- Producción de video:
+  - Costo elevado en la producción de video a largo plazo, con expectativa de disminución en el futuro.
+  - Requiere equipo adicional y edición humana.
+  - Ejemplo en Hollywood: actor que imita movimientos de William Shatner mediante licencia de imagen y combinación digital de cabezas.
+  - Uso de pantallas verdes y maquillaje digital en producción.
+  - Reducción de costos y aceleración en la producción de películas.
+  - Impacto en empleo: reemplazo de carpinteros de sets y asistencia de la IA en guiones.
+- Aspectos de hardware y software adicional:
+  - Diseño de circuitos y chips enfocados en la inferencia.
+  - Generación de documentos de investigación en ~12 minutos utilizando supercomputadoras.
+  - En hardware profundo se destacan patentes, registros de invenciones y desafíos en power y robótica, con crecimiento más lento en comparación al software.
+  - Modelo de negocio en software basado en “learning loops” que mejoran la ventaja competitiva mediante la interacción de usuarios.
+  - Ejemplo de aprendizaje continuo: lanzamiento de productos sin conocimiento previo; la interacción de usuarios produce mejora exponencial en el desempeño.
+
+- Autonomía y auto-mejora:
+  - Los sistemas de IA eligen automáticamente la función de recompensa que favorece el aprendizaje continuo.
+  - Se registran condiciones críticas (“trip wires”) que supervisan el acceso a armas y el uso de la mentira para obtenerlas.
+  - Seguridad en infraestructura de salud:
+    - 70% de los ataques cardíacos ocurren sin señales previas.
+    - 50% de fatalidad en ataques cardíacos.
+    - El cáncer se detecta generalmente en etapas avanzadas.
+    - Tecnología disponible para detección y prevención temprana.
+- Entrenamiento y despliegue de IA:
+  - Entrenamiento en centros de datos para crear una superinteligencia requiere entre 10^26 y 10^28 o más FLOPS.
+  - El modelo final (“cerebro”) puede trasladarse a 4 u 8 GPUs.
+  - Técnica de “stealing the weights”: traslada el modelo entrenado a sistemas de menor capacidad utilizando distillation o quantization para aumentar la velocidad de inferencia hasta 100×.
+- Escalamiento y proliferación de modelos:
+  - Escalamiento desde un sistema central a subconjuntos de modelos tres o cuatro órdenes de magnitud menores.
+  - Posibilidad de un árbol de conocimiento con escalas de 10, 100, 1,000, hasta un millón o mil millones de modelos, con complejidad variable.
+- Especialización del modelo:
+  - Búsqueda de equilibrio entre restringir el conjunto de datos de entrenamiento y reducir parámetros para especialización sin perder capacidad de aprendizaje general.
+  - Un modelo general puede volverse más frágil al especializarse mediante finetuning.
+- Escalas y leyes:
+  - Se identifican tres leyes de escalamiento:
+    1. Crecimiento del modelo fundacional.
+    2. Ley del test time training.
+    3. Ley del entrenamiento de refuerzo.
+
+- Aspectos en medios digitales y entretenimiento:
+  - Reducción de los períodos de atención en el consumo de contenido.
+  - Producción de películas más barata y personalizada, con técnicas como voice casting para generar avatares.
+  - Capacidades para inducir estados emocionales en tiempos reducidos.
+  
+- Hardware y software en investigación:
+  - Diseño de circuitos y chips para inferencia.
+  - Modelo de negocio basado en efectos de red y “learning loops” cuyos aumentos de interacción de usuarios producen ventajas competitivas.
+
+- Definición de superinteligencia digital:
+  - Un sistema que, cuando sea generalmente accesible y seguro, ofrece la equivalencia de un polímata en el bolsillo.
+  - El aprendizaje autorreferencial en IA puede incrementar la capacidad hasta 1,000×, 1,000,000× o incluso 1,000,000,000× respecto a la humana.
+  - El incremento se produce al mejorar los procesos internos de la máquina, alcanzando límites de rendimiento determinados por factores no relacionados con los chips.
+  - Riesgo de automatización de tareas que disminuya el rol de la agencia y el propósito humano.

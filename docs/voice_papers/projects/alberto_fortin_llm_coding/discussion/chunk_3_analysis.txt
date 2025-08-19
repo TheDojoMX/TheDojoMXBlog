@@ -1,0 +1,69 @@
+Section: Section 3
+Characters: 200
+==================================================
+• Título: "After months of coding with LLMs, I'm going back to using my brain".  
+• TLDR: "LLMs funcionan adecuadamente para tareas de codificación, pero a gran escala producen códigos desorganizados."  
+• El autor necesitaba construir una nueva infraestructura para su SaaS debido a que el combo PHP+MySQL ya no cumplía con los requisitos.  
+• Se eligieron las tecnologías Go y Clickhouse para la nueva infraestructura.  
+• El autor actuó inicialmente como gestor de productos, consultando a Claude sobre las mejores prácticas, realizando investigaciones independientes y generando un plan a partir de múltiples intercambios.  
+• Se generó un archivo markdown que detallaba la infraestructura existente, la infraestructura deseada, los objetivos y las razones para el cambio.  
+• Se usó Cursor Notepads para alimentar a un LLM con prompts; el LLM generaba código en base a los inputs.  
+• La metodología consistió en:  
+  – Ingresar mensajes y contextos al LLM.  
+  – Recibir código generado por el LLM.  
+  – Construir y probar el código resultante.  
+• Se priorizó la velocidad de implementación sobre la limpieza del código, debido a la demanda de clientes que necesitaban datos específicos y al hecho de que potenciales clientes aguardaban el lanzamiento para adquirir un plan.  
+• Datos de experiencia: El autor tiene 15 años de experiencia en ingeniería de software y estudió C++ y Java.  
+• Problemas identificados en el código generado:  
+  – Existencia de dos archivos de servicio en el mismo directorio con nombres similares pero métodos diferentes.  
+  – Inconsistencias en nombres de métodos y propiedades (por ejemplo, uno de los archivos usa "WebAPIprovider" y otro "webApi" para el mismo parámetro).  
+  – Múltiples declaraciones del mismo método en diferentes archivos.  
+  – Inconsistencias en la forma de llamar y obtener archivos de configuración.  
+• Se compara la situación con tener a 10 desarrolladores de nivel junior-mediano trabajando simultáneamente sin acceso a Git y sin coordinación.  
+• Con el tiempo, se presentaron errores recurrentes:  
+  – Mensajes de error que, al ser ingresados nuevamente al LLM, producían correcciones que ocasionaban otros errores.  
+  – Disminución en la capacidad del LLM para solucionar problemas detallados a medida que la complejidad aumentaba.  
+• El autor realizó una revisión manual del código generado ("coding review") para entenderlo y corregir las inconsistencias.  
+• Se inició un proceso de aprendizaje sobre Go y Clickhouse mediante:  
+  – Lectura de documentación y artículos.  
+  – Visualización de videos de YouTube (por ejemplo, acerca de Clickhouse).  
+  – Realización de preguntas detalladas a Claude y cuestionamiento de sus respuestas.  
+• El cambio de enfoque incluyó:  
+  – Dedicarse a revisar y reescribir partes del código que generaban mayor incomodidad.  
+  – Utilizar LLMs solo para tareas sencillas, tales como renombrar parámetros en el código y convertir pseudocódigo al equivalente en Go.  
+• El autor planifica funciones y características usando papel y lápiz antes de utilizar LLMs, reservando al LLM el papel de asistente y verificador.  
+• Se manifiestan preocupaciones sobre:  
+  – La pérdida de agilidad mental y la capacidad de planificar y escribir código organizado al depender excesivamente del LLM.  
+  – El riesgo para usuarios sin conocimientos de programación al emplear herramientas de IA para codificar ("vibe coding") y la dificultad de lidiar con errores y código confuso.  
+• Se describe la experiencia de codificar con Cursor y LLMs para usuarios sin conocimientos, donde se enfrentan a largos fragmentos de código sin comprensión, errores recurrentes y soluciones que complican el sistema.  
+• Se señalan limitaciones técnicas de los LLMs actuales en la generación de consultas complejas, por ejemplo:  
+  – No se logra generar una consulta en Clickhouse para tablas con más de 100 millones de filas en un servidor con RAM limitada, aun cuando se suministran el esquema SQL y la documentación correspondiente.  
+  – Modelos específicos mencionados: Gemini, o4-mini-high, o3 y Sonnet 3.7, ninguno de los cuales resuelve el problema sin generar errores.  
+• Se destaca la inconsistencia en el rendimiento del LLM, ya que incluso con un proceso supuestamente perfecto, el resultado no se mantiene estable y se interrumpe ante cambios o requisitos ligeramente distintos.  
+• Se expresa que, a pesar de flujos de trabajo recomendados por expertos o influenciadores, ciertas tareas aún quedan fuera del alcance de la IA.  
+• Se menciona el conflicto entre la velocidad ofrecida por la IA y la necesidad de revisar minuciosamente el código para obtener resultados consistentes y funcionales.  
+• Se hace referencia a la promoción de herramientas y técnicas (como los "reglas de Cursor" y un "flujo de trabajo de 15 pasos" encontrado en Reddit) que, aunque probadas, no resuelven todos los desafíos.  
+• El autor adopta un “punto medio” que consiste en:  
+  – Reducir drásticamente el uso de IA para tareas creativas o de generación de código complejo.  
+  – Emplear la IA para tareas sencillas y de verificación.  
+  – Fundarse en su experiencia y habilidades para escribir y organizar el código.  
+• Se expresa entusiasmo por la tecnología, pero se advierte que la dependencia excesiva en la IA puede afectar la capacidad de aprendizaje y el desarrollo de habilidades de programación.  
+• Se enfatiza que, aunque la tecnología pueda parecer avanzada y prometedora, presenta limitaciones en consistencia, rendimiento y resolución de problemas complejos.  
+• Se usan términos y referencias específicas:  
+  – "Cursor" para el sistema o herramienta de interacción.  
+  – "Claude", "Gemini", "o4-mini-high", "o3" y "Sonnet 3.7" como ejemplos de modelos de lenguaje.  
+• Se menciona el impacto económico: cada día que el sistema no está listo se pierden ingresos debido a clientes potenciales en espera de la implementación.  
+• Se hace una comparación final entre dos métodos:  
+  – Caminar (método tradicional, planificar manualmente).  
+  – Usar una “nave espacial” (IA rápida pero con controles confusos y resultados inestables).  
+• Se critica la promoción de benchmarks e influenciadores que venden la idea de la IA como una solución sin problemas, frente a la realidad de errores y complejidades en su uso.  
+• Benchmark usage se utiliza como métrica para evaluar el rendimiento.  
+• Influencers promueven una herramienta descrita como una “magic shovel.”  
+• Un grupo de compañías intenta persuadir a los usuarios de que la herramienta funciona como un “agent” en lugar de un cron job.  
+• En subreddits relacionados con IA, usuarios reportan experiencias completamente opuestas al usar el mismo modelo con el mismo prompt en el mismo día.  
+• Un reporte indica que codificar con IA puede percibirse como amazing en algunos días.  
+• Otro reporte indica que codificar con IA puede percibirse como increíblemente inefectivo en otros días.  
+• Se plantean preguntas sobre si se están limitando (throttling) los GPUs.  
+• Se plantean preguntas sobre la posibilidad de controlar adecuadamente las herramientas de IA.  
+• Texto adicional: "I long enough you’ll be able to relate. One day it’s amazing, the next day it’s incredibly stupid. Are they throttling the GPUs? Are these tools just impossible to control? What the fuck is going on?"  
+• Estos enunciados establecen ejemplos de percepciones variables y plantean cuestionamientos sobre la gestión de recursos GPU y el control de las herramientas de IA.

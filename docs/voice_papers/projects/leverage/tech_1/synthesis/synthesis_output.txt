@@ -1,0 +1,39 @@
+Cornell AI history lecture
+
+• Technical specifications and data:
+ – Experiments: "01 preview 01", "deep research", y enfoque en agentes.
+ – Imagen generada por ChatGPT: flor en capullo que permanece estática durante 10 minutos y evoluciona a una rosa completa.
+ – Escala temporal: cambios perceptibles en minutos u horas; cambios en escalas de días, años o décadas son menos notorios.
+ – Evolución de la AI: proceso que se extiende a lo largo de años o décadas.
+ – Definición de palanca (leverage): mecanismo por el cual un input pequeño o constante produce un output mayor.
+ – Ejemplo en mecánica clásica: aplicación de fuerza descendente en el lado izquierdo de una palanca para levantar una masa de 1 kilogramo en el lado derecho; aumento del tamaño de la palanca permite un factor de multiplicación de 3×.
+ – Tres tipos de palanca según Naval Rob:
+  1. Trabajo humano: uso de miles de trabajadores con input individual constante, generando mayor output agregado.
+  2. Capital: inversión de 200 mil dólares para comprar una propiedad de un millón de dólares mediante 800 mil dólares de préstamo, amplificando el retorno cuando la propiedad se valoriza.
+  3. Código y medios: escribir código para una aplicación que otorga valor a cada nuevo usuario sin trabajo adicional; publicación de una conferencia en línea que genera valor incremental por cada visualización.
+ – Nuevos mecanismos de palanca: pueden generar mayores valores y retornos; la competencia reduce la efectividad individual.
+ – Uso de AI en educación (ChatGPT): transforma el tiempo y esfuerzo (input) en una comprensión conceptual mayor (output).
+ – Proceso educativo tradicional: uso de búsquedas en Google, Wikipedia y textos; la AI genera materiales personalizados ajustados en dificultad.
+ – Reducción de barreras de aprendizaje: menor costo en tiempo y esfuerzo para la adquisición de conocimientos.
+ – AI como nueva palanca: amplía el impacto desde individuos hacia grupos y beneficia a la humanidad.
+ – Timestamps del discurso: 11:21, 12:03, 12:41, 13:11, 13:41, 14:00, 14:26, 15:11, 15:51, 16:10, 16:34, 16:58, 17:34, 17:57, 18:26, 18:51, 19:25, 20:00, 20:25, 20:57, 21:41, 22:12, 22:38, 22:58.
+ – Escasez de rasgos: motivación para explorar y curiosidad (en contraste con habilidades abundantes como la visión humana).
+ – Impacto social: facilidad para aprender y generar conocimiento con AI modifica la oferta de habilidades valoradas y aumenta el costo de oportunidad de no utilizar estas herramientas.
+
+• Methods and algorithms:
+ – AI Agent: combina dos mecanismos de palanca:
+  1. Trabajo humano: realiza tareas en lugar del usuario, similar a contratar mano de obra.
+  2. Replicabilidad: software ejecutable múltiples veces sin necesidad de permisos (permissionless).
+ – Ejemplo técnico de AI Agent: "deep research" utilizado en tareas de investigación.
+ – Proceso de generación de materiales personalizados: AI ajusta la dificultad de los contenidos educativos dinámicamente.
+
+• Results and measurements:
+ – Ejemplo de palanca en mecánica: uso de una palanca que genera una salida 3× mayor con ajuste en su tamaño.
+ – Impacto en equipos pequeños: startups de 10–20 personas con AI pueden generar ingresos en el orden de cientos de millones de dólares.
+ – Patrón "hockey stick" en crecimiento económico: se relaciona con avances científicos y generación de nuevos conocimientos a partir de la revolución científica del siglo XVII.
+ – Nota textual en timestamp (29:22): mención de la magnitud potencial de un nuevo tipo de palanca.
+
+• System components and architecture:
+ – Componentes de AI en investigación: integración de capacidades de razonamiento avanzado, generación de nuevos conocimientos y cooperación entre expertos especializados.
+ – Representación del conocimiento: sistema de alta dimensión con picos de especialización, conectado mediante una función similar a una envolvente convexa en optimización.
+ – Propuesta de futuro: modelos de AI de próximas generaciones con razonamiento avanzado y capacidad de colaboración continua entre humanos y agentes automatizados.

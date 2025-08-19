@@ -1,0 +1,143 @@
+Section: Section 2
+Characters: 9980
+==================================================
+Below is the complete content of Section 2 along with a comprehensive analysis that preserves every detail, insight, and nuance presented. The section begins by discussing the economic and technological incentives behind adopting AI-based systems in enterprise contexts—specifically, how companies are already engaging in voice customer service and sales initiatives with AI. It uses concrete numbers (for example, the potential value of conversations ranging from $10 to $1,000 and compute costs of roughly 10–20 cents on two to three GPUs) to underline that even minimal compute investment can drive massive adoption. The argument is that as compute becomes cheaper and more efficient in handling voice and conversation data, there is an enormous potential to scale AI adoption (with an expectation of around 10 million concurrent phone calls transitioning to AI in the near term).
+
+In tandem with this, the narrative shifts to highlight Google’s strength in its Cloud Platform (GCP). The discussion details how enterprises can now write a task and, using Google’s “model context protocol”, connect their databases so that a large language model automatically writes enterprise code. This insight is used to illustrate the deep disruption that legacy enterprise software companies—those that have operated for the last 30 years—will face, as their interstitial roles between data and application layers become redundant. The broader implication here is a gradual phasing out of older, less efficient systems in favor of automated, flexible, and scalable architectures.
+
+Furthermore, the section draws attention to a viewpoint described as the “San Francisco consensus”. According to this perspective, two things are reaching an inflection point: computers will soon replace most programming and mathematical tasks. This claim is built on the notion that both tasks operate within limited, well-defined language sets compared to human language, making them computationally simpler and far more scalable with increased computing power. The result will be the rise of world-class AI-driven mathematicians and programmers within the next one or two years—an acceleration that would dramatically boost innovations in fields as diverse as physics, chemistry, biology, and material science. As an example, the text envisions a future where AI independently accelerates the discovery of new materials to address challenges like climate change.
+
+A particularly striking part of the discussion is the exploration of what happens when many specialized AIs (or “sants”) emerge in every field within a short span. This proliferation could eventually lead to a unified superintelligence—one that far exceeds the cumulative capacity of human intellect. The text explores the potential impacts of such an intelligence explosion, including issues like competitive deterrence between global powers (e.g., China vs. the US), challenges related to electricity consumption, and other proliferation issues that defy our current vocabulary and regulatory frameworks.
+
+The narrative then transitions into a discussion on the agentic revolution where AI agents will not only solve specific business or governmental tasks but will be integrated across various sectors, with a faster uptake in financially robust entities compared to slow-moving institutions such as government bodies. These insights emphasize the dual nature of rapid technological progress: on the one hand, it promises unparalleled productivity and problem-solving capabilities (as seen in advanced computational math and programming tasks); on the other, it hints at dangerous potentials including novel cyber and biological attack vectors. 
+
+The section closes by reflecting on the need for society and governments to understand these rapid shifts—as evidenced by discussions about digital superintelligence and continuous updates in algorithms (for example, test time training). It notes that while the positive impacts of AI are undeniable (from automating enterprise tasks to accelerating scientific discoveries), the potential for unprecedented, hard-to-defend attacks in both the biological and cyber domains presents significant national security risks. 
+
+The complete content of Section 2 is as follows:
+
+“t disruptive companies. It's not for you if y
+ou don't want to be informed of what's coming, why it matters, and how you can b
+enefit from it. (09:57) To subscribe for free, go to dmadis.com/tatrends. That's
+ dmandis.com/tatrends to gain access to trends 10 plus years before anyone else.
+ Let me throw some numbers at you just to reinforce what you said. you know, we 
+have a couple companies in the lab that are doing voice customer service, voice 
+sales with the new, you know, just as of the last month. Sure. (10:20) And the v
+alue of these these conversations is 10 to $1,000. And the cost of the compute i
+s, you know, maybe two three concurrent GPUs is optimal. It's like 10 20 cents. 
+And so they would buy massively more compute to improve the the quality of the c
+onversation. There aren't even close to enough. (10:43) We we count about 10 mil
+lion concurrent phone calls that should move to AI in the next year or so. And a
+nd my view of that is that's a good tactical solution and a great business. Let'
+s look at other examples of tactical solutions that are great businesses. And I 
+obviously have a conflict of interest talking about Google because I love it so 
+much. (10:59) So with that as in mind, look at the Google strength in GCP. Now G
+oogle Google's cloud product where they have a completely fully served enterpris
+e offering for essentially automating your company with AI. Yeah. And the remark
+able thing and this is to me is shocking is you can in an enterprise write the t
+ask that you want and then using something called the model context protocol you
+ can connect your databases to that and the large language model can produce the
+ code for your enterprise. (11:30) Now, there's 100,000 enterprise software comp
+anies, middleware companies that grew up in the last 30 years that I've been wor
+king on this that are all now in trouble because that that interstitial connecti
+on is no longer needed with their business and and and of course they'll have to
+ change as well. (11:47) The good news for them is enterprises make these change
+s very slowly. If you built a brand new enterprise um architecture for ERP and M
+RP, you would be highly tempted to not use any of the ERP or MRP suppliers, but 
+instead use open- source libraries, build essentially use BigQuery or the equiva
+lent from Amazon, which is Red Redshift, and essentially build that architecture
+ and it gives you infinite flexibility and the computer system writes most of th
+e code. Now, programmers don't go away at the moment. (12:17) It's pretty clear 
+that junior programmers go away. The sort of journeymen, if you will, of the ste
+reotype because these systems aren't good enough yet to automatically write all 
+the code. They need very senior computer scientists, computer engineers who are 
+watching it, that will eventually go away. (12:35) One of the things to say abou
+t productivity, and I call this the San Francisco consensus because it's it's la
+rgely the view of people who operate in San Francisco, goes something like this.
+ uh we're just about to the point where we can do two things that are shocking. 
+The first is we can replace most programming tasks by computers and we can repla
+ce both most mathemat mathematical tasks by computers. (13:03) Now you sit there
+ and you go why? Well, if you think about programming and math, they have limite
+d language sets compared to human language. So close they're simpler computation
+ally and they're scale free. You can just do it and do it and do it with more el
+ectricity. You don't need data. You don't need real world input. You don't need 
+telemetry. You don't need sensors. Yeah. (13:23) So, it's likely in my opinion t
+hat you're going to see worldclass mathematicians emerge in the next one year th
+at are AI based and worldclass programmers that going to appear within the next 
+one or two years. When those things are deployed at scale, remember math and pro
+gramming are the basis of kind of everything, right? It's an accelerate accelera
+nt for physics, chemistry, biology, material science. (13:50) So, going back to 
+things like climate change, can you imagine if we and this goes back to your ori
+ginal argument, Peter, imagine if we can accelerate the discoveries of the new m
+aterials that allow us to deal with a carbonized world. Yeah. Right. It's very e
+xciting. Can I love to drill in about you first? I just want to hit this because
+ it's important the potential for there to be I don't want to use the word PhD l
+evel you know other than uh thinking in the terms of research PhD level AIS and 
+uh that can basically attack any problem and solve it uh and solve math if you w
+ould in physics. uh this idea of an AI, (14:30) you know, intelligence explosion
+. Um Leo Leopold put that at like 26 27 uh heading towards digital super intelli
+gence in the next few years. Do you buy that time frame? So again, I consider th
+at to be the San Francisco consensus. I think the dates are probably off by one 
+and a half or two times, which is pretty close. (14:58) So a reasonable predicti
+on is that we're going to have specialized soants in every field within five yea
+rs. That's pretty much in the bag as far as I'm concerned. Sure. And here's why.
+ You have this amount of humans and then you add a million AI scientists to do s
+omething, your slope goes like this. Your rate of improvement, we should get the
+re. (15:20) The real question is once you have all these sants, do they unify? D
+o they ultimately become a superhum? The term we're using is super intelligence,
+ which implies intelligence that beyond the sum of what humans can do. The race 
+to super intelligence, which is incredibly important because imagine what a supe
+r intelligence could do that we ourselves cannot imagine, right? There it's so m
+uch smarter than we and it has huge proliferation issues, competitive issues, Ch
+ina versus the US issues, electricity issues, so forth. (15:53) We don't even ha
+ve the language for the deterrence aspects and the proliferation issues of these
+ powerful models or the imagination. Totally agree. In fact, it's it's one of th
+e great flaws actually in the original conception. You remember Singularity Univ
+ersity and Ray Curtzwhile's books and everything. (16:11) And we kind of drew th
+is curve of rat level intelligence, then cat, then monkey, and then it hits huma
+n and then it goes super intelligent. But it's now really obvious when you talk 
+to one of these multilingual models that's explaining physics to you that it's a
+lready hugely super intelligent within its savant category. (16:29) And so Denni
+s keeps redefining AGI day as well when it can discover relativity the same way 
+Einstein did with data that was available up until that date. That's when we hav
+e AGI. So long before that. Yeah. So I think it's worth getting the timeline rig
+ht. Yeah. So the following things are baked in. You're going to have an agentic 
+revolution where agents are connected to solve business processes, government pr
+ocesses and so forth. (16:54) They will be adopted most quickly in companies in 
+country companies that have a lot of money and a lot of uh time latency issues a
+t stake. It will adop be adopted most slowly in places like government which do 
+not have an incentive for innovation. Um and fundamentally are job programs and 
+redistribution of income kind of programs. So call it what you will. (17:12) The
+ important thing is that there will be a tip of the spear in places like financi
+al services, certain kind of bio biomedical things, startups and so forth. And t
+hat's the place to watch. So all of that is going to happen. The agents are goin
+g to happen. This math thing is going to happen. The software thing is going to 
+happen. (17:32) We can debate the rate at which the biological revolution will o
+ccur, but everyone agrees that it's right after that. We're very close to these 
+major biological understandings. Um in physics you're limited by data but you ca
+n generate it synthetically. There are groups which I'm funding which are genera
+ting physics um essentially um models that can approximate algorithms that canno
+t be they're incomputable. (17:59) So in other words you have a a essentially a 
+foundation model that can answer the question good enough for the purposes of do
+ing physics without having to spend a million years doing the computation of you
+ know quantum chromodnamics and things like that. Yep. Um, all of that's going t
+o happen. The next questions have to do with what is the point in which this bec
+omes a national emergency and it goes something like this. (18:23) Everything I'
+ve talked about is in the positive domain, but there's a negative domain as well
+. The ability for biological attacks, um, uh, obviously cyber attacks. Imagine a
+ cyber attack that we as humans cannot conceive of, which means there's no defen
+se for it because no one ever thought about it. Right? These are real issues. A 
+biological attack, you take a virus, I won't obviously go into the details. (18:
+47) You take a virus that's bad and you make it undetectable by some changes in 
+its structure, which again I won't go into the details. We released a whole repo
+rt at the national level on this issue. So at some point the government and not 
+it doesn't appear to understand this now is going to have to say this is very bi
+g because it affects national security, national economic strengths and so forth
+. (19:14) Now China clearly understands this and China is putting an enormous am
+ount of money into this. We have slowed them down by virtue of our chips control
+s but they found clever ways around this. There are also proliferation issues. M
+any of the chips that they're not supposed to have, they seem to be able to get.
+ And more importantly, as I mentioned, the algorithms are changing. (19:36) And 
+instead of having these expensive foundation models by themselves, you have cont
+inuous updating, which is called test time training.
+
+In summary, the section argues that we are on the brink of a digital superintelligence revolution, driven by monumental improvements in AI (especially in natural language processing and enterprise automation) along with radical reductions in computation cost and evolving hardware infrastructures. It explains how today's technological trends (exemplified by Google’s innovations and massive voice AI deployments) foreshadow a broader transformation in both business practices and the fundamental nature of intellectual work. Moreover, it carefully balances the optimism of AI’s potential to accelerate problem-solving in critical fields (like climate change and biomedical research) with significant concerns over national security, cyber/biological threats, and the unknown consequences of unifying countless specialized AI systems into a superintelligent entity. This dual-edged perspective underscores the urgency for both rapid innovation and proactive, thoughtful regulation in the era of AI.

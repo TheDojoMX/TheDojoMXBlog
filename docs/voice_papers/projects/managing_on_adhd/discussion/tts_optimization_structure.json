@@ -1,0 +1,12 @@
+{
+  "project": "managing_on_adhd",
+  "language": "Spanish",
+  "voice_provider": "elevenlabs",
+  "workflow": "tts_optimization",
+  "original_script_length": 18109,
+  "optimized_script_length": 6107,
+  "agent": {
+    "role": "TTS Optimizer",
+    "goal": "Transform educational scripts into TTS-optimized versions with perfect rhythm, emphasis, and natural speech patterns"
+  }
+}

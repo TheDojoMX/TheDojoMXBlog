@@ -1,0 +1,51 @@
+{
+  "project": "youre_all_nuts",
+  "paper_title": "My AI Skeptic Friends Are All Nuts",
+  "language": "Spanish",
+  "technical_level": "technical",
+  "duration_minutes": 20,
+  "tone": "casual",
+  "workflow": "summary_with_chunking",
+  "document_chunks": 3,
+  "chunk_sections": [
+    "Section 1",
+    "Section 2",
+    "Section 3"
+  ],
+  "agents": [
+    {
+      "role": "Deep Document Analyzer",
+      "goal": "Extract comprehensive insights from each section of the document"
+    },
+    {
+      "role": "Master Synthesizer",
+      "goal": "Combine all section analyses into a comprehensive, coherent understanding"
+    },
+    {
+      "role": "Master Educational Science Communicator & Storyteller",
+      "goal": "Transform technical content into captivating podcast narratives following the Voice Papers style guide"
+    }
+  ],
+  "tasks": [
+    {
+      "description": "\nAnalyze this section from the paper \"My AI Skeptic Friends Are All Nuts\".\nSection: Section 1\nThis is the beginning of the document.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"My AI Skeptic Friends Are All Nuts\".\nSection: Section 2\nThis is part 2 of 3.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, st...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"My AI Skeptic Friends Are All Nuts\".\nSection: Section 3\nThis is the final part of the document.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2....",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                You have received detailed analyses of all 3 sections of the paper \"My AI Skeptic Friends Are All Nuts\".\n                \n                Create a comprehensive synthesis that EXTRACT...",
+      "type": "synthesis"
+    },
+    {
+      "description": "\nTransform all the insights from the conversation into an educational podcast script in Spanish.\n\n### 1. INICIO - PRINCIPIOS PARA CREAR GANCHOS:\n\n**IMPORTANTE: Crea un gancho ESPECÍFICO al tema del pa...",
+      "type": "educational"
+    }
+  ]
+}

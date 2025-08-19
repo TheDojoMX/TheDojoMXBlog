@@ -1,0 +1,1631 @@
+LLM Post-Training: A Deep Dive into Reasoning
+Large Language Models
+Komal Kumar, Tajamul Ashraf, Omkar Thawakar, Rao Muhammad Anwer, Hisham Cholakkal,
+Mubarak Shah, Ming-Hsuan Yang, Phillip H. S. Torr, Fahad Shahbaz Khan, Salman Khan
+Abstract—LargeLanguageModels(LLMs)havetransformedthenaturallanguageprocessinglandscapeandbroughttolifediverse
+applications. Pretrainingonvastweb-scaledatahaslaidthefoundationforthesemodels, yettheresearchcommunityisnow
+increasinglyshiftingfocustowardpost-trainingtechniquestoachievefurtherbreakthroughs. Whilepretrainingprovidesabroad
+linguisticfoundation, post-trainingmethodsenableLLMstorefinetheirknowledge, improvereasoning, enhancefactualaccuracy, and
+alignmoreeffectivelywithuserintentsandethicalconsiderations. Fine-tuning, reinforcementlearning, andtest-timescalinghave
+emergedascriticalstrategiesforoptimizingLLMsperformance, ensuringrobustness, andimprovingadaptabilityacrossvarious
+real-worldtasks. Thissurveyprovidesasystematicexplorationofpost-trainingmethodologies, analyzingtheirroleinrefiningLLMs
+beyondpretraining, addressingkeychallengessuchascatastrophicforgetting, rewardhacking, andinference-timetrade-offs. We
+highlightemergingdirectionsinmodelalignment, scalableadaptation, andinference-timereasoning, andoutlinefutureresearch
+directions. Wealsoprovideapublicrepositorytocontinuallytrackdevelopmentsinthisfast-evolvingfield:
+https://github. com/mbzuai-oryx/Awesome-LLM-Post-training.
+IndexTerms—ReasoningModels, LargeLanguageModels, ReinforcementLearning, RewardModeling, Test-timeScaling
+C LLM post-training alignment
+ontemporary Large Language Models (LLMs) exhibit
+GPT-3
+remarkable capabilities across a vast spectrum of tasks, Algorithmic categorization Claude2 GPT-4, 4O, O1
+encompassingnotonlytextgenerationandquestion- Algorithms Claude3 Mistral Large
+answering, butalsosophisticatedmulti-stepreason- Qwen-32B-Preview Gemini 1.5
+ing. Theypowerapplicationsinnaturallanguage LLMs DeepSeek-R1 AlphaGo Beam Search
+understanding, contentgeneration, automatedreasoning, Chain-of-Thought
+Mistral Large 2 Tree-of-Thoughts
+andmultimodalinteractions. Byleveragingvast
+Qwen-32B-Preview Confidence Sampling Consistency Decoding
+self-supervised training corpora, these models often approxiDeepSeek-R1 TRPO Search Against Verifiers
+t M
+o a d T
+m i t f u m a
+f p i h
+c c
+n o p
+t i
+i d
+c r
+c D
+r e
+e y e
+a a
+i e
+b d c
+h s t
+t l s
+t v a i t
+s i i l u p
+h s
+y o i
+t l
+v a i
+r r e o
+i o,
+. n g
+i e s a
+o u
+t i c
+a n
+c g h
+) d h h -
+h i e
+l a
+i r a
+o l
+r s r
+i y c
+u l
+t e e e
+o e
+c d
+c a
+i m n
+o t m b
+e o t
+m i
+h c x e h
+g p l c
+n r p
+e t
+i n
+o a r t
+- e s t r
+e y i n y
+l e n c
+g t
+e i
+s t
+k i
+n d
+i s
+e o s n.
+m e f
+t e
+n t v
+,, d
+r t T
+[ e
+a o t d
+a g (
+h s g e
+c c e
+s i
+l g
+e i l s
+-, h
+c s
+c t
+r a n
+m i
+e o
+c i h
+n r
+m t r
+, a
+e e
+i r
+o l
+g n
+n l
+s a
+o m
+p e
+f s
+e s
+n o
+, g l e
+r [
+n y
+r n
+e a
+e e
+o L
+t n
+x i
+d L
+i r e
+p c
+, n t e
+g u M
+e l
+L a g f a
+a c s
+i L s
+i e
+r ]
+s n,
+. e M
+r s
+e 4
+e m
+u,
+o e r
+s, h
+e m i
+a p
+s t i
+d 4 i
+l o o
+n 4 a
+e a
+, n
+s,
+i a
+d n
+e a
+s t
+e M
+n o p
+s,
+, t
+n g r
+t o
+t h
+a 4
+c h
+s i
+l a
+i n o
+a l
+n ] ] y
+g e
+- -
+.. E D S X t i A a s A
+O t r i
+l L l
+i M N
+Q B n B
+M l
+E E g i E w
+L A
+- R
+R 3 e i
+L T
+d a
+T. n
+B 0 M
+M e.2 3 A G. 5 3 r o. S 3 k o G n e
+n m
+A L n
+P E o
+O i
+o d
+D n r
+w w a o
+i d
+i f
+s p
+m l
+- - t e
+i. e
+t i
+R d l p e
+o l
+e L
+a a g r t
+a S
+t e n
+i l F
+o f t
+- c r
+C h C R r V L l i o t R H a i n q n E F i u
+i n
+r P
+ai ni n
+N e l g
+a O F D
+P R O
+m F
+G E R O
+C L
+l f E l
+O E
+i M
+P p G
+n f
+O i
+R m
+i o c
+P iz
+P d i
+a O
+o e
+i R o
+n l l
+c t
+ard P
+oli
+n R
+e i
+n i
+e D
+e ce c
+in R e g a so n in g 5 S c
+a lin
+r g P L a o i L
+S e a rc h
+n L s M L i M t n g K
+Fig. 1: A taxonomy of post-training approaches for LLMs
+• Equal contribution. Corresponding authors (Email: ko- (LLMs), categorized into Fine-tuning, Reinforcement Learnmal. kumar@mbzuai. ac. ae, tajamul. ashraf@mbzuai. ac. ae)
+ing, and Test-time Scaling methods. We summarize the key
+• KomalKumar, TajamulAshraf, OmkarThawakar, RaoMuhammad Anwer, Hisham Cholakkal, Fahad Shahbaz Khan, and techniques used in recent LLM models, such as GPT-4 ,
+SalmanKhanarewithMohamedbinZayedUniversityofArtificial LLaMA3.3, andDeepseekR1.
+Intelligence, AbuDhabi, UAE.
+• MubarakShahiswiththeCenterforResearchinComputerVision
+attheUniversityofCentralFlorida, Orlando, FL32816, USA.
+• Ming-HsuanYangiswiththeUniversityofCaliforniaatMerced, producecompellingoutputswhilestillstumblingonrelatively
+Merced, CA95343USA, andalsowithGoogleDeepMind, Mounsimple logical tasks. Unlike symbolic reasoning that maniputainView, CA94043, USA.
+• PhilipH. S. TorriswiththeDepartmentofEngineeringScience, latesexplicitrulesandfacts, LLMsoperatein animplicit and
+UniversityofOxford, OxfordOX12JD, UK. probabilistic manner . For the scope of this work,
+raM
+]LC. sc. This complicates
+than explicit logical inference or symbolic manipulation. Ad- planning and credit assignment, as the impact of token seditionally, models trained purely via next-token prediction lection may only emerge later. Feedback in language-based
+can fail to align with user expectations or ethical standards, RL is also sparse , subjective, and delayed, relying on
+especially in ambiguous or malicious scenarios . These heuristic evaluations and user preferences rather than clear
+issues underscore the need for specialized strategies that ad- performance metrics . Additionally, LLMs must
+dressreliability, bias, andcontextsensitivityinLLMoutputs. balance multiple, sometimes conflicting, objectives, unlike
+LLMs training can be broadly categorized into two stages: conventional RL, which typically optimizes for a single goal.
+pre-training, whichgenerallyreliesonanext-tokenprediction Hybrid approaches combining process-based rewards (e. g.,
+objective over large-scale corpora, and post-training, encom- chain-of-thought reasoning) with outcome-based evaluations
+passing multiple rounds of fine-tuning and alignment. Post- (e. g., response quality) help refine learning . Thus,
+training mechanisms aim to mitigate LLMs limitations by RL for LLMs requires specialized optimization techniques to
+refining model behavior and aligning outputs with human handle high-dimensional outputs, non-stationary objectives,
+intent, mitigatingbiasesorinaccuracies. and complex reward structures, ensuring responses remain
+Adapting LLMs to domain-specific tasks often involves contextuallyrelevantandalignedwithuserexpectations.
+techniques like fine-tuning , which enables taskspecific learning but risks overfitting and incurs high computational costs. To address these challenges, approaches Reinforcement in LLMs extends beyond consuch as Reinforcement Learning (RL) en- ventional RL as it navigates vast action spaces,
+hance adaptability by leveraging dynamic feedback and op- handlessubjectiveanddelayedrewards, andbaltimizing sequential decision-making. Additionally, advances ances multiple objectives, necessitating specialin scaling techniques, including Low-Rank Adaptation izedoptimizationtechniques.
+(LoRA) , adapters , and Retrieval-Augmented Generation (RAG) , improve both computational effi- c)TestTimeScalinginLLMs: TestTimeScalingisoptimizciency and factual accuracy. These strategies, coupled with ingmodelperformanceandefficiencywithoutalteringthecore
+distributedtrainingframeworks, facilitatelarge-scaledeploy- architecture. Itenablesbettergeneralizationwhileminimizing
+ment and further boost the usability of LLMs across diverse computationaloverhead. Itiscrucialforenhancingtheperforapplications(Figure1). Throughthesetargetedpost-training manceandefficiencyof LLMs. Ithelpsimprovegeneralization
+interventions, LLMsbecomebetteralignedwithhumanintent across tasks but introduces significant computational chaland ethical requirements, ultimately enhancing their real- lenges. Balancingperformanceandresourceefficiency
+world applicability. Below, we summarize key post-training requires targeted strategies at inference. Techniques like
+stages. CoTreasoningandTree-of-Thought(ToT)frameworks
+a) Fine-Tuning in LLMs: Fine-tuning adapts pre-trained enhance multi-step reasoning by breaking down complex
+LLMstospecifictasksordomainsbyupdatingparameterson problems into sequential or tree-structured steps. Additioncurated datasets . While LLMs gen- ally, search-based techniques enable iterative
+eralizewellafterlarge-scalepretraining, fine-tuningenhances exploration of possible outputs, helping refine responses and
+performanceintaskslikesentimentanalysis, question ensure higher factual accuracy. These approaches, combined
+answering, and domain-specific applications such as medical withmethodslikeLoRA, adapters, andRAG, opdiagnosis . This process, typically supervised, timizethemodel sabilitytohandlecomplex, domain-specific
+alignsmodelswithtaskrequirementsbutposeschallengeslike tasksatscale. RAGenhancesfactualaccuracybydynamically
+overfitting, high computational costs, and sensitivity to data retrievingexternalknowledge, mitigatinglimitationsofstatic
+biases. Tothisend, parameter-efficienttechniques training data . Distributed training frameworks
+like LoRA and adapters learn task-specific adaptation by leverageparallelprocessingtomanagethehighcomputational
+updating explicit parameters, significantly reducing compu- demands of large-scale models. Test-time scaling optimizes
+tational overhead. As models specialize, they may struggle inferencebyadjustingparametersdynamicallybasedontask
+without-of-domaingeneralization, underscoringthetrade-off complexity . Modifying depth, width, or active layers
+betweenspecificityandversatility. balancescomputationalefficiencyandoutputquality, making
+itvaluableinresource-limitedorvariableconditions. Despite
+advancements, scalingpresentschallengessuchasdiminishing
+Fine-tuning tailors LLMs for specific tasks, returns, longer inference times, and environmental impact,
+improving performance but risking overfitting,
+especially when search techniques are performed at test time
+highcomputecosts, andreducedgeneralization.
+rather than during training . Ensuring accessibility and
+feasibility is essential to maintain high-quality, efficient LLM
+b) Reinforcement Learning in LLMs: In conventional RL, deployment.
+an agent interacts with a structured environment, taking
+discrete actions to transition between states while maximizing cumulative rewards . RL domains—such as robotics, Test-time scaling enhances the adaptability
+boardgames, andcontrolsystems—featurewell-definedstate- of LLMs by dynamically adjusting computational
+action spaces and clear objectives . RL in LLMs differs resourcesduringinference.
+significantly. Instead of a finite action set, LLMs select tokens
+1.1 Prior Surveys
+Token-wise training can ensure fluency but
+Recent surveys on RL and LLMs provide valuable insights may cause cascading errors due to uncorrected
+but often focus on specific aspects, leaving key post-training
+mistakesininference.
+components underexplored . Many works examine RL techniques like Reinforcement Learning from Hu- As these models scale, they exhibit emergent reasoning
+man Feedback (RLHF) , Reinforcement Learning from AI
+abilities, particularly when trained on diverse data that inFeedback (RLAIF) , and Direct Preference Optimization
+clude code and mathematical content . However, de-
+(DPO) , yet they overlook fine-tuning, scaling, and critical
+spite their impressive capabilities, LLMs struggle to maintain
+benchmarks essential for real-world applications. Furthercoherence and contextual relevance over long sequences. Admore, thesestudieshavenotexploredthepotentialof RLeven
+dressing these limitations necessitates a structured approach
+without human annotation supervised finetuning in various
+tosequencegeneration, whichnaturallyalignswithRL.
+frameworks such as DeepSeek R1 with GRPO . Other surSinceLLMsgeneratetextautoregressively—whereeachtoveys explore LLMs in traditional RL tasks, such as multi-task
+ken prediction depends on previously generated tokens—this
+learninganddecision-making, buttheyprimarilyclassifyLLM
+processcanbemodeledasasequentialdecision-makingprobfunctionalities rather than addressing test-time scaling and
+lemwithinaMarkovDecisionProcess(MDP). Inthissetintegrated post-training strategies . Similarly, studies
+ting, thestates representsthesequenceoftokensgenerated
+on LLM reasoning discuss t
+so far, theaction a is the next token, anda rewardR(s, a )
+learning-to-reason techniques but lack structured guidance t t t
+evaluates the quality of the output. An LLM s policy π is
+on combining fine-tuning, RL, and scaling. The absence of θ
+optimizedtomaximizetheexpectedreturn:
+tutorials, along with reviews of software libraries and implementation tools, further limits their practicality. In contrast, hX i
+thissurveyoffersacomprehensiveviewofLLMpost-trainingas J(π
+)=E γtR(s
+),
+shown inFigurey systematicallycoveringfine-tuning, RL, t=0
+andscalingasinterconnectedoptimizationstrategies. Weoffer where γ is the discount factor that determines how strongly
+practical resources—benchmarks, datasets, and tutorials—to future rewards influence current decisions. A higher γ places
+aidLLMrefinementforreal-worldapplications. greater importance on long-term rewards. The primary objective in RL is to learn a policy that maximizes the expected cumulative reward, often referred to as the return.
+1.2 Contributions This requires balancing exploration—trying new actions to
+Thekeycontributionsofthissurveyareasfollows: discover their effects—and exploitation—leveraging known
+We provide a comprehensive and systematic review of actions that yield high rewards. While LLMs optimize a like-
+• post-training methodologies for LLMs, covering fine- lihood function using static data, RL instead optimizes the
+expectedreturnthroughdynamicinteractions. Toensurethat
+tuning, RL, andscalingasintegralcomponentsofmodel
+optimization. LLMs generate responses that are not only statistically likely
+but also aligned with human preferences, it is essential to go
+Weofferastructuredtaxonomyofpost-trainingtechbeyond static optimization methods. While likelihood-based
+niques, clarifying their roles and interconnections, and
+training captures patterns from vast corpora, it lacks the
+adaptabilityneededforrefiningdecision-makingininteractive
+directionsinoptimizingLLMsforreal-worlddeployment.
+settings. By leveraging structured approaches to maximizing
+Our survey provides practical guidance by introducing
+• long-term objectives, models can dynamically adjust their
+key benchmarks, datasets, and evaluation metrics
+strategies, balancingexplorationandexploitationtoimprove
+essential for assessing post-training effectiveness, ensurreasoning, coherence, andalignment.
+ingastructuredframeworkforreal-worldapplications.
+LLMs exhibit emergent abilities due to scale,
+Background while RL refines and aligns them for better reasoningandinteraction.
+The LLMs have transformed reasoning by learning to predict
+the next token in a sequence based on vast amounts of text
+data using Maximum Likelihood Estimation (MLE)
+, which maximizes the probability of generating 2.1 RL based Sequential Reasoning.
+the correct sequence given an input. This is achieved by The chain-of-thought reasoning employed in modern LLMs is
+minimizingthenegativelog-likelihood: naturally framed as an RL problem. In this perspective, each
+intermediatereasoningstepistreatedasanactioncontributX T ingtoafinalanswer. TheobjectivefunctionJ(π )represents
+L = logP (y y, X). θ
+MLE θ t t the expected reward of the policy π, capturing how well
+t=1 themodelperformsovermultiplereasoningsteps. Thepolicy
+Here, X represents the input, such as a prompt or context. gradientupdateisgivenby:
+Y = (y, y,..., y ) is the corresponding target output se1 2 T " T #
+quence, and P θ (y t y t, X) denotes the model s predicted J(π )=E X logπ (x x )A(s, a ),
+probabilityfortokeny, givenprecedingtokens. θ θ τ θ θ t 1: t 1 t t
+t=1
+where the advantage function A(s, a ) distributes credit to own highest-scoring output, ensuring that updates directly
+t t
+individual steps, ensuring that the overall reasoning process improve performance relative to what the model currently
+is refined through both immediate and delayed rewards. considersitsbestresponse. Thegradientupdatefollows:
+Suchformulations, includingstep-wiserewarddecomposition (cid:16) (cid:17)
+, havebeencrucialforenhancingtheinterpretability θ J(π θ ) r(ys) r(yˆ) θ logπ θ (ys),
+and performance of LLMs on complex reasoning tasks. In where ys is a sampled sequence, yˆis the greedy output, and
+traditionalRLformulations, anagenthas:
+r(y) represents an evaluation metric such as BLEU for
+Valuefunction: V(s) = E(cid:2)futurereturn s (cid:3), translation or CIDEr for image captioning. Since the
+learning signal is based on the difference r(ys) r(yˆ), the
+Action-value(Q-)function: Q(s, a) = E(cid:2)futurereturn s, a (cid:3), model is explicitly trained to generate outputs that score
+higher than its own baseline under the evaluation metric.
+Advantagefunction: A(s, a) = Q(s, a) V(s).
+If the sampled output outperforms the greedy output, the
+In words, A(s, a) measures how much better or worse it is to model reinforces it; otherwise, it discourages that sequence.
+takeaspecificactionainstatescomparedtowhattheagent This direct feedback loop ensures that training aligns with
+wouldnormally expect(itsbaselineV(s)). the desired evaluation criteria rather than just maximizing
+likelihood. By leveraging the model s own best predictions
+2.2 Early RL Methods for Language Modeling. as a baseline, SCST effectively reduces variance and stabilizes
+Here, we briefly overview pioneering methods that laid the trainingwhileoptimizingreal-worldperformancemetrics.
+groundwork for applying RL to language generation tasks. Minimum Risk Training (MRT). MRT directly miniThese initial efforts train a decision-making model (policy mizestheexpectedriskovertheoutputdistribution. Givena
+(p )) by directly adjusting its parameters to maximize re- task-specific loss (y, y ) comparing the generated output y
+wards. Somepolicygradientapproachesareexplainedbelow: withthereferencey, theMRTobjectiveisdefinedas:
+Policy Gradient (REINFORCE). The REINFORCE algo- L (θ)= X p (y x) (y, y ).
+rithmisamethodusedtoimprovedecision-making MRT θ
+by adjusting the model s strategy (policy) based on rewards y Y
+receivedfromitsactions. Insteadofdirectlylearningthebest This formulation incorporates evaluation metrics (e. g., 1
+actionforeverysituation, thealgorithmrefineshowlikelydif- BLEU) directly into training, enabling fine-grained adjustferentactionsaretobechosen, graduallyimprovingoutcomes mentsofthepolicy.
+overtime. Ateachstep, themodelupdatesitsparameters(θ) Advantage Actor-Critic (A2C/A3C). RL methods like
+basedonhowwellitspastdecisionsperformed: REINFORCE rely solely on policy gradients, which suffer from high variance, leading to unstable and inefficient
+(cid:16) (cid:17)X T learning. Since the reward signal fluctuates across different
+θ θ+α G b logπ (a s ).
+θ θ t t trajectories, updates may be noisy, causing slow or erratic
+t=1 convergence. To mitigate this, Actor-Critic methods combine two components as follows: an actor
+over an episode, b is a baseline value that helps reduce and a critic. The actor is a policy π (a s ) that selects
+variance, making learning more stable, θ logπ θ (a t s t ) actions a at state s, while the crit θ ic i t s a v t alue function
+measureshowmuchasmallchangeinθaffectstheprobability
+V (s )tha
+heexpectedreturnofastate. Thecritic
+of choosing action a t given state s t, α is the learning rate, pr ϕ ovi t des a more stable learning signal, reducing variance in
+controllinghowmuchthepolicyupdatesateachstep.
+policy updates and enabling efficient learning in continuous
+actionspaces. Actorupdatesareguidedbythepolicygradient
+Optimizing actions based on long-term re- theorem, where the advantage function A(s t, a t ) defined in
+wards, whichaccountforthecumulativebenefits
+Sec.2.1, determineshowmuchbetteranactiona
+. Thepolicywiththelearning
+immediate outcomes, is fundamental in recent
+rateαisupdatedas:
+LLMs. This approach allows models to explore θ θ+αA(s, a ) logπ (a s ).
+t t θ θ t t
+multiplereasoningpathsmoreeffectively.
+Meanwhile, the critic is updated using temporal difference
+learning, minimizing the squared error between its estimate
+Curriculum Learning with MIXER.. Ranzato et al. 
+andtheactualreturn:
+introducesagradualtransitionfrommaximumlikelihoodestimation(MLE)toRL. Theoveralllossisaweightedcombination:
+ϕ ϕ β
+(cid:16)
+V (s ) G
+(cid:17)2
+ϕ ϕ t t
+L=λ(t)L +(cid:0)1 λ(t)(cid:1) L,
+MLE RL where β is a learning rate for critic. To enhance stability
+where λ(t) decreases with training time. This curriculum and efficiency, several improvements have been proposed.
+helps the model ease into the RL objective and mitigate the Eligibility traces allow learning from recent states, enabling
+mismatchbetweentrainingandinference. faster convergence. Function approximation with neural netSelf-Critical Sequence Training (SCST). SCST re- works ensures effective handling of high-dimensional inputs.
+fines the policy gradient method by comparing the model s Advanced variants such as Natural Gradient methods 
+sampled outputs against its own best (greedy) predictions. adjustupdatesusingtheFisherInformationMatrix, improvInstead of using an arbitrary baseline, SCST uses the model s ingconvergencespeed.
+RLEnhancedLLMs Developer Source #Params RLMethods Fine-Tuning ArchitectureType Model TTS
+DeepSeek-V2 Deepseek Link 236B-A21B GRPO DPO+GRPO MoE Open
+GPT 4.5 OpenAI Link - RLHF, PPO, RBRM SFT+RLHF MoE Closed
+Gemini Google Link - RLHF SFT+RLHF SingleModel Closed
+Claude 3.7 Anthropic Link - RLAIF SFT+RLAIF SingleModel Closed
+Reka Reka Link 7B,21B RLHF, PPO SFT+RLHF SingleModel Closed
+DeepSeekR1 Deepseek Link 240B-A22B GRPO DPO+GRPO MoE Open
+Nemotron-4 340B NVIDIA Link 340B DPO, RPO DPO+RPO SingleModel Closed
+Falcon TII Link 40B - SFT SingleModel Open
+GPT-4 OpenAI Link - RLHF, PPO, RBRM SFT+RLHF MoE Closed
+Llama 3 Meta Link 8B,70B,405B DPO SFT+DPO SingleModel Open
+Qwen2 Alibaba Link (0.5-72)B,57B-A14B DPO SFT+DPO SingleModel Open
+Gemma2 Google Link 2B,9B,27B RLHF SFT+RLHF SingleModel Open
+Starling-7B Berkeley Link 7B RLAIF, PPO SFT+RLAIF SingleModel Open
+Moshi Kyutai Link 7B - - Multi-modal Open
+Athene-70B Nexusflow Link 70B RLHF SFT+RLHF SingleModel Open
+GPT-3.5 OpenAI Link 3.5B,175B RLHF, PPO SFT+RLHF MoE Closed
+Hermes 3 Nous Link 8B,70B,405B DPO SFT+DPO SingleModel Open
+Zed ZedAI Link 500B RLHF RLHF Multi-modal Open
+PaLM 2 Google Link - RLHF - SingleModel Closed
+InternLM2 SAIL Link 1.8B,7B,20B RLHF, PPO SFT+RLHF SingleModel Closed
+Supernova NovaAI Link 220B RLHF RLHF Multi-modal Open
+Grok3 Grok-3 Link 175B - DPO Dense Open
+Pixtral MistralAI Link 12B,123B - PEFT Multimodal Open
+Minimaxtext MiniMax Link 456B - SFT SingleModel Closed
+Amazonnova Amazon Link - DPO, RLHF, RLAIF SFT SingleModel Closed
+Fugakullm Fujitsu Link 13B - - SingleModel Closed
+Nova Rubik sAI Link - - SFT Proprietary Closed
+03 OpenAI Link - RLthroughCoT RLthroughCoT SingleModel Closed
+Dbrx Databricks Link 136B - SFT SingleModel Open
+Instruct-GPT OpenAI Link 1.3B,6B,175B RLHF, PPO SFT+RLHF SingleModel Closed
+Openassistant LAION Link 17B - SFT SingleModel Open
+ChatGLM ZhipuAI Link 6B,9B ChatGLM-RLHF SFT+RLHF SingleModel Open
+Zephyr Argilla Link 141B-A39B ORPO DPO+ORPO MoE Open
+phi-3 Microsoft Link 3.8B,7B,14B DPO SFT+DPO SingleModel Closed
+Jurassic AI21Labs Link - - SFT Proprietary Closed
+Kimi K1.5 MoonshotAI Link 150B - RLHF Multi-modal Open
+Phi-4 Microsoft Link 28B,70B,140B DPO SFT+DPO SingleModel Closed
+Chameleon MetaAI Link 34B - SFT SingleModel Open
+Cerebrasgpt Cerebras Link 13B - SFT SingleModel Open
+Bloomberggpt BloombergL. P. Link 50B - SFT SingleModel Closed
+Chinchilla DeepMind Link 70B RLHF, PPO SFT SingleModel Closed
+TABLE 1: An overview of reinforcement learning-enhanced LLMs, where 141B-A39B denotes a Mixture of Experts (MoE)
+modelwith141billiontotalparameters, ofwhich39billionareutilizedduringinference. TTSstandsforTest-TimeScaling.
+A notable early example is Barto s Actor-Critic model 3 Reinforced LLMs
+, where the critic uses a linear function V ϕ (s t ) and Fromamethodologicalperspective, theintegrationof RLinto
+the actor follows a linear policy. Modern methods like A2C
+LLMreasoningtypicallyfollowsthreecoresteps:
+(Advantage Actor-Critic) and A3C (Asynchronous AdvantageActor-Critic)extendthisapproachbyparalleliz1) Supervised Fine-Tuning (SFT): Commences with a
+pretrained language model that is subsequently refined
+ing training across multiple environments, leading to faster
+on a supervised dataset of high-quality, human-crafted
+and more stable learning. By leveraging the critic s value
+examples. Thisphaseensuresthemodelacquiresabaseestimation, actor-critic methods stabilize learning, improve
+linecompliancewithformatandstyleguidelines.
+sample efficiency, and accelerate convergence, making them
+moreeffectiveforcomplexdecision-makingtasks.
+2) Reward Model (RM) Training: Generated outputs
+from the fine-tuned model are collected and subjected
+to human preference labeling. The reward model is then
+trained to replicate these label-based scores or rankings,
+Connection with Modern Methods. The aforemen- effectively learning a continuous reward function that
+tioned early RL methods—REINFORCE , MIXER , mapsresponsetexttoascalarvalue.
+SeqGAN, SCST, MRT, andactor-criticalgorithms 3) RL Fine-Tuning: Finally, the main language model is
+established the mathematical foundations for sequential rea- optimized via a policy gradient algorithm most e. g PPO
+soning in LLMs. These methods provided initial solutions to tomaximizetherewardmodel soutput. Byiteratingthis
+challenges such as exposure bias and high variance. Mod- loop, the LLM learns to produce responses that humans
+ern techniques such as large-scale RL from Human Feedback find preferable along key dimensions such as accuracy,
+(RLHF) using PPO and advanced reward models, e. g., helpfulness, andstylisticcoherence.
+Group Relative Policy Optimization (GRPO) build di- 4) Reward Modeling and Alignment: Sophisticated
+rectly upon these ideas. By integrating sophisticated reward reward functions are developed—drawing from human
+signals and leveraging efficient policy updates, contemporary preferences, adversarial feedback, or automated metLLMs achieve improved reasoning, safety, and alignment with rics—to guide the model toward outputs that are coherhumanvaluesandpavethewayforrobustmulti-stepreason- ent, safe, and contextually appropriate. These rewards
+ing and improved quality of generated text. Table provides are critical for effective credit assignment across multian overview of recent models, including their parameters, stepreasoningprocesses.
+architecture types, and the distilled RL methods employed, Early approaches to aligning LLMs with human preferences
+alongwithlinksforeasyaccess. leveraged classical RL algorithms, such as PPO and Trust
+Region Policy Optimization (TRPO) , which optimize a prefery toy, wedenoteitasy y. UnderBradley–Terry,
+j k j k
+policy by maximizing the expected cumulative reward while theprobabilityofy beingpreferredovery isgivenby:
+j k
+enforcing constraints on policy updates via a surrogate objective function and KL-divergence regularization . Im- exp(cid:0) R (x, y )(cid:1)
+P (cid:0) y y x;θ (cid:1) = θ j.
+proved alternatives to these methods for scalable preference- j k exp(cid:0) R (x, y )(cid:1) + exp(cid:0) R (x, y )(cid:1)
+θ j θ k
+based optimization have emerged, such as Direct Preference
+Optimization (DPO) and Group Relative Policy WetrainR
+bymaximizing thelikelihoodofobservedpreferOptimization (GRPO) , which reformulate the ences(orequivalentlyminimizingthenegativelog-likelihood):
+alignment objective as a ranking-based contrastive loss function over human-labeled preference data. Unlike PPO L BT (θ)= X logP (cid:0) y j y k x;θ (cid:1).
+and TRPO , which rely on explicit reward models and (x, yj yk) D
+critic networks, DPO and GRPO directly optimize the policy
+by leveraging log-likelihood ratios and group-wise reward II. Plackett–Luce Model1 (Rankings). When full or
+comparisons, respectively, eliminating the need for explicit partialrankings ofmresponsesareavailable, i. e.,
+value function approximation while preserving preferenceconsistent learning dynamics. This transition from classical y y y,
+j1 j2 jm
+RL-based alignment to preference-based direct optimization
+introducesnovelformulationssuchascontrastiverankingloss, the Plackett–Luce model factorizes the probability of
+policylikelihoodratioregularization, andgroupedadvantage thisrankingas:
+estimation, whichareexplainedinsubsequentsections.
+P (cid:0) y,..., y x;θ (cid:1) = Y m exp(cid:0) R θ (x, y jℓ )(cid:1).
+j1 jm Pm exp(cid:0) R (x, y )(cid:1)
+3.1 Reward modeling ℓ=1 k=ℓ θ jk
+LetX bethespaceofpossiblequeries(e. g., userprompts). For
+Itsnegativelog-likelihoodis:
+eachqueryx X, wecollectoneormorecandidateresponses
+q y u j e r m j y = x x 1. w T h y e p re ica m ll x y, is th t e h s e e n r u es m p b o e n r se o s f a c r a e nd g i e d n a e t r e at r e e d sp b o y ns a es la fo n r - L PL (θ) = X X m log Pm exp e (cid:0) x R p θ (cid:0) ( R x, ( y x jℓ, ) y (cid:1) )(cid:1)!.
+guagemodelorpolicyunderdifferentsamplingorprompting (x, rank) Dℓ=1 k=ℓ θ jk
+conditions. Human annotators provide preference judgments
+Inpractice, oneminimizesthesum(oraverage)ofthechosen
+fortheseresponses. Thesecantakevariousforms:
+ranking-basedlossoverallpreferencedata:
+• Pairwise preference: For two responses y j and y k to
+p th r e efe s r a r m ed e t q o u y er k y. x, an annotator indicates whether y j is L(θ) = D 1 X L ranking (cid:16) θ; x, y j, prefs (cid:17),
+Rankings: A partial or total ordering of the candidate (x, yj, prefs) D
+responses, e. g. y j1 y j2 y jmx. whereL
+ranking
+orL
+. Whilethereward
+We denote such human preference data by r j for each model R θ (x, y) provides a scalar reward signal reflecting
+response or pair, where r j might be a label, a rank, or an human preferences, this connects to common RL concepts,
+index indicating preference level. The overall dataset D then especiallytheadvantagefunction.
+consistsofN annotatedexamples:
+n oN
+D = (xi, yi mi, preferencesi ). Reward modeling uses ranking-based losses
+j j=1
+i=1 to learn a function from human preferences for
+In practice, a large number of queries x are sampled from policyoptimization.
+real or simulated user requests. Candidate responses y mx
+j j=1
+RewardmodelingTypes. Rewardscanbecategorizedinto
+or using beam search or other decoding strategies. Human
+explicitandimplicitapproaches.
+annotators then provide pairwise or ranking feedback on
+whichresponsesarebetter(orworse)accordingtopredefined
+criteria (e. g., quality, correctness, helpfulness, etc). We train 3.1.1 Explicit Reward Modeling
+a parametric model Reward Model (R (x, y)), referred to as Explicit reward modeling defines reward functions directly
+therewardmodel, tomapeach(query, response)pair(x, y)to based on predefined rules, heuristics, or human annotations.
+a scalar score. The goal is for R to reflect the alignment or This reward structure involves direct, numeric signals from
+preferencelevel, suchthat: humans or from specialized AI modules trained to approximate human judgments (e. g., ranking or pairwise compariR: X Y R.
+θ son). This method can produce precise reward estimates but
+HereY isthespaceofallpossibleresponses. may be time-consuming or costly at scale. Illustrative use
+To train R, we use the human preference labels in D to cases include red-teaming exercises where experts rate the
+defineasuitableranking-based loss, asexplainedbelow. severity of toxic outputs, or domain-specialist tasks in which
+I. Bradley–TerryModel(Pairwise). Forpairwisepref- correctnessmustbevalidatedbyasubjectmatterexpert.
+erences, Bradley-Terrymodelisoftenused. Supposethe
+datasetindicatesthat, foragivenqueryx, humanannotators
+1. https://hturner. github. io/PlackettLuce/
+Tree of Reward Model Proximal Regularization
+SFT
+Thoughts n Training PO KL-Divergence
+a n
+ati o
+a Preference Reference Reward Direct
+CoT Prompting
+pairs: (x, y, y ) policy SFT Δℒ(x, y, y ) Optimization
+Reasoning and Expert policy Adversarial
+SFT REINFORCE PO
+Acting demonstrations Reward Signal
+LLM Post Multiple paths Advantage PPO+KL KL constraint
+Self-feedback
+training using policy Estimation Regularization Regularization
+Episodic Offline Terminal Value Function V-guided loss
+Memory Agent trajectories rewards 0,1 Training PO+TTS
+Policy Long CoT Rejection RL helpfulness
+Self- Relative PO
+examples+SFT Sampling & SFT alignment PO
+gninosaer
+emit
+ecnerefnI
+3.2.3
+6.2.3
+4.2.3
+5.2.3
+7.2.3
+8.2.3
+FHLR
+OPD
+FIALR
+OPRT
+OERO
+OPRG
+Fig. 2: Overview of Large Language Models (LLMs) reasoning methods, showcasing pathways for enhancing reasoning
+capabilities through approaches like Chain-of-Thought (CoT) prompting, self-feedback, and episodic memory. The diagram
+highlights multiple reinforcement learning-based optimization techniques, including GRPO, RLHF, DPO, and RLAIF, for finetuningreasoningmodelswithrewardmechanismsandpreference-basedlearning.
+3.1.2 Implicit Reward Modeling debugging, in which the path to the answer is as significant
+Implicit reward modeling infers rewards indirectly from ob- asthefinalstatement. Insuchproblems, therewardassigned
+served behaviors, interactions, or preference signals, often in individual steps encourages transparency and robust stepleveraging machine learning techniques to uncover latent re- by-stepreasoning. However, itrequiresamorecomplexannoward structures. It derives its signals from user interaction tationprocess, e. g., requires gold reasoningstepsorpartial
+metrics such as upvotes, acceptance rates, click-through pat- creditscoring. Processrewardscanbecombinedwithoutcome
+terns, or session engagement times. While it can accumulate rewardsforastrongmulti-phasetrainingsignal.
+vast datasets with minimal overhead, this approach risks
+fostering behaviors that exploit engagement heuristics at the
+expenseofcontentqualityorveracity. Policy Reward Modeling(PRM)withlast-stepagReward Function. Definingarewardfunctionfortextgen- gregation outperforms Outcome Reward Modeling
+eration tasks is an ill-posed problem . The existing
+(ORM)byleveragingfinal-stepevaluationstooptimizepolicyupdatesmoreeffectively.
+RL methods in LLMs either focus on the generation process
+outcome(OutcomeRewardModeling)orthe(ProcessReward
+Modeling), to shape LLM behaviors. We explain these two
+rewardmodelingparadigmsbelow. 3.1.5 Iterative RL with Adaptive Reward Models
+3.1.3 Outcome Reward Modeling to continuously improve the performance of LLMs by iterMeasures the end result (e. g., whether the final answer is atively refining the reward models and the policy model.
+factually correct or solves the user s query). This model Thisapproachaddressesthechallengesofrewardhackingand
+is straightforward to implement but may offer limited in- reward model drift, which can occur when the reward model
+sight into how the conclusion was reached. It is prevalent becomes misaligned with the desired objectives during largein short-response tasks, where the user s primary concern is scale RL training. The RL process is divided into multiple
+the correctness or succinctness of the final statement. For iterations, where the model is trained in cycles. After each
+long-responsetasks, outcomebasedrewardcanleadtocredit iteration, the reward model is updated based on the latest
+assignment problem, i. e., which specific actions or states lead model behavior and human feedback. The reward model is
+toaparticularrewardoutcome. not static but evolves over time to better align with human
+preferences and task requirements. This adaptation ensures
+3.1.4 Process Reward Modeling that the reward signals remain accurate and relevant as the
+Assigns feedback at intermediate reasoning steps, incentiviz- modelimproves. Repeattheiterativeprocessuntilthemodel s
+ing coherent, logically consistent, and well-structured chains performance plateaus or meets the desired benchmarks. The
+of thought. This approach is particularly valuable for tasks rewardmodelandpolicymodelco-evolve, witheachiteration
+involving mathematical derivations, legal arguments, or code bringingthemclosertooptimalalignment.
+3.2 Policy Optimization preferred responses (according to human labels) relative to
+Once we have a trained reward model R (x, y) that captures dispreferred ones. Thekeyideaistolookattheoddsratio:
+humanpreferences, wecanintegrateitintoaRLframeworkto π (y x)
+optimize apolicyπ ϕ. Inessence, wereplace(oraugment)the π ϕ ϕ (y k j x),
+environment s native reward signal with R (x, y) so that the
+wherey
+isthepreferred responseandy
+istheless-preferred
+agivenqueryx.
+responseforagivenqueryx.
+IntypicalRLnotation:
+PairwisePreferenceProbability. Inmanydirectpreferenceapproaches(e. g., Bradley–Terrystyle), onewrites
+• Each state s here can be interpreted as the partial dialogueorpartialgenerationprocessforthenexttoken(in P (cid:0) y y x (cid:1) = σ (cid:16) ln π ϕ (y j x)(cid:17) = 1,
+languagemodeling). ϕ j k π ϕ (y k x) 1+exp (cid:16) lnπϕ(yk x) (cid:17)
+Eachactionaisthenexttoken(ornextchunkoftext)to πϕ(yj x)
+begenerated. whereσ( )isthelogistic(sigmoid)function. Intuitively, ifthe
+• Thepolicy π ϕ (a s)isaconditionaldistributionoverthe policyπ ϕ assignshigherprobabilitytoy j thantoy k, theodds
+nexttoken, parameterizedbyϕ. πϕ(yj x) exceed 1, making y more likely to be the preferred
+Weseektofindϕthatmaximizes theexpectedrewardunder o π uϕt (y cko m x) eunderthemodel. j
+R. Concretely, letxbeauserquery, andlety π ( x)be InORPO, onetypicallydefinesanegativelog-likelihood loss
+θ ϕ
+thegeneratedresponse. Weaimtosolve: forallpairs (x, y y ) inthedataset:
+j k
+max E h E (cid:2) R (x, y)(cid:3)i. L (ϕ) = X log (cid:16) P (cid:0) y y x (cid:1)(cid:17).
+x X y πϕ( x) θ ORPO ϕ j k
+(x, yj yk) D
+Thismeansthatonaverage, overuserqueriesxandresponses
+Substitutingthelogisticformgives:
+ydrawnfromthepolicyπ, wewanttherewardmodel sscore
+R θ (x, y)tobeashighaspossible. L (ϕ) = X log (cid:16) π ϕ (y j x) (cid:17),
+Policy Gradient and Advantage. Themodernalgorithms ORPO π (y x) + π (y x)
+ϕ j ϕ k
+(e. g., PPO, GRPO, TRPO)relyonpolicygradients. (x, yj yk) D
+Figure presents a structured comparison of the these main whichcanalsobeinterpretedasmaximizingthelogoddsratio
+RL frameworks. Each framework builds upon different princi- forthecorrect(preferred)labelineachpairwisecomparison.
+plesforpolicylearning, referencemodeling, andrewardcom- Interpretation via Odds Ratios. By treating each
+h p o u w tat m io u n c. h R b ec e a tt ll e t r h a a n tt a h c e t a io d n va a nt i a s g t e h f a u n nc t t h io e n b A as ( e s l, i a n ) e q e u x a p n e t c ifi te e d s O p R re P f O er p en u c sh e e l s ab t e h l e ( p y j ol icy y k t ) o a i s nc a r c e o a n se st i r t a s in p t ro o b n a t b h il e it o y dd m s a π π sϕs ϕ ( ( o y y k j n x x y ) ) j,
+return V(s). At a high level, we update the policy π ϕ in the whiledecreasingitony k. Whenviewedinlogarithmicspace:
+d ad ir v e a c n ti t o a n ge th a a n t d in d c e r c e r a e s a e s s es π ϕ i ( t a fo r s) ne fo g r at a iv c e ti - o a n d s va a nt w a i g t e h a p c o t s i i o t n iv s e. ln (cid:16) π π ϕ ϕ ( ( y y k j x x ) ) (cid:17),
+Formally, theadvantageA attimetcanbewrittenas:
+t ahighervaluecorrespondstoagreaterlikelihoodofselecting
+A t =Q(s t, a t ) V(s t ), y j over y k. Hence, minimizing L ORPO (ϕ) aligns π ϕ with the
+human-labeledpreferences.
+where Q(s, a ) is the expected future return (sum of future
+t t
+rewards, includingR )startingfroms whentakingactiona.
+θ t t. Odds Ratio Preference Optimization (ORPO)
+WhenusingtherewardmodelR:
+θ is potentially less flexible for combining multi1) We interpret R θ (x, y) as the immediate or terminal re- plerewardsignals.
+wardforthegeneratedresponsey.
+2) The policy s future returns thus factor in how likely
+subsequenttokensaretobepositivelyscoredbyR. 3.2.2 Proximal Policy Optimization (PPO) in LLMs
+3) The advantage function still captures how much better A popular method for policy optimization is PPO , a
+a particular generation step is compared to the baseline strategy adapted to align LLMs with human feedback. Given
+performanceV(s ). a policy π parameterized by θ and a reward function R,
+t θ
+PPO updates the policy by optimizing a clipped objective
+thatbalancesexplorationandstability. Specifically, ifr (θ)=
+Therewardmodellearnsrelativepreferences t
+πθ(at st) denotes the probability ratio for an action a in
+ratherthanabsolutescores. Thisavoidstheneed s π tθaretfe (a s t s, tt ) heclippedPPOobjectiveis: t
+forcalibratedhumanratingsandfocusesonpair- t
+wisecomparisons. LPPO(θ)=E h min(cid:0) r (θ)A, clip(r (θ),1 ϵ,1+ϵ)A (cid:1)i,
+t t t t t
+whereA isanestimatoroftheadvantagefunctionandϵisa
+3.2.1 Odds Ratio Preference Optimization (ORPO) hyperparameter controlling the allowable deviation from the
+The simplest method is ORPO which directly optimizing previouspolicy. A iscomputedusingGeneralizedAdvantage
+a policy from pairwise human preferences. Instead of first Estimation (GAE) based on rewards and a learned value
+learningaseparaterewardmodelandthenrunningstandard function. The clipping objective of PPO restricts how drasRL, ORPO updates the policy to increase the likelihood of tically the updated policy distribution can diverge from the
+original policy. This moderation averts catastrophic shifts in policy updates while ensuring they remain within a conlanguagegenerationandpreservestrainingstability. strainedtrustregion, measuredbyKLdivergence.
+PolicyOptimizationwithKLPenalty. DuringRLfine- InsteadofusingaclippedobjectivelikePPO, TRPOenforces
+tuningwithPPO, thepolicyπisoptimizedtomaximizereward a hard constraint on policy updates by solving the following
+whilestayingclosetothebasemodelρ. Themodifiedreward optimizationproblem:
+functionincludesaKLdivergencepenalty:
+(cid:20) π (a s ) (cid:21)
+J(π)=E (x, y) D (cid:2) r(x, y) βKL(cid:0) π( x) ρ( x)(cid:1)(cid:3), m θ ax E t π θo θ ld (a t t t s t ) A t
+whereβcontrolsthepenaltystrength. TheKLtermKL(π ρ)
+subjecttotheconstraint:
+prevents over-optimization to the proxy reward r(x, y) (i. e.,
+rewardhacking).
+E [D (π ( s ) π ( s ))] δ.
+t KL θold t θ t
+The KL penalty is a regularization, which whereδ isahyperparameterthatcontrolshowmuchthenew
+ensure policy retains the base model s linguistic policycandivergefromtheoldone.
+coherenceandavoidsdegenerateoutputs. UnlikePPO, whichapproximatesthisconstraintusingclipping, TRPOdirectlysolvesaconstrainedoptimizationproblem,
+ensuring each update does not move too far in policy space.
+3.2.3 Reinforcement Learning from Human Feedback (RLHF)
+However, solvingthisconstrainedproblemrequirescomputaRLHF refines LLMs through direct human preference sig- tionally expensive second-order optimization techniques like
+nals, making them more aligned with human expectations.
+conjugate gradient methods, making TRPO less efficient for
+Theprocessinvolvesthreemainsteps. First, SFTisperformed
+large-scale models like LLMs. In practice, PPO is preferred
+on a pretrained model using high-quality labeled data to
+over TRPO due to its simplicity, ease of implementation, and
+establish strong linguistic and factual capabilities. Second, a
+comparableperformanceinlarge-scaleapplicationslikeRLHF.
+rewardfunctionRistrainedusinghuman-annotatedrankings
+However, TRPO remains an important theoretical foundation
+ofgeneratedresponses, allowingittopredictpreferencesand
+forstablepolicyoptimizationindeepreinforcementlearning.
+provide a scalar reward signal. Third, PPO is employed in the
+RLHFpipelinebyusinghuman-providedpreferencescores
+(or rankings) to shape R and thereby guide the policy up- 3.2.6 Direct Preference Optimization (DPO)
+dates. Thisensuresthatthemodelprioritizesoutputsaligned DPO is a recently proposed method for training LLMs
+with human-preferred behavior. The robust performance un- from human preference data without resorting to the tradider conditions of noisy or partial reward signals makes PPO tional RL loop (as in RLHF with PPO). Instead of learning a
+well-suitedfortextgenerationtasks, wherelargeactionspaces separate reward function and then running policy-gradient
+andnuancedrewarddefinitionsarecommon. updates, DPOdirectlyintegrateshumanpreferencesignalsinto
+the model s training objective. So instead of the above PPO
+3.2.4 Reinforcement Learning from AI Feedback (RLAIF) objective, DPO instead constructs an objective that directly
+RLAIF is an alternative to RLHF that replaces human pushes up the probability of a chosen (preferred) response
+annotation with AI-generated feedback. Instead of relying (y+) while pushing down the probability of a less-preferred
+on human-labeled preferences, RLAIF employs a secondary, response (y ), all within a single log-likelihood framework.
+highly capable language model to generate preference labels, Rather than bounding policy changes with clip, the DPO loss
+which are then used to train a reward model. This reward uses the difference between log probabilities of winning vs.
+model guides reinforcement learning-based fine-tuning of the losing responses. Thisexplicitlyencodestheuser spreference
+target model. RLAIF reduces the cost and time required for intheupdatedparameters.
+data collection by eliminating the need for human annotaHere, π is the learnable policy, π is a reference policy
+tors. Itenableslarge-scalemodelalignmentwithoutrequiring θ ref
+(often the SFT-trained model), σ( ) is the sigmoid function,
+extensive human intervention while maintaining high perforβ is a scaling parameter, and D is a dataset of triplets
+mance and alignment. Empirical studies indicate that RLAIF (x, y+, y )wherey+ isthepreferr tr e a d in outputovery.
+isascalableandefficientalternativetoRLHF, making
+it a promising direction for reinforcement learning-driven h (cid:16) π (y+ x)
+languagemodeloptimization. LDPO(θ)=E ((x, y+), y ) Dtrain σ βlog π θ (y+ x)
+ref
+The clipping mechanism constrains policy π (y x) (cid:17)i
+βlog θ.
+updates to remain within a safe trust region, π (y x)
+ref
+whichiscrucialwhendealingwithcomplex, highdimensionalactionspaces. The key insight is that an LLM can be treated as a hidden
+rewardmodel: wecanreparameterizepreferencedatasothat
+themodel sownlogprobabilitiesreflecthowpreferableonere3.2.5 Trust Region Policy Optimization (TRPO) sponseisoveranother. Bydirectlyadjustingthelog-likelihood
+TRPOisanotherwidelyusedpolicyoptimizationmethod, of more-preferred responses relative to less-preferred ones,
+preceding PPO and sharing its fundamental goal: improving DPO sidesteps many complexities of RL-based methods (e. g.,
+stability in reinforcement learning updates. TRPO optimizes advantagefunctionsorexplicitclipping).
+fine-grained credit assignment. The core objective minimizes
+PPO
+back-prop theinconsistencyinthesoftBellmanequation:
+Reference
+q Policy o Reward GAE A V (s ) V (s )=r(s, a ) βlog π θ (a t s t ),
+ϕ t ϕ t+1 t t π (a s )
+Value v ref t t
+update wheres =f(s, a )isthenextstate, risthesparsereward,
+t+1 t t
+andβ controlsKLregularization. Thepolicyandvaluelosses
+GRPO KL are:
+Reference
+q Policy Reward Com G p r u ou ta p tion L V (ϕ)= T 1 T X 1 V ϕ (s t ) R t +β X log π π θ ( ( a a i s s i ) )
+ref i i
+t=0 i t
+DPO update L π (θ)= T 1 T X 1(cid:18) V ϕ (s t ) R t +βlog π π θ ( ( a a t s s t ) ) (cid:19)2 +αL reg,
+ref t t
+t=0
+DPO where L penalizes deviations from π, and α balances
+q Policy r reg ref
+objective regularization.
+Reference Preference
+Model Data OREO s explicit value function enables testtimebeamsearch(e. g., selectinghigh-valuereaFig. 3: Comparison of PPO , GRPO , and DPO . soningsteps)anditerativetraining, wherefailed
+We highlight policy models, reference models, rewards and trajectoriesrefinethepolicy. Thiscontrastswith
+optimizationflowswithcorrespondinglossfunctions. DPO implicit value function, which lacks stepwise
+creditassignment.
+TheadvantagefunctionA ϕ =V ϕ (s t+1 ) V ϕ (s t ). OREO scomputationalcostscaleswithtrajecquantifies per-step contributions, critical for
+torylengthandvalue-modeltraining. Whileefidentifyingkeyreasoningerrors. Thisgranularity
+fective for math/agent tasks, its generalization
+is lost in DPO, which treats entire trajectories
+tobroader domains(e. g., coding) requiresvaliuniformly.
+dation. Iterative training also demands careful
+data curation to avoid overfitting to failure
+Perplexity Filtering for Out-of-Distribution Data. To modes.
+ensure DPO training data is on-distribution (aligned with ρ),
+responses are filtered using perplexity. The perplexity of a
+responsey=(y, y,..., y )isdefinedas: 3.2.8 Group Relative Policy Optimization (GRPO)
+GRPO simplifies the PPO framework by eliminating the
+X T need for a separate value function. Instead, GRPO estimates
+PP(y)=exp T logP ρ (y i y i ), the baseline from the average reward of multiple sampled
+i=1 outputs for the same question. The primary contribution in
+where y is the i-th token. Only responses with perplexity GRPO is that it removes the need for a separate value model
+i (criticmodel)andinsteadestimatesthebaselinerewardfrom
+below a threshold (e. g., the 95th percentile of ρ-generated
+responses)areretained. a group of sampled LLM outputs. This significantly reduces
+memory usage and stabilizes policy learning. The approach
+also aligns well with how reward models are trained, i. e.,
+The advantage function remains a core con- by comparing different LLM-generated outputs rather than
+cept to determine which actions (token choices) predictinganabsolutevalue.
+arebetterthanthebaselineateachstep. For each question q, GRPO samples a group of outputs
+o, o,..., o from the old policy πold. A reward model
+G θ
+is used to score each output in the group, yielding rewards
+3.2.7 Offline Reasoning Optimization (OREO) r 1, r 2,..., r G. The rewards are normalized by subtracting
+thegroupaverageanddividingbythestandarddeviation:
+OREO is an offline reinforcement learning method designed to enhance LLMs multi-step reasoning by optimizing
+r =
+mean(r)
+the soft Bellman equation . Unlike DPO, which relies i std(r)
+on paired preference data, OREO uses sparse rewards based
+on final outcomes (e. g., correctness of reasoning chains) and The advantage A ˆ for each token in the output is set as the
+i, t
+jointly trains a policy model π and a value function V for normalizedrewardr.
+θ ϕ i
+GRPOfirstsamplesaquestionq P(Q)andthensamples Inthisformulation, eachresponsey isjointlyevaluatedinthe
+G outputs o G from πold(O q). Define the per-output context of all other responses, ensuring that comparisons are
+i i=1 θ
+objectiveas notisolatedpairwiseeventsbutratherpartofabroaderranking framework that helps capture more nuanced preferences
+J(o,θ, q)= 1 X oi min n r A ˆ, andreducespotentialbiases.
+i o ratio, i, t i, t
+t=1
+clip(cid:0) r,1 ϵ,1+ϵ (cid:1) A ˆ o 3.3 Pure RL Based LLM Refinement
+ratio, i, t i, t The work from Guo et al. introduces two main
+h i models: DeepSeek-R1-ZeroandDeepSeek-R1.
+βD π π.
+KL θ ref • DeepSeek-R1-Zero operates with a purely ReinforcementLearningapproach, excludinganySFT.
+Then, theGRPOobjectivebecomes
+• DeepSeek-R1 incorporates cold-start data and applies
+" 1 X G # amulti-stagetrainingpipeline.
+J GRPO (θ)=E q P(Q) G J(o i,θ, q), Themethodologyencompassesseveralsteps(SeeFigure2
+i=1 inGRPOformainsteps): collectingcold-startdata, performwheretheprobabilityratioisdefinedas ingRLtraining, carryingoutSFT, usingdistillationtotransfer
+π (o q, o ) knowledge to smaller models, and addressing specific chalr ratio, i, t πo θ ld(o i, t q, o i, t ). lenges such as language mixing and readability. This multiθ i, t i, t stage pipeline ensures robustness and alignment with human
+where ϵ is a clipping hyperparameter akin to PPO, and β preferences, while distillation enables efficient deployment of
+adjuststheKL-divergencepenaltyencouragingthenewpolicy
+smallermodelswithoutsignificantperformanceloss.
+π not to deviate excessively from a reference policy π,
+θ ref
+which is typically the initial supervised fine-tuned (SFT) 3.3.1 Cold-Start RL Phase
+model. GRPOcanbeappliedintwomodes: outcome
+The process begins with a cold-start RL phase, where a small
+supervisionandprocesssupervision.
+amount of curated data is gathered to fine-tune an initial, or
+Outcome Supervision: Provides a reward only at the base, model. Followingthispreliminaryfine-tuning, RLisconend of each output. The advantage A ˆ i, t for all tokens in the ducted—oftenviaalgorithmslikeGRPOuntilconvergence. The
+cold-startphaseiscriticalforstabilizingthemodelbeforefull
+r mean(r) RL training, preventing instability that can arise from purely
+r i = i std(r). RL-driven updates. The cold-start data preparation focuses
+on capturing human-readable reasoning patterns to prevent
+Process Supervision: Provides a reward at the end of
+each reasoning step. The advantage A ˆ for each token is instabilityfrompurelyRL-drivenupdates. Thisstepgenerates
+i, t CoT-styleexampleswithconsistent reasoning_process
+calculated as the sum of the normalized rewards from the
+and summary fields, usually involving thousands of
+followingsteps:
+carefully curated samples. Structured CoT formats and conA ˆ = X r, sistentfieldsensureclarityandrobustnessinthemodel sreai, t i, index(j)
+soning outputs, reducing errors and improving interpretabilindex(j) t
+ity.
+whereindex(j)istheendtokenindexofthej-thstep.
+Overall, GRPOservesasanefficientalternativetoclassicactorcritic frameworks in DeepSeekR1 by leveraging group- ProvidingCoTreasoningtracesbeforeRLtrainlevel advantages, thereby reducing training costs without ingestablishesa strongerfoundationforreasonsacrificing the capacity to distinguish fine-grained differences ing tasks, enhancing both robustness and interamongcandidateresponses. pretabilityofoutputs.
+Fine-grained per-step rewards enable the 3.3.2 Rejection Sampling and Fine-tuning
+model to effectively identify and reinforce high- ThisconceptisalsousedinWebGPT. OnceRLstabilizes,
+quality responses, boosting overall performance arejectionsamplingmechanismisemployedtogeneratehighincomplex, multi-stepreasoningtasks. quality responses that are subsequently filtered for correctness, clarity, and other quality metrics. These filtered responsesarethenblendedwithadditionaldatasetstoproduce
+3.2.9 Multi-Sample Comparison Optimization
+a new, larger corpus for Supervised Fine-Tuning. Rejection
+Instead of relying solely on single-pair comparisons, multisampling ensures that only high-quality outputs are used for
+sample comparison optimization approach compares
+further training, enhancing the model s overall performance
+multiple responses simultaneously to promote diversity
+and mitigate bias. Specifically, given a set of responses and reliability. After RL converges for high-stakes reasoning
+tasks, rejection sampling is used to filter a large number of
+y, y,..., y foraqueryx, theprobabilityofobservingthe
+n generated outputs, expanding the training set. These newly
+rankingy y y isdeterminedbytheproduct
+n generated reasoning examples (potentially up to hundreds of
+P(y y y ) = Y eR(x, yi). thousands in quantity) are mixed with existing SFT data to
+n P eR(x, yj) create a combined dataset of substantial size (often around
+i j
+Efficient Finetuning and Deployment
+Accelerators Co-Optimized Architectures
+(Groq, vLLM, Triton, (FlashAttention, BlockSparse capabilities, enabling smaller models to achieve
+etc.) IO, DeepSeek v3 etc.)
+competitive performance with reduced compuParallel Computing, Data Compression, Data tationaloverhead.
+Distributed Training System Data Filtering (TokenMerging,
+(LoRA, PEFT, RecapDataComp-18,
+DeepSpeed, etc.) etc.)
+Scaling law, Data mining
+Model compression Model
+(Bitsandbite, GPTQ, (Chinchilla, RETRO, C4 4 Supervised Finetuning in LLMs
+data, etc.)
+etc.)
+As shown in Figure, finetuning forms a basic component of
+Fig.4: ThisVenndiagramillustratestheinterplaybetweenSys- LLM post-training recipes. In this section, we summarize the
+tem, Data, and Model for efficient finetuning and deployment.
+differenttypesof LLMfine-tuningmechanisms.
+Itcoversstrategieslikeaccelerators(Groq, vLLM), adaptation
+(LoRA, PEFT), co-optimizedarchitectures(FlashAttention), data
+compression (TokenMerging), scaling laws (Chinchilla), and 4.1 Instruction finetuning
+modelcompression(GPTQ)toboostperformanceandscalability.
+Ininstructionfinetuning, amodelistrainedoncuratedpairs
+ofinstruction(prompt)andresponse(completion). Themain
+800k samples). Rejection sampling and dataset expansion goal is to guide the LLM to follow a user-provided instruction
+accurately and helpfully, regardless of the task domain. This
+significantly enhance the model s coverage of general tasks
+usually involves compiling large, diverse instruction-response
+whilepreservingitsreasoningproficiency.
+datasetscoveringmanytasktypes(e. g., summarization, QA,
+classification, creative writing). Models such as T0 ,
+3.3.3 Reasoning-Oriented RL
+FLAN , Alpaca , Vicuna and Dolly 
+Thereasoning-orientedRL leveragesGRPO, whichsamples
+demonstrate how instruction-finetuned LLMs can outperform
+a group of outputs from the current policy and computes
+base models on zero-shot or few-shot tasks by virtue of their
+rewards and advantages for each output. Rewards may be
+enhancedinstruction-followingabilities.
+computed via rule-based checks, e. g., ensuring correct solutions in math or code tasks, enforcing structured CoT tags,
+andpenalizingundesiredlanguagemixing. GRPOgroup-based 4.2 Dialogue (Multi-turn) Finetuning
+sampling and reward computation ensure that the model
+prioritizeshigh-quality, structuredoutputs, enhancingitsreaSomeLLMsundergodialogue-stylefinetuningtobetterhandle
+multi-turn conversations. Different from instruction tuning
+soningcapabilities.
+described above, here the data takes the form of a continuous dialogue (multi-turn conversations) instead of a single
+3.3.4 Second RL Stage for Human Alignment
+prompt-responsepair. Inthisapproach, trainingdataconsists
+A second RL stage further aligns the model with broader of chat transcripts with muliple user queries and system rehumanpreferences(helpfulness, harmlessness, creativity, etc.) sponses, ensuringthemodellearnstomaintaincontextacross
+by introducing additional reward signals and prompt distri- turnsandproducecoherentreplies. ModelslikeLaMDA
+butions. The second RL stage ensures the model aligns with and ChatGPT highlight how dialogue-tuned LLMs can
+human values, making it more versatile and contextually feel more interactive and context-aware. While dialogue fineaware. After re-training the base model on this combined tuningcanoverlapwithinstructionfinetuning(becausemany
+dataset, a second round of RL can be conducted to align instructions come in a chat format), specialized conversation
+the model more closely with human preferences (e. g., for dataoftenyieldsmorenatural, multi-turnuserexperiences.
+helpfulness and harmlessness). This RL stage fine-tunes the
+model to better align with human values, ensuring outputs
+arenotonlyaccuratebutalsocontextuallyappropriate. 4.3 CoT Reasoning finetuning
+Chain-of-Thought (CoT) reasoning finetuning teaches models
+3.3.5 Distillation for Smaller Models to produce step-by-step reasoning traces instead of just final
+Finally, distillationtechniquesareusedtotransfertherefined answers. By exposing intermediate rationales or thoughts,
+capabilities of the main model to smaller architectures, en- CoT finetuning can improve both interpretability and accuabling more efficient deployments without sacrificing much racy on complex tasks (e. g., math word problems, multiperformance. It allows smaller models to inherit advanced hop QA). In practice, CoT finetuning uses supervised reareasoningcapabilities, makingthemcompetitiveonchalleng- soning annotations (often handcrafted by experts) to show
+ingbenchmarkswithoutthecomputationalcostsoffull-scale how a solution unfolds. Notable early work includes ChainRL training. Finally, distillation plays a pivotal role: the top- of-Thought Prompting and Self-Consistency , which
+performing model, DeepSeek-R1 , serves as a teacher to initially applied the idea to prompting; subsequent efforts
+smaller architectures (e. g., Qwen or Llama families, ranging (e. g., Chain-of-Thought Distillation ) adapt it to a full
+from1.5Bto70Bparameters). Thistransferallowsthesmaller finetuning or student-teacher paradigm. These efforts have
+models to inherit advanced reasoning capabilities, making also been extended to the multimodal domain, e. g., LlaVAthem competitive on challenging benchmarks without incur- CoT and LlamaV-o1 where image, QA and CoT
+ringthecomputationalcostsoffull-scaleRLtraining. reasoningstepsareusedinLLMfinetuning.
+Model Category Source Description
+1. Parameter-EfficientFine-Tuning&ModelCompression
+LoRA Low-RankAdaptation Link Injectstrainablelow-rankadaptersforefficientfine-tuning.
+QLoRA QuantizedAdaptation Link Combines4-bitquantizationwithLoRAtoenablefine-tuningonconsumerGPUs
+GPTQ Post-TrainingQuantization Link Optimal4-bitquantizationmethodforGPT-stylemodelswithminimalloss
+SparseGPT Pruning Link One-shotpruningthatpreservesmodelqualitywithcompensation.
+PEFT(HF) UnifiedFine-Tuning Link LibraryintegratingLoRA, prefixtuning, andotherparameter-efficientmethods
+BitsAndBytes Low-PrecisionTraining Link Enables8-bitoptimizersand4-bitquantizationformemory-efficienttraining
+AdaLoRA AdaptiveAdaptation Link Dynamicallyallocatesparameterbudgetbetweenlayersduringfine-tuning
+P-Tuningv2 PromptOptimization Link Learnscontinuouspromptembeddingsthroughdeepprompttuning
+2. DataManagement&Preprocessing
+HFDatasets DataProcessing Link UnifiedAPIfor30k+datasetswithstreaming, versioning, andpreprocessing
+WebDataset DataStreaming Link Efficienttar-basedshardingformatforpetascaledistributedtraining
+DVC DataVersioning Link Git-likeversioncontrolfordatasetsandmachinelearningpipelines
+ApacheArrow MemoryFormat Link Language-agnosticcolumnarmemoryformatforzero-copydataaccess
+Zstandard Compression Link High-speedcompressionalgorithmfortrainingdatastorage/transfer
+Cleanlab DataQuality Link Automaticdetectionoflabelerrorsandoutliersintrainingdatasets
+3. DistributedTraining&Optimization
+DeepSpeed TrainingOptimization Link ZeROparallelism,3Dparallelism, andmemoryoptimizationsforgiantmodels
+Megatron-LM ModelParallelism Link NVIDIA soptimizedframeworkforlargetransformermodeltraining
+Colossal-AI HeterogeneousTraining Link Unifiedsystemsupportingmultipleparallelizationstrategies
+Horovod DistributedTraining Link MPI-inspiredframeworkformulti-GPU/multi-nodesynchronization
+Ray DistributedComputing Link UniversalframeworkfordistributedPythonapplicationsatscale
+4. EfficientInference&Deployment
+vLLM ServingOptimization Link Pagedattentionimplementationforhigh-throughputLLMserving
+TensorRT GPUOptimization Link NVIDIA sinferenceoptimizerwithkernelfusionandquantizationsupport
+Triton ServingFramework Link Production-gradeservingwithconcurrentmodelexecutionsupport
+ONNX Cross-Platform Link Unifiedinferenceenginewithhardware-specificoptimizations
+OpenVINO IntelOptimization Link RuntimeforIntelCPUs/iGPUswithpruning/quantizationsupport
+XNNPACK MobileInference Link Highlyoptimizedfloating-pointkernelsforARMCPUs
+Groq AIAccelerator Link Deterministiclow-latencyinferenceviacustomtensorstreamingprocessor
+5. IntegratedDevelopmentEcosystems
+HFEcosystem FullStack Link Transformers+Datasets+Accelerate+InferenceEndpoints
+DeepSpeed Training/Inference Link Microsoft send-to-endsolutionforbillion-parametermodels
+PyTorch UnifiedFramework Link NativeLLMsupportviatorch. compileandscaleddot-productattention
+LLMReasoners AdvancedReasoning Link EnhancesLLMreasoningcapabilitiesusingadvancedsearchalgorithms.
+TABLE2: ComprehensiveOverviewofMethodsandFrameworksemployedinModernLLMs
+4.4 Domain-Specific (Specialized) Finetuning with smaller datasets. This approach can yield lighter, faster
+When an LLM needs to excel in a specific domain (e. g., modelsthatretainmuchoftheteacher sperformance, evenin
+biomedicine, finance, or legal), domain-specific finetuning is zero-shotorfew-shottasks.
+used. Here, a curated corpus of domain-relevant text and labeledexamplesisemployedtofinetunetheLLM. Forinstance,
+4.6 Preference and Alignment SFT
+BioGPT and BiMediX specialize in biomedical
+While RLHF is not purely supervised, it starts with a suliterature, FinBERT for financial texts, ClimatGPT
+pervisedpreference oralignment finetuningstage. Thisstage
+ for climate and sustainability and CodeT5 
+uses human-labeled or human-ranked examples to teach the
+for code understanding. Supervised finetuning in these domodel about desirable vs. undesirable outputs (e. g., safe vs.
+mainsoftenincludesclassification, retrieval, orQAtaskswith
+toxic). By training on these explicit preferences, the model
+domain-specificdata, ensuringthemodel sparametersadapt
+becomes more aligned with user values, reducing harmful or
+tothespecializedlanguageandconceptsofthefield. Domainoff-topic completions. Works like InstructGPT illustrate
+specificfinetuningisalsoextendedtovision-languagemodels
+such as, finetuned on remote sensing imagery, on
+trainingandRLupdatesbegin.
+medicalimagingmodalities,onspatiotemporal
+videoinputs, andadaptedforchartunderstanding.
+4.7 Efficient Finetuning
+4.5 Distillation-Based Finetuning Fully finetuning a LLM can be computationally and memoryLarge teacher modelsaresometimesusedtoproducelabeled intensive, particularly as model sizes grow into the tens or
+data or rationales, which a smaller student model finetunes hundreds of billions of parameters. To address these chalon, this is generally called knowledge distillation . lenges, parameter-efficientfinetuning(PEFT)techniquesintroIn the context of LLMs, CoT Distillation is one example duceasmallsetoftrainableparametersorlearnableprompts
+where a powerful teacher LLM generates intermediate rea- while leaving most of the model weights frozen. Approaches
+soning steps, and the student LLM is finetuned to reproduce such as LoRA , Prefix Tuning , and Adapters 
+both the final answer and the reasoning chain. Step-by-step exemplify this strategy by injecting lightweight modules (or
+distillation generates descriptive rationales alongside prompts) in specific layers, thus significantly reducing the
+final answers to train smaller models through distillation memoryfootprint.
+probability paths. By limiting the beam width (N), it manTest Time Scaling
+ages the exponential search space while aiming to find a
+near-optimal sequence. These beams are expanded at each
+Scaling Advanced Improved Sequential decoding step to find multiple probable paths. In reasoning
+Strategies Sampling Reasoning revision
+LLMs, such paths allow us to systematically explore multiple
+Beam Confidence Chain-of-Thought Self-Consistency reasoning chains in parallel, focusing on the most promising
+Search Decoding
+Based Prompting ones. This ensures that high-likelihood reasoning steps are
+Sampling
+M Tr o e n e t S e e C a a r r c l h o Tree-of-Thoughts Self-Improvement considered, whichcanimprovethechancesoffindingacorrect
+Search via Refinements and coherent solution compared to greedy decoding. It has
+Against
+Best-of-N
+Search Verifiers compute-optimal scaling strategy traditionally been used in tasks such as translation, summarization, and code generation, where the goal is a highly
+Fig. 5: An overview of Test-time Scaling methods: parallel
+probablecorrectsequence.
+scaling, sequential scaling, and search-based methods. It also
+While modern LLMs often favor stochastic sampling (e. g.,
+showshowtheyintegrateintoacompute-optimalstrategy.
+temperaturesampling)topromotediversityingeneratedtext,
+beamsearchisstillavaluabletechniqueforstructuredreasoning problems. For example, the Tree-of-Thoughts framework
+Figure4illustrateshowthesetechniquesfitintoabroader
+ allows plugging in different search algorithms to explore
+ecosystemthatinvolvessystem-leveloptimizations, datamana tree of possible thoughts or reasoning steps; usually a
+agement, and evaluation strategies for LLMs. In particular,
+beam search (with beam width b) is used to maintain the
+PEFT approaches can be combined with quantization and
+b most promising states at each reasoning step. Here, beam
+pruning methods to further minimize memory
+usage and compute overhead, enabling finetuning on smaller
+like mathematical puzzles and planning problems, pruning
+GPUsorevenconsumer-gradehardware. Forinstance, QLoRA
+less promising reasoning branches and thus improving the
+unifies 4-bit quantization with low-rank adaptation, while
+model s problem-solving accuracy. Beam search remains a
+BitsAndBytesprovides8-bitoptimizerstomakeLLMtraining
+strong baseline for test-time reasoning when one wants the
+morepracticalinconstrainedenvironments(Table2).
+model to output the single most likely reasoning path or
+Moreover, these PEFT methods still require supervised
+answerunderthemodel slearneddistribution.
+data to guide the adaptation process, but the reduction in
+the number of trainable parameters makes it more feasible
+to use in-domain or task-specific datasets. This is especially 5.2 Best-of-N Search (Rejection Sampling)
+valuable for specialized domains (e. g., medical or software Best-of-N (BoN) search generates N candidate outputs
+development), where data might be limited or expensive to (usually via sampling) and then picks the best one according
+annotate. As shown in Table, PEFT (HF) integrates several toachosencriterion(e. g., arewardmodelorthemodel sown
+of these approaches (LoRA, prefix tuning, and more) into a likelihood). Conceptually, thisisanapplication
+single library, streamlining deployment in both research and ofrejectionsampling: onedrawsmultiplesamplesandrejects
+productionsettings. all but the top-rated result. Unlike Beam Search ,
+which incrementally expands and prunes partial hypotheses,
+BoNsimplysamplesfullsolutionsindependently, allowingfor
+Combining efficient tuning designs like LoRA greater diversity but at a higher computational cost. Beam
+and QLoRA with system and data optimizations Search systematically aims for the most probable sequence,
+(Figure4)enablescost-effectiveLLMadaptation
+while BoN may capture high-quality but lower-probability
+for tasks like domain-specific text generation,
+solutionsthroughbrute-forcesampling.
+withoutexpensivefullfine-tuning.
+Beam search (effective for harder questions)
+Test-time Scaling Methods outperforms best-of-N sampling at low compute
+budgets, while best-of-N scales better for easier
+WhileRLfine-tunesthemodel spolicy, test-timescaling(TTS)
+tasks.
+enhances reasoning during inference typically without model
+updates. Figure presents a taxonomy of TTS methods,
+DuringLLMinference, BoNisusedtoenhancecorrectnessor
+categorizingthembasedontheirunderlyingtechniques.
+alignmentwithoutretrainingthemodel. Bysamplingmultiple
+answers and selecting the top candidate (e. g., via a reward
+5.1 Beam Search model or a checker), BoN effectively boosts accuracy on tasks
+Beam search was first introduced in the context of speech like QA or code generation. BoN is easy to understand and
+recognition. Itgainedprominenceasadecodingstrategy implement and is almost hyper-parameter-free, with N being
+forsequencemodelsandwaslateradoptedinneuralmachine the only parameter that can be adjusted at inference. In
+translation and speech systems . With the popularity of reinforcement learning contexts, BoN sampling can serve as
+LLMs, thisalgorithmhasbeenusedforapproximatesearchin a baseline exploration mechanism i. e., to generate many rollmanytextgenerationtasks. outs, pick the best outcome according to the learned reward,
+The concept of Beam search is similar to pruned breadth- and proceed, although at increased computational overhead.
+first search, where top N highest-probability partial se- OpenAI s WebGPT used BoN to pick the best response via
+quences (the beam ) are kept at each step, discarding lower- a reward model, yielding strong QA performance . BoN
+isalsousedasasimplealignmentmethodthatishighlycom- Wei et al. demonstrated CoT s effectiveness on arithpetitivewithotherpost-trainingtechniquese. g., RLHFand meticandlogictasks, showinglargegainsoverdirectpromptDPO. StudieshaveshownBoNcanapproachormatchRLHF ing. Kojima et al. introduced Zero-Shot CoT, revealing
+results when guided by a sufficiently robust reward model that even adding a simple phrase like Let s think step
+. Alternativessuchasspeculativerejectionbuild by step can trigger coherent reasoning in sufficiently large
+on this idea and utilize a better reward model to improve models. Subsequentworks(e. g., Wangetal.,2022)comefficiency. The studies also highlight issues of reward hacking bined CoT with sampling-based strategies (Self-Consistency)
+if the (proxy) reward function used for BoN is imperfect forevenhigheraccuracy. AsdescribedinSec.5.4, CoTformat
+orinstabilityissuesiftheNparametergetsverylarge. data have also been used for SFT and are shown to help
+reshapethemodelresponsestobemorestep-by-step.
+Choice of either process reward models with
+beam search vs best-of-N depends on the diffi- Fine-tuningmodelstoreviseanswerssequencultyandcomputebudget. tiallyallowsthemtobuildonpreviousattempts,
+improving accuracy over time. This approach is
+particularly effective for easier questions, while
+parallelsampling(exploration)provesmoreben5.3 Compute-Optimal Scaling
+eficialforharderones.
+The Compute-Optimal Scaling Strategy (COS) is a dynamic method designed to allocate computational resources
+efficientlyduringinferenceinLLMs, optimizingaccuracywith- 5.5 Self-Consistency Decoding
+outunnecessaryexpense. Insteadofapplyingauniformsam- Self-Consistency is a decoding strategy introduced by Wang
+pling strategy across all inputs, this approach categorizes et al. . It was proposed as an alternative to simple
+prompts into five difficulty levels—ranging from easy to greedy decoding for chain-of-thought prompts. It built upon
+hard—eitherbyleveragingoracledifficulty(ground-truthsuc- the idea of sampling multiple distinct reasoning paths for a
+cess rates) or model-predicted difficulty (e. g., verifier scores question and was the first to show that marginalizing over
+from Preference Ranking Models). Once categorized, the those paths can significantly improve accuracy on arithmetic
+strategy adapts compute allocation: easier prompts undergo and reasoning problems. In other words, it allows the model
+sequential refinement, where the model iteratively refines to think in many ways and then trust the consensus, which
+its output to improve correctness, while harder prompts improvescorrectnessinmanyreasoningscenarios.
+trigger parallel sampling or beam search, which explores The self-consistency method works by sampling a diverse
+multiple response variations to increase the likelihood of set of reasoning chains from the model (via prompt engifinding a correct solution. This dual approach balances ex- neering to encourage different CoTs, and using temperature
+ploration (for challenging inputs) and refinement (for near- sampling) and then letting the model output a final answer
+correct responses), ensuring optimal performance per unit foreachchain. Insteadoftrustingasinglechain, themethod
+of computational effort. Remarkably, this method achieves selectstheanswerthatismostconsistentacrossthesemultiple
+four times lower compute usage than traditional best-of-N reasoningpaths, effectivelyamajorityvoteorhighestprobabilsamplingwhilemaintainingequivalentperformance. Thekey ity answer after marginalizing out the latent reasoning. The
+insightisthatbymatchingcomputationalstrategytoproblem intuition is that if a complex problem has a unique correct
+difficulty, it avoids wasted resources on trivial cases while answer, different valid reasoning paths should converge to
+ensuring sufficient sampling diversity for complex tasks. In that same answer. By pooling the outcomes of many chains,
+essence, itfunctionsasa smartthermostat forLLMinference, the model can decide which answer is most supported. In
+dynamically adjusting computational effort in response to application, onemightsample, e. g.,20CoTsforamathprobinputcomplexity, leadingtoamoreefficientandcost-effective lem and see what final answer appears most frequently; that
+deploymentoflarge-scalelanguagemodels. answer is then taken as the model s output. This approach
+turns the one-shot CoT process into an ensemble where the
+model cross-verifies its answers. It is especially useful for
+COS achieves 4 efficiency gains over best- arithmeticandcommonsensereasoningtaskswherereasoning
+of-N baselines by optimally balancing sequen- diversityhelps.
+tial/parallel compute. Beam search + revisions
+outperform larger models on easy/intermediate
+questions. Smaller models with test-time compute can
+outperform much larger models in certain scenarios.
+5.4 Chain-of-thought prompting
+Self-consistency is often combined with other methods:
+CoTpromptinginducesLLMstoproduceintermediatereason- e. g., sampling multiple chains and then applying a verifier
+ing steps rather than jumping directly to the final answer. to the most common answer. Its strength lies in requiring no
+By breaking down problems into logical sub-steps, CoT taps new training, only extra sampling, making it a popular testintoamodel slatentabilitytoperformmulti-stepinferences, time scaling strategy to obtain more reliable answers from
+significantly improving performance on tasks like math word LLMs. It has also inspired other variants, e. g., Universal Selfproblems, logicalpuzzles, andmulti-hopQA. Consistencyextendtheoriginalidea(whichworkedonly
+Direct CoT Self-consistancy Multiple CoT ToT GoT
+Input Input Input Input Input Input
+Output
+Not graded
+Positive graded
+Negative graded
+Positive graded
+Voting
+Back tracking
+Output Output Output Output Output
+Self-refining
+Fig.6: ThisfigurecomparesreasoningstrategiesinLLMs, evolvingfromDirectPrompting, whichmapsinputtooutputwithout
+reasoning, to more structured approaches. Chain-of-Thought (CoT) introduces step-by-step reasoning, while Self-Consistency
+(CoT-SC) generates multiple CoT paths and selects the most frequent answer. Multiple CoTs explores diverse reasoning paths
+independently. Tree-of-Thoughts(ToT)structuresreasoningasatree, enablingbacktrackingandrefinement, whereasGraphof-Thoughts(GoT)generalizesthisbydynamicallyaggregatingandconnectingthoughts. Thelegenddecipherskeymechanisms
+likegrading, backtracking, andself-refinement, crucialforoptimizingreasoningefficiency.
+with majority vote on single final answer) to more general combined with ToT: differentLLM agents generate thoughts
+generationtaskssuchassummarizationandopen-endedQA. in parallel and a validator agent prunes incorrect branches,
+leadingtoimprovedaccuracyoverthesingle-agentToT.
+5.6 Tree-of-thoughts
+ToTframeworkgeneralizesthechain-of-thoughtapproach Inference-time computation for LLMs can outby allowing the model to branch out into multiple possible performscalingmodelparameters, especiallyfor
+thoughtsequencesinsteadoffollowingasinglelinearchain. It challengingreasoningtaskslikemathproblems.
+thusformulatestheproblemoflanguage-modelreasoningasa
+treesearch, drawingonclassicAIsearchmethodsinspiredby
+humanproblem-solving. TreeofThoughtstreatsin5.7 Graph of Thoughts
+termediatereasoningstepsas nodes inasearchtreeanduses
+the language modelto expand possible next steps (thoughts) The Graph of Thoughts (GoT) framework extends the
+from a given state. Rather than sampling one long reasoning ToTbyallowingmoreflexibleandefficientreasoningprocesses
+path, the model explores a tree of branching thoughts and throughgraph-basedstructuresratherthanstricthierarchical
+can perform lookahead and backtracking. At each step, the trees. Thought representation differs between the two apLLM might generate several candidate next thoughts, and a proaches: in ToT, each step in reasoning is structured as a
+heuristic or value function evaluates each partial solution node in a tree with fixed parent-child relationships, whereas
+state. Thenasearchalgorithm(e. g., depth-first, breadth-first, GoT represents thoughts as nodes in a graph, enabling more
+beam search) navigates this tree, deciding which branches to adaptabledependenciesandinterconnections.
+explore further. This approach allows systematic exploration In terms of thought expansion strategies, ToT follows a
+of different reasoning strategies: if one path leads to a dead- traditional approach where multiple thought candidates are
+end, themodelcanreturntoanearlierstateandtryadifferent generated at each step, explored using tree-based search
+branch (unlike standard CoT which commits to one line of strategies, andprunedbasedonheuristicsbeforeselectingthe
+reasoning). Ineffect, ToTisaniterativepromptingprocedure mostoptimalpath. Incontrast, GoTincorporatesgraph-based
+where the model generates thoughts, evaluates them, and thoughtexpansion, allowingthoughtstointerconnectdynamrefinesitsapproach, mimickinghowahumanmightmentally ically. This enables three key transformations: aggregation
+mapoutvariouswaystosolveaproblem. (mergingmultiplesolutionsintoaunifiedanswer), refinement
+ToTisespeciallyusefulforcomplexproblemslikepuzzles, (iteratively improving thoughts over time), and generation
+planning tasks, or games where multiple steps and strategic (producingdiversecandidates). Insteadofnavigatingthrough
+explorationareneededandoutperformssimplerCoTmethods a rigid hierarchy, GoT prioritizes thoughts using a volume
+bysystematicallysearchingthroughthesolutionspace. Itpro- metric and explores paths optimally, reducing unnecessary
+videsaflexibleframework–onecanpluginvariousgeneration computations.
+strategies(e. g. samplingvs. prompting)andsearchalgorithms A critical limitation of ToT is its restricted backtrack-
+(BFS, DFS, A, MCTS) depending on the task. Although ing—once a branch is discarded, it is not reconsidered. GoT
+morecomputationallyheavy, ToTshowsthatallocatingextra overcomes this by allowing iterative refinement, where previ-
+thinking time (compute) to explore alternatives can yield ous thoughts can be revisited, modified, and improved upon.
+significantly better reasoning and planning performance. It This iterative nature is particularly useful in complex reahas spawned follow-up research aiming to improve or utilize soningtaskswhereinitialthoughtsmayrequireadjustments.
+it for better reasoning e. g., multi-agent systems have been Moreover, computational efficiency in GoT is significantly
+improved by reducing redundant calculations through the 2) Process Reward Models (PRM): Evaluate the reasonmergingofpartialsolutions. ing steps (e. g., logical coherence in a thought chain),
+providinggranularfeedbacktopruneinvalidpaths.
+Several techniques fall under this paradigm, enhancing
+GoT enhances problem-solving efficiency and
+verification-based optimization. Best-of-N Sampling involves
+adaptability, making it superior to ToT for tasks
+generating multiple answers and ranking them via a verifier
+requiringcomplexreasoning.
+(ORM/PRM), selectingthehighest-scoringone, makingitasimple yet effective approach for improving answer correctness.
+5.8 Confidence-based Sampling Beam Search with PRM tracks top-scoring reasoning paths
+(beams) and prunes low-quality steps early, similar to Tree
+In confidence-based sampling, the language model generates
+of Thought approaches, balancing breadth and depth in reamultiple candidate solutions or reasoning paths and then
+soning path exploration. Monte Carlo Tree Search balances
+prioritizes or selects among them based on the model s own
+explorationandexploitationbyexpandingpromisingreasonconfidence in each outcome . This can happen in two
+ingbranches, simulatingrollouts, andbackpropagatingscores,
+ways:(a)Selection: GenerateNoutputsandpicktheonewith
+providing an optimal trade-off between search depth and
+the highest log probability (i. e., the model s most confident
+verification confidence. Majority Voting (Self-Consistency)
+output). This is essentially best-of-N by probability – the
+aggregates answers from multiple samples and selects the
+model chooses the answer it thinks is most likely correct.
+most frequent one, avoiding explicit verifiers, which works
+(b) Guided exploration: When exploring a reasoning tree or
+well in settings where consistency across multiple responses
+multi-step solution, use the model s token probabilities to
+indicatescorrectness.
+decide which branch to expand (higher confidence branches
+areexploredfirst). Inotherwords, themodel sprobabilityestimatesactasaheuristicguidingthesearchthroughsolution ORM is suitable for tasks where correctness is
+space. Comparedtopurerandomsampling, confidence- binary(right/wrong)andcanbeeasilyassessed.
+based methods bias the process toward what the model believesisright, potentiallyreducingwastedexplorationonlowlikelihood(andoftenincorrect)paths.
+PRMisusefulinmulti-stepreasoning, ensuring
+Confidence-based strategies have been incorporated at
+intermediatestepsfollowslogicalprogression.
+inferencetimee. g., atree-basedsearchforLLMgeneration
+assignseachpossiblecompletion(leaf)aconfidencescore. The
+algorithm samples leaves in proportion to these confidence
+5.10 Self-Improvement via Refinements
+scores to decide which paths to extend . Similarly, some
+This approach refers to the ability of LLMs to enhance their
+reasoning approaches use the model s estimated likelihood of
+outputs through self-evaluation and revision iteratively. This
+an answer to decide when to halt or whether to ask a followprocess enables models to refine their responses dynamically
+up question – essentially if the model s confidence is low,
+during inference rather than relying solely on pre-trained
+it might trigger further reasoning (a form of self-reflection).
+weights. One notable method is Self-Refinement ,
+Confidence-based selection is also used in ensemble settings:
+where an LLM generates an initial response, critiques it, and
+e. g., an LLM may generate multiple answers and a secondary
+then refines the output based on its self-generated feedback.
+model evaluates the confidence of each answer being correct,
+This iterative process continues until the model achieves a
+picking the answer with the highest confidence. This was
+satisfactory result. Such techniques have been shown to imexplored in tasks like medical Q&A, where an LLM gave an
+prove performance on various tasks, including mathematical
+answer and a confidence score, and only high confidence
+reasoningandcodegeneration. Thisprocessfollowsthesekey
+answersweretrustedorreturned.
+steps: a)InitialGeneration: Themodelproducesananswer
+or reasoning path. b) Self-Critique: The model reviews its
+5.9 Search Against Verifiers ownresponseandidentifieserrors, inconsistencies, orareasfor
+This verification approach in LLMs enhances answer improvement. c)Refinement: Themodeladjustsitsresponse
+qualitybygeneratingmultiplecandidateresponsesandselect- based on the critique and generates an improved version.
+ing the best one using automated verification systems. This d) Iteration: The process repeats until the output meets a
+approach shifts focus from increasing pre-training compute predefinedqualitythresholdorstopsimproving.
+to optimizing test-time compute, allowing models to think Another approach is called Self-Polish , where the
+longer during inference through structured reasoning steps modelprogressivelyrefinesgivenproblemstomakethemmore
+oriterativerefinement. Themethodinvolvestwomainsteps: comprehensible and solvable. By rephrasing or restructuring
+Generation: The model (or proposer produces multiple problems, the model enhances its understanding and proanswers or reasoning paths, often using methods like high- vides more accurate solutions. Self-Polish involves progrestemperaturesamplingordiversedecoding. sive refinement of problem statements to make them more
+Verification: Averifier(e. g., arewardmodel)evaluatesthese comprehensible and solvable. The model first rephrases or
+candidates based on predefined criteria, such as correctness, restructurestheproblemforbetterclarity, thenbreaksdown
+coherence, or alignment with desired processes. Verifiers are complex queries into simpler sub-problems and refines amcategorizedbasedontheirevaluationfocus: biguous inputs to ensure precise understanding. By restruc1) OutcomeRewardModels(ORM): Judgeonlythefinal turing problems before solving them, the model improves its
+answer(e. g., correctnessofamathsolution). comprehensionandgeneratesmoreaccuratesolutions.
+of possible reasoning paths and pick a high-reward answer
+Self-improvement methodologies represent a path, outperformingnaivesamplinginascientificQ&Atask.
+paradigm shift in LLM optimization, emphasiz- Similarly, MCTShasbeenappliedtocodegenerationwithLLMs
+ing active reasoning and internal feedback over –thealgorithmexploresdifferentcodepaths(usingthe
+static pre-training. By iterating on their own modeltoproposecodecompletionsandetestthem)tofinda
+responses, models achieve greater consistency correctsolution. AnotherlineofworkensemblesmultipleLLMs
+andaccuracyacrossawiderangeofapplications. withMCTS, treatingeachmodel soutputasabranchandusing
+arewardmodeltosimulateoutcomes. Earlyresultsshow
+thatMCTS-basedreasoningcansolveproblemsthatsingle-pass
+5.11 Monte Carlo Tree Search or greedy methods often miss, although with more compute
+MCTS is based on the application of Monte Carlo sim- . The downside is that MCTS can be significantly slower
+ulations to game-tree search. It rose to prominence with than straightforward sampling or beam search, which recent
+successes in games, notably, it powered AlphaGo in research is addressing by improving efficiency (e. g., by state
+by searching possible moves guided by policy and value merging). Ingeneral, MCTSbringsthestrengthofplanning
+networks. This, aswellastheapplicationtootherboardand algorithmstoLLMinferenceandenablesanLLMto lookahead
+video games, demonstrates the power of MCTS for sequential throughsimulatedrolloutsandmakemoreinformedreasoning
+decision-makingunderuncertainty. choices, muchlikeithasdoneforAIingameplay.
+treebyperformingmanyrandomsimulations. Itisbestknown
+Test-timecomputeisnota1-to-1replacement
+forfindinggoodmovesingamestates, butitcanbeappliedto
+for pretraining but, offers a viable alternative in
+anyproblemwherewecansimulateoutcomes. Thealgorithm
+manycases.
+iteratively: (a) Selects a path from the root according to a
+heuristic(likeUCT, whichpicksnodeswithahighupperconfidence bound), (b) Expands a new node (a previously
+5.12 Chain-of-Action-Thought reasoning
+unvisitedstate)fromtheendofthatpath,(c)Simulatesarandomrolloutfromthatnewstatetogetanoutcome(e. g., win LLMs excel in reasoning tasks but rely heavily on external
+guidance (e. g., verifiers) or extensive sampling at inference
+or loss in a game, or some reward), and (d) Backpropagates
+theresultupthetreetoupdatethevaluesofnodesandinform time. Existing methods like CoT lack mechanisms for selfcorrectionandadaptiveexploration, limitingtheirautonomy
+future selections. Repeating these simulations thousands of
+andgeneralization. Satoriintroducedatwo-stagetraintimesconcentratesthesearchonthemostpromisingbranches
+ing paradigm, which works by initially tuning the model s
+ofthetree. Inessence, MCTSusesrandomsamplingtoevaluate
+output format and then enhancing its reasoning capabilities
+the potential of different action sequences, gradually biasing
+through self-improvement. In Stage 1 (Format Tuning), the
+the search towards those with better average outcomes. In
+model is exposed to a large set of 10K synthetic trajectories
+LLM reasoning, we can treat the generation of text as a
+generatedbyamulti-agentframeworkcomprisingagenerator,
+decision process and use to explore different continuations.
+a critic, and a reward model. This supervised fine-tuning
+For example, at a given question (root), each possible next
+helps the model to produce outputs in specific reasoning
+reasoning step or answer is an action; a simulation could
+format using meta-action tokens, although it may still have
+mean letting the LLM continue to a final answer (perhaps
+difficultygeneralizingbeyondtheseexamples. InStage2(Selfwith some randomness), and a reward could be whether the
+answeriscorrect. Bydoingthisrepeatedly, MCTScanidentify Improvement via RL), the model employs PPO with a Restart
+and Explore strategy , which allows it to restart from
+which chain of thoughts or answers has the highest empirical
+intermediatesteps, whethertheywerecorrectornot, torefine
+success rate. The appeal of MCTS for reasoning is that it can
+itsreasoningprocess. Themodelreceivesrewardsbasedona
+handle large search spaces by sampling intelligently rather
+combinationofrule-basedcorrectness, reflectionbonuses, and
+than exhaustively, and it naturally incorporates uncertainty
+preference-basedOutcomeRewardModelfeedbackexplained
+andexploration.
+in 5.9, thereby incentivizing the allocation of more computationalresourcestotougherproblemsandenablingextended
+Train verifiers to score intermediate steps reasoningduringtestingforcomplextasks.
+(via Monte Carlo rollouts) instead of just final Multi-agent frameworks and advanced fine-tuning strateanswers. gies are increasingly being explored to enhance reasoning
+in LLMs. Multi-Agent LLM Training (MALT) introduces
+Recent efforts have integrated MCTS with LLMs to tackle a structured approach where generation, verification, and
+complexreasoninganddecision-makingtasks. Oneexampleis refinement steps are distributed across specialized agents,
+using MCTS for query planning: Monte Carlo Thought Search allowing for iterative self-correction and improved reasoning
+, whereanLLMisguidedtoaskaseriesofsub-questionsto chains. Similarly, optimizing preference alignment remains
+findananswer. Jayetal.usedanMCTS-basedalgorithm a crucial challenge in ensuring both safety and helpfulness
+called Monte Carlo Reasoner that treats the LLM as an in LLMs . Approaches like Bi-Factorial Preference Optienvironment: each node is a prompt (state) and each edge mization (BFPO) reframe RLHF objectives into a single
+is an action (e. g., a particular question to ask or step to supervised learning task, reducing human intervention while
+take), and random rollouts are used to evaluate outcomes. maintaining robust alignment. Beyond text-based reasonThisapproachallowedthesystemtoefficientlyexploreaspace ing, multimodalapproacheslikeMultimodalVisualization-of19
+Thought(MVoT)extendCoTpromptingbyincorporating TABLE 3: Comprehensive Overview of Reasoning, RL Alignvisual representations, significantly enhancing performance ment, andMultilingualDatasets. Here, pointwiseandpairwise
+refer to different methods of evaluating model performance
+in spatial reasoning tasks. These advancements highlight the
+acrossvarioustasks.
+growingneedforstructuredmulti-agentcollaboration, safetyaware optimization, and multimodal reasoning to address
+Datasets Domain Type #Samples EvaluationCriteria
+fundamentallimitationsinLLMreasoning. ReasoningBenchmarks
+MATH MathReasoning Pointwise 7,500 Step-by-stepsolutions
+GSM8K MathReasoning Pointwise 8.5K Multi-stepreasoning
+5.13 Pretraining vs. Test-Time Scaling M W e o t r a ld M T a r t e h e Q V A 2 ] Ma S t c h ie R nc e e as Q on A ing P Po oi i n n t t w w i i s s e e 4 1 0,6 K 8 + 0 S M elf u - l v t e i- r h ifi o c p a e ti x o p n l, a F na O t B io A ns R
+PangeaBench MultimodalReasoning Pairwise 47Langs. Culturalunderstanding
+PretrainingandTTSaretwodistinctstrategiesforimproving MMMU Science/Math PointwiseCollege-Level Physics, Chemistry, Bilingual
+TruthfulQA QA/Reasoning Pointwise N/A Truthfulness
+LLM performance, each with different tradeoffs in compu- MathInstruct MathReasoning Pointwise 262K Correctness
+MMLU MultitaskReasoning Pointwise 57Tasks Broadknowledgeevaluation
+tational cost and effectiveness. Pretraining involves scaling MMLU-Fairness Fairness/Reasoning Pointwise N/A Bias/EquityAnalysis
+DROP Reading/Reasoning Pointwise 96K Discretereasoningoverparagraphs
+model parameters or increasing training data to enhance BBH HardReasoning Pairwise N/A Complexlogicalproblem-solving
+VRC-Bench MultimodalReasoning Pairwise N/A VisualReasoningandClassification
+capabilities, requiring substantial upfront computational in- RLAlignmentBenchmarks
+vestment . In contrast, TTS optimizes inference-time com- H An el t p h S r t o e p e i r cH RLHF R R L L A A l l i i g g n n m m e en nt t P P a ai ir r w w i i s s e e 3 4 7 2 K.5 + K H M a u rm lti l - e a s t s t n r e ib ss ut a e lig sc n o m ri e n n g t
+UltraFeedback RLAlignment Pairwise 64K Instruction-following, Truthfulness
+pute (such as iterative refinements, search-based decoding, D4RL RL/Control Pointwise N/A OfflineRLacrossdomains
+Meta-World RL/Control Pointwise N/A Multi-taskroboticRL
+or adaptive sampling), allowing performance improvements MineRL RL/Games Pairwise N/A Imitationlearning, rewards
+withoutmodifyingthebasemodel. MultilingualEvaluation
+CulturaX Multilingual Pointwise 6.3T Deduplication, Quality
+From a performance vs. cost perspective, TTS achieves PangeaIns Multilingual Pointwise 6M Multilingualinstructions
+TydiQA Multilingual Pointwise N/A Cross-lingualQA
+results comparable to a model 14 larger on easy to in- XGLUE Multilingual Pointwise N/A Cross-linguallanguagetasks
+MM-Eval Multilingual Pairwise 4,981 Task-orientedmultilingualQA
+termediate tasks (e. g., MATH benchmarks), while reducing ALM-Bench MultilingualQA Pointwise N/A MultilingualEvaluation
+inference costs by 4 fewer FLOPs in compute-intensive
+BigBench GeneralComprehensionPointwise 200+Tasks Broadmulti-domainevaluation
+scenarios . However, pretraining remains superior for C M h T a B tb e o n t ch Ar C C o o m m p p r r e e h h e e n n s s i i o o n n P P a a i ir r w wi is s e e 3 3 3 K K Mult U i-t s u er rn pr c e o f n e v re e n rs c a e tions
+RewardBench Comprehension Pairwise 2,998 Userpreference
+the hardest tasks or when inference compute constraints are
+high, as larger pretrained models inherently encode deeper ConvAI2 Dialogue Pointwise N/A Engagingness, Consistency
+MultiWOZ Dialogue Pointwise N/A Tasksuccess, Coherence
+reasoningcapabilities. TrecDL21&22 Search Pointwise 1,549/2,673 Relevancescoring
+BEIR Search Pointwise 18Datasets Informationretrieval
+Story&RecommendationBenchmarks
+HANNA Story Pointwise 1,056 Relevance, Coherence, Complexity
+A smaller model with test-time compute can S P t K or U y - E S R afe HF V S a t l o u r e y s P P a a i ir r w wi is s e e 8 1 3 0. 0 4 K K Us H er el p p r f e u f l e n r e e s n s c, e H -b a a rm se l d es r s a n n e k s i s ng
+Cvalue Values Pairwise 145K Safety, Responsibility
+outperforma14 largermodeloneasy/interme- NaturalInst. InstructionTuning Pointwise 1,600+ Instruction-followingevaluation
+diate questions, when inference tokens (Y) are
+limited(e. g., self-improvementsettings).
+generalcomprehension, anddialogueandsearchtasks. Awellstructured evaluation framework ensures a comprehensive
+In terms of use cases, TTS is useful for scenarios with understanding of an LLM strengths, and limitations across
+flexibleinferencebudgetorwhenbasemodelsalreadyexhibit various tasks. These benchmarks play a crucial role in LLM
+reasonablecompetenceinthetask. Conversely, pretrainingis post-processingstages, wheremodelsundergofine-tuning, calessential for tasks requiring fundamentally new capabilities ibration, alignment, andoptimizationtoimproveresponseac-
+(e. g., reasoningonnoveldomains)whereinference-timeopti- curacy, robustness, and ethical compliance. Next, we explain
+mizationsalonemaynotsuffice. themainbenchmarkgorups. Table3providesanoverviewof
+There are notable tradeoffs between the two approaches.
+keydatasetscategorizedunderthesebenchmarkgroups.
+TTS reduces upfront training costs, making it attractive for ReasoningBenchmarks. ThesebenchmarksassessLLMson
+flexible, on-the-go optimization, but requires dynamic comtheir ability to perform logical, mathematical, and scientific
+pute allocation at inference. Pretraining, on the other hand,
+reasoning. MathematicalreasoningdatasetslikeMATH,
+GSM8K , and MetaMathQA test models on
+without additional runtime overhead, making it ideal for
+problem-solving, multi-step arithmetic, and theorem-based
+large-scaleAPIdeploymentsorlatency-sensitiveapplications.
+problem formulations. Scientific and multimodal reasoning
+Overall, TTS and pretraining are complementary in nature. benchmarks such as WorldTree V2 and MMMU 
+Future LLM systems may adopt a hybrid approach, where evaluate knowledge in physics, chemistry, and multimodal
+smaller base models are pretrained with essential knowledge,
+understanding, which are crucial for fact-checking and veriwhile TTS dynamically enhances responses through adaptive, fication processes in LLM-generated responses. Additionally,
+on-demand computation. This synergy enables more costdatasets like PangeaBench extend reasoning tasks into
+effectiveandefficientlarge-scalemodeldeployment.
+multilingual and cultural domains, enabling models to refine
+cross-lingual reasoning. These benchmarks help determine
+Choose pretraining for foundational capabillogicaldeductions.
+ities and test-time scaling for accurate contextawarerefinement. RL Alignment Benchmarks. RL alignment benchmarks
+are central to LLM alignment and post-training optimization. Theyrefineresponsegeneration, ethicalconstraints, and
+Benchmarks for LLM Post-training Evaluation user-aligned outputs through RLHF. Datasets such as HelpTo evaluate the success of LLM post-training phases, a di- Steer and UltraFeedback evaluate models based
+verse set of benchmarks have been proposed covering mul- on multi-attribute scoring and alignment with user instructiple domains: reasoning tasks, alignment, multilinguality, tions. Anthropic s HH-RLHF explores how well mod20
+els learn human preference optimization through reinforce- and uncertainty-aware RL methods beyond correlation
+ment learning with human feedback. D4RL and Meta- with human uncertanity that safeguard user trust and
+World focus on robotic control and offline RL, which prevent adversarial attacks. Another crucial area involves
+have implications for autonomous model decision-making. personalization and adaptation (FigMineRL extends RL testing into complex environments ure7e), whereeffortstotailorLLMsforspecificdomainsmust
+suchasMinecraft-basedinteractions, usefulfortrainingLLMs be balanced against risks to privacy , particularly when
+inadaptivedecision-makingsettings. enterprisedataorsensitivepersonalinformationisinvolved.
+Multilingual Evaluation. Multilingualbenchmarksarees- In parallel, process vs. outcome reward opsentialforLLMpost-processingincross-lingualgeneralization, timization(Figure7f)remainsanopenquestion: while
+translation adaptation, and fine-tuning for low-resource lan- process-based rewards help guide incremental improvements,
+guages. CulturaX and PangeaIns evaluate tok- outcome-focusedmetricsaresimplerbutmaynotcapturecruenization, translation, and instruction-following in over 150 cialintermediatedecision-makingsteps. Beyondrewardstruclanguages, ensuring fairness and diversity in model outputs. ture, fine-tuningLLMsonnewtasksstillencounterissueslike
+TydiQA and MM-Eval target bilingual and task- catastrophic forgetting and potential data leakage
+oriented multilingual evaluation, enabling improvements in , underscoringtheneedforparameter-efficientmethLLMfine-tuning. ThesedatasetsensurethatLLMsarenotjust ods and privacy-preserving strategies such as differential
+English-centricbutoptimizedformultilingualadaptability. privacy and federated learning . Human feedback,
+General Comprehension Benchmarks. General compre- while central to alignment, is inherently costly and limited
+hensionbenchmarkscontributetomodelfine-tuning, response in scope; methods like Constitutional AI and RLAIF
+coherence, and preference optimization. Datasets such as seek to automate parts of this oversight, though they
+ChatbotArena, MTBench, andRewardBench introduce fresh concerns about bias calibration and
+test user preference modeling and conversational fluency, model self-consistency . Finally, test-time scaling 
+crucial for LLM response ranking and re-ranking methods. anddynamicreasoningframeworksposefurtherchalBigBenchevaluatesbroadmulti-domaincomprehension, lenges: modelsmustlearnwhentoallocatemorecomputation
+while MMLU measures correctness and informa- for complex queries, how to adapt verification modules 
+tiveness. These datasets help in refining LLM fluency, factual efficiently, and how to maintain robust performance even
+correctness, andopen-endedresponsegeneration. whenfacingadversarialinputs. TheseconvergingresearchdiDialogue and Search Benchmarks. Dialogue and search rections—spanning rewardmodeling, decoding strategies, inbenchmarksplayakeyroleinoptimizing LLMretrieval-based terpretability, personalization, andsafefine-tuning—highlight
+responses, multi-turncoherence, andinformationretrievalac- themultifacetedroleof RLinLLMsandcollectivelyshapethe
+curacy. DatasetssuchasConvAI2andMultiWOZ future trajectory of large-scale language model development.
+evaluate multi-turn conversational models, essential for di- Below, wedelveintosomeofthesedirectionsingreaterdetail.
+alogue history tracking and adaptive response fine-tuning. Fine-tuning challenges. Fine-tuning remains one of the
+For search relevance assessment, BEIR provides large- most direct post-training methods to adapt LLMs to specific
+scale human-annotated judgments for retrieval fine-tuning, tasks or domains, yet it faces several open challenges. One
+ensuringLLMsgenerateandrankresponseseffectively. TREC fundamentalissueiscatastrophicforgetting–whenupdating
+DL21/22contributestodocumentrelevanceranking an LLM on new data causes it to lose or degrade previously
+andfactretrieval. learned capabilities. Even advanced PEFT methods like LoRA
+, which greatly reduce the number of trainable weights,
+do not fully solve this problem . Future work can ex7 Future Directions
+plore better continual learning strategies and regularization
+We gathered all papers related to post-training methods techniques so that models can acquire new skills without
+in LLMs and analyzed their trends, as shown in Figure. erasing old ones. For example, new fine-tuning algorithms
+Application of RL techniques for refining the (e. g. CURLoRA ) explicitly aim to stabilize training and
+LLMs have a noticeable increase in prominence since 2020 preserve prior knowledge while adding new tasks. Promising
+(Figure), emphasizing the demand for interactive ap- researchdirectionsincludecurriculum-basedfine-tuning
+proaches such as human-in-the-loop reinforcement (introducing new facts gradually or in context with known
+and scalability . At the same time, reward facts)andhybridtrainingthatcombinesretrievalorexternal
+modeling (Figure) has seen a steady rise knowledge bases. For instance, rather than solely adjusting
+in interest due to the emergence of self-rewarding language the model s weights, one could fine-tune LLMs to consult a
+models, yet the field still struggles with reward hacking knowledge repository or perform tool use (such as database
+ and the design of robust , failure-aware re- queries or computations) when faced with queries outside
+wardfunctionsbeyondrewardhacking. Decoding and their original training distribution . This retrievalsearch(Figure7c)methodsincludetree-of-thoughtsand augmented fine-tuning could let models incorporate
+Monte Carlo strategies aiming to enhance model freshinformationatinferencetime, reducingtheneedtooverreasoning through iterative self-critique , but writetheirinternalweightswithnewfacts. Anotherapproach
+these techniques also demand reliable uncertainty estima- is training models to explicitly represent uncertainty about
+tors to prevent excessive computational overhead . new knowledge, thereby enabling them to say I don t know
+Safety , robustness , and interpretability or defer to an external source if a query concerns content
+ have likewise become central concerns (Fig- not seen in pre-training. By blending weight updates with
+ure 7d), motivating the development of bias-aware external knowledge integration, future fine-tuned LLMs will
+(b) Reward modeling trends show RLHF (c) Decoding strategies like Tree-of-
+(a) Growing trend in RL for LLMs, with stabilization, with Self-Rewarding Models ThoughtsandMCTSareimprovingLLM
+afocusonHuman-in-the-LoopRL. leading, butRewardHackingpersists. reasoninganddecision-making.
+(d) Safety and Robustness research is (e)PersonalizationandAdaptationfocus (f) Process Reward Modeling dominates
+growing, with Uncertainty-Aware RL en- on Privacy-Preserving RLHF. On-device Outcome-Based Optimization, favoring
+suringRLHFmodelreliability. adaptationremainsachallenge. iterativestrategiesforRL-basedLLMs.
+Fig.7: YearlyTrendsinRLspecificpost-trainingmethodsforLLMsandemergingresearchdirections.
+maintainhigherfactualaccuracyandlowerhallucinationrates itself aligned and correct? There is a risk of feedback loops
+onemerginginformation. oranechochamberofbiasesiftheautomatedpreferencesare
+Safe Fine-tuning. From an ethical and safety perspective, flawed. An open gap is the creation of robust AI feedback
+fine-tuning raises important open research questions. Fine- systems that are calibrated to human values (perhaps perituning data often contains sensitive or proprietary informa- odically grounded by human oversight or by a diverse set
+tion , which can lead to privacy risks if the model mem- of constitutional principles). The blending of human and AI
+orizes and later regurgitates that data. A recent comprehen- feedbackinahierarchicalschemecouldprovideascalableyet
+sive survey highlights vulnerabilities in the fine-tuning reliableRLparadigmforLLMs.
+stage, such as membership inference attacks (detecting if a
+specificrecordwasinthefine-tuningset)anddataextraction Test-time scaling challenges. Open challenges in TTS re-
+(recovering parts of the fine-tuning data from the model s volve around how to orchestrate the inference-time processes
+outputs). Mitigatingtheserisksisanopenproblem: methods efficientlyandreliably. Akeyquestionishowmuchcomputing
+like differential privacy fine-tuning (adding noise to the is enough for a given query, and how to determine this on
+weight updates) and federated fine-tuning (where data never thefly? Usinglessresourcescanresultinmistakes, butusing
+leavesuserdevicesandonlyaggregatedupdatesaresenttothe too much is inefficient and could introduce inconsistencies.
+model) are being actively explored. However, these methods Recent research by Snell et al. tackled it by proposing
+often come at the cost of model utility or require careful a unified framework with a Proposer and a Verifier to
+calibrationtoavoiddegradingperformance. systematically explore and evaluate answers. In their frameLimitations of Human Feedback. Human feedback is work, theProposer(usuallythebaseLLM)generatesmultiple
+costly and subjective. One promising avenue to address the candidate solutions, and the Verifier (another model or a
+limitations of human feedback is using AI feedback and heuristic) judges and selects the best. The optimal strategy
+automation to assist or replace human evaluators. Constitu- can vary by problem difficulty: for easier queries, generattionalAI, introducedbyAnthropic, isanotableexample: ing many answers in parallel and picking the top might be
+instead of relying on extensive human feedback for every sufficient, whereas for harder problems, sequential, step-byharmful or helpful behavior, the model is guided by a set of step reasoning with verification at each step works better.
+written principles (a constitution ) andis trained to critique An important future direction is building adaptive systems
+and refine its own responses using another AI model as the where the LLM dynamically allocates computation based on
+judge . Emerging directions here include RLAIF and an estimate of the question s complexity. This idea connects
+othersemi-automatedfeedbacktechniques: usingstrong tometa-cognitioninAI, enablingmodelstohaveasense
+models to evaluate or guide weaker models, or even having of what they don t know or what deserves more thought.
+multiple AI agents debate a question and using their agree- Developingreliableconfidencemetricsordifficultypredictors
+ment as a reward signal . Such AI-aided feedback for LLMs is an open research area, but progress here would
+could vastly scale the tuning process and help overcome the make TTS far more practical i. e., the model would only slow
+bottleneck of limited human expert time. However, it raises downandthink whennecessary, muchlikeahumanspending
+new theoretical questions: how do we ensure the AI judge is extra time on a hard problem. Additionally, By reframing
+inference-timescalingasaprobabilisticinferenceproblemand encryption during inference; differential privacy via reward
+employingparticle-basedMonteCarlomethods[?], thesmall noising, whichintroducesmathematicallyboundednoise
+modelsachievedo1levelaccuracyinonly32rollouts, a4–16x intoRLHFpreferencerankingsduringalignment; andfederated
+improvementinscalingefficiencyacrossvariousmathematical distillation, which aggregates knowledge from decentralized
+reasoning tasks. Recent study shows distilling test-time user-specificmodelswithoutsharingrawdata.
+computations into synthetic training data creates synergistic Collaborative Multi-Model Systems. As single-model
+pretrainingbenefitswhichcanalsobefurtherexplored. scaling approaches physical limits, alternaReward Modeling and Credit Assignment. Current RL tive paradigms such as multi-agent LLM collaboration become necessary. Researchers are investigating
+elsover-optimizesuperficialproxymetricsratherthangenuine emergent communication protocols that train models to dereasoning quality. The sparse nature of terminal rewards velop lossy compression languages for inter-model knowlin multi-step tasks increases credit assignment challenges, edgetransfersuchasGenAINet, robustensembleswhere
+particularly in long-horizon reasoning scenarios. Traditional stress-testinducedspecializationdrivesautomaticdivisionof
+methods like DPO require inefficient pairwise preference data problem spaces based on failure analysis , and gradientandfailtoutilizefailuretrajectorieseffectively. Hybridreward freesynergylearningthroughevolutionarystrategiesdesigned
+models can be investigated by integrating process supervi- todiscovercomplementarymodelcombinationswithoutrelysion with outcome-based rewards using contrastive stepwise ingonbackpropagation.
+evaluation . This approach enables a more granular as- Multimodal RL Integration. Multimodal reinforcement
+sessmentofintermediatedecision-makingstepswhilealigning learning faces the obstacle of a combinatorial
+with long-term objectives. Recent work suggests step- stateexplosion, especiallyincontextsexceeding128ktokens.
+level policy optimization could improve value function ac- Pioneering methods to overcome this include hierarchical
+curacy while maintaining safety constraints. Dynamic credit attention frameworks that employ modality-specific policies
+assignment mechanisms can be explored through temporal with cross-attention gating , adaptive truncation stratedifference learning adapted for transformers . Such giesthatcompresscontextwhilepreservingcriticalreasoning
+adaptationsmayenhancethemodel sabilitytocapturelong- segments, andflashcurriculumapproachesthatleverage
+range dependencies and optimize reward propagation over self-supervisedcomplexitypredictiontofaciliextended sequences. Failure-aware training strategies can be tateprogressivemultimodalintegration.
+developedbyincorporatingnegativeexamplesintotheRLloop Efficient RL Training. Efficient RL training paradigms convia adversarial data augmentation . This can improve tinue to be a critical research frontier as current methmodelrobustnessbysystematicallyexposingittochallenging ods exhibit significant sample inefficiency and computational
+scenariosandencouragingmoreresilientpolicylearning. overhead. Addressing issues like the overthinking 
+Efficient RL Training and Distillation. Current RL meth- phenomenon, where excessive reasoning chains waste valuodsforLLMsrequireprohibitivecomputationalresources able computation , requires approaches such as partial
+while often underperforming knowledge distillation tech- rollout strategies , adaptive length penalty mechanisms
+niques . This inefficiency limits scalability and practical employing learned compression transformers, and hybrid ardeployment, asdistilledmodelsfrequentlysurpassRL-trained chitecturesthatcombineMCTSwithadvancedRLoptimizers.
+counterparts despite requiring less training overhead. Addi- These innovations are essential for scaling RL to long-context
+tionally, pure RL approaches struggle to balance language taskswhileminimizingwastedcomputationalresources.
+quality with reasoning improvement , creating a performanceceiling.
+The development of hybrid frameworks that initialize RL
+. OverthinkingPhenomenon: Analysisreveals
+policieswithdistilledknowledgefromlargemodels, combining 22% wasted computation is in reasoning chains
+theexploratorybenefitsof RLwiththestabilityofsupervised exceedingoptimalreasoninglength.
+learningisaninterestingdirection. Similarly, curriculumsampling strategies that progressively increase task complexity RLmethodsexhibitsampleinefficiencyandcomputational
+while using distillation to preserve linguistic coherence can overhead, particularly when scaling to contexts exceeding
+also help. PEFT methods can be leveraged during RL up- 128k tokens. The overthinking phenomenon, where models
+datestomaintainbasecapabilitieswhileenhancingreasoning. generate excessively long reasoning chains, further reduces
+token efficiency and increases deployment costs . Investigate partial rollout strategies with flash attention mechIntegration: Combining PRM-guided tree anisms for long-context processing. Develop length penalty
+search with online distillation achieves 4 effi- mechanismsusinglearnedcompressiontransformersforiteraciency gains over baseline methods, while main- tive long2short distillation. Hybrid architectures combining
+taining94%solutionaccuracyonMATHdataset. MCTS with GRPO could enable better explorationexploitationtradeoffs. ParallelworkbyXieet. al.demonPrivacy-Preserving Personalization. Customizing mod- strates promising results through adaptive tree search prunels for enterprise and individual use cases raises the risk of ing. Several open challenges persist in the field. Uncertainty
+exposingprivatetrainingdatathroughmemorization, making propagation remains problematic as current confidence estiprivacy-preserving adaptation essential. Promising so- matorsaddapproximately18%latencyoverhead, whilecataslutions include homomorphic instruction tuning , which trophic forgetting rresults in a degradation of 29% of base
+processesencrypteduserquerieswhilemaintainingend-to-end capabilitiesduringRLfine-tuning. Moreover, benchmark
+saturation is an issue, with MMLU scores correlating poorly (r A. Dubey, A. Jauhri, A. Pandey, A. Kadian, A. Al-Dahle,
+=0.34)withreal-worldperformance. A. Letman, A. Mathur, A. Schelten, A. Yang, A. Fan,
+et al., The llama 3 herd of models, arXiv preprint
+arXiv:2407.21783,2024. 1,5
+. Adversarial Vulnerabilities: Stress tests re- G. Team, M. Riviere, S. Pathak, P. G. Sessa, C. Hardin, S. Bhupatiraju, L. Hussenot, T. Mesnard, B. Shahriari, A. Ramé,
+veal a high success rate on gradient-based
+etal., Gemma2: Improvingopenlanguagemodelsatapractipromptinjections. calsize, arXivpreprintarXiv:2408.00118,2024. 1,5
+ G. Team, R. Anil, S. Borgeaud, J.-B. Alayrac, J. Yu, R. Soricut,
+J. Schalkwyk, A. M. Dai, A. Hauth, K. Millican, etal., Gemini:
+afamilyofhighlycapablemultimodalmodels, arXivpreprint
+arXiv:2312.11805,2023. 1,5
+Thissurveyandtutorialprovidesasystematicreviewofpost- A. Liu, B. Feng, B. Wang, B. Wang, B. Liu, C. Zhao, C. Dengr,
+C. Ruan, D. Dai, D. Guo, et al., Deepseek-v2: A strong,
+training methodologies for LLMs, focusing on fine-tuning, reeconomical, andefficientmixture-of-expertslanguagemodel,
+inforcementlearning, andscaling. Weanalyzekeytechniques,
+arXivpreprintarXiv:2405.04434,2024. 1,2,5,6
+along with strategies for improving efficiency and alignment M. Abdin, J. Aneja, H. Awadalla, A. Awadallah, A. A. Awan,
+with human preferences. Additionally, we explore the role of N. Bach, A. Bahree, A. Bakhtiari, J. Bao, H. Behl, etal., Phi3technicalreport: Ahighlycapablelanguagemodellocallyon
+RLinenhancingLLMsthroughreasoning, planning, andmultiyourphone, arXivpreprintarXiv:2404.14219,2024. 1,5
+task generalization, categorizing their functionalities within A. Fan, M. Lewis, andY. Dauphin, Hierarchicalneuralstory
+the agent-environment paradigm. Recent advancements in generation, arXivpreprintarXiv:1805.04833,2018.
+ C. Chhun, P. Colombo, C. Clavel, andF. M. Suchanek, Ofhureinforcementlearningandtest-timescalinghavesignificantly
+mancriteriaandautomaticmetrics: AbenchmarkoftheevalimprovedLLMsreasoningcapabilities, enablingthemtotackle
+uationofstorygeneration, arXivpreprintarXiv:2208.11646,
+increasingly complex tasks. By consolidating the latest re- 2022.
+searchandidentifyingopenchallenges, weaimtoguidefuture S. Arif, S. Farid, A. H. Azeemi, A. Athar, and A. A. Raza,
+Thefellowshipofthellms: Multi-agentworkflowsforsynthetic
+effortsinoptimizingLLMsforreal-worldapplications.
+preference optimization dataset generation, arXiv preprint
+arXiv:2408.08688,2024.
+ S. Ye, Y. Jo, D. Kim, S. Kim, H. Hwang, andM. Seo, Selfee:

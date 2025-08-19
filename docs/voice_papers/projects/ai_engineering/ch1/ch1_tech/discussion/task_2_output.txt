@@ -1,0 +1,68 @@
+Método: Construcción de Aplicaciones de IA con Modelos Fundamentales  
+
+1. Arquitectura de AI Engineering  
+   1.1. Niveles de la Arquitectura  
+       • Desarrollo de Aplicaciones  
+         - Interfaz de usuario  
+         - Evaluación de resultados  
+         - Ingeniería de prompts  
+       • Desarrollo de Modelos  
+         - Modelado  
+         - Fine-tuning (ajuste fino)  
+         - Ingeniería de datasets (selección, preprocesamiento y optimización)  
+         - Optimización de inferencia  
+       • Infraestructura  
+         - Serving (despliegue en producción)  
+         - Gestión de datos  
+         - Monitoreo  
+
+2. Procesos de Adaptación y Despliegue  
+   2.1. Técnicas de Adaptación  
+       • Prompt Engineering  
+       • RAG (Recuperación+Generación)  
+       • Fine-tuning para adaptación de modelos  
+   2.2. Aplicación de Self-supervision  
+       • Uso de grandes corpus sin etiquetas manuales  
+       • Transición desde métodos supervisados a métodos autodidactas  
+
+3. Metodología Histórica y Evolución de Modelos de Lenguaje  
+   3.1. Enfoques Iniciales  
+       • Técnicas de tokenización (división en unidades semánticas)  
+       • Modelos autocodificadores y enmascarados  
+   3.2. Evolución a Modelos Fundacionales  
+       • Escalado hacia modelos “grandes” (LLMs)  
+       • Integración de múltiples modalidades (texto, imágenes, video, etc.)  
+
+4. Procesos de Optimización de Inferencia  
+   4.1. Técnicas Aplicadas  
+       • Cuantización  
+       • Destilación  
+       • Paralelismo para procesamiento token por token  
+   4.2. Objetivo de la Optimización  
+       • Reducir latencias  
+       • Mejorar la capacidad de respuesta en aplicaciones interactivas  
+
+5. Procesos de Ingeniería de Datos  
+   5.1. Tareas Fundamentales  
+       • Limpieza y deduplicación de datos  
+       • Tokenización adecuada para grandes volúmenes  
+       • Optimización de datasets para modelos de texto e imágenes  
+
+6. Integración en Aplicaciones Empresariales  
+   6.1. Aplicaciones Criticas  
+       • Generación de contenido  
+       • Soporte al cliente  
+       • Automatización de flujos de trabajo  
+   6.2. Consideraciones  
+       • Reducción de costos operativos  
+       • Cumplimiento de requisitos de privacidad y regulaciones  
+
+7. Evaluación y Métricas  
+   7.1. Enfoque en Evaluación  
+       • Nuevos marcos de evaluación para salidas abiertas  
+       • Comparación de rendimientos a través de distintos enfoques de prompt engineering  
+   7.2. Revisión de Métricas  
+       • Balance entre velocidad de implementación e integridad de resultados  
+       • Inclusión de métricas que consideren la variabilidad y el contexto de salida  
+
+Este documento refleja la metodología descrita en el análisis técnico del capítulo “Introducción a la Construcción de Aplicaciones de IA con Modelos Fundamentales”, abarcando desde la arquitectura y procesos de adaptación hasta la optimización y evaluación integral de aplicaciones de IA con modelos fundacionales.

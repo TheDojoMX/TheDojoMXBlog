@@ -1,0 +1,154 @@
+Section: Section 1
+Characters: 9962
+==================================================
+Below is the complete text of Section 1 as provided, followed by an integrated analysis that extracts the key findings, insights, technical details, and the nuanced reasoning embedded in the piece:
+
+──────────────────────────────
+Title: My AI Skeptic Friends Are All Nuts
+
+# My AI Skeptic Friends Are All Nuts
+
+![A psychedelic landscape.](/blog/youre-all-nuts/assets/whoah.png)
+
+[Annie Ruygt](https://annieruygtillustration.com/)
+
+A heartfelt provocation about AI-assisted programming.
+
+Tech execs are mandating LLM adoption. That’s bad strategy. But I get where they’re coming from.
+
+Some of the smartest people I know share a bone-deep belief that AI is a fad — the next iteration of NFT mania. I’ve been reluctant to push back on them, because, well, they’re smarter than me. But their arguments are unserious, and worth confronting. Extraordinarily talented people are doing work that LLMs already do better, out of spite.
+
+All progress on LLMs could halt today, and LLMs would remain the 2nd most important thing to happen over the course of my career.
+
+**Important caveat**: I’m discussing only the implications of LLMs for software development. For art, music, and writing? I got nothing. I’m inclined to believe the skeptics in those fields. I just don’t believe them about mine.
+
+Bona fides: I’ve been shipping software since the mid-1990s. I started out in boxed, shrink-wrap C code. Survived an ill-advised [Alexandrescu](https://www.amazon.com/Modern-Design-Generic-Programming-Patterns/dp/0201704315) C++ phase. Lots of Ruby and Python tooling. Some kernel work. A whole lot of server-side C, Go, and Rust. However you define “serious developer”, I qualify. Even if only on one of your lower tiers.
+
+† (or, God forbid, 2 years ago with Copilot)
+
+First, we need to get on the same page. If you were trying and failing to use an LLM for code 6 months ago †, you’re not doing what most serious LLM-assisted coders are doing.
+
+People coding with LLMs today use agents. Agents get to poke around your codebase on their own. They author files directly. They run tools. They compile code, run tests, and iterate on the results. They also:
+
+- pull in arbitrary code from the tree, or from other trees online, into their context windows,
+- run standard Unix tools to navigate the tree and extract information,
+- interact with Git,
+- run existing tooling, like linters, formatters, and model checkers, and
+- make essentially arbitrary tool calls (that you set up) through MCP.
+
+The code in an agent that actually “does stuff” with code is not, itself, AI. This should reassure you. It’s surprisingly simple systems code, wired to ground truth about programming in the same way a Makefile is. You could write an effective coding agent in a weekend. Its strengths would have more to do with how you think about and structure builds and linting and test harnesses than with how advanced o3 or Sonnet have become.
+
+If you’re making requests on a ChatGPT page and then pasting the resulting (broken) code into your editor, you’re not doing what the AI boosters are doing. No wonder you’re talking past each other.
+
+![four quadrants of tedium and importance](/blog/youre-all-nuts/assets/code-quad.png?2/3¢er)
+
+
+LLMs can write a large fraction of all the tedious code you’ll ever need to write. And most code on most projects is tedious. LLMs drastically reduce the number of things you’ll ever need to Google. They look things up themselves. Most importantly, they don’t get tired; they’re immune to inertia.
+
+Think of anything you wanted to build but didn’t. You tried to home in on some first steps. If you’d been in the limerent phase of a new programming language, you’d have started writing. But you weren’t, so you put it off, for a day, a year, or your whole career.
+
+I can feel my blood pressure rising thinking of all the bookkeeping and Googling and dependency drama of a new project. An LLM can be instructed to just figure all that shit out. Often, it will drop you precisely at that golden moment where shit almost works, and development means tweaking code and immediately seeing things work better. That dopamine hit is why I code.
+
+There’s a downside. Sometimes, gnarly stuff needs doing. But you don’t wanna do it. So you refactor unit tests, soothing yourself with the lie that you’re doing real work. But an LLM can be told to go refactor all your unit tests. An agent can occupy itself for hours putzing with your tests in a VM and come back later with a PR. If you listen to me, you’ll know that. You’ll feel worse yak-shaving. You’ll end up doing… real work.
+
+Are you a vibe coding Youtuber? Can you not read code? If so: astute point. Otherwise: what the fuck is wrong with you?
+
+You’ve always been responsible for what you merge to `main`
+
+. You were five years go. And you are tomorrow, whether or not you use an LLM.
+
+If you build something with an LLM that people will depend on, read the code. In fact, you’ll probably do more than that. You’ll spend 5-10 minutes knocking it back into your own style. LLMs are [showing signs of adapting](https://github.com/PatrickJS/awesome-cursorrules) to local idiom, but we’re not there yet.
+
+People complain about LLM-generated code being “probabilistic”. No it isn’t. It’s code. It’s not Yacc output. It’s knowable. The LLM might be stochastic. But the LLM doesn’t matter. What matters is whether you can make sense of the result, and whether your guardrails hold.
+
+Reading other people’s code is part of the job. If you can’t metabolize the boring, repetitive code an LLM generates: skills issue! How are you handling the chaos human developers turn out on a deadline?
+
+† (because it can hold 50-70kloc in its context window)
+
+For the last month or so, Gemini 2.5 has been my go-to †. Almost nothing it spits out for me merges without edits. I’m sure there’s a skill to getting a SOTA model to one-shot a feature-plus-merge! But I don’t care. I like moving the code around and chuckling to myself while I delete all the stupid comments. I have to read the code line-by-line anyways.
+
+If hallucination matters to you, your programming language has let you down.
+
+Agents lint. They compile and run tests. If their LLM invents a new function signature, the agent sees the error. They feed it back to the LLM, which says “oh, right, I totally made that up” and then tries again.
+
+You’ll only notice this happening if you watch the chain of thought log your agent generates. Don’t. This is why I like [Zed’s agent mode](https://zed.dev/agentic): it begs you to tab away and let it work, and pings you with a desktop notification when it’s done.
+
+I’m sure there are still environments where hallucination matters. But “hallucination” is the first thing developers bring up when someone suggests using LLMs, despite it being (more or less) a solved problem.
+
+Does an intern cost $20/month? Because that’s what Cursor.ai costs.
+
+Part of being a senior developer is making less-able coders productive, be they fleshly or algebraic. Using agents well is both a both a skill and an engineering project all its own, of prompts, indices, [and (especially) tooling.](https://fly.io/blog/semgrep-but-for-real-now/) LLMs only produce shitty code if you let them.
+
+† (Also: 100% of all the Bash code you should author ever again)
+
+Maybe the current confusion is about who’s doing what work. Today, LLMs do a lot of typing, Googling, test cases †, and edit-compile-test-debug cycles. But even the most Claude-poisoned serious developers in the world still own curation, judgement, guidance, and direction.
+
+Also: let’s stop kidding ourselves about how good our human first cuts really are.
+
+It’s hard to get a good toolchain for Brainfuck, too. Life’s tough in the aluminum siding business.
+
+† (and they surely will; the Rust community takes tooling seriously)
+
+A lot of LLM skepticism probably isn’t really about LLMs. It’s projection. People say “LLMs can’t code” when what they really mean is “LLMs can’t write Rust”. Fair enough! But people select languages in part based on how well LLMs work with them, so Rust people should get on that †.
+
+I work mostly in Go. I’m confident the designers of the Go programming language didn’t set out to produce the most LLM-legible language in the industry. They succeeded nonetheless. Go has just enough type safety, an extensive standard library, and a culture that prizes (often repetitive) idiom. LLMs kick ass generating it.
+
+All this is to say: I write some Rust. I like it fine. If LLMs and Rust aren’t working for you, I feel you. But if that’s your whole thing, we’re not having the same argument.
+
+Do you like fine Japanese woodworking? All hand tools and sashimono joinery? Me too. Do it on your own time.
+
+† (I’m a piker compared to my woodworking friends)
+
+I have a basic wood shop in my basement †. I could get a lot of satisfaction from building a table. And, if that table is a workbench or a grill table, sure, I’ll build it. But if I need, like, a table? For people to sit at? In my office? I buy a fucking table.
+
+Professional software developers are in the business of solving practical problems for people with code. We are not, in our day jobs, artisans. Steve Jobs was wrong: we do not need to carve the unseen feet in the sculpture. Nobody cares if the logic board traces are pleasingly routed. If anything we build endures, it won’t be because the codebase was beautiful.
+
+Besides, that’s not really what happens. If you’re taking time carefully golfing functions down into graceful, fluent, minimal functional expressions, alarm bells should ring. You’re yak-shaving. The real work has depleted your focus. You’re not building: you’re self-soothing.
+
+Which, wait for it, is something LLMs are good for. They devour schlep, and clear a path to the important stuff, where your judgement and values really matter.
+
+As a mid-late career coder, I’ve come to appreciate mediocrity. You should be so lucky as to have it flowing almost effortlessly from a tap.
+
+We all write mediocre code. Mediocre code: often fine. Not all code is equally important. Some code should be mediocre. Maximum effort on a random unit test? You’re doing something wrong. Your team lead should correct you.
+──────────────────────────────
+
+Analysis and Comprehensive Insights:
+
+1. Key Findings, Insights, and Arguments:
+   • The author provocatively challenges the idea that AI (specifically LLMs) is a passing fad. There is a clear argument that, even if one could halt progress on LLMs, their impact on coding—as the second-greatest event in the author’s career—is undeniable.
+   • A distinction is made between different uses of AI in programming. The piece argues that while some “smart” skepticism persists (mostly regarding AI in art, music, or writing), in software development LLMs provide genuine productivity benefits.
+   • The author emphasizes that true AI-assisted programming isn’t just about using a chatbot to generate code; it is about integrating the LLM into a system of “agents” that autonomously explore the codebase, run tests, interact with tools, and even modify their outputs based on build failures.
+
+2. Important Data, Statistics, or Evidence:
+   • Specific references to technology like “Gemini 2.5” and comparisons with tools such as Zed’s agent mode provide concrete examples of current systems.
+   • The note about context windows (50-70kloc) and the cost comparison (Cursor.ai costing roughly the price of an intern at $20/month) serve as evidence of technological capability and economic efficiency.
+   • Anecdotal data points (e.g., the history of coding experiences from boxed C code, C++ phases, Ruby, Python, and more) build the author’s credibility while offering a timeline of technical evolution.
+
+3. Novel Concepts or Frameworks Introduced:
+   • The concept of “coding agents” which combine LLM outputs with traditional systems code. These agents not only generate code but also autonomously execute build steps and interact with tools (such as Git, linters, and test harnesses).
+   • The nuanced argument that the randomness or “probabilistic” notion of generated code is less relevant than whether the resulting code can be effectively understood and managed by human developers.
+  
+4. Connections to Other Parts:
+   • The article hints at broader discussions regarding AI in various fields (art, music, writing) but deliberately limits the focus to software development. It contrasts skepticism in non-code creative fields with the robust case for LLM use in programming.
+   • Frequent references to earlier coding practices and traditions (such as hand-crafting code and the “yak-shaving” dynamic) forge a connection between old-school software development and modern, AI-assisted approaches.
+
+5. Implications and Significance:
+   • The argument that LLMs are best suited to mitigate the “tedious” aspects of coding (Google searches, bookkeeping, test-edit cycles) places them as liberators of developer time. This could lead to more focus on “real work”—the high-value problem-solving tasks where human judgment is paramount.
+   • There is a subtle social commentary on professional responsibility and the evolution of what constitutes “real work” in coding, suggesting that even if code produced by LLMs is mediocre it is acceptable when balanced against overall productivity and focus on true challenges.
+   • The piece underscores that while LLMs help cut down repetitive tasks, the final responsibility for code quality, style, and correctness remains with the human developer, meaning the human role is transformed but not eliminated.
+
+6. Controversies or Debates:
+   • The author openly confronts skeptics within the tech community, essentially deprecating the “LLMs can’t code” refrain as projection rather than a technical limitation.
+   • There is debate around the nature of “hallucination” in LLM outputs. The author dismisses hallucination as a “solved problem” in the context of practical coding where errors are caught by automated testing and agent oversight.
+   • The piece also questions whether the pursuit of overly elegant code (or “yak-shaving” to produce poetic code) is counterproductive in a field driven by functionality and reliability.
+
+7. Technical Details That Matter:
+   • The role of context windows in LLMs, enabling up to 50-70k lines of code to be processed, is highlighted as a critical feature for effective integration into development workflows.
+   • The discussion regarding the integration of LLMs with traditional build processes (compilation, linting, testing) clarifies that the heavy lifting is done by tried-and-tested systems code rather than the LLM itself.
+   • There is an emphasis on the reliability of the workflow (agent-generated code, error feedback loops, automated corrections) that demystifies how LLMs can be safely and effectively integrated into development pipelines.
+
+In summary, Section 1 of “My AI Skeptic Friends Are All Nuts” sets the stage by arguing that while AI-assisted programming may seem overhyped or trivialized by skeptics in other creative fields, in software development it provides tangible benefits by automating repetitive tasks and freeing developers to focus on judgment-intensive work. The author’s blend of personal anecdote, historical perspective, and technical insights challenges conventional wisdom on AI in coding and deconstructs the criticisms of LLM-generated code—all while reminding us that regardless of automation, the ultimate responsibility for quality and sustainability lies with the human developer. This balanced, in-depth discussion not only defends the efficacy of LLMs when properly integrated but also redefines the role of developers in a future where mediocrity in boilerplate code is acceptable if it leads to more creative or meaningful innovation.
+
+The rich detailing of the technical workflow (agents, toolchain integration, iterative testing), economic comparisons (cost of Cursor.ai versus an intern), and a healthy dose of irreverence makes this section a multi-layered argument. It bridges the gap between nostalgic coding paradigms and the inevitable embrace of cutting-edge AI tools while urging developers to remain engaged with the code they ultimately release.
+
+This complete content and analysis preserve the section’s full complexity and nuance, ensuring that every argument and reference is maintained for the reader’s deeper understanding.

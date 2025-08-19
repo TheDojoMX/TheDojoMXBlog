@@ -1,0 +1,28 @@
+{
+  "project": "tech_2",
+  "paper_title": "Título: \"AI as a Leverage Mechanism\"",
+  "language": "Spanish",
+  "technical_level": "technical",
+  "duration_minutes": 20,
+  "tone": "casual",
+  "workflow": "summary_with_chunking",
+  "document_chunks": 4,
+  "chunk_sections": [
+    "Section 1",
+    "Section 2",
+    "Section 3",
+    "Section 4"
+  ],
+  "agents": [
+    {
+      "role": "Master Educational Science Communicator & Storyteller",
+      "goal": "Transform technical content into captivating podcast narratives following the Voice Papers style guide"
+    }
+  ],
+  "tasks": [
+    {
+      "description": "\n            Transform this comprehensive synthesis into an engaging educational script.\n            \n            Title: Título: \"AI as a Leverage Mechanism\"\n            \n            Synthesis to tran...",
+      "type": "synthesis"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+Section: Section 9
+Characters: 9791
+==================================================
+• Experimentation with different models, prompts, retrieval algorithms, and sampling variables (sampling variables are discussed in Chapter 2).  
+• Goal: Run models faster and cheaper while setting up a feedback loop for iterative improvement using production data.  
+
+AI Engineering versus ML Engineering – Three major differences:  
+1. Without foundation models, training occurs from scratch; with foundation models, a pre‐trained model is used. This shifts focus from modeling and training to model adaptation.  
+2. AI engineering works with models that are larger, consume more compute resources, and incur higher latency. This increases the need for efficient training and inference optimization as well as expertise in managing larger GPU clusters.  
+3. AI engineering involves models that produce open‐ended outputs, which offers flexibility in tasks but makes evaluation more difficult.  
+
+Model adaptation techniques – Two categories:  
+• Prompt-based techniques:  
+ – Adapt a model without updating model weights by providing instructions and context (prompt engineering).  
+ – Requires less data and is easier to get started, suitable for many successful applications.  
+• Finetuning:  
+ – Involves updating model weights by further training a pre-trained model.  
+ – Typically requires more data and resources but can significantly improve quality, latency, and cost.  
+
+Model development responsibilities – Three main areas:  
+1. Modeling and training:  
+ – Involves designing model architectures, training, and finetuning.  
+ – Tools/tools examples: Google’s TensorFlow, Hugging Face’s Transformers, Meta’s PyTorch.  
+ – Requires familiarity with various ML algorithms (e.g., clustering, logistic regression, decision trees, collaborative filtering) and neural network architectures (e.g., feedforward, recurrent, convolutional, transformer), as well as concepts such as gradient descent, loss function, and regularization.  
+2. Dataset engineering:  
+ – Involves curating, generating, and annotating data required for training and adapting AI models.  
+ – Annotation is more challenging for open-ended queries (foundation models) compared to closed-ended tasks (traditional ML), and foundation models generally work with unstructured data versus the tabular data used in traditional ML.  
+3. Inference optimization:  
+ – Focuses on optimizing model performance during the inference phase.  
+
+Differences among training, pre-training, finetuning, and post-training:  
+• Training always involves changing model weights, but not all changes (e.g., quantization) are considered training.  
+• Pre-training:  
+ – Training a model from scratch with randomly initialized weights.  
+ – For large language models, pre-training (e.g., for text completion) is highly resource-intensive; for InstructGPT, it accounts for up to 98% of compute and data resources.  
+• Finetuning:  
+ – Continuing the training process from a pre-trained model, requiring less data and compute resources compared to pre-training.  
+• Post-training:  
+ – Often used interchangeably with finetuning, but sometimes used to indicate updates done by model developers (e.g., improving a model to follow instructions) versus finetuning by application developers to tailor a model for specific needs.  
+
+This extraction includes the technical details as provided in the section without interpretation.

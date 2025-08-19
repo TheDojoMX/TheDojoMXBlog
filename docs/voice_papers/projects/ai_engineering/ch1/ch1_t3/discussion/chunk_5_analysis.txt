@@ -1,0 +1,67 @@
+Section: Section 5
+Characters: 9853
+==================================================
+• Predicción de Jensen Huang (CEO de NVIDIA): AI reemplazará a los ingenieros de software humanos y se sugiere dejar de enfatizar que los niños deben aprender a programar.
+• Comentario del CEO de AWS, Matt Garman: En un futuro próximo, la mayoría de los desarrolladores dejarán de escribir código.
+• Datos de productividad (según estudio de McKinsey):
+ - Documentación: Los desarrolladores pueden ser el doble de productivos.
+ - Generación y refactorización de código: Mejora de productividad entre 25% y 50%.
+ - Tareas altamente complejas: Se observa una mejora mínima.
+• Observación en desarrollo: Herramientas de AI muestran mayor efectividad en el desarrollo frontend que en el backend.
+
+• Uso de modelos base en marketing y producción:
+ - En empresas, el 11% del presupuesto se destina en promedio a marketing.
+ - Aplicaciones creativas:
+  • Imagen y video:
+   – Midjourney: Generación de imágenes; en 2023, a 1,5 años de existencia, generó $200 millones en ingresos recurrentes anuales.
+   – Adobe Firefly: Edición de fotos.
+   – Runway, Pika Labs y Sora: Generación de videos.
+   – En la App Store de Apple, el 50% de las aplicaciones gratuitas de gráficos y diseño tienen “AI” en su nombre.
+   – Generación de fotos de perfil: Facebook aplicó una prohibición en 2019 y en 2023 muchas apps ofrecen herramientas para generar fotos de perfil.
+  • En empresas, AI se utiliza para:
+   – Generar imágenes y videos promocionales.
+   – Brainstorming de ideas y creación de primeros borradores.
+   – Testear múltiples variantes de anuncios basados en temporadas y ubicaciones (por ejemplo, cambiar colores de hojas en otoño o agregar nieve en invierno).
+
+• Uso de AI en escritura:
+ - Dispositivos móviles: AI potencia autocorrector y autocompletado.
+ - Estudio MIT (Noy y Zhang, 2023) en tareas de escritura específicas:
+  • Reducción en tiempo de escritura promedio: 40%.
+  • Aumento en la calidad del output: 18%.
+  • Los usuarios expuestos a ChatGPT fueron 2 veces más propensos a seguir usándolo dos semanas después y 1.6 veces más después de dos meses.
+ - Aplicaciones de AI en escritura para consumidores:
+  • Transformación del tono de correos electrónicos (de enérgico a agradable).
+  • Expansión de puntos de viñeta en párrafos completos.
+ - Aplicaciones para estudiantes y escritores:
+  • Redacción de ensayos y libros (incluyendo libros interactivos cuyo argumento se adapta a las preferencias de los lectores).
+  • Aplicaciones de lectura para niños que generan historias centradas en palabras difíciles.
+ - Herramientas de asistencia en escritura:
+  • Google Docs, Notion y Gmail integran AI.
+  • Grammarly ajusta un modelo para hacer la escritura más fluida, coherente y clara.
+ - Abuso potencial:
+  • Ejemplo: Amazon recibió múltiples guías de viaje generadas de forma automática con biografías y reseñas también generadas por AI.
+ - Uso empresarial:
+  • Redacción de reportes de desempeño, correos de contacto en frío, textos publicitarios y descripciones de productos.
+  • Herramientas CRM como HubSpot y Salesforce incluyen funciones para generar contenidos web y correos de alcance.
+
+• Uso de AI en optimización SEO:
+ - AI optimiza estrategias SEO al generar contenido optimizado.
+ - Surgimiento de granjas de contenido:
+  • En junio de 2023, NewsGuard identificó casi 400 anuncios de 141 marcas populares en sitios web de contenido generado por AI.
+  • Un sitio web de bajo valor llegó a producir 1,200 artículos diarios.
+
+• Uso de AI en educación:
+ - Durante caídas de ChatGPT, se observó un aumento de quejas de estudiantes que no podían completar tareas.
+ - Organismos educativos (como los de la ciudad de Nueva York y el Distrito Escolar Unificado de Los Ángeles) prohibieron ChatGPT, luego revirtieron la decisión.
+ - AI permite:
+  • Resumen de libros de texto.
+  • Generación de planes de lecciones personalizados.
+  • Adaptación de materiales educativos a estilos de aprendizaje (por ejemplo, lectura en voz alta para aprendices auditivos, visualización adaptada, traducción de ecuaciones matemáticas a código).
+  • Mejora en el aprendizaje de idiomas mediante escenarios de roleplay.
+ - Duolingo:
+  • La etapa de personalización de lecciones se beneficia notablemente del uso de AI (ver referencia de Figure-10 de Pajak y Bicknell, 2022).
+ - Herramientas adicionales:
+  • AI genera cuestionarios (tanto de opción múltiple como de respuesta abierta) y evalúa respuestas.
+  • Actúa como compañero de debate por su capacidad para presentar diferentes puntos de vista.
+  • Khan Academy utiliza asistentes de enseñanza y asistentes de curso potenciados por AI.
+  • Métodos innovadores: Asignación de ensayos generados por AI para que los estudiantes detecten y corrijan errores.

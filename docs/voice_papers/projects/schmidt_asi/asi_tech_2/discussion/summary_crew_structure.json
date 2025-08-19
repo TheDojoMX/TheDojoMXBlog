@@ -1,0 +1,34 @@
+{
+  "project": "asi_tech_2",
+  "paper_title": "Título: \"Ex-Google CEO: What Artificial Superintelligence Will Actually Look Like\"",
+  "language": "Spanish",
+  "technical_level": "technical",
+  "duration_minutes": 20,
+  "tone": "academic",
+  "workflow": "summary_with_chunking",
+  "document_chunks": 10,
+  "chunk_sections": [
+    "Section 1",
+    "Section 2",
+    "Section 3",
+    "Section 4",
+    "Section 5",
+    "Section 6",
+    "Section 7",
+    "Section 8",
+    "Section 9",
+    "Section 10"
+  ],
+  "agents": [
+    {
+      "role": "Technical Content Specialist",
+      "goal": "Present technical content with clarity, minimal transitions, and zero interpretation"
+    }
+  ],
+  "tasks": [
+    {
+      "description": "\n            Transform this comprehensive synthesis into an engaging educational script.\n            \n            Title: Título: \"Ex-Google CEO: What Artificial Superintelligence Will Actually Look Li...",
+      "type": "synthesis"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "project": "a1_t2",
+  "language": "Spanish",
+  "voice_provider": "elevenlabs",
+  "workflow": "tts_optimization",
+  "original_script_length": 4179,
+  "optimized_script_length": 4990,
+  "agent": {
+    "role": "ElevenLabs TTS Optimization Specialist",
+    "goal": "Optimize educational scripts for ElevenLabs TTS by adding proper XML controls and phonetic techniques WITHOUT changing the content"
+  }
+}

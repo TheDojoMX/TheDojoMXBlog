@@ -1,0 +1,56 @@
+{
+  "project": "tech_1",
+  "paper_title": "Título: \"Cornell AI history lecture\"",
+  "language": "Spanish",
+  "technical_level": "technical",
+  "duration_minutes": 20,
+  "tone": "casual",
+  "workflow": "summary_with_chunking",
+  "document_chunks": 4,
+  "chunk_sections": [
+    "Section 1",
+    "Section 2",
+    "Section 3",
+    "Section 4"
+  ],
+  "agents": [
+    {
+      "role": "Technical Document Analyzer",
+      "goal": "Extract facts, data, and specifications from each section with zero interpretation"
+    },
+    {
+      "role": "Technical Synthesizer",
+      "goal": "Combine section analyses into a factual, objective technical summary"
+    },
+    {
+      "role": "Technical Content Specialist",
+      "goal": "Present technical content with clarity, minimal transitions, and zero interpretation"
+    }
+  ],
+  "tasks": [
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                    Extract technical information from this section.\n                    \n                    CRITICAL RULES:\n                    1. NEVER use meta-language: \"el documento presenta\", ...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                You have received technical analyses of all 4 sections.\n                \n                Create a TECHNICAL SYNTHESIS that presents ONLY the facts, data, and specifications.\n         ...",
+      "type": "synthesis"
+    },
+    {
+      "description": "\nCreate a technical presentation of the following content titled \"Título: \"Cornell AI history lecture\"\".\n\nCONTENT TO PRESENT:\nPrevious synthesis content will be used\n\nYOUR MISSION: Present THE IDEAS A...",
+      "type": "educational"
+    }
+  ]
+}

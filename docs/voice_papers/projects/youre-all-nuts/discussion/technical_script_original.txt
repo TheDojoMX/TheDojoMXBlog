@@ -1,0 +1,128 @@
+# Título e Imagen
+- Título: “My AI Skeptic Friends Are All Nuts.”
+- Imagen incluida: “A psychedelic landscape.”
+  - URL: “/blog/youre-all-nuts/assets/whoah.png”
+  - Crédito de imagen: Annie Ruygt (enlace: https://annieruygtillustration.com/)
+
+# Hechos y Datos
+- Ejecutivos tecnológicos están ordenando la adopción de modelos de lenguaje a gran escala (LLMs).
+- Nota temporal: “o, Dios no lo quiera, hace 2 años con Copilot.”
+- Datos biográficos del autor:
+  - Publica software desde mediados de los años 90.
+  - Comenzó trabajando con código en C empaquetado y sellado.
+  - Pasó por una fase de C++ influenciada por Alexandrescu.
+  - Ha trabajado con Ruby y Python.
+  - Ha realizado trabajo a nivel de kernel.
+  - Ha desarrollado en C (servidor), Go y Rust.
+- Comparación temporal: Hace 6 meses, usar un LLM para código sin agentes no es lo mismo que lo que practican codificadores serios hoy.
+- Ejemplo cuantitativo en programación asistida por LLMs:
+  - Un usuario asigna 13 tareas a un LLM.
+    - 3 Pull Requests (PRs) son descartadas y re-promptadas.
+    - 5 reciben retroalimentación similar a la de un desarrollador junior.
+    - 5 son finalmente integradas (merged).
+- Comparación de costos: Costo de un interno a $20/mes versus el costo de Cursor.ai.
+- Ejemplo de caso: Alimentación de 40 transcripciones de log a un agente LLM que, en segundos, detectó problemas de corrupción de metadatos LVM.
+
+# Conceptos y Definiciones
+- Modelos de lenguaje a gran escala (LLMs): Algoritmos que generan código, realizan búsquedas internas, y no se fatigan.
+- Agentes en programación asistida por LLMs: 
+  - Software que explora el código de forma autónoma.
+  - Escribe archivos directamente.
+  - Ejecuta herramientas.
+  - Compila código, ejecuta pruebas y realiza iteraciones basadas en los resultados.
+  - Incorpora código arbitrario de la estructura de archivos local u otras fuentes en línea en su “ventana de contexto.”
+  - Utiliza herramientas Unix estándar para navegar por el árbol de archivos y extraer información.
+  - Interactúa con Git.
+  - Usa herramientas existentes (linters, formateadores y comprobadores de modelos).
+  - Realiza llamadas arbitrarias a herramientas configuradas a través de MCP.
+- Código “de sistemas” de los agentes: Se asemeja a un Makefile en función y dependencia de conceptos básicos de programación.
+- “Chain of thought log”: Traza de pensamiento generada por un agente, que puede mostrar errores (“alucinaciones”).
+- Términos críticos en el debate:
+  - “Stochastic parrots”
+  - “Vibe coding”
+- “Yak-shaving”: Dedicarse en exceso a refinar funciones accesorias en detrimento del trabajo principal.
+- “Sashimono joinery”: Técnica de ebanistería japonesa usada como analogía.
+- “Toolchain”: Cadena de herramientas, ejemplificada con la dificultad para Brainfuck.
+- Términos de algunos inversionistas libertarios:
+  - “Lamplighters”
+  - “Creative destruction”
+  - “New kinds of work”
+
+# Declaraciones y Afirmaciones
+- Se trata de una provocación sincera sobre la programación asistida por IA.
+- Algunos programadores y expertos de primera línea creen que la IA es una moda pasajera, comparable a la “manía” de los NFT.
+- Personas talentosas están realizando tareas que los LLMs ya hacen de forma superior, motivadas por deseos no constructivos.
+- Todo el progreso en los LLMs podría detenerse en cualquier momento y, aun así, representar la segunda contribución más importante en la carrera del autor.
+- Los LLMs pueden escribir gran parte del código tedioso, reduciendo la necesidad de búsquedas en Google.
+- Los LLMs realizan búsquedas internamente, no se cansan y no sufren inercia.
+- Cada desarrollador es responsable del código integrado en la rama “main” y debe revisar el código generado.
+- Se niega que el código generado por un LLM sea inherentemente “probabilístico”; si se mantienen las salvaguardas, el código es legible y comprensible.
+- Leer y entender el código de otros es parte del trabajo del desarrollador.
+- La traza de pensamiento (“chain of thought log”) puede mostrar errores (“alucinaciones”), pero se sugiere no visualizarla.
+- Los agentes “lint” (analizan) el código, compilan y ejecutan pruebas; en caso de error, si el LLM inventa una firma de función, el error es detectado, se retroalimenta al LLM y este reintenta.
+- Es posible escribir un agente de codificación efectivo en un fin de semana.
+- El rendimiento del agente depende más de la estructura de los procesos de construcción, linting y pruebas que del nivel de sofisticación de herramientas especializadas.
+- Los usuarios avanzados evitan copiar directamente el código resultante de interfaces como ChatGPT sin revisarlo.
+- Los desarrolladores serios mantienen la responsabilidad de la curación, el juicio, la orientación y la dirección.
+- La crítica “LLMs no pueden programar” puede ser una alusión a que “LLMs no pueden escribir Rust.”
+- La elección de lenguajes de programación se basa en parte en qué tan bien funcionan los LLMs con ellos; se sugiere que los desarrolladores de Rust deben mejorar esta compatibilidad.
+- Se declara que “100% de todo el código Bash que deberías escribir a partir de ahora” será generado por LLMs.
+- Los LLMs pueden “bajar el techo” de calidad y al mismo tiempo “elevar el piso” mínimo de lo producido.
+- Fragmentos de código provenientes de repositorios públicos en GitHub pueden aparecer en salidas generadas, lo que genera preocupación sobre licenciamiento.
+- En general, se afirma que los desarrolladores muestran poco respeto por la propiedad intelectual, según ejemplos de bienes comunes culturales.
+- La “hype cycle” de AI/VC afecta a practicantes inteligentes, aunque el funcionamiento subyacente no cambia.
+- Existe la posibilidad de que los LLMs desplacen a numerosos desarrolladores de software.
+- Los LLMs son capaces de generar facsímiles “suficientes” del trabajo creativo humano en áreas como:
+  - Ilustraciones y composiciones para portadas de revistas.
+  - Exhibiciones en museos.
+  - Motion graphics.
+  - Activos para videojuegos.
+- Se predice que los agentes de codificación serán, en el futuro, mucho más efectivos que en la actualidad.
+- En un breve comentario, se afirma que personas mencionadas son más inteligentes que el autor y que, una vez superada su “afectación”, harán que los agentes de codificación sean más efectivos.
+
+# Ejemplos y Casos
+- Un agente puede:
+  - Resolver tareas de inicio en proyectos pospuestos, proporcionando un punto de entrada inmediato para ajustar el código.
+  - Pasar horas en una máquina virtual refactorizando pruebas unitarias y luego generar una solicitud de extracción (PR).
+- El modo agente de Zed (https://zed.dev/agentic) muestra una notificación de escritorio al finalizar el trabajo sin requerir supervisión constante.
+- Se menciona, de forma humorística, la dificultad de establecer una buena “toolchain” para el lenguaje Brainfuck.
+- Se cita el ejemplo del paquete rsync y el artículo de Andrew Tridgell.
+- Ejemplo de asignación de tareas a un LLM:
+  - 13 tareas asignadas:
+    - 3 PRs descartadas y re-promptadas.
+    - 5 con retroalimentación similar a la de un desarrollador junior.
+    - 5 finalmente integradas.
+- Comentario de un colaborador: “está tomando rocket fuel”, implicando que quienes no adopten la IA quedarán rezagados.
+- Ejemplo de streaming: Dificultad para hacer streaming de “The Expanse” en LibreWolf (implicación en discusiones sobre propiedad intelectual).
+
+# Métodos y Procesos
+- Funciones de un agente en programación asistida por LLMs:
+  - Explorar el código de forma autónoma.
+  - Escribir archivos directamente.
+  - Ejecutar herramientas.
+  - Compilar código, ejecutar pruebas y realizar iteraciones basadas en resultados.
+  - Incorporar código de la estructura de archivos local u otras fuentes en línea en la “ventana de contexto.”
+  - Utilizar herramientas Unix estándar para navegar por el árbol de archivos y extraer información.
+  - Interactuar con Git.
+  - Usar herramientas existentes (linters, formateadores, comprobadores de modelos).
+  - Realizar llamadas a herramientas configuradas a través de MCP.
+- El código que ejecuta los agentes es similar a un Makefile en dependencia de conceptos básicos de programación.
+- La efectividad del agente depende de la organización de procesos de construcción, linting y pruebas.
+- La implementación de agentes se basa en técnicas de instrucciones (prompts), índices y la integración de herramientas.
+- Los LLMs realizan:
+  - Búsquedas internas.
+  - Tipeo.
+  - Generación de casos de prueba.
+  - Ciclos de edición-compilación-prueba-depuración sin sufrir fatiga o inercia.
+- Usuarios avanzados revisan y validan el código generado en lugar de copiarlo de forma directa.
+
+# Resultados y Conclusiones (Hechos Reportados)
+- Los LLMs generan una fracción significativa del código tedioso en proyectos típicos.
+- La utilización de LLMs reduce la necesidad de realizar búsquedas en Google.
+- El código generado por los LLMs es legible y comprensible, siempre que se mantengan las salvaguardas, negándose la noción de que sea inherentemente “probabilístico.”
+- La aplicación de agentes en programación asistida incrementa la productividad, permitiendo a los desarrolladores concentrarse en tareas que requieren juicio y valores personales.
+- La mayoría del código en proyectos típicos se considera tedioso; se acepta que parte del código puede ser mediocre.
+- La estructura y calidad de los procesos de construcción, linting y pruebas son determinantes en la efectividad de los agentes.
+- Se observa que los LLMs han comenzado a adaptarse de forma incipiente a idiosincrasias locales, aunque sin alcanzar un alto grado de personalización.
+- La atención actual hacia la inteligencia artificial es comparable a la atención recibida por los smartphones en 2008 y, en menor medida, a la de los inicios de Internet.
+- Se predice que, con el tiempo, los agentes de codificación serán mucho más efectivos, elevando el piso mínimo de calidad del código producido.

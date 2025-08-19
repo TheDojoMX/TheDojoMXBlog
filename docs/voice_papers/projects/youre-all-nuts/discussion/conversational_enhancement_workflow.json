@@ -1,0 +1,13 @@
+{
+  "project": "youre-all-nuts",
+  "paper_title": "My AI Skeptic Friends Are All Nuts",
+  "language": "Spanish",
+  "workflow": "conversational_enhancement",
+  "focus": "technical",
+  "original_length": 9948,
+  "enhanced_length": 12680,
+  "agent": {
+    "role": "Technical Knowledge Presenter",
+    "goal": "Present extracted objective knowledge in a natural, flowing structure for spoken delivery"
+  }
+}

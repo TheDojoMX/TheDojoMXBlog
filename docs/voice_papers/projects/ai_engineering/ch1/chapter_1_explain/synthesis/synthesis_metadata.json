@@ -1,0 +1,11 @@
+{
+  "project": "chapter_1_explain",
+  "document_title": "with Foundation Models",
+  "content_type": "book_chapter",
+  "document_chunks": 1,
+  "chunk_contexts": [
+    "introduction"
+  ],
+  "synthesis_length": 5982,
+  "improved_synthesis": true
+}

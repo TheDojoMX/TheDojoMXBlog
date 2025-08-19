@@ -1,0 +1,386 @@
+arXiv:2506.08388v2 [cs. LG] 22 Jun 2025
+Edoardo Cetin, Tianyu Zhao, Yujin Tang
+Sakana AI, Japan
+edo, tianyu, yujintang @sakana. ai
+Training reasoning language models (LMs) with reinforcement learning (RL) for
+one-hot correctness inherently relies on the LM being able to explore and solve its
+task with some chance at initialization. Furthermore, a key use case of reasoning
+LMs is to act as teachers for distilling new students and cold-starting future RL
+iterations rather than being deployed themselves. From these considerations, we
+new class of Reinforcement-Learned Teachers (RLTs) focused on yielding the most
+effective downstream distillation. RLTs are prompted with both the question and
+solution to each problem, and tasked to simply connect-the-dots with detailed
+explanations tailored for their students. We train RLTs with dense rewards obtained
+problem s solution. In practice, the raw outputs of a 7B RLT provide higher final
+performance on competition and graduate-level tasks than existing distillation and
+cold-starting pipelines that collect and postprocess the reasoning traces of orders
+of magnitude larger LMs. Furthermore, RLTs maintain their effectiveness when
+training larger students and when applied zero-shot to out-of-distribution tasks,
+unlocking new levels of efficiency and re-usability for the RL reasoning framework.
+githubgithub. com SakanaAI RLT
+Figure: RLTs provide better student distillation and RL
+cold-starts than orders of magnitude larger LMs across com-
+petition and graduate-level tasks (AIME, MATH, GPQA).
+Exploration is one of the critical chal-
+lenges in reinforcement learning (RL)
+and has been a core focus of its lit-
+erature . Sparse rewards can-
+the agent is already capable of solv-
+ing the given task at initialization.
+With the rise of RL for open-ended
+reasoning (RL reasoning) inducing a
+new form of language model (LM)
+scaling beyond prompt-engineering
+and search , exploration has re-
+emerged as a key challenge. A canon-
+ical motivation for RL is the poten-
+learn entirely new tasks from scratch. However, the nature of one-hot correctness rewards used in the
+RL reasoning framework fails to provide a dense form of guidance, focusing instead on reinforcing
+correct responses in the initial model s pool of pass-at-k attempts without true extrapolation beyond
+Preprint. Under review.
+the LM s initial latent abilities . As a result, mostly large, already-capable models have been
+shown to improve consistently beyond cheaper and simpler supervised optimization .
+Due to this fundamental limitation, coupled with RL s training instability, distillation has emerged as
+another ubiquitous component of current reasoning paradigms. In this case, the test-time role of LMs
+new problems. This teacher-student paradigm is widely adopted both to train smaller, less-capable
+models and even to cold-start future RL iterations for better final convergence with the teacher s
+own initial checkpoint acting as the student . However, the problem-solving skills reinforced
+by correctness-based rewards have been shown not to be entirely aligned with the goal of downstream
+distillation . To account for this mismatch, current pipelines significantly rely on heuristic-driven
+postprocessing of the teacher s outputs for effective student transfer .
+Based on these considerations, we propose a framework that avoids RL s exploration challenge with
+a new class of specialized Reinforcement-Learned Teachers (RLTs)trained specifically to yield
+effective downstream distillation. Our main intuition is simple: the ability of real-world teachers is
+not measured by whether they can come up on their own with complex theorems, proofs, or answers
+from scratch. Instead, what matters is their ability to make use of readily available solutions and
+devise instructive explanations for their students. Thus, we depart from the traditional RL reasoning
+framework, tasking a model to first think and then come up with a new solution for the first time.
+Instead, RLTs are tasked with the easier problem of providing an effective explanation with the
+problem s solution already given within their prompt. We train RLTs with dense rewards using the
+student s log probabilities to assess its understanding of each problem s ground-truth solution from
+the teacher s explanations, and the interpretability of the logical leaps in the explanations themselves.
+By distilling students from the raw outputs of a lightweight RLT with 7B parameters, we demonstrate
+of magnitude more parameters (Figure). We show our framework provides superior benefits even
+when distilling the RLT s explanation to train larger 32B students and to cold-start traditional RL
+optimization. Furthermore, we showcase how RLTs can be transferred zero-shot to new domains
+access to the task s reward. Overall, these results highlight the potential of our new method for
+overcoming the large costs of RL by focusing on stronger, smaller, and highly reusable specialized
+teachers, while removing the current reliance on expensive and heuristic-driven distillation pipelines.
+We share our code and pretrained checkpoints 1 to facilitate future research in RL reasoning and
+distillation. In summary, our main contributions are threefold:
+We introduce the RLT framework, tackling exploration with a simpler dense-reward that
+aligns the objective of RL training to providing effective downstream student distillation.
+We show how distilling the raw outputs of a 7B RLT directly outperforms training students
+with carefully postprocessed reasoning traces from orders of magnitude larger LMs.
+We demonstrate that RLTs also allow for better cold-starts for traditional RL, effective
+distillation to larger students, and even zero-shot transfer to new reasoning domains.
+2.1 Reinforcement learning
+The RL post-training recipe for inducing reasoning behavior was recently popularized by the
+DeepSeek R1 line of work . By fine-tuning on a dataset of questions D = q1,..., qN
+with verifiable solutions s1,..., sN, Guo et al. show effective reasoning behavior emerges
+out of a 671B-parameter LM , significantly pushing its performance on challenging math and
+coding tasks. Their training is conducted with GRPO , an online RL algorithm that foregoes
+the use of a critic model with a simple Monte-Carlo value estimate. GRPO prompts the LM πθ to
+produce a set of G 1 grouped outputs o1,... oG for each sampled question q D, optimizing:
+J(θ) =Eq D, o G
+(Ai β DKL(πθ πref))
+1https: github. com SakanaAI RLT
+Figure: Left: RL format asking an LM to think and solve hard problems from scratch. Right: RLT
+format asking an LM to produce instructive step-by-step explanations given access to the solutions.
+Here, the advantages Ai are obtained by normalizing each output s reward ri within each group:
+Ai = ri mean( r1,..., rG )
+std( r1,..., rG ). (2)
+output oi into two separate formatted sections separated by think and solution tags, denoted
+toi and soi. This structure is forced by assigning rewards ri = 1 to unformatted completions,
+ri = 0.5 to wrong but formatted completions, andri = 1only to correct and formatted completions.
+Training with this strategy, Guo et al. show the LM s completion length gradually grows with
+reflection, verification, and self-correction steps emerging, mirroring human chain-of-thoughts.
+2.2 Supervised distillation
+RL s shortcomings. For any online RL objective like Equation 1 to avoid collapse, the model must
+already possess a non-trivial chance of producing correct responses with non-zero gradients at
+initialization. This defining property makes the RL objective much less applicable than cross-entropy
+objectives that always include the correct response s information in the model s gradients. As a
+consequence of this dichotomy, distilling the reasoning traces of large RL-trained LMs with supervised
+RL itself for inducing reasoning in smaller, less-capable models . Furthermore, RL
+appears prone to instabilities and output degradation, especially during extended training sessions.
+Due to this second limitation, DeepSeek R1 and several other models perform RL training
+over multiple iterations. This is done by using the RL-trained models at the end of each intermediate
+iteration only to, once again, collect distillation datasets used for cold-starting their original initial
+checkpoint and obtain a stronger initialization point for the next RL iteration.
+Constructing a dataset of distillation prompts DSD = d1,..., dN involves using the RL-trained
+LM πθ with its reasoning system prompt to answer a corpus of verifiable questions, which can be
+chosen with several heuristics . The LM s output reasoning traces for each question
+o πθ( q) are then filtered by comparing them with the ground-truth solutions to ensure their
+correctness. Commonly, these reasoning traces are also post-processed via additional manual steps
+of refinements, such as asking other closed-sourced LMs to remove grammatical issues and refactor
+the reasoning steps into a nicer, consistent format. In fact, Li et al. even argues that the structure
+and learn how to reason from distillation, potentially even more important than correctness itself.
+3.1 The implications of training teacher models as students
+modern reasoning framework. As detailed in Section, after RL training, LMs πθ are often not
+deployed themselves but rather used to obtain reasoning distillation datasets for fine-tuning weaker
+models and cold-starting future RL iterations. Thus, these models can be effectively seen as teachers,
+providing explanations for future student models πs to learn from.
+This teacher-student paradigm highlights a potential mismatch between the objective used for RL
+training and the teacher s test-time role. In traditional settings, teachers are trained with sparse
+correctness rewards to improve their ability to solve hard problems from scratch. This objective not
+only precludes the applicability of RL training for tasks beyond the base model s original capabilities,
+due to its inherent exploration challenge, but is also not aligned with the teacher s actual end goal:
+producing reasoning traces from which students πs can learn the necessary skills to derive correct
+solutions themselves. Based on these considerations, we propose a different training framework for
+this objective mismatch. Our framework comprises a much easier task formulation, a dense reward
+objective, and a carefully designed training recipe, allowing us to learn a new class of specialized
+Reinforcement Learned Teachers (RLTs).
+3.2 Aligning the task of teacher models
+Figure: The tokens from the RLT s explana-
+tions are copied into the student format to mea-
+sure its understanding with our reward terms.
+In the traditional RL paradigm, the solution si to
+model and is only employed for checking the cor-
+LM s completions soi. Precluding direct access or
+the test-time objective of solving entirely new test
+problems from scratch, but is precisely what makes
+exploration challenging, as the model receives no
+gradients until its first successful attempt. Our key
+observation, however, is that the test-time teach-
+datasets DSD for questions with known solutions,
+access to such solutions as is the case for real-
+world teachers, who can rely on access to readily
+available solutions and, thus, focus entirely on how
+instructive their explanations are for students.
+To this end, as illustrated in Figure, RLTs are
+prompted with a new formatting style, providing
+inputs, and are tasked to produce instructive step-
+by-step explanations, connecting the dots between
+the two. We design our prompts to allow direct
+reuse of the teacher s outputs for student distilla-
+tion while keeping the task natural, appending the
+completion. At test-time, constructing the corre-
+sponding question completions for the student dis-
+extracting the think tokens from the teacher s out-
+3.3 Evaluating the quality of explanations
+student πs to recover correct solutionssi and are also logical continuations from questions alone under
+the student s perspective. In particular, following the procedure from the previous subsection, for
+each completion oi from the teacher πθ, we extract the think tokens toi and format the corresponding
+student distillation prompt di by prepending the question qi and appending the ground-truth solution
+si. As illustrated in Figure, each distillation prompt is then fed as input to the student model to
+obtain a set of per-token log probabilities, which are processed into our two reward terms as follows:
+i: quantifying the student πs understanding of the solutions si given the question qi
+and think tokens toi in context. This first reward term is computed with the student s log
+probabilities over the solution tokens, reduced with both average and minimum operations:
+rSS(oi, si, qi) = avg log πsi
+s + α min log πsi
+s, where πsi
+s = πs(si toi. qi). (3)
+i: quantifying whether the think tokens toi themselves are interpretable logical continu-
+ations from the student s perspective as compared with the teacher s. This second reward
+distribution (under the RLT s format with bothqi and si in context) and the student s (with
+only the question qi in context), reduced with both average and maximum operations:
+rKL(oi, si, qi) = avg
+s = πs(toi qi), π
+θ = πθ(toi si, qi).
+Finally, the RLT rewards are obtained by combining these two terms with a weighting coefficientλ:
+i = rSS(oi, si, qi) λrKL(oi, si, qi) (5)
+Each term in our reward function serves a precise purpose. First, optimizing rSS will produce
+solution si. However, this term alone does not differentiate between explanations that guide the
+student step-by-step and those that increase the solution s likelihood without a logical path that can be
+learned from. An extreme instance of the latter would be an explanation simply repeating the solution
+tokens to increase likelihood, failing to provide general examples of reasoning methods that can be
+applied when approaching new problems. Thus, introducing rKL fills precisely this gap, aligning
+qi and the previous think tokens in context. Intuitively, introducing this term regularizes for each
+given only its prior understanding and the question itself. Additionally, combining the average with
+min max reductions ensures the rewards do not forego any individual token, regardless of the solution
+length or the number of think tokens in the teacher s explanations. For instance, their omission could
+reduce the influence on rKL of hard but necessary individual logical steps. For further discussion, we
+refer to Appendix, where we empirically analyze and validate all these design choices.
+3.4 Pulling everything together: the RLT training paradigm
+The RLT framework can be used with any RL algorithm (e. g., ) with minimal modifications
+to the LM s conditioning and reward, as described in the above subsections. In this work, we employ
+the simple GRPO recipe detailed in Section, resulting in the following training objective:
+JRLT(θ) =Eq, s D, o G
+i β DKL(πθ πref)
+i is computed with the normalization strategy defined in Equation 2 using the RLT reward
+function from Equation 5. Unlike for correctness-based rewards, our learning signal is inherently
+dense, providing informative rankings to the RLT s output even before achieving any task expertise.
+This fundamental difference greatly facilitates our optimization, akin to how heuristically shaped
+rewards enabled RL agents to learn entirely new behaviors for videogames and robotics tasks .
+4.1 Training, distillation, and evaluation
+We train RLTs on the set of questions and solutions selected by Li et al. based on their level
+of challenge. This dataset comprises less than 17K math and coding problems originally used for
+Table: RLTs and prior distillation pipelines across model (7B and 32B) and data size (1K and 17K).
+Model Data size AIME 2024 MATH 500 GPQA Diamond Overall
+QwQ-32B N. A. 50.00 90.60 54.50 65.03
+DeepSeek-R1 800K+ 79.80 97.30 71.50 82.87
+Qwen2.5-7B-Instruct N. A. 10.00 74.20 33.30 39.17
+Bespoke-7B-1K 1K 13.30 80.00 33.80 42.37
+RLT-7B-1K (Ours) 1K 20.00 80.40 41.90 47.43
+Bespoke-7B 17K 20.00 82.00 37.80 46.60
+RLT-7B (Ours) 17K 23.30 82.80 42.40 49.50
+Qwen2.5-32B-Instruct N. A. 26.70 84.00 49.00 53.23
+s1-32B + budget forcing 1K 56.70 93.00 59.60 69.77
+Bespoke-32B-1K 1K 46.70 92.60 57.50 65.60
+RLT-32B-1K (Ours) 1K 60.00 94.00 60.10 71.37
+Sky-T1-32B 17K 43.30 82.40 56.80 60.83
+Bespoke-32B 17K 63.30 93.00 58.10 71.47
+RLT-32B (Ours) 17K 66.70 93.40 59.60 73.23
+distilling filtered and post-processed reasoning traces collected from QwQ and DeepSeek R1 .
+In contrast, the RLTs we consider are orders-of-magnitude smaller models, all trained starting from
+the Qwen2.5-7B-Instruct LM . We precede our RL phase with a short supervised fine-tuning
+dataset released by Labs . During RL, we compute the reward for the RLT explanations using
+another small Qwen-7B model as the student. We train our main models for 125 steps, less than a
+single epoch, with a batch size of 1024, a constant learning rate of 1 10 6, and a group size of 64.
+We note that we were also able to train RLTs with a smaller batch size of 256 and more steps for
+faster preliminary experimentation with only slightly inferior results.
+We collect our distillation dataset with the learned RLTs using the same full set of 17K question-
+solution pairs from training. With the new reasoning traces, we then proceed to fine-tune our students
+either on this full data or a randomly sampled 1K subset, equating the distillation budget and following
+the same recipes as our baselines . Unlike previous RL distillation pipelines, we do not apply
+extra postprocessing refinements to improve the quality of the RLT s reasoning traces, directly using
+our model s raw outputs for student fine-tuning. We refer to Appendices A and B for further details
+regarding our training and distillation phases with complete lists of hyperparameters.
+Following prior work , our main evaluation considers three popular and challenging tasks
+from the literature: AIME24 , the set of problems used for the American Invitational Mathematics
+Examination. MATH 500 , the set of problems selected by from the canonical competition
+math benchmark. GPQA Diamond , the set of diamond difficulty problems on natural science
+topics from the Graduate-level Google-proof Q&A benchmark. We report the completion accuracy
+of each of our students using Lighteval . When available, we use baseline results reported in
+prior work, which we found close to our early reproduction attempts. In Appendix, we extend the
+experiments in this section by evaluating our models on additional tasks and settings.
+4.2 Test-time reasoning across teachers and students
+traces beyond traditional distillation pipelines. As described in Section, to construct the student
+distillation dataset, we use the same starting question-solution pairs as our recent state-of-the-art
+baselines , with each sample only differing in terms of its reasoning trace. While RLTs could
+be inexpensively applied to provide explanations of larger corpora, this consistency serves to remove
+potential confounding factors, other than the quality of the reasoning traces, biasing our experiments
+and comparisons. For the same reason, we do not retune any hyperparameters for the distillation
+phase, training students following the same procedure as our baselines based on data size .
+Table: RLTs and prior distillation pipelines for cold-starting traditional RL.
+Model Data size AIME 2024 MATH 500 GPQA Diamond Overall
+Qwen2.5-7B-Instruct N. A. 10.00 74.20 33.30 39.17
+Bespoke-7B 17K 20.00 82.00 37.80 46.60
+RLT-7B (Ours) 17K 23.30 82.80 42.40 49.50
+RL no cold-start N. A. 13.30 74.20 34.80 40.77
+RL cold-start (raw) + RL 17K 10.00 71.00 34.80 38.60
+RL cold-start (GPT) + RL 17K 16.70 78.20 36.90 43.93
+Bespoke-7B + RL 17K 16.70 82.80 45.40 48.30
+RLT-7B + RL (Ours) 17K 26.70 84.00 40.90 50.53
+We compare the RLTs explanations with prior approaches, evaluating students fine-tuned on both
+our full 17K distillation samples and its 1K subset. Our recent baselines all follow a similar recipe
+or API calls and postprocessing them with closed-source LMs: s1 using traces from Gemini
+Flash Thinking , Sky-T1 using traces from QwQ , and Bespoke using traces from
+DeepSeek R1 . Since the Bespoke baseline obtained state-of-the-art results with our same question-
+solution corpus, we extend its evaluation with new results distilling its processed R1 traces only for
+our same 1K questions subset, equating its number of datapoints with the other s1 baseline.
+As shown in Table, the raw output explanations of our small 7B parameter RLT outperform all the
+considered data-distillation pipelines involving teachers with orders of magnitude more parameters
+and additional ad-hoc postprocessing steps. We also find the effectiveness of the RLT traces stays
+consistent across different data sizes, in contrast to the R1 traces from the Bespoke pipeline that
+appear significantly less effective when subsampled. Furthermore, even when distilling a Qwen-32B
+student, much larger than our 7B teacher, our RLT still outperforms all prior methods for both data
+sizes with considerable margins. We believe this result, in particular, shows how our framework could
+allow overcoming the current prohibitive costs of RL reasoning: shifting the burden of expensive RL
+procedures to small teachers, unable to effectively solve problems from scratch but highly specialized
+in the simpler task of producing effective explanations for large, more powerful students.
+4.3 RLTs to cold-start RL
+Our next set of experiments focuses on evaluating the effectiveness of RLTs in providing cold-start
+data for traditional RL. For this new RL phase, we use our same GRPO implementation with the
+standard student format and correctness-based rewards described in Section As compared to the
+RLT framework, we find that using a larger batch size of 1024 is significantly more beneficial to
+better cope with the increased variance and reward sparsity of traditional RL. We train for a full epoch
+on the recent RL dataset from Li et al. collected by analyzing and selecting an effective subset of
+improvement.
+We compare performing this new RL phase on the Qwen-7B model cold-started from the reasoning
+traces of our 7B RLT and the postprocessed R1 traces from the Bespoke pipeline, our strongest
+distillation baseline. Moreover, we also compare a 7B parameters baseline teacher trained with
+traditional RL as done in prior work : effectively performing RL twice on the Qwen model
+and collecting a dataset at the end of the first iteration to cold-start the second. To construct the
+cold-starting dataset for this last baseline, we consider either taking the model s raw output traces, as
+done with RLTs, or postprocessing them with additional refinements using GPT4.1-mini and
+following a very similar strategy to the other R1 and QwQ traditional distillation pipelines .
+As shown in Table, the reasoning traces from our 7B parameter RLT again display superior cold-
+starting effectiveness compared to all of our baselines. The performance gap is exceedingly noticeable
+with the cold-starting approaches that are also using a 7B teacher trained with traditional RL. In fact,
+only after improving the format and structure of the traces from these RL-trained teachers with GPT
+postprocessing, we were able to observe any improvements from the original Qwen-7B results. While
+our RLT was itself trained from the same 7B model, it again demonstrates superior cold-starting
+even when compared to postprocessed R1 pipelines. Overall, we find these results to be compelling
+Figure: Left: Out-of-distribution performance transferring RLTs to produce new distillation data
+as compared to students trained on the Li et al. corpus and direct RL on the countdown task.
+Right: Performance after training on different distillation datasets ranked by the RLT reward.
+reasoning framework beyond the current reliance on prohibitively large and closed-source LMs.
+4.4 Out-of-domain zero-shot transfer
+Unlike problem-solving from scratch, we posit that providing effective explanations to given solutions
+is a much less task-specific skill. Thus, in this subsection, we evaluate how well RLTs can be applied
+to construct datasets and distill new specialized students in out-of-distribution domains, without any
+expensive RL retraining. In particular, we focus on the canonical countdown task , asking student
+models to combine a set of numbers to equal a given target using basic arithmetic operations. We
+train and test our models on distinct datasets of 16K and 1K automatically-generated question and
+solution pairs. We compare zero-shot transferring our RLT with transferring the RLT-7B student and
+the Bespoke-7B baselines from the previous subsections. To ground our results, we also consider
+performing RL on the countdown task itself (CD RL), training both from the Qwen-7B model and
+the cold-started Bespoke-7B baseline with the same setup described in Section
+As shown in the left bar plot of Figure, applying RLT distillation zero-shot remarkably achieves
+even higher performance than direct RL on the countdown task. Interestingly, direct RL appears to
+questions that do not include any examples of countdown problems (50.8 vs. 49.2). Furthermore, we
+find there is stark overlap of over 98.5% in the final sets of solved problems between direct RL and
+the RL-free Bespoke-7B baseline. We find these results in line with prior analysis , providing
+come from steering the base model s distribution toward long-context generation. In contrast, by
+simplifying the task and foregoing sparse rewards, our RLT appears much more effective providing
+countdown-specific traces that allow students to learn new knowledge and solve unseen questions,
+yielding higher improvements than direct RL even without any teacher training in this new domain.
+4.5 Explanation reward analysis
+To analyze the design of the RLT reward function, we start by examining the relationship between
+the traces rewards and the effectiveness of student distillation. In particular, we use our RLT s
+checkpoint right before RL training to generate 16 completions for each question-solution pair in
+our data. We then score all completions with our reward and divide them into groups based on their
+relative rank for each prompt. Thus, we obtain 16 datasets with different reasoning traces for each
+question, which we use to train 16 new 7B students from Qwen. As illustrated in the right bar plot
+of Figure, ordering student performance by the respective dataset rank shows a clear correlation
+between the two, with a Pearson coefficient over 0.89, validating the efficacy of the RLT objective.
+Additionally, the highest ranked traces of our 7B teacher before any RL remarkably already yield 90%
+Figure: Examples comparing the contents from the post-processed R1 traces that were
+the performance gains of our baseline R1 distillation pipeline , showing how even small models
+already possess latent teaching skills unlocked by our new reward and simplified task formulation.
+explanations is particularly improved from the baseline R1 distillation pipeline. As shown in Figure,
+we find that the R1 traces with low rewards often try to rely on external tools, such as calculators,
+and employ language patterns likely idiosyncratic to the training data of the DeepSeek-V3 LM, as
+sentences with brief humorous comments . Instead, the corresponding RLT explanations appear
+much more grounded and even manage to add new verification steps not considered by R1 to check
+the final solution. In Appendix, we provide additional examples showcasing further qualitative
+differences of our framework with R1 traces and also specific failure cases from training RLTs without
+proper balance between each reward component, such as repetitions and overly-long explanations.
+Inspired by the unprecedented abilities of the OpenAI o1 model , there has been a resurgence of
+RL approaches aimed at inducing a new kind of open-ended reasoning to scale test-time compute.
+The work from Guo et al. was another milestone in this new domain, providing a first openly
+detailed example of what is possible with large models and RL. Other follow-ups considered smaller
+LMs and ways to decrease optimization costs via approaches such as explicit task breakdown ,
+exploration strategies , new RL objectives , and cold-start data scale . However, it is still
+an open question if RL on small models can go beyond cheaper supervised alternatives and induce
+new skills beyond the pretraining corpus . In contrast to this work, RLTs break the traditional
+framework of maximizing one-hot accuracy with verifiable rewards turning the task on its head by
+feeding the model the correct solution as input and avoiding RL s inherent exploration challenge.
+A large part of the recent test-time scaling literature considering smaller LMs has focused on
+inducing reasoning with teacher-student supervised distillation , a widely validated technique
+in traditional LM development . This approach s popularity to induce LM reasoning dates
+earlier than the RL paradigm, with older methods harnessing verifiers and prompting for self-
+improvement . By following a common structure of generation, filtering correct responses,
+and postprocessing them, modern RL-based distillation has seen significant advances mostly driven
+by more capable teachers and carefully curating targeted datasets . However, the
+student itself , and their ability to induce actual generalization remains unclear . Unlike
+these traditional distillation pipelines, the RLT framework does not rely on verifiers for filtering,
+directly optimizes the teacher for downstream distillation, and does not require any post-processing,
+allowing direct transfer of reasoning capabilities to arbitrary tasks and even larger student models.
+This work introduced a new class of Reinforcement-Learned Teachers trained with a simpler dense-
+reward task that inputs both each problem s question and solution, and optimizes the LM to provide
+instructive reasoning traces for distillation as outputs. Empirically, students trained or cold-started
+from the raw outputs of a 7B RLT obtain higher performance than prior distillation pipelines using
+orders-of-magnitude larger LMs. Furthermore, RLTs maintain their effectiveness even for distilling
+much larger students, and when providing reasoning traces for out-of-distribution tasks beyond
+their training corpus. Nonetheless, our work has only begun to study the design space of our new
+framework, with many exciting directions yet to be explored. One example is training RLTs and their
+students in tandem, allowing the teacher s explanations to adapt to the student s learning dynamics
+live. Pushing this further, the same model could even take both roles, iterating RL with our task
+formulation, providing access to each problem s solution, to obtain instructive reasoning traces, and
+self-distillation to revise its own explanation and learn how to solve questions from scratch
+unifying the open-endedness of RL with the stability of supervised optimization.
+The authors would like to thank Takuya Akiba for insightful project discussions, together with Yutaro
+Yamada and Boris Meinardus for providing feedback on early versions of the text.

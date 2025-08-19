@@ -1,0 +1,12 @@
+{
+  "project": "synthesis_test",
+  "document_title": "Scale in AI: The Defining Feature",
+  "content_type": "general_text",
+  "document_chunks": 1,
+  "chunk_contexts": [
+    "main_content"
+  ],
+  "synthesis_length": 3720,
+  "improved_synthesis": true,
+  "synthesis_method": "knowledge_graph"
+}

@@ -1,0 +1,12 @@
+{
+  "project": "agent_company",
+  "language": "Spanish",
+  "voice_provider": "elevenlabs",
+  "workflow": "tts_optimization",
+  "original_script_length": 6206,
+  "optimized_script_length": 5141,
+  "agent": {
+    "role": "TTS Optimizer",
+    "goal": "Transform educational scripts into TTS-optimized versions with perfect rhythm, emphasis, and natural speech patterns"
+  }
+}

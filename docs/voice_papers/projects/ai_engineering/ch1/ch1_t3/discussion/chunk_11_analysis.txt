@@ -1,0 +1,18 @@
+Section: Section 11
+Characters: 3990
+==================================================
+• Herramientas mencionadas: ansformers.js, OpenAI’s Node library, Vercel’s AI SDK.
+• Perfil de los ingenieros AI: muchos provienen de entornos de desarrollo web o full-stack, lo que les permite transformar ideas en demos rápidas, obtener retroalimentación e iterar.
+• Proceso en ML tradicional: se inicia con la recopilación de datos y el entrenamiento del modelo; la construcción del producto se realiza al final.
+• Proceso en AI engineering actual: se puede empezar desarrollando el producto y realizar la inversión en datos y modelos una vez que el producto demuestra potencial.
+• Visualización del proceso: Figura-16, titulada “The new AI engineering workflow rewards those who can iterate fast” (imagen recreada de The Rise of the AI Engineer, Shawn Wang, 2023).
+• Diferencia en la participación: en ML tradicional, el desarrollo del modelo y del producto son procesos separados y los ingenieros ML rara vez participan en las decisiones del producto; en AI engineering, los ingenieros están más involucrados en la construcción del producto.
+• Objetivos del capítulo: 
+ – Explicar la llegada de AI engineering como disciplina, facilitada por la disponibilidad de foundation models.
+ – Proporcionar una visión general del proceso necesario para construir aplicaciones sobre estos modelos.
+• Evolución técnica: 
+ – Transformación de modelos de lenguaje tradicionales a grandes modelos de lenguaje mediante un enfoque de entrenamiento llamado self-supervision.
+ – Integración de otras modalidades de datos en los modelos de lenguaje para formar foundation models.
+• Aplicaciones: se describen patrones de aplicación exitosos para consumidores y empresas, resaltando que, pese a la cantidad de aplicaciones en producción, la ingeniería AI se encuentra en etapas tempranas y con espacio para más innovaciones.
+• Estado de AI engineering: aunque el término es nuevo, ha evolucionado a partir de ML engineering, incorporando nuevos retos y soluciones, y se inicia un análisis de la estructura de AI engineering (AI engineering stack) y sus diferencias con ML engineering.
+• Enfoque del libro: proporcionar un marco de trabajo para navegar en el campo, comenzando con la base fundamental de AI engineering: los foundation models.

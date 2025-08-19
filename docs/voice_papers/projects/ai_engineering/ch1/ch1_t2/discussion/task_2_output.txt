@@ -1,0 +1,44 @@
+Método: Construcción de Aplicaciones de IA basadas en Modelos Fundamentales
+
+1. Selección y Adopción del Modelo Preentrenado  
+   • Identificar modelos preentrenados disponibles con capacidades multimodales  
+   • Decidir entre dos enfoques de adaptación:  
+     - Técnicas basadas en prompt engineering, que modifican la entrada sin alterar los pesos del modelo  
+     - Técnicas de fine-tuning, que ajustan internamente los parámetros del modelo para tareas específicas  
+
+2. Proceso de Tokenización  
+   • Definir la estrategia de tokenización para dividir el texto en unidades significativas (tokens)  
+   • Determinar el compromiso entre trabajar a nivel de caracteres y a nivel de palabras, optimizando el tamaño del vocabulario  
+
+3. Implementación de la Auto-supervisión  
+   • Aplicar metodologías de auto-supervisión para aprovechar grandes volúmenes de datos no etiquetados  
+   • Utilizar la información implícita de cada secuencia para escalar el modelo sin incurrir en altos costos de etiquetado  
+
+4. Integración del Stack de Ingeniería de IA  
+   • Nivel de Desarrollo de Aplicaciones:  
+     - Diseño y construcción de interfaces de usuario  
+     - Implementación de prompt engineering para iterar rápidamente sobre la funcionalidad  
+   • Nivel de Desarrollo y Adaptación de Modelos:  
+     - Selección y ajuste del modelo preentrenado mediante técnicas de prompt engineering o fine-tuning según la tarea  
+   • Nivel de Infraestructura:  
+     - Optimización de clusters y recursos para la ejecución de inferencias en modelos a gran escala  
+     - Configuración de métricas específicas (latencia, costo de inferencia, consumo de electricidad)
+
+5. Estrategia para Modelos Multimodales  
+   • Adaptar el proceso de tokenización y generación a diversos formatos de datos (texto, imagen, video)  
+   • Ajustar la metodología de auto-supervisión para garantizar coherencia en la integración de múltiples modalidades
+
+6. Proceso de Retroalimentación y Evaluación Continua  
+   • Establecer ciclos de retroalimentación basados en el desempeño medido y la experiencia del usuario  
+   • Ajustar y optimizar continuamente métricas clave (calidad de salida, latencia y uso de recursos)  
+   • Implementar procedimientos de evaluación robustos para tareas abiertas en salidas generativas
+
+Parámetros y Especificaciones Técnicas:  
+   • Elección del enfoque adaptativo (prompt engineering vs. fine-tuning) en función de los requisitos de precisión y recursos disponibles  
+   • Estrategia de tokenización optimizada para balancear la eficiencia computacional y la representatividad semántica  
+   • Métricas de evaluación: latencia de respuesta, costo por inferencia, consumo de energía y capacidad de escalabilidad  
+   • Infraestructura: diseño modular en tres capas (desarrollo de aplicaciones, adaptación de modelos, infraestructura de inferencias)  
+   • Integración Multimodal: ajustes específicos en la tokenización y coordinación de salidas para datos heterogéneos  
+   • Retroalimentación continua: implementación de sistemas iterativos basados en datos de desempeño y experiencias prácticas
+
+Este es el proceso documentado para la construcción de aplicaciones de IA basadas en modelos fundamentales, según lo descrito en el documento analizado.

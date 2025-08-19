@@ -1,0 +1,18 @@
+Section: Section 8
+Characters: 9876
+==================================================
+• Evaluación de modelos existentes para determinar sus capacidades y definir el esfuerzo necesario según el porcentaje de automatización deseado (por ejemplo, si el objetivo es automatizar el 60% de los tickets y el modelo existente automatiza el 30%, se requiere menos trabajo que si automatizara 0%). 
+• Reconocimiento de que las metas pueden cambiar después de evaluar el modelo, puesto que los recursos requeridos para alcanzar un umbral de utilidad pueden exceder el retorno potencial. 
+• Consideración del “último kilómetro” en el desarrollo de productos de IA: el desarrollo de un demo rápido (que puede tomar un fin de semana) no garantiza la calidad o completitud del producto final, el cual puede requerir meses o años para completarse. 
+• Referencia al estudio UltraChat, especificando que avanzar del 0 al 60 en desempeño es sencillo, mientras que pasar del 60 al 100 es significativamente más difícil; ejemplo práctico de LinkedIn: se tardó un mes para alcanzar el 80% de la experiencia deseada y cuatro meses adicionales para superar el 95%. 
+• Requerimiento de planificación para la evolución y el mantenimiento de productos de IA, teniendo en cuenta el ritmo acelerado de cambio en el campo. 
+• Mejoras técnicas observadas en modelos: aumento en la longitud de contexto, mejora en la calidad de las salidas del modelo, y reducción en el costo y tiempo de inferencia. 
+• Ilustración (Figura-11) de la disminución del costo de inferencia y la evolución del desempeño en el benchmark Massive Multitask Language Understanding (MMLU) entre 2022 y 2024. 
+• Necesidad de realizar análisis de costo-beneficio de cada inversión tecnológica, ya que las condiciones del mercado (por ejemplo, cambios en precios de proveedores de modelos o disponibilidad de GPU debido a regulaciones) pueden alterar las ventajas comparativas de las soluciones internas frente a las de terceros. 
+• Consideración de desafíos regulatorios: costos potenciales para cumplir normativas como el GDPR (estimado en $9 mil millones), restricciones en disponibilidad de recursos de cómputo y la evolución de normativas en propiedad intelectual. 
+• Descripción de la pila de ingeniería de IA, la cual se organiza en tres capas:
+ - Desarrollo de aplicaciones: Uso de modelos disponibles, formulación de “prompts” adecuados y provisión de contexto necesario, junto con la evaluación rigurosa y desarrollo de interfaces.
+ - Desarrollo de modelos: Herramientas y frameworks para modelar, entrenar, ajustar y optimizar la inferencia; incluye ingeniería de conjuntos de datos y evaluación rigurosa.
+ - Infraestructura: Herramientas para servir modelos, gestionar datos y recursos de cómputo, y monitorear el desempeño.
+• Datos empíricos obtenidos de GitHub (marzo 2024): 920 repositorios de IA relacionados con aplicaciones y modelos (repositorios con al menos 500 estrellas), con un salto notable en número en 2023, especialmente en las categorías de aplicaciones y desarrollo de aplicaciones, mientras el crecimiento en la capa de infraestructura fue menor.
+• Relevancia de mapear métricas de negocio a métricas de aprendizaje automático, manteniendo prácticas como la experimentación sistemática (ajustes de “prompts”, selección de modelos, algoritmos de recuperación y variables de muestreo) para optimizar la velocidad y costo de inferencia.

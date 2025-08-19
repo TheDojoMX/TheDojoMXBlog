@@ -1,0 +1,13 @@
+{
+  "project": "tech_1",
+  "paper_title": "Título: \"Cornell AI history lecture\"",
+  "language": "Spanish",
+  "workflow": "conversational_enhancement",
+  "focus": "technical",
+  "original_length": 4286,
+  "enhanced_length": 4320,
+  "agent": {
+    "role": "Minimal TTS Enhancer",
+    "goal": "Add ONLY essential connector words to improve text-to-speech flow without changing content"
+  }
+}

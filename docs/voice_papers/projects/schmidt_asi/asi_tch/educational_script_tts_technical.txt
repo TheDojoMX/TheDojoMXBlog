@@ -1,0 +1,142 @@
+Título: "Ex-Google CEO: What Artificial Superintelligence Will Actually Look Like" <break time="1.5s"/>
+
+Hoy vamos a explorar las predicciones fascinantes del ex-CEO de Google sobre el futuro de la inteligencia artificial. Comencemos con las proyecciones más impactantes. <break time="1.0s"/>
+
+I. Predicciones de Superinteligencia Digital <break time="1.5s"/>
+Según estas proyecciones, la superinteligencia digital estará disponible en tan solo 10 años. <break time="1.0s"/>
+Pero eso no es todo: se espera que la inteligencia artificial genere su propio scaffolding, algo proyectado para alrededor de 2025. <break time="1.0s"/>
+Lo más impresionante es que esta capacidad intelectual se equiparará a la de un polímata, combinando nada menos que las habilidades de Einstein y Leonardo da Vinci. <break time="1.5s"/>
+
+Ahora bien, para lograr esto, necesitamos hablar de algo fundamental: la infraestructura energética. <break time="1.0s"/>
+
+II. Infraestructura Nuclear y Requerimientos de Energía <break time="1.5s"/>
+Los números son asombrosos: se requiere potencia adicional de 92 gigavatios en Estados Unidos. Para ponerlo en perspectiva, 1 gigavatio equivale aproximadamente a la salida de una gran central nuclear. <break time="1.0s"/>
+Las grandes tecnológicas ya se están moviendo en esta dirección. Por ejemplo, Meta tiene un contrato nuclear de 20 años con Constellation Energy. <break time="1.0s"/>
+Mientras tanto, Google, Microsoft y Amazon también están adquiriendo capacidad nuclear de forma agresiva. <break time="1.0s"/>
+Es importante considerar que en los últimos 30 años se han construido únicamente dos plantas nucleares, lo que hace esta demanda aún más desafiante. <break time="1.0s"/>
+La solución propuesta incluye un reactor modular pequeño (SMR) de 300 megavatios con operación planificada a partir de 2030. <break time="1.5s"/>
+
+Esta infraestructura energética alimentará algo igualmente impresionante: los sistemas de GPU más grandes jamás construidos. <break time="1.0s"/>
+
+III. Sistemas GPU y Centros de Datos <break time="1.5s"/>
+Para entender la magnitud, consideremos el modelo "Grock": se entrenó en un clúster de Nvidia en Memphis, Tennessee, durante aproximadamente 20 días utilizando nada menos que 200,000 GPUs. <break time="1.0s"/>
+Hablando de costos, cada GPU tiene un precio aproximado de US$50,000. <break time="1.0s"/>
+Esto significa que el clúster "Grock" tiene un costo aproximado de US$10 mil millones, lo que equivale literalmente a un supercomputador en un edificio. <break time="1.0s"/>
+Para el futuro, se requieren cientos de miles de chips de alto rendimiento, como los Blackwell o AMD's 350, para operar un centro de datos. <break time="1.0s"/>
+Los expertos consideran que centros de datos con capacidades de 1 gigavatio son esenciales para las funciones de "supercerebro" digital. <break time="1.5s"/>
+
+Pero la innovación no se detiene en el hardware. También estamos viendo avances revolucionarios en las arquitecturas de IA. <break time="1.0s"/>
+
+IV. Arquitecturas de IA y Métodos de Aprendizaje <break time="1.5s"/>
+En primer lugar, la arquitectura transformer se está actualizando constantemente con variantes optimizadas para inferencia. <break time="1.0s"/>
+Paralelamente, las startups están desarrollando cómputo de inferencia de menor complejidad, lo que democratiza el acceso. <break time="1.0s"/>
+Una técnica particularmente interesante es el "test time training", que implica actualización continua de modelos durante la inferencia en chips de menor potencia. <break time="1.0s"/>
+Además, la técnica de distillation utiliza un modelo grande para generar 10,000 preguntas y emplear las respuestas como material de entrenamiento. <break time="1.0s"/>
+Más avanzada aún es la técnica "stealing the weights", que exporta los pesos del modelo para posteriores procesos de distilación o cuantización, mejorando la velocidad de inferencia con aceleraciones de hasta 100×. <break time="1.0s"/>
+También se introduce la noción fascinante de "recursive self-improvement", en la que los sistemas de IA aprenden continuamente sin generar de forma autónoma sus propios objetivos. <break time="1.0s"/>
+Finalmente, se emplean "learning loops" que permiten la adaptación en tiempo real mediante interacciones de usuario. <break time="1.5s"/>
+
+Estos avances nos llevan a preguntarnos: ¿cómo se escalan estos sistemas? <break time="1.0s"/>
+
+V. Escalabilidad y Diseño de Modelos <break time="1.5s"/>
+Los números son impresionantes: el entrenamiento de grandes modelos requiere aproximadamente 10^26 a 10^28 flops. <break time="1.0s"/>
+Sin embargo, una vez entrenado, el "cerebro" final del modelo se puede ejecutar en una configuración relativamente compacta de 4 a 8 GPUs. <break time="1.0s"/>
+La visión futura incluye una arquitectura en cascada: 10 modelos principales que se expanden en subconjuntos de 100, 1,000, 1,000,000 o incluso 1,000,000,000 unidades. <break time="1.0s"/>
+Todo esto se fundamenta en tres leyes de escalamiento cruciales: <break time="1.0s"/>
+Primero, la ley del crecimiento de los modelos fundacionales. <break time="0.5s"/>
+Segundo, la ley del entrenamiento en tiempo de prueba o "test time training". <break time="0.5s"/>
+Y tercero, la ley del entrenamiento mediante refuerzo. <break time="1.5s"/>
+
+Por supuesto, con tanto poder viene una gran responsabilidad, especialmente en términos de seguridad. <break time="1.0s"/>
+
+VI. Sistemas de Seguridad y Monitoreo <break time="1.5s"/>
+Las medidas de seguridad son extraordinarias: se implementan protocolos en centros de datos comparables a instalaciones de plutonio, incluyendo guardias y armamento especializado. <break time="1.0s"/>
+A nivel técnico, se proponen mecanismos criptográficos en chips para identificar ubicación y estado de las ejecuciones de entrenamiento. <break time="1.0s"/>
+Más importante aún, se diseñan sistemas para monitorear y controlar modelos superinteligentes, evitando acciones no deseadas como exfiltración o acceso no autorizado a armas. <break time="1.0s"/>
+También se plantean pruebas significativas para información nuclear, biológica y para ciertos ciberataques, todo en cumplimiento de requisitos legales estrictos. <break time="1.0s"/>
+La premisa fundamental es que habrá disponibilidad suficiente de electricidad y cómputo en EE. UU. y China para alcanzar la superinteligencia. <break time="1.5s"/>
+
+Ahora, pasemos a algo más tangible: ¿cómo se aplicará esto en el mundo empresarial? <break time="1.0s"/>
+
+VII. Aplicaciones Empresariales y Automatización <break time="1.5s"/>
+Los números comerciales son convincentes: el valor por conversación de voz en atención al cliente o ventas oscila entre US$10 y US$1,000. <break time="1.0s"/>
+En contraste, el requerimiento de cómputo para cada conversación es de solo 2 a 3 GPUs concurrentes, con un costo aproximado de 10 a 20 centavos. <break time="1.0s"/>
+Se estima que 10 millones de llamadas telefónicas concurrentes se migrarán a soluciones de IA en el próximo año. <break time="1.0s"/>
+En el lado técnico, Google Cloud Platform ya ofrece una solución empresarial basada en el "model context protocol" para conectar bases de datos a un modelo de lenguaje grande. <break time="1.0s"/>
+El impacto será masivo: 100,000 empresas de software empresarial y middleware creadas en los últimos 30 años se verán afectadas por la automatización de tareas. <break time="1.0s"/>
+En arquitecturas modernas como ERP y MRP, se utilizan bibliotecas de código abierto junto a herramientas como BigQuery o Amazon Redshift para la generación automática de código. <break time="1.0s"/>
+La realidad es que las computadoras podrán reemplazar gran parte de tareas de programación y matemáticas, dado el uso de conjuntos de lenguajes limitados y cálculos simplificados. <break time="1.0s"/>
+De hecho, se predice la aparición de matemáticos y programadores de clase mundial basados en IA en aproximadamente 1 a 2 años. <break time="1.0s"/>
+Mirando más adelante, se proyecta que surgirán agentes especializados o "soants" en cada campo dentro de 5 años para mejorar procesos empresariales y gubernamentales. <break time="1.5s"/>
+
+Esto nos lleva naturalmente a considerar el impacto en el trabajo físico y la robótica. <break time="1.0s"/>
+
+VIII. Robótica, Automatización y Transformación del Trabajo <break time="1.5s"/>
+En el aspecto positivo, la automatización eliminará trabajos de alto riesgo, y los supervisores de sistemas robóticos podrán tener mayores ingresos. <break time="1.0s"/>
+Sin embargo, debemos ser realistas: la transición de demostraciones a la aplicación diaria en robótica puede tomar más de 20 años. <break time="1.0s"/>
+Además, es posible que la interacción directa de robots humanoides con personas esté restringida por la regulación. <break time="1.0s"/>
+Lo prometedor es que los asistentes computacionales inteligentes permitirán que trabajadores con conocimientos "normales" accedan a empleos mejor remunerados. <break time="1.0s"/>
+Como resultado, se sugiere que grandes empresas reestructuren equipos reduciéndolos a grupos más pequeños, por ejemplo, de 50 personas. <break time="1.5s"/>
+
+La transformación no se limita a los negocios tradicionales; también está revolucionando los medios de comunicación. <break time="1.0s"/>
+
+IX. Transformación Digital en Medios y Cine <break time="1.5s"/>
+Aunque prometedora, la generación de video de formato largo con IA es costosa y aún requiere edición humana para corregir imperfecciones. <break time="1.0s"/>
+Un ejemplo fascinante: un actor fue utilizado para recrear digitalmente movimientos característicos, como poner la cabeza de William Shatner sobre el cuerpo de otro actor de forma "seamless". <break time="1.0s"/>
+En la producción moderna, se utilizan pantallas verdes en lugar de sets físicos, reduciendo costos significativamente. <break time="1.0s"/>
+También se aplica maquillaje digital en efectos especiales para películas de género "scary" o terror. <break time="1.0s"/>
+En general, la transformación digital en cine permite reducir costos, acortar tiempos de producción y aumentar opciones de edición y personalización. <break time="1.0s"/>
+Particularmente intrigante es la tecnología de "voice casting", que asigna la voz de una persona a otra, permitiendo réplicas digitales o avatares, incluso de personas fallecidas con el permiso familiar. <break time="1.0s"/>
+Esto lleva a la posibilidad de que la "esencia digital" de una persona pueda continuar en la nube, permitiendo interacciones basadas en conocimientos almacenados. <break time="1.5s"/>
+
+Volviendo a los aspectos más técnicos, veamos cómo se optimiza el hardware para estas aplicaciones. <break time="1.0s"/>
+
+X. Diseño de Circuitos, Chips y Cómputo en Tiempo de Inferencia <break time="1.5s"/>
+Se están implementando diseños de circuitos y chips específicamente optimizados para el cómputo en tiempo de inferencia. <break time="1.0s"/>
+Curiosamente, la conectividad mejorada, como el Wi-Fi en vuelos, ya posibilita sesiones prolongadas de brainstorming con sistemas como Gemini. <break time="1.0s"/>
+Sin embargo, los algoritmos actuales requieren personalización para lograr estados emocionales o resultados deseados en períodos de inferencia reducidos. <break time="1.0s"/>
+Un desafío moderno es que la abundancia de estímulos digitales ha reducido el tiempo de atención, lo que demanda desconexión de dispositivos para concentrarse efectivamente. <break time="1.0s"/>
+Para ilustrar el poder computacional actual, la generación de un "paper" tomó aproximadamente 12 minutos utilizando supercomputadoras, evidenciando el uso intensivo de cómputo. <break time="1.5s"/>
+
+Todo esto requiere inversiones masivas, lo que nos lleva a considerar la escalabilidad financiera. <break time="1.0s"/>
+
+XI. Inversión y Escalabilidad del Aprendizaje <break time="1.5s"/>
+Las solicitudes de inversión mencionadas van desde US$1 millón hasta US$2 millones para proyectos específicos. <break time="1.0s"/>
+El potencial es exponencial: el autoaprendizaje autorreferencial en IA puede alcanzar capacidades 1,000, 1,000,000 o incluso 1,000,000,000 veces superiores a las de un ser humano. <break time="1.0s"/>
+No obstante, existe un riesgo preocupante de disminución de la agencia humana al delegar tareas a robots o IA, lo que puede afectar nuestra capacidad para actividades físicas o desafiantes. <break time="1.0s"/>
+Ejemplos de tareas que ya se están automatizando incluyen reparación de automóviles y corte de césped, entre otras. <break time="1.0s"/>
+Hay una preocupación legítima de que la omnipresencia de dispositivos digitales cree ambientes virtuales restrictivos y disminuya la determinación humana para superar desafíos. <break time="1.0s"/>
+Por otro lado, las aplicaciones en sectores específicos son prometedoras, como en el legal para gestión de demandas complejas mediante algoritmos, y en la organización del trabajo con la reducción de grandes equipos en favor de grupos pequeños y uso de asistentes digitales. <break time="1.5s"/>
+
+Finalmente, veamos cómo se integra todo esto en una arquitectura de despliegue coherente. <break time="1.0s"/>
+
+XII. Componentes del Sistema y Arquitectura de Despliegue <break time="1.5s"/>
+En cuanto a clústeres de hardware: <break time="1.0s"/>
+Tenemos clústeres masivos de Nvidia con 200,000 GPUs, como el clúster "Grock" en Memphis, Tennessee. <break time="0.5s"/>
+Los centros de datos proyectados para los próximos 5–10 años incluyen 10 centros principales: 5 en EE. UU., 3 en China, y 2 en otras regiones, todos con capacidades de múltiples gigavatios. <break time="1.0s"/>
+
+Respecto a los diseños de chips: <break time="1.0s"/>
+Se desarrollan circuitos y chips especializados para el cómputo en tiempo de inferencia. <break time="0.5s"/>
+La prioridad se centra en diseños no tradicionales para aumentar significativamente la eficiencia energética. <break time="1.0s"/>
+
+En términos de infraestructura de seguridad: <break time="1.0s"/>
+Se implementan protocolos de seguridad en centros de datos comparables a instalaciones de plutonio, con guardias y armamento especializado. <break time="0.5s"/>
+También se incluyen mecanismos criptográficos en chips para registrar ubicación y estado durante el entrenamiento. <break time="1.0s"/>
+
+La arquitectura de despliegue contempla: <break time="1.0s"/>
+Diferenciación entre modelos open source y closed source, con consideraciones regulatorias importantes, como el límite de 10^26 flops. <break time="0.5s"/>
+Además, despliegue en cascada e implantación jerárquica para escalar modelos en distintos niveles de complejidad. <break time="1.0s"/>
+
+Para la integración empresarial: <break time="1.0s"/>
+Se utiliza el "model context protocol" para vincular bases de datos empresariales, por ejemplo, vía Google Cloud Platform. <break time="0.5s"/>
+También hay integración con herramientas de Big Data como BigQuery y Amazon Redshift para automatizar la generación de código. <break time="1.0s"/>
+
+En sistemas de robótica y automatización: <break time="1.0s"/>
+Se contempla la automatización de trabajos de alto riesgo mediante sistemas de IA y despliegue de brazos robóticos. <break time="0.5s"/>
+Además, la creación de interfaces de usuario (UI) generadas por IA a partir de comandos simples. <break time="1.0s"/>
+
+Finalmente, en sistemas de producción digital: <break time="1.0s"/>
+Se emplea el uso de pantallas verdes, maquillaje digital y composición de imágenes para efectos en cine. <break time="1.0s"/>
+Todo esto se complementa con múltiples "learning loops" que permiten actualizaciones continuas, asegurando ventajas competitivas a través del aprendizaje exponencial.
+
+Este panorama completo nos muestra no solo hacia dónde nos dirigimos, sino también la magnitud de la transformación que nos espera en los próximos años.

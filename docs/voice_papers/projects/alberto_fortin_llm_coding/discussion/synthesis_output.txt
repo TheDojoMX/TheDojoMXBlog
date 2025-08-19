@@ -1,0 +1,62 @@
+After months of coding with LLMs, I'm going back to using my brain
+
+Key facts and data points
+• LLMs funcionan adecuadamente para tareas de codificación pero, cuando se usan a gran escala, producen código desorganizado.
+• El autor tiene 15 años de experiencia en ingeniería de software y estudió C++ y Java.
+• La infraestructura previa basada en PHP+MySQL ya no cumplía con los requisitos del SaaS, lo que llevó a la elección de Go y Clickhouse para la nueva infraestructura.
+• Cada día de retraso en la implementación se asocia con la pérdida de ingresos debido a clientes potenciales en espera.
+
+Conceptos y definiciones
+• Infrastructure (infraestructura): Cambio del combo PHP+MySQL a una solución basada en Go y Clickhouse.
+• LLM (modelo de lenguaje): Herramienta utilizada para la generación de código a partir de mensajes y contextos.
+• Cursor Notepads: Herramienta usada para alimentar al LLM con prompts.
+• Benchmark usage: Métrica para evaluar el rendimiento.
+• Diferenciación entre “agent” y “cron job”: Debate sobre la funcionalidad que se le atribuye a la herramienta.
+• Vibe coding: Uso de herramientas de IA por personas sin conocimientos de programación, lo cual genera dificultades para identificar y corregir errores.
+• “Magic shovel”: Término empleado por algunos influencers para describir una herramienta de IA.
+
+Declaraciones y afirmaciones
+• La generación de código a gran escala con LLMs da resultados inconsistentes y desorganizados.
+• El código generado presenta problemas como archivos con nombres similares y métodos diferentes, inconsistencias en nombres de métodos y propiedades (por ejemplo, “WebAPIprovider” versus “webApi”) y múltiples declaraciones del mismo método en archivos distintos.
+• La situación se compara con la coordinación de 10 desarrolladores de nivel junior-mediano trabajando simultáneamente sin acceso a Git.
+• Mensajes de error se reinyectan en el LLM, generando correcciones que a su vez provocan nuevos errores y, con el aumento de la complejidad, la capacidad del LLM para resolver problemas se reduce.
+• Se utilizó una revisión manual de código (coding review) para entender y corregir inconsistencias.
+• El proceso de aprendizaje incluyó la lectura de documentación y artículos, visualización de videos de YouTube sobre Clickhouse y la realización de preguntas detalladas a Claude.
+• Aunque se promueven flujos de trabajo recomendados por expertos e influencers, existen tareas que quedan fuera del alcance de la IA.
+• Se plantean preguntas sobre la posible limitación (throttling) de los GPUs y sobre la capacidad de controlar las herramientas de IA.
+
+Ejemplos y aplicaciones
+• Dos archivos de servicio en el mismo directorio con nombres similares pero con métodos diferentes.
+• Inconsistencias en la denominación de métodos y propiedades, como la variación entre “WebAPIprovider” y “webApi”.
+• Declaración múltiple del mismo método en archivos diferentes.
+• Dificultades para generar una consulta en Clickhouse para tablas con más de 100 millones de filas en un servidor con RAM limitada, aun cuando se suministran el esquema SQL y la documentación.
+• Modelos específicos mencionados: Gemini, o4-mini-high, o3 y Sonnet 3.7, ninguno de los cuales resuelve la generación de consultas complejas sin generar errores.
+• Reportes en subreddits de IA donde, bajo las mismas condiciones (misma herramienta, mismo prompt, mismo día), se obtienen resultados muy distintos: en algunas ocasiones el código es “amazing” y en otras “increíblemente inefectivo”.
+• Comparación entre dos métodos de trabajo: planificar manualmente (caminar) o usar la IA rápidamente (nave espacial) con resultados inestables.
+
+Métodos y procesos
+• Se ingresaban mensajes y contextos en el LLM mediante Cursor Notepads; se recibía el código generado y se procedía a construir y probar el código resultante.
+• Se priorizó la velocidad de implementación debido a la demanda de clientes, a pesar de que el código generado presentaba problemas de limpieza y consistencia.
+• El uso de LLM se restringió progresivamente a tareas sencillas, como renombrar parámetros y convertir pseudocódigo a Go.
+• El autor comenzó a realizar revisiones manuales del código para identificar y corregir inconsistencias.
+• El proceso de aprendizaje sobre Go y Clickhouse se llevó a cabo mediante la lectura de documentación, visualización de videos de YouTube y consultas detalladas a Claude.
+• Se emplearon flujos de trabajo propuestos, como “reglas de Cursor” y un “flujo de trabajo de 15 pasos” encontrado en Reddit, aunque estos no resolvieron todos los desafíos.
+
+Resultados y hallazgos
+• El código generado por el LLM mostró desorganización e inconsistencias, evidenciando la limitación de la herramienta para tareas complejas.
+• La revisión manual del código permitió identificar errores como inconsistencias en nombres, múltiples declaraciones y problemas en la obtención de archivos de configuración.
+• La disminución de la capacidad del LLM para resolver problemas complejos se hizo evidente a medida que aumentaban los requerimientos.
+• La dependencia excesiva en la IA se asocia con una potencial pérdida de agilidad mental y una reducción en la capacidad para planificar y escribir código organizado.
+• Los informes en foros y subreddits indican variabilidad en la percepción de la efectividad de la IA, con experiencias que varían de “amazing” a “increíblemente inefectivo”.
+• Las herramientas de IA, pese a flujos de trabajo supuestamente perfectos, muestran inestabilidad frente a cambios o requisitos ligeramente distintos.
+
+Información histórica
+• La transición de la infraestructura de PHP+MySQL a una basada en Go y Clickhouse responde a nuevos requisitos del SaaS.
+• El autor actuó inicialmente como gestor de productos, utilizando múltiples intercambios y consultas a Claude para estructurar el plan de migración.
+• La generación de un archivo Markdown detalló la infraestructura existente, la deseada, los objetivos y las razones para el cambio.
+• La promoción de la herramienta de IA por parte de influencers y benchmarks se contrapone a la experiencia real de errores y complejidades en su uso.
+• Se estableció una comparación final entre métodos tradicionales y el uso de la IA, haciendo énfasis en la diferencia entre planificar manualmente y utilizar la IA de manera rápida pero inestable.
+
+Adicionalmente, se incluyen percepciones textuales directas:
+• "I long enough you’ll be able to relate. One day it’s amazing, the next day it’s incredibly stupid. Are they throttling the GPUs? Are these tools just impossible to control? What the fuck is going on?" 
+Esta declaración ejemplifica la percepción variable en el desempeño y la frustración ante la dificultad para controlar las herramientas de IA.

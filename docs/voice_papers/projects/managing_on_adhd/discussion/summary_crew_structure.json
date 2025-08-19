@@ -1,0 +1,66 @@
+{
+  "project": "managing_on_adhd",
+  "paper_title": "Notes on Managing ADHD",
+  "language": "Spanish",
+  "technical_level": "accessible",
+  "duration_minutes": 15,
+  "tone": "casual",
+  "workflow": "summary_with_chunking",
+  "document_chunks": 6,
+  "chunk_sections": [
+    "Section 1",
+    "Section 2",
+    "Section 3",
+    "Section 4",
+    "Section 5",
+    "Section 6"
+  ],
+  "agents": [
+    {
+      "role": "Deep Document Analyzer",
+      "goal": "Extract comprehensive insights from each section of the document"
+    },
+    {
+      "role": "Master Synthesizer",
+      "goal": "Combine all section analyses into a comprehensive, coherent understanding"
+    },
+    {
+      "role": "Master Educational Science Communicator",
+      "goal": "Transform technical content into captivating, natural educational narratives that feel like passionate teaching, not AI generation"
+    }
+  ],
+  "tasks": [
+    {
+      "description": "\nAnalyze this section from the paper \"Notes on Managing ADHD\".\nSection: Section 1\nThis is the beginning of the document.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important da...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"Notes on Managing ADHD\".\nSection: Section 2\nThis is part 2 of 6.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"Notes on Managing ADHD\".\nSection: Section 3\nThis is part 3 of 6.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"Notes on Managing ADHD\".\nSection: Section 4\nThis is part 4 of 6.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"Notes on Managing ADHD\".\nSection: Section 5\nThis is part 5 of 6.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"Notes on Managing ADHD\".\nSection: Section 6\nThis is the final part of the document.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important d...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                You have received detailed analyses of all 6 sections of the paper \"Notes on Managing ADHD\".\n                \n                Now synthesize them into a comprehensive understanding th...",
+      "type": "synthesis"
+    },
+    {
+      "description": "\nTransform all the insights from the conversation into a 15-minute educational podcast script in Spanish.\n\nYOUR MISSION: Create a script that sounds like a passionate teacher having a one-on-one conve...",
+      "type": "educational"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+Why I'm Betting Against AI Agents in 2025 (Despite Building Them)
+
+TLDR:
+• The current production deployment of AI agents is hampered by mathematical reliability constraints, economic inefficiencies, and integration challenges.
+• Production systems require precise, bounded operations with human oversight rather than fully autonomous, long-chain workflows.
+• The future success lies in building constrained, domain-specific tools that combine AI for challenging tasks with robust traditional engineering foundations.
+
+────────────────────────────
+I. Introduction and Core Claims
+
+• Title and Claim:
+  “Why I'm Betting Against AI Agents in 2025 (Despite Building Them)” states that although multiple production AI agent systems have been built, the current hype around autonomous agents is mathematically impossible at production scale, and what works in production is not the fully autonomous agent as often claimed.
+
+────────────────────────────
+II. Experience and Examples of Production Systems
+
+• Experience and Examples of Production Systems:
+  – More than a dozen production agent systems have been built across various domains:
+    ▪ Development agents:
+      • UI generators that create functional React components from natural language.
+      • Code refactoring agents for modernizing legacy codebases.
+      • Documentation generators that maintain API documentation automatically.
+      • Function generators converting specifications into working implementations.
+    ▪ Data & Infrastructure agents:
+      • Database operation agents that manage complex queries and migrations.
+      • DevOps automation systems managing infrastructure-as-code across multiple cloud providers.
+    ▪ Quality & Process agents:
+      • CI/CD pipelines that fix lint issues, generate comprehensive test suites, perform automated code reviews, and create detailed pull requests.
+
+────────────────────────────
+III. Core Hard Truths and Mathematical Realities
+
+• Error Compounding in Multi-Step Workflows:
+  – With a 95% reliable step, a 5-step workflow achieves roughly 77% overall success.
+  – A 10-step workflow drops to around 59%.
+  – A 20-step workflow only has about 36% success.
+  – Even a hypothetical 99% per-step reliability only gives 82% success over 20 steps.
+  – Production systems require reliability of 99.9% or greater.
+  – Practical example: A DevOps agent is engineered not as a long chain of 20 steps but as 3–5 discrete, verifiable operations with rollback points and sometimes human confirmation.
+
+• Token Economics in Conversational Agents:
+  – Context windows lead to quadratic scaling in token costs.
+  – In a “conversational” agent, every new interaction requires processing all previous context.
+  – A conversation with 100 turns can cost between $50 and $100, making it economically unsustainable at scale.
+  – Example: A conversational database agent prototype showed each response becoming increasingly expensive, far outweighing the provided value.
+
+• Engineering Tooling and Feedback Systems:
+  – The challenge is designing tools and feedback systems that allow agents to use them effectively.
+  – Successful systems use bounded contexts, verifiable operations, and sometimes human decision points.
+  – Tool design includes managing feedback such as:
+    • Communicating partial successes.
+    • Controlling the amount of contextual data (e.g., a database query returning 10,000 rows should be abstracted to “query succeeded, 10k results, here are the first 5”).
+    • Handling interdependent operations like database transactions, file locks, and resource dependencies.
+  – Approximately 30% of work is performed by AI, while 70% is dedicated to tool engineering (feedback interfaces, context management, handling partial failures, and recovery mechanisms).
+
+────────────────────────────
+IV. Integration Challenges
+
+• Integration Challenges:
+  – Enterprise systems have legacy quirks, complex authentication flows, variable rate limits, and compliance issues that make autonomous orchestration difficult.
+  – Example: A database agent not only executes queries but also navigates connection pooling, transaction rollbacks, read-only replicas, query timeouts, and audit logging.
+  – Claims that fully autonomous agents can integrate effortlessly with entire tech stacks are challenged by these real-world complexities.
+
+────────────────────────────
+V. What Works in Production
+
+• What Works in Production:
+  – Systems that work well use a combination of AI handling complexity and traditional engineering ensuring reliability:
+    ▪ UI generation: AI generates interfaces while humans review before deployment.
+    ▪ Database operations: AI translates requirements into SQL, but humans confirm destructive actions.
+    ▪ Function generation: Operates within a clearly defined boundary (“description → function → done”).
+    ▪ DevOps automation: Generates reviewable, version-controlled, and rollback-capable infrastructure-as-code.
+    ▪ CI/CD pipelines: AI suggests fixes while pipelines enforce clear success criteria and rollback mechanisms.
+
+────────────────────────────
+VI. Predictions for 2025
+
+• Predictions for 2025:
+  – Venture-funded startups offering “fully autonomous agent” solutions will face the economics wall when transitioning from short, successful demos (e.g., 5-step workflows) to longer, complex 20+ step processes.
+  – Enterprise software companies that add AI agents to existing products will struggle, as their agents cannot integrate deeply enough to handle real workflows.
+
+────────────────────────────
+VII. Strategic Principles and Future Directions
+
+• Team Strategies and Principles for Building with AI Agents:
+  – Teams that succeed will build constrained, domain-specific tools that leverage AI for the hard aspects while ensuring human control or strict boundaries over critical decisions. The focus is on creating “extremely capable assistants with clear boundaries” rather than pursuing “autonomous everything.”
+  – The market will differentiate between AI that performs well in demos and AI that ships reliably, and companies will incur significant costs as they learn this distinction.
+  – The strategy is not to bet against AI itself but to bet against the current approach to agent architecture. The future potential is seen as far more valuable than the current hype.
+  
+• Essential Principles:
+  – Define clear boundaries by specifying exactly what the agent can do versus what is handled by humans or deterministic systems.
+  – Design for failure by planning for the 20–40% of cases where the AI makes mistakes, including having rollback mechanisms.
+  – Solve the economics by evaluating the cost of each interaction and understanding scaling, noting that stateless designs often outperform stateful ones.
+  – Prioritize reliability over autonomy, since users trust tools that work consistently more than they value systems that occasionally perform exceptionally.
+  – Build on solid foundations by using AI for challenging tasks (like understanding intent or generating content) while relying on traditional software engineering for execution, error handling, and state management.
+
+• Overall Outlook:
+  – The coming agent revolution will not resemble the current 2025 promises but will succeed precisely because it takes a different, more practical approach.
+  – There is a significant gap between solutions that “work in demo” and those that “work at scale.” Many are still navigating the challenges of agent reliability, cost optimization, and integration complexity.
+  – Engineers and teams face fascinating problems without obvious solutions, such as making build vs. buy decisions and debugging production issues with agents.
+  – There is an active invitation for further conversations on these challenges, with contact details provided for more in-depth discussion.
+  – Additional insights are available via subscription for further articles on AI engineering, development tools, and lessons from building production systems.

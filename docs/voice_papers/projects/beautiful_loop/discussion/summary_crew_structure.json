@@ -1,0 +1,91 @@
+{
+  "project": "beautiful_loop",
+  "paper_title": "A beautiful loop:",
+  "language": "Spanish",
+  "technical_level": "technical",
+  "duration_minutes": 15,
+  "tone": "casual",
+  "workflow": "summary_with_chunking",
+  "document_chunks": 11,
+  "chunk_sections": [
+    "Section 1",
+    "Section 2",
+    "Section 3",
+    "Section 4",
+    "Section 5",
+    "Section 6",
+    "Section 7",
+    "Section 8",
+    "Section 9",
+    "Section 10",
+    "Section 11"
+  ],
+  "agents": [
+    {
+      "role": "Deep Document Analyzer",
+      "goal": "Extract comprehensive insights from each section of the document"
+    },
+    {
+      "role": "Master Synthesizer",
+      "goal": "Combine all section analyses into a comprehensive, coherent understanding"
+    },
+    {
+      "role": "Master Educational Science Communicator",
+      "goal": "Transform technical content into captivating, natural educational narratives that feel like passionate teaching, not AI generation"
+    }
+  ],
+  "tasks": [
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 1\nThis is the beginning of the document.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, s...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 2\nThis is part 2 of 11.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or evi...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 3\nThis is part 3 of 11.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or evi...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 4\nThis is part 4 of 11.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or evi...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 5\nThis is part 5 of 11.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or evi...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 6\nThis is part 6 of 11.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or evi...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 7\nThis is part 7 of 11.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or evi...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 8\nThis is part 8 of 11.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or evi...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 9\nThis is part 9 of 11.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or evi...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 10\nThis is part 10 of 11.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data, statistics, or e...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\nAnalyze this section from the paper \"A beautiful loop:\".\nSection: Section 11\nThis is the final part of the document.\n\nExtract and preserve:\n1. Key findings, insights, and arguments\n2. Important data,...",
+      "type": "chunk_analysis"
+    },
+    {
+      "description": "\n                You have received detailed analyses of all 11 sections of the paper \"A beautiful loop:\".\n                \n                Now synthesize them into a comprehensive understanding that:\n...",
+      "type": "synthesis"
+    },
+    {
+      "description": "\nTransform all the insights from the conversation into a 15-minute educational podcast script in Spanish.\n\nYOUR MISSION: Create a script that sounds like a passionate teacher having a one-on-one conve...",
+      "type": "educational"
+    }
+  ]
+}

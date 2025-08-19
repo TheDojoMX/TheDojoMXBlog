@@ -1,0 +1,17 @@
+Section: Section 3
+Characters: 9841
+==================================================
+• Algoritmos cambian hacia una “actualización continua” durante la inferencia, denominada test time training, la cual puede realizarse en chips de menor potencia. 
+• Open source implica pesos abiertos, lo que permite que cualquier parte utilice los modelos, con implicaciones en la competitividad entre países. 
+• Se menciona un límite de potencia de cómputo de 10^26 flops: si un modelo opera por encima de ese umbral se requiere regulación, mientras que por debajo no, según la doctrina propuesta en la administración Biden. 
+• La propuesta en la administración Biden era regular tanto los modelos open source como los closed source. 
+• Se plantea la posibilidad de que, a pesar de restricciones de chips, se implementen cambios arquitectónicos que permitan a China construir modelos de potencia equiparable. 
+• Se cuestiona la viabilidad de recaudar US$50 mil millones para un centro de datos si el producto es open source, dado que los modelos cerrados permiten justificar la recuperación de inversión en capital. 
+• Se menciona el rendimiento en leaderboards: Gemini 2.5 Pro alcanzó la cima y, una semana después, Deepseek obtuvo un desempeño ligeramente superior. 
+• Deepseek se entrena en el hardware existente en China, que incluye chips Ascend de Huawei y algunos otros. 
+• Se describe la técnica de distillation: utilizar un modelo grande para formular 10,000 preguntas y emplear sus respuestas como material de entrenamiento. 
+• Se señala la necesidad de que las empresas estadounidenses protejan la información propietaria frente a filtraciones en modelos open source, especialmente en lo que refiere a riesgos nucleares, biológicos, químicos y cibernéticos. 
+• Se implementan pruebas significativas para la información nuclear, biológica y para ciertos tipos de ciberataques, en cumplimiento de requisitos legales. 
+• Se sugiere incorporar mecanismos criptográficos en los chips para identificar su ubicación y el estado de las ejecuciones de entrenamiento. 
+• Se asume la disponibilidad de suficiente electricidad y capacidad de cómputo, tanto en EE. UU. como en China, para alcanzar un estado eventual de superinteligencia. 
+• Se introduce el concepto de “mutual AI malfunction” (malfuncionamiento mutuo de la IA), en el cual un exceso en la capacidad de cómputo podría desencadenar medidas cibernéticas recíprocas, similar a la doctrina de destrucción mutua asegurada.

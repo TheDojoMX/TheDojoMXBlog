@@ -1,4 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2025-05-16T00:47:00-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">¿Qué son los agentes inteligentes?</title><link href="https://blog.thedojo.mx/2025/05/16/que-son-los-agentes-inteligentes.html" rel="alternate" type="text/html" title="¿Qué son los agentes inteligentes?" /><published>2025-05-16T00:00:00-06:00</published><updated>2025-05-16T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/05/16/que-son-los-agentes-inteligentes</id><content type="html" xml:base="https://blog.thedojo.mx/2025/05/16/que-son-los-agentes-inteligentes.html"><![CDATA[<p>Con la llegada de los LLM’s, el término “agente” empezó a ganar más popularidad y
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://blog.thedojo.mx/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.thedojo.mx/" rel="alternate" type="text/html" /><updated>2025-08-19T00:06:24-06:00</updated><id>https://blog.thedojo.mx/feed.xml</id><title type="html">The Dojo MX Blog</title><author><name>Héctor Patricio</name><uri>https://github.com/hectorip</uri></author><entry><title type="html">Zig: un lenguaje que quiere reemplazar al poderoso C</title><link href="https://blog.thedojo.mx/2025/08/19/zig-un-lenguaje-que-quiere-reemplazar-al-poderoso-c.html" rel="alternate" type="text/html" title="Zig: un lenguaje que quiere reemplazar al poderoso C" /><published>2025-08-19T00:00:00-06:00</published><updated>2025-08-19T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/08/19/zig-un-lenguaje-que-quiere-reemplazar-al-poderoso-c</id><content type="html" xml:base="https://blog.thedojo.mx/2025/08/19/zig-un-lenguaje-que-quiere-reemplazar-al-poderoso-c.html"><![CDATA[<p>Recientemente hemos visto una ola de lenguajes listos para destronar
+a los lenguajes de programación que forman la base de casi toda nuestra
+computación actual: C y C++. Lenguajes como Rust y Go quieren reemplazarlos,
+pero tenemos a otro competidor que apunta directamente hacia C y parece
+que se está acercando aunque no tiene todavía una versión completamente estable.</p>
+
+<p>En este artículo vamos a hablar de las características de Zig y cómo es que
+planea reemplazar a C.</p>
+
+<h2 id="las-características-de-zig">Las características de Zig</h2>
+
+<p><a href="https://ziglang.org/">Zig</a> es actualmente desarrollado por la Zig Software
+Foundation, una organización sin fines de lucro que básicamente fue creada para
+seguir desarrollando el lenguaje. Pero <a href="https://andrewkelley.me/"><strong>Andrew Kelley</strong></a>,
+lo empezó en 2015 con la idea de retar la forma en la que hacemos software.</p>
+
+<p>Kelley es un programador con experiencia en C principalmente y mientras trabajaba en su
+proyecto “Genesis Digital Audio Workstation” se decidió para crear Zig.
+En sus propias palabras: <em>“mi meta es crear un lenguaje más pragmático que C.”</em></p>
+
+<p>Algunas de las características que presenta en el artículo en el que
+habla por primera vez de Zig son:</p>
+
+<ol>
+  <li><strong>Pragmatismo</strong>. Ser pragmático es lo mismo que ser práctico. Zig es un lenguaje
+que se enfoca en resolver problemas reales y no en ser un lenguaje teórico, y quiere
+ayudarte a lograr lo que necesitas hacer mejor que otros lenguajes.</li>
+  <li><strong>Óptimo</strong>. Debe de ser iguale de rápido o más que C y más fácil de escribir.</li>
+  <li><strong>Seguridad en memoria</strong>. Es la segunda característica más importante del lenguaje, Kelley
+  dice que va en el asiento del copiloto.</li>
+  <li><strong>Legible</strong>. zig debería evitar la sintaxis compleja y tener una forma canónica de hacer las cosas
+  dando como resultado un código que sea fácil de leer, aunque te tengas que esforzar un poco para escribirlo.</li>
+</ol>
+
+<h2 id="algunas-decisiones-de-diseño">Algunas decisiones de diseño</h2>
+
+<p>Se dice que los lenguajes de programación están creados por los miedos de sus diseñadores.
+Por ejemplo, si alguien quiere hacer un nuevo lenguaje viniendo de lenguajes que
+tardan mucho en compilar, por ejemplo C++, va a intentar hacer un lenguaje
+que compile rápido, como fue le caso de Go.</p>
+
+<p>Veamos algunas decisiones de diseño de Zig.</p>
+
+<h3 id="interoperabilidad-completa-con-c">Interoperabilidad completa con C</h3>
+
+<p>C tiene una dominación histórica en el mundo de la programación de sistemas. Muchos de los
+sistemas importantes están escritos en C. Así es que Zig tiene como una decisón de diseño
+crear programas que puedan ser usados desde C o al revés. Así que Zig es compatible con la
+C ABI.</p>
+
+<p>La <strong>C ABI</strong> (Application Binary Interface) es un conjunto de convenciones y reglas que
+define cómo los programas compilados en C interactúan a nivel de código máquina.</p>
+
+<h3 id="uso-de-tipos-opcionales">Uso de tipos opcionales</h3>
+
+<p>El manejo de valores vacíos o nulos es uno de los grandes problemas en todo el desarrollo de
+software. Así que Zig ha elegido usar tipos opcionales, es decir, valores que desde el
+sistemas de tipos declaras que pueden contener un valor o no. Así el compilador te puede
+ayudar a no dispararte en el pie dejando como nulo o aceptando un nulo en una variable donde
+siempre debería haber un valor. Además, te puede ayudar a verificar que estás considerando
+todos los casos posibles cuando tienes variables opcionales.</p>
+
+<h3 id="manejo-de-errores">Manejo de errores</h3>
+
+<p>Zig utiliza tipos de datos primitivos para manejar errores. Estos son los Error Sets y
+Error Unions. Con estos dos tipos de datos puedes crear funciones que devuelvan un error
+y manejarlo de forma más elegante.</p>
+
+<h3 id="otras-características">Otras características</h3>
+
+<p>Zig tiene otras características muy interesantes nacidas directamente del uso que su
+principal creador, Andrew Kelley, hizo de C desde hace mucho tiempo. Por ejemplo tiene
+características para evitar el preprocesador de C, por ejemplo, sintaxis directa para
+compilación condicional.</p>
+
+<h2 id="algunos-proyectos-importantes-en-zig">Algunos proyectos importantes en Zig</h2>
+
+<p>Aunque todavía no tenemos una versión 100% estable de Zig, ya tenemos proyectos que
+están haciendo olas en el mundo de la programación programados en Zig. Hablemos de
+algunos de ellos:</p>
+
+<ul>
+  <li>
+    <p><a href="https://bun.sh/">Bun</a>: Bun es un nuevo runtime de JavaScript que caracteriza
+por su gran velocidad de ejecución. Aunque no tiene todas las características de
+Node.js todavía, se lo lleva por mucho en rendimiento.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/tigerbeetle/tigerbeetle">TigerBeetle</a>: TigerBeetle es una
+base de datos financiera distribuida. Como te imaginarás, todo aquello que se quiera
+usar en un entorno financiero serio debe ofrecer características fuertes de rendimiento
+y seguridad.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/ghostty-org/ghostty">Ghostty</a>: Ghostty es un emulador de terminal
+escrito por el mismo creador de Terraform, Mitchell Hashimoto, que está intentando hacer
+todas las cosas bien.</p>
+  </li>
+</ul>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Si estás metido en el desarrollo de sistemas, sin duda Zig es un lenguaje que vale la pena
+voltear a ver, pero también si quieres aprender más sobre desarrollo de software a bajo nivel
+con ideas modernas.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="zig" /><category term="zig-lang" /><category term="c" /><category term="c-lang" /><summary type="html"><![CDATA[Zig es un lenguaje prometedor que quiere reemplazar a C y competir con Rust por ser el nuevo lenguaje de sistemas. Hablemos de sus promesas y características.]]></summary></entry><entry><title type="html">¿Qué son los agentes inteligentes?</title><link href="https://blog.thedojo.mx/2025/05/16/que-son-los-agentes-inteligentes.html" rel="alternate" type="text/html" title="¿Qué son los agentes inteligentes?" /><published>2025-05-16T00:00:00-06:00</published><updated>2025-05-16T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2025/05/16/que-son-los-agentes-inteligentes</id><content type="html" xml:base="https://blog.thedojo.mx/2025/05/16/que-son-los-agentes-inteligentes.html"><![CDATA[<p>Con la llegada de los LLM’s, el término “agente” empezó a ganar más popularidad y
 lo oímos por todos lados. En este artículo vamos a hablar de qué son, para entenderlo
 lo mejor posible y no dejarnos llevar por el hype.</p>
 
@@ -1400,62 +1504,4 @@ permite hacer lo mismo con muchas menos líneas. Ejemplo:</p>
 <h2 id="conclusión">Conclusión</h2>
 
 <p>La búsqueda binaria es uno de los algoritmos que todos los desarrolladores deberíamos conocer.
-Espero que este artículo te haya ayudado a entender cómo funciona y su importancia.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="algoritmos" /><category term="búsqueda" /><summary type="html"><![CDATA[Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es muy importante en el mundo de la computación.]]></summary></entry><entry><title type="html">Desarrolladores que deberías admirar: Martin Kleppmann</title><link href="https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html" rel="alternate" type="text/html" title="Desarrolladores que deberías admirar: Martin Kleppmann" /><published>2024-10-20T00:00:00-06:00</published><updated>2024-10-20T00:00:00-06:00</updated><id>https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann</id><content type="html" xml:base="https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deberias-admirar-martin-kleppmann.html"><![CDATA[<p><strong>Martin Kleppmann</strong> es un desarrollador de software, investigador y profesor muy prolífico.
-Hablemos de su trabajo, ideas y de por qué es alguien que podrías admirar.</p>
-
-<h2 id="su-carrera">Su carrera</h2>
-
-<p>Martin ha desarrollado su carrera e investigación alrededor del software deTambién trabaja en seguridad de sistemas distribuidos, un tema relacionado al anterior,
-pero digamos que para temas de mayor escala.</p>
-
-<p>Es profesor en la <strong>Universidad de Cambridge</strong>, pero parece que nunca se ha separado de la industria,
-por ejemplo, como emprendedor, fundó Rapportive: una empresa que creó un plug-in que te permitía
-ver los detalles de tus contactos directamente en tu bandeja de entrada de email. Rapportive fue
-adquirida por LinkedIn por nada más y nada menos que por 15 millones de dólares.</p>
-
-<p>También ha participado en proyectos de código abierto, con los siguientes proyectos:</p>
-
-<ol>
-  <li><a href="https://automerge.org/"><strong>Automerge</strong></a>: una biblioteca para crear software local-first, que es principalmente 
-un CRDT (Conflict-free Replicated Data Type), es decir, una estructura de datos que sirve para sincronizar
-información entre varios procesos que compartan esta misma estructura, de manera automática. Está disponible
-para JavaScript, Swift y Rust.</li>
-  <li><a href="https://avro.apache.org/docs/"><strong>Apache Avro</strong></a>: un formato de serialización de datos que compite con
-protocol buffers y JSON, usado principalmente en el campo de ciencia e ingeniería de datos.</li>
-  <li><a href="https://samza.apache.org/"><strong>Apache Samza</strong></a>: es un framework para procesar flujos de datos
-de manera distribuida en tiempo real, que puede cooperar con Kafka y otros sistemas de procesamiento de datos.</li>
-</ol>
-
-<p>Kleppmann también es un gran contribuidor a la comunidad tanto con pláticas y artículos como con un libro que
-es por lo que más se le conoce: <a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>.</p>
-
-<h2 id="ideas-sobre-el-desarrollo-de-software">Ideas sobre el desarrollo de software</h2>
-
-<p>Martin es un gran proponente de los sistemas distribuidos en todas sus formas y de todos los aspectos realacionados
-con estos, desde los temas conceptuales hasta la implementación y la seguridad. Actualmente está trabajando
-con <em>local-first</em> software, que es aquel funciona principalmente en un entorno local, pero que puede
-aprovechar las ventajas de tener una conexión a una red para hacer diferentes operaciones,
-como sincronizar datos o colaborar en tiempo real.</p>
-
-<p>En su libro <a href="https://dataintensive.net/">Designing Data-Intensive Applications</a> analiza las características
-de software que manejan grandes cantidades de datos, y que cumple con tres características arquitectónicas: disponibilidad, escalabilidad y mantenibilidad. Este libro ha sido muy influyente en la industria, sobre todo
-para aquellos que quieren mejorar sus habilidades de diseño de software relacionadas con sistemas de backend
-distribuidos y bases de datos.</p>
-
-<p>Si quieres aprender más acerca de todos los temas que hemos mencionado, que giran alrededor de sistemas
-distribuidos, manejo de grandes cantidades de datos, diseño de software y software local-first, te recomiendo
-ver la <a href="https://www.youtube.com/playlist?list=PLeKd45zvjcDHJxge6VtYUAbYnvd_VNQCx">lista de reproducción de videos</a>.</p>
-
-<h2 id="curiosidades">Curiosidades</h2>
-
-<p>Muchas personas buenas en el campo de la computación son buenas en otras cosas o tienen múltiples intereses.
-Martin es un gran músico, compuso una ópera llamada “Die Türme des Februar”, que se estrenó en 2007.</p>
-
-<h2 id="referencias">Referencias</h2>
-
-<ul>
-  <li><a href="https://martin.kleppmann.com/">Página personal de Martin Kleppmann</a></li>
-  <li><a href="https://dataintensive.net/">Designing Data-Intensive Applications</a></li>
-  <li><a href="https://twitter.com/martinkl">Twitter de Martin Kleppmann</a></li>
-  <li><a href="https://github.com/mrkleppmann">GitHub de Martin Kleppmann</a></li>
-</ul>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="Martin-Kleppmann" /><category term="bases-de-datos" /><category term="sistemas-distribuidos" /><category term="software-local-first" /><summary type="html"><![CDATA[Hablemos de Martin Kleppmann, uno de los desarrolladores e investigadores de software más influyentes en el panorama actual de las bases de datos y sistemas que usan datos.]]></summary></entry></feed>
+Espero que este artículo te haya ayudado a entender cómo funciona y su importancia.</p>]]></content><author><name>Héctor Patricio</name><email>hectorivanpatriciomoreno@gmail.com</email><uri>https://github.com/hectorip</uri></author><category term="algoritmos" /><category term="búsqueda" /><summary type="html"><![CDATA[Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es muy importante en el mundo de la computación.]]></summary></entry></feed>

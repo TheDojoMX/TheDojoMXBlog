@@ -1,0 +1,68 @@
+I. Azure OpenAI Service  
+   1. Método de Generación de Contenido  
+      a. Recibir entrada en forma de texto o instrucciones para generación.  
+      b. Procesar la solicitud mediante modelos preentrenados (GPT-3.5, GPT-4, Codex, DALL·E 2).  
+      c. Generar salidas en función de la tarea: texto, resumen, interfaz conversacional, código o imágenes.  
+   2. Procedimiento de Seguridad y Cumplimiento  
+      a. Configuración de opciones para redes privadas.  
+      b. Establecimiento de controles de acceso.  
+      c. Implementación de monitoreo y registro para garantizar el cumplimiento normativo y la protección de datos.  
+      d. Garantía de que la información enviada no se utiliza para reentrenar los modelos.
+
+II. Azure Machine Learning (Azure ML)  
+   1. Proceso de Desarrollo y Entrenamiento de Modelos  
+      a. Integrar modelos provenientes de diversas fuentes (Microsoft, OpenAI, Hugging Face, Meta, Cohere, etc.).  
+      b. Realizar entrenamiento en infraestructura con soporte GPU gestionado.  
+      c. Ajuste fino de modelos según requerimientos específicos.  
+   2. Despliegue y Orquestación de Modelos  
+      a. Exponer modelos a través de endpoints API.  
+      b. Utilizar herramientas especializadas:  
+         i. Prompt Flow – Diseño y orquestación visual y en código de flujos de trabajo de prompt engineering.  
+         ii. MLOps – Procedimientos de monitoreo, gestión de la seguridad, alertas ante deriva y seguimiento de calidad de respuestas.
+
+III. Azure Cognitive Search  
+   1. Proceso de Indexación y Consulta de Datos  
+      a. Transformar datos empresariales en índices accesibles.  
+      b. Permitir búsquedas tradicionales a través de palabras clave.  
+      c. Habilitar búsquedas basadas en similitud vectorial para casos RAG (Retrieval-Augmented Generation).  
+   2. Configuración de Parámetros Adicionales  
+      a. Aplicar funciones de ranking y filtrado.  
+      b. Asegurar el acceso a la información mediante controles de seguridad.
+
+IV. Azure AI Content Safety  
+   1. Método de Evaluación de Contenido  
+      a. Analizar entradas de contenido textual e imágenes.  
+      b. Asignar puntajes de severidad a categorías específicas (discurso de odio, violencia, contenido sexual, autolesiones).  
+   2. Integración en Flujos de Trabajo  
+      a. Utilizar el servicio en fases de pre o postprocesamiento.  
+      b. Integrar con otros servicios como Azure OpenAI Service o Prompt Flow para mantener prácticas de IA responsable.
+
+V. Azure AI Agent Service  
+   1. Desarrollo y Configuración de Agentes Autónomos  
+      a. Definir herramientas a través de llamadas API, consultas a bases de datos, búsquedas web o funciones personalizadas.  
+   2. Ejecución y Gestión de la Comunicación  
+      a. Utilizar un runtime de agente para coordinar interacciones entre el modelo AI y herramientas externas.  
+      b. Integrar frameworks de soporte (LangChain y Semantic Kernel) con registros y controles de seguridad.
+
+VI. Servicios Adicionales en Azure AI  
+   1. Azure AI Speech  
+      a. Convertir de voz a texto y de texto a voz.  
+      b. Integrar capacidades de traducción basadas en el modelo Whisper de OpenAI.  
+   2. Visión y Document AI  
+      a. Procesar y analizar imágenes y documentos mediante OCR y análisis avanzado (Form Recognizer/Document Intelligence).  
+      b. Permitir tareas de clasificación, detección de objetos y segmentación.  
+   3. Azure AI Studio (Foundry)  
+      a. Proveer un portal unificado para la exploración de modelos y pruebas de ingeniería de prompt.  
+      b. Configurar la seguridad de contenido y facilitar el encadenamiento de servicios, incluido el Agent Service.
+
+VII. Oportunidades para Desarrollar Sobre los Servicios de Azure AI  
+   1. Integración y Extensión  
+      a. Combinar y ampliar herramientas para construir soluciones especializadas que integren capacidades adicionales.  
+   2. Seguridad y Cumplimiento  
+      a. Aplicar características empresariales para asegurar que las implementaciones cumplan con normativas de seguridad y privacidad.  
+   3. Innovación en Aplicaciones Autónomas  
+      a. Construir agentes interactivos y asistentes digitales que generen contenido y ejecuten acciones reales (por ejemplo, agendar reuniones o gestionar tickets de soporte).  
+   4. Aplicaciones en Búsqueda y Moderación  
+      a. Integrar Azure Cognitive Search con Azure AI Content Safety para recuperar y procesar de manera segura datos que fundamenten respuestas generativas.
+
+Este documento detalla los métodos, procesos y procedimientos explícitamente descritos en el análisis del portafolio de servicios de Azure AI, centralizando las especificaciones de cada componente ofrecido.

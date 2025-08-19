@@ -10,6 +10,7 @@ from openai import OpenAI
 import anthropic
 from slugify import slugify
 from pathlib import Path
+from video_transcriber import transcribe_video, diagnose_system
 
 # Cargar variables de entorno
 load_dotenv()
@@ -36,6 +37,7 @@ def save_as_markdown(data: dict, output_file: str):
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(f"# Descripción para TikTok\n\n")
         f.write(f"**Tema:** {data['topic']}\n\n")
+        f.write(f"**Fuente:** {data.get('source_file', 'texto directo')}\n\n")
         f.write(f"**Texto Original:**\n\n{data['original_text']}\n\n")
         f.write(f"**Generado el:** {data['timestamp']}\n\n")
 
@@ -47,16 +49,72 @@ def save_as_markdown(data: dict, output_file: str):
 
 
 @begin.start
-def generate_descriptions(topic, text, output_file=None, markdown=False):
+def generate_descriptions(
+    topic,
+    text=None,
+    input_file=None,
+    video_file=None,
+    output_file=None,
+    markdown=False,
+    language="es-MX",
+):
     """
     Genera descripciones para redes sociales usando múltiples modelos de IA.
 
     Args:
         topic: El tema central a destacar
-        text: El fragmento de texto a convertir
+        text: El fragmento de texto a convertir (opcional si se proporciona input_file o video_file)
+        input_file: Archivo de texto del cual extraer la transcripción (opcional si se proporciona text o video_file)
+        video_file: Archivo de video MP4 del cual extraer la transcripción (opcional si se proporciona text o input_file)
         output_file: Archivo donde guardar los resultados (opcional)
         markdown: Si es True, guarda en formato Markdown en lugar de YAML
+        language: Código de idioma para la transcripción de video (default: es-MX)
     """
+    # Validar que se proporcione texto, archivo de texto o video, pero no múltiples
+    inputs_provided = sum([bool(text), bool(input_file), bool(video_file)])
+
+    if inputs_provided == 0:
+        print("❌ Error: Debes proporcionar 'text', 'input_file' o 'video_file'")
+        return
+
+    if inputs_provided > 1:
+        print(
+            "❌ Error: Solo puedes proporcionar una opción: 'text', 'input_file' o 'video_file'"
+        )
+        return
+
+    # Si se proporciona un archivo de texto, leer su contenido
+    if input_file:
+        try:
+            with open(input_file, "r", encoding="utf-8") as f:
+                text = f.read().strip()
+            print(f"📄 Leyendo transcripción desde: {input_file}")
+        except FileNotFoundError:
+            print(f"❌ Error: No se encontró el archivo {input_file}")
+            return
+        except Exception as e:
+            print(f"❌ Error al leer el archivo: {str(e)}")
+            return
+
+    # Si se proporciona un archivo de video, transcribirlo
+    if video_file:
+        try:
+            print(f"🎬 Transcribiendo video: {video_file}")
+            text = transcribe_video(video_file, language_code=language)
+            print(f"✅ Video transcrito exitosamente")
+        except FileNotFoundError:
+            print(f"❌ Error: No se encontró el archivo de video {video_file}")
+            return
+        except Exception as e:
+            print(f"❌ Error al transcribir el video: {str(e)}")
+            print("\n🔍 Ejecutando diagnóstico del sistema...")
+            diagnose_system()
+            return
+
+    if not text:
+        print("❌ Error: El texto está vacío")
+        return
+
     prompt = f"""Convierte el siguiente fragmento en una **descripción educativa para TikTok** (máx. 1000 caracteres).
 Pautas:
 - Usa un tono serio pero relajado, sin emojis.
@@ -119,14 +177,21 @@ Pautas:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     if output_file is None:
         extension = ".md" if markdown else ".yaml"
-        output_file = f"descriptions_{slugify(topic)}_{timestamp}{extension}"
+        output_file = f"{slugify(topic)}_{timestamp}{extension}"
 
     # Asegurar que el archivo se guarde en la carpeta de resultados
     output_path = RESULTS_DIR / output_file
 
+    source_info = "texto directo"
+    if input_file:
+        source_info = input_file
+    elif video_file:
+        source_info = video_file
+
     output_data = {
         "topic": topic,
         "original_text": text,
+        "source_file": source_info,
         "timestamp": timestamp,
         "results": results,
     }

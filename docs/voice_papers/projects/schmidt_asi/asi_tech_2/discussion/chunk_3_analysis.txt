@@ -1,0 +1,21 @@
+Section: Section 3
+Characters: 9841
+==================================================
+• Algoritmo: Se implementa “test time training”, es decir, actualización continua de los modelos en tiempo de ejecución, lo cual se puede hacer con chips de menor potencia.  
+• Open source: El uso de “open weights” permite que cualquier entidad utilice el modelo, lo que puede hacer que países fuera del mundo occidental lo perciban como una opción más económica.  
+• Impacto geopolítico: Se plantea la posibilidad de que la utilización de modelos de código abierto transfiera el liderazgo en open source de Estados Unidos a China.  
+• Regulación de modelos: Se menciona una política basada en la “doctrina de 10^26 FLOPS”, en la cual modelos por debajo de 10^26 FLOPS no requieren regulación, mientras que los que superen ese umbral deben ser regulados.  
+• Propuesta del gobierno estadounidense: Regular tanto modelos de código abierto como cerrados.  
+• Preguntas técnicas y estratégicas:  
+ – Utilización de restricciones en chips y cambios arquitectónicos por parte de China para construir modelos de potencia similar a los de EE. UU.  
+ – Consideración sobre la financiación de centros de datos con un capital estimado de $50 mil millones, lo que implica que el modelo de negocio basado en productos cerrados es necesario para justificar el gasto en capital.  
+• Caso Deepseek:  
+ – Gemini 2.5 Pro logró posicionarse en la cima de los leaderboards de inteligencia, y poco después Deepseek mostró un rendimiento ligeramente superior.  
+ – Deepseek fue entrenado utilizando hardware existente en China, incluyendo chips Ascend de Huawei y otros.  
+ – Se utiliza una técnica llamada “distillation”, en la cual se toma un modelo grande, se le hacen 10,000 preguntas y se emplean sus respuestas como material de entrenamiento.  
+• Seguridad y filtración de información:  
+ – Se monitorean y testean significativamente categorías como información nuclear, biológica, química y cibernética en los procesos de entrenamiento para evitar fugas de información clasificada.  
+ – La filtración de información nuclear durante el entrenamiento está prohibida por ley.  
+• Propuesta de seguimiento: Se recomienda que se instale un sistema (por ejemplo, mediante un añadido criptográfico en los chips) para informar la localización y actividad de los chips y centros de entrenamiento, facilitando el conocimiento de “dónde están los chips”.  
+• Concepto de “mal funcionamiento mutuo en IA”:  
+ – Se plantea un escenario en el que un país (por ejemplo, EE. UU.) y otro (China) alcanzan niveles de cómputo donde, al sobrepasar ciertos límites, se activan respuestas en forma de ciberataques, creando un balance de poder similar a la doctrina de “destrucción mutuamente asegurada”.

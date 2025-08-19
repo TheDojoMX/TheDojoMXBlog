@@ -1,0 +1,12 @@
+{
+  "project": "a1",
+  "paper_title": "# Azure’s Generative AI and Foundation Model Services",
+  "document_chunks": 3,
+  "chunk_sections": [
+    "Section 1",
+    "Section 2",
+    "Section 3"
+  ],
+  "synthesis_length": 6655,
+  "workflow": "summary"
+}

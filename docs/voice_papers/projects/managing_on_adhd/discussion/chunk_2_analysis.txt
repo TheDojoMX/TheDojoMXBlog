@@ -1,0 +1,97 @@
+Section: Section 2
+Characters: 9929
+==================================================
+Below is the complete content of Section 2 from “Notes on Managing ADHD” along with a comprehensive analysis that preserves its depth and nuance:
+
+─────────────────────────────────────────────── 
+[Complete Content of Section 2]
+
+ake up I have the highest possible voltage, and throughout the course of the day the voltage declines. And that s the key difference from spoon theory: spoons are fungible across time, voltage is not. For each category of activity, there is a span of the day when I can action it.
+When I wake up, I do my morning routine, get some quick wins, and then I try to tackle the thing I dread the most, as early in the morning as possible, because that s the time of day when I have the most energy and self-control. I get that done and I move on.
+(Another reason to do the dreaded tasks first: if you put it off to, say, late morning, well, why not put it off again? And again and again. And then it s 7pm and you can t even think about the task, and it s late, and I don t have energy, so I couldn t even do it if I wanted to, so let s do it tomorrow.)
+And then, when I have removed that burden, I work on projects. The creative, generative, intellectual things. The things that move some kind of needle, and aren t just pointless chores.
+And when I run out of energy to create, I read.
+And when I run out of energy to read, I clean and go to the gym and do the other things.
+And when the sun goes down everything starts to unravel: I have zero energy and the lazy dopamine-seeking behaviour comes out. So I take melatonin, and try to be in bed before the instant gratification monkey seizes power.
+Typology of procrastination, approaches.
+In my ontology there are three types of procrastination:
+ADHD Procrastination: you want to do the task, but can t because of distraction/hyperactivity.
+you want to do the task, but can t because of distraction/hyperactivity. Anxious Procrastination: you know you have to do the task, but you don t want to, because it triggers difficult emotions.
+you know you have to do the task, but you don t want to, because it triggers difficult emotions. Decision Paralysis Procrastination: you don t know how to execute the task, because it involves a decision and you have difficulty making the decision.
+ADHD Procrastination
+This is the easiest kind to address. The solution is pharmacological treatment for ADHD + having a productivity system and some tricks.
+Anxious Procrastination
+This one is harder. The good thing is you know, cognitively, what you have to do. The hard part is getting over the aversion.
+In the short term, the way to fix this is to do it scared. Accept the anxiety. Asking for help also works, sometimes you just need someone in the room with you when you hit send on the email. You can also use techniques like CBT to rationally challenge the source of the anxiety and maybe overcome it.
+In the long term: write down the things you procrastinate one due to anxiety, and find the common through-line, or the common ancestor. By identifying the emotional root cause, you can work on fixing it.
+Decision Paralysis Procrastination
+And this is the hardest, because you don t know, cognitively, what the right choice is, and also you probably have a lot of anxiety/aversion around it. Many things in life are susceptible to this: you have set of choices, there s good arguments for/against each one, and you have a lot of uncertainty as to the outcomes. And so you ruminate on it endlessly.
+I don t have a good general solution for this.
+Talking to people helps: friends, therapists, Claude. This works because thinking by yourself has diminishing returns: you will quickly exhaust all the thoughts you will have about the problem, and start going in circles. Often people will bring up options/considerations I would never have thought of. Sometimes, if you re lucky, that s all it takes: someone mentions an option you had not considered and you realize, oh, it was all so simple.
+One thing to consider is that thinking in your head is inherently circular, because you have a limited working memory, and you will inevitably start going in circles. Writing things down helps here. Treat the decision, or the emotions behind it, like an object of study, or an engineering problem. Sit down and write an essay about it. Name the arguments, number the bullet points, refer back to things. Make the thoughts into real, physical, manipulable entities.
+Journaling is good for detecting maladaptive patterns and tracking your progress.
+I keep a hierarchical journal in Obsidian. Hierarchical because I have entries for the days, weeks, months, and years. The directory tree looks like this:
+Journal/ Daily/ YYYY/ MM/ YYYY-MM-DD. md Weekly/ YYYY/ YYYY-WW. md Monthly/ YYYY/ YYYY-MM. md Yearly/ YYYY. md
+In the morning I finish yesterday s journal entry, and begin today s. Every Sunday I write the review of the week, the first of each month I write the review of the previous month, the first of each year I review the past year. The time allotted to each review is in inverse proportion to its frequency: so a monthly review might take an hour while a yearly review might take up a whole morning.
+The daily reviews are pretty freeform. Weekly and above there s more structure. For example, for the weekly reviews I will write a list of the salient things that happened in the week. Then I list on what went well and what went poorly. And then I reflect on how I will change my behaviour to make the next week go better.
+Journaling is a valuable habit. I started doing it for vague reasons: I wasn t sure what I wanted to get out of it, and it took a long time (and long stretches of not doing it) until it became a regular, daily habit. I ve been doing it consistently now for three years, and I can identify the benefits.
+The main benefit is that to change bad patterns, you have to notice them. And it is very easy to travel in a fix orbit, day in, day out, and not notice it. Laying it out in writing helps to notice the maladaptive coping mechanisms. Reading back over the journal entries helps you notice: when an event of type X happens, I react with Y.
+Today s journal entry is a good default place for writing ad-hoc notes or thoughts. Often I wanted to write something, but didn t know where I would file it (how do you even file these little scraps of thought?) and from not knowing where to put it, I would not do it. Nowadays I just begin writing in the journal. Later, if it is valuable to file it away, I do so.
+Creating a journal entry in the morning is a good opportunity to go over the goals and priorities for the day and explicitly restate them to myself.
+The final benefit is retrospection: I can look at the past and see how my life has changed. And this is often a positive experience, because the things that worried me didn t come to pass, the things I used to struggle with are now easy, or at least easier. There s a paradox with productivity: when you grind executive function enough, things that you used to struggle with become quotidian. And so what was once the ceiling becomes the new floor. You no longer feel proud that you did X, Y, Z because that s just the new normal. It s like the hedonic treadmill. You might feel that you never get to productive. Journaling helps to combat this because you can see how far you ve come.
+Time
+Manage time at the macro level with calendars, at the micro level with timers.
+To manage time, you need a calendar (macro) and a timer (micro).
+Macro
+At the macro level, I use the calendar very lightly. Mostly for social things (to ensure I don t forget an event, and that I don t double-book things). I also use it to schedule the gym: if the goal is to lift, say, five times a week, I schedule five time blocks to lift. Lifting is special because it has a lot of temporal constraints:
+I lift exactly n times per week. I lift at most once a day. I lift in the evening, which potentially clashes with social things. There are adjacency constraints, e. g. doing shoulders the day before chest is bad. There is at least one rest day which has to be scheduled strategically (e. g. to have maximal distance between successive deadlift sessions).
+But outside these two categories, my calendar is empty.
+The calendar might be useful to you as a self-binding device. If you keep dragging some project along because you haven t made time for it: consider making a time block in the calendar, and sticking to it. Creating a calendar event is, literally, making time: it s like calling malloc_time().
+Some people use the calendar as their entire todo list. I think this kind of works if your todo list is very coarse grained: buy groceries and go to the dentist. But I have a very fine-grained todo list, and putting my tasks in the calendar would make it overwhelming.
+Another problem with calendars is they are too time-bound: if I make a calendar block to do something, and I don t do it, the calendar doesn t know it. It just sits there, forgotten, in the past. In a todo list, everything gets dragged along until I explicitly complete it. Along the same lines, the calendar is not good for collecting vague ideas and plans for things you want to do in the future, while todo lists are ideal for this.
+Micro
+The problem with todo lists is that they re timeless: there is no sense of urgency. You look at the list and think, I could do the next task now, or in five minutes, or in an hour. There s always some time left in the day. Or tomorrow. You need a way to manufacture urgency.
+If you have ADHD you ve probably heard of the Pomodoro method, tried it, and bounced off it. The way it s framed is very neurotypical: it s scaffolding around doing, but ADHD people often have problems with the doing itself. And so the scaffolding is kind of pointless.
+The method works well in three kinds of contexts:
+Overcoming Aversion: when you have a large number of microtasks, each of which takes a few seconds to a few minutes, but the number of them, and the uncertainty factor, makes the sum seem a lot larger. A classic example for me is having to reply to like ten different people. Realistically, each person can be handled in 15s.
+
+─────────────────────────────────────────────── 
+
+[Comprehensive Analysis and Insights]
+
+1. Mental Energy as Voltage versus Spoon Theory:
+   The author introduces a novel metaphor in which mental energy is compared to voltage that diminishes throughout the day—a departure from the traditional spoon theory, where “spoons” are fungible. This distinction is critical because it captures how certain tasks demand a threshold level of energy (“voltage”) to begin, thereby justifying the practice of scheduling high-demand tasks (like tackling dreaded tasks) early in the day when energy is at its peak.
+
+2. Task Scheduling and Daily Routine:
+   The section outlines a clear, structured daily workflow: a morning routine for quick wins, followed by immediately addressing the most dreaded task to prevent procrastination. Once challenging tasks are completed, the remaining time is allocated in descending order—from creative projects to reading, then to chores and gym sessions. This progression reflects a deliberate strategy to maximize productivity when energy is high and to shift to lower-energy activities as the day wears on.
+
+3. Typology of Procrastination:
+   A key insight is the classification of procrastination into three distinct types:
+   • ADHD Procrastination – rooted in distraction and hyperactivity. The prescribed remedy involves pharmacological treatment along with a robust productivity system.
+   • Anxious Procrastination – where tasks are avoided due to the emotional discomfort they trigger. Short-term solutions include “doing it scared” and seeking immediate support, while long-term remedies involve identifying and addressing underlying emotional causes.
+   • Decision Paralysis Procrastination – characterized by hesitancy in choosing a course of action due to overwhelming options and uncertainty. The recommendation here is to externalize thoughts through writing and discussion to break free of circular thinking.
+   This classification not only aids in self-diagnosis but also underscores that each type demands a tailored strategic response.
+
+4. Journaling as a Systematic Tool:
+   The author details the use of a hierarchical journaling system (implemented in Obsidian) for daily, weekly, monthly, and yearly reflections. This practice serves three purposes:
+   • Detecting and rectifying maladaptive patterns.
+   • Establishing clear, written priorities for each day.
+   • Offering retrospective insights to appreciate progress over time.
+   The journal thus acts as both a cognitive archive and a tool for continuous self-improvement.
+
+5. Time Management Strategies – Macro and Micro:
+   Time is managed at two levels:
+   • Macro-level management uses a calendar for scheduling non-negotiable time blocks (e.g., social events and gym sessions) but remains purposely sparse to avoid overload.
+   • Micro-level management addresses the timeless nature of todo lists. The text critiques standard tools like the Pomodoro method for ADHD users, emphasizing instead the need for strategies that create a sense of urgency and break tasks into manageable microtasks, especially when overcoming aversion.
+
+6. Broader Implications and Significance:
+   The content not only provides actionable strategies but also highlights the nuanced interplay between biological factors and cognitive behaviors in ADHD management. By framing medication as a key enabler that allows the successful use of external productivity tools (like calendars, todo lists, and journals), the author presents a holistic approach wherein internal (biological/psychological) and external (structural/systematic) interventions must work in tandem.
+   The voltage analogy reinforces why the timing of tasks is vital, and the detailed categorization of procrastination offers personalized strategies for different challenges. Each technical detail—from the specifics of scheduling the gym to the hierarchical structure of the journal—serves as evidence that systematic change is possible when one aligns practical tools with an understanding of one’s cognitive and emotional landscape.
+
+7. Controversies and Limitations:
+   While the strategies overarch as highly personal and effective, the author acknowledges that certain issues, particularly decision paralysis procrastination, remain resistant to a “one-size-fits-all” solution. This open admission invites further debate and exploration into individualized ADHD management techniques, emphasizing the complexity of human behavior and executive function challenges.
+
+─────────────────────────────────────────────── 
+In summary, Section 2 of “Notes on Managing ADHD” rigorously dissects the daily energy cycle, offers a detailed taxonomy of procrastination, and prescribes a multi-layered self-management system that integrates pharmacological treatment, structured routines, and reflective practices. The thorough discussion of technical details like time-blocking, journaling hierarchies, and the voltage metaphor provides both a practical guide and a reflective framework for understanding and managing ADHD. This interconnected system of strategies is aimed not merely at overcoming ADHD symptoms but at cultivating long-term personal growth and consistent productivity.
+
+The complete text above, paired with the detailed insights, embodies the section’s full narrative—illustrating why these approaches work and how they fit together to form a robust, integrative model for managing ADHD.

@@ -1,0 +1,11 @@
+/Users/hectorip/Development/thedojomx/TheDojoMXBlog/publish_tools/target/debug/deps/console-e8ae54ba0da8f906.d: /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/lib.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/common_term.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/kb.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/term.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/unix_term.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/utils.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/ansi.rs
+
+/Users/hectorip/Development/thedojomx/TheDojoMXBlog/publish_tools/target/debug/deps/libconsole-e8ae54ba0da8f906.rmeta: /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/lib.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/common_term.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/kb.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/term.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/unix_term.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/utils.rs /Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/ansi.rs
+
+/Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/lib.rs:
+/Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/common_term.rs:
+/Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/kb.rs:
+/Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/term.rs:
+/Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/unix_term.rs:
+/Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/utils.rs:
+/Users/hectorip/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.7/src/ansi.rs:

@@ -1,0 +1,12 @@
+{
+  "project": "concat_test_unique",
+  "document_title": "Scale in AI Test",
+  "content_type": "general_text",
+  "document_chunks": 1,
+  "chunk_contexts": [
+    "main_content"
+  ],
+  "synthesis_length": 1209,
+  "improved_synthesis": true,
+  "synthesis_method": "concatenation"
+}

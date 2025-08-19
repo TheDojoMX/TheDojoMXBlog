@@ -1,0 +1,40 @@
+[project]
+name = "voice-papers"
+version = "0.1.0"
+description = "Generate podcast-style discussions from academic papers using AI agents and voice synthesis"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "crewai>=0.63.0",
+    "openai>=1.12.0",
+    "elevenlabs>=1.0.0",
+    "cartesia>=1.0.0",
+    "click>=8.1.0",
+    "python-dotenv>=1.0.0",
+    "pypdf>=4.0.0",
+    "pdfplumber>=0.11.0",
+    "pymupdf>=1.24.0",
+    "pydantic>=2.5.0",
+    "requests>=2.31.0",
+    "pathlib>=1.0.0",
+    "opencv-python>=4.5.0",
+    "pillow>=9.0.0",
+    "librosa>=0.9.0",
+    "numpy>=1.21.0",
+    "beautifulsoup4>=4.12.0",
+    "lxml>=4.9.0",
+    "newspaper3k>=0.2.8",
+    "lxml-html-clean>=0.4.2",
+    "pydub>=0.25.1",
+    "html2text>=2020.1.16",
+]
+
+[tool.setuptools.packages.find]
+include = ["voice_papers*"]
+
+[project.scripts]
+voice-papers = "voice_papers.cli:main"
+create-video = "create_video:main"
+
+[tool.uv]
+package = true

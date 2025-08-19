@@ -904,4 +904,10 @@ var store = [{
         "tags": ["agente","IA","inteligencia-artificial","agents"],
         "url": "/2025/05/16/que-son-los-agentes-inteligentes.html",
         "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_440/v1739597131/ryan-klaus-Xa0BLOXVxrQ-unsplash_necdjp.jpg"
+      },{
+        "title": "Zig: un lenguaje que quiere reemplazar al poderoso C",
+        "excerpt":"Recientemente hemos visto una ola de lenguajes listos para destronar a los lenguajes de programación que forman la base de casi toda nuestra computación actual: C y C++. Lenguajes como Rust y Go quieren reemplazarlos, pero tenemos a otro competidor que apunta directamente hacia C y parece que se está...","categories": [],
+        "tags": ["zig","zig-lang","c","c-lang"],
+        "url": "/2025/08/19/zig-un-lenguaje-que-quiere-reemplazar-al-poderoso-c.html",
+        "teaser": "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_400/v1747718313/mariola-grobelska-EJBwRJZMOCQ-unsplash_rugsm8.jpg"
       }]

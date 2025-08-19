@@ -1,0 +1,51 @@
+Section: Section 2
+Characters: 9933
+==================================================
+• Completion behavior: A language model may complete a given prompt by generating a continuation that can include questions rather than a direct answer. 
+• PostTraining (page 78): A process discussed to make a model respond appropriately to a user’s request. 
+• Machine learning algorithms: Besides language modeling, there are models for object detection, topic modeling, recommender systems, weather forecasting, stock price prediction, etc. 
+• Self-supervision: 
+ – Language models are trained using self-supervision. 
+ – In self-supervised training, the model infers labels from the input data rather than using manually labeled data. 
+ – Example: In language modeling, each input text sequence provides both tokens to predict and the context for predicting them. 
+• Supervised learning contrast: 
+ – In supervised learning, examples are manually labeled (e.g., transactions labeled as fraud or not) and used for training. 
+ – AlexNet was a supervised model trained to classify over 1 million images from ImageNet into 1,000 categories. 
+• Data labeling costs and examples: 
+ – Amazon SageMaker Ground Truth (as of September 2024) charges 8 cents per image for labeling fewer than 50,000 images and 2 cents per image for labeling more than 1 million images. 
+ – Example cost: At 5 cents per image, labeling 1 million images costs $50,000; requiring two people per image would double the cost. 
+ – Scaling to 1 million categories could escalate labeling costs to an estimated $50 million. 
+• Training sample for language modeling (Table-1 from the sentence “I love street food.”): 
+ – The sentence yields six training samples. 
+ – Sequence details:
+  1. Input: BOS  Output: BOS, I 
+  2. Input: BOS, I  Output: love 
+  3. Input: BOS, I, love  Output: street 
+  4. Input: BOS, I, love, street  Output: food 
+  5. Input: BOS, I, love, street, food  Output: BOS, I, love, street, food, . 
+  6. Input: BOS, I, love, street, food, .  Output: EOS 
+ – BOS and EOS are special tokens marking the beginning and end of a sequence. 
+• Model parameters: 
+ – The term “model weights” is used to refer to all parameters. 
+ – A parameter is a variable within an ML model that is updated during training. 
+• Model scale examples: 
+ – OpenAI’s generative pre-trained transformer (GPT) from June 2018 had 117 million parameters. 
+ – OpenAI’s GPT-2, introduced in February 2019, had 1.5 billion parameters. 
+ – Currently, a model with billions of parameters is considered large. 
+• Data requirements: 
+ – Larger models have greater capacity and therefore require more training data to maximize performance. 
+• Multimodal and foundation models: 
+ – Language models are being extended to incorporate additional data modalities besides text. 
+ – Examples include GPT-4V and Claude 3, which process both images and texts; some models also process videos, 3D assets, protein structures, etc. 
+ – A model that processes more than one data modality is referred to as a multimodal model or a large multimodal model (LMM). 
+ – Figure-3 (referenced) illustrates that a multimodal model generates the next token conditioned on information from both text and visual tokens. 
+• CLIP model: 
+ – Uses natural language supervision, a variant of self-supervision, to train a language-image model. 
+ – Created using 400 million (image, text) pairs collected from the internet, which is 400 times larger than ImageNet without incurring manual labeling costs. 
+ – CLIP is an embedding model designed to generate joint embeddings for texts and images rather than generating open-ended outputs. 
+• Distinctions in learning approaches: 
+ – Self-supervised learning: Labels are inferred from the input data. 
+ – Unsupervised learning: No labels are used at all. 
+• Additional technical notes: 
+ – The scalability of language models is enabled by the abundance of text sequences available in digital sources such as books, blog posts, articles, and online comments. 
+ – This availability allows for massive training datasets that underpin the development of large language models (LLMs) and foundation models.

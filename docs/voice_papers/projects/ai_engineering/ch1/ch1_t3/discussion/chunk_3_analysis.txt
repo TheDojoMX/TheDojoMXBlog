@@ -1,0 +1,22 @@
+Section: Section 3
+Characters: 9890
+==================================================
+• CLIP is an embedding model trained to produce joint embeddings of both texts and images.
+• Embeddings are defined as vectors intended to capture the meanings of the original data.
+• Multimodal embedding models like CLIP serve as backbones for generative multimodal models such as Flamingo, LLaVA, and Gemini (previously Bard).
+• Foundation models represent a shift from task-specific models (e.g., models for sentiment analysis or translation) to general-purpose models capable of handling a wide range of tasks.
+• General-purpose models can perform multiple tasks out of the box (e.g., an LLM can perform both sentiment analysis and translation) but can be further adapted to specific tasks for improved performance.
+• Figure-4 (referenced) illustrates the range of tasks in the Super-NaturalInstructions benchmark used to evaluate foundation models.
+• Three AI engineering techniques for adapting foundation models are listed:
+ 1. Prompt engineering: Crafting detailed instructions with examples of the desired outputs.
+ 2. Retrieval-augmented generation (RAG): Connecting the model to a database of customer reviews to enhance its output.
+ 3. Fine-tuning: Further training the model on a dataset of high-quality product descriptions.
+• Adapting an existing foundation model to a task may require as few as ten examples and one weekend of work compared to building a model from scratch, which might require one million examples and six months.
+• AI engineering is defined as building applications on top of foundation models, contrasting with traditional ML engineering where models are built from scratch.
+• Three factors enabling the rapid growth of AI engineering are detailed:
+ Factor 1 – General-purpose AI capabilities: Foundation models can perform a wider range of tasks (e.g., writing emails, customer responses, code generation) due to their ability to generate high-quality outputs.
+ Factor 2 – Increased AI investments: Notable points include a two orders of magnitude reduction in estimated AI costs from April 2022 to April 2023 and projections of AI investment reaching approximately $100 billion in the US and $200 billion globally by 2025. Additionally, companies mentioning AI in earnings calls saw an average stock price increase of 4.6% compared to 2.4% for companies that did not.
+ Factor 3 – Low entrance barrier: Models are provided as a service via APIs, allowing application development with minimal coding and without needing the infrastructure to host large models.
+• Open source AI engineering tools mentioned include AutoGPT, Stable Diffusion web UI, LangChain, and Ollama; these tools have rapidly gained GitHub stars, surpassing counts for Bitcoin, React, and Vue.
+• A LinkedIn survey from August 2023 indicates that the number of professionals adding terms such as Generative AI, ChatGPT, Prompt Engineering, and Prompt Crafting to their profiles increased by an average of 75% each month.
+• The section also explains that AI engineering is chosen over the term ML engineering because working with foundation models involves different aspects from traditional machine learning models.

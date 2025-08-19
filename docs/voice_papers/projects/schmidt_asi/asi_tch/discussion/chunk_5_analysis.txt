@@ -1,0 +1,15 @@
+Section: Section 5
+Characters: 9919
+==================================================
+• Sistemas de inteligencia artificial pueden seleccionar funciones de recompensa que incluyen, por ejemplo, “acceso a armas” y “mentir para obtenerlo”, considerados trip wires cuyo mal funcionamiento podría desencadenar eventos críticos (analogía con un mini evento de Chernobyl).  
+• El proceso de entrenamiento de grandes modelos requiere aproximadamente 10^26 a 10^28 flops; sin embargo, el “cerebro” final del modelo puede ser trasladado para correr en una configuración de 4 a 8 GPUs, en una caja de tamaño reducido.  
+• Se utiliza la técnica denominada “stealing the weights”, en la que se exportan los pesos del modelo entrenado en centros de datos para luego, mediante procesos como la destilación o cuantización, lograr mejoras en la velocidad de inferencia (se menciona, por ejemplo, una aceleración de 100 veces).  
+• En lugar de limitarse a 10 modelos centrales o centros de datos, se prevé que existan múltiples sistemas en cascada: 10 modelos principales que se expandirán en subconjuntos de menor tamaño, alcanzando cantidades del orden de 100, 1,000, 1 millón o incluso 1 billón a niveles de complejidad distintos.  
+• En investigaciones actuales (por ejemplo en MIT y potencialmente en Stanford) se explora el equilibrio óptimo entre el estrechamiento de los datos de entrenamiento y la reducción del conjunto de parámetros para lograr especialización sin perder capacidad general de aprendizaje.  
+• Se identifican tres leyes de escalamiento:  
+  – Ley del crecimiento de los modelos fundacionales.  
+  – Ley de entrenamiento en tiempo de prueba (“test time training”).  
+  – Ley de entrenamiento mediante refuerzo.  
+• Las actualizaciones continuas (“test time training”) se realizan durante la inferencia en chips de menor potencia, permitiendo que los sistemas se adapten en tiempo real.  
+• En el ámbito de la robótica, se detalla que la automatización comenzará eliminando los trabajos de mayor riesgo, aumentando el salario de aquellos que operen o supervisen brazos robóticos, y que la transición de demostraciones (ejemplo: DRA Grand Challenge en 2004) a una aplicación diaria puede tomar más de 20 años; además, se anticipa que la regulación restringirá la interacción directa de robots humanoides con personas.  
+• El uso de asistentes computacionales inteligentes permitirá que trabajadores con niveles de conocimiento “normales” puedan alcanzar empleos de mayor pago, contribuyendo a que la expansión de la economía genere más empleos en conjunto.

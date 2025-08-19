@@ -1,0 +1,27 @@
+{
+  "project": "ai_research",
+  "paper_title": "AI Research",
+  "language": "Spanish",
+  "technical_level": "accessible",
+  "duration_minutes": 10,
+  "tone": "casual",
+  "workflow": "summary",
+  "agents": [
+    {
+      "role": "Expert Document Synthesizer",
+      "goal": "Extract and synthesize the most important insights from the research paper"
+    },
+    {
+      "role": "Master Educational Science Communicator",
+      "goal": "Transform technical content into captivating, natural educational narratives that feel like passionate teaching, not AI generation"
+    }
+  ],
+  "tasks": [
+    {
+      "description": "\n            Read and deeply analyze this research paper: \"AI Research\"\n            \n            Create a comprehensive synthesis that captures:\n            1. The core thesis and revolutionary ideas\n..."
+    },
+    {
+      "description": "\nTransform all the insights from the conversation into a 10-minute educational podcast script in Spanish.\n\nYOUR MISSION: Create a script that sounds like a passionate teacher having a one-on-one conve..."
+    }
+  ]
+}
