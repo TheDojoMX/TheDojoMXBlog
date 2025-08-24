@@ -199,9 +199,7 @@ class ElevenLabsSynthesizer(VoiceSynthesizer):
                                 model_id=model_id,
                                 voice_settings=voice_settings,
                                 output_format="mp3_44100_128",  # High quality output
-                                previous_request_ids=request_ids[-3:]
-                                if request_ids
-                                else None,  # Max 3 IDs
+                                previous_request_ids=request_ids[-3:] if model != "flash" else None,  # Max 3 IDs
                             ) as response:
                                 # Extract request-id from headers for stitching
                                 request_id = response._response.headers.get(

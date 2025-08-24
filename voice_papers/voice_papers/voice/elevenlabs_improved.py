@@ -318,7 +318,7 @@ class ElevenLabsImprovedSynthesizer:
                     model_id=model_id,
                     voice_settings=voice_settings,
                     output_format="mp3_44100_128",
-                    previous_request_ids=previous_request_ids,
+                    previous_request_ids=previous_request_ids if model_id != "eleven_v3" else None,
                 ) as response:
                     # Extract various useful headers from API response
                     headers = response._response.headers
