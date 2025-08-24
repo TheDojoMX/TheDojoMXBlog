@@ -107,11 +107,11 @@ class Constraints:
     }
     
     ENGLISH_CONSTRAINTS = {
-        "avoid_redundancy": [
-            "very unique" → "unique",
-            "completely exhausted" → "exhausted",
-            "absolutely essential" → "essential"
-        ]
+        "avoid_redundancy": {
+            "very unique": "unique",
+            "completely exhausted": "exhausted",
+            "absolutely essential": "essential"
+        }
     }
     
     # ============== FORMATTING RULES ==============

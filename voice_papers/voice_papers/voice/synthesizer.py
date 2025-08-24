@@ -71,7 +71,8 @@ class ElevenLabsSynthesizer(VoiceSynthesizer):
 
     # Default voice settings for optimal quality and stability
     DEFAULT_VOICE_SETTINGS = {
-        "stability": 0.65,  # Higher stability for more consistent output
+        "ttd_stability": 0.5,
+        "stability": 0.5,  # Higher stability for more consistent output
         "similarity_boost": 0.8,  # Strong similarity to original voice
         "style": 0.0,  # Minimal style exaggeration to avoid instability
         "use_speaker_boost": True,  # Boost similarity to original speaker
@@ -106,6 +107,7 @@ class ElevenLabsSynthesizer(VoiceSynthesizer):
                 model=model,
                 voice_name=voice_name,
                 stability=stability,
+                # ttd_stability=0.,
                 similarity_boost=similarity_boost,
                 style=style,
                 use_speaker_boost=use_speaker_boost,

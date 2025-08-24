@@ -43,7 +43,7 @@ class ElevenLabsImprovedSynthesizer:
         "eleven_turbo_v2": 18000,  # ~5-6 minutes of audio
         "eleven_multilingual_v2": 9500,  # Keep original (already ~3 minutes)
         "eleven_multilingual_v1": 9500,  # Keep original
-        "eleven_v3": 9500,  # Keep original
+        "eleven_v3": 2500,  # Keep original
         "eleven_monolingual_v1": 9500,  # Keep original
         "default": 9500,
     }
@@ -58,7 +58,7 @@ class ElevenLabsImprovedSynthesizer:
 
     # Default voice settings
     DEFAULT_VOICE_SETTINGS = {
-        "stability": 0.65,
+        "stability": 0.5,
         "similarity_boost": 0.8,
         "style": 0.0,
         "use_speaker_boost": True,
@@ -173,6 +173,7 @@ class ElevenLabsImprovedSynthesizer:
                 "use_speaker_boost": use_speaker_boost
                 if use_speaker_boost is not None
                 else self.DEFAULT_VOICE_SETTINGS["use_speaker_boost"],
+                "ttd_stability": 0.5,
             }
 
             # Split text into chunks
@@ -309,7 +310,7 @@ class ElevenLabsImprovedSynthesizer:
                     model_id, self.PRICING_PER_1K_CHARS["default"]
                 )
                 credits = char_count  # Initial estimate, API will return actual
-
+                print(f"Voice settings: {voice_settings}")
                 # Make API call
                 with self.client.text_to_speech.with_raw_response.convert(
                     voice_id=voice_id,
