@@ -17,6 +17,14 @@ from .conversational_enhancer import (
     get_conversational_enhancer_agent,
     create_conversational_enhancement_task,
 )
+from .exhaustive_extractor import (
+    create_exhaustive_extractor_agent,
+    MultiPassAnalyzer,
+    create_comprehensive_extraction_task,
+    CoverageVerifier,
+)
+from .dynamic_agent_generator import DynamicAgentGenerator
+from .prompts.comprehensive_prompts import ComprehensivePrompts
 
 # Import centralized prompts
 from .prompts import (
@@ -43,6 +51,7 @@ class CrewManager:
         focus: str = "explanatory",
         synthesis_method: str = "concatenation",
         generate_knowledge_graph: bool = True,
+        depth: str = "comprehensive",  # New parameter for extraction depth
     ):
         self.language = language
         self.project_name = project_name
@@ -53,6 +62,7 @@ class CrewManager:
         self.focus = focus
         self.synthesis_method = synthesis_method
         self.generate_knowledge_graph = generate_knowledge_graph
+        self.depth = depth  # Store extraction depth
 
         # If pdf_path is provided, create project in same directory as PDF
         if pdf_path:
@@ -1892,3 +1902,271 @@ class CrewManager:
 
         click.echo("✅ Conversational enhancement completed")
         return str(result).strip()
+
+    def run_comprehensive_extraction_workflow(
+        self, content: str, title: str, verify_coverage: bool = True
+    ) -> str:
+        """Run comprehensive multi-pass extraction workflow for complete content preservation.
+        
+        Args:
+            content: The content to extract from
+            title: The title of the content
+            verify_coverage: Whether to verify coverage and enhance if needed
+            
+        Returns:
+            Comprehensive extraction of all content
+        """
+        print(f"🔬 Starting comprehensive extraction with depth: {self.depth}")
+        
+        # Initialize analyzers
+        multi_pass = MultiPassAnalyzer(self.llm)
+        verifier = CoverageVerifier(self.llm) if verify_coverage else None
+        agent_generator = DynamicAgentGenerator(self.llm)
+        
+        # Step 1: Run multi-pass analysis
+        print("📊 Running multi-pass content analysis...")
+        analysis_results = multi_pass.run_multi_pass_analysis(content, title)
+        
+        # Save analysis results
+        analysis_path = self.synthesis_dir / "multi_pass_analysis.json"
+        with open(analysis_path, "w", encoding="utf-8") as f:
+            json.dump(analysis_results['content_analysis'], f, indent=2, ensure_ascii=False)
+        
+        # Step 2: Generate dynamic agents based on content
+        print("🤖 Generating specialized agents based on content...")
+        dynamic_agents = agent_generator.generate_agents_for_content(
+            content, title, analysis_results['content_analysis']
+        )
+        
+        # Step 3: Create exhaustive extractor
+        exhaustive_extractor = create_exhaustive_extractor_agent(self.llm)
+        
+        # Step 4: Run comprehensive extraction
+        print(f"📝 Running {self.depth} extraction...")
+        extraction_task = create_comprehensive_extraction_task(
+            content=content,
+            title=title,
+            extractor_agent=exhaustive_extractor,
+            multi_pass_results=analysis_results,
+            language=self.language
+        )
+        
+        # Create crew with all specialized agents
+        all_agents = dynamic_agents + [exhaustive_extractor]
+        extraction_crew = Crew(
+            agents=all_agents,
+            tasks=[extraction_task],
+            verbose=True
+        )
+        
+        # Run extraction
+        extraction_result = extraction_crew.kickoff()
+        extracted_content = str(extraction_result)
+        
+        # Step 5: Verify coverage if requested
+        if verify_coverage:
+            print("✅ Verifying extraction coverage...")
+            coverage_check = verifier.verify_coverage(content, extracted_content)
+            
+            # Save coverage report
+            coverage_path = self.synthesis_dir / "coverage_verification.json"
+            with open(coverage_path, "w", encoding="utf-8") as f:
+                json.dump(coverage_check, f, indent=2, ensure_ascii=False)
+            
+            print(f"📊 Coverage: {coverage_check['coverage_checks']['coverage_percentage']:.1f}%")
+            
+            # If coverage is insufficient, enhance
+            if not coverage_check['is_comprehensive']:
+                print("🔧 Enhancing extraction to improve coverage...")
+                completion_task = verifier.create_completion_task(
+                    coverage_check['missing_elements'],
+                    extracted_content,
+                    exhaustive_extractor
+                )
+                
+                completion_crew = Crew(
+                    agents=[exhaustive_extractor],
+                    tasks=[completion_task],
+                    verbose=True
+                )
+                
+                enhanced_result = completion_crew.kickoff()
+                extracted_content = str(enhanced_result)
+                
+                # Re-verify
+                final_check = verifier.verify_coverage(content, extracted_content)
+                print(f"📊 Final coverage: {final_check['coverage_checks']['coverage_percentage']:.1f}%")
+        
+        # Save comprehensive extraction
+        extraction_path = self.synthesis_dir / f"comprehensive_extraction_{self.depth}.txt"
+        with open(extraction_path, "w", encoding="utf-8") as f:
+            f.write(extracted_content)
+        
+        print(f"💾 Saved comprehensive extraction to: {extraction_path}")
+        
+        return extracted_content
+    
+    def run_exhaustive_workflow(self, paper_content: str, paper_title: str) -> str:
+        """Run exhaustive extraction workflow followed by educational transformation.
+        
+        This is the most comprehensive workflow that ensures nothing is lost.
+        """
+        print("🚀 Starting EXHAUSTIVE extraction workflow...")
+        
+        # Step 1: Run comprehensive extraction with exhaustive depth
+        original_depth = self.depth
+        self.depth = "exhaustive"  # Force exhaustive depth
+        
+        extracted_content = self.run_comprehensive_extraction_workflow(
+            paper_content, paper_title, verify_coverage=True
+        )
+        
+        self.depth = original_depth  # Restore original depth
+        
+        # Step 2: Transform to educational format with completeness focus
+        print("📚 Transforming to educational format with completeness focus...")
+        
+        # Get comprehensive prompts
+        comp_prompts = ComprehensivePrompts()
+        educational_prompt = comp_prompts.get_educational_completeness_prompt(
+            self.language, self.duration_minutes, self.depth
+        )
+        
+        # Create educational writer with completeness focus
+        from .improved_educational_writer import get_improved_educational_writer
+        educational_writer = get_improved_educational_writer(self.llm)
+        
+        # Override the agent's goal for completeness
+        educational_writer.goal = "Transform content into COMPLETE educational script ensuring ALL information is preserved"
+        
+        # Create transformation task
+        transform_task = Task(
+            description=f"""
+            {educational_prompt}
+            
+            Title: {paper_title}
+            
+            Content to transform (PRESERVE EVERYTHING):
+            {extracted_content}
+            """,
+            agent=educational_writer,
+            expected_output=f"Complete educational script in {self.language} with ALL content preserved"
+        )
+        
+        # Run transformation
+        transform_crew = Crew(
+            agents=[educational_writer],
+            tasks=[transform_task],
+            verbose=True
+        )
+        
+        result = transform_crew.kickoff()
+        final_script = str(result)
+        
+        # Save the exhaustive educational script
+        script_path = self.project_dir / f"exhaustive_educational_script_{self.depth}.txt"
+        with open(script_path, "w", encoding="utf-8") as f:
+            f.write(final_script)
+        
+        print(f"✅ Exhaustive workflow complete! Script saved to: {script_path}")
+        
+        return final_script
+    
+    def run_technical_preservation_workflow(
+        self, paper_content: str, paper_title: str
+    ) -> str:
+        """Run technical preservation workflow that maintains all technical details.
+        
+        This workflow is optimized for technical audiences who need complete accuracy.
+        """
+        print("🔬 Starting technical preservation workflow...")
+        
+        # Step 1: Extract with technical focus
+        comp_prompts = ComprehensivePrompts()
+        technical_prompt = comp_prompts.get_technical_preservation_prompt("technical")
+        
+        # Create technical extractor
+        technical_extractor = Agent(
+            role="Technical Content Preservation Specialist",
+            goal="Preserve ALL technical content with complete accuracy",
+            backstory=technical_prompt,
+            llm=self.llm,
+            verbose=True
+        )
+        
+        # Create extraction task
+        extraction_task = Task(
+            description=f"""
+            Extract and preserve ALL technical content from this document.
+            
+            Title: {paper_title}
+            
+            CRITICAL: Preserve every formula, equation, algorithm, data point, and technical specification.
+            
+            Content:
+            {paper_content}
+            
+            Remember: NO simplification, NO summarization. Keep EVERYTHING technical.
+            """,
+            agent=technical_extractor,
+            expected_output="Complete technical content with all details preserved"
+        )
+        
+        # Run extraction
+        extraction_crew = Crew(
+            agents=[technical_extractor],
+            tasks=[extraction_task],
+            verbose=True
+        )
+        
+        technical_result = extraction_crew.kickoff()
+        technical_content = str(technical_result)
+        
+        # Step 2: Create technical documentation
+        from .technical_writer import get_technical_writer_agent
+        tech_writer = get_technical_writer_agent(self.llm)
+        
+        # Override for preservation focus
+        tech_writer.goal = "Create comprehensive technical documentation preserving all details"
+        
+        doc_task = Task(
+            description=f"""
+            Create comprehensive technical documentation from this extracted content.
+            
+            Requirements:
+            1. Keep ALL technical details
+            2. Maintain precise terminology
+            3. Preserve all formulas and equations
+            4. Include all code and algorithms
+            5. Document all methodologies
+            6. Keep all data and results
+            
+            Title: {paper_title}
+            
+            Technical Content:
+            {technical_content}
+            
+            Language: {self.language}
+            """,
+            agent=tech_writer,
+            expected_output=f"Comprehensive technical documentation in {self.language}"
+        )
+        
+        # Run documentation
+        doc_crew = Crew(
+            agents=[tech_writer],
+            tasks=[doc_task],
+            verbose=True
+        )
+        
+        final_result = doc_crew.kickoff()
+        final_documentation = str(final_result)
+        
+        # Save technical documentation
+        doc_path = self.project_dir / "technical_preservation_documentation.txt"
+        with open(doc_path, "w", encoding="utf-8") as f:
+            f.write(final_documentation)
+        
+        print(f"✅ Technical preservation complete! Documentation saved to: {doc_path}")
+        
+        return final_documentation

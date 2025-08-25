@@ -200,6 +200,28 @@ from .utils.file_backup import backup_existing_file, get_filename_with_focus
     ),
     help="Analysis focus mode: explanatory (default), innovation, practical, historical, tutorial, critical, story, technical (zero interpretation), or all",
 )
+@click.option(
+    "--depth",
+    default="comprehensive",
+    type=click.Choice(["summary", "standard", "comprehensive", "exhaustive"]),
+    help="Content extraction depth: summary (main points), standard (important content), comprehensive (all meaningful), exhaustive (everything)",
+)
+@click.option(
+    "--preserve-all",
+    is_flag=True,
+    help="Use exhaustive extraction workflow to preserve ALL content (overrides --depth)",
+)
+@click.option(
+    "--verify-coverage",
+    is_flag=True,
+    default=True,
+    help="Verify extraction coverage and enhance if needed (enabled by default)",
+)
+@click.option(
+    "--technical-preservation",
+    is_flag=True,
+    help="Use technical preservation mode for complete accuracy (best for technical papers)",
+)
 def main(
     input_source: str,
     language: str,
@@ -233,6 +255,10 @@ def main(
     synthesis_method: str,
     no_knowledge_graph: bool,
     focus: str,
+    depth: str,
+    preserve_all: bool,
+    verify_coverage: bool,
+    technical_preservation: bool,
 ):
     """Generate an educational audio lecture from a document (PDF, MD, TXT) or web article.
 
@@ -248,7 +274,15 @@ def main(
     - Default: Document → Concatenation Synthesis + Knowledge Graph → Multi-agent discussion → Educational transformation
     - --summary: Document → Concatenation Synthesis + Knowledge Graph → Educational Writer (faster, skips multi-agent discussion)
     - --direct: Text → Educational Writer only (fastest, for pre-processed content)
+    - --preserve-all: Exhaustive extraction → Complete educational transformation (nothing lost)
+    - --technical-preservation: Technical extraction → Documentation (for technical audiences)
     - --skip-synthesis: Use legacy behavior without synthesis step
+    
+    Extraction Depth Levels:
+    - summary: Extract main points only (10-20% of content)
+    - standard: Important information with detail (40-60% of content)
+    - comprehensive: All meaningful content (70-90% of content)
+    - exhaustive: Everything with explanations (100-120% of content)
     
     Synthesis Methods (NEW DEFAULT: concatenation + knowledge graph):
     - concatenation (default): Direct content extraction + knowledge graph generation
@@ -531,6 +565,7 @@ def main(
             focus=focus,
             synthesis_method=synthesis_method,
             generate_knowledge_graph=not no_knowledge_graph,
+            depth=depth,
         )
 
         # Run direct workflow
@@ -711,6 +746,7 @@ def main(
     click.echo(f"Conversation mode: {conversation_mode}")
     click.echo(f"Conversation tone: {tone}")
     click.echo(f"Focus mode: {focus}")
+    click.echo(f"Extraction depth: {depth}")
 
     # Show voice quality settings
     if voice_provider == "elevenlabs":
@@ -950,6 +986,7 @@ def main(
                     focus=current_focus,
                     synthesis_method=synthesis_method,
                     generate_knowledge_graph=not no_knowledge_graph,
+                    depth=depth,
                 )
 
                 # Run the appropriate workflow for this focus
@@ -1064,6 +1101,7 @@ def main(
             focus=focus,
             synthesis_method=synthesis_method,
             generate_knowledge_graph=not no_knowledge_graph,
+            depth=depth,
         )
 
         # Check if reusing existing discussion
@@ -1208,8 +1246,25 @@ def main(
             else:
                 click.echo("⚠️  No existing discussion found. Running full workflow...")
 
+        # Check if using special extraction modes
+        if preserve_all:
+            # Use exhaustive extraction workflow
+            click.echo("🚀 Using EXHAUSTIVE extraction mode - preserving ALL content...")
+            click.echo("⚠️  This will take longer but ensures nothing is lost")
+            final_script = crew_manager.run_exhaustive_workflow(paper_content, paper_title)
+            
+            # Apply light editing if requested
+            if light_edit:
+                click.echo(f"✏️  Applying light {language} editing for readability...")
+                final_script = crew_manager.run_light_edit_flow(final_script, paper_title)
+                click.echo("✅ Light editing completed")
+        elif technical_preservation:
+            # Use technical preservation workflow
+            click.echo("🔬 Using technical preservation mode - maintaining complete accuracy...")
+            click.echo("📊 This mode is optimized for technical audiences")
+            final_script = crew_manager.run_technical_preservation_workflow(paper_content, paper_title)
         # Check if using summary mode
-        if summary:
+        elif summary:
             click.echo(
                 "📄 Using enhanced summary workflow (synthesis + direct to educational writer)..."
             )

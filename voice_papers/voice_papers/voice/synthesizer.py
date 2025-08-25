@@ -187,8 +187,7 @@ class ElevenLabsSynthesizer(VoiceSynthesizer):
 
                 for i, chunk in enumerate(chunks):
                     print(f"Synthesizing chunk {i+1}/{len(chunks)}...")
-
-                    # Add retry logic for timeouts
+                    # Add retry logic for timeous
                     max_retries = 3
                     for attempt in range(max_retries):
                         try:
@@ -212,7 +211,6 @@ class ElevenLabsSynthesizer(VoiceSynthesizer):
                                     )
                                 else:
                                     print(f"⚠️  No request-id received for chunk {i+1}")
-
                                 # Get audio data from response and create iterable wrapper
                                 audio_data = response.data
                                 audio_chunks.append(audio_data)
