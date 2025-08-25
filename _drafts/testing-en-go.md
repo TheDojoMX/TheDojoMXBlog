@@ -18,4 +18,15 @@ tener que pelearte con instalaciones o configuraciones complejas.
 
 Hablemos de los diferentes tips de testing y cómo puedes hacerlos en Go.
 
-##  
+## Testing básico
+
+El tipo de pruebas más básico que podemos hacer son las pruebas unitarias.
+
+Las pruebas unitarias son pruebas que se hacen sobre una unidad de código.
+
+Por ejemplo, si tenemos una función que suma dos números, podemos hacer una
+prueba unitaria para verificar que la función suma dos números correctamente.
+
+```go
+
+```
