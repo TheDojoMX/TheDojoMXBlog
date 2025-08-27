@@ -1,0 +1,50 @@
+[
+  {
+    "titulo": "Libros fundamentales para desarrolladores",
+    "inicio_estimado": 0,
+    "duracion_estimada": 45,
+    "razon": "Presenta la importancia de ciertos libros en la formación de un desarrollador, lo que puede inspirar a otros a leerlos.",
+    "hook": "¿Qué libro técnico consideras fundamental en tu formación como desarrollador?",
+    "tipo": "pregunta"
+  },
+  {
+    "titulo": "Dijkstra y Wirth: Enfoques similares",
+    "inicio_estimado": 30,
+    "duracion_estimada": 45,
+    "razon": "Compara dos figuras importantes en la programación, lo que puede interesar a quienes buscan entender diferentes enfoques.",
+    "hook": "Curiosamente, ambos autores abordan la programación de la misma forma.",
+    "tipo": "historia"
+  },
+  {
+    "titulo": "La importancia de la abstracción en programación",
+    "inicio_estimado": 70,
+    "duracion_estimada": 45,
+    "razon": "Explica un concepto clave en programación que es relevante para todos los desarrolladores.",
+    "hook": "No querían explicarlo con un lenguaje de programación específico.",
+    "tipo": "educativo"
+  },
+  {
+    "titulo": "El desafío de enseñar algoritmia",
+    "inicio_estimado": 110,
+    "duracion_estimada": 45,
+    "razon": "Destaca la dificultad de enseñar algoritmos sin un lenguaje de programación, lo que puede ser un reto para educadores.",
+    "hook": "Ambos intentan enseñarte algoritmia sin ligarse a un lenguaje específico.",
+    "tipo": "consejo"
+  },
+  {
+    "titulo": "El uso de Pascal en la enseñanza",
+    "inicio_estimado": 150,
+    "duracion_estimada": 45,
+    "razon": "Muestra cómo incluso los expertos pueden verse obligados a usar lenguajes específicos, lo que es una reflexión interesante.",
+    "hook": "Nicklaus Wirth, al final, termina utilizando Pascal.",
+    "tipo": "historia"
+  },
+  {
+    "titulo": "Creación de un lenguaje propio",
+    "inicio_estimado": 190,
+    "duracion_estimada": 45,
+    "razon": "Ilustra la innovación en programación y el deseo de personalizar el aprendizaje, lo que puede inspirar a futuros desarrolladores.",
+    "hook": "Dijkstra se crea su propio lenguaje de programación.",
+    "tipo": "historia"
+  }
+]

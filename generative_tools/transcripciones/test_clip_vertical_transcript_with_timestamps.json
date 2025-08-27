@@ -1,0 +1,384 @@
+{
+  "text": "La tercera pregunta es, ¿qué libro técnico considerarías fundamental en tu formación como desarrollador? ¿Hay algún libro que digas que este me puso bases fuertes? Curiosamente estuve leyendo hace poco dos libros, uno de Dijkstra y otro de Nicklaus Wirth. Los dos entraban en temas siempre de la misma forma. Tengo la traducción al español de Nicklaus Wirth. Algoritmo y estructuras de datos.",
+  "language": "spanish",
+  "duration": 45.08000183105469,
+  "words": [
+    {
+      "word": "La",
+      "start": 0.0,
+      "end": 0.10000000149011612
+    },
+    {
+      "word": "tercera",
+      "start": 0.10000000149011612,
+      "end": 0.36000001430511475
+    },
+    {
+      "word": "pregunta",
+      "start": 0.36000001430511475,
+      "end": 0.8399999737739563
+    },
+    {
+      "word": "es",
+      "start": 0.8399999737739563,
+      "end": 1.5199999809265137
+    },
+    {
+      "word": "¿qué",
+      "start": 1.659999966621399,
+      "end": 1.7200000286102295
+    },
+    {
+      "word": "libro",
+      "start": 1.7200000286102295,
+      "end": 1.899999976158142
+    },
+    {
+      "word": "técnico",
+      "start": 1.899999976158142,
+      "end": 2.319999933242798
+    },
+    {
+      "word": "considerarías",
+      "start": 2.319999933242798,
+      "end": 2.9200000762939453
+    },
+    {
+      "word": "fundamental",
+      "start": 2.9200000762939453,
+      "end": 3.4200000762939453
+    },
+    {
+      "word": "en",
+      "start": 3.4200000762939453,
+      "end": 3.559999942779541
+    },
+    {
+      "word": "tu",
+      "start": 3.559999942779541,
+      "end": 3.680000066757202
+    },
+    {
+      "word": "formación",
+      "start": 3.680000066757202,
+      "end": 3.940000057220459
+    },
+    {
+      "word": "como",
+      "start": 3.940000057220459,
+      "end": 4.260000228881836
+    },
+    {
+      "word": "desarrollador",
+      "start": 4.260000228881836,
+      "end": 4.900000095367432
+    },
+    {
+      "word": "¿Hay",
+      "start": 5.579999923706055,
+      "end": 5.71999979019165
+    },
+    {
+      "word": "algún",
+      "start": 5.71999979019165,
+      "end": 5.980000019073486
+    },
+    {
+      "word": "libro",
+      "start": 5.980000019073486,
+      "end": 6.099999904632568
+    },
+    {
+      "word": "que",
+      "start": 6.099999904632568,
+      "end": 6.300000190734863
+    },
+    {
+      "word": "digas",
+      "start": 6.300000190734863,
+      "end": 6.619999885559082
+    },
+    {
+      "word": "que",
+      "start": 6.619999885559082,
+      "end": 6.880000114440918
+    },
+    {
+      "word": "este",
+      "start": 6.880000114440918,
+      "end": 8.640000343322754
+    },
+    {
+      "word": "me",
+      "start": 8.640000343322754,
+      "end": 9.9399995803833
+    },
+    {
+      "word": "puso",
+      "start": 9.9399995803833,
+      "end": 9.960000038146973
+    },
+    {
+      "word": "bases",
+      "start": 9.960000038146973,
+      "end": 10.5600004196167
+    },
+    {
+      "word": "fuertes",
+      "start": 10.5600004196167,
+      "end": 11.260000228881836
+    },
+    {
+      "word": "Curiosamente",
+      "start": 13.960000038146973,
+      "end": 14.640000343322754
+    },
+    {
+      "word": "estuve",
+      "start": 14.640000343322754,
+      "end": 15.020000457763672
+    },
+    {
+      "word": "leyendo",
+      "start": 15.020000457763672,
+      "end": 15.380000114440918
+    },
+    {
+      "word": "hace",
+      "start": 15.380000114440918,
+      "end": 15.859999656677246
+    },
+    {
+      "word": "poco",
+      "start": 15.859999656677246,
+      "end": 16.020000457763672
+    },
+    {
+      "word": "dos",
+      "start": 16.020000457763672,
+      "end": 16.6200008392334
+    },
+    {
+      "word": "libros",
+      "start": 16.6200008392334,
+      "end": 17.260000228881836
+    },
+    {
+      "word": "uno",
+      "start": 18.860000610351562,
+      "end": 19.200000762939453
+    },
+    {
+      "word": "de",
+      "start": 19.200000762939453,
+      "end": 19.520000457763672
+    },
+    {
+      "word": "Dijkstra",
+      "start": 19.520000457763672,
+      "end": 19.8799991607666
+    },
+    {
+      "word": "y",
+      "start": 19.8799991607666,
+      "end": 20.18000030517578
+    },
+    {
+      "word": "otro",
+      "start": 20.18000030517578,
+      "end": 20.3799991607666
+    },
+    {
+      "word": "de",
+      "start": 20.3799991607666,
+      "end": 20.719999313354492
+    },
+    {
+      "word": "Nicklaus",
+      "start": 20.719999313354492,
+      "end": 21.059999465942383
+    },
+    {
+      "word": "Wirth",
+      "start": 21.059999465942383,
+      "end": 21.3799991607666
+    },
+    {
+      "word": "Los",
+      "start": 23.3799991607666,
+      "end": 24.3799991607666
+    },
+    {
+      "word": "dos",
+      "start": 24.3799991607666,
+      "end": 24.700000762939453
+    },
+    {
+      "word": "entraban",
+      "start": 24.700000762939453,
+      "end": 25.239999771118164
+    },
+    {
+      "word": "en",
+      "start": 25.239999771118164,
+      "end": 25.739999771118164
+    },
+    {
+      "word": "temas",
+      "start": 25.739999771118164,
+      "end": 26.420000076293945
+    },
+    {
+      "word": "siempre",
+      "start": 26.420000076293945,
+      "end": 26.979999542236328
+    },
+    {
+      "word": "de",
+      "start": 26.979999542236328,
+      "end": 27.5
+    },
+    {
+      "word": "la",
+      "start": 27.5,
+      "end": 27.860000610351562
+    },
+    {
+      "word": "misma",
+      "start": 27.860000610351562,
+      "end": 27.940000534057617
+    },
+    {
+      "word": "forma",
+      "start": 27.940000534057617,
+      "end": 28.440000534057617
+    },
+    {
+      "word": "Tengo",
+      "start": 32.0,
+      "end": 33.0
+    },
+    {
+      "word": "la",
+      "start": 33.0,
+      "end": 34.0
+    },
+    {
+      "word": "traducción",
+      "start": 34.0,
+      "end": 34.5
+    },
+    {
+      "word": "al",
+      "start": 34.5,
+      "end": 34.959999084472656
+    },
+    {
+      "word": "español",
+      "start": 34.959999084472656,
+      "end": 35.20000076293945
+    },
+    {
+      "word": "de",
+      "start": 35.20000076293945,
+      "end": 35.959999084472656
+    },
+    {
+      "word": "Nicklaus",
+      "start": 35.959999084472656,
+      "end": 36.34000015258789
+    },
+    {
+      "word": "Wirth",
+      "start": 36.34000015258789,
+      "end": 36.84000015258789
+    },
+    {
+      "word": "Algoritmo",
+      "start": 39.47999954223633,
+      "end": 39.599998474121094
+    },
+    {
+      "word": "y",
+      "start": 39.599998474121094,
+      "end": 39.959999084472656
+    },
+    {
+      "word": "estructuras",
+      "start": 39.959999084472656,
+      "end": 39.959999084472656
+    },
+    {
+      "word": "de",
+      "start": 39.959999084472656,
+      "end": 40.2599983215332
+    },
+    {
+      "word": "datos",
+      "start": 40.2599983215332,
+      "end": 40.47999954223633
+    }
+  ],
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.0,
+      "end": 4.900000095367432,
+      "text": " La tercera pregunta es, ¿qué libro técnico considerarías fundamental en tu formación como desarrollador?",
+      "avg_logprob": -0.3558919131755829,
+      "compression_ratio": 1.3232322931289673,
+      "no_speech_prob": 0.21771009266376495,
+      "temperature": 0.0
+    },
+    {
+      "id": 1,
+      "start": 5.579999923706055,
+      "end": 11.260000228881836,
+      "text": " ¿Hay algún libro que digas que este me puso bases fuertes?",
+      "avg_logprob": -0.3558919131755829,
+      "compression_ratio": 1.3232322931289673,
+      "no_speech_prob": 0.21771009266376495,
+      "temperature": 0.0
+    },
+    {
+      "id": 2,
+      "start": 13.960000038146973,
+      "end": 21.3799991607666,
+      "text": " Curiosamente estuve leyendo hace poco dos libros, uno de Dijkstra y otro de Nicklaus Wirth.",
+      "avg_logprob": -0.3558919131755829,
+      "compression_ratio": 1.3232322931289673,
+      "no_speech_prob": 0.21771009266376495,
+      "temperature": 0.0
+    },
+    {
+      "id": 3,
+      "start": 23.3799991607666,
+      "end": 28.440000534057617,
+      "text": " Los dos entraban en temas siempre de la misma forma.",
+      "avg_logprob": -0.3371293544769287,
+      "compression_ratio": 1.1404958963394165,
+      "no_speech_prob": 0.3693790137767792,
+      "temperature": 0.0
+    },
+    {
+      "id": 4,
+      "start": 32.0,
+      "end": 36.380001068115234,
+      "text": " Tengo la traducción al español de Nicklaus Wirth.",
+      "avg_logprob": -0.3371293544769287,
+      "compression_ratio": 1.1404958963394165,
+      "no_speech_prob": 0.3693790137767792,
+      "temperature": 0.0
+    },
+    {
+      "id": 5,
+      "start": 39.47999954223633,
+      "end": 40.47999954223633,
+      "text": " Algoritmo y estructuras de datos.",
+      "avg_logprob": -0.3371293544769287,
+      "compression_ratio": 1.1404958963394165,
+      "no_speech_prob": 0.3693790137767792,
+      "temperature": 0.0
+    }
+  ]
+}
