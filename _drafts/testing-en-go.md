@@ -29,4 +29,21 @@ prueba unitaria para verificar que la función suma dos números correctamente.
 
 ```go
 
+func Sum(a, b int) int {
+  return a + b
+}
 ```
+
+La podemos probar con un test unitario de la siguiente manera:
+
+```go
+
+func TestSum(t *testing.T) {
+  result := Sum(1, 2)
+  if result != 3 {
+    t.Errorf("Sum(1, 2) = %d; want 3", result)
+  }
+}
+```
+
+
