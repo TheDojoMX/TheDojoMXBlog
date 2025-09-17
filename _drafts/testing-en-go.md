@@ -46,4 +46,5 @@ func TestSum(t *testing.T) {
 }
 ```
 
-
+Esta prueba es muy simple, pero nos permite ver la sintaxis de las pruebas
+unitarias en Go.

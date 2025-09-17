@@ -600,11 +600,21 @@ def transcribe_video(
         else:
             transcript = transcribe_audio_with_google_cloud(audio_path, language_code)
 
-        # Guardar transcripción si se especifica archivo de salida
-        if output_file:
-            with open(output_file, "w", encoding="utf-8") as f:
-                f.write(transcript)
-            print(f"📝 Transcripción guardada en: {output_file}")
+        # Si no se especifica archivo de salida, crear uno automáticamente
+        if not output_file:
+            # Crear directorio transcripciones si no existe
+            transcriptions_dir = Path("transcripciones")
+            transcriptions_dir.mkdir(exist_ok=True)
+
+            # Generar nombre de archivo basado en el video
+            video_name = Path(video_path).stem
+            output_file = transcriptions_dir / f"{video_name}_transcript.txt"
+            print(f"📁 Guardando transcripción automáticamente en: {output_file}")
+
+        # Guardar transcripción
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write(transcript)
+        print(f"📝 Transcripción guardada en: {output_file}")
 
         return transcript
 
