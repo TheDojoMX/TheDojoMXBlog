@@ -11,8 +11,10 @@ header:
   overlay_filter: rgba(0, 0, 0, 0.5)
 ---
 
+En este artículo hablaremos de las series de tiempo, uno de los tipos de datos
+más comunes en la informática moderna.
 
-La series de tiempo tienen características especiales. Normalmente, los puntos de datos
+La series de tiempo tienen características especiales, en estas los puntos de datos
 consisten un par de valores: un identificador (el momento en el que sucedió) y un valor
 (el valor que se observó).
 
