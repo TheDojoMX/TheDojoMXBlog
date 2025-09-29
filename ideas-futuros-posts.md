@@ -117,19 +117,141 @@ Complementa tu artículo sobre "Cómo aprender Rust" con contenido práctico.
     - Interpretando resultados
     - ROI del mutation testing
 
+## 🏗️ Construcción de Sistemas Fundamentales
+
+### Bases de Datos desde Cero
+
+44. **Construyendo tu propia base de datos: Storage Engine**
+    - B-Trees vs LSM-Trees implementación
+    - Write-Ahead Logging (WAL)
+    - ACID properties desde cero
+    - Benchmarks contra SQLite
+
+45. **Query Engine: Del SQL al resultado**
+    - Parser y AST para SQL
+    - Query planner y optimizer
+    - Execution engine
+    - Índices y su implementación
+
+46. **Base de datos distribuida: Consenso y replicación**
+    - Implementando Raft
+    - Sharding y particionamiento
+    - Consistency models
+    - Clock sincronización (Hybrid Logical Clocks)
+
+### Compiladores e Intérpretes
+
+47. **Tu primer compilador: De código fuente a assembly**
+    - Lexer y Parser con ejemplos
+    - AST y semantic analysis
+    - Generación de código intermedio
+    - Optimizaciones básicas
+    - Backend para x86/ARM
+
+48. **Construyendo un intérprete estilo JavaScript**
+    - Tokenización y parsing
+    - AST walker vs bytecode VM
+    - Gestión de memoria y GC básico
+    - Closures y scope chain
+    - Event loop implementation
+
+49. **JIT Compiler: Optimización en tiempo real**
+    - Profiling y hot code detection
+    - Inline caching
+    - Type specialization
+    - Deoptimización strategies
+
+### JavaScript Engines
+
+50. **Reimplementando V8: Los conceptos core**
+    - Hidden classes y transitions
+    - Inline caching explicado
+    - Garbage collection (Scavenger y Mark-Compact)
+    - TurboFan pipeline
+
+51. **JavaScript Engine mínimo pero funcional**
+    - Parser de ES6 básico
+    - Prototype chain implementation
+    - Async/await desde cero
+    - WeakMaps y WeakSets internals
+
+### Sistemas Operativos y Kernels
+
+52. **Mini OS: Boot to Shell**
+    - Bootloader básico
+    - Modo protegido y paginación
+    - Scheduler simple
+    - System calls
+    - Shell interactivo
+
+53. **Filesystem desde cero**
+    - Diseño de inodos
+    - Journaling basics
+    - Directory structure
+    - Performance optimizations
+
+### Runtimes y Virtual Machines
+
+54. **Construyendo una VM estilo JVM**
+    - Bytecode design
+    - Stack vs register-based
+    - Class loading
+    - Method dispatch
+    - Basic JIT
+
+55. **WebAssembly Runtime básico**
+    - Wat parser
+    - Linear memory model
+    - Host functions
+    - WASI implementation basics
+
+### Networking y Protocolos
+
+56. **TCP/IP Stack desde cero**
+    - Ethernet frames
+    - IP routing básico
+    - TCP state machine
+    - Congestion control
+
+57. **HTTP Server high-performance**
+    - Event loop vs thread pool
+    - Zero-copy techniques
+    - HTTP/2 y multiplexing
+    - TLS implementation basics
+
+### Graphics y Game Engines
+
+58. **Software Renderer: Sin GPU**
+    - Rasterización de triángulos
+    - Z-buffering
+    - Texture mapping
+    - Shading básico
+
+59. **Mini Game Engine 2D**
+    - Entity Component System
+    - Physics engine básico
+    - Collision detection spatial
+    - Audio mixing
+
+60. **Ray Tracer en un weekend (extendido)**
+    - Path tracing
+    - BVH acceleration
+    - Materials avanzados
+    - Parallel rendering
+
 ## 🎯 Arquitectura y Diseño Avanzado
 
-20. **Event Sourcing en la práctica**
+61. **Event Sourcing en la práctica**
     - Implementación desde cero
     - CQRS y proyecciones
     - Migración desde CRUD
 
-21. **Arquitectura Hexagonal con ejemplos reales**
+62. **Arquitectura Hexagonal con ejemplos reales**
     - Ports and Adapters
     - Testing de arquitectura
     - Refactoring hacia hexagonal
 
-22. **Domain-Driven Design táctico**
+63. **Domain-Driven Design táctico**
     - Aggregates y Value Objects
     - Repositories y Domain Events
     - Código ejemplo en múltiples lenguajes
