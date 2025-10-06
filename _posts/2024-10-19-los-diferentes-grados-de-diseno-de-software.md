@@ -102,7 +102,7 @@ También toma en cuenta la estructura de la organización y su composición para
 en que el software se va a desarrollar.
 
 ¿Qué tanto debe saber sobre _construcción de software_ un arquitecto de software? Un arquitecto de
-software, según la tradición medieval, es _el constructor principal_. Por lo tanto, debe tener 
+software, según la tradición medieval, es _el constructor principal_. Por lo tanto, debe tener
 una muy amplia experiencia técnica, conocer cómo funcionan la mayoría de los componentes principales
 comunes del software, pero también debe tener experiencia tratando con las necesidades del negocio.
 
@@ -169,7 +169,7 @@ como referencia, pero después tienes que profundizar:
 Este libro te prepara para las entrevistas de trabajo, tocando todos los temas fundamentales de diseño de
 sistemas.
 
-- [System Design Interview – An Insider’s Guide](https://www.oreilly.com/library/view/acing-the-system/9781633439108/). Otro 
+- [System Design Interview – An Insider’s Guide](https://www.oreilly.com/library/view/acing-the-system/9781633439108/). Otro
 libro que te prepara para la entrevista de diseño, pero es un poco más informal que
 el anterior. Tiene una segunda parte que puedes encotrar aquí: [System Design Interview - An Insider's Guide: Volume 2](https://amzn.to/3Ysb0ux).
 
@@ -216,7 +216,7 @@ Un programador, usa el diseño para lograr que cada pieza de software cumpla con
 #### Recursos para aprender diseño de código
 
 En este nivel vamos a encontrar muchos recursos, pero muchos de ellos se contradicen entre sí, por lo que
-creo que es fundamental escoger una escuela de pensamiento y seguirla, pero también echarle un vistazo 
+creo que es fundamental escoger una escuela de pensamiento y seguirla, pero también echarle un vistazo
 a las otras y contrastar los puntos de vista, para que generes tu propio estilo.
 
 A continuación recomiendo mis libros favoritos en este nivel:
