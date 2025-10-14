@@ -16,55 +16,84 @@ tags:
   - performance
   - HPC
 series: "HPC con GPU"
-series_index: 1
 ---
 
-Este es el primer artículo de una serie en la que hablaremos de computación de alto
-rendimiento (High Perfomance Computing - HPC) usando GPUs, específicamente
-para cargas de trabajo de machine learning y data science, algo de lo que más aplicación
-tiene hoy.
+Este es el primer artículo de una serie en la que hablaremos de **computación de alto
+rendimiento** (High Perfomance Computing - HPC) usando GPUs, específicamente
+para cargas de trabajo relacionadas con machine learning y data science, algo de
+lo que más aplicación tiene hoy.
 
 Antes de entrar en materia hablemos de manera más general sobre qué es HPC y por qué
 vamos a enfocarnos en la vertiente que usa los GPUs.
 
-## ¿Qué es HPC?
+## ¿Qué es High Perfomance Computing?
 
-El término HPC es un campo amplio que abarca técnicas, hardware y software para hacer
-que las computadoras resuelvan problemas complejos de manera eficiente.
+El término **HPC** es un campo amplio que abarca técnicas, hardware y software para hacer
+que las computadoras resuelvan problemas complejos de manera eficiente, y casi siempre
+tiene que ver con ejecutar grandes cantidades de cálculos. Esto se puede
+lograr de muchas formas. Algunas de las más comunes son:
 
-## Por qué GPU (y cuándo no)
+- **Paralelismo y concurrencia**: Dividir el trabajo en partes que se puedan ejecutar al
+mismo tiempo en muchísimos núcleos o máquinas. Cuando nos referimos a HPC y paralelismo en
+múltiples cores estamos hablando de cientos o miles de núcleos. Además, se requieren
+entornos de ejecución especiales como MPI (Message Passing Interface) para coordinar
+el trabajo entre nodos. Otra forma de paralelismo es usar GPUs, que tienen miles de núcleos
+simples diseñados para ejecutar la misma operación en muchos datos a la vez (SIMT - Single
+Instruction Multiple Threads).
 
-### ¿Qué hace especial a una GPU?
+- **Optimización de algoritmos**: Este es un campo de estudio enorme que siempre está
+buscando la forma de lograr resultados con menos cálculos o usando mejor el hardaware que
+soporta esos cálculos.
 
-- **Miles de núcleos simples** vs decenas de núcleos complejos en CPU
+Pero empecemos desde las mismísimas bases para no obviar nada.
+
+### ¿Qué es un GPU?
+
+Un **GPU** (Graphics Processing Unit) es un procesador especializado, originalmente
+diseñado para acelerar el renderizado de elementos gráficos en videojuegos y programas
+de diseño (CAD y para diseño industrial). Ahora estamos completamente acostumbrados a su
+existencia, pero cuando nacieron las computadoras personales, no era común que las tuvieran.
+
+### ¿Qué hace diferente a una GPU?
+
+- **Miles de núcleos simples** contra decenas de núcleos complejos en CPU. Un núcleo simple puede
+ejecutar operaciones matemáticas básicas muy rápido.
 - Diseñada para **paralelismo masivo**: misma operación en muchos datos (SIMT: Single Instruction, Multiple Threads)
 - **Memoria de alto ancho de banda**: hasta 10× más throughput que RAM de CPU
 - **Especialización**: hardware dedicado para operaciones comunes (matmul, convoluciones)
 
-#### Reglas de oro rápidas
-- Ley de Amdahl: la aceleración está limitada por la parte no paralelizable; perfila antes de invertir.
-- Intensidad aritmética: si haces muchas operaciones por byte movido, la GPU suele ganar; si mueves más de lo que calculas, optimiza memoria primero.
+### Algunas reglas qu vale la pena recordar - reglas de platino
 
-Nota: SIMD (CPU) vs SIMT (GPU): SIMD usa lanes vectoriales en un core; SIMT ejecuta muchos threads en warps con la misma instrucción.
+Ley de Amdahl: la aceleración está limitada por la parte no paralelizable; perfila antes de invertir.
+Intensidad aritmética: si haces muchas operaciones por byte movido, la GPU suele ganar; si mueves más de lo que calculas, optimiza memoria primero.
+
+SIMD (CPU) vs SIMT (GPU): SIMD usa lanes vectoriales en un core; SIMT ejecuta muchos threads en warps con la misma instrucción.
 
 ### Candidatos ideales para GPU
 
-✅ **Cómputo denso y regular**
+**Cómputo denso y regular**
+
 - Multiplicación de matrices grandes
 - Convoluciones en imágenes
 - Simulaciones físicas con grids uniformes
 
-✅ **Alto paralelismo de datos**
+**Alto paralelismo de datos**
 - Procesar millones de píxeles, puntos, embeddings
 - Operaciones elementwise en tensores grandes
 
-✅ **Poco branching condicional**
+**Poco branching condicional**
 - Flujos de control predecibles
 - Sin if/else complejos que divergen entre threads
 
-### Cuándo la GPU **no** ayuda
 
-❌ **Lógica secuencial compleja**
+Por eso el GPU es la columna vertebral del deep learning: las redes neuronales se pueden
+programar como una serie de operaciones matemátcas densas sin casi nada de lógica
+condicional.
+
+### Cuándo la GPU no ayuda
+
+
+**Lógica secuencial compleja**
 - Algoritmos con dependencias entre pasos
 - Mucho código condicional (if/else por cada dato)
 
@@ -188,7 +217,9 @@ Guarda esta reflexión. Al final de la serie (post 22), revisarás si tu anális
 
 ## Qué estudiar para escribir este artículo
 
+
 ### Fundamentos necesarios
+
 1. **Arquitectura básica GPU vs CPU**
    - Conceptos: núcleos, SIMT, memoria de alto ancho de banda
    - Recursos: NVIDIA CUDA C Programming Guide (Capítulo 1), "Programming Massively Parallel Processors" (Cap. 1-2)
@@ -211,14 +242,4 @@ Guarda esta reflexión. Al final de la serie (post 22), revisarás si tu anális
 - Experiencia básica con PyTorch o NumPy (manejo de arrays/tensores)
 - Entender qué es un cuello de botella de rendimiento
 - Haber perfilado código al menos una vez (con time, cProfile, o similar)
-
-### Tiempo estimado de estudio
-- **Si eres nuevo en GPU**: 4-6 horas (leer conceptos + explorar ejemplos)
-- **Si tienes experiencia con PyTorch**: 2-3 horas (revisar arquitectura GPU + casos de uso)
-- **Si ya usaste CUDA**: 1 hora (refrescar trade-offs y preparar ejemplos didácticos)
-
----
-
-## Siguiente
-
-En el **próximo artículo** (2/22): instalarás drivers NVIDIA, CUDA Toolkit, PyTorch con soporte CUDA y Triton. Verificarás que todo funciona y generarás un reporte de capacidades de tu GPU.
+- Familiaridad con conceptos de paralelismo (threads, procesos)
