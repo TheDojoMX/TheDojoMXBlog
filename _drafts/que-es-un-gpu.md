@@ -122,21 +122,18 @@ Los GPUs priorizan **throughput** (cantidad de trabajo procesado, basado en dato
 El modelo de programación de GPUs se basa en **SIMD/SIMT** (Single Instruction, Multiple Data / Single Instruction, Multiple Threads):
 
 - Un mismo conjunto de instrucciones se ejecuta sobre múltiples datos simultáneamente
-- Todos los threads en un warp ejecutan la misma instrucción al mismo tiempo (sobre diferentees datos)
-- Divergencia de control (diferentes branches) causa serialización y pérdida de performance
+todos los threads en un warp ejecutan la misma instrucción al mismo tiempo (sobre diferentees datos), divergencia de control (diferentes branches) causa serialización y pérdida de performance
 
 ### Ejemplo Práctico
 
 **Problema A**: Multiplicar 1 millón de números por una constante
 - **Paralelismo perfecto**: Cada operación es independiente
-- **GPU gana dramáticamente**: 100x más rápido o más
-
-**Problema B**: Construir un árbol de decisión
+- **GPU gana dramáticamente**: 100x más rápido o más dependiendo del hardware
+**Problema B**: Construir un árbol de decisión se lleva mucho mejor con lógica compleja
 - **Inherentemente secuencial**: Cada decisión depende de la anterior
 - **CPU gana**: Mejor control de flujo y menor overhead
 
-### Complejidad de Programación
-
+### Complejidad de Programación - Desafíos
 
 - **Debugging**: Más difícil que código CPU
 - **Profiling**: Herramientas especializadas necesarias
