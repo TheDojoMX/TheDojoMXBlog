@@ -60,7 +60,8 @@ Ahora hablemos del tema que nos concierne: los GPUs.
 
 ### GPU: La Línea de Ensamblaje
 
-Un GPU tiene **miles de núcleos simples** (miles a decenas de miles en GPUs modernas).Están pensados para **optimizar paralelismo masivo** con operaciones _independientes_. Un GPU procesa **grandes cantidades de datos simultáneamente.**
+Un GPU tiene **miles de núcleos simples** (miles a decenas de miles en GPUs modernas).Están pensados para **optimizar paralelismo masivo** con operaciones _independientes_. Un GPU procesa **grandes cantidades de datos simultáneamente, pero aplicándoles operaciones relativamente sencillas**.
+
 Su control de flujo es simple, es decir, no puede predecir branches complejos ni
 reordenar instrucciones. Digamos que su principal fortaleza es hacer operaciones
 matemáticas básicas (suma, multiplicación, etc.) en muchos datos al mismo tiempo.
@@ -78,59 +79,53 @@ Los GPUs modernos organizan sus recursos computacionales en varias capas. Veamos
 ### Unidades de Procesamiento
 
 El componente pricipal es el conjunto de núcleos individuales que hacen el trabajo
+real, estos pequeños procesadores tienen diferentes nombres dependiendo del
+fabricante:
+  - **NVIDIA**: CUDA Cores
+  - **AMD**: Stream Processors
+  - **Intel**: Execution Units (EUs)
 
-- **CUDA Cores** o **Stream Processors**: Los núcleos individuales que ejecutan operaciones
-- **Streaming Multiprocessors (SMs)**: Agrupan múltiples núcleos y recursos compartidos
-- **Tensor Cores** (GPUs recientes): Hardware especializado para multiplicación de matrices.
+Y así... pero la idea es la misma: muchos núcleos o procesadores encargados
+de hacer operacionas matemáticas básicas.
+
+Estos núcleos están agrupados en unidades mayores que llamamos **streaming Multiprocessors (SMs)** y tienen una memoria rápida compartida entre ellos. A nivel global, tenemos otro nivel de memoria accesible a todos los SMs.
+
+Recientemente y sobre todo pensando en cargas de operaciones matriciales complejas
+(como las que se usan en machine learning) se han añadido unidades especializadas: los **tensor cores**. La industria se está adaptando  a los nuevos usos del
+software.
+
+Pero hablemos un poco de la estructura de memoria.
 
 ### Jerarquía de Memoria
 
-Al igual que los CPUs, los GPUs tienen un conjunto de diferentes tipos de memoria.
+Al igual que los CPUs, los GPUs tienen un conjunto de diferentes tipos (y velocidades) de memoria.
+La memoria más inmediata para cada uno de los cores son los **registros**: memoria ultra-rápida privada de cada thread que usa para las operaciones más inmediatas.
+Ya hablamos de la **memoria compartida** a nivel de bloque de los SMs, que no es tan rápida como los registros pero sigue siendo MUY rápida.
 
-1. **Registros**: Memoria ultra-rápida privada de cada thread
-2. **Memoria compartida**: Memoria rápida compartida entre threads de un bloque
 3. **Memoria global**: Memoria grande pero con mayor latencia, accesible por todos
 4. **Memoria de textura/constantes**: Optimizada para patrones específicos de acceso
+5. **Memoria de host**: La RAM del sistema, accesible a través del bus PCIe (lenta)
 
-### Modelo de Ejecución
+### Modelo de Ejecución de un GPU
 
-- **Thread**: Unidad mínima de ejecución
-- **Warp/Wavefront**: Grupo de 32 threads (NVIDIA) que ejecutan en lockstep
-- **Bloque de threads**: Grupo de threads que pueden cooperar y compartir memoria
-- **Grid**: Colección de bloques que ejecutan el mismo kernel
+Veamos cómo corre un programa en un GPU: primero el programa se divide en **kernels**. Un kernel es una función que se ejecuta aprovecha la estructura de procesamiento del GPU: lanza cientos o miles de threads en paralelo. Cada thread ejecuta la misma función pero con datos diferentes. Un **thread** (hilo) es la unidad básica de ejecución en un GPU.
+
+Un Grupo de **32 threads (NVIDIA)** que ejecutan, el bloque de threads: grupo de threads que pueden cooperar y compartir memoria.**Grid**: Colección de bloques que ejecutan el mismo kernel.
+
 
 ### Ancho de Banda vs Latencia
 
-Los GPUs priorizan **throughput** (cantidad de trabajo procesado) sobre **latencia** (tiempo para una operación individual). Esto significa que aunque una operación individual puede tardar más en GPU que en CPU, el GPU puede procesar miles de operaciones simultáneamente, resultando en mayor throughput total.
+Los GPUs priorizan **throughput** (cantidad de trabajo procesado, basado en datos) sobre **latencia** (tiempo para una operación individual). Esto significa que aunque una operación individual puede tardar más en GPU que en CPU, el GPU puede procesar miles de operaciones simultáneamente, resultando en mayor throughput total.
 
-## Paralelismo de Datos: El Superpoder del GPU
+## Paralelismo de Datos
 
 El modelo de programación de GPUs se basa en **SIMD/SIMT** (Single Instruction, Multiple Data / Single Instruction, Multiple Threads):
 
 - Un mismo conjunto de instrucciones se ejecuta sobre múltiples datos simultáneamente
-- Todos los threads en un warp ejecutan la misma instrucción al mismo tiempo
+- Todos los threads en un warp ejecutan la misma instrucción al mismo tiempo (sobre diferentees datos)
 - Divergencia de control (diferentes branches) causa serialización y pérdida de performance
 
-### Casos de Uso Perfectos
-
-**Operaciones Matriciales**:
-
-```python
-# Multiplicar cada elemento por un escalar
-
-# CPU: Loop secuenciall
-for i in range(len(array)):
-    array[i] = array[i] * 2
-
-# GPU: Todos los elementos se multiplican simultáneamente
-# Un thread por elemento, miles ejecutando en paralelo
-**Entrenamiento de Redes Neuronales**
-
-- Forward pass: Multiplicaciones matriz-vector masivas
-- Backward pass: Cálculo de gradientes en paralelo
-- Actualización de pesos: Operaciones vectoriales
-
-### Ejemplo Práctico: Contraste
+### Ejemplo Práctico
 
 **Problema A**: Multiplicar 1 millón de números por una constante
 - **Paralelismo perfecto**: Cada operación es independiente
