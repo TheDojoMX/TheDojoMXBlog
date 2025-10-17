@@ -1,0 +1,76 @@
+<!doctype html><html lang=es dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>¿Cómo funciona TensorFlow? | The Dojo MX Blog</title>
+<link rel=icon href=/favicon.svg sizes=any type=image/svg+xml><meta property="og:title" content="¿Cómo funciona TensorFlow?"><meta property="og:description" content=">-"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-09-16T00:00:00+00:00"><meta property="article:modified_time" content="2024-09-16T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="¿Cómo funciona TensorFlow?"><meta name=twitter:description content=">-"><link rel=stylesheet href=/css/extended.min.771dff75f9f3290205d2bfcbeda2ed15a5984c0414d431dfec3423ae5e37bb90.css integrity="sha256-dx3/dfnzKQIF0r/L7aLtFaWYTAQU1DHf7DQjrl43u5A=" crossorigin=anonymous><link rel=stylesheet href=/css/root.min.0e732b812b9751962e01a7c4798a1211cd5f8ac8abec7f99793fe306989e459f.css integrity="sha256-DnMrgSuXUZYuAafEeYoSEc1fisir7H+ZeT/jBpieRZ8=" crossorigin=anonymous><link rel=stylesheet href=/css/bundle.min.59eb1a059f8cd558e64375ede3e68d3e9120ddb0c6bdbab555c247689cef59e1.css integrity="sha256-WesaBZ+M1VjmQ3Xt4+aNPpEg3bDGvbq1VcJHaJzvWeE=" crossorigin=anonymous><script src=/js/bundle.cc8ae9952dbfb731affafabdf26e5c60a6910047ff59ccdeaf1daebaa26c8830.js integrity="sha256-zIrplS2/tzGv+vq98m5cYKaRAEf/Wczerx2uuqJsiDA=" crossorigin=anonymous></script><script defer src=/js/search/flexsearch.compact.64594b125f7b78bdf4fa8316955922bbebb1cd6baef3f16654bfca20309f18f8.js integrity="sha256-ZFlLEl97eL30+oMWlVkiu+uxzWuu8/FmVL/KIDCfGPg="></script><script defer src=/js/search/search.1d980f84df11f3eb7c8c5f17f541d49a0611608df179dd74fa7f06225eb56ace.js integrity="sha256-HZgPhN8R8+t8jF8X9UHUmgYRYI3xed10+n8GIl61as4="></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel=stylesheet></head><body class=notransition><div id=container><header id=main-header><div role=navigation aria-label=Main><div class=nav-left><a href=https://blog.thedojo.mx/ style=color:inherit>The Dojo MX Blog</a></div><div class=nav-right><div style=position:absolute;width:0;height:0><div id=nav-dropdown-menu class=hidden href=#><div class=nav-item><a aria-current=true class=ancestor href=/posts/>Posts</a></div><div class=nav-item><a>Acerca de</a></div></div></div><a id=nav-dropdown-button href=#><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div id=nav-menu><div class=nav-item><a aria-current=true class=ancestor href=/posts/>Posts</a></div><div class=nav-item><a>Acerca de</a></div></div><a id=theme-switcher href=#><svg class="light-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3V4m0 16v1M4 12H3M6.31412 6.31412 5.5 5.5m12.1859.81412L18.5 5.5M6.31412 17.69 5.5 18.5001M17.6859 17.69 18.5 18.5001M21 12H20m-4 0c0 2.2091-1.7909 4-4 4-2.20914.0-4-1.7909-4-4 0-2.20914 1.79086-4 4-4 2.2091.0 4 1.79086 4 4z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="dark-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.32031 11.6835c0 4.9706 4.02944 9 8.99999 9 3.7872.0 7.028-2.3392 8.3565-5.6515C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834c-4.9706.0-8.99999-4.0294-8.99999-8.99998C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996 5.65605 4.66028 3.32031 7.89912 3.32031 11.6835z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></header><div class="flex grow"><div id=main-pane><main id=main-content><div class=single-header><ol class=breadcrumbs itemscope itemtype=https://schema.org/BreadcrumbList><li itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=https://blog.thedojo.mx/><span itemprop=name>Home</span>
+</a><meta itemprop=position content='1'></li><span>&nbsp»&nbsp</span><li itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=https://blog.thedojo.mx/posts/><span itemprop=name>Posts</span>
+</a><meta itemprop=position content='2'></li><span>&nbsp»&nbsp</span></ol><h1>¿Cómo funciona TensorFlow?</h1><time class=dim datetime=2024-09-16T00:00:00+00:00>September 16, 2024</time><div class=term-container><div class=tag><a href=https://blog.thedojo.mx/tags/tensorflow/>#tensorflow</a></div><div class=tag><a href=https://blog.thedojo.mx/tags/machine-learning/>#machine-learning</a></div><div class=tag><a href=https://blog.thedojo.mx/tags/ai/>#ai</a></div><div class=tag><a href=https://blog.thedojo.mx/tags/deep-learning/>#deep-learning</a></div></ol></div><section class=page-section><p><strong>TensorFlow</strong> es una de las herramientas más populares e influyentes
+en el campo de la del aprendizaje automático. En este artículo vamos a ver
+qué es exactamente y cómo funciona.</p><h2 id=qué-es-tensorflow>¿Qué es TensorFlow?</h2><p>Siempre que hablamos de TensorFlow se dice que es una &ldquo;biblioteca (o librería)
+para hacer aprendizaje automático, pero este definición no es muy
+explícita y por eso vamos a ver <em>cómo nos permite</em> crear modelos de
+aprendizaje.</p><p>Para crear modelos de aprendizaje automático, tenemos que hacer muchos cálculos
+matemáticos, la gran mayoría son operaciones de multiplicación de matrices.
+Estos cálculos no son eficientes en un procesador tradicional y por eso se
+requiere de toda la ayuda que se pueda conseguir para hacerlos lo más rápido
+posible y gastando menos energía.</p><p>Es aquí donde entra <strong>TensorFlow</strong>, una biblioteca que permite <em>representar</em> estos
+cálculos mediante grafos de cómputo y después ejecutarlos en procesadores
+especializados como tarjetas gráficas y otros procesadores eficientes en
+operaciones matemáticas pesadas. Además, TensorFlow abstrae al usuario final (tú),
+de los detalles de implementación de muchas funciones y operaciones matemáticas
+que se usan mucho en el aprendizaje automático. Y finalmente, con su <em>API</em> de alto
+nivel, <strong>Keras</strong>, te permite crear diferentes tipos de redes neuronales sin
+que tengas que pelearte con los detalles de implementación.</p><p>Y es aquí donde empieza lo interesante. ¿Qué es un grafo de cómputo? ¿Cómo
+llegamos a él y para qué nos sirve? Veamos.</p><h2 id=grafos-de-cómputo-de-tensorflow>Grafos de cómputo de TensorFlow</h2><p>Para entenderlo, vamos a ver un ejemplo sencillo de un cálculo y su
+representación, por ejemplo, sumemos dos números, que llamaremos X y Y.</p><p>¿Cómo representa TensorFlow esto? Este es el grafo de cómputo que podemos ver con
+una herramienta de análisis de TensorFlow llamada TensorBoard:</p><p><img src=https://res.cloudinary.com/hectorip/image/upload/c_scale,w_250/v1726379906/Screenshot_2024-09-14_at_23.53.34_1_izykn5.png alt="Imagen de un grafo de cómputo de TensorFlow">{: .align-center}</p><p>Puedes pensar en este grafo como una serie de nodos que representan cada uno
+una operación sobre conjuntos de datos numéricos llamados tensores. Cuando
+ejecutamos este grafo, los tensores <em>fluyen</em> por estos nodos, transformándose
+en cada uno, hasta que obtenemos el resultado final de la operación. (Los nodos
+que dicen <code>Identity</code> son operaciones de copia o lectura de valores, útiles para
+el funcionamiento interno de TensorFlow).</p><p>La otra cosa que podemos notar hasta abajo de la gráfica son los dos nodos que
+representan nuestros números simples: X scalar y Y scalar, ya que los definimos
+como números simples, que también pueden pensarse como tensores de una dimensión.</p><p>Formalmente, TensorFlow te da una serie de estructuras de datos, que puedes
+ir construyendo poco a poco para definir todas las operaciones que necesites hacer.</p><p>En una red neuronal, estos grafos son mucho más complicados, pero justo ese es
+el trabajo de TensorFlow: ayudarte a definirlos y a ejecutarlos en el hardware
+más conveniente para tu proyecto.</p><p>Usar los grafos de cómputo de TF te permite varias cosas más:</p><ul><li><strong>Optimización de las operaciones</strong>: TensorFlow tiene todo un sistema de optimización
+llamado <code>Grappler</code>, que se encarga varias optimizaciones.</li><li><strong>Paralelización</strong>. Con las operaciones divididas, TensorFlow puede verificar
+qué operaciones son independientes y puede ejecutarlas en otros procesadores
+si están disponibles.</li><li><strong>Exportación</strong>. Una vez teniendo las operaciones definidas en un grafo, no necesitamos
+de Python para ejecutarlas, así que TensorFlow puede ejecutarlas en otros dispositivos
+y usando otros lenguajes.</li></ul><p>Esta definición de grafos de cómputo no es la única forma de trabajar con TensorFlow,
+ya que desde su versión 2.0, también permite trabajar con un modo más imperativo,
+que se siente más integrado con Python y más dinámico: la ejecución adelantada (en
+inglés: <em>eager execution</em>). Con esta forma de ejecución, las operaciones se van
+ejecutando inmediatamente después de definirlas. Esto es más fácil de programar y
+de leer, pero deja poco espacio para la optimización. Es justamente como la comparación
+entre un lenguaje compilado y uno interpretado.</p><h2 id=tensorflow-y-keras>TensorFlow y Keras</h2><p>Keras era otra biblioteca que se creó por separado, para hacer más fácil de usar
+la versión 1.0 de TensorFlow, que era bastante más verbosa de programar (por sólo
+soportar grafos de cómputo estáticos).Sin embargo, en la versión 2.0 de TensorFlow,
+Keras se volvió parte del paquete.</p><p>Keras te permite crear modelos de aprendizaje profundo de manera sencilla. Es la
+manera fácil de usar TensorFlow, pero también te permite complicarte tanto como quieras
+o necesites (esperamos que sea esto último). Keras usa el principio de &ldquo;revelación
+progresiva de la complejidad&rdquo;, lo que significa que puedes empezar de manera muy
+sencilla e ir aprendiendo cosas conforme vayas avanzando en hacer cosas más complejas.</p><p>Así que la forma más común de usar TensorFlow para crear tus modelos de machine
+learning es mediante la interfaz de Keras, que además de todo te provee de
+utilidades que son de uso muy común en las redes neuronales. Por ejemplo, provee
+regularizadores, inicializadores, funciones de activación, optimizadores, y muchas
+utilidades más. Es por eso que ya casi no se concibe el uso de TensorFlow para
+casos comunes sin usar Keras.</p><h2 id=tensorflow-y-mlir>TensorFlow y MLIR</h2><p>MLIR es una herramienta para crear compiladores hecha por parte del mismo
+equipo que hizo LLVM, la infraestructura para compiladores que está detrás
+de la mayoría de los compiladores modernos.</p><p>La especialidad de MLIR es hacer traducciones para arquitecturas de hardware no
+tradicionales,usando un lenguaje intermedio multi-capa al que le puedes agregar
+más plugins para diferentes arquitecturas de ejecutores. MLIR es muy usado
+para computación de alto rendimiento, justamente la que necesitamos para
+crear modelo de aprendizaje automático complejos en tiempos y con costos
+razonables.</p><p>Así que TensorFlow, aprovechando este sistema, usa MLIR para compilar los
+grafos de cómputo y los modelos para hardware específico, para que se pueda
+obtener el mejor rendimiento posible.</p><h2 id=tensorflow-y-su-relación-con-el-hardware>TensorFlow y su relación con el hardware</h2><p>Después de la sección anterior, es muy probable que la relación de TF con
+el hardware quede muy clara: TensorFlow ayuda a que se pueda compilar
+de mejor manera el código con los cálculos para poder ejecutarlo
+en el hardware especializado.</p><p><strong>IF</strong> soporta gran variedad de tipos de hardware y es por eso que hasta el
+momento es la biblioteca de machine learning con mejor soporte para
+distribuir tus modelos en diferentes dispositivos, desde procesadores
+especializados hasta que corran directamente en tu teléfono o navegador.</p><h2 id=conclusión>Conclusión</h2><p>Si quieres hacer machine learning, lo más probable es que tengas que
+aprender TensorFlow, una herramienta muy útil para hacer los modelos usados
+hoy.</p><p>Espero que lo que hablamos sobre TensorFlow en este artículo te haya ayudado
+a entenderlo un poco más. En otro artículo hablaremos de su competidor
+más directo: <strong>PyTorch</strong>.</p></section></main><footer id=main-footer><div class=footer><a href=#>Scroll to Top</a><div class=footer-copyright><div class=dim>© 2025 Héctor Patricio</div><div>Made with ❤️ and powered by <a href=https://github.com/math-queiroz/rusty-typewriter target=_blank>Rusty Typewriter</a> theme for <a href=https://gohugo.io/ target=_blank>Hugo</a></div></div></div></footer></div><aside id=side-pane class=side-sticky><div class=side-details><span>1065 words</span>
+<span>6 - 8 minutes read</span></div><h3>Table Of Contents</h3><nav id=TableOfContents><ul><li><a href=#qué-es-tensorflow>¿Qué es TensorFlow?</a></li><li><a href=#grafos-de-cómputo-de-tensorflow>Grafos de cómputo de TensorFlow</a></li><li><a href=#tensorflow-y-keras>TensorFlow y Keras</a></li><li><a href=#tensorflow-y-mlir>TensorFlow y MLIR</a></li><li><a href=#tensorflow-y-su-relación-con-el-hardware>TensorFlow y su relación con el hardware</a></li><li><a href=#conclusión>Conclusión</a></li></ul></nav><h3>Related</h3><ul><li><a href=/2023/12/13/mojo-un-lenguaje-prometedor/>Mojo 🔥: un lenguaje prometedor</a></li><li><a href=/2023/01/07/ejercicio-programando-un-perceptr%C3%B3n-con-python/>Ejercicio: programando un perceptrón con Python</a></li><li><a href=/2021/03/25/intro-a-machine-learning-entendiendo-el-perceptr%C3%B3n/>Intro a Machine Learning: Entendiendo el perceptrón</a></li><li><a href=/2021/03/06/ruta-de-aprendizaje-deep-learning/>Ruta de aprendizaje: Deep Learning</a></li><li><a href=/2020/12/30/qu%C3%A9-son-los-modelos-generativos/>¿Qué son los modelos generativos?</a></li></ul></aside></div></div></body></html>

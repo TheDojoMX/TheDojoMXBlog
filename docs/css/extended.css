@@ -1,0 +1,24 @@
+/* Color azul Tekhelet personalizado */
+:root {
+  --accent: #5299D3;
+  --background: #1a1a1a;
+  --color: #e0e0e0;
+  --border-color: #5299D3;
+}
+
+a {
+  color: #5299D3;
+}
+
+a:hover {
+  color: #6bb3ff;
+}
+
+.logo__cursor {
+  background: #5299D3;
+}
+
+.pagination .pagination__buttons a:hover {
+  background: #5299D3;
+  color: #1a1a1a;
+}
