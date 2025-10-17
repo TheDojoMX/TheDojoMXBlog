@@ -76,7 +76,8 @@ matemáticas básicas (suma, multiplicación, etc.) en muchos datos al mismo tie
 
 Así que la comparación es clara: un GPU es como una línea de esamblaje que tiene
 miles de unidades que pueden hacer trabajo simple al mismo tiempo, mientras que un
-CPU es como un conjunto de artesanos expertos haciendo trabajo complejo y _secuencial principalmente_.
+CPU es como un conjunto de artesanos expertos haciendo trabajo complejo y
+_secuencial principalmente_.
 
 Ahora hablemos de la arquitectura de un GPU para ver cómo hace el paralelismo masivo posible.
 
