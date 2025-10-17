@@ -1,2 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mit on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/mit/</link><description>Recent content in Mit on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Thu, 09 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/mit/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es el pensamiento computacional?</title><link>https://blog.thedojo.mx/2020/07/09/qu%C3%A9-es-el-pensamiento-computacional/</link><pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/07/09/qu%C3%A9-es-el-pensamiento-computacional/</guid><description>Todo lo relacionado con el pensamiento computacional (la programación, la inteligencia artificial, las computadoras) ha estado muy presente en la mente de la sociedad, porque vivimos en un mundo en el que cada aspecto de la vida se ha visto influenciado por lo que la computación permite.
-En varios lugares del mundo se ha pensado que se debe agregar el pensamiento computacional a la educación básica que todos reciben, bajo la promesa de que mejorará en general la capacidad de pensar y resolver problemas.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mit on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/mit/</link>
+    <description>Recent content in Mit on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Thu, 09 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/mit/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Qué es el pensamiento computacional?</title>
+      <link>https://blog.thedojo.mx/2020/07/09/qu%C3%A9-es-el-pensamiento-computacional/</link>
+      <pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2020/07/09/qu%C3%A9-es-el-pensamiento-computacional/</guid>
+      <description>&lt;p&gt;Todo lo relacionado con el &lt;strong&gt;pensamiento computacional&lt;/strong&gt; (la programación, la inteligencia artificial, las computadoras) ha estado muy presente en la mente de la sociedad, porque vivimos en un mundo en el que &lt;em&gt;cada aspecto de la vida&lt;/em&gt; se ha visto influenciado por lo que la computación permite.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Complación on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/complaci%C3%B3n/</link><description>Recent content in Complación on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sun, 22 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/complaci%C3%B3n/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es el bytecode?</title><link>https://blog.thedojo.mx/2023/01/22/qu%C3%A9-es-el-bytecode/</link><pubDate>Sun, 22 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/01/22/qu%C3%A9-es-el-bytecode/</guid><description>Tanto para Java como para otros lenguajes que son interpretados, por ejemplo Python o JavaScript, se genera una representación intermedia como resultado de la ejecución o compilación. A este código le llamamos bytecode.
-Hablemos de qué es y para qué existe.
-¿Qué es el bytecode? El bytecode es una representación intermedia de tu programa que tiene dos características principales:
-No es tan legible como el código fuente, por ser más compacta.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Complación on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/complaci%C3%B3n/</link>
+    <description>Recent content in Complación on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sun, 22 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/complaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Qué es el bytecode?</title>
+      <link>https://blog.thedojo.mx/2023/01/22/qu%C3%A9-es-el-bytecode/</link>
+      <pubDate>Sun, 22 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/01/22/qu%C3%A9-es-el-bytecode/</guid>
+      <description>&lt;p&gt;Tanto para Java como para otros lenguajes que son interpretados, por ejemplo Python o JavaScript, se genera una representación intermedia como resultado de la ejecución o compilación. A este código le llamamos bytecode.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

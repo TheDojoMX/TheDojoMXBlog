@@ -1,2 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming-Languages on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/programming-languages/</link><description>Recent content in Programming-Languages on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 11 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/programming-languages/index.xml" rel="self" type="application/rss+xml"/><item><title>Resumen: Historia de los lenguajes de programación</title><link>https://blog.thedojo.mx/2022/06/11/resumen-historia-de-los-lenguajes-de-programaci%C3%B3n/</link><pubDate>Sat, 11 Jun 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/06/11/resumen-historia-de-los-lenguajes-de-programaci%C3%B3n/</guid><description>¿Te has preguntado cómo nacieron los primeros lenguajes de programación? Manuel Rubio, autor de &amp;lsquo;Historia de los lenguajes de programación&amp;rsquo;, nos habla lo explica de manera cronológica en el primer tomo de esta obra.
-Resumen general El libro habla de manera más o menos cronológica del nacimiento de los primeros lenguajes de programación, desde la época de 1940. La forma en que lo narra te hace comprender claramente por qué eran necesarios y las diferentes tendencias que se dieron.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming-Languages on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/programming-languages/</link>
+    <description>Recent content in Programming-Languages on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 11 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/programming-languages/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Resumen: Historia de los lenguajes de programación</title>
+      <link>https://blog.thedojo.mx/2022/06/11/resumen-historia-de-los-lenguajes-de-programaci%C3%B3n/</link>
+      <pubDate>Sat, 11 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2022/06/11/resumen-historia-de-los-lenguajes-de-programaci%C3%B3n/</guid>
+      <description>&lt;p&gt;¿Te has preguntado cómo nacieron los primeros lenguajes de programación? Manuel Rubio, autor de &lt;a
+  href=&#34;https://altenwald.com/book/histlangprog&#34;
+    target=&#34;_blank&#34;
+  &gt;&amp;lsquo;Historia de los lenguajes de programación&amp;rsquo;&lt;/a&gt;, nos habla lo explica de manera cronológica en el primer tomo de esta obra.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,5 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Math on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/math/</link><description>Recent content in Math on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/math/index.xml" rel="self" type="application/rss+xml"/><item><title>Las bases matemáticas de la programación funcional</title><link>https://blog.thedojo.mx/2021/03/18/las-bases-matem%C3%A1ticas-de-la-programaci%C3%B3n-funcional/</link><pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/03/18/las-bases-matem%C3%A1ticas-de-la-programaci%C3%B3n-funcional/</guid><description>La programación funcional tiene conceptos muy relacionados con las matemáticas. Aquí te vamos a platicar de sus orígenes y de algunos conceptos matemáticos directamente embebidos en la programación funcional.
-Lo primero que tienes que recordar es que las matemáticas no tienen que ver necesariamente con números, sino con el razonamiento y la formalización de este. En este artículo hablamos más de ello: Las matemáticas que necesitas para programar.
-Ahora sí, empecemos con lo más fundamental de las matemáticas que soportan la programación funcional, no sin mencionar que podemos afirmar que la programación funcional es una forma de matemáticas.</description></item><item><title>Las matemáticas que debes saber para programar</title><link>https://blog.thedojo.mx/2019/12/25/las-matem%C3%A1ticas-que-debes-saber-para-programar/</link><pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/12/25/las-matem%C3%A1ticas-que-debes-saber-para-programar/</guid><description>Cuando se habla de matemáticas muchas personas prefieren cambiar de tema.
-Pero las matemáticas son la base de muchas otras ciencias incluida la computación. Podríamos considerar las ciencias de la computación como una rama de las matemáticas, pero que ha evolucionado todavía más allá de ellas.
-Para programar con eficacia no necesitas saber muchas matemáticas, con el entendimiento básico es suficiente. En este artículo hablaremos de aquello que debes dominar.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/math/</link>
+    <description>Recent content in Math on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Las bases matemáticas de la programación funcional</title>
+      <link>https://blog.thedojo.mx/2021/03/18/las-bases-matem%C3%A1ticas-de-la-programaci%C3%B3n-funcional/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2021/03/18/las-bases-matem%C3%A1ticas-de-la-programaci%C3%B3n-funcional/</guid>
+      <description>&lt;p&gt;La programación funcional tiene conceptos muy relacionados con las matemáticas. Aquí te vamos a platicar de sus orígenes y de algunos conceptos matemáticos directamente embebidos en la programación funcional.&lt;/p&gt;
+&lt;p&gt;Lo primero que tienes que recordar es que las matemáticas no tienen que ver  &lt;em&gt;necesariamente&lt;/em&gt; con números, sino con el razonamiento y la &lt;em&gt;formalización&lt;/em&gt; de este. En este artículo hablamos más de ello: &lt;a
+  href=&#34;https://blog.thedojo.mx/2019/12/25/las-matematicas-que-debes-saber-para-programar.html&#34;&gt;Las matemáticas que necesitas para programar&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Las matemáticas que debes saber para programar</title>
+      <link>https://blog.thedojo.mx/2019/12/25/las-matem%C3%A1ticas-que-debes-saber-para-programar/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/12/25/las-matem%C3%A1ticas-que-debes-saber-para-programar/</guid>
+      <description>&lt;p&gt;Cuando se habla de &lt;strong&gt;matemáticas&lt;/strong&gt; muchas personas prefieren cambiar de tema.&lt;/p&gt;
+&lt;p&gt;Pero las matemáticas son la base de muchas otras ciencias incluida la computación. Podríamos considerar las ciencias de la computación como &lt;strong&gt;una rama de las matemáticas&lt;/strong&gt;, pero que ha evolucionado todavía más allá de ellas.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

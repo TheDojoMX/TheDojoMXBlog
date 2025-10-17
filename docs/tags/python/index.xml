@@ -1,12 +1,107 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/python/</link><description>Recent content in Python on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Mojo 🔥: un lenguaje prometedor</title><link>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor/</link><pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor/</guid><description>Chris Lattner{:target=&amp;quot;_blank&amp;quot;}, uno de los creadores de LLVM y Swift, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de Python pero pensado para atacar su punto más débil: la velocidad de ejecución.
-Este lenguaje se llama Mojo, y está siendo publicitado como un lenguaje para hacer aplicaciones de inteligencia artificial. Como ya dijimos, su enfoque principal está en ser un lenguaje que produzca programar eficientes, por lo que puede ser usado para cualquier aplicación que requiera alto rendimiento o hacer una gran cantidad de cálculos, justo como las aplicaciones de machine learning.</description></item><item><title>Creando código de Python robusto, Parte 1</title><link>https://blog.thedojo.mx/2022/12/24/creando-c%C3%B3digo-de-python-robusto-parte-1/</link><pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/24/creando-c%C3%B3digo-de-python-robusto-parte-1/</guid><description>En esta serie de posts vamos a hablar de algunas cosas que harán que tu código de Python sea:
-resistente al paso del tiempo más fácil de entender, de mantener y cambiar que evite errores difíciles de encontrar En este artículo vamos a empezar a hablar de cómo hacer código que sea resistente al paso del tiempo.
-El tiempo y los cambios En realidad el puro paso del tiempo no le hace nada a ninguna cosa.</description></item><item><title>20 bibliotecas de Python que deberías estar usando</title><link>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</link><pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</guid><description>El libro &amp;ldquo;20 Python Libraries You Aren&amp;rsquo;t Using (But Should)&amp;rdquo; de Caleb Hattingh es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida.
-{: .align-center}
-Veamos las 5 que me parece más importante conocer y tú puedes leer el libro para ver el detalle y entender las otras 15.
-En la biblioteca estándar de Python Estas bibliotecas no las tendrás que instalar porque vienen con todas las instalaciones normales de Python, pero son poco usadas.</description></item><item><title>Libros gratuitos para aprender análisis de datos</title><link>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</link><pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</guid><description>¿Quieres aprender análisis de datos y ya eres programador? Los siguientes libros pueden ser de gran ayuda. Este post está basado en un artículo inglés que encontramos, pero con los recursos que recomienda actualizados y algunos otros de nuestra cosecha.
-Casi todos están en inglés pero incluímos unos cuántos en español y, en los que nos fue posible, tienes descarga directa.
-0. R en español Empecemos por los pocos recursos en español.</description></item><item><title>Tres formas de crear API's con Python</title><link>https://blog.thedojo.mx/2019/03/12/tres-formas-de-crear-apis-con-python/</link><pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/03/12/tres-formas-de-crear-apis-con-python/</guid><description>Es una tarea común para un desarrollador el diseñar e implementar una API web. Veremos tres herramientas para desarrollar tu API, de lo más sencillo a lo más completo: Hug, Flask y Django Rest Framework.
-Hug Hug es una pequeña biblioteca para crear API&amp;rsquo;s muy fáciles de entender y mantener. Provee un serie de herramientas que permiten hacer tu API muy rápidamente, con poco código y siguiendo las mejores prácticas. Hug no es una biblioteca exclusiva para hacer API&amp;rsquo;s web, sino que se enfoca en permitirte crear API&amp;rsquo;s en el más amplio sentido de la palabra: una intefaz para permitir el uso automatizado (mediante código) de tu programa.</description></item><item><title>Patrón de diseño: Cadena de responsabilidad</title><link>https://blog.thedojo.mx/2019/02/21/patr%C3%B3n-de-dise%C3%B1o-cadena-de-responsabilidad/</link><pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/02/21/patr%C3%B3n-de-dise%C3%B1o-cadena-de-responsabilidad/</guid><description>Propósito Asegurar el bajo acoplamiento entre un request y su receiver dando a múltiples objetos oportunidad de manejar el request
-Hace unas semanas me enfrenté a un tema de procesar un mensaje de un usuario y darle tratamiento por medio de un algoritmo de Natrual Language Processing. Antes de pasar el mensaje por el set de algoritmos apropiados hay que darle una serie de tratamientos previos:
-Eliminar los acentos y solo dejar en ASCII el mensaje.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/python/</link>
+    <description>Recent content in Python on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mojo 🔥: un lenguaje prometedor</title>
+      <link>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor/</link>
+      <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor/</guid>
+      <description>&lt;p&gt;&lt;a
+  href=&#34;https://www.nondot.org/sabre/&#34;
+    target=&#34;_blank&#34;
+  &gt;Chris Lattner&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}, uno de los creadores de &lt;a
+  href=&#34;https://llvm.org&#34;
+    target=&#34;_blank&#34;
+  &gt;LLVM&lt;/a&gt; y &lt;a
+  href=&#34;https://www.swift.org/&#34;
+    target=&#34;_blank&#34;
+  &gt;Swift&lt;/a&gt;, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de &lt;strong&gt;Python&lt;/strong&gt; pero pensado para atacar su punto más débil: &lt;strong&gt;la velocidad de ejecución&lt;/strong&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Creando código de Python robusto, Parte 1</title>
+      <link>https://blog.thedojo.mx/2022/12/24/creando-c%C3%B3digo-de-python-robusto-parte-1/</link>
+      <pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2022/12/24/creando-c%C3%B3digo-de-python-robusto-parte-1/</guid>
+      <description>&lt;p&gt;En esta serie de posts vamos a hablar de algunas cosas que harán que tu código de Python sea:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;resistente al paso del tiempo&lt;/li&gt;
+&lt;li&gt;más fácil de entender, de mantener y cambiar&lt;/li&gt;
+&lt;li&gt;que evite errores difíciles de encontrar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En este artículo vamos a empezar a hablar de cómo hacer código que sea resistente al paso del tiempo.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>20 bibliotecas de Python que deberías estar usando</title>
+      <link>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</guid>
+      <description>&lt;p&gt;El libro &lt;a
+  href=&#34;https://freecomputerbooks.com/20-Python-Libraries%20You-Are-Not-Using-But-Should.html#downloadLinks&#34;
+    target=&#34;_blank&#34;
+  &gt;&amp;ldquo;20 Python Libraries You Aren&amp;rsquo;t Using (But Should)&amp;rdquo;&lt;/a&gt; de &lt;a
+  href=&#34;https://github.com/cjrh&#34;
+    target=&#34;_blank&#34;
+  &gt;Caleb Hattingh&lt;/a&gt; es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Libros gratuitos para aprender análisis de datos</title>
+      <link>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</link>
+      <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</guid>
+      <description>&lt;p&gt;¿Quieres aprender análisis de datos y ya eres programador? Los siguientes libros pueden ser de gran ayuda. Este post está basado en &lt;a
+  href=&#34;http://bit.ly/2RjPiol&#34;
+    target=&#34;_blank&#34;
+  &gt;un artículo inglés que encontramos&lt;/a&gt;, pero con los recursos que recomienda actualizados y algunos otros de nuestra cosecha.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Tres formas de crear API&#39;s con Python</title>
+      <link>https://blog.thedojo.mx/2019/03/12/tres-formas-de-crear-apis-con-python/</link>
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/03/12/tres-formas-de-crear-apis-con-python/</guid>
+      <description>&lt;p&gt;Es una tarea común para un desarrollador el diseñar e implementar una API web. Veremos tres herramientas para desarrollar tu API, de lo más sencillo a lo más completo: Hug, Flask y Django Rest Framework.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Patrón de diseño: Cadena de responsabilidad</title>
+      <link>https://blog.thedojo.mx/2019/02/21/patr%C3%B3n-de-dise%C3%B1o-cadena-de-responsabilidad/</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/02/21/patr%C3%B3n-de-dise%C3%B1o-cadena-de-responsabilidad/</guid>
+      <description>&lt;h4 class=&#34;relative group&#34;&gt;Propósito
+    &lt;div id=&#34;propósito&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
+        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#prop%c3%b3sito&#34; aria-label=&#34;Ancla&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;
+    
+&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Asegurar el bajo acoplamiento entre un &lt;em&gt;request&lt;/em&gt; y su &lt;em&gt;receiver&lt;/em&gt; dando a múltiples objetos oportunidad de manejar el &lt;em&gt;request&lt;/em&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

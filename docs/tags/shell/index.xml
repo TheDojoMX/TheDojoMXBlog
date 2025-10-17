@@ -1,2 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/shell/</link><description>Recent content in Shell on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>De Bash a Zsh</title><link>https://blog.thedojo.mx/2020/07/16/de-bash-a-zsh/</link><pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/07/16/de-bash-a-zsh/</guid><description>Con la reciente liberación de MacOS Catalina, Apple anunció que entre alguno de los cambios al sistema operativo, se utilizará a partir de esta versión un nuevo shell que de manera regular se utilizaba en la app Terminal y en otras aplicaciones utilizadas por los desarrolladores para interactuar con la Mac a través de la línea de comandos.
-El shell que se utilizaba previo a esta versión era Bash (Bourne Again Shell) y el que se utilizará ahora es Zsh.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/shell/</link>
+    <description>Recent content in Shell on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Thu, 16 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>De Bash a Zsh</title>
+      <link>https://blog.thedojo.mx/2020/07/16/de-bash-a-zsh/</link>
+      <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2020/07/16/de-bash-a-zsh/</guid>
+      <description>&lt;p&gt;Con la reciente liberación de MacOS Catalina, Apple anunció que entre alguno de los cambios al sistema operativo, se utilizará a partir de esta versión un nuevo &lt;em&gt;shell&lt;/em&gt; que de manera regular se utilizaba en la app Terminal y en otras aplicaciones utilizadas por los desarrolladores para interactuar con la Mac a través de la línea de comandos.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

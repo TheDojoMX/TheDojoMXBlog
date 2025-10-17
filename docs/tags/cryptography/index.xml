@@ -1,3 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cryptography on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/cryptography/</link><description>Recent content in Cryptography on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/cryptography/index.xml" rel="self" type="application/rss+xml"/><item><title>Criptografía para desarrolladores: Códigos de autenticación de mensajes</title><link>https://blog.thedojo.mx/2021/12/30/criptograf%C3%ADa-para-desarrolladores-c%C3%B3digos-de-autenticaci%C3%B3n-de-mensajes/</link><pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/30/criptograf%C3%ADa-para-desarrolladores-c%C3%B3digos-de-autenticaci%C3%B3n-de-mensajes/</guid><description>Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.
-En general este tipo de algoritmos se llaman hashes con llave o Keyed Hashes.</description></item><item><title>Tipos de algoritmos criptográficos: cifrados de bloque</title><link>https://blog.thedojo.mx/2020/12/03/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-bloque/</link><pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/12/03/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-bloque/</guid><description>Ya hablamos de lo que es la criptografía, ahora empecemos a hablar de los tipos de algoritmos criptográficos que existen, sus características y sus principales diferencias. En este artículo hablaremos de los cifrados de bloque.
-¿Qué es un cifrado de bloque? Los cifrados de bloque trabajan sobre un conjunto de bits de tamaño fijo, produciendo un texto cifrado del mismo tamaño. Para cifrar datos de tamaño arbitrario como sucede en la vida real, se utiliza el algoritmo de cifrado de bloque combinado con diferentes técnicas llamadas Modos de Operación.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cryptography on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/cryptography/</link>
+    <description>Recent content in Cryptography on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Criptografía para desarrolladores: Códigos de autenticación de mensajes</title>
+      <link>https://blog.thedojo.mx/2021/12/30/criptograf%C3%ADa-para-desarrolladores-c%C3%B3digos-de-autenticaci%C3%B3n-de-mensajes/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2021/12/30/criptograf%C3%ADa-para-desarrolladores-c%C3%B3digos-de-autenticaci%C3%B3n-de-mensajes/</guid>
+      <description>&lt;p&gt;Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Tipos de algoritmos criptográficos: cifrados de bloque</title>
+      <link>https://blog.thedojo.mx/2020/12/03/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-bloque/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2020/12/03/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-bloque/</guid>
+      <description>&lt;p&gt;Ya hablamos de lo que es &lt;a
+  href=&#34;https://blog.thedojo.mx/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&#34;&gt;la criptografía&lt;/a&gt;, ahora empecemos a hablar de los tipos de
+algoritmos criptográficos que existen, sus características y sus principales diferencias. En este artículo hablaremos de los cifrados de bloque.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,2 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Matin-Kleppmann on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/matin-kleppmann/</link><description>Recent content in Matin-Kleppmann on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Fri, 30 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/matin-kleppmann/index.xml" rel="self" type="application/rss+xml"/><item><title>Por qué debes leer Designing Data-intensive Applications</title><link>https://blog.thedojo.mx/2024/08/30/por-qu%C3%A9-debes-leer-designing-data-intensive-applications/</link><pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/08/30/por-qu%C3%A9-debes-leer-designing-data-intensive-applications/</guid><description>Uno de los libros más recomendados para todos los desarrolladores modernos es &amp;ldquo;Designing Data-intensive Applications&amp;rdquo; de Martin Kleppmann. En este artículo corto vamos a hablar de por qué vale la pena leerlo.
-¿Quién es Martin Kleppmann? Martin es un desarrollador, investigador, escritor y profesor de ciencias de la computación bastante prolífico. Actualmente trabaja en la Universidad de Cambridge y ha trabajado en empresas como Rapportive(que él fundó y fue comprada por LinkedIn, y también trabajó ahí).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matin-Kleppmann on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/matin-kleppmann/</link>
+    <description>Recent content in Matin-Kleppmann on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Fri, 30 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/matin-kleppmann/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Por qué debes leer Designing Data-intensive Applications</title>
+      <link>https://blog.thedojo.mx/2024/08/30/por-qu%C3%A9-debes-leer-designing-data-intensive-applications/</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2024/08/30/por-qu%C3%A9-debes-leer-designing-data-intensive-applications/</guid>
+      <description>&lt;p&gt;Uno de los libros más recomendados para todos los desarrolladores modernos
+es &amp;ldquo;Designing Data-intensive Applications&amp;rdquo; de &lt;a
+  href=&#34;https://martin.kleppmann.com/&#34;
+    target=&#34;_blank&#34;
+  &gt;Martin Kleppmann&lt;/a&gt;.
+En este artículo corto vamos a hablar de por qué vale la pena leerlo.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,2 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Modelos-Mentales on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/modelos-mentales/</link><description>Recent content in Modelos-Mentales on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Thu, 22 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/modelos-mentales/index.xml" rel="self" type="application/rss+xml"/><item><title>Modelos mentales para desarrolladores: modelos elementales</title><link>https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-modelos-elementales/</link><pubDate>Thu, 22 Jun 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-modelos-elementales/</guid><description>La mente es la principal herramienta del desarrollador de software. Puedes ayudar a que se desempeñe mejor si le das, a su vez, herramientas que te permitan organizar, comprender, combinar y analizar más rápido la información. Estas herramientas además te pueden ayudar a ver cosas claramente que antes eran imposibles de ver, o a llegar más profundo en los análisis.
-Estas herramientas son los modelos mentales, que en este artículo explicaremos, pero además daremos algunos ejemplos que te servirán directamente como desarrollador.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modelos-Mentales on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/modelos-mentales/</link>
+    <description>Recent content in Modelos-Mentales on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Thu, 22 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/modelos-mentales/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Modelos mentales para desarrolladores: modelos elementales</title>
+      <link>https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-modelos-elementales/</link>
+      <pubDate>Thu, 22 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/06/22/modelos-mentales-para-desarrolladores-modelos-elementales/</guid>
+      <description>&lt;p&gt;La &lt;strong&gt;mente&lt;/strong&gt; es la principal herramienta del desarrollador de software. Puedes ayudar a que se desempeñe mejor si le das, a su vez, herramientas que te permitan &lt;em&gt;organizar, comprender, combinar y analizar más rápido la información&lt;/em&gt;. Estas herramientas además te pueden ayudar a ver cosas claramente que antes eran imposibles de ver, o a llegar más profundo en los análisis.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

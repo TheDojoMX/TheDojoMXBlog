@@ -1,5 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arquitectura-De-Software on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/arquitectura-de-software/</link><description>Recent content in Arquitectura-De-Software on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 19 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/arquitectura-de-software/index.xml" rel="self" type="application/rss+xml"/><item><title>Los diferentes grados de diseño de software</title><link>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-dise%C3%B1o-de-software/</link><pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-dise%C3%B1o-de-software/</guid><description>Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza a hablar de patrones de diseño, infraestructura, y otras cosas con las que no nos conviene meternos en ese nivel.
-Es por eso que en este artículo vamos a proponer una taxonomía para los diferentes grados de diseño de software. Pero antes hablemos de por qué te conviene hacer una distinción clara.
-Por qué te conviene distinguir los grados de diseño de software Lo primero que debemos entender es que hacer software implica diseñar software.</description></item><item><title>Los diferentes grados de diseño de software</title><link>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-dise%C3%B1o-de-software/</link><pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-dise%C3%B1o-de-software/</guid><description>Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza a hablar de patrones de diseño, infraestructura, y otras cosas con las que no nos conviene meternos en ese nivel.
-Es por eso que en este artículo vamos a proponer una taxonomía para los diferentes grados de diseño de software. Pero antes hablemos de por qué te conviene hacer una distinción clara.
-También presentaremos una serie de recursos que puedes usar más para aprender de cada uno de estos niveles de abstracción en el diseño de software.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arquitectura-De-Software on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/arquitectura-de-software/</link>
+    <description>Recent content in Arquitectura-De-Software on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 19 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/arquitectura-de-software/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Los diferentes grados de diseño de software</title>
+      <link>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-dise%C3%B1o-de-software/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-dise%C3%B1o-de-software/</guid>
+      <description>&lt;p&gt;Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza
+a hablar de patrones de diseño, infraestructura, y otras cosas con las que no nos conviene
+meternos en ese nivel.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Los diferentes grados de diseño de software</title>
+      <link>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-dise%C3%B1o-de-software/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2024/10/19/los-diferentes-grados-de-dise%C3%B1o-de-software/</guid>
+      <description>&lt;p&gt;Hay una confusión enorme sobre el diseño de software. Cuando se habla de arquitectura, se empieza
+a hablar de patrones de diseño, infraestructura, y otras cosas con las que no nos conviene
+meternos en ese nivel.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

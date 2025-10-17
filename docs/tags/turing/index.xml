@@ -1,3 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Turing on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/turing/</link><description>Recent content in Turing on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Wed, 08 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/turing/index.xml" rel="self" type="application/rss+xml"/><item><title>Máquinas de Turing no deterministas y problemas NP</title><link>https://blog.thedojo.mx/2023/02/08/m%C3%A1quinas-de-turing-no-deterministas-y-problemas-np/</link><pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/02/08/m%C3%A1quinas-de-turing-no-deterministas-y-problemas-np/</guid><description>En el artículo anterior hablamos de las clases de complejidad y su relación con la criptografía. Hablamos brevemente de los problemas NP y de dijimos que pueden ser resueltos por una máquina de Turing no determinista en un tiempo razonable (complejidad polinomial).
-En este artículo vamos a entender qué son las máquinas de Turing no deterministas, pero empecemos entendiendo la diferencia entre determinismo y no determinismo.
-Determinismo y no determinismo En la física y las ciencias existen básicamente dos tipos de sistemas basados en el conocimiento que podemos tener de su comportamiento en un momento dado.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Turing on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/turing/</link>
+    <description>Recent content in Turing on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Wed, 08 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/turing/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Máquinas de Turing no deterministas y problemas NP</title>
+      <link>https://blog.thedojo.mx/2023/02/08/m%C3%A1quinas-de-turing-no-deterministas-y-problemas-np/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/02/08/m%C3%A1quinas-de-turing-no-deterministas-y-problemas-np/</guid>
+      <description>&lt;p&gt;En el artículo anterior hablamos de las clases de complejidad y su relación con la criptografía. Hablamos brevemente de los problemas NP y de dijimos que pueden ser resueltos por una máquina de Turing no determinista en un tiempo razonable (complejidad polinomial).&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

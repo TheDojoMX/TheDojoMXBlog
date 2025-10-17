@@ -1,6 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Compiladores on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/compiladores/</link><description>Recent content in Compiladores on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 28 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/compiladores/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Cómo funciona un intérprete?</title><link>https://blog.thedojo.mx/2024/09/28/c%C3%B3mo-funciona-un-int%C3%A9rprete/</link><pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/09/28/c%C3%B3mo-funciona-un-int%C3%A9rprete/</guid><description>Un intérprete es un programa que lee código fuente y se encarga de ejecutarlo. En este artículo vamos a hablar de sus etapas y las principales tareas que realiza, para darte la idea de cómo funciona y si lo deseas, puedas tener idea de cómo hacerlo tu mismo.
-Empecemos por hablar de la diferencia con un compilador.
-Intérprete vs compilador Ambos tipos de programas tienen la característica de recibir código fuente, pero la diferencia está en lo que devuelven, y por lo tanto en las etapas que les permiten lograrlo.</description></item><item><title>Qué es la compilación Just In Time (JIT)</title><link>https://blog.thedojo.mx/2023/01/18/qu%C3%A9-es-la-compilaci%C3%B3n-just-in-time-jit/</link><pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/01/18/qu%C3%A9-es-la-compilaci%C3%B3n-just-in-time-jit/</guid><description>Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo de software. Hace tiempo ha empezado a sonar más un término: JIT o compilación Just In Time, ya que varios lenguajes lo han integrado a sus entornos de ejecución, aquí la llamaremos &amp;ldquo;compilación bajo demanda&amp;rdquo; (gracias a Manuel Rubio por la sugerencia). Durante el artículo entenderás por qué creemos que esta traducción es adecuada.</description></item><item><title>¿Qué es un engine de JavaScript?</title><link>https://blog.thedojo.mx/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</link><pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</guid><description>Me llamó mucho la atención la salida de Deno v1 esta semana y le quise echar un ojito. Pero desde la explicación que da inicialmente, no entiendo exactamente lo que es y hace:
-&amp;ldquo;Deno is a simple, modern and secure runtime for JavaScript and TypeScript that uses V8 and is built in Rust.&amp;rdquo;
-Aquí me surgió la pregunta: ¿Qué es un runtime para JavaScript?
-Pero para contestarla, antes tengo que entender qué es V8.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compiladores on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/compiladores/</link>
+    <description>Recent content in Compiladores on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 28 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/compiladores/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Cómo funciona un intérprete?</title>
+      <link>https://blog.thedojo.mx/2024/09/28/c%C3%B3mo-funciona-un-int%C3%A9rprete/</link>
+      <pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2024/09/28/c%C3%B3mo-funciona-un-int%C3%A9rprete/</guid>
+      <description>&lt;p&gt;Un intérprete es un programa que lee código fuente y se encarga de
+ejecutarlo. En este artículo vamos a hablar de sus etapas y las principales
+tareas que realiza, para darte la idea de cómo funciona y si lo deseas, puedas
+tener idea de cómo hacerlo tu mismo.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Qué es la compilación Just In Time (JIT)</title>
+      <link>https://blog.thedojo.mx/2023/01/18/qu%C3%A9-es-la-compilaci%C3%B3n-just-in-time-jit/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/01/18/qu%C3%A9-es-la-compilaci%C3%B3n-just-in-time-jit/</guid>
+      <description>&lt;p&gt;Los lenguajes de programación y los compiladores son de las cosas más interesantes en el desarrollo   de software. Hace tiempo ha empezado a sonar más un término: &lt;strong&gt;JIT&lt;/strong&gt; o compilación &lt;strong&gt;Just In Time&lt;/strong&gt;, ya que varios lenguajes lo han integrado a sus entornos de ejecución, aquí la llamaremos &amp;ldquo;compilación bajo demanda&amp;rdquo; (gracias a Manuel Rubio por la sugerencia). Durante el artículo entenderás por qué creemos que esta traducción es adecuada.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>¿Qué es un engine de JavaScript?</title>
+      <link>https://blog.thedojo.mx/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</link>
+      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</guid>
+      <description>&lt;p&gt;Me llamó mucho la atención  la salida de &lt;a
+  href=&#34;https://deno.land/v1&#34;
+    target=&#34;_blank&#34;
+  &gt;Deno v1 esta semana&lt;/a&gt; y le quise echar un ojito. Pero desde la explicación que da inicialmente, no entiendo &lt;em&gt;exactamente&lt;/em&gt; lo que es y hace:&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,2 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Profundizar on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/profundizar/</link><description>Recent content in Profundizar on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Wed, 25 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/profundizar/index.xml" rel="self" type="application/rss+xml"/><item><title>Patrones para aprendices: Cava más hondo</title><link>https://blog.thedojo.mx/2023/01/25/patrones-para-aprendices-cava-m%C3%A1s-hondo/</link><pubDate>Wed, 25 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/01/25/patrones-para-aprendices-cava-m%C3%A1s-hondo/</guid><description>¿Sientes que sabes un poquito de muchas cosas pero no te sientes con lo confianza de decir que eres experto en algo? Muchos desarrolladores de software sentimos eso, exacerbado por la gran cantidad de herramientas, lenguajes y situaciones que las necesidades del negocio nos impone.
-En este artículo vamos a hablar acerca de un un consejo encontrado en el libro Apprenticeship Patterns que en español llamaríamos &amp;ldquo;Patrones para aprendices&amp;rdquo;. En este libro se mencionan una serie de consejos con acciones para los desarrolladores de software que se consideran aprendices.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Profundizar on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/profundizar/</link>
+    <description>Recent content in Profundizar on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Wed, 25 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/profundizar/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Patrones para aprendices: Cava más hondo</title>
+      <link>https://blog.thedojo.mx/2023/01/25/patrones-para-aprendices-cava-m%C3%A1s-hondo/</link>
+      <pubDate>Wed, 25 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/01/25/patrones-para-aprendices-cava-m%C3%A1s-hondo/</guid>
+      <description>&lt;p&gt;¿Sientes que sabes un poquito de muchas cosas pero no te sientes con lo confianza de decir que eres experto en algo? Muchos desarrolladores de software sentimos eso, exacerbado por la gran cantidad de herramientas, lenguajes y situaciones que las necesidades del negocio nos impone.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

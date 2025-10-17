@@ -1,6 +1,1372 @@
-<!doctype html><html lang=es dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>¿Qué es una API? | The Dojo MX Blog</title>
-<link rel=icon href=/favicon.svg sizes=any type=image/svg+xml><meta property="og:title" content="¿Qué es una API?"><meta property="og:description" content="Definamos que es un 'Application Programming Interface' en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API's."><meta property="og:type" content="article"><meta property="og:url" content="https://blog.thedojo.mx/2023/03/18/qu%C3%A9-es-una-api/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-03-18T00:00:00+00:00"><meta property="article:modified_time" content="2023-03-18T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="¿Qué es una API?"><meta name=twitter:description content="Definamos que es un 'Application Programming Interface' en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API's."><link rel=stylesheet href=/css/extended.min.771dff75f9f3290205d2bfcbeda2ed15a5984c0414d431dfec3423ae5e37bb90.css integrity="sha256-dx3/dfnzKQIF0r/L7aLtFaWYTAQU1DHf7DQjrl43u5A=" crossorigin=anonymous><link rel=stylesheet href=/css/root.min.0e732b812b9751962e01a7c4798a1211cd5f8ac8abec7f99793fe306989e459f.css integrity="sha256-DnMrgSuXUZYuAafEeYoSEc1fisir7H+ZeT/jBpieRZ8=" crossorigin=anonymous><link rel=stylesheet href=/css/bundle.min.59eb1a059f8cd558e64375ede3e68d3e9120ddb0c6bdbab555c247689cef59e1.css integrity="sha256-WesaBZ+M1VjmQ3Xt4+aNPpEg3bDGvbq1VcJHaJzvWeE=" crossorigin=anonymous><script src=/js/bundle.cc8ae9952dbfb731affafabdf26e5c60a6910047ff59ccdeaf1daebaa26c8830.js integrity="sha256-zIrplS2/tzGv+vq98m5cYKaRAEf/Wczerx2uuqJsiDA=" crossorigin=anonymous></script><script defer src=/js/search/flexsearch.compact.64594b125f7b78bdf4fa8316955922bbebb1cd6baef3f16654bfca20309f18f8.js integrity="sha256-ZFlLEl97eL30+oMWlVkiu+uxzWuu8/FmVL/KIDCfGPg="></script><script defer src=/js/search/search.1d980f84df11f3eb7c8c5f17f541d49a0611608df179dd74fa7f06225eb56ace.js integrity="sha256-HZgPhN8R8+t8jF8X9UHUmgYRYI3xed10+n8GIl61as4="></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel=stylesheet></head><body class=notransition><div id=container><header id=main-header><div role=navigation aria-label=Main><div class=nav-left><a href=https://blog.thedojo.mx/ style=color:inherit>The Dojo MX Blog</a></div><div class=nav-right><div style=position:absolute;width:0;height:0><div id=nav-dropdown-menu class=hidden href=#><div class=nav-item><a aria-current=true class=ancestor href=/posts/>Posts</a></div><div class=nav-item><a>Acerca de</a></div></div></div><a id=nav-dropdown-button href=#><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div id=nav-menu><div class=nav-item><a aria-current=true class=ancestor href=/posts/>Posts</a></div><div class=nav-item><a>Acerca de</a></div></div><a id=theme-switcher href=#><svg class="light-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3V4m0 16v1M4 12H3M6.31412 6.31412 5.5 5.5m12.1859.81412L18.5 5.5M6.31412 17.69 5.5 18.5001M17.6859 17.69 18.5 18.5001M21 12H20m-4 0c0 2.2091-1.7909 4-4 4-2.20914.0-4-1.7909-4-4 0-2.20914 1.79086-4 4-4 2.2091.0 4 1.79086 4 4z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="dark-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.32031 11.6835c0 4.9706 4.02944 9 8.99999 9 3.7872.0 7.028-2.3392 8.3565-5.6515C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834c-4.9706.0-8.99999-4.0294-8.99999-8.99998C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996 5.65605 4.66028 3.32031 7.89912 3.32031 11.6835z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></header><div class="flex grow"><div id=main-pane><main id=main-content><div class=single-header><ol class=breadcrumbs itemscope itemtype=https://schema.org/BreadcrumbList><li itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=https://blog.thedojo.mx/><span itemprop=name>Home</span>
-</a><meta itemprop=position content='1'></li><span>&nbsp»&nbsp</span><li itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=https://blog.thedojo.mx/posts/><span itemprop=name>Posts</span>
-</a><meta itemprop=position content='2'></li><span>&nbsp»&nbsp</span></ol><h1>¿Qué es una API?</h1><time class=dim datetime=2023-03-18T00:00:00+00:00>March 18, 2023</time><div class=term-container><div class=tag><a href=https://blog.thedojo.mx/tags/apis/>#apis</a></div><div class=tag><a href=https://blog.thedojo.mx/tags/abstracci%C3%B3n/>#abstracción</a></div><div class=tag><a href=https://blog.thedojo.mx/tags/dise%C3%B1o-de-software/>#diseño-de-software</a></div><div class=tag><a href=https://blog.thedojo.mx/tags/definiciones/>#definiciones</a></div></ol></div><section class=page-section><p>A veces limitamos el uso de la palabra <strong>API</strong> a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.</p><h2 id=application-programming-interface>Application Programming Interface</h2><p>La realidad es que el inicialismo &ldquo;API&rdquo; es casi auto-explicativo: Interfaz de Programación de Aplicación. Bueno, vamos a analizarlo un poco.</p><h3 id=interfaz>Interfaz</h3><p>Primeramente es un <strong>interfaz</strong>. Una interfaz es el lugar en donde dos sistemas o entidades convergen e <strong>interactúan</strong>. Podemos entender como interfaz a la parte que te permite usar un aparato electrónico, por ejemplo. En una computadora, su interfaz para los humanos son el teclado, la pantalla y el mouse o trackpad. En una televisión, la interfaz es la pantalla, el control remoto y los controles integrados en el cuerpo principal.</p><p>La interfaz normalmente <strong>esconde</strong> la mayor parte del sistema y muestra solamente las partes que son relevantes o <em>que se pueden usar</em> por un sistema externo. En el caso de la computadora, ver o interactuar directamente con el procesador o la RAM no nos interesa, por eso la computadora expone un conjunto limitado de todas las características que la componen. Esta interfaz en realidad representa una <strong>abstracción</strong> de lo que el sistema completo es. Este elemento habilita y simplifica el uso de este sistema. Las interfaces definen <strong>la forma</strong> de un sistema para entidades externas a él.</p><p>Una interfaz podría entenderse como un iceberg: la parte &ldquo;visible&rdquo; o con la que puedes interactuar es la punta, mientras que la gran masa es la funcionalidad que está oculta y a la que no puedes acceder.</p><p><img src=https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1679188585/Ilustracio%CC%81n_sin_ti%CC%81tulo_3_fi05qn.png alt="Una interfaz es como un Iceberg">{: .align-center}</p><p>(Probablemente ese iceberg está mal dibujado: <a href=https://axbom.com/iceberg/>The topple of an iceberg: You&rsquo;re drawing it wrong</a>)</p><h3 id=interfaz-de-programación>Interfaz de Programación</h3><p>Ya que sabemos que es una interfaz, ahora agreguemos el siguiente término: <strong>programación</strong>. Que sea un interfaz de programación nos indica la forma en la que esta interfaz puede ser usada: mediante el fino arte de la programación. Otra forma en la que creo que suena bien la traducción es <em>Interfaz Programática</em>. Así como las interfaces visuales se entienden mediante la visión, las interfaces programáticas se entienden y usan con <strong>programas</strong>.</p><p>¿Qué hace que una interfaz pueda ser usada de manera sencilla por un programa? Listemos algunas de las características:</p><ol><li>La comunicación con la interfaz se puede hacer por medio un programa. La manera más sencilla es por medio de texto plano en formatos establecidos o formatos binarios. Estos pueden ser, por ejemplo, HTTP y para facilitar más las cosas JSON o XML. Hay formatos binarios usados como <a href=https://protobuf.dev/>Protcol Buffers</a>. Pero no <strong>tiene</strong> que ser ninguno de estos. Mientras el formato se pueda procesar de manera automática con un programa, es una interfaz de programación. Por ejemplo, una aplicación podría escribir a un archivo y la otra simplemente leerlo de ahí (ejem. así funcionan los <em>sockets</em> en UNIX). O por ejemplo, la &ldquo;aplicación&rdquo; puede ser cargada en el mismo espacio de memoria y ser usada por el mismo entorno de ejecución.</li><li>La interfaz puede recibir peticiones o instrucciones creadas por un programa. Muy en la línea del punto anterior, la interfaz debe exponer formas de que otro programa la llame mediante medios programables.</li></ol><p>Si la interfaz cumple con esto, entonces es una interfaz de programación.</p><h3 id=interfaz-de-programación-de-aplicación>Interfaz de Programación de Aplicación</h3><p>El último término nos dice a quién la pertenece esta interfaz: <strong>a otra APLICACIÓN</strong>. Esto nos dice que la interfaz pertenece a un programa para que <strong>otro programa se comunique</strong>.</p><p>Resumen: un API es lo que permite la comunicación entre dos programas de manera automática, es decir, sin que tengan que intervenir humanos en esa comunicación. Le permite a un programa usar otro.</p><p>Con el tiempo, lo que llamamos <em>&ldquo;aplicación&rdquo;</em> se ha extendido para referirse a cualquier programa o parte de un programa, como un módulo, una clase, etc.</p><h3 id=uso-de-api-en-el-contexto-actual>Uso de &ldquo;API&rdquo; en el contexto actual</h3><p>Recapitulemos: una API es una interfaz entre dos programas, que permite a ambos una comunicación unidireccional o bidireccional.</p><p>El uso más común tiene que ver con interfaces que tienen comunicación a través de una red de computadoras, como Internet. Normalmente son un servidores HTTP que pueden responder con formatos que pueden ser procesados de automáticamente de manera sencilla, los más comunes son JSON y XML.
-Dependiendo de los estándares que sigan, estas API&rsquo;s pueden ser llamadas <strong>RPC</strong> (Remote Procedure Call), <strong>ReST</strong> (Representational State Transfer) o <strong>SOAP</strong> (Simple Object Access Protocol).</p><p>Este tipo de comunicación a través de la red tiene varias versiones, no sólo HTTP. Por ejemplo, existen alternativas más modernas como <strong>gRPC</strong> (Google Remote Procedure Call), que usa HTTP2 como medio de transporte y Protocol Buffers com formato de serialización (el lenguaje que puede ser fácilmente procesado por otro programa).</p><p>Seguro existen muchas otras formas de crear un API en un sistema distribuido pero la idea básica ya la tienes. Este es el uso más común de la palabra.</p><p>Ahora hablemos de otro uso de la palabra: en el diseño de software.</p><h3 id=apis-en-el-diseño-de-software>API&rsquo;s en el diseño de software</h3><p>Cuando se usa la palabra API en contexto de diseño de software, normalmente se refiere a la interfaz que otro sistema, módulo, o en general, componente del software presenta.</p><p>Por ejemplo, podemos decir que una clase tiene un API en el sentido de que presenta una cara a los demás parte del sistema para que lo usen, pero sobre todo <strong>oculta</strong> la implementación de las funciones que da. Como te podrás dar cuenta, una API es la parte pragmática de una <a href=/2023/03/13/que-es-la-abstraccion.html>abstracción</a>, y por eso es importante entenderlas.</p><p>El diseño del API de tus módulos, clases y aplicaciones en general es importantísimo para hacer buen software.</p><p>Retomando lo que siempre repetimos en este blog: <strong>las interfaces bien diseñadas te permiten ocultar información</strong> que no quieres que otras partes del sistema tengan en cuenta.</p><p>Por ejemplo en <a href=https://elixirlang.com>Elixir</a>, la forma de crear separación entre diferentes partes del sistema, a parte de módulos, son lo que llamamos <strong>aplicaciones</strong>. Esta aplicación puede tener un API bien definida que permita que sea 1) fácil de usar 2) que oculte todos los detalles de implementación posibles para que no se escape nada de información no concerniente a otras aplicaciones.</p><h3 id=cómo-diseñar-una-buena-api>Cómo diseñar una buena API</h3><p>En esta sección voy a mencionar lo que a mi me ha servido para crear interfaces que, al mismo tiempo que son fáciles de usar, son efectivas escondiendo información.</p><p><strong>Las interfaces deben tener una complejidad relativa a la funcionalidad que están ocultando</strong>. Es decir si tienes una función o clase que hace muy poquito, como por ejemplo, hacer un cálculo sencillo y casi auto-explicativo, no te conviene que tengas que pasar veinte datos diferentes para que lo puedas usar, lo único que vas a lograr es que tu programa sea más complicado de usar. En cambio, si la funcionalidad que está detrás de la API es grande y compleja, por supuesto que vale más la pena que la interfaz sea más compleja y requiera que pienses más para usarla.</p><p>Como analogía: el control de una bicicleta consiste en un manubrio análogo, mientras que el de un avión tiene decenas (¿tal vez más de 100?) de botones.</p><p>Esto está muy relacionado con el concepto que John Ousterhout presenta en <a href=https://amzn.to/2H92nwA>&ldquo;A Philosophy of Software Design&rdquo;</a>: crear módulos profundos, es decir, que tengan una interfaz lo más pequeña posible en relación con su funcionalidad, que debe ser lo más grande posible. Como un iceberg.</p><p><strong>Documenta bien las interfaces</strong>. No sirve de mucho una interfaz que nadie sepa como usar. Como en las películas de ciencia ficción donde encuentran aparatos que nadie tiene idea de cómo funcionan, así nos puede pasar con una pieza de software. La documentación de la interfaz debe incluir, además de los nombres de los métodos o llamadas, los tipos de datos esperados (enteros, flotantes, cadenas, fechas), el comportamiento dependiendo de la entrada y el tipo y estructura de la información que devuelve. Es supremamente importante además que se mencione si el uso de la interfaz tiene un efecto secundario, como el disparo de un correo, la creación o manipulación de un archivo.</p><p><strong>Explica la razón de ser</strong>. Esta parte de la documentación cuenta como un ejercicio que tiene dos objetivos: aclararte a ti mismo la razón de la existencia de la interfaz (aquí te vas a dar cuenta de que tal vez no vale la pena crearla o de que debe ser diferente de alguna forma). Si encuentras una buena explicación, entonces definitivamente el contenedor que tiene una API debe ser creado, y lo que vale la pena ser creado en programación, vale la pena ser documentado.</p><p><strong>No ocultes información demasiado temprano</strong>. Los puntos anteriores te pueden ayudar a no caer en este error, pero por si las dudas vamos a dejarlo claro: no tienes por qué separar o crear abstracciones de todo y ponerlo detrás de una API. La separación de implementaciones a final de cuentas puede crear una carga extra: cómo transferir la información. El caso más claro es el de las interfaces que se comunican a través de un red, en las que necesitamos usar una capa de transporte. Pero en otras ocasiones también implica un poco de trabajo extra, que puede no valer la pena si no estamos en la etapa correcta.</p><h2 id=ventajas-de-usar-un-api-bien-diseñada>Ventajas de usar un API bien diseñada</h2><p>Usar un API tiene varias ventajas, pero yo veo tres principales que pueden llevar tu desarrollo a niveles que no esperabas. Hablemos de ellas y tú evaluarás si es algo que te interese.</p><h3 id=menor-carga-cognitiva>Menor carga cognitiva</h3><p>Al separar tu software en varios componentes o aplicaciones que trabajen mediante interfaces, puedes reducir el número de cosas que tienes que mantener en la cabeza debido a que no te preocuparás por todos los detalles: solamente te interesarás por la interacción entre las API&rsquo;s o tu software y un API.</p><p>Esto es justo lo que pasa cuando un front-end se hace separado de un backend. Después de establecer la forma de la API, cuando trabajas en un lado, en front por ejemplo, sólo te preocupas de mostrar los datos que sabes a recibir de la interfaz sin preocuparte de los detalles de procesamiento o de almacenamiento de información de los que el backend se hace cargo.</p><h3 id=mejor-evolución-del-software>Mejor evolución del software</h3><p>Esto se logra gracias a que, si los diferentes componentes de un sistema están comunicados por API&rsquo;s claramente definidas, que además protejan bien los detalles de implementación de escaparse, estas partes pueden cambiarse internamente sin necesidad de afectar a otras parte si la forma de la interfaz se respeta. Además permite extender el software si creamos otro componente con la misma interfaz pero otro funcionamiento, por ejemplo.</p><p>Podríamos decir que las piezas son intercambiables, tal como cuando tienes un foco que se descompone y quieres reemplazarlo por otro, o simplemente quieres cambiar tu viejo foco incandescente por uno de led. Mientras consigas uno con la misma interfaz y que trabaje con el mismo voltaje, no importa la &ldquo;implementación&rdquo;, es decir, cómo cumpla con su función de entregar luz: podría ser otro incandescente, fluorescente, de led, o incluso podrías poner una cámara o un ventilador.</p><p>Esto se puede llevar al extremo si la interfaz que estás usando está estandarizada y tienes un programa que sepa utilizar este tipo de interfaces automáticamente. Por ejemplo esa es la idea de ReST y GraphQL.</p><p><img src=https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1679188820/paul-hanaoka-RJkKjLu8I9I-unsplash_o5k8ex.jpg alt="Power plug">{: .align-center}</p><p>Las interfaces proveen la función de <strong>&ldquo;plug and play&rdquo;</strong>, mientras el aparato tenga la misma interfaz, podemos conectar cualquier cosa, como en los contactos eléctricos.</p><h3 id=mejor-separación-del-trabajo>Mejor separación del trabajo</h3><p>Esto se puede inferir del comentario que hicimos, en el primer punto de las ventajas de usar un API. Si creas una interfaz estable y bien documentada, puedes delegar el trabajo de implementar las funciones detrás de esa interfaz a otra personas, otro equipo o de plano otra empresa.</p><p>En Open Source, por ejemplo, después de definir la API de un componente y hacer una implementación de referencia, se deja en manos de la comunidad crear otras implementaciones de ese módulo.</p><h2 id=cómo-decidir-los-módulos>Cómo decidir los módulos</h2><p>Finalmente, surge la pregunta, ¿cómo puedo decidir qué irá detrás de una interfaz y cómo crear la separación de funciones entre módulos?</p><p>De eso hablaremos en un artículo futuro, basándonos en un artículo de David L. Parnas, <a href=https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf>&ldquo;On the Criteria to be Used in Decomposing Systems into Modules&rdquo;</a>.</p><h2 id=conclusión>Conclusión</h2><p>Lo importante de saber que es un API es entender su función y tener técnicas para diseñarlas lo mejor posible. Recuerda, un API no se limita a un servidor web que sirve JSON, sino que es toda aquella interfaz que puede ser usada con un programa. De ahí que los navegadores expongan API&rsquo;s como la File API, Fetch API, Device API, <a href=https://www.educative.io/answers/what-are-browser-apis>etc.</a>{:target="_blank"}, que no tienen nada que ver con una API de un servidor web, sino con el <strong>uso de otras partes del software</strong> y que mediante esta interfaz nos olvidamos de los detalles de implementación.</p><p>Cuando a ti te toque diseñar un API, recuerda su principal función: separar dos partes de un software al mismo tiempo que permites la comunicación.</p></section></main><footer id=main-footer><div class=footer><a href=#>Scroll to Top</a><div class=footer-copyright><div class=dim>© 2025 Héctor Patricio</div><div>Made with ❤️ and powered by <a href=https://github.com/math-queiroz/rusty-typewriter target=_blank>Rusty Typewriter</a> theme for <a href=https://gohugo.io/ target=_blank>Hugo</a></div></div></div></footer></div><aside id=side-pane class=side-sticky><div class=side-details><span>2186 words</span>
-<span>12 - 16 minutes read</span></div><h3>Table Of Contents</h3><nav id=TableOfContents><ul><li><a href=#application-programming-interface>Application Programming Interface</a><ul><li><a href=#interfaz>Interfaz</a></li><li><a href=#interfaz-de-programación>Interfaz de Programación</a></li><li><a href=#interfaz-de-programación-de-aplicación>Interfaz de Programación de Aplicación</a></li><li><a href=#uso-de-api-en-el-contexto-actual>Uso de &ldquo;API&rdquo; en el contexto actual</a></li><li><a href=#apis-en-el-diseño-de-software>API&rsquo;s en el diseño de software</a></li><li><a href=#cómo-diseñar-una-buena-api>Cómo diseñar una buena API</a></li></ul></li><li><a href=#ventajas-de-usar-un-api-bien-diseñada>Ventajas de usar un API bien diseñada</a><ul><li><a href=#menor-carga-cognitiva>Menor carga cognitiva</a></li><li><a href=#mejor-evolución-del-software>Mejor evolución del software</a></li><li><a href=#mejor-separación-del-trabajo>Mejor separación del trabajo</a></li></ul></li><li><a href=#cómo-decidir-los-módulos>Cómo decidir los módulos</a></li><li><a href=#conclusión>Conclusión</a></li></ul></nav><h3>Related</h3><ul><li><a href=/2023/03/13/qu%C3%A9-es-la-abstracci%C3%B3n/>¿Qué es la abstracción?</a></li><li><a href=/2020/10/19/or%C3%ADgenes-de-la-deuda-t%C3%A9cnica/>Orígenes de la deuda técnica</a></li><li><a href=/2020/09/20/formas-de-hacer-una-api-con-go/>Formas de hacer una API con Go</a></li><li><a href=/2020/07/19/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/>Traducción automática: API's vs tu propio modelo</a></li><li><a href=/2020/03/07/a-philosophy-of-software-design-ocultar-informaci%C3%B3n/>A Philosophy of Software Design: Ocultar información</a></li></ul></aside></div></div></body></html>
+<!doctype html>
+<html
+  lang="es"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="es">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>¿Qué es una API? &middot; The Dojo MX Blog</title>
+    <meta name="title" content="¿Qué es una API? &middot; The Dojo MX Blog">
+  
+
+  
+  
+    <meta name="description" content="Definamos que es un &#39;Application Programming Interface&#39; en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API&#39;s.">
+  
+  
+    <meta name="keywords" content="apis,abstracción,diseño-de-software,definiciones,">
+  
+  
+  
+  <link rel="canonical" href="https://blog.thedojo.mx/2023/03/18/qu%C3%A9-es-una-api/">
+  
+
+  
+  
+  
+
+  
+  <meta property="og:url" content="https://blog.thedojo.mx/2023/03/18/qu%C3%A9-es-una-api/">
+  <meta property="og:site_name" content="The Dojo MX Blog">
+  <meta property="og:title" content="¿Qué es una API?">
+  <meta property="og:description" content="Definamos que es un &#39;Application Programming Interface&#39; en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API&#39;s.">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-03-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-03-18T00:00:00+00:00">
+    <meta property="article:tag" content="Apis">
+    <meta property="article:tag" content="Abstracción">
+    <meta property="article:tag" content="Diseño-De-Software">
+    <meta property="article:tag" content="Definiciones">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="¿Qué es una API?">
+  <meta name="twitter:description" content="Definamos que es un &#39;Application Programming Interface&#39; en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API&#39;s.">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.ef4185fe5e339387cacb87bebf66ba27f7d03e7d74a369c9b3d06530e81016b3cd3d15b4cdfc6fea1d5508c0c40ae6ffca1c3bbf2b089764211589988ca20e19.css"
+    integrity="sha512-70GF/l4zk4fKy4e&#43;v2a6J/fQPn10o2nJs9BlMOgQFrPNPRW0zfxv6h1VCMDECub/yhw7vysIl2QhFYmYjKIOGQ==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copiar"
+      data-copied="Copiado"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "¿Qué es una API?",
+    "headline": "¿Qué es una API?",
+    "description": "Definamos que es un \u0027Application Programming Interface\u0027 en el desarrollo de software. Y con este entendimiento, hablemos de cómo hacer mejores API\u0027s.",
+    "abstract": "\u003cp\u003eA veces limitamos el uso de la palabra \u003cstrong\u003eAPI\u003c\/strong\u003e a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.\u003c\/p\u003e",
+    "inLanguage": "es",
+    "url" : "https:\/\/blog.thedojo.mx\/2023\/03\/18\/qu%C3%A9-es-una-api\/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    "copyrightYear": "2023",
+    "dateCreated": "2023-03-18T00:00:00\u002b00:00",
+    "datePublished": "2023-03-18T00:00:00\u002b00:00",
+    
+    "dateModified": "2023-03-18T00:00:00\u002b00:00",
+    
+    "keywords": ["apis","abstracción","diseño-de-software","definiciones"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2199"
+  }]
+  </script>
+
+
+
+  
+  
+    
+
+  <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-127437335-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127437335-2');
+</script>
+
+
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Ir al contenido
+      </a>
+    </div>
+    
+    
+      <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium">
+          The Dojo MX Blog
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/posts/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Posts"
+  title="Posts">
+  
+  
+    <p class="text-base font-medium">
+      Posts
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/tags/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tags"
+  title="Tags">
+  
+  
+    <p class="text-base font-medium">
+      Tags
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Acerca de"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      Acerca de
+    </p>
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Buscar (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Buscar (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 me-1">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Posts"
+    title="Posts">
+    
+    
+      <p class="text-bg font-bg">
+        Posts
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/tags/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tags"
+    title="Tags">
+    
+    
+      <p class="text-bg font-bg">
+        Tags
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Acerca de"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        Acerca de
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="/js/background-blur.min.00a57c73ea12f2cab2980c3c3d649e89f6d82f190f74bbe2b67f2f5e39ab7d032ece47086400ca05396758aace13299da49aca43ea643d2625e62c506267a169.js"
+  integrity="sha512-AKV8c&#43;oS8sqymAw8PWSeifbYLxkPdLvitn8vXjmrfQMuzkcIZADKBTlnWKrOEymdpJrKQ&#43;pkPSYl5ixQYmehaQ=="
+  data-blur-id="menu-blur"></script>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/"
+      >The Dojo MX Blog</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/posts/"
+      >Posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/2023/03/18/qu%C3%A9-es-una-api/"
+      >¿Qué es una API?</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        ¿Qué es una API?
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2023-03-18T00:00:00&#43;00:00">18 marzo 2023</time><span class="px-2 text-primary-500">&middot;</span><span>2199 palabras</span><span class="px-2 text-primary-500">&middot;</span><span title="Tiempo de lectura">11 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/apis/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Apis
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/abstracci%C3%B3n/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Abstracción
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/dise%C3%B1o-de-software/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Diseño-De-Software
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/definiciones/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Definiciones
+  </span>
+</span>
+
+              </a>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+  
+
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Tabla de contenido
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#application-programming-interface">Application Programming Interface</a>
+      <ul>
+        <li><a href="#interfaz">Interfaz</a></li>
+        <li><a href="#interfaz-de-programación">Interfaz de Programación</a></li>
+        <li><a href="#interfaz-de-programación-de-aplicación">Interfaz de Programación de Aplicación</a></li>
+        <li><a href="#uso-de-api-en-el-contexto-actual">Uso de &ldquo;API&rdquo; en el contexto actual</a></li>
+        <li><a href="#apis-en-el-diseño-de-software">API&rsquo;s en el diseño de software</a></li>
+        <li><a href="#cómo-diseñar-una-buena-api">Cómo diseñar una buena API</a></li>
+      </ul>
+    </li>
+    <li><a href="#ventajas-de-usar-un-api-bien-diseñada">Ventajas de usar un API bien diseñada</a>
+      <ul>
+        <li><a href="#menor-carga-cognitiva">Menor carga cognitiva</a></li>
+        <li><a href="#mejor-evolución-del-software">Mejor evolución del software</a></li>
+        <li><a href="#mejor-separación-del-trabajo">Mejor separación del trabajo</a></li>
+      </ul>
+    </li>
+    <li><a href="#cómo-decidir-los-módulos">Cómo decidir los módulos</a></li>
+    <li><a href="#conclusión">Conclusión</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Tabla de contenido
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#application-programming-interface">Application Programming Interface</a>
+      <ul>
+        <li><a href="#interfaz">Interfaz</a></li>
+        <li><a href="#interfaz-de-programación">Interfaz de Programación</a></li>
+        <li><a href="#interfaz-de-programación-de-aplicación">Interfaz de Programación de Aplicación</a></li>
+        <li><a href="#uso-de-api-en-el-contexto-actual">Uso de &ldquo;API&rdquo; en el contexto actual</a></li>
+        <li><a href="#apis-en-el-diseño-de-software">API&rsquo;s en el diseño de software</a></li>
+        <li><a href="#cómo-diseñar-una-buena-api">Cómo diseñar una buena API</a></li>
+      </ul>
+    </li>
+    <li><a href="#ventajas-de-usar-un-api-bien-diseñada">Ventajas de usar un API bien diseñada</a>
+      <ul>
+        <li><a href="#menor-carga-cognitiva">Menor carga cognitiva</a></li>
+        <li><a href="#mejor-evolución-del-software">Mejor evolución del software</a></li>
+        <li><a href="#mejor-separación-del-trabajo">Mejor separación del trabajo</a></li>
+      </ul>
+    </li>
+    <li><a href="#cómo-decidir-los-módulos">Cómo decidir los módulos</a></li>
+    <li><a href="#conclusión">Conclusión</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = false
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>A veces limitamos el uso de la palabra <strong>API</strong> a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.</p>
+
+<h2 class="relative group">Application Programming Interface
+    <div id="application-programming-interface" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#application-programming-interface" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>La realidad es que el inicialismo &ldquo;API&rdquo; es casi auto-explicativo: Interfaz de Programación de Aplicación. Bueno, vamos a analizarlo un poco.</p>
+
+<h3 class="relative group">Interfaz
+    <div id="interfaz" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#interfaz" aria-label="Ancla">#</a>
+    </span>
+    
+</h3>
+<p>Primeramente es un <strong>interfaz</strong>. Una interfaz es el lugar en donde dos sistemas o entidades convergen e <strong>interactúan</strong>. Podemos entender como interfaz a la parte que te permite usar un aparato electrónico, por ejemplo. En una computadora, su interfaz para los humanos son el teclado, la pantalla y el mouse o trackpad. En una televisión, la interfaz es la pantalla, el control remoto y los controles integrados en el cuerpo principal.</p>
+<p>La interfaz normalmente <strong>esconde</strong> la mayor parte del sistema y muestra solamente las partes que son relevantes o <em>que se pueden usar</em> por un sistema externo. En el caso de la computadora, ver o interactuar directamente con el procesador o la RAM no nos interesa, por eso la computadora expone un conjunto limitado de todas las características que la componen. Esta interfaz en realidad representa una <strong>abstracción</strong> de lo que el sistema completo es. Este elemento habilita y simplifica el uso de este sistema. Las interfaces definen <strong>la forma</strong> de un sistema para entidades externas a él.</p>
+<p>Una interfaz podría entenderse como un iceberg: la parte &ldquo;visible&rdquo; o con la que puedes interactuar es la punta, mientras que la gran masa es la funcionalidad que está oculta y a la que no puedes acceder.</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="Una interfaz es como un Iceberg"
+    src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1679188585/Ilustracio%CC%81n_sin_ti%CC%81tulo_3_fi05qn.png"
+    ></figure>
+{: .align-center}</p>
+<p>(Probablemente ese iceberg está mal dibujado: <a
+  href="https://axbom.com/iceberg/"
+    target="_blank"
+  >The topple of an iceberg: You&rsquo;re drawing it wrong</a>)</p>
+
+<h3 class="relative group">Interfaz de Programación
+    <div id="interfaz-de-programación" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#interfaz-de-programaci%c3%b3n" aria-label="Ancla">#</a>
+    </span>
+    
+</h3>
+<p>Ya que sabemos que es una interfaz, ahora agreguemos el siguiente término: <strong>programación</strong>. Que sea un interfaz de programación nos indica la forma en la que esta interfaz puede ser usada: mediante el fino arte de la programación. Otra forma en la que creo que suena bien la traducción es <em>Interfaz Programática</em>. Así como las interfaces visuales se entienden mediante la visión, las interfaces programáticas se entienden y usan con <strong>programas</strong>.</p>
+<p>¿Qué hace que una interfaz pueda ser usada de manera sencilla por un programa? Listemos algunas de las características:</p>
+<ol>
+<li>La comunicación con la interfaz se puede hacer por medio un programa. La manera más sencilla es por medio de texto plano en formatos establecidos o formatos binarios. Estos pueden ser, por ejemplo, HTTP y para facilitar más las cosas JSON o XML. Hay formatos binarios usados como <a
+  href="https://protobuf.dev/"
+    target="_blank"
+  >Protcol Buffers</a>. Pero no <strong>tiene</strong> que ser ninguno de estos. Mientras el formato se pueda procesar de manera automática con un programa, es una interfaz de programación. Por ejemplo, una aplicación podría escribir a un archivo y la otra simplemente leerlo de ahí (ejem. así funcionan los <em>sockets</em> en UNIX). O por ejemplo, la &ldquo;aplicación&rdquo; puede ser cargada en el mismo espacio de memoria y ser usada por el mismo entorno de ejecución.</li>
+<li>La interfaz puede recibir peticiones o instrucciones creadas por un programa. Muy en la línea del punto anterior, la interfaz debe exponer formas de que otro programa la llame mediante medios programables.</li>
+</ol>
+<p>Si la interfaz cumple con esto, entonces es una interfaz de programación.</p>
+
+<h3 class="relative group">Interfaz de Programación de Aplicación
+    <div id="interfaz-de-programación-de-aplicación" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#interfaz-de-programaci%c3%b3n-de-aplicaci%c3%b3n" aria-label="Ancla">#</a>
+    </span>
+    
+</h3>
+<p>El último término nos dice a quién la pertenece esta interfaz: <strong>a otra APLICACIÓN</strong>. Esto nos dice que la interfaz pertenece a un programa para que <strong>otro programa se comunique</strong>.</p>
+<p>Resumen: un API es lo que permite la comunicación entre dos programas de manera automática, es decir, sin que tengan que intervenir humanos en esa comunicación. Le permite a un programa usar otro.</p>
+<p>Con el tiempo, lo que llamamos <em>&ldquo;aplicación&rdquo;</em> se ha extendido para referirse a cualquier programa o parte de un programa, como un módulo, una clase, etc.</p>
+
+<h3 class="relative group">Uso de &ldquo;API&rdquo; en el contexto actual
+    <div id="uso-de-api-en-el-contexto-actual" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#uso-de-api-en-el-contexto-actual" aria-label="Ancla">#</a>
+    </span>
+    
+</h3>
+<p>Recapitulemos: una API es una interfaz entre dos programas, que permite a ambos una comunicación unidireccional o bidireccional.</p>
+<p>El uso más común tiene que ver con interfaces que tienen comunicación a través de una red de computadoras, como Internet. Normalmente son un servidores HTTP que pueden responder con formatos que pueden ser procesados de automáticamente de manera sencilla, los más comunes son JSON y XML.
+Dependiendo de los estándares que sigan, estas API&rsquo;s pueden ser llamadas <strong>RPC</strong> (Remote Procedure Call), <strong>ReST</strong> (Representational State Transfer) o <strong>SOAP</strong> (Simple Object Access Protocol).</p>
+<p>Este tipo de comunicación a través de la red tiene varias versiones, no sólo HTTP. Por ejemplo, existen alternativas más modernas como <strong>gRPC</strong> (Google Remote Procedure Call), que usa HTTP2 como medio de transporte y Protocol Buffers com formato de serialización (el lenguaje que puede ser fácilmente procesado por otro programa).</p>
+<p>Seguro existen muchas otras formas de crear un API en un sistema distribuido pero la idea básica ya la tienes. Este es el uso más común de la palabra.</p>
+<p>Ahora hablemos de otro uso de la palabra: en el diseño de software.</p>
+
+<h3 class="relative group">API&rsquo;s en el diseño de software
+    <div id="apis-en-el-diseño-de-software" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#apis-en-el-dise%c3%b1o-de-software" aria-label="Ancla">#</a>
+    </span>
+    
+</h3>
+<p>Cuando se usa la palabra API en contexto de diseño de software, normalmente se refiere a la interfaz que otro sistema, módulo, o en general, componente del software presenta.</p>
+<p>Por ejemplo, podemos decir que una clase tiene un API en el sentido de que presenta una cara a los demás parte del sistema para que lo usen, pero sobre todo <strong>oculta</strong> la implementación de las funciones que da. Como te podrás dar cuenta, una API es la parte pragmática de una <a
+  href="/2023/03/13/que-es-la-abstraccion.html">abstracción</a>, y por eso es importante entenderlas.</p>
+<p>El diseño del API de tus módulos, clases y aplicaciones en general es importantísimo para hacer buen software.</p>
+<p>Retomando lo que siempre repetimos en este blog: <strong>las interfaces bien diseñadas te permiten ocultar información</strong> que no quieres que otras partes del sistema tengan en cuenta.</p>
+<p>Por ejemplo en <a
+  href="https://elixirlang.com"
+    target="_blank"
+  >Elixir</a>, la forma de crear separación entre diferentes partes del sistema, a parte de módulos, son lo que llamamos <strong>aplicaciones</strong>. Esta aplicación puede tener un API bien definida que permita que sea 1) fácil de usar 2) que oculte todos los detalles de implementación posibles para que no se escape nada de información no concerniente a otras aplicaciones.</p>
+
+<h3 class="relative group">Cómo diseñar una buena API
+    <div id="cómo-diseñar-una-buena-api" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#c%c3%b3mo-dise%c3%b1ar-una-buena-api" aria-label="Ancla">#</a>
+    </span>
+    
+</h3>
+<p>En esta sección voy a mencionar lo que a mi me ha servido para crear interfaces que, al mismo tiempo que son fáciles de usar, son efectivas escondiendo información.</p>
+<p><strong>Las interfaces deben tener una complejidad relativa a la funcionalidad que están ocultando</strong>. Es decir si tienes una función o clase que hace muy poquito, como por ejemplo, hacer un cálculo sencillo y casi auto-explicativo, no te conviene que tengas que pasar veinte datos diferentes para que lo puedas usar, lo único que vas a lograr es que tu programa sea más complicado de usar. En cambio, si la funcionalidad que está detrás de la API es grande y compleja, por supuesto que vale más la pena que la interfaz sea más compleja y requiera que pienses más para usarla.</p>
+<p>Como analogía: el control de una bicicleta consiste en un manubrio análogo, mientras que el de un avión tiene decenas (¿tal vez más de 100?) de botones.</p>
+<p>Esto está muy relacionado con el concepto que John Ousterhout presenta en <a
+  href="https://amzn.to/2H92nwA"
+    target="_blank"
+  >&ldquo;A Philosophy of Software Design&rdquo;</a>: crear módulos profundos, es decir, que tengan una interfaz lo más pequeña posible en relación con su funcionalidad, que debe ser lo más grande posible. Como un iceberg.</p>
+<p><strong>Documenta bien las interfaces</strong>. No sirve de mucho una interfaz que nadie sepa como usar. Como en las películas de ciencia ficción donde encuentran aparatos que nadie tiene idea de cómo funcionan, así nos puede pasar con una pieza de software. La documentación de la interfaz debe incluir, además de los nombres de los métodos o llamadas, los tipos de datos esperados (enteros, flotantes, cadenas, fechas), el comportamiento dependiendo de la entrada y el tipo y estructura de la información que devuelve. Es supremamente importante además que se mencione si el uso de la interfaz tiene un efecto secundario, como el disparo de un correo, la creación o manipulación de un archivo.</p>
+<p><strong>Explica la razón de ser</strong>. Esta parte de la documentación cuenta como un ejercicio que tiene dos objetivos: aclararte a ti mismo la razón de la existencia de la interfaz (aquí te vas a dar cuenta de que tal vez no vale la pena crearla o de que debe ser diferente de alguna forma). Si encuentras una buena explicación, entonces definitivamente el contenedor que tiene una API debe ser creado, y lo que vale la pena ser creado en programación, vale la pena ser documentado.</p>
+<p><strong>No ocultes información demasiado temprano</strong>. Los puntos anteriores te pueden ayudar a no caer en este error, pero por si las dudas vamos a dejarlo claro: no tienes por qué separar o crear abstracciones de todo y ponerlo detrás de una API. La separación de implementaciones a final de cuentas puede crear una carga extra: cómo transferir la información. El caso más claro es el de las interfaces que se comunican a través de un red, en las que necesitamos usar una capa de transporte. Pero en otras ocasiones también implica un poco de trabajo extra, que puede no valer la pena si no estamos en la etapa correcta.</p>
+
+<h2 class="relative group">Ventajas de usar un API bien diseñada
+    <div id="ventajas-de-usar-un-api-bien-diseñada" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ventajas-de-usar-un-api-bien-dise%c3%b1ada" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>Usar un API tiene varias ventajas, pero yo veo tres principales que pueden llevar tu desarrollo a niveles que no esperabas. Hablemos de ellas y tú evaluarás si es algo que te interese.</p>
+
+<h3 class="relative group">Menor carga cognitiva
+    <div id="menor-carga-cognitiva" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#menor-carga-cognitiva" aria-label="Ancla">#</a>
+    </span>
+    
+</h3>
+<p>Al separar tu software en varios componentes o aplicaciones que trabajen mediante interfaces, puedes reducir el número de cosas que tienes que mantener en la cabeza debido a que no te preocuparás por todos los detalles: solamente te interesarás por la interacción entre las API&rsquo;s o tu software y un API.</p>
+<p>Esto es justo lo que pasa cuando un front-end se hace separado de un backend. Después de establecer la forma de la API, cuando trabajas en un lado, en front por ejemplo, sólo te preocupas de mostrar los datos que sabes a recibir de la interfaz sin preocuparte de los detalles de procesamiento o de almacenamiento de información de los que el backend se hace cargo.</p>
+
+<h3 class="relative group">Mejor evolución del software
+    <div id="mejor-evolución-del-software" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#mejor-evoluci%c3%b3n-del-software" aria-label="Ancla">#</a>
+    </span>
+    
+</h3>
+<p>Esto se logra gracias a que, si los diferentes componentes de un sistema están comunicados por API&rsquo;s claramente definidas, que además protejan bien los detalles de implementación de escaparse, estas partes pueden cambiarse internamente sin necesidad de afectar a otras parte si la forma de la interfaz se respeta. Además permite extender el software si creamos otro componente con la misma interfaz pero otro funcionamiento, por ejemplo.</p>
+<p>Podríamos decir que las piezas son intercambiables, tal como cuando tienes un foco que se descompone y quieres reemplazarlo por otro, o simplemente quieres cambiar tu viejo foco incandescente por uno de led. Mientras consigas uno con la misma interfaz y que trabaje con el mismo voltaje, no importa la &ldquo;implementación&rdquo;, es decir, cómo cumpla con su función de entregar luz: podría ser otro incandescente, fluorescente, de led, o incluso podrías poner una cámara o un ventilador.</p>
+<p>Esto se puede llevar al extremo si la interfaz que estás usando está estandarizada y tienes un programa que sepa utilizar este tipo de interfaces automáticamente. Por ejemplo esa es la idea de ReST y GraphQL.</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="Power plug"
+    src="https://res.cloudinary.com/hectorip/image/upload/c_scale,w_800/v1679188820/paul-hanaoka-RJkKjLu8I9I-unsplash_o5k8ex.jpg"
+    ></figure>
+{: .align-center}</p>
+<p>Las interfaces proveen la función de <strong>&ldquo;plug and play&rdquo;</strong>, mientras el aparato tenga la misma interfaz, podemos conectar cualquier cosa, como en los contactos eléctricos.</p>
+
+<h3 class="relative group">Mejor separación del trabajo
+    <div id="mejor-separación-del-trabajo" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#mejor-separaci%c3%b3n-del-trabajo" aria-label="Ancla">#</a>
+    </span>
+    
+</h3>
+<p>Esto se puede inferir del comentario que hicimos, en el primer punto de las ventajas de usar un API. Si creas una interfaz estable y bien documentada, puedes delegar el trabajo de implementar las funciones detrás de esa interfaz a otra personas, otro equipo o de plano otra empresa.</p>
+<p>En Open Source, por ejemplo, después de definir la API de un componente y hacer una implementación de referencia, se deja en manos de la comunidad crear otras implementaciones de ese módulo.</p>
+
+<h2 class="relative group">Cómo decidir los módulos
+    <div id="cómo-decidir-los-módulos" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#c%c3%b3mo-decidir-los-m%c3%b3dulos" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>Finalmente, surge la pregunta, ¿cómo puedo decidir qué irá detrás de una interfaz y cómo crear la separación de funciones entre módulos?</p>
+<p>De eso hablaremos en un artículo futuro, basándonos en un artículo de David L. Parnas, <a
+  href="https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf"
+    target="_blank"
+  >&ldquo;On the Criteria to be Used in Decomposing Systems into Modules&rdquo;</a>.</p>
+
+<h2 class="relative group">Conclusión
+    <div id="conclusión" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#conclusi%c3%b3n" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>Lo importante de saber que es un API es entender su función y tener técnicas para diseñarlas lo mejor posible. Recuerda, un API no se limita a un servidor web que sirve JSON, sino que es toda aquella interfaz que puede ser usada con un programa. De ahí que los navegadores expongan API&rsquo;s como la File API, Fetch API, Device API, <a
+  href="https://www.educative.io/answers/what-are-browser-apis"
+    target="_blank"
+  >etc.</a>{:target=&quot;_blank&quot;}, que no tienen nada que ver con una API de un servidor web, sino con el <strong>uso de otras partes del software</strong> y que mediante esta interfaz nos olvidamos de los detalles de implementación.</p>
+<p>Cuando a ti te toque diseñar un API, recuerda su principal función: separar dos partes de un software al mismo tiempo que permites la comunicación.</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_posts/que-es-un-api.md"
+          data-oid-likes="likes_posts/que-es-un-api.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/2023/03/13/qu%C3%A9-es-la-abstracci%C3%B3n/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;¿Qué es la abstracción?
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2023-03-13T00:00:00&#43;00:00">13 marzo 2023</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+            <a
+              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/">
+              <span class="leading-6">
+                Descomponiendo tu aplicación en módulos&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+              </span>
+            </a>
+            
+              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2023-03-25T00:00:00&#43;00:00">25 marzo 2023</time>
+              </span>
+            
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-24 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Ir arriba"
+    title="Ir arriba">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Desarrollada con <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="https://blog.thedojo.mx/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Buscar"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Cerrar (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

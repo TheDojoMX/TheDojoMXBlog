@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open/Closed on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/open/closed/</link><description>Recent content in Open/Closed on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 03 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/open/closed/index.xml" rel="self" type="application/rss+xml"/><item><title>El principio Abierto/Cerrado (Open/Closed)</title><link>https://blog.thedojo.mx/2022/12/03/el-principio-abierto/cerrado-open/closed/</link><pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/03/el-principio-abierto/cerrado-open/closed/</guid><description>El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por Robert Martin{:target=&amp;quot;_blank&amp;quot;}), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.
-Vamos a analizarlo, ver sus caso de uso y finalmente a establecer sus relaciones con otros principios de diseño de software que te pueden ayudar a crear mejores programas.
-El principio Abierto/Cerrado Este principio establece que:
-Cualquier módulo de software debería estar abierto para la extensión, pero cerrado para modificación.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open/Closed on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/open/closed/</link>
+    <description>Recent content in Open/Closed on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 03 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/open/closed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>El principio Abierto/Cerrado (Open/Closed)</title>
+      <link>https://blog.thedojo.mx/2022/12/03/el-principio-abierto/cerrado-open/closed/</link>
+      <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2022/12/03/el-principio-abierto/cerrado-open/closed/</guid>
+      <description>&lt;p&gt;El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por &lt;a
+  href=&#34;https://drive.google.com/file/d/0BwhCYaYDn8EgN2M5MTkwM2EtNWFkZC00ZTI3LWFjZTUtNTFhZGZiYmUzODc1/view?resourcekey=0-FsS837CGML599A_o5D-nAw&#34;
+    target=&#34;_blank&#34;
+  &gt;Robert Martin&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

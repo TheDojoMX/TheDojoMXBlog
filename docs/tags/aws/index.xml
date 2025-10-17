@@ -1,3 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/aws/</link><description>Recent content in AWS on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Mon, 17 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Instrumentando microservicios en Go con Gin y AWS X-Ray</title><link>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-en-go-con-gin-y-aws-x-ray/</link><pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-en-go-con-gin-y-aws-x-ray/</guid><description>En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.
-Si nuestro código provee información de traceo para requests, y logs, podemos decir que está instrumentado y que podemos observar cómo se está desempeñando nuestro sistema.
-La instrumentación de servicios es especialmente útil para identificar y resolver problemas de rendimiento y errores.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/aws/</link>
+    <description>Recent content in AWS on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Mon, 17 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Instrumentando microservicios en Go con Gin y AWS X-Ray</title>
+      <link>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-en-go-con-gin-y-aws-x-ray/</link>
+      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-en-go-con-gin-y-aws-x-ray/</guid>
+      <description>&lt;p&gt;En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

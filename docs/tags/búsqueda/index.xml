@@ -1,2 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Búsqueda on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/b%C3%BAsqueda/</link><description>Recent content in Búsqueda on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/b%C3%BAsqueda/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es la búsqueda binaria?</title><link>https://blog.thedojo.mx/2024/10/26/qu%C3%A9-es-la-b%C3%BAsqueda-binaria/</link><pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/10/26/qu%C3%A9-es-la-b%C3%BAsqueda-binaria/</guid><description>Uno de los algoritmos más fáciles de entender, que incluso sin preparación aplicamos en la vida real y que se enseña en las primeras clases de programación es la búsqueda binaria. Vamos a hablar de este algoritmo y su relación profunda con las ciencias de la computación y la información en general.
-Búsqueda binaria en la vida real ¿Alguna ves has jugado &amp;ldquo;Adivina Quién&amp;rdquo;? Es un juego de mesa en el que cada jugador tiene un tablero con un conjunto de personajes con características físicas distintas, como el color de pelo, diferentes accesorios, y otros rasgos distintivos.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Búsqueda on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/b%C3%BAsqueda/</link>
+    <description>Recent content in Búsqueda on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/b%C3%BAsqueda/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Qué es la búsqueda binaria?</title>
+      <link>https://blog.thedojo.mx/2024/10/26/qu%C3%A9-es-la-b%C3%BAsqueda-binaria/</link>
+      <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2024/10/26/qu%C3%A9-es-la-b%C3%BAsqueda-binaria/</guid>
+      <description>&lt;p&gt;Uno de los algoritmos más fáciles de entender, que incluso sin preparación
+aplicamos en la vida real y que se enseña en las primeras clases de programación
+es la &lt;strong&gt;búsqueda binaria&lt;/strong&gt;. Vamos a hablar de este algoritmo y su relación
+profunda con las ciencias de la computación y la información en general.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

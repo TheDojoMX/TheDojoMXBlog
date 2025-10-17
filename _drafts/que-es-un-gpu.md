@@ -20,7 +20,10 @@ perspectiva como desarrolladores de software.
 
 ## GPUs para Desarrolladores
 
-Lo que comenzó como hardware especializado para renderizar gráficos en videojuegos se ha convertido en el motor computacional detrás de los modelos de inteligencia artificial más avanzados, simulaciones científicas complejas y procesamiento masivo de datos.
+Lo que comenzó como hardware especializado para renderizar gráficos en videojuegos
+se ha convertido en el motor computacional detrás de los modelos de inteligencia
+artificial más avanzados, simulaciones científicas complejas y procesamiento
+masivo de datos.
 
 Como desarrolladores modernos, entender qué es un GPU y cuándo aprovecharlo
 es muy importante. Si trabajas (o quieres trabajar) con machine learning,
@@ -34,7 +37,8 @@ beneficiarse de una implementación en GPUs en lugar de CPUs tradicionales.
 
 ## CPU vs GPU: Filosofías de Diseño Diferentes
 
-Para entender un GPU, primero debemos contrastar su diseño con el de un CPU (Central Processing Unit). Pongamos un ejemplo sencillo.
+Para entender un GPU, primero debemos contrastar su diseño con el de un CPU
+(Central Processing Unit). Pongamos un ejemplo sencillo.
 
 ### CPU: El Artesano experto
 
@@ -51,6 +55,7 @@ También tinen cachés "enormes" (L1, L2, L3) para minimizar la latencia de acce
 a memoria. Otra característica es que pueden reordenar las instrucciones
 de bajo nivel para aprovechar mejor los recursos, reduciendo la latencia en la
 ejecución.
+
 Si quieres tener máximo control y flexibilidad, como en el caso de lógica de
 negocio, bases de datos, servidores web, algoritmos complejos, etc., tu programa
 debe correr en CPU. Esto es lo que el 99.999% de los desarrolladores hacemos,
@@ -60,7 +65,10 @@ Ahora hablemos del tema que nos concierne: los GPUs.
 
 ### GPU: La Línea de Ensamblaje
 
-Un GPU tiene **miles de núcleos simples** (miles a decenas de miles en GPUs modernas).Están pensados para **optimizar paralelismo masivo** con operaciones _independientes_. Un GPU procesa **grandes cantidades de datos simultáneamente, pero aplicándoles operaciones relativamente sencillas**.
+Un GPU tiene **muchísimos núcleos simples** (miles a decenas de miles en GPUs modernas).
+Están pensados para **optimizar paralelismo masivo** con operaciones _independientes_.
+Un GPU procesa **grandes cantidades de datos simultáneamente, pero aplicándoles operaciones
+relativamente sencillas**.
 
 Su control de flujo es simple, es decir, no puede predecir branches complejos ni
 reordenar instrucciones. Digamos que su principal fortaleza es hacer operaciones
@@ -122,10 +130,11 @@ Los GPUs priorizan **throughput** (cantidad de trabajo procesado, basado en dato
 El modelo de programación de GPUs se basa en **SIMD/SIMT** (Single Instruction, Multiple Data / Single Instruction, Multiple Threads):
 
 - Un mismo conjunto de instrucciones se ejecuta sobre múltiples datos simultáneamente
-todos los threads en un warp ejecutan la misma instrucción al mismo tiempo (sobre diferentees datos), divergencia de control (diferentes branches) causa serialización y pérdida de performance
+todos los threads en un warp ejecutan la misma instrucción al mismo tiempo (sobre
+diferentees datos), divergencia de control (diferentes branches) causa
+serialización y pérdida de performance
 
 ### Ejemplo Práctico
-
 **Problema A**: Multiplicar 1 millón de números por una constante
 - **Paralelismo perfecto**: Cada operación es independiente
 - **GPU gana dramáticamente**: 100x más rápido o más dependiendo del hardware
@@ -135,14 +144,17 @@ todos los threads en un warp ejecutan la misma instrucción al mismo tiempo (sob
 
 ### Complejidad de Programación - Desafíos
 
-- **Debugging**: Más difícil que código CPU
-- **Profiling**: Herramientas especializadas necesarias
+Programar para GPUs es completamente diferente que programar para CPUs. Aquí
+algunos retos:
+
+- **Debugging**: Más difícil que código CPU, porque tenemos herramientas más limitadas
+- **Profiling**: Herramientas especializadas necesarias y también hay pocas
 - **Curva de aprendizaje**: Entender modelo de memoria y ejecución
 - **Portabilidad**: CUDA es específico de NVIDIA
 
-### Consumo Energético y Costo
+### Consumo Energético
 
-- GPUs de alto rendimiento consumen 300-500W
+Los GPUs consumen mucha, pero mucha más engergía que los CPU's. Un GPU de alto rendimiento consumen 300-500W
 - Hardware costoso (especialmente para ML/AI)
 - Refrigeración y infraestructura adicional
 
@@ -151,26 +163,21 @@ todos los threads en un warp ejecutan la misma instrucción al mismo tiempo (sob
 ### GPU Programming Más Accesible
 
 - **Compiladores inteligentes**: Generación automática de código GPU
-- **Domain-specific languages**: Abstracciones de alto nivel
+- **Domain-specific languages**: Abstracciones de alto nivel: CUDA, OpenCL, SYCL, Triton, Mojo
 - **Auto-tuning**: Optimización automática de parámetros
-
 ### Hardware Especializado
 
 - **TPUs (Tensor Processing Units)**: Optimizadas para ML
 - **NPUs (Neural Processing Units)**: IA en edge devices
-- **IPUs (Intelligence Processing Units)**: Graph-based computing
+- **FPGAs (Field)**
+### GPUs en la Nube
 
-### GPU en la Nube
+Si no tienes un GPU físico hay varias formas de acceder a GPUs de alto rendimiento,
+de forma remota y sin mucha inversión por adelantado:
 
-- **Serverless GPU**: Paga solo por el tiempo de uso
+- **Serverless GPU**: Paga solo por el tiempo de uso (Lambda, Functions)
 - **Spot instances**: GPU computing económico
 - **Kubernetes con GPUs**: Orquestación de cargas GPU
-
-### Integración CPU-GPU
-
-- **Unified memory**: Espacio de direcciones compartido
-- **Heterogeneous computing**: Cooperación CPU-GPU transparente
-- **Smart scheduling**: Distribuir trabajo automáticamente
 
 ## Conclusión
 
@@ -185,18 +192,25 @@ La clave está en reconocer el patrón: **¿Estás aplicando la misma operación
 
 ## Referencias y Recursos para Profundizar
 
+La programación de GPUs es una campo amplio y bastante diferente a la programación
+"tradicional". Aquí nos centramos en transformaciones matemáticas, álgebra lineal
+e incluso cálculo.
+
+
 ### Libros Fundamentales
 
-**Programming Massively Parallel Processors: A Hands-on Approach** - (David B. Kirk, Wen-mei W. Hwu, Izzat El Hajj): El LIBRO que tienes que leer para aprender programación de GPUs. Cubre desde conceptos básicos hasta técnicas avanzadas con enfoque práctico.
+**Programming Massively Parallel Processors: A Hands-on Approach** - (David B.
+Kirk, Wen-mei W. Hwu, Izzat El Hajj): El LIBRO que tienes que leer para aprender
+programación de GPUs. Cubre desde conceptos básicos hasta técnicas avanzadas con
+enfoque práctico.
 
 **GPU Gems Series** (Disponibles gratis online)
 - *GPU Gems 1* (2004): Técnicas de programación gráfica en tiempo real
-- *GPU Gems 2* (2005): 20 capítulos dedicados a GPGPU programming
+- *GPU Gems 2* (2005): 20 capítulos dedicados a GPU programming
 - *GPU Gems 3*: Técnicas modernas de GPU programming
 - *Link*: [NVIDIA Developer](https://developer.nvidia.com/gpugems)
 
 ### Documentación Oficial
-
 **3. CUDA C++ Programming Guide**
 - *Fuente*: NVIDIA Official Documentation
 - *Descripción*: Documentación completa y oficial del modelo de programación CUDA
@@ -206,17 +220,17 @@ La clave está en reconocer el patrón: **¿Estás aplicando la misma operación
 - *Descripción*: Técnicas de optimización y patrones idiomáticos para programación CUDA
 - *Link*: [https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/)
 
-### Cursos Online
+### Cursos
+De este curso puedes encontrar todas las presentaciones en línea:
+**CS 179: GPU Programming** de la universidad de Caltech académico con 6 tareas y proyecto de 4 semanas
 
-**5. CS 179: GPU Programming (Caltech)**
-- *Descripción*: Curso académico con 6 tareas y proyecto de 4 semanas
-- *Link*: [https://courses.cms.caltech.edu/cs179/](https://courses.cms.caltech.edu/cs179/)
+[https://courses.cms.caltech.edu/cs179/](https://courses.cms.caltech.edu/cs179)
 
 **6. GPU Programming Specialization (Johns Hopkins - Coursera)**
 - *Descripción*: Especialización completa en high performance computing con GPUs
 - *Link*: [Coursera](https://www.coursera.org/specializations/gpu-programming)
 
-**7. NVIDIA CUDA Education & Training**
+7. NVIDIA CUDA Education & Training**
 - *Descripción*: Cursos oficiales de NVIDIA, self-paced e instructor-led
 - *Incluye*: GPU-accelerated workstations en la nube, certificaciones
 - *Link*: [https://developer.nvidia.com/cuda-education-training](https://developer.nvidia.com/cuda-education-training)

@@ -1,14 +1,108 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Solid on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/solid/</link><description>Recent content in Solid on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 17 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/solid/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Son aplicables y prácticos los principios SOLID?</title><link>https://blog.thedojo.mx/2023/06/17/son-aplicables-y-pr%C3%A1cticos-los-principios-solid/</link><pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/06/17/son-aplicables-y-pr%C3%A1cticos-los-principios-solid/</guid><description>Los principios SOLID, se enseñan como verdades incuestionables sobre el buen desarrollo de software. Aunque, justo por la educación, antes era completamente partidario de estos, con el tiempo me fui dando cuenta de varias de las fallas que presentan.
-En este artículo te voy a hablar de las fallas generales como conjunto, pero también es un índice para una serie de artículos que escribí sobre cada uno de ellos, analizándolo a profundidad.</description></item><item><title>El principio de Inversión de Dependencias</title><link>https://blog.thedojo.mx/2023/04/22/el-principio-de-inversi%C3%B3n-de-dependencias/</link><pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/04/22/el-principio-de-inversi%C3%B3n-de-dependencias/</guid><description>Este es el artículo final sobre el análisis de los principios SOLID. En este artículo veremos el principio de Inversión de Dependencias, el cual nos dice que las clases de alto nivel no deben depender de las clases de bajo nivel, sino que ambas deben depender de abstracciones.
-Veamos qué tan útil es en la vida real, aplicándolo día a día, cuáles son las formas de implementarlo y algunos ejemplos, asó como algunas críticas.</description></item><item><title>El principio de segregación de Interfaces</title><link>https://blog.thedojo.mx/2023/04/01/el-principio-de-segregaci%C3%B3n-de-interfaces/</link><pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/04/01/el-principio-de-segregaci%C3%B3n-de-interfaces/</guid><description>Continuemos con el estudio de los principios SOLID. En esta ocasión hablaremos del cuarto principio: El principio de segregación de interfaces.
-Recuerda que el objetivo de estos artículos no es explicártelos como si fueran una religión que estás mal si no sigues, sino analizarlos bajo una luz crítica y decidir si de verdad son útiles o podemos usar otro principio.
-Analicemos primero el enunciado, junto con algunos ejemplos y veamos si nos conviene aplicarlo directamente o no.</description></item><item><title>El principio de sustitución de Liskov</title><link>https://blog.thedojo.mx/2023/03/06/el-principio-de-sustituci%C3%B3n-de-liskov/</link><pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/03/06/el-principio-de-sustituci%C3%B3n-de-liskov/</guid><description>El tercer principio enunciado en los principios SOLID es el principio de sustitución de Liskov. ¿Qué significa este principio? Y más importante, ¿vale la pena seguirlo? Pero antes de hablar del principio, hablemos de Barbara Liskov, la persona que lo inspiró y que estableció los conceptos principales.
-Un poco de historia: Barbara Liskov Barbara Liskov es una matemática muy reconocida en las ciencias de la computación por los grandes aportes que ha hecho.</description></item><item><title>El principio Abierto/Cerrado (Open/Closed)</title><link>https://blog.thedojo.mx/2022/12/03/el-principio-abierto/cerrado-open/closed/</link><pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/03/el-principio-abierto/cerrado-open/closed/</guid><description>El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por Robert Martin{:target=&amp;quot;_blank&amp;quot;}), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.
-Vamos a analizarlo, ver sus caso de uso y finalmente a establecer sus relaciones con otros principios de diseño de software que te pueden ayudar a crear mejores programas.
-El principio Abierto/Cerrado Este principio establece que:
-Cualquier módulo de software debería estar abierto para la extensión, pero cerrado para modificación.</description></item><item><title>Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link>https://blog.thedojo.mx/2022/12/01/an%C3%A1lisis-de-los-principios-solid-principio-de-responsabilidad-%C3%BAnica/</link><pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/01/an%C3%A1lisis-de-los-principios-solid-principio-de-responsabilidad-%C3%BAnica/</guid><description>En esta serie de artículos vamos a hablar sobre los cinco principios SOLID. Se dice que todo programador que quiera crear código mantenible y &amp;ldquo;limpio&amp;rdquo; debe conocer y usar. La estructura de los artículos llevará la siguiente forma:
-Explicación del principio Ejemplos y contraejemplos para pensar Críticas y alternativas Esta serie de artículos surge debido a que aunque son poco entendidos por la mayoría de los programadores, estos principios se toman como verdades universales que hay que seguir.</description></item><item><title>Principios de Diseño de Software</title><link>https://blog.thedojo.mx/2019/03/19/principios-de-dise%C3%B1o-de-software/</link><pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/03/19/principios-de-dise%C3%B1o-de-software/</guid><description>En este artículo hablaremos primero de la importancia de aprender principios: qué son, qué ventajas tienen y cómo aplicarlos.
-Hallarás una explicación básica de cada principio y su importancia, pero cada principio tendrá un post extenso explicando sus aplicaciones, forma de implementarlo y ejemplos prácticos, un sólo artículo no es suficiente para explicarlos cuando se podría escribir un libro sobre cada principio.
-Ponle atención a los primeros dos 😉. Pero antes hablemos de lo que es un principio en general.</description></item><item><title>Patrón de diseño: Cadena de responsabilidad</title><link>https://blog.thedojo.mx/2019/02/21/patr%C3%B3n-de-dise%C3%B1o-cadena-de-responsabilidad/</link><pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/02/21/patr%C3%B3n-de-dise%C3%B1o-cadena-de-responsabilidad/</guid><description>Propósito Asegurar el bajo acoplamiento entre un request y su receiver dando a múltiples objetos oportunidad de manejar el request
-Hace unas semanas me enfrenté a un tema de procesar un mensaje de un usuario y darle tratamiento por medio de un algoritmo de Natrual Language Processing. Antes de pasar el mensaje por el set de algoritmos apropiados hay que darle una serie de tratamientos previos:
-Eliminar los acentos y solo dejar en ASCII el mensaje.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Solid on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/solid/</link>
+    <description>Recent content in Solid on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 17 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/solid/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Son aplicables y prácticos los principios SOLID?</title>
+      <link>https://blog.thedojo.mx/2023/06/17/son-aplicables-y-pr%C3%A1cticos-los-principios-solid/</link>
+      <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/06/17/son-aplicables-y-pr%C3%A1cticos-los-principios-solid/</guid>
+      <description>&lt;p&gt;Los &lt;strong&gt;principios SOLID&lt;/strong&gt;, se enseñan como verdades incuestionables sobre el buen desarrollo de software. Aunque, justo por la educación, antes era completamente partidario de estos, con el tiempo me fui dando cuenta de varias de las fallas que presentan.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>El principio de Inversión de Dependencias</title>
+      <link>https://blog.thedojo.mx/2023/04/22/el-principio-de-inversi%C3%B3n-de-dependencias/</link>
+      <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/04/22/el-principio-de-inversi%C3%B3n-de-dependencias/</guid>
+      <description>&lt;p&gt;Este es el artículo final sobre el análisis de los principios SOLID. En este artículo veremos el principio de &lt;strong&gt;Inversión de Dependencias&lt;/strong&gt;, el cual nos dice que las clases de alto nivel no deben depender de las clases de bajo nivel, sino que ambas deben &lt;strong&gt;depender de abstracciones&lt;/strong&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>El principio de segregación de Interfaces</title>
+      <link>https://blog.thedojo.mx/2023/04/01/el-principio-de-segregaci%C3%B3n-de-interfaces/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/04/01/el-principio-de-segregaci%C3%B3n-de-interfaces/</guid>
+      <description>&lt;p&gt;Continuemos con el estudio de los principios SOLID. En esta ocasión hablaremos del cuarto principio: El principio de segregación de interfaces.&lt;/p&gt;
+&lt;p&gt;Recuerda que el objetivo de estos artículos &lt;strong&gt;no es explicártelos como si fueran una religión que estás mal si no sigues&lt;/strong&gt;, sino analizarlos bajo una luz crítica y decidir si de verdad son útiles o podemos usar otro principio.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>El principio de sustitución de Liskov</title>
+      <link>https://blog.thedojo.mx/2023/03/06/el-principio-de-sustituci%C3%B3n-de-liskov/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/03/06/el-principio-de-sustituci%C3%B3n-de-liskov/</guid>
+      <description>&lt;p&gt;El tercer principio enunciado en los principios &lt;strong&gt;SOLID&lt;/strong&gt; es el principio de sustitución de Liskov. ¿Qué significa este principio? Y más importante, ¿vale la pena seguirlo? Pero antes de hablar del principio, hablemos de &lt;strong&gt;Barbara Liskov&lt;/strong&gt;, la persona que lo inspiró y que estableció los conceptos principales.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>El principio Abierto/Cerrado (Open/Closed)</title>
+      <link>https://blog.thedojo.mx/2022/12/03/el-principio-abierto/cerrado-open/closed/</link>
+      <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2022/12/03/el-principio-abierto/cerrado-open/closed/</guid>
+      <description>&lt;p&gt;El principio Abierto/Cerrado, originalmente establecido por Bertrand Meyer en 1988 (pero popularizado por &lt;a
+  href=&#34;https://drive.google.com/file/d/0BwhCYaYDn8EgN2M5MTkwM2EtNWFkZC00ZTI3LWFjZTUtNTFhZGZiYmUzODc1/view?resourcekey=0-FsS837CGML599A_o5D-nAw&#34;
+    target=&#34;_blank&#34;
+  &gt;Robert Martin&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}), es para mi uno de los más útiles en el conjunto (tal vez el más útil) de SOLID.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Análisis de los principios SOLID: Principio de Responsabilidad Única</title>
+      <link>https://blog.thedojo.mx/2022/12/01/an%C3%A1lisis-de-los-principios-solid-principio-de-responsabilidad-%C3%BAnica/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2022/12/01/an%C3%A1lisis-de-los-principios-solid-principio-de-responsabilidad-%C3%BAnica/</guid>
+      <description>&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y &lt;em&gt;&amp;ldquo;limpio&amp;rdquo;&lt;/em&gt; debe conocer y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Principios de Diseño de Software</title>
+      <link>https://blog.thedojo.mx/2019/03/19/principios-de-dise%C3%B1o-de-software/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/03/19/principios-de-dise%C3%B1o-de-software/</guid>
+      <description>&lt;p&gt;En este artículo hablaremos primero de la importancia de aprender &lt;strong&gt;principios&lt;/strong&gt;: qué son, qué ventajas tienen y cómo aplicarlos.&lt;/p&gt;
+&lt;p&gt;Hallarás una explicación básica de cada principio y su importancia, pero cada principio tendrá un post extenso explicando sus aplicaciones, forma de implementarlo y ejemplos prácticos, un sólo artículo no es suficiente para explicarlos cuando se podría escribir un libro sobre cada principio.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Patrón de diseño: Cadena de responsabilidad</title>
+      <link>https://blog.thedojo.mx/2019/02/21/patr%C3%B3n-de-dise%C3%B1o-cadena-de-responsabilidad/</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/02/21/patr%C3%B3n-de-dise%C3%B1o-cadena-de-responsabilidad/</guid>
+      <description>&lt;h4 class=&#34;relative group&#34;&gt;Propósito
+    &lt;div id=&#34;propósito&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
+        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#prop%c3%b3sito&#34; aria-label=&#34;Ancla&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;
+    
+&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Asegurar el bajo acoplamiento entre un &lt;em&gt;request&lt;/em&gt; y su &lt;em&gt;receiver&lt;/em&gt; dando a múltiples objetos oportunidad de manejar el &lt;em&gt;request&lt;/em&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

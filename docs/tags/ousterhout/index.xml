@@ -1,6 +1,56 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ousterhout on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/ousterhout/</link><description>Recent content in Ousterhout on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Fri, 07 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/ousterhout/index.xml" rel="self" type="application/rss+xml"/><item><title>Cuando separar el código</title><link>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-c%C3%B3digo/</link><pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-c%C3%B3digo/</guid><description>Hay quienes afirman que mientras más pequeñas sean tus clases o funciones, mejor. Hasta llegan a poner un límite de la líneas que pueden ir en un método o función. Esto crea código súper fragmentado que llega a ser complejo por el simple hecho de tener muchos elementos individuales que luego se tienen que unir mediante más código. Además, trazar la causa de algo a través de un código similar es casi imposible o, por lo menos, te puede tomar mucho tiempo.</description></item><item><title>¿Deberías comentar tu código?</title><link>https://blog.thedojo.mx/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</link><pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</guid><description>Cuando hablamos de los comentarios en el código, hay dos escuelas. La primera dice que debes usar los comentarios para clarificar lo que quisiste expresar con tu código, mientras que la segunda dice que deberías evitarlos al máximo y que comentar tu código es un mal necesario que sólo denota tu falta de habilidad para no hacer código lo suficientemente claro.
-¿A cuál de los dos consejos deberías hacerle caso? En este artículo explicaremos por qué creemos que deberías ver los comentarios como una herramienta necesaria, valiosa y muy útil, y cómo usarlos para no caer en el extremo que ha llevado a algunas personas a tener una mala actitud hacia ellos.</description></item><item><title>A Philosophy of Software Design: Los módulos deben ser profundos</title><link>https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</link><pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</guid><description>Para reducir la complejidad de los programas es importante tener técnicas definidas. La primera que vamos a analizar es la organización y separación de código a alto nivel, es decir separación en módulos.
-Por qué es importante la separación Antes de empezar a hablar de cómo deberíamos diseñar nuestros módulos hablemos de por qué es importante la separación.
-La mejor forma de resolver un problema complejo es mediante la descomposición del problema en problemas más sencillos.</description></item><item><title>A Philosophy of Software Design: Tres formas de identificar la complejidad</title><link>https://blog.thedojo.mx/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</link><pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</guid><description>&amp;ldquo;Controlar la complejidad es la esencia de la programación&amp;rdquo; - Brian W. Kernighan
-Muchas mentes brillantes dedicadas al desarrollo de software han estado de acuerdo en que el principal problema al crear y mantener programas es el manejo de la complejidad.
-Podemos decir que algo complejo es aquello que está compuesto por muchas piezas relacionadas entre ellas. Ousterhout lo define de manera práctica como todo aquello que hace que el software sea difícil de entender, escribir o mantener.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ousterhout on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/ousterhout/</link>
+    <description>Recent content in Ousterhout on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Fri, 07 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/ousterhout/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cuando separar el código</title>
+      <link>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-c%C3%B3digo/</link>
+      <pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-c%C3%B3digo/</guid>
+      <description>&lt;p&gt;Hay quienes afirman que mientras más pequeñas sean tus clases o funciones, mejor. Hasta llegan a poner un límite de la líneas que pueden ir en un método o función. Esto crea código súper fragmentado que llega a ser complejo por el simple hecho de tener muchos elementos individuales que luego se tienen que unir mediante más código. Además, trazar la causa de algo a través de un código similar es casi imposible o, por lo menos, te puede tomar mucho tiempo.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>¿Deberías comentar tu código?</title>
+      <link>https://blog.thedojo.mx/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</guid>
+      <description>&lt;p&gt;Cuando hablamos de los comentarios en el código, hay dos escuelas. La primera dice que debes usar los comentarios para &lt;strong&gt;clarificar lo que quisiste expresar con tu código&lt;/strong&gt;, mientras que la segunda dice que deberías &lt;strong&gt;evitarlos al máximo&lt;/strong&gt; y que comentar tu código es un mal necesario que sólo denota tu falta de habilidad para no hacer código lo suficientemente claro.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>A Philosophy of Software Design: Los módulos deben ser profundos</title>
+      <link>https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</guid>
+      <description>&lt;p&gt;Para reducir la complejidad de los programas es importante tener técnicas definidas. La primera que vamos a analizar es la organización y separación de código a alto nivel, es decir separación en módulos.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>A Philosophy of Software Design: Tres formas de identificar la complejidad</title>
+      <link>https://blog.thedojo.mx/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Controlar la complejidad es la esencia de la programación&amp;rdquo; - Brian W. Kernighan&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Muchas mentes brillantes dedicadas al desarrollo de software han estado de acuerdo en que el principal problema al crear y mantener programas es el manejo de la complejidad.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

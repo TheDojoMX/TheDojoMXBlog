@@ -1,3 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computación on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/computaci%C3%B3n/</link><description>Recent content in Computación on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 19 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/computaci%C3%B3n/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es la filosofía de la computación?</title><link>https://blog.thedojo.mx/2023/08/19/qu%C3%A9-es-la-filosof%C3%ADa-de-la-computaci%C3%B3n/</link><pubDate>Sat, 19 Aug 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/08/19/qu%C3%A9-es-la-filosof%C3%ADa-de-la-computaci%C3%B3n/</guid><description>La filosofía es una de las ramas más importantes del saber humano y, para mi, es la fundación de todas las demás ramas del conocimiento y de las ciencias. En este artículo hablaremos de la filosofía de la computación y cómo esta te puede ayudar como programador o desarrollador de software.
-Empecemos primero hablando de qué es la filosofía y luego combinándola con la computación.
-¿Qué es la filosofía? La filosofía busca responder las preguntas fundamentales de la existencia humana.</description></item><item><title>La importancia de entender los principios de la computación</title><link>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</guid><description>Este artículo está inspirado por lo que leí en el resumen del libro que Camilo Chacón Sartori está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &amp;ldquo;Principios de programación&amp;rdquo;. Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computación on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/computaci%C3%B3n/</link>
+    <description>Recent content in Computación on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 19 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/computaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Qué es la filosofía de la computación?</title>
+      <link>https://blog.thedojo.mx/2023/08/19/qu%C3%A9-es-la-filosof%C3%ADa-de-la-computaci%C3%B3n/</link>
+      <pubDate>Sat, 19 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/08/19/qu%C3%A9-es-la-filosof%C3%ADa-de-la-computaci%C3%B3n/</guid>
+      <description>&lt;p&gt;La filosofía es una de las ramas más importantes del saber humano y, para mi, es la fundación de todas las demás ramas del conocimiento y de las ciencias. En este artículo hablaremos de la filosofía de la computación y cómo esta te puede ayudar como programador o desarrollador de software.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>La importancia de entender los principios de la computación</title>
+      <link>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</link>
+      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</guid>
+      <description>&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a
+  href=&#34;https://camilochs.github.io/web/&#34;
+    target=&#34;_blank&#34;
+  &gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;&amp;ldquo;Principios de programación&amp;rdquo;.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Api on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/api/</link><description>Recent content in Api on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 15 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Entendiendo REST. El estilo de Arquitectura.</title><link>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</link><pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</guid><description>En el artículo anterior de la serie hablamos un poco de lo que es una API REST. En este artículo empezaremos a ver qué es REST y por qué surgió.
-Antes de empezar con lo nuestro, hablemos de lo que NO es una API REST.
-Esto no es REST Actualmente, muchos desarrolladores (yo me contaba entre ellos), llaman API REST a cualquier servicio Web que corra sobre HTTP, sirva recursos (objetos o elementos que representan un objeto) o cosas parecidas y use JSON como lenguaje de transferencia de datos.</description></item><item><title>Tres formas de crear API's con Python</title><link>https://blog.thedojo.mx/2019/03/12/tres-formas-de-crear-apis-con-python/</link><pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/03/12/tres-formas-de-crear-apis-con-python/</guid><description>Es una tarea común para un desarrollador el diseñar e implementar una API web. Veremos tres herramientas para desarrollar tu API, de lo más sencillo a lo más completo: Hug, Flask y Django Rest Framework.
-Hug Hug es una pequeña biblioteca para crear API&amp;rsquo;s muy fáciles de entender y mantener. Provee un serie de herramientas que permiten hacer tu API muy rápidamente, con poco código y siguiendo las mejores prácticas. Hug no es una biblioteca exclusiva para hacer API&amp;rsquo;s web, sino que se enfoca en permitirte crear API&amp;rsquo;s en el más amplio sentido de la palabra: una intefaz para permitir el uso automatizado (mediante código) de tu programa.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Api on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/api/</link>
+    <description>Recent content in Api on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 15 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Entendiendo REST. El estilo de Arquitectura.</title>
+      <link>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</link>
+      <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</guid>
+      <description>&lt;p&gt;En el &lt;a
+  href=&#34;https://blog.thedojo.mx/2019/05/06/diseno-y-desarrollo-de-una-api-desde-cero.html&#34;&gt;artículo anterior de la serie&lt;/a&gt; hablamos un poco de lo que es una API REST. En este artículo empezaremos a ver qué es REST y por qué surgió.&lt;/p&gt;
+&lt;p&gt;Antes de empezar con lo nuestro, hablemos de lo que NO es una API REST.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Tres formas de crear API&#39;s con Python</title>
+      <link>https://blog.thedojo.mx/2019/03/12/tres-formas-de-crear-apis-con-python/</link>
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/03/12/tres-formas-de-crear-apis-con-python/</guid>
+      <description>&lt;p&gt;Es una tarea común para un desarrollador el diseñar e implementar una API web. Veremos tres herramientas para desarrollar tu API, de lo más sencillo a lo más completo: Hug, Flask y Django Rest Framework.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

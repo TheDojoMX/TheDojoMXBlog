@@ -1,7 +1,57 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>REST on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/rest/</link><description>Recent content in REST on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 03 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/rest/index.xml" rel="self" type="application/rss+xml"/><item><title>Entendiendo REST: conexión sin estado</title><link>https://blog.thedojo.mx/2019/08/03/entendiendo-rest-conexi%C3%B3n-sin-estado/</link><pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/08/03/entendiendo-rest-conexi%C3%B3n-sin-estado/</guid><description>Hemos venido hablando de las características que componen a un sistema REST. En el último artículo hablamos de la arquitectura cliente-servidor. Esta es la primera característica fundamental de un sistema REST. Ahora pasemos a la siguiente característica-limitante que Thomas Fielding establece para los sistemas REST: conexión sin estado.
-¿Qué es el estado de un sistema? El estado de una aplicación son todos los datos que usa para operar en un momento determinado.</description></item><item><title>Entendiendo REST: Arquitectura cliente-servidor</title><link>https://blog.thedojo.mx/2019/07/04/entendiendo-rest-arquitectura-cliente-servidor/</link><pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/07/04/entendiendo-rest-arquitectura-cliente-servidor/</guid><description>El propósito de construir software no es crear una topología de interacciones específicas, o usar un tipo particular de componente; es crear un sistema que cumpla y exceda las necesidades de la aplicación. - Thomas Fielding
-Ya hablamos de las motivaciones detrás del estilo arquitectural REST{:taget=blank}. Ahora empecemos con la primera de sus características o restricciones, que la empieza a definir: la arquitectura cliente-servidor.
-¿Qué es la arquitectura cliente-servidor? Esta arquitectura de aplicación divide un sistema en dos componentes:</description></item><item><title>Entendiendo REST. El estilo de Arquitectura.</title><link>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</link><pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</guid><description>En el artículo anterior de la serie hablamos un poco de lo que es una API REST. En este artículo empezaremos a ver qué es REST y por qué surgió.
-Antes de empezar con lo nuestro, hablemos de lo que NO es una API REST.
-Esto no es REST Actualmente, muchos desarrolladores (yo me contaba entre ellos), llaman API REST a cualquier servicio Web que corra sobre HTTP, sirva recursos (objetos o elementos que representan un objeto) o cosas parecidas y use JSON como lenguaje de transferencia de datos.</description></item><item><title>Diseño y desarrollo de una API RESTful desde cero - La importancia de diseñar tu API</title><link>https://blog.thedojo.mx/2019/05/06/dise%C3%B1o-y-desarrollo-de-una-api-restful-desde-cero-la-importancia-de-dise%C3%B1ar-tu-api/</link><pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/05/06/dise%C3%B1o-y-desarrollo-de-una-api-restful-desde-cero-la-importancia-de-dise%C3%B1ar-tu-api/</guid><description>En este post explicaré los principios básicos de diseño de una API. Esta primera parte es bastante teórica, empezaremos con la práctica (no con la programación, sino con el diseño) en un post posterior.
-Primero hablemos de la importancia del diseño o la arquitectura de la API. En la serie de posts hablaremos de API&amp;rsquo;s para consumo web, a través de HTTP, ya que son las de mayor uso y popularidad.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>REST on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/rest/</link>
+    <description>Recent content in REST on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 03 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/rest/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Entendiendo REST: conexión sin estado</title>
+      <link>https://blog.thedojo.mx/2019/08/03/entendiendo-rest-conexi%C3%B3n-sin-estado/</link>
+      <pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/08/03/entendiendo-rest-conexi%C3%B3n-sin-estado/</guid>
+      <description>&lt;p&gt;Hemos venido hablando de las características que componen a un sistema REST. En el último artículo &lt;a
+  href=&#34;https://blog.thedojo.mx/2019/07/04/entendiendo-rest-arquitectura-cliente-servidor.html&#34;&gt;hablamos de la arquitectura cliente-servidor&lt;/a&gt;. Esta es la primera característica fundamental de un sistema REST. Ahora pasemos a la siguiente característica-limitante que Thomas Fielding establece para los sistemas REST: &lt;strong&gt;conexión sin estado&lt;/strong&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Entendiendo REST: Arquitectura cliente-servidor</title>
+      <link>https://blog.thedojo.mx/2019/07/04/entendiendo-rest-arquitectura-cliente-servidor/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/07/04/entendiendo-rest-arquitectura-cliente-servidor/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;El propósito de construir software no es crear una topología de interacciones específicas, o usar un tipo particular de componente; es crear un sistema que cumpla y exceda las necesidades de la aplicación. - Thomas Fielding&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Entendiendo REST. El estilo de Arquitectura.</title>
+      <link>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</link>
+      <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</guid>
+      <description>&lt;p&gt;En el &lt;a
+  href=&#34;https://blog.thedojo.mx/2019/05/06/diseno-y-desarrollo-de-una-api-desde-cero.html&#34;&gt;artículo anterior de la serie&lt;/a&gt; hablamos un poco de lo que es una API REST. En este artículo empezaremos a ver qué es REST y por qué surgió.&lt;/p&gt;
+&lt;p&gt;Antes de empezar con lo nuestro, hablemos de lo que NO es una API REST.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Diseño y desarrollo de una API RESTful desde cero - La importancia de diseñar tu API</title>
+      <link>https://blog.thedojo.mx/2019/05/06/dise%C3%B1o-y-desarrollo-de-una-api-restful-desde-cero-la-importancia-de-dise%C3%B1ar-tu-api/</link>
+      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/05/06/dise%C3%B1o-y-desarrollo-de-una-api-restful-desde-cero-la-importancia-de-dise%C3%B1ar-tu-api/</guid>
+      <description>&lt;p&gt;En este post explicaré &lt;strong&gt;los principios básicos de diseño de una API&lt;/strong&gt;. Esta primera parte es bastante teórica, empezaremos con la práctica (no con la programación, sino con el diseño) en un post posterior.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

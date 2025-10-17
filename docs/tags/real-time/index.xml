@@ -1,2 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Real-Time on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/real-time/</link><description>Recent content in Real-Time on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 09 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/real-time/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es Real Time en sistemas de software?</title><link>https://blog.thedojo.mx/2023/12/09/qu%C3%A9-es-real-time-en-sistemas-de-software/</link><pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/12/09/qu%C3%A9-es-real-time-en-sistemas-de-software/</guid><description>A veces, los programadores usamos muy libremente los conceptos. Uno de ellos es el de Real Time. En este artículo vamos a hablar de lo que significa realmente el término, lo vamos a definir claramente y sobre todo aprenderemos a diferenciar los distintos niveles o garantías que debe ofrecer un sistema en tiempo real.
-¿Qué es Real Time? Un sistema que provee garantías de Tiempo Real o Real Time es aquel que garantiza que una tarea se va a ejecutar en un tiempo determinado.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Real-Time on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/real-time/</link>
+    <description>Recent content in Real-Time on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 09 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/real-time/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Qué es Real Time en sistemas de software?</title>
+      <link>https://blog.thedojo.mx/2023/12/09/qu%C3%A9-es-real-time-en-sistemas-de-software/</link>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2023/12/09/qu%C3%A9-es-real-time-en-sistemas-de-software/</guid>
+      <description>&lt;p&gt;A veces, los programadores usamos muy libremente los conceptos. Uno de ellos es el de Real Time. En este artículo vamos a hablar de lo que significa realmente el término, lo vamos a definir claramente y sobre todo aprenderemos a diferenciar los distintos niveles o garantías que debe ofrecer un sistema en tiempo real.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

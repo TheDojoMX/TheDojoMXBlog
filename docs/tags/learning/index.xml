@@ -1,5 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Learning on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/learning/</link><description>Recent content in Learning on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Mon, 29 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/learning/index.xml" rel="self" type="application/rss+xml"/><item><title>Recursos para aprender diseño de sistemas</title><link>https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-dise%C3%B1o-de-sistemas/</link><pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-dise%C3%B1o-de-sistemas/</guid><description>El diseño de sistemas es un tema recurrente en entrevistas para desarrolladores de software, sobre todo para los niveles que requieren más experiencia, pero más allá de eso, es una habilidad fundamental a dominar si quieres avanzar en tu carrera.
-Es por eso que vamos a empezar a hablar más de ese tema, contando nuestra experiencia, pero al mismo tiempo aprendiendo a diseñar mejor.
-En este post hablaremos de algunos recursos con los que puedes empezar a aprender.</description></item><item><title>Libros gratuitos para aprender análisis de datos</title><link>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</link><pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</guid><description>¿Quieres aprender análisis de datos y ya eres programador? Los siguientes libros pueden ser de gran ayuda. Este post está basado en un artículo inglés que encontramos, pero con los recursos que recomienda actualizados y algunos otros de nuestra cosecha.
-Casi todos están en inglés pero incluímos unos cuántos en español y, en los que nos fue posible, tienes descarga directa.
-0. R en español Empecemos por los pocos recursos en español.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/learning/</link>
+    <description>Recent content in Learning on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Mon, 29 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Recursos para aprender diseño de sistemas</title>
+      <link>https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-dise%C3%B1o-de-sistemas/</link>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2021/03/29/recursos-para-aprender-dise%C3%B1o-de-sistemas/</guid>
+      <description>&lt;p&gt;El diseño de sistemas es un tema recurrente en entrevistas para desarrolladores de software, sobre todo para los niveles que requieren más experiencia, pero más allá de eso, es una habilidad fundamental a dominar si quieres avanzar en tu carrera.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Libros gratuitos para aprender análisis de datos</title>
+      <link>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</link>
+      <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</guid>
+      <description>&lt;p&gt;¿Quieres aprender análisis de datos y ya eres programador? Los siguientes libros pueden ser de gran ayuda. Este post está basado en &lt;a
+  href=&#34;http://bit.ly/2RjPiol&#34;
+    target=&#34;_blank&#34;
+  &gt;un artículo inglés que encontramos&lt;/a&gt;, pero con los recursos que recomienda actualizados y algunos otros de nuestra cosecha.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

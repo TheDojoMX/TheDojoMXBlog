@@ -1,2 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zig-Lang on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/zig-lang/</link><description>Recent content in Zig-Lang on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/zig-lang/index.xml" rel="self" type="application/rss+xml"/><item><title>Zig: un lenguaje que quiere reemplazar al poderoso C</title><link>https://blog.thedojo.mx/2025/08/19/zig-un-lenguaje-que-quiere-reemplazar-al-poderoso-c/</link><pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2025/08/19/zig-un-lenguaje-que-quiere-reemplazar-al-poderoso-c/</guid><description>Recientemente hemos visto una ola de lenguajes listos para destronar a los lenguajes de programación que forman la base de casi toda nuestra computación actual: C y C++. Lenguajes como Rust y Go quieren reemplazarlos, pero tenemos a otro competidor que apunta directamente hacia C y parece que se está acercando aunque no tiene todavía una versión completamente estable.
-En este artículo vamos a hablar de las características de Zig y cómo es que planea reemplazar a C.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zig-Lang on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/zig-lang/</link>
+    <description>Recent content in Zig-Lang on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/zig-lang/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Zig: un lenguaje que quiere reemplazar al poderoso C</title>
+      <link>https://blog.thedojo.mx/2025/08/19/zig-un-lenguaje-que-quiere-reemplazar-al-poderoso-c/</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2025/08/19/zig-un-lenguaje-que-quiere-reemplazar-al-poderoso-c/</guid>
+      <description>&lt;p&gt;Recientemente hemos visto una ola de lenguajes listos para destronar
+a los lenguajes de programación que forman la base de casi toda nuestra
+computación actual: C y C++. Lenguajes como Rust y Go quieren reemplazarlos,
+pero tenemos a otro competidor que apunta directamente hacia C y parece
+que se está acercando aunque no tiene todavía una versión completamente estable.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scala on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/scala/</link><description>Recent content in Scala on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 06 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/scala/index.xml" rel="self" type="application/rss+xml"/><item><title>Los mejores recursos para aprender programación funcional</title><link>https://blog.thedojo.mx/2019/04/06/los-mejores-recursos-para-aprender-programaci%C3%B3n-funcional/</link><pubDate>Sat, 06 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/04/06/los-mejores-recursos-para-aprender-programaci%C3%B3n-funcional/</guid><description>En el articulo anterior hablamos de la programación funcional y por qué es importante. En este te daremos algunos recursos para que puedas iniciarte en ella.
-Empezando ligero Empecemos con algunos recursos para entenderla y apreciarla mejor.
-Russ Olsen tiene una plática en la que explica las bases y características principales de la programación funcional en 40 minutos de manera concisa y entretenida.
-Las bases ¿Quieres aprender un poco de las bases de la programación funcional?</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scala on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/scala/</link>
+    <description>Recent content in Scala on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 06 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/scala/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Los mejores recursos para aprender programación funcional</title>
+      <link>https://blog.thedojo.mx/2019/04/06/los-mejores-recursos-para-aprender-programaci%C3%B3n-funcional/</link>
+      <pubDate>Sat, 06 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/04/06/los-mejores-recursos-para-aprender-programaci%C3%B3n-funcional/</guid>
+      <description>&lt;p&gt;En &lt;a
+  href=&#34;https://blog.thedojo.mx/2019/03/30/que-es-la-programacion-funcional.html&#34;&gt;el articulo anterior&lt;/a&gt; hablamos de la programación funcional y por qué es importante. En este te daremos algunos recursos para que puedas iniciarte en ella.&lt;/p&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Empezando ligero
+    &lt;div id=&#34;empezando-ligero&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
+        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#empezando-ligero&#34; aria-label=&#34;Ancla&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Empecemos con algunos recursos para entenderla y apreciarla mejor.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

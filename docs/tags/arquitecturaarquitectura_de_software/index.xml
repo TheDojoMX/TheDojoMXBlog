@@ -1,3 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arquitecturaarquitectura_de_software on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/arquitecturaarquitectura_de_software/</link><description>Recent content in Arquitecturaarquitectura_de_software on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/arquitecturaarquitectura_de_software/index.xml" rel="self" type="application/rss+xml"/><item><title>Recursos para aprender Arquitectura de Software</title><link>https://blog.thedojo.mx/2020/07/15/recursos-para-aprender-arquitectura-de-software/</link><pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/07/15/recursos-para-aprender-arquitectura-de-software/</guid><description>Tuvimos una plática con Agustín Ramos acerca de la arquitectura de software y lo que debes aprender para practicarla. Este pequeño artículo incluye nuestro resumen y las recomendaciones de Agustín.
-¿Qué es la arquitectura de software? La arquitectura del software incluye el diseño del sistema a alto nivel: la descomposición del sistema en módulos, la descripción de las responsabilidades de cada uno y sus relaciones.
-También incluye las prácticas y herramientas que permitirán que el proyecto cumpla con los atributos de calidad o requerimientos no funcionales.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arquitecturaarquitectura_de_software on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/arquitecturaarquitectura_de_software/</link>
+    <description>Recent content in Arquitecturaarquitectura_de_software on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/arquitecturaarquitectura_de_software/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Recursos para aprender Arquitectura de Software</title>
+      <link>https://blog.thedojo.mx/2020/07/15/recursos-para-aprender-arquitectura-de-software/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2020/07/15/recursos-para-aprender-arquitectura-de-software/</guid>
+      <description>&lt;p&gt;Tuvimos una plática con &lt;a
+  href=&#34;https://twitter.com/machinesareus&#34;
+    target=&#34;_blank&#34;
+  &gt;Agustín Ramos&lt;/a&gt; acerca de la arquitectura de software y lo que debes aprender para practicarla. Este pequeño artículo incluye nuestro resumen y las recomendaciones de Agustín.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

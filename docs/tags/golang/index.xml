@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/golang/</link><description>Recent content in Golang on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Por qué deberías aprender Go?</title><link>https://blog.thedojo.mx/2019/09/01/por-qu%C3%A9-deber%C3%ADas-aprender-go/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/09/01/por-qu%C3%A9-deber%C3%ADas-aprender-go/</guid><description>Go es eficiente, escalable y productivo. - Rob Pike
-Go es un lenguaje popular por los rumores que hay acerca de él, como que es el lenguaje que va a matar a C, o que es muy muy rápido y poderoso. En este artículo vamos a hablar de qué cosas son ciertas y en qué casos te conviene aprender Go.
-Empecemos hablando de cómo y por qué nació.
-Historia de Go Go fue diseñado por Google para resolver sus problemas, y Google tiene grandes problemas.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/golang/</link>
+    <description>Recent content in Golang on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Por qué deberías aprender Go?</title>
+      <link>https://blog.thedojo.mx/2019/09/01/por-qu%C3%A9-deber%C3%ADas-aprender-go/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2019/09/01/por-qu%C3%A9-deber%C3%ADas-aprender-go/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Go es &lt;strong&gt;eficiente, escalable y productivo&lt;/strong&gt;. - &lt;em&gt;Rob Pike&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Go es un lenguaje popular por los rumores que hay acerca de él, como que es el lenguaje que va a matar a C, o que es muy muy rápido y poderoso. En este artículo vamos a hablar de qué cosas son ciertas y en qué casos te conviene aprender Go.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

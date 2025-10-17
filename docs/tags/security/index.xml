@@ -1,2 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/security/</link><description>Recent content in Security on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Criptografía para desarrolladores: Códigos de autenticación de mensajes</title><link>https://blog.thedojo.mx/2021/12/30/criptograf%C3%ADa-para-desarrolladores-c%C3%B3digos-de-autenticaci%C3%B3n-de-mensajes/</link><pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/30/criptograf%C3%ADa-para-desarrolladores-c%C3%B3digos-de-autenticaci%C3%B3n-de-mensajes/</guid><description>Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.
-En general este tipo de algoritmos se llaman hashes con llave o Keyed Hashes.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/security/</link>
+    <description>Recent content in Security on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Criptografía para desarrolladores: Códigos de autenticación de mensajes</title>
+      <link>https://blog.thedojo.mx/2021/12/30/criptograf%C3%ADa-para-desarrolladores-c%C3%B3digos-de-autenticaci%C3%B3n-de-mensajes/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2021/12/30/criptograf%C3%ADa-para-desarrolladores-c%C3%B3digos-de-autenticaci%C3%B3n-de-mensajes/</guid>
+      <description>&lt;p&gt;Ya hemos hablado de los cifrados de bloque, de flujo y de los hashes, ahora hablemos de un híbrido entre ellos que funciona como un hash pero usa una llave como un cifrado. El uso principal de este tipo de algoritmos es la autenticación y verificación de mensajes, pero también pueden ser usados para generar derivados de una llave, por su carácter pseudo-aleatorio.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

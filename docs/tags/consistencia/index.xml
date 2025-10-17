@@ -1,2 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Consistencia on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/consistencia/</link><description>Recent content in Consistencia on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/consistencia/index.xml" rel="self" type="application/rss+xml"/><item><title>Consistencia en el código</title><link>https://blog.thedojo.mx/2022/06/02/consistencia-en-el-c%C3%B3digo/</link><pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/06/02/consistencia-en-el-c%C3%B3digo/</guid><description>Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en &amp;ldquo;A Philosophy of Software Design&amp;rdquo;.
-¿Qué es la consistencia en el código? Básicamente, significa que las que cosas o el código que hace lo mismo luzca y se programen igual y las piezas de código que no hacen los mismo, luzcan y se programen diferente.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Consistencia on The Dojo MX Blog</title>
+    <link>https://blog.thedojo.mx/tags/consistencia/</link>
+    <description>Recent content in Consistencia on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/consistencia/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Consistencia en el código</title>
+      <link>https://blog.thedojo.mx/2022/06/02/consistencia-en-el-c%C3%B3digo/</link>
+      <pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.thedojo.mx/2022/06/02/consistencia-en-el-c%C3%B3digo/</guid>
+      <description>&lt;p&gt;Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en &amp;ldquo;A Philosophy of Software Design&amp;rdquo;.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
