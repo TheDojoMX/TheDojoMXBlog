@@ -50,4 +50,5 @@ generative_tools/description_results/*
 CLAUDE.md
 .env
 voice_papers/projects/*
-!voice_papers/projects/.keep
+!voice_papers/projects/.keepcodex_claude/*
+codex-claude/*

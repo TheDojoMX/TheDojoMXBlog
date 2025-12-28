@@ -74,7 +74,7 @@ Su control de flujo es simple, es decir, no puede predecir branches complejos ni
 reordenar instrucciones. Digamos que su principal fortaleza es hacer operaciones
 matemáticas básicas (suma, multiplicación, etc.) en muchos datos al mismo tiempo.
 
-Así que la comparación es clara: un GPU es como una línea de esamblaje que tiene
+La comparación es clara: un GPU es como una línea de esamblaje que tiene
 miles de unidades que pueden hacer trabajo simple al mismo tiempo, mientras que un
 CPU es como un conjunto de artesanos expertos haciendo trabajo complejo y
 _secuencial principalmente_.
@@ -90,6 +90,7 @@ Los GPUs modernos organizan sus recursos computacionales en varias capas. Veamos
 El componente pricipal es el conjunto de núcleos individuales que hacen el trabajo
 real, estos pequeños procesadores tienen diferentes nombres dependiendo del
 fabricante:
+
   - **NVIDIA**: CUDA Cores
   - **AMD**: Stream Processors
   - **Intel**: Execution Units (EUs)
@@ -103,11 +104,10 @@ Recientemente y sobre todo pensando en cargas de operaciones matriciales complej
 (como las que se usan en machine learning) se han añadido unidades especializadas: los **tensor cores**. La industria se está adaptando  a los nuevos usos del
 software.
 
-Pero hablemos un poco de la estructura de memoria.
-
 ### Jerarquía de Memoria
 
-Al igual que los CPUs, los GPUs tienen un conjunto de diferentes tipos (y velocidades) de memoria.
+Al igual que los _CPUs_, los GPUs tienen un conjunto de diferentes tipos (y velocidades) de memoria.
+
 La memoria más inmediata para cada uno de los cores son los **registros**: memoria ultra-rápida privada de cada thread que usa para las operaciones más inmediatas.
 Ya hablamos de la **memoria compartida** a nivel de bloque de los SMs, que no es tan rápida como los registros pero sigue siendo MUY rápida.
 
