@@ -52,3 +52,4 @@ CLAUDE.md
 voice_papers/projects/*
 !voice_papers/projects/.keepcodex_claude/*
 codex-claude/*
+.codex/*
