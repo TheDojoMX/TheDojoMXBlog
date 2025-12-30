@@ -1,0 +1,56 @@
+colorScheme = "dojo"
+defaultAppearance = "dark"
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+
+mainSections = ["posts"]
+hotlinkFeatureImage = true
+
+highlightCurrentMenuArea = true
+smartTOC = true
+
+[header]
+layout = "fixed"
+
+[footer]
+showMenu = true
+showCopyright = true
+showThemeAttribution = true
+showAppearanceSwitcher = true
+showScrollToTop = true
+
+[homepage]
+layout = "page"
+showRecent = true
+showRecentItems = 25
+showMoreLink = true
+showMoreLinkDest = "/posts"
+cardView = true
+cardViewScreenWidth = false
+
+[article]
+showDate = true
+showDateUpdated = false
+showAuthor = true
+showHero = true
+heroStyle = "background"
+showBreadcrumbs = true
+showDraftLabel = true
+showEdit = false
+showSummary = true
+showTableOfContents = true
+showTaxonomies = true
+showWordCount = true
+showComments = false
+
+# Analytics
+[fathomAnalytics]
+site = ""
+
+[verification]
+google = ""
+bing = ""
+pinterest = ""
+yandex = ""

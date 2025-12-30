@@ -1,0 +1,22 @@
+languageCode = "es"
+languageName = "Espanol"
+weight = 1
+title = "The Dojo MX Blog"
+
+[params]
+displayName = "ES"
+isoCode = "es"
+rtl = false
+dateFormat = "2 January 2006"
+logo = "img/logo.png"
+mainSections = ["posts"]
+description = "Blog tecnico sobre desarrollo de software"
+
+[author]
+name = "Hector Patricio"
+image = "img/author.jpg"
+headline = "Tech Lead @ The Dojo MX"
+bio = "Desarrollador de software y tech lead"
+links = [
+  { github = "https://github.com/hectorip" }
+]

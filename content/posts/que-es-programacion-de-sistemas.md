@@ -1,0 +1,18 @@
+---
+title: "¿Qué es programación de sistemas?"
+date: 2023-11-06
+author: "Héctor Patricio"
+tags: ['systems-programming', 'programación-de-sistemas']
+description: "En este artículo vamos a definir la programación de sistemas y qué tipo de conocimiento y habilidades necesitas para trabajar en esta área."
+featuredImage: "teaser:"
+draft: true
+---
+
+En la programación de sistemas se crean programas que corren directamente sobre el sistema operativo o que incluso son parte de él, es decir, que se ejecutan en el kernel del sistema.
+
+Al crear estos programas tenemos que preocuparnos por cosas como el manejo de memoria, la representación de datos y la concurrencia (el uso de múltiples procesos o hilos de ejecución, aprovechando de la mejor mejor manera los recursos del sistema para lograr hacerlo eficiente).
+
+Hablemos un poco más de qué es la programación de sistemas y qué conocimientos
+y habilidades necesitas para ser un programador de esta área.
+
+## ¿Qué es la programación de sistemas?

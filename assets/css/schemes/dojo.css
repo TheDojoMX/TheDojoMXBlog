@@ -1,0 +1,38 @@
+:root {
+  /* Neutral colors - almost black for dark theme */
+  --color-neutral: 255, 255, 255;
+  --color-neutral-50: 250, 250, 250;
+  --color-neutral-100: 244, 244, 245;
+  --color-neutral-200: 228, 228, 231;
+  --color-neutral-300: 200, 200, 205;
+  --color-neutral-400: 140, 140, 150;
+  --color-neutral-500: 100, 100, 110;
+  --color-neutral-600: 60, 60, 68;
+  --color-neutral-700: 30, 30, 35;
+  --color-neutral-800: 13, 13, 15;
+  --color-neutral-900: 8, 8, 10;
+
+  /* Primary color - #075299 (7, 82, 153) with variants */
+  --color-primary-50: 235, 245, 255;
+  --color-primary-100: 210, 232, 255;
+  --color-primary-200: 165, 205, 245;
+  --color-primary-300: 110, 170, 220;
+  --color-primary-400: 60, 135, 195;
+  --color-primary-500: 7, 82, 153;
+  --color-primary-600: 6, 70, 130;
+  --color-primary-700: 5, 58, 108;
+  --color-primary-800: 4, 46, 86;
+  --color-primary-900: 3, 35, 65;
+
+  /* Secondary color - complementary blue tones */
+  --color-secondary-50: 240, 248, 255;
+  --color-secondary-100: 220, 238, 255;
+  --color-secondary-200: 180, 215, 245;
+  --color-secondary-300: 130, 185, 225;
+  --color-secondary-400: 80, 150, 200;
+  --color-secondary-500: 40, 115, 175;
+  --color-secondary-600: 30, 95, 150;
+  --color-secondary-700: 20, 75, 125;
+  --color-secondary-800: 15, 55, 95;
+  --color-secondary-900: 10, 40, 70;
+}
