@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DuckDB on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/duckdb/</link>
+    <description>Recent content in DuckDB on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Tue, 25 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/duckdb/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DuckDB: procesa datos eficientemente con Python</title>
+      <link>http://localhost:1313/2024/06/25/duckdb-procesa-datos-eficientemente-con-python/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2024/06/25/duckdb-procesa-datos-eficientemente-con-python/</guid>
+      <description>&lt;p&gt;El procesamiento de datos para obtener valor de ellos es una de las tareas que toda plataforma o aplicación
+moderna tiene. Existen bases de datos especializadas en este tipo de trabajos, llamados OLAP (Online Analytical Processing: Procesamiento Analítico en Línea), por ejemplo BigQueru, SnowFlake o RedShift.
+Estas bases de datos funcionan como servicios separados y tienes que mantenerlos y darles servicio (o pagar
+por servicios administrados, como en los ejemplos de arriba) para poder seguir
+usándolos.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

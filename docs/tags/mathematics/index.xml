@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathematics on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/mathematics/</link>
+    <description>Recent content in Mathematics on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Fri, 12 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/mathematics/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Usando Agda para crear softwae correcto</title>
+      <link>http://localhost:1313/2024/01/12/usando-agda-para-crear-softwae-correcto/</link>
+      <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2024/01/12/usando-agda-para-crear-softwae-correcto/</guid>
+      <description>&lt;p&gt;En este artículo hablaremos Agda, un lenguaje de programación con un sistema de tipos muy estricto
+que te puede ayudar a crear pruebas de que tu software funciona bien a nivel teórica antes de programar
+la implementación que va a producción.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

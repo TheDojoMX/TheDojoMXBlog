@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lentes on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/lentes/</link>
+    <description>Recent content in Lentes on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Sat, 01 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/lentes/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Programación funcional: lentes y óptica</title>
+      <link>http://localhost:1313/2023/07/01/programaci%C3%B3n-funcional-lentes-y-%C3%B3ptica/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/07/01/programaci%C3%B3n-funcional-lentes-y-%C3%B3ptica/</guid>
+      <description>&lt;p&gt;Gran parte de nuestro trabajo consiste en transformar datos, almacenarlos y procesarlos. Las estructuras de datos y muchos algoritmos están pensados específicamente para eso, para hacer eficiente y conveniente esta transformación.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

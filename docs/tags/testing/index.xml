@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/testing/</link>
+    <description>Recent content in Testing on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Testing en Go</title>
+      <link>http://localhost:1313/2025/08/19/testing-en-go/</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2025/08/19/testing-en-go/</guid>
+      <description>&lt;p&gt;Las pruebas de software son una parte importante de cualquier proyecto que
+queremos que perdure en el tiempo. Los lenguajes modernos, como Go, tienen
+herramientas que te permiten hacer pruebas de forma efectiva y sencilla, sin
+tener que pelearte con instalaciones o configuraciones complejas.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
