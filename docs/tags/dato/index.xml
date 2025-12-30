@@ -1,28 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Dato on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/dato/</link>
-    <description>Recent content in Dato on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Fri, 30 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/dato/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Por qué debes leer Designing Data-intensive Applications</title>
-      <link>https://blog.thedojo.mx/2024/08/30/por-qu%C3%A9-debes-leer-designing-data-intensive-applications/</link>
-      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2024/08/30/por-qu%C3%A9-debes-leer-designing-data-intensive-applications/</guid>
-      <description>&lt;p&gt;Uno de los libros más recomendados para todos los desarrolladores modernos
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dato on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/dato/</link><description>Recent content in Dato on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Fri, 30 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/dato/index.xml" rel="self" type="application/rss+xml"/><item><title>Por qué debes leer Designing Data-intensive Applications</title><link>https://blog.thedojo.mx/2024/08/30/por-qu%C3%A9-debes-leer-designing-data-intensive-applications/</link><pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/08/30/por-qu%C3%A9-debes-leer-designing-data-intensive-applications/</guid><description>&lt;p&gt;Uno de los libros más recomendados para todos los desarrolladores modernos
 es &amp;ldquo;Designing Data-intensive Applications&amp;rdquo; de &lt;a
-  href=&#34;https://martin.kleppmann.com/&#34;
-    target=&#34;_blank&#34;
-  &gt;Martin Kleppmann&lt;/a&gt;.
-En este artículo corto vamos a hablar de por qué vale la pena leerlo.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+href="https://martin.kleppmann.com/"
+target="_blank"
+&gt;Martin Kleppmann&lt;/a&gt;.
+En este artículo corto vamos a hablar de por qué vale la pena leerlo.&lt;/p&gt;</description></item></channel></rss>

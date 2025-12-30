@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Functional-Programming on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/functional-programming/</link>
-    <description>Recent content in Functional-Programming on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Sat, 30 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/functional-programming/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>¿Qué es la programación funcional?</title>
-      <link>https://blog.thedojo.mx/2019/03/30/qu%C3%A9-es-la-programaci%C3%B3n-funcional/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2019/03/30/qu%C3%A9-es-la-programaci%C3%B3n-funcional/</guid>
-      <description>&lt;p&gt;En los últimos años ha estado cobrando relevancia (de nuevo) la &lt;strong&gt;programación funcional&lt;/strong&gt;. ¿Qué diferencias tiene con los estilos más usados?
-En este artículo hablaremos de sus dos caracterísitcas más distintivas y el tipo de programas que se pueden crear con ella.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Functional-Programming on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/functional-programming/</link><description>Recent content in Functional-Programming on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sat, 30 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/functional-programming/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es la programación funcional?</title><link>https://blog.thedojo.mx/2019/03/30/qu%C3%A9-es-la-programaci%C3%B3n-funcional/</link><pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/03/30/qu%C3%A9-es-la-programaci%C3%B3n-funcional/</guid><description>&lt;p&gt;En los últimos años ha estado cobrando relevancia (de nuevo) la &lt;strong&gt;programación funcional&lt;/strong&gt;. ¿Qué diferencias tiene con los estilos más usados?
+En este artículo hablaremos de sus dos caracterísitcas más distintivas y el tipo de programas que se pueden crear con ella.&lt;/p&gt;</description></item></channel></rss>

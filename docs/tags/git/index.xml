@@ -1,38 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Git on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/git/</link>
-    <description>Recent content in Git on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Fri, 19 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Alternativas a Git</title>
-      <link>https://blog.thedojo.mx/2024/07/19/alternativas-a-git/</link>
-      <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2024/07/19/alternativas-a-git/</guid>
-      <description>&lt;p&gt;Git es una herramienta que se considera &lt;em&gt;obligatoria&lt;/em&gt; para los desarrolladores
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/git/</link><description>Recent content in Git on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Fri, 19 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Alternativas a Git</title><link>https://blog.thedojo.mx/2024/07/19/alternativas-a-git/</link><pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/07/19/alternativas-a-git/</guid><description>&lt;p&gt;Git es una herramienta que se considera &lt;em&gt;obligatoria&lt;/em&gt; para los desarrolladores
 modernos por ser el programa usado para versionamiento de código usado por
 la mayoría de los proyectos.&lt;/p&gt;
 &lt;p&gt;Pero no es ningún secreto que Git es una herramienta difícil de comprender y
 que el 90% de los desarrolladores le dan &lt;strong&gt;el uso más básico&lt;/strong&gt;, temiendo romper algo
-y por eso tener que usar comandos más avanzados.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Versiona mejor tu código: versionamiento semántico y commits convencionales</title>
-      <link>https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-c%C3%B3digo-versionamiento-sem%C3%A1ntico-y-commits-convencionales/</link>
-      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-c%C3%B3digo-versionamiento-sem%C3%A1ntico-y-commits-convencionales/</guid>
-      <description>&lt;p&gt;Una de las mejores cosas que podemos hacer por nosotros mismos y por nuestro equipo es versionar nuestro código y qué mejor que hacerlo de las mejores formas conocidas hasta el momento.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+y por eso tener que usar comandos más avanzados.&lt;/p&gt;</description></item><item><title>Versiona mejor tu código: versionamiento semántico y commits convencionales</title><link>https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-c%C3%B3digo-versionamiento-sem%C3%A1ntico-y-commits-convencionales/</link><pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/04/versiona-mejor-tu-c%C3%B3digo-versionamiento-sem%C3%A1ntico-y-commits-convencionales/</guid><description>&lt;p&gt;Una de las mejores cosas que podemos hacer por nosotros mismos y por nuestro equipo es versionar nuestro código y qué mejor que hacerlo de las mejores formas conocidas hasta el momento.&lt;/p&gt;</description></item></channel></rss>

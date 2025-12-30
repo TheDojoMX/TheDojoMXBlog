@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Acoplamiento on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/acoplamiento/</link>
-    <description>Recent content in Acoplamiento on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/acoplamiento/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Entendiendo la cohesión y el acoplamiento en el software</title>
-      <link>https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesi%C3%B3n-y-el-acoplamiento-en-el-software/</link>
-      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesi%C3%B3n-y-el-acoplamiento-en-el-software/</guid>
-      <description>&lt;p&gt;Siempre se dice que una buena base de código tiene alta &lt;strong&gt;cohesión&lt;/strong&gt;, pero bajo &lt;strong&gt;acoplamiento&lt;/strong&gt;. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica?&lt;/p&gt;
-&lt;p&gt;En este artículo vamos a definir cada uno de esos términos de manera sencilla, y con ejemplos de cómo llegar a la aplicación real de estos términos.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Acoplamiento on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/acoplamiento/</link><description>Recent content in Acoplamiento on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/acoplamiento/index.xml" rel="self" type="application/rss+xml"/><item><title>Entendiendo la cohesión y el acoplamiento en el software</title><link>https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesi%C3%B3n-y-el-acoplamiento-en-el-software/</link><pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/05/entendiendo-la-cohesi%C3%B3n-y-el-acoplamiento-en-el-software/</guid><description>&lt;p&gt;Siempre se dice que una buena base de código tiene alta &lt;strong&gt;cohesión&lt;/strong&gt;, pero bajo &lt;strong&gt;acoplamiento&lt;/strong&gt;. ¿Cómo se puede entender esto? ¿Cómo podemos llevar este principio a la práctica?&lt;/p&gt;
+&lt;p&gt;En este artículo vamos a definir cada uno de esos términos de manera sencilla, y con ejemplos de cómo llegar a la aplicación real de estos términos.&lt;/p&gt;</description></item></channel></rss>

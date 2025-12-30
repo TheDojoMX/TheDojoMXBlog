@@ -1,28 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Fossil on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/fossil/</link>
-    <description>Recent content in Fossil on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Fri, 19 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/fossil/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Alternativas a Git</title>
-      <link>https://blog.thedojo.mx/2024/07/19/alternativas-a-git/</link>
-      <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2024/07/19/alternativas-a-git/</guid>
-      <description>&lt;p&gt;Git es una herramienta que se considera &lt;em&gt;obligatoria&lt;/em&gt; para los desarrolladores
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fossil on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/fossil/</link><description>Recent content in Fossil on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Fri, 19 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/fossil/index.xml" rel="self" type="application/rss+xml"/><item><title>Alternativas a Git</title><link>https://blog.thedojo.mx/2024/07/19/alternativas-a-git/</link><pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/07/19/alternativas-a-git/</guid><description>&lt;p&gt;Git es una herramienta que se considera &lt;em&gt;obligatoria&lt;/em&gt; para los desarrolladores
 modernos por ser el programa usado para versionamiento de código usado por
 la mayoría de los proyectos.&lt;/p&gt;
 &lt;p&gt;Pero no es ningún secreto que Git es una herramienta difícil de comprender y
 que el 90% de los desarrolladores le dan &lt;strong&gt;el uso más básico&lt;/strong&gt;, temiendo romper algo
-y por eso tener que usar comandos más avanzados.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+y por eso tener que usar comandos más avanzados.&lt;/p&gt;</description></item></channel></rss>

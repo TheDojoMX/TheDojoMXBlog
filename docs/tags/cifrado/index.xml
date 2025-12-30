@@ -1,36 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Cifrado on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/cifrado/</link>
-    <description>Recent content in Cifrado on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/cifrado/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Tipos de algoritmos criptográficos: cifrados de flujo</title>
-      <link>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-flujo/</link>
-      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-flujo/</guid>
-      <description>&lt;p&gt;Ya hablamos de &lt;a
-  href=&#34;https://blog.thedojo.mx/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&#34;&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a
-  href=&#34;https://blog.thedojo.mx/2020/12/03/tipos-de-algoritmos-criptograficos.html&#34;&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra con los cifrados de &lt;em&gt;flujo&lt;/em&gt; o &lt;strong&gt;stream ciphers&lt;/strong&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Algoritmos criptográficos: ¿Qué es un Hash?</title>
-      <link>https://blog.thedojo.mx/2021/12/02/algoritmos-criptogr%C3%A1ficos-qu%C3%A9-es-un-hash/</link>
-      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/12/02/algoritmos-criptogr%C3%A1ficos-qu%C3%A9-es-un-hash/</guid>
-      <description>&lt;p&gt;Dentro del mundo del desarrollo se escucha bastante sobre &lt;strong&gt;funciones hash&lt;/strong&gt; y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cifrado on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/cifrado/</link><description>Recent content in Cifrado on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/cifrado/index.xml" rel="self" type="application/rss+xml"/><item><title>Tipos de algoritmos criptográficos: cifrados de flujo</title><link>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-flujo/</link><pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/12/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-flujo/</guid><description>&lt;p&gt;Ya hablamos de &lt;a
+href="https://blog.thedojo.mx/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html"&gt;lo que es la criptografía&lt;/a&gt; y del tipo de cifrado más fuerte y seguro que existe en la criptografía: &lt;a
+href="https://blog.thedojo.mx/2020/12/03/tipos-de-algoritmos-criptograficos.html"&gt;los cifrados de bloque&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora hablemos de cómo puedes transformar cadenas de texto plano de tamaño indeterminado en cadenas de texto cifradas del mismo tamaño. Esto se logra con los cifrados de &lt;em&gt;flujo&lt;/em&gt; o &lt;strong&gt;stream ciphers&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Algoritmos criptográficos: ¿Qué es un Hash?</title><link>https://blog.thedojo.mx/2021/12/02/algoritmos-criptogr%C3%A1ficos-qu%C3%A9-es-un-hash/</link><pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/02/algoritmos-criptogr%C3%A1ficos-qu%C3%A9-es-un-hash/</guid><description>&lt;p&gt;Dentro del mundo del desarrollo se escucha bastante sobre &lt;strong&gt;funciones hash&lt;/strong&gt; y, en realidad, se usan para múltiples cosas. En este artículo vamos a hablar de lo que es una función hash, los diferentes tipos que hay y cómo pueden servirte para desarrollar software.&lt;/p&gt;</description></item></channel></rss>

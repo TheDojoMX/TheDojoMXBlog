@@ -1,25 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tensorflow on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/tensorflow/</link>
-    <description>Recent content in Tensorflow on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>¿Cómo funciona TensorFlow?</title>
-      <link>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</link>
-      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;TensorFlow&lt;/strong&gt; es una de las herramientas más populares e influyentes
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tensorflow on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/tensorflow/</link><description>Recent content in Tensorflow on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/tensorflow/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Cómo funciona TensorFlow?</title><link>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</guid><description>&lt;p&gt;&lt;strong&gt;TensorFlow&lt;/strong&gt; es una de las herramientas más populares e influyentes
 en el campo de la del aprendizaje automático. En este artículo vamos a ver
-qué es exactamente y cómo funciona.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+qué es exactamente y cómo funciona.&lt;/p&gt;</description></item></channel></rss>

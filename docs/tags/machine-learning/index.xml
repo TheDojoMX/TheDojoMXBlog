@@ -1,105 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Machine-Learning on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/machine-learning/</link>
-    <description>Recent content in Machine-Learning on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Sun, 23 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Reseña del libro &#39;Deep Learning&#39; de MIT Press Essential Knowledge Series</title>
-      <link>https://blog.thedojo.mx/2025/02/23/rese%C3%B1a-del-libro-deep-learning-de-mit-press-essential-knowledge-series/</link>
-      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2025/02/23/rese%C3%B1a-del-libro-deep-learning-de-mit-press-essential-knowledge-series/</guid>
-      <description>&lt;p&gt;La serie &lt;strong&gt;The MIT Press Essential Knowledge Series&lt;/strong&gt; es una serie de libros de introducción
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine-Learning on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/machine-learning/</link><description>Recent content in Machine-Learning on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sun, 23 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/machine-learning/index.xml" rel="self" type="application/rss+xml"/><item><title>Reseña del libro 'Deep Learning' de MIT Press Essential Knowledge Series</title><link>https://blog.thedojo.mx/2025/02/23/rese%C3%B1a-del-libro-deep-learning-de-mit-press-essential-knowledge-series/</link><pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2025/02/23/rese%C3%B1a-del-libro-deep-learning-de-mit-press-essential-knowledge-series/</guid><description>&lt;p&gt;La serie &lt;strong&gt;The MIT Press Essential Knowledge Series&lt;/strong&gt; es una serie de libros de introducción
 a diferentes temas interesantes y actuales, sobre todo de ciencia y tecnología.&lt;/p&gt;
 &lt;p&gt;Me gustan mucho porque son lo suficientemente introductorios para que cualquiera
 sin conocimiento previo del tema específico pueda introducirse, pero lo suficientemente
-completos para salir con una buena visión general de ese tema específico.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>¿Cómo funciona TensorFlow?</title>
-      <link>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</link>
-      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;TensorFlow&lt;/strong&gt; es una de las herramientas más populares e influyentes
+completos para salir con una buena visión general de ese tema específico.&lt;/p&gt;</description></item><item><title>¿Cómo funciona TensorFlow?</title><link>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</guid><description>&lt;p&gt;&lt;strong&gt;TensorFlow&lt;/strong&gt; es una de las herramientas más populares e influyentes
 en el campo de la del aprendizaje automático. En este artículo vamos a ver
-qué es exactamente y cómo funciona.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Mojo 🔥: un lenguaje prometedor</title>
-      <link>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor/</link>
-      <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor/</guid>
-      <description>&lt;p&gt;&lt;a
-  href=&#34;https://www.nondot.org/sabre/&#34;
-    target=&#34;_blank&#34;
-  &gt;Chris Lattner&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}, uno de los creadores de &lt;a
-  href=&#34;https://llvm.org&#34;
-    target=&#34;_blank&#34;
-  &gt;LLVM&lt;/a&gt; y &lt;a
-  href=&#34;https://www.swift.org/&#34;
-    target=&#34;_blank&#34;
-  &gt;Swift&lt;/a&gt;, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de &lt;strong&gt;Python&lt;/strong&gt; pero pensado para atacar su punto más débil: &lt;strong&gt;la velocidad de ejecución&lt;/strong&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Ejercicio: programando un perceptrón con Python</title>
-      <link>https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptr%C3%B3n-con-python/</link>
-      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptr%C3%B3n-con-python/</guid>
-      <description>&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
+qué es exactamente y cómo funciona.&lt;/p&gt;</description></item><item><title>Mojo 🔥: un lenguaje prometedor</title><link>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor/</link><pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor/</guid><description>&lt;p&gt;&lt;a
+href="https://www.nondot.org/sabre/"
+target="_blank"
+&gt;Chris Lattner&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}, uno de los creadores de &lt;a
+href="https://llvm.org"
+target="_blank"
+&gt;LLVM&lt;/a&gt; y &lt;a
+href="https://www.swift.org/"
+target="_blank"
+&gt;Swift&lt;/a&gt;, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de &lt;strong&gt;Python&lt;/strong&gt; pero pensado para atacar su punto más débil: &lt;strong&gt;la velocidad de ejecución&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Ejercicio: programando un perceptrón con Python</title><link>https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptr%C3%B3n-con-python/</link><pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptr%C3%B3n-con-python/</guid><description>&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
 &lt;p&gt;Si no tienes claro lo que es un perceptrón, puedes leer nuestro &lt;a
-  href=&#34;https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html&#34;&gt;artículo anterior&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar de la manera más sencilla posible.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Intro a Machine Learning: Entendiendo el perceptrón</title>
-      <link>https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-el-perceptr%C3%B3n/</link>
-      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-el-perceptr%C3%B3n/</guid>
-      <description>&lt;p&gt;Hablar de aprendizaje automático y los términos que lo rodean, muchas veces intimida a los desarrolladores. En esta serie de posts vamos a intentar explicar los conceptos detrás del aprendizaje automático y llevarlos a la práctica.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Ruta de aprendizaje: Deep Learning</title>
-      <link>https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning/</link>
-      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning/</guid>
-      <description>&lt;p&gt;Inspirado en el libro &amp;ldquo;Ultralearning&amp;rdquo; de Scott Young, voy hacer un proyecto de aprendizaje de algo que llama mi atención desde hace mucho: Deep Learning y Machine Learning en general. Si no conces el concepto, te invito leer el post aquí: &lt;a
-  href=&#34;https://blog.thedojo.mx/2019/08/13/lecciones-sobre-el-aprendizaje-de-manos-de-un-experto.html&#34;&gt;Ultralearning: el arte del aprendizaje profundo&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Traducción automática: API&#39;s vs tu propio modelo</title>
-      <link>https://blog.thedojo.mx/2020/07/19/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</link>
-      <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2020/07/19/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</guid>
-      <description>&lt;p&gt;Traducir texto es una tarea frecuente y que puede realizarse de diferentes maneras, en este artículo queremos explorar algunas de ellas.&lt;/p&gt;
+href="https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html"&gt;artículo anterior&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar de la manera más sencilla posible.&lt;/p&gt;</description></item><item><title>Intro a Machine Learning: Entendiendo el perceptrón</title><link>https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-el-perceptr%C3%B3n/</link><pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-el-perceptr%C3%B3n/</guid><description>&lt;p&gt;Hablar de aprendizaje automático y los términos que lo rodean, muchas veces intimida a los desarrolladores. En esta serie de posts vamos a intentar explicar los conceptos detrás del aprendizaje automático y llevarlos a la práctica.&lt;/p&gt;</description></item><item><title>Ruta de aprendizaje: Deep Learning</title><link>https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning/</link><pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning/</guid><description>&lt;p&gt;Inspirado en el libro &amp;ldquo;Ultralearning&amp;rdquo; de Scott Young, voy hacer un proyecto de aprendizaje de algo que llama mi atención desde hace mucho: Deep Learning y Machine Learning en general. Si no conces el concepto, te invito leer el post aquí: &lt;a
+href="https://blog.thedojo.mx/2019/08/13/lecciones-sobre-el-aprendizaje-de-manos-de-un-experto.html"&gt;Ultralearning: el arte del aprendizaje profundo&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Traducción automática: API's vs tu propio modelo</title><link>https://blog.thedojo.mx/2020/07/22/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</link><pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/07/22/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</guid><description>&lt;p&gt;Traducir texto es una tarea frecuente y que puede realizarse de diferentes maneras, en este artículo queremos explorar algunas de ellas.&lt;/p&gt;
 &lt;p&gt;Existen sitios donde la traducción puede hacerse en línea, como en &lt;a
-  href=&#34;https://translate.google.com.mx/?hl=es&#34;
-    target=&#34;_blank&#34;
-  &gt;Google Translate&lt;/a&gt;, sin embargo, en muchos casos existe un límite en la cantidad de texto que puedes traducir.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+href="https://translate.google.com.mx/?hl=es"
+target="_blank"
+&gt;Google Translate&lt;/a&gt;, sin embargo, en muchos casos existe un límite en la cantidad de texto que puedes traducir.&lt;/p&gt;</description></item><item><title>Libros gratuitos para aprender análisis de datos</title><link>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</link><pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</guid><description>&lt;p&gt;¿Quieres aprender análisis de datos y ya eres programador? Los siguientes libros pueden ser de gran ayuda. Este post está basado en &lt;a
+href="http://bit.ly/2RjPiol"
+target="_blank"
+&gt;un artículo inglés que encontramos&lt;/a&gt;, pero con los recursos que recomienda actualizados y algunos otros de nuestra cosecha.&lt;/p&gt;</description></item></channel></rss>

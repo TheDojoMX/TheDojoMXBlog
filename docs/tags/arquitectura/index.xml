@@ -1,119 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Arquitectura on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/arquitectura/</link>
-    <description>Recent content in Arquitectura on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/arquitectura/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>¿Qué son los requerimientos funcionales?</title>
-      <link>https://blog.thedojo.mx/2024/11/23/qu%C3%A9-son-los-requerimientos-funcionales/</link>
-      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2024/11/23/qu%C3%A9-son-los-requerimientos-funcionales/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;&amp;ldquo;Requerimientos funcionales&amp;rdquo;&lt;/strong&gt; es una expresión muy rebuscada para un concepto
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arquitectura on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/arquitectura/</link><description>Recent content in Arquitectura on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/arquitectura/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué son los requerimientos funcionales?</title><link>https://blog.thedojo.mx/2024/11/23/qu%C3%A9-son-los-requerimientos-funcionales/</link><pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/11/23/qu%C3%A9-son-los-requerimientos-funcionales/</guid><description>&lt;p&gt;&lt;strong&gt;&amp;ldquo;Requerimientos funcionales&amp;rdquo;&lt;/strong&gt; es una expresión muy rebuscada para un concepto
 muy sencillo relacionado con el diseño de los sistemas de software: &lt;strong&gt;las
 cosas que tu sistema HACE&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;En este artículo hablaremos de formas de encontrarlos, definirlos, documentarlos
-y tenerlos listos para la siguiente etapa del desarrollo de software.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>¿Qué producimos los desarrolladores de software?</title>
-      <link>https://blog.thedojo.mx/2024/03/09/qu%C3%A9-producimos-los-desarrolladores-de-software/</link>
-      <pubDate>Sat, 09 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2024/03/09/qu%C3%A9-producimos-los-desarrolladores-de-software/</guid>
-      <description>&lt;p&gt;Para algunos, la respuesta a la pregunta del título es simplemente &amp;ldquo;&lt;em&gt;software&lt;/em&gt;&amp;rdquo;,
+y tenerlos listos para la siguiente etapa del desarrollo de software.&lt;/p&gt;</description></item><item><title>¿Qué producimos los desarrolladores de software?</title><link>https://blog.thedojo.mx/2024/03/09/qu%C3%A9-producimos-los-desarrolladores-de-software/</link><pubDate>Sat, 09 Mar 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/03/09/qu%C3%A9-producimos-los-desarrolladores-de-software/</guid><description>&lt;p&gt;Para algunos, la respuesta a la pregunta del título es simplemente &amp;ldquo;&lt;em&gt;software&lt;/em&gt;&amp;rdquo;,
 porque parece tan obvia que el mismo nombre lo dice. Y aunque el &lt;strong&gt;software&lt;/strong&gt;
 tiene una definición concreta, en este artículo vamos a desmunazar los productos
 de un proceso de desarrollo de software. Lo que quiero que veas es que el
 desarrollo de software no sólamente es crear programas que fucncionen, ya
 que para que el software sea efectivo tiene que &lt;strong&gt;evolucionar&lt;/strong&gt;, y aquí
-entra el punto importante.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Libros que todo desarrollador de software debería leer: arquitectura</title>
-      <link>https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deber%C3%ADa-leer-arquitectura/</link>
-      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deber%C3%ADa-leer-arquitectura/</guid>
-      <description>&lt;p&gt;Hablemos sobre los libros de arquitectura de software que te enseñarán a tomar en cuenta los aspectos importantes de este campo y te pueden hacer mejor desarrollador. Como muchos desarrolladores con experiencia mencionan, la arquitectura es un rol, no un puesto de trabajo. Como rol, lo puedes ejercer parcialmente, y todos los desarrolladores deberíamos hacer arquitectura de software a diferentes escalas. El arquitecto que sólo hace diseños no debería existir.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Descomponiendo tu aplicación en módulos</title>
-      <link>https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/</link>
-      <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/</guid>
-      <description>&lt;p&gt;Hay un dicho que tiene que ver con la guerra que es un gran consejo para crear gran software:&lt;/p&gt;
+entra el punto importante.&lt;/p&gt;</description></item><item><title>Libros que todo desarrollador de software debería leer: arquitectura</title><link>https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deber%C3%ADa-leer-arquitectura/</link><pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/06/08/libros-que-todo-desarrollador-de-software-deber%C3%ADa-leer-arquitectura/</guid><description>&lt;p&gt;Hablemos sobre los libros de arquitectura de software que te enseñarán a tomar en cuenta los aspectos importantes de este campo y te pueden hacer mejor desarrollador. Como muchos desarrolladores con experiencia mencionan, la arquitectura es un rol, no un puesto de trabajo. Como rol, lo puedes ejercer parcialmente, y todos los desarrolladores deberíamos hacer arquitectura de software a diferentes escalas. El arquitecto que sólo hace diseños no debería existir.&lt;/p&gt;</description></item><item><title>Descomponiendo tu aplicación en módulos</title><link>https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/</guid><description>&lt;p&gt;Hay un dicho que tiene que ver con la guerra que es un gran consejo para crear gran software:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Divide y vencerás&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Dividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de ellas, así como de las técnicas y los criterios que puedes seguir para hacerlo efectivamente. Específicamente, en este artículo vamos a hablar de cómo dividir la aplicación en módulos. Pero antes definamos lo que es un módulo.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Desarrolladores de los que puedes aprender: Kevlin Henney</title>
-      <link>https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney/</link>
-      <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney/</guid>
-      <description>&lt;p&gt;Hay varios desarrolladores de talla internacional de los que puedes &lt;strong&gt;aprender mucho&lt;/strong&gt;, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que puedes aprender.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Orígenes de la deuda técnica</title>
-      <link>https://blog.thedojo.mx/2020/10/19/or%C3%ADgenes-de-la-deuda-t%C3%A9cnica/</link>
-      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2020/10/19/or%C3%ADgenes-de-la-deuda-t%C3%A9cnica/</guid>
-      <description>&lt;p&gt;Tuvimos una plática con &lt;a
-  href=&#34;https://twitter.com/sagmmd&#34;
-    target=&#34;_blank&#34;
-  &gt;Sagrario Meneses&lt;/a&gt; sobre la &lt;strong&gt;deuda técnica&lt;/strong&gt; y cómo podemos atacarla. En este artículo te presentamos un pequeño resumen de lo que es y algunas sugerencias sobre su manejo.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Guía para escoger tu stack: por qué deberías escoger tecnología aburrida</title>
-      <link>https://blog.thedojo.mx/2020/03/11/gu%C3%ADa-para-escoger-tu-stack-por-qu%C3%A9-deber%C3%ADas-escoger-tecnolog%C3%ADa-aburrida/</link>
-      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2020/03/11/gu%C3%ADa-para-escoger-tu-stack-por-qu%C3%A9-deber%C3%ADas-escoger-tecnolog%C3%ADa-aburrida/</guid>
-      <description>&lt;p&gt;Este artículo está basado en la presentación &lt;a
-  href=&#34;http://boringtechnology.club&#34;
-    target=&#34;_blank&#34;
-  &gt;Choose Boring Technology&lt;/a&gt; de &lt;a
-  href=&#34;https://mcfunley.com/&#34;
-    target=&#34;_blank&#34;
-  &gt;Dan McKinley&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;No hay nada que haga más feliz a un desarrollador que trabajar con el último de los frameworks, lenguaje de programación o herramienta que salió el mes pasado.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Entendiendo REST. El estilo de Arquitectura.</title>
-      <link>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</link>
-      <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</guid>
-      <description>&lt;p&gt;En el &lt;a
-  href=&#34;https://blog.thedojo.mx/2019/05/06/diseno-y-desarrollo-de-una-api-desde-cero.html&#34;&gt;artículo anterior de la serie&lt;/a&gt; hablamos un poco de lo que es una API REST. En este artículo empezaremos a ver qué es REST y por qué surgió.&lt;/p&gt;
-&lt;p&gt;Antes de empezar con lo nuestro, hablemos de lo que NO es una API REST.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Dividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de ellas, así como de las técnicas y los criterios que puedes seguir para hacerlo efectivamente. Específicamente, en este artículo vamos a hablar de cómo dividir la aplicación en módulos. Pero antes definamos lo que es un módulo.&lt;/p&gt;</description></item><item><title>Desarrolladores de los que puedes aprender: Kevlin Henney</title><link>https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney/</link><pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney/</guid><description>&lt;p&gt;Hay varios desarrolladores de talla internacional de los que puedes &lt;strong&gt;aprender mucho&lt;/strong&gt;, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que puedes aprender.&lt;/p&gt;</description></item><item><title>Orígenes de la deuda técnica</title><link>https://blog.thedojo.mx/2020/10/19/or%C3%ADgenes-de-la-deuda-t%C3%A9cnica/</link><pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/10/19/or%C3%ADgenes-de-la-deuda-t%C3%A9cnica/</guid><description>&lt;p&gt;Tuvimos una plática con &lt;a
+href="https://twitter.com/sagmmd"
+target="_blank"
+&gt;Sagrario Meneses&lt;/a&gt; sobre la &lt;strong&gt;deuda técnica&lt;/strong&gt; y cómo podemos atacarla. En este artículo te presentamos un pequeño resumen de lo que es y algunas sugerencias sobre su manejo.&lt;/p&gt;</description></item><item><title>Guía para escoger tu stack: por qué deberías escoger tecnología aburrida</title><link>https://blog.thedojo.mx/2020/03/11/gu%C3%ADa-para-escoger-tu-stack-por-qu%C3%A9-deber%C3%ADas-escoger-tecnolog%C3%ADa-aburrida/</link><pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/03/11/gu%C3%ADa-para-escoger-tu-stack-por-qu%C3%A9-deber%C3%ADas-escoger-tecnolog%C3%ADa-aburrida/</guid><description>&lt;p&gt;Este artículo está basado en la presentación &lt;a
+href="http://boringtechnology.club"
+target="_blank"
+&gt;Choose Boring Technology&lt;/a&gt; de &lt;a
+href="https://mcfunley.com/"
+target="_blank"
+&gt;Dan McKinley&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;No hay nada que haga más feliz a un desarrollador que trabajar con el último de los frameworks, lenguaje de programación o herramienta que salió el mes pasado.&lt;/p&gt;</description></item><item><title>Entendiendo REST. El estilo de Arquitectura.</title><link>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</link><pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</guid><description>&lt;p&gt;En el &lt;a
+href="https://blog.thedojo.mx/2019/05/06/diseno-y-desarrollo-de-una-api-desde-cero.html"&gt;artículo anterior de la serie&lt;/a&gt; hablamos un poco de lo que es una API REST. En este artículo empezaremos a ver qué es REST y por qué surgió.&lt;/p&gt;
+&lt;p&gt;Antes de empezar con lo nuestro, hablemos de lo que NO es una API REST.&lt;/p&gt;</description></item></channel></rss>

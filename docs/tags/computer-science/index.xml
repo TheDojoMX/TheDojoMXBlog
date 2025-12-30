@@ -1,59 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Computer-Science on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/computer-science/</link>
-    <description>Recent content in Computer-Science on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Sat, 12 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/computer-science/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>¿Por qué debes aprender ciencias de la computación?</title>
-      <link>https://blog.thedojo.mx/2023/08/12/por-qu%C3%A9-debes-aprender-ciencias-de-la-computaci%C3%B3n/</link>
-      <pubDate>Sat, 12 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2023/08/12/por-qu%C3%A9-debes-aprender-ciencias-de-la-computaci%C3%B3n/</guid>
-      <description>&lt;p&gt;Las ciencias de la computación a veces parecen algo mítico para los desarrolladores, algo que sólo aquellos que trabajan en &lt;em&gt;Big Tech&lt;/em&gt; o en la &lt;em&gt;NASA&lt;/em&gt; pueden entender. Pero si programas, es algo &lt;em&gt;&lt;strong&gt;ya que usas a diario&lt;/strong&gt;&lt;/em&gt;, por lo que te conviene comprenderlo mejor.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Pilares fundamentales de las ciencias de la computación</title>
-      <link>https://blog.thedojo.mx/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computaci%C3%B3n/</link>
-      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computaci%C3%B3n/</guid>
-      <description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computer-Science on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/computer-science/</link><description>Recent content in Computer-Science on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sat, 12 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/computer-science/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Por qué debes aprender ciencias de la computación?</title><link>https://blog.thedojo.mx/2023/08/12/por-qu%C3%A9-debes-aprender-ciencias-de-la-computaci%C3%B3n/</link><pubDate>Sat, 12 Aug 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/08/12/por-qu%C3%A9-debes-aprender-ciencias-de-la-computaci%C3%B3n/</guid><description>&lt;p&gt;Las ciencias de la computación a veces parecen algo mítico para los desarrolladores, algo que sólo aquellos que trabajan en &lt;em&gt;Big Tech&lt;/em&gt; o en la &lt;em&gt;NASA&lt;/em&gt; pueden entender. Pero si programas, es algo &lt;em&gt;&lt;strong&gt;ya que usas a diario&lt;/strong&gt;&lt;/em&gt;, por lo que te conviene comprenderlo mejor.&lt;/p&gt;</description></item><item><title>Pilares fundamentales de las ciencias de la computación</title><link>https://blog.thedojo.mx/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computaci%C3%B3n/</link><pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/05/30/pilares-fundamentales-de-las-ciencias-de-la-computaci%C3%B3n/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;The computer is the tool but not the object of study. - &lt;strong&gt;Peter Denning&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Entender la computación &lt;strong&gt;profundamente&lt;/strong&gt; es importante para cualquier desarrollador de software, porque al avanzar en su carrera se encontrará con problemas relacionados con las principios más fundamentales de la computación. Piensa en los siguientes casos:&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>La importancia de entender los principios de la computación</title>
-      <link>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</link>
-      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</guid>
-      <description>&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a
-  href=&#34;https://camilochs.github.io/web/&#34;
-    target=&#34;_blank&#34;
-  &gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;&amp;ldquo;Principios de programación&amp;rdquo;.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Problemas difíciles de la computación y su relación con la criptografía: Problemas NP</title>
-      <link>https://blog.thedojo.mx/2023/02/03/problemas-dif%C3%ADciles-de-la-computaci%C3%B3n-y-su-relaci%C3%B3n-con-la-criptograf%C3%ADa-problemas-np/</link>
-      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2023/02/03/problemas-dif%C3%ADciles-de-la-computaci%C3%B3n-y-su-relaci%C3%B3n-con-la-criptograf%C3%ADa-problemas-np/</guid>
-      <description>&lt;p&gt;La intuición a veces nos dice que cualquier cálculo numérico &lt;em&gt;debería&lt;/em&gt; ser muy fácil para una computadora. Sin embargo, hay problemas numéricos y no numéricos que son imposibles de resolver para las computadoras actuales, independientemente de su poder de procesamiento.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Entender la computación &lt;strong&gt;profundamente&lt;/strong&gt; es importante para cualquier desarrollador de software, porque al avanzar en su carrera se encontrará con problemas relacionados con las principios más fundamentales de la computación. Piensa en los siguientes casos:&lt;/p&gt;</description></item><item><title>La importancia de entender los principios de la computación</title><link>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</guid><description>&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a
+href="https://camilochs.github.io/web/"
+target="_blank"
+&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;&amp;ldquo;Principios de programación&amp;rdquo;.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;</description></item><item><title>Problemas difíciles de la computación y su relación con la criptografía: Problemas NP</title><link>https://blog.thedojo.mx/2023/02/03/problemas-dif%C3%ADciles-de-la-computaci%C3%B3n-y-su-relaci%C3%B3n-con-la-criptograf%C3%ADa-problemas-np/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/02/03/problemas-dif%C3%ADciles-de-la-computaci%C3%B3n-y-su-relaci%C3%B3n-con-la-criptograf%C3%ADa-problemas-np/</guid><description>&lt;p&gt;La intuición a veces nos dice que cualquier cálculo numérico &lt;em&gt;debería&lt;/em&gt; ser muy fácil para una computadora. Sin embargo, hay problemas numéricos y no numéricos que son imposibles de resolver para las computadoras actuales, independientemente de su poder de procesamiento.&lt;/p&gt;</description></item></channel></rss>

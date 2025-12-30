@@ -1,59 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Apis on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/apis/</link>
-    <description>Recent content in Apis on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Sat, 18 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/apis/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>¿Qué es una API?</title>
-      <link>https://blog.thedojo.mx/2023/03/18/qu%C3%A9-es-una-api/</link>
-      <pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2023/03/18/qu%C3%A9-es-una-api/</guid>
-      <description>&lt;p&gt;A veces limitamos el uso de la palabra &lt;strong&gt;API&lt;/strong&gt; a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Formas de hacer una API con Go</title>
-      <link>https://blog.thedojo.mx/2020/09/20/formas-de-hacer-una-api-con-go/</link>
-      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2020/09/20/formas-de-hacer-una-api-con-go/</guid>
-      <description>&lt;p&gt;Go es uno de los lenguajes modernos más usados. Ya hablamos de &lt;a
-  href=&#34;https://blog.thedojo.mx/2019/09/01/por-que-deberias-aprender-go.html&#34;&gt;por qué deberías aprenderlo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Ahora hablemos de un caso de uso práctico: &lt;strong&gt;úsalo para crear una API HTTP&lt;/strong&gt;. En este artículo nos enfocaremos en la parte de comunicación HTTP y la generación de respuestas adecuadas.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Traducción automática: API&#39;s vs tu propio modelo</title>
-      <link>https://blog.thedojo.mx/2020/07/19/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</link>
-      <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2020/07/19/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</guid>
-      <description>&lt;p&gt;Traducir texto es una tarea frecuente y que puede realizarse de diferentes maneras, en este artículo queremos explorar algunas de ellas.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apis on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/apis/</link><description>Recent content in Apis on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sat, 18 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/apis/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es una API?</title><link>https://blog.thedojo.mx/2023/03/18/qu%C3%A9-es-una-api/</link><pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/03/18/qu%C3%A9-es-una-api/</guid><description>&lt;p&gt;A veces limitamos el uso de la palabra &lt;strong&gt;API&lt;/strong&gt; a un programa que nos regresa información mediante una conexión web, generalmente en un formato que una máquina puede procesar. Pero muchas otras veces se usa de manera más amplia. En este artículo hablaremos de otras acepciones y qué tiene que ver con la buena programación.&lt;/p&gt;</description></item><item><title>Formas de hacer una API con Go</title><link>https://blog.thedojo.mx/2020/09/20/formas-de-hacer-una-api-con-go/</link><pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/09/20/formas-de-hacer-una-api-con-go/</guid><description>&lt;p&gt;Go es uno de los lenguajes modernos más usados. Ya hablamos de &lt;a
+href="https://blog.thedojo.mx/2019/09/01/por-que-deberias-aprender-go.html"&gt;por qué deberías aprenderlo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora hablemos de un caso de uso práctico: &lt;strong&gt;úsalo para crear una API HTTP&lt;/strong&gt;. En este artículo nos enfocaremos en la parte de comunicación HTTP y la generación de respuestas adecuadas.&lt;/p&gt;</description></item><item><title>Traducción automática: API's vs tu propio modelo</title><link>https://blog.thedojo.mx/2020/07/22/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</link><pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/07/22/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</guid><description>&lt;p&gt;Traducir texto es una tarea frecuente y que puede realizarse de diferentes maneras, en este artículo queremos explorar algunas de ellas.&lt;/p&gt;
 &lt;p&gt;Existen sitios donde la traducción puede hacerse en línea, como en &lt;a
-  href=&#34;https://translate.google.com.mx/?hl=es&#34;
-    target=&#34;_blank&#34;
-  &gt;Google Translate&lt;/a&gt;, sin embargo, en muchos casos existe un límite en la cantidad de texto que puedes traducir.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Diseño y desarrollo de una API RESTful desde cero - La importancia de diseñar tu API</title>
-      <link>https://blog.thedojo.mx/2019/05/06/dise%C3%B1o-y-desarrollo-de-una-api-restful-desde-cero-la-importancia-de-dise%C3%B1ar-tu-api/</link>
-      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2019/05/06/dise%C3%B1o-y-desarrollo-de-una-api-restful-desde-cero-la-importancia-de-dise%C3%B1ar-tu-api/</guid>
-      <description>&lt;p&gt;En este post explicaré &lt;strong&gt;los principios básicos de diseño de una API&lt;/strong&gt;. Esta primera parte es bastante teórica, empezaremos con la práctica (no con la programación, sino con el diseño) en un post posterior.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+href="https://translate.google.com.mx/?hl=es"
+target="_blank"
+&gt;Google Translate&lt;/a&gt;, sin embargo, en muchos casos existe un límite en la cantidad de texto que puedes traducir.&lt;/p&gt;</description></item><item><title>Diseño y desarrollo de una API RESTful desde cero - La importancia de diseñar tu API</title><link>https://blog.thedojo.mx/2019/05/06/dise%C3%B1o-y-desarrollo-de-una-api-restful-desde-cero-la-importancia-de-dise%C3%B1ar-tu-api/</link><pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/05/06/dise%C3%B1o-y-desarrollo-de-una-api-restful-desde-cero-la-importancia-de-dise%C3%B1ar-tu-api/</guid><description>&lt;p&gt;En este post explicaré &lt;strong&gt;los principios básicos de diseño de una API&lt;/strong&gt;. Esta primera parte es bastante teórica, empezaremos con la práctica (no con la programación, sino con el diseño) en un post posterior.&lt;/p&gt;</description></item></channel></rss>

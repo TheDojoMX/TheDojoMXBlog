@@ -1,32 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Preguntas on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/preguntas/</link>
-    <description>Recent content in Preguntas on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Thu, 09 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/preguntas/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Cómo convertirte en un mago programando</title>
-      <link>https://blog.thedojo.mx/2021/12/09/c%C3%B3mo-convertirte-en-un-mago-programando/</link>
-      <pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/12/09/c%C3%B3mo-convertirte-en-un-mago-programando/</guid>
-      <description>&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a
-  href=&#34;https://www.youtube.com/watch?v=drPMyDyQG8M&#34;
-    target=&#34;_blank&#34;
-  &gt;wizardzine&lt;/a&gt; gratuito &lt;a
-  href=&#34;https://wizardzines.com/zines/wizard/&#34;
-    target=&#34;_blank&#34;
-  &gt;&amp;ldquo;So you want to be a wizard&amp;rdquo;&lt;/a&gt; de &lt;a
-  href=&#34;https://twitter.com/b0rk&#34;
-    target=&#34;_blank&#34;
-  &gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Preguntas on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/preguntas/</link><description>Recent content in Preguntas on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Thu, 09 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/preguntas/index.xml" rel="self" type="application/rss+xml"/><item><title>Cómo convertirte en un mago programando</title><link>https://blog.thedojo.mx/2021/12/09/c%C3%B3mo-convertirte-en-un-mago-programando/</link><pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/09/c%C3%B3mo-convertirte-en-un-mago-programando/</guid><description>&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a
+href="https://www.youtube.com/watch?v=drPMyDyQG8M"
+target="_blank"
+&gt;wizardzine&lt;/a&gt; gratuito &lt;a
+href="https://wizardzines.com/zines/wizard/"
+target="_blank"
+&gt;&amp;ldquo;So you want to be a wizard&amp;rdquo;&lt;/a&gt; de &lt;a
+href="https://twitter.com/b0rk"
+target="_blank"
+&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

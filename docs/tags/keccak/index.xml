@@ -1,29 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Keccak on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/keccak/</link>
-    <description>Recent content in Keccak on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/keccak/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Crea hashes resistentes a balas con Keccak (SHA-3)</title>
-      <link>https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-sha-3/</link>
-      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2022/10/12/crea-hashes-resistentes-a-balas-con-keccak-sha-3/</guid>
-      <description>&lt;p&gt;Ya hemos hablado en este blog de lo que es un &lt;a
-  href=&#34;https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&#34;&gt;hash&lt;/a&gt; e incluso qué hashes puedes usar para guardar tus &lt;a
-  href=&#34;https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html&#34;&gt;passwords de manera segura&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Keccak on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/keccak/</link><description>Recent content in Keccak on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sun, 23 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/keccak/index.xml" rel="self" type="application/rss+xml"/><item><title>Crea hashes resistentes a balas con Keccak (SHA-3)</title><link>https://blog.thedojo.mx/2022/10/23/crea-hashes-resistentes-a-balas-con-keccak-sha-3/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/10/23/crea-hashes-resistentes-a-balas-con-keccak-sha-3/</guid><description>&lt;p&gt;Ya hemos hablado en este blog de lo que es un &lt;a
+href="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html"&gt;hash&lt;/a&gt; e incluso qué hashes puedes usar para guardar tus &lt;a
+href="https://blog.thedojo.mx/2021/12/03/algoritmos-criptograficos-hashes-seguros-para-alamcenar-passwords.html"&gt;passwords de manera segura&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;En este artículo vamos a hablar de uno en específico, el que estamos seguros que deberías usar para cualquier uso futuro en tus programas y sistemas, el que ha sido nombrado como el Secure Hash Algorithm 3 (&lt;a
-  href=&#34;https://www.nist.gov/publications/sha-3-standard-permutation-based-hash-and-extendable-output-functions?pub_id=919061&#34;
-    target=&#34;_blank&#34;
-  &gt;SHA-3&lt;/a&gt;): &lt;strong&gt;Keccak&lt;/strong&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+href="https://www.nist.gov/publications/sha-3-standard-permutation-based-hash-and-extendable-output-functions?pub_id=919061"
+target="_blank"
+&gt;SHA-3&lt;/a&gt;): &lt;strong&gt;Keccak&lt;/strong&gt;.&lt;/p&gt;</description></item></channel></rss>

@@ -1,51 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Books on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/books/</link>
-    <description>Recent content in Books on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/books/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>20 bibliotecas de Python que deberías estar usando</title>
-      <link>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</link>
-      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</guid>
-      <description>&lt;p&gt;El libro &lt;a
-  href=&#34;https://freecomputerbooks.com/20-Python-Libraries%20You-Are-Not-Using-But-Should.html#downloadLinks&#34;
-    target=&#34;_blank&#34;
-  &gt;&amp;ldquo;20 Python Libraries You Aren&amp;rsquo;t Using (But Should)&amp;rdquo;&lt;/a&gt; de &lt;a
-  href=&#34;https://github.com/cjrh&#34;
-    target=&#34;_blank&#34;
-  &gt;Caleb Hattingh&lt;/a&gt; es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Libros que te ayudarán a aprender Data Science</title>
-      <link>https://blog.thedojo.mx/2021/02/01/libros-que-te-ayudar%C3%A1n-a-aprender-data-science/</link>
-      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/02/01/libros-que-te-ayudar%C3%A1n-a-aprender-data-science/</guid>
-      <description>&lt;p&gt;Creemos firmemente que una de las mejores maneras de educarte como desarrollador es conseguir guía clara.&lt;/p&gt;
-&lt;p&gt;Una de las mejores fuentes de conocimiento son los libros escritos por personas expertas en el tema del que quieres aprender, es por eso siempre buscamos personas que nos den consejos sobre los mejores recursos que encuentren.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Técnicas para resolver problemas</title>
-      <link>https://blog.thedojo.mx/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</link>
-      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</guid>
-      <description>&lt;p&gt;Todos los desarrolladores nos hemos encontrado con problemas que nos dejan perplejos y que no tenemos idea de por dónde empezar a resolver.&lt;/p&gt;
-&lt;p&gt;George Polya fue uno de los matemáticos más prolíficos del Siglo XX, un matemático de primera clase (de esos que descubren e inventan cosas, y para algunos, &lt;strong&gt;el matemático más influyente del siglo&lt;/strong&gt;) pero que, a diferencia de muchos otros, mantenía un interés por la educación y la enseñanza de las matemáticas, algo muy peculiar.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Books on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/books/</link><description>Recent content in Books on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/books/index.xml" rel="self" type="application/rss+xml"/><item><title>20 bibliotecas de Python que deberías estar usando</title><link>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</link><pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</guid><description>&lt;p&gt;El libro &lt;a
+href="https://freecomputerbooks.com/20-Python-Libraries%20You-Are-Not-Using-But-Should.html#downloadLinks"
+target="_blank"
+&gt;&amp;ldquo;20 Python Libraries You Aren&amp;rsquo;t Using (But Should)&amp;rdquo;&lt;/a&gt; de &lt;a
+href="https://github.com/cjrh"
+target="_blank"
+&gt;Caleb Hattingh&lt;/a&gt; es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida.&lt;/p&gt;</description></item><item><title>Libros que te ayudarán a aprender Data Science</title><link>https://blog.thedojo.mx/2021/02/01/libros-que-te-ayudar%C3%A1n-a-aprender-data-science/</link><pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/02/01/libros-que-te-ayudar%C3%A1n-a-aprender-data-science/</guid><description>&lt;p&gt;Creemos firmemente que una de las mejores maneras de educarte como desarrollador es conseguir guía clara.&lt;/p&gt;
+&lt;p&gt;Una de las mejores fuentes de conocimiento son los libros escritos por personas expertas en el tema del que quieres aprender, es por eso siempre buscamos personas que nos den consejos sobre los mejores recursos que encuentren.&lt;/p&gt;</description></item><item><title>Técnicas para resolver problemas</title><link>https://blog.thedojo.mx/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</link><pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</guid><description>&lt;p&gt;Todos los desarrolladores nos hemos encontrado con problemas que nos dejan perplejos y que no tenemos idea de por dónde empezar a resolver.&lt;/p&gt;
+&lt;p&gt;George Polya fue uno de los matemáticos más prolíficos del Siglo XX, un matemático de primera clase (de esos que descubren e inventan cosas, y para algunos, &lt;strong&gt;el matemático más influyente del siglo&lt;/strong&gt;) pero que, a diferencia de muchos otros, mantenía un interés por la educación y la enseñanza de las matemáticas, algo muy peculiar.&lt;/p&gt;</description></item></channel></rss>

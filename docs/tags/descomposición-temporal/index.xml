@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Descomposición-Temporal on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/descomposici%C3%B3n-temporal/</link>
-    <description>Recent content in Descomposición-Temporal on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/descomposici%C3%B3n-temporal/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>A Philosophy of Software Design: Descomposición Temporal</title>
-      <link>https://blog.thedojo.mx/2020/03/16/a-philosophy-of-software-design-descomposici%C3%B3n-temporal/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2020/03/16/a-philosophy-of-software-design-descomposici%C3%B3n-temporal/</guid>
-      <description>&lt;p&gt;En el artículo pasado hablamos de una forma de evitar una fuga de información, que consiste en encapsular una decisión de diseño en un módulo.&lt;/p&gt;
-&lt;p&gt;Otra forma de dejar escapar información no relevante para los usuarios de una pieza de software es mediante obligarlos a usarla siempre de la misma forma, con el mismo orden de operaciones reglas de operación implícita. Esto se llama descomposición temporal. Hablemos más de ella.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Descomposición-Temporal on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/descomposici%C3%B3n-temporal/</link><description>Recent content in Descomposición-Temporal on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/descomposici%C3%B3n-temporal/index.xml" rel="self" type="application/rss+xml"/><item><title>A Philosophy of Software Design: Descomposición Temporal</title><link>https://blog.thedojo.mx/2020/03/16/a-philosophy-of-software-design-descomposici%C3%B3n-temporal/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/03/16/a-philosophy-of-software-design-descomposici%C3%B3n-temporal/</guid><description>&lt;p&gt;En el artículo pasado hablamos de una forma de evitar una fuga de información, que consiste en encapsular una decisión de diseño en un módulo.&lt;/p&gt;
+&lt;p&gt;Otra forma de dejar escapar información no relevante para los usuarios de una pieza de software es mediante obligarlos a usarla siempre de la misma forma, con el mismo orden de operaciones reglas de operación implícita. Esto se llama descomposición temporal. Hablemos más de ella.&lt;/p&gt;</description></item></channel></rss>

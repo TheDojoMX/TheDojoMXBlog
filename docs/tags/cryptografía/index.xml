@@ -1,25 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Cryptografía on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/cryptograf%C3%ADa/</link>
-    <description>Recent content in Cryptografía on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/cryptograf%C3%ADa/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Tipos de algoritmos criptográficos: cifrados de bloque</title>
-      <link>https://blog.thedojo.mx/2020/12/03/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-bloque/</link>
-      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2020/12/03/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-bloque/</guid>
-      <description>&lt;p&gt;Ya hablamos de lo que es &lt;a
-  href=&#34;https://blog.thedojo.mx/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html&#34;&gt;la criptografía&lt;/a&gt;, ahora empecemos a hablar de los tipos de
-algoritmos criptográficos que existen, sus características y sus principales diferencias. En este artículo hablaremos de los cifrados de bloque.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cryptografía on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/cryptograf%C3%ADa/</link><description>Recent content in Cryptografía on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/cryptograf%C3%ADa/index.xml" rel="self" type="application/rss+xml"/><item><title>Tipos de algoritmos criptográficos: cifrados de bloque</title><link>https://blog.thedojo.mx/2020/12/03/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-bloque/</link><pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/12/03/tipos-de-algoritmos-criptogr%C3%A1ficos-cifrados-de-bloque/</guid><description>&lt;p&gt;Ya hablamos de lo que es &lt;a
+href="https://blog.thedojo.mx/2019/11/12/criptografia-basica-para-programadores-que-es-la-criptografia.html"&gt;la criptografía&lt;/a&gt;, ahora empecemos a hablar de los tipos de
+algoritmos criptográficos que existen, sus características y sus principales diferencias. En este artículo hablaremos de los cifrados de bloque.&lt;/p&gt;</description></item></channel></rss>

@@ -1,50 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>True on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/true/</link>
-    <description>Recent content in True on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/true/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Explicaciones elocuentes</title>
-      <link>https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes/</guid>
-      <description>&lt;p&gt;Aunque el principal trabajo de un desarrollador es comunicar sus pensamientos a la computadora a través de instrucciones precisas (el código), ningún trabajo serio o que valga la pena se puede hacer solo. Casi siempre formamos parte de un equipo, puede ser con otros roles o con más desarrolladores. Para trabajar efectivamente, hay que comunicarse lo mejor posible. &lt;a
-  href=&#34;https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&#34;
-    target=&#34;_blank&#34;
-  &gt;Russ Olsen&lt;/a&gt; tiene una plática llamada &lt;a
-  href=&#34;https://www.youtube.com/watch?v=80EE4mZmp3A&#34;
-    target=&#34;_blank&#34;
-  &gt;Eloquent Explanations&lt;/a&gt; en la que nos da consejos sobre cómo comunicarnos claramente, además de que da razones por las que es importante hacerlo.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>A Philosophy of Software Design: Organiza bien los sistemas en capas</title>
-      <link>https://blog.thedojo.mx/2020/09/01/a-philosophy-of-software-design-organiza-bien-los-sistemas-en-capas/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2020/09/01/a-philosophy-of-software-design-organiza-bien-los-sistemas-en-capas/</guid>
-      <description>&lt;p&gt;Hemos escuchado muchísimo acerca de los sistemas en capas como &lt;em&gt;Modelo-Vista-Controlador&lt;/em&gt;, Modelo-Vista-Template, Modelo-Vista-*, &lt;em&gt;MV-lo-que-sea&lt;/em&gt; etc. y eso es porque la mayoría de los sistemas actuales se organiza así: &lt;strong&gt;en capas&lt;/strong&gt;. Además, nuestros módulos se dividen naturalmente en capas con diferentes funciones (como código que usa a otro).&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>La forma fácil de colaborar en The Dojo MX Blog</title>
-      <link>https://blog.thedojo.mx/2019/03/03/la-forma-f%C3%A1cil-de-colaborar-en-the-dojo-mx-blog/</link>
-      <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2019/03/03/la-forma-f%C3%A1cil-de-colaborar-en-the-dojo-mx-blog/</guid>
-      <description>&lt;p&gt;¿Quieres empezar a escribir? Contribuye con tus artículos a la comunidad. En este post encontrarás una guía detallada para la instalación del repositorio y ver tus posts de manera local, así como la convenciones que seguimos antes de publicar un post.
-Como verás, todo está por desarrolladores y para desarrolladores.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>True on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/true/</link><description>Recent content in True on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/true/index.xml" rel="self" type="application/rss+xml"/><item><title>Explicaciones elocuentes</title><link>https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes/</link><pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/26/explicaciones-elocuentes/</guid><description>&lt;p&gt;Aunque el principal trabajo de un desarrollador es comunicar sus pensamientos a la computadora a través de instrucciones precisas (el código), ningún trabajo serio o que valga la pena se puede hacer solo. Casi siempre formamos parte de un equipo, puede ser con otros roles o con más desarrolladores. Para trabajar efectivamente, hay que comunicarse lo mejor posible. &lt;a
+href="https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html"
+target="_blank"
+&gt;Russ Olsen&lt;/a&gt; tiene una plática llamada &lt;a
+href="https://www.youtube.com/watch?v=80EE4mZmp3A"
+target="_blank"
+&gt;Eloquent Explanations&lt;/a&gt; en la que nos da consejos sobre cómo comunicarnos claramente, además de que da razones por las que es importante hacerlo.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Organiza bien los sistemas en capas</title><link>https://blog.thedojo.mx/2020/09/01/a-philosophy-of-software-design-organiza-bien-los-sistemas-en-capas/</link><pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/09/01/a-philosophy-of-software-design-organiza-bien-los-sistemas-en-capas/</guid><description>&lt;p&gt;Hemos escuchado muchísimo acerca de los sistemas en capas como &lt;em&gt;Modelo-Vista-Controlador&lt;/em&gt;, Modelo-Vista-Template, Modelo-Vista-*, &lt;em&gt;MV-lo-que-sea&lt;/em&gt; etc. y eso es porque la mayoría de los sistemas actuales se organiza así: &lt;strong&gt;en capas&lt;/strong&gt;. Además, nuestros módulos se dividen naturalmente en capas con diferentes funciones (como código que usa a otro).&lt;/p&gt;</description></item><item><title>La forma fácil de colaborar en The Dojo MX Blog</title><link>https://blog.thedojo.mx/2019/03/03/la-forma-f%C3%A1cil-de-colaborar-en-the-dojo-mx-blog/</link><pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/03/03/la-forma-f%C3%A1cil-de-colaborar-en-the-dojo-mx-blog/</guid><description>&lt;p&gt;¿Quieres empezar a escribir? Contribuye con tus artículos a la comunidad. En este post encontrarás una guía detallada para la instalación del repositorio y ver tus posts de manera local, así como la convenciones que seguimos antes de publicar un post.
+Como verás, todo está por desarrolladores y para desarrolladores.&lt;/p&gt;</description></item></channel></rss>

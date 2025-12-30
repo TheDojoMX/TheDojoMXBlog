@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Password on The Dojo MX Blog</title>
-    <link>https://blog.thedojo.mx/tags/password/</link>
-    <description>Recent content in Password on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2025 </copyright>
-    <lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/password/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Algoritmos criptográficos: hashes seguros para alamcenar passwords</title>
-      <link>https://blog.thedojo.mx/2021/12/03/algoritmos-criptogr%C3%A1ficos-hashes-seguros-para-alamcenar-passwords/</link>
-      <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.thedojo.mx/2021/12/03/algoritmos-criptogr%C3%A1ficos-hashes-seguros-para-alamcenar-passwords/</guid>
-      <description>&lt;p&gt;Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre &lt;em&gt;hashearla&lt;/em&gt;. Como aprendiste &lt;a
-  href=&#34;https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&#34;&gt;en el artículo anterior&lt;/a&gt;, un hash es una función que impide recuperar el valor original ya que simplemente la información se pierde.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Password on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/password/</link><description>Recent content in Password on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/password/index.xml" rel="self" type="application/rss+xml"/><item><title>Algoritmos criptográficos: hashes seguros para alamcenar passwords</title><link>https://blog.thedojo.mx/2021/12/03/algoritmos-criptogr%C3%A1ficos-hashes-seguros-para-alamcenar-passwords/</link><pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/03/algoritmos-criptogr%C3%A1ficos-hashes-seguros-para-alamcenar-passwords/</guid><description>&lt;p&gt;Una práctica común para solucionar la identificación de usuarios es registrarlos con su nombre de usuario y contraseña. Para no almacenar su contraseña directamente, es una costumbre &lt;em&gt;hashearla&lt;/em&gt;. Como aprendiste &lt;a
+href="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html"&gt;en el artículo anterior&lt;/a&gt;, un hash es una función que impide recuperar el valor original ya que simplemente la información se pierde.&lt;/p&gt;</description></item></channel></rss>
