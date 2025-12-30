@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Diseño on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/dise%C3%B1o/</link><description>Recent content in Diseño on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sat, 25 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/dise%C3%B1o/index.xml" rel="self" type="application/rss+xml"/><item><title>Descomponiendo tu aplicación en módulos</title><link>https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/</guid><description>&lt;p&gt;Hay un dicho que tiene que ver con la guerra que es un gran consejo para crear gran software:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Divide y vencerás&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Dividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de ellas, así como de las técnicas y los criterios que puedes seguir para hacerlo efectivamente. Específicamente, en este artículo vamos a hablar de cómo dividir la aplicación en módulos. Pero antes definamos lo que es un módulo.&lt;/p&gt;</description></item></channel></rss>n
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Diseño" on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/dise%C3%B1o/</link><description>Recent content in Diseño" on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sat, 23 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/dise%C3%B1o/index.xml" rel="self" type="application/rss+xml"/><item><title>Patrones de diseño: qué son y cuándo usarlos</title><link>https://blog.thedojo.mx/2019/02/23/patrones-de-dise%C3%B1o-qu%C3%A9-son-y-cu%C3%A1ndo-usarlos/</link><pubDate>Sat, 23 Feb 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/02/23/patrones-de-dise%C3%B1o-qu%C3%A9-son-y-cu%C3%A1ndo-usarlos/</guid><description>&lt;p&gt;Parte del conocimiento fundamental de un desarrollador profesional de software son los &lt;em&gt;Patrones de diseño&lt;/em&gt; (Design Patterns). En este artículo explicamos de manera concisa:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Qué son&lt;/li&gt;
+&lt;li&gt;De dónde vienen&lt;/li&gt;
+&lt;li&gt;Por qué deberías aprender algunos cuantos&lt;/li&gt;
+&lt;li&gt;Por dónde empezar&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 class="relative group"&gt;Qué son los patrones de diseño
+&lt;div id="qué-son-los-patrones-de-diseño" class="anchor"&gt;&lt;/div&gt;
+&lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
 &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#qu%c3%a9-son-los-patrones-de-dise%c3%b1o" aria-label="Ancla"&gt;#&lt;/a&gt;
 &lt;/span&gt;
