@@ -55,97 +55,99 @@ Algunos ejemplos concretos de series de tiempo que probablemente ya conoces:
 
 Una base de datos relacional pensada en transacciones (OLTP) es muy flexible y sin duda
 puedes almacenar pares de valores de tiempo y el valor medido sin ninguna dificultad. Pero
-algunas de las razones por las que no es buena idea usar este tipo de bases de datos.
+veamos algunas de las razones por las que no es buena idea usar este tipo de bases de datos.
 
 ### Problemas de rendimiento
 
-~~Las consultas de agregación temporal se vuelven lentas conforme crece la tabla.
+Las consultas de agregación temporal se vuelven lentas conforme crece la tabla.
 Calcular el promedio de las últimas 24 horas o el máximo por hora requiere
-escanear millones de filas, incluso con índices bien diseñados.~~
+escanear millones de filas, incluso con índices bien diseñados.
 
-~~Los índices B-tree, el tipo más común en bases de datos relacionales, no están
+Los índices _B-tree_, el tipo más común en bases de datos relacionales, no están
 optimizados para consultas por rangos de tiempo. Un índice B-tree funciona bien
 para búsquedas exactas (`WHERE timestamp = X`), pero para rangos
-(`WHERE timestamp BETWEEN X AND Y`) debe recorrer muchos nodos del árbol.~~
+(`WHERE timestamp BETWEEN X AND Y`) debe recorrer muchos nodos del árbol.
 
-~~Considera esta consulta típica en PostgreSQL:~~
+Considera esta consulta típica en PostgreSQL:
 
 ```sql
-~~-- Promedio de CPU por servidor en la última semana~~
-~~SELECT server_id, AVG(cpu_usage)~~
-~~FROM metrics~~
-~~WHERE timestamp > NOW() - INTERVAL '7 days'~~
-~~GROUP BY server_id;~~
+-- Promedio de CPU por servidor en la última semana
+SELECT server_id, AVG(cpu_usage)
+FROM metrics
+WHERE timestamp > NOW() - INTERVAL '7 days'
+GROUP BY server_id;
 ```
 
-~~Con 100 millones de filas, esta consulta puede tardar minutos. En una TSDB
+Con 100 millones de filas, esta consulta puede tardar minutos. En una TSDB
 especializada, la misma operación toma segundos gracias a índices temporales
-y datos pre-agregados.~~
+y datos pre-agregados.
 
 ### Problemas de almacenamiento
 
-~~Las bases de datos relacionales no tienen compresión especializada para datos
+Las bases de datos relacionales no tienen compresión especializada para datos
 temporales. Los timestamps consecutivos suelen diferir por pocos segundos, pero
 se almacenan como valores completos de 8 bytes cada uno. Lo mismo ocurre con
-valores numéricos que cambian poco entre mediciones.~~
+valores numéricos que cambian poco entre mediciones.
 
-~~Además, hay desperdicio de espacio con valores repetidos. Si el `server_id` es
+Además, hay desperdicio de espacio con valores repetidos. Si el `server_id` es
 "web-server-prod-01" y tienes un millón de mediciones, esa cadena se almacena
-(o referencia) un millón de veces.~~
+(o referencia) un millón de veces.
 
-~~El crecimiento es lineal y sin control automático. Si generas 1GB de datos
+El crecimiento es lineal y sin control automático. Si generas 1GB de datos
 por día, en un año tendrás 365GB. Sin políticas de retención automáticas,
-debes implementar scripts manuales para purgar datos antiguos.~~
+debes implementar scripts manuales para purgar datos antiguos.
 
 ### Ejemplo práctico
 
-~~Veamos cómo se vería un esquema típico en PostgreSQL:~~
+Veamos cómo se vería un esquema típico en PostgreSQL para guardar una
+serie de métricas:
 
 ```sql
-~~CREATE TABLE metrics (~~
-~~    id SERIAL PRIMARY KEY,~~
-~~    timestamp TIMESTAMPTZ NOT NULL,~~
-~~    server_id VARCHAR(100) NOT NULL,~~
-~~    metric_name VARCHAR(50) NOT NULL,~~
-~~    value DOUBLE PRECISION NOT NULL~~
-~~);~~
+CREATE TABLE metrics (
+    id SERIAL PRIMARY KEY,
+    timestamp TIMESTAMPTZ NOT NULL,
+    server_id VARCHAR(100) NOT NULL,
+    metric_name VARCHAR(50) NOT NULL,
+    value DOUBLE PRECISION NOT NULL
+);
 
-~~CREATE INDEX idx_metrics_time ON metrics(timestamp);~~
-~~CREATE INDEX idx_metrics_server ON metrics(server_id, timestamp);~~
+CREATE INDEX idx_metrics_time ON metrics(timestamp);
+CREATE INDEX idx_metrics_server ON metrics(server_id, timestamp);
 ```
 
-~~Este esquema funciona, pero tiene problemas:~~
+Este esquema funciona, pero tiene algunos problemas:
 
-~~- Cada fila ocupa ~150 bytes (con overhead de PostgreSQL)~~
-~~- 1 millón de puntos = ~150MB~~
-~~- 1 billón de puntos = ~150GB~~
+- Cada fila ocupa ~150 bytes (con overhead de PostgreSQL)
+- 1 millón de puntos = ~150MB
+- 1 billón de puntos = ~150GB
 
-~~En una TSDB como TimescaleDB con compresión habilitada, el mismo billón de
-puntos puede ocupar 15-30GB, una reducción de 5-10x.~~
+En una TSDB como TimescaleDB con compresión habilitada, el mismo billón de
+puntos puede ocupar 15-30GB, una reducción de 5-10x.
 
 ## ¿Qué hace especial a una base de datos de series de tiempo?
 
-~~Las TSDBs (Time Series Databases) están diseñadas desde cero para manejar
-las características únicas de los datos temporales. Veamos qué las hace diferentes.~~
+Las TSDBs están diseñadas desde cero para manejar
+las características únicas de los datos temporales. Veamos qué las hace diferentes.
 
 ### 1. Compresión optimizada
 
-~~Las TSDBs usan algoritmos de compresión específicos para datos temporales:~~
+Las TSDBs usan algoritmos de compresión específicos para datos con las características
+que hemos mencionado:
 
-~~- **Delta encoding**: en lugar de guardar cada timestamp completo, se guarda
+- **Delta encoding**: en lugar de guardar cada timestamp completo, se guarda
   la diferencia con el anterior. Si los datos llegan cada 10 segundos, solo
-  se almacena "10" en lugar de timestamps completos~~
-~~- **Gorilla compression**: desarrollado por Facebook, comprime valores
-  flotantes aprovechando que mediciones consecutivas suelen ser similares~~
-~~- **Dictionary encoding**: para tags repetidos como nombres de servidores~~
+  se almacena "10" en lugar de timestamps completos
+- **Gorilla compression**: desarrollado por Facebook, comprime valores
+  flotantes aprovechando que mediciones consecutivas suelen ser similares
+- **Dictionary encoding**: para tags repetidos como nombres de servidores
 
-~~El resultado es impresionante: datos que ocuparían 1GB en PostgreSQL pueden
-reducirse a 100MB o menos en una TSDB con compresión habilitada.~~
+El resultado es muy conveniente: datos que ocuparían 1GB en PostgreSQL pueden
+reducirse a 100MB o menos en una TSDB con compresión habilitada.
 
 ### 2. Índices temporales especializados
 
-~~Las TSDBs organizan los datos de forma que las consultas temporales sean
-naturalmente eficientes:~~
+Las TSDBs organizan los datos de forma que las consultas temporales sean
+naturalmente eficientes:
 
 ~~- **Ordenamiento automático por timestamp**: los datos se almacenan
   físicamente en orden cronológico, eliminando la necesidad de ordenar en queries~~
