@@ -34,7 +34,7 @@ Las series de tiempo tienen características distintivas que las diferencian
 de otros tipos de datos:
 
 - **Alta frecuencia de escritura**: los datos llegan constantemente, a veces
-  miles o millones de puntos por segundo
+  miles o millones de puntos por segundo, a veces también **a intervalos regulares**
 - **Datos inmutables**: una vez registrado un punto, rara vez se modifica, y generalmente
 no tiene sentido que haya actualizaciones
 - **Consultas por rangos temporales**: las preguntas típicas son "¿qué pasó
@@ -149,23 +149,24 @@ reducirse a 100MB o menos en una TSDB con compresión habilitada.
 Las TSDBs organizan los datos de forma que las consultas temporales sean
 naturalmente eficientes:
 
-~~- **Ordenamiento automático por timestamp**: los datos se almacenan
-  físicamente en orden cronológico, eliminando la necesidad de ordenar en queries~~
-~~- **Skip indexes**: permiten saltar bloques enteros de datos que no coinciden
-  con el rango temporal buscado~~
-~~- **Particionamiento automático por tiempo**: los datos se dividen en
+- **Ordenamiento automático por timestamp**: los datos se almacenan
+  físicamente en orden cronológico, eliminando la necesidad de ordenar en cada query
+- **Skip indexes**: permiten saltar bloques enteros de datos que no coinciden
+  con el rango temporal buscado
+- **Particionamiento automático por tiempo**: los datos se dividen en
   "chunks" por período (hora, día, semana), permitiendo escanear solo las
-  particiones relevantes~~
+  particiones relevantes
 
 ### 3. Políticas de retención (Retention policies)
 
-~~Una de las características más útiles es la gestión automática del ciclo de
-vida de los datos:~~
+Una de las características más útiles es la gestión automática del ciclo de
+vida de los datos, es decir, cuánto tiempo permanecen almacenados. Las TSDBs
+permiten definir:
 
-~~- **Eliminación automática**: configuras "eliminar datos mayores a 30 días"
-  y la TSDB lo hace automáticamente~~
-~~- **Políticas por tipo de dato**: puedes mantener datos crudos 7 días,
-  agregados por hora 90 días, y agregados por día indefinidamente~~
+- **Eliminación automática**: configuras "eliminar datos mayores a 30 días"
+  y la TSDB lo hace automáticamente
+- **Políticas difernciadas por tipo de dato**: puedes mantener datos crudos 7 días,
+  agregados por hora 90 días, y agregados por día indefinidamente
 ~~- **Sin intervención manual**: no necesitas cron jobs ni scripts de limpieza~~
 
 ### 4. Agregaciones continuas (Continuous aggregates)
@@ -177,7 +178,7 @@ vida de los datos:~~
 ~~- **Consultas instantáneas**: preguntar "¿cuál fue el promedio de CPU ayer?"
   no requiere escanear millones de filas, solo leer el valor pre-calculado~~
 ~~- **Actualización incremental**: cuando llegan nuevos datos, solo se
-  recalcula lo necesario~~
+  recalcula lo necesario
 
 ### 5. Downsampling automático
 
@@ -201,68 +202,43 @@ de tiempo:~~
 ~~- **Alto throughput**: las TSDBs modernas manejan millones de puntos por
   segundo en hardware modesto~~
 
-## Ejemplos de bases de datos para series temporales
 
-~~Existen varias opciones maduras en el mercado. Cada una tiene sus fortalezas
-y casos de uso ideales. Veamos las más populares.~~
+## Principales opciones en el mercado
+
+Existen varias opciones maduras de TSDBs en el mercado. Cada una tiene sus fortalezas
+y casos de uso ideales.
 
 ### InfluxDB
 
-~~InfluxDB es una de las TSDBs más conocidas. Usa su propio lenguaje de consultas
-llamado Flux (aunque también soporta InfluxQL, similar a SQL). Es ideal para
-monitoreo de infraestructura e IoT.~~
-
-~~**Ventajas**: retention policies integradas, interfaz web incluida, buena
-documentación y comunidad activa.~~
-
-~~**Desventajas**: la versión 3 tiene licencia comercial más restrictiva, y
-Flux tiene una curva de aprendizaje significativa si vienes de SQL.~~
+InfluxDB es una de las más conocidas. Usa su propio lenguaje de consultas
+llamado Flux (aunque también soporta InfluxQL, similar a SQL). Es usada para
+monitoreo de infraestructura e IoT.
+**Ventajas**: retention policies integradas, interfaz web incluida, buena
+documentación y comunidad activa.
+**Desventajas**: Flux tiene una curva de aprendizaje significativa si vienes de SQL.
 
 ### TimescaleDB
 
-~~TimescaleDB es una extensión de PostgreSQL que le agrega capacidades de TSDB.
+TimescaleDB es una extensión de PostgreSQL que le agrega capacidades de TSDB.
 Es la opción natural si ya usas PostgreSQL y no quieres aprender un nuevo
-sistema.~~
+sistema.
 
-~~**Ventajas**: compatibilidad total con el ecosistema PostgreSQL (pg_dump,
-replicación, extensiones), SQL estándar, fácil migración.~~
+**Ventajas**: compatibilidad total con el ecosistema PostgreSQL (pg_dump,
+replicación, extensiones), SQL estándar, fácil migración.
 
-~~**Desventajas**: requiere tuning manual para obtener el mejor rendimiento,
+**Desventajas**: requiere tuning manual para obtener el mejor rendimiento,
 la compresión es menor que en TSDBs puras.~~
-
-### Prometheus
-
-~~Prometheus es el estándar de facto para monitoreo en Kubernetes. Más que una
-base de datos general, está enfocada en métricas de aplicaciones y alerting.~~
-
-~~**Ventajas**: modelo pull (Prometheus obtiene las métricas, no las recibe),
-alerting integrado con Alertmanager, ecosistema maduro con miles de exporters.~~
-
-~~**Desventajas**: retención local limitada (típicamente 15-30 días), no
-diseñada para almacenamiento a largo plazo.~~
-
-### VictoriaMetrics
-
-~~VictoriaMetrics es compatible con Prometheus pero optimizada para escala y
-almacenamiento a largo plazo. Es un reemplazo drop-in para Prometheus como
-backend de almacenamiento.~~
-
-~~**Ventajas**: compresión superior a Prometheus, menor uso de recursos,
-excelente para clusters grandes.~~
-
-~~**Desventajas**: menos funcionalidades de alerting que Prometheus (aunque
-puede usar Alertmanager).~~
 
 ### QuestDB
 
-~~QuestDB es una TSDB relativamente nueva enfocada en rendimiento extremo,
-especialmente para ingestas masivas. Usa SQL estándar.~~
+QuestDB es una TSDB relativamente nueva enfocada en rendimiento extremo,
+especialmente para ingestas masivas. Usa SQL estándar.
 
-~~**Ventajas**: SQL familiar, rendimiento excepcional en escrituras (millones
+**Ventajas**: SQL familiar, rendimiento excepcional en escrituras (millones
 de filas por segundo), ideal para finanzas y trading de alta frecuencia.~~
 
-~~**Desventajas**: comunidad más pequeña que las opciones anteriores, menos
-integraciones disponibles.~~
+**Desventajas**: comunidad más pequeña que las opciones anteriores, menos
+integraciones disponibles.
 
 ### Tabla comparativa
 
