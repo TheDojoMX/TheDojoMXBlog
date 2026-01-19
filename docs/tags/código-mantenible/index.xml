@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Código-Mantenible on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/c%C3%B3digo-mantenible/</link><description>Recent content in Código-Mantenible on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Wed, 30 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/c%C3%B3digo-mantenible/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Deberías comentar tu código?</title><link>https://blog.thedojo.mx/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</link><pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</guid><description>&lt;p&gt;Cuando hablamos de los comentarios en el código, hay dos escuelas. La primera dice que debes usar los comentarios para &lt;strong&gt;clarificar lo que quisiste expresar con tu código&lt;/strong&gt;, mientras que la segunda dice que deberías &lt;strong&gt;evitarlos al máximo&lt;/strong&gt; y que comentar tu código es un mal necesario que sólo denota tu falta de habilidad para no hacer código lo suficientemente claro.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Código-Mantenible on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/c%C3%B3digo-mantenible/</link>
+    <description>Recent content in Código-Mantenible on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Wed, 30 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/c%C3%B3digo-mantenible/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Deberías comentar tu código?</title>
+      <link>http://localhost:1313/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</guid>
+      <description>&lt;p&gt;Cuando hablamos de los comentarios en el código, hay dos escuelas. La primera dice que debes usar los comentarios para &lt;strong&gt;clarificar lo que quisiste expresar con tu código&lt;/strong&gt;, mientras que la segunda dice que deberías &lt;strong&gt;evitarlos al máximo&lt;/strong&gt; y que comentar tu código es un mal necesario que sólo denota tu falta de habilidad para no hacer código lo suficientemente claro.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

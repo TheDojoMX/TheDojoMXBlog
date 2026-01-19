@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Developers on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/developers/</link><description>Recent content in Developers on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/developers/index.xml" rel="self" type="application/rss+xml"/><item><title>Desarrolladores de los que puedes aprender: Kevlin Henney</title><link>https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney/</link><pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney/</guid><description>&lt;p&gt;Hay varios desarrolladores de talla internacional de los que puedes &lt;strong&gt;aprender mucho&lt;/strong&gt;, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que puedes aprender.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Developers on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/developers/</link>
+    <description>Recent content in Developers on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/developers/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Desarrolladores de los que puedes aprender: Kevlin Henney</title>
+      <link>http://localhost:1313/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney/</link>
+      <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2021/07/07/desarrolladores-de-los-que-puedes-aprender-kevlin-henney/</guid>
+      <description>&lt;p&gt;Hay varios desarrolladores de talla internacional de los que puedes &lt;strong&gt;aprender mucho&lt;/strong&gt;, que creemos que no tienen la suficiente exposición, sobre todo en America Latina. Es por eso que estamos creando una serie de artículos y videos en la que resaltaremos la trayectoria, forma de pensar, pláticas y cosas que puedes aprender.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

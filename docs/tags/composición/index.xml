@@ -1,5 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Composición on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/composici%C3%B3n/</link><description>Recent content in Composición on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Mon, 17 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/composici%C3%B3n/index.xml" rel="self" type="application/rss+xml"/><item><title>Composición en el software</title><link>https://blog.thedojo.mx/2023/04/17/composici%C3%B3n-en-el-software/</link><pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/04/17/composici%C3%B3n-en-el-software/</guid><description>&lt;p&gt;Composición:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Composición on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/composici%C3%B3n/</link>
+    <description>Recent content in Composición on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Mon, 17 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/composici%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Composición en el software</title>
+      <link>http://localhost:1313/2023/04/17/composici%C3%B3n-en-el-software/</link>
+      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/04/17/composici%C3%B3n-en-el-software/</guid>
+      <description>&lt;p&gt;Composición:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Es la acción de combinar componentes individuales para formar un sistema más complejo.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Componer es la técnica más efectiva para construir software de manera organizada. La composición nos permite crear software complejo porque nos permite construir piezas pequeñas que resuelven problemas manejables y luego &amp;ldquo;juntarlas&amp;rdquo; para entregar la solución de nuestro problema.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Componer es la técnica más efectiva para construir software de manera organizada. La composición nos permite crear software complejo porque nos permite construir piezas pequeñas que resuelven problemas manejables y luego &amp;ldquo;juntarlas&amp;rdquo; para entregar la solución de nuestro problema.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

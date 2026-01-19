@@ -1,2 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dry on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/dry/</link><description>Recent content in Dry on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/dry/index.xml" rel="self" type="application/rss+xml"/><item><title>Principios de Diseño de Software</title><link>https://blog.thedojo.mx/2019/03/19/principios-de-dise%C3%B1o-de-software/</link><pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/03/19/principios-de-dise%C3%B1o-de-software/</guid><description>&lt;p&gt;En este artículo hablaremos primero de la importancia de aprender &lt;strong&gt;principios&lt;/strong&gt;: qué son, qué ventajas tienen y cómo aplicarlos.&lt;/p&gt;
-&lt;p&gt;Hallarás una explicación básica de cada principio y su importancia, pero cada principio tendrá un post extenso explicando sus aplicaciones, forma de implementarlo y ejemplos prácticos, un sólo artículo no es suficiente para explicarlos cuando se podría escribir un libro sobre cada principio.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dry on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/dry/</link>
+    <description>Recent content in Dry on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/dry/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Principios de Diseño de Software</title>
+      <link>http://localhost:1313/2019/03/19/principios-de-dise%C3%B1o-de-software/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2019/03/19/principios-de-dise%C3%B1o-de-software/</guid>
+      <description>&lt;p&gt;En este artículo hablaremos primero de la importancia de aprender &lt;strong&gt;principios&lt;/strong&gt;: qué son, qué ventajas tienen y cómo aplicarlos.&lt;/p&gt;
+&lt;p&gt;Hallarás una explicación básica de cada principio y su importancia, pero cada principio tendrá un post extenso explicando sus aplicaciones, forma de implementarlo y ejemplos prácticos, un sólo artículo no es suficiente para explicarlos cuando se podría escribir un libro sobre cada principio.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,8 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Eloquentjs-Español on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/eloquentjs-espa%C3%B1ol/</link><description>Recent content in Eloquentjs-Español on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Fri, 21 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/eloquentjs-espa%C3%B1ol/index.xml" rel="self" type="application/rss+xml"/><item><title>Eloquent JavaScript en Español</title><link>https://blog.thedojo.mx/2020/02/21/eloquent-javascript-en-espa%C3%B1ol/</link><pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/02/21/eloquent-javascript-en-espa%C3%B1ol/</guid><description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eloquentjs-Español on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/eloquentjs-espa%C3%B1ol/</link>
+    <description>Recent content in Eloquentjs-Español on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Fri, 21 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/eloquentjs-espa%C3%B1ol/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Eloquent JavaScript en Español</title>
+      <link>http://localhost:1313/2020/02/21/eloquent-javascript-en-espa%C3%B1ol/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2020/02/21/eloquent-javascript-en-espa%C3%B1ol/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;TL;DR: Estamos trabajando en una nueva traducción de Eloquent JavaScript al español, en su tercera edición. La puedes encontrar aquí: &lt;a
-href="https://eloquentjs-es.thedojo.mx/"
-target="_blank"
-&gt;Eloquent JavaScript en Español&lt;/a&gt;. Está la versión en &lt;a
-href="https://eloquentjs-es.thedojo.mx/Eloquent_JavaScript.pdf"
-target="_blank"
-&gt;Eloquent JavaScript en Español en PDF&lt;/a&gt;, que actualizamos cada capítulo. Si quieres contribuir puedes ponerte de acuerdo a través de este foro o en GitHub.&lt;/p&gt;</description></item></channel></rss>
+  href=&#34;https://eloquentjs-es.thedojo.mx/&#34;
+    target=&#34;_blank&#34;
+  &gt;Eloquent JavaScript en Español&lt;/a&gt;. Está la versión en &lt;a
+  href=&#34;https://eloquentjs-es.thedojo.mx/Eloquent_JavaScript.pdf&#34;
+    target=&#34;_blank&#34;
+  &gt;Eloquent JavaScript en Español en PDF&lt;/a&gt;, que actualizamos cada capítulo. Si quieres contribuir puedes ponerte de acuerdo a través de este foro o en GitHub.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

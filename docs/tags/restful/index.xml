@@ -1,3 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Restful on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/restful/</link><description>Recent content in Restful on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sat, 15 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/restful/index.xml" rel="self" type="application/rss+xml"/><item><title>Entendiendo REST. El estilo de Arquitectura.</title><link>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</link><pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</guid><description>&lt;p&gt;En el &lt;a
-href="https://blog.thedojo.mx/2019/05/06/diseno-y-desarrollo-de-una-api-desde-cero.html"&gt;artículo anterior de la serie&lt;/a&gt; hablamos un poco de lo que es una API REST. En este artículo empezaremos a ver qué es REST y por qué surgió.&lt;/p&gt;
-&lt;p&gt;Antes de empezar con lo nuestro, hablemos de lo que NO es una API REST.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Restful on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/restful/</link>
+    <description>Recent content in Restful on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Sat, 15 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/restful/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Entendiendo REST. El estilo de Arquitectura.</title>
+      <link>http://localhost:1313/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</link>
+      <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2019/06/15/entendiendo-rest.-el-estilo-de-arquitectura./</guid>
+      <description>&lt;p&gt;En el &lt;a
+  href=&#34;http://localhost:1313/2019/05/06/diseno-y-desarrollo-de-una-api-desde-cero.html&#34;&gt;artículo anterior de la serie&lt;/a&gt; hablamos un poco de lo que es una API REST. En este artículo empezaremos a ver qué es REST y por qué surgió.&lt;/p&gt;
+&lt;p&gt;Antes de empezar con lo nuestro, hablemos de lo que NO es una API REST.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

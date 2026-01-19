@@ -1,7 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rust on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/rust/</link><description>Recent content in Rust on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/rust/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Cómo aprender Rust? Recursos para empezar</title><link>https://blog.thedojo.mx/2022/12/18/c%C3%B3mo-aprender-rust-recursos-para-empezar/</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/18/c%C3%B3mo-aprender-rust-recursos-para-empezar/</guid><description>&lt;p&gt;En el &lt;a
-href="https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust.html"&gt;artículo pasado&lt;/a&gt; hablamos
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/rust/</link>
+    <description>Recent content in Rust on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Cómo aprender Rust? Recursos para empezar</title>
+      <link>http://localhost:1313/2022/12/18/c%C3%B3mo-aprender-rust-recursos-para-empezar/</link>
+      <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2022/12/18/c%C3%B3mo-aprender-rust-recursos-para-empezar/</guid>
+      <description>&lt;p&gt;En el &lt;a
+  href=&#34;http://localhost:1313/2022/12/13/por-que-aprender-rust.html&#34;&gt;artículo pasado&lt;/a&gt; hablamos
 de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo.
-Ahora hablemos de cómo empezar, primero veamos los recursos en español y sigamos con recursos en inglés.&lt;/p&gt;</description></item><item><title>¿Por qué aprender Rust en 2023?</title><link>https://blog.thedojo.mx/2022/12/13/por-qu%C3%A9-aprender-rust-en-2023/</link><pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/13/por-qu%C3%A9-aprender-rust-en-2023/</guid><description>&lt;p&gt;Rust se ha establecido como uno de los lenguajes más queridos entre los desarrolladores en los últimos años y desde 2016 está en el número uno, según la encuesta anual de &lt;a
-href="https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted"
-target="_blank"
-&gt;Stack Overflow&lt;/a&gt;. Esto no es de extrañar, ya que Rust es un lenguaje que ofrece &lt;strong&gt;muchas cosas buenas&lt;/strong&gt; a aquellos que lo usan.&lt;/p&gt;</description></item></channel></rss>
+Ahora hablemos de cómo empezar, primero veamos los recursos en español y sigamos con recursos en inglés.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>¿Por qué aprender Rust en 2023?</title>
+      <link>http://localhost:1313/2022/12/13/por-qu%C3%A9-aprender-rust-en-2023/</link>
+      <pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2022/12/13/por-qu%C3%A9-aprender-rust-en-2023/</guid>
+      <description>&lt;p&gt;Rust se ha establecido como uno de los lenguajes más queridos entre los desarrolladores en los últimos años y desde 2016 está en el número uno, según la encuesta anual de &lt;a
+  href=&#34;https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted&#34;
+    target=&#34;_blank&#34;
+  &gt;Stack Overflow&lt;/a&gt;. Esto no es de extrañar, ya que Rust es un lenguaje que ofrece &lt;strong&gt;muchas cosas buenas&lt;/strong&gt; a aquellos que lo usan.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

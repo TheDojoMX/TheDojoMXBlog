@@ -1,1 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on The Dojo MX Blog</title><link>https://blog.thedojo.mx/categories/</link><description>Recent content in Categories on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sun, 27 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Comments:</title><link>https://blog.thedojo.mx/categories/comments/</link><pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/categories/comments/</guid><description/></item><item><title>True</title><link>https://blog.thedojo.mx/categories/true/</link><pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/categories/true/</guid><description/></item><item><title>Educación</title><link>https://blog.thedojo.mx/categories/educaci%C3%B3n/</link><pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/categories/educaci%C3%B3n/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on The Dojo MX Blog</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Sun, 27 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Comments:</title>
+      <link>http://localhost:1313/categories/comments/</link>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/comments/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>True</title>
+      <link>http://localhost:1313/categories/true/</link>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/true/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Educación</title>
+      <link>http://localhost:1313/categories/educaci%C3%B3n/</link>
+      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/educaci%C3%B3n/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

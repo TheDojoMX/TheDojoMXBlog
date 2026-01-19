@@ -1,18 +1,80 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Complejidad on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/complejidad/</link><description>Recent content in Complejidad on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/complejidad/index.xml" rel="self" type="application/rss+xml"/><item><title>Debes leer 'Thinking in Systems</title><link>https://blog.thedojo.mx/2025/05/15/debes-leer-thinking-in-systems/</link><pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2025/05/15/debes-leer-thinking-in-systems/</guid><description>&lt;p&gt;El libro &amp;ldquo;Thinking in Systems&amp;rdquo; de &lt;a
-href="https://en.wikipedia.org/wiki/Donella_H._Meadows"
-target="_blank"
-&gt;Donella Hager Meadows&lt;/a&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Complejidad on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/complejidad/</link>
+    <description>Recent content in Complejidad on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/complejidad/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Debes leer &#39;Thinking in Systems</title>
+      <link>http://localhost:1313/2025/05/15/debes-leer-thinking-in-systems/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2025/05/15/debes-leer-thinking-in-systems/</guid>
+      <description>&lt;p&gt;El libro &amp;ldquo;Thinking in Systems&amp;rdquo; de &lt;a
+  href=&#34;https://en.wikipedia.org/wiki/Donella_H._Meadows&#34;
+    target=&#34;_blank&#34;
+  &gt;Donella Hager Meadows&lt;/a&gt;
 es un libro muy importante para cualquier desarrollador de software. ¿Por qué? Los desarrolladores nos dedicamos
-a hacer &lt;em&gt;sistemas&lt;/em&gt;, y este es justo el tema principal del libro, escrito por una experta en sistemas complejos.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Ocultar información</title><link>https://blog.thedojo.mx/2020/03/07/a-philosophy-of-software-design-ocultar-informaci%C3%B3n/</link><pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/03/07/a-philosophy-of-software-design-ocultar-informaci%C3%B3n/</guid><description>&lt;blockquote&gt;
+a hacer &lt;em&gt;sistemas&lt;/em&gt;, y este es justo el tema principal del libro, escrito por una experta en sistemas complejos.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>A Philosophy of Software Design: Ocultar información</title>
+      <link>http://localhost:1313/2020/03/07/a-philosophy-of-software-design-ocultar-informaci%C3%B3n/</link>
+      <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2020/03/07/a-philosophy-of-software-design-ocultar-informaci%C3%B3n/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;La idea básica es que cada módulo debería encapsular algunas piezas de conocimiento, que representen decisiones de diseño. - &lt;strong&gt;John Ousterhout&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;En &lt;a
-href="https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-modulos-deben-ser-profundos.html"
-target="_blank"
-&gt;el artículo anterior&lt;/a&gt; vimos por qué es bueno que los módulos sean profundos, es decir, oculten detalles de implementación y funcionalidades detrás de una interfaz lo más sencilla posible. En este y los siguientes artículos vamos a ver maneras prácticas de lograr esto, basado en ejemplos de &lt;a
-href="https://amzn.to/2H92nwA"
-target="_blank"
-&gt;&amp;ldquo;A Philosophy of Software Design&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Los módulos deben ser profundos</title><link>https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</link><pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</guid><description>&lt;p&gt;Para reducir la complejidad de los programas es importante tener técnicas definidas. La primera que vamos a analizar es la organización y separación de código a alto nivel, es decir separación en módulos.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Tres formas de identificar la complejidad</title><link>https://blog.thedojo.mx/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</link><pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</guid><description>&lt;blockquote&gt;
+  href=&#34;https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-modulos-deben-ser-profundos.html&#34;
+    target=&#34;_blank&#34;
+  &gt;el artículo anterior&lt;/a&gt; vimos por qué es bueno que los módulos sean profundos, es decir, oculten detalles de implementación y funcionalidades detrás de una interfaz lo más sencilla posible. En este y los siguientes artículos vamos a ver maneras prácticas de lograr esto, basado en ejemplos de &lt;a
+  href=&#34;https://amzn.to/2H92nwA&#34;
+    target=&#34;_blank&#34;
+  &gt;&amp;ldquo;A Philosophy of Software Design&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>A Philosophy of Software Design: Los módulos deben ser profundos</title>
+      <link>http://localhost:1313/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</guid>
+      <description>&lt;p&gt;Para reducir la complejidad de los programas es importante tener técnicas definidas. La primera que vamos a analizar es la organización y separación de código a alto nivel, es decir separación en módulos.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>A Philosophy of Software Design: Tres formas de identificar la complejidad</title>
+      <link>http://localhost:1313/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;Controlar la complejidad es la esencia de la programación&amp;rdquo; - Brian W. Kernighan&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Muchas mentes brillantes dedicadas al desarrollo de software han estado de acuerdo en que el principal problema al crear y mantener programas es el manejo de la complejidad.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Desarrollo Táctico vs Estratégico</title><link>https://blog.thedojo.mx/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</link><pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</guid><description>&lt;p&gt;Cuando desarrollas software tienes dos actitudes para escoger: desarrollas de forma rápida y sucia (desarrollo táctico) o de forma ordenada, planeada y pensando en el futuro. Cada uno de estos tipos de desarrollo o filosofías de desarrollo tiene ventajas y desventajas. Pero veamos a más detalle de qué trata cada uno.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Muchas mentes brillantes dedicadas al desarrollo de software han estado de acuerdo en que el principal problema al crear y mantener programas es el manejo de la complejidad.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>A Philosophy of Software Design: Desarrollo Táctico vs Estratégico</title>
+      <link>http://localhost:1313/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</guid>
+      <description>&lt;p&gt;Cuando desarrollas software tienes dos actitudes para escoger: desarrollas de forma rápida y sucia (desarrollo táctico) o de forma ordenada, planeada y pensando en el futuro. Cada uno de estos tipos de desarrollo o filosofías de desarrollo tiene ventajas y desventajas. Pero veamos a más detalle de qué trata cada uno.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

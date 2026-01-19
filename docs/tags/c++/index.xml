@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C++ on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/c++/</link><description>Recent content in C++ on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/c++/index.xml" rel="self" type="application/rss+xml"/><item><title>El arte genérico: una historia de la metaprogramación en C++</title><link>https://blog.thedojo.mx/2025/04/17/el-arte-gen%C3%A9rico-una-historia-de-la-metaprogramaci%C3%B3n-en-c-/</link><pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2025/04/17/el-arte-gen%C3%A9rico-una-historia-de-la-metaprogramaci%C3%B3n-en-c-/</guid><description>&lt;p&gt;Hablar de metaprogramación en C++ suele generar cierto rechazo, y no sin razón: dominar el lenguaje ya representa un reto considerable, y sumarle la complejidad de los teamplates puede parecer excesivo. A diferencia de otros lenguajes con mecanismos más flexibles o integrados, C++ exige un conocimiento profundo no solo del lenguaje, sino también del compilador y su comportamiento. Comprender cómo interactúan las plantillas, como se resuelven los tipos, como se gestionan las sobrecargas o se aplican las optimizaciones es esencial para escribir código genérico eficaz, lo que convierte esta práctica en un desafío tanto técnico como mental.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>El arte genérico: una historia de la metaprogramación en C&#43;&#43;</title>
+      <link>http://localhost:1313/2025/04/17/el-arte-gen%C3%A9rico-una-historia-de-la-metaprogramaci%C3%B3n-en-c-/</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2025/04/17/el-arte-gen%C3%A9rico-una-historia-de-la-metaprogramaci%C3%B3n-en-c-/</guid>
+      <description>&lt;p&gt;Hablar de metaprogramación en C++ suele generar cierto rechazo, y no sin razón: dominar el lenguaje ya representa un reto considerable, y sumarle la complejidad de los teamplates puede parecer excesivo. A diferencia de otros lenguajes con mecanismos más flexibles o integrados, C++ exige un conocimiento profundo no solo del lenguaje, sino también del compilador y su comportamiento. Comprender cómo interactúan las plantillas, como se resuelven los tipos, como se gestionan las sobrecargas o se aplican las optimizaciones es esencial para escribir código genérico eficaz, lo que convierte esta práctica en un desafío tanto técnico como mental.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

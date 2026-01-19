@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Principios on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/principios/</link><description>Recent content in Principios on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sat, 17 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/principios/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Son aplicables y prácticos los principios SOLID?</title><link>https://blog.thedojo.mx/2023/06/17/son-aplicables-y-pr%C3%A1cticos-los-principios-solid/</link><pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/06/17/son-aplicables-y-pr%C3%A1cticos-los-principios-solid/</guid><description>&lt;p&gt;Los &lt;strong&gt;principios SOLID&lt;/strong&gt;, se enseñan como verdades incuestionables sobre el buen desarrollo de software. Aunque, justo por la educación, antes era completamente partidario de estos, con el tiempo me fui dando cuenta de varias de las fallas que presentan.&lt;/p&gt;</description></item><item><title>El principio de sustitución de Liskov</title><link>https://blog.thedojo.mx/2023/03/06/el-principio-de-sustituci%C3%B3n-de-liskov/</link><pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/03/06/el-principio-de-sustituci%C3%B3n-de-liskov/</guid><description>&lt;p&gt;El tercer principio enunciado en los principios &lt;strong&gt;SOLID&lt;/strong&gt; es el principio de sustitución de Liskov. ¿Qué significa este principio? Y más importante, ¿vale la pena seguirlo? Pero antes de hablar del principio, hablemos de &lt;strong&gt;Barbara Liskov&lt;/strong&gt;, la persona que lo inspiró y que estableció los conceptos principales.&lt;/p&gt;</description></item><item><title>La importancia de entender los principios de la computación</title><link>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</link><pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</guid><description>&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a
-href="https://camilochs.github.io/web/"
-target="_blank"
-&gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;&amp;ldquo;Principios de programación&amp;rdquo;.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;</description></item><item><title>Análisis de los principios SOLID: Principio de Responsabilidad Única</title><link>https://blog.thedojo.mx/2022/12/01/an%C3%A1lisis-de-los-principios-solid-principio-de-responsabilidad-%C3%BAnica/</link><pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/01/an%C3%A1lisis-de-los-principios-solid-principio-de-responsabilidad-%C3%BAnica/</guid><description>&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y &lt;em&gt;&amp;ldquo;limpio&amp;rdquo;&lt;/em&gt; debe conocer y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Principios on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/principios/</link>
+    <description>Recent content in Principios on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Sat, 17 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/principios/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Son aplicables y prácticos los principios SOLID?</title>
+      <link>http://localhost:1313/2023/06/17/son-aplicables-y-pr%C3%A1cticos-los-principios-solid/</link>
+      <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/06/17/son-aplicables-y-pr%C3%A1cticos-los-principios-solid/</guid>
+      <description>&lt;p&gt;Los &lt;strong&gt;principios SOLID&lt;/strong&gt;, se enseñan como verdades incuestionables sobre el buen desarrollo de software. Aunque, justo por la educación, antes era completamente partidario de estos, con el tiempo me fui dando cuenta de varias de las fallas que presentan.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>El principio de sustitución de Liskov</title>
+      <link>http://localhost:1313/2023/03/06/el-principio-de-sustituci%C3%B3n-de-liskov/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/03/06/el-principio-de-sustituci%C3%B3n-de-liskov/</guid>
+      <description>&lt;p&gt;El tercer principio enunciado en los principios &lt;strong&gt;SOLID&lt;/strong&gt; es el principio de sustitución de Liskov. ¿Qué significa este principio? Y más importante, ¿vale la pena seguirlo? Pero antes de hablar del principio, hablemos de &lt;strong&gt;Barbara Liskov&lt;/strong&gt;, la persona que lo inspiró y que estableció los conceptos principales.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>La importancia de entender los principios de la computación</title>
+      <link>http://localhost:1313/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</link>
+      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/02/17/la-importancia-de-entender-los-principios-de-la-computaci%C3%B3n/</guid>
+      <description>&lt;p&gt;Este artículo está inspirado por lo que leí en el resumen del libro que &lt;a
+  href=&#34;https://camilochs.github.io/web/&#34;
+    target=&#34;_blank&#34;
+  &gt;Camilo Chacón Sartori&lt;/a&gt; está escribiendo y que muy amablemente me compartió para que le diera mi opinión. El libro se llama &lt;strong&gt;&amp;ldquo;Principios de programación&amp;rdquo;.&lt;/strong&gt; Espero que pronto esté disponible, pero mientras, hablemos de la importancia de comprender los principios básicos de la computación y programación, con la esperanza de que te emociones por aprender más sobre ellos.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Análisis de los principios SOLID: Principio de Responsabilidad Única</title>
+      <link>http://localhost:1313/2022/12/01/an%C3%A1lisis-de-los-principios-solid-principio-de-responsabilidad-%C3%BAnica/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2022/12/01/an%C3%A1lisis-de-los-principios-solid-principio-de-responsabilidad-%C3%BAnica/</guid>
+      <description>&lt;p&gt;En esta serie de artículos vamos a hablar sobre los cinco &lt;strong&gt;principios SOLID&lt;/strong&gt;. Se dice que todo programador que quiera crear código mantenible y &lt;em&gt;&amp;ldquo;limpio&amp;rdquo;&lt;/em&gt; debe conocer y usar. La estructura de los artículos llevará la siguiente forma:&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

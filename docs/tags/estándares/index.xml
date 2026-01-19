@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Estándares on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/est%C3%A1ndares/</link><description>Recent content in Estándares on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Tue, 05 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/est%C3%A1ndares/index.xml" rel="self" type="application/rss+xml"/><item><title>La Importancia de los Estándares de Código</title><link>https://blog.thedojo.mx/2021/10/05/la-importancia-de-los-est%C3%A1ndares-de-c%C3%B3digo/</link><pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/10/05/la-importancia-de-los-est%C3%A1ndares-de-c%C3%B3digo/</guid><description>&lt;p&gt;Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Estándares on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/est%C3%A1ndares/</link>
+    <description>Recent content in Estándares on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Tue, 05 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/est%C3%A1ndares/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>La Importancia de los Estándares de Código</title>
+      <link>http://localhost:1313/2021/10/05/la-importancia-de-los-est%C3%A1ndares-de-c%C3%B3digo/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2021/10/05/la-importancia-de-los-est%C3%A1ndares-de-c%C3%B3digo/</guid>
+      <description>&lt;p&gt;Los estándares se encuentran constantemente presentes en nuestra vida cotidiana, son importantes para mantener un cierto orden en las cosas. La Ingeniería de Software no es una excepción a la regla, por lo tanto, los estándares de código son un requisito básico para los sistemas de calidad.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,10 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mojo on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/mojo/</link><description>Recent content in Mojo on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/mojo/index.xml" rel="self" type="application/rss+xml"/><item><title>Mojo 🔥: un lenguaje prometedor</title><link>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor/</link><pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/12/13/mojo-un-lenguaje-prometedor/</guid><description>&lt;p&gt;&lt;a
-href="https://www.nondot.org/sabre/"
-target="_blank"
-&gt;Chris Lattner&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}, uno de los creadores de &lt;a
-href="https://llvm.org"
-target="_blank"
-&gt;LLVM&lt;/a&gt; y &lt;a
-href="https://www.swift.org/"
-target="_blank"
-&gt;Swift&lt;/a&gt;, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de &lt;strong&gt;Python&lt;/strong&gt; pero pensado para atacar su punto más débil: &lt;strong&gt;la velocidad de ejecución&lt;/strong&gt;.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mojo on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/mojo/</link>
+    <description>Recent content in Mojo on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/mojo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mojo 🔥: un lenguaje prometedor</title>
+      <link>http://localhost:1313/2023/12/13/mojo-un-lenguaje-prometedor/</link>
+      <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/12/13/mojo-un-lenguaje-prometedor/</guid>
+      <description>&lt;p&gt;&lt;a
+  href=&#34;https://www.nondot.org/sabre/&#34;
+    target=&#34;_blank&#34;
+  &gt;Chris Lattner&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}, uno de los creadores de &lt;a
+  href=&#34;https://llvm.org&#34;
+    target=&#34;_blank&#34;
+  &gt;LLVM&lt;/a&gt; y &lt;a
+  href=&#34;https://www.swift.org/&#34;
+    target=&#34;_blank&#34;
+  &gt;Swift&lt;/a&gt;, ha estado desarrollando un nuevo lenguaje basado en la sintaxis de &lt;strong&gt;Python&lt;/strong&gt; pero pensado para atacar su punto más débil: &lt;strong&gt;la velocidad de ejecución&lt;/strong&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

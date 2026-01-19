@@ -1,2 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sha-256 on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/sha-256/</link><description>Recent content in Sha-256 on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/sha-256/index.xml" rel="self" type="application/rss+xml"/><item><title>Las tres garantías de seguridad de un hash</title><link>https://blog.thedojo.mx/2023/08/28/las-tres-garant%C3%ADas-de-seguridad-de-un-hash/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/08/28/las-tres-garant%C3%ADas-de-seguridad-de-un-hash/</guid><description>&lt;p&gt;En este artículo profundizaremos sobre las garantías de seguridad mínimas que una función hash debe cumplir para ser criptográficamente segura. En un artículo anterior: &lt;a
-href="https://blog.thedojo.mx/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html"&gt;¿Qué es un hash?&lt;/a&gt; ya hablamos más detalladamente de la definición y de los algoritmos que puedes usar aún hoy de manera segura.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sha-256 on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/sha-256/</link>
+    <description>Recent content in Sha-256 on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/sha-256/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Las tres garantías de seguridad de un hash</title>
+      <link>http://localhost:1313/2023/08/28/las-tres-garant%C3%ADas-de-seguridad-de-un-hash/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/08/28/las-tres-garant%C3%ADas-de-seguridad-de-un-hash/</guid>
+      <description>&lt;p&gt;En este artículo profundizaremos sobre las garantías de seguridad mínimas que una función hash debe cumplir para ser criptográficamente segura. En un artículo anterior: &lt;a
+  href=&#34;http://localhost:1313/2021/12/02/algoritmos-criptograficos-que-es-un-hash.html&#34;&gt;¿Qué es un hash?&lt;/a&gt; ya hablamos más detalladamente de la definición y de los algoritmos que puedes usar aún hoy de manera segura.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

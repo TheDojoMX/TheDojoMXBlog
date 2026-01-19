@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Langchain on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/langchain/</link><description>Recent content in Langchain on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Thu, 20 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/langchain/index.xml" rel="self" type="application/rss+xml"/><item><title>Creando agentes con LangChain y GPT-4</title><link>https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4/</link><pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/04/20/creando-agentes-con-langchain-y-gpt-4/</guid><description>&lt;p&gt;En este pequeño tutorial vamos a hablar de cómo puedes crear agentes que interactúen con el mundo exterior, usando LangChain y como modelo de lenguaje GPT-4. Como siempre, la mejor manera de aprender es haciendo algo, por lo que vamos a crear un agente&lt;/p&gt;</description></item><item><title>Usando LangChain 🦜 para crear software basado en LLM's</title><link>https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llms/</link><pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/04/15/usando-langchain-para-crear-software-basado-en-llms/</guid><description>&lt;p&gt;Los grandes modelos de lenguaje o LLM&amp;rsquo;s (Large Language Models) han sido noticia en este 2023. Es por eso que han surgido muchos proyectos y herramientas que permiten crear software basado en estas herramientas.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Langchain on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/langchain/</link>
+    <description>Recent content in Langchain on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Thu, 20 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/langchain/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Creando agentes con LangChain y GPT-4</title>
+      <link>http://localhost:1313/2023/04/20/creando-agentes-con-langchain-y-gpt-4/</link>
+      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/04/20/creando-agentes-con-langchain-y-gpt-4/</guid>
+      <description>&lt;p&gt;En este pequeño tutorial vamos a hablar de cómo puedes crear agentes que interactúen con el mundo exterior, usando LangChain y como modelo de lenguaje GPT-4. Como siempre, la mejor manera de aprender es haciendo algo, por lo que vamos a crear un agente&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Usando LangChain 🦜 para crear software basado en LLM&#39;s</title>
+      <link>http://localhost:1313/2023/04/15/usando-langchain-para-crear-software-basado-en-llms/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/04/15/usando-langchain-para-crear-software-basado-en-llms/</guid>
+      <description>&lt;p&gt;Los grandes modelos de lenguaje o LLM&amp;rsquo;s (Large Language Models) han sido noticia en este 2023. Es por eso que han surgido muchos proyectos y herramientas que permiten crear software basado en estas herramientas.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

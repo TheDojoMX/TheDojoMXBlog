@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A-Philosophy-of-Software-Design on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/a-philosophy-of-software-design/</link><description>Recent content in A-Philosophy-of-Software-Design on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Tue, 11 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/a-philosophy-of-software-design/index.xml" rel="self" type="application/rss+xml"/><item><title>A Philosophy of Software Design: Desarrollo Táctico vs Estratégico</title><link>https://blog.thedojo.mx/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</link><pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</guid><description>&lt;p&gt;Cuando desarrollas software tienes dos actitudes para escoger: desarrollas de forma rápida y sucia (desarrollo táctico) o de forma ordenada, planeada y pensando en el futuro. Cada uno de estos tipos de desarrollo o filosofías de desarrollo tiene ventajas y desventajas. Pero veamos a más detalle de qué trata cada uno.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A-Philosophy-of-Software-Design on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/a-philosophy-of-software-design/</link>
+    <description>Recent content in A-Philosophy-of-Software-Design on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/a-philosophy-of-software-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A Philosophy of Software Design: Desarrollo Táctico vs Estratégico</title>
+      <link>http://localhost:1313/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</guid>
+      <description>&lt;p&gt;Cuando desarrollas software tienes dos actitudes para escoger: desarrollas de forma rápida y sucia (desarrollo táctico) o de forma ordenada, planeada y pensando en el futuro. Cada uno de estos tipos de desarrollo o filosofías de desarrollo tiene ventajas y desventajas. Pero veamos a más detalle de qué trata cada uno.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

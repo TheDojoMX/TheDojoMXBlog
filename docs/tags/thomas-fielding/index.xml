@@ -1,2 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Thomas-Fielding on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/thomas-fielding/</link><description>Recent content in Thomas-Fielding on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sat, 03 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/thomas-fielding/index.xml" rel="self" type="application/rss+xml"/><item><title>Entendiendo REST: conexión sin estado</title><link>https://blog.thedojo.mx/2019/08/03/entendiendo-rest-conexi%C3%B3n-sin-estado/</link><pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/08/03/entendiendo-rest-conexi%C3%B3n-sin-estado/</guid><description>&lt;p&gt;Hemos venido hablando de las características que componen a un sistema REST. En el último artículo &lt;a
-href="https://blog.thedojo.mx/2019/07/04/entendiendo-rest-arquitectura-cliente-servidor.html"&gt;hablamos de la arquitectura cliente-servidor&lt;/a&gt;. Esta es la primera característica fundamental de un sistema REST. Ahora pasemos a la siguiente característica-limitante que Thomas Fielding establece para los sistemas REST: &lt;strong&gt;conexión sin estado&lt;/strong&gt;.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thomas-Fielding on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/thomas-fielding/</link>
+    <description>Recent content in Thomas-Fielding on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Sat, 03 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/thomas-fielding/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Entendiendo REST: conexión sin estado</title>
+      <link>http://localhost:1313/2019/08/03/entendiendo-rest-conexi%C3%B3n-sin-estado/</link>
+      <pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2019/08/03/entendiendo-rest-conexi%C3%B3n-sin-estado/</guid>
+      <description>&lt;p&gt;Hemos venido hablando de las características que componen a un sistema REST. En el último artículo &lt;a
+  href=&#34;http://localhost:1313/2019/07/04/entendiendo-rest-arquitectura-cliente-servidor.html&#34;&gt;hablamos de la arquitectura cliente-servidor&lt;/a&gt;. Esta es la primera característica fundamental de un sistema REST. Ahora pasemos a la siguiente característica-limitante que Thomas Fielding establece para los sistemas REST: &lt;strong&gt;conexión sin estado&lt;/strong&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

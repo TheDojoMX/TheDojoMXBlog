@@ -1,15 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pláticas on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/pl%C3%A1ticas/</link><description>Recent content in Pláticas on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Fri, 30 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/pl%C3%A1ticas/index.xml" rel="self" type="application/rss+xml"/><item><title>Claridad de Saša Jurić</title><link>https://blog.thedojo.mx/2022/12/30/claridad-de-sa%C5%A1a-juri%C4%87/</link><pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/30/claridad-de-sa%C5%A1a-juri%C4%87/</guid><description>&lt;figure&gt;
-&lt;figcaption class="caption-audio"&gt;Escucha este artículo:&lt;/figcaption&gt;
-&lt;audio style="width: 100%;"
-controls
-src="https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav"&gt;
-&lt;a href="https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav"&gt;
-Descargar audio
-&lt;/a&gt;
-&lt;/audio&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pláticas on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/pl%C3%A1ticas/</link>
+    <description>Recent content in Pláticas on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Fri, 30 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/pl%C3%A1ticas/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Claridad de  Saša Jurić</title>
+      <link>http://localhost:1313/2022/12/30/claridad-de-sa%C5%A1a-juri%C4%87/</link>
+      <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2022/12/30/claridad-de-sa%C5%A1a-juri%C4%87/</guid>
+      <description>&lt;figure&gt;
+    &lt;figcaption class=&#34;caption-audio&#34;&gt;Escucha este artículo:&lt;/figcaption&gt;
+    &lt;audio style=&#34;width: 100%;&#34;
+        controls
+        src=&#34;https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav&#34;&gt;
+            &lt;a href=&#34;https://res.cloudinary.com/hectorip/video/upload/v1672460944/clarity-2_vrm0vk.wav&#34;&gt;
+                Descargar audio
+            &lt;/a&gt;
+    &lt;/audio&gt;
 &lt;/figure&gt;
 &lt;p&gt;Hablemos de las cosas que hacen más entendible y claro tu código.&lt;/p&gt;
 &lt;p&gt;Muchas de estas ideas están basadas en la plática &lt;a
-href="https://www.youtube.com/watch?v=6sNmJtoKDCo"
-target="_blank"
-&gt;&amp;ldquo;Clarity&amp;rdquo; de Saša Jurić&lt;/a&gt; de la Elixir Conf EU de 2021, de hecho, podríamos considerar este artículo como un análisis y extensión de esa plática.&lt;/p&gt;</description></item></channel></rss>
+  href=&#34;https://www.youtube.com/watch?v=6sNmJtoKDCo&#34;
+    target=&#34;_blank&#34;
+  &gt;&amp;ldquo;Clarity&amp;rdquo; de Saša Jurić&lt;/a&gt; de la Elixir Conf EU de 2021, de hecho, podríamos considerar este artículo como un análisis y extensión de esa plática.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

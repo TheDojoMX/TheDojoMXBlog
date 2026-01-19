@@ -1,14 +1,966 @@
-<!doctype html><html lang=es dir=ltr class=scroll-smooth data-default-appearance=dark data-auto-appearance=true><head><meta charset=utf-8><meta http-equiv=content-language content="es"><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=theme-color><title>¿Qué es la búsqueda binaria? &#183; The Dojo MX Blog</title><meta name=title content="¿Qué es la búsqueda binaria? &#183; The Dojo MX Blog"><meta name=description content="Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es"><meta name=keywords content="algoritmos,búsqueda,"><link rel=canonical href=https://blog.thedojo.mx/2024/10/26/qu%C3%A9-es-la-b%C3%BAsqueda-binaria/><meta property="og:url" content="https://blog.thedojo.mx/2024/10/26/qu%C3%A9-es-la-b%C3%BAsqueda-binaria/"><meta property="og:site_name" content="The Dojo MX Blog"><meta property="og:title" content="¿Qué es la búsqueda binaria?"><meta property="og:description" content="Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es"><meta property="og:locale" content="es"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-10-26T00:00:00+00:00"><meta property="article:modified_time" content="2024-10-26T00:00:00+00:00"><meta property="article:tag" content="Algoritmos"><meta property="article:tag" content="Búsqueda"><meta name=twitter:card content="summary"><meta name=twitter:title content="¿Qué es la búsqueda binaria?"><meta name=twitter:description content="Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es"><link type=text/css rel=stylesheet href=/css/main.bundle.min.f3f0a0f5f0a98349075e89ac6efd50d4005df562f33f20a0130bd2ad7167d99c0c20140704a8bb9618407ec5a01059c4c6ae400dd65f404a692fa4ba95f82eaa.css integrity="sha512-8/Cg9fCpg0kHXomsbv1Q1ABd9WLzPyCgEwvSrXFn2ZwMIBQHBKi7lhhAfsWgEFnExq5ADdZfQEppL6S6lfguqg=="><script type=text/javascript src=/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js integrity="sha512-b0EXSzoFtoCCD+CMrb+l+3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script><script src=/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7+kfJ6kKCJxQGC+8wm+Bz9JucDjDTGNew=="></script><script defer type=text/javascript id=script-bundle src=/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP+pSqMXxm6JPOUeAg==" data-copy=Copiar data-copied=Copiado></script><script src=/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><script type=application/ld+json>[{"@context":"https://schema.org","@type":"Article","articleSection":"Posts","name":"¿Qué es la búsqueda binaria?","headline":"¿Qué es la búsqueda binaria?","description":"Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es","abstract":"\u003cp\u003eUno de los algoritmos más fáciles de entender, que incluso sin preparación\naplicamos en la vida real y que se enseña en las primeras clases de programación\nes la \u003cstrong\u003ebúsqueda binaria\u003c\/strong\u003e. Vamos a hablar de este algoritmo y su relación\nprofunda con las ciencias de la computación y la información en general.\u003c\/p\u003e","inLanguage":"es","url":"https:\/\/blog.thedojo.mx\/2024\/10\/26\/qu%C3%A9-es-la-b%C3%BAsqueda-binaria\/","author":{"@type":"Person","name":""},"copyrightYear":"2024","dateCreated":"2024-10-26T00:00:00\u002b00:00","datePublished":"2024-10-26T00:00:00\u002b00:00","dateModified":"2024-10-26T00:00:00\u002b00:00","keywords":["algoritmos","búsqueda"],"mainEntityOfPage":"true","wordCount":"1351"}]</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-127437335-2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-127437335-2")</script></head><body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600"><div id=the-top class="absolute flex self-center"><a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600" href=#main-content><span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
-Ir al contenido</a></div><div class=min-h-[148px]></div><div class="fixed inset-x-0 z-100"><div id=menu-blur class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div><div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32"><div class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0"><div class="flex flex-1 items-center justify-between"><nav class="flex space-x-3"><a href=/ class="text-base font-medium">The Dojo MX Blog</a></nav><nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12"><a href=/posts/ class="flex items-center hover:text-primary-600 dark:hover:text-primary-400" aria-label=Posts title=Posts><p class="text-base font-medium">Posts</p></a><a href=/tags/ class="flex items-center hover:text-primary-600 dark:hover:text-primary-400" aria-label=Tags title=Tags><p class="text-base font-medium">Tags</p></a><a href=/about/ class="flex items-center hover:text-primary-600 dark:hover:text-primary-400" aria-label="Acerca de" title="Acerca de este Blog"><p class="text-base font-medium">Acerca de</p></a><button id=search-button aria-label=Search class="text-base hover:text-primary-600 dark:hover:text-primary-400" title="Buscar (/)">
-<span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></span></button><div class="flex items-center"><button id=appearance-switcher aria-label="Dark mode switcher" type=button class="text-base hover:text-primary-600 dark:hover:text-primary-400"><div class="flex items-center justify-center dark:hidden"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z"/></svg></span></div><div class="items-center justify-center hidden dark:flex"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z"/></svg></span></div></button></div></nav><div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12"><span></span>
-<button id=search-button-mobile aria-label=Search class="text-base hover:text-primary-600 dark:hover:text-primary-400" title="Buscar (/)">
-<span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
-</span></button>
-<button id=appearance-switcher-mobile aria-label="Dark mode switcher" type=button class="text-base hover:text-primary-600 dark:hover:text-primary-400 me-1"><div class="flex items-center justify-center dark:hidden"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z"/></svg></span></div><div class="items-center justify-center hidden dark:flex"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z"/></svg></span></div></button></div></div><div class="-my-2 md:hidden"><div id=menu-button class=block><div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400"><span class="relative block icon"><svg viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416c17.7.0 32 14.33 32 32 0 17.7-14.3 32-32 32H32C14.33 128 0 113.7.0 96zM0 256c0-17.7 14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32H32c-17.67.0-32-14.3-32-32zM416 448H32c-17.67.0-32-14.3-32-32s14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32z"/></svg></span></div><div id=menu-wrapper class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]"><ul class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl"><li id=menu-close-button><span class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400"><span class="relative block icon"><svg viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75.0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75.0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75.0-45.25s32.75-12.5 45.25.0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25.0s12.5 32.75.0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></span></li><li class=mt-1><a href=/posts/ class="flex items-center hover:text-primary-600 dark:hover:text-primary-400" aria-label=Posts title=Posts><p class="text-bg font-bg">Posts</p></a></li><li class=mt-1><a href=/tags/ class="flex items-center hover:text-primary-600 dark:hover:text-primary-400" aria-label=Tags title=Tags><p class="text-bg font-bg">Tags</p></a></li><li class=mt-1><a href=/about/ class="flex items-center hover:text-primary-600 dark:hover:text-primary-400" aria-label="Acerca de" title="Acerca de este Blog"><p class="text-bg font-bg">Acerca de</p></a></li></ul></div></div></div></div><script>(function(){var e=$(".main-menu"),t=window.location.pathname;e.find('a[href="'+t+'"]').each(function(e,t){$(t).children("p").addClass("active")})})()</script></div></div><script type=text/javascript src=/js/background-blur.min.00a57c73ea12f2cab2980c3c3d649e89f6d82f190f74bbe2b67f2f5e39ab7d032ece47086400ca05396758aace13299da49aca43ea643d2625e62c506267a169.js integrity="sha512-AKV8c+oS8sqymAw8PWSeifbYLxkPdLvitn8vXjmrfQMuzkcIZADKBTlnWKrOEymdpJrKQ+pkPSYl5ixQYmehaQ==" data-blur-id=menu-blur></script><div class="relative flex flex-col grow"><main id=main-content class=grow><article><header id=single_header class="mt-5 max-w-prose"><ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden"><li class=hidden><a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href=/>The Dojo MX Blog</a><span class="px-1 text-primary-500">/</span></li><li class=inline><a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href=/posts/>Posts</a><span class="px-1 text-primary-500">/</span></li><li class=hidden><a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href=/2024/10/26/qu%C3%A9-es-la-b%C3%BAsqueda-binaria/>¿Qué es la búsqueda binaria?</a><span class="px-1 text-primary-500">/</span></li></ol><h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">¿Qué es la búsqueda binaria?</h1><div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden"><div class="flex flex-row flex-wrap items-center"><time datetime=2024-10-26T00:00:00+00:00>26 octubre 2024</time><span class="px-2 text-primary-500">&#183;</span><span>1351 palabras</span><span class="px-2 text-primary-500">&#183;</span><span title="Tiempo de lectura">7 mins</span></div><div class="flex flex-row flex-wrap items-center"><a class="relative mt-[0.5rem] me-2" href=/tags/algoritmos/><span class="flex cursor-pointer"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">Algoritmos
-</span></span></a><a class="relative mt-[0.5rem] me-2" href=/tags/b%C3%BAsqueda/><span class="flex cursor-pointer"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">Búsqueda</span></span></a></div></div><div class="flex author"><div class=place-self-center><div class="text-2xl sm:text-lg"></div></div></div><div class=mb-5></div></header><section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row"><div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs"><div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]"><details open id=TOCView class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block"><summary class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">Tabla de contenido</summary><div class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600"><nav id=TableOfContents><ul><li><a href=#búsqueda-binaria-en-la-vida-real>Búsqueda binaria en la vida real</a></li><li><a href=#búsqueda-binaria-en-la-computación>Búsqueda binaria en la computación</a></li><li><a href=#implementación-en-pseudocódigo>Implementación en pseudocódigo</a></li><li><a href=#complejidad>Complejidad</a></li><li><a href=#implementaciones>Implementaciones</a></li><li><a href=#uso-en-el-mundo-real>Uso en el mundo real</a></li><li><a href=#conclusión>Conclusión</a></li></ul></nav></div></details><details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden"><summary class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">Tabla de contenido</summary><div class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600"><nav id=TableOfContents><ul><li><a href=#búsqueda-binaria-en-la-vida-real>Búsqueda binaria en la vida real</a></li><li><a href=#búsqueda-binaria-en-la-computación>Búsqueda binaria en la computación</a></li><li><a href=#implementación-en-pseudocódigo>Implementación en pseudocódigo</a></li><li><a href=#complejidad>Complejidad</a></li><li><a href=#implementaciones>Implementaciones</a></li><li><a href=#uso-en-el-mundo-real>Uso en el mundo real</a></li><li><a href=#conclusión>Conclusión</a></li></ul></nav></div></details><script>(function(){"use strict";const s=.33,o="#TableOfContents",i=".anchor",a='a[href^="#"]',r="li ul",c="active";let t=!1;function l(e,n){const o=window.scrollY+window.innerHeight*n,i=[...document.querySelectorAll('#TableOfContents a[href^="#"]')],s=new Set(i.map(e=>e.getAttribute("href").substring(1)));if(t)for(let t=0;t<e.length;t++){const n=e[t];if(!s.has(n.id))continue;const o=n.getBoundingClientRect().top+window.scrollY;if(Math.abs(window.scrollY-o)<100)return n.id}for(let t=e.length-1;t>=0;t--){const n=e[t].getBoundingClientRect().top+window.scrollY;if(n<=o&&s.has(e[t].id))return e[t].id}return e.find(e=>s.has(e.id))?.id||""}function e({toc:e,anchors:t,links:n,scrollOffset:s,collapseInactive:o}){const i=l(t,s);if(!i)return;if(n.forEach(e=>{const t=e.getAttribute("href")===`#${i}`;if(e.classList.toggle(c,t),o){const n=e.closest("li")?.querySelector("ul");n&&(n.style.display=t?"":"none")}}),o){const n=e.querySelector(`a[href="#${CSS.escape(i)}"]`);let t=n;for(;t&&t!==e;)t.tagName==="UL"&&(t.style.display=""),t.tagName==="LI"&&t.querySelector("ul")?.style.setProperty("display",""),t=t.parentElement}}function n(){const n=document.querySelector(o);if(!n)return;const l=!1,u=[...document.querySelectorAll(i)],d=[...n.querySelectorAll(a)];l&&n.querySelectorAll(r).forEach(e=>e.style.display="none"),d.forEach(e=>{e.addEventListener("click",()=>{t=!0})});const c={toc:n,anchors:u,links:d,scrollOffset:s,collapseInactive:l};window.addEventListener("scroll",()=>e(c),{passive:!0}),window.addEventListener("hashchange",()=>e(c),{passive:!0}),e(c)}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",n):n()})()</script></div></div><div class="min-w-0 min-h-0 max-w-fit"><div class="article-content max-w-prose mb-20"><p>Uno de los algoritmos más fáciles de entender, que incluso sin preparación
+<!doctype html>
+<html
+  lang="es"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="es">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>¿Qué es la búsqueda binaria? &middot; The Dojo MX Blog</title>
+    <meta name="title" content="¿Qué es la búsqueda binaria? &middot; The Dojo MX Blog">
+  
+
+  
+  
+    <meta name="description" content="Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es">
+  
+  
+    <meta name="keywords" content="algoritmos,búsqueda,">
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/2024/10/26/qu%C3%A9-es-la-b%C3%BAsqueda-binaria/">
+  
+
+  
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/2024/10/26/qu%C3%A9-es-la-b%C3%BAsqueda-binaria/">
+  <meta property="og:site_name" content="The Dojo MX Blog">
+  <meta property="og:title" content="¿Qué es la búsqueda binaria?">
+  <meta property="og:description" content="Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-26T00:00:00+00:00">
+    <meta property="article:tag" content="Algoritmos">
+    <meta property="article:tag" content="Búsqueda">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="¿Qué es la búsqueda binaria?">
+  <meta name="twitter:description" content="Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.f3f0a0f5f0a98349075e89ac6efd50d4005df562f33f20a0130bd2ad7167d99c0c20140704a8bb9618407ec5a01059c4c6ae400dd65f404a692fa4ba95f82eaa.css"
+    integrity="sha512-8/Cg9fCpg0kHXomsbv1Q1ABd9WLzPyCgEwvSrXFn2ZwMIBQHBKi7lhhAfsWgEFnExq5ADdZfQEppL6S6lfguqg==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copiar"
+      data-copied="Copiado"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "¿Qué es la búsqueda binaria?",
+    "headline": "¿Qué es la búsqueda binaria?",
+    "description": "Hablemos de un algoritmo sencillo que incluso utilizamos en la vida real pero que es",
+    "abstract": "\u003cp\u003eUno de los algoritmos más fáciles de entender, que incluso sin preparación\naplicamos en la vida real y que se enseña en las primeras clases de programación\nes la \u003cstrong\u003ebúsqueda binaria\u003c\/strong\u003e. Vamos a hablar de este algoritmo y su relación\nprofunda con las ciencias de la computación y la información en general.\u003c\/p\u003e",
+    "inLanguage": "es",
+    "url" : "http:\/\/localhost:1313\/2024\/10\/26\/qu%C3%A9-es-la-b%C3%BAsqueda-binaria\/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    "copyrightYear": "2024",
+    "dateCreated": "2024-10-26T00:00:00\u002b00:00",
+    "datePublished": "2024-10-26T00:00:00\u002b00:00",
+    
+    "dateModified": "2024-10-26T00:00:00\u002b00:00",
+    
+    "keywords": ["algoritmos","búsqueda"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1351"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Ir al contenido
+      </a>
+    </div>
+    
+    
+      <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium">
+          The Dojo MX Blog
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/posts/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Posts"
+  title="Posts">
+  
+  
+    <p class="text-base font-medium">
+      Posts
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/tags/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tags"
+  title="Tags">
+  
+  
+    <p class="text-base font-medium">
+      Tags
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/about/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Acerca de"
+  title="Acerca de este Blog">
+  
+  
+    <p class="text-base font-medium">
+      Acerca de
+    </p>
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Buscar (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Buscar (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 me-1">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Posts"
+    title="Posts">
+    
+    
+      <p class="text-bg font-bg">
+        Posts
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/tags/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tags"
+    title="Tags">
+    
+    
+      <p class="text-bg font-bg">
+        Tags
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/about/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Acerca de"
+    title="Acerca de este Blog">
+    
+    
+      <p class="text-bg font-bg">
+        Acerca de
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="/js/background-blur.min.00a57c73ea12f2cab2980c3c3d649e89f6d82f190f74bbe2b67f2f5e39ab7d032ece47086400ca05396758aace13299da49aca43ea643d2625e62c506267a169.js"
+  integrity="sha512-AKV8c&#43;oS8sqymAw8PWSeifbYLxkPdLvitn8vXjmrfQMuzkcIZADKBTlnWKrOEymdpJrKQ&#43;pkPSYl5ixQYmehaQ=="
+  data-blur-id="menu-blur"></script>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+      
+      
+      
+      
+        
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+
+
+      
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/"
+      >The Dojo MX Blog</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/posts/"
+      >Posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/2024/10/26/qu%C3%A9-es-la-b%C3%BAsqueda-binaria/"
+      >¿Qué es la búsqueda binaria?</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        ¿Qué es la búsqueda binaria?
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2024-10-26T00:00:00&#43;00:00">26 octubre 2024</time><span class="px-2 text-primary-500">&middot;</span><span>1351 palabras</span><span class="px-2 text-primary-500">&middot;</span><span title="Tiempo de lectura">7 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/algoritmos/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Algoritmos
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/b%C3%BAsqueda/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Búsqueda
+  </span>
+</span>
+
+              </a>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+  
+
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Tabla de contenido
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#búsqueda-binaria-en-la-vida-real">Búsqueda binaria en la vida real</a></li>
+    <li><a href="#búsqueda-binaria-en-la-computación">Búsqueda binaria en la computación</a></li>
+    <li><a href="#implementación-en-pseudocódigo">Implementación en pseudocódigo</a></li>
+    <li><a href="#complejidad">Complejidad</a></li>
+    <li><a href="#implementaciones">Implementaciones</a></li>
+    <li><a href="#uso-en-el-mundo-real">Uso en el mundo real</a></li>
+    <li><a href="#conclusión">Conclusión</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Tabla de contenido
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#búsqueda-binaria-en-la-vida-real">Búsqueda binaria en la vida real</a></li>
+    <li><a href="#búsqueda-binaria-en-la-computación">Búsqueda binaria en la computación</a></li>
+    <li><a href="#implementación-en-pseudocódigo">Implementación en pseudocódigo</a></li>
+    <li><a href="#complejidad">Complejidad</a></li>
+    <li><a href="#implementaciones">Implementaciones</a></li>
+    <li><a href="#uso-en-el-mundo-real">Uso en el mundo real</a></li>
+    <li><a href="#conclusión">Conclusión</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = false
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>Uno de los algoritmos más fáciles de entender, que incluso sin preparación
 aplicamos en la vida real y que se enseña en las primeras clases de programación
 es la <strong>búsqueda binaria</strong>. Vamos a hablar de este algoritmo y su relación
-profunda con las ciencias de la computación y la información en general.</p><h2 class="relative group">Búsqueda binaria en la vida real<div id=búsqueda-binaria-en-la-vida-real class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"><a class="text-primary-300 dark:text-neutral-700 !no-underline" href=#b%c3%basqueda-binaria-en-la-vida-real aria-label=Ancla>#</a></span></h2><p>¿Alguna ves has jugado &ldquo;Adivina Quién&rdquo;? Es un juego de mesa en el
+profunda con las ciencias de la computación y la información en general.</p>
+
+<h2 class="relative group">Búsqueda binaria en la vida real
+    <div id="búsqueda-binaria-en-la-vida-real" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#b%c3%basqueda-binaria-en-la-vida-real" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>¿Alguna ves has jugado &ldquo;Adivina Quién&rdquo;? Es un juego de mesa en el
 que cada jugador tiene un tablero con un conjunto de personajes con
 características físicas distintas, como el color de pelo, diferentes
 accesorios, y otros rasgos distintivos. Cada jugador escoge secretamente
@@ -17,20 +969,45 @@ le permitan ir eliminando a los personajes que el otro jugador no ha elegido.
 ¿Cuál es la mejor estrategia para adivinar con la menor cantidad de
 preguntas? Podrías pensar que es por cosas muy distintivas, por ejemplo,
 si hay dos personajes con sombrero, y preguntas si tiene sombrero, puede
-parecer una buena estrategia, pero no lo es.</p><p>En este caso, suponiendo que tenemos 40 personajes y solo dos tienen sombrero y
+parecer una buena estrategia, pero no lo es.</p>
+<p>En este caso, suponiendo que tenemos 40 personajes y solo dos tienen sombrero y
 suponiendo que tienes 40 personajes, sólo 5% de las veces te ayudará reducir
 significativamente el número de personajes, por lo que la mayoría de las veces
 será una pregunta extra si la haces inicialmente. Lo mejor es empezar por las
 características que dividan el conjunto de personajes en dos grupos más o menos
 iguales. Por ejemplo, si hay 40 personajes y 20 tienen el pelo largo y 20 el corto,
 la pregunta si el personaje tiene el pelo largo, te dejará con 20 personajes.
-La siguiente pregunta debería ser algo similar.</p><p>Esto es exactamente lo que hace la búsqueda binaria, ir partiendo el conjunto
+La siguiente pregunta debería ser algo similar.</p>
+<p>Esto es exactamente lo que hace la búsqueda binaria, ir partiendo el conjunto
 de elementos en dos grupos más o menos iguales e ir eliminando la mitad en cada
-paso.</p><h2 class="relative group">Búsqueda binaria en la computación<div id=búsqueda-binaria-en-la-computación class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"><a class="text-primary-300 dark:text-neutral-700 !no-underline" href=#b%c3%basqueda-binaria-en-la-computaci%c3%b3n aria-label=Ancla>#</a></span></h2><p>El algoritmo de búsqueda binaria se aplica para encontrar un valor en una
+paso.</p>
+
+<h2 class="relative group">Búsqueda binaria en la computación
+    <div id="búsqueda-binaria-en-la-computación" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#b%c3%basqueda-binaria-en-la-computaci%c3%b3n" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>El algoritmo de búsqueda binaria se aplica para encontrar un valor en una
 colección <em>ordenada</em> de elementos. Esto es para tener una forma sencilla de
 eliminar la mitad del espacio de búsqueda en cada paso. Y puedes pensar justamente
 que la necesidad de tener que ordenar los elementos es precisamente una de sus
-des</p><h2 class="relative group">Implementación en pseudocódigo<div id=implementación-en-pseudocódigo class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"><a class="text-primary-300 dark:text-neutral-700 !no-underline" href=#implementaci%c3%b3n-en-pseudoc%c3%b3digo aria-label=Ancla>#</a></span></h2><p>Aquí puedes ver una implementación de la búsqueda binaria en pseudocódigo:</p><pre tabindex=0><code>búsqueda_binaria(arreglo, elemento_buscado):
+des</p>
+
+<h2 class="relative group">Implementación en pseudocódigo
+    <div id="implementación-en-pseudocódigo" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#implementaci%c3%b3n-en-pseudoc%c3%b3digo" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>Aquí puedes ver una implementación de la búsqueda binaria en pseudocódigo:</p>
+<pre tabindex="0"><code>búsqueda_binaria(arreglo, elemento_buscado):
     inicio = 0
     fin = longitud(arreglo) - 1
     mientras inicio &lt;= fin:
@@ -47,77 +1024,347 @@ des</p><h2 class="relative group">Implementación en pseudocódigo<div id=implem
 los que nos dicen en qué parte vamos a buscar. Después, calculamos el centro
 de la lista, sumando el inicio y el fin y dividiendo entre dos. Otra forma de
 calcularlo sería restando el inicio y el fin, dividiendo entre dos y sumándole
-el inicio. Estas dos formas son equivalentes.</p><p>Ahora, comparamos el elemento buscado con el elemento en el centro. Si es igual,
+el inicio. Estas dos formas son equivalentes.</p>
+<p>Ahora, comparamos el elemento buscado con el elemento en el centro. Si es igual,
 hemos encontrado el elemento y terminamos. Si es menor, tenemos que agarrar
 la parte de la lista que está a la derecha, es decir, los elementos mayores.
 Para esto, el inicio es un elemento a la derecha del medio (<code>inicio = medio + 1</code>)
 y el fin se queda igual. Si el elemento buscado es mayor, tenemos que agarrar
-la parte de lista que está a la izquierda, y ahora el que cambia es el fin.</p><p>De esta manera, en cada paso nuestro espacio de búsqueda se reduce a la mitad.</p><p>Si llegamos a un punto en el que el inicio es mayor que el fin, entonces no
+la parte de lista que está a la izquierda, y ahora el que cambia es el fin.</p>
+<p>De esta manera, en cada paso nuestro espacio de búsqueda se reduce a la mitad.</p>
+<p>Si llegamos a un punto en el que el inicio es mayor que el fin, entonces no
 encontramos el elemento y retornamos -1 (el -1 es una forma de que el
-programa nos diga que no encontramos el elemento, muy usada en programación).</p><h2 class="relative group">Complejidad<div id=complejidad class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"><a class="text-primary-300 dark:text-neutral-700 !no-underline" href=#complejidad aria-label=Ancla>#</a></span></h2><p>Con un arreglo pequeño pensarás que la búsqueda binaria es más lenta una búsqueda
+programa nos diga que no encontramos el elemento, muy usada en programación).</p>
+
+<h2 class="relative group">Complejidad
+    <div id="complejidad" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#complejidad" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>Con un arreglo pequeño pensarás que la búsqueda binaria es más lenta una búsqueda
 aleatoria o secuencial y así es, pero recuerda que los algoritmos eficientes
-se notan cuando el tamaño de los datos crece.</p><p>Al ir cortando sucesivamente a la mitad el espacio de búsqueda, la complejidad
-de la búsqueda binaria crece en forma logarítmica.</p><p>Expliquemos un poco eso. Un logaritmo es la función que nos ayuda a encontrar
+se notan cuando el tamaño de los datos crece.</p>
+<p>Al ir cortando sucesivamente a la mitad el espacio de búsqueda, la complejidad
+de la búsqueda binaria crece en forma logarítmica.</p>
+<p>Expliquemos un poco eso. Un logaritmo es la función que nos ayuda a encontrar
 el exponente al que hay que elevar un número para obtener otro. En la búsqueda
 binaria, el número que queremos &ldquo;obtener&rdquo; (en verdad, es recorrer) es el número
-de elementos en el arreglo que vamos a buscar.</p><p>Suponiendo que en cada paso hacemos más o menos 5 operaciones, por ejemplo,
+de elementos en el arreglo que vamos a buscar.</p>
+<p>Suponiendo que en cada paso hacemos más o menos 5 operaciones, por ejemplo,
 para buscar en un arreglo de 1000 elementos y tomando en cuenta lo que hemos
 visto de cómo se va reduciendo el espacio de búsqueda, tendríamos la siguiente
-sucesión:</p><p>Elementos por buscar: 1000</p><p>Operaciones totales: 5</p><hr><p>Elementos por buscar: 500</p><p>Operaciones totales: 10</p><hr><p>Elementos por buscar: 250</p><p>Operaciones totales: 15</p><hr><p>Elementos por buscar: 125</p><p>Operaciones totales: 20</p><hr><p>Elementos por buscar: 62</p><p>Operaciones totales: 25</p><hr><p>Elementos por buscar: 31</p><p>Operaciones totales: 30</p><hr><p>Elementos por buscar: 15</p><p>Operaciones totales: 35</p><hr><p>Elementos por buscar: 7</p><p>Operaciones totales: 40</p><hr><p>Elementos por buscar: 3</p><p>Operaciones totales: 45</p><hr><p>Elementos por buscar: 1</p><p>Operaciones totales: 50</p><hr><p>Observa cómo es que el número de operaciones no creció al mismo ritmo que el número de
+sucesión:</p>
+<p>Elementos por buscar: 1000</p>
+<p>Operaciones totales: 5</p>
+<hr>
+<p>Elementos por buscar: 500</p>
+<p>Operaciones totales: 10</p>
+<hr>
+<p>Elementos por buscar: 250</p>
+<p>Operaciones totales: 15</p>
+<hr>
+<p>Elementos por buscar: 125</p>
+<p>Operaciones totales: 20</p>
+<hr>
+<p>Elementos por buscar: 62</p>
+<p>Operaciones totales: 25</p>
+<hr>
+<p>Elementos por buscar: 31</p>
+<p>Operaciones totales: 30</p>
+<hr>
+<p>Elementos por buscar: 15</p>
+<p>Operaciones totales: 35</p>
+<hr>
+<p>Elementos por buscar: 7</p>
+<p>Operaciones totales: 40</p>
+<hr>
+<p>Elementos por buscar: 3</p>
+<p>Operaciones totales: 45</p>
+<hr>
+<p>Elementos por buscar: 1</p>
+<p>Operaciones totales: 50</p>
+<hr>
+<p>Observa cómo es que el número de operaciones no creció al mismo ritmo que el número de
 elementos. El número de operaciones creció sumó sólo 5 operaciones cada que duplicamos
 el número de elementos. Aquí es donde está el logaritmo, como estamos duplicando o
 multiplicando por dos, la base de nuestro logaritmo es el 2. ¿Cuánto &ldquo;pasos&rdquo; vamos a
 tener que hacer? Cuantas veces tengamos que duplicar el número de elementos para llegar
 al número total de elementos del arreglo en el peor de los casos. Esto es el logaritmo
-base 2.</p><p>Así que la complejidad de la búsqueda binaria es $$O(\log n)$$. Donde $$n$$ es el
-número de elementos en el arreglo.</p><h2 class="relative group">Implementaciones<div id=implementaciones class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"><a class="text-primary-300 dark:text-neutral-700 !no-underline" href=#implementaciones aria-label=Ancla>#</a></span></h2><p>Vamos a ver dos implementaciones en Python, una iterativa y otra recursiva.</p><p>Empezamos con la iterativa:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>binary_search</span>(arreglo, elemento_buscado):
-</span></span><span style=display:flex><span>    inicio <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>    fin <span style=color:#f92672>=</span> len(arreglo) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>while</span> inicio <span style=color:#f92672>&lt;=</span> fin:
-</span></span><span style=display:flex><span>        medio <span style=color:#f92672>=</span> (inicio <span style=color:#f92672>+</span> fin) <span style=color:#f92672>//</span> <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> arreglo[medio] <span style=color:#f92672>==</span> elemento_buscado:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> medio
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>elif</span> arreglo[medio] <span style=color:#f92672>&lt;</span> elemento_buscado:
-</span></span><span style=display:flex><span>            inicio <span style=color:#f92672>=</span> medio <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>            fin <span style=color:#f92672>=</span> medio <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
-</span></span></code></pre></div><p>Y la versión recursiva:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>binary_search</span>(arreglo, elemento_buscado, inicio<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>, fin<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> fin <span style=color:#f92672>is</span> <span style=color:#66d9ef>None</span>:
-</span></span><span style=display:flex><span>        fin <span style=color:#f92672>=</span> len(arreglo) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> inicio <span style=color:#f92672>&gt;</span> fin:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>    medio <span style=color:#f92672>=</span> (inicio <span style=color:#f92672>+</span> fin) <span style=color:#f92672>//</span> <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> arreglo[medio] <span style=color:#f92672>==</span> elemento_buscado:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> medio
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>elif</span> arreglo[medio] <span style=color:#f92672>&lt;</span> elemento_buscado:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> binary_search(arreglo, elemento_buscado, medio <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, fin)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> binary_search(arreglo, elemento_buscado, inicio, medio <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+base 2.</p>
+<p>Así que la complejidad de la búsqueda binaria es $$O(\log n)$$. Donde $$n$$ es el
+número de elementos en el arreglo.</p>
+
+<h2 class="relative group">Implementaciones
+    <div id="implementaciones" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#implementaciones" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>Vamos a ver dos implementaciones en Python, una iterativa y otra recursiva.</p>
+<p>Empezamos con la iterativa:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">binary_search</span>(arreglo, elemento_buscado):
+</span></span><span style="display:flex;"><span>    inicio <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    fin <span style="color:#f92672">=</span> len(arreglo) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> inicio <span style="color:#f92672">&lt;=</span> fin:
+</span></span><span style="display:flex;"><span>        medio <span style="color:#f92672">=</span> (inicio <span style="color:#f92672">+</span> fin) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> arreglo[medio] <span style="color:#f92672">==</span> elemento_buscado:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> medio
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> arreglo[medio] <span style="color:#f92672">&lt;</span> elemento_buscado:
+</span></span><span style="display:flex;"><span>            inicio <span style="color:#f92672">=</span> medio <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            fin <span style="color:#f92672">=</span> medio <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Y la versión recursiva:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">binary_search</span>(arreglo, elemento_buscado, inicio<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, fin<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> fin <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        fin <span style="color:#f92672">=</span> len(arreglo) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> inicio <span style="color:#f92672">&gt;</span> fin:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    medio <span style="color:#f92672">=</span> (inicio <span style="color:#f92672">+</span> fin) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> arreglo[medio] <span style="color:#f92672">==</span> elemento_buscado:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> medio
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> arreglo[medio] <span style="color:#f92672">&lt;</span> elemento_buscado:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> binary_search(arreglo, elemento_buscado, medio <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, fin)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> binary_search(arreglo, elemento_buscado, inicio, medio <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
 </span></span></code></pre></div><p>Debido a la sintaxis de Python, la versión recursiva es un poco más verbosa,
 por el manejo que tienes que hacer de los parámetros por defecto, pero si no
-fuera por eso, en general me gusta más la versión recursiva.</p><p>Finalmente, si quieres hacer un programa que funcione con esta forma de búsqueda,
+fuera por eso, en general me gusta más la versión recursiva.</p>
+<p>Finalmente, si quieres hacer un programa que funcione con esta forma de búsqueda,
 tienes que asegurarte de que las inserciones en el arreglo sean ordenadas, una forma
-sencilla es usar un algoritmo parecido para encontrar el lugar adecuado para insertarlo.</p><h2 class="relative group">Uso en el mundo real<div id=uso-en-el-mundo-real class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"><a class="text-primary-300 dark:text-neutral-700 !no-underline" href=#uso-en-el-mundo-real aria-label=Ancla>#</a></span></h2><p>Lo que vimos en la sección anterior es para que entiendas cómo funciona, pero
+sencilla es usar un algoritmo parecido para encontrar el lugar adecuado para insertarlo.</p>
+
+<h2 class="relative group">Uso en el mundo real
+    <div id="uso-en-el-mundo-real" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#uso-en-el-mundo-real" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>Lo que vimos en la sección anterior es para que entiendas cómo funciona, pero
 lenguajes como Python, Ruby y otros, probablemente ya tengan implementaciones de
 este algoritmo muy común. Por ejemplo, en Python tenemos el módulo <code>bisect</code> que
-permite hacer lo mismo con muchas menos líneas. Ejemplo:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> bisect
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>lista <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>10</span>]
-</span></span><span style=display:flex><span>elemento <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>indice <span style=color:#f92672>=</span> bisect<span style=color:#f92672>.</span>bisect_left(lista, elemento) <span style=color:#75715e># en realidad nos dice el valor más pequeño que es mayor o igual al elemento buscado</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># si el índice es más grande que el número de elementos, no está en la lista</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> indice <span style=color:#f92672>!=</span> len(lista) <span style=color:#f92672>and</span> lista[indice] <span style=color:#f92672>==</span> elemento: 
-</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;El elemento </span><span style=color:#e6db74>{</span>elemento<span style=color:#e6db74>}</span><span style=color:#e6db74> está en el índice </span><span style=color:#e6db74>{</span>indice<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;El elemento </span><span style=color:#e6db74>{</span>elemento<span style=color:#e6db74>}</span><span style=color:#e6db74> no está en la lista&#34;</span>)
-</span></span></code></pre></div><p>Puedes ver más detalles del módulo <code>bisect</code> en la <a href=https://docs.python.org/3/library/bisect.html target=_blank>documentación oficial</a>.</p><h2 class="relative group">Conclusión<div id=conclusión class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"><a class="text-primary-300 dark:text-neutral-700 !no-underline" href=#conclusi%c3%b3n aria-label=Ancla>#</a></span></h2><p>La búsqueda binaria es uno de los algoritmos que todos los desarrolladores deberíamos conocer.
-Espero que este artículo te haya ayudado a entender cómo funciona y su importancia.</p></div></div><script type=text/javascript src=/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA==" data-oid=views_posts/que-es-la-busqueda-binaria.md data-oid-likes=likes_posts/que-es-la-busqueda-binaria.md></script></section><footer class="pt-8 max-w-prose print:hidden"><div class=pt-8><hr class="border-dotted border-neutral-300 dark:border-neutral-600"><div class="flex justify-between pt-3"><span class="flex flex-col"><a class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400" href=/2024/10/20/desarrolladores-que-deber%C3%ADas-admirar-martin-kleppmann/><span class=leading-6><span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Desarrolladores que deberías admirar: Martin Kleppmann
-</span></a><span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400"><time datetime=2024-10-20T00:00:00+00:00>20 octubre 2024</time>
-</span></span><span class="flex flex-col items-end"><a class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400" href=/2024/10/31/qu%C3%A9-es-la-programaci%C3%B3n-as%C3%ADncrona/><span class=leading-6>¿Qué es la programación asíncrona?&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
-</span></a><span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400"><time datetime=2024-10-31T00:00:00+00:00>31 octubre 2024</time></span></span></div></div></footer></article><div id=scroll-to-top class="fixed bottom-24 end-6 z-50 transform translate-y-4 opacity-0 duration-200"><a href=#the-top class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400" aria-label="Ir arriba" title="Ir arriba">&uarr;</a></div></main><footer id=site-footer class="py-10 print:hidden"><div class="flex items-center justify-between"><p class="text-sm text-neutral-500 dark:text-neutral-400">&copy;
-2025</p><p class="text-xs text-neutral-500 dark:text-neutral-400">Desarrollada con <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href=https://gohugo.io/ target=_blank rel="noopener noreferrer">Hugo</a> & <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href=https://blowfish.page/ target=_blank rel="noopener noreferrer">Blowfish</a></p></div><script>mediumZoom(document.querySelectorAll("img:not(.nozoom)"),{margin:24,background:"rgba(0,0,0,0.5)",scrollOffset:0})</script><script type=text/javascript src=/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh+sCQ0E53ghYrxgYqw+0GCRyIEpA=="></script></footer><div id=search-wrapper class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500" data-url=https://blog.thedojo.mx/><div id=search-modal class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"><header class="relative z-10 flex items-center justify-between flex-none px-2"><form class="flex items-center flex-auto min-w-0"><div class="flex items-center justify-center w-8 h-8 text-neutral-400"><span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></span></div><input type=search id=search-query class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent" placeholder=Buscar tabindex=0></form><button id=close-search-button class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400" title="Cerrar (Esc)">
-<span class="relative block icon"><svg viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75.0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75.0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75.0-45.25s32.75-12.5 45.25.0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25.0s12.5 32.75.0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></button></header><section class="flex-auto px-2 overflow-auto"><ul id=search-results></ul></section></div></div></div></body></html>
+permite hacer lo mismo con muchas menos líneas. Ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> bisect
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lista <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">10</span>]
+</span></span><span style="display:flex;"><span>elemento <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>indice <span style="color:#f92672">=</span> bisect<span style="color:#f92672">.</span>bisect_left(lista, elemento) <span style="color:#75715e"># en realidad nos dice el valor más pequeño que es mayor o igual al elemento buscado</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># si el índice es más grande que el número de elementos, no está en la lista</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> indice <span style="color:#f92672">!=</span> len(lista) <span style="color:#f92672">and</span> lista[indice] <span style="color:#f92672">==</span> elemento: 
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;El elemento </span><span style="color:#e6db74">{</span>elemento<span style="color:#e6db74">}</span><span style="color:#e6db74"> está en el índice </span><span style="color:#e6db74">{</span>indice<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;El elemento </span><span style="color:#e6db74">{</span>elemento<span style="color:#e6db74">}</span><span style="color:#e6db74"> no está en la lista&#34;</span>)
+</span></span></code></pre></div><p>Puedes ver más detalles del módulo <code>bisect</code> en la <a
+  href="https://docs.python.org/3/library/bisect.html"
+    target="_blank"
+  >documentación oficial</a>.</p>
+
+<h2 class="relative group">Conclusión
+    <div id="conclusión" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#conclusi%c3%b3n" aria-label="Ancla">#</a>
+    </span>
+    
+</h2>
+<p>La búsqueda binaria es uno de los algoritmos que todos los desarrolladores deberíamos conocer.
+Espero que este artículo te haya ayudado a entender cómo funciona y su importancia.</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_posts/que-es-la-busqueda-binaria.md"
+          data-oid-likes="likes_posts/que-es-la-busqueda-binaria.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/2024/10/20/desarrolladores-que-deber%C3%ADas-admirar-martin-kleppmann/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Desarrolladores que deberías admirar: Martin Kleppmann
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2024-10-20T00:00:00&#43;00:00">20 octubre 2024</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+            <a
+              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/2024/10/31/qu%C3%A9-es-la-programaci%C3%B3n-as%C3%ADncrona/">
+              <span class="leading-6">
+                ¿Qué es la programación asíncrona?&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+              </span>
+            </a>
+            
+              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2024-10-31T00:00:00&#43;00:00">31 octubre 2024</time>
+              </span>
+            
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-24 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Ir arriba"
+    title="Ir arriba">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Desarrollada con <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Buscar"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Cerrar (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

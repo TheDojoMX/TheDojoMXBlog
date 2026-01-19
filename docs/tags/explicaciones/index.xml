@@ -1,6 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Explicaciones on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/explicaciones/</link><description>Recent content in Explicaciones on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/explicaciones/index.xml" rel="self" type="application/rss+xml"/><item><title>Como transmitir conocimiento en el desarrollo de software</title><link>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software/</link><pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software/</guid><description>&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Explicaciones on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/explicaciones/</link>
+    <description>Recent content in Explicaciones on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/explicaciones/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Como transmitir conocimiento en el desarrollo de software</title>
+      <link>http://localhost:1313/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software/</link>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2021/07/19/como-transmitir-conocimiento-en-el-desarrollo-de-software/</guid>
+      <description>&lt;p&gt;Desarrollar software es una de las cosas que están basadas completamente en el conocimiento que tenemos sobre lo que estamos programando.&lt;/p&gt;
 &lt;p&gt;La charla &lt;a
-href="https://www.youtube.com/watch?v=80EE4mZmp3A"
-target="_blank"
-&gt;&amp;ldquo;Eloquent Explanations&amp;rdquo;&lt;/a&gt; de &lt;a
-href="https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html"&gt;Russ Olsen&lt;/a&gt;. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo lo que aprendí.&lt;/p&gt;</description></item></channel></rss>
+  href=&#34;https://www.youtube.com/watch?v=80EE4mZmp3A&#34;
+    target=&#34;_blank&#34;
+  &gt;&amp;ldquo;Eloquent Explanations&amp;rdquo;&lt;/a&gt; de &lt;a
+  href=&#34;http://localhost:1313/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen.html&#34;&gt;Russ Olsen&lt;/a&gt;. En ella se proponen 5 puntos para darnos a entender cuando compartimos conocimiento con nuestro equipo u otras personas. Aquí te resumo lo que aprendí.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

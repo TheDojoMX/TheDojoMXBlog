@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Async/Await on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/async/await/</link><description>Recent content in Async/Await on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/async/await/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es la programación asíncrona?</title><link>https://blog.thedojo.mx/2024/10/31/qu%C3%A9-es-la-programaci%C3%B3n-as%C3%ADncrona/</link><pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/10/31/qu%C3%A9-es-la-programaci%C3%B3n-as%C3%ADncrona/</guid><description>&lt;p&gt;La programación asíncrona es uno de los primeros temas avanzados que encontrarás
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Async/Await on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/async/await/</link>
+    <description>Recent content in Async/Await on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/async/await/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Qué es la programación asíncrona?</title>
+      <link>http://localhost:1313/2024/10/31/qu%C3%A9-es-la-programaci%C3%B3n-as%C3%ADncrona/</link>
+      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2024/10/31/qu%C3%A9-es-la-programaci%C3%B3n-as%C3%ADncrona/</guid>
+      <description>&lt;p&gt;La programación asíncrona es uno de los primeros temas avanzados que encontrarás
 al programar, especialmente si desarrollas aplicaciones web. Esto es aún más
 común si haces &lt;strong&gt;JavaScript&lt;/strong&gt;, que es un lenguaje que se usa en entornos de
-ejecución asíncronos.&lt;/p&gt;</description></item></channel></rss>
+ejecución asíncronos.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,3 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/programming/</link><description>Recent content in Programming on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Un concepto importante: los buffers</title><link>https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/12/30/un-concepto-importante-los-buffers/</guid><description>&lt;p&gt;El concepto de buffer es usado por todos lados en el desarrollo de software, pero siento
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/programming/</link>
+    <description>Recent content in Programming on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Un concepto importante: los buffers</title>
+      <link>http://localhost:1313/2024/12/30/un-concepto-importante-los-buffers/</link>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2024/12/30/un-concepto-importante-los-buffers/</guid>
+      <description>&lt;p&gt;El concepto de buffer es usado por todos lados en el desarrollo de software, pero siento
 que es un concepto poco entendido. En este artículo vamos a hablar de qué son los buffers,
-para qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor software.&lt;/p&gt;</description></item></channel></rss>
+para qué se usan y cómo pueden ayudarte a resolver problemas y diseñar mejor software.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

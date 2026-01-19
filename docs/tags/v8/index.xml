@@ -1,5 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>V8 on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/v8/</link><description>Recent content in V8 on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Thu, 14 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/v8/index.xml" rel="self" type="application/rss+xml"/><item><title>Engines de JavaScript y sus usos</title><link>https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos/</link><pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/12/14/engines-de-javascript-y-sus-usos/</guid><description>&lt;p&gt;Ya hemos explicado antes qué es un &lt;a
-href="https://blog.thedojo.mx/2020/05/17/que-es-un-engine-de-javascript.html"&gt;engine de JavaScript&lt;/a&gt;. Como resumen, es el programa encargado de correr tus programas de JavaScript: recibe tus archivos o código de JS y ejecuta las acciones en el sistema operativo en el que se está ejecutando.&lt;/p&gt;</description></item><item><title>¿Qué es un engine de JavaScript?</title><link>https://blog.thedojo.mx/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</link><pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</guid><description>&lt;p&gt;Me llamó mucho la atención la salida de &lt;a
-href="https://deno.land/v1"
-target="_blank"
-&gt;Deno v1 esta semana&lt;/a&gt; y le quise echar un ojito. Pero desde la explicación que da inicialmente, no entiendo &lt;em&gt;exactamente&lt;/em&gt; lo que es y hace:&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>V8 on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/v8/</link>
+    <description>Recent content in V8 on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Thu, 14 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/v8/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Engines de JavaScript y sus usos</title>
+      <link>http://localhost:1313/2023/12/14/engines-de-javascript-y-sus-usos/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023/12/14/engines-de-javascript-y-sus-usos/</guid>
+      <description>&lt;p&gt;Ya hemos explicado antes qué es un &lt;a
+  href=&#34;http://localhost:1313/2020/05/17/que-es-un-engine-de-javascript.html&#34;&gt;engine de JavaScript&lt;/a&gt;. Como resumen, es el programa encargado de correr tus programas de JavaScript: recibe tus archivos o código de JS y ejecuta las acciones en el sistema operativo en el que se está ejecutando.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>¿Qué es un engine de JavaScript?</title>
+      <link>http://localhost:1313/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</link>
+      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</guid>
+      <description>&lt;p&gt;Me llamó mucho la atención  la salida de &lt;a
+  href=&#34;https://deno.land/v1&#34;
+    target=&#34;_blank&#34;
+  &gt;Deno v1 esta semana&lt;/a&gt; y le quise echar un ojito. Pero desde la explicación que da inicialmente, no entiendo &lt;em&gt;exactamente&lt;/em&gt; lo que es y hace:&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

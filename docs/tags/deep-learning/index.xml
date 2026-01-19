@@ -1,7 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deep-Learning on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/deep-learning/</link><description>Recent content in Deep-Learning on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Sun, 23 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/deep-learning/index.xml" rel="self" type="application/rss+xml"/><item><title>Reseña del libro 'Deep Learning' de MIT Press Essential Knowledge Series</title><link>https://blog.thedojo.mx/2025/02/23/rese%C3%B1a-del-libro-deep-learning-de-mit-press-essential-knowledge-series/</link><pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2025/02/23/rese%C3%B1a-del-libro-deep-learning-de-mit-press-essential-knowledge-series/</guid><description>&lt;p&gt;La serie &lt;strong&gt;The MIT Press Essential Knowledge Series&lt;/strong&gt; es una serie de libros de introducción
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep-Learning on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/deep-learning/</link>
+    <description>Recent content in Deep-Learning on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Sun, 23 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Reseña del libro &#39;Deep Learning&#39; de MIT Press Essential Knowledge Series</title>
+      <link>http://localhost:1313/2025/02/23/rese%C3%B1a-del-libro-deep-learning-de-mit-press-essential-knowledge-series/</link>
+      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2025/02/23/rese%C3%B1a-del-libro-deep-learning-de-mit-press-essential-knowledge-series/</guid>
+      <description>&lt;p&gt;La serie &lt;strong&gt;The MIT Press Essential Knowledge Series&lt;/strong&gt; es una serie de libros de introducción
 a diferentes temas interesantes y actuales, sobre todo de ciencia y tecnología.&lt;/p&gt;
 &lt;p&gt;Me gustan mucho porque son lo suficientemente introductorios para que cualquiera
 sin conocimiento previo del tema específico pueda introducirse, pero lo suficientemente
-completos para salir con una buena visión general de ese tema específico.&lt;/p&gt;</description></item><item><title>¿Cómo funciona TensorFlow?</title><link>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</guid><description>&lt;p&gt;&lt;strong&gt;TensorFlow&lt;/strong&gt; es una de las herramientas más populares e influyentes
+completos para salir con una buena visión general de ese tema específico.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>¿Cómo funciona TensorFlow?</title>
+      <link>http://localhost:1313/2024/09/16/c%C3%B3mo-funciona-tensorflow/</link>
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2024/09/16/c%C3%B3mo-funciona-tensorflow/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;TensorFlow&lt;/strong&gt; es una de las herramientas más populares e influyentes
 en el campo de la del aprendizaje automático. En este artículo vamos a ver
-qué es exactamente y cómo funciona.&lt;/p&gt;</description></item></channel></rss>
+qué es exactamente y cómo funciona.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

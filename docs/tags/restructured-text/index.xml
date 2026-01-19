@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Restructured-Text on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/restructured-text/</link><description>Recent content in Restructured-Text on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/restructured-text/index.xml" rel="self" type="application/rss+xml"/><item><title>Formatos de marcado de texto que deberías aprender</title><link>https://blog.thedojo.mx/2019/12/20/formatos-de-marcado-de-texto-que-deber%C3%ADas-aprender/</link><pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/12/20/formatos-de-marcado-de-texto-que-deber%C3%ADas-aprender/</guid><description>&lt;p&gt;Parte del trabajo de un desarrollador es crear documentos con un formato fácil de entender y agradable a la vista, para crear documentación, registrar decisiones, escribir manuales, etc. La forma común de hacerlos es un procesador de textos como Word o Google Docs, pero generalmente batallamos sobre todo con el formateo y embellecimiento de documento.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Restructured-Text on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/restructured-text/</link>
+    <description>Recent content in Restructured-Text on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/restructured-text/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Formatos de marcado de texto que deberías aprender</title>
+      <link>http://localhost:1313/2019/12/20/formatos-de-marcado-de-texto-que-deber%C3%ADas-aprender/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2019/12/20/formatos-de-marcado-de-texto-que-deber%C3%ADas-aprender/</guid>
+      <description>&lt;p&gt;Parte del trabajo de un desarrollador es crear documentos con un formato fácil de entender y agradable a la vista, para crear documentación, registrar decisiones, escribir manuales, etc. La forma común de hacerlos es un procesador de textos como Word o Google Docs, pero generalmente batallamos sobre todo con el formateo y embellecimiento de documento.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

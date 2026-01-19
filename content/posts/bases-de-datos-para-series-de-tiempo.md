@@ -154,10 +154,10 @@ naturalmente eficientes:
 - **Skip indexes**: permiten saltar bloques enteros de datos que no coinciden
   con el rango temporal buscado
 - **Particionamiento automático por tiempo**: los datos se dividen en
-  "chunks" por período (hora, día, semana), permitiendo escanear solo las
+  "chunks" por período (hora, día, semana, etc.), permitiendo escanear solo las
   particiones relevantes
 
-### 3. Políticas de retención (Retention policies)
+### 3. Políticas de retención
 
 Una de las características más útiles es la gestión automática del ciclo de
 vida de los datos, es decir, cuánto tiempo permanecen almacenados. Las TSDBs
@@ -165,43 +165,41 @@ permiten definir:
 
 - **Eliminación automática**: configuras "eliminar datos mayores a 30 días"
   y la TSDB lo hace automáticamente
-- **Políticas difernciadas por tipo de dato**: puedes mantener datos crudos 7 días,
+- **Políticas diferenciadas por tipo de dato**: puedes mantener datos crudos 7 días,
   agregados por hora 90 días, y agregados por día indefinidamente
-~~- **Sin intervención manual**: no necesitas cron jobs ni scripts de limpieza~~
+- **Sin intervención manual**: no necesitas cron jobs ni scripts de limpieza
 
 ### 4. Agregaciones continuas (Continuous aggregates)
 
-~~Las TSDBs pueden pre-calcular métricas comunes en segundo plano:~~
+Las TSDBs pueden pre-calcular métricas comunes en segundo plano:
 
-~~- **Materialización automática**: defines "quiero el promedio por hora de
-  cada métrica" y la TSDB mantiene esos cálculos actualizados~~
-~~- **Consultas instantáneas**: preguntar "¿cuál fue el promedio de CPU ayer?"
-  no requiere escanear millones de filas, solo leer el valor pre-calculado~~
-~~- **Actualización incremental**: cuando llegan nuevos datos, solo se
-  recalcula lo necesario
+- **Materialización automática**: defines "quiero el promedio por hora de
+  cada métrica" y la TSDB mantiene esos cálculos actualizados, guardados físicamente, esto nodos
+da lo que parecen _consultas instantáneas_: preguntar "¿cuál fue el promedio de CPU ayer?"
+  no requiere escanear millones de filas, solo leer el valor pre-calculado
+- **Actualización incremental**: cuando llegan nuevos datos, solo se
+recalcula lo necesario
 
 ### 5. Downsampling automático
 
-~~El downsampling reduce la resolución de datos antiguos para ahorrar espacio:~~
+Hacer "downsampling" es reducir la cantidad de datos retenidos siguiendo alguna política.
+También se entiende como bajar la "resolución" de datos antiguos para ahorrar espacio.
+Hacer esto tiene múltiples facetas:
 
-~~- **Resolución variable por antigüedad**: datos del último día a resolución
-  de 1 segundo, última semana a 1 minuto, último mes a 1 hora~~
-~~- **Conservación de tendencias**: aunque pierdas granularidad, las tendencias
+- **Resolución variable por antigüedad**: datos del último día a resolución
+  de 1 segundo, última semana a 1 minuto, último mes a 1 hora
+- **Conservación de tendencias**: aunque se pierda la granularidad, las tendencias
   generales se mantienen~~
-~~- **Configuración declarativa**: defines las reglas una vez y la TSDB las
-  aplica automáticamente~~
+- **Configuración declarativa**: defines las reglas una vez y la TSDB las
+  aplica automáticamente
 
 ### 6. Modelo de escritura optimizado
 
-~~Las TSDBs están optimizadas para el patrón de escritura típico de series
-de tiempo:~~
-
-~~- **Append-only**: los datos nuevos siempre se agregan al final, sin
-  necesidad de buscar dónde insertar~~
-~~- **Batch inserts**: pueden recibir miles de puntos en una sola operación~~
-~~- **Alto throughput**: las TSDBs modernas manejan millones de puntos por
-  segundo en hardware modesto~~
-
+Las TSDBs están optimizadas para el patrón de escritura típico de series
+de tiempo, normalmente son "append-only": los datos nuevos siempre se
+agregan al final, sin necesidad de buscar dónde insertar y sin cambiar datos anteriores.
+También se hacen **batch inserts**, pueden recibir miles de puntos en una sola operación,
+lo que reduce la sobrecarga.
 
 ## Principales opciones en el mercado
 
@@ -234,8 +232,8 @@ la compresión es menor que en TSDBs puras.~~
 QuestDB es una TSDB relativamente nueva enfocada en rendimiento extremo,
 especialmente para ingestas masivas. Usa SQL estándar.
 
-**Ventajas**: SQL familiar, rendimiento excepcional en escrituras (millones
-de filas por segundo), ideal para finanzas y trading de alta frecuencia.~~
+**Ventajas**: tiene un rendimiento excepcional en escrituras (millones
+de filas por segundo), ideal para finanzas y trading de alta frecuencia.
 
 **Desventajas**: comunidad más pequeña que las opciones anteriores, menos
 integraciones disponibles.
@@ -246,34 +244,28 @@ integraciones disponibles.
 |---------------|----------------|------------|----------------|------------|
 | InfluxDB | Flux | Alta | Sí | IoT, DevOps |
 | TimescaleDB | SQL | Media | Manual | Apps PostgreSQL |
-| Prometheus | PromQL | Media | Limitada | Métricas K8s |
-| VictoriaMetrics | PromQL | Muy alta | Sí | Escala grande |
 | QuestDB | SQL | Alta | Manual | Finanzas |
 
 ## ¿Cuándo usar una TSDB?
 
-~~No siempre necesitas una base de datos especializada. Aquí hay algunas guías
-para tomar la decisión.~~
+No siempre necesitas una base de datos especializada. Recuerda que cada pieza
+de sotware extra que introduzcas en tu sistema aumenta la carga de mantenimiento
+y la complejidad en genral. Veamos algunos consejos para tomar la decisión.
 
-### Señales de que necesitas una TSDB:
+### Cuándo SÍ necesitas una TSDB
 
-~~Considera una TSDB si tu caso cumple varias de estas condiciones:~~
+- **Consultas temporales frecuentes**: "dame el promedio de la última hora"
+  es una pregunta común
+- **Timestamp como dimensión principal**: el tiempo es el eje principal de
+  análisis, no las relaciones entre entidades
+- **Necesidad de políticas de retención automáticas**: quieres que los datos viejos se
+  eliminen o compriman sin intervención manual
+- **Agregaciones temporales eficientes**: necesitas promedios, máximos o mínimos por
+  hora, día o semana de forma eficiente
 
-- ~~**Alto volumen de escritura**: más de 10,000 puntos de datos por segundo~~
-- ~~**Consultas temporales frecuentes**: "dame el promedio de la última hora"
-  es una pregunta común~~
-- ~~**Timestamp como dimensión principal**: el tiempo es el eje principal de
-  análisis, no las relaciones entre entidades~~
-- ~~**Necesidad de retención automática**: quieres que los datos viejos se
-  eliminen o compriman sin intervención manual~~
-- ~~**Agregaciones temporales**: necesitas promedios, máximos o mínimos por
-  hora, día o semana de forma eficiente~~
+### Cuándo NO necesitas una TSDB
 
-### Cuándo NO necesitas una TSDB:
-
-~~Una base de datos relacional tradicional puede ser suficiente si:~~
-
-- ~~**Volumen bajo**: menos de un millón de puntos en total~~
+- **Volumen bajo**: menos de un millón de puntos en total
 - ~~**Actualizaciones frecuentes**: necesitas modificar valores históricos
   regularmente (las TSDBs asumen datos inmutables)~~
 - ~~**Relaciones complejas**: tus datos tienen muchas relaciones entre

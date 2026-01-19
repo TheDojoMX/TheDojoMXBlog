@@ -1,2 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ml on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/ml/</link><description>Recent content in Ml on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/ml/index.xml" rel="self" type="application/rss+xml"/><item><title>Intro a Machine Learning: Entendiendo el perceptrón</title><link>https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-el-perceptr%C3%B3n/</link><pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-el-perceptr%C3%B3n/</guid><description>&lt;p&gt;Hablar de aprendizaje automático y los términos que lo rodean, muchas veces intimida a los desarrolladores. En esta serie de posts vamos a intentar explicar los conceptos detrás del aprendizaje automático y llevarlos a la práctica.&lt;/p&gt;</description></item><item><title>Ruta de aprendizaje: Deep Learning</title><link>https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning/</link><pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning/</guid><description>&lt;p&gt;Inspirado en el libro &amp;ldquo;Ultralearning&amp;rdquo; de Scott Young, voy hacer un proyecto de aprendizaje de algo que llama mi atención desde hace mucho: Deep Learning y Machine Learning en general. Si no conces el concepto, te invito leer el post aquí: &lt;a
-href="https://blog.thedojo.mx/2019/08/13/lecciones-sobre-el-aprendizaje-de-manos-de-un-experto.html"&gt;Ultralearning: el arte del aprendizaje profundo&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>¿Qué son los modelos generativos?</title><link>https://blog.thedojo.mx/2020/12/30/qu%C3%A9-son-los-modelos-generativos/</link><pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/12/30/qu%C3%A9-son-los-modelos-generativos/</guid><description>&lt;p&gt;Los modelos generativos permiten a una máquina &amp;ldquo;aprender&amp;rdquo; los patrones que existen en los datos con los que son entrenadas y a partir de dicho aprendizaje, son capaces de &lt;strong&gt;generar datos similares&lt;/strong&gt; que en algunos casos pueden ser casi tan &amp;ldquo;reales&amp;rdquo; como los que se utilizaron inicialmente para su entrenamiento.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ml on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/ml/</link>
+    <description>Recent content in Ml on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Intro a Machine Learning: Entendiendo el perceptrón</title>
+      <link>http://localhost:1313/2021/03/25/intro-a-machine-learning-entendiendo-el-perceptr%C3%B3n/</link>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2021/03/25/intro-a-machine-learning-entendiendo-el-perceptr%C3%B3n/</guid>
+      <description>&lt;p&gt;Hablar de aprendizaje automático y los términos que lo rodean, muchas veces intimida a los desarrolladores. En esta serie de posts vamos a intentar explicar los conceptos detrás del aprendizaje automático y llevarlos a la práctica.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Ruta de aprendizaje: Deep Learning</title>
+      <link>http://localhost:1313/2021/03/06/ruta-de-aprendizaje-deep-learning/</link>
+      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2021/03/06/ruta-de-aprendizaje-deep-learning/</guid>
+      <description>&lt;p&gt;Inspirado en el libro &amp;ldquo;Ultralearning&amp;rdquo; de Scott Young, voy hacer un proyecto de aprendizaje de algo que llama mi atención desde hace mucho: Deep Learning y Machine Learning en general. Si no conces el concepto, te invito leer el post aquí: &lt;a
+  href=&#34;http://localhost:1313/2019/08/13/lecciones-sobre-el-aprendizaje-de-manos-de-un-experto.html&#34;&gt;Ultralearning: el arte del aprendizaje profundo&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>¿Qué son los modelos generativos?</title>
+      <link>http://localhost:1313/2020/12/30/qu%C3%A9-son-los-modelos-generativos/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2020/12/30/qu%C3%A9-son-los-modelos-generativos/</guid>
+      <description>&lt;p&gt;Los modelos generativos permiten a una máquina &amp;ldquo;aprender&amp;rdquo; los patrones que existen en los datos con los que son entrenadas y a partir de dicho aprendizaje, son capaces de &lt;strong&gt;generar datos similares&lt;/strong&gt; que en algunos casos pueden ser casi tan &amp;ldquo;reales&amp;rdquo; como los que se utilizaron inicialmente para su entrenamiento.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -223,7 +223,7 @@
     "keywords": ["series-de-tiempo","bases-de-datos","data-science","tsdb","timescaledb","prometheus"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1943"
+    "wordCount": "1826"
   }]
   </script>
 
@@ -695,7 +695,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-12-29T00:00:00&#43;00:00">29 diciembre 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1943 palabras</span><span class="px-2 text-primary-500">&middot;</span><span title="Tiempo de lectura">10 mins</span>
+      <time datetime="2025-12-29T00:00:00&#43;00:00">29 diciembre 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1826 palabras</span><span class="px-2 text-primary-500">&middot;</span><span title="Tiempo de lectura">9 mins</span>
     
 
     
@@ -866,26 +866,24 @@
       <ul>
         <li><a href="#1-compresión-optimizada">1. Compresión optimizada</a></li>
         <li><a href="#2-índices-temporales-especializados">2. Índices temporales especializados</a></li>
-        <li><a href="#3-políticas-de-retención-retention-policies">3. Políticas de retención (Retention policies)</a></li>
+        <li><a href="#3-políticas-de-retención">3. Políticas de retención</a></li>
         <li><a href="#4-agregaciones-continuas-continuous-aggregates">4. Agregaciones continuas (Continuous aggregates)</a></li>
         <li><a href="#5-downsampling-automático">5. Downsampling automático</a></li>
         <li><a href="#6-modelo-de-escritura-optimizado">6. Modelo de escritura optimizado</a></li>
       </ul>
     </li>
-    <li><a href="#ejemplos-de-bases-de-datos-para-series-temporales">Ejemplos de bases de datos para series temporales</a>
+    <li><a href="#principales-opciones-en-el-mercado">Principales opciones en el mercado</a>
       <ul>
         <li><a href="#influxdb">InfluxDB</a></li>
         <li><a href="#timescaledb">TimescaleDB</a></li>
-        <li><a href="#prometheus">Prometheus</a></li>
-        <li><a href="#victoriametrics">VictoriaMetrics</a></li>
         <li><a href="#questdb">QuestDB</a></li>
         <li><a href="#tabla-comparativa">Tabla comparativa</a></li>
       </ul>
     </li>
     <li><a href="#cuándo-usar-una-tsdb">¿Cuándo usar una TSDB?</a>
       <ul>
-        <li><a href="#señales-de-que-necesitas-una-tsdb">Señales de que necesitas una TSDB:</a></li>
-        <li><a href="#cuándo-no-necesitas-una-tsdb">Cuándo NO necesitas una TSDB:</a></li>
+        <li><a href="#cuándo-sí-necesitas-una-tsdb">Cuándo SÍ necesitas una TSDB</a></li>
+        <li><a href="#cuándo-no-necesitas-una-tsdb">Cuándo NO necesitas una TSDB</a></li>
       </ul>
     </li>
     <li><a href="#conclusión">Conclusión</a></li>
@@ -914,26 +912,24 @@
       <ul>
         <li><a href="#1-compresión-optimizada">1. Compresión optimizada</a></li>
         <li><a href="#2-índices-temporales-especializados">2. Índices temporales especializados</a></li>
-        <li><a href="#3-políticas-de-retención-retention-policies">3. Políticas de retención (Retention policies)</a></li>
+        <li><a href="#3-políticas-de-retención">3. Políticas de retención</a></li>
         <li><a href="#4-agregaciones-continuas-continuous-aggregates">4. Agregaciones continuas (Continuous aggregates)</a></li>
         <li><a href="#5-downsampling-automático">5. Downsampling automático</a></li>
         <li><a href="#6-modelo-de-escritura-optimizado">6. Modelo de escritura optimizado</a></li>
       </ul>
     </li>
-    <li><a href="#ejemplos-de-bases-de-datos-para-series-temporales">Ejemplos de bases de datos para series temporales</a>
+    <li><a href="#principales-opciones-en-el-mercado">Principales opciones en el mercado</a>
       <ul>
         <li><a href="#influxdb">InfluxDB</a></li>
         <li><a href="#timescaledb">TimescaleDB</a></li>
-        <li><a href="#prometheus">Prometheus</a></li>
-        <li><a href="#victoriametrics">VictoriaMetrics</a></li>
         <li><a href="#questdb">QuestDB</a></li>
         <li><a href="#tabla-comparativa">Tabla comparativa</a></li>
       </ul>
     </li>
     <li><a href="#cuándo-usar-una-tsdb">¿Cuándo usar una TSDB?</a>
       <ul>
-        <li><a href="#señales-de-que-necesitas-una-tsdb">Señales de que necesitas una TSDB:</a></li>
-        <li><a href="#cuándo-no-necesitas-una-tsdb">Cuándo NO necesitas una TSDB:</a></li>
+        <li><a href="#cuándo-sí-necesitas-una-tsdb">Cuándo SÍ necesitas una TSDB</a></li>
+        <li><a href="#cuándo-no-necesitas-una-tsdb">Cuándo NO necesitas una TSDB</a></li>
       </ul>
     </li>
     <li><a href="#conclusión">Conclusión</a></li>
@@ -1083,7 +1079,7 @@ maneras útiles.</p>
 de otros tipos de datos:</p>
 <ul>
 <li><strong>Alta frecuencia de escritura</strong>: los datos llegan constantemente, a veces
-miles o millones de puntos por segundo</li>
+miles o millones de puntos por segundo, a veces también <strong>a intervalos regulares</strong></li>
 <li><strong>Datos inmutables</strong>: una vez registrado un punto, rara vez se modifica, y generalmente
 no tiene sentido que haya actualizaciones</li>
 <li><strong>Consultas por rangos temporales</strong>: las preguntas típicas son &ldquo;¿qué pasó
@@ -1112,7 +1108,7 @@ activos</li>
 </h2>
 <p>Una base de datos relacional pensada en transacciones (OLTP) es muy flexible y sin duda
 puedes almacenar pares de valores de tiempo y el valor medido sin ninguna dificultad. Pero
-algunas de las razones por las que no es buena idea usar este tipo de bases de datos.</p>
+veamos algunas de las razones por las que no es buena idea usar este tipo de bases de datos.</p>
 
 <h3 class="relative group">Problemas de rendimiento
     <div id="problemas-de-rendimiento" class="anchor"></div>
@@ -1123,22 +1119,22 @@ algunas de las razones por las que no es buena idea usar este tipo de bases de d
     </span>
     
 </h3>
-<p><del>Las consultas de agregación temporal se vuelven lentas conforme crece la tabla.
+<p>Las consultas de agregación temporal se vuelven lentas conforme crece la tabla.
 Calcular el promedio de las últimas 24 horas o el máximo por hora requiere
-escanear millones de filas, incluso con índices bien diseñados.</del></p>
-<p><del>Los índices B-tree, el tipo más común en bases de datos relacionales, no están
+escanear millones de filas, incluso con índices bien diseñados.</p>
+<p>Los índices <em>B-tree</em>, el tipo más común en bases de datos relacionales, no están
 optimizados para consultas por rangos de tiempo. Un índice B-tree funciona bien
 para búsquedas exactas (<code>WHERE timestamp = X</code>), pero para rangos
-(<code>WHERE timestamp BETWEEN X AND Y</code>) debe recorrer muchos nodos del árbol.</del></p>
-<p><del>Considera esta consulta típica en PostgreSQL:</del></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">~~</span><span style="color:#75715e">-- Promedio de CPU por servidor en la última semana~~
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">~~</span><span style="color:#66d9ef">SELECT</span> server_id, <span style="color:#66d9ef">AVG</span>(cpu_usage)<span style="color:#f92672">~~</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span><span style="color:#66d9ef">FROM</span> metrics<span style="color:#f92672">~~</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span><span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">timestamp</span> <span style="color:#f92672">&gt;</span> NOW() <span style="color:#f92672">-</span> INTERVAL <span style="color:#e6db74">&#39;7 days&#39;</span><span style="color:#f92672">~~</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> server_id;<span style="color:#f92672">~~</span>
-</span></span></code></pre></div><p><del>Con 100 millones de filas, esta consulta puede tardar minutos. En una TSDB
+(<code>WHERE timestamp BETWEEN X AND Y</code>) debe recorrer muchos nodos del árbol.</p>
+<p>Considera esta consulta típica en PostgreSQL:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- Promedio de CPU por servidor en la última semana
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> server_id, <span style="color:#66d9ef">AVG</span>(cpu_usage)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> metrics
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">timestamp</span> <span style="color:#f92672">&gt;</span> NOW() <span style="color:#f92672">-</span> INTERVAL <span style="color:#e6db74">&#39;7 days&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> server_id;
+</span></span></code></pre></div><p>Con 100 millones de filas, esta consulta puede tardar minutos. En una TSDB
 especializada, la misma operación toma segundos gracias a índices temporales
-y datos pre-agregados.</del></p>
+y datos pre-agregados.</p>
 
 <h3 class="relative group">Problemas de almacenamiento
     <div id="problemas-de-almacenamiento" class="anchor"></div>
@@ -1149,16 +1145,16 @@ y datos pre-agregados.</del></p>
     </span>
     
 </h3>
-<p><del>Las bases de datos relacionales no tienen compresión especializada para datos
+<p>Las bases de datos relacionales no tienen compresión especializada para datos
 temporales. Los timestamps consecutivos suelen diferir por pocos segundos, pero
 se almacenan como valores completos de 8 bytes cada uno. Lo mismo ocurre con
-valores numéricos que cambian poco entre mediciones.</del></p>
-<p><del>Además, hay desperdicio de espacio con valores repetidos. Si el <code>server_id</code> es
+valores numéricos que cambian poco entre mediciones.</p>
+<p>Además, hay desperdicio de espacio con valores repetidos. Si el <code>server_id</code> es
 &ldquo;web-server-prod-01&rdquo; y tienes un millón de mediciones, esa cadena se almacena
-(o referencia) un millón de veces.</del></p>
-<p><del>El crecimiento es lineal y sin control automático. Si generas 1GB de datos
+(o referencia) un millón de veces.</p>
+<p>El crecimiento es lineal y sin control automático. Si generas 1GB de datos
 por día, en un año tendrás 365GB. Sin políticas de retención automáticas,
-debes implementar scripts manuales para purgar datos antiguos.</del></p>
+debes implementar scripts manuales para purgar datos antiguos.</p>
 
 <h3 class="relative group">Ejemplo práctico
     <div id="ejemplo-práctico" class="anchor"></div>
@@ -1169,23 +1165,26 @@ debes implementar scripts manuales para purgar datos antiguos.</del></p>
     </span>
     
 </h3>
-<p><del>Veamos cómo se vería un esquema típico en PostgreSQL:</del></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">~~</span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> metrics (<span style="color:#f92672">~~</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span>    id SERIAL <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,<span style="color:#f92672">~~</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span>    <span style="color:#66d9ef">timestamp</span> TIMESTAMPTZ <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,<span style="color:#f92672">~~</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span>    server_id VARCHAR(<span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,<span style="color:#f92672">~~</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span>    metric_name VARCHAR(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,<span style="color:#f92672">~~</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span>    value DOUBLE <span style="color:#66d9ef">PRECISION</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span><span style="color:#f92672">~~</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span>);<span style="color:#f92672">~~</span>
+<p>Veamos cómo se vería un esquema típico en PostgreSQL para guardar una
+serie de métricas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> metrics (
+</span></span><span style="display:flex;"><span>    id SERIAL <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">timestamp</span> TIMESTAMPTZ <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    server_id VARCHAR(<span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    metric_name VARCHAR(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    value DOUBLE <span style="color:#66d9ef">PRECISION</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> idx_metrics_time <span style="color:#66d9ef">ON</span> metrics(<span style="color:#66d9ef">timestamp</span>);<span style="color:#f92672">~~</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">~~</span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> idx_metrics_server <span style="color:#66d9ef">ON</span> metrics(server_id, <span style="color:#66d9ef">timestamp</span>);<span style="color:#f92672">~~</span>
-</span></span></code></pre></div><p><del>Este esquema funciona, pero tiene problemas:</del></p>
-<p>~<del>- Cada fila ocupa <del>150 bytes (con overhead de PostgreSQL)</del></del>
-~<del>- 1 millón de puntos = <del>150MB</del></del>
-~<del>- 1 billón de puntos = <del>150GB</del></del></p>
-<p><del>En una TSDB como TimescaleDB con compresión habilitada, el mismo billón de
-puntos puede ocupar 15-30GB, una reducción de 5-10x.</del></p>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> idx_metrics_time <span style="color:#66d9ef">ON</span> metrics(<span style="color:#66d9ef">timestamp</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> idx_metrics_server <span style="color:#66d9ef">ON</span> metrics(server_id, <span style="color:#66d9ef">timestamp</span>);
+</span></span></code></pre></div><p>Este esquema funciona, pero tiene algunos problemas:</p>
+<ul>
+<li>Cada fila ocupa ~150 bytes (con overhead de PostgreSQL)</li>
+<li>1 millón de puntos = ~150MB</li>
+<li>1 billón de puntos = ~150GB</li>
+</ul>
+<p>En una TSDB como TimescaleDB con compresión habilitada, el mismo billón de
+puntos puede ocupar 15-30GB, una reducción de 5-10x.</p>
 
 <h2 class="relative group">¿Qué hace especial a una base de datos de series de tiempo?
     <div id="qué-hace-especial-a-una-base-de-datos-de-series-de-tiempo" class="anchor"></div>
@@ -1196,8 +1195,8 @@ puntos puede ocupar 15-30GB, una reducción de 5-10x.</del></p>
     </span>
     
 </h2>
-<p><del>Las TSDBs (Time Series Databases) están diseñadas desde cero para manejar
-las características únicas de los datos temporales. Veamos qué las hace diferentes.</del></p>
+<p>Las TSDBs están diseñadas desde cero para manejar
+las características únicas de los datos temporales. Veamos qué las hace diferentes.</p>
 
 <h3 class="relative group">1. Compresión optimizada
     <div id="1-compresión-optimizada" class="anchor"></div>
@@ -1208,15 +1207,18 @@ las características únicas de los datos temporales. Veamos qué las hace difer
     </span>
     
 </h3>
-<p><del>Las TSDBs usan algoritmos de compresión específicos para datos temporales:</del></p>
-<p><del>- <strong>Delta encoding</strong>: en lugar de guardar cada timestamp completo, se guarda
+<p>Las TSDBs usan algoritmos de compresión específicos para datos con las características
+que hemos mencionado:</p>
+<ul>
+<li><strong>Delta encoding</strong>: en lugar de guardar cada timestamp completo, se guarda
 la diferencia con el anterior. Si los datos llegan cada 10 segundos, solo
-se almacena &ldquo;10&rdquo; en lugar de timestamps completos</del>
-<del>- <strong>Gorilla compression</strong>: desarrollado por Facebook, comprime valores
-flotantes aprovechando que mediciones consecutivas suelen ser similares</del>
-<del>- <strong>Dictionary encoding</strong>: para tags repetidos como nombres de servidores</del></p>
-<p><del>El resultado es impresionante: datos que ocuparían 1GB en PostgreSQL pueden
-reducirse a 100MB o menos en una TSDB con compresión habilitada.</del></p>
+se almacena &ldquo;10&rdquo; en lugar de timestamps completos</li>
+<li><strong>Gorilla compression</strong>: desarrollado por Facebook, comprime valores
+flotantes aprovechando que mediciones consecutivas suelen ser similares</li>
+<li><strong>Dictionary encoding</strong>: para tags repetidos como nombres de servidores</li>
+</ul>
+<p>El resultado es muy conveniente: datos que ocuparían 1GB en PostgreSQL pueden
+reducirse a 100MB o menos en una TSDB con compresión habilitada.</p>
 
 <h3 class="relative group">2. Índices temporales especializados
     <div id="2-índices-temporales-especializados" class="anchor"></div>
@@ -1227,32 +1229,37 @@ reducirse a 100MB o menos en una TSDB con compresión habilitada.</del></p>
     </span>
     
 </h3>
-<p><del>Las TSDBs organizan los datos de forma que las consultas temporales sean
-naturalmente eficientes:</del></p>
-<p><del>- <strong>Ordenamiento automático por timestamp</strong>: los datos se almacenan
-físicamente en orden cronológico, eliminando la necesidad de ordenar en queries</del>
-<del>- <strong>Skip indexes</strong>: permiten saltar bloques enteros de datos que no coinciden
-con el rango temporal buscado</del>
-<del>- <strong>Particionamiento automático por tiempo</strong>: los datos se dividen en
-&ldquo;chunks&rdquo; por período (hora, día, semana), permitiendo escanear solo las
-particiones relevantes</del></p>
+<p>Las TSDBs organizan los datos de forma que las consultas temporales sean
+naturalmente eficientes:</p>
+<ul>
+<li><strong>Ordenamiento automático por timestamp</strong>: los datos se almacenan
+físicamente en orden cronológico, eliminando la necesidad de ordenar en cada query</li>
+<li><strong>Skip indexes</strong>: permiten saltar bloques enteros de datos que no coinciden
+con el rango temporal buscado</li>
+<li><strong>Particionamiento automático por tiempo</strong>: los datos se dividen en
+&ldquo;chunks&rdquo; por período (hora, día, semana, etc.), permitiendo escanear solo las
+particiones relevantes</li>
+</ul>
 
-<h3 class="relative group">3. Políticas de retención (Retention policies)
-    <div id="3-políticas-de-retención-retention-policies" class="anchor"></div>
+<h3 class="relative group">3. Políticas de retención
+    <div id="3-políticas-de-retención" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#3-pol%c3%adticas-de-retenci%c3%b3n-retention-policies" aria-label="Ancla">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#3-pol%c3%adticas-de-retenci%c3%b3n" aria-label="Ancla">#</a>
     </span>
     
 </h3>
-<p><del>Una de las características más útiles es la gestión automática del ciclo de
-vida de los datos:</del></p>
-<p><del>- <strong>Eliminación automática</strong>: configuras &ldquo;eliminar datos mayores a 30 días&rdquo;
-y la TSDB lo hace automáticamente</del>
-<del>- <strong>Políticas por tipo de dato</strong>: puedes mantener datos crudos 7 días,
-agregados por hora 90 días, y agregados por día indefinidamente</del>
-<del>- <strong>Sin intervención manual</strong>: no necesitas cron jobs ni scripts de limpieza</del></p>
+<p>Una de las características más útiles es la gestión automática del ciclo de
+vida de los datos, es decir, cuánto tiempo permanecen almacenados. Las TSDBs
+permiten definir:</p>
+<ul>
+<li><strong>Eliminación automática</strong>: configuras &ldquo;eliminar datos mayores a 30 días&rdquo;
+y la TSDB lo hace automáticamente</li>
+<li><strong>Políticas diferenciadas por tipo de dato</strong>: puedes mantener datos crudos 7 días,
+agregados por hora 90 días, y agregados por día indefinidamente</li>
+<li><strong>Sin intervención manual</strong>: no necesitas cron jobs ni scripts de limpieza</li>
+</ul>
 
 <h3 class="relative group">4. Agregaciones continuas (Continuous aggregates)
     <div id="4-agregaciones-continuas-continuous-aggregates" class="anchor"></div>
@@ -1263,13 +1270,15 @@ agregados por hora 90 días, y agregados por día indefinidamente</del>
     </span>
     
 </h3>
-<p><del>Las TSDBs pueden pre-calcular métricas comunes en segundo plano:</del></p>
-<p><del>- <strong>Materialización automática</strong>: defines &ldquo;quiero el promedio por hora de
-cada métrica&rdquo; y la TSDB mantiene esos cálculos actualizados</del>
-<del>- <strong>Consultas instantáneas</strong>: preguntar &ldquo;¿cuál fue el promedio de CPU ayer?&rdquo;
-no requiere escanear millones de filas, solo leer el valor pre-calculado</del>
-<del>- <strong>Actualización incremental</strong>: cuando llegan nuevos datos, solo se
-recalcula lo necesario</del></p>
+<p>Las TSDBs pueden pre-calcular métricas comunes en segundo plano:</p>
+<ul>
+<li><strong>Materialización automática</strong>: defines &ldquo;quiero el promedio por hora de
+cada métrica&rdquo; y la TSDB mantiene esos cálculos actualizados, guardados físicamente, esto nodos
+da lo que parecen <em>consultas instantáneas</em>: preguntar &ldquo;¿cuál fue el promedio de CPU ayer?&rdquo;
+no requiere escanear millones de filas, solo leer el valor pre-calculado</li>
+<li><strong>Actualización incremental</strong>: cuando llegan nuevos datos, solo se
+recalcula lo necesario</li>
+</ul>
 
 <h3 class="relative group">5. Downsampling automático
     <div id="5-downsampling-automático" class="anchor"></div>
@@ -1280,13 +1289,17 @@ recalcula lo necesario</del></p>
     </span>
     
 </h3>
-<p><del>El downsampling reduce la resolución de datos antiguos para ahorrar espacio:</del></p>
-<p><del>- <strong>Resolución variable por antigüedad</strong>: datos del último día a resolución
-de 1 segundo, última semana a 1 minuto, último mes a 1 hora</del>
-<del>- <strong>Conservación de tendencias</strong>: aunque pierdas granularidad, las tendencias
-generales se mantienen</del>
-<del>- <strong>Configuración declarativa</strong>: defines las reglas una vez y la TSDB las
-aplica automáticamente</del></p>
+<p>Hacer &ldquo;downsampling&rdquo; es reducir la cantidad de datos retenidos siguiendo alguna política.
+También se entiende como bajar la &ldquo;resolución&rdquo; de datos antiguos para ahorrar espacio.
+Hacer esto tiene múltiples facetas:</p>
+<ul>
+<li><strong>Resolución variable por antigüedad</strong>: datos del último día a resolución
+de 1 segundo, última semana a 1 minuto, último mes a 1 hora</li>
+<li><strong>Conservación de tendencias</strong>: aunque se pierda la granularidad, las tendencias
+generales se mantienen~~</li>
+<li><strong>Configuración declarativa</strong>: defines las reglas una vez y la TSDB las
+aplica automáticamente</li>
+</ul>
 
 <h3 class="relative group">6. Modelo de escritura optimizado
     <div id="6-modelo-de-escritura-optimizado" class="anchor"></div>
@@ -1297,25 +1310,23 @@ aplica automáticamente</del></p>
     </span>
     
 </h3>
-<p><del>Las TSDBs están optimizadas para el patrón de escritura típico de series
-de tiempo:</del></p>
-<p><del>- <strong>Append-only</strong>: los datos nuevos siempre se agregan al final, sin
-necesidad de buscar dónde insertar</del>
-<del>- <strong>Batch inserts</strong>: pueden recibir miles de puntos en una sola operación</del>
-<del>- <strong>Alto throughput</strong>: las TSDBs modernas manejan millones de puntos por
-segundo en hardware modesto</del></p>
+<p>Las TSDBs están optimizadas para el patrón de escritura típico de series
+de tiempo, normalmente son &ldquo;append-only&rdquo;: los datos nuevos siempre se
+agregan al final, sin necesidad de buscar dónde insertar y sin cambiar datos anteriores.
+También se hacen <strong>batch inserts</strong>, pueden recibir miles de puntos en una sola operación,
+lo que reduce la sobrecarga.</p>
 
-<h2 class="relative group">Ejemplos de bases de datos para series temporales
-    <div id="ejemplos-de-bases-de-datos-para-series-temporales" class="anchor"></div>
+<h2 class="relative group">Principales opciones en el mercado
+    <div id="principales-opciones-en-el-mercado" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ejemplos-de-bases-de-datos-para-series-temporales" aria-label="Ancla">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#principales-opciones-en-el-mercado" aria-label="Ancla">#</a>
     </span>
     
 </h2>
-<p><del>Existen varias opciones maduras en el mercado. Cada una tiene sus fortalezas
-y casos de uso ideales. Veamos las más populares.</del></p>
+<p>Existen varias opciones maduras de TSDBs en el mercado. Cada una tiene sus fortalezas
+y casos de uso ideales.</p>
 
 <h3 class="relative group">InfluxDB
     <div id="influxdb" class="anchor"></div>
@@ -1326,13 +1337,12 @@ y casos de uso ideales. Veamos las más populares.</del></p>
     </span>
     
 </h3>
-<p><del>InfluxDB es una de las TSDBs más conocidas. Usa su propio lenguaje de consultas
-llamado Flux (aunque también soporta InfluxQL, similar a SQL). Es ideal para
-monitoreo de infraestructura e IoT.</del></p>
-<p><del><strong>Ventajas</strong>: retention policies integradas, interfaz web incluida, buena
-documentación y comunidad activa.</del></p>
-<p><del><strong>Desventajas</strong>: la versión 3 tiene licencia comercial más restrictiva, y
-Flux tiene una curva de aprendizaje significativa si vienes de SQL.</del></p>
+<p>InfluxDB es una de las más conocidas. Usa su propio lenguaje de consultas
+llamado Flux (aunque también soporta InfluxQL, similar a SQL). Es usada para
+monitoreo de infraestructura e IoT.
+<strong>Ventajas</strong>: retention policies integradas, interfaz web incluida, buena
+documentación y comunidad activa.
+<strong>Desventajas</strong>: Flux tiene una curva de aprendizaje significativa si vienes de SQL.</p>
 
 <h3 class="relative group">TimescaleDB
     <div id="timescaledb" class="anchor"></div>
@@ -1343,46 +1353,13 @@ Flux tiene una curva de aprendizaje significativa si vienes de SQL.</del></p>
     </span>
     
 </h3>
-<p><del>TimescaleDB es una extensión de PostgreSQL que le agrega capacidades de TSDB.
+<p>TimescaleDB es una extensión de PostgreSQL que le agrega capacidades de TSDB.
 Es la opción natural si ya usas PostgreSQL y no quieres aprender un nuevo
-sistema.</del></p>
-<p><del><strong>Ventajas</strong>: compatibilidad total con el ecosistema PostgreSQL (pg_dump,
-replicación, extensiones), SQL estándar, fácil migración.</del></p>
-<p><del><strong>Desventajas</strong>: requiere tuning manual para obtener el mejor rendimiento,
-la compresión es menor que en TSDBs puras.</del></p>
-
-<h3 class="relative group">Prometheus
-    <div id="prometheus" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#prometheus" aria-label="Ancla">#</a>
-    </span>
-    
-</h3>
-<p><del>Prometheus es el estándar de facto para monitoreo en Kubernetes. Más que una
-base de datos general, está enfocada en métricas de aplicaciones y alerting.</del></p>
-<p><del><strong>Ventajas</strong>: modelo pull (Prometheus obtiene las métricas, no las recibe),
-alerting integrado con Alertmanager, ecosistema maduro con miles de exporters.</del></p>
-<p><del><strong>Desventajas</strong>: retención local limitada (típicamente 15-30 días), no
-diseñada para almacenamiento a largo plazo.</del></p>
-
-<h3 class="relative group">VictoriaMetrics
-    <div id="victoriametrics" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#victoriametrics" aria-label="Ancla">#</a>
-    </span>
-    
-</h3>
-<p><del>VictoriaMetrics es compatible con Prometheus pero optimizada para escala y
-almacenamiento a largo plazo. Es un reemplazo drop-in para Prometheus como
-backend de almacenamiento.</del></p>
-<p><del><strong>Ventajas</strong>: compresión superior a Prometheus, menor uso de recursos,
-excelente para clusters grandes.</del></p>
-<p><del><strong>Desventajas</strong>: menos funcionalidades de alerting que Prometheus (aunque
-puede usar Alertmanager).</del></p>
+sistema.</p>
+<p><strong>Ventajas</strong>: compatibilidad total con el ecosistema PostgreSQL (pg_dump,
+replicación, extensiones), SQL estándar, fácil migración.</p>
+<p><strong>Desventajas</strong>: requiere tuning manual para obtener el mejor rendimiento,
+la compresión es menor que en TSDBs puras.~~</p>
 
 <h3 class="relative group">QuestDB
     <div id="questdb" class="anchor"></div>
@@ -1393,12 +1370,12 @@ puede usar Alertmanager).</del></p>
     </span>
     
 </h3>
-<p><del>QuestDB es una TSDB relativamente nueva enfocada en rendimiento extremo,
-especialmente para ingestas masivas. Usa SQL estándar.</del></p>
-<p><del><strong>Ventajas</strong>: SQL familiar, rendimiento excepcional en escrituras (millones
-de filas por segundo), ideal para finanzas y trading de alta frecuencia.</del></p>
-<p><del><strong>Desventajas</strong>: comunidad más pequeña que las opciones anteriores, menos
-integraciones disponibles.</del></p>
+<p>QuestDB es una TSDB relativamente nueva enfocada en rendimiento extremo,
+especialmente para ingestas masivas. Usa SQL estándar.</p>
+<p><strong>Ventajas</strong>: tiene un rendimiento excepcional en escrituras (millones
+de filas por segundo), ideal para finanzas y trading de alta frecuencia.</p>
+<p><strong>Desventajas</strong>: comunidad más pequeña que las opciones anteriores, menos
+integraciones disponibles.</p>
 
 <h3 class="relative group">Tabla comparativa
     <div id="tabla-comparativa" class="anchor"></div>
@@ -1435,20 +1412,6 @@ integraciones disponibles.</del></p>
           <td>Apps PostgreSQL</td>
       </tr>
       <tr>
-          <td>Prometheus</td>
-          <td>PromQL</td>
-          <td>Media</td>
-          <td>Limitada</td>
-          <td>Métricas K8s</td>
-      </tr>
-      <tr>
-          <td>VictoriaMetrics</td>
-          <td>PromQL</td>
-          <td>Muy alta</td>
-          <td>Sí</td>
-          <td>Escala grande</td>
-      </tr>
-      <tr>
           <td>QuestDB</td>
           <td>SQL</td>
           <td>Alta</td>
@@ -1467,32 +1430,31 @@ integraciones disponibles.</del></p>
     </span>
     
 </h2>
-<p><del>No siempre necesitas una base de datos especializada. Aquí hay algunas guías
-para tomar la decisión.</del></p>
+<p>No siempre necesitas una base de datos especializada. Recuerda que cada pieza
+de sotware extra que introduzcas en tu sistema aumenta la carga de mantenimiento
+y la complejidad en genral. Veamos algunos consejos para tomar la decisión.</p>
 
-<h3 class="relative group">Señales de que necesitas una TSDB:
-    <div id="señales-de-que-necesitas-una-tsdb" class="anchor"></div>
+<h3 class="relative group">Cuándo SÍ necesitas una TSDB
+    <div id="cuándo-sí-necesitas-una-tsdb" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#se%c3%b1ales-de-que-necesitas-una-tsdb" aria-label="Ancla">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cu%c3%a1ndo-s%c3%ad-necesitas-una-tsdb" aria-label="Ancla">#</a>
     </span>
     
 </h3>
-<p><del>Considera una TSDB si tu caso cumple varias de estas condiciones:</del></p>
 <ul>
-<li><del><strong>Alto volumen de escritura</strong>: más de 10,000 puntos de datos por segundo</del></li>
-<li><del><strong>Consultas temporales frecuentes</strong>: &ldquo;dame el promedio de la última hora&rdquo;
-es una pregunta común</del></li>
-<li><del><strong>Timestamp como dimensión principal</strong>: el tiempo es el eje principal de
-análisis, no las relaciones entre entidades</del></li>
-<li><del><strong>Necesidad de retención automática</strong>: quieres que los datos viejos se
-eliminen o compriman sin intervención manual</del></li>
-<li><del><strong>Agregaciones temporales</strong>: necesitas promedios, máximos o mínimos por
-hora, día o semana de forma eficiente</del></li>
+<li><strong>Consultas temporales frecuentes</strong>: &ldquo;dame el promedio de la última hora&rdquo;
+es una pregunta común</li>
+<li><strong>Timestamp como dimensión principal</strong>: el tiempo es el eje principal de
+análisis, no las relaciones entre entidades</li>
+<li><strong>Necesidad de políticas de retención automáticas</strong>: quieres que los datos viejos se
+eliminen o compriman sin intervención manual</li>
+<li><strong>Agregaciones temporales eficientes</strong>: necesitas promedios, máximos o mínimos por
+hora, día o semana de forma eficiente</li>
 </ul>
 
-<h3 class="relative group">Cuándo NO necesitas una TSDB:
+<h3 class="relative group">Cuándo NO necesitas una TSDB
     <div id="cuándo-no-necesitas-una-tsdb" class="anchor"></div>
     
     <span
@@ -1501,9 +1463,8 @@ hora, día o semana de forma eficiente</del></li>
     </span>
     
 </h3>
-<p><del>Una base de datos relacional tradicional puede ser suficiente si:</del></p>
 <ul>
-<li><del><strong>Volumen bajo</strong>: menos de un millón de puntos en total</del></li>
+<li><strong>Volumen bajo</strong>: menos de un millón de puntos en total</li>
 <li><del><strong>Actualizaciones frecuentes</strong>: necesitas modificar valores históricos
 regularmente (las TSDBs asumen datos inmutables)</del></li>
 <li><del><strong>Relaciones complejas</strong>: tus datos tienen muchas relaciones entre
@@ -1647,7 +1608,7 @@ darán una base sólida para cualquier proyecto que involucre datos temporales.<
     
       <p class="text-sm text-neutral-500 dark:text-neutral-400">
           &copy;
-          2025
+          2026
           
       </p>
     

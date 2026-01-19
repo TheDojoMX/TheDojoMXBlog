@@ -1,7 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Paralelismo on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/paralelismo/</link><description>Recent content in Paralelismo on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2025</copyright><lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/paralelismo/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es un GPU?</title><link>https://blog.thedojo.mx/2025/12/29/qu%C3%A9-es-un-gpu/</link><pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2025/12/29/qu%C3%A9-es-un-gpu/</guid><description>&lt;p&gt;Si has estado atento a las tendencias de desarrollo de software, te habrás dado
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paralelismo on The Dojo MX Blog</title>
+    <link>http://localhost:1313/tags/paralelismo/</link>
+    <description>Recent content in Paralelismo on The Dojo MX Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/paralelismo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>¿Qué es un GPU?</title>
+      <link>http://localhost:1313/2025/12/29/qu%C3%A9-es-un-gpu/</link>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2025/12/29/qu%C3%A9-es-un-gpu/</guid>
+      <description>&lt;p&gt;Si has estado atento a las tendencias de desarrollo de software, te habrás dado
 cuenta que la computación especializada cada vez está más extendida, sobre todo
 por la proliferación de modelos de machine learning que requieren un montón
 de cómputo. Uno de los elementos de hardware que brilla en esta industria es
 el GPU (Graphics Processing Unit). Hablemos de qué es un GPU desde nuestra
-perspectiva como desarrolladores de software.&lt;/p&gt;</description></item><item><title>La diferencia entre concurrencia y paralelismo</title><link>https://blog.thedojo.mx/2019/04/17/la-diferencia-entre-concurrencia-y-paralelismo/</link><pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/04/17/la-diferencia-entre-concurrencia-y-paralelismo/</guid><description>&lt;p&gt;Los términos &lt;strong&gt;concurrencia&lt;/strong&gt; y &lt;strong&gt;paralelismo&lt;/strong&gt; siempre han sido relevantes en el entorno de la computación y desarrollo de software. Hablemos de la diferencia entre ellos y cómo podemos aplicarlos en nuestros programas.
-Son conceptos relacionados, pero decir que uno es el otro es como decir que las naranjas y manzanas son iguales.&lt;/p&gt;</description></item></channel></rss>
+perspectiva como desarrolladores de software.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>La diferencia entre concurrencia y paralelismo</title>
+      <link>http://localhost:1313/2019/04/17/la-diferencia-entre-concurrencia-y-paralelismo/</link>
+      <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2019/04/17/la-diferencia-entre-concurrencia-y-paralelismo/</guid>
+      <description>&lt;p&gt;Los términos &lt;strong&gt;concurrencia&lt;/strong&gt; y &lt;strong&gt;paralelismo&lt;/strong&gt; siempre han sido relevantes en el entorno de la computación y desarrollo de software. Hablemos de la diferencia entre ellos y cómo podemos aplicarlos en nuestros programas.
+Son conceptos relacionados, pero decir que uno es el otro es como decir que las naranjas y manzanas son iguales.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
