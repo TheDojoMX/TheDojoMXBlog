@@ -266,8 +266,8 @@ y la complejidad en genral. Veamos algunos consejos para tomar la decisión.
 ### Cuándo NO necesitas una TSDB
 
 - **Volumen bajo**: menos de un millón de puntos en total
-- ~~**Actualizaciones frecuentes**: necesitas modificar valores históricos
-  regularmente (las TSDBs asumen datos inmutables)~~
+- **Actualizaciones frecuentes**: necesitas modificar valores históricos
+  regularmente (las TSDBs asumen datos inmutables)
 - ~~**Relaciones complejas**: tus datos tienen muchas relaciones entre
   entidades que necesitas consultar (JOINs complejos)~~
 - ~~**Transacciones ACID críticas**: necesitas garantías estrictas de
