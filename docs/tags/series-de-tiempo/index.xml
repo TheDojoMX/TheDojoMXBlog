@@ -1,26 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Series-De-Tiempo on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/series-de-tiempo/</link>
-    <description>Recent content in Series-De-Tiempo on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/series-de-tiempo/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Bases de datos para series de tiempo</title>
-      <link>http://localhost:1313/2025/12/29/bases-de-datos-para-series-de-tiempo/</link>
-      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2025/12/29/bases-de-datos-para-series-de-tiempo/</guid>
-      <description>&lt;p&gt;En este artículo hablaremos de las series de tiempo, uno de los tipos de datos más comunes en la informática moderna.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Series-De-Tiempo on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/series-de-tiempo/</link><description>Recent content in Series-De-Tiempo on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/series-de-tiempo/index.xml" rel="self" type="application/rss+xml"/><item><title>Bases de datos para series de tiempo</title><link>https://blog.thedojo.mx/2025/12/29/bases-de-datos-para-series-de-tiempo/</link><pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2025/12/29/bases-de-datos-para-series-de-tiempo/</guid><description>&lt;p&gt;En este artículo hablaremos de las series de tiempo, uno de los tipos de datos más comunes en la informática moderna.&lt;/p&gt;
 &lt;p&gt;La series de tiempo tienen características especiales, en estas los puntos de datos
 consisten un par de valores: un identificador (el momento en el que sucedió) y un valor
-(el valor que se observó).&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+(el valor que se observó).&lt;/p&gt;</description></item></channel></rss>

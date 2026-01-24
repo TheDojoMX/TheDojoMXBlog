@@ -2,10 +2,10 @@
 title: "Bases de datos para series de tiempo"
 date: 2025-12-29
 author: "Héctor Patricio"
-tags: ['series-de-tiempo', 'bases-de-datos', 'data-science', 'tsdb', 'timescaledb', 'prometheus']
+tags: ['series-de-tiempo', 'bases-de-datos', 'data-science', 'tsdb', 'timescaledb']
 description: "¿Qué bases de datos puedes usar para guardar datos generados de manera periódica? Hablemos de por qué es importante escoger la herramienta correcta."
 featuredImage: "https://res.cloudinary.com/hectorip/image/upload/c_scale,w_1400/v1736399971/veri-ivanova-p3Pj7jOYvnM-unsplash_cf1uue.jpg"
-draft: true
+draft: false
 ---
 
 En este artículo hablaremos de las series de tiempo, uno de los tipos de datos más comunes en la informática moderna.
@@ -225,7 +225,7 @@ sistema.
 replicación, extensiones), SQL estándar, fácil migración.
 
 **Desventajas**: requiere tuning manual para obtener el mejor rendimiento,
-la compresión es menor que en TSDBs puras.~~
+la compresión es menor que en TSDBs puras.
 
 ### QuestDB
 
@@ -268,29 +268,26 @@ y la complejidad en genral. Veamos algunos consejos para tomar la decisión.
 - **Volumen bajo**: menos de un millón de puntos en total
 - **Actualizaciones frecuentes**: necesitas modificar valores históricos
   regularmente (las TSDBs asumen datos inmutables)
-- ~~**Relaciones complejas**: tus datos tienen muchas relaciones entre
-  entidades que necesitas consultar (JOINs complejos)~~
-- ~~**Transacciones ACID críticas**: necesitas garantías estrictas de
-  consistencia que las TSDBs sacrifican por rendimiento~~
+- **Relaciones complejas**: tus datos tienen muchas relaciones entre
+  entidades que necesitas consultar (JOINs complejos)
+- **Transacciones ACID críticas**: necesitas garantías estrictas de
+  consistencia que las TSDBs sacrifican por rendimiento
 
 ## Conclusión
 
-La conclusión es sencilla: usa la herramienta adecuada para los datos que tienes que
-almacenar y procesar. Por algo existen herramientas especializadas en tipos de datos
-específicos. Personas con más experiencia se han dado cuenta de la necesidad de crear especializaciones en este tipo de datos.
+Usa la herramienta adecuada para los datos que tienes que
+almacenar y procesar.
 
-~~Si trabajas con métricas de infraestructura, datos de sensores, logs con
+Si trabajas con métricas de infraestructura, datos de sensores, logs con
 timestamps o cualquier dato que se genere continuamente en el tiempo, vale
 la pena evaluar una TSDB. La inversión inicial en aprender una nueva
 herramienta se paga rápidamente con consultas más rápidas, menor uso de
-almacenamiento y menos mantenimiento operativo.~~
+almacenamiento y menos mantenimiento operativo.
 
-~~Mi recomendación para empezar:~~
+Mi recomendación para empezar:
+- **Si ya usas PostgreSQL**: prueba TimescaleDB, la transición es mínima
+- **Si empiezas de cero con IoT o métricas**: InfluxDB tiene buena documentación
+- **Si necesitas máximo rendimiento en escrituras**: evalúa QuestDB
 
-~~- **Si ya usas PostgreSQL**: prueba TimescaleDB, la transición es mínima~~
-~~- **Si usas Kubernetes**: Prometheus + VictoriaMetrics es una combinación probada~~
-~~- **Si empiezas de cero con IoT o métricas**: InfluxDB tiene buena documentación~~
-~~- **Si necesitas máximo rendimiento en escrituras**: evalúa QuestDB~~
-
-~~El mundo de las series de tiempo es amplio, pero estas herramientas te
-darán una base sólida para cualquier proyecto que involucre datos temporales.~~
+El mundo de las series de tiempo es amplio, pero estas herramientas te
+darán una base sólida para cualquier proyecto que involucre datos temporales.
