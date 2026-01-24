@@ -1,47 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Inteligencia-Artificial on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/inteligencia-artificial/</link>
-    <description>Recent content in Inteligencia-Artificial on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Fri, 16 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/inteligencia-artificial/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>¿Qué son los agentes inteligentes?</title>
-      <link>http://localhost:1313/2025/05/16/qu%C3%A9-son-los-agentes-inteligentes/</link>
-      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2025/05/16/qu%C3%A9-son-los-agentes-inteligentes/</guid>
-      <description>&lt;p&gt;Con la llegada de los LLM&amp;rsquo;s, el término &amp;ldquo;agente&amp;rdquo; empezó a ganar más popularidad y
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Inteligencia-Artificial on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/inteligencia-artificial/</link><description>Recent content in Inteligencia-Artificial on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Fri, 16 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/inteligencia-artificial/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué son los agentes inteligentes?</title><link>https://blog.thedojo.mx/2025/05/16/qu%C3%A9-son-los-agentes-inteligentes/</link><pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2025/05/16/qu%C3%A9-son-los-agentes-inteligentes/</guid><description>&lt;p&gt;Con la llegada de los LLM&amp;rsquo;s, el término &amp;ldquo;agente&amp;rdquo; empezó a ganar más popularidad y
 lo oímos por todos lados. En este artículo vamos a hablar de qué son, para entenderlo
-lo mejor posible y no dejarnos llevar por el hype.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>¿Qué es un modelo transformador de inteligencia artificial?</title>
-      <link>http://localhost:1313/2023/02/27/qu%C3%A9-es-un-modelo-transformador-de-inteligencia-artificial/</link>
-      <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2023/02/27/qu%C3%A9-es-un-modelo-transformador-de-inteligencia-artificial/</guid>
-      <description>&lt;p&gt;En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada &lt;em&gt;transformer&lt;/em&gt; o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Ejercicio: programando un perceptrón con Python</title>
-      <link>http://localhost:1313/2023/01/07/ejercicio-programando-un-perceptr%C3%B3n-con-python/</link>
-      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2023/01/07/ejercicio-programando-un-perceptr%C3%B3n-con-python/</guid>
-      <description>&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
+lo mejor posible y no dejarnos llevar por el hype.&lt;/p&gt;</description></item><item><title>¿Qué es un modelo transformador de inteligencia artificial?</title><link>https://blog.thedojo.mx/2023/02/27/qu%C3%A9-es-un-modelo-transformador-de-inteligencia-artificial/</link><pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/02/27/qu%C3%A9-es-un-modelo-transformador-de-inteligencia-artificial/</guid><description>&lt;p&gt;En los últimos años los modelos de inteligencia artificial generativos han avanzado mucho. Esto es en parte gracias a una nueva arquitectura para las redes neuronales llamada &lt;em&gt;transformer&lt;/em&gt; o de transformador, como les llamaremos en este artículo. Hablemos de en qué consiste esta arquitectura y por qué es tan revolucionaria o porque ha ayudado tanto a avanzar en el campo de la inteligencia artificial.&lt;/p&gt;</description></item><item><title>Ejercicio: programando un perceptrón con Python</title><link>https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptr%C3%B3n-con-python/</link><pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/01/07/ejercicio-programando-un-perceptr%C3%B3n-con-python/</guid><description>&lt;p&gt;En este post platicaremos acerca de cómo funciona un perceptrón con un ejemplo de código y las técnicas que utiliza para aproximar una función a partir de datos.&lt;/p&gt;
 &lt;p&gt;Si no tienes claro lo que es un perceptrón, puedes leer nuestro &lt;a
-  href=&#34;http://localhost:1313/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html&#34;&gt;artículo anterior&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar de la manera más sencilla posible.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+href="https://blog.thedojo.mx/2021/03/25/intro-a-machine-learning-entendiendo-perceptron.html"&gt;artículo anterior&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}. Ahí también explicamos las bases de funcionamiento. En este artículo lo vamos a ilustrar de la manera más sencilla posible.&lt;/p&gt;</description></item></channel></rss>

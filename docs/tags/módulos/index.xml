@@ -1,37 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Módulos on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/m%C3%B3dulos/</link>
-    <description>Recent content in Módulos on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Sat, 25 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/m%C3%B3dulos/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Descomponiendo tu aplicación en módulos</title>
-      <link>http://localhost:1313/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/</link>
-      <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/</guid>
-      <description>&lt;p&gt;Hay un dicho que tiene que ver con la guerra que es un gran consejo para crear gran software:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Módulos on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/m%C3%B3dulos/</link><description>Recent content in Módulos on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Sat, 25 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/m%C3%B3dulos/index.xml" rel="self" type="application/rss+xml"/><item><title>Descomponiendo tu aplicación en módulos</title><link>https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/03/25/descomponiendo-tu-aplicaci%C3%B3n-en-m%C3%B3dulos/</guid><description>&lt;p&gt;Hay un dicho que tiene que ver con la guerra que es un gran consejo para crear gran software:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Divide y vencerás&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Dividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de ellas, así como de las técnicas y los criterios que puedes seguir para hacerlo efectivamente. Específicamente, en este artículo vamos a hablar de cómo dividir la aplicación en módulos. Pero antes definamos lo que es un módulo.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>A Philosophy of Software Design: Crea módulos de propósito general</title>
-      <link>http://localhost:1313/2020/04/02/a-philosophy-of-software-design-crea-m%C3%B3dulos-de-prop%C3%B3sito-general/</link>
-      <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/04/02/a-philosophy-of-software-design-crea-m%C3%B3dulos-de-prop%C3%B3sito-general/</guid>
-      <description>&lt;p&gt;Una burla común hacia los programadores es que todo lo queremos hacer &lt;em&gt;demasiado general&lt;/em&gt;. Nos piden una funcionalidad y en ese momento empezamos a pensar en todos los casos en los que podría ser usado en el universo.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Dividir un problema para resolverlo por partes tiene muchas ventajas, en este artículo vamos a hablar de ellas, así como de las técnicas y los criterios que puedes seguir para hacerlo efectivamente. Específicamente, en este artículo vamos a hablar de cómo dividir la aplicación en módulos. Pero antes definamos lo que es un módulo.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Crea módulos de propósito general</title><link>https://blog.thedojo.mx/2020/04/02/a-philosophy-of-software-design-crea-m%C3%B3dulos-de-prop%C3%B3sito-general/</link><pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/04/02/a-philosophy-of-software-design-crea-m%C3%B3dulos-de-prop%C3%B3sito-general/</guid><description>&lt;p&gt;Una burla común hacia los programadores es que todo lo queremos hacer &lt;em&gt;demasiado general&lt;/em&gt;. Nos piden una funcionalidad y en ese momento empezamos a pensar en todos los casos en los que podría ser usado en el universo.&lt;/p&gt;</description></item></channel></rss>

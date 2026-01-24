@@ -1,38 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Domix on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/domix/</link>
-    <description>Recent content in Domix on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/domix/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>No hagas hagas DevOps por convivir</title>
-      <link>http://localhost:1313/2020/09/10/no-hagas-hagas-devops-por-convivir/</link>
-      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/09/10/no-hagas-hagas-devops-por-convivir/</guid>
-      <description>&lt;p&gt;Tuvimos una plática con Domingo Suárez(&lt;a
-  href=&#34;https://twitter.com/domix&#34;
-    target=&#34;_blank&#34;
-  &gt;@domix&lt;/a&gt;) acerca de diferentes temas que le interesan a los desarrolladores.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Domix on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/domix/</link><description>Recent content in Domix on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/domix/index.xml" rel="self" type="application/rss+xml"/><item><title>No hagas hagas DevOps por convivir</title><link>https://blog.thedojo.mx/2020/09/10/no-hagas-hagas-devops-por-convivir/</link><pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/09/10/no-hagas-hagas-devops-por-convivir/</guid><description>&lt;p&gt;Tuvimos una plática con Domingo Suárez(&lt;a
+href="https://twitter.com/domix"
+target="_blank"
+&gt;@domix&lt;/a&gt;) acerca de diferentes temas que le interesan a los desarrolladores.&lt;/p&gt;
 &lt;p&gt;En este artículo te vamos a dar un resumen.&lt;/p&gt;
-
-&lt;h2 class=&#34;relative group&#34;&gt;Cómo nos dejamos influir para adoptar una tecnología
-    &lt;div id=&#34;cómo-nos-dejamos-influir-para-adoptar-una-tecnología&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#c%c3%b3mo-nos-dejamos-influir-para-adoptar-una-tecnolog%c3%ada&#34; aria-label=&#34;Ancla&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
+&lt;h2 class="relative group"&gt;Cómo nos dejamos influir para adoptar una tecnología
+&lt;div id="cómo-nos-dejamos-influir-para-adoptar-una-tecnología" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+&lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#c%c3%b3mo-nos-dejamos-influir-para-adoptar-una-tecnolog%c3%ada" aria-label="Ancla"&gt;#&lt;/a&gt;
+&lt;/span&gt;
 &lt;/h2&gt;
-&lt;p&gt;Lo primero de lo que hablamos es de la forma en que muchas veces adoptamos la tecnología: &lt;strong&gt;por moda&lt;/strong&gt;. A veces es porque alguien con autoridad la mencionó o muchos miembros de la comunidad la están usando. A los desarrolladores nos gustan las cosas &lt;em&gt;brillantes&lt;/em&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Lo primero de lo que hablamos es de la forma en que muchas veces adoptamos la tecnología: &lt;strong&gt;por moda&lt;/strong&gt;. A veces es porque alguien con autoridad la mencionó o muchos miembros de la comunidad la están usando. A los desarrolladores nos gustan las cosas &lt;em&gt;brillantes&lt;/em&gt;.&lt;/p&gt;</description></item></channel></rss>

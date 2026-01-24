@@ -1,72 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Go on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/go/</link>
-    <description>Recent content in Go on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Testing en Go</title>
-      <link>http://localhost:1313/2025/08/19/testing-en-go/</link>
-      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2025/08/19/testing-en-go/</guid>
-      <description>&lt;p&gt;Las pruebas de software son una parte importante de cualquier proyecto que
-queremos que perdure en el tiempo. Los lenguajes modernos, como Go, tienen
-herramientas que te permiten hacer pruebas de forma efectiva y sencilla, sin
-tener que pelearte con instalaciones o configuraciones complejas.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Instrumentando microservicios en Go con Gin y AWS X-Ray</title>
-      <link>http://localhost:1313/2023/04/17/instrumentando-microservicios-en-go-con-gin-y-aws-x-ray/</link>
-      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2023/04/17/instrumentando-microservicios-en-go-con-gin-y-aws-x-ray/</guid>
-      <description>&lt;p&gt;En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Formas de hacer una API con Go</title>
-      <link>http://localhost:1313/2020/09/20/formas-de-hacer-una-api-con-go/</link>
-      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/09/20/formas-de-hacer-una-api-con-go/</guid>
-      <description>&lt;p&gt;Go es uno de los lenguajes modernos más usados. Ya hablamos de &lt;a
-  href=&#34;http://localhost:1313/2019/09/01/por-que-deberias-aprender-go.html&#34;&gt;por qué deberías aprenderlo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Ahora hablemos de un caso de uso práctico: &lt;strong&gt;úsalo para crear una API HTTP&lt;/strong&gt;. En este artículo nos enfocaremos en la parte de comunicación HTTP y la generación de respuestas adecuadas.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>¿Por qué deberías aprender Go?</title>
-      <link>http://localhost:1313/2019/09/01/por-qu%C3%A9-deber%C3%ADas-aprender-go/</link>
-      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2019/09/01/por-qu%C3%A9-deber%C3%ADas-aprender-go/</guid>
-      <description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/go/</link><description>Recent content in Go on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Mon, 17 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/go/index.xml" rel="self" type="application/rss+xml"/><item><title>Instrumentando microservicios en Go con Gin y AWS X-Ray</title><link>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-en-go-con-gin-y-aws-x-ray/</link><pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/04/17/instrumentando-microservicios-en-go-con-gin-y-aws-x-ray/</guid><description>&lt;p&gt;En una arquitectura de microservicios, las operaciones muchas veces abarcan múltiples servicios y recursos tales como gateways, microservicios, balanceadores de carga, bases de datos entre otros. La naturaleza distribuida de los microservicios es lo que hace invaluable la instrumentazión de software.&lt;/p&gt;</description></item><item><title>Formas de hacer una API con Go</title><link>https://blog.thedojo.mx/2020/09/20/formas-de-hacer-una-api-con-go/</link><pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/09/20/formas-de-hacer-una-api-con-go/</guid><description>&lt;p&gt;Go es uno de los lenguajes modernos más usados. Ya hablamos de &lt;a
+href="https://blog.thedojo.mx/2019/09/01/por-que-deberias-aprender-go.html"&gt;por qué deberías aprenderlo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora hablemos de un caso de uso práctico: &lt;strong&gt;úsalo para crear una API HTTP&lt;/strong&gt;. En este artículo nos enfocaremos en la parte de comunicación HTTP y la generación de respuestas adecuadas.&lt;/p&gt;</description></item><item><title>¿Por qué deberías aprender Go?</title><link>https://blog.thedojo.mx/2019/09/01/por-qu%C3%A9-deber%C3%ADas-aprender-go/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/09/01/por-qu%C3%A9-deber%C3%ADas-aprender-go/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;Go es &lt;strong&gt;eficiente, escalable y productivo&lt;/strong&gt;. - &lt;em&gt;Rob Pike&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Go es un lenguaje popular por los rumores que hay acerca de él, como que es el lenguaje que va a matar a C, o que es muy muy rápido y poderoso. En este artículo vamos a hablar de qué cosas son ciertas y en qué casos te conviene aprender Go.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>La diferencia entre concurrencia y paralelismo</title>
-      <link>http://localhost:1313/2019/04/17/la-diferencia-entre-concurrencia-y-paralelismo/</link>
-      <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2019/04/17/la-diferencia-entre-concurrencia-y-paralelismo/</guid>
-      <description>&lt;p&gt;Los términos &lt;strong&gt;concurrencia&lt;/strong&gt; y &lt;strong&gt;paralelismo&lt;/strong&gt; siempre han sido relevantes en el entorno de la computación y desarrollo de software. Hablemos de la diferencia entre ellos y cómo podemos aplicarlos en nuestros programas.
-Son conceptos relacionados, pero decir que uno es el otro es como decir que las naranjas y manzanas son iguales.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Go es un lenguaje popular por los rumores que hay acerca de él, como que es el lenguaje que va a matar a C, o que es muy muy rápido y poderoso. En este artículo vamos a hablar de qué cosas son ciertas y en qué casos te conviene aprender Go.&lt;/p&gt;</description></item><item><title>La diferencia entre concurrencia y paralelismo</title><link>https://blog.thedojo.mx/2019/04/17/la-diferencia-entre-concurrencia-y-paralelismo/</link><pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/04/17/la-diferencia-entre-concurrencia-y-paralelismo/</guid><description>&lt;p&gt;Los términos &lt;strong&gt;concurrencia&lt;/strong&gt; y &lt;strong&gt;paralelismo&lt;/strong&gt; siempre han sido relevantes en el entorno de la computación y desarrollo de software. Hablemos de la diferencia entre ellos y cómo podemos aplicarlos en nuestros programas.
+Son conceptos relacionados, pero decir que uno es el otro es como decir que las naranjas y manzanas son iguales.&lt;/p&gt;</description></item></channel></rss>

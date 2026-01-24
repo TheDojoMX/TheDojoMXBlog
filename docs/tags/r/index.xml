@@ -1,26 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>R on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/r/</link>
-    <description>Recent content in R on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Sat, 22 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/r/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Libros gratuitos para aprender análisis de datos</title>
-      <link>http://localhost:1313/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</link>
-      <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</guid>
-      <description>&lt;p&gt;¿Quieres aprender análisis de datos y ya eres programador? Los siguientes libros pueden ser de gran ayuda. Este post está basado en &lt;a
-  href=&#34;http://bit.ly/2RjPiol&#34;
-    target=&#34;_blank&#34;
-  &gt;un artículo inglés que encontramos&lt;/a&gt;, pero con los recursos que recomienda actualizados y algunos otros de nuestra cosecha.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>R on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/r/</link><description>Recent content in R on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Sat, 22 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/r/index.xml" rel="self" type="application/rss+xml"/><item><title>Libros gratuitos para aprender análisis de datos</title><link>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</link><pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/06/22/libros-gratuitos-para-aprender-an%C3%A1lisis-de-datos/</guid><description>&lt;p&gt;¿Quieres aprender análisis de datos y ya eres programador? Los siguientes libros pueden ser de gran ayuda. Este post está basado en &lt;a
+href="http://bit.ly/2RjPiol"
+target="_blank"
+&gt;un artículo inglés que encontramos&lt;/a&gt;, pero con los recursos que recomienda actualizados y algunos otros de nuestra cosecha.&lt;/p&gt;</description></item></channel></rss>

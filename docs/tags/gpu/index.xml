@@ -1,41 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Gpu on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/gpu/</link>
-    <description>Recent content in Gpu on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/gpu/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>¿Qué es un GPU?</title>
-      <link>http://localhost:1313/2025/12/29/qu%C3%A9-es-un-gpu/</link>
-      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2025/12/29/qu%C3%A9-es-un-gpu/</guid>
-      <description>&lt;p&gt;Si has estado atento a las tendencias de desarrollo de software, te habrás dado
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gpu on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/gpu/</link><description>Recent content in Gpu on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/gpu/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es un GPU?</title><link>https://blog.thedojo.mx/2025/12/29/qu%C3%A9-es-un-gpu/</link><pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2025/12/29/qu%C3%A9-es-un-gpu/</guid><description>&lt;p&gt;Si has estado atento a las tendencias de desarrollo de software, te habrás dado
 cuenta que la computación especializada cada vez está más extendida, sobre todo
 por la proliferación de modelos de machine learning que requieren un montón
 de cómputo. Uno de los elementos de hardware que brilla en esta industria es
 el GPU (Graphics Processing Unit). Hablemos de qué es un GPU desde nuestra
-perspectiva como desarrolladores de software.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Computación de alto rendimiento (HPC) con GPU: mapa del terreno</title>
-      <link>http://localhost:1313/2025/01/15/computaci%C3%B3n-de-alto-rendimiento-hpc-con-gpu-mapa-del-terreno/</link>
-      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2025/01/15/computaci%C3%B3n-de-alto-rendimiento-hpc-con-gpu-mapa-del-terreno/</guid>
-      <description>&lt;p&gt;Este es el primer artículo de una serie en la que hablaremos de &lt;strong&gt;computación de alto
-rendimiento&lt;/strong&gt; (High Perfomance Computing - HPC) usando GPUs, específicamente
-para cargas de trabajo relacionadas con machine learning y data science, algo de
-lo que más aplicación tiene hoy.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+perspectiva como desarrolladores de software.&lt;/p&gt;</description></item></channel></rss>

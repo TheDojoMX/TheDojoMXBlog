@@ -1,146 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Aprendizaje on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/aprendizaje/</link>
-    <description>Recent content in Aprendizaje on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Wed, 24 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/aprendizaje/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Técnicas para aprender eficientemente</title>
-      <link>http://localhost:1313/2024/04/24/t%C3%A9cnicas-para-aprender-eficientemente/</link>
-      <pubDate>Wed, 24 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2024/04/24/t%C3%A9cnicas-para-aprender-eficientemente/</guid>
-      <description>&lt;p&gt;Aprender sobre cosas completamente desconocidas y sobre nuevas tecnologías es
-una de las tareas más comunes que cualquier profesional moderno tiene que
-hacer, pero es particularmente relevante para los desarrolladores de software.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Patrones para aprendices: Cava más hondo</title>
-      <link>http://localhost:1313/2023/01/25/patrones-para-aprendices-cava-m%C3%A1s-hondo/</link>
-      <pubDate>Wed, 25 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2023/01/25/patrones-para-aprendices-cava-m%C3%A1s-hondo/</guid>
-      <description>&lt;p&gt;¿Sientes que sabes un poquito de muchas cosas pero no te sientes con lo confianza de decir que eres experto en algo? Muchos desarrolladores de software sentimos eso, exacerbado por la gran cantidad de herramientas, lenguajes y situaciones que las necesidades del negocio nos impone.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Tomando notas efectivamente: Zettelkasten</title>
-      <link>http://localhost:1313/2022/12/22/tomando-notas-efectivamente-zettelkasten/</link>
-      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2022/12/22/tomando-notas-efectivamente-zettelkasten/</guid>
-      <description>&lt;p&gt;Como desarrolladores de Software, necesitamos tener sistemas efectivos para aprender. Y aunque no seas desarrollador@ de software, muchas profesiones requieren que se esté aprendiendo constantemente, sea nuevos avances en el estado del arte, nuevas tecnologías, nuevas técnicas, o simplemente aprender nuevas áreas para entrar en &lt;strong&gt;&amp;ldquo;pastos más verdes&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>¿Cómo aprender Rust? Recursos para empezar</title>
-      <link>http://localhost:1313/2022/12/18/c%C3%B3mo-aprender-rust-recursos-para-empezar/</link>
-      <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2022/12/18/c%C3%B3mo-aprender-rust-recursos-para-empezar/</guid>
-      <description>&lt;p&gt;En el &lt;a
-  href=&#34;http://localhost:1313/2022/12/13/por-que-aprender-rust.html&#34;&gt;artículo pasado&lt;/a&gt; hablamos
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aprendizaje on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/aprendizaje/</link><description>Recent content in Aprendizaje on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Wed, 25 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/aprendizaje/index.xml" rel="self" type="application/rss+xml"/><item><title>Patrones para aprendices: Cava más hondo</title><link>https://blog.thedojo.mx/2023/01/25/patrones-para-aprendices-cava-m%C3%A1s-hondo/</link><pubDate>Wed, 25 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/01/25/patrones-para-aprendices-cava-m%C3%A1s-hondo/</guid><description>&lt;p&gt;¿Sientes que sabes un poquito de muchas cosas pero no te sientes con lo confianza de decir que eres experto en algo? Muchos desarrolladores de software sentimos eso, exacerbado por la gran cantidad de herramientas, lenguajes y situaciones que las necesidades del negocio nos impone.&lt;/p&gt;</description></item><item><title>Tomando notas efectivamente: Zettelkasten</title><link>https://blog.thedojo.mx/2022/12/22/tomando-notas-efectivamente-zettelkasten/</link><pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/22/tomando-notas-efectivamente-zettelkasten/</guid><description>&lt;p&gt;Como desarrolladores de Software, necesitamos tener sistemas efectivos para aprender. Y aunque no seas desarrollador@ de software, muchas profesiones requieren que se esté aprendiendo constantemente, sea nuevos avances en el estado del arte, nuevas tecnologías, nuevas técnicas, o simplemente aprender nuevas áreas para entrar en &lt;strong&gt;&amp;ldquo;pastos más verdes&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>¿Cómo aprender Rust? Recursos para empezar</title><link>https://blog.thedojo.mx/2022/12/18/c%C3%B3mo-aprender-rust-recursos-para-empezar/</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/18/c%C3%B3mo-aprender-rust-recursos-para-empezar/</guid><description>&lt;p&gt;En el &lt;a
+href="https://blog.thedojo.mx/2022/12/13/por-que-aprender-rust.html"&gt;artículo pasado&lt;/a&gt; hablamos
 de por qué te conviene aprender Rust, un lenguaje moderno, seguro y productivo.
-Ahora hablemos de cómo empezar, primero veamos los recursos en español y sigamos con recursos en inglés.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>¿Por qué aprender Rust en 2023?</title>
-      <link>http://localhost:1313/2022/12/13/por-qu%C3%A9-aprender-rust-en-2023/</link>
-      <pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2022/12/13/por-qu%C3%A9-aprender-rust-en-2023/</guid>
-      <description>&lt;p&gt;Rust se ha establecido como uno de los lenguajes más queridos entre los desarrolladores en los últimos años y desde 2016 está en el número uno, según la encuesta anual de &lt;a
-  href=&#34;https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted&#34;
-    target=&#34;_blank&#34;
-  &gt;Stack Overflow&lt;/a&gt;. Esto no es de extrañar, ya que Rust es un lenguaje que ofrece &lt;strong&gt;muchas cosas buenas&lt;/strong&gt; a aquellos que lo usan.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Aprendiendo desarrollo efectivamente</title>
-      <link>http://localhost:1313/2022/01/03/aprendiendo-desarrollo-efectivamente/</link>
-      <pubDate>Mon, 03 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2022/01/03/aprendiendo-desarrollo-efectivamente/</guid>
-      <description>&lt;p&gt;Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado técnicas para aprender efectivamente, aunque la escuela trata de aprender lo más efectivamente posible.&lt;/p&gt;
-&lt;p&gt;El desarrollo de software es un campo muy amplio en el que tenemos que aprender constantemente, sea por el cambio de las tecnologías, porque tenemos que aprender del área en la que estamos aplicando nuestro conocimiento tecnológico para crear software efectivo o simplemente porque queremos cambiar de área.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Cómo convertirte en un mago programando</title>
-      <link>http://localhost:1313/2021/12/09/c%C3%B3mo-convertirte-en-un-mago-programando/</link>
-      <pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2021/12/09/c%C3%B3mo-convertirte-en-un-mago-programando/</guid>
-      <description>&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a
-  href=&#34;https://www.youtube.com/watch?v=drPMyDyQG8M&#34;
-    target=&#34;_blank&#34;
-  &gt;wizardzine&lt;/a&gt; gratuito &lt;a
-  href=&#34;https://wizardzines.com/zines/wizard/&#34;
-    target=&#34;_blank&#34;
-  &gt;&amp;ldquo;So you want to be a wizard&amp;rdquo;&lt;/a&gt; de &lt;a
-  href=&#34;https://twitter.com/b0rk&#34;
-    target=&#34;_blank&#34;
-  &gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Fuentes no convencionales de aprendizaje</title>
-      <link>http://localhost:1313/2021/06/14/fuentes-no-convencionales-de-aprendizaje/</link>
-      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2021/06/14/fuentes-no-convencionales-de-aprendizaje/</guid>
-      <description>&lt;p&gt;Cada quien tiene su forma de aprender. A algunas personas les funcionan mejor formas visuales y no convencionales. En este artículo te vamos a presentar algunos de los recursos que hemos encontrado que explican ideas y temas relacionados con la programación con un formato no convencional.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Ruta de aprendizaje: Deep Learning</title>
-      <link>http://localhost:1313/2021/03/06/ruta-de-aprendizaje-deep-learning/</link>
-      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2021/03/06/ruta-de-aprendizaje-deep-learning/</guid>
-      <description>&lt;p&gt;Inspirado en el libro &amp;ldquo;Ultralearning&amp;rdquo; de Scott Young, voy hacer un proyecto de aprendizaje de algo que llama mi atención desde hace mucho: Deep Learning y Machine Learning en general. Si no conces el concepto, te invito leer el post aquí: &lt;a
-  href=&#34;http://localhost:1313/2019/08/13/lecciones-sobre-el-aprendizaje-de-manos-de-un-experto.html&#34;&gt;Ultralearning: el arte del aprendizaje profundo&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Cursos certificados gratuitos</title>
-      <link>http://localhost:1313/2020/05/16/cursos-certificados-gratuitos/</link>
-      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/05/16/cursos-certificados-gratuitos/</guid>
-      <description>&lt;p&gt;Debido a la emergencia sanitaria mundial, algunas universidades han liberado cursos
-que además de auditar, puedes cursar para obtener un &lt;strong&gt;certificado&lt;/strong&gt;. Si quieres mejorar un poco tu perfil del LinkedIn aquí te ponemos unos cursos de tecnología que puedes tomar.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Ultralearning: el arte del aprendizaje profundo</title>
-      <link>http://localhost:1313/2019/08/13/ultralearning-el-arte-del-aprendizaje-profundo/</link>
-      <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2019/08/13/ultralearning-el-arte-del-aprendizaje-profundo/</guid>
-      <description>&lt;blockquote&gt;
+Ahora hablemos de cómo empezar, primero veamos los recursos en español y sigamos con recursos en inglés.&lt;/p&gt;</description></item><item><title>¿Por qué aprender Rust en 2023?</title><link>https://blog.thedojo.mx/2022/12/13/por-qu%C3%A9-aprender-rust-en-2023/</link><pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/12/13/por-qu%C3%A9-aprender-rust-en-2023/</guid><description>&lt;p&gt;Rust se ha establecido como uno de los lenguajes más queridos entre los desarrolladores en los últimos años y desde 2016 está en el número uno, según la encuesta anual de &lt;a
+href="https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted"
+target="_blank"
+&gt;Stack Overflow&lt;/a&gt;. Esto no es de extrañar, ya que Rust es un lenguaje que ofrece &lt;strong&gt;muchas cosas buenas&lt;/strong&gt; a aquellos que lo usan.&lt;/p&gt;</description></item><item><title>Aprendiendo desarrollo efectivamente</title><link>https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente/</link><pubDate>Mon, 03 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/01/03/aprendiendo-desarrollo-efectivamente/</guid><description>&lt;p&gt;Desde que comenzamos en la escuela, a muy pocos de nosotros nos han enseñado técnicas para aprender efectivamente, aunque la escuela trata de aprender lo más efectivamente posible.&lt;/p&gt;
+&lt;p&gt;El desarrollo de software es un campo muy amplio en el que tenemos que aprender constantemente, sea por el cambio de las tecnologías, porque tenemos que aprender del área en la que estamos aplicando nuestro conocimiento tecnológico para crear software efectivo o simplemente porque queremos cambiar de área.&lt;/p&gt;</description></item><item><title>Cómo convertirte en un mago programando</title><link>https://blog.thedojo.mx/2021/12/09/c%C3%B3mo-convertirte-en-un-mago-programando/</link><pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/09/c%C3%B3mo-convertirte-en-un-mago-programando/</guid><description>&lt;p&gt;Todos queremos crecer en nuestra carrera de programación y para lograrlo necesitamos adquirir hábitos y técnicas que nos ayudarán a no quedarnos estancados. En este artículo hablaremos de las tres técnicas que me parecen más importantes del &lt;a
+href="https://www.youtube.com/watch?v=drPMyDyQG8M"
+target="_blank"
+&gt;wizardzine&lt;/a&gt; gratuito &lt;a
+href="https://wizardzines.com/zines/wizard/"
+target="_blank"
+&gt;&amp;ldquo;So you want to be a wizard&amp;rdquo;&lt;/a&gt; de &lt;a
+href="https://twitter.com/b0rk"
+target="_blank"
+&gt;Julia Evans&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Fuentes no convencionales de aprendizaje</title><link>https://blog.thedojo.mx/2021/06/14/fuentes-no-convencionales-de-aprendizaje/</link><pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/06/14/fuentes-no-convencionales-de-aprendizaje/</guid><description>&lt;p&gt;Cada quien tiene su forma de aprender. A algunas personas les funcionan mejor formas visuales y no convencionales. En este artículo te vamos a presentar algunos de los recursos que hemos encontrado que explican ideas y temas relacionados con la programación con un formato no convencional.&lt;/p&gt;</description></item><item><title>Ruta de aprendizaje: Deep Learning</title><link>https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning/</link><pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/03/06/ruta-de-aprendizaje-deep-learning/</guid><description>&lt;p&gt;Inspirado en el libro &amp;ldquo;Ultralearning&amp;rdquo; de Scott Young, voy hacer un proyecto de aprendizaje de algo que llama mi atención desde hace mucho: Deep Learning y Machine Learning en general. Si no conces el concepto, te invito leer el post aquí: &lt;a
+href="https://blog.thedojo.mx/2019/08/13/lecciones-sobre-el-aprendizaje-de-manos-de-un-experto.html"&gt;Ultralearning: el arte del aprendizaje profundo&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Cursos certificados gratuitos</title><link>https://blog.thedojo.mx/2020/05/16/cursos-certificados-gratuitos/</link><pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/05/16/cursos-certificados-gratuitos/</guid><description>&lt;p&gt;Debido a la emergencia sanitaria mundial, algunas universidades han liberado cursos
+que además de auditar, puedes cursar para obtener un &lt;strong&gt;certificado&lt;/strong&gt;. Si quieres mejorar un poco tu perfil del LinkedIn aquí te ponemos unos cursos de tecnología que puedes tomar.&lt;/p&gt;</description></item><item><title>Ultralearning: el arte del aprendizaje profundo</title><link>https://blog.thedojo.mx/2019/08/13/ultralearning-el-arte-del-aprendizaje-profundo/</link><pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/08/13/ultralearning-el-arte-del-aprendizaje-profundo/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;¿En qué te convertirías si aprendieras todo lo que deseas?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;¿Cuántas cosas están en tu lista de aprendizaje?&lt;/strong&gt; Todos tenemos una lista larga de temas, habilidades y curiosidades por aprender. Pero tenemos una cantidad igual de grande de obstáculos para lograrlo: la falta de acceso a recursos de aprendizaje, la falta de tiempo, falta de motivación, dificultad en estructura, entre muchas otras cosas.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;&lt;strong&gt;¿Cuántas cosas están en tu lista de aprendizaje?&lt;/strong&gt; Todos tenemos una lista larga de temas, habilidades y curiosidades por aprender. Pero tenemos una cantidad igual de grande de obstáculos para lograrlo: la falta de acceso a recursos de aprendizaje, la falta de tiempo, falta de motivación, dificultad en estructura, entre muchas otras cosas.&lt;/p&gt;</description></item></channel></rss>

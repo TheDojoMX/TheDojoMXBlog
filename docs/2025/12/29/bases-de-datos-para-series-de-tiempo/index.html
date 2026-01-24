@@ -1465,12 +1465,12 @@ hora, día o semana de forma eficiente</li>
 </h3>
 <ul>
 <li><strong>Volumen bajo</strong>: menos de un millón de puntos en total</li>
-<li><del><strong>Actualizaciones frecuentes</strong>: necesitas modificar valores históricos
-regularmente (las TSDBs asumen datos inmutables)</del></li>
-<li><del><strong>Relaciones complejas</strong>: tus datos tienen muchas relaciones entre
-entidades que necesitas consultar (JOINs complejos)</del></li>
-<li><del><strong>Transacciones ACID críticas</strong>: necesitas garantías estrictas de
-consistencia que las TSDBs sacrifican por rendimiento</del></li>
+<li><strong>Actualizaciones frecuentes</strong>: necesitas modificar valores históricos
+regularmente (las TSDBs asumen datos inmutables)</li>
+<li><strong>Relaciones complejas</strong>: tus datos tienen muchas relaciones entre
+entidades que necesitas consultar (JOINs complejos)</li>
+<li><strong>Transacciones ACID críticas</strong>: necesitas garantías estrictas de
+consistencia que las TSDBs sacrifican por rendimiento</li>
 </ul>
 
 <h2 class="relative group">Conclusión
@@ -1485,11 +1485,11 @@ consistencia que las TSDBs sacrifican por rendimiento</del></li>
 <p>La conclusión es sencilla: usa la herramienta adecuada para los datos que tienes que
 almacenar y procesar. Por algo existen herramientas especializadas en tipos de datos
 específicos. Personas con más experiencia se han dado cuenta de la necesidad de crear especializaciones en este tipo de datos.</p>
-<p><del>Si trabajas con métricas de infraestructura, datos de sensores, logs con
+<p>Si trabajas con métricas de infraestructura, datos de sensores, logs con
 timestamps o cualquier dato que se genere continuamente en el tiempo, vale
 la pena evaluar una TSDB. La inversión inicial en aprender una nueva
 herramienta se paga rápidamente con consultas más rápidas, menor uso de
-almacenamiento y menos mantenimiento operativo.</del></p>
+almacenamiento y menos mantenimiento operativo.</p>
 <p><del>Mi recomendación para empezar:</del></p>
 <p><del>- <strong>Si ya usas PostgreSQL</strong>: prueba TimescaleDB, la transición es mínima</del>
 <del>- <strong>Si usas Kubernetes</strong>: Prometheus + VictoriaMetrics es una combinación probada</del>

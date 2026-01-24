@@ -1,99 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Javascript on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/javascript/</link>
-    <description>Recent content in Javascript on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>¿Qué es la programación asíncrona?</title>
-      <link>http://localhost:1313/2024/10/31/qu%C3%A9-es-la-programaci%C3%B3n-as%C3%ADncrona/</link>
-      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2024/10/31/qu%C3%A9-es-la-programaci%C3%B3n-as%C3%ADncrona/</guid>
-      <description>&lt;p&gt;La programación asíncrona es uno de los primeros temas avanzados que encontrarás
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Javascript on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/javascript/</link><description>Recent content in Javascript on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es la programación asíncrona?</title><link>https://blog.thedojo.mx/2024/10/31/qu%C3%A9-es-la-programaci%C3%B3n-as%C3%ADncrona/</link><pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/10/31/qu%C3%A9-es-la-programaci%C3%B3n-as%C3%ADncrona/</guid><description>&lt;p&gt;La programación asíncrona es uno de los primeros temas avanzados que encontrarás
 al programar, especialmente si desarrollas aplicaciones web. Esto es aún más
 común si haces &lt;strong&gt;JavaScript&lt;/strong&gt;, que es un lenguaje que se usa en entornos de
-ejecución asíncronos.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>¿Por qué deberías aprender TypeScript?</title>
-      <link>http://localhost:1313/2021/12/06/por-qu%C3%A9-deber%C3%ADas-aprender-typescript/</link>
-      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2021/12/06/por-qu%C3%A9-deber%C3%ADas-aprender-typescript/</guid>
-      <description>&lt;p&gt;TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>¿Qué es un engine de JavaScript?</title>
-      <link>http://localhost:1313/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</link>
-      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</guid>
-      <description>&lt;p&gt;Me llamó mucho la atención  la salida de &lt;a
-  href=&#34;https://deno.land/v1&#34;
-    target=&#34;_blank&#34;
-  &gt;Deno v1 esta semana&lt;/a&gt; y le quise echar un ojito. Pero desde la explicación que da inicialmente, no entiendo &lt;em&gt;exactamente&lt;/em&gt; lo que es y hace:&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Entendiendo ES6</title>
-      <link>http://localhost:1313/2020/04/27/entendiendo-es6/</link>
-      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/04/27/entendiendo-es6/</guid>
-      <description>&lt;p&gt;Hace tiempo dimos un curso de ES6 o ES2015. Hicimos una investigación acerca de la historia, la nomenclatura, quién lo creo y porque tanta confusión con los nombres.&lt;/p&gt;
-&lt;p&gt;En este video explicamos eso y más: las características principales que se agregaron y la diferencia entre JavaScript y ECMAScript.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Eloquent JavaScript en Español</title>
-      <link>http://localhost:1313/2020/02/21/eloquent-javascript-en-espa%C3%B1ol/</link>
-      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/02/21/eloquent-javascript-en-espa%C3%B1ol/</guid>
-      <description>&lt;blockquote&gt;
+ejecución asíncronos.&lt;/p&gt;</description></item><item><title>¿Por qué deberías aprender TypeScript?</title><link>https://blog.thedojo.mx/2021/12/06/por-qu%C3%A9-deber%C3%ADas-aprender-typescript/</link><pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/06/por-qu%C3%A9-deber%C3%ADas-aprender-typescript/</guid><description>&lt;p&gt;TypeScript es uno de los lenguajes que más ha sonado en los últimos años. En este artículo vamos a hablar de por qué es una buena idea que lo aprendas y las ventajas que te puede dar.&lt;/p&gt;</description></item><item><title>¿Qué es un engine de JavaScript?</title><link>https://blog.thedojo.mx/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</link><pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/05/17/qu%C3%A9-es-un-engine-de-javascript/</guid><description>&lt;p&gt;Me llamó mucho la atención la salida de &lt;a
+href="https://deno.land/v1"
+target="_blank"
+&gt;Deno v1 esta semana&lt;/a&gt; y le quise echar un ojito. Pero desde la explicación que da inicialmente, no entiendo &lt;em&gt;exactamente&lt;/em&gt; lo que es y hace:&lt;/p&gt;</description></item><item><title>Entendiendo ES6</title><link>https://blog.thedojo.mx/2020/04/27/entendiendo-es6/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/04/27/entendiendo-es6/</guid><description>&lt;p&gt;Hace tiempo dimos un curso de ES6 o ES2015. Hicimos una investigación acerca de la historia, la nomenclatura, quién lo creo y porque tanta confusión con los nombres.&lt;/p&gt;
+&lt;p&gt;En este video explicamos eso y más: las características principales que se agregaron y la diferencia entre JavaScript y ECMAScript.&lt;/p&gt;</description></item><item><title>Eloquent JavaScript en Español</title><link>https://blog.thedojo.mx/2020/02/21/eloquent-javascript-en-espa%C3%B1ol/</link><pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/02/21/eloquent-javascript-en-espa%C3%B1ol/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;TL;DR: Estamos trabajando en una nueva traducción de Eloquent JavaScript al español, en su tercera edición. La puedes encontrar aquí: &lt;a
-  href=&#34;https://eloquentjs-es.thedojo.mx/&#34;
-    target=&#34;_blank&#34;
-  &gt;Eloquent JavaScript en Español&lt;/a&gt;. Está la versión en &lt;a
-  href=&#34;https://eloquentjs-es.thedojo.mx/Eloquent_JavaScript.pdf&#34;
-    target=&#34;_blank&#34;
-  &gt;Eloquent JavaScript en Español en PDF&lt;/a&gt;, que actualizamos cada capítulo. Si quieres contribuir puedes ponerte de acuerdo a través de este foro o en GitHub.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Los mejores recursos para aprender programación funcional</title>
-      <link>http://localhost:1313/2019/04/05/los-mejores-recursos-para-aprender-programaci%C3%B3n-funcional/</link>
-      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2019/04/05/los-mejores-recursos-para-aprender-programaci%C3%B3n-funcional/</guid>
-      <description>&lt;p&gt;En &lt;a
-  href=&#34;http://localhost:1313/2019/03/30/que-es-la-programacion-funcional.html&#34;&gt;el articulo anterior&lt;/a&gt; hablamos de la programación funcional y por qué es importante. En este te daremos algunos recursos para que puedas iniciarte en ella.&lt;/p&gt;
-
-&lt;h2 class=&#34;relative group&#34;&gt;Empezando ligero
-    &lt;div id=&#34;empezando-ligero&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#empezando-ligero&#34; aria-label=&#34;Ancla&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
+href="https://eloquentjs-es.thedojo.mx/"
+target="_blank"
+&gt;Eloquent JavaScript en Español&lt;/a&gt;. Está la versión en &lt;a
+href="https://eloquentjs-es.thedojo.mx/Eloquent_JavaScript.pdf"
+target="_blank"
+&gt;Eloquent JavaScript en Español en PDF&lt;/a&gt;, que actualizamos cada capítulo. Si quieres contribuir puedes ponerte de acuerdo a través de este foro o en GitHub.&lt;/p&gt;</description></item><item><title>Los mejores recursos para aprender programación funcional</title><link>https://blog.thedojo.mx/2019/04/05/los-mejores-recursos-para-aprender-programaci%C3%B3n-funcional/</link><pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/04/05/los-mejores-recursos-para-aprender-programaci%C3%B3n-funcional/</guid><description>&lt;p&gt;En &lt;a
+href="https://blog.thedojo.mx/2019/03/30/que-es-la-programacion-funcional.html"&gt;el articulo anterior&lt;/a&gt; hablamos de la programación funcional y por qué es importante. En este te daremos algunos recursos para que puedas iniciarte en ella.&lt;/p&gt;
+&lt;h2 class="relative group"&gt;Empezando ligero
+&lt;div id="empezando-ligero" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+&lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#empezando-ligero" aria-label="Ancla"&gt;#&lt;/a&gt;
+&lt;/span&gt;
 &lt;/h2&gt;
-&lt;p&gt;Empecemos con algunos recursos para entenderla y apreciarla mejor.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Empecemos con algunos recursos para entenderla y apreciarla mejor.&lt;/p&gt;</description></item></channel></rss>

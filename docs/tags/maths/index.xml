@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Maths on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/maths/</link>
-    <description>Recent content in Maths on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Fri, 27 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/maths/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Técnicas para resolver problemas</title>
-      <link>http://localhost:1313/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</link>
-      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</guid>
-      <description>&lt;p&gt;Todos los desarrolladores nos hemos encontrado con problemas que nos dejan perplejos y que no tenemos idea de por dónde empezar a resolver.&lt;/p&gt;
-&lt;p&gt;George Polya fue uno de los matemáticos más prolíficos del Siglo XX, un matemático de primera clase (de esos que descubren e inventan cosas, y para algunos, &lt;strong&gt;el matemático más influyente del siglo&lt;/strong&gt;) pero que, a diferencia de muchos otros, mantenía un interés por la educación y la enseñanza de las matemáticas, algo muy peculiar.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Maths on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/maths/</link><description>Recent content in Maths on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Fri, 27 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/maths/index.xml" rel="self" type="application/rss+xml"/><item><title>Técnicas para resolver problemas</title><link>https://blog.thedojo.mx/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</link><pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</guid><description>&lt;p&gt;Todos los desarrolladores nos hemos encontrado con problemas que nos dejan perplejos y que no tenemos idea de por dónde empezar a resolver.&lt;/p&gt;
+&lt;p&gt;George Polya fue uno de los matemáticos más prolíficos del Siglo XX, un matemático de primera clase (de esos que descubren e inventan cosas, y para algunos, &lt;strong&gt;el matemático más influyente del siglo&lt;/strong&gt;) pero que, a diferencia de muchos otros, mantenía un interés por la educación y la enseñanza de las matemáticas, algo muy peculiar.&lt;/p&gt;</description></item></channel></rss>

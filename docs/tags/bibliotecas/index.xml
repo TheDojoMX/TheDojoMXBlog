@@ -1,29 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Bibliotecas on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/bibliotecas/</link>
-    <description>Recent content in Bibliotecas on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/bibliotecas/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>20 bibliotecas de Python que deberías estar usando</title>
-      <link>http://localhost:1313/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</link>
-      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</guid>
-      <description>&lt;p&gt;El libro &lt;a
-  href=&#34;https://freecomputerbooks.com/20-Python-Libraries%20You-Are-Not-Using-But-Should.html#downloadLinks&#34;
-    target=&#34;_blank&#34;
-  &gt;&amp;ldquo;20 Python Libraries You Aren&amp;rsquo;t Using (But Should)&amp;rdquo;&lt;/a&gt; de &lt;a
-  href=&#34;https://github.com/cjrh&#34;
-    target=&#34;_blank&#34;
-  &gt;Caleb Hattingh&lt;/a&gt; es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bibliotecas on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/bibliotecas/</link><description>Recent content in Bibliotecas on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/bibliotecas/index.xml" rel="self" type="application/rss+xml"/><item><title>20 bibliotecas de Python que deberías estar usando</title><link>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</link><pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/01/20-bibliotecas-de-python-que-deber%C3%ADas-estar-usando/</guid><description>&lt;p&gt;El libro &lt;a
+href="https://freecomputerbooks.com/20-Python-Libraries%20You-Are-Not-Using-But-Should.html#downloadLinks"
+target="_blank"
+&gt;&amp;ldquo;20 Python Libraries You Aren&amp;rsquo;t Using (But Should)&amp;rdquo;&lt;/a&gt; de &lt;a
+href="https://github.com/cjrh"
+target="_blank"
+&gt;Caleb Hattingh&lt;/a&gt; es un lectura corta que recomienda bibliotecas de Python muy útiles que pueden ayudarte a desarrollar software de manera más efectiva y rápida.&lt;/p&gt;</description></item></channel></rss>

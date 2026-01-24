@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Mooc on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/mooc/</link>
-    <description>Recent content in Mooc on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Sat, 16 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/mooc/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Cursos certificados gratuitos</title>
-      <link>http://localhost:1313/2020/05/16/cursos-certificados-gratuitos/</link>
-      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/05/16/cursos-certificados-gratuitos/</guid>
-      <description>&lt;p&gt;Debido a la emergencia sanitaria mundial, algunas universidades han liberado cursos
-que además de auditar, puedes cursar para obtener un &lt;strong&gt;certificado&lt;/strong&gt;. Si quieres mejorar un poco tu perfil del LinkedIn aquí te ponemos unos cursos de tecnología que puedes tomar.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mooc on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/mooc/</link><description>Recent content in Mooc on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Sat, 16 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/mooc/index.xml" rel="self" type="application/rss+xml"/><item><title>Cursos certificados gratuitos</title><link>https://blog.thedojo.mx/2020/05/16/cursos-certificados-gratuitos/</link><pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/05/16/cursos-certificados-gratuitos/</guid><description>&lt;p&gt;Debido a la emergencia sanitaria mundial, algunas universidades han liberado cursos
+que además de auditar, puedes cursar para obtener un &lt;strong&gt;certificado&lt;/strong&gt;. Si quieres mejorar un poco tu perfil del LinkedIn aquí te ponemos unos cursos de tecnología que puedes tomar.&lt;/p&gt;</description></item></channel></rss>

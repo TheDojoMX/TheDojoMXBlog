@@ -1,72 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Polya on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/polya/</link>
-    <description>Recent content in Polya on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/polya/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Algunas ideas sobre la resolución de problemas</title>
-      <link>http://localhost:1313/2020/10/04/algunas-ideas-sobre-la-resoluci%C3%B3n-de-problemas/</link>
-      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/10/04/algunas-ideas-sobre-la-resoluci%C3%B3n-de-problemas/</guid>
-      <description>&lt;p&gt;En este artículo veremos algunas de las ideas que George Polya presenta en su libro &lt;a
-  href=&#34;https://amzn.to/33qfw07&#34;
-    target=&#34;_blank&#34;
-  &gt;How to Solve It&lt;/a&gt; sobre la resolución de problemas.&lt;/p&gt;
-&lt;p&gt;Estas ideas son sacadas del apartado &amp;ldquo;Aforismos y citas&amp;rdquo;, esperemos que pueda ayudar mejorar tus habilidades de resolución de problemas o que te saque del bache si te encuentras en uno.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Inducción y Deducción para desarrolladores de software</title>
-      <link>http://localhost:1313/2019/12/14/inducci%C3%B3n-y-deducci%C3%B3n-para-desarrolladores-de-software/</link>
-      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2019/12/14/inducci%C3%B3n-y-deducci%C3%B3n-para-desarrolladores-de-software/</guid>
-      <description>&lt;p&gt;Este es el tercer artículo acerca del libro &lt;a
-  href=&#34;https://amzn.to/2P8HJA8&#34;
-    target=&#34;_blank&#34;
-  &gt;&amp;ldquo;How to Solve It&amp;rdquo;&lt;/a&gt; de George Polya. Puedes ver los dos artículos anteriores aquí:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Polya on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/polya/</link><description>Recent content in Polya on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/polya/index.xml" rel="self" type="application/rss+xml"/><item><title>Algunas ideas sobre la resolución de problemas</title><link>https://blog.thedojo.mx/2020/10/04/algunas-ideas-sobre-la-resoluci%C3%B3n-de-problemas/</link><pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/10/04/algunas-ideas-sobre-la-resoluci%C3%B3n-de-problemas/</guid><description>&lt;p&gt;En este artículo veremos algunas de las ideas que George Polya presenta en su libro &lt;a
+href="https://amzn.to/33qfw07"
+target="_blank"
+&gt;How to Solve It&lt;/a&gt; sobre la resolución de problemas.&lt;/p&gt;
+&lt;p&gt;Estas ideas son sacadas del apartado &amp;ldquo;Aforismos y citas&amp;rdquo;, esperemos que pueda ayudar mejorar tus habilidades de resolución de problemas o que te saque del bache si te encuentras en uno.&lt;/p&gt;</description></item><item><title>Inducción y Deducción para desarrolladores de software</title><link>https://blog.thedojo.mx/2019/12/14/inducci%C3%B3n-y-deducci%C3%B3n-para-desarrolladores-de-software/</link><pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/12/14/inducci%C3%B3n-y-deducci%C3%B3n-para-desarrolladores-de-software/</guid><description>&lt;p&gt;Este es el tercer artículo acerca del libro &lt;a
+href="https://amzn.to/2P8HJA8"
+target="_blank"
+&gt;&amp;ldquo;How to Solve It&amp;rdquo;&lt;/a&gt; de George Polya. Puedes ver los dos artículos anteriores aquí:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a
-  href=&#34;http://localhost:1313/2019/09/27/tecnicas-para-resolver-problemas.html&#34;&gt;Técnicas para resolver problemas&lt;/a&gt;&lt;/li&gt;
+href="https://blog.thedojo.mx/2019/09/27/tecnicas-para-resolver-problemas.html"&gt;Técnicas para resolver problemas&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a
-  href=&#34;http://localhost:1313/2019/10/03/el-arte-de-resolver-problemas-la-heuristica.html&#34;&gt;Heurística&lt;/a&gt;&lt;/li&gt;
+href="https://blog.thedojo.mx/2019/10/03/el-arte-de-resolver-problemas-la-heuristica.html"&gt;Heurística&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Con este artículo cerraremos con las ideas que George Polya desarrolló para resolver problemas.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>El arte de resolver problemas: la heurística</title>
-      <link>http://localhost:1313/2019/10/03/el-arte-de-resolver-problemas-la-heur%C3%ADstica/</link>
-      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2019/10/03/el-arte-de-resolver-problemas-la-heur%C3%ADstica/</guid>
-      <description>&lt;blockquote&gt;
+&lt;p&gt;Con este artículo cerraremos con las ideas que George Polya desarrolló para resolver problemas.&lt;/p&gt;</description></item><item><title>El arte de resolver problemas: la heurística</title><link>https://blog.thedojo.mx/2019/10/03/el-arte-de-resolver-problemas-la-heur%C3%ADstica/</link><pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/10/03/el-arte-de-resolver-problemas-la-heur%C3%ADstica/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;La heurística habla del &lt;strong&gt;comportamiento humano&lt;/strong&gt; frente a los problemas. - George Polya&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;En un &lt;a
-  href=&#34;http://localhost:1313/2019/09/27/tecnicas-para-resolver-problemas.html&#34;&gt;artículo anterior&lt;/a&gt; analizamos la estructura básica de un problema y la estructura de resolución que George Polya propone para intentar resolverlos.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Técnicas para resolver problemas</title>
-      <link>http://localhost:1313/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</link>
-      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</guid>
-      <description>&lt;p&gt;Todos los desarrolladores nos hemos encontrado con problemas que nos dejan perplejos y que no tenemos idea de por dónde empezar a resolver.&lt;/p&gt;
-&lt;p&gt;George Polya fue uno de los matemáticos más prolíficos del Siglo XX, un matemático de primera clase (de esos que descubren e inventan cosas, y para algunos, &lt;strong&gt;el matemático más influyente del siglo&lt;/strong&gt;) pero que, a diferencia de muchos otros, mantenía un interés por la educación y la enseñanza de las matemáticas, algo muy peculiar.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+href="https://blog.thedojo.mx/2019/09/27/tecnicas-para-resolver-problemas.html"&gt;artículo anterior&lt;/a&gt; analizamos la estructura básica de un problema y la estructura de resolución que George Polya propone para intentar resolverlos.&lt;/p&gt;</description></item><item><title>Técnicas para resolver problemas</title><link>https://blog.thedojo.mx/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</link><pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/09/27/t%C3%A9cnicas-para-resolver-problemas/</guid><description>&lt;p&gt;Todos los desarrolladores nos hemos encontrado con problemas que nos dejan perplejos y que no tenemos idea de por dónde empezar a resolver.&lt;/p&gt;
+&lt;p&gt;George Polya fue uno de los matemáticos más prolíficos del Siglo XX, un matemático de primera clase (de esos que descubren e inventan cosas, y para algunos, &lt;strong&gt;el matemático más influyente del siglo&lt;/strong&gt;) pero que, a diferencia de muchos otros, mantenía un interés por la educación y la enseñanza de las matemáticas, algo muy peculiar.&lt;/p&gt;</description></item></channel></rss>

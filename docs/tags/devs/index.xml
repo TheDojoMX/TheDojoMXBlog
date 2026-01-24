@@ -1,29 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Devs on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/devs/</link>
-    <description>Recent content in Devs on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Wed, 14 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/devs/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Desarrolladores de los que puedes aprender: Russ Olsen</title>
-      <link>http://localhost:1313/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen/</link>
-      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen/</guid>
-      <description>&lt;p&gt;En este capítulo vamos a Hablar de &lt;a
-  href=&#34;http://russolsen.com/&#34;
-    target=&#34;_blank&#34;
-  &gt;Russ Olsen&lt;/a&gt;, un desarrollador ahora de &lt;a
-  href=&#34;https://clojure.org/&#34;
-    target=&#34;_blank&#34;
-  &gt;Clojure&lt;/a&gt;, pero bastante reconocido en el mundo de Ruby. Ha escrito varios libros y contribuye activamente a la comunidad mediante podcasts, presentaciones y charlas.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Devs on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/devs/</link><description>Recent content in Devs on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Wed, 14 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/devs/index.xml" rel="self" type="application/rss+xml"/><item><title>Desarrolladores de los que puedes aprender: Russ Olsen</title><link>https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen/</link><pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/07/14/desarrolladores-de-los-que-puedes-aprender-russ-olsen/</guid><description>&lt;p&gt;En este capítulo vamos a Hablar de &lt;a
+href="http://russolsen.com/"
+target="_blank"
+&gt;Russ Olsen&lt;/a&gt;, un desarrollador ahora de &lt;a
+href="https://clojure.org/"
+target="_blank"
+&gt;Clojure&lt;/a&gt;, pero bastante reconocido en el mundo de Ruby. Ha escrito varios libros y contribuye activamente a la comunidad mediante podcasts, presentaciones y charlas.&lt;/p&gt;</description></item></channel></rss>

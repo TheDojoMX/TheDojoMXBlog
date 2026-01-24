@@ -1,30 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Decisiones-Técnicas on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/decisiones-t%C3%A9cnicas/</link>
-    <description>Recent content in Decisiones-Técnicas on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Wed, 11 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/decisiones-t%C3%A9cnicas/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Guía para escoger tu stack: por qué deberías escoger tecnología aburrida</title>
-      <link>http://localhost:1313/2020/03/11/gu%C3%ADa-para-escoger-tu-stack-por-qu%C3%A9-deber%C3%ADas-escoger-tecnolog%C3%ADa-aburrida/</link>
-      <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/03/11/gu%C3%ADa-para-escoger-tu-stack-por-qu%C3%A9-deber%C3%ADas-escoger-tecnolog%C3%ADa-aburrida/</guid>
-      <description>&lt;p&gt;Este artículo está basado en la presentación &lt;a
-  href=&#34;http://boringtechnology.club&#34;
-    target=&#34;_blank&#34;
-  &gt;Choose Boring Technology&lt;/a&gt; de &lt;a
-  href=&#34;https://mcfunley.com/&#34;
-    target=&#34;_blank&#34;
-  &gt;Dan McKinley&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;No hay nada que haga más feliz a un desarrollador que trabajar con el último de los frameworks, lenguaje de programación o herramienta que salió el mes pasado.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Decisiones-Técnicas on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/decisiones-t%C3%A9cnicas/</link><description>Recent content in Decisiones-Técnicas on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Wed, 11 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/decisiones-t%C3%A9cnicas/index.xml" rel="self" type="application/rss+xml"/><item><title>Guía para escoger tu stack: por qué deberías escoger tecnología aburrida</title><link>https://blog.thedojo.mx/2020/03/11/gu%C3%ADa-para-escoger-tu-stack-por-qu%C3%A9-deber%C3%ADas-escoger-tecnolog%C3%ADa-aburrida/</link><pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/03/11/gu%C3%ADa-para-escoger-tu-stack-por-qu%C3%A9-deber%C3%ADas-escoger-tecnolog%C3%ADa-aburrida/</guid><description>&lt;p&gt;Este artículo está basado en la presentación &lt;a
+href="http://boringtechnology.club"
+target="_blank"
+&gt;Choose Boring Technology&lt;/a&gt; de &lt;a
+href="https://mcfunley.com/"
+target="_blank"
+&gt;Dan McKinley&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;No hay nada que haga más feliz a un desarrollador que trabajar con el último de los frameworks, lenguaje de programación o herramienta que salió el mes pasado.&lt;/p&gt;</description></item></channel></rss>

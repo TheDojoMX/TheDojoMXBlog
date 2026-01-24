@@ -1,46 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posd on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/posd/</link>
-    <description>Recent content in Posd on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/posd/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Consistencia en el código</title>
-      <link>http://localhost:1313/2022/06/02/consistencia-en-el-c%C3%B3digo/</link>
-      <pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2022/06/02/consistencia-en-el-c%C3%B3digo/</guid>
-      <description>&lt;p&gt;Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en &amp;ldquo;A Philosophy of Software Design&amp;rdquo;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>A Philosophy of Software Design: Los módulos deben ser profundos</title>
-      <link>http://localhost:1313/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</guid>
-      <description>&lt;p&gt;Para reducir la complejidad de los programas es importante tener técnicas definidas. La primera que vamos a analizar es la organización y separación de código a alto nivel, es decir separación en módulos.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>A Philosophy of Software Design: Tres formas de identificar la complejidad</title>
-      <link>http://localhost:1313/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</link>
-      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</guid>
-      <description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posd on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/posd/</link><description>Recent content in Posd on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/posd/index.xml" rel="self" type="application/rss+xml"/><item><title>Consistencia en el código</title><link>https://blog.thedojo.mx/2022/06/02/consistencia-en-el-c%C3%B3digo/</link><pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2022/06/02/consistencia-en-el-c%C3%B3digo/</guid><description>&lt;p&gt;Una de las mejores formas de ayudar a que tu código sea fácil de mantener es hacer que el estilo tanto de formateo como de programación en general sea consistente. Analicemos este concepto que se menciona en &amp;ldquo;A Philosophy of Software Design&amp;rdquo;.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Los módulos deben ser profundos</title><link>https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</link><pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-m%C3%B3dulos-deben-ser-profundos/</guid><description>&lt;p&gt;Para reducir la complejidad de los programas es importante tener técnicas definidas. La primera que vamos a analizar es la organización y separación de código a alto nivel, es decir separación en módulos.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Tres formas de identificar la complejidad</title><link>https://blog.thedojo.mx/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</link><pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/02/26/a-philosophy-of-software-design-tres-formas-de-identificar-la-complejidad/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;Controlar la complejidad es la esencia de la programación&amp;rdquo; - Brian W. Kernighan&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Muchas mentes brillantes dedicadas al desarrollo de software han estado de acuerdo en que el principal problema al crear y mantener programas es el manejo de la complejidad.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Muchas mentes brillantes dedicadas al desarrollo de software han estado de acuerdo en que el principal problema al crear y mantener programas es el manejo de la complejidad.&lt;/p&gt;</description></item></channel></rss>

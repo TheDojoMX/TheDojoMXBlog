@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Es6 on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/es6/</link>
-    <description>Recent content in Es6 on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Mon, 27 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/es6/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Entendiendo ES6</title>
-      <link>http://localhost:1313/2020/04/27/entendiendo-es6/</link>
-      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/04/27/entendiendo-es6/</guid>
-      <description>&lt;p&gt;Hace tiempo dimos un curso de ES6 o ES2015. Hicimos una investigación acerca de la historia, la nomenclatura, quién lo creo y porque tanta confusión con los nombres.&lt;/p&gt;
-&lt;p&gt;En este video explicamos eso y más: las características principales que se agregaron y la diferencia entre JavaScript y ECMAScript.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Es6 on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/es6/</link><description>Recent content in Es6 on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Mon, 27 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/es6/index.xml" rel="self" type="application/rss+xml"/><item><title>Entendiendo ES6</title><link>https://blog.thedojo.mx/2020/04/27/entendiendo-es6/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/04/27/entendiendo-es6/</guid><description>&lt;p&gt;Hace tiempo dimos un curso de ES6 o ES2015. Hicimos una investigación acerca de la historia, la nomenclatura, quién lo creo y porque tanta confusión con los nombres.&lt;/p&gt;
+&lt;p&gt;En este video explicamos eso y más: las características principales que se agregaron y la diferencia entre JavaScript y ECMAScript.&lt;/p&gt;</description></item></channel></rss>

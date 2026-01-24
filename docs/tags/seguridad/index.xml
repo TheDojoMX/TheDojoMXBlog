@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Seguridad on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/seguridad/</link>
-    <description>Recent content in Seguridad on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Tue, 12 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/seguridad/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Criptografía básica para programadores: ¿Qué es la criptografía?</title>
-      <link>http://localhost:1313/2019/11/12/criptograf%C3%ADa-b%C3%A1sica-para-programadores-qu%C3%A9-es-la-criptograf%C3%ADa/</link>
-      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2019/11/12/criptograf%C3%ADa-b%C3%A1sica-para-programadores-qu%C3%A9-es-la-criptograf%C3%ADa/</guid>
-      <description>&lt;p&gt;Es muy común escuchar de &amp;ldquo;encriptación&amp;rdquo; (la palabra correcta en español es &lt;em&gt;cifrado&lt;/em&gt;), llaves, algoritmos criptográficos y cosas parecidas, sobre todo con el surgimiento de Bitcoin y Blockchain.&lt;/p&gt;
-&lt;p&gt;Uno de los temas menos tratados por programadores de software común (para usuarios y sistemas que no impliquen el uso de seguridad a medida), es el correcto uso de los algoritmos criptográficos y muchas veces ni siquiera conocemos lo suficiente de ellos, sino que confiamos en lo que las herramientas pre-establecen (que gran parte de las veces fue diseñado por expertos y eso está bien).&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Seguridad on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/seguridad/</link><description>Recent content in Seguridad on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Tue, 12 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/seguridad/index.xml" rel="self" type="application/rss+xml"/><item><title>Criptografía básica para programadores: ¿Qué es la criptografía?</title><link>https://blog.thedojo.mx/2019/11/12/criptograf%C3%ADa-b%C3%A1sica-para-programadores-qu%C3%A9-es-la-criptograf%C3%ADa/</link><pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2019/11/12/criptograf%C3%ADa-b%C3%A1sica-para-programadores-qu%C3%A9-es-la-criptograf%C3%ADa/</guid><description>&lt;p&gt;Es muy común escuchar de &amp;ldquo;encriptación&amp;rdquo; (la palabra correcta en español es &lt;em&gt;cifrado&lt;/em&gt;), llaves, algoritmos criptográficos y cosas parecidas, sobre todo con el surgimiento de Bitcoin y Blockchain.&lt;/p&gt;
+&lt;p&gt;Uno de los temas menos tratados por programadores de software común (para usuarios y sistemas que no impliquen el uso de seguridad a medida), es el correcto uso de los algoritmos criptográficos y muchas veces ni siquiera conocemos lo suficiente de ellos, sino que confiamos en lo que las herramientas pre-establecen (que gran parte de las veces fue diseñado por expertos y eso está bien).&lt;/p&gt;</description></item></channel></rss>

@@ -1,49 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>AI on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/ai/</link>
-    <description>Recent content in AI on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>¿Cómo funciona TensorFlow?</title>
-      <link>http://localhost:1313/2024/09/16/c%C3%B3mo-funciona-tensorflow/</link>
-      <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2024/09/16/c%C3%B3mo-funciona-tensorflow/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;TensorFlow&lt;/strong&gt; es una de las herramientas más populares e influyentes
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/ai/</link><description>Recent content in AI on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Cómo funciona TensorFlow?</title><link>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</link><pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/09/16/c%C3%B3mo-funciona-tensorflow/</guid><description>&lt;p&gt;&lt;strong&gt;TensorFlow&lt;/strong&gt; es una de las herramientas más populares e influyentes
 en el campo de la del aprendizaje automático. En este artículo vamos a ver
-qué es exactamente y cómo funciona.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>¿Qué son los modelos generativos?</title>
-      <link>http://localhost:1313/2020/12/30/qu%C3%A9-son-los-modelos-generativos/</link>
-      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/12/30/qu%C3%A9-son-los-modelos-generativos/</guid>
-      <description>&lt;p&gt;Los modelos generativos permiten a una máquina &amp;ldquo;aprender&amp;rdquo; los patrones que existen en los datos con los que son entrenadas y a partir de dicho aprendizaje, son capaces de &lt;strong&gt;generar datos similares&lt;/strong&gt; que en algunos casos pueden ser casi tan &amp;ldquo;reales&amp;rdquo; como los que se utilizaron inicialmente para su entrenamiento.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Traducción automática: API&#39;s vs tu propio modelo</title>
-      <link>http://localhost:1313/2020/07/22/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</link>
-      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/07/22/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</guid>
-      <description>&lt;p&gt;Traducir texto es una tarea frecuente y que puede realizarse de diferentes maneras, en este artículo queremos explorar algunas de ellas.&lt;/p&gt;
+qué es exactamente y cómo funciona.&lt;/p&gt;</description></item><item><title>¿Qué son los modelos generativos?</title><link>https://blog.thedojo.mx/2020/12/30/qu%C3%A9-son-los-modelos-generativos/</link><pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/12/30/qu%C3%A9-son-los-modelos-generativos/</guid><description>&lt;p&gt;Los modelos generativos permiten a una máquina &amp;ldquo;aprender&amp;rdquo; los patrones que existen en los datos con los que son entrenadas y a partir de dicho aprendizaje, son capaces de &lt;strong&gt;generar datos similares&lt;/strong&gt; que en algunos casos pueden ser casi tan &amp;ldquo;reales&amp;rdquo; como los que se utilizaron inicialmente para su entrenamiento.&lt;/p&gt;</description></item><item><title>Traducción automática: API's vs tu propio modelo</title><link>https://blog.thedojo.mx/2020/07/22/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</link><pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/07/22/traducci%C3%B3n-autom%C3%A1tica-apis-vs-tu-propio-modelo/</guid><description>&lt;p&gt;Traducir texto es una tarea frecuente y que puede realizarse de diferentes maneras, en este artículo queremos explorar algunas de ellas.&lt;/p&gt;
 &lt;p&gt;Existen sitios donde la traducción puede hacerse en línea, como en &lt;a
-  href=&#34;https://translate.google.com.mx/?hl=es&#34;
-    target=&#34;_blank&#34;
-  &gt;Google Translate&lt;/a&gt;, sin embargo, en muchos casos existe un límite en la cantidad de texto que puedes traducir.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+href="https://translate.google.com.mx/?hl=es"
+target="_blank"
+&gt;Google Translate&lt;/a&gt;, sin embargo, en muchos casos existe un límite en la cantidad de texto que puedes traducir.&lt;/p&gt;</description></item></channel></rss>

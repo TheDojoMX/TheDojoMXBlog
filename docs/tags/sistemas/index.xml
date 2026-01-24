@@ -1,28 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Sistemas on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/sistemas/</link>
-    <description>Recent content in Sistemas on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/sistemas/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Debes leer &#39;Thinking in Systems</title>
-      <link>http://localhost:1313/2025/05/15/debes-leer-thinking-in-systems/</link>
-      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2025/05/15/debes-leer-thinking-in-systems/</guid>
-      <description>&lt;p&gt;El libro &amp;ldquo;Thinking in Systems&amp;rdquo; de &lt;a
-  href=&#34;https://en.wikipedia.org/wiki/Donella_H._Meadows&#34;
-    target=&#34;_blank&#34;
-  &gt;Donella Hager Meadows&lt;/a&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sistemas on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/sistemas/</link><description>Recent content in Sistemas on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/sistemas/index.xml" rel="self" type="application/rss+xml"/><item><title>Debes leer 'Thinking in Systems</title><link>https://blog.thedojo.mx/2025/05/15/debes-leer-thinking-in-systems/</link><pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2025/05/15/debes-leer-thinking-in-systems/</guid><description>&lt;p&gt;El libro &amp;ldquo;Thinking in Systems&amp;rdquo; de &lt;a
+href="https://en.wikipedia.org/wiki/Donella_H._Meadows"
+target="_blank"
+&gt;Donella Hager Meadows&lt;/a&gt;
 es un libro muy importante para cualquier desarrollador de software. ¿Por qué? Los desarrolladores nos dedicamos
-a hacer &lt;em&gt;sistemas&lt;/em&gt;, y este es justo el tema principal del libro, escrito por una experta en sistemas complejos.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+a hacer &lt;em&gt;sistemas&lt;/em&gt;, y este es justo el tema principal del libro, escrito por una experta en sistemas complejos.&lt;/p&gt;</description></item></channel></rss>

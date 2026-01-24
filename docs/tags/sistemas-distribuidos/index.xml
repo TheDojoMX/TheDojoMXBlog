@@ -1,36 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Sistemas-Distribuidos on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/sistemas-distribuidos/</link>
-    <description>Recent content in Sistemas-Distribuidos on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/sistemas-distribuidos/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Desarrolladores que deberías admirar: Martin Kleppmann</title>
-      <link>http://localhost:1313/2024/10/20/desarrolladores-que-deber%C3%ADas-admirar-martin-kleppmann/</link>
-      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2024/10/20/desarrolladores-que-deber%C3%ADas-admirar-martin-kleppmann/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Martin Kleppmann&lt;/strong&gt; es un desarrollador de software, investigador y profesor muy prolífico.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sistemas-Distribuidos on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/sistemas-distribuidos/</link><description>Recent content in Sistemas-Distribuidos on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/sistemas-distribuidos/index.xml" rel="self" type="application/rss+xml"/><item><title>Desarrolladores que deberías admirar: Martin Kleppmann</title><link>https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deber%C3%ADas-admirar-martin-kleppmann/</link><pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2024/10/20/desarrolladores-que-deber%C3%ADas-admirar-martin-kleppmann/</guid><description>&lt;p&gt;&lt;strong&gt;Martin Kleppmann&lt;/strong&gt; es un desarrollador de software, investigador y profesor muy prolífico.
 Hablemos de su trabajo, ideas y de por qué es alguien que podrías admirar.&lt;/p&gt;
-
-&lt;h2 class=&#34;relative group&#34;&gt;Su carrera
-    &lt;div id=&#34;su-carrera&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#su-carrera&#34; aria-label=&#34;Ancla&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
+&lt;h2 class="relative group"&gt;Su carrera
+&lt;div id="su-carrera" class="anchor"&gt;&lt;/div&gt;
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+&lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#su-carrera" aria-label="Ancla"&gt;#&lt;/a&gt;
+&lt;/span&gt;
 &lt;/h2&gt;
 &lt;p&gt;Martin ha desarrollado su carrera e investigación alrededor del software deTambién trabaja en seguridad de sistemas distribuidos, un tema relacionado al anterior,
-pero digamos que para temas de mayor escala.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+pero digamos que para temas de mayor escala.&lt;/p&gt;</description></item></channel></rss>

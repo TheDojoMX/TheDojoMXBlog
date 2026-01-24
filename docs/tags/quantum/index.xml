@@ -1,26 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Quantum on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/quantum/</link>
-    <description>Recent content in Quantum on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Sat, 11 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/quantum/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Criptografía VS computación cuántica</title>
-      <link>http://localhost:1313/2021/12/11/criptograf%C3%ADa-vs-computaci%C3%B3n-cu%C3%A1ntica/</link>
-      <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2021/12/11/criptograf%C3%ADa-vs-computaci%C3%B3n-cu%C3%A1ntica/</guid>
-      <description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quantum on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/quantum/</link><description>Recent content in Quantum on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Sat, 11 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/quantum/index.xml" rel="self" type="application/rss+xml"/><item><title>Criptografía VS computación cuántica</title><link>https://blog.thedojo.mx/2021/12/11/criptograf%C3%ADa-vs-computaci%C3%B3n-cu%C3%A1ntica/</link><pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2021/12/11/criptograf%C3%ADa-vs-computaci%C3%B3n-cu%C3%A1ntica/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;“If you are not completely confused by quantum mechanics, you do not understand it.” - Richard Feynman&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;La computación cuántica es una tecnología muy prometedora que lleva &lt;em&gt;décadas&lt;/em&gt; en gestación y cada vez la vemos más cerca. Una de las cosas que más llama la atención es la capacidad de cómputo que las computadoras cuánticas pueden tener, en este artículo aclararemos de qué se trata todo esto y &lt;strong&gt;cómo se relaciona con la criptografía&lt;/strong&gt;, uno de los campos más afectados.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;La computación cuántica es una tecnología muy prometedora que lleva &lt;em&gt;décadas&lt;/em&gt; en gestación y cada vez la vemos más cerca. Una de las cosas que más llama la atención es la capacidad de cómputo que las computadoras cuánticas pueden tener, en este artículo aclararemos de qué se trata todo esto y &lt;strong&gt;cómo se relaciona con la criptografía&lt;/strong&gt;, uno de los campos más afectados.&lt;/p&gt;</description></item></channel></rss>

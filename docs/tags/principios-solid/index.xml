@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Principios-Solid on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/principios-solid/</link>
-    <description>Recent content in Principios-Solid on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Sat, 01 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/principios-solid/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>El principio de segregación de Interfaces</title>
-      <link>http://localhost:1313/2023/04/01/el-principio-de-segregaci%C3%B3n-de-interfaces/</link>
-      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2023/04/01/el-principio-de-segregaci%C3%B3n-de-interfaces/</guid>
-      <description>&lt;p&gt;Continuemos con el estudio de los principios SOLID. En esta ocasión hablaremos del cuarto principio: El principio de segregación de interfaces.&lt;/p&gt;
-&lt;p&gt;Recuerda que el objetivo de estos artículos &lt;strong&gt;no es explicártelos como si fueran una religión que estás mal si no sigues&lt;/strong&gt;, sino analizarlos bajo una luz crítica y decidir si de verdad son útiles o podemos usar otro principio.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Principios-Solid on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/principios-solid/</link><description>Recent content in Principios-Solid on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Sat, 01 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/principios-solid/index.xml" rel="self" type="application/rss+xml"/><item><title>El principio de segregación de Interfaces</title><link>https://blog.thedojo.mx/2023/04/01/el-principio-de-segregaci%C3%B3n-de-interfaces/</link><pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/04/01/el-principio-de-segregaci%C3%B3n-de-interfaces/</guid><description>&lt;p&gt;Continuemos con el estudio de los principios SOLID. En esta ocasión hablaremos del cuarto principio: El principio de segregación de interfaces.&lt;/p&gt;
+&lt;p&gt;Recuerda que el objetivo de estos artículos &lt;strong&gt;no es explicártelos como si fueran una religión que estás mal si no sigues&lt;/strong&gt;, sino analizarlos bajo una luz crítica y decidir si de verdad son útiles o podemos usar otro principio.&lt;/p&gt;</description></item></channel></rss>

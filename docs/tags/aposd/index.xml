@@ -1,94 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Aposd on The Dojo MX Blog</title>
-    <link>http://localhost:1313/tags/aposd/</link>
-    <description>Recent content in Aposd on The Dojo MX Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Fri, 07 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/aposd/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Cuando separar el código</title>
-      <link>http://localhost:1313/2023/04/07/cuando-separar-el-c%C3%B3digo/</link>
-      <pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2023/04/07/cuando-separar-el-c%C3%B3digo/</guid>
-      <description>&lt;p&gt;Hay quienes afirman que mientras más pequeñas sean tus clases o funciones, mejor. Hasta llegan a poner un límite de la líneas que pueden ir en un método o función. Esto crea código súper fragmentado que llega a ser complejo por el simple hecho de tener muchos elementos individuales que luego se tienen que unir mediante más código. Además, trazar la causa de algo a través de un código similar es casi imposible o, por lo menos, te puede tomar mucho tiempo.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>¿Deberías comentar tu código?</title>
-      <link>http://localhost:1313/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</link>
-      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</guid>
-      <description>&lt;p&gt;Cuando hablamos de los comentarios en el código, hay dos escuelas. La primera dice que debes usar los comentarios para &lt;strong&gt;clarificar lo que quisiste expresar con tu código&lt;/strong&gt;, mientras que la segunda dice que deberías &lt;strong&gt;evitarlos al máximo&lt;/strong&gt; y que comentar tu código es un mal necesario que sólo denota tu falta de habilidad para no hacer código lo suficientemente claro.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>A Philosophy of Software Design: Crea módulos de propósito general</title>
-      <link>http://localhost:1313/2020/04/02/a-philosophy-of-software-design-crea-m%C3%B3dulos-de-prop%C3%B3sito-general/</link>
-      <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/04/02/a-philosophy-of-software-design-crea-m%C3%B3dulos-de-prop%C3%B3sito-general/</guid>
-      <description>&lt;p&gt;Una burla común hacia los programadores es que todo lo queremos hacer &lt;em&gt;demasiado general&lt;/em&gt;. Nos piden una funcionalidad y en ese momento empezamos a pensar en todos los casos en los que podría ser usado en el universo.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>A Philosophy of Software Design: Recomendaciones de diseño modular</title>
-      <link>http://localhost:1313/2020/03/18/a-philosophy-of-software-design-recomendaciones-de-dise%C3%B1o-modular/</link>
-      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/03/18/a-philosophy-of-software-design-recomendaciones-de-dise%C3%B1o-modular/</guid>
-      <description>&lt;p&gt;En los artículos anteriores hemos estado hablando de cómo evitar la complejidad mediante ocultar información.&lt;/p&gt;
-&lt;p&gt;En este daremos algunas recomendaciones más y hablaremos de cómo no llevar este principio al extremo.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>A Philosophy of Software Design: Descomposición Temporal</title>
-      <link>http://localhost:1313/2020/03/16/a-philosophy-of-software-design-descomposici%C3%B3n-temporal/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/03/16/a-philosophy-of-software-design-descomposici%C3%B3n-temporal/</guid>
-      <description>&lt;p&gt;En el artículo pasado hablamos de una forma de evitar una fuga de información, que consiste en encapsular una decisión de diseño en un módulo.&lt;/p&gt;
-&lt;p&gt;Otra forma de dejar escapar información no relevante para los usuarios de una pieza de software es mediante obligarlos a usarla siempre de la misma forma, con el mismo orden de operaciones reglas de operación implícita. Esto se llama descomposición temporal. Hablemos más de ella.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>A Philosophy of Software Design: Ocultar información</title>
-      <link>http://localhost:1313/2020/03/07/a-philosophy-of-software-design-ocultar-informaci%C3%B3n/</link>
-      <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/03/07/a-philosophy-of-software-design-ocultar-informaci%C3%B3n/</guid>
-      <description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aposd on The Dojo MX Blog</title><link>https://blog.thedojo.mx/tags/aposd/</link><description>Recent content in Aposd on The Dojo MX Blog</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>© 2026</copyright><lastBuildDate>Fri, 07 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.thedojo.mx/tags/aposd/index.xml" rel="self" type="application/rss+xml"/><item><title>Cuando separar el código</title><link>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-c%C3%B3digo/</link><pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2023/04/07/cuando-separar-el-c%C3%B3digo/</guid><description>&lt;p&gt;Hay quienes afirman que mientras más pequeñas sean tus clases o funciones, mejor. Hasta llegan a poner un límite de la líneas que pueden ir en un método o función. Esto crea código súper fragmentado que llega a ser complejo por el simple hecho de tener muchos elementos individuales que luego se tienen que unir mediante más código. Además, trazar la causa de algo a través de un código similar es casi imposible o, por lo menos, te puede tomar mucho tiempo.&lt;/p&gt;</description></item><item><title>¿Deberías comentar tu código?</title><link>https://blog.thedojo.mx/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</link><pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/12/30/deber%C3%ADas-comentar-tu-c%C3%B3digo/</guid><description>&lt;p&gt;Cuando hablamos de los comentarios en el código, hay dos escuelas. La primera dice que debes usar los comentarios para &lt;strong&gt;clarificar lo que quisiste expresar con tu código&lt;/strong&gt;, mientras que la segunda dice que deberías &lt;strong&gt;evitarlos al máximo&lt;/strong&gt; y que comentar tu código es un mal necesario que sólo denota tu falta de habilidad para no hacer código lo suficientemente claro.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Crea módulos de propósito general</title><link>https://blog.thedojo.mx/2020/04/02/a-philosophy-of-software-design-crea-m%C3%B3dulos-de-prop%C3%B3sito-general/</link><pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/04/02/a-philosophy-of-software-design-crea-m%C3%B3dulos-de-prop%C3%B3sito-general/</guid><description>&lt;p&gt;Una burla común hacia los programadores es que todo lo queremos hacer &lt;em&gt;demasiado general&lt;/em&gt;. Nos piden una funcionalidad y en ese momento empezamos a pensar en todos los casos en los que podría ser usado en el universo.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Recomendaciones de diseño modular</title><link>https://blog.thedojo.mx/2020/03/18/a-philosophy-of-software-design-recomendaciones-de-dise%C3%B1o-modular/</link><pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/03/18/a-philosophy-of-software-design-recomendaciones-de-dise%C3%B1o-modular/</guid><description>&lt;p&gt;En los artículos anteriores hemos estado hablando de cómo evitar la complejidad mediante ocultar información.&lt;/p&gt;
+&lt;p&gt;En este daremos algunas recomendaciones más y hablaremos de cómo no llevar este principio al extremo.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Descomposición Temporal</title><link>https://blog.thedojo.mx/2020/03/16/a-philosophy-of-software-design-descomposici%C3%B3n-temporal/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/03/16/a-philosophy-of-software-design-descomposici%C3%B3n-temporal/</guid><description>&lt;p&gt;En el artículo pasado hablamos de una forma de evitar una fuga de información, que consiste en encapsular una decisión de diseño en un módulo.&lt;/p&gt;
+&lt;p&gt;Otra forma de dejar escapar información no relevante para los usuarios de una pieza de software es mediante obligarlos a usarla siempre de la misma forma, con el mismo orden de operaciones reglas de operación implícita. Esto se llama descomposición temporal. Hablemos más de ella.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Ocultar información</title><link>https://blog.thedojo.mx/2020/03/07/a-philosophy-of-software-design-ocultar-informaci%C3%B3n/</link><pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/03/07/a-philosophy-of-software-design-ocultar-informaci%C3%B3n/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;La idea básica es que cada módulo debería encapsular algunas piezas de conocimiento, que representen decisiones de diseño. - &lt;strong&gt;John Ousterhout&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;En &lt;a
-  href=&#34;https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-modulos-deben-ser-profundos.html&#34;
-    target=&#34;_blank&#34;
-  &gt;el artículo anterior&lt;/a&gt; vimos por qué es bueno que los módulos sean profundos, es decir, oculten detalles de implementación y funcionalidades detrás de una interfaz lo más sencilla posible. En este y los siguientes artículos vamos a ver maneras prácticas de lograr esto, basado en ejemplos de &lt;a
-  href=&#34;https://amzn.to/2H92nwA&#34;
-    target=&#34;_blank&#34;
-  &gt;&amp;ldquo;A Philosophy of Software Design&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>A Philosophy of Software Design: Desarrollo Táctico vs Estratégico</title>
-      <link>http://localhost:1313/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</link>
-      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</guid>
-      <description>&lt;p&gt;Cuando desarrollas software tienes dos actitudes para escoger: desarrollas de forma rápida y sucia (desarrollo táctico) o de forma ordenada, planeada y pensando en el futuro. Cada uno de estos tipos de desarrollo o filosofías de desarrollo tiene ventajas y desventajas. Pero veamos a más detalle de qué trata cada uno.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+href="https://blog.thedojo.mx/2020/03/02/a-philosophy-of-software-design-los-modulos-deben-ser-profundos.html"
+target="_blank"
+&gt;el artículo anterior&lt;/a&gt; vimos por qué es bueno que los módulos sean profundos, es decir, oculten detalles de implementación y funcionalidades detrás de una interfaz lo más sencilla posible. En este y los siguientes artículos vamos a ver maneras prácticas de lograr esto, basado en ejemplos de &lt;a
+href="https://amzn.to/2H92nwA"
+target="_blank"
+&gt;&amp;ldquo;A Philosophy of Software Design&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>A Philosophy of Software Design: Desarrollo Táctico vs Estratégico</title><link>https://blog.thedojo.mx/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</link><pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate><guid>https://blog.thedojo.mx/2020/02/11/a-philosophy-of-software-design-desarrollo-t%C3%A1ctico-vs-estrat%C3%A9gico/</guid><description>&lt;p&gt;Cuando desarrollas software tienes dos actitudes para escoger: desarrollas de forma rápida y sucia (desarrollo táctico) o de forma ordenada, planeada y pensando en el futuro. Cada uno de estos tipos de desarrollo o filosofías de desarrollo tiene ventajas y desventajas. Pero veamos a más detalle de qué trata cada uno.&lt;/p&gt;</description></item></channel></rss>
