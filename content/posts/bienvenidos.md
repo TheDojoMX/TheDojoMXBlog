@@ -23,7 +23,7 @@ software, con un enfoque educativo. Algunos ejemplos de los tópicos a tratar so
 - Mejores prácticas de desarrollo
 - Inteligencia Artificial
 - Ciencias de la computación teóricas
-- Algoritmia
+- Algoritmos y estructuras de datos
 - Ingeniería de software
 - Open Source
 
