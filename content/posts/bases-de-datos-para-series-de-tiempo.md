@@ -1,6 +1,6 @@
 ---
 title: "Bases de datos para series de tiempo"
-date: 2025-12-29
+date: 2026-01-29
 author: "Héctor Patricio"
 tags: ['series-de-tiempo', 'bases-de-datos', 'data-science', 'tsdb', 'timescaledb']
 description: "¿Qué bases de datos puedes usar para guardar datos generados de manera periódica? Hablemos de por qué es importante escoger la herramienta correcta."
