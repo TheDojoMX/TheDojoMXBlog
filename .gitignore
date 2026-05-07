@@ -53,3 +53,6 @@ voice_papers/projects/*
 !voice_papers/projects/.keepcodex_claude/*
 codex-claude/*
 .codex/*
+
+# External Hugo theme (clone separately, see README)
+/themes/
